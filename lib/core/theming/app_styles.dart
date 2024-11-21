@@ -5,9 +5,19 @@ import 'package:home4u/core/theming/font_weight_helper.dart';
 
 class AppStyles {
 
-  static  TextStyle font16BlackMedium = TextStyle(
+  static TextStyle font16BlackMedium = TextStyle(
     fontSize: 16.sp,
     color: AppColors.blackColor,
     fontWeight: FontWeightHelper.medium,
+  );
+  static TextStyle font20BlackMedium = TextStyle(
+    fontSize: 20.sp,
+    color: AppColors.blackColor,
+    fontWeight: FontWeightHelper.medium,
+  );
+  static TextStyle font20BlackLight = TextStyle(
+    fontSize: 20.sp,
+    color: AppColors.blackColor,
+    fontWeight: FontWeightHelper.light,
   );
 }
