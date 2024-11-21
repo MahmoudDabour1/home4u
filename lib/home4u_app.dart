@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:home4u/core/routing/app_router.dart';
+import 'package:home4u/core/routing/routes.dart';
 
 class Home4uApp extends StatelessWidget {
   final AppRouter appRouter;
@@ -16,7 +17,7 @@ class Home4uApp extends StatelessWidget {
         onGenerateRoute: appRouter.generateRoute,
         debugShowCheckedModeBanner: false,
         navigatorObservers: [NavigatorObserver()],
-        initialRoute: '/',
+        initialRoute: Routes.onBoardingScreen,
       ),
     );
   }
