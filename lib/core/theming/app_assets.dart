@@ -6,4 +6,5 @@ abstract class AppAssets {
   static const String google = 'assets/images/google.png';
   static const String facebook = 'assets/images/facebook.png';
   static const String loginImage = 'assets/images/login_image.png';
+  static const String signUpImage = 'assets/images/signup_image.png';
 }

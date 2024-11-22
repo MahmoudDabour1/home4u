@@ -4,11 +4,11 @@ import 'package:home4u/core/theming/app_colors.dart';
 import 'package:home4u/core/theming/app_styles.dart';
 import 'package:home4u/core/utils/spacing.dart';
 
-class OtherLoginButton extends StatelessWidget {
+class OtherAuthButton extends StatelessWidget {
   final String image;
   final String text;
   final VoidCallback onPressed;
-  const OtherLoginButton({super.key, required this.image, required this.text, required this.onPressed});
+  const OtherAuthButton({super.key, required this.image, required this.text, required this.onPressed});
 
   @override
   Widget build(BuildContext context) {
@@ -30,8 +30,8 @@ class OtherLoginButton extends StatelessWidget {
         ],
       ),
       style: ButtonStyle(
-        padding: MaterialStateProperty.all(EdgeInsets.symmetric(vertical: 16.h)),
-        shape: MaterialStateProperty.all(
+        padding: WidgetStateProperty.all(EdgeInsets.symmetric(vertical: 16.h)),
+        shape: WidgetStateProperty.all(
           RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(16.r),
             side: BorderSide(
