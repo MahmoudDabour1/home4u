@@ -17,6 +17,8 @@ class PhoneAndPassword extends StatefulWidget {
 class _PhoneAndPasswordState extends State<PhoneAndPassword> {
   bool isObscureText = true;
   final formKey = GlobalKey<FormState>();
+  final phoneFocusNode = FocusNode();
+  final passwordFocusNode = FocusNode();
 
   @override
   Widget build(BuildContext context) {
@@ -26,6 +28,9 @@ class _PhoneAndPasswordState extends State<PhoneAndPassword> {
         children: [
           AppTextFormField(
             hintText: AppStrings.phoneNumber,
+            keyboardType: TextInputType.phone,
+            focusNode:phoneFocusNode ,
+            textInputAction: TextInputAction.next,
             validator: (value) {
               if (value.isEmpty ||
                   !AppRegex.isPhoneNumberValid(value)) {
@@ -36,6 +41,10 @@ class _PhoneAndPasswordState extends State<PhoneAndPassword> {
           verticalSpace(16),
           AppTextFormField(
             hintText: AppStrings.password,
+            focusNode:passwordFocusNode ,
+            textInputAction: TextInputAction.done,
+            isObscureText: isObscureText,
+            keyboardType: TextInputType.visiblePassword,
             validator: (value) {
               if (value.isEmpty) {
                 return AppStrings.pleaseEnterAValidPassword;
