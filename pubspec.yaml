@@ -75,7 +75,7 @@ dependencies:
   #
   skeletonizer: ^1.4.2
   # convert from HTML to Json
-  path_provider: ^2.1.5
+
   # for sharing content via the platform share UI, using the ACTION_SEND intent on Android and UIActivityViewController on iOS.
   share_plus: ^10.1.1
   # local storage
@@ -122,22 +122,22 @@ flutter:
   # "family" key with the font family name, and a "fonts" key with a
   # list giving the asset and other descriptors for the font. For
   # example:
-fonts:
-  - family: IBM Plex Sans Arabic
-    fonts:
-      - asset: assets/fonts/IBMPlexSansArabic-Bold.ttf
-      - asset: assets/fonts/IBMPlexSansArabic-ExtraLight.ttf
-      - asset: assets/fonts/IBMPlexSansArabic-Light.ttf
-      - asset: assets/fonts/IBMPlexSansArabic-Medium.ttf
-      - asset: assets/fonts/IBMPlexSansArabic-Regular.ttf
-      - asset: assets/fonts/IBMPlexSansArabic-SemiBold.ttf
-      - asset: assets/fonts/IBMPlexSansArabic-Thin.ttf
-        weight: 700
- #
- # For details regarding fonts from package dependencies,
- # see https://flutter.dev/to/font-from-package
-assets:
-   - assets/images/
-   - assets/svgs/
-   - assets/jsons/
+  fonts:
+    - family: IBM Plex Sans Arabic
+      fonts:
+        - asset: assets/fonts/IBMPlexSansArabic-Bold.ttf
+        - asset: assets/fonts/IBMPlexSansArabic-ExtraLight.ttf
+        - asset: assets/fonts/IBMPlexSansArabic-Light.ttf
+        - asset: assets/fonts/IBMPlexSansArabic-Medium.ttf
+        - asset: assets/fonts/IBMPlexSansArabic-Regular.ttf
+        - asset: assets/fonts/IBMPlexSansArabic-SemiBold.ttf
+        - asset: assets/fonts/IBMPlexSansArabic-Thin.ttf
+          weight: 700
+   #
+   # For details regarding fonts from package dependencies,
+   # see https://flutter.dev/to/font-from-package
+  assets:
+     - assets/images/
+     - assets/svgs/
+     - assets/jsons/
 
