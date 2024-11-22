@@ -1,10 +1,10 @@
-import 'package:device_preview/device_preview.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:home4u/core/routing/app_router.dart';
 import 'package:home4u/core/routing/routes.dart';
 
 import 'core/theming/app_theme.dart';
+
 
 class Home4uApp extends StatelessWidget {
   final AppRouter appRouter;
@@ -23,7 +23,7 @@ class Home4uApp extends StatelessWidget {
         onGenerateRoute: appRouter.generateRoute,
         debugShowCheckedModeBanner: false,
         navigatorObservers: [NavigatorObserver()],
-        initialRoute: Routes.onBoardingScreen,
+        initialRoute: Routes.loginScreen,
       ),
     );
   }
