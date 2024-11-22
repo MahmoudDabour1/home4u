@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:home4u/core/routing/routes.dart';
-import 'package:home4u/features/login/presentation/login_screen.dart';
 
+import '../../features/auth/login/presentation/login_screen.dart';
 import '../../features/onboarding/presentation/onboarding_screen.dart';
 
 
-class AppRouter{
 class AppRouter {
   Route? generateRoute(RouteSettings settings) {
     switch (settings.name) {

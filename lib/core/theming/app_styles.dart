@@ -38,9 +38,4 @@ class AppStyles {
     color: AppColors.blackColor,
     fontWeight: FontWeightHelper.medium,
   );
-  static TextStyle font16BlackLight = TextStyle(
-    fontSize: 16.sp,
-    color: AppColors.blackColor,
-    fontWeight: FontWeightHelper.light,
-  );
 }
