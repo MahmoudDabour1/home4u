@@ -13,42 +13,27 @@ class LoginScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SingleChildScrollView(
-        child: Column(
-          children: [
-            AuthImageAndTextWidget(
-              image: AppAssets.loginImage,
-              text: AppStrings.login,
-              subText: AppStrings.welcomeBack,
-            ),
-            Padding(
-              padding: EdgeInsets.symmetric(horizontal: 24.w),
-              child: Column(
-                children: [
-                  verticalSpace(12),
-                  PhoneAndPassword(),
-                  LoginButtons(),
-                ],
       body: SafeArea(
-        child: Padding(
-          padding: EdgeInsets.symmetric(horizontal: 24.w),
+        child:SingleChildScrollView(
           child: Column(
             children: [
-              Text(
-                "Login",
+              AuthImageAndTextWidget(
+                image: AppAssets.loginImage,
+                text: AppStrings.login,
+                subText: AppStrings.welcomeBack,
               ),
-              PhoneAndPassword(),
-              Align(
-                alignment: Alignment.centerRight,
-                child: TextButton(
-                  onPressed: () {},
-                  child: Text(
-                    "forget password",
-                  ),
+              Padding(
+                padding: EdgeInsets.symmetric(horizontal: 24.w),
+                child: Column(
+                  children: [
+                    verticalSpace(12),
+                    PhoneAndPassword(),
+                    LoginButtons(),
+                  ],
                 ),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );
