@@ -1,13 +1,20 @@
 import 'package:flutter/material.dart';
 import 'package:home4u/core/routing/routes.dart';
+import 'package:home4u/features/login/presentation/login_screen.dart';
 
-class AppRouter{
+import '../../features/onboarding/presentation/onboarding_screen.dart';
+
+class AppRouter {
   Route? generateRoute(RouteSettings settings) {
     switch (settings.name) {
-      // case Routes.onBoardingScreen:
-      //   return MaterialPageRoute(
-      //      builder: (_) => OnBoardingScreen(),
-      //   );
+      case Routes.onBoardingScreen:
+        return MaterialPageRoute(
+          builder: (_) => OnBoardingScreen(),
+        );
+      case Routes.loginScreen:
+        return MaterialPageRoute(
+          builder: (_) => LoginScreen(),
+        );
       default:
         return null;
     }
