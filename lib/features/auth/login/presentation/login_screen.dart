@@ -19,7 +19,6 @@ class LoginScreen extends StatelessWidget {
             children: [
               Text(
                 "Login",
-                // style: AppStyles.font20BlackBold,
               ),
               PhoneAndPassword(),
               Align(
@@ -28,7 +27,6 @@ class LoginScreen extends StatelessWidget {
                   onPressed: () {},
                   child: Text(
                     "forget password",
-                    // style: AppStyles.font14DarkBlueBold,
                   ),
                 ),
               ),
