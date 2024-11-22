@@ -125,17 +125,17 @@ flutter:
   # "family" key with the font family name, and a "fonts" key with a
   # list giving the asset and other descriptors for the font. For
   # example:
-fonts:
-  - family: IBM Plex Sans Arabic
-    fonts:
-      - asset: assets/fonts/IBMPlexSansArabic-Bold.ttf
-      - asset: assets/fonts/IBMPlexSansArabic-ExtraLight.ttf
-      - asset: assets/fonts/IBMPlexSansArabic-Light.ttf
-      - asset: assets/fonts/IBMPlexSansArabic-Medium.ttf
-      - asset: assets/fonts/IBMPlexSansArabic-Regular.ttf
-      - asset: assets/fonts/IBMPlexSansArabic-SemiBold.ttf
-      - asset: assets/fonts/IBMPlexSansArabic-Thin.ttf
-        weight: 700
+  fonts:
+    - family: IBM Plex Sans Arabic
+      fonts:
+        - asset: assets/fonts/IBMPlexSansArabic-Bold.ttf
+        - asset: assets/fonts/IBMPlexSansArabic-ExtraLight.ttf
+        - asset: assets/fonts/IBMPlexSansArabic-Light.ttf
+        - asset: assets/fonts/IBMPlexSansArabic-Medium.ttf
+        - asset: assets/fonts/IBMPlexSansArabic-Regular.ttf
+        - asset: assets/fonts/IBMPlexSansArabic-SemiBold.ttf
+        - asset: assets/fonts/IBMPlexSansArabic-Thin.ttf
+          weight: 700
 
 
 
