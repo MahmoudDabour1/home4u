@@ -8,11 +8,18 @@ class OtherLoginButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-height: 56.h,
+      height: 56.h,
       child: Row(
         children: [
-          Image.asset("",height:32.h ,width: 32.w,),
-          Text("Continuo with Google",style: AppStyles.font16DarkBlueBold,),
+          Image.asset(
+            "",
+            height: 32.h,
+            width: 32.w,
+          ),
+          Text(
+            "Continuo with Google",
+            style: AppStyles.font16DarkBlueBold,
+          ),
         ],
       ),
     );
