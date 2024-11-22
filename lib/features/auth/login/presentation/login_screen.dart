@@ -29,6 +29,23 @@ class LoginScreen extends StatelessWidget {
                   PhoneAndPassword(),
                   LoginButtons(),
                 ],
+      body: SafeArea(
+        child: Padding(
+          padding: EdgeInsets.symmetric(horizontal: 24.w),
+          child: Column(
+            children: [
+              Text(
+                "Login",
+              ),
+              PhoneAndPassword(),
+              Align(
+                alignment: Alignment.centerRight,
+                child: TextButton(
+                  onPressed: () {},
+                  child: Text(
+                    "forget password",
+                  ),
+                ),
               ),
             ),
           ],
