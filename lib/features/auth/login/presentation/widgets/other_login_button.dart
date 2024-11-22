@@ -7,12 +7,13 @@ import 'package:home4u/core/utils/spacing.dart';
 class OtherLoginButton extends StatelessWidget {
   final String image;
   final String text;
-  const OtherLoginButton({super.key, required this.image, required this.text});
+  final VoidCallback onPressed;
+  const OtherLoginButton({super.key, required this.image, required this.text, required this.onPressed});
 
   @override
   Widget build(BuildContext context) {
     return IconButton(
-      onPressed: () {},
+      onPressed: onPressed,
       icon: Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
