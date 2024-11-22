@@ -22,11 +22,11 @@ class AppCustomButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(8).r,
+        borderRadius: BorderRadius.circular(16).r,
         gradient: LinearGradient(
           colors: [
-            AppColors.secondaryColor,
             AppColors.secondaryGradientColor,
+            AppColors.secondaryColor,
           ],
         ),
       ),
