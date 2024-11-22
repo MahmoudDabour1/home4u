@@ -75,12 +75,16 @@ dependencies:
   #
   skeletonizer: ^1.4.2
   # convert from HTML to Json
-
+  path_provider: ^2.1.5
   # for sharing content via the platform share UI, using the ACTION_SEND intent on Android and UIActivityViewController on iOS.
   share_plus: ^10.1.1
   # local storage
   hive: ^2.2.3
   hive_flutter: ^1.1.0
+  # how your Flutter app looks and performs on another device
+  device_preview: ^1.2.0
+  # automatically resizes text to fit perfectly within its bounds.
+  auto_size_text: ^3.0.0
 
 dev_dependencies:
   flutter_test:
