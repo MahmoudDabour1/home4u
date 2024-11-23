@@ -33,6 +33,7 @@ class AppTextFormField extends StatelessWidget {
     this.inputTextStyle,
     this.backgroundColor,
     this.controller,
+    required this.validator, this.prefixIcon,
     required this.validator,
     this.prefixIcon,
     this.keyboardType,
@@ -43,6 +44,44 @@ class AppTextFormField extends StatelessWidget {
   Widget build(BuildContext context) {
     return TextFormField(
       controller: controller,
+      decoration: InputDecoration(
+          isDense: true,
+          contentPadding: contentPadding ??
+              EdgeInsets.symmetric(
+                vertical: 18.h,
+                horizontal: 20.w,
+              ),
+          focusedBorder: focusedBorder ??
+              OutlineInputBorder(
+                borderSide:
+                    const BorderSide(color: AppColors.primaryColor, width: 1.3),
+                borderRadius: BorderRadius.circular(16.r),
+              ),
+          enabledBorder: enabledBorder ??
+              OutlineInputBorder(
+                borderSide: const BorderSide(
+                    color: AppColors.secondaryColor, width: 1.3),
+                borderRadius: BorderRadius.circular(16.r),
+              ),
+
+          errorBorder: OutlineInputBorder(
+            borderSide: const BorderSide(color: Colors.red, width: 1.3),
+            borderRadius: BorderRadius.circular(16.r),
+          ),
+          focusedErrorBorder: OutlineInputBorder(
+            borderSide: const BorderSide(color: Colors.red, width: 1.3),
+            borderRadius: BorderRadius.circular(16.r),
+          ),
+          hintStyle: hintStyle ?? AppStyles.font16BlackLight,
+          hintText: hintText,
+          suffixIcon: suffixIcon,
+        prefixIcon: prefixIcon,
+          ),
+      obscureText: isObscureText ?? false,
+      style: AppStyles.font16BlackLight,
+      validator: (value) {
+          return validator(value!);
+      },
       keyboardType: keyboardType,
       focusNode: focusNode,
       onTapOutside: (event) {
