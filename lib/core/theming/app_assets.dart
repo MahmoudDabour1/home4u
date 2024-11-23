@@ -7,4 +7,7 @@ abstract class AppAssets {
   static const String facebook = 'assets/images/facebook.png';
   static const String loginImage = 'assets/images/login_image.png';
   static const String signUpImage = 'assets/images/signup_image.png';
+  static const String newPasswordImage = 'assets/images/new_password.png';
+  static const String verificationImage = 'assets/images/verification.png';
+  static const String forgetPasswordImage = 'assets/images/forget_password.png';
 }

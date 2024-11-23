@@ -10,7 +10,8 @@ class AuthImageAndTextWidget extends StatelessWidget {
   final String text;
   final  String subText;
   final bool isBackButton ;
-  const AuthImageAndTextWidget({super.key, required this.image, required this.text, required this.subText,  this.isBackButton=false});
+  final double horizontalPadding;
+  const AuthImageAndTextWidget({super.key, required this.image, required this.text, required this.subText,  this.isBackButton=false,  this.horizontalPadding=24});
 
   @override
   Widget build(BuildContext context) {
@@ -25,7 +26,7 @@ class AuthImageAndTextWidget extends StatelessWidget {
             left: 24.w,
             child: AppBackButton()):SizedBox.shrink(),
         Padding(
-          padding: EdgeInsets.symmetric(horizontal: 24.w),
+          padding: EdgeInsets.symmetric(horizontal: horizontalPadding.w),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             mainAxisAlignment: MainAxisAlignment.end,

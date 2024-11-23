@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:home4u/core/routing/routes.dart';
 import 'package:home4u/core/utils/spacing.dart';
 
 import '../../../../../core/theming/app_strings.dart';
@@ -19,7 +20,9 @@ class LoginButtons extends StatelessWidget {
         Align(
           alignment: Alignment.centerRight,
           child: TextButton(
-            onPressed: () {},
+            onPressed: () {
+              Navigator.pushNamed(context, Routes.forgetPasswordScreen);
+            },
             child: Text(
               AppStrings.forgetPassword,
               style: AppStyles.font14DarkBlueBold,
