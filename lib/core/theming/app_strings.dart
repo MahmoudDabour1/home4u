@@ -30,5 +30,7 @@ abstract class AppStrings {
   static const String resendOTP = 'Resend OTP';
   static const String didnReceiveTheOTP = 'Didn\'t receive the OTP?';
   static const String resendIn00 = 'Resend in 00:';
-
+  static const String newPassword = 'New password';
+  static const String enterYourNewPassword = 'Enter Your New Password';
+  static const String confirm = 'Confirm';
 }
