@@ -81,6 +81,10 @@ dependencies:
   # local storage
   hive: ^2.2.3
   hive_flutter: ^1.1.0
+  # how your Flutter app looks and performs on another device
+  device_preview: ^1.2.0
+  # automatically resizes text to fit perfectly within its bounds.
+  auto_size_text: ^3.0.0
 
 dev_dependencies:
   flutter_test:
@@ -122,22 +126,19 @@ flutter:
   # "family" key with the font family name, and a "fonts" key with a
   # list giving the asset and other descriptors for the font. For
   # example:
-fonts:
-  - family: IBM Plex Sans Arabic
-    fonts:
-      - asset: assets/fonts/IBMPlexSansArabic-Bold.ttf
-      - asset: assets/fonts/IBMPlexSansArabic-ExtraLight.ttf
-      - asset: assets/fonts/IBMPlexSansArabic-Light.ttf
-      - asset: assets/fonts/IBMPlexSansArabic-Medium.ttf
-      - asset: assets/fonts/IBMPlexSansArabic-Regular.ttf
-      - asset: assets/fonts/IBMPlexSansArabic-SemiBold.ttf
-      - asset: assets/fonts/IBMPlexSansArabic-Thin.ttf
-        weight: 700
- #
- # For details regarding fonts from package dependencies,
- # see https://flutter.dev/to/font-from-package
-assets:
-   - assets/images/
-   - assets/svgs/
-   - assets/jsons/
-
+  fonts:
+    - family: IBM Plex Sans Arabic
+      fonts:
+        - asset: assets/fonts/IBMPlexSansArabic-Bold.ttf
+        - asset: assets/fonts/IBMPlexSansArabic-ExtraLight.ttf
+        - asset: assets/fonts/IBMPlexSansArabic-Light.ttf
+        - asset: assets/fonts/IBMPlexSansArabic-Medium.ttf
+        - asset: assets/fonts/IBMPlexSansArabic-Regular.ttf
+        - asset: assets/fonts/IBMPlexSansArabic-SemiBold.ttf
+        - asset: assets/fonts/IBMPlexSansArabic-Thin.ttf
+          weight: 700
+    #
+    # For details regarding fonts from package dependencies,
+    # see https://flutter.dev/to/font-from-package
+  assets:
+    - assets/images/

@@ -17,10 +17,7 @@ import 'package:flutter/foundation.dart'
 class DefaultFirebaseOptions {
   static FirebaseOptions get currentPlatform {
     if (kIsWeb) {
-      throw UnsupportedError(
-        'DefaultFirebaseOptions have not been configured for web - '
-        'you can reconfigure this by running the FlutterFire CLI again.',
-      );
+      return web;
     }
     switch (defaultTargetPlatform) {
       case TargetPlatform.android:
@@ -28,10 +25,7 @@ class DefaultFirebaseOptions {
       case TargetPlatform.iOS:
         return ios;
       case TargetPlatform.macOS:
-        throw UnsupportedError(
-          'DefaultFirebaseOptions have not been configured for macos - '
-          'you can reconfigure this by running the FlutterFire CLI again.',
-        );
+        return macos;
       case TargetPlatform.windows:
         throw UnsupportedError(
           'DefaultFirebaseOptions have not been configured for windows - '
@@ -65,4 +59,24 @@ class DefaultFirebaseOptions {
     storageBucket: 'home4u-3492b.firebasestorage.app',
     iosBundleId: 'com.example.home4u',
   );
+
+  static const FirebaseOptions web = FirebaseOptions(
+    apiKey: 'AIzaSyBM4kQA7rInEySsXS-oenPw1RCleQdD8AU',
+    appId: '1:409187249081:web:6c96c8e78b1ba17954e468',
+    messagingSenderId: '409187249081',
+    projectId: 'home4u-3492b',
+    authDomain: 'home4u-3492b.firebaseapp.com',
+    storageBucket: 'home4u-3492b.firebasestorage.app',
+    measurementId: 'G-3QVGERC4JM',
+  );
+
+  static const FirebaseOptions macos = FirebaseOptions(
+    apiKey: 'AIzaSyDqkkD7N2hFjJN_kEjTwFQ_fGygCQPHkXU',
+    appId: '1:409187249081:ios:723404f61cf3c08754e468',
+    messagingSenderId: '409187249081',
+    projectId: 'home4u-3492b',
+    storageBucket: 'home4u-3492b.firebasestorage.app',
+    iosBundleId: 'com.example.home4u',
+  );
+
 }
