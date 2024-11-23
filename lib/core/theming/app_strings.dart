@@ -20,4 +20,7 @@ abstract class AppStrings {
   static const String lastName = 'Last name';
   static const String alreadyHaveAnAccount = 'Already have an account? ';
   static const String accessYourAccount = 'Access your account';
+  static const String forgetPasswordK = 'Forget Password';
+  static const String enterYourPhoneNumber = 'Enter Your Phone Number';
+  static const String send = 'Send';
 }
