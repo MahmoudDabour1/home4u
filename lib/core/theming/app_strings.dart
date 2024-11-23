@@ -23,4 +23,12 @@ abstract class AppStrings {
   static const String forgetPasswordK = 'Forget Password';
   static const String enterYourPhoneNumber = 'Enter Your Phone Number';
   static const String send = 'Send';
+  static const String verification = 'Verification';
+  static const String pleaseVerifyYourAccount = 'Please Verify Your Account';
+  static const String continue0 = 'Continue';
+  static const String resendIn = 'Resend in ';
+  static const String resendOTP = 'Resend OTP';
+  static const String didnReceiveTheOTP = 'Didn\'t receive the OTP?';
+  static const String resendIn00 = 'Resend in 00:';
+
 }

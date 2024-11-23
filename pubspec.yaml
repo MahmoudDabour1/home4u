@@ -85,6 +85,9 @@ dependencies:
   device_preview: ^1.2.0
   # automatically resizes text to fit perfectly within its bounds.
   auto_size_text: ^3.0.0
+  # enter a digit code usually in cases of Sms Otp Code
+  code_input: ^2.0.0
+
 
 dev_dependencies:
   flutter_test:
