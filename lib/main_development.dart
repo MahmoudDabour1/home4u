@@ -17,10 +17,10 @@ void main() async {
     options: DefaultFirebaseOptions.currentPlatform,
   );
   runApp(
-    DevicePreview(
-      enabled: !kReleaseMode,
-      builder: (context) => Home4uApp(appRouter: AppRouter()),
-    ),
-    // Home4uApp(appRouter: AppRouter()),
+    // DevicePreview(
+    //   enabled: !kReleaseMode,
+    //   builder: (context) => Home4uApp(appRouter: AppRouter()),
+    // ),
+      Home4uApp(appRouter: AppRouter()),
   );
 }
