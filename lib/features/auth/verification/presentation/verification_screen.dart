@@ -5,6 +5,7 @@ import 'package:home4u/core/widgets/app_custom_button.dart';
 import 'package:home4u/features/auth/verification/presentation/widgets/otp_inputs.dart';
 import 'package:home4u/features/auth/verification/presentation/widgets/resend_otp.dart';
 
+import '../../../../core/routing/routes.dart';
 import '../../../../core/theming/app_assets.dart';
 import '../../../../core/theming/app_strings.dart';
 import '../../widgets/auth_image_and_text_widget.dart';
@@ -33,7 +34,9 @@ class VerificationScreen extends StatelessWidget {
               verticalSpace(32),
               AppCustomButton(
                 textButton: AppStrings.continue0,
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.pushNamed(context, Routes.newPasswordScreen);
+                },
                 btnHeight: 65.h,
                 btnWidth: MediaQuery.sizeOf(context).width,
               ),
