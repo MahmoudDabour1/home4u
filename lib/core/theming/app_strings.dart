@@ -20,4 +20,20 @@ abstract class AppStrings {
   static const String lastName = 'Last name';
   static const String alreadyHaveAnAccount = 'Already have an account? ';
   static const String accessYourAccount = 'Access your account';
+  static const String forgetPasswordK = 'Forget Password';
+  static const String enterYourPhoneNumber = 'Enter Your Phone Number';
+  static const String send = 'Send';
+  static const String verification = 'Verification';
+  static const String pleaseVerifyYourAccount = 'Please Verify Your Account';
+  static const String continue0 = 'Continue';
+  static const String resendIn = 'Resend in ';
+  static const String resendOTP = 'Resend OTP';
+  static const String didnReceiveTheOTP = 'Didn\'t receive the OTP?';
+  static const String resendIn00 = 'Resend in 00:';
+  static const String newPassword = 'New password';
+  static const String enterYourNewPassword = 'Enter Your New Password';
+  static const String confirm = 'Confirm';
+  static const String orContinueWith = 'Or Continue with';
+  static const String theGovernorate = 'The Governorate';
+  static const String theCity = 'The City';
 }
