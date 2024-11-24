@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:home4u/core/routing/routes.dart';
+import 'package:home4u/features/auth/forget_password/presentation/forget_password_screen.dart';
+import 'package:home4u/features/auth/new_password/presentation/new_password_screen.dart';
+import 'package:home4u/features/auth/sign_up/presentation/sign_up_screen.dart';
+import 'package:home4u/features/auth/verification/presentation/verification_screen.dart';
 
 import '../../features/auth/login/presentation/login_screen.dart';
 import '../../features/onboarding/presentation/onboarding_screen.dart';
@@ -15,6 +19,20 @@ class AppRouter {
       case Routes.onBoardingScreen:
         return MaterialPageRoute(
           builder: (_) => OnBoardingScreen(),
+        );
+        case Routes.signUpScreen:
+        return MaterialPageRoute(
+          builder: (_) => SignUpScreen(),
+        );
+        case Routes.forgetPasswordScreen:
+        return MaterialPageRoute(
+          builder: (_) => ForgetPasswordScreen(),
+        );case Routes.verificationScreen:
+        return MaterialPageRoute(
+          builder: (_) => VerificationScreen(),
+        );case Routes.newPasswordScreen:
+        return MaterialPageRoute(
+          builder: (_) => NewPasswordScreen(),
         );
       default:
         return null;

@@ -12,12 +12,16 @@ class Assets {
   static const String imagesAndroid12Splash = 'assets/images/android_12_splash.png';
   static const String imagesArrow = 'assets/images/arrow.png';
   static const String imagesFacebook = 'assets/images/facebook.png';
+  static const String imagesForgetPassword = 'assets/images/forget_password.png';
   static const String imagesGoogle = 'assets/images/google.png';
   static const String imagesLock = 'assets/images/lock.png';
   static const String imagesLoginImage = 'assets/images/login_image.png';
+  static const String imagesNewPassword = 'assets/images/new_password.png';
   static const String imagesOnboardingOneFour = 'assets/images/onboarding_one_four.png';
   static const String imagesOnboardingThree = 'assets/images/onboarding_three.png';
   static const String imagesOnboardingTwo = 'assets/images/onboarding_two.png';
+  static const String imagesSignUpImage = 'assets/images/signup_image.png';
   static const String imagesSplash = 'assets/images/splash.png';
+  static const String imagesVerification = 'assets/images/verification.png';
 
 }
