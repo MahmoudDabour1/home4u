@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:home4u/core/routing/routes.dart';
 import 'package:home4u/core/utils/spacing.dart';
 
 import '../../../../../core/theming/app_strings.dart';
 import '../../../../../core/theming/app_styles.dart';
-import '../../../../../core/utils/spacing.dart';
 import '../../../../../core/widgets/app_custom_button.dart';
 import '../../../widgets/google_and_facebook_auth_buttons.dart';
 import 'dont_have_an_account_text.dart';
@@ -19,7 +19,9 @@ class LoginButtons extends StatelessWidget {
         Align(
           alignment: Alignment.centerRight,
           child: TextButton(
-            onPressed: () {},
+            onPressed: () {
+              Navigator.pushNamed(context, Routes.forgetPasswordScreen);
+            },
             child: Text(
               AppStrings.forgetPassword,
               style: AppStyles.font14DarkBlueBold,
