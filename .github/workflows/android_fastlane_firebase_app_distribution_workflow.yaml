@@ -13,10 +13,10 @@ jobs:
       - name: Checkout Repository Code
         uses: actions/checkout@v4
 
-      - name: Set Up JDK 23.0.1
+      - name: Set Up JDK 11
         uses: actions/setup-java@v4
         with:
-          java-version: 23.0.1
+          java-version: 11
           distribution: 'temurin'
 
       - name: Install Flutter
