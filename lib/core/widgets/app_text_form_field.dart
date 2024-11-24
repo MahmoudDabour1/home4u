@@ -36,7 +36,7 @@ class AppTextFormField extends StatelessWidget {
     required this.validator,
     this.prefixIcon,
     this.keyboardType,
-    this.focusNode, this.textInputAction=TextInputAction.next,
+    this.focusNode, this.textInputAction,
   });
 
   @override

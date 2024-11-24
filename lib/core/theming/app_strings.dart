@@ -33,7 +33,4 @@ abstract class AppStrings {
   static const String newPassword = 'New password';
   static const String enterYourNewPassword = 'Enter Your New Password';
   static const String confirm = 'Confirm';
-  static const String orContinueWith = 'Or Continue with';
-  static const String theGovernorate = 'The Governorate';
-  static const String theCity = 'The City';
 }

@@ -1,6 +1,5 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:home4u/core/theming/app_styles.dart';
 
 import '../../../../../core/theming/app_strings.dart';
 import '../../../../../core/utils/spacing.dart';
@@ -22,11 +21,6 @@ class SignUpButtons extends StatelessWidget {
             onPressed: () {},
             btnHeight: 65.h,
             btnWidth: MediaQuery.sizeOf(context).width,
-          ),
-          verticalSpace(16),
-          Text(
-            AppStrings.orContinueWith,
-            style: AppStyles.font16DarkBlueBold,
           ),
           GoogleAndFacebookAuthButtons(
             onPressedFacebook: () {},

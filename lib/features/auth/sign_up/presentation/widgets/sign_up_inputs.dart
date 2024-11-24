@@ -6,7 +6,6 @@ import '../../../../../core/theming/app_colors.dart';
 import '../../../../../core/theming/app_strings.dart';
 import '../../../../../core/utils/spacing.dart';
 import '../../../../../core/widgets/app_text_form_field.dart';
-import 'drop_down_buttons.dart';
 
 class SignUpInputs extends StatefulWidget {
   const SignUpInputs({super.key});
@@ -24,8 +23,6 @@ class _SignUpInputsState extends State<SignUpInputs> {
   final phoneNumberFocusNode = FocusNode();
   final passwordFocusNode = FocusNode();
   final confirmPasswordFocusNode = FocusNode();
-  String? selectedGovernorate;
-  String? selectedCity;
 
   @override
   Widget build(BuildContext context) {
@@ -42,6 +39,7 @@ class _SignUpInputsState extends State<SignUpInputs> {
                     child: AppTextFormField(
                   hintText: AppStrings.firstName,
                   focusNode: firstNameFocusNode,
+                  textInputAction: TextInputAction.next,
                   keyboardType: TextInputType.name,
                   validator: (value) {
                     if (value.isEmpty) {
@@ -54,6 +52,7 @@ class _SignUpInputsState extends State<SignUpInputs> {
                     child: AppTextFormField(
                   hintText: AppStrings.lastName,
                   focusNode: lastNameFocusNode,
+                  textInputAction: TextInputAction.next,
                   keyboardType: TextInputType.name,
                   validator: (value) {
                     if (value.isEmpty) {
@@ -74,10 +73,11 @@ class _SignUpInputsState extends State<SignUpInputs> {
                     return AppStrings.pleaseEnterAValidPhoneNumber;
                   }
                 }),
-            DropDownButtons(),
+            verticalSpace(16),
             AppTextFormField(
               hintText: AppStrings.password,
               focusNode: passwordFocusNode,
+              textInputAction: TextInputAction.next,
               keyboardType: TextInputType.visiblePassword,
               isObscureText: isObscurePassword,
               validator: (value) {
