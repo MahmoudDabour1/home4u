@@ -47,4 +47,9 @@ class AppStyles {
     color: AppColors.blackColor,
     fontWeight: FontWeightHelper.medium,
   );
+  static TextStyle font24BlackMedium = TextStyle(
+    fontSize: 24.sp,
+    color: AppColors.blackColor,
+    fontWeight: FontWeightHelper.medium,
+  );
 }

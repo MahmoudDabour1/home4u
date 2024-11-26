@@ -1,11 +1,9 @@
 import 'dart:async';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:home4u/core/extensions/navigation_extension.dart';
 import 'package:home4u/features/onboarding/data/model/onboarding_model.dart';
 import 'package:home4u/features/onboarding/presentation/widgets/onboarding_item.dart';
-
 import '../../../core/routing/routes.dart';
 
 class OnBoardingScreen extends StatefulWidget {
@@ -40,30 +38,34 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
   }
 
   void _onNextPressed() {
+    _animatePageTransition(() {
+      if (index <= 3) {
+        index++;
+        _pageController.nextPage(
+          duration: Duration(milliseconds: 300),
+          curve: Curves.easeInOut,
+        );
+      }
+    });
+  }
+
+  void _onSkipPressed() {
+    _animatePageTransition(() {
+      index = 3;
+      _pageController.jumpToPage(3);
+    });
+  }
+
+  void _animatePageTransition(VoidCallback action) {
     setState(() {
       _isOut = true;
     });
     Timer(Duration(milliseconds: 210), () {
       setState(() {
-        if (index < 3) {
-          index++;
-          _isOut = false;
-          _pageController.nextPage(
-            duration: Duration(milliseconds: 300),
-            curve: Curves.easeInOut,
-          );
-        }
+        action();
+        _isOut = false;
       });
     });
-    if (index == 3) {
-      context.pushNameAndRemoveUntil(Routes.loginScreen,
-          predicate: (Route<dynamic> route) => false);
-    }
-  }
-
-  void _onSkipPressed() {
-    context.pushNameAndRemoveUntil(Routes.loginScreen,
-        predicate: (Route<dynamic> route) => false);
   }
 
   @override
@@ -71,23 +73,17 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
     return Scaffold(
       body: SafeArea(
         child: Padding(
-          padding: EdgeInsets.symmetric(horizontal: 24.0.w, vertical: 24.0.h),
+          padding: EdgeInsets.only(right: 24.0.w, left: 24.0.w, top: 18.h),
           child: Column(
             children: [
               Expanded(
                 child: PageView.builder(
                   controller: _pageController,
                   onPageChanged: (newIndex) {
-                    setState(() {
-                      _isOut = true;
-                    });
-                    Timer(Duration(milliseconds: 210), () {
-                      setState(() {
-                        if (index <= 3) {
-                          index++;
-                          _isOut = false;
-                        }
-                      });
+                    _animatePageTransition(() {
+                      if (index <= 3) {
+                        index++;
+                      }
                     });
                   },
                   itemCount: onBoardingItems.length,
@@ -95,9 +91,16 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                     return OnboardingScrollItems(
                       index: index,
                       isOut: _isOut,
-                      onStartPressed: _onNextPressed,
                       onSkipPressed: _onSkipPressed,
                       onNextPressed: _onNextPressed,
+                      onPressedToSignUp: () {
+                        context.pushNameAndRemoveUntil(Routes.signUpScreen,
+                            predicate: (Route<dynamic> route) => false);
+                      },
+                      onPressedToLogin: () {
+                        context.pushNameAndRemoveUntil(Routes.loginScreen,
+                            predicate: (Route<dynamic> route) => false);
+                      },
                     );
                   },
                 ),
