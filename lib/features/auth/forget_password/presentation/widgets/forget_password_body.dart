@@ -27,7 +27,9 @@ class ForgetPasswordBody extends StatelessWidget {
                   if (value.isEmpty || !AppRegex.isPhoneNumberValid(value)) {
                     return AppStrings.pleaseEnterAValidPhoneNumber;
                   }
-                }),
+                },
+              keyboardType: TextInputType.phone,
+            ),
             verticalSpace(32),
             AppCustomButton(
               textButton: AppStrings.send,
