@@ -50,7 +50,7 @@ class _PhoneAndPasswordState extends State<PhoneAndPassword> {
                 return AppStrings.pleaseEnterAValidPassword;
               }
             },
-            prefixIcon: Icon(Icons.lock_open_outlined,size: 16.r,color: AppColors.blackColor,),
+            prefixIcon: Icon(Icons.lock_open_outlined,size: 18.r,color: AppColors.iconsColor,),
             suffixIcon: GestureDetector(
               onTap: () {
                 setState(() {
@@ -58,8 +58,9 @@ class _PhoneAndPasswordState extends State<PhoneAndPassword> {
                 });
               },
               child: Icon(
-                isObscureText ? Icons.visibility_off : Icons.visibility,
-                color: AppColors.primaryColor,
+                isObscureText ? Icons.visibility_off_outlined : Icons.visibility_outlined,
+                color: AppColors.iconsColor,
+                size: 24.r,
               ),
             ),
           )

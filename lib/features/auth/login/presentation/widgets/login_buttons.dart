@@ -38,6 +38,7 @@ class LoginButtons extends StatelessWidget {
           onPressedFacebook: () {},
           onPressedGoogle: () {},
         ),
+        verticalSpace(16), 
         DontHaveAnAccountText(),
         verticalSpace(32),
       ],
