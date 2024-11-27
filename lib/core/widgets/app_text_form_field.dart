@@ -6,11 +6,11 @@ import '../theming/app_colors.dart';
 
 class AppTextFormField extends StatelessWidget {
   final EdgeInsetsGeometry? contentPadding;
-  final String? hintText;
+  final String? labelText;
   final Widget? suffixIcon;
   final Widget? prefixIcon;
   final bool? isObscureText;
-  final TextStyle? hintStyle;
+  final TextStyle? labelStyle;
   final InputBorder? focusedBorder;
   final InputBorder? enabledBorder;
   final TextStyle? inputTextStyle;
@@ -24,10 +24,10 @@ class AppTextFormField extends StatelessWidget {
   const AppTextFormField({
     super.key,
     this.contentPadding,
-    required this.hintText,
+    required this.labelText,
     this.suffixIcon,
     this.isObscureText,
-    this.hintStyle,
+    this.labelStyle,
     this.focusedBorder,
     this.enabledBorder,
     this.inputTextStyle,
@@ -76,8 +76,8 @@ class AppTextFormField extends StatelessWidget {
           borderSide: const BorderSide(color: Colors.red, width: 1.3),
           borderRadius: BorderRadius.circular(16.r),
         ),
-        hintStyle: hintStyle ?? AppStyles.font16BlackLight,
-        hintText: hintText,
+        labelStyle: labelStyle ?? AppStyles.font16BlackLight,
+        labelText: labelText,
         suffixIcon: suffixIcon,
         prefixIcon: prefixIcon,
       ),

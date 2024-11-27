@@ -27,7 +27,7 @@ class _PhoneAndPasswordState extends State<PhoneAndPassword> {
       child: Column(
         children: [
           AppTextFormField(
-            hintText: AppStrings.phoneNumber,
+            labelText: AppStrings.phoneNumber,
             keyboardType: TextInputType.phone,
             focusNode:phoneFocusNode ,
             textInputAction: TextInputAction.next,
@@ -40,7 +40,7 @@ class _PhoneAndPasswordState extends State<PhoneAndPassword> {
           ),
           verticalSpace(16),
           AppTextFormField(
-            hintText: AppStrings.password,
+            labelText: AppStrings.password,
             focusNode:passwordFocusNode ,
             textInputAction: TextInputAction.done,
             isObscureText: isObscureText,

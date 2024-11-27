@@ -36,4 +36,5 @@ abstract class AppStrings {
   static const String orContinueWith = 'Or Continue with';
   static const String theGovernorate = 'The Governorate';
   static const String theCity = 'The City';
+  static const String chooseYourAccountType = 'Choose your account type';
 }
