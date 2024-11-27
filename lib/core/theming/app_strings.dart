@@ -37,4 +37,14 @@ abstract class AppStrings {
   static const String theGovernorate = 'The Governorate';
   static const String theCity = 'The City';
   static const String chooseYourAccountType = 'Choose your account type';
+  static const String welcomeToHome4You = 'Welcome to Home 4 you';
+  static const String engineeringOffice = 'Engineering office';
+  static const String scopeOfWork = 'Scope of work';
+  static const String enterTheBio = 'Enter the bio';
+  static const String enterTheServices = 'Enter the services';
+  static const String section = 'Sections';
+  static const String commercialRegister = 'Commercial Register';
+  static const String taxCard = 'Tax Card';
+  static const String personalCard = 'Personal Card';
+  static const String coverPhoto = 'Cover Photo';
 }
