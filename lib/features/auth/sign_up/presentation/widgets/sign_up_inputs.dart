@@ -40,7 +40,7 @@ class _SignUpInputsState extends State<SignUpInputs> {
               children: [
                 Expanded(
                     child: AppTextFormField(
-                  hintText: AppStrings.firstName,
+                  labelText: AppStrings.firstName,
                   focusNode: firstNameFocusNode,
                   keyboardType: TextInputType.name,
                   validator: (value) {
@@ -52,7 +52,7 @@ class _SignUpInputsState extends State<SignUpInputs> {
                 horizontalSpace(8),
                 Expanded(
                     child: AppTextFormField(
-                  hintText: AppStrings.lastName,
+                  labelText: AppStrings.lastName,
                   focusNode: lastNameFocusNode,
                   keyboardType: TextInputType.name,
                   validator: (value) {
@@ -65,7 +65,7 @@ class _SignUpInputsState extends State<SignUpInputs> {
             ),
             verticalSpace(16),
             AppTextFormField(
-                hintText: AppStrings.phoneNumber,
+                labelText: AppStrings.phoneNumber,
                 focusNode: phoneNumberFocusNode,
                 textInputAction: TextInputAction.next,
                 keyboardType: TextInputType.phone,
@@ -76,7 +76,7 @@ class _SignUpInputsState extends State<SignUpInputs> {
                 }),
             DropDownButtons(),
             AppTextFormField(
-              hintText: AppStrings.password,
+              labelText: AppStrings.password,
               focusNode: passwordFocusNode,
               keyboardType: TextInputType.visiblePassword,
               isObscureText: isObscurePassword,
@@ -87,8 +87,8 @@ class _SignUpInputsState extends State<SignUpInputs> {
               },
               prefixIcon: Icon(
                 Icons.lock_open_outlined,
-                size: 16.r,
-                color: AppColors.blackColor,
+                size: 18.r,
+                color: AppColors.iconsColor,
               ),
               suffixIcon: GestureDetector(
                 onTap: () {
@@ -97,14 +97,17 @@ class _SignUpInputsState extends State<SignUpInputs> {
                   });
                 },
                 child: Icon(
-                  isObscurePassword ? Icons.visibility_off : Icons.visibility,
-                  color: AppColors.primaryColor,
+                  isObscurePassword
+                      ? Icons.visibility_off_outlined
+                      : Icons.visibility_outlined,
+                  color: AppColors.iconsColor,
+                  size: 24.r,
                 ),
               ),
             ),
             verticalSpace(16),
             AppTextFormField(
-              hintText: AppStrings.confirmPassword,
+              labelText: AppStrings.confirmPassword,
               focusNode: confirmPasswordFocusNode,
               textInputAction: TextInputAction.done,
               keyboardType: TextInputType.visiblePassword,
@@ -116,8 +119,8 @@ class _SignUpInputsState extends State<SignUpInputs> {
               },
               prefixIcon: Icon(
                 Icons.lock_open_outlined,
-                size: 16.r,
-                color: AppColors.blackColor,
+                size: 18.r,
+                color: AppColors.iconsColor,
               ),
               suffixIcon: GestureDetector(
                 onTap: () {
@@ -127,9 +130,10 @@ class _SignUpInputsState extends State<SignUpInputs> {
                 },
                 child: Icon(
                   isObscureConfirmPassword
-                      ? Icons.visibility_off
-                      : Icons.visibility,
-                  color: AppColors.primaryColor,
+                      ? Icons.visibility_off_outlined
+                      : Icons.visibility_outlined,
+                  color: AppColors.iconsColor,
+                  size: 24.r,
                 ),
               ),
             ),

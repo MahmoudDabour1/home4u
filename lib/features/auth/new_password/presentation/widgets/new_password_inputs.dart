@@ -29,7 +29,7 @@ class _NewPasswordInputsState extends State<NewPasswordInputs> {
         child: Column(
           children: [
             AppTextFormField(
-              hintText: AppStrings.newPassword,
+              labelText: AppStrings.newPassword,
               isObscureText: isObscureNewPassword,
               textInputAction: TextInputAction.next,
               focusNode: newPasswordFocusNode,
@@ -42,15 +42,16 @@ class _NewPasswordInputsState extends State<NewPasswordInputs> {
                 },
                 child: Icon(
                   isObscureNewPassword
-                      ? Icons.visibility_off
-                      : Icons.visibility,
-                  color: AppColors.primaryColor,
+                      ? Icons.visibility_off_outlined
+                      : Icons.visibility_outlined,
+                  color: AppColors.iconsColor,
+                  size: 24.r,
                 ),
               ),
               prefixIcon: Icon(
                 Icons.lock_open_outlined,
-                size: 16.r,
-                color: AppColors.blackColor,
+                size: 18.r,
+                color: AppColors.iconsColor,
               ),
               validator: (value) {
                 if (value.isEmpty) {
@@ -60,7 +61,7 @@ class _NewPasswordInputsState extends State<NewPasswordInputs> {
             ),
             verticalSpace(16),
             AppTextFormField(
-              hintText: AppStrings.confirmPassword,
+              labelText: AppStrings.confirmPassword,
               isObscureText: isObscureConfirmPassword,
               textInputAction: TextInputAction.done,
               focusNode: confirmPasswordFocusNode,
@@ -73,15 +74,16 @@ class _NewPasswordInputsState extends State<NewPasswordInputs> {
                 },
                 child: Icon(
                   isObscureConfirmPassword
-                      ? Icons.visibility_off
-                      : Icons.visibility,
-                  color: AppColors.primaryColor,
+                      ? Icons.visibility_off_outlined
+                      : Icons.visibility_outlined,
+                  color: AppColors.iconsColor,
+                  size: 24.r,
                 ),
               ),
               prefixIcon: Icon(
                 Icons.lock_open_outlined,
-                size: 16.r,
-                color: AppColors.blackColor,
+                size: 18.r,
+                color: AppColors.iconsColor,
               ),
               validator: (value) {
                 if (value.isEmpty) {

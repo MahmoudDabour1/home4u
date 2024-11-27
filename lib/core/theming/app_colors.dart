@@ -9,4 +9,5 @@ abstract class AppColors {
   static const textFieldFillColor = Color(0xFFFBFAF9);
   static const whiteColor = Color(0xFFFFFFFF);
   static const blackColor = Color(0xFF000000);
+  static const  iconsColor = Color(0xFF656565);
 }
