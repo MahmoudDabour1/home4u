@@ -35,7 +35,7 @@ class _SignUpInputsState extends State<SignUpInputs> {
         padding: EdgeInsets.symmetric(horizontal: 24.w),
         child: Column(
           children: [
-            verticalSpace(12),
+            verticalSpace(32),
             Row(
               children: [
                 Expanded(

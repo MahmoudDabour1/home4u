@@ -20,8 +20,10 @@ class Assets {
   static const String imagesOnboardingOneFour = 'assets/images/onboarding_one_four.png';
   static const String imagesOnboardingThree = 'assets/images/onboarding_three.png';
   static const String imagesOnboardingTwo = 'assets/images/onboarding_two.png';
-  static const String imagesSignUpImage = 'assets/images/signup_image.png';
+  static const String imagesSignupImage = 'assets/images/signup_image.png';
   static const String imagesSplash = 'assets/images/splash.png';
   static const String imagesVerification = 'assets/images/verification.png';
+  static const String svgsArrowLeft = 'assets/svgs/arrow_left.svg';
+  static const String svgsArrowRight = 'assets/svgs/arrow_right.svg';
 
 }

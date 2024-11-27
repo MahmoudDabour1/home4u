@@ -20,7 +20,7 @@ class ForgetPasswordBody extends StatelessWidget {
         key: formKey,
         child: Column(
           children: [
-            verticalSpace(10),
+            verticalSpace(32),
             AppTextFormField(
                 hintText: AppStrings.phoneNumber,
                 validator: (value) {

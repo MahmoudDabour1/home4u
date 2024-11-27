@@ -11,4 +11,5 @@ abstract class AppAssets {
   static const String verificationImage = 'assets/images/verification.png';
   static const String forgetPasswordImage = 'assets/images/forget_password.png';
   static const String arrowRightSvgImage = 'assets/svgs/arrow_right.svg';
+  static const String arrowLeftSvgImage = 'assets/svgs/arrow_left.svg';
 }
