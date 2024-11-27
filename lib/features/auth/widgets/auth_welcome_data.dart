@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:home4u/core/theming/app_colors.dart';
-import 'package:home4u/core/theming/app_strings.dart';
 import 'package:home4u/core/theming/app_styles.dart';
 import 'package:home4u/core/utils/spacing.dart';
 import 'package:home4u/features/auth/widgets/custom_header_shape.dart';

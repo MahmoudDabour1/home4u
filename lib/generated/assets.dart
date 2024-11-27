@@ -12,9 +12,11 @@ class Assets {
   static const String imagesAndroid12Splash = 'assets/images/android_12_splash.png';
   static const String imagesArrow = 'assets/images/arrow.png';
   static const String imagesFacebook = 'assets/images/facebook.png';
+  static const String imagesForgetPassword = 'assets/images/forget_password.png';
   static const String imagesGoogle = 'assets/images/google.png';
   static const String imagesLock = 'assets/images/lock.png';
   static const String imagesLoginImage = 'assets/images/login_image.png';
+  static const String imagesNewPassword = 'assets/images/new_password.png';
   static const String imagesOnboardingOneFour = 'assets/images/onboarding_one_four.png';
   static const String imagesOnboardingThree = 'assets/images/onboarding_three.png';
   static const String imagesOnboardingTwo = 'assets/images/onboarding_two.png';
@@ -23,5 +25,7 @@ class Assets {
   static const String imagesVerification = 'assets/images/verification.png';
   static const String svgsArrowLeft = 'assets/svgs/arrow_left.svg';
   static const String svgsArrowRight = 'assets/svgs/arrow_right.svg';
+  static const String svgsLoadImages = 'assets/svgs/load_images.svg';
+  static const String svgsLockSvg = 'assets/svgs/lock_svg.svg';
 
 }
