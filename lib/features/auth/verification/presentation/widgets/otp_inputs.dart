@@ -16,7 +16,7 @@ class OtpInputs extends StatelessWidget {
         keyboardType: TextInputType.number,
         builder: CodeInputBuilders.rectangle(
             border: Border.all(color: AppColors.secondaryColor),
-            color: Colors.white,
+            color: AppColors.textFieldFillColor,
             textStyle: TextStyle(
               color: Colors.black,
               fontSize: 20.sp,
