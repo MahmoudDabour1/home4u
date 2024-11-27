@@ -21,6 +21,7 @@ class Assets {
   static const String imagesSignupImage = 'assets/images/signup_image.png';
   static const String imagesSplash = 'assets/images/splash.png';
   static const String imagesVerification = 'assets/images/verification.png';
+  static const String svgsArrowLeft = 'assets/svgs/arrow_left.svg';
   static const String svgsArrowRight = 'assets/svgs/arrow_right.svg';
 
 }

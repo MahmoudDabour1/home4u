@@ -33,7 +33,7 @@ class AuthImageAndTextWidget extends StatelessWidget {
             children: [
               Text(
                 text,
-                style: AppStyles.font20BlackBold,
+                style: AppStyles.font20WhiteBold,
               ),
               verticalSpace(12),
               Text(

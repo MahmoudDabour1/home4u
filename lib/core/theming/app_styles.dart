@@ -28,9 +28,9 @@ class AppStyles {
     color: AppColors.secondaryColor,
     fontWeight: FontWeightHelper.regular,
   );
-  static  TextStyle font20BlackBold = TextStyle(
+  static  TextStyle font20WhiteBold = TextStyle(
     fontSize: 20.sp,
-    color: AppColors.blackColor,
+    color: AppColors.whiteColor,
     fontWeight: FontWeightHelper.bold,
   );static  TextStyle font14DarkBlueBold= TextStyle(
     fontSize: 14.sp,

@@ -16,7 +16,7 @@ class AppBackButton extends StatelessWidget {
         height: 40.h,
         decoration: BoxDecoration(
           color: AppColors.offWhiteColor,
-          borderRadius: BorderRadius.circular(40.r),
+          shape: BoxShape.circle,
         ),
         child: Icon(
           Icons.arrow_back_ios_new_outlined,

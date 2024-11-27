@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:home4u/core/theming/app_assets.dart';
 import 'package:home4u/core/theming/app_strings.dart';
 import 'package:home4u/core/utils/spacing.dart';
 import 'package:home4u/core/widgets/app_custom_button.dart';
 import 'package:home4u/features/auth/new_password/presentation/widgets/new_password_inputs.dart';
-import 'package:home4u/features/auth/widgets/auth_image_and_text_widget.dart';
+
+import '../../widgets/auth_welcome_data.dart';
 
 class NewPasswordScreen extends StatelessWidget {
   const NewPasswordScreen({super.key});
@@ -17,16 +17,14 @@ class NewPasswordScreen extends StatelessWidget {
         child: SingleChildScrollView(
           child: Column(
             children: [
-              AuthImageAndTextWidget(
-                image: AppAssets.newPasswordImage,
-                text: AppStrings.newPassword,
+              AuthWelcomeData(
+                headText: AppStrings.newPassword,
                 subText: AppStrings.enterYourNewPassword,
-                isBackButton: true,
               ),
-              verticalSpace(10),
+              verticalSpace(32),
               NewPasswordInputs(),
               Padding(
-                padding:  EdgeInsets.symmetric(horizontal: 24.w),
+                padding: EdgeInsets.symmetric(horizontal: 24.w),
                 child: AppCustomButton(
                   textButton: AppStrings.confirm,
                   btnWidth: MediaQuery.sizeOf(context).width,
