@@ -43,7 +43,7 @@ class _DropDownButtonsState extends State<DropDownButtons> {
             });
           },
           decoration:
-              getCommonInputDecoration(hintText: AppStrings.theGovernorate),
+              getCommonInputDecoration(labelText: AppStrings.theGovernorate),
 
           dropdownColor: Colors.white,
         ),
@@ -68,7 +68,7 @@ class _DropDownButtonsState extends State<DropDownButtons> {
               selectedCity = value;
             });
           },
-          decoration: getCommonInputDecoration(hintText: AppStrings.theCity),
+          decoration: getCommonInputDecoration(labelText: AppStrings.theCity),
           dropdownColor: Colors.white,
         ),
         verticalSpace(16),

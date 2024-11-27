@@ -5,8 +5,8 @@ import '../theming/app_colors.dart';
 import '../theming/app_styles.dart';
 
 InputDecoration getCommonInputDecoration({
-  required String hintText,
-  TextStyle? hintStyle,
+  required String labelText,
+  TextStyle? labelStyle,
   Widget? suffixIcon,
   Widget? prefixIcon,
 }) {
@@ -18,6 +18,7 @@ InputDecoration getCommonInputDecoration({
       vertical: 17.h,
       horizontal: 20.w,
     ),
+
     focusedBorder: OutlineInputBorder(
       borderSide: const BorderSide(color: AppColors.primaryColor, width: 1.3),
       borderRadius: BorderRadius.circular(16.r),
@@ -34,8 +35,11 @@ InputDecoration getCommonInputDecoration({
       borderSide: const BorderSide(color: Colors.red, width: 1.3),
       borderRadius: BorderRadius.circular(16.r),
     ),
-    hintText: hintText,
-    hintStyle: hintStyle ?? AppStyles.font16BlackLight,
+    // hintText: hintText,
+    label: Text(
+      labelText,
+      style: labelStyle ?? AppStyles.font16BlackLight,
+    ),
     suffixIcon: suffixIcon,
     prefixIcon: prefixIcon,
   );

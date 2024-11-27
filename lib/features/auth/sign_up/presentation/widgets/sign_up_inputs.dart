@@ -87,8 +87,8 @@ class _SignUpInputsState extends State<SignUpInputs> {
               },
               prefixIcon: Icon(
                 Icons.lock_open_outlined,
-                size: 16.r,
-                color: AppColors.blackColor,
+                size: 18.r,
+                color: AppColors.iconsColor,
               ),
               suffixIcon: GestureDetector(
                 onTap: () {
@@ -97,8 +97,11 @@ class _SignUpInputsState extends State<SignUpInputs> {
                   });
                 },
                 child: Icon(
-                  isObscurePassword ? Icons.visibility_off : Icons.visibility,
-                  color: AppColors.primaryColor,
+                  isObscurePassword
+                      ? Icons.visibility_off_outlined
+                      : Icons.visibility_outlined,
+                  color: AppColors.iconsColor,
+                  size: 24.r,
                 ),
               ),
             ),
@@ -116,8 +119,8 @@ class _SignUpInputsState extends State<SignUpInputs> {
               },
               prefixIcon: Icon(
                 Icons.lock_open_outlined,
-                size: 16.r,
-                color: AppColors.blackColor,
+                size: 18.r,
+                color: AppColors.iconsColor,
               ),
               suffixIcon: GestureDetector(
                 onTap: () {
@@ -127,9 +130,10 @@ class _SignUpInputsState extends State<SignUpInputs> {
                 },
                 child: Icon(
                   isObscureConfirmPassword
-                      ? Icons.visibility_off
-                      : Icons.visibility,
-                  color: AppColors.primaryColor,
+                      ? Icons.visibility_off_outlined
+                      : Icons.visibility_outlined,
+                  color: AppColors.iconsColor,
+                  size: 24.r,
                 ),
               ),
             ),
