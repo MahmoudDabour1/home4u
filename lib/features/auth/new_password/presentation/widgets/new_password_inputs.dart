@@ -29,7 +29,7 @@ class _NewPasswordInputsState extends State<NewPasswordInputs> {
         child: Column(
           children: [
             AppTextFormField(
-              hintText: AppStrings.newPassword,
+              labelText: AppStrings.newPassword,
               isObscureText: isObscureNewPassword,
               textInputAction: TextInputAction.next,
               focusNode: newPasswordFocusNode,
@@ -61,7 +61,7 @@ class _NewPasswordInputsState extends State<NewPasswordInputs> {
             ),
             verticalSpace(16),
             AppTextFormField(
-              hintText: AppStrings.confirmPassword,
+              labelText: AppStrings.confirmPassword,
               isObscureText: isObscureConfirmPassword,
               textInputAction: TextInputAction.done,
               focusNode: confirmPasswordFocusNode,

@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:home4u/core/theming/app_colors.dart';
 import 'package:home4u/core/utils/spacing.dart';
 
 import '../../../../../core/theming/app_strings.dart';
 import '../../../../../core/theming/app_styles.dart';
-import '../../../../../core/widgets/get_common_input_decoration.dart';
+import '../../../../../core/widgets/app_custom_drop_down_button_form_field.dart';
 import 'egypt_locations_list.dart';
 
 class DropDownButtons extends StatefulWidget {
@@ -17,16 +16,34 @@ class DropDownButtons extends StatefulWidget {
 class _DropDownButtonsState extends State<DropDownButtons> {
   String? selectedGovernorate;
   String? selectedCity;
+  String? selectedAccountType;
 
   @override
   Widget build(BuildContext context) {
     return Column(
       children: [
         verticalSpace(16),
-        DropdownButtonFormField<String>(
-          isExpanded: true,
+        AppCustomDropDownButtonFormField(
+          value: selectedAccountType,
+          items: accountTypes.map((String accountType) {
+            return DropdownMenuItem<String>(
+              value: accountType,
+              child: Text(
+                accountType,
+                style: AppStyles.font16BlackLight,
+              ),
+            );
+          }).toList(),
+          onChanged: (value) {
+            setState(() {
+              selectedAccountType = value;
+            });
+          },
+          labelText: AppStrings.chooseYourAccountType,
+        ),
+        verticalSpace(16),
+        AppCustomDropDownButtonFormField(
           value: selectedGovernorate,
-          icon: Icon(Icons.keyboard_arrow_down_outlined,color: AppColors.secondaryColor,),
           items: egyptLocations.keys.map((String governorate) {
             return DropdownMenuItem<String>(
               value: governorate,
@@ -42,35 +59,28 @@ class _DropDownButtonsState extends State<DropDownButtons> {
               selectedCity = null;
             });
           },
-          decoration:
-              getCommonInputDecoration(labelText: AppStrings.theGovernorate),
-
-          dropdownColor: Colors.white,
+          labelText: AppStrings.theGovernorate,
         ),
         verticalSpace(16),
-        DropdownButtonFormField<String>(
-          isExpanded: true,
-          value: selectedCity,
-          icon: Icon(Icons.keyboard_arrow_down_outlined,color: AppColors.secondaryColor,),
-          items: selectedGovernorate != null
-              ? egyptLocations[selectedGovernorate]!.map((String city) {
-                  return DropdownMenuItem<String>(
-                    value: city,
-                    child: Text(
-                      city,
-                      style: AppStyles.font16BlackLight,
-                    ),
-                  );
-                }).toList()
-              : [],
-          onChanged: (value) {
-            setState(() {
-              selectedCity = value;
-            });
-          },
-          decoration: getCommonInputDecoration(labelText: AppStrings.theCity),
-          dropdownColor: Colors.white,
-        ),
+        AppCustomDropDownButtonFormField(
+            value: selectedCity,
+            items: selectedGovernorate != null
+                ? egyptLocations[selectedGovernorate]!.map((String city) {
+                    return DropdownMenuItem<String>(
+                      value: city,
+                      child: Text(
+                        city,
+                        style: AppStyles.font16BlackLight,
+                      ),
+                    );
+                  }).toList()
+                : [],
+            onChanged: (value) {
+              setState(() {
+                selectedCity = value;
+              });
+            },
+            labelText: AppStrings.theCity),
         verticalSpace(16),
       ],
     );
