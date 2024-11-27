@@ -13,4 +13,5 @@ abstract class AppAssets {
   static const String arrowRightSvgImage = 'assets/svgs/arrow_right.svg';
   static const String arrowLeftSvgImage = 'assets/svgs/arrow_left.svg';
   static const String loadImageSvgImage = 'assets/svgs/load_images.svg';
+  static const String arrowDownSvgImage = 'assets/svgs/arrow_down.svg';
 }

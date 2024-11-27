@@ -12,8 +12,8 @@ InputDecoration getCommonInputDecoration({
 }) {
   return InputDecoration(
     isDense: true,
-    fillColor: AppColors.whiteColor,
     filled: true,
+    fillColor: AppColors.textFieldFillColor,
     contentPadding: EdgeInsets.symmetric(
       vertical: 17.h,
       horizontal: 20.w,
