@@ -144,6 +144,7 @@ flutter:
    # For details regarding fonts from package dependencies,
    # see https://flutter.dev/to/font-from-package
   assets:
-     - assets/images/
-     - assets/svgs/
-     - assets/jsons/
+    - assets/images/
+    - assets/svgs/
+    - assets/jsons/
+    - shorebird.yaml

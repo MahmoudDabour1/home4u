@@ -32,9 +32,8 @@ List<OnboardingModel> onBoardingItems = [
     image: AppAssets.onboardingThree,
   ),
   OnboardingModel(
-    title: 'Make Your Offer',
-    description:
-    "Comprehensive services including civil works and finishing, with engineering consultations and 2D and 3D designs, in addition to free and paid services through our platform.",
+    title: 'Let’s Continue Your Journey!',
+    description: '',
     image: AppAssets.onboardingOneFour,
   ),
 ];
