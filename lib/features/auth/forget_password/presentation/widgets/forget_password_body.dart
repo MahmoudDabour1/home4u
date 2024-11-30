@@ -22,10 +22,10 @@ class ForgetPasswordBody extends StatelessWidget {
           children: [
             verticalSpace(32),
             AppTextFormField(
-                labelText: AppStrings.phoneNumber,
+                labelText: AppStrings.emailAddress,
                 validator: (value) {
                   if (value.isEmpty || !AppRegex.isPhoneNumberValid(value)) {
-                    return AppStrings.pleaseEnterAValidPhoneNumber;
+                    return AppStrings.pleaseEnterAValidEmailAddress;
                   }
                 },
               keyboardType: TextInputType.phone,
