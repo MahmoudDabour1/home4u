@@ -22,6 +22,9 @@ mixin _$SignUpState<T> {
     required TResult Function() loadingUserTypes,
     required TResult Function(T data) successUserTypes,
     required TResult Function(String error) errorUserTypes,
+    required TResult Function() loadingSignUp,
+    required TResult Function(T data) successSignUp,
+    required TResult Function(String error) errorSignUp,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -30,6 +33,9 @@ mixin _$SignUpState<T> {
     TResult? Function()? loadingUserTypes,
     TResult? Function(T data)? successUserTypes,
     TResult? Function(String error)? errorUserTypes,
+    TResult? Function()? loadingSignUp,
+    TResult? Function(T data)? successSignUp,
+    TResult? Function(String error)? errorSignUp,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -38,6 +44,9 @@ mixin _$SignUpState<T> {
     TResult Function()? loadingUserTypes,
     TResult Function(T data)? successUserTypes,
     TResult Function(String error)? errorUserTypes,
+    TResult Function()? loadingSignUp,
+    TResult Function(T data)? successSignUp,
+    TResult Function(String error)? errorSignUp,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -47,6 +56,9 @@ mixin _$SignUpState<T> {
     required TResult Function(LoadingUserTypes<T> value) loadingUserTypes,
     required TResult Function(SuccessUserTypes<T> value) successUserTypes,
     required TResult Function(ErrorUserTypes<T> value) errorUserTypes,
+    required TResult Function(SignUpLoadingState<T> value) loadingSignUp,
+    required TResult Function(SignUpSuccessState<T> value) successSignUp,
+    required TResult Function(SignUpErrorState<T> value) errorSignUp,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -55,6 +67,9 @@ mixin _$SignUpState<T> {
     TResult? Function(LoadingUserTypes<T> value)? loadingUserTypes,
     TResult? Function(SuccessUserTypes<T> value)? successUserTypes,
     TResult? Function(ErrorUserTypes<T> value)? errorUserTypes,
+    TResult? Function(SignUpLoadingState<T> value)? loadingSignUp,
+    TResult? Function(SignUpSuccessState<T> value)? successSignUp,
+    TResult? Function(SignUpErrorState<T> value)? errorSignUp,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -63,6 +78,9 @@ mixin _$SignUpState<T> {
     TResult Function(LoadingUserTypes<T> value)? loadingUserTypes,
     TResult Function(SuccessUserTypes<T> value)? successUserTypes,
     TResult Function(ErrorUserTypes<T> value)? errorUserTypes,
+    TResult Function(SignUpLoadingState<T> value)? loadingSignUp,
+    TResult Function(SignUpSuccessState<T> value)? successSignUp,
+    TResult Function(SignUpErrorState<T> value)? errorSignUp,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -134,6 +152,9 @@ class _$InitialImpl<T> implements _Initial<T> {
     required TResult Function() loadingUserTypes,
     required TResult Function(T data) successUserTypes,
     required TResult Function(String error) errorUserTypes,
+    required TResult Function() loadingSignUp,
+    required TResult Function(T data) successSignUp,
+    required TResult Function(String error) errorSignUp,
   }) {
     return initial();
   }
@@ -145,6 +166,9 @@ class _$InitialImpl<T> implements _Initial<T> {
     TResult? Function()? loadingUserTypes,
     TResult? Function(T data)? successUserTypes,
     TResult? Function(String error)? errorUserTypes,
+    TResult? Function()? loadingSignUp,
+    TResult? Function(T data)? successSignUp,
+    TResult? Function(String error)? errorSignUp,
   }) {
     return initial?.call();
   }
@@ -156,6 +180,9 @@ class _$InitialImpl<T> implements _Initial<T> {
     TResult Function()? loadingUserTypes,
     TResult Function(T data)? successUserTypes,
     TResult Function(String error)? errorUserTypes,
+    TResult Function()? loadingSignUp,
+    TResult Function(T data)? successSignUp,
+    TResult Function(String error)? errorSignUp,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -171,6 +198,9 @@ class _$InitialImpl<T> implements _Initial<T> {
     required TResult Function(LoadingUserTypes<T> value) loadingUserTypes,
     required TResult Function(SuccessUserTypes<T> value) successUserTypes,
     required TResult Function(ErrorUserTypes<T> value) errorUserTypes,
+    required TResult Function(SignUpLoadingState<T> value) loadingSignUp,
+    required TResult Function(SignUpSuccessState<T> value) successSignUp,
+    required TResult Function(SignUpErrorState<T> value) errorSignUp,
   }) {
     return initial(this);
   }
@@ -182,6 +212,9 @@ class _$InitialImpl<T> implements _Initial<T> {
     TResult? Function(LoadingUserTypes<T> value)? loadingUserTypes,
     TResult? Function(SuccessUserTypes<T> value)? successUserTypes,
     TResult? Function(ErrorUserTypes<T> value)? errorUserTypes,
+    TResult? Function(SignUpLoadingState<T> value)? loadingSignUp,
+    TResult? Function(SignUpSuccessState<T> value)? successSignUp,
+    TResult? Function(SignUpErrorState<T> value)? errorSignUp,
   }) {
     return initial?.call(this);
   }
@@ -193,6 +226,9 @@ class _$InitialImpl<T> implements _Initial<T> {
     TResult Function(LoadingUserTypes<T> value)? loadingUserTypes,
     TResult Function(SuccessUserTypes<T> value)? successUserTypes,
     TResult Function(ErrorUserTypes<T> value)? errorUserTypes,
+    TResult Function(SignUpLoadingState<T> value)? loadingSignUp,
+    TResult Function(SignUpSuccessState<T> value)? successSignUp,
+    TResult Function(SignUpErrorState<T> value)? errorSignUp,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -252,6 +288,9 @@ class _$LoadingUserTypesImpl<T> implements LoadingUserTypes<T> {
     required TResult Function() loadingUserTypes,
     required TResult Function(T data) successUserTypes,
     required TResult Function(String error) errorUserTypes,
+    required TResult Function() loadingSignUp,
+    required TResult Function(T data) successSignUp,
+    required TResult Function(String error) errorSignUp,
   }) {
     return loadingUserTypes();
   }
@@ -263,6 +302,9 @@ class _$LoadingUserTypesImpl<T> implements LoadingUserTypes<T> {
     TResult? Function()? loadingUserTypes,
     TResult? Function(T data)? successUserTypes,
     TResult? Function(String error)? errorUserTypes,
+    TResult? Function()? loadingSignUp,
+    TResult? Function(T data)? successSignUp,
+    TResult? Function(String error)? errorSignUp,
   }) {
     return loadingUserTypes?.call();
   }
@@ -274,6 +316,9 @@ class _$LoadingUserTypesImpl<T> implements LoadingUserTypes<T> {
     TResult Function()? loadingUserTypes,
     TResult Function(T data)? successUserTypes,
     TResult Function(String error)? errorUserTypes,
+    TResult Function()? loadingSignUp,
+    TResult Function(T data)? successSignUp,
+    TResult Function(String error)? errorSignUp,
     required TResult orElse(),
   }) {
     if (loadingUserTypes != null) {
@@ -289,6 +334,9 @@ class _$LoadingUserTypesImpl<T> implements LoadingUserTypes<T> {
     required TResult Function(LoadingUserTypes<T> value) loadingUserTypes,
     required TResult Function(SuccessUserTypes<T> value) successUserTypes,
     required TResult Function(ErrorUserTypes<T> value) errorUserTypes,
+    required TResult Function(SignUpLoadingState<T> value) loadingSignUp,
+    required TResult Function(SignUpSuccessState<T> value) successSignUp,
+    required TResult Function(SignUpErrorState<T> value) errorSignUp,
   }) {
     return loadingUserTypes(this);
   }
@@ -300,6 +348,9 @@ class _$LoadingUserTypesImpl<T> implements LoadingUserTypes<T> {
     TResult? Function(LoadingUserTypes<T> value)? loadingUserTypes,
     TResult? Function(SuccessUserTypes<T> value)? successUserTypes,
     TResult? Function(ErrorUserTypes<T> value)? errorUserTypes,
+    TResult? Function(SignUpLoadingState<T> value)? loadingSignUp,
+    TResult? Function(SignUpSuccessState<T> value)? successSignUp,
+    TResult? Function(SignUpErrorState<T> value)? errorSignUp,
   }) {
     return loadingUserTypes?.call(this);
   }
@@ -311,6 +362,9 @@ class _$LoadingUserTypesImpl<T> implements LoadingUserTypes<T> {
     TResult Function(LoadingUserTypes<T> value)? loadingUserTypes,
     TResult Function(SuccessUserTypes<T> value)? successUserTypes,
     TResult Function(ErrorUserTypes<T> value)? errorUserTypes,
+    TResult Function(SignUpLoadingState<T> value)? loadingSignUp,
+    TResult Function(SignUpSuccessState<T> value)? successSignUp,
+    TResult Function(SignUpErrorState<T> value)? errorSignUp,
     required TResult orElse(),
   }) {
     if (loadingUserTypes != null) {
@@ -398,6 +452,9 @@ class _$SuccessUserTypesImpl<T> implements SuccessUserTypes<T> {
     required TResult Function() loadingUserTypes,
     required TResult Function(T data) successUserTypes,
     required TResult Function(String error) errorUserTypes,
+    required TResult Function() loadingSignUp,
+    required TResult Function(T data) successSignUp,
+    required TResult Function(String error) errorSignUp,
   }) {
     return successUserTypes(data);
   }
@@ -409,6 +466,9 @@ class _$SuccessUserTypesImpl<T> implements SuccessUserTypes<T> {
     TResult? Function()? loadingUserTypes,
     TResult? Function(T data)? successUserTypes,
     TResult? Function(String error)? errorUserTypes,
+    TResult? Function()? loadingSignUp,
+    TResult? Function(T data)? successSignUp,
+    TResult? Function(String error)? errorSignUp,
   }) {
     return successUserTypes?.call(data);
   }
@@ -420,6 +480,9 @@ class _$SuccessUserTypesImpl<T> implements SuccessUserTypes<T> {
     TResult Function()? loadingUserTypes,
     TResult Function(T data)? successUserTypes,
     TResult Function(String error)? errorUserTypes,
+    TResult Function()? loadingSignUp,
+    TResult Function(T data)? successSignUp,
+    TResult Function(String error)? errorSignUp,
     required TResult orElse(),
   }) {
     if (successUserTypes != null) {
@@ -435,6 +498,9 @@ class _$SuccessUserTypesImpl<T> implements SuccessUserTypes<T> {
     required TResult Function(LoadingUserTypes<T> value) loadingUserTypes,
     required TResult Function(SuccessUserTypes<T> value) successUserTypes,
     required TResult Function(ErrorUserTypes<T> value) errorUserTypes,
+    required TResult Function(SignUpLoadingState<T> value) loadingSignUp,
+    required TResult Function(SignUpSuccessState<T> value) successSignUp,
+    required TResult Function(SignUpErrorState<T> value) errorSignUp,
   }) {
     return successUserTypes(this);
   }
@@ -446,6 +512,9 @@ class _$SuccessUserTypesImpl<T> implements SuccessUserTypes<T> {
     TResult? Function(LoadingUserTypes<T> value)? loadingUserTypes,
     TResult? Function(SuccessUserTypes<T> value)? successUserTypes,
     TResult? Function(ErrorUserTypes<T> value)? errorUserTypes,
+    TResult? Function(SignUpLoadingState<T> value)? loadingSignUp,
+    TResult? Function(SignUpSuccessState<T> value)? successSignUp,
+    TResult? Function(SignUpErrorState<T> value)? errorSignUp,
   }) {
     return successUserTypes?.call(this);
   }
@@ -457,6 +526,9 @@ class _$SuccessUserTypesImpl<T> implements SuccessUserTypes<T> {
     TResult Function(LoadingUserTypes<T> value)? loadingUserTypes,
     TResult Function(SuccessUserTypes<T> value)? successUserTypes,
     TResult Function(ErrorUserTypes<T> value)? errorUserTypes,
+    TResult Function(SignUpLoadingState<T> value)? loadingSignUp,
+    TResult Function(SignUpSuccessState<T> value)? successSignUp,
+    TResult Function(SignUpErrorState<T> value)? errorSignUp,
     required TResult orElse(),
   }) {
     if (successUserTypes != null) {
@@ -551,6 +623,9 @@ class _$ErrorUserTypesImpl<T> implements ErrorUserTypes<T> {
     required TResult Function() loadingUserTypes,
     required TResult Function(T data) successUserTypes,
     required TResult Function(String error) errorUserTypes,
+    required TResult Function() loadingSignUp,
+    required TResult Function(T data) successSignUp,
+    required TResult Function(String error) errorSignUp,
   }) {
     return errorUserTypes(error);
   }
@@ -562,6 +637,9 @@ class _$ErrorUserTypesImpl<T> implements ErrorUserTypes<T> {
     TResult? Function()? loadingUserTypes,
     TResult? Function(T data)? successUserTypes,
     TResult? Function(String error)? errorUserTypes,
+    TResult? Function()? loadingSignUp,
+    TResult? Function(T data)? successSignUp,
+    TResult? Function(String error)? errorSignUp,
   }) {
     return errorUserTypes?.call(error);
   }
@@ -573,6 +651,9 @@ class _$ErrorUserTypesImpl<T> implements ErrorUserTypes<T> {
     TResult Function()? loadingUserTypes,
     TResult Function(T data)? successUserTypes,
     TResult Function(String error)? errorUserTypes,
+    TResult Function()? loadingSignUp,
+    TResult Function(T data)? successSignUp,
+    TResult Function(String error)? errorSignUp,
     required TResult orElse(),
   }) {
     if (errorUserTypes != null) {
@@ -588,6 +669,9 @@ class _$ErrorUserTypesImpl<T> implements ErrorUserTypes<T> {
     required TResult Function(LoadingUserTypes<T> value) loadingUserTypes,
     required TResult Function(SuccessUserTypes<T> value) successUserTypes,
     required TResult Function(ErrorUserTypes<T> value) errorUserTypes,
+    required TResult Function(SignUpLoadingState<T> value) loadingSignUp,
+    required TResult Function(SignUpSuccessState<T> value) successSignUp,
+    required TResult Function(SignUpErrorState<T> value) errorSignUp,
   }) {
     return errorUserTypes(this);
   }
@@ -599,6 +683,9 @@ class _$ErrorUserTypesImpl<T> implements ErrorUserTypes<T> {
     TResult? Function(LoadingUserTypes<T> value)? loadingUserTypes,
     TResult? Function(SuccessUserTypes<T> value)? successUserTypes,
     TResult? Function(ErrorUserTypes<T> value)? errorUserTypes,
+    TResult? Function(SignUpLoadingState<T> value)? loadingSignUp,
+    TResult? Function(SignUpSuccessState<T> value)? successSignUp,
+    TResult? Function(SignUpErrorState<T> value)? errorSignUp,
   }) {
     return errorUserTypes?.call(this);
   }
@@ -610,6 +697,9 @@ class _$ErrorUserTypesImpl<T> implements ErrorUserTypes<T> {
     TResult Function(LoadingUserTypes<T> value)? loadingUserTypes,
     TResult Function(SuccessUserTypes<T> value)? successUserTypes,
     TResult Function(ErrorUserTypes<T> value)? errorUserTypes,
+    TResult Function(SignUpLoadingState<T> value)? loadingSignUp,
+    TResult Function(SignUpSuccessState<T> value)? successSignUp,
+    TResult Function(SignUpErrorState<T> value)? errorSignUp,
     required TResult orElse(),
   }) {
     if (errorUserTypes != null) {
@@ -629,5 +719,485 @@ abstract class ErrorUserTypes<T> implements SignUpState<T> {
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
   _$$ErrorUserTypesImplCopyWith<T, _$ErrorUserTypesImpl<T>> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$SignUpLoadingStateImplCopyWith<T, $Res> {
+  factory _$$SignUpLoadingStateImplCopyWith(_$SignUpLoadingStateImpl<T> value,
+          $Res Function(_$SignUpLoadingStateImpl<T>) then) =
+      __$$SignUpLoadingStateImplCopyWithImpl<T, $Res>;
+}
+
+/// @nodoc
+class __$$SignUpLoadingStateImplCopyWithImpl<T, $Res>
+    extends _$SignUpStateCopyWithImpl<T, $Res, _$SignUpLoadingStateImpl<T>>
+    implements _$$SignUpLoadingStateImplCopyWith<T, $Res> {
+  __$$SignUpLoadingStateImplCopyWithImpl(_$SignUpLoadingStateImpl<T> _value,
+      $Res Function(_$SignUpLoadingStateImpl<T>) _then)
+      : super(_value, _then);
+
+  /// Create a copy of SignUpState
+  /// with the given fields replaced by the non-null parameter values.
+}
+
+/// @nodoc
+
+class _$SignUpLoadingStateImpl<T> implements SignUpLoadingState<T> {
+  const _$SignUpLoadingStateImpl();
+
+  @override
+  String toString() {
+    return 'SignUpState<$T>.loadingSignUp()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$SignUpLoadingStateImpl<T>);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() loadingUserTypes,
+    required TResult Function(T data) successUserTypes,
+    required TResult Function(String error) errorUserTypes,
+    required TResult Function() loadingSignUp,
+    required TResult Function(T data) successSignUp,
+    required TResult Function(String error) errorSignUp,
+  }) {
+    return loadingSignUp();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? loadingUserTypes,
+    TResult? Function(T data)? successUserTypes,
+    TResult? Function(String error)? errorUserTypes,
+    TResult? Function()? loadingSignUp,
+    TResult? Function(T data)? successSignUp,
+    TResult? Function(String error)? errorSignUp,
+  }) {
+    return loadingSignUp?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loadingUserTypes,
+    TResult Function(T data)? successUserTypes,
+    TResult Function(String error)? errorUserTypes,
+    TResult Function()? loadingSignUp,
+    TResult Function(T data)? successSignUp,
+    TResult Function(String error)? errorSignUp,
+    required TResult orElse(),
+  }) {
+    if (loadingSignUp != null) {
+      return loadingSignUp();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial<T> value) initial,
+    required TResult Function(LoadingUserTypes<T> value) loadingUserTypes,
+    required TResult Function(SuccessUserTypes<T> value) successUserTypes,
+    required TResult Function(ErrorUserTypes<T> value) errorUserTypes,
+    required TResult Function(SignUpLoadingState<T> value) loadingSignUp,
+    required TResult Function(SignUpSuccessState<T> value) successSignUp,
+    required TResult Function(SignUpErrorState<T> value) errorSignUp,
+  }) {
+    return loadingSignUp(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial<T> value)? initial,
+    TResult? Function(LoadingUserTypes<T> value)? loadingUserTypes,
+    TResult? Function(SuccessUserTypes<T> value)? successUserTypes,
+    TResult? Function(ErrorUserTypes<T> value)? errorUserTypes,
+    TResult? Function(SignUpLoadingState<T> value)? loadingSignUp,
+    TResult? Function(SignUpSuccessState<T> value)? successSignUp,
+    TResult? Function(SignUpErrorState<T> value)? errorSignUp,
+  }) {
+    return loadingSignUp?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial<T> value)? initial,
+    TResult Function(LoadingUserTypes<T> value)? loadingUserTypes,
+    TResult Function(SuccessUserTypes<T> value)? successUserTypes,
+    TResult Function(ErrorUserTypes<T> value)? errorUserTypes,
+    TResult Function(SignUpLoadingState<T> value)? loadingSignUp,
+    TResult Function(SignUpSuccessState<T> value)? successSignUp,
+    TResult Function(SignUpErrorState<T> value)? errorSignUp,
+    required TResult orElse(),
+  }) {
+    if (loadingSignUp != null) {
+      return loadingSignUp(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class SignUpLoadingState<T> implements SignUpState<T> {
+  const factory SignUpLoadingState() = _$SignUpLoadingStateImpl<T>;
+}
+
+/// @nodoc
+abstract class _$$SignUpSuccessStateImplCopyWith<T, $Res> {
+  factory _$$SignUpSuccessStateImplCopyWith(_$SignUpSuccessStateImpl<T> value,
+          $Res Function(_$SignUpSuccessStateImpl<T>) then) =
+      __$$SignUpSuccessStateImplCopyWithImpl<T, $Res>;
+  @useResult
+  $Res call({T data});
+}
+
+/// @nodoc
+class __$$SignUpSuccessStateImplCopyWithImpl<T, $Res>
+    extends _$SignUpStateCopyWithImpl<T, $Res, _$SignUpSuccessStateImpl<T>>
+    implements _$$SignUpSuccessStateImplCopyWith<T, $Res> {
+  __$$SignUpSuccessStateImplCopyWithImpl(_$SignUpSuccessStateImpl<T> _value,
+      $Res Function(_$SignUpSuccessStateImpl<T>) _then)
+      : super(_value, _then);
+
+  /// Create a copy of SignUpState
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? data = freezed,
+  }) {
+    return _then(_$SignUpSuccessStateImpl<T>(
+      freezed == data
+          ? _value.data
+          : data // ignore: cast_nullable_to_non_nullable
+              as T,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$SignUpSuccessStateImpl<T> implements SignUpSuccessState<T> {
+  const _$SignUpSuccessStateImpl(this.data);
+
+  @override
+  final T data;
+
+  @override
+  String toString() {
+    return 'SignUpState<$T>.successSignUp(data: $data)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$SignUpSuccessStateImpl<T> &&
+            const DeepCollectionEquality().equals(other.data, data));
+  }
+
+  @override
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(data));
+
+  /// Create a copy of SignUpState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$SignUpSuccessStateImplCopyWith<T, _$SignUpSuccessStateImpl<T>>
+      get copyWith => __$$SignUpSuccessStateImplCopyWithImpl<T,
+          _$SignUpSuccessStateImpl<T>>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() loadingUserTypes,
+    required TResult Function(T data) successUserTypes,
+    required TResult Function(String error) errorUserTypes,
+    required TResult Function() loadingSignUp,
+    required TResult Function(T data) successSignUp,
+    required TResult Function(String error) errorSignUp,
+  }) {
+    return successSignUp(data);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? loadingUserTypes,
+    TResult? Function(T data)? successUserTypes,
+    TResult? Function(String error)? errorUserTypes,
+    TResult? Function()? loadingSignUp,
+    TResult? Function(T data)? successSignUp,
+    TResult? Function(String error)? errorSignUp,
+  }) {
+    return successSignUp?.call(data);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loadingUserTypes,
+    TResult Function(T data)? successUserTypes,
+    TResult Function(String error)? errorUserTypes,
+    TResult Function()? loadingSignUp,
+    TResult Function(T data)? successSignUp,
+    TResult Function(String error)? errorSignUp,
+    required TResult orElse(),
+  }) {
+    if (successSignUp != null) {
+      return successSignUp(data);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial<T> value) initial,
+    required TResult Function(LoadingUserTypes<T> value) loadingUserTypes,
+    required TResult Function(SuccessUserTypes<T> value) successUserTypes,
+    required TResult Function(ErrorUserTypes<T> value) errorUserTypes,
+    required TResult Function(SignUpLoadingState<T> value) loadingSignUp,
+    required TResult Function(SignUpSuccessState<T> value) successSignUp,
+    required TResult Function(SignUpErrorState<T> value) errorSignUp,
+  }) {
+    return successSignUp(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial<T> value)? initial,
+    TResult? Function(LoadingUserTypes<T> value)? loadingUserTypes,
+    TResult? Function(SuccessUserTypes<T> value)? successUserTypes,
+    TResult? Function(ErrorUserTypes<T> value)? errorUserTypes,
+    TResult? Function(SignUpLoadingState<T> value)? loadingSignUp,
+    TResult? Function(SignUpSuccessState<T> value)? successSignUp,
+    TResult? Function(SignUpErrorState<T> value)? errorSignUp,
+  }) {
+    return successSignUp?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial<T> value)? initial,
+    TResult Function(LoadingUserTypes<T> value)? loadingUserTypes,
+    TResult Function(SuccessUserTypes<T> value)? successUserTypes,
+    TResult Function(ErrorUserTypes<T> value)? errorUserTypes,
+    TResult Function(SignUpLoadingState<T> value)? loadingSignUp,
+    TResult Function(SignUpSuccessState<T> value)? successSignUp,
+    TResult Function(SignUpErrorState<T> value)? errorSignUp,
+    required TResult orElse(),
+  }) {
+    if (successSignUp != null) {
+      return successSignUp(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class SignUpSuccessState<T> implements SignUpState<T> {
+  const factory SignUpSuccessState(final T data) = _$SignUpSuccessStateImpl<T>;
+
+  T get data;
+
+  /// Create a copy of SignUpState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$SignUpSuccessStateImplCopyWith<T, _$SignUpSuccessStateImpl<T>>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$SignUpErrorStateImplCopyWith<T, $Res> {
+  factory _$$SignUpErrorStateImplCopyWith(_$SignUpErrorStateImpl<T> value,
+          $Res Function(_$SignUpErrorStateImpl<T>) then) =
+      __$$SignUpErrorStateImplCopyWithImpl<T, $Res>;
+  @useResult
+  $Res call({String error});
+}
+
+/// @nodoc
+class __$$SignUpErrorStateImplCopyWithImpl<T, $Res>
+    extends _$SignUpStateCopyWithImpl<T, $Res, _$SignUpErrorStateImpl<T>>
+    implements _$$SignUpErrorStateImplCopyWith<T, $Res> {
+  __$$SignUpErrorStateImplCopyWithImpl(_$SignUpErrorStateImpl<T> _value,
+      $Res Function(_$SignUpErrorStateImpl<T>) _then)
+      : super(_value, _then);
+
+  /// Create a copy of SignUpState
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? error = null,
+  }) {
+    return _then(_$SignUpErrorStateImpl<T>(
+      error: null == error
+          ? _value.error
+          : error // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$SignUpErrorStateImpl<T> implements SignUpErrorState<T> {
+  const _$SignUpErrorStateImpl({required this.error});
+
+  @override
+  final String error;
+
+  @override
+  String toString() {
+    return 'SignUpState<$T>.errorSignUp(error: $error)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$SignUpErrorStateImpl<T> &&
+            (identical(other.error, error) || other.error == error));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, error);
+
+  /// Create a copy of SignUpState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$SignUpErrorStateImplCopyWith<T, _$SignUpErrorStateImpl<T>> get copyWith =>
+      __$$SignUpErrorStateImplCopyWithImpl<T, _$SignUpErrorStateImpl<T>>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() loadingUserTypes,
+    required TResult Function(T data) successUserTypes,
+    required TResult Function(String error) errorUserTypes,
+    required TResult Function() loadingSignUp,
+    required TResult Function(T data) successSignUp,
+    required TResult Function(String error) errorSignUp,
+  }) {
+    return errorSignUp(error);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? loadingUserTypes,
+    TResult? Function(T data)? successUserTypes,
+    TResult? Function(String error)? errorUserTypes,
+    TResult? Function()? loadingSignUp,
+    TResult? Function(T data)? successSignUp,
+    TResult? Function(String error)? errorSignUp,
+  }) {
+    return errorSignUp?.call(error);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loadingUserTypes,
+    TResult Function(T data)? successUserTypes,
+    TResult Function(String error)? errorUserTypes,
+    TResult Function()? loadingSignUp,
+    TResult Function(T data)? successSignUp,
+    TResult Function(String error)? errorSignUp,
+    required TResult orElse(),
+  }) {
+    if (errorSignUp != null) {
+      return errorSignUp(error);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial<T> value) initial,
+    required TResult Function(LoadingUserTypes<T> value) loadingUserTypes,
+    required TResult Function(SuccessUserTypes<T> value) successUserTypes,
+    required TResult Function(ErrorUserTypes<T> value) errorUserTypes,
+    required TResult Function(SignUpLoadingState<T> value) loadingSignUp,
+    required TResult Function(SignUpSuccessState<T> value) successSignUp,
+    required TResult Function(SignUpErrorState<T> value) errorSignUp,
+  }) {
+    return errorSignUp(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial<T> value)? initial,
+    TResult? Function(LoadingUserTypes<T> value)? loadingUserTypes,
+    TResult? Function(SuccessUserTypes<T> value)? successUserTypes,
+    TResult? Function(ErrorUserTypes<T> value)? errorUserTypes,
+    TResult? Function(SignUpLoadingState<T> value)? loadingSignUp,
+    TResult? Function(SignUpSuccessState<T> value)? successSignUp,
+    TResult? Function(SignUpErrorState<T> value)? errorSignUp,
+  }) {
+    return errorSignUp?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial<T> value)? initial,
+    TResult Function(LoadingUserTypes<T> value)? loadingUserTypes,
+    TResult Function(SuccessUserTypes<T> value)? successUserTypes,
+    TResult Function(ErrorUserTypes<T> value)? errorUserTypes,
+    TResult Function(SignUpLoadingState<T> value)? loadingSignUp,
+    TResult Function(SignUpSuccessState<T> value)? successSignUp,
+    TResult Function(SignUpErrorState<T> value)? errorSignUp,
+    required TResult orElse(),
+  }) {
+    if (errorSignUp != null) {
+      return errorSignUp(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class SignUpErrorState<T> implements SignUpState<T> {
+  const factory SignUpErrorState({required final String error}) =
+      _$SignUpErrorStateImpl<T>;
+
+  String get error;
+
+  /// Create a copy of SignUpState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$SignUpErrorStateImplCopyWith<T, _$SignUpErrorStateImpl<T>> get copyWith =>
       throw _privateConstructorUsedError;
 }
