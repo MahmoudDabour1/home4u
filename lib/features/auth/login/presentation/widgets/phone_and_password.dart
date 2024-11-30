@@ -27,7 +27,7 @@ class _PhoneAndPasswordState extends State<PhoneAndPassword> {
       child: Column(
         children: [
           AppTextFormField(
-            labelText: AppStrings.phoneNumber,
+            labelText: AppStrings.emailAddress,
             keyboardType: TextInputType.phone,
             focusNode:phoneFocusNode ,
             textInputAction: TextInputAction.next,
