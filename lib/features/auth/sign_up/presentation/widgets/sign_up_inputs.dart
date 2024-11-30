@@ -71,7 +71,7 @@ class _SignUpInputsState extends State<SignUpInputs> {
                 keyboardType: TextInputType.phone,
                 validator: (value) {
                   if (value.isEmpty || !AppRegex.isPhoneNumberValid(value)) {
-                    return AppStrings.pleaseEnterAValidPhoneNumber;
+                    return AppStrings.pleaseEnterAValidEmailAddress;
                   }
                 }),
             DropDownButtons(),

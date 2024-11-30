@@ -25,7 +25,7 @@ class ForgetPasswordBody extends StatelessWidget {
                 labelText: AppStrings.emailAddress,
                 validator: (value) {
                   if (value.isEmpty || !AppRegex.isPhoneNumberValid(value)) {
-                    return AppStrings.pleaseEnterAValidPhoneNumber;
+                    return AppStrings.pleaseEnterAValidEmailAddress;
                   }
                 },
               keyboardType: TextInputType.phone,
