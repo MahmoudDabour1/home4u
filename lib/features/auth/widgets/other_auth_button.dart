@@ -23,9 +23,14 @@ class OtherAuthButton extends StatelessWidget {
             height: 32.h,
           ),
           horizontalSpace(16),
-          Text(
-            text,
-            style: AppStyles.font16DarkBlueBold,
+          Flexible(
+            child: Text(
+              text,
+              style: AppStyles.font16DarkBlueBold,
+              overflow: TextOverflow.ellipsis,
+              maxLines: 1,
+              textAlign: TextAlign.center,
+            ),
           ),
         ],
       ),

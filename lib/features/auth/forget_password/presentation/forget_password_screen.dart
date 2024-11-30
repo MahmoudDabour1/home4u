@@ -15,7 +15,7 @@ class ForgetPasswordScreen extends StatelessWidget {
           children: [
             AuthWelcomeData(
               headText: AppStrings.forgetPasswordK,
-              subText: AppStrings.enterYourPhoneNumber,
+              subText: AppStrings.enterYourEmailAddress,
             ),
             ForgetPasswordBody(),
           ],

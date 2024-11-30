@@ -65,13 +65,13 @@ class _SignUpInputsState extends State<SignUpInputs> {
             ),
             verticalSpace(16),
             AppTextFormField(
-                labelText: AppStrings.phoneNumber,
+                labelText: AppStrings.emailAddress,
                 focusNode: phoneNumberFocusNode,
                 textInputAction: TextInputAction.next,
                 keyboardType: TextInputType.phone,
                 validator: (value) {
                   if (value.isEmpty || !AppRegex.isPhoneNumberValid(value)) {
-                    return AppStrings.pleaseEnterAValidPhoneNumber;
+                    return AppStrings.pleaseEnterAValidEmailAddress;
                   }
                 }),
             DropDownButtons(),

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 import 'package:home4u/core/routing/app_router.dart';
 import 'package:home4u/core/routing/routes.dart';
 
@@ -18,12 +19,13 @@ class Home4uApp extends StatelessWidget {
       child: MaterialApp(
         title: 'Home4u App',
         theme: appTheme,
+        builder: FToastBuilder(),
         // locale: DevicePreview.locale(context),
         // builder: DevicePreview.appBuilder,
         onGenerateRoute: appRouter.generateRoute,
         debugShowCheckedModeBanner: false,
         navigatorObservers: [NavigatorObserver()],
-        initialRoute: Routes.onBoardingScreen,
+        initialRoute: Routes.loginScreen,
       ),
     );
   }

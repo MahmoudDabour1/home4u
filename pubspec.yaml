@@ -87,6 +87,10 @@ dependencies:
   auto_size_text: ^3.0.0
   # enter a digit code usually in cases of Sms Otp Code
   code_input: ^2.0.0
+  # Loading animation or loading spinner or loader. It's used to show loading animation
+  loading_animation_widget: ^1.3.0
+  # Toast Library for Flutter, Easily create toast messages in single line of code
+  fluttertoast: ^8.2.8
 
 
 dev_dependencies:
@@ -140,10 +144,10 @@ flutter:
         - asset: assets/fonts/IBMPlexSansArabic-SemiBold.ttf
         - asset: assets/fonts/IBMPlexSansArabic-Thin.ttf
           weight: 700
-   #
-   # For details regarding fonts from package dependencies,
-   # see https://flutter.dev/to/font-from-package
+    #
+    # For details regarding fonts from package dependencies,
+    # see https://flutter.dev/to/font-from-package
   assets:
-     - assets/images/
-     - assets/svgs/
-     - assets/jsons/
+    - assets/images/
+    - assets/svgs/
+    - assets/jsons/

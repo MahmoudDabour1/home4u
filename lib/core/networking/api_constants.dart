@@ -1,6 +1,7 @@
 
 class ApiConstants {
-  static const String apiBaseUrl = "";
+  static const String apiBaseUrl = "https://dynamic-mouse-needlessly.ngrok-free.app";
+  static const String loginEndPoint = "/api/v1/auth/login";
 }
 
 class ApiErrors {

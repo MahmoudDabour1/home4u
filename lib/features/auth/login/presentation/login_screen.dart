@@ -2,8 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:home4u/core/theming/app_strings.dart';
 import 'package:home4u/core/utils/spacing.dart';
+import 'package:home4u/features/auth/login/presentation/widgets/email_and_password.dart';
+import 'package:home4u/features/auth/login/presentation/widgets/login_bloc_listener.dart';
 import 'package:home4u/features/auth/login/presentation/widgets/login_buttons.dart';
-import 'package:home4u/features/auth/login/presentation/widgets/phone_and_password.dart';
 import 'package:home4u/features/auth/widgets/auth_welcome_data.dart';
 
 class LoginScreen extends StatelessWidget {
@@ -26,8 +27,9 @@ class LoginScreen extends StatelessWidget {
                 child: Column(
                   children: [
                     verticalSpace(32),
-                    PhoneAndPassword(),
-                    LoginButtons(),
+                    const EmailAndPassword(),
+                    const LoginButtons(),
+                    const LoginBlocListener(),
                   ],
                 ),
               ),
