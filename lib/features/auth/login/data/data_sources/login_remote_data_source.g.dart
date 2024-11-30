@@ -12,7 +12,7 @@ class _LoginRemoteDataSource implements LoginRemoteDataSource {
   _LoginRemoteDataSource(
     this._dio, {
     this.baseUrl,
-   // this.errorLogger,
+    this.errorLogger,
   }) {
     baseUrl ??= 'https://dynamic-mouse-needlessly.ngrok-free.app';
   }
@@ -21,7 +21,7 @@ class _LoginRemoteDataSource implements LoginRemoteDataSource {
 
   String? baseUrl;
 
-  //final ParseErrorLogger? errorLogger;
+  final ParseErrorLogger? errorLogger;
 
   @override
   Future<LoginResponse> login(LoginRequestBody loginRequestBody) async {
@@ -51,7 +51,7 @@ class _LoginRemoteDataSource implements LoginRemoteDataSource {
     try {
       _value = LoginResponse.fromJson(_result.data!);
     } on Object catch (e, s) {
-      //errorLogger?.logError(e, s, _options);
+      errorLogger?.logError(e, s, _options);
       rethrow;
     }
     return _value;

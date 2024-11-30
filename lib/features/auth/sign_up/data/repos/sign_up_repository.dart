@@ -1,6 +1,6 @@
-import 'package:home4u/core/networking/api_error_model.dart';
 import 'package:home4u/core/networking/api_result.dart';
 
+import '../../../../../core/networking/api_error_handler.dart';
 import '../data_source/sign_up_remote_data_source.dart';
 import '../models/user_type_model.dart';
 
@@ -15,7 +15,11 @@ class SignUpRepositoryImpl implements SignUpRepository {
 
   @override
   Future<ApiResult<List<UserTypeData>>> getUserTypes() async {
-    final userTypeData = await remoteDataSource.getUserTypes();
-    return ApiResult.success(userTypeData.data);
+    try {
+      final userTypeData = await remoteDataSource.getUserTypes();
+      return ApiResult.success(userTypeData.data);
+    } catch (error) {
+      return ApiResult.failure(ApiErrorHandler.handle(error));
+    }
   }
 }

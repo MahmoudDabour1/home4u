@@ -13,10 +13,11 @@ class SignUpCubit extends Cubit<SignUpState> {
   void getUserTypes() async {
     emit(const SignUpState.loadingUserTypes());
     final userTypes = await signUpRepository.getUserTypes();
-    userTypes.when(
-        success: (List<UserTypeData> data) =>
-            emit(SignUpState.loadedUserTypes(UserTypeModel(data: data))),
-        failure: (ApiErrorModel apiErrorModel) =>
-            emit(SignUpState.errorUserTypes("")));
+    userTypes.when(success: (data) {
+      emit(SignUpState.successUserTypes(data));
+    }, failure: (error) {
+      emit(SignUpState.errorUserTypes(
+          error: error.message ?? "An unknown error occurred"));
+    });
   }
 }

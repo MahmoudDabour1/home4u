@@ -15,69 +15,69 @@ final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
-mixin _$SignUpState {
+mixin _$SignUpState<T> {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loadingUserTypes,
-    required TResult Function(UserTypeModel userTypes) loadedUserTypes,
-    required TResult Function(String message) errorUserTypes,
+    required TResult Function(T data) successUserTypes,
+    required TResult Function(String error) errorUserTypes,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loadingUserTypes,
-    TResult? Function(UserTypeModel userTypes)? loadedUserTypes,
-    TResult? Function(String message)? errorUserTypes,
+    TResult? Function(T data)? successUserTypes,
+    TResult? Function(String error)? errorUserTypes,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loadingUserTypes,
-    TResult Function(UserTypeModel userTypes)? loadedUserTypes,
-    TResult Function(String message)? errorUserTypes,
+    TResult Function(T data)? successUserTypes,
+    TResult Function(String error)? errorUserTypes,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
-    required TResult Function(LoadingUserTypes value) loadingUserTypes,
-    required TResult Function(LoadedUserTypes value) loadedUserTypes,
-    required TResult Function(ErrorUserTypes value) errorUserTypes,
+    required TResult Function(_Initial<T> value) initial,
+    required TResult Function(LoadingUserTypes<T> value) loadingUserTypes,
+    required TResult Function(SuccessUserTypes<T> value) successUserTypes,
+    required TResult Function(ErrorUserTypes<T> value) errorUserTypes,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Initial value)? initial,
-    TResult? Function(LoadingUserTypes value)? loadingUserTypes,
-    TResult? Function(LoadedUserTypes value)? loadedUserTypes,
-    TResult? Function(ErrorUserTypes value)? errorUserTypes,
+    TResult? Function(_Initial<T> value)? initial,
+    TResult? Function(LoadingUserTypes<T> value)? loadingUserTypes,
+    TResult? Function(SuccessUserTypes<T> value)? successUserTypes,
+    TResult? Function(ErrorUserTypes<T> value)? errorUserTypes,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(LoadingUserTypes value)? loadingUserTypes,
-    TResult Function(LoadedUserTypes value)? loadedUserTypes,
-    TResult Function(ErrorUserTypes value)? errorUserTypes,
+    TResult Function(_Initial<T> value)? initial,
+    TResult Function(LoadingUserTypes<T> value)? loadingUserTypes,
+    TResult Function(SuccessUserTypes<T> value)? successUserTypes,
+    TResult Function(ErrorUserTypes<T> value)? errorUserTypes,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $SignUpStateCopyWith<$Res> {
+abstract class $SignUpStateCopyWith<T, $Res> {
   factory $SignUpStateCopyWith(
-          SignUpState value, $Res Function(SignUpState) then) =
-      _$SignUpStateCopyWithImpl<$Res, SignUpState>;
+          SignUpState<T> value, $Res Function(SignUpState<T>) then) =
+      _$SignUpStateCopyWithImpl<T, $Res, SignUpState<T>>;
 }
 
 /// @nodoc
-class _$SignUpStateCopyWithImpl<$Res, $Val extends SignUpState>
-    implements $SignUpStateCopyWith<$Res> {
+class _$SignUpStateCopyWithImpl<T, $Res, $Val extends SignUpState<T>>
+    implements $SignUpStateCopyWith<T, $Res> {
   _$SignUpStateCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
@@ -90,18 +90,18 @@ class _$SignUpStateCopyWithImpl<$Res, $Val extends SignUpState>
 }
 
 /// @nodoc
-abstract class _$$InitialImplCopyWith<$Res> {
+abstract class _$$InitialImplCopyWith<T, $Res> {
   factory _$$InitialImplCopyWith(
-          _$InitialImpl value, $Res Function(_$InitialImpl) then) =
-      __$$InitialImplCopyWithImpl<$Res>;
+          _$InitialImpl<T> value, $Res Function(_$InitialImpl<T>) then) =
+      __$$InitialImplCopyWithImpl<T, $Res>;
 }
 
 /// @nodoc
-class __$$InitialImplCopyWithImpl<$Res>
-    extends _$SignUpStateCopyWithImpl<$Res, _$InitialImpl>
-    implements _$$InitialImplCopyWith<$Res> {
+class __$$InitialImplCopyWithImpl<T, $Res>
+    extends _$SignUpStateCopyWithImpl<T, $Res, _$InitialImpl<T>>
+    implements _$$InitialImplCopyWith<T, $Res> {
   __$$InitialImplCopyWithImpl(
-      _$InitialImpl _value, $Res Function(_$InitialImpl) _then)
+      _$InitialImpl<T> _value, $Res Function(_$InitialImpl<T>) _then)
       : super(_value, _then);
 
   /// Create a copy of SignUpState
@@ -110,18 +110,18 @@ class __$$InitialImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$InitialImpl implements _Initial {
+class _$InitialImpl<T> implements _Initial<T> {
   const _$InitialImpl();
 
   @override
   String toString() {
-    return 'SignUpState.initial()';
+    return 'SignUpState<$T>.initial()';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$InitialImpl);
+        (other.runtimeType == runtimeType && other is _$InitialImpl<T>);
   }
 
   @override
@@ -132,8 +132,8 @@ class _$InitialImpl implements _Initial {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loadingUserTypes,
-    required TResult Function(UserTypeModel userTypes) loadedUserTypes,
-    required TResult Function(String message) errorUserTypes,
+    required TResult Function(T data) successUserTypes,
+    required TResult Function(String error) errorUserTypes,
   }) {
     return initial();
   }
@@ -143,8 +143,8 @@ class _$InitialImpl implements _Initial {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loadingUserTypes,
-    TResult? Function(UserTypeModel userTypes)? loadedUserTypes,
-    TResult? Function(String message)? errorUserTypes,
+    TResult? Function(T data)? successUserTypes,
+    TResult? Function(String error)? errorUserTypes,
   }) {
     return initial?.call();
   }
@@ -154,8 +154,8 @@ class _$InitialImpl implements _Initial {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loadingUserTypes,
-    TResult Function(UserTypeModel userTypes)? loadedUserTypes,
-    TResult Function(String message)? errorUserTypes,
+    TResult Function(T data)? successUserTypes,
+    TResult Function(String error)? errorUserTypes,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -167,10 +167,10 @@ class _$InitialImpl implements _Initial {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
-    required TResult Function(LoadingUserTypes value) loadingUserTypes,
-    required TResult Function(LoadedUserTypes value) loadedUserTypes,
-    required TResult Function(ErrorUserTypes value) errorUserTypes,
+    required TResult Function(_Initial<T> value) initial,
+    required TResult Function(LoadingUserTypes<T> value) loadingUserTypes,
+    required TResult Function(SuccessUserTypes<T> value) successUserTypes,
+    required TResult Function(ErrorUserTypes<T> value) errorUserTypes,
   }) {
     return initial(this);
   }
@@ -178,10 +178,10 @@ class _$InitialImpl implements _Initial {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Initial value)? initial,
-    TResult? Function(LoadingUserTypes value)? loadingUserTypes,
-    TResult? Function(LoadedUserTypes value)? loadedUserTypes,
-    TResult? Function(ErrorUserTypes value)? errorUserTypes,
+    TResult? Function(_Initial<T> value)? initial,
+    TResult? Function(LoadingUserTypes<T> value)? loadingUserTypes,
+    TResult? Function(SuccessUserTypes<T> value)? successUserTypes,
+    TResult? Function(ErrorUserTypes<T> value)? errorUserTypes,
   }) {
     return initial?.call(this);
   }
@@ -189,10 +189,10 @@ class _$InitialImpl implements _Initial {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(LoadingUserTypes value)? loadingUserTypes,
-    TResult Function(LoadedUserTypes value)? loadedUserTypes,
-    TResult Function(ErrorUserTypes value)? errorUserTypes,
+    TResult Function(_Initial<T> value)? initial,
+    TResult Function(LoadingUserTypes<T> value)? loadingUserTypes,
+    TResult Function(SuccessUserTypes<T> value)? successUserTypes,
+    TResult Function(ErrorUserTypes<T> value)? errorUserTypes,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -202,23 +202,23 @@ class _$InitialImpl implements _Initial {
   }
 }
 
-abstract class _Initial implements SignUpState {
-  const factory _Initial() = _$InitialImpl;
+abstract class _Initial<T> implements SignUpState<T> {
+  const factory _Initial() = _$InitialImpl<T>;
 }
 
 /// @nodoc
-abstract class _$$LoadingUserTypesImplCopyWith<$Res> {
-  factory _$$LoadingUserTypesImplCopyWith(_$LoadingUserTypesImpl value,
-          $Res Function(_$LoadingUserTypesImpl) then) =
-      __$$LoadingUserTypesImplCopyWithImpl<$Res>;
+abstract class _$$LoadingUserTypesImplCopyWith<T, $Res> {
+  factory _$$LoadingUserTypesImplCopyWith(_$LoadingUserTypesImpl<T> value,
+          $Res Function(_$LoadingUserTypesImpl<T>) then) =
+      __$$LoadingUserTypesImplCopyWithImpl<T, $Res>;
 }
 
 /// @nodoc
-class __$$LoadingUserTypesImplCopyWithImpl<$Res>
-    extends _$SignUpStateCopyWithImpl<$Res, _$LoadingUserTypesImpl>
-    implements _$$LoadingUserTypesImplCopyWith<$Res> {
-  __$$LoadingUserTypesImplCopyWithImpl(_$LoadingUserTypesImpl _value,
-      $Res Function(_$LoadingUserTypesImpl) _then)
+class __$$LoadingUserTypesImplCopyWithImpl<T, $Res>
+    extends _$SignUpStateCopyWithImpl<T, $Res, _$LoadingUserTypesImpl<T>>
+    implements _$$LoadingUserTypesImplCopyWith<T, $Res> {
+  __$$LoadingUserTypesImplCopyWithImpl(_$LoadingUserTypesImpl<T> _value,
+      $Res Function(_$LoadingUserTypesImpl<T>) _then)
       : super(_value, _then);
 
   /// Create a copy of SignUpState
@@ -227,18 +227,19 @@ class __$$LoadingUserTypesImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$LoadingUserTypesImpl implements LoadingUserTypes {
+class _$LoadingUserTypesImpl<T> implements LoadingUserTypes<T> {
   const _$LoadingUserTypesImpl();
 
   @override
   String toString() {
-    return 'SignUpState.loadingUserTypes()';
+    return 'SignUpState<$T>.loadingUserTypes()';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$LoadingUserTypesImpl);
+        (other.runtimeType == runtimeType &&
+            other is _$LoadingUserTypesImpl<T>);
   }
 
   @override
@@ -249,8 +250,8 @@ class _$LoadingUserTypesImpl implements LoadingUserTypes {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loadingUserTypes,
-    required TResult Function(UserTypeModel userTypes) loadedUserTypes,
-    required TResult Function(String message) errorUserTypes,
+    required TResult Function(T data) successUserTypes,
+    required TResult Function(String error) errorUserTypes,
   }) {
     return loadingUserTypes();
   }
@@ -260,8 +261,8 @@ class _$LoadingUserTypesImpl implements LoadingUserTypes {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loadingUserTypes,
-    TResult? Function(UserTypeModel userTypes)? loadedUserTypes,
-    TResult? Function(String message)? errorUserTypes,
+    TResult? Function(T data)? successUserTypes,
+    TResult? Function(String error)? errorUserTypes,
   }) {
     return loadingUserTypes?.call();
   }
@@ -271,8 +272,8 @@ class _$LoadingUserTypesImpl implements LoadingUserTypes {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loadingUserTypes,
-    TResult Function(UserTypeModel userTypes)? loadedUserTypes,
-    TResult Function(String message)? errorUserTypes,
+    TResult Function(T data)? successUserTypes,
+    TResult Function(String error)? errorUserTypes,
     required TResult orElse(),
   }) {
     if (loadingUserTypes != null) {
@@ -284,10 +285,10 @@ class _$LoadingUserTypesImpl implements LoadingUserTypes {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
-    required TResult Function(LoadingUserTypes value) loadingUserTypes,
-    required TResult Function(LoadedUserTypes value) loadedUserTypes,
-    required TResult Function(ErrorUserTypes value) errorUserTypes,
+    required TResult Function(_Initial<T> value) initial,
+    required TResult Function(LoadingUserTypes<T> value) loadingUserTypes,
+    required TResult Function(SuccessUserTypes<T> value) successUserTypes,
+    required TResult Function(ErrorUserTypes<T> value) errorUserTypes,
   }) {
     return loadingUserTypes(this);
   }
@@ -295,10 +296,10 @@ class _$LoadingUserTypesImpl implements LoadingUserTypes {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Initial value)? initial,
-    TResult? Function(LoadingUserTypes value)? loadingUserTypes,
-    TResult? Function(LoadedUserTypes value)? loadedUserTypes,
-    TResult? Function(ErrorUserTypes value)? errorUserTypes,
+    TResult? Function(_Initial<T> value)? initial,
+    TResult? Function(LoadingUserTypes<T> value)? loadingUserTypes,
+    TResult? Function(SuccessUserTypes<T> value)? successUserTypes,
+    TResult? Function(ErrorUserTypes<T> value)? errorUserTypes,
   }) {
     return loadingUserTypes?.call(this);
   }
@@ -306,10 +307,10 @@ class _$LoadingUserTypesImpl implements LoadingUserTypes {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(LoadingUserTypes value)? loadingUserTypes,
-    TResult Function(LoadedUserTypes value)? loadedUserTypes,
-    TResult Function(ErrorUserTypes value)? errorUserTypes,
+    TResult Function(_Initial<T> value)? initial,
+    TResult Function(LoadingUserTypes<T> value)? loadingUserTypes,
+    TResult Function(SuccessUserTypes<T> value)? successUserTypes,
+    TResult Function(ErrorUserTypes<T> value)? errorUserTypes,
     required TResult orElse(),
   }) {
     if (loadingUserTypes != null) {
@@ -319,25 +320,25 @@ class _$LoadingUserTypesImpl implements LoadingUserTypes {
   }
 }
 
-abstract class LoadingUserTypes implements SignUpState {
-  const factory LoadingUserTypes() = _$LoadingUserTypesImpl;
+abstract class LoadingUserTypes<T> implements SignUpState<T> {
+  const factory LoadingUserTypes() = _$LoadingUserTypesImpl<T>;
 }
 
 /// @nodoc
-abstract class _$$LoadedUserTypesImplCopyWith<$Res> {
-  factory _$$LoadedUserTypesImplCopyWith(_$LoadedUserTypesImpl value,
-          $Res Function(_$LoadedUserTypesImpl) then) =
-      __$$LoadedUserTypesImplCopyWithImpl<$Res>;
+abstract class _$$SuccessUserTypesImplCopyWith<T, $Res> {
+  factory _$$SuccessUserTypesImplCopyWith(_$SuccessUserTypesImpl<T> value,
+          $Res Function(_$SuccessUserTypesImpl<T>) then) =
+      __$$SuccessUserTypesImplCopyWithImpl<T, $Res>;
   @useResult
-  $Res call({UserTypeModel userTypes});
+  $Res call({T data});
 }
 
 /// @nodoc
-class __$$LoadedUserTypesImplCopyWithImpl<$Res>
-    extends _$SignUpStateCopyWithImpl<$Res, _$LoadedUserTypesImpl>
-    implements _$$LoadedUserTypesImplCopyWith<$Res> {
-  __$$LoadedUserTypesImplCopyWithImpl(
-      _$LoadedUserTypesImpl _value, $Res Function(_$LoadedUserTypesImpl) _then)
+class __$$SuccessUserTypesImplCopyWithImpl<T, $Res>
+    extends _$SignUpStateCopyWithImpl<T, $Res, _$SuccessUserTypesImpl<T>>
+    implements _$$SuccessUserTypesImplCopyWith<T, $Res> {
+  __$$SuccessUserTypesImplCopyWithImpl(_$SuccessUserTypesImpl<T> _value,
+      $Res Function(_$SuccessUserTypesImpl<T>) _then)
       : super(_value, _then);
 
   /// Create a copy of SignUpState
@@ -345,49 +346,49 @@ class __$$LoadedUserTypesImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? userTypes = null,
+    Object? data = freezed,
   }) {
-    return _then(_$LoadedUserTypesImpl(
-      null == userTypes
-          ? _value.userTypes
-          : userTypes // ignore: cast_nullable_to_non_nullable
-              as UserTypeModel,
+    return _then(_$SuccessUserTypesImpl<T>(
+      freezed == data
+          ? _value.data
+          : data // ignore: cast_nullable_to_non_nullable
+              as T,
     ));
   }
 }
 
 /// @nodoc
 
-class _$LoadedUserTypesImpl implements LoadedUserTypes {
-  const _$LoadedUserTypesImpl(this.userTypes);
+class _$SuccessUserTypesImpl<T> implements SuccessUserTypes<T> {
+  const _$SuccessUserTypesImpl(this.data);
 
   @override
-  final UserTypeModel userTypes;
+  final T data;
 
   @override
   String toString() {
-    return 'SignUpState.loadedUserTypes(userTypes: $userTypes)';
+    return 'SignUpState<$T>.successUserTypes(data: $data)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$LoadedUserTypesImpl &&
-            (identical(other.userTypes, userTypes) ||
-                other.userTypes == userTypes));
+            other is _$SuccessUserTypesImpl<T> &&
+            const DeepCollectionEquality().equals(other.data, data));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, userTypes);
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(data));
 
   /// Create a copy of SignUpState
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$LoadedUserTypesImplCopyWith<_$LoadedUserTypesImpl> get copyWith =>
-      __$$LoadedUserTypesImplCopyWithImpl<_$LoadedUserTypesImpl>(
+  _$$SuccessUserTypesImplCopyWith<T, _$SuccessUserTypesImpl<T>> get copyWith =>
+      __$$SuccessUserTypesImplCopyWithImpl<T, _$SuccessUserTypesImpl<T>>(
           this, _$identity);
 
   @override
@@ -395,10 +396,10 @@ class _$LoadedUserTypesImpl implements LoadedUserTypes {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loadingUserTypes,
-    required TResult Function(UserTypeModel userTypes) loadedUserTypes,
-    required TResult Function(String message) errorUserTypes,
+    required TResult Function(T data) successUserTypes,
+    required TResult Function(String error) errorUserTypes,
   }) {
-    return loadedUserTypes(userTypes);
+    return successUserTypes(data);
   }
 
   @override
@@ -406,10 +407,10 @@ class _$LoadedUserTypesImpl implements LoadedUserTypes {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loadingUserTypes,
-    TResult? Function(UserTypeModel userTypes)? loadedUserTypes,
-    TResult? Function(String message)? errorUserTypes,
+    TResult? Function(T data)? successUserTypes,
+    TResult? Function(String error)? errorUserTypes,
   }) {
-    return loadedUserTypes?.call(userTypes);
+    return successUserTypes?.call(data);
   }
 
   @override
@@ -417,12 +418,12 @@ class _$LoadedUserTypesImpl implements LoadedUserTypes {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loadingUserTypes,
-    TResult Function(UserTypeModel userTypes)? loadedUserTypes,
-    TResult Function(String message)? errorUserTypes,
+    TResult Function(T data)? successUserTypes,
+    TResult Function(String error)? errorUserTypes,
     required TResult orElse(),
   }) {
-    if (loadedUserTypes != null) {
-      return loadedUserTypes(userTypes);
+    if (successUserTypes != null) {
+      return successUserTypes(data);
     }
     return orElse();
   }
@@ -430,69 +431,68 @@ class _$LoadedUserTypesImpl implements LoadedUserTypes {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
-    required TResult Function(LoadingUserTypes value) loadingUserTypes,
-    required TResult Function(LoadedUserTypes value) loadedUserTypes,
-    required TResult Function(ErrorUserTypes value) errorUserTypes,
+    required TResult Function(_Initial<T> value) initial,
+    required TResult Function(LoadingUserTypes<T> value) loadingUserTypes,
+    required TResult Function(SuccessUserTypes<T> value) successUserTypes,
+    required TResult Function(ErrorUserTypes<T> value) errorUserTypes,
   }) {
-    return loadedUserTypes(this);
+    return successUserTypes(this);
   }
 
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Initial value)? initial,
-    TResult? Function(LoadingUserTypes value)? loadingUserTypes,
-    TResult? Function(LoadedUserTypes value)? loadedUserTypes,
-    TResult? Function(ErrorUserTypes value)? errorUserTypes,
+    TResult? Function(_Initial<T> value)? initial,
+    TResult? Function(LoadingUserTypes<T> value)? loadingUserTypes,
+    TResult? Function(SuccessUserTypes<T> value)? successUserTypes,
+    TResult? Function(ErrorUserTypes<T> value)? errorUserTypes,
   }) {
-    return loadedUserTypes?.call(this);
+    return successUserTypes?.call(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(LoadingUserTypes value)? loadingUserTypes,
-    TResult Function(LoadedUserTypes value)? loadedUserTypes,
-    TResult Function(ErrorUserTypes value)? errorUserTypes,
+    TResult Function(_Initial<T> value)? initial,
+    TResult Function(LoadingUserTypes<T> value)? loadingUserTypes,
+    TResult Function(SuccessUserTypes<T> value)? successUserTypes,
+    TResult Function(ErrorUserTypes<T> value)? errorUserTypes,
     required TResult orElse(),
   }) {
-    if (loadedUserTypes != null) {
-      return loadedUserTypes(this);
+    if (successUserTypes != null) {
+      return successUserTypes(this);
     }
     return orElse();
   }
 }
 
-abstract class LoadedUserTypes implements SignUpState {
-  const factory LoadedUserTypes(final UserTypeModel userTypes) =
-      _$LoadedUserTypesImpl;
+abstract class SuccessUserTypes<T> implements SignUpState<T> {
+  const factory SuccessUserTypes(final T data) = _$SuccessUserTypesImpl<T>;
 
-  UserTypeModel get userTypes;
+  T get data;
 
   /// Create a copy of SignUpState
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$LoadedUserTypesImplCopyWith<_$LoadedUserTypesImpl> get copyWith =>
+  _$$SuccessUserTypesImplCopyWith<T, _$SuccessUserTypesImpl<T>> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$ErrorUserTypesImplCopyWith<$Res> {
-  factory _$$ErrorUserTypesImplCopyWith(_$ErrorUserTypesImpl value,
-          $Res Function(_$ErrorUserTypesImpl) then) =
-      __$$ErrorUserTypesImplCopyWithImpl<$Res>;
+abstract class _$$ErrorUserTypesImplCopyWith<T, $Res> {
+  factory _$$ErrorUserTypesImplCopyWith(_$ErrorUserTypesImpl<T> value,
+          $Res Function(_$ErrorUserTypesImpl<T>) then) =
+      __$$ErrorUserTypesImplCopyWithImpl<T, $Res>;
   @useResult
-  $Res call({String message});
+  $Res call({String error});
 }
 
 /// @nodoc
-class __$$ErrorUserTypesImplCopyWithImpl<$Res>
-    extends _$SignUpStateCopyWithImpl<$Res, _$ErrorUserTypesImpl>
-    implements _$$ErrorUserTypesImplCopyWith<$Res> {
-  __$$ErrorUserTypesImplCopyWithImpl(
-      _$ErrorUserTypesImpl _value, $Res Function(_$ErrorUserTypesImpl) _then)
+class __$$ErrorUserTypesImplCopyWithImpl<T, $Res>
+    extends _$SignUpStateCopyWithImpl<T, $Res, _$ErrorUserTypesImpl<T>>
+    implements _$$ErrorUserTypesImplCopyWith<T, $Res> {
+  __$$ErrorUserTypesImplCopyWithImpl(_$ErrorUserTypesImpl<T> _value,
+      $Res Function(_$ErrorUserTypesImpl<T>) _then)
       : super(_value, _then);
 
   /// Create a copy of SignUpState
@@ -500,12 +500,12 @@ class __$$ErrorUserTypesImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? message = null,
+    Object? error = null,
   }) {
-    return _then(_$ErrorUserTypesImpl(
-      null == message
-          ? _value.message
-          : message // ignore: cast_nullable_to_non_nullable
+    return _then(_$ErrorUserTypesImpl<T>(
+      error: null == error
+          ? _value.error
+          : error // ignore: cast_nullable_to_non_nullable
               as String,
     ));
   }
@@ -513,35 +513,35 @@ class __$$ErrorUserTypesImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$ErrorUserTypesImpl implements ErrorUserTypes {
-  const _$ErrorUserTypesImpl(this.message);
+class _$ErrorUserTypesImpl<T> implements ErrorUserTypes<T> {
+  const _$ErrorUserTypesImpl({required this.error});
 
   @override
-  final String message;
+  final String error;
 
   @override
   String toString() {
-    return 'SignUpState.errorUserTypes(message: $message)';
+    return 'SignUpState<$T>.errorUserTypes(error: $error)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$ErrorUserTypesImpl &&
-            (identical(other.message, message) || other.message == message));
+            other is _$ErrorUserTypesImpl<T> &&
+            (identical(other.error, error) || other.error == error));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, message);
+  int get hashCode => Object.hash(runtimeType, error);
 
   /// Create a copy of SignUpState
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$ErrorUserTypesImplCopyWith<_$ErrorUserTypesImpl> get copyWith =>
-      __$$ErrorUserTypesImplCopyWithImpl<_$ErrorUserTypesImpl>(
+  _$$ErrorUserTypesImplCopyWith<T, _$ErrorUserTypesImpl<T>> get copyWith =>
+      __$$ErrorUserTypesImplCopyWithImpl<T, _$ErrorUserTypesImpl<T>>(
           this, _$identity);
 
   @override
@@ -549,10 +549,10 @@ class _$ErrorUserTypesImpl implements ErrorUserTypes {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loadingUserTypes,
-    required TResult Function(UserTypeModel userTypes) loadedUserTypes,
-    required TResult Function(String message) errorUserTypes,
+    required TResult Function(T data) successUserTypes,
+    required TResult Function(String error) errorUserTypes,
   }) {
-    return errorUserTypes(message);
+    return errorUserTypes(error);
   }
 
   @override
@@ -560,10 +560,10 @@ class _$ErrorUserTypesImpl implements ErrorUserTypes {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loadingUserTypes,
-    TResult? Function(UserTypeModel userTypes)? loadedUserTypes,
-    TResult? Function(String message)? errorUserTypes,
+    TResult? Function(T data)? successUserTypes,
+    TResult? Function(String error)? errorUserTypes,
   }) {
-    return errorUserTypes?.call(message);
+    return errorUserTypes?.call(error);
   }
 
   @override
@@ -571,12 +571,12 @@ class _$ErrorUserTypesImpl implements ErrorUserTypes {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loadingUserTypes,
-    TResult Function(UserTypeModel userTypes)? loadedUserTypes,
-    TResult Function(String message)? errorUserTypes,
+    TResult Function(T data)? successUserTypes,
+    TResult Function(String error)? errorUserTypes,
     required TResult orElse(),
   }) {
     if (errorUserTypes != null) {
-      return errorUserTypes(message);
+      return errorUserTypes(error);
     }
     return orElse();
   }
@@ -584,10 +584,10 @@ class _$ErrorUserTypesImpl implements ErrorUserTypes {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
-    required TResult Function(LoadingUserTypes value) loadingUserTypes,
-    required TResult Function(LoadedUserTypes value) loadedUserTypes,
-    required TResult Function(ErrorUserTypes value) errorUserTypes,
+    required TResult Function(_Initial<T> value) initial,
+    required TResult Function(LoadingUserTypes<T> value) loadingUserTypes,
+    required TResult Function(SuccessUserTypes<T> value) successUserTypes,
+    required TResult Function(ErrorUserTypes<T> value) errorUserTypes,
   }) {
     return errorUserTypes(this);
   }
@@ -595,10 +595,10 @@ class _$ErrorUserTypesImpl implements ErrorUserTypes {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Initial value)? initial,
-    TResult? Function(LoadingUserTypes value)? loadingUserTypes,
-    TResult? Function(LoadedUserTypes value)? loadedUserTypes,
-    TResult? Function(ErrorUserTypes value)? errorUserTypes,
+    TResult? Function(_Initial<T> value)? initial,
+    TResult? Function(LoadingUserTypes<T> value)? loadingUserTypes,
+    TResult? Function(SuccessUserTypes<T> value)? successUserTypes,
+    TResult? Function(ErrorUserTypes<T> value)? errorUserTypes,
   }) {
     return errorUserTypes?.call(this);
   }
@@ -606,10 +606,10 @@ class _$ErrorUserTypesImpl implements ErrorUserTypes {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(LoadingUserTypes value)? loadingUserTypes,
-    TResult Function(LoadedUserTypes value)? loadedUserTypes,
-    TResult Function(ErrorUserTypes value)? errorUserTypes,
+    TResult Function(_Initial<T> value)? initial,
+    TResult Function(LoadingUserTypes<T> value)? loadingUserTypes,
+    TResult Function(SuccessUserTypes<T> value)? successUserTypes,
+    TResult Function(ErrorUserTypes<T> value)? errorUserTypes,
     required TResult orElse(),
   }) {
     if (errorUserTypes != null) {
@@ -619,14 +619,15 @@ class _$ErrorUserTypesImpl implements ErrorUserTypes {
   }
 }
 
-abstract class ErrorUserTypes implements SignUpState {
-  const factory ErrorUserTypes(final String message) = _$ErrorUserTypesImpl;
+abstract class ErrorUserTypes<T> implements SignUpState<T> {
+  const factory ErrorUserTypes({required final String error}) =
+      _$ErrorUserTypesImpl<T>;
 
-  String get message;
+  String get error;
 
   /// Create a copy of SignUpState
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$ErrorUserTypesImplCopyWith<_$ErrorUserTypesImpl> get copyWith =>
+  _$$ErrorUserTypesImplCopyWith<T, _$ErrorUserTypesImpl<T>> get copyWith =>
       throw _privateConstructorUsedError;
 }
