@@ -1,0 +1,17 @@
+import 'package:dio/dio.dart';
+import 'package:home4u/features/auth/sign_up/data/models/user_type_model.dart';
+import 'package:retrofit/error_logger.dart';
+import 'package:retrofit/http.dart';
+
+import '../../../../../core/networking/api_constants.dart';
+
+part 'sign_up_remote_data_source.g.dart';
+
+@RestApi(baseUrl: ApiConstants.apiBaseUrl)
+abstract class SignUpRemoteDataSource {
+  factory SignUpRemoteDataSource(Dio dio, {String baseUrl}) =
+      _SignUpRemoteDataSource;
+
+  @GET(ApiConstants.userTypesEp)
+  Future<UserTypeModel> getUserTypes();
+}
