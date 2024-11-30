@@ -8,6 +8,7 @@ class AppCustomDropDownButtonFormField extends StatelessWidget {
   final void Function(String?) onChanged;
   final List<DropdownMenuItem<String>> items;
   final String labelText;
+  final FormFieldValidator<String>? validator;
 
   const AppCustomDropDownButtonFormField({
     super.key,
@@ -15,6 +16,7 @@ class AppCustomDropDownButtonFormField extends StatelessWidget {
     required this.onChanged,
     required this.items,
     required this.labelText,
+    this.validator,
   });
 
   @override
@@ -30,6 +32,7 @@ class AppCustomDropDownButtonFormField extends StatelessWidget {
       onChanged: onChanged,
       decoration: getCommonInputDecoration(labelText: labelText),
       dropdownColor: Colors.white,
+      validator: validator,
     );
   }
 }

@@ -1,8 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:home4u/core/routing/app_router.dart';
 import 'package:home4u/core/theming/app_strings.dart';
 import 'package:home4u/core/utils/spacing.dart';
+import 'package:home4u/features/auth/sign_up/logic/sign_up_cubit.dart';
 import 'package:home4u/features/auth/sign_up/presentation/widgets/sign_up_buttons.dart';
 import 'package:home4u/features/auth/sign_up/presentation/widgets/sign_up_inputs.dart';
+import 'package:home4u/features/auth/sign_up/presentation/widgets/sign_up_listener.dart';
 
 import '../../widgets/auth_welcome_data.dart';
 
@@ -11,6 +15,7 @@ class SignUpScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    context.read<SignUpCubit>().getUserTypes();
     return Scaffold(
       body: SafeArea(
         child: SingleChildScrollView(
@@ -24,6 +29,7 @@ class SignUpScreen extends StatelessWidget {
               SignUpInputs(),
               verticalSpace(32),
               SignUpButtons(),
+              SignUpListener(),
             ],
           ),
         ),

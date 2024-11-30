@@ -5,6 +5,7 @@ import 'package:home4u/features/auth/engineering_office/presentation/engineering
 import 'package:home4u/features/auth/forget_password/presentation/forget_password_screen.dart';
 import 'package:home4u/features/auth/login/logic/login_cubit.dart';
 import 'package:home4u/features/auth/new_password/presentation/new_password_screen.dart';
+import 'package:home4u/features/auth/sign_up/logic/sign_up_cubit.dart';
 import 'package:home4u/features/auth/sign_up/presentation/sign_up_screen.dart';
 import 'package:home4u/features/auth/verification/presentation/verification_screen.dart';
 
@@ -29,7 +30,11 @@ class AppRouter {
         );
       case Routes.signUpScreen:
         return MaterialPageRoute(
-          builder: (_) => SignUpScreen(),
+          builder: (_) =>
+              BlocProvider<SignUpCubit>(
+                create: (context) => sl<SignUpCubit>(),
+                child: SignUpScreen(),
+              ),
         );
       case Routes.forgetPasswordScreen:
         return MaterialPageRoute(
