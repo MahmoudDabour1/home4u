@@ -4,7 +4,7 @@ class SignUpBody {
   final String email;
   final String phone;
   final String password;
-  final UserType userType;
+  final UserTypeRequest userType;
 
   SignUpBody({
     required this.firstName,
@@ -22,16 +22,16 @@ class SignUpBody {
       "email": email,
       "phone": phone,
       "password": password,
-      "userType": userType,
+      "userType": userType.toJson(),
     };
   }
 }
 
-class UserType {
+class UserTypeRequest {
   final int id;
   final String code;
 
-  UserType({
+  UserTypeRequest({
     required this.id,
     required this.code,
   });

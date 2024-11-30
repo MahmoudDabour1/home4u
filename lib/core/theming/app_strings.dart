@@ -8,9 +8,11 @@ abstract class AppStrings {
   static const String continueWithGoogle = 'Continue with Google';
   static const String continueWithFacebook = 'Continue with Facebook';
   static const String emailAddress = 'Email Address';
+  static const String phoneNumber = 'Phone Number';
   static const String password = 'password';
   static const String confirmPassword = 'Confirm password';
   static const String pleaseEnterAValidEmailAddress = 'Please enter a valid email address';
+  static const String pleaseEnterAValidPhoneNumber = 'Please enter a valid phone number';
   static const String pleaseEnterAValidPassword = 'Please Enter a valid Password';
   static const String enterValidName = 'Enter valid name';
   static const String dontHaveAnAccount = 'Don\'t have an account? ';
