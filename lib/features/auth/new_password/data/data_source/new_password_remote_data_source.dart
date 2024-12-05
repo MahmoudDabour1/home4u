@@ -11,9 +11,9 @@ abstract class NewPasswordRemoteDataSource {
   factory NewPasswordRemoteDataSource(Dio dio, {String baseUrl}) =
       _NewPasswordRemoteDataSource;
 
-  @POST(ApiConstants.newPasswordEP)
+  @PUT(ApiConstants.newPasswordEP)
   Future<NewPasswordResponseModel> newPassword(
     @Query("email") String email,
-    @Query("password") String password,
+    @Query("newPassword") String password,
   );
 }

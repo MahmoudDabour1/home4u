@@ -11,6 +11,9 @@ import 'package:home4u/features/auth/verification/data/data_source/verification_
 import '../../features/auth/forget_password/data/data_source/forget_password_data_source.dart';
 import '../../features/auth/forget_password/data/repos/forget_password_repo.dart';
 import '../../features/auth/forget_password/logic/forget_password_cubit.dart';
+import '../../features/auth/new_password/data/data_source/new_password_remote_data_source.dart';
+import '../../features/auth/new_password/data/repos/new_password_repo.dart';
+import '../../features/auth/new_password/logic/new_password_cubit.dart';
 import '../../features/auth/verification/data/repos/verification_repo.dart';
 import '../../features/auth/verification/logic/verification_cubit.dart';
 import '../networking/dio_factory.dart';
@@ -45,5 +48,10 @@ Future<void> setupGetIt() async {
   sl.registerLazySingleton<VerificationRepo>(()=> VerificationRepo(sl()));
   sl.registerFactory<VerificationCubit>(()=> VerificationCubit(sl()));
 
+
+  //newPassword
+  sl.registerLazySingleton<NewPasswordRemoteDataSource>(() => NewPasswordRemoteDataSource(dio));
+  sl.registerLazySingleton<NewPasswordRepo>(() => NewPasswordRepo(sl()));
+  sl.registerFactory<NewPasswordCubit>(() => NewPasswordCubit(sl()));
 
 }
