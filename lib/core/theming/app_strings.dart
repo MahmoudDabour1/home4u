@@ -49,4 +49,5 @@ abstract class AppStrings {
   static const String taxCard = 'Tax Card';
   static const String personalCard = 'Personal Card';
   static const String coverPhoto = 'Cover Photo';
+  static const String passwordsDoNotMatch = 'Passwords Do Not Match';
 }

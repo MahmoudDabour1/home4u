@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:home4u/core/utils/spacing.dart';
 
 import '../../../../../core/theming/app_colors.dart';
 import '../../../../../core/theming/app_strings.dart';
  import '../../../../../core/widgets/app_text_form_field.dart';
+import '../../logic/new_password_cubit.dart';
 
 class NewPasswordInputs extends StatefulWidget {
   const NewPasswordInputs({super.key});
@@ -18,17 +20,17 @@ class _NewPasswordInputsState extends State<NewPasswordInputs> {
   bool isObscureNewPassword = true;
   final newPasswordFocusNode = FocusNode();
   final confirmPasswordFocusNode = FocusNode();
-  final formKey = GlobalKey<FormState>();
 
   @override
   Widget build(BuildContext context) {
     return Form(
-      key: formKey,
+      key: context.read<NewPasswordCubit>().formKey,
       child: Padding(
         padding: EdgeInsets.symmetric(horizontal: 24.w),
         child: Column(
           children: [
             AppTextFormField(
+              controller: context.read<NewPasswordCubit>().newPasswordController,
               labelText: AppStrings.newPassword,
               isObscureText: isObscureNewPassword,
               textInputAction: TextInputAction.next,
@@ -61,6 +63,7 @@ class _NewPasswordInputsState extends State<NewPasswordInputs> {
             ),
             verticalSpace(16),
             AppTextFormField(
+              controller: context.read<NewPasswordCubit>().confirmPasswordController,
               labelText: AppStrings.confirmPassword,
               isObscureText: isObscureConfirmPassword,
               textInputAction: TextInputAction.done,
@@ -88,6 +91,9 @@ class _NewPasswordInputsState extends State<NewPasswordInputs> {
               validator: (value) {
                 if (value.isEmpty) {
                   return AppStrings.pleaseEnterAValidPassword;
+                }
+                if (value != context.read<NewPasswordCubit>().newPasswordController.text) {
+                  return AppStrings.passwordsDoNotMatch;
                 }
               },
             ),
