@@ -6,7 +6,6 @@ import 'package:home4u/core/theming/app_colors.dart';
 import 'package:home4u/features/auth/verification/logic/verification_cubit.dart';
 import 'package:logger/logger.dart';
 
-import '../../../../../core/routing/routes.dart';
 
 class OtpInputs extends StatelessWidget {
   const OtpInputs({super.key});
