@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:home4u/core/routing/app_router.dart';
 import 'package:home4u/core/theming/app_strings.dart';
 import 'package:home4u/core/utils/spacing.dart';
 import 'package:home4u/features/auth/sign_up/logic/sign_up_cubit.dart';

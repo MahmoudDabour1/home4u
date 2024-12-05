@@ -1,7 +1,9 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:home4u/core/theming/app_strings.dart';
+import 'package:home4u/features/auth/forget_password/logic/forget_password_cubit.dart';
 
 import '../../../../../core/theming/app_styles.dart';
 
@@ -49,6 +51,7 @@ class _ResendOtpState extends State<ResendOtp> {
 
   void resendOtp() {
     if (resendCooldown == 0) {
+      context.read<ForgetPasswordCubit>().emitForgetPasswordStates();
       startResendTimer();
     }
   }

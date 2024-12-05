@@ -9,7 +9,6 @@ import '../../../../../core/theming/app_strings.dart';
 import '../../../../../core/theming/app_styles.dart';
 import '../../../../../core/widgets/app_custom_drop_down_button_form_field.dart';
 import '../../data/models/user_type_model.dart';
-import 'egypt_locations_list.dart';
 
 class DropDownButtons extends StatefulWidget {
   const DropDownButtons({super.key});

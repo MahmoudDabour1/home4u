@@ -6,7 +6,6 @@ import 'package:home4u/core/theming/app_colors.dart';
 import 'package:home4u/features/auth/verification/logic/verification_cubit.dart';
 import 'package:logger/logger.dart';
 
-import '../../../../../core/routing/routes.dart';
 
 class OtpInputs extends StatelessWidget {
   const OtpInputs({super.key});
@@ -31,13 +30,10 @@ class OtpInputs extends StatelessWidget {
               totalSize: Size(63.w, 63.h),
               borderRadius: BorderRadius.circular(8.r)),
           spacing: 8.w,
-          onDone: (value) {
-            Navigator.pushNamed(context, Routes.newPasswordScreen);
-            Logger().i('OTP: $value');
-          },
           onFilled: (value) {
             context.read<VerificationCubit>().otpValve = value;
             Logger().i('final OTP: $value');
+            context.read<VerificationCubit>().emitVerificationStates();
           },
         ),
       ),
