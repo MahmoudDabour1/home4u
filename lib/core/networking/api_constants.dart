@@ -6,6 +6,7 @@ class ApiConstants {
   static const String signUpEp = "/api/v1/auth/register";
   static const String forgetPasswordEp = "/api/v1/auth/send-otp";
   static const String verificationEP = "/api/v1/auth/activate-the-account";
+  static const String newPasswordEP = "/api/v1/auth/reset-password";
 }
 
 class ApiErrors {
