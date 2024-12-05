@@ -7,6 +7,9 @@ import 'package:home4u/features/auth/sign_up/data/data_source/sign_up_remote_dat
 import 'package:home4u/features/auth/sign_up/data/repos/sign_up_repository.dart';
 import 'package:home4u/features/auth/sign_up/logic/sign_up_cubit.dart';
 
+import '../../features/auth/forget_password/data/data_source/forget_password_data_source.dart';
+import '../../features/auth/forget_password/data/repos/forget_password_repo.dart';
+import '../../features/auth/forget_password/logic/forget_password_cubit.dart';
 import '../networking/dio_factory.dart';
 
 final sl = GetIt.instance;
@@ -27,4 +30,10 @@ Future<void> setupGetIt() async {
     return SignUpRepositoryImpl(remoteDataSource: sl());
   });
   sl.registerFactory<SignUpCubit>(() => SignUpCubit(sl()));
+
+  //forgetPassword
+  sl.registerLazySingleton<ForgetPasswordDataSource>(
+      () => ForgetPasswordDataSource(dio));
+  sl.registerLazySingleton<ForgetPasswordRepo>(() => ForgetPasswordRepo(sl()));
+  sl.registerFactory<ForgetPasswordCubit>(() => ForgetPasswordCubit(sl()));
 }

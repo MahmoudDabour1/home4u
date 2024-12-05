@@ -4,6 +4,7 @@ class ApiConstants {
   static const String loginEndPoint = "/api/v1/auth/login";
   static const String userTypesEp = "/api/v1/user-types";
   static const String signUpEp = "/api/v1/auth/register";
+  static const String forgetPasswordEp = "/api/v1/auth/send-otp";
 }
 
 class ApiErrors {
