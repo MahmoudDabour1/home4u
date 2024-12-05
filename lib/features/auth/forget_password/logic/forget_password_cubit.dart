@@ -1,8 +1,10 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:home4u/core/helpers/shared_pref_keys.dart';
 import 'package:home4u/features/auth/forget_password/data/repos/forget_password_repo.dart';
 
 import '../../../../core/helpers/helper_methods.dart';
+import '../../../../core/helpers/shared_pref_helper.dart';
 import 'forget_password_state.dart';
 
 class ForgetPasswordCubit extends Cubit<ForgetPasswordState> {
@@ -19,6 +21,7 @@ class ForgetPasswordCubit extends Cubit<ForgetPasswordState> {
 
   void emitForgetPasswordStates() async {
     emit(const ForgetPasswordState.loading());
+    await SharedPrefHelper.setData(SharedPrefKeys.userEmailAddress, emailController.text);
     final response = await _forgetPasswordRepo.forgetPassword(
       emailController.text,
     );
@@ -26,7 +29,7 @@ class ForgetPasswordCubit extends Cubit<ForgetPasswordState> {
       success: (
         forgetPasswordResponse,
       ) async {
-        await showToast(message: "Check your email ");
+        await showToast(message: forgetPasswordResponse.data??"Check your email ");
         emit(ForgetPasswordState.success(forgetPasswordResponse));
       },
       failure: (error) async {
