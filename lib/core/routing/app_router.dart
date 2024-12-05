@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:home4u/core/routing/routes.dart';
 import 'package:home4u/features/auth/engineering_office/presentation/engineering_office_screen.dart';
+import 'package:home4u/features/auth/forget_password/logic/forget_password_cubit.dart';
 import 'package:home4u/features/auth/forget_password/presentation/forget_password_screen.dart';
 import 'package:home4u/features/auth/login/logic/login_cubit.dart';
 import 'package:home4u/features/auth/new_password/presentation/new_password_screen.dart';
@@ -38,7 +39,11 @@ class AppRouter {
         );
       case Routes.forgetPasswordScreen:
         return MaterialPageRoute(
-          builder: (_) => ForgetPasswordScreen(),
+          builder: (_) =>
+              BlocProvider(
+                create: (context) => sl<ForgetPasswordCubit>(),
+                child: ForgetPasswordScreen(),
+              ),
         );
       case Routes.verificationScreen:
         return MaterialPageRoute(
