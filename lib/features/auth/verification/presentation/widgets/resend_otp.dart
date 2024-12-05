@@ -56,19 +56,15 @@ class _ResendOtpState extends State<ResendOtp> {
 
   @override
   Widget build(BuildContext context) {
-    return Wrap(
-      alignment: WrapAlignment.center,
-      crossAxisAlignment: WrapCrossAlignment.center,
+    return Column(
       children: [
-        Flexible(
-          child: Text(
-            resendCooldown > 0
-                ? '${AppStrings.resendIn00}$resendCooldown'
-                : AppStrings.didnReceiveTheOTP,
-            style: TextStyle(fontSize: 14),
-            overflow: TextOverflow.ellipsis,
-            maxLines: 2,
-          ),
+        Text(
+          resendCooldown > 0
+              ? '${AppStrings.resendIn00}$resendCooldown'
+              : AppStrings.didnReceiveTheOTP,
+          style: TextStyle(fontSize: 14),
+          overflow: TextOverflow.ellipsis,
+          maxLines: 2,
         ),
         if (resendCooldown == 0)
           TextButton(

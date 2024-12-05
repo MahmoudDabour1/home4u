@@ -6,10 +6,13 @@ import 'package:home4u/features/auth/login/logic/login_cubit.dart';
 import 'package:home4u/features/auth/sign_up/data/data_source/sign_up_remote_data_source.dart';
 import 'package:home4u/features/auth/sign_up/data/repos/sign_up_repository.dart';
 import 'package:home4u/features/auth/sign_up/logic/sign_up_cubit.dart';
+import 'package:home4u/features/auth/verification/data/data_source/verification_remote_data_source.dart';
 
 import '../../features/auth/forget_password/data/data_source/forget_password_data_source.dart';
 import '../../features/auth/forget_password/data/repos/forget_password_repo.dart';
 import '../../features/auth/forget_password/logic/forget_password_cubit.dart';
+import '../../features/auth/verification/data/repos/verification_repo.dart';
+import '../../features/auth/verification/logic/verification_cubit.dart';
 import '../networking/dio_factory.dart';
 
 final sl = GetIt.instance;
@@ -36,4 +39,11 @@ Future<void> setupGetIt() async {
       () => ForgetPasswordDataSource(dio));
   sl.registerLazySingleton<ForgetPasswordRepo>(() => ForgetPasswordRepo(sl()));
   sl.registerFactory<ForgetPasswordCubit>(() => ForgetPasswordCubit(sl()));
+
+  //verification
+  sl.registerLazySingleton<VerificationRemoteDataSource>(()=> VerificationRemoteDataSource(dio));
+  sl.registerLazySingleton<VerificationRepo>(()=> VerificationRepo(sl()));
+  sl.registerFactory<VerificationCubit>(()=> VerificationCubit(sl()));
+
+
 }

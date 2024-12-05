@@ -8,6 +8,7 @@ import 'package:home4u/features/auth/login/logic/login_cubit.dart';
 import 'package:home4u/features/auth/new_password/presentation/new_password_screen.dart';
 import 'package:home4u/features/auth/sign_up/logic/sign_up_cubit.dart';
 import 'package:home4u/features/auth/sign_up/presentation/sign_up_screen.dart';
+import 'package:home4u/features/auth/verification/logic/verification_cubit.dart';
 import 'package:home4u/features/auth/verification/presentation/verification_screen.dart';
 
 import '../../features/auth/login/presentation/login_screen.dart';
@@ -47,7 +48,11 @@ class AppRouter {
         );
       case Routes.verificationScreen:
         return MaterialPageRoute(
-          builder: (_) => VerificationScreen(),
+          builder: (_) =>
+              BlocProvider(
+                create: (context) => sl<VerificationCubit>(),
+                child: VerificationScreen(),
+              ),
         );
       case Routes.newPasswordScreen:
         return MaterialPageRoute(
