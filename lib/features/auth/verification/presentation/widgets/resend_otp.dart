@@ -16,7 +16,7 @@ class ResendOtp extends StatefulWidget {
 
 class _ResendOtpState extends State<ResendOtp> {
   final TextEditingController otpController = TextEditingController();
-  int resendCooldown = 20; // Resend timer in seconds
+  int resendCooldown = 60;
   Timer? _timer;
   @override
   void initState() {
@@ -34,7 +34,7 @@ class _ResendOtpState extends State<ResendOtp> {
 
   void startResendTimer() {
     setState(() {
-      resendCooldown = 20; // Reset timer
+      resendCooldown = 60;
     });
     _timer?.cancel();
     _timer = Timer.periodic(Duration(seconds: 1), (timer) {
