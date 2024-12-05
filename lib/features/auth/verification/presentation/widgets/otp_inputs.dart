@@ -31,13 +31,10 @@ class OtpInputs extends StatelessWidget {
               totalSize: Size(63.w, 63.h),
               borderRadius: BorderRadius.circular(8.r)),
           spacing: 8.w,
-          onDone: (value) {
-            Navigator.pushNamed(context, Routes.newPasswordScreen);
-            Logger().i('OTP: $value');
-          },
           onFilled: (value) {
             context.read<VerificationCubit>().otpValve = value;
             Logger().i('final OTP: $value');
+            context.read<VerificationCubit>().emitVerificationStates();
           },
         ),
       ),

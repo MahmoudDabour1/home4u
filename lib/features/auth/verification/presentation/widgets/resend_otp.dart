@@ -1,8 +1,13 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:home4u/core/routing/app_router.dart';
 import 'package:home4u/core/theming/app_strings.dart';
+import 'package:home4u/features/auth/forget_password/logic/forget_password_cubit.dart';
+import 'package:home4u/features/auth/verification/logic/verification_cubit.dart';
 
+import '../../../../../core/di/dependency_injection.dart';
 import '../../../../../core/theming/app_styles.dart';
 
 class ResendOtp extends StatefulWidget {
@@ -49,6 +54,7 @@ class _ResendOtpState extends State<ResendOtp> {
 
   void resendOtp() {
     if (resendCooldown == 0) {
+      context.read<ForgetPasswordCubit>().emitForgetPasswordStates();
       startResendTimer();
     }
   }
