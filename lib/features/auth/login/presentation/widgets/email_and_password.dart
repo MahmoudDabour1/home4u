@@ -35,7 +35,7 @@ class _EmailAndPasswordState extends State<EmailAndPassword> {
             textInputAction: TextInputAction.next,
             validator: (value) {
               if (value.isEmpty ||
-                  !AppRegex.isPhoneNumberValid(value)) {
+                  !AppRegex.isEmailValid(value)) {
                 return AppStrings.pleaseEnterAValidEmailAddress;
               }
             },

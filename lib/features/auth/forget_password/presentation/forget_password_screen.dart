@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:home4u/core/theming/app_strings.dart';
+import 'package:home4u/features/auth/forget_password/presentation/widgets/forget_password_bloc_listener.dart';
 import 'package:home4u/features/auth/forget_password/presentation/widgets/forget_password_body.dart';
 import 'package:home4u/features/auth/widgets/auth_welcome_data.dart';
 
@@ -18,6 +19,7 @@ class ForgetPasswordScreen extends StatelessWidget {
               subText: AppStrings.enterYourEmailAddress,
             ),
             ForgetPasswordBody(),
+            ForgetPasswordBlocListener(),
           ],
         ),
       )),

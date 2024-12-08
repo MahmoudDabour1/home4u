@@ -11,12 +11,14 @@ class AuthWelcomeData extends StatelessWidget {
   final bool isBackButton;
   final String headText;
   final String subText;
+  void Function()? onPressed;
 
-  const AuthWelcomeData({
+   AuthWelcomeData({
     super.key,
     this.isBackButton = true,
     required this.headText,
     required this.subText,
+     this.onPressed
   });
 
   @override
@@ -47,7 +49,9 @@ class AuthWelcomeData extends StatelessWidget {
                 top: 16.h,
                 left: 24.w,
                 bottom: 38.h,
-                child: AppBackButton(),
+                child: AppBackButton(
+                  onPressed: onPressed,
+                ),
               )
             : SizedBox.shrink(),
       ],

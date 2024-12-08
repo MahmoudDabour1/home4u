@@ -1,4 +1,6 @@
 import 'package:dio/dio.dart';
+import 'package:home4u/features/auth/sign_up/data/models/city_model.dart';
+import 'package:home4u/features/auth/sign_up/data/models/governorate_model.dart';
 import 'package:home4u/features/auth/sign_up/data/models/sign_up_response.dart';
 import 'package:home4u/features/auth/sign_up/data/models/user_type_model.dart';
 import 'package:retrofit/error_logger.dart';
@@ -20,5 +22,13 @@ abstract class SignUpRemoteDataSource {
   @POST(ApiConstants.signUpEp)
   Future<SignUpResponse> signUp(
     @Body() SignUpBody signUpBody,
+  );
+
+  @GET(ApiConstants.governoratesEp)
+  Future<GovernorateModel> getGovernorates();
+
+  @GET("/api/v1/cities/governorate/{governorateId}")
+  Future<CityModel> getCities(
+    @Path("governorateId") int governorateId,
   );
 }
