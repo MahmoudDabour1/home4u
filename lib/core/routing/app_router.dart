@@ -63,6 +63,9 @@ class AppRouter {
       case Routes.engineeringOfficeScreen:
         return MaterialPageRoute(
           builder: (_) => EngineeringOfficeScreen(),
+        ); case Routes.homeScreen:
+        return MaterialPageRoute(
+          builder: (_) => HomeScreen(),
         );
       case Routes.homeScreen:
         return MaterialPageRoute(
