@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:home4u/core/helpers/shared_pref_helper.dart';
+import 'package:home4u/core/helpers/shared_pref_keys.dart';
 import 'package:home4u/features/auth/forget_password/logic/forget_password_cubit.dart';
 
 import '../../../../../core/helpers/app_regex.dart';
@@ -41,9 +43,11 @@ class ForgetPasswordBody extends StatelessWidget {
                   isLoading: state is ForgetPasswordLoading,
                   btnWidth: MediaQuery.sizeOf(context).width,
                   btnHeight: 65.h,
-                  onPressed: () {
+                  onPressed: () async {
                     if (cubit.formKey.currentState!.validate()) {
-                      cubit.emitForgetPasswordStates();
+                      await SharedPrefHelper.setData(
+                          SharedPrefKeys.isFromForgetPassword, true);
+                      cubit.emitForgetPasswordStates(cubit.emailController.text);
                     }
                   },
                 ),
