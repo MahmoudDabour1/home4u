@@ -5,6 +5,8 @@ import 'package:home4u/core/theming/app_styles.dart';
 import 'package:home4u/features/auth/sign_up/logic/sign_up_cubit.dart';
 import 'package:home4u/features/auth/sign_up/logic/sign_up_state.dart';
 
+import '../../../../../core/helpers/shared_pref_helper.dart';
+import '../../../../../core/helpers/shared_pref_keys.dart';
 import '../../../../../core/theming/app_strings.dart';
 import '../../../../../core/utils/spacing.dart';
 import '../../../../../core/widgets/app_custom_button.dart';
@@ -25,19 +27,21 @@ class SignUpButtons extends StatelessWidget {
               AppCustomButton(
                 isLoading: state is SignUpLoadingState,
                 textButton: AppStrings.signUp,
-                onPressed: () {
-                  if (context
+                onPressed: () async {
+                  final checkInputs = context
                       .read<SignUpCubit>()
                       .formKey
                       .currentState!
-                      .validate()) {
-                    context.read<SignUpCubit>().emitSignUp();
+                      .validate();
+                  final signUpCubit = context.read<SignUpCubit>();
+                  await SharedPrefHelper.setData(
+                      SharedPrefKeys.isFromForgetPassword, false);
+                  if (checkInputs) {
+                    signUpCubit.emitSignUp();
                   }
                 },
                 btnHeight: 65.h,
-                btnWidth: MediaQuery
-                    .sizeOf(context)
-                    .width,
+                btnWidth: MediaQuery.sizeOf(context).width,
               ),
               verticalSpace(16),
               Text(

@@ -19,11 +19,11 @@ class ForgetPasswordCubit extends Cubit<ForgetPasswordState> {
       TextEditingController(text: "mahmoud.dabour1000000@gmail.com");
   final formKey = GlobalKey<FormState>();
 
-  void emitForgetPasswordStates() async {
+  void emitForgetPasswordStates(String? email) async {
     emit(const ForgetPasswordState.loading());
-    await SharedPrefHelper.setData(SharedPrefKeys.userEmailAddress, emailController.text);
+    await SharedPrefHelper.setData(SharedPrefKeys.userEmailAddress, email);
     final response = await _forgetPasswordRepo.forgetPassword(
-      emailController.text,
+      email.toString(),
     );
     response.when(
       success: (

@@ -6,4 +6,5 @@ abstract class Routes{
   static const String verificationScreen = '/verificationScreen';
   static const String newPasswordScreen = '/newPasswordScreen';
   static const String engineeringOfficeScreen = '/engineeringOfficeScreen';
+  static const String homeScreen = '/homeScreen';
 }

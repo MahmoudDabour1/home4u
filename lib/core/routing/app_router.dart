@@ -10,6 +10,7 @@ import 'package:home4u/features/auth/sign_up/logic/sign_up_cubit.dart';
 import 'package:home4u/features/auth/sign_up/presentation/sign_up_screen.dart';
 import 'package:home4u/features/auth/verification/logic/verification_cubit.dart';
 import 'package:home4u/features/auth/verification/presentation/verification_screen.dart';
+import 'package:home4u/features/home/presentation/home_screen.dart';
 
 import '../../features/auth/login/presentation/login_screen.dart';
 import '../../features/onboarding/presentation/onboarding_screen.dart';
@@ -57,6 +58,9 @@ class AppRouter {
       case Routes.engineeringOfficeScreen:
         return MaterialPageRoute(
           builder: (_) => EngineeringOfficeScreen(),
+        ); case Routes.homeScreen:
+        return MaterialPageRoute(
+          builder: (_) => HomeScreen(),
         );
       default:
         return null;
