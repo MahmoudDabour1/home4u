@@ -7,6 +7,7 @@ import 'package:home4u/features/auth/login/logic/login_cubit.dart';
 import 'package:home4u/features/auth/new_password/logic/new_password_cubit.dart';
 import 'package:home4u/features/auth/new_password/presentation/new_password_screen.dart';
 import 'package:home4u/features/auth/sign_up/logic/sign_up_cubit.dart';
+import 'package:home4u/features/auth/sign_up/presentation/sign_up_engineer.dart';
 import 'package:home4u/features/auth/sign_up/presentation/sign_up_screen.dart';
 import 'package:home4u/features/auth/verification/logic/verification_cubit.dart';
 import 'package:home4u/features/auth/verification/presentation/verification_screen.dart';
@@ -55,10 +56,15 @@ class AppRouter {
             child: NewPasswordScreen(),
           ),
         );
+      case Routes.engineerSignUpScreen:
+        return MaterialPageRoute(
+          builder: (_) => SignUpEngineer(),
+        );
       case Routes.engineeringOfficeScreen:
         return MaterialPageRoute(
           builder: (_) => EngineeringOfficeScreen(),
-        ); case Routes.homeScreen:
+        );
+      case Routes.homeScreen:
         return MaterialPageRoute(
           builder: (_) => HomeScreen(),
         );
