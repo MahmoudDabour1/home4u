@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:home4u/core/extensions/navigation_extension.dart';
-import 'package:home4u/core/helpers/helper_methods.dart';
+import 'package:home4u/core/helpers/shared_pref_helper.dart';
+import 'package:home4u/core/helpers/shared_pref_keys.dart';
+import 'package:home4u/features/auth/forget_password/logic/forget_password_cubit.dart';
 import 'package:home4u/features/auth/login/logic/login_cubit.dart';
 import 'package:home4u/features/auth/login/logic/login_state.dart';
 
@@ -21,7 +23,24 @@ class LoginBlocListener extends StatelessWidget {
         state.whenOrNull(
           success: (loginResponse) {
             context.pop();
-            context.pushNamed(Routes.signUpScreen);
+            context.pushNamed(Routes.homeScreen);
+          },
+          error: (error) async {
+            if (error == "Your account is not enabled" ||
+                error == "حسابك غير مفعل.") {
+              final forgetPasswordCubit = context.read<ForgetPasswordCubit>();
+              final navigatorToVerificationScreen =
+                  context.pushNamed(Routes.verificationScreen);
+              await SharedPrefHelper.setData(SharedPrefKeys.userEmailAddress,
+                  context.read<LoginCubit>().emailOrPhoneController.text);
+              await SharedPrefHelper.setData(
+                  SharedPrefKeys.isFromForgetPassword, false);
+              forgetPasswordCubit.emitForgetPasswordStates(
+                await SharedPrefHelper.getString(
+                    SharedPrefKeys.userEmailAddress),
+              );
+              navigatorToVerificationScreen;
+            }
           },
         );
       },
