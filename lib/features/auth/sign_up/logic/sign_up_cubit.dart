@@ -4,6 +4,8 @@ import 'package:home4u/features/auth/sign_up/logic/sign_up_state.dart';
 import 'package:logger/logger.dart';
 
 import '../../../../core/helpers/helper_methods.dart';
+import '../data/models/city_model.dart';
+import '../data/models/governorate_model.dart';
 import '../data/models/sign_up_body.dart';
 import '../data/models/user_type_model.dart';
 import '../data/repos/sign_up_repository.dart';
@@ -14,6 +16,8 @@ class SignUpCubit extends Cubit<SignUpState> {
   SignUpCubit(this.signUpRepository) : super(const SignUpState.initial());
 
   List<UserTypeData> userTypes = [];
+  List<GovernorateDataModel> governorates = [];
+  List<CityDataModel> cities = [];
 
   void getUserTypes() async {
     if (userTypes.isNotEmpty) {
@@ -28,6 +32,30 @@ class SignUpCubit extends Cubit<SignUpState> {
       emit(SignUpState.successUserTypes(data));
     }, failure: (error) {
       emit(SignUpState.errorUserTypes(
+          error: error.message ?? "An unknown error occurred"));
+    });
+  }
+
+  void getGovernorates() async {
+    emit(const SignUpState.loadingGovernorates());
+    final governoratesResponse = await signUpRepository.getGovernorates();
+    governoratesResponse.when(success: (data) {
+      governorates = data;
+      emit(SignUpState.successGovernorates(data));
+    }, failure: (error) {
+      emit(SignUpState.errorGovernorates(
+          error: error.message ?? "An unknown error occurred"));
+    });
+  }
+
+  void getCities(int governorateId) async {
+    emit(const SignUpState.loadingCities());
+    final citiesResponse = await signUpRepository.getCities(governorateId);
+    citiesResponse.when(success: (data) {
+      cities = data;
+      emit(SignUpState.successCities(data));
+    }, failure: (error) {
+      emit(SignUpState.errorCities(
           error: error.message ?? "An unknown error occurred"));
     });
   }
@@ -71,9 +99,7 @@ class SignUpCubit extends Cubit<SignUpState> {
       final errorMessage = error.message ?? "An unknown error occurred";
       await showToast(message: errorMessage, isError: true);
       Logger().t("Sign Up Error: $errorMessage");
-      emit(
-        SignUpState.errorSignUp(error: errorMessage),
-      );
+      emit(SignUpState.errorSignUp(error: errorMessage));
     });
   }
 }

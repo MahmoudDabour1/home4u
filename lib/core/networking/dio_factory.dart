@@ -27,6 +27,7 @@ class DioFactory {
       'Accept': 'application/json',
       'Authorization':
       'Bearer ${await SharedPrefHelper.getSecuredString(SharedPrefKeys.userToken)}',
+      'Accept-Language' : 'en',
     };
   }
 
