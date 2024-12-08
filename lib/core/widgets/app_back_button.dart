@@ -3,12 +3,13 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:home4u/core/theming/app_colors.dart';
 
 class AppBackButton extends StatelessWidget {
-  const AppBackButton({super.key});
+  void Function()? onPressed;
+   AppBackButton({super.key,this.onPressed});
 
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: () {
+      onTap:onPressed?? () {
         Navigator.of(context).pop();
       },
       child: Container(

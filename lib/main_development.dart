@@ -2,6 +2,10 @@ import 'package:bloc/bloc.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:hive/hive.dart';
+import 'package:hive_flutter/hive_flutter.dart';
+import 'package:home4u/core/utils/app_constants.dart';
+import 'package:home4u/features/auth/sign_up/data/models/governorate_model.dart';
 
 import 'core/di/dependency_injection.dart';
 import 'core/routing/app_router.dart';
@@ -14,6 +18,11 @@ void main() async {
   setupGetIt();
   await ScreenUtil.ensureScreenSize();
   Bloc.observer = MyBlocObserver();
+
+  await Hive.initFlutter();
+  Hive.registerAdapter<GovernorateDataModel>(GovernorateDataModelAdapter());
+  await Hive.openBox<GovernorateDataModel>(kGovernoratesBox);
+
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
@@ -22,6 +31,6 @@ void main() async {
     //   enabled: !kReleaseMode,
     //   builder: (context) => Home4uApp(appRouter: AppRouter()),
     // ),
-      Home4uApp(appRouter: AppRouter()),
+    Home4uApp(appRouter: AppRouter()),
   );
 }

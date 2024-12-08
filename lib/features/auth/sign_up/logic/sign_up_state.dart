@@ -1,5 +1,4 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:home4u/features/auth/sign_up/data/models/user_type_model.dart';
 
 part 'sign_up_state.freezed.dart';
 
@@ -20,4 +19,14 @@ class SignUpState<T> with _$SignUpState<T> {
 
   const factory SignUpState.errorSignUp({required String error}) =
       SignUpErrorState;
+
+  // Governorates
+  const factory SignUpState.loadingGovernorates() = LoadingGovernorates;
+  const factory SignUpState.successGovernorates(T data) = SuccessGovernorates<T>;
+  const factory SignUpState.errorGovernorates({required String error}) = ErrorGovernorates;
+
+  // Cities
+  const factory SignUpState.loadingCities() = LoadingCities;
+  const factory SignUpState.successCities(T data) = SuccessCities<T>;
+  const factory SignUpState.errorCities({required String error}) = ErrorCities;
 }
