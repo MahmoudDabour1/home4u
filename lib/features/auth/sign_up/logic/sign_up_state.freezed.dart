@@ -25,6 +25,12 @@ mixin _$SignUpState<T> {
     required TResult Function() loadingSignUp,
     required TResult Function(T data) successSignUp,
     required TResult Function(String error) errorSignUp,
+    required TResult Function() loadingGovernorates,
+    required TResult Function(T data) successGovernorates,
+    required TResult Function(String error) errorGovernorates,
+    required TResult Function() loadingCities,
+    required TResult Function(T data) successCities,
+    required TResult Function(String error) errorCities,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -36,6 +42,12 @@ mixin _$SignUpState<T> {
     TResult? Function()? loadingSignUp,
     TResult? Function(T data)? successSignUp,
     TResult? Function(String error)? errorSignUp,
+    TResult? Function()? loadingGovernorates,
+    TResult? Function(T data)? successGovernorates,
+    TResult? Function(String error)? errorGovernorates,
+    TResult? Function()? loadingCities,
+    TResult? Function(T data)? successCities,
+    TResult? Function(String error)? errorCities,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -47,6 +59,12 @@ mixin _$SignUpState<T> {
     TResult Function()? loadingSignUp,
     TResult Function(T data)? successSignUp,
     TResult Function(String error)? errorSignUp,
+    TResult Function()? loadingGovernorates,
+    TResult Function(T data)? successGovernorates,
+    TResult Function(String error)? errorGovernorates,
+    TResult Function()? loadingCities,
+    TResult Function(T data)? successCities,
+    TResult Function(String error)? errorCities,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -59,6 +77,12 @@ mixin _$SignUpState<T> {
     required TResult Function(SignUpLoadingState<T> value) loadingSignUp,
     required TResult Function(SignUpSuccessState<T> value) successSignUp,
     required TResult Function(SignUpErrorState<T> value) errorSignUp,
+    required TResult Function(LoadingGovernorates<T> value) loadingGovernorates,
+    required TResult Function(SuccessGovernorates<T> value) successGovernorates,
+    required TResult Function(ErrorGovernorates<T> value) errorGovernorates,
+    required TResult Function(LoadingCities<T> value) loadingCities,
+    required TResult Function(SuccessCities<T> value) successCities,
+    required TResult Function(ErrorCities<T> value) errorCities,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -70,6 +94,12 @@ mixin _$SignUpState<T> {
     TResult? Function(SignUpLoadingState<T> value)? loadingSignUp,
     TResult? Function(SignUpSuccessState<T> value)? successSignUp,
     TResult? Function(SignUpErrorState<T> value)? errorSignUp,
+    TResult? Function(LoadingGovernorates<T> value)? loadingGovernorates,
+    TResult? Function(SuccessGovernorates<T> value)? successGovernorates,
+    TResult? Function(ErrorGovernorates<T> value)? errorGovernorates,
+    TResult? Function(LoadingCities<T> value)? loadingCities,
+    TResult? Function(SuccessCities<T> value)? successCities,
+    TResult? Function(ErrorCities<T> value)? errorCities,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -81,6 +111,12 @@ mixin _$SignUpState<T> {
     TResult Function(SignUpLoadingState<T> value)? loadingSignUp,
     TResult Function(SignUpSuccessState<T> value)? successSignUp,
     TResult Function(SignUpErrorState<T> value)? errorSignUp,
+    TResult Function(LoadingGovernorates<T> value)? loadingGovernorates,
+    TResult Function(SuccessGovernorates<T> value)? successGovernorates,
+    TResult Function(ErrorGovernorates<T> value)? errorGovernorates,
+    TResult Function(LoadingCities<T> value)? loadingCities,
+    TResult Function(SuccessCities<T> value)? successCities,
+    TResult Function(ErrorCities<T> value)? errorCities,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -155,6 +191,12 @@ class _$InitialImpl<T> implements _Initial<T> {
     required TResult Function() loadingSignUp,
     required TResult Function(T data) successSignUp,
     required TResult Function(String error) errorSignUp,
+    required TResult Function() loadingGovernorates,
+    required TResult Function(T data) successGovernorates,
+    required TResult Function(String error) errorGovernorates,
+    required TResult Function() loadingCities,
+    required TResult Function(T data) successCities,
+    required TResult Function(String error) errorCities,
   }) {
     return initial();
   }
@@ -169,6 +211,12 @@ class _$InitialImpl<T> implements _Initial<T> {
     TResult? Function()? loadingSignUp,
     TResult? Function(T data)? successSignUp,
     TResult? Function(String error)? errorSignUp,
+    TResult? Function()? loadingGovernorates,
+    TResult? Function(T data)? successGovernorates,
+    TResult? Function(String error)? errorGovernorates,
+    TResult? Function()? loadingCities,
+    TResult? Function(T data)? successCities,
+    TResult? Function(String error)? errorCities,
   }) {
     return initial?.call();
   }
@@ -183,6 +231,12 @@ class _$InitialImpl<T> implements _Initial<T> {
     TResult Function()? loadingSignUp,
     TResult Function(T data)? successSignUp,
     TResult Function(String error)? errorSignUp,
+    TResult Function()? loadingGovernorates,
+    TResult Function(T data)? successGovernorates,
+    TResult Function(String error)? errorGovernorates,
+    TResult Function()? loadingCities,
+    TResult Function(T data)? successCities,
+    TResult Function(String error)? errorCities,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -201,6 +255,12 @@ class _$InitialImpl<T> implements _Initial<T> {
     required TResult Function(SignUpLoadingState<T> value) loadingSignUp,
     required TResult Function(SignUpSuccessState<T> value) successSignUp,
     required TResult Function(SignUpErrorState<T> value) errorSignUp,
+    required TResult Function(LoadingGovernorates<T> value) loadingGovernorates,
+    required TResult Function(SuccessGovernorates<T> value) successGovernorates,
+    required TResult Function(ErrorGovernorates<T> value) errorGovernorates,
+    required TResult Function(LoadingCities<T> value) loadingCities,
+    required TResult Function(SuccessCities<T> value) successCities,
+    required TResult Function(ErrorCities<T> value) errorCities,
   }) {
     return initial(this);
   }
@@ -215,6 +275,12 @@ class _$InitialImpl<T> implements _Initial<T> {
     TResult? Function(SignUpLoadingState<T> value)? loadingSignUp,
     TResult? Function(SignUpSuccessState<T> value)? successSignUp,
     TResult? Function(SignUpErrorState<T> value)? errorSignUp,
+    TResult? Function(LoadingGovernorates<T> value)? loadingGovernorates,
+    TResult? Function(SuccessGovernorates<T> value)? successGovernorates,
+    TResult? Function(ErrorGovernorates<T> value)? errorGovernorates,
+    TResult? Function(LoadingCities<T> value)? loadingCities,
+    TResult? Function(SuccessCities<T> value)? successCities,
+    TResult? Function(ErrorCities<T> value)? errorCities,
   }) {
     return initial?.call(this);
   }
@@ -229,6 +295,12 @@ class _$InitialImpl<T> implements _Initial<T> {
     TResult Function(SignUpLoadingState<T> value)? loadingSignUp,
     TResult Function(SignUpSuccessState<T> value)? successSignUp,
     TResult Function(SignUpErrorState<T> value)? errorSignUp,
+    TResult Function(LoadingGovernorates<T> value)? loadingGovernorates,
+    TResult Function(SuccessGovernorates<T> value)? successGovernorates,
+    TResult Function(ErrorGovernorates<T> value)? errorGovernorates,
+    TResult Function(LoadingCities<T> value)? loadingCities,
+    TResult Function(SuccessCities<T> value)? successCities,
+    TResult Function(ErrorCities<T> value)? errorCities,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -291,6 +363,12 @@ class _$LoadingUserTypesImpl<T> implements LoadingUserTypes<T> {
     required TResult Function() loadingSignUp,
     required TResult Function(T data) successSignUp,
     required TResult Function(String error) errorSignUp,
+    required TResult Function() loadingGovernorates,
+    required TResult Function(T data) successGovernorates,
+    required TResult Function(String error) errorGovernorates,
+    required TResult Function() loadingCities,
+    required TResult Function(T data) successCities,
+    required TResult Function(String error) errorCities,
   }) {
     return loadingUserTypes();
   }
@@ -305,6 +383,12 @@ class _$LoadingUserTypesImpl<T> implements LoadingUserTypes<T> {
     TResult? Function()? loadingSignUp,
     TResult? Function(T data)? successSignUp,
     TResult? Function(String error)? errorSignUp,
+    TResult? Function()? loadingGovernorates,
+    TResult? Function(T data)? successGovernorates,
+    TResult? Function(String error)? errorGovernorates,
+    TResult? Function()? loadingCities,
+    TResult? Function(T data)? successCities,
+    TResult? Function(String error)? errorCities,
   }) {
     return loadingUserTypes?.call();
   }
@@ -319,6 +403,12 @@ class _$LoadingUserTypesImpl<T> implements LoadingUserTypes<T> {
     TResult Function()? loadingSignUp,
     TResult Function(T data)? successSignUp,
     TResult Function(String error)? errorSignUp,
+    TResult Function()? loadingGovernorates,
+    TResult Function(T data)? successGovernorates,
+    TResult Function(String error)? errorGovernorates,
+    TResult Function()? loadingCities,
+    TResult Function(T data)? successCities,
+    TResult Function(String error)? errorCities,
     required TResult orElse(),
   }) {
     if (loadingUserTypes != null) {
@@ -337,6 +427,12 @@ class _$LoadingUserTypesImpl<T> implements LoadingUserTypes<T> {
     required TResult Function(SignUpLoadingState<T> value) loadingSignUp,
     required TResult Function(SignUpSuccessState<T> value) successSignUp,
     required TResult Function(SignUpErrorState<T> value) errorSignUp,
+    required TResult Function(LoadingGovernorates<T> value) loadingGovernorates,
+    required TResult Function(SuccessGovernorates<T> value) successGovernorates,
+    required TResult Function(ErrorGovernorates<T> value) errorGovernorates,
+    required TResult Function(LoadingCities<T> value) loadingCities,
+    required TResult Function(SuccessCities<T> value) successCities,
+    required TResult Function(ErrorCities<T> value) errorCities,
   }) {
     return loadingUserTypes(this);
   }
@@ -351,6 +447,12 @@ class _$LoadingUserTypesImpl<T> implements LoadingUserTypes<T> {
     TResult? Function(SignUpLoadingState<T> value)? loadingSignUp,
     TResult? Function(SignUpSuccessState<T> value)? successSignUp,
     TResult? Function(SignUpErrorState<T> value)? errorSignUp,
+    TResult? Function(LoadingGovernorates<T> value)? loadingGovernorates,
+    TResult? Function(SuccessGovernorates<T> value)? successGovernorates,
+    TResult? Function(ErrorGovernorates<T> value)? errorGovernorates,
+    TResult? Function(LoadingCities<T> value)? loadingCities,
+    TResult? Function(SuccessCities<T> value)? successCities,
+    TResult? Function(ErrorCities<T> value)? errorCities,
   }) {
     return loadingUserTypes?.call(this);
   }
@@ -365,6 +467,12 @@ class _$LoadingUserTypesImpl<T> implements LoadingUserTypes<T> {
     TResult Function(SignUpLoadingState<T> value)? loadingSignUp,
     TResult Function(SignUpSuccessState<T> value)? successSignUp,
     TResult Function(SignUpErrorState<T> value)? errorSignUp,
+    TResult Function(LoadingGovernorates<T> value)? loadingGovernorates,
+    TResult Function(SuccessGovernorates<T> value)? successGovernorates,
+    TResult Function(ErrorGovernorates<T> value)? errorGovernorates,
+    TResult Function(LoadingCities<T> value)? loadingCities,
+    TResult Function(SuccessCities<T> value)? successCities,
+    TResult Function(ErrorCities<T> value)? errorCities,
     required TResult orElse(),
   }) {
     if (loadingUserTypes != null) {
@@ -455,6 +563,12 @@ class _$SuccessUserTypesImpl<T> implements SuccessUserTypes<T> {
     required TResult Function() loadingSignUp,
     required TResult Function(T data) successSignUp,
     required TResult Function(String error) errorSignUp,
+    required TResult Function() loadingGovernorates,
+    required TResult Function(T data) successGovernorates,
+    required TResult Function(String error) errorGovernorates,
+    required TResult Function() loadingCities,
+    required TResult Function(T data) successCities,
+    required TResult Function(String error) errorCities,
   }) {
     return successUserTypes(data);
   }
@@ -469,6 +583,12 @@ class _$SuccessUserTypesImpl<T> implements SuccessUserTypes<T> {
     TResult? Function()? loadingSignUp,
     TResult? Function(T data)? successSignUp,
     TResult? Function(String error)? errorSignUp,
+    TResult? Function()? loadingGovernorates,
+    TResult? Function(T data)? successGovernorates,
+    TResult? Function(String error)? errorGovernorates,
+    TResult? Function()? loadingCities,
+    TResult? Function(T data)? successCities,
+    TResult? Function(String error)? errorCities,
   }) {
     return successUserTypes?.call(data);
   }
@@ -483,6 +603,12 @@ class _$SuccessUserTypesImpl<T> implements SuccessUserTypes<T> {
     TResult Function()? loadingSignUp,
     TResult Function(T data)? successSignUp,
     TResult Function(String error)? errorSignUp,
+    TResult Function()? loadingGovernorates,
+    TResult Function(T data)? successGovernorates,
+    TResult Function(String error)? errorGovernorates,
+    TResult Function()? loadingCities,
+    TResult Function(T data)? successCities,
+    TResult Function(String error)? errorCities,
     required TResult orElse(),
   }) {
     if (successUserTypes != null) {
@@ -501,6 +627,12 @@ class _$SuccessUserTypesImpl<T> implements SuccessUserTypes<T> {
     required TResult Function(SignUpLoadingState<T> value) loadingSignUp,
     required TResult Function(SignUpSuccessState<T> value) successSignUp,
     required TResult Function(SignUpErrorState<T> value) errorSignUp,
+    required TResult Function(LoadingGovernorates<T> value) loadingGovernorates,
+    required TResult Function(SuccessGovernorates<T> value) successGovernorates,
+    required TResult Function(ErrorGovernorates<T> value) errorGovernorates,
+    required TResult Function(LoadingCities<T> value) loadingCities,
+    required TResult Function(SuccessCities<T> value) successCities,
+    required TResult Function(ErrorCities<T> value) errorCities,
   }) {
     return successUserTypes(this);
   }
@@ -515,6 +647,12 @@ class _$SuccessUserTypesImpl<T> implements SuccessUserTypes<T> {
     TResult? Function(SignUpLoadingState<T> value)? loadingSignUp,
     TResult? Function(SignUpSuccessState<T> value)? successSignUp,
     TResult? Function(SignUpErrorState<T> value)? errorSignUp,
+    TResult? Function(LoadingGovernorates<T> value)? loadingGovernorates,
+    TResult? Function(SuccessGovernorates<T> value)? successGovernorates,
+    TResult? Function(ErrorGovernorates<T> value)? errorGovernorates,
+    TResult? Function(LoadingCities<T> value)? loadingCities,
+    TResult? Function(SuccessCities<T> value)? successCities,
+    TResult? Function(ErrorCities<T> value)? errorCities,
   }) {
     return successUserTypes?.call(this);
   }
@@ -529,6 +667,12 @@ class _$SuccessUserTypesImpl<T> implements SuccessUserTypes<T> {
     TResult Function(SignUpLoadingState<T> value)? loadingSignUp,
     TResult Function(SignUpSuccessState<T> value)? successSignUp,
     TResult Function(SignUpErrorState<T> value)? errorSignUp,
+    TResult Function(LoadingGovernorates<T> value)? loadingGovernorates,
+    TResult Function(SuccessGovernorates<T> value)? successGovernorates,
+    TResult Function(ErrorGovernorates<T> value)? errorGovernorates,
+    TResult Function(LoadingCities<T> value)? loadingCities,
+    TResult Function(SuccessCities<T> value)? successCities,
+    TResult Function(ErrorCities<T> value)? errorCities,
     required TResult orElse(),
   }) {
     if (successUserTypes != null) {
@@ -626,6 +770,12 @@ class _$ErrorUserTypesImpl<T> implements ErrorUserTypes<T> {
     required TResult Function() loadingSignUp,
     required TResult Function(T data) successSignUp,
     required TResult Function(String error) errorSignUp,
+    required TResult Function() loadingGovernorates,
+    required TResult Function(T data) successGovernorates,
+    required TResult Function(String error) errorGovernorates,
+    required TResult Function() loadingCities,
+    required TResult Function(T data) successCities,
+    required TResult Function(String error) errorCities,
   }) {
     return errorUserTypes(error);
   }
@@ -640,6 +790,12 @@ class _$ErrorUserTypesImpl<T> implements ErrorUserTypes<T> {
     TResult? Function()? loadingSignUp,
     TResult? Function(T data)? successSignUp,
     TResult? Function(String error)? errorSignUp,
+    TResult? Function()? loadingGovernorates,
+    TResult? Function(T data)? successGovernorates,
+    TResult? Function(String error)? errorGovernorates,
+    TResult? Function()? loadingCities,
+    TResult? Function(T data)? successCities,
+    TResult? Function(String error)? errorCities,
   }) {
     return errorUserTypes?.call(error);
   }
@@ -654,6 +810,12 @@ class _$ErrorUserTypesImpl<T> implements ErrorUserTypes<T> {
     TResult Function()? loadingSignUp,
     TResult Function(T data)? successSignUp,
     TResult Function(String error)? errorSignUp,
+    TResult Function()? loadingGovernorates,
+    TResult Function(T data)? successGovernorates,
+    TResult Function(String error)? errorGovernorates,
+    TResult Function()? loadingCities,
+    TResult Function(T data)? successCities,
+    TResult Function(String error)? errorCities,
     required TResult orElse(),
   }) {
     if (errorUserTypes != null) {
@@ -672,6 +834,12 @@ class _$ErrorUserTypesImpl<T> implements ErrorUserTypes<T> {
     required TResult Function(SignUpLoadingState<T> value) loadingSignUp,
     required TResult Function(SignUpSuccessState<T> value) successSignUp,
     required TResult Function(SignUpErrorState<T> value) errorSignUp,
+    required TResult Function(LoadingGovernorates<T> value) loadingGovernorates,
+    required TResult Function(SuccessGovernorates<T> value) successGovernorates,
+    required TResult Function(ErrorGovernorates<T> value) errorGovernorates,
+    required TResult Function(LoadingCities<T> value) loadingCities,
+    required TResult Function(SuccessCities<T> value) successCities,
+    required TResult Function(ErrorCities<T> value) errorCities,
   }) {
     return errorUserTypes(this);
   }
@@ -686,6 +854,12 @@ class _$ErrorUserTypesImpl<T> implements ErrorUserTypes<T> {
     TResult? Function(SignUpLoadingState<T> value)? loadingSignUp,
     TResult? Function(SignUpSuccessState<T> value)? successSignUp,
     TResult? Function(SignUpErrorState<T> value)? errorSignUp,
+    TResult? Function(LoadingGovernorates<T> value)? loadingGovernorates,
+    TResult? Function(SuccessGovernorates<T> value)? successGovernorates,
+    TResult? Function(ErrorGovernorates<T> value)? errorGovernorates,
+    TResult? Function(LoadingCities<T> value)? loadingCities,
+    TResult? Function(SuccessCities<T> value)? successCities,
+    TResult? Function(ErrorCities<T> value)? errorCities,
   }) {
     return errorUserTypes?.call(this);
   }
@@ -700,6 +874,12 @@ class _$ErrorUserTypesImpl<T> implements ErrorUserTypes<T> {
     TResult Function(SignUpLoadingState<T> value)? loadingSignUp,
     TResult Function(SignUpSuccessState<T> value)? successSignUp,
     TResult Function(SignUpErrorState<T> value)? errorSignUp,
+    TResult Function(LoadingGovernorates<T> value)? loadingGovernorates,
+    TResult Function(SuccessGovernorates<T> value)? successGovernorates,
+    TResult Function(ErrorGovernorates<T> value)? errorGovernorates,
+    TResult Function(LoadingCities<T> value)? loadingCities,
+    TResult Function(SuccessCities<T> value)? successCities,
+    TResult Function(ErrorCities<T> value)? errorCities,
     required TResult orElse(),
   }) {
     if (errorUserTypes != null) {
@@ -771,6 +951,12 @@ class _$SignUpLoadingStateImpl<T> implements SignUpLoadingState<T> {
     required TResult Function() loadingSignUp,
     required TResult Function(T data) successSignUp,
     required TResult Function(String error) errorSignUp,
+    required TResult Function() loadingGovernorates,
+    required TResult Function(T data) successGovernorates,
+    required TResult Function(String error) errorGovernorates,
+    required TResult Function() loadingCities,
+    required TResult Function(T data) successCities,
+    required TResult Function(String error) errorCities,
   }) {
     return loadingSignUp();
   }
@@ -785,6 +971,12 @@ class _$SignUpLoadingStateImpl<T> implements SignUpLoadingState<T> {
     TResult? Function()? loadingSignUp,
     TResult? Function(T data)? successSignUp,
     TResult? Function(String error)? errorSignUp,
+    TResult? Function()? loadingGovernorates,
+    TResult? Function(T data)? successGovernorates,
+    TResult? Function(String error)? errorGovernorates,
+    TResult? Function()? loadingCities,
+    TResult? Function(T data)? successCities,
+    TResult? Function(String error)? errorCities,
   }) {
     return loadingSignUp?.call();
   }
@@ -799,6 +991,12 @@ class _$SignUpLoadingStateImpl<T> implements SignUpLoadingState<T> {
     TResult Function()? loadingSignUp,
     TResult Function(T data)? successSignUp,
     TResult Function(String error)? errorSignUp,
+    TResult Function()? loadingGovernorates,
+    TResult Function(T data)? successGovernorates,
+    TResult Function(String error)? errorGovernorates,
+    TResult Function()? loadingCities,
+    TResult Function(T data)? successCities,
+    TResult Function(String error)? errorCities,
     required TResult orElse(),
   }) {
     if (loadingSignUp != null) {
@@ -817,6 +1015,12 @@ class _$SignUpLoadingStateImpl<T> implements SignUpLoadingState<T> {
     required TResult Function(SignUpLoadingState<T> value) loadingSignUp,
     required TResult Function(SignUpSuccessState<T> value) successSignUp,
     required TResult Function(SignUpErrorState<T> value) errorSignUp,
+    required TResult Function(LoadingGovernorates<T> value) loadingGovernorates,
+    required TResult Function(SuccessGovernorates<T> value) successGovernorates,
+    required TResult Function(ErrorGovernorates<T> value) errorGovernorates,
+    required TResult Function(LoadingCities<T> value) loadingCities,
+    required TResult Function(SuccessCities<T> value) successCities,
+    required TResult Function(ErrorCities<T> value) errorCities,
   }) {
     return loadingSignUp(this);
   }
@@ -831,6 +1035,12 @@ class _$SignUpLoadingStateImpl<T> implements SignUpLoadingState<T> {
     TResult? Function(SignUpLoadingState<T> value)? loadingSignUp,
     TResult? Function(SignUpSuccessState<T> value)? successSignUp,
     TResult? Function(SignUpErrorState<T> value)? errorSignUp,
+    TResult? Function(LoadingGovernorates<T> value)? loadingGovernorates,
+    TResult? Function(SuccessGovernorates<T> value)? successGovernorates,
+    TResult? Function(ErrorGovernorates<T> value)? errorGovernorates,
+    TResult? Function(LoadingCities<T> value)? loadingCities,
+    TResult? Function(SuccessCities<T> value)? successCities,
+    TResult? Function(ErrorCities<T> value)? errorCities,
   }) {
     return loadingSignUp?.call(this);
   }
@@ -845,6 +1055,12 @@ class _$SignUpLoadingStateImpl<T> implements SignUpLoadingState<T> {
     TResult Function(SignUpLoadingState<T> value)? loadingSignUp,
     TResult Function(SignUpSuccessState<T> value)? successSignUp,
     TResult Function(SignUpErrorState<T> value)? errorSignUp,
+    TResult Function(LoadingGovernorates<T> value)? loadingGovernorates,
+    TResult Function(SuccessGovernorates<T> value)? successGovernorates,
+    TResult Function(ErrorGovernorates<T> value)? errorGovernorates,
+    TResult Function(LoadingCities<T> value)? loadingCities,
+    TResult Function(SuccessCities<T> value)? successCities,
+    TResult Function(ErrorCities<T> value)? errorCities,
     required TResult orElse(),
   }) {
     if (loadingSignUp != null) {
@@ -935,6 +1151,12 @@ class _$SignUpSuccessStateImpl<T> implements SignUpSuccessState<T> {
     required TResult Function() loadingSignUp,
     required TResult Function(T data) successSignUp,
     required TResult Function(String error) errorSignUp,
+    required TResult Function() loadingGovernorates,
+    required TResult Function(T data) successGovernorates,
+    required TResult Function(String error) errorGovernorates,
+    required TResult Function() loadingCities,
+    required TResult Function(T data) successCities,
+    required TResult Function(String error) errorCities,
   }) {
     return successSignUp(data);
   }
@@ -949,6 +1171,12 @@ class _$SignUpSuccessStateImpl<T> implements SignUpSuccessState<T> {
     TResult? Function()? loadingSignUp,
     TResult? Function(T data)? successSignUp,
     TResult? Function(String error)? errorSignUp,
+    TResult? Function()? loadingGovernorates,
+    TResult? Function(T data)? successGovernorates,
+    TResult? Function(String error)? errorGovernorates,
+    TResult? Function()? loadingCities,
+    TResult? Function(T data)? successCities,
+    TResult? Function(String error)? errorCities,
   }) {
     return successSignUp?.call(data);
   }
@@ -963,6 +1191,12 @@ class _$SignUpSuccessStateImpl<T> implements SignUpSuccessState<T> {
     TResult Function()? loadingSignUp,
     TResult Function(T data)? successSignUp,
     TResult Function(String error)? errorSignUp,
+    TResult Function()? loadingGovernorates,
+    TResult Function(T data)? successGovernorates,
+    TResult Function(String error)? errorGovernorates,
+    TResult Function()? loadingCities,
+    TResult Function(T data)? successCities,
+    TResult Function(String error)? errorCities,
     required TResult orElse(),
   }) {
     if (successSignUp != null) {
@@ -981,6 +1215,12 @@ class _$SignUpSuccessStateImpl<T> implements SignUpSuccessState<T> {
     required TResult Function(SignUpLoadingState<T> value) loadingSignUp,
     required TResult Function(SignUpSuccessState<T> value) successSignUp,
     required TResult Function(SignUpErrorState<T> value) errorSignUp,
+    required TResult Function(LoadingGovernorates<T> value) loadingGovernorates,
+    required TResult Function(SuccessGovernorates<T> value) successGovernorates,
+    required TResult Function(ErrorGovernorates<T> value) errorGovernorates,
+    required TResult Function(LoadingCities<T> value) loadingCities,
+    required TResult Function(SuccessCities<T> value) successCities,
+    required TResult Function(ErrorCities<T> value) errorCities,
   }) {
     return successSignUp(this);
   }
@@ -995,6 +1235,12 @@ class _$SignUpSuccessStateImpl<T> implements SignUpSuccessState<T> {
     TResult? Function(SignUpLoadingState<T> value)? loadingSignUp,
     TResult? Function(SignUpSuccessState<T> value)? successSignUp,
     TResult? Function(SignUpErrorState<T> value)? errorSignUp,
+    TResult? Function(LoadingGovernorates<T> value)? loadingGovernorates,
+    TResult? Function(SuccessGovernorates<T> value)? successGovernorates,
+    TResult? Function(ErrorGovernorates<T> value)? errorGovernorates,
+    TResult? Function(LoadingCities<T> value)? loadingCities,
+    TResult? Function(SuccessCities<T> value)? successCities,
+    TResult? Function(ErrorCities<T> value)? errorCities,
   }) {
     return successSignUp?.call(this);
   }
@@ -1009,6 +1255,12 @@ class _$SignUpSuccessStateImpl<T> implements SignUpSuccessState<T> {
     TResult Function(SignUpLoadingState<T> value)? loadingSignUp,
     TResult Function(SignUpSuccessState<T> value)? successSignUp,
     TResult Function(SignUpErrorState<T> value)? errorSignUp,
+    TResult Function(LoadingGovernorates<T> value)? loadingGovernorates,
+    TResult Function(SuccessGovernorates<T> value)? successGovernorates,
+    TResult Function(ErrorGovernorates<T> value)? errorGovernorates,
+    TResult Function(LoadingCities<T> value)? loadingCities,
+    TResult Function(SuccessCities<T> value)? successCities,
+    TResult Function(ErrorCities<T> value)? errorCities,
     required TResult orElse(),
   }) {
     if (successSignUp != null) {
@@ -1106,6 +1358,12 @@ class _$SignUpErrorStateImpl<T> implements SignUpErrorState<T> {
     required TResult Function() loadingSignUp,
     required TResult Function(T data) successSignUp,
     required TResult Function(String error) errorSignUp,
+    required TResult Function() loadingGovernorates,
+    required TResult Function(T data) successGovernorates,
+    required TResult Function(String error) errorGovernorates,
+    required TResult Function() loadingCities,
+    required TResult Function(T data) successCities,
+    required TResult Function(String error) errorCities,
   }) {
     return errorSignUp(error);
   }
@@ -1120,6 +1378,12 @@ class _$SignUpErrorStateImpl<T> implements SignUpErrorState<T> {
     TResult? Function()? loadingSignUp,
     TResult? Function(T data)? successSignUp,
     TResult? Function(String error)? errorSignUp,
+    TResult? Function()? loadingGovernorates,
+    TResult? Function(T data)? successGovernorates,
+    TResult? Function(String error)? errorGovernorates,
+    TResult? Function()? loadingCities,
+    TResult? Function(T data)? successCities,
+    TResult? Function(String error)? errorCities,
   }) {
     return errorSignUp?.call(error);
   }
@@ -1134,6 +1398,12 @@ class _$SignUpErrorStateImpl<T> implements SignUpErrorState<T> {
     TResult Function()? loadingSignUp,
     TResult Function(T data)? successSignUp,
     TResult Function(String error)? errorSignUp,
+    TResult Function()? loadingGovernorates,
+    TResult Function(T data)? successGovernorates,
+    TResult Function(String error)? errorGovernorates,
+    TResult Function()? loadingCities,
+    TResult Function(T data)? successCities,
+    TResult Function(String error)? errorCities,
     required TResult orElse(),
   }) {
     if (errorSignUp != null) {
@@ -1152,6 +1422,12 @@ class _$SignUpErrorStateImpl<T> implements SignUpErrorState<T> {
     required TResult Function(SignUpLoadingState<T> value) loadingSignUp,
     required TResult Function(SignUpSuccessState<T> value) successSignUp,
     required TResult Function(SignUpErrorState<T> value) errorSignUp,
+    required TResult Function(LoadingGovernorates<T> value) loadingGovernorates,
+    required TResult Function(SuccessGovernorates<T> value) successGovernorates,
+    required TResult Function(ErrorGovernorates<T> value) errorGovernorates,
+    required TResult Function(LoadingCities<T> value) loadingCities,
+    required TResult Function(SuccessCities<T> value) successCities,
+    required TResult Function(ErrorCities<T> value) errorCities,
   }) {
     return errorSignUp(this);
   }
@@ -1166,6 +1442,12 @@ class _$SignUpErrorStateImpl<T> implements SignUpErrorState<T> {
     TResult? Function(SignUpLoadingState<T> value)? loadingSignUp,
     TResult? Function(SignUpSuccessState<T> value)? successSignUp,
     TResult? Function(SignUpErrorState<T> value)? errorSignUp,
+    TResult? Function(LoadingGovernorates<T> value)? loadingGovernorates,
+    TResult? Function(SuccessGovernorates<T> value)? successGovernorates,
+    TResult? Function(ErrorGovernorates<T> value)? errorGovernorates,
+    TResult? Function(LoadingCities<T> value)? loadingCities,
+    TResult? Function(SuccessCities<T> value)? successCities,
+    TResult? Function(ErrorCities<T> value)? errorCities,
   }) {
     return errorSignUp?.call(this);
   }
@@ -1180,6 +1462,12 @@ class _$SignUpErrorStateImpl<T> implements SignUpErrorState<T> {
     TResult Function(SignUpLoadingState<T> value)? loadingSignUp,
     TResult Function(SignUpSuccessState<T> value)? successSignUp,
     TResult Function(SignUpErrorState<T> value)? errorSignUp,
+    TResult Function(LoadingGovernorates<T> value)? loadingGovernorates,
+    TResult Function(SuccessGovernorates<T> value)? successGovernorates,
+    TResult Function(ErrorGovernorates<T> value)? errorGovernorates,
+    TResult Function(LoadingCities<T> value)? loadingCities,
+    TResult Function(SuccessCities<T> value)? successCities,
+    TResult Function(ErrorCities<T> value)? errorCities,
     required TResult orElse(),
   }) {
     if (errorSignUp != null) {
@@ -1199,5 +1487,1182 @@ abstract class SignUpErrorState<T> implements SignUpState<T> {
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
   _$$SignUpErrorStateImplCopyWith<T, _$SignUpErrorStateImpl<T>> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$LoadingGovernoratesImplCopyWith<T, $Res> {
+  factory _$$LoadingGovernoratesImplCopyWith(_$LoadingGovernoratesImpl<T> value,
+          $Res Function(_$LoadingGovernoratesImpl<T>) then) =
+      __$$LoadingGovernoratesImplCopyWithImpl<T, $Res>;
+}
+
+/// @nodoc
+class __$$LoadingGovernoratesImplCopyWithImpl<T, $Res>
+    extends _$SignUpStateCopyWithImpl<T, $Res, _$LoadingGovernoratesImpl<T>>
+    implements _$$LoadingGovernoratesImplCopyWith<T, $Res> {
+  __$$LoadingGovernoratesImplCopyWithImpl(_$LoadingGovernoratesImpl<T> _value,
+      $Res Function(_$LoadingGovernoratesImpl<T>) _then)
+      : super(_value, _then);
+
+  /// Create a copy of SignUpState
+  /// with the given fields replaced by the non-null parameter values.
+}
+
+/// @nodoc
+
+class _$LoadingGovernoratesImpl<T> implements LoadingGovernorates<T> {
+  const _$LoadingGovernoratesImpl();
+
+  @override
+  String toString() {
+    return 'SignUpState<$T>.loadingGovernorates()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$LoadingGovernoratesImpl<T>);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() loadingUserTypes,
+    required TResult Function(T data) successUserTypes,
+    required TResult Function(String error) errorUserTypes,
+    required TResult Function() loadingSignUp,
+    required TResult Function(T data) successSignUp,
+    required TResult Function(String error) errorSignUp,
+    required TResult Function() loadingGovernorates,
+    required TResult Function(T data) successGovernorates,
+    required TResult Function(String error) errorGovernorates,
+    required TResult Function() loadingCities,
+    required TResult Function(T data) successCities,
+    required TResult Function(String error) errorCities,
+  }) {
+    return loadingGovernorates();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? loadingUserTypes,
+    TResult? Function(T data)? successUserTypes,
+    TResult? Function(String error)? errorUserTypes,
+    TResult? Function()? loadingSignUp,
+    TResult? Function(T data)? successSignUp,
+    TResult? Function(String error)? errorSignUp,
+    TResult? Function()? loadingGovernorates,
+    TResult? Function(T data)? successGovernorates,
+    TResult? Function(String error)? errorGovernorates,
+    TResult? Function()? loadingCities,
+    TResult? Function(T data)? successCities,
+    TResult? Function(String error)? errorCities,
+  }) {
+    return loadingGovernorates?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loadingUserTypes,
+    TResult Function(T data)? successUserTypes,
+    TResult Function(String error)? errorUserTypes,
+    TResult Function()? loadingSignUp,
+    TResult Function(T data)? successSignUp,
+    TResult Function(String error)? errorSignUp,
+    TResult Function()? loadingGovernorates,
+    TResult Function(T data)? successGovernorates,
+    TResult Function(String error)? errorGovernorates,
+    TResult Function()? loadingCities,
+    TResult Function(T data)? successCities,
+    TResult Function(String error)? errorCities,
+    required TResult orElse(),
+  }) {
+    if (loadingGovernorates != null) {
+      return loadingGovernorates();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial<T> value) initial,
+    required TResult Function(LoadingUserTypes<T> value) loadingUserTypes,
+    required TResult Function(SuccessUserTypes<T> value) successUserTypes,
+    required TResult Function(ErrorUserTypes<T> value) errorUserTypes,
+    required TResult Function(SignUpLoadingState<T> value) loadingSignUp,
+    required TResult Function(SignUpSuccessState<T> value) successSignUp,
+    required TResult Function(SignUpErrorState<T> value) errorSignUp,
+    required TResult Function(LoadingGovernorates<T> value) loadingGovernorates,
+    required TResult Function(SuccessGovernorates<T> value) successGovernorates,
+    required TResult Function(ErrorGovernorates<T> value) errorGovernorates,
+    required TResult Function(LoadingCities<T> value) loadingCities,
+    required TResult Function(SuccessCities<T> value) successCities,
+    required TResult Function(ErrorCities<T> value) errorCities,
+  }) {
+    return loadingGovernorates(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial<T> value)? initial,
+    TResult? Function(LoadingUserTypes<T> value)? loadingUserTypes,
+    TResult? Function(SuccessUserTypes<T> value)? successUserTypes,
+    TResult? Function(ErrorUserTypes<T> value)? errorUserTypes,
+    TResult? Function(SignUpLoadingState<T> value)? loadingSignUp,
+    TResult? Function(SignUpSuccessState<T> value)? successSignUp,
+    TResult? Function(SignUpErrorState<T> value)? errorSignUp,
+    TResult? Function(LoadingGovernorates<T> value)? loadingGovernorates,
+    TResult? Function(SuccessGovernorates<T> value)? successGovernorates,
+    TResult? Function(ErrorGovernorates<T> value)? errorGovernorates,
+    TResult? Function(LoadingCities<T> value)? loadingCities,
+    TResult? Function(SuccessCities<T> value)? successCities,
+    TResult? Function(ErrorCities<T> value)? errorCities,
+  }) {
+    return loadingGovernorates?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial<T> value)? initial,
+    TResult Function(LoadingUserTypes<T> value)? loadingUserTypes,
+    TResult Function(SuccessUserTypes<T> value)? successUserTypes,
+    TResult Function(ErrorUserTypes<T> value)? errorUserTypes,
+    TResult Function(SignUpLoadingState<T> value)? loadingSignUp,
+    TResult Function(SignUpSuccessState<T> value)? successSignUp,
+    TResult Function(SignUpErrorState<T> value)? errorSignUp,
+    TResult Function(LoadingGovernorates<T> value)? loadingGovernorates,
+    TResult Function(SuccessGovernorates<T> value)? successGovernorates,
+    TResult Function(ErrorGovernorates<T> value)? errorGovernorates,
+    TResult Function(LoadingCities<T> value)? loadingCities,
+    TResult Function(SuccessCities<T> value)? successCities,
+    TResult Function(ErrorCities<T> value)? errorCities,
+    required TResult orElse(),
+  }) {
+    if (loadingGovernorates != null) {
+      return loadingGovernorates(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class LoadingGovernorates<T> implements SignUpState<T> {
+  const factory LoadingGovernorates() = _$LoadingGovernoratesImpl<T>;
+}
+
+/// @nodoc
+abstract class _$$SuccessGovernoratesImplCopyWith<T, $Res> {
+  factory _$$SuccessGovernoratesImplCopyWith(_$SuccessGovernoratesImpl<T> value,
+          $Res Function(_$SuccessGovernoratesImpl<T>) then) =
+      __$$SuccessGovernoratesImplCopyWithImpl<T, $Res>;
+  @useResult
+  $Res call({T data});
+}
+
+/// @nodoc
+class __$$SuccessGovernoratesImplCopyWithImpl<T, $Res>
+    extends _$SignUpStateCopyWithImpl<T, $Res, _$SuccessGovernoratesImpl<T>>
+    implements _$$SuccessGovernoratesImplCopyWith<T, $Res> {
+  __$$SuccessGovernoratesImplCopyWithImpl(_$SuccessGovernoratesImpl<T> _value,
+      $Res Function(_$SuccessGovernoratesImpl<T>) _then)
+      : super(_value, _then);
+
+  /// Create a copy of SignUpState
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? data = freezed,
+  }) {
+    return _then(_$SuccessGovernoratesImpl<T>(
+      freezed == data
+          ? _value.data
+          : data // ignore: cast_nullable_to_non_nullable
+              as T,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$SuccessGovernoratesImpl<T> implements SuccessGovernorates<T> {
+  const _$SuccessGovernoratesImpl(this.data);
+
+  @override
+  final T data;
+
+  @override
+  String toString() {
+    return 'SignUpState<$T>.successGovernorates(data: $data)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$SuccessGovernoratesImpl<T> &&
+            const DeepCollectionEquality().equals(other.data, data));
+  }
+
+  @override
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(data));
+
+  /// Create a copy of SignUpState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$SuccessGovernoratesImplCopyWith<T, _$SuccessGovernoratesImpl<T>>
+      get copyWith => __$$SuccessGovernoratesImplCopyWithImpl<T,
+          _$SuccessGovernoratesImpl<T>>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() loadingUserTypes,
+    required TResult Function(T data) successUserTypes,
+    required TResult Function(String error) errorUserTypes,
+    required TResult Function() loadingSignUp,
+    required TResult Function(T data) successSignUp,
+    required TResult Function(String error) errorSignUp,
+    required TResult Function() loadingGovernorates,
+    required TResult Function(T data) successGovernorates,
+    required TResult Function(String error) errorGovernorates,
+    required TResult Function() loadingCities,
+    required TResult Function(T data) successCities,
+    required TResult Function(String error) errorCities,
+  }) {
+    return successGovernorates(data);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? loadingUserTypes,
+    TResult? Function(T data)? successUserTypes,
+    TResult? Function(String error)? errorUserTypes,
+    TResult? Function()? loadingSignUp,
+    TResult? Function(T data)? successSignUp,
+    TResult? Function(String error)? errorSignUp,
+    TResult? Function()? loadingGovernorates,
+    TResult? Function(T data)? successGovernorates,
+    TResult? Function(String error)? errorGovernorates,
+    TResult? Function()? loadingCities,
+    TResult? Function(T data)? successCities,
+    TResult? Function(String error)? errorCities,
+  }) {
+    return successGovernorates?.call(data);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loadingUserTypes,
+    TResult Function(T data)? successUserTypes,
+    TResult Function(String error)? errorUserTypes,
+    TResult Function()? loadingSignUp,
+    TResult Function(T data)? successSignUp,
+    TResult Function(String error)? errorSignUp,
+    TResult Function()? loadingGovernorates,
+    TResult Function(T data)? successGovernorates,
+    TResult Function(String error)? errorGovernorates,
+    TResult Function()? loadingCities,
+    TResult Function(T data)? successCities,
+    TResult Function(String error)? errorCities,
+    required TResult orElse(),
+  }) {
+    if (successGovernorates != null) {
+      return successGovernorates(data);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial<T> value) initial,
+    required TResult Function(LoadingUserTypes<T> value) loadingUserTypes,
+    required TResult Function(SuccessUserTypes<T> value) successUserTypes,
+    required TResult Function(ErrorUserTypes<T> value) errorUserTypes,
+    required TResult Function(SignUpLoadingState<T> value) loadingSignUp,
+    required TResult Function(SignUpSuccessState<T> value) successSignUp,
+    required TResult Function(SignUpErrorState<T> value) errorSignUp,
+    required TResult Function(LoadingGovernorates<T> value) loadingGovernorates,
+    required TResult Function(SuccessGovernorates<T> value) successGovernorates,
+    required TResult Function(ErrorGovernorates<T> value) errorGovernorates,
+    required TResult Function(LoadingCities<T> value) loadingCities,
+    required TResult Function(SuccessCities<T> value) successCities,
+    required TResult Function(ErrorCities<T> value) errorCities,
+  }) {
+    return successGovernorates(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial<T> value)? initial,
+    TResult? Function(LoadingUserTypes<T> value)? loadingUserTypes,
+    TResult? Function(SuccessUserTypes<T> value)? successUserTypes,
+    TResult? Function(ErrorUserTypes<T> value)? errorUserTypes,
+    TResult? Function(SignUpLoadingState<T> value)? loadingSignUp,
+    TResult? Function(SignUpSuccessState<T> value)? successSignUp,
+    TResult? Function(SignUpErrorState<T> value)? errorSignUp,
+    TResult? Function(LoadingGovernorates<T> value)? loadingGovernorates,
+    TResult? Function(SuccessGovernorates<T> value)? successGovernorates,
+    TResult? Function(ErrorGovernorates<T> value)? errorGovernorates,
+    TResult? Function(LoadingCities<T> value)? loadingCities,
+    TResult? Function(SuccessCities<T> value)? successCities,
+    TResult? Function(ErrorCities<T> value)? errorCities,
+  }) {
+    return successGovernorates?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial<T> value)? initial,
+    TResult Function(LoadingUserTypes<T> value)? loadingUserTypes,
+    TResult Function(SuccessUserTypes<T> value)? successUserTypes,
+    TResult Function(ErrorUserTypes<T> value)? errorUserTypes,
+    TResult Function(SignUpLoadingState<T> value)? loadingSignUp,
+    TResult Function(SignUpSuccessState<T> value)? successSignUp,
+    TResult Function(SignUpErrorState<T> value)? errorSignUp,
+    TResult Function(LoadingGovernorates<T> value)? loadingGovernorates,
+    TResult Function(SuccessGovernorates<T> value)? successGovernorates,
+    TResult Function(ErrorGovernorates<T> value)? errorGovernorates,
+    TResult Function(LoadingCities<T> value)? loadingCities,
+    TResult Function(SuccessCities<T> value)? successCities,
+    TResult Function(ErrorCities<T> value)? errorCities,
+    required TResult orElse(),
+  }) {
+    if (successGovernorates != null) {
+      return successGovernorates(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class SuccessGovernorates<T> implements SignUpState<T> {
+  const factory SuccessGovernorates(final T data) =
+      _$SuccessGovernoratesImpl<T>;
+
+  T get data;
+
+  /// Create a copy of SignUpState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$SuccessGovernoratesImplCopyWith<T, _$SuccessGovernoratesImpl<T>>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$ErrorGovernoratesImplCopyWith<T, $Res> {
+  factory _$$ErrorGovernoratesImplCopyWith(_$ErrorGovernoratesImpl<T> value,
+          $Res Function(_$ErrorGovernoratesImpl<T>) then) =
+      __$$ErrorGovernoratesImplCopyWithImpl<T, $Res>;
+  @useResult
+  $Res call({String error});
+}
+
+/// @nodoc
+class __$$ErrorGovernoratesImplCopyWithImpl<T, $Res>
+    extends _$SignUpStateCopyWithImpl<T, $Res, _$ErrorGovernoratesImpl<T>>
+    implements _$$ErrorGovernoratesImplCopyWith<T, $Res> {
+  __$$ErrorGovernoratesImplCopyWithImpl(_$ErrorGovernoratesImpl<T> _value,
+      $Res Function(_$ErrorGovernoratesImpl<T>) _then)
+      : super(_value, _then);
+
+  /// Create a copy of SignUpState
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? error = null,
+  }) {
+    return _then(_$ErrorGovernoratesImpl<T>(
+      error: null == error
+          ? _value.error
+          : error // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$ErrorGovernoratesImpl<T> implements ErrorGovernorates<T> {
+  const _$ErrorGovernoratesImpl({required this.error});
+
+  @override
+  final String error;
+
+  @override
+  String toString() {
+    return 'SignUpState<$T>.errorGovernorates(error: $error)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$ErrorGovernoratesImpl<T> &&
+            (identical(other.error, error) || other.error == error));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, error);
+
+  /// Create a copy of SignUpState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$ErrorGovernoratesImplCopyWith<T, _$ErrorGovernoratesImpl<T>>
+      get copyWith =>
+          __$$ErrorGovernoratesImplCopyWithImpl<T, _$ErrorGovernoratesImpl<T>>(
+              this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() loadingUserTypes,
+    required TResult Function(T data) successUserTypes,
+    required TResult Function(String error) errorUserTypes,
+    required TResult Function() loadingSignUp,
+    required TResult Function(T data) successSignUp,
+    required TResult Function(String error) errorSignUp,
+    required TResult Function() loadingGovernorates,
+    required TResult Function(T data) successGovernorates,
+    required TResult Function(String error) errorGovernorates,
+    required TResult Function() loadingCities,
+    required TResult Function(T data) successCities,
+    required TResult Function(String error) errorCities,
+  }) {
+    return errorGovernorates(error);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? loadingUserTypes,
+    TResult? Function(T data)? successUserTypes,
+    TResult? Function(String error)? errorUserTypes,
+    TResult? Function()? loadingSignUp,
+    TResult? Function(T data)? successSignUp,
+    TResult? Function(String error)? errorSignUp,
+    TResult? Function()? loadingGovernorates,
+    TResult? Function(T data)? successGovernorates,
+    TResult? Function(String error)? errorGovernorates,
+    TResult? Function()? loadingCities,
+    TResult? Function(T data)? successCities,
+    TResult? Function(String error)? errorCities,
+  }) {
+    return errorGovernorates?.call(error);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loadingUserTypes,
+    TResult Function(T data)? successUserTypes,
+    TResult Function(String error)? errorUserTypes,
+    TResult Function()? loadingSignUp,
+    TResult Function(T data)? successSignUp,
+    TResult Function(String error)? errorSignUp,
+    TResult Function()? loadingGovernorates,
+    TResult Function(T data)? successGovernorates,
+    TResult Function(String error)? errorGovernorates,
+    TResult Function()? loadingCities,
+    TResult Function(T data)? successCities,
+    TResult Function(String error)? errorCities,
+    required TResult orElse(),
+  }) {
+    if (errorGovernorates != null) {
+      return errorGovernorates(error);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial<T> value) initial,
+    required TResult Function(LoadingUserTypes<T> value) loadingUserTypes,
+    required TResult Function(SuccessUserTypes<T> value) successUserTypes,
+    required TResult Function(ErrorUserTypes<T> value) errorUserTypes,
+    required TResult Function(SignUpLoadingState<T> value) loadingSignUp,
+    required TResult Function(SignUpSuccessState<T> value) successSignUp,
+    required TResult Function(SignUpErrorState<T> value) errorSignUp,
+    required TResult Function(LoadingGovernorates<T> value) loadingGovernorates,
+    required TResult Function(SuccessGovernorates<T> value) successGovernorates,
+    required TResult Function(ErrorGovernorates<T> value) errorGovernorates,
+    required TResult Function(LoadingCities<T> value) loadingCities,
+    required TResult Function(SuccessCities<T> value) successCities,
+    required TResult Function(ErrorCities<T> value) errorCities,
+  }) {
+    return errorGovernorates(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial<T> value)? initial,
+    TResult? Function(LoadingUserTypes<T> value)? loadingUserTypes,
+    TResult? Function(SuccessUserTypes<T> value)? successUserTypes,
+    TResult? Function(ErrorUserTypes<T> value)? errorUserTypes,
+    TResult? Function(SignUpLoadingState<T> value)? loadingSignUp,
+    TResult? Function(SignUpSuccessState<T> value)? successSignUp,
+    TResult? Function(SignUpErrorState<T> value)? errorSignUp,
+    TResult? Function(LoadingGovernorates<T> value)? loadingGovernorates,
+    TResult? Function(SuccessGovernorates<T> value)? successGovernorates,
+    TResult? Function(ErrorGovernorates<T> value)? errorGovernorates,
+    TResult? Function(LoadingCities<T> value)? loadingCities,
+    TResult? Function(SuccessCities<T> value)? successCities,
+    TResult? Function(ErrorCities<T> value)? errorCities,
+  }) {
+    return errorGovernorates?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial<T> value)? initial,
+    TResult Function(LoadingUserTypes<T> value)? loadingUserTypes,
+    TResult Function(SuccessUserTypes<T> value)? successUserTypes,
+    TResult Function(ErrorUserTypes<T> value)? errorUserTypes,
+    TResult Function(SignUpLoadingState<T> value)? loadingSignUp,
+    TResult Function(SignUpSuccessState<T> value)? successSignUp,
+    TResult Function(SignUpErrorState<T> value)? errorSignUp,
+    TResult Function(LoadingGovernorates<T> value)? loadingGovernorates,
+    TResult Function(SuccessGovernorates<T> value)? successGovernorates,
+    TResult Function(ErrorGovernorates<T> value)? errorGovernorates,
+    TResult Function(LoadingCities<T> value)? loadingCities,
+    TResult Function(SuccessCities<T> value)? successCities,
+    TResult Function(ErrorCities<T> value)? errorCities,
+    required TResult orElse(),
+  }) {
+    if (errorGovernorates != null) {
+      return errorGovernorates(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class ErrorGovernorates<T> implements SignUpState<T> {
+  const factory ErrorGovernorates({required final String error}) =
+      _$ErrorGovernoratesImpl<T>;
+
+  String get error;
+
+  /// Create a copy of SignUpState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$ErrorGovernoratesImplCopyWith<T, _$ErrorGovernoratesImpl<T>>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$LoadingCitiesImplCopyWith<T, $Res> {
+  factory _$$LoadingCitiesImplCopyWith(_$LoadingCitiesImpl<T> value,
+          $Res Function(_$LoadingCitiesImpl<T>) then) =
+      __$$LoadingCitiesImplCopyWithImpl<T, $Res>;
+}
+
+/// @nodoc
+class __$$LoadingCitiesImplCopyWithImpl<T, $Res>
+    extends _$SignUpStateCopyWithImpl<T, $Res, _$LoadingCitiesImpl<T>>
+    implements _$$LoadingCitiesImplCopyWith<T, $Res> {
+  __$$LoadingCitiesImplCopyWithImpl(_$LoadingCitiesImpl<T> _value,
+      $Res Function(_$LoadingCitiesImpl<T>) _then)
+      : super(_value, _then);
+
+  /// Create a copy of SignUpState
+  /// with the given fields replaced by the non-null parameter values.
+}
+
+/// @nodoc
+
+class _$LoadingCitiesImpl<T> implements LoadingCities<T> {
+  const _$LoadingCitiesImpl();
+
+  @override
+  String toString() {
+    return 'SignUpState<$T>.loadingCities()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$LoadingCitiesImpl<T>);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() loadingUserTypes,
+    required TResult Function(T data) successUserTypes,
+    required TResult Function(String error) errorUserTypes,
+    required TResult Function() loadingSignUp,
+    required TResult Function(T data) successSignUp,
+    required TResult Function(String error) errorSignUp,
+    required TResult Function() loadingGovernorates,
+    required TResult Function(T data) successGovernorates,
+    required TResult Function(String error) errorGovernorates,
+    required TResult Function() loadingCities,
+    required TResult Function(T data) successCities,
+    required TResult Function(String error) errorCities,
+  }) {
+    return loadingCities();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? loadingUserTypes,
+    TResult? Function(T data)? successUserTypes,
+    TResult? Function(String error)? errorUserTypes,
+    TResult? Function()? loadingSignUp,
+    TResult? Function(T data)? successSignUp,
+    TResult? Function(String error)? errorSignUp,
+    TResult? Function()? loadingGovernorates,
+    TResult? Function(T data)? successGovernorates,
+    TResult? Function(String error)? errorGovernorates,
+    TResult? Function()? loadingCities,
+    TResult? Function(T data)? successCities,
+    TResult? Function(String error)? errorCities,
+  }) {
+    return loadingCities?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loadingUserTypes,
+    TResult Function(T data)? successUserTypes,
+    TResult Function(String error)? errorUserTypes,
+    TResult Function()? loadingSignUp,
+    TResult Function(T data)? successSignUp,
+    TResult Function(String error)? errorSignUp,
+    TResult Function()? loadingGovernorates,
+    TResult Function(T data)? successGovernorates,
+    TResult Function(String error)? errorGovernorates,
+    TResult Function()? loadingCities,
+    TResult Function(T data)? successCities,
+    TResult Function(String error)? errorCities,
+    required TResult orElse(),
+  }) {
+    if (loadingCities != null) {
+      return loadingCities();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial<T> value) initial,
+    required TResult Function(LoadingUserTypes<T> value) loadingUserTypes,
+    required TResult Function(SuccessUserTypes<T> value) successUserTypes,
+    required TResult Function(ErrorUserTypes<T> value) errorUserTypes,
+    required TResult Function(SignUpLoadingState<T> value) loadingSignUp,
+    required TResult Function(SignUpSuccessState<T> value) successSignUp,
+    required TResult Function(SignUpErrorState<T> value) errorSignUp,
+    required TResult Function(LoadingGovernorates<T> value) loadingGovernorates,
+    required TResult Function(SuccessGovernorates<T> value) successGovernorates,
+    required TResult Function(ErrorGovernorates<T> value) errorGovernorates,
+    required TResult Function(LoadingCities<T> value) loadingCities,
+    required TResult Function(SuccessCities<T> value) successCities,
+    required TResult Function(ErrorCities<T> value) errorCities,
+  }) {
+    return loadingCities(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial<T> value)? initial,
+    TResult? Function(LoadingUserTypes<T> value)? loadingUserTypes,
+    TResult? Function(SuccessUserTypes<T> value)? successUserTypes,
+    TResult? Function(ErrorUserTypes<T> value)? errorUserTypes,
+    TResult? Function(SignUpLoadingState<T> value)? loadingSignUp,
+    TResult? Function(SignUpSuccessState<T> value)? successSignUp,
+    TResult? Function(SignUpErrorState<T> value)? errorSignUp,
+    TResult? Function(LoadingGovernorates<T> value)? loadingGovernorates,
+    TResult? Function(SuccessGovernorates<T> value)? successGovernorates,
+    TResult? Function(ErrorGovernorates<T> value)? errorGovernorates,
+    TResult? Function(LoadingCities<T> value)? loadingCities,
+    TResult? Function(SuccessCities<T> value)? successCities,
+    TResult? Function(ErrorCities<T> value)? errorCities,
+  }) {
+    return loadingCities?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial<T> value)? initial,
+    TResult Function(LoadingUserTypes<T> value)? loadingUserTypes,
+    TResult Function(SuccessUserTypes<T> value)? successUserTypes,
+    TResult Function(ErrorUserTypes<T> value)? errorUserTypes,
+    TResult Function(SignUpLoadingState<T> value)? loadingSignUp,
+    TResult Function(SignUpSuccessState<T> value)? successSignUp,
+    TResult Function(SignUpErrorState<T> value)? errorSignUp,
+    TResult Function(LoadingGovernorates<T> value)? loadingGovernorates,
+    TResult Function(SuccessGovernorates<T> value)? successGovernorates,
+    TResult Function(ErrorGovernorates<T> value)? errorGovernorates,
+    TResult Function(LoadingCities<T> value)? loadingCities,
+    TResult Function(SuccessCities<T> value)? successCities,
+    TResult Function(ErrorCities<T> value)? errorCities,
+    required TResult orElse(),
+  }) {
+    if (loadingCities != null) {
+      return loadingCities(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class LoadingCities<T> implements SignUpState<T> {
+  const factory LoadingCities() = _$LoadingCitiesImpl<T>;
+}
+
+/// @nodoc
+abstract class _$$SuccessCitiesImplCopyWith<T, $Res> {
+  factory _$$SuccessCitiesImplCopyWith(_$SuccessCitiesImpl<T> value,
+          $Res Function(_$SuccessCitiesImpl<T>) then) =
+      __$$SuccessCitiesImplCopyWithImpl<T, $Res>;
+  @useResult
+  $Res call({T data});
+}
+
+/// @nodoc
+class __$$SuccessCitiesImplCopyWithImpl<T, $Res>
+    extends _$SignUpStateCopyWithImpl<T, $Res, _$SuccessCitiesImpl<T>>
+    implements _$$SuccessCitiesImplCopyWith<T, $Res> {
+  __$$SuccessCitiesImplCopyWithImpl(_$SuccessCitiesImpl<T> _value,
+      $Res Function(_$SuccessCitiesImpl<T>) _then)
+      : super(_value, _then);
+
+  /// Create a copy of SignUpState
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? data = freezed,
+  }) {
+    return _then(_$SuccessCitiesImpl<T>(
+      freezed == data
+          ? _value.data
+          : data // ignore: cast_nullable_to_non_nullable
+              as T,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$SuccessCitiesImpl<T> implements SuccessCities<T> {
+  const _$SuccessCitiesImpl(this.data);
+
+  @override
+  final T data;
+
+  @override
+  String toString() {
+    return 'SignUpState<$T>.successCities(data: $data)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$SuccessCitiesImpl<T> &&
+            const DeepCollectionEquality().equals(other.data, data));
+  }
+
+  @override
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(data));
+
+  /// Create a copy of SignUpState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$SuccessCitiesImplCopyWith<T, _$SuccessCitiesImpl<T>> get copyWith =>
+      __$$SuccessCitiesImplCopyWithImpl<T, _$SuccessCitiesImpl<T>>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() loadingUserTypes,
+    required TResult Function(T data) successUserTypes,
+    required TResult Function(String error) errorUserTypes,
+    required TResult Function() loadingSignUp,
+    required TResult Function(T data) successSignUp,
+    required TResult Function(String error) errorSignUp,
+    required TResult Function() loadingGovernorates,
+    required TResult Function(T data) successGovernorates,
+    required TResult Function(String error) errorGovernorates,
+    required TResult Function() loadingCities,
+    required TResult Function(T data) successCities,
+    required TResult Function(String error) errorCities,
+  }) {
+    return successCities(data);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? loadingUserTypes,
+    TResult? Function(T data)? successUserTypes,
+    TResult? Function(String error)? errorUserTypes,
+    TResult? Function()? loadingSignUp,
+    TResult? Function(T data)? successSignUp,
+    TResult? Function(String error)? errorSignUp,
+    TResult? Function()? loadingGovernorates,
+    TResult? Function(T data)? successGovernorates,
+    TResult? Function(String error)? errorGovernorates,
+    TResult? Function()? loadingCities,
+    TResult? Function(T data)? successCities,
+    TResult? Function(String error)? errorCities,
+  }) {
+    return successCities?.call(data);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loadingUserTypes,
+    TResult Function(T data)? successUserTypes,
+    TResult Function(String error)? errorUserTypes,
+    TResult Function()? loadingSignUp,
+    TResult Function(T data)? successSignUp,
+    TResult Function(String error)? errorSignUp,
+    TResult Function()? loadingGovernorates,
+    TResult Function(T data)? successGovernorates,
+    TResult Function(String error)? errorGovernorates,
+    TResult Function()? loadingCities,
+    TResult Function(T data)? successCities,
+    TResult Function(String error)? errorCities,
+    required TResult orElse(),
+  }) {
+    if (successCities != null) {
+      return successCities(data);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial<T> value) initial,
+    required TResult Function(LoadingUserTypes<T> value) loadingUserTypes,
+    required TResult Function(SuccessUserTypes<T> value) successUserTypes,
+    required TResult Function(ErrorUserTypes<T> value) errorUserTypes,
+    required TResult Function(SignUpLoadingState<T> value) loadingSignUp,
+    required TResult Function(SignUpSuccessState<T> value) successSignUp,
+    required TResult Function(SignUpErrorState<T> value) errorSignUp,
+    required TResult Function(LoadingGovernorates<T> value) loadingGovernorates,
+    required TResult Function(SuccessGovernorates<T> value) successGovernorates,
+    required TResult Function(ErrorGovernorates<T> value) errorGovernorates,
+    required TResult Function(LoadingCities<T> value) loadingCities,
+    required TResult Function(SuccessCities<T> value) successCities,
+    required TResult Function(ErrorCities<T> value) errorCities,
+  }) {
+    return successCities(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial<T> value)? initial,
+    TResult? Function(LoadingUserTypes<T> value)? loadingUserTypes,
+    TResult? Function(SuccessUserTypes<T> value)? successUserTypes,
+    TResult? Function(ErrorUserTypes<T> value)? errorUserTypes,
+    TResult? Function(SignUpLoadingState<T> value)? loadingSignUp,
+    TResult? Function(SignUpSuccessState<T> value)? successSignUp,
+    TResult? Function(SignUpErrorState<T> value)? errorSignUp,
+    TResult? Function(LoadingGovernorates<T> value)? loadingGovernorates,
+    TResult? Function(SuccessGovernorates<T> value)? successGovernorates,
+    TResult? Function(ErrorGovernorates<T> value)? errorGovernorates,
+    TResult? Function(LoadingCities<T> value)? loadingCities,
+    TResult? Function(SuccessCities<T> value)? successCities,
+    TResult? Function(ErrorCities<T> value)? errorCities,
+  }) {
+    return successCities?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial<T> value)? initial,
+    TResult Function(LoadingUserTypes<T> value)? loadingUserTypes,
+    TResult Function(SuccessUserTypes<T> value)? successUserTypes,
+    TResult Function(ErrorUserTypes<T> value)? errorUserTypes,
+    TResult Function(SignUpLoadingState<T> value)? loadingSignUp,
+    TResult Function(SignUpSuccessState<T> value)? successSignUp,
+    TResult Function(SignUpErrorState<T> value)? errorSignUp,
+    TResult Function(LoadingGovernorates<T> value)? loadingGovernorates,
+    TResult Function(SuccessGovernorates<T> value)? successGovernorates,
+    TResult Function(ErrorGovernorates<T> value)? errorGovernorates,
+    TResult Function(LoadingCities<T> value)? loadingCities,
+    TResult Function(SuccessCities<T> value)? successCities,
+    TResult Function(ErrorCities<T> value)? errorCities,
+    required TResult orElse(),
+  }) {
+    if (successCities != null) {
+      return successCities(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class SuccessCities<T> implements SignUpState<T> {
+  const factory SuccessCities(final T data) = _$SuccessCitiesImpl<T>;
+
+  T get data;
+
+  /// Create a copy of SignUpState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$SuccessCitiesImplCopyWith<T, _$SuccessCitiesImpl<T>> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$ErrorCitiesImplCopyWith<T, $Res> {
+  factory _$$ErrorCitiesImplCopyWith(_$ErrorCitiesImpl<T> value,
+          $Res Function(_$ErrorCitiesImpl<T>) then) =
+      __$$ErrorCitiesImplCopyWithImpl<T, $Res>;
+  @useResult
+  $Res call({String error});
+}
+
+/// @nodoc
+class __$$ErrorCitiesImplCopyWithImpl<T, $Res>
+    extends _$SignUpStateCopyWithImpl<T, $Res, _$ErrorCitiesImpl<T>>
+    implements _$$ErrorCitiesImplCopyWith<T, $Res> {
+  __$$ErrorCitiesImplCopyWithImpl(
+      _$ErrorCitiesImpl<T> _value, $Res Function(_$ErrorCitiesImpl<T>) _then)
+      : super(_value, _then);
+
+  /// Create a copy of SignUpState
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? error = null,
+  }) {
+    return _then(_$ErrorCitiesImpl<T>(
+      error: null == error
+          ? _value.error
+          : error // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$ErrorCitiesImpl<T> implements ErrorCities<T> {
+  const _$ErrorCitiesImpl({required this.error});
+
+  @override
+  final String error;
+
+  @override
+  String toString() {
+    return 'SignUpState<$T>.errorCities(error: $error)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$ErrorCitiesImpl<T> &&
+            (identical(other.error, error) || other.error == error));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, error);
+
+  /// Create a copy of SignUpState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$ErrorCitiesImplCopyWith<T, _$ErrorCitiesImpl<T>> get copyWith =>
+      __$$ErrorCitiesImplCopyWithImpl<T, _$ErrorCitiesImpl<T>>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() loadingUserTypes,
+    required TResult Function(T data) successUserTypes,
+    required TResult Function(String error) errorUserTypes,
+    required TResult Function() loadingSignUp,
+    required TResult Function(T data) successSignUp,
+    required TResult Function(String error) errorSignUp,
+    required TResult Function() loadingGovernorates,
+    required TResult Function(T data) successGovernorates,
+    required TResult Function(String error) errorGovernorates,
+    required TResult Function() loadingCities,
+    required TResult Function(T data) successCities,
+    required TResult Function(String error) errorCities,
+  }) {
+    return errorCities(error);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? loadingUserTypes,
+    TResult? Function(T data)? successUserTypes,
+    TResult? Function(String error)? errorUserTypes,
+    TResult? Function()? loadingSignUp,
+    TResult? Function(T data)? successSignUp,
+    TResult? Function(String error)? errorSignUp,
+    TResult? Function()? loadingGovernorates,
+    TResult? Function(T data)? successGovernorates,
+    TResult? Function(String error)? errorGovernorates,
+    TResult? Function()? loadingCities,
+    TResult? Function(T data)? successCities,
+    TResult? Function(String error)? errorCities,
+  }) {
+    return errorCities?.call(error);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loadingUserTypes,
+    TResult Function(T data)? successUserTypes,
+    TResult Function(String error)? errorUserTypes,
+    TResult Function()? loadingSignUp,
+    TResult Function(T data)? successSignUp,
+    TResult Function(String error)? errorSignUp,
+    TResult Function()? loadingGovernorates,
+    TResult Function(T data)? successGovernorates,
+    TResult Function(String error)? errorGovernorates,
+    TResult Function()? loadingCities,
+    TResult Function(T data)? successCities,
+    TResult Function(String error)? errorCities,
+    required TResult orElse(),
+  }) {
+    if (errorCities != null) {
+      return errorCities(error);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial<T> value) initial,
+    required TResult Function(LoadingUserTypes<T> value) loadingUserTypes,
+    required TResult Function(SuccessUserTypes<T> value) successUserTypes,
+    required TResult Function(ErrorUserTypes<T> value) errorUserTypes,
+    required TResult Function(SignUpLoadingState<T> value) loadingSignUp,
+    required TResult Function(SignUpSuccessState<T> value) successSignUp,
+    required TResult Function(SignUpErrorState<T> value) errorSignUp,
+    required TResult Function(LoadingGovernorates<T> value) loadingGovernorates,
+    required TResult Function(SuccessGovernorates<T> value) successGovernorates,
+    required TResult Function(ErrorGovernorates<T> value) errorGovernorates,
+    required TResult Function(LoadingCities<T> value) loadingCities,
+    required TResult Function(SuccessCities<T> value) successCities,
+    required TResult Function(ErrorCities<T> value) errorCities,
+  }) {
+    return errorCities(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial<T> value)? initial,
+    TResult? Function(LoadingUserTypes<T> value)? loadingUserTypes,
+    TResult? Function(SuccessUserTypes<T> value)? successUserTypes,
+    TResult? Function(ErrorUserTypes<T> value)? errorUserTypes,
+    TResult? Function(SignUpLoadingState<T> value)? loadingSignUp,
+    TResult? Function(SignUpSuccessState<T> value)? successSignUp,
+    TResult? Function(SignUpErrorState<T> value)? errorSignUp,
+    TResult? Function(LoadingGovernorates<T> value)? loadingGovernorates,
+    TResult? Function(SuccessGovernorates<T> value)? successGovernorates,
+    TResult? Function(ErrorGovernorates<T> value)? errorGovernorates,
+    TResult? Function(LoadingCities<T> value)? loadingCities,
+    TResult? Function(SuccessCities<T> value)? successCities,
+    TResult? Function(ErrorCities<T> value)? errorCities,
+  }) {
+    return errorCities?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial<T> value)? initial,
+    TResult Function(LoadingUserTypes<T> value)? loadingUserTypes,
+    TResult Function(SuccessUserTypes<T> value)? successUserTypes,
+    TResult Function(ErrorUserTypes<T> value)? errorUserTypes,
+    TResult Function(SignUpLoadingState<T> value)? loadingSignUp,
+    TResult Function(SignUpSuccessState<T> value)? successSignUp,
+    TResult Function(SignUpErrorState<T> value)? errorSignUp,
+    TResult Function(LoadingGovernorates<T> value)? loadingGovernorates,
+    TResult Function(SuccessGovernorates<T> value)? successGovernorates,
+    TResult Function(ErrorGovernorates<T> value)? errorGovernorates,
+    TResult Function(LoadingCities<T> value)? loadingCities,
+    TResult Function(SuccessCities<T> value)? successCities,
+    TResult Function(ErrorCities<T> value)? errorCities,
+    required TResult orElse(),
+  }) {
+    if (errorCities != null) {
+      return errorCities(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class ErrorCities<T> implements SignUpState<T> {
+  const factory ErrorCities({required final String error}) =
+      _$ErrorCitiesImpl<T>;
+
+  String get error;
+
+  /// Create a copy of SignUpState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$ErrorCitiesImplCopyWith<T, _$ErrorCitiesImpl<T>> get copyWith =>
       throw _privateConstructorUsedError;
 }

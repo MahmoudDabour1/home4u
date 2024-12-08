@@ -19,11 +19,14 @@ class DropDownButtons extends StatefulWidget {
 
 class _DropDownButtonsState extends State<DropDownButtons> {
   String? selectedAccountType;
+  String? selectedGovernorate;
+  String? selectedCity;
 
   @override
   void initState() {
     super.initState();
     context.read<SignUpCubit>().getUserTypes();
+    context.read<SignUpCubit>().getGovernorates();
   }
 
   @override
@@ -31,6 +34,7 @@ class _DropDownButtonsState extends State<DropDownButtons> {
     return BlocBuilder<SignUpCubit, SignUpState>(
       builder: (context, state) {
         final cubit = context.read<SignUpCubit>();
+
         return Column(
           children: [
             verticalSpace(16),
@@ -62,46 +66,48 @@ class _DropDownButtonsState extends State<DropDownButtons> {
               },
             ),
             verticalSpace(16),
-            // AppCustomDropDownButtonFormField(
-            //   value: selectedGovernorate,
-            //   items: egyptLocations.keys.map((String governorate) {
-            //     return DropdownMenuItem<String>(
-            //       value: governorate,
-            //       child: Text(
-            //         governorate,
-            //         style: AppStyles.font16BlackLight,
-            //       ),
-            //     );
-            //   }).toList(),
-            //   onChanged: (value) {
-            //     setState(() {
-            //       selectedGovernorate = value;
-            //       selectedCity = null;
-            //     });
-            //   },
-            //   labelText: AppStrings.theGovernorate,
-            // ),
-            // verticalSpace(16),
-            // AppCustomDropDownButtonFormField(
-            //     value: selectedCity,
-            //     items: selectedGovernorate != null
-            //         ? egyptLocations[selectedGovernorate]!.map((String city) {
-            //             return DropdownMenuItem<String>(
-            //               value: city,
-            //               child: Text(
-            //                 city,
-            //                 style: AppStyles.font16BlackLight,
-            //               ),
-            //             );
-            //           }).toList()
-            //         : [],
-            //     onChanged: (value) {
-            //       setState(() {
-            //         selectedCity = value;
-            //       });
-            //     },
-            //     labelText: AppStrings.theCity),
-            // verticalSpace(16),
+            AppCustomDropDownButtonFormField(
+              value: selectedGovernorate,
+              items: cubit.governorates.map((governorate) {
+                return DropdownMenuItem<String>(
+                  value: governorate.id.toString(),
+                  child: Text(
+                    governorate.name,
+                    style: AppStyles.font16BlackLight,
+                  ),
+                );
+              }).toList(),
+              onChanged: (value) {
+                setState(() {
+                  selectedGovernorate = value;
+                  selectedCity = null;
+                  cubit.getCities(int.parse(value!));
+                });
+              },
+              labelText: AppStrings.theGovernorate,
+            ),
+            verticalSpace(16),
+            AppCustomDropDownButtonFormField(
+              value: selectedCity,
+              items: selectedGovernorate != null
+                  ? cubit.cities.map((city) {
+                      return DropdownMenuItem<String>(
+                        value: city.id.toString(),
+                        child: Text(
+                          city.name,
+                          style: AppStyles.font16BlackLight,
+                        ),
+                      );
+                    }).toList()
+                  : [],
+              onChanged: (value) {
+                setState(() {
+                  selectedCity = value;
+                });
+              },
+              labelText: AppStrings.theCity,
+            ),
+            verticalSpace(16),
           ],
         );
       },

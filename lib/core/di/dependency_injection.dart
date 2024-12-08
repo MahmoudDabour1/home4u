@@ -3,6 +3,7 @@ import 'package:get_it/get_it.dart';
 import 'package:home4u/features/auth/login/data/data_sources/login_remote_data_source.dart';
 import 'package:home4u/features/auth/login/data/repos/login_repo.dart';
 import 'package:home4u/features/auth/login/logic/login_cubit.dart';
+import 'package:home4u/features/auth/sign_up/data/data_source/common_local_data_source.dart';
 import 'package:home4u/features/auth/sign_up/data/data_source/sign_up_remote_data_source.dart';
 import 'package:home4u/features/auth/sign_up/data/repos/sign_up_repository.dart';
 import 'package:home4u/features/auth/sign_up/logic/sign_up_cubit.dart';
@@ -32,8 +33,10 @@ Future<void> setupGetIt() async {
   //signUp
   sl.registerLazySingleton<SignUpRemoteDataSource>(
       () => SignUpRemoteDataSource(dio));
+  sl.registerLazySingleton<CommonLocalDataSource>(
+      () => CommonLocalDataSourceImpl());
   sl.registerLazySingleton<SignUpRepository>(() {
-    return SignUpRepositoryImpl(remoteDataSource: sl());
+    return SignUpRepositoryImpl(remoteDataSource: sl(), localDataSource: sl());
   });
   sl.registerFactory<SignUpCubit>(() => SignUpCubit(sl()));
 
