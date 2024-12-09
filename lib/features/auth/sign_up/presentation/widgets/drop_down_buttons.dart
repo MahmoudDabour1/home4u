@@ -82,6 +82,7 @@ class _DropDownButtonsState extends State<DropDownButtons> {
                   selectedGovernorate = value;
                   selectedCity = null;
                   cubit.getCities(int.parse(value!));
+                  cubit.selectedGovernorate = value;
                 });
               },
               labelText: AppStrings.theGovernorate,
@@ -103,6 +104,7 @@ class _DropDownButtonsState extends State<DropDownButtons> {
               onChanged: (value) {
                 setState(() {
                   selectedCity = value;
+                  cubit.selectedCity = value;
                 });
               },
               labelText: AppStrings.theCity,

@@ -5,9 +5,11 @@ import 'package:logger/logger.dart';
 
 import '../../../../core/helpers/helper_methods.dart';
 import '../data/models/city_model.dart';
+import '../data/models/engineer_body.dart';
 import '../data/models/governorate_model.dart';
 import '../data/models/sign_up_body.dart';
 import '../data/models/user_type_model.dart';
+import '../data/models/worker_body.dart';
 import '../data/repos/sign_up_repository.dart';
 
 class SignUpCubit extends Cubit<SignUpState> {
@@ -73,8 +75,18 @@ class SignUpCubit extends Cubit<SignUpState> {
       TextEditingController(text: "12345678");
   final TextEditingController passwordConfirmationController =
       TextEditingController(text: "12345678");
+  final TextEditingController yearsOfExperienceController =
+      TextEditingController(text: "5");
 
   UserTypeRequest? selectedUserType;
+  EngineerRequest? engineerRequest;
+  TechnicalWorkerRequest? technicalWorkerRequest;
+  String? selectedGovernorate;
+  String? selectedCity;
+  int? selectedEngineerType;
+  List<int>? selectedEngineerServices;
+  String? selectedWorkerType;
+  List<String>? selectedWorkerServices;
 
   void emitSignUp() async {
     if (selectedUserType == null) {
@@ -83,13 +95,49 @@ class SignUpCubit extends Cubit<SignUpState> {
     }
 
     emit(const SignUpState.loadingSignUp());
+
+    if (selectedUserType!.code == "ENGINEER") {
+      if (selectedEngineerType == null || selectedEngineerServices == null) {
+        emit(
+            SignUpState.errorSignUp(error: "Please complete engineer details"));
+        return;
+      }
+      engineerRequest = EngineerRequest(
+        type: EngineerTypeRequest(id: selectedEngineerType!),
+        yearsOfExperience: int.parse(yearsOfExperienceController.text),
+        engineerServ: selectedEngineerServices!
+            .map((id) => EngineerServiceRequest(id: id))
+            .toList(),
+      );
+    } else if (selectedUserType!.code == "TECHNICAL_WORKER") {
+      if (selectedWorkerType == null || selectedWorkerServices == null) {
+        emit(SignUpState.errorSignUp(error: "Please complete worker details"));
+        return;
+      }
+      technicalWorkerRequest = TechnicalWorkerRequest(
+        type: WorkerTypeRequest(id: int.parse(selectedWorkerType!)),
+        yearsOfExperience: int.parse(yearsOfExperienceController.text),
+        workerServs: selectedWorkerServices!
+            .map((id) => WorkerServiceRequest(id: int.parse(id)))
+            .toList(),
+      );
+    }
+
     final response = await signUpRepository.signUp(SignUpBody(
       firstName: firstNameController.text,
       lastName: lastNameController.text,
       email: emailController.text,
       phone: phoneController.text,
-      userType: selectedUserType!,
       password: passwordController.text,
+      governorate: selectedGovernorate != null
+          ? GovernorateRequest(id: int.parse(selectedGovernorate!))
+          : null,
+      city: selectedCity != null
+          ? CityRequest(id: int.parse(selectedCity!))
+          : null,
+      userType: selectedUserType!,
+      engineer: engineerRequest,
+      technicalWorker: technicalWorkerRequest,
     ));
 
     response.when(success: (data) async {

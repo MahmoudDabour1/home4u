@@ -136,7 +136,7 @@ class _SignUpRemoteDataSource implements SignUpRemoteDataSource {
     )
         .compose(
           _dio.options,
-          '/api/v1/cities/governorate/{governorateId',
+          '/api/v1/cities/governorate/${governorateId}',
           queryParameters: queryParameters,
           data: _data,
         )

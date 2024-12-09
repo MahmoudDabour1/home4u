@@ -1,6 +1,5 @@
 import 'package:dropdown_search/dropdown_search.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:home4u/core/widgets/get_common_input_decoration.dart';
 
 import '../theming/app_colors.dart';
@@ -8,6 +7,7 @@ import '../theming/app_colors.dart';
 class AppCustomDropDownMultiSelectButton extends StatelessWidget {
   final List<String> selectedValues;
   final void Function(List<String>) onChanged;
+  final void Function(List<String>?)? onSaved;
   final List<String> items;
   final String labelText;
   final FormFieldValidator<List<String>>? validator;
@@ -19,6 +19,7 @@ class AppCustomDropDownMultiSelectButton extends StatelessWidget {
     required this.items,
     required this.labelText,
     this.validator,
+    this.onSaved,
   });
 
   @override
@@ -28,6 +29,7 @@ class AppCustomDropDownMultiSelectButton extends StatelessWidget {
       selectedItems: [...selectedValues],
       validator: validator,
       onChanged: onChanged,
+      onSaved: onSaved,
       items: (filter, loadProps) => Future.value(items),
       decoratorProps: DropDownDecoratorProps(
         decoration: getCommonInputDecoration(labelText: labelText),
