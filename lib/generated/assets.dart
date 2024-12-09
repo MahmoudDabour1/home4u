@@ -27,5 +27,9 @@ class Assets {
   static const String svgsArrowRight = 'assets/svgs/arrow_right.svg';
   static const String svgsLoadImages = 'assets/svgs/load_images.svg';
   static const String svgsLockSvg = 'assets/svgs/lock_svg.svg';
+  static const String svgsMenuSvg = 'assets/svgs/menu_svg.svg';
+  static const String svgsNotificationSvg = 'assets/svgs/notification_svg.svg';
+  static const String svgsProfileSvg = 'assets/svgs/profile_svg.svg';
+  static const String svgsSettingSvg = 'assets/svgs/setting_svg.svg';
 
 }
