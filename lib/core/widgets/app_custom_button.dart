@@ -11,6 +11,7 @@ class AppCustomButton extends StatelessWidget {
   final double btnHeight;
   final VoidCallback onPressed;
   final bool isLoading;
+  final double radius;
 
   const AppCustomButton({
     super.key,
@@ -19,13 +20,14 @@ class AppCustomButton extends StatelessWidget {
     required this.btnHeight,
     required this.onPressed,
     this.isLoading = false,
+    this.radius=16
   });
 
   @override
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(16).r,
+        borderRadius: BorderRadius.circular(radius.r),
         gradient: LinearGradient(
           colors: [
             AppColors.secondaryGradientColor,

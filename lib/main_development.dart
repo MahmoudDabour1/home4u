@@ -22,6 +22,6 @@ void main() async {
     //   enabled: !kReleaseMode,
     //   builder: (context) => Home4uApp(appRouter: AppRouter()),
     // ),
-      Home4uApp(appRouter: AppRouter()),
+    Home4uApp(appRouter: AppRouter()),
   );
 }
