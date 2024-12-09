@@ -7,6 +7,11 @@ class ApiConstants {
   static const String forgetPasswordEp = "/api/v1/auth/send-otp";
   static const String verificationEP = "/api/v1/auth/activate-the-account";
   static const String newPasswordEP = "/api/v1/auth/reset-password";
+  static const String governoratesEp = "/api/v1/governorates";
+
+  static String citiesEp(int governorateId) {
+    return "/api/v1/cities/governorate/$governorateId";
+  }
 }
 
 class ApiErrors {

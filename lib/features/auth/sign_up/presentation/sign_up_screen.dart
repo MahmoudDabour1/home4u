@@ -14,7 +14,6 @@ class SignUpScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    context.read<SignUpCubit>().getUserTypes();
     return Scaffold(
       body: SafeArea(
         child: SingleChildScrollView(
