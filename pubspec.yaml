@@ -91,7 +91,8 @@ dependencies:
   loading_animation_widget: ^1.3.0
   # Toast Library for Flutter, Easily create toast messages in single line of code
   fluttertoast: ^8.2.8
-
+  #Multi select && Search DropDown flutter
+  dropdown_search: ^6.0.1
 
 dev_dependencies:
   flutter_test:

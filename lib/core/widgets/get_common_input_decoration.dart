@@ -18,7 +18,6 @@ InputDecoration getCommonInputDecoration({
       vertical: 17.h,
       horizontal: 20.w,
     ),
-
     focusedBorder: OutlineInputBorder(
       borderSide: const BorderSide(color: AppColors.primaryColor, width: 1.3),
       borderRadius: BorderRadius.circular(16.r),

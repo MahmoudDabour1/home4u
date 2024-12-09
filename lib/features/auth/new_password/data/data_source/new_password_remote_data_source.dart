@@ -1,5 +1,6 @@
 import 'package:dio/dio.dart';
 import 'package:home4u/features/auth/new_password/data/models/new_password_response_model.dart';
+import 'package:retrofit/error_logger.dart';
 import 'package:retrofit/http.dart';
 
 import '../../../../../core/networking/api_constants.dart';

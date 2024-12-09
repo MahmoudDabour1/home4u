@@ -27,7 +27,7 @@ abstract class SignUpRemoteDataSource {
   @GET(ApiConstants.governoratesEp)
   Future<GovernorateModel> getGovernorates();
 
-  @GET("/api/v1/cities/governorate/{governorateId}")
+  @GET("/api/v1/cities/governorate/{governorateId")
   Future<CityModel> getCities(
     @Path("governorateId") int governorateId,
   );

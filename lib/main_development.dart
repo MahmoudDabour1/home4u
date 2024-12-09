@@ -20,8 +20,8 @@ void main() async {
   Bloc.observer = MyBlocObserver();
 
   await Hive.initFlutter();
-  Hive.registerAdapter<GovernorateDataModel>(GovernorateDataModelAdapter());
-  await Hive.openBox<GovernorateDataModel>(kGovernoratesBox);
+  // Hive.registerAdapter<GovernorateDataModel>(GovernorateDataModelAdapter());
+  // await Hive.openBox<GovernorateDataModel>(kGovernoratesBox);
 
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,

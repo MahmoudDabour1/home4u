@@ -12,7 +12,7 @@ class _NewPasswordRemoteDataSource implements NewPasswordRemoteDataSource {
   _NewPasswordRemoteDataSource(
     this._dio, {
     this.baseUrl,
-    // this.errorLogger,
+    this.errorLogger,
   }) {
     baseUrl ??= 'https://dynamic-mouse-needlessly.ngrok-free.app';
   }
@@ -21,7 +21,7 @@ class _NewPasswordRemoteDataSource implements NewPasswordRemoteDataSource {
 
   String? baseUrl;
 
-  // final ParseErrorLogger? errorLogger;
+  final ParseErrorLogger? errorLogger;
 
   @override
   Future<NewPasswordResponseModel> newPassword(
@@ -56,7 +56,7 @@ class _NewPasswordRemoteDataSource implements NewPasswordRemoteDataSource {
     try {
       _value = NewPasswordResponseModel.fromJson(_result.data!);
     } on Object catch (e, s) {
-      // errorLogger?.logError(e, s, _options);
+      errorLogger?.logError(e, s, _options);
       rethrow;
     }
     return _value;

@@ -6,6 +6,7 @@ import 'package:home4u/features/auth/forget_password/presentation/forget_passwor
 import 'package:home4u/features/auth/login/logic/login_cubit.dart';
 import 'package:home4u/features/auth/new_password/logic/new_password_cubit.dart';
 import 'package:home4u/features/auth/new_password/presentation/new_password_screen.dart';
+import 'package:home4u/features/auth/sign_up/logic/engineer/engineer_cubit.dart';
 import 'package:home4u/features/auth/sign_up/logic/sign_up_cubit.dart';
 import 'package:home4u/features/auth/sign_up/presentation/sign_up_engineer.dart';
 import 'package:home4u/features/auth/sign_up/presentation/sign_up_screen.dart';
@@ -58,7 +59,10 @@ class AppRouter {
         );
       case Routes.engineerSignUpScreen:
         return MaterialPageRoute(
-          builder: (_) => SignUpEngineer(),
+          builder: (_) => BlocProvider<EngineerCubit>(
+            create: (_) => sl<EngineerCubit>(),
+            child: SignUpEngineer(),
+          ),
         );
       case Routes.engineeringOfficeScreen:
         return MaterialPageRoute(

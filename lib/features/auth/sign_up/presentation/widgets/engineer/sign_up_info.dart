@@ -3,11 +3,9 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:home4u/features/auth/sign_up/presentation/widgets/engineer/engineer_sign_up_button.dart';
 
 import '../../../../../../core/theming/app_strings.dart';
-import '../../../../../../core/theming/app_styles.dart';
 import '../../../../../../core/utils/spacing.dart';
-import '../../../../../../core/widgets/app_custom_drop_down_button_form_field.dart';
 import '../../../../../../core/widgets/app_text_form_field.dart';
-import '../egypt_locations_list.dart';
+import 'engineer_drop_down_buttons.dart';
 
 class SignUpInfo extends StatefulWidget {
   const SignUpInfo({super.key});
@@ -43,45 +41,7 @@ class _SignUpInfoState extends State<SignUpInfo> {
             },
           ),
           verticalSpace(16),
-          AppCustomDropDownButtonFormField(
-            value: selectedGovernorate,
-            items: egyptLocations.keys.map((String governorate) {
-              return DropdownMenuItem<String>(
-                value: governorate,
-                child: Text(
-                  governorate,
-                  style: AppStyles.font16BlackLight,
-                ),
-              );
-            }).toList(),
-            onChanged: (value) {
-              setState(() {
-                selectedGovernorate = value;
-                selectedCity = null;
-              });
-            },
-            labelText: AppStrings.theGovernorate,
-          ),
-          verticalSpace(16),
-          AppCustomDropDownButtonFormField(
-              value: selectedCity,
-              items: selectedGovernorate != null
-                  ? egyptLocations[selectedGovernorate]!.map((String city) {
-                      return DropdownMenuItem<String>(
-                        value: city,
-                        child: Text(
-                          city,
-                          style: AppStyles.font16BlackLight,
-                        ),
-                      );
-                    }).toList()
-                  : [],
-              onChanged: (value) {
-                setState(() {
-                  selectedCity = value;
-                });
-              },
-              labelText: AppStrings.theCity),
+          EngineerDropDownButtons(),
           verticalSpace(32),
           EngineerSignUpButton(),
         ],

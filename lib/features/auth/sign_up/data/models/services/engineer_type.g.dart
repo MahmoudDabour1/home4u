@@ -1,33 +1,31 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'governorate_model.dart';
+part of 'engineer_type.dart';
 
 // **************************************************************************
 // JsonSerializableGenerator
 // **************************************************************************
 
-GovernorateModel _$GovernorateModelFromJson(Map<String, dynamic> json) =>
-    GovernorateModel(
+EngineerTypes _$EngineerTypesFromJson(Map<String, dynamic> json) =>
+    EngineerTypes(
       data: (json['data'] as List<dynamic>)
-          .map((e) => GovernorateDataModel.fromJson(e as Map<String, dynamic>))
+          .map((e) => EngineerTypeData.fromJson(e as Map<String, dynamic>))
           .toList(),
     );
 
-Map<String, dynamic> _$GovernorateModelToJson(GovernorateModel instance) =>
+Map<String, dynamic> _$EngineerTypesToJson(EngineerTypes instance) =>
     <String, dynamic>{
       'data': instance.data,
     };
 
-GovernorateDataModel _$GovernorateDataModelFromJson(
-        Map<String, dynamic> json) =>
-    GovernorateDataModel(
+EngineerTypeData _$EngineerTypeDataFromJson(Map<String, dynamic> json) =>
+    EngineerTypeData(
       id: (json['id'] as num).toInt(),
       code: json['code'] as String,
       name: json['name'] as String,
     );
 
-Map<String, dynamic> _$GovernorateDataModelToJson(
-        GovernorateDataModel instance) =>
+Map<String, dynamic> _$EngineerTypeDataToJson(EngineerTypeData instance) =>
     <String, dynamic>{
       'id': instance.id,
       'code': instance.code,
