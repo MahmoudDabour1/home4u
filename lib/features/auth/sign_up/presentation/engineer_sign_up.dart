@@ -4,8 +4,8 @@ import 'package:home4u/features/auth/sign_up/presentation/widgets/engineer/sign_
 
 import '../../widgets/auth_welcome_data.dart';
 
-class SignUpEngineer extends StatelessWidget {
-  const SignUpEngineer({super.key});
+class EngineerSignUp extends StatelessWidget {
+  const EngineerSignUp({super.key});
 
   @override
   Widget build(BuildContext context) {

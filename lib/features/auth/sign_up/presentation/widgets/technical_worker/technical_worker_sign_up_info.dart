@@ -5,20 +5,20 @@ import 'package:home4u/features/auth/sign_up/logic/sign_up_cubit.dart';
 import 'package:home4u/core/theming/app_strings.dart';
 import 'package:home4u/core/utils/spacing.dart';
 import 'package:home4u/core/widgets/app_text_form_field.dart';
-import 'engineer_drop_down_buttons.dart';
-import 'engineer_sign_up_button.dart';
+import 'technical_worker_drop_down_buttons.dart';
+import 'technical_worker_sign_up_button.dart';
 
-class SignUpInfo extends StatefulWidget {
-  const SignUpInfo({super.key});
+class TechnicalWorkerSignUpInfo extends StatefulWidget {
+  const TechnicalWorkerSignUpInfo({super.key});
 
   @override
-  State<SignUpInfo> createState() => _SignUpInfoState();
+  State<TechnicalWorkerSignUpInfo> createState() => _TechnicalWorkerSignUpInfoState();
 }
 
-class _SignUpInfoState extends State<SignUpInfo> {
-  final engineerTypeFocusNode = FocusNode();
-  final engineerServicesFocusNode = FocusNode();
-  final engineerYearsOfExperienceFocusNode = FocusNode();
+class _TechnicalWorkerSignUpInfoState extends State<TechnicalWorkerSignUpInfo> {
+  final technicalWorkerTypeFocusNode = FocusNode();
+  final technicalWorkerServicesFocusNode = FocusNode();
+  final technicalWorkerYearsOfExperienceFocusNode = FocusNode();
 
   @override
   Widget build(BuildContext context) {
@@ -32,7 +32,7 @@ class _SignUpInfoState extends State<SignUpInfo> {
           AppTextFormField(
             controller: signUpCubit.yearsOfExperienceController,
             labelText: AppStrings.yearsOfExperience,
-            focusNode: engineerYearsOfExperienceFocusNode,
+            focusNode: technicalWorkerYearsOfExperienceFocusNode,
             textInputAction: TextInputAction.next,
             keyboardType: TextInputType.number,
             validator: (value) {
@@ -43,9 +43,9 @@ class _SignUpInfoState extends State<SignUpInfo> {
             },
           ),
           verticalSpace(16),
-          EngineerDropDownButtons(),
+          TechnicalWorkerDropDownButtons(),
           verticalSpace(32),
-          EngineerSignUpButton(
+          TechnicalWorkerSignUpButton(
             onPressed: () {
               final checkInputs = signUpCubit.formKey.currentState!.validate();
               if (checkInputs) {

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'engineer_sign_up_remote_data_source.dart';
+part of 'freelancer_sign_up_remote_data_source.dart';
 
 // **************************************************************************
 // RetrofitGenerator
@@ -8,9 +8,9 @@ part of 'engineer_sign_up_remote_data_source.dart';
 
 // ignore_for_file: unnecessary_brace_in_string_interps,no_leading_underscores_for_local_identifiers,unused_element,unnecessary_string_interpolations
 
-class _EngineerSignUpRemoteDataSource
-    implements EngineerSignUpRemoteDataSource {
-  _EngineerSignUpRemoteDataSource(
+class _FreelancerSignUpRemoteDataSource
+    implements FreelancerSignUpRemoteDataSource {
+  _FreelancerSignUpRemoteDataSource(
     this._dio, {
     this.baseUrl,
     this.errorLogger,
@@ -25,12 +25,12 @@ class _EngineerSignUpRemoteDataSource
   final ParseErrorLogger? errorLogger;
 
   @override
-  Future<EngineerTypes> getEngineerTypes() async {
+  Future<FreelancerTypes> getEngineerTypes() async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
     const Map<String, dynamic>? _data = null;
-    final _options = _setStreamType<EngineerTypes>(Options(
+    final _options = _setStreamType<FreelancerTypes>(Options(
       method: 'GET',
       headers: _headers,
       extra: _extra,
@@ -47,9 +47,9 @@ class _EngineerSignUpRemoteDataSource
           baseUrl,
         )));
     final _result = await _dio.fetch<Map<String, dynamic>>(_options);
-    late EngineerTypes _value;
+    late FreelancerTypes _value;
     try {
-      _value = EngineerTypes.fromJson(_result.data!);
+      _value = FreelancerTypes.fromJson(_result.data!);
     } on Object catch (e, s) {
       errorLogger?.logError(e, s, _options);
       rethrow;
@@ -58,12 +58,12 @@ class _EngineerSignUpRemoteDataSource
   }
 
   @override
-  Future<EngineerServices> getEngineerServices(int engineerTypeId) async {
+  Future<FreelancerServices> getEngineerServices(int engineerTypeId) async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
     const Map<String, dynamic>? _data = null;
-    final _options = _setStreamType<EngineerServices>(Options(
+    final _options = _setStreamType<FreelancerServices>(Options(
       method: 'GET',
       headers: _headers,
       extra: _extra,
@@ -80,9 +80,76 @@ class _EngineerSignUpRemoteDataSource
           baseUrl,
         )));
     final _result = await _dio.fetch<Map<String, dynamic>>(_options);
-    late EngineerServices _value;
+    late FreelancerServices _value;
     try {
-      _value = EngineerServices.fromJson(_result.data!);
+      _value = FreelancerServices.fromJson(_result.data!);
+    } on Object catch (e, s) {
+      errorLogger?.logError(e, s, _options);
+      rethrow;
+    }
+    return _value;
+  }
+
+  @override
+  Future<FreelancerTypes> getTechnicalWorkerTypes() async {
+    final _extra = <String, dynamic>{};
+    final queryParameters = <String, dynamic>{};
+    final _headers = <String, dynamic>{};
+    const Map<String, dynamic>? _data = null;
+    final _options = _setStreamType<FreelancerTypes>(Options(
+      method: 'GET',
+      headers: _headers,
+      extra: _extra,
+    )
+        .compose(
+          _dio.options,
+          '/api/v1/technical-worker-types',
+          queryParameters: queryParameters,
+          data: _data,
+        )
+        .copyWith(
+            baseUrl: _combineBaseUrls(
+          _dio.options.baseUrl,
+          baseUrl,
+        )));
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
+    late FreelancerTypes _value;
+    try {
+      _value = FreelancerTypes.fromJson(_result.data!);
+    } on Object catch (e, s) {
+      errorLogger?.logError(e, s, _options);
+      rethrow;
+    }
+    return _value;
+  }
+
+  @override
+  Future<FreelancerServices> getTechnicalWorkerServices(
+      int technicalWorkerTypeId) async {
+    final _extra = <String, dynamic>{};
+    final queryParameters = <String, dynamic>{};
+    final _headers = <String, dynamic>{};
+    const Map<String, dynamic>? _data = null;
+    final _options = _setStreamType<FreelancerServices>(Options(
+      method: 'GET',
+      headers: _headers,
+      extra: _extra,
+    )
+        .compose(
+          _dio.options,
+          '/api/v1/technical-worker-services/service/${technicalWorkerTypeId}',
+          queryParameters: queryParameters,
+          data: _data,
+        )
+        .copyWith(
+            baseUrl: _combineBaseUrls(
+          _dio.options.baseUrl,
+          baseUrl,
+        )));
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
+    late FreelancerServices _value;
+    try {
+      _value = FreelancerServices.fromJson(_result.data!);
     } on Object catch (e, s) {
       errorLogger?.logError(e, s, _options);
       rethrow;

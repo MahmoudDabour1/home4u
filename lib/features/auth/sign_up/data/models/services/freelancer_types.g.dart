@@ -1,28 +1,28 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'governorate_model.dart';
+part of 'freelancer_types.dart';
 
 // **************************************************************************
 // TypeAdapterGenerator
 // **************************************************************************
 
-class GovernorateModelAdapter extends TypeAdapter<GovernorateModel> {
+class FreelancerTypesAdapter extends TypeAdapter<FreelancerTypes> {
   @override
-  final int typeId = 1;
+  final int typeId = 11;
 
   @override
-  GovernorateModel read(BinaryReader reader) {
+  FreelancerTypes read(BinaryReader reader) {
     final numOfFields = reader.readByte();
     final fields = <int, dynamic>{
       for (int i = 0; i < numOfFields; i++) reader.readByte(): reader.read(),
     };
-    return GovernorateModel(
-      data: (fields[0] as List).cast<GovernorateDataModel>(),
+    return FreelancerTypes(
+      data: (fields[0] as List).cast<FreelancerTypeData>(),
     );
   }
 
   @override
-  void write(BinaryWriter writer, GovernorateModel obj) {
+  void write(BinaryWriter writer, FreelancerTypes obj) {
     writer
       ..writeByte(1)
       ..writeByte(0)
@@ -35,22 +35,22 @@ class GovernorateModelAdapter extends TypeAdapter<GovernorateModel> {
   @override
   bool operator ==(Object other) =>
       identical(this, other) ||
-      other is GovernorateModelAdapter &&
+      other is FreelancerTypesAdapter &&
           runtimeType == other.runtimeType &&
           typeId == other.typeId;
 }
 
-class GovernorateDataModelAdapter extends TypeAdapter<GovernorateDataModel> {
+class FreelancerTypeDataAdapter extends TypeAdapter<FreelancerTypeData> {
   @override
-  final int typeId = 0;
+  final int typeId = 10;
 
   @override
-  GovernorateDataModel read(BinaryReader reader) {
+  FreelancerTypeData read(BinaryReader reader) {
     final numOfFields = reader.readByte();
     final fields = <int, dynamic>{
       for (int i = 0; i < numOfFields; i++) reader.readByte(): reader.read(),
     };
-    return GovernorateDataModel(
+    return FreelancerTypeData(
       id: fields[0] as int,
       code: fields[1] as String,
       name: fields[2] as String,
@@ -58,7 +58,7 @@ class GovernorateDataModelAdapter extends TypeAdapter<GovernorateDataModel> {
   }
 
   @override
-  void write(BinaryWriter writer, GovernorateDataModel obj) {
+  void write(BinaryWriter writer, FreelancerTypeData obj) {
     writer
       ..writeByte(3)
       ..writeByte(0)
@@ -75,7 +75,7 @@ class GovernorateDataModelAdapter extends TypeAdapter<GovernorateDataModel> {
   @override
   bool operator ==(Object other) =>
       identical(this, other) ||
-      other is GovernorateDataModelAdapter &&
+      other is FreelancerTypeDataAdapter &&
           runtimeType == other.runtimeType &&
           typeId == other.typeId;
 }
@@ -84,28 +84,26 @@ class GovernorateDataModelAdapter extends TypeAdapter<GovernorateDataModel> {
 // JsonSerializableGenerator
 // **************************************************************************
 
-GovernorateModel _$GovernorateModelFromJson(Map<String, dynamic> json) =>
-    GovernorateModel(
+FreelancerTypes _$FreelancerTypesFromJson(Map<String, dynamic> json) =>
+    FreelancerTypes(
       data: (json['data'] as List<dynamic>)
-          .map((e) => GovernorateDataModel.fromJson(e as Map<String, dynamic>))
+          .map((e) => FreelancerTypeData.fromJson(e as Map<String, dynamic>))
           .toList(),
     );
 
-Map<String, dynamic> _$GovernorateModelToJson(GovernorateModel instance) =>
+Map<String, dynamic> _$FreelancerTypesToJson(FreelancerTypes instance) =>
     <String, dynamic>{
       'data': instance.data,
     };
 
-GovernorateDataModel _$GovernorateDataModelFromJson(
-        Map<String, dynamic> json) =>
-    GovernorateDataModel(
+FreelancerTypeData _$FreelancerTypeDataFromJson(Map<String, dynamic> json) =>
+    FreelancerTypeData(
       id: (json['id'] as num).toInt(),
       code: json['code'] as String,
       name: json['name'] as String,
     );
 
-Map<String, dynamic> _$GovernorateDataModelToJson(
-        GovernorateDataModel instance) =>
+Map<String, dynamic> _$FreelancerTypeDataToJson(FreelancerTypeData instance) =>
     <String, dynamic>{
       'id': instance.id,
       'code': instance.code,

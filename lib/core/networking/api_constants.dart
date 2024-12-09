@@ -10,8 +10,9 @@ class ApiConstants {
   static const String governoratesEp = "/api/v1/governorates";
 
 
-  ///Engineer
+  ///Freelancer
   static const String engineerTypesEp = "/api/v1/engineer-types";
+  static const String technicalWorkerTypesEp = "/api/v1/technical-worker-types";
 
 }
 

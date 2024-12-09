@@ -1,26 +1,26 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:hive/hive.dart';
 
-part 'engineer_type.g.dart';
+part 'freelancer_types.g.dart';
 
 @JsonSerializable()
 @HiveType(typeId: 11)
-class EngineerTypes {
+class FreelancerTypes {
   @JsonKey(name: "data")
   @HiveField(0)
-  final List<EngineerTypeData> data;
+  final List<FreelancerTypeData> data;
 
-  EngineerTypes({
+  FreelancerTypes({
     required this.data,
   });
 
-  factory EngineerTypes.fromJson(Map<String, dynamic> json) =>
-      _$EngineerTypesFromJson(json);
+  factory FreelancerTypes.fromJson(Map<String, dynamic> json) =>
+      _$FreelancerTypesFromJson(json);
 }
 
 @JsonSerializable()
 @HiveType(typeId: 10)
-class EngineerTypeData {
+class FreelancerTypeData {
   @JsonKey(name: "id")
   @HiveField(0)
   final int id;
@@ -31,13 +31,12 @@ class EngineerTypeData {
   @HiveField(2)
   final String name;
 
-
-  EngineerTypeData({
+  FreelancerTypeData({
     required this.id,
     required this.code,
     required this.name,
   });
 
-  factory EngineerTypeData.fromJson(Map<String, dynamic> json) =>
-      _$EngineerTypeDataFromJson(json);
+  factory FreelancerTypeData.fromJson(Map<String, dynamic> json) =>
+      _$FreelancerTypeDataFromJson(json);
 }

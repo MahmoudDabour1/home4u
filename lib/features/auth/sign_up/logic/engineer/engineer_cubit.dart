@@ -1,18 +1,18 @@
 import 'package:bloc/bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:home4u/features/auth/sign_up/data/models/services/engineer_services.dart';
-import 'package:home4u/features/auth/sign_up/data/models/services/engineer_type.dart';
-import '../../data/repos/engineer_sign_up_repository.dart';
+import 'package:home4u/features/auth/sign_up/data/models/services/freelancer_services.dart';
+import 'package:home4u/features/auth/sign_up/data/models/services/freelancer_types.dart';
+import '../../data/repos/freelancer_sign_up_repository.dart';
 import 'engineer_state.dart';
 
 class EngineerCubit extends Cubit<EngineerState> {
-  final EngineerSignUpRepository _engineerSignUpRepository;
+  final FreelancerSignUpRepository _engineerSignUpRepository;
 
   EngineerCubit(this._engineerSignUpRepository)
       : super(const EngineerState.initial());
 
-  List<EngineerTypeData> engineerTypes = [];
-  List<EngineerServiceData> engineerServices = [];
+  List<FreelancerTypeData> engineerTypes = [];
+  List<FreelancerServiceData> engineerServices = [];
 
   void getEngineerTypes() async {
     emit(const EngineerState.loadingEngineerTypes());

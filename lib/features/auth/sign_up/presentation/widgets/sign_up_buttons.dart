@@ -41,6 +41,9 @@ class SignUpButtons extends StatelessWidget {
                   if (checkInputs) {
                     if (signUpCubit.selectedUserType?.code == "ENGINEER") {
                       context.pushNamed(Routes.engineerSignUpScreen);
+                    } else if (signUpCubit.selectedUserType?.code ==
+                        "TECHNICAL_WORKER") {
+                      context.pushNamed(Routes.technicalWorkerSignUpScreen);
                     } else {
                       signUpCubit.emitSignUp();
                     }
