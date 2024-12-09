@@ -73,9 +73,6 @@ class AppRouter {
       case Routes.profileScreen:
         return MaterialPageRoute(
           builder: (_) => ProfileScreen(),
-      case Routes.homeScreen:
-        return MaterialPageRoute(
-          builder: (_) => HomeScreen(),
         );
       default:
         return null;
