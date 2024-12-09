@@ -85,8 +85,8 @@ class SignUpCubit extends Cubit<SignUpState> {
   String? selectedCity;
   int? selectedEngineerType;
   List<int>? selectedEngineerServices;
-  String? selectedWorkerType;
-  List<String>? selectedWorkerServices;
+  int? selectedWorkerType;
+  List<int>? selectedWorkerServices;
 
   void emitSignUp() async {
     if (selectedUserType == null) {
@@ -115,10 +115,10 @@ class SignUpCubit extends Cubit<SignUpState> {
         return;
       }
       technicalWorkerRequest = TechnicalWorkerRequest(
-        type: WorkerTypeRequest(id: int.parse(selectedWorkerType!)),
+        type: WorkerTypeRequest(id: selectedWorkerType ?? 1),
         yearsOfExperience: int.parse(yearsOfExperienceController.text),
         workerServs: selectedWorkerServices!
-            .map((id) => WorkerServiceRequest(id: int.parse(id)))
+            .map((id) => WorkerServiceRequest(id: id))
             .toList(),
       );
     }

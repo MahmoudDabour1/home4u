@@ -1,32 +1,33 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'engineer_services.dart';
+part of 'freelancer_services.dart';
 
 // **************************************************************************
 // JsonSerializableGenerator
 // **************************************************************************
 
-EngineerServices _$EngineerServicesFromJson(Map<String, dynamic> json) =>
-    EngineerServices(
+FreelancerServices _$FreelancerServicesFromJson(Map<String, dynamic> json) =>
+    FreelancerServices(
       data: (json['data'] as List<dynamic>)
-          .map((e) => EngineerServiceData.fromJson(e as Map<String, dynamic>))
+          .map((e) => FreelancerServiceData.fromJson(e as Map<String, dynamic>))
           .toList(),
     );
 
-Map<String, dynamic> _$EngineerServicesToJson(EngineerServices instance) =>
+Map<String, dynamic> _$FreelancerServicesToJson(FreelancerServices instance) =>
     <String, dynamic>{
       'data': instance.data,
     };
 
-EngineerServiceData _$EngineerServiceDataFromJson(Map<String, dynamic> json) =>
-    EngineerServiceData(
+FreelancerServiceData _$FreelancerServiceDataFromJson(
+        Map<String, dynamic> json) =>
+    FreelancerServiceData(
       id: (json['id'] as num).toInt(),
       code: json['code'] as String,
       name: json['name'] as String?,
     );
 
-Map<String, dynamic> _$EngineerServiceDataToJson(
-        EngineerServiceData instance) =>
+Map<String, dynamic> _$FreelancerServiceDataToJson(
+        FreelancerServiceData instance) =>
     <String, dynamic>{
       'id': instance.id,
       'code': instance.code,

@@ -4,11 +4,11 @@ import 'package:home4u/features/auth/login/data/data_sources/login_remote_data_s
 import 'package:home4u/features/auth/login/data/repos/login_repo.dart';
 import 'package:home4u/features/auth/login/logic/login_cubit.dart';
 import 'package:home4u/features/auth/sign_up/data/data_source/common_local_data_source.dart';
-import 'package:home4u/features/auth/sign_up/data/data_source/engineer/engineer_sign_up_remote_data_source.dart';
 import 'package:home4u/features/auth/sign_up/data/data_source/sign_up_remote_data_source.dart';
-import 'package:home4u/features/auth/sign_up/data/repos/engineer_sign_up_repository.dart';
+import 'package:home4u/features/auth/sign_up/data/repos/freelancer_sign_up_repository.dart';
 import 'package:home4u/features/auth/sign_up/data/repos/sign_up_repository.dart';
 import 'package:home4u/features/auth/sign_up/logic/sign_up_cubit.dart';
+import 'package:home4u/features/auth/sign_up/logic/technical_worker/technical_worker_cubit.dart';
 import 'package:home4u/features/auth/verification/data/data_source/verification_remote_data_source.dart';
 
 import '../../features/auth/forget_password/data/data_source/forget_password_data_source.dart';
@@ -17,6 +17,7 @@ import '../../features/auth/forget_password/logic/forget_password_cubit.dart';
 import '../../features/auth/new_password/data/data_source/new_password_remote_data_source.dart';
 import '../../features/auth/new_password/data/repos/new_password_repo.dart';
 import '../../features/auth/new_password/logic/new_password_cubit.dart';
+import '../../features/auth/sign_up/data/data_source/freelancer_sign_up/freelancer_sign_up_remote_data_source.dart';
 import '../../features/auth/sign_up/logic/engineer/engineer_cubit.dart';
 import '../../features/auth/verification/data/repos/verification_repo.dart';
 import '../../features/auth/verification/logic/verification_cubit.dart';
@@ -62,9 +63,10 @@ Future<void> setupGetIt() async {
   sl.registerFactory<NewPasswordCubit>(() => NewPasswordCubit(sl()));
 
   ///Engineer
-  sl.registerLazySingleton<EngineerSignUpRemoteDataSource>(
-      () => EngineerSignUpRemoteDataSource(dio));
-  sl.registerLazySingleton<EngineerSignUpRepository>(
-      () => EngineerSignUpRepositoryImpl(remoteDataSource: sl()));
+  sl.registerLazySingleton<FreelancerSignUpRemoteDataSource>(
+      () => FreelancerSignUpRemoteDataSource(dio));
+  sl.registerLazySingleton<FreelancerSignUpRepository>(
+      () => FreelancerSignUpRepositoryImpl(remoteDataSource: sl()));
   sl.registerFactory<EngineerCubit>(() => EngineerCubit(sl()));
+  sl.registerFactory<TechnicalWorkerCubit>(() => TechnicalWorkerCubit(sl()));
 }
