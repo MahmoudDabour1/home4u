@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'verification_remote_data_source.dart';
+part of 'engineer_sign_up_remote_data_source.dart';
 
 // **************************************************************************
 // RetrofitGenerator
@@ -8,8 +8,9 @@ part of 'verification_remote_data_source.dart';
 
 // ignore_for_file: unnecessary_brace_in_string_interps,no_leading_underscores_for_local_identifiers,unused_element,unnecessary_string_interpolations
 
-class _VerificationRemoteDataSource implements VerificationRemoteDataSource {
-  _VerificationRemoteDataSource(
+class _EngineerSignUpRemoteDataSource
+    implements EngineerSignUpRemoteDataSource {
+  _EngineerSignUpRemoteDataSource(
     this._dio, {
     this.baseUrl,
     this.errorLogger,
@@ -24,25 +25,19 @@ class _VerificationRemoteDataSource implements VerificationRemoteDataSource {
   final ParseErrorLogger? errorLogger;
 
   @override
-  Future<VerificationResponseModel> verifyEmail(
-    String email,
-    String otp,
-  ) async {
+  Future<EngineerTypes> getEngineerTypes() async {
     final _extra = <String, dynamic>{};
-    final queryParameters = <String, dynamic>{
-      r'email': email,
-      r'otp': otp,
-    };
+    final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
     const Map<String, dynamic>? _data = null;
-    final _options = _setStreamType<VerificationResponseModel>(Options(
-      method: 'POST',
+    final _options = _setStreamType<EngineerTypes>(Options(
+      method: 'GET',
       headers: _headers,
       extra: _extra,
     )
         .compose(
           _dio.options,
-          '/api/v1/auth/activate-the-account',
+          '/api/v1/engineer-types',
           queryParameters: queryParameters,
           data: _data,
         )
@@ -52,9 +47,42 @@ class _VerificationRemoteDataSource implements VerificationRemoteDataSource {
           baseUrl,
         )));
     final _result = await _dio.fetch<Map<String, dynamic>>(_options);
-    late VerificationResponseModel _value;
+    late EngineerTypes _value;
     try {
-      _value = VerificationResponseModel.fromJson(_result.data!);
+      _value = EngineerTypes.fromJson(_result.data!);
+    } on Object catch (e, s) {
+      errorLogger?.logError(e, s, _options);
+      rethrow;
+    }
+    return _value;
+  }
+
+  @override
+  Future<EngineerServices> getEngineerServices(int engineerTypeId) async {
+    final _extra = <String, dynamic>{};
+    final queryParameters = <String, dynamic>{};
+    final _headers = <String, dynamic>{};
+    const Map<String, dynamic>? _data = null;
+    final _options = _setStreamType<EngineerServices>(Options(
+      method: 'GET',
+      headers: _headers,
+      extra: _extra,
+    )
+        .compose(
+          _dio.options,
+          '/api/v1/engineer-services/service/${engineerTypeId}',
+          queryParameters: queryParameters,
+          data: _data,
+        )
+        .copyWith(
+            baseUrl: _combineBaseUrls(
+          _dio.options.baseUrl,
+          baseUrl,
+        )));
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
+    late EngineerServices _value;
+    try {
+      _value = EngineerServices.fromJson(_result.data!);
     } on Object catch (e, s) {
       errorLogger?.logError(e, s, _options);
       rethrow;

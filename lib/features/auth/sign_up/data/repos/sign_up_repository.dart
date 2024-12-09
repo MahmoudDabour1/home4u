@@ -49,14 +49,14 @@ class SignUpRepositoryImpl implements SignUpRepository {
   @override
   Future<ApiResult<List<GovernorateDataModel>>> getGovernorates() async {
     try {
-      List<GovernorateDataModel> governorates;
-      governorates = localDataSource.getLocalGovernorates();
-      if (governorates.isNotEmpty) {
-        return ApiResult.success(governorates);
-      }
+      // List<GovernorateDataModel> governorates;
+      // governorates = localDataSource.getLocalGovernorates();
+      // if (governorates.isNotEmpty) {
+      //   return ApiResult.success(governorates);
+      // }
       final response = await remoteDataSource.getGovernorates();
-      governorates = response.data;
-      return ApiResult.success(governorates);
+      // governorates = response.data;
+      return ApiResult.success(response.data);
     } catch (error) {
       return Future.value(ApiResult.failure(ApiErrorHandler.handle(error)));
     }

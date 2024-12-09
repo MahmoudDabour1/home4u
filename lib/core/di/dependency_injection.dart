@@ -4,7 +4,9 @@ import 'package:home4u/features/auth/login/data/data_sources/login_remote_data_s
 import 'package:home4u/features/auth/login/data/repos/login_repo.dart';
 import 'package:home4u/features/auth/login/logic/login_cubit.dart';
 import 'package:home4u/features/auth/sign_up/data/data_source/common_local_data_source.dart';
+import 'package:home4u/features/auth/sign_up/data/data_source/engineer/engineer_sign_up_remote_data_source.dart';
 import 'package:home4u/features/auth/sign_up/data/data_source/sign_up_remote_data_source.dart';
+import 'package:home4u/features/auth/sign_up/data/repos/engineer_sign_up_repository.dart';
 import 'package:home4u/features/auth/sign_up/data/repos/sign_up_repository.dart';
 import 'package:home4u/features/auth/sign_up/logic/sign_up_cubit.dart';
 import 'package:home4u/features/auth/verification/data/data_source/verification_remote_data_source.dart';
@@ -15,6 +17,7 @@ import '../../features/auth/forget_password/logic/forget_password_cubit.dart';
 import '../../features/auth/new_password/data/data_source/new_password_remote_data_source.dart';
 import '../../features/auth/new_password/data/repos/new_password_repo.dart';
 import '../../features/auth/new_password/logic/new_password_cubit.dart';
+import '../../features/auth/sign_up/logic/engineer/engineer_cubit.dart';
 import '../../features/auth/verification/data/repos/verification_repo.dart';
 import '../../features/auth/verification/logic/verification_cubit.dart';
 import '../networking/dio_factory.dart';
@@ -47,14 +50,21 @@ Future<void> setupGetIt() async {
   sl.registerFactory<ForgetPasswordCubit>(() => ForgetPasswordCubit(sl()));
 
   //verification
-  sl.registerLazySingleton<VerificationRemoteDataSource>(()=> VerificationRemoteDataSource(dio));
-  sl.registerLazySingleton<VerificationRepo>(()=> VerificationRepo(sl()));
-  sl.registerFactory<VerificationCubit>(()=> VerificationCubit(sl()));
-
+  sl.registerLazySingleton<VerificationRemoteDataSource>(
+      () => VerificationRemoteDataSource(dio));
+  sl.registerLazySingleton<VerificationRepo>(() => VerificationRepo(sl()));
+  sl.registerFactory<VerificationCubit>(() => VerificationCubit(sl()));
 
   //newPassword
-  sl.registerLazySingleton<NewPasswordRemoteDataSource>(() => NewPasswordRemoteDataSource(dio));
+  sl.registerLazySingleton<NewPasswordRemoteDataSource>(
+      () => NewPasswordRemoteDataSource(dio));
   sl.registerLazySingleton<NewPasswordRepo>(() => NewPasswordRepo(sl()));
   sl.registerFactory<NewPasswordCubit>(() => NewPasswordCubit(sl()));
 
+  ///Engineer
+  sl.registerLazySingleton<EngineerSignUpRemoteDataSource>(
+      () => EngineerSignUpRemoteDataSource(dio));
+  sl.registerLazySingleton<EngineerSignUpRepository>(
+      () => EngineerSignUpRepositoryImpl(remoteDataSource: sl()));
+  sl.registerFactory<EngineerCubit>(() => EngineerCubit(sl()));
 }
