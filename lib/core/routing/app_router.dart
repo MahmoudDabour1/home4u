@@ -15,6 +15,7 @@ import 'package:home4u/features/home/presentation/home_screen.dart';
 
 import '../../features/auth/login/presentation/login_screen.dart';
 import '../../features/onboarding/presentation/onboarding_screen.dart';
+import '../../features/profile/presentation/profile_screen.dart';
 import '../di/dependency_injection.dart';
 
 class AppRouter {
@@ -63,10 +64,15 @@ class AppRouter {
       case Routes.engineeringOfficeScreen:
         return MaterialPageRoute(
           builder: (_) => EngineeringOfficeScreen(),
-        ); case Routes.homeScreen:
+        );
+
+      case Routes.homeScreen:
         return MaterialPageRoute(
           builder: (_) => HomeScreen(),
         );
+      case Routes.profileScreen:
+        return MaterialPageRoute(
+          builder: (_) => ProfileScreen(),
       case Routes.homeScreen:
         return MaterialPageRoute(
           builder: (_) => HomeScreen(),
