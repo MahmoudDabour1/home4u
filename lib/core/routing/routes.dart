@@ -8,4 +8,5 @@ abstract class Routes{
   static const String newPasswordScreen = '/newPasswordScreen';
   static const String engineeringOfficeScreen = '/engineeringOfficeScreen';
   static const String homeScreen = '/homeScreen';
+  static const String profileScreen = '/profileScreen';
 }
