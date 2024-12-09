@@ -12,7 +12,7 @@ class _VerificationRemoteDataSource implements VerificationRemoteDataSource {
   _VerificationRemoteDataSource(
     this._dio, {
     this.baseUrl,
-    // this.errorLogger,
+    this.errorLogger,
   }) {
     baseUrl ??= 'https://dynamic-mouse-needlessly.ngrok-free.app';
   }
@@ -21,7 +21,7 @@ class _VerificationRemoteDataSource implements VerificationRemoteDataSource {
 
   String? baseUrl;
 
-  // final ParseErrorLogger? errorLogger;
+  final ParseErrorLogger? errorLogger;
 
   @override
   Future<VerificationResponseModel> verifyEmail(
@@ -56,7 +56,7 @@ class _VerificationRemoteDataSource implements VerificationRemoteDataSource {
     try {
       _value = VerificationResponseModel.fromJson(_result.data!);
     } on Object catch (e, s) {
-      // errorLogger?.logError(e, s, _options);
+      errorLogger?.logError(e, s, _options);
       rethrow;
     }
     return _value;

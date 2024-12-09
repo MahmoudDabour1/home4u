@@ -19,7 +19,7 @@ class SignUpListener extends StatelessWidget {
       listener: (context, state) {
         state.whenOrNull(successSignUp: (signUpResponse) {
           context.pop();
-          context.pushNamed(Routes.loginScreen);
+          context.pushNamed(Routes.profileScreen);
         });
       },
       child: const SizedBox.shrink(),

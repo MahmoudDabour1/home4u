@@ -51,9 +51,10 @@ abstract class AppStrings {
   static const String coverPhoto = 'Cover Photo';
   static const String passwordsDoNotMatch = 'Passwords Do Not Match';
   static const String engineerInfo = 'Engineer Information';
+  static const String technicalInfo = 'Technical Information';
   static const String yearsOfExperience = 'Years of Experience';
   static const String engineerType = 'Engineer Type';
   static const String engineeringServices = 'Engineer Services';
-  static const String technicalType = 'Technical Type';
-  static const String technicalService = 'Technical Service';
+  static const String technicalWorkerTypes = 'Technical Worker Types';
+  static const String technicalWorkerServices = 'Technical Worker Services';
 }

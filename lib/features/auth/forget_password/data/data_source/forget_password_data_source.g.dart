@@ -12,7 +12,7 @@ class _ForgetPasswordDataSource implements ForgetPasswordDataSource {
   _ForgetPasswordDataSource(
     this._dio, {
     this.baseUrl,
-    // this.errorLogger,
+    this.errorLogger,
   }) {
     baseUrl ??= 'https://dynamic-mouse-needlessly.ngrok-free.app';
   }
@@ -21,7 +21,7 @@ class _ForgetPasswordDataSource implements ForgetPasswordDataSource {
 
   String? baseUrl;
 
-  // final ParseErrorLogger? errorLogger;
+  final ParseErrorLogger? errorLogger;
 
   @override
   Future<ForgetPasswordResponseModel> forgetPassword(String email) async {
@@ -50,7 +50,7 @@ class _ForgetPasswordDataSource implements ForgetPasswordDataSource {
     try {
       _value = ForgetPasswordResponseModel.fromJson(_result.data!);
     } on Object catch (e, s) {
-      // errorLogger?.logError(e, s, _options);
+      errorLogger?.logError(e, s, _options);
       rethrow;
     }
     return _value;

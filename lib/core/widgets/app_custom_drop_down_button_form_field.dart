@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:home4u/core/widgets/app_custom_loading_indicator.dart';
 
 import '../theming/app_colors.dart';
 import 'get_common_input_decoration.dart';
@@ -9,6 +10,7 @@ class AppCustomDropDownButtonFormField extends StatelessWidget {
   final List<DropdownMenuItem<String>> items;
   final String labelText;
   final FormFieldValidator<String>? validator;
+  final void Function(String?)? onSaved;
 
   const  AppCustomDropDownButtonFormField({
     super.key,
@@ -17,6 +19,7 @@ class AppCustomDropDownButtonFormField extends StatelessWidget {
     required this.items,
     required this.labelText,
     this.validator,
+    this.onSaved,
   });
 
   @override
@@ -30,6 +33,7 @@ class AppCustomDropDownButtonFormField extends StatelessWidget {
       ),
       items: items,
       onChanged: onChanged,
+      onSaved: onSaved,
       decoration: getCommonInputDecoration(labelText: labelText),
       dropdownColor: Colors.white,
       validator: validator,
