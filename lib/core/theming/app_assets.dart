@@ -17,4 +17,6 @@ abstract class AppAssets {
   static const String notificationSvgImage = 'assets/svgs/notification_svg.svg';
   static const String settingSvgImage = 'assets/svgs/setting_svg.svg';
   static const String menuSvgImage = 'assets/svgs/menu_svg.svg';
+  static const String deleteSvgImage = 'assets/svgs/delete_svg.svg';
+  static const String editSvgImage = 'assets/svgs/edit_svg.svg';
 }

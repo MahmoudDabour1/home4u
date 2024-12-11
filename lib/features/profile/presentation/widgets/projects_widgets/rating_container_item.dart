@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import '../../../../core/theming/app_styles.dart';
-import '../../../../core/utils/spacing.dart';
+import '../../../../../core/theming/app_styles.dart';
+import '../../../../../core/utils/spacing.dart';
 
 class RatingContainerItem extends StatelessWidget {
   final String ratingText;
