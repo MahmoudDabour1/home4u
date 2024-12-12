@@ -7,8 +7,6 @@ import '../theming/app_styles.dart';
 InputDecoration getCommonInputDecoration({
   required String labelText,
   TextStyle? labelStyle,
-  Widget? suffixIcon,
-  Widget? prefixIcon,
 }) {
   return InputDecoration(
     isDense: true,
@@ -34,12 +32,18 @@ InputDecoration getCommonInputDecoration({
       borderSide: const BorderSide(color: Colors.red, width: 1.3),
       borderRadius: BorderRadius.circular(16.r),
     ),
+    border: OutlineInputBorder(
+      borderSide: const BorderSide(color: AppColors.secondaryColor, width: 1.3),
+      borderRadius: BorderRadius.circular(16.r),
+    ),
+    disabledBorder: OutlineInputBorder(
+      borderSide: const BorderSide(color: AppColors.secondaryColor, width: 1.3),
+      borderRadius: BorderRadius.circular(16.r),
+    ),
     // hintText: hintText,
     label: Text(
       labelText,
       style: labelStyle ?? AppStyles.font16BlackLight,
     ),
-    suffixIcon: suffixIcon,
-    prefixIcon: prefixIcon,
   );
 }

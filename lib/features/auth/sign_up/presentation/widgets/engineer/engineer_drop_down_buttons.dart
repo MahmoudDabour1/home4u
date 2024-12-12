@@ -50,7 +50,8 @@ class _EngineerDropDownButtonsState extends State<EngineerDropDownButtons> {
               onChanged: (value) {
                 setState(() {
                   selectedEngineerType = value;
-                  selectedEngineerServices = null;
+                  selectedEngineerServices = [];
+                  signUpCubit.selectedEngineerServices = [];
                   engineerCubit.getEngineerServices(int.parse(value!));
                   signUpCubit.selectedEngineerType = int.parse(value);
                 });
@@ -62,6 +63,7 @@ class _EngineerDropDownButtonsState extends State<EngineerDropDownButtons> {
             ),
             verticalSpace(16),
             AppCustomDropDownMultiSelectButton(
+              isEnabled: engineerCubit.engineerTypes.isNotEmpty,
               validator: (value) {
                 if (value?.isEmpty ?? true) {
                   return "Please select at least one service";

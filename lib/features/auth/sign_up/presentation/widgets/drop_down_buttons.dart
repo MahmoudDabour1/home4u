@@ -48,7 +48,7 @@ class _DropDownButtonsState extends State<DropDownButtons> {
                     style: AppStyles.font16BlackLight,
                   ),
                 );
-              }).toList(),
+              }).toSet().toList(),
               onChanged: (value) {
                 setState(() {
                   selectedAccountType = value;
@@ -92,14 +92,14 @@ class _DropDownButtonsState extends State<DropDownButtons> {
               value: selectedCity,
               items: selectedGovernorate != null
                   ? cubit.cities.map((city) {
-                      return DropdownMenuItem<String>(
-                        value: city.id.toString(),
-                        child: Text(
-                          city.name,
-                          style: AppStyles.font16BlackLight,
-                        ),
-                      );
-                    }).toList()
+                return DropdownMenuItem<String>(
+                  value: city.id.toString(),
+                  child: Text(
+                    city.name,
+                    style: AppStyles.font16BlackLight,
+                  ),
+                );
+              }).toSet().toList()
                   : [],
               onChanged: (value) {
                 setState(() {
