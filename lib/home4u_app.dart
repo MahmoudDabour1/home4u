@@ -38,7 +38,7 @@ class Home4uApp extends StatelessWidget {
           onGenerateRoute: appRouter.generateRoute,
           debugShowCheckedModeBanner: false,
           navigatorObservers: [NavigatorObserver()],
-          initialRoute: Routes.profileScreen,
+          initialRoute: Routes.onBoardingScreen,
         ),
       ),
     );
