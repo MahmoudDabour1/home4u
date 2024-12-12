@@ -57,4 +57,6 @@ abstract class AppStrings {
   static const String engineeringServices = 'Engineer Services';
   static const String technicalWorkerTypes = 'Technical Worker Types';
   static const String technicalWorkerServices = 'Technical Worker Services';
+  static const String delete = 'Delete';
+  static const String edit = 'Edit';
 }
