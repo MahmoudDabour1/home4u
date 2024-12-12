@@ -16,7 +16,7 @@ publish_to: 'none' # Remove this line if you wish to publish to pub.dev
 # https://developer.apple.com/library/archive/documentation/General/Reference/InfoPlistKeyReference/Articles/CoreFoundationKeys.html
 # In Windows, build-name is used as the major, minor, and patch parts
 # of the product and file versions while build-number is used as the build suffix.
-version: 1.0.2+1
+version: 1.0.3+1
 
 environment:
   sdk: ^3.5.4
@@ -87,6 +87,14 @@ dependencies:
   auto_size_text: ^3.0.0
   # enter a digit code usually in cases of Sms Otp Code
   code_input: ^2.0.0
+  # Loading animation or loading spinner or loader. It's used to show loading animation
+  loading_animation_widget: ^1.3.0
+  # Toast Library for Flutter, Easily create toast messages in single line of code
+  fluttertoast: ^8.2.8
+  #Multi select && Search DropDown flutter
+  dropdown_search: ^6.0.1
+  # Custom rating bar for flutter with support of custom icons, half icons, directions, alignments & more.
+  custom_rating_bar: ^3.0.0
 
 
 dev_dependencies:
@@ -101,6 +109,7 @@ dev_dependencies:
   flutter_lints: ^5.0.0
   build_runner: ^2.4.13
   json_serializable: ^6.9.0
+  hive_generator: ^2.0.1
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
@@ -140,10 +149,12 @@ flutter:
         - asset: assets/fonts/IBMPlexSansArabic-SemiBold.ttf
         - asset: assets/fonts/IBMPlexSansArabic-Thin.ttf
           weight: 700
-   #
-   # For details regarding fonts from package dependencies,
-   # see https://flutter.dev/to/font-from-package
+    #
+    # For details regarding fonts from package dependencies,
+    # see https://flutter.dev/to/font-from-package
   assets:
-     - assets/images/
-     - assets/svgs/
-     - assets/jsons/
+    - assets/images/
+    - assets/svgs/
+    - assets/jsons/
+    - assets/jsons/
+    - shorebird.yaml

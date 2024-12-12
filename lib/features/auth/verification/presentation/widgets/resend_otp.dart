@@ -1,8 +1,12 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:home4u/core/theming/app_strings.dart';
+import 'package:home4u/features/auth/forget_password/logic/forget_password_cubit.dart';
 
+import '../../../../../core/helpers/shared_pref_helper.dart';
+import '../../../../../core/helpers/shared_pref_keys.dart';
 import '../../../../../core/theming/app_styles.dart';
 
 class ResendOtp extends StatefulWidget {
@@ -14,8 +18,9 @@ class ResendOtp extends StatefulWidget {
 
 class _ResendOtpState extends State<ResendOtp> {
   final TextEditingController otpController = TextEditingController();
-  int resendCooldown = 20; // Resend timer in seconds
+  int resendCooldown = 60;
   Timer? _timer;
+
   @override
   void initState() {
     super.initState();
@@ -29,10 +34,9 @@ class _ResendOtpState extends State<ResendOtp> {
     super.dispose();
   }
 
-
   void startResendTimer() {
     setState(() {
-      resendCooldown = 20; // Reset timer
+      resendCooldown = 60;
     });
     _timer?.cancel();
     _timer = Timer.periodic(Duration(seconds: 1), (timer) {
@@ -46,30 +50,38 @@ class _ResendOtpState extends State<ResendOtp> {
     });
   }
 
-
-  void resendOtp() {
+  void resendOtp() async {
     if (resendCooldown == 0) {
+      context.read<ForgetPasswordCubit>().emitForgetPasswordStates(
+            await SharedPrefHelper.getString(
+              SharedPrefKeys.userEmailAddress,
+            ),
+          );
       startResendTimer();
     }
   }
 
-
   @override
   Widget build(BuildContext context) {
-    return Row(
-
-      mainAxisAlignment: MainAxisAlignment.center,
+    return Column(
       children: [
         Text(
           resendCooldown > 0
               ? '${AppStrings.resendIn00}$resendCooldown'
               : AppStrings.didnReceiveTheOTP,
           style: TextStyle(fontSize: 14),
+          overflow: TextOverflow.ellipsis,
+          maxLines: 2,
         ),
         if (resendCooldown == 0)
           TextButton(
             onPressed: resendOtp,
-            child: Text(AppStrings.resendOTP,style: AppStyles.font16DarkBlueBold),
+            child: Text(
+              AppStrings.resendOTP,
+              style: AppStyles.font16DarkBlueBold,
+              overflow: TextOverflow.ellipsis,
+              maxLines: 2,
+            ),
           ),
       ],
     );

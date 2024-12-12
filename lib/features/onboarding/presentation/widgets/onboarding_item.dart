@@ -40,8 +40,14 @@ class OnboardingScrollItems extends StatelessWidget {
             _buildImageWithIndicator(),
             verticalSpace(32),
             _buildTitle(),
-            verticalSpace(16),
-            _buildDescription(),
+            index > 2
+                ?SizedBox.shrink()
+                : Column(
+                    children: [
+                      verticalSpace(16),
+                      _buildDescription(),
+                    ],
+                  ),
             verticalSpace(32),
             _buildButtons(context),
             verticalSpace(32),
@@ -102,57 +108,59 @@ class OnboardingScrollItems extends StatelessWidget {
   }
 
   Widget _buildDescription() {
-    return AnimatedOpacity(
-      opacity: isOut ? 0 : 1,
-      duration: Duration(milliseconds: 200),
-      child: AutoSizeText(
-        textAlign: TextAlign.center,
-        onBoardingItems[index].description,
-        maxLines: 5,
-        style: AppStyles.font16BlackLight.copyWith(
-          height: 1.5,
-        ),
-      ),
-    );
+    return onBoardingItems[index].description.isEmpty
+        ? SizedBox.shrink()
+        : AnimatedOpacity(
+            opacity: isOut ? 0 : 1,
+            duration: Duration(milliseconds: 200),
+            child: AutoSizeText(
+              textAlign: TextAlign.center,
+              onBoardingItems[index].description,
+              maxLines: 5,
+              style: AppStyles.font16BlackLight.copyWith(
+                height: 1.5,
+              ),
+            ),
+          );
   }
 
   Widget _buildButtons(BuildContext context) {
     return index == 3
         ? Column(
-      children: [
-        AppCustomButton(
-          textButton: AppStrings.signUp,
-          btnWidth: MediaQuery.sizeOf(context).width,
-          btnHeight: 56.h,
-          onPressed: onPressedToSignUp,
-        ),
-        verticalSpace(16),
-        TextButton(
-          style: ButtonStyle(
-            fixedSize: WidgetStateProperty.all<Size>(
-              Size(MediaQuery.sizeOf(context).width, 56.h),
-            ),
-            shape: WidgetStateProperty.all<RoundedRectangleBorder>(
-              RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(16.0).r,
-                side: BorderSide(
-                  color: AppColors.primaryColor,
-                  width: 1,
+            children: [
+              AppCustomButton(
+                textButton: AppStrings.signUp,
+                btnWidth: MediaQuery.sizeOf(context).width,
+                btnHeight: 56.h,
+                onPressed: onPressedToSignUp,
+              ),
+              verticalSpace(16),
+              TextButton(
+                style: ButtonStyle(
+                  fixedSize: WidgetStateProperty.all<Size>(
+                    Size(MediaQuery.sizeOf(context).width, 56.h),
+                  ),
+                  shape: WidgetStateProperty.all<RoundedRectangleBorder>(
+                    RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(16.0).r,
+                      side: BorderSide(
+                        color: AppColors.primaryColor,
+                        width: 1,
+                      ),
+                    ),
+                  ),
+                ),
+                onPressed: onPressedToLogin,
+                child: Text(
+                  AppStrings.login,
+                  style: AppStyles.font16WhiteBold.copyWith(
+                    color: AppColors.blackColor,
+                  ),
+                  textAlign: TextAlign.center,
                 ),
               ),
-            ),
-          ),
-          onPressed: onPressedToLogin,
-          child: Text(
-            AppStrings.login,
-            style: AppStyles.font16WhiteBold.copyWith(
-              color: AppColors.blackColor,
-            ),
-            textAlign: TextAlign.center,
-          ),
-        ),
-      ],
-    )
+            ],
+          )
         : NextButton(onPressed: onNextPressed);
   }
 }

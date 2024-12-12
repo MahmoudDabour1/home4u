@@ -1,6 +1,19 @@
 
 class ApiConstants {
-  static const String apiBaseUrl = "";
+  static const String apiBaseUrl = "https://dynamic-mouse-needlessly.ngrok-free.app";
+  static const String loginEndPoint = "/api/v1/auth/login";
+  static const String userTypesEp = "/api/v1/user-types";
+  static const String signUpEp = "/api/v1/auth/register";
+  static const String forgetPasswordEp = "/api/v1/auth/send-otp";
+  static const String verificationEP = "/api/v1/auth/activate-the-account";
+  static const String newPasswordEP = "/api/v1/auth/reset-password";
+  static const String governoratesEp = "/api/v1/governorates";
+
+
+  ///Freelancer
+  static const String engineerTypesEp = "/api/v1/engineer-types";
+  static const String technicalWorkerTypesEp = "/api/v1/technical-worker-types";
+
 }
 
 class ApiErrors {

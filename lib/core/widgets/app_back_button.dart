@@ -1,29 +1,36 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:home4u/core/theming/app_colors.dart';
 
+import '../theming/app_assets.dart';
+
 class AppBackButton extends StatelessWidget {
-  const AppBackButton({super.key});
+  void Function()? onPressed;
+
+  AppBackButton({super.key, this.onPressed});
 
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: () {
-        Navigator.of(context).pop();
-      },
+      onTap: onPressed ??
+          () {
+            Navigator.of(context).pop();
+          },
       child: Container(
         width: 40.w,
         height: 40.h,
         decoration: BoxDecoration(
           color: AppColors.offWhiteColor,
-          borderRadius: BorderRadius.circular(40.r),
+          shape: BoxShape.circle,
         ),
-        child: Icon(
-          Icons.arrow_back_ios_new_outlined,
-          color: AppColors.secondaryColor,
-          size: 20.r,
-          weight: 14.w,
-          fill: 1,
+        child: Align(
+          alignment: Alignment.center,
+          child: SvgPicture.asset(
+            AppAssets.arrowLeftSvgImage,
+            height: 20.h,
+            width: 20.w,
+          ),
         ),
       ),
     );

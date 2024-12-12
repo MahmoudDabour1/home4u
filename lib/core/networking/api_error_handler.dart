@@ -15,7 +15,7 @@ class ApiErrorHandler {
         case DioExceptionType.unknown:
           return ApiErrorModel(
               message:
-              "Connection to the server failed due to internet connection");
+                  "Connection to the server failed due to internet connection");
         case DioExceptionType.receiveTimeout:
           return ApiErrorModel(
               message: "Receive timeout in connection with the server");
@@ -33,10 +33,18 @@ class ApiErrorHandler {
   }
 
   static ApiErrorModel _handleError(int? statusCode, dynamic error) {
+    if (error is String && error.contains('<html')) {
+      return ApiErrorModel(
+        message: "Received an HTML response instead of JSON. Possible server error.",
+        statusCode: statusCode,
+      );
+    }
     return ApiErrorModel(
       message: error['message'] ?? "Unknown error occurred",
-      code: statusCode,
-      errors: error['data'],
+      statusCode: statusCode,
+      errorsDetails: (error['details'] as List<dynamic>?)
+          ?.map((e) => e as String?)
+          .toList(),
     );
   }
 }

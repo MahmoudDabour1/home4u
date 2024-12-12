@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:home4u/core/theming/app_assets.dart';
 import 'package:home4u/core/theming/app_strings.dart';
+import 'package:home4u/features/auth/forget_password/presentation/widgets/forget_password_bloc_listener.dart';
 import 'package:home4u/features/auth/forget_password/presentation/widgets/forget_password_body.dart';
-import 'package:home4u/features/auth/widgets/auth_image_and_text_widget.dart';
+import 'package:home4u/features/auth/widgets/auth_welcome_data.dart';
 
 class ForgetPasswordScreen extends StatelessWidget {
   const ForgetPasswordScreen({super.key});
@@ -14,14 +14,12 @@ class ForgetPasswordScreen extends StatelessWidget {
           child: SingleChildScrollView(
         child: Column(
           children: [
-            AuthImageAndTextWidget(
-              image: AppAssets.forgetPasswordImage,
-              text: AppStrings.forgetPasswordK,
-              subText: AppStrings.enterYourPhoneNumber,
-              isBackButton: true,
-              horizontalPadding: 18,
+            AuthWelcomeData(
+              headText: AppStrings.forgetPasswordK,
+              subText: AppStrings.enterYourEmailAddress,
             ),
             ForgetPasswordBody(),
+            ForgetPasswordBlocListener(),
           ],
         ),
       )),

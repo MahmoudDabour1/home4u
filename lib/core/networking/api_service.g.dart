@@ -13,7 +13,9 @@ class _ApiService implements ApiService {
     this._dio, {
     this.baseUrl,
     this.errorLogger,
-  });
+  }) {
+    baseUrl ??= 'https://dynamic-mouse-needlessly.ngrok-free.app';
+  }
 
   final Dio _dio;
 

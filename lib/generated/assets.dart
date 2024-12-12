@@ -9,6 +9,7 @@ class Assets {
   static const String fontsIBMPlexSansArabicRegular = 'assets/fonts/IBMPlexSansArabic-Regular.ttf';
   static const String fontsIBMPlexSansArabicSemiBold = 'assets/fonts/IBMPlexSansArabic-SemiBold.ttf';
   static const String fontsIBMPlexSansArabicThin = 'assets/fonts/IBMPlexSansArabic-Thin.ttf';
+  static const String home4uShorebird = 'shorebird.yaml';
   static const String imagesAndroid12Splash = 'assets/images/android_12_splash.png';
   static const String imagesArrow = 'assets/images/arrow.png';
   static const String imagesFacebook = 'assets/images/facebook.png';
@@ -20,8 +21,13 @@ class Assets {
   static const String imagesOnboardingOneFour = 'assets/images/onboarding_one_four.png';
   static const String imagesOnboardingThree = 'assets/images/onboarding_three.png';
   static const String imagesOnboardingTwo = 'assets/images/onboarding_two.png';
-  static const String imagesSignUpImage = 'assets/images/signup_image.png';
+  static const String imagesSignupImage = 'assets/images/signup_image.png';
   static const String imagesSplash = 'assets/images/splash.png';
   static const String imagesVerification = 'assets/images/verification.png';
+  static const String svgsArrowDown = 'assets/svgs/arrow_down.svg';
+  static const String svgsArrowLeft = 'assets/svgs/arrow_left.svg';
+  static const String svgsArrowRight = 'assets/svgs/arrow_right.svg';
+  static const String svgsLoadImages = 'assets/svgs/load_images.svg';
+  static const String svgsLockSvg = 'assets/svgs/lock_svg.svg';
 
 }

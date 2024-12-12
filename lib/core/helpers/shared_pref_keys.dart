@@ -1,5 +1,5 @@
 class SharedPrefKeys {
-  static const String saveCategory = 'saveCategory';
-  static const String themeModeKey = 'theme_mode';
-
+  static const String userToken = 'userToken';
+  static const String userEmailAddress = 'userEmailAddress';
+  static const String isFromForgetPassword = 'isisFromForgetPassword';
 }
