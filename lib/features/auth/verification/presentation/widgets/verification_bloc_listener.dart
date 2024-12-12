@@ -24,7 +24,7 @@ class VerificationBlocListener extends StatelessWidget {
             context.pushNamed(
               await SharedPrefHelper.getBool(SharedPrefKeys.isFromForgetPassword)
                   ? Routes.newPasswordScreen
-                  : Routes.homeScreen,
+                  : Routes.profileScreen,
             );
           },
         );

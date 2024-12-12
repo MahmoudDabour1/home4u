@@ -15,7 +15,7 @@ class ProfileUpperButtons extends StatelessWidget {
       padding: EdgeInsets.only(left: 24.w, right: 24.w, top: 16.h),
       child: Row(
         children: [
-          AppBackButton(),
+          // AppBackButton(),
           Spacer(),
           Row(
             children: [
