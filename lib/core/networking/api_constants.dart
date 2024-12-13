@@ -8,6 +8,7 @@ class ApiConstants {
   static const String verificationEP = "/api/v1/auth/activate-the-account";
   static const String newPasswordEP = "/api/v1/auth/reset-password";
   static const String governoratesEp = "/api/v1/governorates";
+  static const String getProjectsEp = "/api/v1/project/user-projects";
 
 
   ///Freelancer
