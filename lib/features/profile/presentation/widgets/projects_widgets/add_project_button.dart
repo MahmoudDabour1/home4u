@@ -10,7 +10,7 @@ class AddProjectButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return  Align(
+    return Align(
       alignment: Alignment.centerRight,
       child: IconButton(
         onPressed: () {},
@@ -23,7 +23,10 @@ class AddProjectButton extends StatelessWidget {
               color: AppColors.secondaryColor,
             ),
             horizontalSpace(10),
-            Text("Add Project",style:AppStyles.font16DarkBlueLight,),
+            Text(
+              "Add Project",
+              style: AppStyles.font16DarkBlueLight,
+            ),
           ],
         ),
       ),

@@ -10,6 +10,8 @@ import 'package:home4u/features/auth/sign_up/data/repos/sign_up_repository.dart'
 import 'package:home4u/features/auth/sign_up/logic/sign_up_cubit.dart';
 import 'package:home4u/features/auth/sign_up/logic/technical_worker/technical_worker_cubit.dart';
 import 'package:home4u/features/auth/verification/data/data_source/verification_remote_data_source.dart';
+import 'package:home4u/features/profile/data/data_sources/get_projects_remote_data_source.dart';
+import 'package:home4u/features/profile/data/repos/get_projects_repo.dart';
 
 import '../../features/auth/forget_password/data/data_source/forget_password_data_source.dart';
 import '../../features/auth/forget_password/data/repos/forget_password_repo.dart';
@@ -21,6 +23,7 @@ import '../../features/auth/sign_up/data/data_source/freelancer_sign_up/freelanc
 import '../../features/auth/sign_up/logic/engineer/engineer_cubit.dart';
 import '../../features/auth/verification/data/repos/verification_repo.dart';
 import '../../features/auth/verification/logic/verification_cubit.dart';
+import '../../features/profile/logic/profile_cubit.dart';
 import '../networking/dio_factory.dart';
 
 final sl = GetIt.instance;
@@ -69,4 +72,10 @@ Future<void> setupGetIt() async {
       () => FreelancerSignUpRepositoryImpl(remoteDataSource: sl()));
   sl.registerFactory<EngineerCubit>(() => EngineerCubit(sl()));
   sl.registerFactory<TechnicalWorkerCubit>(() => TechnicalWorkerCubit(sl()));
+
+//profile
+  sl.registerLazySingleton<GetProjectsRemoteDataSource>(
+      () => GetProjectsRemoteDataSource(dio));
+  sl.registerLazySingleton<GetProjectsRepo>((() => GetProjectsRepo(sl())));
+  sl.registerFactory<ProfileCubit>(() => ProfileCubit(sl()));
 }

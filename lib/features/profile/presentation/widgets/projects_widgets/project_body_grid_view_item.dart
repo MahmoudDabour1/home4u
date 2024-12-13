@@ -18,8 +18,8 @@ class ProjectBodyGridViewItem extends StatelessWidget {
           child: CachedNetworkImage(
             imageUrl:
                 "https://images.unsplash.com/photo-1640434037438-c3e8485687c2?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-            width: 164.w,
-            height: 164.h,
+            width: MediaQuery.sizeOf(context).width*0.5,
+            height:  MediaQuery.sizeOf(context).height*0.5,
             fit: BoxFit.fill,
             alignment: Alignment.center,
           ),
