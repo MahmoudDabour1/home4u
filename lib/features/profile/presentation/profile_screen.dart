@@ -9,12 +9,15 @@ class ProfileScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: SafeArea(
-        child: Column(
-          children: [
-            ProfileUpperWidget(),
-            Expanded(child: TapBarWidget()),
-          ],
+        child:SingleChildScrollView(
+          child: Column(
+            children: [
+              ProfileUpperWidget(),
+              TapBarWidget(),
+            ],
+          ),
         ),
+
       ),
     );
   }

@@ -45,7 +45,8 @@ class TapBarWidget extends StatelessWidget {
                 color: AppColors.secondaryColor,
               ),
             ),
-            Expanded(
+            SizedBox(
+              height: MediaQuery.of(context).size.height - 200.h,
               child: TabBarView(
                 children: [
                   ProjectsBody(),

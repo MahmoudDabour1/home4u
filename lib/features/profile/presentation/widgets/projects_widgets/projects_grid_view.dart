@@ -9,6 +9,8 @@ class ProjectsGridView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Expanded(
       child: GridView.builder(
+        shrinkWrap: true,
+        physics: NeverScrollableScrollPhysics(),
         padding: EdgeInsets.symmetric(vertical: 16.h),
         gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
           crossAxisCount: 2,
@@ -16,7 +18,7 @@ class ProjectsGridView extends StatelessWidget {
           mainAxisSpacing: 16.h,
           childAspectRatio: 1 / 1,
         ),
-        itemCount: 10,
+        itemCount: 20,
         itemBuilder: (context, index) {
           return ProjectBodyGridViewItem();
         },
