@@ -9,11 +9,12 @@ class ApiConstants {
   static const String newPasswordEP = "/api/v1/auth/reset-password";
   static const String governoratesEp = "/api/v1/governorates";
 
-
   ///Freelancer
   static const String engineerTypesEp = "/api/v1/engineer-types";
   static const String technicalWorkerTypesEp = "/api/v1/technical-worker-types";
 
+  ///Project
+  static const String projectAddEp = "/api/v1/project";
 }
 
 class ApiErrors {
