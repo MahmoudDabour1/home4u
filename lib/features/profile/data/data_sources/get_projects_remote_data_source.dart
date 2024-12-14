@@ -1,6 +1,7 @@
 
 import 'package:dio/dio.dart';
 import 'package:home4u/features/profile/data/models/get_projects_response_model.dart';
+import 'package:retrofit/error_logger.dart';
 import 'package:retrofit/http.dart';
 
 import '../../../../core/networking/api_constants.dart';

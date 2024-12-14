@@ -59,4 +59,10 @@ abstract class AppStrings {
   static const String technicalWorkerServices = 'Technical Worker Services';
   static const String delete = 'Delete';
   static const String edit = 'Edit';
+  static const String addProject = 'Add Project';
+  static const String uploadProjectImages = 'upload project images';
+  static const String projectDescription = 'Project Description';
+  static const String projectStartData= 'Start Data';
+  static const String projectEndData = 'End Data';
+  static const String projectTools = 'Tools';
 }

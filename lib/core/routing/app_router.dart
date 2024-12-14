@@ -19,6 +19,7 @@ import 'package:home4u/features/profile/logic/profile_cubit.dart';
 import '../../features/auth/login/presentation/login_screen.dart';
 import '../../features/onboarding/presentation/onboarding_screen.dart';
 import '../../features/profile/presentation/profile_screen.dart';
+import '../../features/profile/presentation/widgets/add_project_screen.dart';
 import '../di/dependency_injection.dart';
 
 class AppRouter {
@@ -71,7 +72,10 @@ class AppRouter {
             child: TechnicalWorkerSignUp(),
           ),
         );
-
+      case Routes.addProjectScreen:
+        return MaterialPageRoute(
+          builder: (_) => AddProjectScreen(),
+        );
       case Routes.engineeringOfficeScreen:
         return MaterialPageRoute(
           builder: (_) => EngineeringOfficeScreen(),
