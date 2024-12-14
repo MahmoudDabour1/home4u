@@ -26,7 +26,7 @@ class ProjectBodyGridViewItem extends StatelessWidget {
             alignment: Alignment.center,
           ),
         ),
-        MenuButtonAndDialog(),
+        MenuButtonAndDialog(projectId: projectData!.id??0,),
         ProjectBottomRatingWidget(),
       ],
     );
