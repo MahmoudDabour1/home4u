@@ -1,21 +1,21 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:home4u/core/extensions/navigation_extension.dart';
-import 'package:home4u/core/routing/routes.dart';
 
-import '../../../../../core/theming/app_colors.dart';
-import '../../../../../core/theming/app_styles.dart';
-import '../../../../../core/utils/spacing.dart';
+import '../theming/app_colors.dart';
+import '../theming/app_styles.dart';
+import '../utils/spacing.dart';
 
-class AddProjectButton extends StatelessWidget {
-  const AddProjectButton({super.key});
+class AppCustomAddButton extends StatelessWidget {
+  final String text;
+  final VoidCallback onPressed;
+  const AppCustomAddButton({super.key, required this.text, required this.onPressed});
 
   @override
   Widget build(BuildContext context) {
     return Align(
       alignment: Alignment.centerRight,
       child: IconButton(
-        onPressed: () => context.pushNamed(Routes.addProjectScreen),
+        onPressed:onPressed,
         icon: Row(
           mainAxisSize: MainAxisSize.min,
           children: [
@@ -26,7 +26,7 @@ class AddProjectButton extends StatelessWidget {
             ),
             horizontalSpace(10),
             Text(
-              "Add Project",
+              text,
               style: AppStyles.font16DarkBlueLight,
             ),
           ],

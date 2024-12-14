@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:home4u/features/profile/presentation/widgets/projects_widgets/projects_grid_view.dart';
+import 'package:home4u/core/theming/app_strings.dart';
 
-import 'add_project_button.dart';
+import '../../../../../core/widgets/app_custom_add_button.dart';
+import 'get_projects_bloc_builder.dart';
 
 class ProjectsBody extends StatelessWidget {
   const ProjectsBody({super.key});
@@ -10,8 +11,8 @@ class ProjectsBody extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        AddProjectButton(),
-        ProjectsGridView(),
+        AppCustomAddButton(text: AppStrings.addProject, onPressed: () {}),
+        GetProjectsBlocBuilder(),
       ],
     );
   }

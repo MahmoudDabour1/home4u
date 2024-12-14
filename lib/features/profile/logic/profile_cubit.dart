@@ -2,10 +2,10 @@ import 'package:bloc/bloc.dart';
 import 'package:home4u/features/profile/data/models/get_projects_response_model.dart';
 import 'package:home4u/features/profile/logic/profile_state.dart';
 
-import '../data/repos/get_projects_repo.dart';
+import '../data/repos/projects_repo.dart';
 
 class ProfileCubit extends Cubit<ProfileState> {
-  final GetProjectsRepo _getProjectsRepo;
+  final ProjectsRepo _getProjectsRepo;
 
   ProfileCubit(this._getProjectsRepo) : super(const ProfileState.initial());
   List<ProjectsData?>? projectsList = [];
@@ -20,6 +20,19 @@ class ProfileCubit extends Cubit<ProfileState> {
       },
       failure: (error) {
         emit(ProfileState.getProjectsError(error: error.message.toString()));
+      },
+    );
+  }
+
+  Future<void> deleteProject(int projectId) async {
+    emit(const ProfileState.deleteProjectLoading());
+    final response = await _getProjectsRepo.getProjectsByUserId(projectId);
+    response.when(
+      success: (deleteProjectResponseModel) {
+        emit(const ProfileState.deleteProjectSuccess());
+      },
+      failure: (error) {
+        emit(ProfileState.deleteProjectError(error: error.message.toString()));
       },
     );
   }

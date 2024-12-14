@@ -18,9 +18,7 @@ class ProjectsData {
   int? statusCode;
   String? name;
   String? description;
-  // @JsonKey(fromJson: _fromJsonDate, toJson: _toJsonDate)
   DateTime? startDate;
-  // @JsonKey(fromJson: _fromJsonDate, toJson: _toJsonDate)
   DateTime? endDate;
   String? tools;
   String? coverPath;
@@ -37,9 +35,4 @@ class ProjectsData {
   });
   factory ProjectsData.fromJson(Map<String, dynamic> json) =>
       _$ProjectsDataFromJson(json);
-  // static DateTime? _fromJsonDate(String? date) =>
-  //     date != null ? DateTime.parse(date) : null;
-  //
-  // static String? _toJsonDate(DateTime? date) =>
-  //     date?.toIso8601String();
 }

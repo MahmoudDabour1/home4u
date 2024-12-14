@@ -14,7 +14,6 @@ import 'package:home4u/features/auth/sign_up/presentation/technical_worker_sign_
 import 'package:home4u/features/auth/verification/logic/verification_cubit.dart';
 import 'package:home4u/features/auth/verification/presentation/verification_screen.dart';
 import 'package:home4u/features/home/presentation/home_screen.dart';
-import 'package:home4u/features/profile/logic/profile_cubit.dart';
 
 import '../../features/auth/login/presentation/login_screen.dart';
 import '../../features/onboarding/presentation/onboarding_screen.dart';
@@ -82,10 +81,7 @@ class AppRouter {
         );
       case Routes.profileScreen:
         return MaterialPageRoute(
-          builder: (_) => BlocProvider(
-            create: (context) => sl<ProfileCubit>(),
-            child: ProfileScreen(),
-          ),
+          builder: (_) => ProfileScreen(),
         );
       case Routes.homeScreen:
         return MaterialPageRoute(
