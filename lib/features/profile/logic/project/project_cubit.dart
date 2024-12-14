@@ -2,7 +2,6 @@ import 'package:bloc/bloc.dart';
 import 'package:dio/dio.dart';
 import 'package:home4u/features/profile/data/repos/project_repository.dart';
 import 'package:home4u/features/profile/logic/project/project_state.dart';
-import 'package:image_picker/image_picker.dart';
 
 import '../../data/models/add_project_body.dart';
 
