@@ -1,8 +1,7 @@
 import 'package:dio/dio.dart';
 import 'package:pretty_dio_logger/pretty_dio_logger.dart';
 
-import '../helpers/shared_pref_helper.dart';
-import '../helpers/shared_pref_keys.dart';
+import '../routing/router_observer.dart';
 
 class DioFactory {
   DioFactory._();
@@ -16,18 +15,20 @@ class DioFactory {
       dio!
         ..options.connectTimeout = timeout
         ..options.receiveTimeout = timeout;
+      addDioHeaders();
       addDioInterceptors();
       return dio!;
     } else {
       return dio!;
     }
   }
+
   static void addDioHeaders() async {
     dio?.options.headers = {
       'Accept': 'application/json',
       'Authorization':
-      'Bearer ${await SharedPrefHelper.getSecuredString(SharedPrefKeys.userToken)}',
-      'Accept-Language' : 'en',
+          'Bearer eyJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJIb21lNFUiLCJzdWIiOiI2MCIsImlhdCI6MTczNDExNDMwNywiZXhwIjoxNzM0NzE5MTA3fQ.AomN-87v1_TbAeMOkfdJyuBBDbi8V0KWq-hIj3BeKeI',
+      'Accept-Language': 'en',
     };
   }
 
@@ -36,7 +37,16 @@ class DioFactory {
       'Authorization': 'Bearer $token',
     };
   }
+
   static void addDioInterceptors() {
+    dio?.interceptors.add(
+      InterceptorsWrapper(
+        onRequest: (options, handler) {
+          logger.d('Token: ${options.headers['Authorization']}');
+          return handler.next(options);
+        },
+      ),
+    );
     dio?.interceptors.add(
       PrettyDioLogger(
         requestBody: true,
