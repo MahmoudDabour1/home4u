@@ -1,0 +1,50 @@
+import 'package:flutter/material.dart';
+import 'package:home4u/core/extensions/navigation_extension.dart';
+
+import '../../features/profile/presentation/widgets/projects_widgets/delete_dialog_button_widget.dart';
+import '../theming/app_colors.dart';
+import '../theming/app_strings.dart';
+import '../theming/app_styles.dart';
+import '../utils/spacing.dart';
+
+class AppCustomAlertDialog extends StatelessWidget {
+  final VoidCallback onDeleteButtonPressed;
+  final bool isLoading;
+
+  const AppCustomAlertDialog(
+      {super.key,
+      required this.onDeleteButtonPressed,
+      required this.isLoading});
+
+  @override
+  Widget build(BuildContext context) {
+    return AlertDialog(
+      content: Text(
+        AppStrings.areYouSureYouWantToDeleteThisItem,
+        style: AppStyles.font16BlackMedium,
+        textAlign: TextAlign.center,
+      ),
+      actions: [
+        Row(
+          children: [
+            DeleteDialogButtonWidget(
+              text: AppStrings.cancel,
+              onPressed: () {
+                context.pop();
+              },
+            ),
+            horizontalSpace(16),
+            DeleteDialogButtonWidget(
+              isLoading: isLoading,
+              text: AppStrings.delete,
+              onPressed: onDeleteButtonPressed,
+              isBoarder: true,
+              backgroundColor: AppColors.whiteColor,
+              textColor: AppColors.secondaryColor,
+            ),
+          ],
+        ),
+      ],
+    );
+  }
+}

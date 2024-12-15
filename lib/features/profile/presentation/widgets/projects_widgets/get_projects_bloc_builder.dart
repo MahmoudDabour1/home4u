@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:home4u/features/profile/logic/profile_cubit.dart';
 import 'package:home4u/features/profile/logic/profile_state.dart';
 import 'package:home4u/features/profile/presentation/widgets/projects_widgets/projects_grid_view.dart';
+import 'package:home4u/features/profile/presentation/widgets/projects_widgets/projects_grid_view_shimmer_widget.dart';
 
 class GetProjectsBlocBuilder extends StatelessWidget {
   const GetProjectsBlocBuilder({super.key});
@@ -16,13 +17,12 @@ class GetProjectsBlocBuilder extends StatelessWidget {
             current is GetProjectsError,
         builder: (context, state) {
           return state.maybeWhen(
-            initial: () => const CircularProgressIndicator(),
-            getProjectsLoading: () => const CircularProgressIndicator(),
+            getProjectsLoading: () => ProjectsGridViewShimmerWidget (),
             getProjectsSuccess: (projects) {
               var projectsList = projects;
               return setupSuccessWidget(projectsList);
             },
-            getProjectsError: (message) => Text(message),
+            getProjectsError:(errorHandler)=>setupError(),
             orElse: () {
               return const SizedBox.shrink();
             },
@@ -32,5 +32,8 @@ class GetProjectsBlocBuilder extends StatelessWidget {
 
   Widget setupSuccessWidget(projects) {
     return ProjectsGridView(projectsList: projects ?? []);
+  }
+  Widget setupError() {
+    return const SizedBox.shrink();
   }
 }

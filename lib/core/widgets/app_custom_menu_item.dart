@@ -2,15 +2,19 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:home4u/core/utils/spacing.dart';
 
-import '../../../../../core/theming/app_styles.dart';
+import '../theming/app_styles.dart';
 
-class MenuItem extends StatelessWidget {
-  final String text;
+class AppCustomMenuItem extends StatelessWidget {
+  const AppCustomMenuItem({
+    super.key,
+    required this.onTap,
+    required this.icon,
+    required this.text,
+  });
+
+  final VoidCallback onTap;
   final String icon;
-  void Function()? onTap;
-
-   MenuItem(
-      {super.key, required this.text, required this.icon,  required this.onTap});
+  final String text;
 
   @override
   Widget build(BuildContext context) {
@@ -18,7 +22,7 @@ class MenuItem extends StatelessWidget {
       onTap: onTap,
       child: Row(
         children: [
-         Align(child: SvgPicture.asset(icon)),
+          Align(child: SvgPicture.asset(icon)),
           horizontalSpace(8),
           Text(
             text,
