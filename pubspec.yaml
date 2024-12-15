@@ -95,11 +95,8 @@ dependencies:
   dropdown_search: ^6.0.1
   # Custom rating bar for flutter with support of custom icons, half icons, directions, alignments & more.
   custom_rating_bar: ^3.0.0
-  # pick image
-  image_picker: ^1.1.2
-  # displays a timeline of dates in a horizontal view
-  easy_date_timeline: ^2.0.6
-  path:
+  shimmer: ^3.0.0
+  redacted: ^1.0.12
 
 
 dev_dependencies:
