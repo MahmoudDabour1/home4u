@@ -5,6 +5,7 @@ import 'package:fluttertoast/fluttertoast.dart';
 import 'package:home4u/core/routing/app_router.dart';
 import 'package:home4u/core/routing/routes.dart';
 import 'package:home4u/features/auth/sign_up/logic/sign_up_cubit.dart';
+import 'package:home4u/features/profile/logic/profile_cubit.dart';
 
 import 'core/di/dependency_injection.dart';
 import 'core/theming/app_theme.dart';
@@ -22,7 +23,10 @@ class Home4uApp extends StatelessWidget {
         BlocProvider<SignUpCubit>(create: (_) => sl<SignUpCubit>()),
         BlocProvider<ForgetPasswordCubit>(
           create: (_) => sl<ForgetPasswordCubit>(),
-        )
+        ), BlocProvider<ProfileCubit>(
+          create: (_) => sl<ProfileCubit>(),
+        ),
+
       ],
       child: ScreenUtilInit(
         designSize: const Size(393, 852),

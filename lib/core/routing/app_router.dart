@@ -7,7 +7,6 @@ import 'package:home4u/features/auth/login/logic/login_cubit.dart';
 import 'package:home4u/features/auth/new_password/logic/new_password_cubit.dart';
 import 'package:home4u/features/auth/new_password/presentation/new_password_screen.dart';
 import 'package:home4u/features/auth/sign_up/logic/engineer/engineer_cubit.dart';
-import 'package:home4u/features/auth/sign_up/logic/sign_up_cubit.dart';
 import 'package:home4u/features/auth/sign_up/logic/technical_worker/technical_worker_cubit.dart';
 import 'package:home4u/features/auth/sign_up/presentation/engineer_sign_up.dart';
 import 'package:home4u/features/auth/sign_up/presentation/sign_up_screen.dart';
