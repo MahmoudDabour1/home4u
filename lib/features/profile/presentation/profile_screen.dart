@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:home4u/features/profile/presentation/widgets/profile_upper_widget.dart';
 import 'package:home4u/features/profile/presentation/widgets/projects_widgets/projects_body.dart';
+import 'package:home4u/features/profile/presentation/widgets/services_widget/services_body.dart';
 import 'package:home4u/features/profile/presentation/widgets/tap_bar_widget.dart';
 
 import '../logic/profile_cubit.dart';
@@ -55,7 +56,7 @@ class TapBarViewBody extends StatelessWidget {
       child: TabBarView(
         children: const [
           ProjectsBody(),
-          Center(child: Text("Services Content")),
+          ServicesBody(),
           Center(child: Text("Pricing Content")),
           Center(child: Text("Certifications Content")),
         ],
