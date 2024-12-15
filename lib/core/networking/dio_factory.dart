@@ -9,7 +9,7 @@ class DioFactory {
   static Dio? dio;
 
   static Dio getDio() {
-    Duration timeout = const Duration(seconds: 10);
+    Duration timeout = const Duration(seconds: 30);
     if (dio == null) {
       dio = Dio();
       dio!
@@ -27,8 +27,9 @@ class DioFactory {
     dio?.options.headers = {
       'Accept': 'application/json',
       'Authorization':
-          'Bearer eyJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJIb21lNFUiLCJzdWIiOiI2MCIsImlhdCI6MTczNDExNDMwNywiZXhwIjoxNzM0NzE5MTA3fQ.AomN-87v1_TbAeMOkfdJyuBBDbi8V0KWq-hIj3BeKeI',
+          'Bearer eyJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJIb21lNFUiLCJzdWIiOiI2MCIsImlhdCI6MTczNDIxMTQ2MCwiZXhwIjoxNzM0ODE2MjYwfQ.qGw8SxFgjV5dCLan79QwLkLm7APK1nu7N12VsMCqYwk',
       'Accept-Language': 'en',
+      'Content-Type': 'multipart/form-data',
     };
   }
 

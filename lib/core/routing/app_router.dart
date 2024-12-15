@@ -18,7 +18,7 @@ import 'package:home4u/features/home/presentation/home_screen.dart';
 import '../../features/auth/login/presentation/login_screen.dart';
 import '../../features/onboarding/presentation/onboarding_screen.dart';
 import '../../features/profile/presentation/profile_screen.dart';
-import '../../features/profile/presentation/widgets/add_project_screen.dart';
+import '../../features/profile/presentation/add_project_screen.dart';
 import '../di/dependency_injection.dart';
 
 class AppRouter {

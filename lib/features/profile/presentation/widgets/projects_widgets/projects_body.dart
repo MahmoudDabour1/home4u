@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:home4u/core/extensions/navigation_extension.dart';
+import 'package:home4u/core/routing/routes.dart';
 import 'package:home4u/core/theming/app_strings.dart';
 
 import '../../../../../core/widgets/app_custom_add_button.dart';
@@ -11,7 +13,10 @@ class ProjectsBody extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        AppCustomAddButton(text: AppStrings.addProject, onPressed: () {}),
+        AppCustomAddButton(
+          text: AppStrings.addProject,
+          onPressed: () => context.pushNamed(Routes.addProjectScreen),
+        ),
         GetProjectsBlocBuilder(),
       ],
     );

@@ -17,6 +17,7 @@ class AppTextFormField extends StatelessWidget {
   final TextInputAction? textInputAction;
   final InputDecoration? decoration;
   final int? maxLines;
+  final bool? enabled;
 
   const AppTextFormField({
     super.key,
@@ -31,12 +32,14 @@ class AppTextFormField extends StatelessWidget {
     this.textInputAction = TextInputAction.next,
     this.decoration,
     this.maxLines = 1,
+    this.enabled = true,
   });
 
   @override
   Widget build(BuildContext context) {
     return TextFormField(
       controller: controller,
+      enabled: enabled,
       keyboardType: keyboardType,
       focusNode: focusNode,
       onTapOutside: (event) {

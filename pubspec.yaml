@@ -97,6 +97,9 @@ dependencies:
   custom_rating_bar: ^3.0.0
   # pick image
   image_picker: ^1.1.2
+  # displays a timeline of dates in a horizontal view
+  easy_date_timeline: ^2.0.6
+  path:
 
 
 dev_dependencies:

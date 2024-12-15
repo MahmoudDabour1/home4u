@@ -12,6 +12,7 @@ import 'package:home4u/features/auth/sign_up/logic/technical_worker/technical_wo
 import 'package:home4u/features/auth/verification/data/data_source/verification_remote_data_source.dart';
 import 'package:home4u/features/profile/data/data_sources/projects_remote_data_source.dart';
 import 'package:home4u/features/profile/data/repos/projects_repo.dart';
+import 'package:home4u/features/profile/logic/project/project_cubit.dart';
 
 import '../../features/auth/forget_password/data/data_source/forget_password_data_source.dart';
 import '../../features/auth/forget_password/data/repos/forget_password_repo.dart';
@@ -76,7 +77,7 @@ Future<void> setupGetIt() async {
 //profile
   sl.registerLazySingleton<ProjectsRemoteDataSource>(
       () => ProjectsRemoteDataSource(dio));
-  sl.registerLazySingleton<ProjectsRepo>((() => ProjectsRepoImpl(sl())));
+  sl.registerLazySingleton<ProjectsRepo>(() => ProjectsRepoImpl(sl()));
+  sl.registerFactory<ProjectCubit>(() => ProjectCubit(sl()));
   sl.registerFactory<ProfileCubit>(() => ProfileCubit(sl()));
-
 }
