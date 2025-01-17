@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_localization/flutter_localization.dart';
 import 'package:home4u/core/extensions/navigation_extension.dart';
 
 import '../../features/profile/presentation/widgets/projects_widgets/delete_dialog_button_widget.dart';
+import '../../locale/app_locale.dart';
 import '../theming/app_colors.dart';
-import '../theming/app_strings.dart';
 import '../theming/app_styles.dart';
 import '../utils/spacing.dart';
 
@@ -20,7 +21,7 @@ class AppCustomAlertDialog extends StatelessWidget {
   Widget build(BuildContext context) {
     return AlertDialog(
       content: Text(
-        AppStrings.areYouSureYouWantToDeleteThisItem,
+        AppLocale.areYouSureYouWantToDeleteThisItem.getString(context),
         style: AppStyles.font16BlackMedium,
         textAlign: TextAlign.center,
       ),
@@ -28,7 +29,7 @@ class AppCustomAlertDialog extends StatelessWidget {
         Row(
           children: [
             DeleteDialogButtonWidget(
-              text: AppStrings.cancel,
+              text: AppLocale.cancel.getString(context),
               onPressed: () {
                 context.pop();
               },
@@ -36,7 +37,7 @@ class AppCustomAlertDialog extends StatelessWidget {
             horizontalSpace(16),
             DeleteDialogButtonWidget(
               isLoading: isLoading,
-              text: AppStrings.delete,
+              text: AppLocale.delete.getString(context),
               onPressed: onDeleteButtonPressed,
               isBoarder: true,
               backgroundColor: AppColors.whiteColor,

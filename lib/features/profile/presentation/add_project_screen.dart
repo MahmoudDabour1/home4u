@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_localization/flutter_localization.dart';
 import 'package:home4u/features/profile/logic/project/project_cubit.dart';
 import 'package:home4u/features/profile/presentation/widgets/add_project_widgets/add_project_info.dart';
 
 import '../../../core/di/dependency_injection.dart';
-import '../../../core/theming/app_strings.dart';
+import '../../../locale/app_locale.dart';
 import '../../auth/widgets/auth_welcome_data.dart';
 
 class AddProjectScreen extends StatelessWidget {
@@ -20,7 +21,7 @@ class AddProjectScreen extends StatelessWidget {
             child: Column(
               children: [
                 AuthWelcomeData(
-                  headText: AppStrings.addProject,
+                  headText: AppLocale.addProject.getString(context),
                   subText: '',
                 ),
                 AddProjectInfo(),

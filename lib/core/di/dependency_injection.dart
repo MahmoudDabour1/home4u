@@ -1,4 +1,5 @@
 import 'package:dio/dio.dart';
+import 'package:flutter_localization/flutter_localization.dart';
 import 'package:get_it/get_it.dart';
 import 'package:home4u/features/auth/login/data/data_sources/login_remote_data_source.dart';
 import 'package:home4u/features/auth/login/data/repos/login_repo.dart';
@@ -25,6 +26,7 @@ import '../../features/auth/sign_up/logic/engineer/engineer_cubit.dart';
 import '../../features/auth/verification/data/repos/verification_repo.dart';
 import '../../features/auth/verification/logic/verification_cubit.dart';
 import '../../features/profile/logic/profile_cubit.dart';
+import '../localization/app_localization_cubit.dart';
 import '../networking/dio_factory.dart';
 
 final sl = GetIt.instance;
@@ -80,4 +82,14 @@ Future<void> setupGetIt() async {
   sl.registerLazySingleton<ProjectsRepo>(() => ProjectsRepoImpl(sl()));
   sl.registerFactory<ProjectCubit>(() => ProjectCubit(sl()));
   sl.registerFactory<ProfileCubit>(() => ProfileCubit(sl()));
+
+  ///App Localization
+  sl.registerLazySingleton<FlutterLocalization>(
+    () => FlutterLocalization.instance,
+  );
+  sl.registerLazySingleton<AppLocalizationCubit>(
+    () => AppLocalizationCubit(
+      sl<FlutterLocalization>(),
+    ),
+  );
 }

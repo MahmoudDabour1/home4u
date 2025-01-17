@@ -11,14 +11,14 @@ class AuthWelcomeData extends StatelessWidget {
   final bool isBackButton;
   final String headText;
   final String subText;
-  void Function()? onPressed;
+  final VoidCallback? onPressed;
 
-   AuthWelcomeData({
+  const AuthWelcomeData({
     super.key,
     this.isBackButton = true,
     required this.headText,
     required this.subText,
-     this.onPressed
+    this.onPressed,
   });
 
   @override

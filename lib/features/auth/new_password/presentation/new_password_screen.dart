@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_localization/flutter_localization.dart';
 import 'package:home4u/core/extensions/navigation_extension.dart';
 import 'package:home4u/core/routing/routes.dart';
-import 'package:home4u/core/theming/app_strings.dart';
 import 'package:home4u/core/utils/spacing.dart';
 import 'package:home4u/features/auth/new_password/presentation/widgets/new_password_bloc_listener.dart';
 import 'package:home4u/features/auth/new_password/presentation/widgets/new_password_button.dart';
 import 'package:home4u/features/auth/new_password/presentation/widgets/new_password_inputs.dart';
 
+import '../../../../locale/app_locale.dart';
 import '../../widgets/auth_welcome_data.dart';
 
 class NewPasswordScreen extends StatelessWidget {
@@ -22,8 +23,8 @@ class NewPasswordScreen extends StatelessWidget {
             child: Column(
               children: [
                 AuthWelcomeData(
-                  headText: AppStrings.newPassword,
-                  subText: AppStrings.enterYourNewPassword,
+                  headText: AppLocale.newPassword.getString(context),
+                  subText: AppLocale.enterYourNewPassword.getString(context),
                   onPressed: () {
                     context.pushNameAndRemoveUntil(
                       Routes.loginScreen,

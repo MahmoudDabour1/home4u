@@ -1,10 +1,11 @@
 import 'dart:io';
-
+import 'dart:convert';
 import 'package:bloc/bloc.dart';
 import 'package:dio/dio.dart';
 import 'package:home4u/features/profile/data/repos/projects_repo.dart';
 import 'package:home4u/features/profile/logic/project/project_state.dart';
 import 'package:path/path.dart';
+import 'package:retrofit/http.dart';
 
 import '../../data/models/add_project_body.dart';
 
@@ -14,40 +15,36 @@ class ProjectCubit extends Cubit<ProjectState> {
   ProjectCubit(this._projectRepository) : super(ProjectState.initial());
 
   Future<void> addProject(
-    AddProjectBody projectData,
-    List<File>? images,
-    File? cover,
-  ) async {
+      AddProjectBody projectData,
+      List<MultipartFile>? images,
+      MultipartFile? cover,
+      ) async {
     emit(ProjectState.loading());
     try {
       final formData = FormData()
         ..fields.add(
           MapEntry(
             'projectData',
-            projectData.toJson().toString(),
+            jsonEncode(projectData.toJson()),
           ),
         );
+
       if (images != null) {
         for (var image in images) {
           formData.files.add(
             MapEntry(
               'images',
-              await MultipartFile.fromFile(
-                image.path,
-                filename: basename(image.path),
-              ),
+              image,
             ),
           );
         }
       }
+
       if (cover != null) {
         formData.files.add(
           MapEntry(
             'cover',
-            await MultipartFile.fromFile(
-              cover.path,
-              filename: basename(cover.path),
-            ),
+            cover,
           ),
         );
       }

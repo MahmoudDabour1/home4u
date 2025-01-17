@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:home4u/core/theming/app_strings.dart';
+import 'package:flutter_localization/flutter_localization.dart';
 import 'package:home4u/features/auth/sign_up/presentation/widgets/engineer/sign_up_info.dart';
 
+import '../../../../locale/app_locale.dart';
 import '../../widgets/auth_welcome_data.dart';
 
 class EngineerSignUp extends StatelessWidget {
@@ -15,8 +16,8 @@ class EngineerSignUp extends StatelessWidget {
           child: Column(
             children: [
               AuthWelcomeData(
-                headText: AppStrings.engineerInfo,
-                subText: AppStrings.welcomeToHome4You,
+                headText: AppLocale.engineerInfo.getString(context),
+                subText: AppLocale.welcomeToHome4You.getString(context),
                 isBackButton: true,
               ),
               SignUpInfo(),

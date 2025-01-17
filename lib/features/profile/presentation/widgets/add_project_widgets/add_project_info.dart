@@ -3,20 +3,21 @@ import 'dart:io';
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_localization/flutter_localization.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:home4u/core/widgets/get_common_input_decoration.dart';
 import 'package:home4u/features/profile/data/models/add_project_body.dart';
-import 'package:image_picker/image_picker.dart';
 import 'package:home4u/features/profile/logic/project/project_cubit.dart';
 import 'package:home4u/features/profile/logic/project/project_state.dart';
+import 'package:image_picker/image_picker.dart';
+import 'package:path/path.dart' as path;
 
 import '../../../../../core/theming/app_assets.dart';
-import '../../../../../core/theming/app_strings.dart';
 import '../../../../../core/utils/spacing.dart';
 import '../../../../../core/widgets/app_custom_button.dart';
 import '../../../../../core/widgets/app_text_form_field.dart';
-import 'add_project_details_button.dart';
+import '../../../../../locale/app_locale.dart';
 
 class AddProjectInfo extends StatefulWidget {
   const AddProjectInfo({super.key});
@@ -32,7 +33,8 @@ class _AddProjectInfoState extends State<AddProjectInfo> {
   late TextEditingController projectEndDateController;
   late TextEditingController projectToolsController;
   final ImagePicker _picker = ImagePicker();
-  final List<File> _selectedImages = [];
+  final List<File> _selectedImagesFiles = [];
+  final List<MultipartFile> _selectedImagesMultipart = [];
 
   @override
   void initState() {
@@ -88,22 +90,27 @@ class _AddProjectInfoState extends State<AddProjectInfo> {
     final pickedFile = await _picker.pickImage(source: source);
     if (pickedFile != null) {
       setState(() {
-        _selectedImages.add(File(pickedFile.path));
+        File file = File(pickedFile.path);
+        _selectedImagesFiles.add(file);
+        _selectedImagesMultipart.add(MultipartFile.fromFileSync(pickedFile.path,
+            filename: path.basename(pickedFile.path)));
       });
     }
   }
 
   void _deleteImage(int index) {
     setState(() {
-      _selectedImages.removeAt(index);
+      _selectedImagesFiles.removeAt(index);
+      _selectedImagesMultipart.removeAt(index);
     });
   }
 
-  void _viewImage(String path) {
+  void _viewImage(int index) {
     Navigator.push(
       context,
       MaterialPageRoute(
-        builder: (context) => FullScreenImage(imagePath: path),
+        builder: (context) =>
+            FullScreenImage(imageFile: _selectedImagesFiles[index]),
       ),
     );
   }
@@ -124,9 +131,9 @@ class _AddProjectInfoState extends State<AddProjectInfo> {
                   onTap: () => _showImagePickerOptions(context),
                   child: AbsorbPointer(
                     child: AppTextFormField(
-                      labelText: AppStrings.uploadProjectImages,
+                      labelText: AppLocale.uploadProjectImages,
                       validator: (value) {
-                        if (value.isEmpty && _selectedImages.isEmpty) {
+                        if (value.isEmpty && _selectedImagesFiles.isEmpty) {
                           return "Please enter your project images";
                         }
                         return null;
@@ -145,22 +152,21 @@ class _AddProjectInfoState extends State<AddProjectInfo> {
                   ),
                 ),
                 verticalSpace(16),
-                if (_selectedImages.isNotEmpty)
+                if (_selectedImagesFiles.isNotEmpty)
                   SizedBox(
                     height: 100.h,
                     child: ListView.builder(
                       scrollDirection: Axis.horizontal,
-                      itemCount: _selectedImages.length,
+                      itemCount: _selectedImagesFiles.length,
                       itemBuilder: (context, index) {
                         return Stack(
                           children: [
                             GestureDetector(
-                              onTap: () =>
-                                  _viewImage(_selectedImages[index].path),
+                              onTap: () => _viewImage(index),
                               child: Padding(
                                 padding: EdgeInsets.only(right: 8.w),
                                 child: Image.file(
-                                  File(_selectedImages[index].path),
+                                  _selectedImagesFiles[index],
                                   width: 100.w,
                                   height: 100.h,
                                   fit: BoxFit.cover,
@@ -192,13 +198,13 @@ class _AddProjectInfoState extends State<AddProjectInfo> {
                     }),
                 verticalSpace(16),
                 AppTextFormField(
-                  labelText: AppStrings.projectDescription,
+                  labelText: AppLocale.projectDescription,
                   keyboardType: TextInputType.multiline,
                   textInputAction: TextInputAction.newline,
                   controller: projectDescriptionController,
                   decoration: getCommonInputDecoration(
-                          labelText: AppStrings.projectDescription)
-                      .copyWith(
+                    labelText: AppLocale.projectDescription.getString(context),
+                  ).copyWith(
                     constraints: BoxConstraints(
                       maxHeight: 128.h,
                     ),
@@ -219,7 +225,7 @@ class _AddProjectInfoState extends State<AddProjectInfo> {
                       child: AppTextFormField(
                         keyboardType: TextInputType.datetime,
                         controller: projectStartDateController,
-                        labelText: AppStrings.projectStartData,
+                        labelText: AppLocale.projectStartData,
                         validator: (value) {
                           if (value.isEmpty) {
                             return "Please enter your start date";
@@ -231,7 +237,7 @@ class _AddProjectInfoState extends State<AddProjectInfo> {
                     horizontalSpace(16),
                     Expanded(
                       child: AppTextFormField(
-                        labelText: AppStrings.projectEndData,
+                        labelText: AppLocale.projectEndData,
                         keyboardType: TextInputType.datetime,
                         controller: projectEndDateController,
                         validator: (value) {
@@ -246,7 +252,7 @@ class _AddProjectInfoState extends State<AddProjectInfo> {
                 ),
                 verticalSpace(16),
                 AppTextFormField(
-                  labelText: AppStrings.projectTools,
+                  labelText: AppLocale.projectTools,
                   keyboardType: TextInputType.text,
                   controller: projectToolsController,
                   validator: (value) {
@@ -259,7 +265,7 @@ class _AddProjectInfoState extends State<AddProjectInfo> {
                 verticalSpace(32),
                 AppCustomButton(
                   isLoading: state is ProjectLoadingState,
-                  textButton: AppStrings.confirm,
+                  textButton: AppLocale.confirm,
                   btnWidth: MediaQuery.sizeOf(context).width,
                   btnHeight: 65.h,
                   onPressed: () {
@@ -272,8 +278,8 @@ class _AddProjectInfoState extends State<AddProjectInfo> {
                         endDate: projectEndDateController.text,
                         tools: projectToolsController.text,
                       ),
-                      _selectedImages.isNotEmpty ? _selectedImages : null,
-                      null,
+                      _selectedImagesMultipart,
+                      _selectedImagesMultipart[0],
                     );
                   },
                 ),
@@ -288,16 +294,16 @@ class _AddProjectInfoState extends State<AddProjectInfo> {
 }
 
 class FullScreenImage extends StatelessWidget {
-  final String imagePath;
+  final File imageFile;
 
-  const FullScreenImage({super.key, required this.imagePath});
+  const FullScreenImage({super.key, required this.imageFile});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(),
       body: Center(
-        child: Image.file(File(imagePath)),
+        child: Image.file(imageFile),
       ),
     );
   }

@@ -25,15 +25,15 @@ class ProjectBodyGridViewItem extends StatelessWidget {
               borderRadius: BorderRadius.circular(16.r),
               child: FancyShimmerImage(
                 imageUrl:
-                    "https://dynamic-mouse-needlessly.ngrok-free.app/api/v1/file/download?fileName=${projectData!.coverPath}" ??
-                        "https://images.unsplash.com/photo-1640434037438-c3e8485687c2?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+                "https://dynamic-mouse-needlessly.ngrok-free.app/api/v1/file/download?fileName=${projectData!.coverPath}" ??
+                    "https://images.unsplash.com/photo-1640434037438-c3e8485687c2?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
                 width: MediaQuery.sizeOf(context).width * 0.5,
                 height: MediaQuery.sizeOf(context).height * 0.5,
                 boxFit: BoxFit.fill,
                 shimmerBaseColor: Colors.grey[300]!,
                 shimmerHighlightColor: Colors.grey[100]!,
                 shimmerBackColor: Colors.grey[100]!,
-                errorWidget: Center(child: const Icon(Icons.error)),
+                errorWidget: const Center(child: Icon(Icons.error)),
                 alignment: Alignment.center,
                 imageBuilder: (context, imageProvider) => Container(
                   decoration: BoxDecoration(
@@ -50,10 +50,7 @@ class ProjectBodyGridViewItem extends StatelessWidget {
             MenuButtonAndDialog(
               projectId: projectData!.id ?? 0,
             ),
-            Skeletonizer(
-              enabled: state is GetProjectsLoading,
-              child: ProjectBottomRatingWidget(),
-            ),
+            ProjectBottomRatingWidget(),
           ],
         );
       },

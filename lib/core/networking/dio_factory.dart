@@ -39,6 +39,10 @@ class DioFactory {
     };
   }
 
+  static void updateLanguageHeader(String languageCode) {
+    dio?.options.headers['Accept-Language'] = languageCode;
+  }
+
   static void addDioInterceptors() {
     dio?.interceptors.add(
       InterceptorsWrapper(
