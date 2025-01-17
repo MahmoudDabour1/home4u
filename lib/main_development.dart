@@ -1,13 +1,14 @@
 import 'package:bloc/bloc.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_localization/flutter_localization.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:hive/hive.dart';
 import 'package:hive_flutter/hive_flutter.dart';
-import 'package:home4u/core/utils/app_constants.dart';
-import 'package:home4u/features/auth/sign_up/data/models/governorate_model.dart';
 
 import 'core/di/dependency_injection.dart';
+import 'core/helpers/shared_pref_helper.dart';
+import 'core/helpers/shared_pref_keys.dart';
 import 'core/routing/app_router.dart';
 import 'core/utils/my_bloc_observer.dart';
 import 'firebase_options.dart';
@@ -26,11 +27,24 @@ void main() async {
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
+
+  await FlutterLocalization.instance.ensureInitialized();
+
+  final cachedLocale =
+      await SharedPrefHelper.getString(SharedPrefKeys.selectedLocale);
+  final initialLocale = cachedLocale.isNotEmpty ? cachedLocale : 'en';
+
   runApp(
     // DevicePreview(
     //   enabled: !kReleaseMode,
-    //   builder: (context) => Home4uApp(appRouter: AppRouter()),
+    //   builder: (context) => Home4uApp(
+    //     appRouter: AppRouter(),
+    //     initialLocale: initialLocale,
+    //   ),
     // ),
-    Home4uApp(appRouter: AppRouter()),
+    Home4uApp(
+      appRouter: AppRouter(),
+      initialLocale: initialLocale,
+    ),
   );
 }

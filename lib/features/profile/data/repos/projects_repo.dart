@@ -1,15 +1,19 @@
+import 'package:dio/dio.dart';
 import 'package:home4u/core/networking/api_result.dart';
 import 'package:home4u/features/profile/data/data_sources/projects_remote_data_source.dart';
 import 'package:home4u/features/profile/data/models/delete_project_response_model.dart';
 import 'package:home4u/features/profile/data/models/get_projects_response_model.dart';
 
 import '../../../../core/networking/api_error_handler.dart';
+import '../models/project_response.dart';
 
 abstract class ProjectsRepo {
   Future<ApiResult<GetProjectsResponseModel>> getProjects();
 
   Future<ApiResult<DeleteProjectResponseModel>> getProjectsByUserId(
       int projectId);
+
+  Future<ApiResult<ProjectDataResponse>> addProject(FormData projectData);
 }
 
 class ProjectsRepoImpl implements ProjectsRepo {
@@ -35,6 +39,18 @@ class ProjectsRepoImpl implements ProjectsRepo {
       return ApiResult.success(response);
     } catch (error) {
       return ApiResult.failure(ApiErrorHandler.handle(error));
+    }
+  }
+
+  @override
+  Future<ApiResult<ProjectDataResponse>> addProject(projectData) async {
+    try {
+      final result = await _projectsRemoteDataSource.addProject(
+        projectData,
+      );
+      return ApiResult.success(result.data);
+    } catch (e) {
+      return ApiResult.failure(ApiErrorHandler.handle(e));
     }
   }
 }

@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_localization/flutter_localization.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+import '../../locale/app_locale.dart';
 import 'app_custom_menu_item.dart';
 import '../theming/app_assets.dart';
 import '../theming/app_colors.dart';
-import '../theming/app_strings.dart';
 import '../utils/spacing.dart';
 
 class AppCustomMenu extends StatefulWidget {
@@ -40,13 +41,13 @@ class _AppCustomMenuState extends State<AppCustomMenu> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             AppCustomMenuItem(
-              text: AppStrings.delete,
+              text: AppLocale.delete.getString(context),
               onTap: widget.onDeleteButtonPressed,
               icon: AppAssets.deleteSvgImage,
             ),
             verticalSpace(8),
             AppCustomMenuItem(
-              text: AppStrings.edit,
+              text: AppLocale.edit.getString(context),
               onTap: widget.onEditButtonPressed,
               icon: AppAssets.editSvgImage,
             ),

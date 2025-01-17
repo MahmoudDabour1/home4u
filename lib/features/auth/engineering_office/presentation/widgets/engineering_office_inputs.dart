@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_localization/flutter_localization.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:home4u/core/theming/app_strings.dart';
 import 'package:home4u/core/utils/spacing.dart';
 import 'package:home4u/core/widgets/app_custom_drop_down_button_form_field.dart';
 
 import '../../../../../core/theming/app_styles.dart';
+import '../../../../../locale/app_locale.dart';
 import '../../../sign_up/presentation/widgets/egypt_locations_list.dart';
 import 'engineering_office_images_fields.dart';
 
@@ -45,7 +46,7 @@ class _EngineeringOfficeInputsState extends State<EngineeringOfficeInputs> {
                 scopeOfWork = value;
               });
             },
-            labelText: AppStrings.scopeOfWork,
+            labelText: AppLocale.scopeOfWork.getString(context),
           ),
           verticalSpace(16),
           AppCustomDropDownButtonFormField(
@@ -64,7 +65,7 @@ class _EngineeringOfficeInputsState extends State<EngineeringOfficeInputs> {
                 enterTheBio = value;
               });
             },
-            labelText: AppStrings.enterTheBio,
+            labelText: AppLocale.enterTheBio.getString(context),
           ),
           verticalSpace(16),
           AppCustomDropDownButtonFormField(
@@ -83,7 +84,7 @@ class _EngineeringOfficeInputsState extends State<EngineeringOfficeInputs> {
                 enterTheServices = value;
               });
             },
-            labelText: AppStrings.enterTheServices,
+            labelText: AppLocale.enterTheServices.getString(context),
           ),
           verticalSpace(16),
           EngineeringOfficeImagesFields(),
@@ -104,7 +105,7 @@ class _EngineeringOfficeInputsState extends State<EngineeringOfficeInputs> {
                 section = value;
               });
             },
-            labelText: AppStrings.section,
+            labelText: AppLocale.section.getString(context),
           ),
           verticalSpace(32),
         ],

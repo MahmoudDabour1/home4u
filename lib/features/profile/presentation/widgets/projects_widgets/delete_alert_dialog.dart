@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_localization/flutter_localization.dart';
 import 'package:home4u/core/extensions/navigation_extension.dart';
-import 'package:home4u/core/theming/app_strings.dart';
 import 'package:home4u/features/profile/logic/profile_state.dart';
 
 import '../../../../../core/helpers/helper_methods.dart';
 import '../../../../../core/widgets/app_custom_alert_dialog.dart';
+import '../../../../../locale/app_locale.dart';
 import '../../../logic/profile_cubit.dart';
 
 class ProjectsDeleteAlertDialog extends StatelessWidget {
@@ -22,10 +23,12 @@ class ProjectsDeleteAlertDialog extends StatelessWidget {
           isLoading: state is DeleteProjectLoading,
           onDeleteButtonPressed: () async {
             final navigationBack = context.pop();
-             await profileCubit.deleteProject(projectId);
+            await profileCubit.deleteProject(projectId);
             navigationBack;
             profileCubit.getProjects();
-            await showToast(message: AppStrings.deletedSuccessfully);
+            await showToast(
+              message: AppLocale.deletedSuccessfully.getString(context),
+            );
           },
         );
       },

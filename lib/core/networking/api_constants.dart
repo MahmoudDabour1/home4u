@@ -10,11 +10,12 @@ class ApiConstants {
   static const String governoratesEp = "/api/v1/governorates";
   static const String getProjectsEp = "/api/v1/project/user-projects";
 
-
   ///Freelancer
   static const String engineerTypesEp = "/api/v1/engineer-types";
   static const String technicalWorkerTypesEp = "/api/v1/technical-worker-types";
 
+  ///Project
+  static const String projectAddEp = "/api/v1/project";
 }
 
 class ApiErrors {
