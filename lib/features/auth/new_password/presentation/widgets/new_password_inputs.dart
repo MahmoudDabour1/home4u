@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_localization/flutter_localization.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:home4u/core/utils/spacing.dart';
 
 import '../../../../../core/theming/app_colors.dart';
-import '../../../../../core/theming/app_strings.dart';
+import '../../../../../locale/app_locale.dart';
  import '../../../../../core/widgets/app_text_form_field.dart';
 import '../../logic/new_password_cubit.dart';
 
@@ -31,7 +32,7 @@ class _NewPasswordInputsState extends State<NewPasswordInputs> {
           children: [
             AppTextFormField(
               controller: context.read<NewPasswordCubit>().newPasswordController,
-              labelText: AppStrings.newPassword,
+              labelText: AppLocale.newPassword.getString(context),
               isObscureText: isObscureNewPassword,
               textInputAction: TextInputAction.next,
               focusNode: newPasswordFocusNode,
@@ -57,14 +58,14 @@ class _NewPasswordInputsState extends State<NewPasswordInputs> {
               ),
               validator: (value) {
                 if (value.isEmpty) {
-                  return AppStrings.pleaseEnterAValidPassword;
+                  return AppLocale.pleaseEnterAValidPassword.getString(context);
                 }
               },
             ),
             verticalSpace(16),
             AppTextFormField(
               controller: context.read<NewPasswordCubit>().confirmPasswordController,
-              labelText: AppStrings.confirmPassword,
+              labelText: AppLocale.confirmPassword.getString(context),
               isObscureText: isObscureConfirmPassword,
               textInputAction: TextInputAction.done,
               focusNode: confirmPasswordFocusNode,
@@ -90,10 +91,10 @@ class _NewPasswordInputsState extends State<NewPasswordInputs> {
               ),
               validator: (value) {
                 if (value.isEmpty) {
-                  return AppStrings.pleaseEnterAValidPassword;
+                  return AppLocale.pleaseEnterAValidPassword.getString(context);
                 }
                 if (value != context.read<NewPasswordCubit>().newPasswordController.text) {
-                  return AppStrings.passwordsDoNotMatch;
+                  return AppLocale.passwordsDoNotMatch.getString(context);
                 }
               },
             ),

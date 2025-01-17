@@ -1,13 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_localization/flutter_localization.dart';
 import 'package:home4u/features/auth/sign_up/logic/technical_worker/technical_worker_cubit.dart';
 import 'package:home4u/features/auth/sign_up/logic/sign_up_cubit.dart';
 
-import '../../../../../../core/theming/app_strings.dart';
 import '../../../../../../core/theming/app_styles.dart';
 import '../../../../../../core/utils/spacing.dart';
 import '../../../../../../core/widgets/app_custom_drop_down_button_form_field.dart';
 import '../../../../../../core/widgets/app_custom_drop_down_multi_select_button.dart';
+import '../../../../../../locale/app_locale.dart';
 
 class TechnicalWorkerDropDownButtons extends StatefulWidget {
   const TechnicalWorkerDropDownButtons({super.key});
@@ -60,7 +61,7 @@ class _TechnicalWorkerDropDownButtonsState
               onSaved: (value) {
                 signUpCubit.selectedWorkerType = int.parse(value!);
               },
-              labelText: AppStrings.technicalWorkerTypes,
+              labelText: AppLocale.technicalWorkerTypes.getString(context),
             ),
             verticalSpace(16),
             AppCustomDropDownMultiSelectButton(
@@ -75,7 +76,7 @@ class _TechnicalWorkerDropDownButtonsState
                   .map((technicalWorkerService) {
                 return technicalWorkerService.name ?? 'N/A';
               }).toList(),
-              labelText: AppStrings.technicalWorkerServices,
+              labelText: AppLocale.technicalWorkerServices.getString(context),
               onChanged: (List<String> values) {
                 setState(() {
                   selectedTechnicalWorkerServices = values;

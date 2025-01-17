@@ -15,7 +15,7 @@ class AppCustomAddButton extends StatelessWidget {
     return Align(
       alignment: Alignment.centerRight,
       child: IconButton(
-        onPressed:onPressed,
+        onPressed: onPressed,
         icon: Row(
           mainAxisSize: MainAxisSize.min,
           children: [

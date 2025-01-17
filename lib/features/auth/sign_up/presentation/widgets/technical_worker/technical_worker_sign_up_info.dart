@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_localization/flutter_localization.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:home4u/features/auth/sign_up/logic/sign_up_cubit.dart';
-import 'package:home4u/core/theming/app_strings.dart';
 import 'package:home4u/core/utils/spacing.dart';
 import 'package:home4u/core/widgets/app_text_form_field.dart';
+import 'package:home4u/features/auth/sign_up/logic/sign_up_cubit.dart';
+
+import '../../../../../../locale/app_locale.dart';
 import 'technical_worker_drop_down_buttons.dart';
 import 'technical_worker_sign_up_button.dart';
 
@@ -12,7 +14,8 @@ class TechnicalWorkerSignUpInfo extends StatefulWidget {
   const TechnicalWorkerSignUpInfo({super.key});
 
   @override
-  State<TechnicalWorkerSignUpInfo> createState() => _TechnicalWorkerSignUpInfoState();
+  State<TechnicalWorkerSignUpInfo> createState() =>
+      _TechnicalWorkerSignUpInfoState();
 }
 
 class _TechnicalWorkerSignUpInfoState extends State<TechnicalWorkerSignUpInfo> {
@@ -31,7 +34,7 @@ class _TechnicalWorkerSignUpInfoState extends State<TechnicalWorkerSignUpInfo> {
           verticalSpace(32),
           AppTextFormField(
             controller: signUpCubit.yearsOfExperienceController,
-            labelText: AppStrings.yearsOfExperience,
+            labelText: AppLocale.yearsOfExperience.getString(context),
             focusNode: technicalWorkerYearsOfExperienceFocusNode,
             textInputAction: TextInputAction.next,
             keyboardType: TextInputType.number,

@@ -14,10 +14,13 @@ import 'package:home4u/features/auth/sign_up/presentation/technical_worker_sign_
 import 'package:home4u/features/auth/verification/logic/verification_cubit.dart';
 import 'package:home4u/features/auth/verification/presentation/verification_screen.dart';
 import 'package:home4u/features/home/presentation/home_screen.dart';
+import 'package:home4u/features/layout/logic/bottom_nav_cubit.dart';
 
 import '../../features/auth/login/presentation/login_screen.dart';
+import '../../features/layout/presentation/bottom_nav_bar_layout.dart';
 import '../../features/onboarding/presentation/onboarding_screen.dart';
 import '../../features/profile/presentation/profile_screen.dart';
+import '../../features/profile/presentation/add_project_screen.dart';
 import '../di/dependency_injection.dart';
 
 class AppRouter {
@@ -70,7 +73,10 @@ class AppRouter {
             child: TechnicalWorkerSignUp(),
           ),
         );
-
+      case Routes.addProjectScreen:
+        return MaterialPageRoute(
+          builder: (_) => AddProjectScreen(),
+        );
       case Routes.engineeringOfficeScreen:
         return MaterialPageRoute(
           builder: (_) => EngineeringOfficeScreen(),
@@ -82,6 +88,13 @@ class AppRouter {
       case Routes.homeScreen:
         return MaterialPageRoute(
           builder: (_) => HomeScreen(),
+        );
+      case Routes.bottomNavLayout:
+        return MaterialPageRoute(
+          builder: (_) => BlocProvider<BottomNavCubit>(
+            create: (_) => BottomNavCubit(),
+            child: BottomNavBarLayout(),
+          ),
         );
       default:
         return null;

@@ -1,13 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_localization/flutter_localization.dart';
 import 'package:home4u/core/utils/spacing.dart';
 import 'package:home4u/features/auth/sign_up/data/models/sign_up_body.dart';
 import 'package:home4u/features/auth/sign_up/logic/sign_up_cubit.dart';
 import 'package:home4u/features/auth/sign_up/logic/sign_up_state.dart';
 
-import '../../../../../core/theming/app_strings.dart';
 import '../../../../../core/theming/app_styles.dart';
 import '../../../../../core/widgets/app_custom_drop_down_button_form_field.dart';
+import '../../../../../locale/app_locale.dart';
 import '../../data/models/user_type_model.dart';
 
 class DropDownButtons extends StatefulWidget {
@@ -57,7 +58,7 @@ class _DropDownButtonsState extends State<DropDownButtons> {
                       .toUserTypeRequest();
                 });
               },
-              labelText: AppStrings.chooseYourAccountType,
+              labelText: AppLocale.chooseYourAccountType.getString(context),
               validator: (value) {
                 if (value == null || value.isEmpty) {
                   return 'Please select an account type';
@@ -85,7 +86,7 @@ class _DropDownButtonsState extends State<DropDownButtons> {
                   cubit.selectedGovernorate = value;
                 });
               },
-              labelText: AppStrings.theGovernorate,
+              labelText: AppLocale.theGovernorate.getString(context),
             ),
             verticalSpace(16),
             AppCustomDropDownButtonFormField(
@@ -107,7 +108,7 @@ class _DropDownButtonsState extends State<DropDownButtons> {
                   cubit.selectedCity = value;
                 });
               },
-              labelText: AppStrings.theCity,
+              labelText: AppLocale.theCity.getString(context),
             ),
             verticalSpace(16),
           ],

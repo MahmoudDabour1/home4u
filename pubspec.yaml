@@ -93,10 +93,16 @@ dependencies:
   fluttertoast: ^8.2.8
   #Multi select && Search DropDown flutter
   dropdown_search: ^6.0.1
+  # Pick Images from camera or gallery
+  image_picker: ^1.1.2
   # Custom rating bar for flutter with support of custom icons, half icons, directions, alignments & more.
   custom_rating_bar: ^3.0.0
   shimmer: ^3.0.0
   redacted: ^1.0.12
+  # in-app localization with map data.
+  flutter_localization: ^0.3.1
+  #A modern google style nav bar
+  google_nav_bar: ^5.0.7
 
 
 dev_dependencies:
@@ -157,6 +163,4 @@ flutter:
   assets:
     - assets/images/
     - assets/svgs/
-    - assets/jsons/
-    - assets/jsons/
     - shorebird.yaml

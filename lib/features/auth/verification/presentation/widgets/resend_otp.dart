@@ -2,12 +2,13 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:home4u/core/theming/app_strings.dart';
+import 'package:flutter_localization/flutter_localization.dart';
 import 'package:home4u/features/auth/forget_password/logic/forget_password_cubit.dart';
 
 import '../../../../../core/helpers/shared_pref_helper.dart';
 import '../../../../../core/helpers/shared_pref_keys.dart';
 import '../../../../../core/theming/app_styles.dart';
+import '../../../../../locale/app_locale.dart';
 
 class ResendOtp extends StatefulWidget {
   const ResendOtp({super.key});
@@ -67,8 +68,8 @@ class _ResendOtpState extends State<ResendOtp> {
       children: [
         Text(
           resendCooldown > 0
-              ? '${AppStrings.resendIn00}$resendCooldown'
-              : AppStrings.didnReceiveTheOTP,
+              ? '${AppLocale.resendIn00.getString(context)}$resendCooldown'
+              : AppLocale.didnReceiveTheOTP.getString(context),
           style: TextStyle(fontSize: 14),
           overflow: TextOverflow.ellipsis,
           maxLines: 2,
@@ -77,7 +78,7 @@ class _ResendOtpState extends State<ResendOtp> {
           TextButton(
             onPressed: resendOtp,
             child: Text(
-              AppStrings.resendOTP,
+              AppLocale.resendOTP,
               style: AppStyles.font16DarkBlueBold,
               overflow: TextOverflow.ellipsis,
               maxLines: 2,

@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_localization/flutter_localization.dart';
 import 'package:home4u/features/auth/verification/presentation/widgets/verification_bloc_listener.dart';
 import 'package:home4u/features/auth/verification/presentation/widgets/verification_body.dart';
 
-import '../../../../core/theming/app_strings.dart';
+import '../../../../locale/app_locale.dart';
 import '../../widgets/auth_welcome_data.dart';
 
 class VerificationScreen extends StatelessWidget {
@@ -16,8 +17,8 @@ class VerificationScreen extends StatelessWidget {
           child: Column(
             children: [
               AuthWelcomeData(
-                headText: AppStrings.verification,
-                subText: AppStrings.pleaseVerifyYourAccount,
+                headText: AppLocale.verification.getString(context),
+                subText: AppLocale.pleaseVerifyYourAccount.getString(context),
               ),
               VerificationBody(),
               VerificationBlocListener(),
