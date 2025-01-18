@@ -3,7 +3,6 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../../core/theming/app_assets.dart';
 import '../../../../core/utils/spacing.dart';
-import '../../../../core/widgets/app_back_button.dart';
 import '../../../../core/widgets/app_custom_circle_button.dart';
 
 class ProfileUpperButtons extends StatelessWidget {
@@ -15,7 +14,6 @@ class ProfileUpperButtons extends StatelessWidget {
       padding: EdgeInsets.only(left: 24.w, right: 24.w, top: 16.h),
       child: Row(
         children: [
-          AppBackButton(),
           Spacer(),
           Row(
             children: [

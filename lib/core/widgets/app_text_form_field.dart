@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:home4u/core/theming/app_styles.dart';
 import 'package:home4u/core/widgets/get_common_input_decoration.dart';
 
-import '../theming/app_colors.dart';
 
 class AppTextFormField extends StatelessWidget {
   final String labelText;

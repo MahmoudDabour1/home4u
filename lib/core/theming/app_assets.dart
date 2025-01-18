@@ -20,4 +20,11 @@ abstract class AppAssets {
   static const String deleteSvgImage = 'assets/svgs/delete_svg.svg';
   static const String editSvgImage = 'assets/svgs/edit_svg.svg';
   static const String menuBlackImageSvg = 'assets/svgs/menu-dots-black_svg.svg';
+  static const String changeLanguageImageSvg = 'assets/svgs/change_language.svg';
+  static const String editProfileImageSvg = 'assets/svgs/edit_profle.svg';
+  static const String lockBlackImageSvg = 'assets/svgs/lock_black.svg';
+  static const String logOutImageSvg = 'assets/svgs/log_out.svg';
+  static const String managePermissionsImageSvg = 'assets/svgs/manage_permissions.svg';
+  static const String notificationImageSvg = 'assets/svgs/notificationsvg.svg';
+  static const String faqsImageSvg = 'assets/svgs/faqs.svg';
 }

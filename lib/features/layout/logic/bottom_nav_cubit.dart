@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:home4u/features/profile/presentation/profile_screen.dart';
+import 'package:home4u/features/settings/presentation/setting_screen.dart';
 import 'bottom_nav_state.dart';
 
 class BottomNavCubit extends Cubit<BottomNavState> {
@@ -45,6 +46,6 @@ class BottomNavCubit extends Cubit<BottomNavState> {
     Container(color: Colors.green),
     Container(color: Colors.blue),
     Container(color: Colors.yellow),
-    Container(color: Colors.purple),
+    SettingScreen(),
   ];
 }

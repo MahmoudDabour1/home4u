@@ -21,6 +21,7 @@ import '../../features/layout/presentation/bottom_nav_bar_layout.dart';
 import '../../features/onboarding/presentation/onboarding_screen.dart';
 import '../../features/profile/presentation/profile_screen.dart';
 import '../../features/profile/presentation/add_project_screen.dart';
+import '../../features/settings/presentation/setting_screen.dart';
 import '../di/dependency_injection.dart';
 
 class AppRouter {
@@ -95,6 +96,10 @@ class AppRouter {
             create: (_) => BottomNavCubit(),
             child: BottomNavBarLayout(),
           ),
+        );
+      case Routes.settingScreen:
+        return MaterialPageRoute(
+          builder: (_) => SettingScreen(),
         );
       default:
         return null;
