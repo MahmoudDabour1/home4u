@@ -86,6 +86,30 @@ class AppLocale {
   static const String addProject = 'Add Project';
 
   static const String toggleLanguage = 'Toggle Language';
+  static const String editProfile = 'Edit Profile';
+  static const String projects = 'Projects';
+  static const String services = 'Services';
+  static const String pricing = 'Pricing';
+  static const String certifications = 'Certifications';
+  static const String addServices = 'Add Services';
+  static const String add = 'Add';
+  static const String editService = 'Edit Service';
+  static const String settings = 'Settings';
+  static const String account = 'Account:';
+  static const String changePassword = 'Change password';
+  static const String logout = 'Log out';
+  static const String notifications = 'Notifications:';
+  static const String enableNotifications = 'Enable notifications';
+  static const String customizeAlertTypes = 'Customize alert types';
+  static const String privacy = 'Privacy:';
+  static const String managePermissions = 'Manage permissions';
+  static const String privacySettings = 'Privacy settings';
+  static const String appearance= 'Appearance:';
+  static const String changeLanguage= 'Change Language';
+  static const String support= 'Support:';
+  static const String faqs= 'Faqs';
+
+
 
   static const Map<String, dynamic> en = {
     onBoardingTitle1: 'Civil works and finishing services',
@@ -170,6 +194,28 @@ class AppLocale {
     areYouSureYouWantToDeleteThisItem:
         'Are you sure you want to delete this item?',
     addProject: 'Add Project',
+    editProfile: 'Edit Profile',
+    projects: 'Projects',
+    services: 'Services',
+    pricing: 'Pricing',
+    certifications: 'Certifications',
+    addServices: 'Add Services',
+    add:'Add',
+    editService: 'Edit Service',
+    settings: 'Settings',
+    account: 'Account:',
+    changePassword: 'Change password',
+    logout: 'Log out',
+    notifications: 'Notifications:',
+    enableNotifications: 'Enable notifications',
+    customizeAlertTypes: 'Customize alert types',
+    privacy: 'Privacy:',
+    managePermissions: 'Manage permissions',
+    privacySettings: 'Privacy settings',
+    appearance: 'Appearance:',
+    changeLanguage: 'Change Language',
+    support: 'Support:',
+    faqs: 'Faqs',
   };
 
   static const Map<String, dynamic> ar = {
@@ -254,5 +300,27 @@ class AppLocale {
     deletedSuccessfully: 'تم الحذف بنجاح',
     areYouSureYouWantToDeleteThisItem: 'هل أنت متأكد أنك تريد حذف هذا العنصر؟',
     addProject: 'إضافة مشروع',
+    editProfile: 'تعديل الملف الشخصي',
+    projects: 'المشاريع',
+    services: 'الخدمات',
+    pricing: 'التسعير',
+    certifications: 'الشهادات',
+    addServices: 'إضافة خدمات',
+    add:'إضافة',
+    editService: 'تعديل الخدمة',
+    settings: 'الإعدادات',
+    account: 'الحساب:',
+    changePassword: 'تغيير كلمة المرور',
+    logout: 'تسجيل الخروج',
+    notifications: 'الإشعارات:',
+    enableNotifications: 'تمكين الإشعارات',
+    customizeAlertTypes: 'تخصيص أنواع التنبيه',
+    privacy: 'الخصوصية:',
+    managePermissions: 'إدارة الأذونات',
+    privacySettings: 'إعدادات الخصوصية',
+    appearance: 'المظهر:',
+    changeLanguage: 'تغيير اللغة',
+    support: 'الدعم:',
+    faqs: 'الأسئلة الشائعة',
   };
 }

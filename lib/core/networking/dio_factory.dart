@@ -1,7 +1,7 @@
 import 'package:dio/dio.dart';
+import 'package:home4u/core/helpers/shared_pref_helper.dart';
+import 'package:home4u/core/helpers/shared_pref_keys.dart';
 import 'package:pretty_dio_logger/pretty_dio_logger.dart';
-
-import '../routing/router_observer.dart';
 
 class DioFactory {
   DioFactory._();
@@ -27,7 +27,7 @@ class DioFactory {
     dio?.options.headers = {
       'Accept': 'application/json',
       'Authorization':
-          'Bearer eyJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJIb21lNFUiLCJzdWIiOiI2MCIsImlhdCI6MTczNDIxMTQ2MCwiZXhwIjoxNzM0ODE2MjYwfQ.qGw8SxFgjV5dCLan79QwLkLm7APK1nu7N12VsMCqYwk',
+          'Bearer ${await SharedPrefHelper.getSecuredString(SharedPrefKeys.userToken)}',
       'Accept-Language': 'en',
       'Content-Type': 'multipart/form-data',
     };
@@ -44,14 +44,6 @@ class DioFactory {
   }
 
   static void addDioInterceptors() {
-    dio?.interceptors.add(
-      InterceptorsWrapper(
-        onRequest: (options, handler) {
-          logger.d('Token: ${options.headers['Authorization']}');
-          return handler.next(options);
-        },
-      ),
-    );
     dio?.interceptors.add(
       PrettyDioLogger(
         requestBody: true,

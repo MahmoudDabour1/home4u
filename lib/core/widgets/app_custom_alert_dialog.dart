@@ -30,6 +30,7 @@ class AppCustomAlertDialog extends StatelessWidget {
           children: [
             DeleteDialogButtonWidget(
               text: AppLocale.cancel.getString(context),
+              backgroundColor: AppColors.secondaryGradientColor,
               onPressed: () {
                 context.pop();
               },

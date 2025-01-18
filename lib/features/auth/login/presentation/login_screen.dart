@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_localization/flutter_localization.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:home4u/core/utils/spacing.dart';
-import 'package:home4u/core/widgets/locale_drop_down.dart';
 import 'package:home4u/features/auth/login/presentation/widgets/email_and_password.dart';
 import 'package:home4u/features/auth/login/presentation/widgets/login_bloc_listener.dart';
 import 'package:home4u/features/auth/login/presentation/widgets/login_buttons.dart';
@@ -34,7 +33,6 @@ class LoginScreen extends StatelessWidget {
                   const LoginButtons(),
                   const LoginBlocListener(),
                   verticalSpace(16),
-                  LocaleDropDown(),
                 ],
               ),
             ),

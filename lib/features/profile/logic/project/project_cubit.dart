@@ -1,11 +1,8 @@
-import 'dart:io';
 import 'dart:convert';
 import 'package:bloc/bloc.dart';
 import 'package:dio/dio.dart';
 import 'package:home4u/features/profile/data/repos/projects_repo.dart';
 import 'package:home4u/features/profile/logic/project/project_state.dart';
-import 'package:path/path.dart';
-import 'package:retrofit/http.dart';
 
 import '../../data/models/add_project_body.dart';
 

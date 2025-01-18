@@ -8,7 +8,6 @@ import '../helpers/shared_pref_helper.dart';
 import '../helpers/shared_pref_keys.dart';
 import '../networking/dio_factory.dart';
 import 'app_localization_state.dart';
-import '';
 
 class AppLocalizationCubit extends Cubit<AppLocalizationState> {
   final FlutterLocalization localization;

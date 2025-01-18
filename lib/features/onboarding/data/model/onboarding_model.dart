@@ -1,5 +1,3 @@
-import 'package:flutter_localization/flutter_localization.dart';
-import 'package:home4u/core/di/dependency_injection.dart';
 import 'package:home4u/core/theming/app_assets.dart';
 import 'package:home4u/locale/app_locale.dart';
 

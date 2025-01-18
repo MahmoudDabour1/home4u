@@ -1,5 +1,4 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:home4u/features/auth/sign_up/data/models/services/freelancer_types.dart';
 
 part 'freelancer_services.g.dart';
 

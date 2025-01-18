@@ -6,7 +6,6 @@ import 'package:home4u/features/profile/data/models/get_projects_response_model.
 import 'package:home4u/features/profile/logic/profile_cubit.dart';
 import 'package:home4u/features/profile/logic/profile_state.dart';
 import 'package:home4u/features/profile/presentation/widgets/projects_widgets/project_bottom_rating_widget.dart';
-import 'package:skeletonizer/skeletonizer.dart';
 import 'menu_button_and_dialog.dart';
 
 class ProjectBodyGridViewItem extends StatelessWidget {
