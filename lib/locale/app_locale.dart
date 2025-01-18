@@ -86,6 +86,15 @@ class AppLocale {
   static const String addProject = 'Add Project';
 
   static const String toggleLanguage = 'Toggle Language';
+  static const String editProfile = 'Edit Profile';
+  static const String projects = 'Projects';
+  static const String services = 'Services';
+  static const String pricing = 'Pricing';
+  static const String certifications = 'Certifications';
+  static const String addServices = 'Add Services';
+  static const String add = 'Add';
+  static const String editService = 'Edit Service';
+
 
   static const Map<String, dynamic> en = {
     onBoardingTitle1: 'Civil works and finishing services',
@@ -170,6 +179,14 @@ class AppLocale {
     areYouSureYouWantToDeleteThisItem:
         'Are you sure you want to delete this item?',
     addProject: 'Add Project',
+    editProfile: 'Edit Profile',
+    projects: 'Projects',
+    services: 'Services',
+    pricing: 'Pricing',
+    certifications: 'Certifications',
+    addServices: 'Add Services',
+    add:'Add',
+    editService: 'Edit Service',
   };
 
   static const Map<String, dynamic> ar = {
@@ -254,5 +271,13 @@ class AppLocale {
     deletedSuccessfully: 'تم الحذف بنجاح',
     areYouSureYouWantToDeleteThisItem: 'هل أنت متأكد أنك تريد حذف هذا العنصر؟',
     addProject: 'إضافة مشروع',
+    editProfile: 'تعديل الملف الشخصي',
+    projects: 'المشاريع',
+    services: 'الخدمات',
+    pricing: 'التسعير',
+    certifications: 'الشهادات',
+    addServices: 'إضافة خدمات',
+    add:'إضافة',
+    editService: 'تعديل الخدمة',
   };
 }

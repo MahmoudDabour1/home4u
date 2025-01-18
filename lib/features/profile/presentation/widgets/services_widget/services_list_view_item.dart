@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:home4u/core/helpers/helper_methods.dart';
+import 'package:home4u/features/profile/presentation/widgets/services_widget/add_services_alert_dialog.dart';
 import 'package:home4u/features/profile/presentation/widgets/services_widget/services_delete_alert_dialog.dart';
 
 import '../../../../../core/theming/app_styles.dart';
@@ -30,7 +30,12 @@ class ServicesListViewItem extends StatelessWidget {
                 );
               }
               if (value == "edit") {
-                showToast(message: "edit");
+                showDialog(
+                  context: context,
+                  builder: (context) => ServicesAlertDialog(
+                    isEdit: true,
+                  ),
+                );
               }
             },
           ),

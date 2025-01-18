@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_localization/flutter_localization.dart';
 import 'package:home4u/core/widgets/app_custom_add_button.dart';
 import 'package:home4u/features/profile/presentation/widgets/services_widget/services_list_view.dart';
+import 'package:home4u/locale/app_locale.dart';
+
+import 'add_services_alert_dialog.dart';
 
 class ServicesBody extends StatelessWidget {
   const ServicesBody({super.key});
@@ -9,7 +13,13 @@ class ServicesBody extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        AppCustomAddButton(text: "Add Services", onPressed: () {}),
+        AppCustomAddButton(
+            text: AppLocale.addServices.getString(context),
+            onPressed: () {
+              showDialog(
+                  context: context,
+                  builder: (context) => ServicesAlertDialog());
+            }),
         ServicesListView(),
       ],
     );

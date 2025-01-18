@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_localization/flutter_localization.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:home4u/core/utils/spacing.dart';
 import 'package:home4u/features/profile/presentation/widgets/profile_rating_widget.dart';
 
 import '../../../../core/theming/app_styles.dart';
 import '../../../../core/widgets/app_custom_button.dart';
+import '../../../../locale/app_locale.dart';
 
 class InformationWidget extends StatelessWidget {
   const InformationWidget({super.key});
@@ -35,7 +37,7 @@ class InformationWidget extends StatelessWidget {
           ),
           verticalSpace(8),
           AppCustomButton(
-            textButton: "Edit Profile",
+            textButton: AppLocale.editProfile.getString(context),
             btnWidth: 200.w,
             btnHeight: 30.h,
             onPressed: () {},

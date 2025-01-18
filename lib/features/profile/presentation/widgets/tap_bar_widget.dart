@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_localization/flutter_localization.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:home4u/core/theming/app_colors.dart';
 import 'package:home4u/core/theming/app_styles.dart';
+
+import '../../../../locale/app_locale.dart';
 
 class TapBarWidget extends StatelessWidget {
   const TapBarWidget({super.key});
@@ -15,11 +18,11 @@ class TapBarWidget extends StatelessWidget {
       automaticallyImplyLeading: false,
       toolbarHeight: 0,
       bottom: TabBar(
-        tabs: const [
-          Tab(text: "Projects"),
-          Tab(text: "Services"),
-          Tab(text: "Pricing"),
-          Tab(text: "Certifications"),
+        tabs:  [
+          Tab(text: AppLocale.projects.getString(context)),
+          Tab(text: AppLocale.services.getString(context)),
+          Tab(text: AppLocale.pricing.getString(context)),
+          Tab(text: AppLocale.certifications.getString(context)),
         ],
         padding: EdgeInsets.symmetric(horizontal: 24.w),
         isScrollable: true,
