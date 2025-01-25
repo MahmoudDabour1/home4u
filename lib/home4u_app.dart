@@ -7,7 +7,7 @@ import 'package:home4u/core/localization/app_localization_state.dart';
 import 'package:home4u/core/routing/app_router.dart';
 import 'package:home4u/core/routing/routes.dart';
 import 'package:home4u/features/auth/sign_up/logic/sign_up_cubit.dart';
-import 'package:home4u/features/profile/logic/profile_cubit.dart';
+import 'package:home4u/features/profile/logic/profile/profile_cubit.dart';
 
 import 'core/di/dependency_injection.dart';
 import 'core/localization/app_localization_cubit.dart';
@@ -87,7 +87,7 @@ class _Home4uAppState extends State<Home4uApp> {
                 onGenerateRoute: widget.appRouter.generateRoute,
                 debugShowCheckedModeBanner: false,
                 navigatorObservers: [NavigatorObserver()],
-                initialRoute: Routes.bottomNavLayout,
+                initialRoute: Routes.loginScreen,
               ),
             );
           },

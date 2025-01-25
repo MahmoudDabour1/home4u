@@ -25,13 +25,17 @@ class _EmailAndPasswordState extends State<EmailAndPassword> {
   @override
   Widget build(BuildContext context) {
     return Form(
-      key: context.read<LoginCubit>().formKey,
+      key: context
+          .read<LoginCubit>()
+          .formKey,
       child: Column(
         children: [
           AppTextFormField(
-            controller: context.read<LoginCubit>().emailOrPhoneController,
+            controller: context
+                .read<LoginCubit>()
+                .emailOrPhoneController,
             labelText: AppLocale.emailAddress.getString(context),
-            keyboardType: TextInputType.phone,
+            keyboardType: TextInputType.emailAddress,
             focusNode: phoneFocusNode,
             textInputAction: TextInputAction.next,
             validator: (value) {
@@ -44,7 +48,9 @@ class _EmailAndPasswordState extends State<EmailAndPassword> {
           verticalSpace(16),
           AppTextFormField(
             labelText: AppLocale.password.getString(context),
-            controller: context.read<LoginCubit>().passwordController,
+            controller: context
+                .read<LoginCubit>()
+                .passwordController,
             focusNode: passwordFocusNode,
             textInputAction: TextInputAction.done,
             isObscureText: isObscureText,

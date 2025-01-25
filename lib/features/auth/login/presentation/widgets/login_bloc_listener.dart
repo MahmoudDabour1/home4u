@@ -23,7 +23,7 @@ class LoginBlocListener extends StatelessWidget {
         state.whenOrNull(
           success: (loginResponse) {
             context.pop();
-            context.pushNamed(Routes.homeScreen);
+            context.pushNamed(Routes.bottomNavLayout);
           },
           error: (error) async {
             if (error == "Your account is not enabled" ||

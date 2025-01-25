@@ -24,12 +24,16 @@ class DioFactory {
   }
 
   static void addDioHeaders() async {
+    final token =
+        await SharedPrefHelper.getSecuredString(SharedPrefKeys.userToken);
+    if (token == null || token.isEmpty) {
+      throw Exception("User token is missing or invalid.");
+    }
     dio?.options.headers = {
       'Accept': 'application/json',
-      'Authorization':
-          'Bearer ${await SharedPrefHelper.getSecuredString(SharedPrefKeys.userToken)}',
+      'Authorization': 'Bearer $token',
       'Accept-Language': 'en',
-      'Content-Type': 'multipart/form-data',
+      'Content-Type': 'application/json',
     };
   }
 
@@ -41,6 +45,14 @@ class DioFactory {
 
   static void updateLanguageHeader(String languageCode) {
     dio?.options.headers['Accept-Language'] = languageCode;
+  }
+
+  static void setContentType(String contentType) {
+    dio?.options.headers['Content-Type'] = contentType;
+  }
+
+  static void clearTokenFromHeader() {
+    dio?.options.headers.remove('Authorization');
   }
 
   static void addDioInterceptors() {

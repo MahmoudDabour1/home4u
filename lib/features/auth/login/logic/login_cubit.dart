@@ -29,16 +29,25 @@ class LoginCubit extends Cubit<LoginState> {
     );
     response.when(success: (loginResponse) async {
       await showToast(message: "Login Successfully");
+      await saveUserToken(loginResponse.userData!.token!);
       emit(LoginState.success(loginResponse));
-    }, failure: (error) async{
+    }, failure: (error) async {
       final errorMessage = error.message ?? "An unknown error occurred";
-      await  showToast(message: errorMessage, isError: true);
+      await showToast(message: errorMessage, isError: true);
       emit(LoginState.error(error: errorMessage));
     });
   }
 
   Future<void> saveUserToken(String token) async {
+    if (token.isEmpty) {
+      throw Exception("Token is empty or invalid.");
+    }
     await SharedPrefHelper.setSecuredString(SharedPrefKeys.userToken, token);
     DioFactory.setTokenIntoHeaderAfterLogin(token);
+  }
+
+  Future<void> clearUserToken() async {
+    await SharedPrefHelper.removeSecuredString(SharedPrefKeys.userToken);
+    DioFactory.clearTokenFromHeader();
   }
 }

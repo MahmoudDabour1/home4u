@@ -1,10 +1,9 @@
-import 'dart:convert';
 import 'package:bloc/bloc.dart';
 import 'package:dio/dio.dart';
 import 'package:home4u/features/profile/data/repos/projects_repo.dart';
 import 'package:home4u/features/profile/logic/project/project_state.dart';
 
-import '../../data/models/add_project_body.dart';
+import '../../../../core/networking/dio_factory.dart';
 
 class ProjectCubit extends Cubit<ProjectState> {
   final ProjectsRepo _projectRepository;
@@ -12,43 +11,19 @@ class ProjectCubit extends Cubit<ProjectState> {
   ProjectCubit(this._projectRepository) : super(ProjectState.initial());
 
   Future<void> addProject(
-      AddProjectBody projectData,
-      List<MultipartFile>? images,
-      MultipartFile? cover,
-      ) async {
+    FormData projectData,
+  ) async {
     emit(ProjectState.loading());
-    try {
-      final formData = FormData()
-        ..fields.add(
-          MapEntry(
-            'projectData',
-            jsonEncode(projectData.toJson()),
-          ),
-        );
+    DioFactory.setContentType('multipart/form-data');
 
-      if (images != null) {
-        for (var image in images) {
-          formData.files.add(
-            MapEntry(
-              'images',
-              image,
-            ),
-          );
-        }
-      }
-
-      if (cover != null) {
-        formData.files.add(
-          MapEntry(
-            'cover',
-            cover,
-          ),
-        );
-      }
-      final result = await _projectRepository.addProject(formData);
-      emit(ProjectState.success(result));
-    } catch (e) {
-      emit(ProjectState.failure(errorMessage: e.toString()));
-    }
+    final response = await _projectRepository.addProject(projectData);
+    response.when(
+      success: (projectResponse) {
+        emit(ProjectState.success(projectResponse));
+      },
+      failure: (error) {
+        emit(ProjectState.failure(errorMessage: error.message.toString()));
+      },
+    );
   }
 }
