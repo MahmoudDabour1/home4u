@@ -1,3 +1,4 @@
+import 'dart:convert';
 import 'dart:io';
 
 import 'package:dio/dio.dart';
@@ -7,12 +8,14 @@ import 'package:flutter_localization/flutter_localization.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:home4u/core/widgets/get_common_input_decoration.dart';
-import 'package:home4u/features/profile/data/models/add_project_body.dart';
 import 'package:home4u/features/profile/logic/project/project_cubit.dart';
 import 'package:home4u/features/profile/logic/project/project_state.dart';
+import 'package:http_parser/http_parser.dart';
 import 'package:image_picker/image_picker.dart';
+import 'package:logger/logger.dart';
 import 'package:path/path.dart' as path;
 
+import '../../../../../core/networking/dio_factory.dart';
 import '../../../../../core/theming/app_assets.dart';
 import '../../../../../core/utils/spacing.dart';
 import '../../../../../core/widgets/app_custom_button.dart';
@@ -35,6 +38,8 @@ class _AddProjectInfoState extends State<AddProjectInfo> {
   final ImagePicker _picker = ImagePicker();
   final List<File> _selectedImagesFiles = [];
   final List<MultipartFile> _selectedImagesMultipart = [];
+  File? _coverImageFile;
+  MultipartFile? _coverImageMultipart;
 
   @override
   void initState() {
@@ -92,8 +97,29 @@ class _AddProjectInfoState extends State<AddProjectInfo> {
       setState(() {
         File file = File(pickedFile.path);
         _selectedImagesFiles.add(file);
-        _selectedImagesMultipart.add(MultipartFile.fromFileSync(pickedFile.path,
-            filename: path.basename(pickedFile.path)));
+        _selectedImagesMultipart.add(
+          MultipartFile.fromFileSync(
+            pickedFile.path,
+            filename: pickedFile.path.split('/').last,
+            contentType: getContentType(file),
+          ),
+        );
+        debugPrint("Selected Images: ${pickedFile.path}");
+      });
+    }
+  }
+
+  Future<void> _pickCoverImage(ImageSource source) async {
+    final pickedFile = await _picker.pickImage(source: source);
+    if (pickedFile != null) {
+      setState(() {
+        _coverImageFile = File(pickedFile.path);
+        _coverImageMultipart = MultipartFile.fromFileSync(
+          pickedFile.path,
+          filename: pickedFile.path.split('/').last,
+          contentType: getContentType(_coverImageFile!),
+        );
+        debugPrint("Selected Cover Image: ${pickedFile.path}");
       });
     }
   }
@@ -102,6 +128,13 @@ class _AddProjectInfoState extends State<AddProjectInfo> {
     setState(() {
       _selectedImagesFiles.removeAt(index);
       _selectedImagesMultipart.removeAt(index);
+    });
+  }
+
+  void _deleteCoverImage() {
+    setState(() {
+      _coverImageFile = null;
+      _coverImageMultipart = null;
     });
   }
 
@@ -127,167 +160,258 @@ class _AddProjectInfoState extends State<AddProjectInfo> {
             child: Column(
               children: [
                 verticalSpace(32),
-                GestureDetector(
-                  onTap: () => _showImagePickerOptions(context),
-                  child: AbsorbPointer(
-                    child: AppTextFormField(
-                      labelText: AppLocale.uploadProjectImages,
-                      validator: (value) {
-                        if (value.isEmpty && _selectedImagesFiles.isEmpty) {
-                          return "Please enter your project images";
-                        }
-                        return null;
-                      },
-                      suffixIcon: SizedBox(
-                        width: 24.w,
-                        height: 20.h,
-                        child: Align(
-                          child: SvgPicture.asset(
-                            AppAssets.loadImageSvgImage,
-                            fit: BoxFit.contain,
-                          ),
-                        ),
-                      ),
-                    ),
-                  ),
-                ),
+                _buildImagePickerField(context),
                 verticalSpace(16),
-                if (_selectedImagesFiles.isNotEmpty)
-                  SizedBox(
-                    height: 100.h,
-                    child: ListView.builder(
-                      scrollDirection: Axis.horizontal,
-                      itemCount: _selectedImagesFiles.length,
-                      itemBuilder: (context, index) {
-                        return Stack(
-                          children: [
-                            GestureDetector(
-                              onTap: () => _viewImage(index),
-                              child: Padding(
-                                padding: EdgeInsets.only(right: 8.w),
-                                child: Image.file(
-                                  _selectedImagesFiles[index],
-                                  width: 100.w,
-                                  height: 100.h,
-                                  fit: BoxFit.cover,
-                                ),
-                              ),
-                            ),
-                            Positioned(
-                              right: 0,
-                              child: IconButton(
-                                icon: Icon(Icons.delete, color: Colors.red),
-                                onPressed: () => _deleteImage(index),
-                              ),
-                            ),
-                          ],
-                        );
-                      },
-                    ),
-                  ),
+                _buildSelectedImagesList(),
                 verticalSpace(16),
-                AppTextFormField(
-                    labelText: "Project Name",
-                    controller: projectNameController,
-                    keyboardType: TextInputType.text,
-                    validator: (value) {
-                      if (value.isEmpty) {
-                        return "Please enter your project name";
-                      }
-                      return null;
-                    }),
+                _buildCoverImagePickerField(),
                 verticalSpace(16),
-                AppTextFormField(
-                  labelText: AppLocale.projectDescription,
-                  keyboardType: TextInputType.multiline,
-                  textInputAction: TextInputAction.newline,
-                  controller: projectDescriptionController,
-                  decoration: getCommonInputDecoration(
-                    labelText: AppLocale.projectDescription.getString(context),
-                  ).copyWith(
-                    constraints: BoxConstraints(
-                      maxHeight: 128.h,
-                    ),
-                    isDense: true,
-                  ),
-                  maxLines: 6,
-                  validator: (value) {
-                    if (value.isEmpty) {
-                      return "Please enter your project description";
-                    }
-                    return null;
-                  },
-                ),
+                _buildCoverImagePreview(),
                 verticalSpace(16),
-                Row(
-                  children: [
-                    Expanded(
-                      child: AppTextFormField(
-                        keyboardType: TextInputType.datetime,
-                        controller: projectStartDateController,
-                        labelText: AppLocale.projectStartData,
-                        validator: (value) {
-                          if (value.isEmpty) {
-                            return "Please enter your start date";
-                          }
-                          return null;
-                        },
-                      ),
-                    ),
-                    horizontalSpace(16),
-                    Expanded(
-                      child: AppTextFormField(
-                        labelText: AppLocale.projectEndData,
-                        keyboardType: TextInputType.datetime,
-                        controller: projectEndDateController,
-                        validator: (value) {
-                          if (value.isEmpty) {
-                            return "Please enter your end date";
-                          }
-                          return null;
-                        },
-                      ),
-                    ),
-                  ],
-                ),
+                _buildProjectNameField(),
                 verticalSpace(16),
-                AppTextFormField(
-                  labelText: AppLocale.projectTools,
-                  keyboardType: TextInputType.text,
-                  controller: projectToolsController,
-                  validator: (value) {
-                    if (value.isEmpty) {
-                      return "Please enter your project location";
-                    }
-                    return null;
-                  },
-                ),
+                _buildProjectDescriptionField(),
+                verticalSpace(16),
+                _buildProjectDatesFields(),
+                verticalSpace(16),
+                _buildProjectToolsField(),
                 verticalSpace(32),
-                AppCustomButton(
-                  isLoading: state is ProjectLoadingState,
-                  textButton: AppLocale.confirm,
-                  btnWidth: MediaQuery.sizeOf(context).width,
-                  btnHeight: 65.h,
-                  onPressed: () {
-                    final cubit = context.read<ProjectCubit>();
-                    cubit.addProject(
-                      AddProjectBody(
-                        name: projectNameController.text,
-                        description: projectDescriptionController.text,
-                        startDate: projectStartDateController.text,
-                        endDate: projectEndDateController.text,
-                        tools: projectToolsController.text,
-                      ),
-                      _selectedImagesMultipart,
-                      _selectedImagesMultipart[0],
-                    );
-                  },
-                ),
+                _buildSubmitButton(context, state),
                 verticalSpace(64),
               ],
             ),
           );
         }
+      },
+    );
+  }
+
+  Widget _buildImagePickerField(BuildContext context) {
+    return GestureDetector(
+      onTap: () => _showImagePickerOptions(context),
+      child: AbsorbPointer(
+        child: AppTextFormField(
+          labelText: AppLocale.uploadProjectImages,
+          validator: (value) {
+            if (value.isEmpty && _selectedImagesFiles.isEmpty) {
+              return "Please enter your project images";
+            }
+            return null;
+          },
+          suffixIcon: SizedBox(
+            width: 24.w,
+            height: 20.h,
+            child: Align(
+              child: SvgPicture.asset(
+                AppAssets.loadImageSvgImage,
+                fit: BoxFit.contain,
+              ),
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+
+  Widget _buildSelectedImagesList() {
+    if (_selectedImagesFiles.isEmpty) return SizedBox.shrink();
+    return SizedBox(
+      height: 100.h,
+      child: ListView.builder(
+        scrollDirection: Axis.horizontal,
+        itemCount: _selectedImagesFiles.length,
+        itemBuilder: (context, index) {
+          return Stack(
+            children: [
+              GestureDetector(
+                onTap: () => _viewImage(index),
+                child: Padding(
+                  padding: EdgeInsets.only(right: 8.w),
+                  child: Image.file(
+                    _selectedImagesFiles[index],
+                    width: 100.w,
+                    height: 100.h,
+                    fit: BoxFit.cover,
+                  ),
+                ),
+              ),
+              Positioned(
+                right: 0,
+                child: IconButton(
+                  icon: Icon(Icons.delete, color: Colors.red),
+                  onPressed: () => _deleteImage(index),
+                ),
+              ),
+            ],
+          );
+        },
+      ),
+    );
+  }
+
+  Widget _buildCoverImagePickerField() {
+    return GestureDetector(
+      onTap: () => _pickCoverImage(ImageSource.gallery),
+      child: AbsorbPointer(
+        child: AppTextFormField(
+          labelText: "Upload Cover Image",
+          validator: (value) {
+            if (value.isEmpty && _coverImageFile == null) {
+              return "Please upload a cover image";
+            }
+            return null;
+          },
+          suffixIcon: SizedBox(
+            width: 24.w,
+            height: 20.h,
+            child: Align(
+              child: SvgPicture.asset(
+                AppAssets.loadImageSvgImage,
+                fit: BoxFit.contain,
+              ),
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+
+  Widget _buildCoverImagePreview() {
+    if (_coverImageFile == null) return SizedBox.shrink();
+    return Stack(
+      children: [
+        Image.file(
+          _coverImageFile!,
+          width: 100.w,
+          height: 100.h,
+          fit: BoxFit.cover,
+        ),
+        Positioned(
+          right: 0,
+          child: IconButton(
+            icon: Icon(Icons.delete, color: Colors.red),
+            onPressed: _deleteCoverImage,
+          ),
+        ),
+      ],
+    );
+  }
+
+  Widget _buildProjectNameField() {
+    return AppTextFormField(
+      labelText: "Project Name",
+      controller: projectNameController,
+      keyboardType: TextInputType.text,
+      validator: (value) {
+        if (value.isEmpty) {
+          return "Please enter your project name";
+        }
+        return null;
+      },
+    );
+  }
+
+  Widget _buildProjectDescriptionField() {
+    return AppTextFormField(
+      labelText: AppLocale.projectDescription,
+      keyboardType: TextInputType.multiline,
+      textInputAction: TextInputAction.newline,
+      controller: projectDescriptionController,
+      decoration: getCommonInputDecoration(
+        labelText: AppLocale.projectDescription.getString(context),
+      ).copyWith(
+        constraints: BoxConstraints(
+          maxHeight: 128.h,
+        ),
+        isDense: true,
+      ),
+      maxLines: 6,
+      validator: (value) {
+        if (value.isEmpty) {
+          return "Please enter your project description";
+        }
+        return null;
+      },
+    );
+  }
+
+  Widget _buildProjectDatesFields() {
+    return Row(
+      children: [
+        Expanded(
+          child: AppTextFormField(
+            keyboardType: TextInputType.datetime,
+            controller: projectStartDateController,
+            labelText: AppLocale.projectStartData,
+            validator: (value) {
+              if (value.isEmpty) {
+                return "Please enter your start date";
+              }
+              return null;
+            },
+          ),
+        ),
+        horizontalSpace(16),
+        Expanded(
+          child: AppTextFormField(
+            labelText: AppLocale.projectEndData,
+            keyboardType: TextInputType.datetime,
+            controller: projectEndDateController,
+            validator: (value) {
+              if (value.isEmpty) {
+                return "Please enter your end date";
+              }
+              return null;
+            },
+          ),
+        ),
+      ],
+    );
+  }
+
+  Widget _buildProjectToolsField() {
+    return AppTextFormField(
+      labelText: AppLocale.projectTools,
+      keyboardType: TextInputType.text,
+      controller: projectToolsController,
+      validator: (value) {
+        if (value.isEmpty) {
+          return "Please enter your project location";
+        }
+        return null;
+      },
+    );
+  }
+
+  Widget _buildSubmitButton(BuildContext context, ProjectState state) {
+    return AppCustomButton(
+      isLoading: state is ProjectLoadingState,
+      textButton: AppLocale.confirm,
+      btnWidth: MediaQuery.sizeOf(context).width,
+      btnHeight: 65.h,
+      onPressed: () {
+        final cubit = context.read<ProjectCubit>();
+        DioFactory.setContentType('multipart/form-data');
+
+        final formData = FormData.fromMap({
+          "cover": _coverImageMultipart,
+          "images": _selectedImagesMultipart,
+          "projectData": jsonEncode({
+            "name": projectNameController.text,
+            "description": projectDescriptionController.text,
+            "startDate": projectStartDateController.text,
+            "endDate": projectEndDateController.text,
+            "tools": projectToolsController.text,
+          }),
+        });
+        final logger = Logger();
+        // Debug print to check the FormData
+        logger.w("FormData: ${formData.fields}");
+        logger.w("Cover Image: ${_coverImageMultipart?.filename}");
+        logger.w(
+            "Images: ${_selectedImagesMultipart.map((file) => file.filename).toList()}");
+
+        cubit.addProject(formData);
       },
     );
   }
@@ -306,5 +430,22 @@ class FullScreenImage extends StatelessWidget {
         child: Image.file(imageFile),
       ),
     );
+  }
+}
+
+MediaType getContentType(File file) {
+  final extension = path.extension(file.path).toLowerCase();
+  switch (extension) {
+    case '.jpg':
+    case '.jpeg':
+      return MediaType('image', 'jpeg');
+    case '.png':
+      return MediaType('image', 'png');
+    case '.gif':
+      return MediaType('image', 'gif');
+    case '.mp4':
+      return MediaType('video', 'mp4');
+    default:
+      return MediaType('application', 'octet-stream');
   }
 }

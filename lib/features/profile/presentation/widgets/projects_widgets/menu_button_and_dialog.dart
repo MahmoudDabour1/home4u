@@ -1,16 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:home4u/features/profile/logic/profile_cubit.dart';
+import 'package:home4u/features/profile/logic/profile/profile_cubit.dart';
 
 import '../../../../../core/helpers/helper_methods.dart';
 import '../../../../../core/theming/app_assets.dart';
 import '../../../../../core/widgets/app_custom_drop_down_search_menu.dart';
-import '../../../logic/profile_state.dart';
+import '../../../logic/profile/profile_state.dart';
 import 'delete_alert_dialog.dart';
 
 class MenuButtonAndDialog extends StatelessWidget {
   final int projectId;
+
   const MenuButtonAndDialog({super.key, required this.projectId});
 
   @override
@@ -25,7 +26,9 @@ class MenuButtonAndDialog extends StatelessWidget {
               if (value == "delete") {
                 showDialog(
                   context: context,
-                  builder: (context) => ProjectsDeleteAlertDialog(projectId: projectId,),
+                  builder: (context) => ProjectsDeleteAlertDialog(
+                    projectId: projectId,
+                  ),
                 );
               }
               if (value == "edit") {
