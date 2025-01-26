@@ -29,7 +29,7 @@ class DioFactory {
       'Authorization':
           'Bearer ${await SharedPrefHelper.getSecuredString(SharedPrefKeys.userToken)}',
       'Accept-Language': 'en',
-      'Content-Type': 'multipart/form-data',
+      'Content-Type': 'application/json',
     };
   }
 

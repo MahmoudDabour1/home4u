@@ -103,6 +103,8 @@ dependencies:
   flutter_localization: ^0.3.1
   #A modern google style nav bar
   google_nav_bar: ^5.0.7
+  #
+  http_parser:
 
 
 dev_dependencies:
