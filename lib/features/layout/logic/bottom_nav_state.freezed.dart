@@ -1,9 +1,9 @@
-part of 'bottom_nav_state.dart';
-
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
+
+part of 'bottom_nav_state.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -22,7 +22,6 @@ mixin _$BottomNavState<T> {
     required TResult Function(int index) changeBottomNavIndex,
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
@@ -36,7 +35,6 @@ mixin _$BottomNavState<T> {
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial<T> value) initial,
@@ -44,7 +42,6 @@ mixin _$BottomNavState<T> {
         changeBottomNavIndex,
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial<T> value)? initial,
@@ -72,9 +69,9 @@ class _$BottomNavStateCopyWithImpl<T, $Res, $Val extends BottomNavState<T>>
     implements $BottomNavStateCopyWith<T, $Res> {
   _$BottomNavStateCopyWithImpl(this._value, this._then);
 
-// ignore: unused_field
+  // ignore: unused_field
   final $Val _value;
-// ignore: unused_field
+  // ignore: unused_field
   final $Res Function($Val) _then;
 
   /// Create a copy of BottomNavState

@@ -21,7 +21,7 @@ class LoginCubit extends Cubit<LoginState> {
       TextEditingController(text: "12345678");
   final formKey = GlobalKey<FormState>();
 
-  void emitLoginStates(context) async {
+  void emitLoginStates() async {
     emit(const LoginState.loading());
     final response = await _loginRepo.login(
       LoginRequestBody(
@@ -43,7 +43,15 @@ class LoginCubit extends Cubit<LoginState> {
   }
 
   Future<void> saveUserToken(String token) async {
+    if (token.isEmpty) {
+      throw Exception("Token is empty or invalid.");
+    }
     await SharedPrefHelper.setSecuredString(SharedPrefKeys.userToken, token);
     DioFactory.setTokenIntoHeaderAfterLogin(token);
+  }
+
+  Future<void> clearUserToken() async {
+    await SharedPrefHelper.removeSecuredString(SharedPrefKeys.userToken);
+    DioFactory.clearTokenFromHeader();
   }
 }

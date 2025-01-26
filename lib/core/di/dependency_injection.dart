@@ -25,7 +25,7 @@ import '../../features/auth/sign_up/data/data_source/freelancer_sign_up/freelanc
 import '../../features/auth/sign_up/logic/engineer/engineer_cubit.dart';
 import '../../features/auth/verification/data/repos/verification_repo.dart';
 import '../../features/auth/verification/logic/verification_cubit.dart';
-import '../../features/profile/logic/profile_cubit.dart';
+import '../../features/profile/logic/profile/profile_cubit.dart';
 import '../localization/app_localization_cubit.dart';
 import '../networking/dio_factory.dart';
 

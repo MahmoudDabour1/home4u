@@ -1,8 +1,8 @@
 import 'package:bloc/bloc.dart';
 import 'package:home4u/features/profile/data/models/get_projects_response_model.dart';
-import 'package:home4u/features/profile/logic/profile_state.dart';
+import 'package:home4u/features/profile/logic/profile/profile_state.dart';
 
-import '../data/repos/projects_repo.dart';
+import '../../data/repos/projects_repo.dart';
 
 class ProfileCubit extends Cubit<ProfileState> {
   final ProjectsRepo _getProjectsRepo;

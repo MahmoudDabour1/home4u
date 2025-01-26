@@ -6,7 +6,7 @@ import 'package:home4u/features/profile/presentation/widgets/projects_widgets/pr
 import 'package:home4u/features/profile/presentation/widgets/services_widget/services_body.dart';
 import 'package:home4u/features/profile/presentation/widgets/tap_bar_widget.dart';
 
-import '../logic/profile_cubit.dart';
+import '../logic/profile/profile_cubit.dart';
 
 class ProfileScreen extends StatefulWidget {
   const ProfileScreen({super.key});
