@@ -21,7 +21,7 @@ class LoginCubit extends Cubit<LoginState> {
       TextEditingController(text: "12345678");
   final formKey = GlobalKey<FormState>();
 
-  void emitLoginStates() async {
+  void emitLoginStates(context) async {
     emit(const LoginState.loading());
     final response = await _loginRepo.login(
       LoginRequestBody(
