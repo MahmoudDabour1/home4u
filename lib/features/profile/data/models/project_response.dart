@@ -29,7 +29,8 @@ class ProjectDataResponse {
   final DateTime? startDate;
   final DateTime? endDate;
   final String? tools;
-  // final dynamic images;
+  @JsonKey(name: "images")
+  final List<Image?>? images;
 
   ProjectDataResponse({
     required this.id,
@@ -39,11 +40,28 @@ class ProjectDataResponse {
     required this.startDate,
     required this.endDate,
     required this.tools,
-    // this.images,
+    this.images,
   });
 
   factory ProjectDataResponse.fromJson(Map<String, dynamic> json) =>
       _$ProjectDataResponseFromJson(json);
 
   Map<String, dynamic> toJson() => _$ProjectDataResponseToJson(this);
+}
+
+@JsonSerializable()
+class Image {
+  @JsonKey(name: "id")
+  final int id;
+  @JsonKey(name: "path")
+  final String path;
+
+  Image({
+    required this.id,
+    required this.path,
+  });
+
+  factory Image.fromJson(Map<String, dynamic> json) => _$ImageFromJson(json);
+
+  Map<String, dynamic> toJson() => _$ImageToJson(this);
 }

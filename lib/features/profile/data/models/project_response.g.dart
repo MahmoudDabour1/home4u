@@ -33,6 +33,10 @@ ProjectDataResponse _$ProjectDataResponseFromJson(Map<String, dynamic> json) =>
           ? null
           : DateTime.parse(json['endDate'] as String),
       tools: json['tools'] as String?,
+      images: (json['images'] as List<dynamic>?)
+          ?.map((e) =>
+              e == null ? null : Image.fromJson(e as Map<String, dynamic>))
+          .toList(),
     );
 
 Map<String, dynamic> _$ProjectDataResponseToJson(
@@ -45,4 +49,15 @@ Map<String, dynamic> _$ProjectDataResponseToJson(
       'startDate': instance.startDate?.toIso8601String(),
       'endDate': instance.endDate?.toIso8601String(),
       'tools': instance.tools,
+      'images': instance.images,
+    };
+
+Image _$ImageFromJson(Map<String, dynamic> json) => Image(
+      id: (json['id'] as num).toInt(),
+      path: json['path'] as String,
+    );
+
+Map<String, dynamic> _$ImageToJson(Image instance) => <String, dynamic>{
+      'id': instance.id,
+      'path': instance.path,
     };

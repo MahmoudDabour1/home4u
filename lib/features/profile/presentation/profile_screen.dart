@@ -1,26 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:home4u/features/profile/presentation/widgets/profile_upper_widget.dart';
 import 'package:home4u/features/profile/presentation/widgets/projects_widgets/projects_body.dart';
 import 'package:home4u/features/profile/presentation/widgets/services_widget/services_body.dart';
 import 'package:home4u/features/profile/presentation/widgets/tap_bar_widget.dart';
 
-import '../logic/profile/profile_cubit.dart';
-
-class ProfileScreen extends StatefulWidget {
+class ProfileScreen extends StatelessWidget {
   const ProfileScreen({super.key});
-
-  @override
-  State<ProfileScreen> createState() => _ProfileScreenState();
-}
-
-class _ProfileScreenState extends State<ProfileScreen> {
-  @override
-  void initState() {
-    context.read<ProfileCubit>().getProjects();
-    super.initState();
-  }
 
   @override
   Widget build(BuildContext context) {

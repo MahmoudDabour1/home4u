@@ -7,16 +7,5 @@ part 'profile_state.freezed.dart';
 class ProfileState<T> with _$ProfileState<T> {
   const factory ProfileState.initial() = ProfileInitial;
 
-//getProjects
-  const factory ProfileState.getProjectsLoading() = GetProjectsLoading;
-  const factory ProfileState.getProjectsSuccess(
-      List<ProjectsData?>? projectData) = GetProjectsSuccess;
-  const factory ProfileState.getProjectsError({required String error}) =
-      GetProjectsError;
 
-//deleteProject
-  const factory ProfileState.deleteProjectLoading() = DeleteProjectLoading;
-  const factory ProfileState.deleteProjectSuccess() = DeleteProjectSuccess;
-  const factory ProfileState.deleteProjectError({required String error}) =
-      DeleteProjectError;
 }

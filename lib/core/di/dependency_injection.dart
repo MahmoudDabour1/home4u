@@ -92,4 +92,15 @@ Future<void> setupGetIt() async {
       sl<FlutterLocalization>(),
     ),
   );
+
+  ///Project
+  sl.registerLazySingleton<ProjectsRemoteDataSource>(
+    () => ProjectsRemoteDataSource(dio),
+  );
+
+  sl.registerLazySingleton<ProjectsRepo>(() => ProjectsRepoImpl(sl()));
+
+  sl.registerFactory<ProjectCubit>(
+    () => ProjectCubit(sl()),
+  );
 }

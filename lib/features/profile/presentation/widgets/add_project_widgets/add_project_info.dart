@@ -10,10 +10,8 @@ import 'package:flutter_svg/svg.dart';
 import 'package:home4u/core/widgets/get_common_input_decoration.dart';
 import 'package:home4u/features/profile/logic/project/project_cubit.dart';
 import 'package:home4u/features/profile/logic/project/project_state.dart';
-import 'package:http_parser/http_parser.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:logger/logger.dart';
-import 'package:path/path.dart' as path;
 
 import '../../../../../core/networking/dio_factory.dart';
 import '../../../../../core/theming/app_assets.dart';
@@ -101,7 +99,7 @@ class _AddProjectInfoState extends State<AddProjectInfo> {
           MultipartFile.fromFileSync(
             pickedFile.path,
             filename: pickedFile.path.split('/').last,
-            contentType: getContentType(file),
+            // contentType: getContentType(file),
           ),
         );
         debugPrint("Selected Images: ${pickedFile.path}");
@@ -117,7 +115,7 @@ class _AddProjectInfoState extends State<AddProjectInfo> {
         _coverImageMultipart = MultipartFile.fromFileSync(
           pickedFile.path,
           filename: pickedFile.path.split('/').last,
-          contentType: getContentType(_coverImageFile!),
+          // contentType: getContentType(_coverImageFile!),
         );
         debugPrint("Selected Cover Image: ${pickedFile.path}");
       });
@@ -152,8 +150,8 @@ class _AddProjectInfoState extends State<AddProjectInfo> {
   Widget build(BuildContext context) {
     return BlocBuilder<ProjectCubit, ProjectState>(
       builder: (context, state) {
-        if (state is ProjectFailureState) {
-          return Center(child: Text(state.errorMessage));
+        if (state is AddProjectError) {
+          return Center(child: Text(state.error));
         } else {
           return Padding(
             padding: const EdgeInsets.symmetric(horizontal: 24.0).w,
@@ -385,12 +383,13 @@ class _AddProjectInfoState extends State<AddProjectInfo> {
 
   Widget _buildSubmitButton(BuildContext context, ProjectState state) {
     return AppCustomButton(
-      isLoading: state is ProjectLoadingState,
+      isLoading: state is AddProjectLoading,
       textButton: AppLocale.confirm,
       btnWidth: MediaQuery.sizeOf(context).width,
       btnHeight: 65.h,
       onPressed: () {
         final cubit = context.read<ProjectCubit>();
+
         DioFactory.setContentType('multipart/form-data');
 
         final formData = FormData.fromMap({
@@ -415,6 +414,52 @@ class _AddProjectInfoState extends State<AddProjectInfo> {
       },
     );
   }
+
+// Widget _buildSubmitButton(BuildContext context, ProjectState state) {
+//   return AppCustomButton(
+//     isLoading: state is ProjectLoadingState,
+//     textButton: AppLocale.confirm,
+//     btnWidth: MediaQuery.sizeOf(context).width,
+//     btnHeight: 65.h,
+//     onPressed: () async {
+//       final cubit = context.read<ProjectCubit>();
+//
+//       // Set the content type to 'multipart/form-data'
+//       DioFactory.setContentType('multipart/form-data');
+//
+//       // Prepare the FormData
+//       final formData = FormData.fromMap({
+//         "cover": _coverImageMultipart != null
+//             ? await MultipartFile.fromFile(
+//                 _coverImageFile!.path,
+//                 filename: _coverImageFile!.path.split('/').last,
+//                 // contentType: getContentType(_coverImageFile!),
+//               )
+//             : null,
+//         "images": _selectedImagesMultipart.isNotEmpty
+//             ? _selectedImagesMultipart
+//             : null,
+//         "projectData": jsonEncode({
+//           "name": projectNameController.text,
+//           "description": projectDescriptionController.text,
+//           "startDate": projectStartDateController.text,
+//           "endDate": projectEndDateController.text,
+//           "tools": projectToolsController.text,
+//         }),
+//       });
+//
+//       final logger = Logger();
+//       // Debug print to check the FormData
+//       logger.w("FormData: ${formData.fields}");
+//       logger.w("Cover Image: ${_coverImageMultipart?.filename}");
+//       logger.w(
+//           "Images: ${_selectedImagesMultipart.map((file) => file.filename).toList()}");
+//
+//       // Call the cubit to add the project
+//       cubit.addProject(formData);
+//     },
+//   );
+// }
 }
 
 class FullScreenImage extends StatelessWidget {
@@ -433,19 +478,19 @@ class FullScreenImage extends StatelessWidget {
   }
 }
 
-MediaType getContentType(File file) {
-  final extension = path.extension(file.path).toLowerCase();
-  switch (extension) {
-    case '.jpg':
-    case '.jpeg':
-      return MediaType('image', 'jpeg');
-    case '.png':
-      return MediaType('image', 'png');
-    case '.gif':
-      return MediaType('image', 'gif');
-    case '.mp4':
-      return MediaType('video', 'mp4');
-    default:
-      return MediaType('application', 'octet-stream');
-  }
-}
+// MediaType getContentType(File file) {
+//   final extension = path.extension(file.path).toLowerCase();
+//   switch (extension) {
+//     case '.jpg':
+//     case '.jpeg':
+//       return MediaType('image', 'jpeg');
+//     case '.png':
+//       return MediaType('image', 'png');
+//     case '.gif':
+//       return MediaType('image', 'gif');
+//     case '.mp4':
+//       return MediaType('video', 'mp4');
+//     default:
+//       return MediaType('application', 'octet-stream');
+//   }
+// }

@@ -13,6 +13,7 @@ import 'core/di/dependency_injection.dart';
 import 'core/localization/app_localization_cubit.dart';
 import 'core/theming/app_theme.dart';
 import 'features/auth/forget_password/logic/forget_password_cubit.dart';
+import 'features/profile/logic/project/project_cubit.dart';
 import 'locale/app_locale.dart';
 
 class Home4uApp extends StatefulWidget {
@@ -64,6 +65,7 @@ class _Home4uAppState extends State<Home4uApp> {
         BlocProvider<ForgetPasswordCubit>(
             create: (_) => sl<ForgetPasswordCubit>()),
         BlocProvider<ProfileCubit>(create: (_) => sl<ProfileCubit>()),
+        BlocProvider<ProjectCubit>(create: (_) => sl<ProjectCubit>()..getProjects()),
       ],
       child: ScreenUtilInit(
         designSize: const Size(393, 852),
