@@ -110,6 +110,7 @@ class AppLocale {
   static const String faqs= 'Faqs';
   static const String loginSuccessfully= 'Login Successfully';
   static const String anUnknownErrorOccurred= 'An unknown error occurred';
+  static const String addCertifications= 'Add Certifications';
 
 
 
@@ -220,6 +221,7 @@ class AppLocale {
     faqs: 'Faqs',
     loginSuccessfully: 'Login Successfully',
     anUnknownErrorOccurred: 'An unknown error occurred',
+    addCertifications: 'Add Certifications',
   };
 
   static const Map<String, dynamic> ar = {
@@ -328,5 +330,6 @@ class AppLocale {
     faqs: 'الأسئلة الشائعة',
     loginSuccessfully: 'تم تسجيل الدخول بنجاح',
     anUnknownErrorOccurred: 'حدث خطأ غير معروف',
+    addCertifications: 'إضافة الشهادات',
   };
 }

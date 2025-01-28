@@ -11,8 +11,11 @@ import 'package:home4u/features/auth/sign_up/data/repos/sign_up_repository.dart'
 import 'package:home4u/features/auth/sign_up/logic/sign_up_cubit.dart';
 import 'package:home4u/features/auth/sign_up/logic/technical_worker/technical_worker_cubit.dart';
 import 'package:home4u/features/auth/verification/data/data_source/verification_remote_data_source.dart';
+import 'package:home4u/features/profile/data/data_sources/certifications_remote_data_source.dart';
 import 'package:home4u/features/profile/data/data_sources/projects_remote_data_source.dart';
+import 'package:home4u/features/profile/data/repos/certifications_repo.dart';
 import 'package:home4u/features/profile/data/repos/projects_repo.dart';
+import 'package:home4u/features/profile/logic/certifications/certifications_cubit.dart';
 import 'package:home4u/features/profile/logic/project/project_cubit.dart';
 
 import '../../features/auth/forget_password/data/data_source/forget_password_data_source.dart';
@@ -81,7 +84,7 @@ Future<void> setupGetIt() async {
       () => ProjectsRemoteDataSource(dio));
   sl.registerLazySingleton<ProjectsRepo>(() => ProjectsRepoImpl(sl()));
   sl.registerFactory<ProjectCubit>(() => ProjectCubit(sl()));
-  sl.registerFactory<ProfileCubit>(() => ProfileCubit(sl()));
+  sl.registerFactory<ProfileCubit>(() => ProfileCubit());
 
   ///App Localization
   sl.registerLazySingleton<FlutterLocalization>(
@@ -92,4 +95,10 @@ Future<void> setupGetIt() async {
       sl<FlutterLocalization>(),
     ),
   );
+
+  // certifications
+  sl.registerLazySingleton<CertificationsRemoteDataSource>(
+          () => CertificationsRemoteDataSource(dio));
+  sl.registerLazySingleton<CertificationsRepo>(() => CertificationsRepoImpl(sl()));
+  sl.registerFactory<CertificationsCubit>(() => CertificationsCubit(sl()));
 }

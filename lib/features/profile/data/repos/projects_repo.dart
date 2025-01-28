@@ -1,13 +1,11 @@
 import 'package:dio/dio.dart';
 import 'package:home4u/core/networking/api_result.dart';
 import 'package:home4u/features/profile/data/data_sources/projects_remote_data_source.dart';
-import 'package:home4u/features/profile/data/models/add_project_body.dart';
-import 'package:home4u/features/profile/data/models/delete_project_response_model.dart';
-import 'package:home4u/features/profile/data/models/get_projects_response_model.dart';
-import 'package:home4u/features/profile/data/models/project_data.dart';
+import 'package:home4u/features/profile/data/models/projects/delete_project_response_model.dart';
+import 'package:home4u/features/profile/data/models/projects/get_projects_response_model.dart';
 
 import '../../../../core/networking/api_error_handler.dart';
-import '../models/project_response.dart';
+import '../models/projects/project_response.dart';
 
 abstract class ProjectsRepo {
   Future<ApiResult<GetProjectsResponseModel>> getProjects();
