@@ -28,7 +28,6 @@ abstract class ProjectsRemoteDataSource {
   );
 
   @POST(ApiConstants.projectAddEp)
-  @MultiPart()
   Future<ProjectResponse> addProject(
     @Body() FormData projectData,
   );

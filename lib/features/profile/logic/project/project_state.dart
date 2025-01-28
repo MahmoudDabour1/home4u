@@ -1,5 +1,7 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 
+import '../../data/models/projects/get_projects_response_model.dart';
+
 part 'project_state.freezed.dart';
 
 @freezed
@@ -33,7 +35,7 @@ class ProjectState<T> with _$ProjectState<T> {
   //getProjects
   const factory ProjectState.getProjectsLoading() = GetProjectsLoading;
   const factory ProjectState.getProjectsSuccess(
-      T projectData) = GetProjectsSuccess;
+      List<ProjectsData?>? projectData) = GetProjectsSuccess;
   const factory ProjectState.getProjectsError({required String error}) =
   GetProjectsError;
 
@@ -42,11 +44,14 @@ class ProjectState<T> with _$ProjectState<T> {
   const factory ProjectState.deleteProjectSuccess() = DeleteProjectSuccess;
   const factory ProjectState.deleteProjectError({required String error}) =
   DeleteProjectError;
-  /// Add Project
+  //addProject
   const factory ProjectState.addProjectLoading() = AddProjectLoading;
-
   const factory ProjectState.addProjectSuccess() = AddProjectSuccess;
+  const factory ProjectState.addProjectError({required String error}) = AddProjectError;
 
-  const factory ProjectState.addProjectError({required String error}) =
-      AddProjectError;
+//addImage
+  const factory ProjectState.addImage() = AddImage;
+  const factory ProjectState.addCover() = AddCover;
+
+
 }
