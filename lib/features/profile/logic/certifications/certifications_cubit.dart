@@ -107,6 +107,30 @@ class CertificationsCubit extends Cubit<CertificationsState> {
     }
   }
 
+  Future<void> updateCertification() async {
+    emit(CertificationsState.updateCertificationLoading());
+    try {
+      final formData = await _createFormData();
+      final response = await _certificationsRepository.updateCertification(formData);
+      response.when(
+        success: (_) {
+          showToast(message: "Certification updated successfully");
+          emit(CertificationsState.updateCertificationSuccess());
+        },
+        failure: (error) {
+          showToast(message: error.message.toString(), isError: true);
+          emit(CertificationsState.updateCertificationError(
+              errorMessage: error.message.toString()));
+        },
+      );
+    } catch (e) {
+      showToast(message: "Error updating certification", isError: true);
+      emit(CertificationsState.updateCertificationError(
+          errorMessage: e.toString()));
+    }
+  }
+
+
 
 
   Future<FormData> _createFormData() async {

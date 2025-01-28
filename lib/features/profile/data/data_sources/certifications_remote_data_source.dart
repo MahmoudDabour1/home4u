@@ -24,6 +24,9 @@ abstract class CertificationsRemoteDataSource {
 
   @POST(ApiConstants.addCertificationsEp)
   Future<AddCertificationResponseModel> addCertification(
-    @Body() FormData formData,
-      );
+      @Body() FormData formData);
+
+  @PUT(ApiConstants.updateCertificationsEp)
+  Future<AddCertificationResponseModel> updateCertification(
+      @Body() FormData formData);
 }

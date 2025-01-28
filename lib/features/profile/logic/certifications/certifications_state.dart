@@ -38,4 +38,12 @@ class CertificationsState<T> with _$CertificationsState<T> {
 
   //add image
   const factory CertificationsState.addImage() = AddImage;
+
+  //update Certification
+  const factory CertificationsState.updateCertificationLoading() =
+      UpdateCertificationLoading;
+  const factory CertificationsState.updateCertificationSuccess() =
+      UpdateCertificationSuccess;
+  const factory CertificationsState.updateCertificationError({required String errorMessage})=
+      UpdateCertificationError;
 }
