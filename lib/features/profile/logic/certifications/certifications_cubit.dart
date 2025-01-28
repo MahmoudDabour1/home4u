@@ -1,14 +1,13 @@
 import 'dart:convert';
 import 'dart:io';
+
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:home4u/core/networking/dio_factory.dart';
 import 'package:http_parser/http_parser.dart';
 import 'package:image_picker/image_picker.dart';
-
 import '../../../../core/helpers/helper_methods.dart';
-import '../../data/models/certifications/get_certifications_response_model.dart';
 import '../../data/repos/certifications_repo.dart';
 import 'certifications_state.dart';
 
@@ -20,21 +19,11 @@ class CertificationsCubit extends Cubit<CertificationsState> {
 
   static CertificationsCubit get(context) => BlocProvider.of(context);
 
-  List<CertificationsData?>? certificationsList = [];
   final nameController = TextEditingController();
   final descriptionController = TextEditingController();
   File? image;
 
-  void selectImage({ImageSource? source}) {
-    ImagePicker.platform.getImage(source: source!).then((value) {
-      if (value != null) {
-        image = File(value.path);
-        emit(CertificationsState.addImage());
-      }
-    });
-  }
-
-  void chooseMyImage({ImageSource? source}) {
+  void selectImage({required BuildContext context,ImageSource? source}) {
     ImagePicker.platform
         .getImage(
       source: source!,
@@ -42,7 +31,7 @@ class CertificationsCubit extends Cubit<CertificationsState> {
         .then((value) {
       if (value != null) {
         image = File(value.path);
-        print(value.path);
+        Navigator.pop(context);
         emit(CertificationsState.addImage());
       }
     });
@@ -53,9 +42,11 @@ class CertificationsCubit extends Cubit<CertificationsState> {
     final response = await _certificationsRepository.getAllCertifications();
     response.when(
       success: (certificationsResponse) {
-        certificationsList = certificationsResponse.data ?? [];
-        emit(CertificationsState.getAllCertificationsSuccess(
-            certificationsList));
+        emit(
+          CertificationsState.getAllCertificationsSuccess(
+            certificationsResponse.data,
+          ),
+        );
       },
       failure: (error) {
         emit(CertificationsState.getAllCertificationsFailure(
@@ -65,7 +56,7 @@ class CertificationsCubit extends Cubit<CertificationsState> {
   }
 
   Future<void> deleteCertification(int certificationId) async {
-    emit( CertificationsState.deleteCertificationLoading());
+    emit(CertificationsState.deleteCertificationLoading());
     final response = await _certificationsRepository
         .deleteCertificationById(certificationId);
     response.when(
@@ -92,25 +83,16 @@ class CertificationsCubit extends Cubit<CertificationsState> {
     }
     emit(CertificationsState.addCertificationLoading());
     try {
-      Map<String, dynamic> certificateMap = {
-        'name': nameController.text,
-        'description': descriptionController.text,
-      };
-      FormData formData = FormData.fromMap({
-        'certificate': json.encode(certificateMap),
-        'image': await MultipartFile.fromFile(
-          image!.path,
-          filename: image!.path.split('/').last, // Extract filename
-          contentType: MediaType('image', 'jpeg'),
-        ),
-      });
-      DioFactory.setContentType("multipart/form-data");
-      final response =
-          await _certificationsRepository.addCertification(formData);
+
+      final formData = await _createFormData();
+      final response = await _certificationsRepository.addCertification(formData);
       response.when(
         success: (_) {
           showToast(message: "Certification added successfully");
           emit(CertificationsState.addCertificationSuccess());
+          nameController.clear();
+          descriptionController.clear();
+          image = null;
         },
         failure: (error) {
           showToast(message: error.message.toString(), isError: true);
@@ -123,5 +105,28 @@ class CertificationsCubit extends Cubit<CertificationsState> {
       emit(CertificationsState.addCertificationError(
           errorMessage: e.toString()));
     }
+  }
+
+
+
+  Future<FormData> _createFormData() async {
+    final certificateMap = {
+      'name': nameController.text,
+      'description': descriptionController.text,
+    };
+    final certificateJson = json.encode(certificateMap);
+    DioFactory.setContentType("multipart/form-data");
+    final imageFile = await MultipartFile.fromFile(
+      image!.path,
+      filename: image!.path.split('/').last,
+      contentType: MediaType('image', 'jpeg'),
+    );
+    return FormData.fromMap({
+      'certificate': MultipartFile.fromString(
+        certificateJson,
+        contentType: MediaType('application', 'json'),
+      ),
+      'image': imageFile,
+    });
   }
 }

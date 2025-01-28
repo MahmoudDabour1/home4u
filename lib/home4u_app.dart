@@ -16,6 +16,7 @@ import 'features/auth/forget_password/logic/forget_password_cubit.dart';
 import 'features/profile/logic/certifications/certifications_cubit.dart';
 import 'features/profile/logic/project/project_cubit.dart';
 import 'locale/app_locale.dart';
+import 'core/helpers/helper_methods.dart';
 
 class Home4uApp extends StatefulWidget {
   final AppRouter appRouter;
@@ -82,6 +83,7 @@ class _Home4uAppState extends State<Home4uApp> {
               child: MaterialApp(
                 title: 'Home4u App',
                 theme: appTheme,
+                navigatorKey: navigatorKey,
                 supportedLocales: localization.supportedLocales,
                 localizationsDelegates: localization.localizationsDelegates,
                 builder: FToastBuilder(),

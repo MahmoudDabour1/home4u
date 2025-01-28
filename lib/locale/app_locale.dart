@@ -111,6 +111,12 @@ class AppLocale {
   static const String loginSuccessfully= 'Login Successfully';
   static const String anUnknownErrorOccurred= 'An unknown error occurred';
   static const String addCertifications= 'Add Certifications';
+  static const String pleaseSelectImageWay= 'Please Select Image way';
+  static const String camera= 'Camera';
+  static const String gallery= 'Gallery';
+  static const String tapToAddImage= 'Tap to Add Image';
+  static const String name= 'Name';
+  static const String description= 'Description';
 
 
 
@@ -222,6 +228,12 @@ class AppLocale {
     loginSuccessfully: 'Login Successfully',
     anUnknownErrorOccurred: 'An unknown error occurred',
     addCertifications: 'Add Certifications',
+    pleaseSelectImageWay: 'Please Select Image way',
+    camera: 'Camera',
+    gallery: 'Gallery',
+    tapToAddImage: 'Tap to Add Image',
+    name: 'Name',
+    description: 'Description',
   };
 
   static const Map<String, dynamic> ar = {
@@ -331,5 +343,11 @@ class AppLocale {
     loginSuccessfully: 'تم تسجيل الدخول بنجاح',
     anUnknownErrorOccurred: 'حدث خطأ غير معروف',
     addCertifications: 'إضافة الشهادات',
+    pleaseSelectImageWay: 'الرجاء تحديد طريقة الصورة',
+    camera: 'الكاميرا',
+    gallery: 'المعرض',
+    tapToAddImage: 'انقر لإضافة صورة',
+    name: 'الاسم',
+    description: 'الوصف',
   };
 }
