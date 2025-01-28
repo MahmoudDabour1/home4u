@@ -27,4 +27,14 @@ class ProjectState<T> with _$ProjectState<T> {
   const factory ProjectState.deleteProjectSuccess() = DeleteProjectSuccess;
   const factory ProjectState.deleteProjectError({required String error}) =
   DeleteProjectError;
+  //addProject
+  const factory ProjectState.addProjectLoading() = AddProjectLoading;
+  const factory ProjectState.addProjectSuccess() = AddProjectSuccess;
+  const factory ProjectState.addProjectError({required String error}) = AddProjectError;
+
+//addImage
+  const factory ProjectState.addImage() = AddImage;
+  const factory ProjectState.addCover() = AddCover;
+
+
 }
