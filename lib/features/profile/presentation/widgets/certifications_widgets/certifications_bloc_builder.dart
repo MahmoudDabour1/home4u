@@ -1,0 +1,37 @@
+import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:home4u/features/profile/logic/certifications/certifications_cubit.dart';
+import 'package:home4u/features/profile/logic/certifications/certifications_state.dart';
+import 'package:home4u/features/profile/presentation/widgets/certifications_widgets/certifications_grid_view.dart';
+
+class CertificationsBlocBuilder extends StatelessWidget {
+  const CertificationsBlocBuilder({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return BlocBuilder<CertificationsCubit,CertificationsState>(
+        buildWhen: (previous, current) =>
+            current is CertificationsLoadingState ||
+            current is CertificationsSuccessState ||
+            current is CertificationsFailureState,
+        builder: (context, state) {
+      return state.maybeWhen(
+        getAllCertificationsLoading: () => Center(child: CircularProgressIndicator()),
+        getAllCertificationsSuccess: (certifications) {
+          var certificationsList = certifications;
+          return setupSuccessWidget(certificationsList);
+        },
+        getAllCertificationsFailure: (errorHandler) => setupError(),
+        orElse: () {
+          return const SizedBox.shrink();
+        },
+      );
+    });
+  }
+  Widget setupSuccessWidget(certifications) {
+    return CertificationsGridView(certificationsList: certifications ?? []);
+  }
+  Widget setupError() {
+    return const SizedBox.shrink();
+  }
+}
