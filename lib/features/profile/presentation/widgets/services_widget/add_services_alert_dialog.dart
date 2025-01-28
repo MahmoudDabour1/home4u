@@ -4,7 +4,7 @@ import 'package:home4u/core/extensions/navigation_extension.dart';
 import 'package:home4u/core/helpers/helper_methods.dart';
 import 'package:home4u/core/theming/app_colors.dart';
 import 'package:home4u/core/widgets/app_text_form_field.dart';
-import 'package:home4u/features/profile/presentation/widgets/projects_widgets/delete_dialog_button_widget.dart';
+import 'package:home4u/features/profile/presentation/widgets/delete_dialog_button_widget.dart';
 import 'package:home4u/locale/app_locale.dart';
 
 import '../../../../../core/theming/app_styles.dart';

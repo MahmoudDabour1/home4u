@@ -1,7 +1,9 @@
 import 'package:bloc/bloc.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_localization/flutter_localization.dart';
 import 'package:home4u/core/helpers/helper_methods.dart';
 import 'package:home4u/features/auth/login/data/repos/login_repo.dart';
+import 'package:home4u/locale/app_locale.dart';
 
 import '../../../../core/helpers/shared_pref_helper.dart';
 import '../../../../core/helpers/shared_pref_keys.dart';
@@ -19,7 +21,7 @@ class LoginCubit extends Cubit<LoginState> {
       TextEditingController(text: "12345678");
   final formKey = GlobalKey<FormState>();
 
-  void emitLoginStates() async {
+  void emitLoginStates(context) async {
     emit(const LoginState.loading());
     final response = await _loginRepo.login(
       LoginRequestBody(
@@ -28,11 +30,13 @@ class LoginCubit extends Cubit<LoginState> {
       ),
     );
     response.when(success: (loginResponse) async {
-      await showToast(message: "Login Successfully");
-      await saveUserToken(loginResponse.userData!.token!);
+      final token = loginResponse.userData!.token;
+      await saveUserToken(token!);
+      await showToast(message: AppLocale.loginSuccessfully.getString(context));
       emit(LoginState.success(loginResponse));
     }, failure: (error) async {
-      final errorMessage = error.message ?? "An unknown error occurred";
+      final errorMessage =
+          error.message ?? AppLocale.anUnknownErrorOccurred.getString(context);
       await showToast(message: errorMessage, isError: true);
       emit(LoginState.error(error: errorMessage));
     });

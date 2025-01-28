@@ -16,6 +16,11 @@ class ApiConstants {
 
   ///Project
   static const String projectAddEp = "/api/v1/project";
+
+  ///Certifications
+  static const String getAllCertificationsEp = "/api/v1/certificate/user-certificates";
+  static const String addCertificationsEp = "/api/v1/certificate";
+  static const String updateCertificationsEp = "/api/v1/certificate";
 }
 
 class ApiErrors {

@@ -13,8 +13,10 @@ import 'core/di/dependency_injection.dart';
 import 'core/localization/app_localization_cubit.dart';
 import 'core/theming/app_theme.dart';
 import 'features/auth/forget_password/logic/forget_password_cubit.dart';
+import 'features/profile/logic/certifications/certifications_cubit.dart';
 import 'features/profile/logic/project/project_cubit.dart';
 import 'locale/app_locale.dart';
+import 'core/helpers/helper_methods.dart';
 
 class Home4uApp extends StatefulWidget {
   final AppRouter appRouter;
@@ -66,6 +68,7 @@ class _Home4uAppState extends State<Home4uApp> {
             create: (_) => sl<ForgetPasswordCubit>()),
         BlocProvider<ProfileCubit>(create: (_) => sl<ProfileCubit>()),
         BlocProvider<ProjectCubit>(create: (_) => sl<ProjectCubit>()..getProjects()),
+        BlocProvider<CertificationsCubit>(create: (_) => sl<CertificationsCubit>()),
       ],
       child: ScreenUtilInit(
         designSize: const Size(393, 852),
@@ -80,6 +83,7 @@ class _Home4uAppState extends State<Home4uApp> {
               child: MaterialApp(
                 title: 'Home4u App',
                 theme: appTheme,
+                navigatorKey: navigatorKey,
                 supportedLocales: localization.supportedLocales,
                 localizationsDelegates: localization.localizationsDelegates,
                 builder: FToastBuilder(),
@@ -89,7 +93,7 @@ class _Home4uAppState extends State<Home4uApp> {
                 onGenerateRoute: widget.appRouter.generateRoute,
                 debugShowCheckedModeBanner: false,
                 navigatorObservers: [NavigatorObserver()],
-                initialRoute: Routes.loginScreen,
+                initialRoute: Routes.bottomNavLayout,
               ),
             );
           },

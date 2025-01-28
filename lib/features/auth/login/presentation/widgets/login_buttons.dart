@@ -43,7 +43,7 @@ class LoginButtons extends StatelessWidget {
                     .formKey
                     .currentState!
                     .validate()) {
-                  context.read<LoginCubit>().emitLoginStates();
+                  context.read<LoginCubit>().emitLoginStates(context);
                 }
               },
               btnHeight: 65.h,

@@ -13,4 +13,5 @@ abstract class Routes{
   static const String addProjectScreen = '/addProjectScreen';
   static const String bottomNavLayout = '/bottomNavLayout';
   static const String settingScreen = '/settingScreen';
+  static const String addCertificationScreen = '/addCertificationScreen';
 }

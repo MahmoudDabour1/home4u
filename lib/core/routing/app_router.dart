@@ -15,6 +15,7 @@ import 'package:home4u/features/auth/verification/logic/verification_cubit.dart'
 import 'package:home4u/features/auth/verification/presentation/verification_screen.dart';
 import 'package:home4u/features/home/presentation/home_screen.dart';
 import 'package:home4u/features/layout/logic/bottom_nav_cubit.dart';
+import 'package:home4u/features/profile/presentation/add_certification_screen.dart';
 
 import '../../features/auth/login/presentation/login_screen.dart';
 import '../../features/layout/presentation/bottom_nav_bar_layout.dart';
@@ -100,6 +101,9 @@ class AppRouter {
       case Routes.settingScreen:
         return MaterialPageRoute(
           builder: (_) => SettingScreen(),
+        );case Routes.addCertificationScreen:
+        return MaterialPageRoute(
+          builder: (_) => AddCertificationScreen(),
         );
       default:
         return null;

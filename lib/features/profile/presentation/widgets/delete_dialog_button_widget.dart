@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import '../../../../../core/theming/app_colors.dart';
-import '../../../../../core/theming/app_styles.dart';
-import '../../../../../core/widgets/app_custom_loading_indicator.dart';
+import '../../../../core/theming/app_colors.dart';
+import '../../../../core/theming/app_styles.dart';
+import '../../../../core/widgets/app_custom_loading_indicator.dart';
 
 class DeleteDialogButtonWidget extends StatelessWidget {
   final String text;
