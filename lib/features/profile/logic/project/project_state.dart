@@ -33,7 +33,7 @@ class ProjectState<T> with _$ProjectState<T> {
   //getProjects
   const factory ProjectState.getProjectsLoading() = GetProjectsLoading;
   const factory ProjectState.getProjectsSuccess(
-      List<ProjectsData?>? projectData) = GetProjectsSuccess;
+      T projectData) = GetProjectsSuccess;
   const factory ProjectState.getProjectsError({required String error}) =
   GetProjectsError;
 

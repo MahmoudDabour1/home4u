@@ -19,18 +19,19 @@ mixin _$ProjectState<T> {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
-    required TResult Function() getProjectsLoading,
-    required TResult Function(T projectData) getProjectsSuccess,
-    required TResult Function(String error) getProjectsError,
     required TResult Function() getProjectLoading,
     required TResult Function(T projectData) getProjectSuccess,
     required TResult Function(String error) getProjectError,
-    required TResult Function() deleteProjectLoading,
-    required TResult Function() deleteProjectSuccess,
-    required TResult Function(String error) deleteProjectError,
     required TResult Function() updateProjectLoading,
     required TResult Function() updateProjectSuccess,
     required TResult Function(String error) updateProjectError,
+    required TResult Function(String errorMessage) failure,
+    required TResult Function() getProjectsLoading,
+    required TResult Function(T projectData) getProjectsSuccess,
+    required TResult Function(String error) getProjectsError,
+    required TResult Function() deleteProjectLoading,
+    required TResult Function() deleteProjectSuccess,
+    required TResult Function(String error) deleteProjectError,
     required TResult Function() addProjectLoading,
     required TResult Function() addProjectSuccess,
     required TResult Function(String error) addProjectError,
@@ -39,18 +40,19 @@ mixin _$ProjectState<T> {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
-    TResult? Function()? getProjectsLoading,
-    TResult? Function(T projectData)? getProjectsSuccess,
-    TResult? Function(String error)? getProjectsError,
     TResult? Function()? getProjectLoading,
     TResult? Function(T projectData)? getProjectSuccess,
     TResult? Function(String error)? getProjectError,
-    TResult? Function()? deleteProjectLoading,
-    TResult? Function()? deleteProjectSuccess,
-    TResult? Function(String error)? deleteProjectError,
     TResult? Function()? updateProjectLoading,
     TResult? Function()? updateProjectSuccess,
     TResult? Function(String error)? updateProjectError,
+    TResult? Function(String errorMessage)? failure,
+    TResult? Function()? getProjectsLoading,
+    TResult? Function(T projectData)? getProjectsSuccess,
+    TResult? Function(String error)? getProjectsError,
+    TResult? Function()? deleteProjectLoading,
+    TResult? Function()? deleteProjectSuccess,
+    TResult? Function(String error)? deleteProjectError,
     TResult? Function()? addProjectLoading,
     TResult? Function()? addProjectSuccess,
     TResult? Function(String error)? addProjectError,
@@ -59,18 +61,19 @@ mixin _$ProjectState<T> {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
-    TResult Function()? getProjectsLoading,
-    TResult Function(T projectData)? getProjectsSuccess,
-    TResult Function(String error)? getProjectsError,
     TResult Function()? getProjectLoading,
     TResult Function(T projectData)? getProjectSuccess,
     TResult Function(String error)? getProjectError,
-    TResult Function()? deleteProjectLoading,
-    TResult Function()? deleteProjectSuccess,
-    TResult Function(String error)? deleteProjectError,
     TResult Function()? updateProjectLoading,
     TResult Function()? updateProjectSuccess,
     TResult Function(String error)? updateProjectError,
+    TResult Function(String errorMessage)? failure,
+    TResult Function()? getProjectsLoading,
+    TResult Function(T projectData)? getProjectsSuccess,
+    TResult Function(String error)? getProjectsError,
+    TResult Function()? deleteProjectLoading,
+    TResult Function()? deleteProjectSuccess,
+    TResult Function(String error)? deleteProjectError,
     TResult Function()? addProjectLoading,
     TResult Function()? addProjectSuccess,
     TResult Function(String error)? addProjectError,
@@ -80,22 +83,23 @@ mixin _$ProjectState<T> {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial<T> value) initial,
-    required TResult Function(GetProjectsLoading<T> value) getProjectsLoading,
-    required TResult Function(GetProjectsSuccess<T> value) getProjectsSuccess,
-    required TResult Function(GetProjectsError<T> value) getProjectsError,
     required TResult Function(GetProjectLoading<T> value) getProjectLoading,
     required TResult Function(GetProjectSuccess<T> value) getProjectSuccess,
     required TResult Function(GetProjectError<T> value) getProjectError,
-    required TResult Function(DeleteProjectLoading<T> value)
-        deleteProjectLoading,
-    required TResult Function(DeleteProjectSuccess<T> value)
-        deleteProjectSuccess,
-    required TResult Function(DeleteProjectError<T> value) deleteProjectError,
     required TResult Function(UpdateProjectLoading<T> value)
         updateProjectLoading,
     required TResult Function(UpdateProjectSuccess<T> value)
         updateProjectSuccess,
     required TResult Function(UpdateProjectError<T> value) updateProjectError,
+    required TResult Function(ProjectFailureState<T> value) failure,
+    required TResult Function(GetProjectsLoading<T> value) getProjectsLoading,
+    required TResult Function(GetProjectsSuccess<T> value) getProjectsSuccess,
+    required TResult Function(GetProjectsError<T> value) getProjectsError,
+    required TResult Function(DeleteProjectLoading<T> value)
+        deleteProjectLoading,
+    required TResult Function(DeleteProjectSuccess<T> value)
+        deleteProjectSuccess,
+    required TResult Function(DeleteProjectError<T> value) deleteProjectError,
     required TResult Function(AddProjectLoading<T> value) addProjectLoading,
     required TResult Function(AddProjectSuccess<T> value) addProjectSuccess,
     required TResult Function(AddProjectError<T> value) addProjectError,
@@ -104,18 +108,19 @@ mixin _$ProjectState<T> {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial<T> value)? initial,
-    TResult? Function(GetProjectsLoading<T> value)? getProjectsLoading,
-    TResult? Function(GetProjectsSuccess<T> value)? getProjectsSuccess,
-    TResult? Function(GetProjectsError<T> value)? getProjectsError,
     TResult? Function(GetProjectLoading<T> value)? getProjectLoading,
     TResult? Function(GetProjectSuccess<T> value)? getProjectSuccess,
     TResult? Function(GetProjectError<T> value)? getProjectError,
-    TResult? Function(DeleteProjectLoading<T> value)? deleteProjectLoading,
-    TResult? Function(DeleteProjectSuccess<T> value)? deleteProjectSuccess,
-    TResult? Function(DeleteProjectError<T> value)? deleteProjectError,
     TResult? Function(UpdateProjectLoading<T> value)? updateProjectLoading,
     TResult? Function(UpdateProjectSuccess<T> value)? updateProjectSuccess,
     TResult? Function(UpdateProjectError<T> value)? updateProjectError,
+    TResult? Function(ProjectFailureState<T> value)? failure,
+    TResult? Function(GetProjectsLoading<T> value)? getProjectsLoading,
+    TResult? Function(GetProjectsSuccess<T> value)? getProjectsSuccess,
+    TResult? Function(GetProjectsError<T> value)? getProjectsError,
+    TResult? Function(DeleteProjectLoading<T> value)? deleteProjectLoading,
+    TResult? Function(DeleteProjectSuccess<T> value)? deleteProjectSuccess,
+    TResult? Function(DeleteProjectError<T> value)? deleteProjectError,
     TResult? Function(AddProjectLoading<T> value)? addProjectLoading,
     TResult? Function(AddProjectSuccess<T> value)? addProjectSuccess,
     TResult? Function(AddProjectError<T> value)? addProjectError,
@@ -124,18 +129,19 @@ mixin _$ProjectState<T> {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial<T> value)? initial,
-    TResult Function(GetProjectsLoading<T> value)? getProjectsLoading,
-    TResult Function(GetProjectsSuccess<T> value)? getProjectsSuccess,
-    TResult Function(GetProjectsError<T> value)? getProjectsError,
     TResult Function(GetProjectLoading<T> value)? getProjectLoading,
     TResult Function(GetProjectSuccess<T> value)? getProjectSuccess,
     TResult Function(GetProjectError<T> value)? getProjectError,
-    TResult Function(DeleteProjectLoading<T> value)? deleteProjectLoading,
-    TResult Function(DeleteProjectSuccess<T> value)? deleteProjectSuccess,
-    TResult Function(DeleteProjectError<T> value)? deleteProjectError,
     TResult Function(UpdateProjectLoading<T> value)? updateProjectLoading,
     TResult Function(UpdateProjectSuccess<T> value)? updateProjectSuccess,
     TResult Function(UpdateProjectError<T> value)? updateProjectError,
+    TResult Function(ProjectFailureState<T> value)? failure,
+    TResult Function(GetProjectsLoading<T> value)? getProjectsLoading,
+    TResult Function(GetProjectsSuccess<T> value)? getProjectsSuccess,
+    TResult Function(GetProjectsError<T> value)? getProjectsError,
+    TResult Function(DeleteProjectLoading<T> value)? deleteProjectLoading,
+    TResult Function(DeleteProjectSuccess<T> value)? deleteProjectSuccess,
+    TResult Function(DeleteProjectError<T> value)? deleteProjectError,
     TResult Function(AddProjectLoading<T> value)? addProjectLoading,
     TResult Function(AddProjectSuccess<T> value)? addProjectSuccess,
     TResult Function(AddProjectError<T> value)? addProjectError,
@@ -207,18 +213,19 @@ class _$InitialImpl<T> implements _Initial<T> {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
-    required TResult Function() getProjectsLoading,
-    required TResult Function(T projectData) getProjectsSuccess,
-    required TResult Function(String error) getProjectsError,
     required TResult Function() getProjectLoading,
     required TResult Function(T projectData) getProjectSuccess,
     required TResult Function(String error) getProjectError,
-    required TResult Function() deleteProjectLoading,
-    required TResult Function() deleteProjectSuccess,
-    required TResult Function(String error) deleteProjectError,
     required TResult Function() updateProjectLoading,
     required TResult Function() updateProjectSuccess,
     required TResult Function(String error) updateProjectError,
+    required TResult Function(String errorMessage) failure,
+    required TResult Function() getProjectsLoading,
+    required TResult Function(T projectData) getProjectsSuccess,
+    required TResult Function(String error) getProjectsError,
+    required TResult Function() deleteProjectLoading,
+    required TResult Function() deleteProjectSuccess,
+    required TResult Function(String error) deleteProjectError,
     required TResult Function() addProjectLoading,
     required TResult Function() addProjectSuccess,
     required TResult Function(String error) addProjectError,
@@ -230,18 +237,19 @@ class _$InitialImpl<T> implements _Initial<T> {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
-    TResult? Function()? getProjectsLoading,
-    TResult? Function(T projectData)? getProjectsSuccess,
-    TResult? Function(String error)? getProjectsError,
     TResult? Function()? getProjectLoading,
     TResult? Function(T projectData)? getProjectSuccess,
     TResult? Function(String error)? getProjectError,
-    TResult? Function()? deleteProjectLoading,
-    TResult? Function()? deleteProjectSuccess,
-    TResult? Function(String error)? deleteProjectError,
     TResult? Function()? updateProjectLoading,
     TResult? Function()? updateProjectSuccess,
     TResult? Function(String error)? updateProjectError,
+    TResult? Function(String errorMessage)? failure,
+    TResult? Function()? getProjectsLoading,
+    TResult? Function(T projectData)? getProjectsSuccess,
+    TResult? Function(String error)? getProjectsError,
+    TResult? Function()? deleteProjectLoading,
+    TResult? Function()? deleteProjectSuccess,
+    TResult? Function(String error)? deleteProjectError,
     TResult? Function()? addProjectLoading,
     TResult? Function()? addProjectSuccess,
     TResult? Function(String error)? addProjectError,
@@ -253,18 +261,19 @@ class _$InitialImpl<T> implements _Initial<T> {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
-    TResult Function()? getProjectsLoading,
-    TResult Function(T projectData)? getProjectsSuccess,
-    TResult Function(String error)? getProjectsError,
     TResult Function()? getProjectLoading,
     TResult Function(T projectData)? getProjectSuccess,
     TResult Function(String error)? getProjectError,
-    TResult Function()? deleteProjectLoading,
-    TResult Function()? deleteProjectSuccess,
-    TResult Function(String error)? deleteProjectError,
     TResult Function()? updateProjectLoading,
     TResult Function()? updateProjectSuccess,
     TResult Function(String error)? updateProjectError,
+    TResult Function(String errorMessage)? failure,
+    TResult Function()? getProjectsLoading,
+    TResult Function(T projectData)? getProjectsSuccess,
+    TResult Function(String error)? getProjectsError,
+    TResult Function()? deleteProjectLoading,
+    TResult Function()? deleteProjectSuccess,
+    TResult Function(String error)? deleteProjectError,
     TResult Function()? addProjectLoading,
     TResult Function()? addProjectSuccess,
     TResult Function(String error)? addProjectError,
@@ -280,22 +289,23 @@ class _$InitialImpl<T> implements _Initial<T> {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial<T> value) initial,
-    required TResult Function(GetProjectsLoading<T> value) getProjectsLoading,
-    required TResult Function(GetProjectsSuccess<T> value) getProjectsSuccess,
-    required TResult Function(GetProjectsError<T> value) getProjectsError,
     required TResult Function(GetProjectLoading<T> value) getProjectLoading,
     required TResult Function(GetProjectSuccess<T> value) getProjectSuccess,
     required TResult Function(GetProjectError<T> value) getProjectError,
-    required TResult Function(DeleteProjectLoading<T> value)
-        deleteProjectLoading,
-    required TResult Function(DeleteProjectSuccess<T> value)
-        deleteProjectSuccess,
-    required TResult Function(DeleteProjectError<T> value) deleteProjectError,
     required TResult Function(UpdateProjectLoading<T> value)
         updateProjectLoading,
     required TResult Function(UpdateProjectSuccess<T> value)
         updateProjectSuccess,
     required TResult Function(UpdateProjectError<T> value) updateProjectError,
+    required TResult Function(ProjectFailureState<T> value) failure,
+    required TResult Function(GetProjectsLoading<T> value) getProjectsLoading,
+    required TResult Function(GetProjectsSuccess<T> value) getProjectsSuccess,
+    required TResult Function(GetProjectsError<T> value) getProjectsError,
+    required TResult Function(DeleteProjectLoading<T> value)
+        deleteProjectLoading,
+    required TResult Function(DeleteProjectSuccess<T> value)
+        deleteProjectSuccess,
+    required TResult Function(DeleteProjectError<T> value) deleteProjectError,
     required TResult Function(AddProjectLoading<T> value) addProjectLoading,
     required TResult Function(AddProjectSuccess<T> value) addProjectSuccess,
     required TResult Function(AddProjectError<T> value) addProjectError,
@@ -307,18 +317,19 @@ class _$InitialImpl<T> implements _Initial<T> {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial<T> value)? initial,
-    TResult? Function(GetProjectsLoading<T> value)? getProjectsLoading,
-    TResult? Function(GetProjectsSuccess<T> value)? getProjectsSuccess,
-    TResult? Function(GetProjectsError<T> value)? getProjectsError,
     TResult? Function(GetProjectLoading<T> value)? getProjectLoading,
     TResult? Function(GetProjectSuccess<T> value)? getProjectSuccess,
     TResult? Function(GetProjectError<T> value)? getProjectError,
-    TResult? Function(DeleteProjectLoading<T> value)? deleteProjectLoading,
-    TResult? Function(DeleteProjectSuccess<T> value)? deleteProjectSuccess,
-    TResult? Function(DeleteProjectError<T> value)? deleteProjectError,
     TResult? Function(UpdateProjectLoading<T> value)? updateProjectLoading,
     TResult? Function(UpdateProjectSuccess<T> value)? updateProjectSuccess,
     TResult? Function(UpdateProjectError<T> value)? updateProjectError,
+    TResult? Function(ProjectFailureState<T> value)? failure,
+    TResult? Function(GetProjectsLoading<T> value)? getProjectsLoading,
+    TResult? Function(GetProjectsSuccess<T> value)? getProjectsSuccess,
+    TResult? Function(GetProjectsError<T> value)? getProjectsError,
+    TResult? Function(DeleteProjectLoading<T> value)? deleteProjectLoading,
+    TResult? Function(DeleteProjectSuccess<T> value)? deleteProjectSuccess,
+    TResult? Function(DeleteProjectError<T> value)? deleteProjectError,
     TResult? Function(AddProjectLoading<T> value)? addProjectLoading,
     TResult? Function(AddProjectSuccess<T> value)? addProjectSuccess,
     TResult? Function(AddProjectError<T> value)? addProjectError,
@@ -330,18 +341,19 @@ class _$InitialImpl<T> implements _Initial<T> {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial<T> value)? initial,
-    TResult Function(GetProjectsLoading<T> value)? getProjectsLoading,
-    TResult Function(GetProjectsSuccess<T> value)? getProjectsSuccess,
-    TResult Function(GetProjectsError<T> value)? getProjectsError,
     TResult Function(GetProjectLoading<T> value)? getProjectLoading,
     TResult Function(GetProjectSuccess<T> value)? getProjectSuccess,
     TResult Function(GetProjectError<T> value)? getProjectError,
-    TResult Function(DeleteProjectLoading<T> value)? deleteProjectLoading,
-    TResult Function(DeleteProjectSuccess<T> value)? deleteProjectSuccess,
-    TResult Function(DeleteProjectError<T> value)? deleteProjectError,
     TResult Function(UpdateProjectLoading<T> value)? updateProjectLoading,
     TResult Function(UpdateProjectSuccess<T> value)? updateProjectSuccess,
     TResult Function(UpdateProjectError<T> value)? updateProjectError,
+    TResult Function(ProjectFailureState<T> value)? failure,
+    TResult Function(GetProjectsLoading<T> value)? getProjectsLoading,
+    TResult Function(GetProjectsSuccess<T> value)? getProjectsSuccess,
+    TResult Function(GetProjectsError<T> value)? getProjectsError,
+    TResult Function(DeleteProjectLoading<T> value)? deleteProjectLoading,
+    TResult Function(DeleteProjectSuccess<T> value)? deleteProjectSuccess,
+    TResult Function(DeleteProjectError<T> value)? deleteProjectError,
     TResult Function(AddProjectLoading<T> value)? addProjectLoading,
     TResult Function(AddProjectSuccess<T> value)? addProjectSuccess,
     TResult Function(AddProjectError<T> value)? addProjectError,
@@ -356,662 +368,6 @@ class _$InitialImpl<T> implements _Initial<T> {
 
 abstract class _Initial<T> implements ProjectState<T> {
   const factory _Initial() = _$InitialImpl<T>;
-}
-
-/// @nodoc
-abstract class _$$GetProjectsLoadingImplCopyWith<T, $Res> {
-  factory _$$GetProjectsLoadingImplCopyWith(_$GetProjectsLoadingImpl<T> value,
-          $Res Function(_$GetProjectsLoadingImpl<T>) then) =
-      __$$GetProjectsLoadingImplCopyWithImpl<T, $Res>;
-}
-
-/// @nodoc
-class __$$GetProjectsLoadingImplCopyWithImpl<T, $Res>
-    extends _$ProjectStateCopyWithImpl<T, $Res, _$GetProjectsLoadingImpl<T>>
-    implements _$$GetProjectsLoadingImplCopyWith<T, $Res> {
-  __$$GetProjectsLoadingImplCopyWithImpl(_$GetProjectsLoadingImpl<T> _value,
-      $Res Function(_$GetProjectsLoadingImpl<T>) _then)
-      : super(_value, _then);
-
-  /// Create a copy of ProjectState
-  /// with the given fields replaced by the non-null parameter values.
-}
-
-/// @nodoc
-
-class _$GetProjectsLoadingImpl<T> implements GetProjectsLoading<T> {
-  const _$GetProjectsLoadingImpl();
-
-  @override
-  String toString() {
-    return 'ProjectState<$T>.getProjectsLoading()';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$GetProjectsLoadingImpl<T>);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() initial,
-    required TResult Function() getProjectsLoading,
-    required TResult Function(T projectData) getProjectsSuccess,
-    required TResult Function(String error) getProjectsError,
-    required TResult Function() getProjectLoading,
-    required TResult Function(T projectData) getProjectSuccess,
-    required TResult Function(String error) getProjectError,
-    required TResult Function() deleteProjectLoading,
-    required TResult Function() deleteProjectSuccess,
-    required TResult Function(String error) deleteProjectError,
-    required TResult Function() updateProjectLoading,
-    required TResult Function() updateProjectSuccess,
-    required TResult Function(String error) updateProjectError,
-    required TResult Function() addProjectLoading,
-    required TResult Function() addProjectSuccess,
-    required TResult Function(String error) addProjectError,
-  }) {
-    return getProjectsLoading();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? initial,
-    TResult? Function()? getProjectsLoading,
-    TResult? Function(T projectData)? getProjectsSuccess,
-    TResult? Function(String error)? getProjectsError,
-    TResult? Function()? getProjectLoading,
-    TResult? Function(T projectData)? getProjectSuccess,
-    TResult? Function(String error)? getProjectError,
-    TResult? Function()? deleteProjectLoading,
-    TResult? Function()? deleteProjectSuccess,
-    TResult? Function(String error)? deleteProjectError,
-    TResult? Function()? updateProjectLoading,
-    TResult? Function()? updateProjectSuccess,
-    TResult? Function(String error)? updateProjectError,
-    TResult? Function()? addProjectLoading,
-    TResult? Function()? addProjectSuccess,
-    TResult? Function(String error)? addProjectError,
-  }) {
-    return getProjectsLoading?.call();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? getProjectsLoading,
-    TResult Function(T projectData)? getProjectsSuccess,
-    TResult Function(String error)? getProjectsError,
-    TResult Function()? getProjectLoading,
-    TResult Function(T projectData)? getProjectSuccess,
-    TResult Function(String error)? getProjectError,
-    TResult Function()? deleteProjectLoading,
-    TResult Function()? deleteProjectSuccess,
-    TResult Function(String error)? deleteProjectError,
-    TResult Function()? updateProjectLoading,
-    TResult Function()? updateProjectSuccess,
-    TResult Function(String error)? updateProjectError,
-    TResult Function()? addProjectLoading,
-    TResult Function()? addProjectSuccess,
-    TResult Function(String error)? addProjectError,
-    required TResult orElse(),
-  }) {
-    if (getProjectsLoading != null) {
-      return getProjectsLoading();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Initial<T> value) initial,
-    required TResult Function(GetProjectsLoading<T> value) getProjectsLoading,
-    required TResult Function(GetProjectsSuccess<T> value) getProjectsSuccess,
-    required TResult Function(GetProjectsError<T> value) getProjectsError,
-    required TResult Function(GetProjectLoading<T> value) getProjectLoading,
-    required TResult Function(GetProjectSuccess<T> value) getProjectSuccess,
-    required TResult Function(GetProjectError<T> value) getProjectError,
-    required TResult Function(DeleteProjectLoading<T> value)
-        deleteProjectLoading,
-    required TResult Function(DeleteProjectSuccess<T> value)
-        deleteProjectSuccess,
-    required TResult Function(DeleteProjectError<T> value) deleteProjectError,
-    required TResult Function(UpdateProjectLoading<T> value)
-        updateProjectLoading,
-    required TResult Function(UpdateProjectSuccess<T> value)
-        updateProjectSuccess,
-    required TResult Function(UpdateProjectError<T> value) updateProjectError,
-    required TResult Function(AddProjectLoading<T> value) addProjectLoading,
-    required TResult Function(AddProjectSuccess<T> value) addProjectSuccess,
-    required TResult Function(AddProjectError<T> value) addProjectError,
-  }) {
-    return getProjectsLoading(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Initial<T> value)? initial,
-    TResult? Function(GetProjectsLoading<T> value)? getProjectsLoading,
-    TResult? Function(GetProjectsSuccess<T> value)? getProjectsSuccess,
-    TResult? Function(GetProjectsError<T> value)? getProjectsError,
-    TResult? Function(GetProjectLoading<T> value)? getProjectLoading,
-    TResult? Function(GetProjectSuccess<T> value)? getProjectSuccess,
-    TResult? Function(GetProjectError<T> value)? getProjectError,
-    TResult? Function(DeleteProjectLoading<T> value)? deleteProjectLoading,
-    TResult? Function(DeleteProjectSuccess<T> value)? deleteProjectSuccess,
-    TResult? Function(DeleteProjectError<T> value)? deleteProjectError,
-    TResult? Function(UpdateProjectLoading<T> value)? updateProjectLoading,
-    TResult? Function(UpdateProjectSuccess<T> value)? updateProjectSuccess,
-    TResult? Function(UpdateProjectError<T> value)? updateProjectError,
-    TResult? Function(AddProjectLoading<T> value)? addProjectLoading,
-    TResult? Function(AddProjectSuccess<T> value)? addProjectSuccess,
-    TResult? Function(AddProjectError<T> value)? addProjectError,
-  }) {
-    return getProjectsLoading?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial<T> value)? initial,
-    TResult Function(GetProjectsLoading<T> value)? getProjectsLoading,
-    TResult Function(GetProjectsSuccess<T> value)? getProjectsSuccess,
-    TResult Function(GetProjectsError<T> value)? getProjectsError,
-    TResult Function(GetProjectLoading<T> value)? getProjectLoading,
-    TResult Function(GetProjectSuccess<T> value)? getProjectSuccess,
-    TResult Function(GetProjectError<T> value)? getProjectError,
-    TResult Function(DeleteProjectLoading<T> value)? deleteProjectLoading,
-    TResult Function(DeleteProjectSuccess<T> value)? deleteProjectSuccess,
-    TResult Function(DeleteProjectError<T> value)? deleteProjectError,
-    TResult Function(UpdateProjectLoading<T> value)? updateProjectLoading,
-    TResult Function(UpdateProjectSuccess<T> value)? updateProjectSuccess,
-    TResult Function(UpdateProjectError<T> value)? updateProjectError,
-    TResult Function(AddProjectLoading<T> value)? addProjectLoading,
-    TResult Function(AddProjectSuccess<T> value)? addProjectSuccess,
-    TResult Function(AddProjectError<T> value)? addProjectError,
-    required TResult orElse(),
-  }) {
-    if (getProjectsLoading != null) {
-      return getProjectsLoading(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class GetProjectsLoading<T> implements ProjectState<T> {
-  const factory GetProjectsLoading() = _$GetProjectsLoadingImpl<T>;
-}
-
-/// @nodoc
-abstract class _$$GetProjectsSuccessImplCopyWith<T, $Res> {
-  factory _$$GetProjectsSuccessImplCopyWith(_$GetProjectsSuccessImpl<T> value,
-          $Res Function(_$GetProjectsSuccessImpl<T>) then) =
-      __$$GetProjectsSuccessImplCopyWithImpl<T, $Res>;
-  @useResult
-  $Res call({T projectData});
-}
-
-/// @nodoc
-class __$$GetProjectsSuccessImplCopyWithImpl<T, $Res>
-    extends _$ProjectStateCopyWithImpl<T, $Res, _$GetProjectsSuccessImpl<T>>
-    implements _$$GetProjectsSuccessImplCopyWith<T, $Res> {
-  __$$GetProjectsSuccessImplCopyWithImpl(_$GetProjectsSuccessImpl<T> _value,
-      $Res Function(_$GetProjectsSuccessImpl<T>) _then)
-      : super(_value, _then);
-
-  /// Create a copy of ProjectState
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? projectData = freezed,
-  }) {
-    return _then(_$GetProjectsSuccessImpl<T>(
-      freezed == projectData
-          ? _value.projectData
-          : projectData // ignore: cast_nullable_to_non_nullable
-              as T,
-    ));
-  }
-}
-
-/// @nodoc
-
-class _$GetProjectsSuccessImpl<T> implements GetProjectsSuccess<T> {
-  const _$GetProjectsSuccessImpl(this.projectData);
-
-  @override
-  final T projectData;
-
-  @override
-  String toString() {
-    return 'ProjectState<$T>.getProjectsSuccess(projectData: $projectData)';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$GetProjectsSuccessImpl<T> &&
-            const DeepCollectionEquality()
-                .equals(other.projectData, projectData));
-  }
-
-  @override
-  int get hashCode => Object.hash(
-      runtimeType, const DeepCollectionEquality().hash(projectData));
-
-  /// Create a copy of ProjectState
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$GetProjectsSuccessImplCopyWith<T, _$GetProjectsSuccessImpl<T>>
-      get copyWith => __$$GetProjectsSuccessImplCopyWithImpl<T,
-          _$GetProjectsSuccessImpl<T>>(this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() initial,
-    required TResult Function() getProjectsLoading,
-    required TResult Function(T projectData) getProjectsSuccess,
-    required TResult Function(String error) getProjectsError,
-    required TResult Function() getProjectLoading,
-    required TResult Function(T projectData) getProjectSuccess,
-    required TResult Function(String error) getProjectError,
-    required TResult Function() deleteProjectLoading,
-    required TResult Function() deleteProjectSuccess,
-    required TResult Function(String error) deleteProjectError,
-    required TResult Function() updateProjectLoading,
-    required TResult Function() updateProjectSuccess,
-    required TResult Function(String error) updateProjectError,
-    required TResult Function() addProjectLoading,
-    required TResult Function() addProjectSuccess,
-    required TResult Function(String error) addProjectError,
-  }) {
-    return getProjectsSuccess(projectData);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? initial,
-    TResult? Function()? getProjectsLoading,
-    TResult? Function(T projectData)? getProjectsSuccess,
-    TResult? Function(String error)? getProjectsError,
-    TResult? Function()? getProjectLoading,
-    TResult? Function(T projectData)? getProjectSuccess,
-    TResult? Function(String error)? getProjectError,
-    TResult? Function()? deleteProjectLoading,
-    TResult? Function()? deleteProjectSuccess,
-    TResult? Function(String error)? deleteProjectError,
-    TResult? Function()? updateProjectLoading,
-    TResult? Function()? updateProjectSuccess,
-    TResult? Function(String error)? updateProjectError,
-    TResult? Function()? addProjectLoading,
-    TResult? Function()? addProjectSuccess,
-    TResult? Function(String error)? addProjectError,
-  }) {
-    return getProjectsSuccess?.call(projectData);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? getProjectsLoading,
-    TResult Function(T projectData)? getProjectsSuccess,
-    TResult Function(String error)? getProjectsError,
-    TResult Function()? getProjectLoading,
-    TResult Function(T projectData)? getProjectSuccess,
-    TResult Function(String error)? getProjectError,
-    TResult Function()? deleteProjectLoading,
-    TResult Function()? deleteProjectSuccess,
-    TResult Function(String error)? deleteProjectError,
-    TResult Function()? updateProjectLoading,
-    TResult Function()? updateProjectSuccess,
-    TResult Function(String error)? updateProjectError,
-    TResult Function()? addProjectLoading,
-    TResult Function()? addProjectSuccess,
-    TResult Function(String error)? addProjectError,
-    required TResult orElse(),
-  }) {
-    if (getProjectsSuccess != null) {
-      return getProjectsSuccess(projectData);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Initial<T> value) initial,
-    required TResult Function(GetProjectsLoading<T> value) getProjectsLoading,
-    required TResult Function(GetProjectsSuccess<T> value) getProjectsSuccess,
-    required TResult Function(GetProjectsError<T> value) getProjectsError,
-    required TResult Function(GetProjectLoading<T> value) getProjectLoading,
-    required TResult Function(GetProjectSuccess<T> value) getProjectSuccess,
-    required TResult Function(GetProjectError<T> value) getProjectError,
-    required TResult Function(DeleteProjectLoading<T> value)
-        deleteProjectLoading,
-    required TResult Function(DeleteProjectSuccess<T> value)
-        deleteProjectSuccess,
-    required TResult Function(DeleteProjectError<T> value) deleteProjectError,
-    required TResult Function(UpdateProjectLoading<T> value)
-        updateProjectLoading,
-    required TResult Function(UpdateProjectSuccess<T> value)
-        updateProjectSuccess,
-    required TResult Function(UpdateProjectError<T> value) updateProjectError,
-    required TResult Function(AddProjectLoading<T> value) addProjectLoading,
-    required TResult Function(AddProjectSuccess<T> value) addProjectSuccess,
-    required TResult Function(AddProjectError<T> value) addProjectError,
-  }) {
-    return getProjectsSuccess(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Initial<T> value)? initial,
-    TResult? Function(GetProjectsLoading<T> value)? getProjectsLoading,
-    TResult? Function(GetProjectsSuccess<T> value)? getProjectsSuccess,
-    TResult? Function(GetProjectsError<T> value)? getProjectsError,
-    TResult? Function(GetProjectLoading<T> value)? getProjectLoading,
-    TResult? Function(GetProjectSuccess<T> value)? getProjectSuccess,
-    TResult? Function(GetProjectError<T> value)? getProjectError,
-    TResult? Function(DeleteProjectLoading<T> value)? deleteProjectLoading,
-    TResult? Function(DeleteProjectSuccess<T> value)? deleteProjectSuccess,
-    TResult? Function(DeleteProjectError<T> value)? deleteProjectError,
-    TResult? Function(UpdateProjectLoading<T> value)? updateProjectLoading,
-    TResult? Function(UpdateProjectSuccess<T> value)? updateProjectSuccess,
-    TResult? Function(UpdateProjectError<T> value)? updateProjectError,
-    TResult? Function(AddProjectLoading<T> value)? addProjectLoading,
-    TResult? Function(AddProjectSuccess<T> value)? addProjectSuccess,
-    TResult? Function(AddProjectError<T> value)? addProjectError,
-  }) {
-    return getProjectsSuccess?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial<T> value)? initial,
-    TResult Function(GetProjectsLoading<T> value)? getProjectsLoading,
-    TResult Function(GetProjectsSuccess<T> value)? getProjectsSuccess,
-    TResult Function(GetProjectsError<T> value)? getProjectsError,
-    TResult Function(GetProjectLoading<T> value)? getProjectLoading,
-    TResult Function(GetProjectSuccess<T> value)? getProjectSuccess,
-    TResult Function(GetProjectError<T> value)? getProjectError,
-    TResult Function(DeleteProjectLoading<T> value)? deleteProjectLoading,
-    TResult Function(DeleteProjectSuccess<T> value)? deleteProjectSuccess,
-    TResult Function(DeleteProjectError<T> value)? deleteProjectError,
-    TResult Function(UpdateProjectLoading<T> value)? updateProjectLoading,
-    TResult Function(UpdateProjectSuccess<T> value)? updateProjectSuccess,
-    TResult Function(UpdateProjectError<T> value)? updateProjectError,
-    TResult Function(AddProjectLoading<T> value)? addProjectLoading,
-    TResult Function(AddProjectSuccess<T> value)? addProjectSuccess,
-    TResult Function(AddProjectError<T> value)? addProjectError,
-    required TResult orElse(),
-  }) {
-    if (getProjectsSuccess != null) {
-      return getProjectsSuccess(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class GetProjectsSuccess<T> implements ProjectState<T> {
-  const factory GetProjectsSuccess(final T projectData) =
-      _$GetProjectsSuccessImpl<T>;
-
-  T get projectData;
-
-  /// Create a copy of ProjectState
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$GetProjectsSuccessImplCopyWith<T, _$GetProjectsSuccessImpl<T>>
-      get copyWith => throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class _$$GetProjectsErrorImplCopyWith<T, $Res> {
-  factory _$$GetProjectsErrorImplCopyWith(_$GetProjectsErrorImpl<T> value,
-          $Res Function(_$GetProjectsErrorImpl<T>) then) =
-      __$$GetProjectsErrorImplCopyWithImpl<T, $Res>;
-  @useResult
-  $Res call({String error});
-}
-
-/// @nodoc
-class __$$GetProjectsErrorImplCopyWithImpl<T, $Res>
-    extends _$ProjectStateCopyWithImpl<T, $Res, _$GetProjectsErrorImpl<T>>
-    implements _$$GetProjectsErrorImplCopyWith<T, $Res> {
-  __$$GetProjectsErrorImplCopyWithImpl(_$GetProjectsErrorImpl<T> _value,
-      $Res Function(_$GetProjectsErrorImpl<T>) _then)
-      : super(_value, _then);
-
-  /// Create a copy of ProjectState
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? error = null,
-  }) {
-    return _then(_$GetProjectsErrorImpl<T>(
-      error: null == error
-          ? _value.error
-          : error // ignore: cast_nullable_to_non_nullable
-              as String,
-    ));
-  }
-}
-
-/// @nodoc
-
-class _$GetProjectsErrorImpl<T> implements GetProjectsError<T> {
-  const _$GetProjectsErrorImpl({required this.error});
-
-  @override
-  final String error;
-
-  @override
-  String toString() {
-    return 'ProjectState<$T>.getProjectsError(error: $error)';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$GetProjectsErrorImpl<T> &&
-            (identical(other.error, error) || other.error == error));
-  }
-
-  @override
-  int get hashCode => Object.hash(runtimeType, error);
-
-  /// Create a copy of ProjectState
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$GetProjectsErrorImplCopyWith<T, _$GetProjectsErrorImpl<T>> get copyWith =>
-      __$$GetProjectsErrorImplCopyWithImpl<T, _$GetProjectsErrorImpl<T>>(
-          this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() initial,
-    required TResult Function() getProjectsLoading,
-    required TResult Function(T projectData) getProjectsSuccess,
-    required TResult Function(String error) getProjectsError,
-    required TResult Function() getProjectLoading,
-    required TResult Function(T projectData) getProjectSuccess,
-    required TResult Function(String error) getProjectError,
-    required TResult Function() deleteProjectLoading,
-    required TResult Function() deleteProjectSuccess,
-    required TResult Function(String error) deleteProjectError,
-    required TResult Function() updateProjectLoading,
-    required TResult Function() updateProjectSuccess,
-    required TResult Function(String error) updateProjectError,
-    required TResult Function() addProjectLoading,
-    required TResult Function() addProjectSuccess,
-    required TResult Function(String error) addProjectError,
-  }) {
-    return getProjectsError(error);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? initial,
-    TResult? Function()? getProjectsLoading,
-    TResult? Function(T projectData)? getProjectsSuccess,
-    TResult? Function(String error)? getProjectsError,
-    TResult? Function()? getProjectLoading,
-    TResult? Function(T projectData)? getProjectSuccess,
-    TResult? Function(String error)? getProjectError,
-    TResult? Function()? deleteProjectLoading,
-    TResult? Function()? deleteProjectSuccess,
-    TResult? Function(String error)? deleteProjectError,
-    TResult? Function()? updateProjectLoading,
-    TResult? Function()? updateProjectSuccess,
-    TResult? Function(String error)? updateProjectError,
-    TResult? Function()? addProjectLoading,
-    TResult? Function()? addProjectSuccess,
-    TResult? Function(String error)? addProjectError,
-  }) {
-    return getProjectsError?.call(error);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? getProjectsLoading,
-    TResult Function(T projectData)? getProjectsSuccess,
-    TResult Function(String error)? getProjectsError,
-    TResult Function()? getProjectLoading,
-    TResult Function(T projectData)? getProjectSuccess,
-    TResult Function(String error)? getProjectError,
-    TResult Function()? deleteProjectLoading,
-    TResult Function()? deleteProjectSuccess,
-    TResult Function(String error)? deleteProjectError,
-    TResult Function()? updateProjectLoading,
-    TResult Function()? updateProjectSuccess,
-    TResult Function(String error)? updateProjectError,
-    TResult Function()? addProjectLoading,
-    TResult Function()? addProjectSuccess,
-    TResult Function(String error)? addProjectError,
-    required TResult orElse(),
-  }) {
-    if (getProjectsError != null) {
-      return getProjectsError(error);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Initial<T> value) initial,
-    required TResult Function(GetProjectsLoading<T> value) getProjectsLoading,
-    required TResult Function(GetProjectsSuccess<T> value) getProjectsSuccess,
-    required TResult Function(GetProjectsError<T> value) getProjectsError,
-    required TResult Function(GetProjectLoading<T> value) getProjectLoading,
-    required TResult Function(GetProjectSuccess<T> value) getProjectSuccess,
-    required TResult Function(GetProjectError<T> value) getProjectError,
-    required TResult Function(DeleteProjectLoading<T> value)
-        deleteProjectLoading,
-    required TResult Function(DeleteProjectSuccess<T> value)
-        deleteProjectSuccess,
-    required TResult Function(DeleteProjectError<T> value) deleteProjectError,
-    required TResult Function(UpdateProjectLoading<T> value)
-        updateProjectLoading,
-    required TResult Function(UpdateProjectSuccess<T> value)
-        updateProjectSuccess,
-    required TResult Function(UpdateProjectError<T> value) updateProjectError,
-    required TResult Function(AddProjectLoading<T> value) addProjectLoading,
-    required TResult Function(AddProjectSuccess<T> value) addProjectSuccess,
-    required TResult Function(AddProjectError<T> value) addProjectError,
-  }) {
-    return getProjectsError(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Initial<T> value)? initial,
-    TResult? Function(GetProjectsLoading<T> value)? getProjectsLoading,
-    TResult? Function(GetProjectsSuccess<T> value)? getProjectsSuccess,
-    TResult? Function(GetProjectsError<T> value)? getProjectsError,
-    TResult? Function(GetProjectLoading<T> value)? getProjectLoading,
-    TResult? Function(GetProjectSuccess<T> value)? getProjectSuccess,
-    TResult? Function(GetProjectError<T> value)? getProjectError,
-    TResult? Function(DeleteProjectLoading<T> value)? deleteProjectLoading,
-    TResult? Function(DeleteProjectSuccess<T> value)? deleteProjectSuccess,
-    TResult? Function(DeleteProjectError<T> value)? deleteProjectError,
-    TResult? Function(UpdateProjectLoading<T> value)? updateProjectLoading,
-    TResult? Function(UpdateProjectSuccess<T> value)? updateProjectSuccess,
-    TResult? Function(UpdateProjectError<T> value)? updateProjectError,
-    TResult? Function(AddProjectLoading<T> value)? addProjectLoading,
-    TResult? Function(AddProjectSuccess<T> value)? addProjectSuccess,
-    TResult? Function(AddProjectError<T> value)? addProjectError,
-  }) {
-    return getProjectsError?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial<T> value)? initial,
-    TResult Function(GetProjectsLoading<T> value)? getProjectsLoading,
-    TResult Function(GetProjectsSuccess<T> value)? getProjectsSuccess,
-    TResult Function(GetProjectsError<T> value)? getProjectsError,
-    TResult Function(GetProjectLoading<T> value)? getProjectLoading,
-    TResult Function(GetProjectSuccess<T> value)? getProjectSuccess,
-    TResult Function(GetProjectError<T> value)? getProjectError,
-    TResult Function(DeleteProjectLoading<T> value)? deleteProjectLoading,
-    TResult Function(DeleteProjectSuccess<T> value)? deleteProjectSuccess,
-    TResult Function(DeleteProjectError<T> value)? deleteProjectError,
-    TResult Function(UpdateProjectLoading<T> value)? updateProjectLoading,
-    TResult Function(UpdateProjectSuccess<T> value)? updateProjectSuccess,
-    TResult Function(UpdateProjectError<T> value)? updateProjectError,
-    TResult Function(AddProjectLoading<T> value)? addProjectLoading,
-    TResult Function(AddProjectSuccess<T> value)? addProjectSuccess,
-    TResult Function(AddProjectError<T> value)? addProjectError,
-    required TResult orElse(),
-  }) {
-    if (getProjectsError != null) {
-      return getProjectsError(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class GetProjectsError<T> implements ProjectState<T> {
-  const factory GetProjectsError({required final String error}) =
-      _$GetProjectsErrorImpl<T>;
-
-  String get error;
-
-  /// Create a copy of ProjectState
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$GetProjectsErrorImplCopyWith<T, _$GetProjectsErrorImpl<T>> get copyWith =>
-      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -1057,18 +413,19 @@ class _$GetProjectLoadingImpl<T> implements GetProjectLoading<T> {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
-    required TResult Function() getProjectsLoading,
-    required TResult Function(T projectData) getProjectsSuccess,
-    required TResult Function(String error) getProjectsError,
     required TResult Function() getProjectLoading,
     required TResult Function(T projectData) getProjectSuccess,
     required TResult Function(String error) getProjectError,
-    required TResult Function() deleteProjectLoading,
-    required TResult Function() deleteProjectSuccess,
-    required TResult Function(String error) deleteProjectError,
     required TResult Function() updateProjectLoading,
     required TResult Function() updateProjectSuccess,
     required TResult Function(String error) updateProjectError,
+    required TResult Function(String errorMessage) failure,
+    required TResult Function() getProjectsLoading,
+    required TResult Function(T projectData) getProjectsSuccess,
+    required TResult Function(String error) getProjectsError,
+    required TResult Function() deleteProjectLoading,
+    required TResult Function() deleteProjectSuccess,
+    required TResult Function(String error) deleteProjectError,
     required TResult Function() addProjectLoading,
     required TResult Function() addProjectSuccess,
     required TResult Function(String error) addProjectError,
@@ -1080,18 +437,19 @@ class _$GetProjectLoadingImpl<T> implements GetProjectLoading<T> {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
-    TResult? Function()? getProjectsLoading,
-    TResult? Function(T projectData)? getProjectsSuccess,
-    TResult? Function(String error)? getProjectsError,
     TResult? Function()? getProjectLoading,
     TResult? Function(T projectData)? getProjectSuccess,
     TResult? Function(String error)? getProjectError,
-    TResult? Function()? deleteProjectLoading,
-    TResult? Function()? deleteProjectSuccess,
-    TResult? Function(String error)? deleteProjectError,
     TResult? Function()? updateProjectLoading,
     TResult? Function()? updateProjectSuccess,
     TResult? Function(String error)? updateProjectError,
+    TResult? Function(String errorMessage)? failure,
+    TResult? Function()? getProjectsLoading,
+    TResult? Function(T projectData)? getProjectsSuccess,
+    TResult? Function(String error)? getProjectsError,
+    TResult? Function()? deleteProjectLoading,
+    TResult? Function()? deleteProjectSuccess,
+    TResult? Function(String error)? deleteProjectError,
     TResult? Function()? addProjectLoading,
     TResult? Function()? addProjectSuccess,
     TResult? Function(String error)? addProjectError,
@@ -1103,18 +461,19 @@ class _$GetProjectLoadingImpl<T> implements GetProjectLoading<T> {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
-    TResult Function()? getProjectsLoading,
-    TResult Function(T projectData)? getProjectsSuccess,
-    TResult Function(String error)? getProjectsError,
     TResult Function()? getProjectLoading,
     TResult Function(T projectData)? getProjectSuccess,
     TResult Function(String error)? getProjectError,
-    TResult Function()? deleteProjectLoading,
-    TResult Function()? deleteProjectSuccess,
-    TResult Function(String error)? deleteProjectError,
     TResult Function()? updateProjectLoading,
     TResult Function()? updateProjectSuccess,
     TResult Function(String error)? updateProjectError,
+    TResult Function(String errorMessage)? failure,
+    TResult Function()? getProjectsLoading,
+    TResult Function(T projectData)? getProjectsSuccess,
+    TResult Function(String error)? getProjectsError,
+    TResult Function()? deleteProjectLoading,
+    TResult Function()? deleteProjectSuccess,
+    TResult Function(String error)? deleteProjectError,
     TResult Function()? addProjectLoading,
     TResult Function()? addProjectSuccess,
     TResult Function(String error)? addProjectError,
@@ -1130,22 +489,23 @@ class _$GetProjectLoadingImpl<T> implements GetProjectLoading<T> {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial<T> value) initial,
-    required TResult Function(GetProjectsLoading<T> value) getProjectsLoading,
-    required TResult Function(GetProjectsSuccess<T> value) getProjectsSuccess,
-    required TResult Function(GetProjectsError<T> value) getProjectsError,
     required TResult Function(GetProjectLoading<T> value) getProjectLoading,
     required TResult Function(GetProjectSuccess<T> value) getProjectSuccess,
     required TResult Function(GetProjectError<T> value) getProjectError,
-    required TResult Function(DeleteProjectLoading<T> value)
-        deleteProjectLoading,
-    required TResult Function(DeleteProjectSuccess<T> value)
-        deleteProjectSuccess,
-    required TResult Function(DeleteProjectError<T> value) deleteProjectError,
     required TResult Function(UpdateProjectLoading<T> value)
         updateProjectLoading,
     required TResult Function(UpdateProjectSuccess<T> value)
         updateProjectSuccess,
     required TResult Function(UpdateProjectError<T> value) updateProjectError,
+    required TResult Function(ProjectFailureState<T> value) failure,
+    required TResult Function(GetProjectsLoading<T> value) getProjectsLoading,
+    required TResult Function(GetProjectsSuccess<T> value) getProjectsSuccess,
+    required TResult Function(GetProjectsError<T> value) getProjectsError,
+    required TResult Function(DeleteProjectLoading<T> value)
+        deleteProjectLoading,
+    required TResult Function(DeleteProjectSuccess<T> value)
+        deleteProjectSuccess,
+    required TResult Function(DeleteProjectError<T> value) deleteProjectError,
     required TResult Function(AddProjectLoading<T> value) addProjectLoading,
     required TResult Function(AddProjectSuccess<T> value) addProjectSuccess,
     required TResult Function(AddProjectError<T> value) addProjectError,
@@ -1157,18 +517,19 @@ class _$GetProjectLoadingImpl<T> implements GetProjectLoading<T> {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial<T> value)? initial,
-    TResult? Function(GetProjectsLoading<T> value)? getProjectsLoading,
-    TResult? Function(GetProjectsSuccess<T> value)? getProjectsSuccess,
-    TResult? Function(GetProjectsError<T> value)? getProjectsError,
     TResult? Function(GetProjectLoading<T> value)? getProjectLoading,
     TResult? Function(GetProjectSuccess<T> value)? getProjectSuccess,
     TResult? Function(GetProjectError<T> value)? getProjectError,
-    TResult? Function(DeleteProjectLoading<T> value)? deleteProjectLoading,
-    TResult? Function(DeleteProjectSuccess<T> value)? deleteProjectSuccess,
-    TResult? Function(DeleteProjectError<T> value)? deleteProjectError,
     TResult? Function(UpdateProjectLoading<T> value)? updateProjectLoading,
     TResult? Function(UpdateProjectSuccess<T> value)? updateProjectSuccess,
     TResult? Function(UpdateProjectError<T> value)? updateProjectError,
+    TResult? Function(ProjectFailureState<T> value)? failure,
+    TResult? Function(GetProjectsLoading<T> value)? getProjectsLoading,
+    TResult? Function(GetProjectsSuccess<T> value)? getProjectsSuccess,
+    TResult? Function(GetProjectsError<T> value)? getProjectsError,
+    TResult? Function(DeleteProjectLoading<T> value)? deleteProjectLoading,
+    TResult? Function(DeleteProjectSuccess<T> value)? deleteProjectSuccess,
+    TResult? Function(DeleteProjectError<T> value)? deleteProjectError,
     TResult? Function(AddProjectLoading<T> value)? addProjectLoading,
     TResult? Function(AddProjectSuccess<T> value)? addProjectSuccess,
     TResult? Function(AddProjectError<T> value)? addProjectError,
@@ -1180,18 +541,19 @@ class _$GetProjectLoadingImpl<T> implements GetProjectLoading<T> {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial<T> value)? initial,
-    TResult Function(GetProjectsLoading<T> value)? getProjectsLoading,
-    TResult Function(GetProjectsSuccess<T> value)? getProjectsSuccess,
-    TResult Function(GetProjectsError<T> value)? getProjectsError,
     TResult Function(GetProjectLoading<T> value)? getProjectLoading,
     TResult Function(GetProjectSuccess<T> value)? getProjectSuccess,
     TResult Function(GetProjectError<T> value)? getProjectError,
-    TResult Function(DeleteProjectLoading<T> value)? deleteProjectLoading,
-    TResult Function(DeleteProjectSuccess<T> value)? deleteProjectSuccess,
-    TResult Function(DeleteProjectError<T> value)? deleteProjectError,
     TResult Function(UpdateProjectLoading<T> value)? updateProjectLoading,
     TResult Function(UpdateProjectSuccess<T> value)? updateProjectSuccess,
     TResult Function(UpdateProjectError<T> value)? updateProjectError,
+    TResult Function(ProjectFailureState<T> value)? failure,
+    TResult Function(GetProjectsLoading<T> value)? getProjectsLoading,
+    TResult Function(GetProjectsSuccess<T> value)? getProjectsSuccess,
+    TResult Function(GetProjectsError<T> value)? getProjectsError,
+    TResult Function(DeleteProjectLoading<T> value)? deleteProjectLoading,
+    TResult Function(DeleteProjectSuccess<T> value)? deleteProjectSuccess,
+    TResult Function(DeleteProjectError<T> value)? deleteProjectError,
     TResult Function(AddProjectLoading<T> value)? addProjectLoading,
     TResult Function(AddProjectSuccess<T> value)? addProjectSuccess,
     TResult Function(AddProjectError<T> value)? addProjectError,
@@ -1281,18 +643,19 @@ class _$GetProjectSuccessImpl<T> implements GetProjectSuccess<T> {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
-    required TResult Function() getProjectsLoading,
-    required TResult Function(T projectData) getProjectsSuccess,
-    required TResult Function(String error) getProjectsError,
     required TResult Function() getProjectLoading,
     required TResult Function(T projectData) getProjectSuccess,
     required TResult Function(String error) getProjectError,
-    required TResult Function() deleteProjectLoading,
-    required TResult Function() deleteProjectSuccess,
-    required TResult Function(String error) deleteProjectError,
     required TResult Function() updateProjectLoading,
     required TResult Function() updateProjectSuccess,
     required TResult Function(String error) updateProjectError,
+    required TResult Function(String errorMessage) failure,
+    required TResult Function() getProjectsLoading,
+    required TResult Function(T projectData) getProjectsSuccess,
+    required TResult Function(String error) getProjectsError,
+    required TResult Function() deleteProjectLoading,
+    required TResult Function() deleteProjectSuccess,
+    required TResult Function(String error) deleteProjectError,
     required TResult Function() addProjectLoading,
     required TResult Function() addProjectSuccess,
     required TResult Function(String error) addProjectError,
@@ -1304,18 +667,19 @@ class _$GetProjectSuccessImpl<T> implements GetProjectSuccess<T> {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
-    TResult? Function()? getProjectsLoading,
-    TResult? Function(T projectData)? getProjectsSuccess,
-    TResult? Function(String error)? getProjectsError,
     TResult? Function()? getProjectLoading,
     TResult? Function(T projectData)? getProjectSuccess,
     TResult? Function(String error)? getProjectError,
-    TResult? Function()? deleteProjectLoading,
-    TResult? Function()? deleteProjectSuccess,
-    TResult? Function(String error)? deleteProjectError,
     TResult? Function()? updateProjectLoading,
     TResult? Function()? updateProjectSuccess,
     TResult? Function(String error)? updateProjectError,
+    TResult? Function(String errorMessage)? failure,
+    TResult? Function()? getProjectsLoading,
+    TResult? Function(T projectData)? getProjectsSuccess,
+    TResult? Function(String error)? getProjectsError,
+    TResult? Function()? deleteProjectLoading,
+    TResult? Function()? deleteProjectSuccess,
+    TResult? Function(String error)? deleteProjectError,
     TResult? Function()? addProjectLoading,
     TResult? Function()? addProjectSuccess,
     TResult? Function(String error)? addProjectError,
@@ -1327,18 +691,19 @@ class _$GetProjectSuccessImpl<T> implements GetProjectSuccess<T> {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
-    TResult Function()? getProjectsLoading,
-    TResult Function(T projectData)? getProjectsSuccess,
-    TResult Function(String error)? getProjectsError,
     TResult Function()? getProjectLoading,
     TResult Function(T projectData)? getProjectSuccess,
     TResult Function(String error)? getProjectError,
-    TResult Function()? deleteProjectLoading,
-    TResult Function()? deleteProjectSuccess,
-    TResult Function(String error)? deleteProjectError,
     TResult Function()? updateProjectLoading,
     TResult Function()? updateProjectSuccess,
     TResult Function(String error)? updateProjectError,
+    TResult Function(String errorMessage)? failure,
+    TResult Function()? getProjectsLoading,
+    TResult Function(T projectData)? getProjectsSuccess,
+    TResult Function(String error)? getProjectsError,
+    TResult Function()? deleteProjectLoading,
+    TResult Function()? deleteProjectSuccess,
+    TResult Function(String error)? deleteProjectError,
     TResult Function()? addProjectLoading,
     TResult Function()? addProjectSuccess,
     TResult Function(String error)? addProjectError,
@@ -1354,22 +719,23 @@ class _$GetProjectSuccessImpl<T> implements GetProjectSuccess<T> {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial<T> value) initial,
-    required TResult Function(GetProjectsLoading<T> value) getProjectsLoading,
-    required TResult Function(GetProjectsSuccess<T> value) getProjectsSuccess,
-    required TResult Function(GetProjectsError<T> value) getProjectsError,
     required TResult Function(GetProjectLoading<T> value) getProjectLoading,
     required TResult Function(GetProjectSuccess<T> value) getProjectSuccess,
     required TResult Function(GetProjectError<T> value) getProjectError,
-    required TResult Function(DeleteProjectLoading<T> value)
-        deleteProjectLoading,
-    required TResult Function(DeleteProjectSuccess<T> value)
-        deleteProjectSuccess,
-    required TResult Function(DeleteProjectError<T> value) deleteProjectError,
     required TResult Function(UpdateProjectLoading<T> value)
         updateProjectLoading,
     required TResult Function(UpdateProjectSuccess<T> value)
         updateProjectSuccess,
     required TResult Function(UpdateProjectError<T> value) updateProjectError,
+    required TResult Function(ProjectFailureState<T> value) failure,
+    required TResult Function(GetProjectsLoading<T> value) getProjectsLoading,
+    required TResult Function(GetProjectsSuccess<T> value) getProjectsSuccess,
+    required TResult Function(GetProjectsError<T> value) getProjectsError,
+    required TResult Function(DeleteProjectLoading<T> value)
+        deleteProjectLoading,
+    required TResult Function(DeleteProjectSuccess<T> value)
+        deleteProjectSuccess,
+    required TResult Function(DeleteProjectError<T> value) deleteProjectError,
     required TResult Function(AddProjectLoading<T> value) addProjectLoading,
     required TResult Function(AddProjectSuccess<T> value) addProjectSuccess,
     required TResult Function(AddProjectError<T> value) addProjectError,
@@ -1381,18 +747,19 @@ class _$GetProjectSuccessImpl<T> implements GetProjectSuccess<T> {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial<T> value)? initial,
-    TResult? Function(GetProjectsLoading<T> value)? getProjectsLoading,
-    TResult? Function(GetProjectsSuccess<T> value)? getProjectsSuccess,
-    TResult? Function(GetProjectsError<T> value)? getProjectsError,
     TResult? Function(GetProjectLoading<T> value)? getProjectLoading,
     TResult? Function(GetProjectSuccess<T> value)? getProjectSuccess,
     TResult? Function(GetProjectError<T> value)? getProjectError,
-    TResult? Function(DeleteProjectLoading<T> value)? deleteProjectLoading,
-    TResult? Function(DeleteProjectSuccess<T> value)? deleteProjectSuccess,
-    TResult? Function(DeleteProjectError<T> value)? deleteProjectError,
     TResult? Function(UpdateProjectLoading<T> value)? updateProjectLoading,
     TResult? Function(UpdateProjectSuccess<T> value)? updateProjectSuccess,
     TResult? Function(UpdateProjectError<T> value)? updateProjectError,
+    TResult? Function(ProjectFailureState<T> value)? failure,
+    TResult? Function(GetProjectsLoading<T> value)? getProjectsLoading,
+    TResult? Function(GetProjectsSuccess<T> value)? getProjectsSuccess,
+    TResult? Function(GetProjectsError<T> value)? getProjectsError,
+    TResult? Function(DeleteProjectLoading<T> value)? deleteProjectLoading,
+    TResult? Function(DeleteProjectSuccess<T> value)? deleteProjectSuccess,
+    TResult? Function(DeleteProjectError<T> value)? deleteProjectError,
     TResult? Function(AddProjectLoading<T> value)? addProjectLoading,
     TResult? Function(AddProjectSuccess<T> value)? addProjectSuccess,
     TResult? Function(AddProjectError<T> value)? addProjectError,
@@ -1404,18 +771,19 @@ class _$GetProjectSuccessImpl<T> implements GetProjectSuccess<T> {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial<T> value)? initial,
-    TResult Function(GetProjectsLoading<T> value)? getProjectsLoading,
-    TResult Function(GetProjectsSuccess<T> value)? getProjectsSuccess,
-    TResult Function(GetProjectsError<T> value)? getProjectsError,
     TResult Function(GetProjectLoading<T> value)? getProjectLoading,
     TResult Function(GetProjectSuccess<T> value)? getProjectSuccess,
     TResult Function(GetProjectError<T> value)? getProjectError,
-    TResult Function(DeleteProjectLoading<T> value)? deleteProjectLoading,
-    TResult Function(DeleteProjectSuccess<T> value)? deleteProjectSuccess,
-    TResult Function(DeleteProjectError<T> value)? deleteProjectError,
     TResult Function(UpdateProjectLoading<T> value)? updateProjectLoading,
     TResult Function(UpdateProjectSuccess<T> value)? updateProjectSuccess,
     TResult Function(UpdateProjectError<T> value)? updateProjectError,
+    TResult Function(ProjectFailureState<T> value)? failure,
+    TResult Function(GetProjectsLoading<T> value)? getProjectsLoading,
+    TResult Function(GetProjectsSuccess<T> value)? getProjectsSuccess,
+    TResult Function(GetProjectsError<T> value)? getProjectsError,
+    TResult Function(DeleteProjectLoading<T> value)? deleteProjectLoading,
+    TResult Function(DeleteProjectSuccess<T> value)? deleteProjectSuccess,
+    TResult Function(DeleteProjectError<T> value)? deleteProjectError,
     TResult Function(AddProjectLoading<T> value)? addProjectLoading,
     TResult Function(AddProjectSuccess<T> value)? addProjectSuccess,
     TResult Function(AddProjectError<T> value)? addProjectError,
@@ -1511,18 +879,19 @@ class _$GetProjectErrorImpl<T> implements GetProjectError<T> {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
-    required TResult Function() getProjectsLoading,
-    required TResult Function(T projectData) getProjectsSuccess,
-    required TResult Function(String error) getProjectsError,
     required TResult Function() getProjectLoading,
     required TResult Function(T projectData) getProjectSuccess,
     required TResult Function(String error) getProjectError,
-    required TResult Function() deleteProjectLoading,
-    required TResult Function() deleteProjectSuccess,
-    required TResult Function(String error) deleteProjectError,
     required TResult Function() updateProjectLoading,
     required TResult Function() updateProjectSuccess,
     required TResult Function(String error) updateProjectError,
+    required TResult Function(String errorMessage) failure,
+    required TResult Function() getProjectsLoading,
+    required TResult Function(T projectData) getProjectsSuccess,
+    required TResult Function(String error) getProjectsError,
+    required TResult Function() deleteProjectLoading,
+    required TResult Function() deleteProjectSuccess,
+    required TResult Function(String error) deleteProjectError,
     required TResult Function() addProjectLoading,
     required TResult Function() addProjectSuccess,
     required TResult Function(String error) addProjectError,
@@ -1534,18 +903,19 @@ class _$GetProjectErrorImpl<T> implements GetProjectError<T> {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
-    TResult? Function()? getProjectsLoading,
-    TResult? Function(T projectData)? getProjectsSuccess,
-    TResult? Function(String error)? getProjectsError,
     TResult? Function()? getProjectLoading,
     TResult? Function(T projectData)? getProjectSuccess,
     TResult? Function(String error)? getProjectError,
-    TResult? Function()? deleteProjectLoading,
-    TResult? Function()? deleteProjectSuccess,
-    TResult? Function(String error)? deleteProjectError,
     TResult? Function()? updateProjectLoading,
     TResult? Function()? updateProjectSuccess,
     TResult? Function(String error)? updateProjectError,
+    TResult? Function(String errorMessage)? failure,
+    TResult? Function()? getProjectsLoading,
+    TResult? Function(T projectData)? getProjectsSuccess,
+    TResult? Function(String error)? getProjectsError,
+    TResult? Function()? deleteProjectLoading,
+    TResult? Function()? deleteProjectSuccess,
+    TResult? Function(String error)? deleteProjectError,
     TResult? Function()? addProjectLoading,
     TResult? Function()? addProjectSuccess,
     TResult? Function(String error)? addProjectError,
@@ -1557,18 +927,19 @@ class _$GetProjectErrorImpl<T> implements GetProjectError<T> {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
-    TResult Function()? getProjectsLoading,
-    TResult Function(T projectData)? getProjectsSuccess,
-    TResult Function(String error)? getProjectsError,
     TResult Function()? getProjectLoading,
     TResult Function(T projectData)? getProjectSuccess,
     TResult Function(String error)? getProjectError,
-    TResult Function()? deleteProjectLoading,
-    TResult Function()? deleteProjectSuccess,
-    TResult Function(String error)? deleteProjectError,
     TResult Function()? updateProjectLoading,
     TResult Function()? updateProjectSuccess,
     TResult Function(String error)? updateProjectError,
+    TResult Function(String errorMessage)? failure,
+    TResult Function()? getProjectsLoading,
+    TResult Function(T projectData)? getProjectsSuccess,
+    TResult Function(String error)? getProjectsError,
+    TResult Function()? deleteProjectLoading,
+    TResult Function()? deleteProjectSuccess,
+    TResult Function(String error)? deleteProjectError,
     TResult Function()? addProjectLoading,
     TResult Function()? addProjectSuccess,
     TResult Function(String error)? addProjectError,
@@ -1584,22 +955,23 @@ class _$GetProjectErrorImpl<T> implements GetProjectError<T> {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial<T> value) initial,
-    required TResult Function(GetProjectsLoading<T> value) getProjectsLoading,
-    required TResult Function(GetProjectsSuccess<T> value) getProjectsSuccess,
-    required TResult Function(GetProjectsError<T> value) getProjectsError,
     required TResult Function(GetProjectLoading<T> value) getProjectLoading,
     required TResult Function(GetProjectSuccess<T> value) getProjectSuccess,
     required TResult Function(GetProjectError<T> value) getProjectError,
-    required TResult Function(DeleteProjectLoading<T> value)
-        deleteProjectLoading,
-    required TResult Function(DeleteProjectSuccess<T> value)
-        deleteProjectSuccess,
-    required TResult Function(DeleteProjectError<T> value) deleteProjectError,
     required TResult Function(UpdateProjectLoading<T> value)
         updateProjectLoading,
     required TResult Function(UpdateProjectSuccess<T> value)
         updateProjectSuccess,
     required TResult Function(UpdateProjectError<T> value) updateProjectError,
+    required TResult Function(ProjectFailureState<T> value) failure,
+    required TResult Function(GetProjectsLoading<T> value) getProjectsLoading,
+    required TResult Function(GetProjectsSuccess<T> value) getProjectsSuccess,
+    required TResult Function(GetProjectsError<T> value) getProjectsError,
+    required TResult Function(DeleteProjectLoading<T> value)
+        deleteProjectLoading,
+    required TResult Function(DeleteProjectSuccess<T> value)
+        deleteProjectSuccess,
+    required TResult Function(DeleteProjectError<T> value) deleteProjectError,
     required TResult Function(AddProjectLoading<T> value) addProjectLoading,
     required TResult Function(AddProjectSuccess<T> value) addProjectSuccess,
     required TResult Function(AddProjectError<T> value) addProjectError,
@@ -1611,18 +983,19 @@ class _$GetProjectErrorImpl<T> implements GetProjectError<T> {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial<T> value)? initial,
-    TResult? Function(GetProjectsLoading<T> value)? getProjectsLoading,
-    TResult? Function(GetProjectsSuccess<T> value)? getProjectsSuccess,
-    TResult? Function(GetProjectsError<T> value)? getProjectsError,
     TResult? Function(GetProjectLoading<T> value)? getProjectLoading,
     TResult? Function(GetProjectSuccess<T> value)? getProjectSuccess,
     TResult? Function(GetProjectError<T> value)? getProjectError,
-    TResult? Function(DeleteProjectLoading<T> value)? deleteProjectLoading,
-    TResult? Function(DeleteProjectSuccess<T> value)? deleteProjectSuccess,
-    TResult? Function(DeleteProjectError<T> value)? deleteProjectError,
     TResult? Function(UpdateProjectLoading<T> value)? updateProjectLoading,
     TResult? Function(UpdateProjectSuccess<T> value)? updateProjectSuccess,
     TResult? Function(UpdateProjectError<T> value)? updateProjectError,
+    TResult? Function(ProjectFailureState<T> value)? failure,
+    TResult? Function(GetProjectsLoading<T> value)? getProjectsLoading,
+    TResult? Function(GetProjectsSuccess<T> value)? getProjectsSuccess,
+    TResult? Function(GetProjectsError<T> value)? getProjectsError,
+    TResult? Function(DeleteProjectLoading<T> value)? deleteProjectLoading,
+    TResult? Function(DeleteProjectSuccess<T> value)? deleteProjectSuccess,
+    TResult? Function(DeleteProjectError<T> value)? deleteProjectError,
     TResult? Function(AddProjectLoading<T> value)? addProjectLoading,
     TResult? Function(AddProjectSuccess<T> value)? addProjectSuccess,
     TResult? Function(AddProjectError<T> value)? addProjectError,
@@ -1634,18 +1007,19 @@ class _$GetProjectErrorImpl<T> implements GetProjectError<T> {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial<T> value)? initial,
-    TResult Function(GetProjectsLoading<T> value)? getProjectsLoading,
-    TResult Function(GetProjectsSuccess<T> value)? getProjectsSuccess,
-    TResult Function(GetProjectsError<T> value)? getProjectsError,
     TResult Function(GetProjectLoading<T> value)? getProjectLoading,
     TResult Function(GetProjectSuccess<T> value)? getProjectSuccess,
     TResult Function(GetProjectError<T> value)? getProjectError,
-    TResult Function(DeleteProjectLoading<T> value)? deleteProjectLoading,
-    TResult Function(DeleteProjectSuccess<T> value)? deleteProjectSuccess,
-    TResult Function(DeleteProjectError<T> value)? deleteProjectError,
     TResult Function(UpdateProjectLoading<T> value)? updateProjectLoading,
     TResult Function(UpdateProjectSuccess<T> value)? updateProjectSuccess,
     TResult Function(UpdateProjectError<T> value)? updateProjectError,
+    TResult Function(ProjectFailureState<T> value)? failure,
+    TResult Function(GetProjectsLoading<T> value)? getProjectsLoading,
+    TResult Function(GetProjectsSuccess<T> value)? getProjectsSuccess,
+    TResult Function(GetProjectsError<T> value)? getProjectsError,
+    TResult Function(DeleteProjectLoading<T> value)? deleteProjectLoading,
+    TResult Function(DeleteProjectSuccess<T> value)? deleteProjectSuccess,
+    TResult Function(DeleteProjectError<T> value)? deleteProjectError,
     TResult Function(AddProjectLoading<T> value)? addProjectLoading,
     TResult Function(AddProjectSuccess<T> value)? addProjectSuccess,
     TResult Function(AddProjectError<T> value)? addProjectError,
@@ -1669,626 +1043,6 @@ abstract class GetProjectError<T> implements ProjectState<T> {
   @JsonKey(includeFromJson: false, includeToJson: false)
   _$$GetProjectErrorImplCopyWith<T, _$GetProjectErrorImpl<T>> get copyWith =>
       throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class _$$DeleteProjectLoadingImplCopyWith<T, $Res> {
-  factory _$$DeleteProjectLoadingImplCopyWith(
-          _$DeleteProjectLoadingImpl<T> value,
-          $Res Function(_$DeleteProjectLoadingImpl<T>) then) =
-      __$$DeleteProjectLoadingImplCopyWithImpl<T, $Res>;
-}
-
-/// @nodoc
-class __$$DeleteProjectLoadingImplCopyWithImpl<T, $Res>
-    extends _$ProjectStateCopyWithImpl<T, $Res, _$DeleteProjectLoadingImpl<T>>
-    implements _$$DeleteProjectLoadingImplCopyWith<T, $Res> {
-  __$$DeleteProjectLoadingImplCopyWithImpl(_$DeleteProjectLoadingImpl<T> _value,
-      $Res Function(_$DeleteProjectLoadingImpl<T>) _then)
-      : super(_value, _then);
-
-  /// Create a copy of ProjectState
-  /// with the given fields replaced by the non-null parameter values.
-}
-
-/// @nodoc
-
-class _$DeleteProjectLoadingImpl<T> implements DeleteProjectLoading<T> {
-  const _$DeleteProjectLoadingImpl();
-
-  @override
-  String toString() {
-    return 'ProjectState<$T>.deleteProjectLoading()';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$DeleteProjectLoadingImpl<T>);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() initial,
-    required TResult Function() getProjectsLoading,
-    required TResult Function(T projectData) getProjectsSuccess,
-    required TResult Function(String error) getProjectsError,
-    required TResult Function() getProjectLoading,
-    required TResult Function(T projectData) getProjectSuccess,
-    required TResult Function(String error) getProjectError,
-    required TResult Function() deleteProjectLoading,
-    required TResult Function() deleteProjectSuccess,
-    required TResult Function(String error) deleteProjectError,
-    required TResult Function() updateProjectLoading,
-    required TResult Function() updateProjectSuccess,
-    required TResult Function(String error) updateProjectError,
-    required TResult Function() addProjectLoading,
-    required TResult Function() addProjectSuccess,
-    required TResult Function(String error) addProjectError,
-  }) {
-    return deleteProjectLoading();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? initial,
-    TResult? Function()? getProjectsLoading,
-    TResult? Function(T projectData)? getProjectsSuccess,
-    TResult? Function(String error)? getProjectsError,
-    TResult? Function()? getProjectLoading,
-    TResult? Function(T projectData)? getProjectSuccess,
-    TResult? Function(String error)? getProjectError,
-    TResult? Function()? deleteProjectLoading,
-    TResult? Function()? deleteProjectSuccess,
-    TResult? Function(String error)? deleteProjectError,
-    TResult? Function()? updateProjectLoading,
-    TResult? Function()? updateProjectSuccess,
-    TResult? Function(String error)? updateProjectError,
-    TResult? Function()? addProjectLoading,
-    TResult? Function()? addProjectSuccess,
-    TResult? Function(String error)? addProjectError,
-  }) {
-    return deleteProjectLoading?.call();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? getProjectsLoading,
-    TResult Function(T projectData)? getProjectsSuccess,
-    TResult Function(String error)? getProjectsError,
-    TResult Function()? getProjectLoading,
-    TResult Function(T projectData)? getProjectSuccess,
-    TResult Function(String error)? getProjectError,
-    TResult Function()? deleteProjectLoading,
-    TResult Function()? deleteProjectSuccess,
-    TResult Function(String error)? deleteProjectError,
-    TResult Function()? updateProjectLoading,
-    TResult Function()? updateProjectSuccess,
-    TResult Function(String error)? updateProjectError,
-    TResult Function()? addProjectLoading,
-    TResult Function()? addProjectSuccess,
-    TResult Function(String error)? addProjectError,
-    required TResult orElse(),
-  }) {
-    if (deleteProjectLoading != null) {
-      return deleteProjectLoading();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Initial<T> value) initial,
-    required TResult Function(GetProjectsLoading<T> value) getProjectsLoading,
-    required TResult Function(GetProjectsSuccess<T> value) getProjectsSuccess,
-    required TResult Function(GetProjectsError<T> value) getProjectsError,
-    required TResult Function(GetProjectLoading<T> value) getProjectLoading,
-    required TResult Function(GetProjectSuccess<T> value) getProjectSuccess,
-    required TResult Function(GetProjectError<T> value) getProjectError,
-    required TResult Function(DeleteProjectLoading<T> value)
-        deleteProjectLoading,
-    required TResult Function(DeleteProjectSuccess<T> value)
-        deleteProjectSuccess,
-    required TResult Function(DeleteProjectError<T> value) deleteProjectError,
-    required TResult Function(UpdateProjectLoading<T> value)
-        updateProjectLoading,
-    required TResult Function(UpdateProjectSuccess<T> value)
-        updateProjectSuccess,
-    required TResult Function(UpdateProjectError<T> value) updateProjectError,
-    required TResult Function(AddProjectLoading<T> value) addProjectLoading,
-    required TResult Function(AddProjectSuccess<T> value) addProjectSuccess,
-    required TResult Function(AddProjectError<T> value) addProjectError,
-  }) {
-    return deleteProjectLoading(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Initial<T> value)? initial,
-    TResult? Function(GetProjectsLoading<T> value)? getProjectsLoading,
-    TResult? Function(GetProjectsSuccess<T> value)? getProjectsSuccess,
-    TResult? Function(GetProjectsError<T> value)? getProjectsError,
-    TResult? Function(GetProjectLoading<T> value)? getProjectLoading,
-    TResult? Function(GetProjectSuccess<T> value)? getProjectSuccess,
-    TResult? Function(GetProjectError<T> value)? getProjectError,
-    TResult? Function(DeleteProjectLoading<T> value)? deleteProjectLoading,
-    TResult? Function(DeleteProjectSuccess<T> value)? deleteProjectSuccess,
-    TResult? Function(DeleteProjectError<T> value)? deleteProjectError,
-    TResult? Function(UpdateProjectLoading<T> value)? updateProjectLoading,
-    TResult? Function(UpdateProjectSuccess<T> value)? updateProjectSuccess,
-    TResult? Function(UpdateProjectError<T> value)? updateProjectError,
-    TResult? Function(AddProjectLoading<T> value)? addProjectLoading,
-    TResult? Function(AddProjectSuccess<T> value)? addProjectSuccess,
-    TResult? Function(AddProjectError<T> value)? addProjectError,
-  }) {
-    return deleteProjectLoading?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial<T> value)? initial,
-    TResult Function(GetProjectsLoading<T> value)? getProjectsLoading,
-    TResult Function(GetProjectsSuccess<T> value)? getProjectsSuccess,
-    TResult Function(GetProjectsError<T> value)? getProjectsError,
-    TResult Function(GetProjectLoading<T> value)? getProjectLoading,
-    TResult Function(GetProjectSuccess<T> value)? getProjectSuccess,
-    TResult Function(GetProjectError<T> value)? getProjectError,
-    TResult Function(DeleteProjectLoading<T> value)? deleteProjectLoading,
-    TResult Function(DeleteProjectSuccess<T> value)? deleteProjectSuccess,
-    TResult Function(DeleteProjectError<T> value)? deleteProjectError,
-    TResult Function(UpdateProjectLoading<T> value)? updateProjectLoading,
-    TResult Function(UpdateProjectSuccess<T> value)? updateProjectSuccess,
-    TResult Function(UpdateProjectError<T> value)? updateProjectError,
-    TResult Function(AddProjectLoading<T> value)? addProjectLoading,
-    TResult Function(AddProjectSuccess<T> value)? addProjectSuccess,
-    TResult Function(AddProjectError<T> value)? addProjectError,
-    required TResult orElse(),
-  }) {
-    if (deleteProjectLoading != null) {
-      return deleteProjectLoading(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class DeleteProjectLoading<T> implements ProjectState<T> {
-  const factory DeleteProjectLoading() = _$DeleteProjectLoadingImpl<T>;
-}
-
-/// @nodoc
-abstract class _$$DeleteProjectSuccessImplCopyWith<T, $Res> {
-  factory _$$DeleteProjectSuccessImplCopyWith(
-          _$DeleteProjectSuccessImpl<T> value,
-          $Res Function(_$DeleteProjectSuccessImpl<T>) then) =
-      __$$DeleteProjectSuccessImplCopyWithImpl<T, $Res>;
-}
-
-/// @nodoc
-class __$$DeleteProjectSuccessImplCopyWithImpl<T, $Res>
-    extends _$ProjectStateCopyWithImpl<T, $Res, _$DeleteProjectSuccessImpl<T>>
-    implements _$$DeleteProjectSuccessImplCopyWith<T, $Res> {
-  __$$DeleteProjectSuccessImplCopyWithImpl(_$DeleteProjectSuccessImpl<T> _value,
-      $Res Function(_$DeleteProjectSuccessImpl<T>) _then)
-      : super(_value, _then);
-
-  /// Create a copy of ProjectState
-  /// with the given fields replaced by the non-null parameter values.
-}
-
-/// @nodoc
-
-class _$DeleteProjectSuccessImpl<T> implements DeleteProjectSuccess<T> {
-  const _$DeleteProjectSuccessImpl();
-
-  @override
-  String toString() {
-    return 'ProjectState<$T>.deleteProjectSuccess()';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$DeleteProjectSuccessImpl<T>);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() initial,
-    required TResult Function() getProjectsLoading,
-    required TResult Function(T projectData) getProjectsSuccess,
-    required TResult Function(String error) getProjectsError,
-    required TResult Function() getProjectLoading,
-    required TResult Function(T projectData) getProjectSuccess,
-    required TResult Function(String error) getProjectError,
-    required TResult Function() deleteProjectLoading,
-    required TResult Function() deleteProjectSuccess,
-    required TResult Function(String error) deleteProjectError,
-    required TResult Function() updateProjectLoading,
-    required TResult Function() updateProjectSuccess,
-    required TResult Function(String error) updateProjectError,
-    required TResult Function() addProjectLoading,
-    required TResult Function() addProjectSuccess,
-    required TResult Function(String error) addProjectError,
-  }) {
-    return deleteProjectSuccess();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? initial,
-    TResult? Function()? getProjectsLoading,
-    TResult? Function(T projectData)? getProjectsSuccess,
-    TResult? Function(String error)? getProjectsError,
-    TResult? Function()? getProjectLoading,
-    TResult? Function(T projectData)? getProjectSuccess,
-    TResult? Function(String error)? getProjectError,
-    TResult? Function()? deleteProjectLoading,
-    TResult? Function()? deleteProjectSuccess,
-    TResult? Function(String error)? deleteProjectError,
-    TResult? Function()? updateProjectLoading,
-    TResult? Function()? updateProjectSuccess,
-    TResult? Function(String error)? updateProjectError,
-    TResult? Function()? addProjectLoading,
-    TResult? Function()? addProjectSuccess,
-    TResult? Function(String error)? addProjectError,
-  }) {
-    return deleteProjectSuccess?.call();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? getProjectsLoading,
-    TResult Function(T projectData)? getProjectsSuccess,
-    TResult Function(String error)? getProjectsError,
-    TResult Function()? getProjectLoading,
-    TResult Function(T projectData)? getProjectSuccess,
-    TResult Function(String error)? getProjectError,
-    TResult Function()? deleteProjectLoading,
-    TResult Function()? deleteProjectSuccess,
-    TResult Function(String error)? deleteProjectError,
-    TResult Function()? updateProjectLoading,
-    TResult Function()? updateProjectSuccess,
-    TResult Function(String error)? updateProjectError,
-    TResult Function()? addProjectLoading,
-    TResult Function()? addProjectSuccess,
-    TResult Function(String error)? addProjectError,
-    required TResult orElse(),
-  }) {
-    if (deleteProjectSuccess != null) {
-      return deleteProjectSuccess();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Initial<T> value) initial,
-    required TResult Function(GetProjectsLoading<T> value) getProjectsLoading,
-    required TResult Function(GetProjectsSuccess<T> value) getProjectsSuccess,
-    required TResult Function(GetProjectsError<T> value) getProjectsError,
-    required TResult Function(GetProjectLoading<T> value) getProjectLoading,
-    required TResult Function(GetProjectSuccess<T> value) getProjectSuccess,
-    required TResult Function(GetProjectError<T> value) getProjectError,
-    required TResult Function(DeleteProjectLoading<T> value)
-        deleteProjectLoading,
-    required TResult Function(DeleteProjectSuccess<T> value)
-        deleteProjectSuccess,
-    required TResult Function(DeleteProjectError<T> value) deleteProjectError,
-    required TResult Function(UpdateProjectLoading<T> value)
-        updateProjectLoading,
-    required TResult Function(UpdateProjectSuccess<T> value)
-        updateProjectSuccess,
-    required TResult Function(UpdateProjectError<T> value) updateProjectError,
-    required TResult Function(AddProjectLoading<T> value) addProjectLoading,
-    required TResult Function(AddProjectSuccess<T> value) addProjectSuccess,
-    required TResult Function(AddProjectError<T> value) addProjectError,
-  }) {
-    return deleteProjectSuccess(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Initial<T> value)? initial,
-    TResult? Function(GetProjectsLoading<T> value)? getProjectsLoading,
-    TResult? Function(GetProjectsSuccess<T> value)? getProjectsSuccess,
-    TResult? Function(GetProjectsError<T> value)? getProjectsError,
-    TResult? Function(GetProjectLoading<T> value)? getProjectLoading,
-    TResult? Function(GetProjectSuccess<T> value)? getProjectSuccess,
-    TResult? Function(GetProjectError<T> value)? getProjectError,
-    TResult? Function(DeleteProjectLoading<T> value)? deleteProjectLoading,
-    TResult? Function(DeleteProjectSuccess<T> value)? deleteProjectSuccess,
-    TResult? Function(DeleteProjectError<T> value)? deleteProjectError,
-    TResult? Function(UpdateProjectLoading<T> value)? updateProjectLoading,
-    TResult? Function(UpdateProjectSuccess<T> value)? updateProjectSuccess,
-    TResult? Function(UpdateProjectError<T> value)? updateProjectError,
-    TResult? Function(AddProjectLoading<T> value)? addProjectLoading,
-    TResult? Function(AddProjectSuccess<T> value)? addProjectSuccess,
-    TResult? Function(AddProjectError<T> value)? addProjectError,
-  }) {
-    return deleteProjectSuccess?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial<T> value)? initial,
-    TResult Function(GetProjectsLoading<T> value)? getProjectsLoading,
-    TResult Function(GetProjectsSuccess<T> value)? getProjectsSuccess,
-    TResult Function(GetProjectsError<T> value)? getProjectsError,
-    TResult Function(GetProjectLoading<T> value)? getProjectLoading,
-    TResult Function(GetProjectSuccess<T> value)? getProjectSuccess,
-    TResult Function(GetProjectError<T> value)? getProjectError,
-    TResult Function(DeleteProjectLoading<T> value)? deleteProjectLoading,
-    TResult Function(DeleteProjectSuccess<T> value)? deleteProjectSuccess,
-    TResult Function(DeleteProjectError<T> value)? deleteProjectError,
-    TResult Function(UpdateProjectLoading<T> value)? updateProjectLoading,
-    TResult Function(UpdateProjectSuccess<T> value)? updateProjectSuccess,
-    TResult Function(UpdateProjectError<T> value)? updateProjectError,
-    TResult Function(AddProjectLoading<T> value)? addProjectLoading,
-    TResult Function(AddProjectSuccess<T> value)? addProjectSuccess,
-    TResult Function(AddProjectError<T> value)? addProjectError,
-    required TResult orElse(),
-  }) {
-    if (deleteProjectSuccess != null) {
-      return deleteProjectSuccess(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class DeleteProjectSuccess<T> implements ProjectState<T> {
-  const factory DeleteProjectSuccess() = _$DeleteProjectSuccessImpl<T>;
-}
-
-/// @nodoc
-abstract class _$$DeleteProjectErrorImplCopyWith<T, $Res> {
-  factory _$$DeleteProjectErrorImplCopyWith(_$DeleteProjectErrorImpl<T> value,
-          $Res Function(_$DeleteProjectErrorImpl<T>) then) =
-      __$$DeleteProjectErrorImplCopyWithImpl<T, $Res>;
-  @useResult
-  $Res call({String error});
-}
-
-/// @nodoc
-class __$$DeleteProjectErrorImplCopyWithImpl<T, $Res>
-    extends _$ProjectStateCopyWithImpl<T, $Res, _$DeleteProjectErrorImpl<T>>
-    implements _$$DeleteProjectErrorImplCopyWith<T, $Res> {
-  __$$DeleteProjectErrorImplCopyWithImpl(_$DeleteProjectErrorImpl<T> _value,
-      $Res Function(_$DeleteProjectErrorImpl<T>) _then)
-      : super(_value, _then);
-
-  /// Create a copy of ProjectState
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? error = null,
-  }) {
-    return _then(_$DeleteProjectErrorImpl<T>(
-      error: null == error
-          ? _value.error
-          : error // ignore: cast_nullable_to_non_nullable
-              as String,
-    ));
-  }
-}
-
-/// @nodoc
-
-class _$DeleteProjectErrorImpl<T> implements DeleteProjectError<T> {
-  const _$DeleteProjectErrorImpl({required this.error});
-
-  @override
-  final String error;
-
-  @override
-  String toString() {
-    return 'ProjectState<$T>.deleteProjectError(error: $error)';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$DeleteProjectErrorImpl<T> &&
-            (identical(other.error, error) || other.error == error));
-  }
-
-  @override
-  int get hashCode => Object.hash(runtimeType, error);
-
-  /// Create a copy of ProjectState
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$DeleteProjectErrorImplCopyWith<T, _$DeleteProjectErrorImpl<T>>
-      get copyWith => __$$DeleteProjectErrorImplCopyWithImpl<T,
-          _$DeleteProjectErrorImpl<T>>(this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() initial,
-    required TResult Function() getProjectsLoading,
-    required TResult Function(T projectData) getProjectsSuccess,
-    required TResult Function(String error) getProjectsError,
-    required TResult Function() getProjectLoading,
-    required TResult Function(T projectData) getProjectSuccess,
-    required TResult Function(String error) getProjectError,
-    required TResult Function() deleteProjectLoading,
-    required TResult Function() deleteProjectSuccess,
-    required TResult Function(String error) deleteProjectError,
-    required TResult Function() updateProjectLoading,
-    required TResult Function() updateProjectSuccess,
-    required TResult Function(String error) updateProjectError,
-    required TResult Function() addProjectLoading,
-    required TResult Function() addProjectSuccess,
-    required TResult Function(String error) addProjectError,
-  }) {
-    return deleteProjectError(error);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? initial,
-    TResult? Function()? getProjectsLoading,
-    TResult? Function(T projectData)? getProjectsSuccess,
-    TResult? Function(String error)? getProjectsError,
-    TResult? Function()? getProjectLoading,
-    TResult? Function(T projectData)? getProjectSuccess,
-    TResult? Function(String error)? getProjectError,
-    TResult? Function()? deleteProjectLoading,
-    TResult? Function()? deleteProjectSuccess,
-    TResult? Function(String error)? deleteProjectError,
-    TResult? Function()? updateProjectLoading,
-    TResult? Function()? updateProjectSuccess,
-    TResult? Function(String error)? updateProjectError,
-    TResult? Function()? addProjectLoading,
-    TResult? Function()? addProjectSuccess,
-    TResult? Function(String error)? addProjectError,
-  }) {
-    return deleteProjectError?.call(error);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? getProjectsLoading,
-    TResult Function(T projectData)? getProjectsSuccess,
-    TResult Function(String error)? getProjectsError,
-    TResult Function()? getProjectLoading,
-    TResult Function(T projectData)? getProjectSuccess,
-    TResult Function(String error)? getProjectError,
-    TResult Function()? deleteProjectLoading,
-    TResult Function()? deleteProjectSuccess,
-    TResult Function(String error)? deleteProjectError,
-    TResult Function()? updateProjectLoading,
-    TResult Function()? updateProjectSuccess,
-    TResult Function(String error)? updateProjectError,
-    TResult Function()? addProjectLoading,
-    TResult Function()? addProjectSuccess,
-    TResult Function(String error)? addProjectError,
-    required TResult orElse(),
-  }) {
-    if (deleteProjectError != null) {
-      return deleteProjectError(error);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Initial<T> value) initial,
-    required TResult Function(GetProjectsLoading<T> value) getProjectsLoading,
-    required TResult Function(GetProjectsSuccess<T> value) getProjectsSuccess,
-    required TResult Function(GetProjectsError<T> value) getProjectsError,
-    required TResult Function(GetProjectLoading<T> value) getProjectLoading,
-    required TResult Function(GetProjectSuccess<T> value) getProjectSuccess,
-    required TResult Function(GetProjectError<T> value) getProjectError,
-    required TResult Function(DeleteProjectLoading<T> value)
-        deleteProjectLoading,
-    required TResult Function(DeleteProjectSuccess<T> value)
-        deleteProjectSuccess,
-    required TResult Function(DeleteProjectError<T> value) deleteProjectError,
-    required TResult Function(UpdateProjectLoading<T> value)
-        updateProjectLoading,
-    required TResult Function(UpdateProjectSuccess<T> value)
-        updateProjectSuccess,
-    required TResult Function(UpdateProjectError<T> value) updateProjectError,
-    required TResult Function(AddProjectLoading<T> value) addProjectLoading,
-    required TResult Function(AddProjectSuccess<T> value) addProjectSuccess,
-    required TResult Function(AddProjectError<T> value) addProjectError,
-  }) {
-    return deleteProjectError(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Initial<T> value)? initial,
-    TResult? Function(GetProjectsLoading<T> value)? getProjectsLoading,
-    TResult? Function(GetProjectsSuccess<T> value)? getProjectsSuccess,
-    TResult? Function(GetProjectsError<T> value)? getProjectsError,
-    TResult? Function(GetProjectLoading<T> value)? getProjectLoading,
-    TResult? Function(GetProjectSuccess<T> value)? getProjectSuccess,
-    TResult? Function(GetProjectError<T> value)? getProjectError,
-    TResult? Function(DeleteProjectLoading<T> value)? deleteProjectLoading,
-    TResult? Function(DeleteProjectSuccess<T> value)? deleteProjectSuccess,
-    TResult? Function(DeleteProjectError<T> value)? deleteProjectError,
-    TResult? Function(UpdateProjectLoading<T> value)? updateProjectLoading,
-    TResult? Function(UpdateProjectSuccess<T> value)? updateProjectSuccess,
-    TResult? Function(UpdateProjectError<T> value)? updateProjectError,
-    TResult? Function(AddProjectLoading<T> value)? addProjectLoading,
-    TResult? Function(AddProjectSuccess<T> value)? addProjectSuccess,
-    TResult? Function(AddProjectError<T> value)? addProjectError,
-  }) {
-    return deleteProjectError?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial<T> value)? initial,
-    TResult Function(GetProjectsLoading<T> value)? getProjectsLoading,
-    TResult Function(GetProjectsSuccess<T> value)? getProjectsSuccess,
-    TResult Function(GetProjectsError<T> value)? getProjectsError,
-    TResult Function(GetProjectLoading<T> value)? getProjectLoading,
-    TResult Function(GetProjectSuccess<T> value)? getProjectSuccess,
-    TResult Function(GetProjectError<T> value)? getProjectError,
-    TResult Function(DeleteProjectLoading<T> value)? deleteProjectLoading,
-    TResult Function(DeleteProjectSuccess<T> value)? deleteProjectSuccess,
-    TResult Function(DeleteProjectError<T> value)? deleteProjectError,
-    TResult Function(UpdateProjectLoading<T> value)? updateProjectLoading,
-    TResult Function(UpdateProjectSuccess<T> value)? updateProjectSuccess,
-    TResult Function(UpdateProjectError<T> value)? updateProjectError,
-    TResult Function(AddProjectLoading<T> value)? addProjectLoading,
-    TResult Function(AddProjectSuccess<T> value)? addProjectSuccess,
-    TResult Function(AddProjectError<T> value)? addProjectError,
-    required TResult orElse(),
-  }) {
-    if (deleteProjectError != null) {
-      return deleteProjectError(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class DeleteProjectError<T> implements ProjectState<T> {
-  const factory DeleteProjectError({required final String error}) =
-      _$DeleteProjectErrorImpl<T>;
-
-  String get error;
-
-  /// Create a copy of ProjectState
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$DeleteProjectErrorImplCopyWith<T, _$DeleteProjectErrorImpl<T>>
-      get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -2335,18 +1089,19 @@ class _$UpdateProjectLoadingImpl<T> implements UpdateProjectLoading<T> {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
-    required TResult Function() getProjectsLoading,
-    required TResult Function(T projectData) getProjectsSuccess,
-    required TResult Function(String error) getProjectsError,
     required TResult Function() getProjectLoading,
     required TResult Function(T projectData) getProjectSuccess,
     required TResult Function(String error) getProjectError,
-    required TResult Function() deleteProjectLoading,
-    required TResult Function() deleteProjectSuccess,
-    required TResult Function(String error) deleteProjectError,
     required TResult Function() updateProjectLoading,
     required TResult Function() updateProjectSuccess,
     required TResult Function(String error) updateProjectError,
+    required TResult Function(String errorMessage) failure,
+    required TResult Function() getProjectsLoading,
+    required TResult Function(T projectData) getProjectsSuccess,
+    required TResult Function(String error) getProjectsError,
+    required TResult Function() deleteProjectLoading,
+    required TResult Function() deleteProjectSuccess,
+    required TResult Function(String error) deleteProjectError,
     required TResult Function() addProjectLoading,
     required TResult Function() addProjectSuccess,
     required TResult Function(String error) addProjectError,
@@ -2358,18 +1113,19 @@ class _$UpdateProjectLoadingImpl<T> implements UpdateProjectLoading<T> {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
-    TResult? Function()? getProjectsLoading,
-    TResult? Function(T projectData)? getProjectsSuccess,
-    TResult? Function(String error)? getProjectsError,
     TResult? Function()? getProjectLoading,
     TResult? Function(T projectData)? getProjectSuccess,
     TResult? Function(String error)? getProjectError,
-    TResult? Function()? deleteProjectLoading,
-    TResult? Function()? deleteProjectSuccess,
-    TResult? Function(String error)? deleteProjectError,
     TResult? Function()? updateProjectLoading,
     TResult? Function()? updateProjectSuccess,
     TResult? Function(String error)? updateProjectError,
+    TResult? Function(String errorMessage)? failure,
+    TResult? Function()? getProjectsLoading,
+    TResult? Function(T projectData)? getProjectsSuccess,
+    TResult? Function(String error)? getProjectsError,
+    TResult? Function()? deleteProjectLoading,
+    TResult? Function()? deleteProjectSuccess,
+    TResult? Function(String error)? deleteProjectError,
     TResult? Function()? addProjectLoading,
     TResult? Function()? addProjectSuccess,
     TResult? Function(String error)? addProjectError,
@@ -2381,18 +1137,19 @@ class _$UpdateProjectLoadingImpl<T> implements UpdateProjectLoading<T> {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
-    TResult Function()? getProjectsLoading,
-    TResult Function(T projectData)? getProjectsSuccess,
-    TResult Function(String error)? getProjectsError,
     TResult Function()? getProjectLoading,
     TResult Function(T projectData)? getProjectSuccess,
     TResult Function(String error)? getProjectError,
-    TResult Function()? deleteProjectLoading,
-    TResult Function()? deleteProjectSuccess,
-    TResult Function(String error)? deleteProjectError,
     TResult Function()? updateProjectLoading,
     TResult Function()? updateProjectSuccess,
     TResult Function(String error)? updateProjectError,
+    TResult Function(String errorMessage)? failure,
+    TResult Function()? getProjectsLoading,
+    TResult Function(T projectData)? getProjectsSuccess,
+    TResult Function(String error)? getProjectsError,
+    TResult Function()? deleteProjectLoading,
+    TResult Function()? deleteProjectSuccess,
+    TResult Function(String error)? deleteProjectError,
     TResult Function()? addProjectLoading,
     TResult Function()? addProjectSuccess,
     TResult Function(String error)? addProjectError,
@@ -2408,22 +1165,23 @@ class _$UpdateProjectLoadingImpl<T> implements UpdateProjectLoading<T> {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial<T> value) initial,
-    required TResult Function(GetProjectsLoading<T> value) getProjectsLoading,
-    required TResult Function(GetProjectsSuccess<T> value) getProjectsSuccess,
-    required TResult Function(GetProjectsError<T> value) getProjectsError,
     required TResult Function(GetProjectLoading<T> value) getProjectLoading,
     required TResult Function(GetProjectSuccess<T> value) getProjectSuccess,
     required TResult Function(GetProjectError<T> value) getProjectError,
-    required TResult Function(DeleteProjectLoading<T> value)
-        deleteProjectLoading,
-    required TResult Function(DeleteProjectSuccess<T> value)
-        deleteProjectSuccess,
-    required TResult Function(DeleteProjectError<T> value) deleteProjectError,
     required TResult Function(UpdateProjectLoading<T> value)
         updateProjectLoading,
     required TResult Function(UpdateProjectSuccess<T> value)
         updateProjectSuccess,
     required TResult Function(UpdateProjectError<T> value) updateProjectError,
+    required TResult Function(ProjectFailureState<T> value) failure,
+    required TResult Function(GetProjectsLoading<T> value) getProjectsLoading,
+    required TResult Function(GetProjectsSuccess<T> value) getProjectsSuccess,
+    required TResult Function(GetProjectsError<T> value) getProjectsError,
+    required TResult Function(DeleteProjectLoading<T> value)
+        deleteProjectLoading,
+    required TResult Function(DeleteProjectSuccess<T> value)
+        deleteProjectSuccess,
+    required TResult Function(DeleteProjectError<T> value) deleteProjectError,
     required TResult Function(AddProjectLoading<T> value) addProjectLoading,
     required TResult Function(AddProjectSuccess<T> value) addProjectSuccess,
     required TResult Function(AddProjectError<T> value) addProjectError,
@@ -2435,18 +1193,19 @@ class _$UpdateProjectLoadingImpl<T> implements UpdateProjectLoading<T> {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial<T> value)? initial,
-    TResult? Function(GetProjectsLoading<T> value)? getProjectsLoading,
-    TResult? Function(GetProjectsSuccess<T> value)? getProjectsSuccess,
-    TResult? Function(GetProjectsError<T> value)? getProjectsError,
     TResult? Function(GetProjectLoading<T> value)? getProjectLoading,
     TResult? Function(GetProjectSuccess<T> value)? getProjectSuccess,
     TResult? Function(GetProjectError<T> value)? getProjectError,
-    TResult? Function(DeleteProjectLoading<T> value)? deleteProjectLoading,
-    TResult? Function(DeleteProjectSuccess<T> value)? deleteProjectSuccess,
-    TResult? Function(DeleteProjectError<T> value)? deleteProjectError,
     TResult? Function(UpdateProjectLoading<T> value)? updateProjectLoading,
     TResult? Function(UpdateProjectSuccess<T> value)? updateProjectSuccess,
     TResult? Function(UpdateProjectError<T> value)? updateProjectError,
+    TResult? Function(ProjectFailureState<T> value)? failure,
+    TResult? Function(GetProjectsLoading<T> value)? getProjectsLoading,
+    TResult? Function(GetProjectsSuccess<T> value)? getProjectsSuccess,
+    TResult? Function(GetProjectsError<T> value)? getProjectsError,
+    TResult? Function(DeleteProjectLoading<T> value)? deleteProjectLoading,
+    TResult? Function(DeleteProjectSuccess<T> value)? deleteProjectSuccess,
+    TResult? Function(DeleteProjectError<T> value)? deleteProjectError,
     TResult? Function(AddProjectLoading<T> value)? addProjectLoading,
     TResult? Function(AddProjectSuccess<T> value)? addProjectSuccess,
     TResult? Function(AddProjectError<T> value)? addProjectError,
@@ -2458,18 +1217,19 @@ class _$UpdateProjectLoadingImpl<T> implements UpdateProjectLoading<T> {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial<T> value)? initial,
-    TResult Function(GetProjectsLoading<T> value)? getProjectsLoading,
-    TResult Function(GetProjectsSuccess<T> value)? getProjectsSuccess,
-    TResult Function(GetProjectsError<T> value)? getProjectsError,
     TResult Function(GetProjectLoading<T> value)? getProjectLoading,
     TResult Function(GetProjectSuccess<T> value)? getProjectSuccess,
     TResult Function(GetProjectError<T> value)? getProjectError,
-    TResult Function(DeleteProjectLoading<T> value)? deleteProjectLoading,
-    TResult Function(DeleteProjectSuccess<T> value)? deleteProjectSuccess,
-    TResult Function(DeleteProjectError<T> value)? deleteProjectError,
     TResult Function(UpdateProjectLoading<T> value)? updateProjectLoading,
     TResult Function(UpdateProjectSuccess<T> value)? updateProjectSuccess,
     TResult Function(UpdateProjectError<T> value)? updateProjectError,
+    TResult Function(ProjectFailureState<T> value)? failure,
+    TResult Function(GetProjectsLoading<T> value)? getProjectsLoading,
+    TResult Function(GetProjectsSuccess<T> value)? getProjectsSuccess,
+    TResult Function(GetProjectsError<T> value)? getProjectsError,
+    TResult Function(DeleteProjectLoading<T> value)? deleteProjectLoading,
+    TResult Function(DeleteProjectSuccess<T> value)? deleteProjectSuccess,
+    TResult Function(DeleteProjectError<T> value)? deleteProjectError,
     TResult Function(AddProjectLoading<T> value)? addProjectLoading,
     TResult Function(AddProjectSuccess<T> value)? addProjectSuccess,
     TResult Function(AddProjectError<T> value)? addProjectError,
@@ -2530,18 +1290,19 @@ class _$UpdateProjectSuccessImpl<T> implements UpdateProjectSuccess<T> {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
-    required TResult Function() getProjectsLoading,
-    required TResult Function(T projectData) getProjectsSuccess,
-    required TResult Function(String error) getProjectsError,
     required TResult Function() getProjectLoading,
     required TResult Function(T projectData) getProjectSuccess,
     required TResult Function(String error) getProjectError,
-    required TResult Function() deleteProjectLoading,
-    required TResult Function() deleteProjectSuccess,
-    required TResult Function(String error) deleteProjectError,
     required TResult Function() updateProjectLoading,
     required TResult Function() updateProjectSuccess,
     required TResult Function(String error) updateProjectError,
+    required TResult Function(String errorMessage) failure,
+    required TResult Function() getProjectsLoading,
+    required TResult Function(T projectData) getProjectsSuccess,
+    required TResult Function(String error) getProjectsError,
+    required TResult Function() deleteProjectLoading,
+    required TResult Function() deleteProjectSuccess,
+    required TResult Function(String error) deleteProjectError,
     required TResult Function() addProjectLoading,
     required TResult Function() addProjectSuccess,
     required TResult Function(String error) addProjectError,
@@ -2553,18 +1314,19 @@ class _$UpdateProjectSuccessImpl<T> implements UpdateProjectSuccess<T> {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
-    TResult? Function()? getProjectsLoading,
-    TResult? Function(T projectData)? getProjectsSuccess,
-    TResult? Function(String error)? getProjectsError,
     TResult? Function()? getProjectLoading,
     TResult? Function(T projectData)? getProjectSuccess,
     TResult? Function(String error)? getProjectError,
-    TResult? Function()? deleteProjectLoading,
-    TResult? Function()? deleteProjectSuccess,
-    TResult? Function(String error)? deleteProjectError,
     TResult? Function()? updateProjectLoading,
     TResult? Function()? updateProjectSuccess,
     TResult? Function(String error)? updateProjectError,
+    TResult? Function(String errorMessage)? failure,
+    TResult? Function()? getProjectsLoading,
+    TResult? Function(T projectData)? getProjectsSuccess,
+    TResult? Function(String error)? getProjectsError,
+    TResult? Function()? deleteProjectLoading,
+    TResult? Function()? deleteProjectSuccess,
+    TResult? Function(String error)? deleteProjectError,
     TResult? Function()? addProjectLoading,
     TResult? Function()? addProjectSuccess,
     TResult? Function(String error)? addProjectError,
@@ -2576,18 +1338,19 @@ class _$UpdateProjectSuccessImpl<T> implements UpdateProjectSuccess<T> {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
-    TResult Function()? getProjectsLoading,
-    TResult Function(T projectData)? getProjectsSuccess,
-    TResult Function(String error)? getProjectsError,
     TResult Function()? getProjectLoading,
     TResult Function(T projectData)? getProjectSuccess,
     TResult Function(String error)? getProjectError,
-    TResult Function()? deleteProjectLoading,
-    TResult Function()? deleteProjectSuccess,
-    TResult Function(String error)? deleteProjectError,
     TResult Function()? updateProjectLoading,
     TResult Function()? updateProjectSuccess,
     TResult Function(String error)? updateProjectError,
+    TResult Function(String errorMessage)? failure,
+    TResult Function()? getProjectsLoading,
+    TResult Function(T projectData)? getProjectsSuccess,
+    TResult Function(String error)? getProjectsError,
+    TResult Function()? deleteProjectLoading,
+    TResult Function()? deleteProjectSuccess,
+    TResult Function(String error)? deleteProjectError,
     TResult Function()? addProjectLoading,
     TResult Function()? addProjectSuccess,
     TResult Function(String error)? addProjectError,
@@ -2603,22 +1366,23 @@ class _$UpdateProjectSuccessImpl<T> implements UpdateProjectSuccess<T> {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial<T> value) initial,
-    required TResult Function(GetProjectsLoading<T> value) getProjectsLoading,
-    required TResult Function(GetProjectsSuccess<T> value) getProjectsSuccess,
-    required TResult Function(GetProjectsError<T> value) getProjectsError,
     required TResult Function(GetProjectLoading<T> value) getProjectLoading,
     required TResult Function(GetProjectSuccess<T> value) getProjectSuccess,
     required TResult Function(GetProjectError<T> value) getProjectError,
-    required TResult Function(DeleteProjectLoading<T> value)
-        deleteProjectLoading,
-    required TResult Function(DeleteProjectSuccess<T> value)
-        deleteProjectSuccess,
-    required TResult Function(DeleteProjectError<T> value) deleteProjectError,
     required TResult Function(UpdateProjectLoading<T> value)
         updateProjectLoading,
     required TResult Function(UpdateProjectSuccess<T> value)
         updateProjectSuccess,
     required TResult Function(UpdateProjectError<T> value) updateProjectError,
+    required TResult Function(ProjectFailureState<T> value) failure,
+    required TResult Function(GetProjectsLoading<T> value) getProjectsLoading,
+    required TResult Function(GetProjectsSuccess<T> value) getProjectsSuccess,
+    required TResult Function(GetProjectsError<T> value) getProjectsError,
+    required TResult Function(DeleteProjectLoading<T> value)
+        deleteProjectLoading,
+    required TResult Function(DeleteProjectSuccess<T> value)
+        deleteProjectSuccess,
+    required TResult Function(DeleteProjectError<T> value) deleteProjectError,
     required TResult Function(AddProjectLoading<T> value) addProjectLoading,
     required TResult Function(AddProjectSuccess<T> value) addProjectSuccess,
     required TResult Function(AddProjectError<T> value) addProjectError,
@@ -2630,18 +1394,19 @@ class _$UpdateProjectSuccessImpl<T> implements UpdateProjectSuccess<T> {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial<T> value)? initial,
-    TResult? Function(GetProjectsLoading<T> value)? getProjectsLoading,
-    TResult? Function(GetProjectsSuccess<T> value)? getProjectsSuccess,
-    TResult? Function(GetProjectsError<T> value)? getProjectsError,
     TResult? Function(GetProjectLoading<T> value)? getProjectLoading,
     TResult? Function(GetProjectSuccess<T> value)? getProjectSuccess,
     TResult? Function(GetProjectError<T> value)? getProjectError,
-    TResult? Function(DeleteProjectLoading<T> value)? deleteProjectLoading,
-    TResult? Function(DeleteProjectSuccess<T> value)? deleteProjectSuccess,
-    TResult? Function(DeleteProjectError<T> value)? deleteProjectError,
     TResult? Function(UpdateProjectLoading<T> value)? updateProjectLoading,
     TResult? Function(UpdateProjectSuccess<T> value)? updateProjectSuccess,
     TResult? Function(UpdateProjectError<T> value)? updateProjectError,
+    TResult? Function(ProjectFailureState<T> value)? failure,
+    TResult? Function(GetProjectsLoading<T> value)? getProjectsLoading,
+    TResult? Function(GetProjectsSuccess<T> value)? getProjectsSuccess,
+    TResult? Function(GetProjectsError<T> value)? getProjectsError,
+    TResult? Function(DeleteProjectLoading<T> value)? deleteProjectLoading,
+    TResult? Function(DeleteProjectSuccess<T> value)? deleteProjectSuccess,
+    TResult? Function(DeleteProjectError<T> value)? deleteProjectError,
     TResult? Function(AddProjectLoading<T> value)? addProjectLoading,
     TResult? Function(AddProjectSuccess<T> value)? addProjectSuccess,
     TResult? Function(AddProjectError<T> value)? addProjectError,
@@ -2653,18 +1418,19 @@ class _$UpdateProjectSuccessImpl<T> implements UpdateProjectSuccess<T> {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial<T> value)? initial,
-    TResult Function(GetProjectsLoading<T> value)? getProjectsLoading,
-    TResult Function(GetProjectsSuccess<T> value)? getProjectsSuccess,
-    TResult Function(GetProjectsError<T> value)? getProjectsError,
     TResult Function(GetProjectLoading<T> value)? getProjectLoading,
     TResult Function(GetProjectSuccess<T> value)? getProjectSuccess,
     TResult Function(GetProjectError<T> value)? getProjectError,
-    TResult Function(DeleteProjectLoading<T> value)? deleteProjectLoading,
-    TResult Function(DeleteProjectSuccess<T> value)? deleteProjectSuccess,
-    TResult Function(DeleteProjectError<T> value)? deleteProjectError,
     TResult Function(UpdateProjectLoading<T> value)? updateProjectLoading,
     TResult Function(UpdateProjectSuccess<T> value)? updateProjectSuccess,
     TResult Function(UpdateProjectError<T> value)? updateProjectError,
+    TResult Function(ProjectFailureState<T> value)? failure,
+    TResult Function(GetProjectsLoading<T> value)? getProjectsLoading,
+    TResult Function(GetProjectsSuccess<T> value)? getProjectsSuccess,
+    TResult Function(GetProjectsError<T> value)? getProjectsError,
+    TResult Function(DeleteProjectLoading<T> value)? deleteProjectLoading,
+    TResult Function(DeleteProjectSuccess<T> value)? deleteProjectSuccess,
+    TResult Function(DeleteProjectError<T> value)? deleteProjectError,
     TResult Function(AddProjectLoading<T> value)? addProjectLoading,
     TResult Function(AddProjectSuccess<T> value)? addProjectSuccess,
     TResult Function(AddProjectError<T> value)? addProjectError,
@@ -2751,18 +1517,19 @@ class _$UpdateProjectErrorImpl<T> implements UpdateProjectError<T> {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
-    required TResult Function() getProjectsLoading,
-    required TResult Function(T projectData) getProjectsSuccess,
-    required TResult Function(String error) getProjectsError,
     required TResult Function() getProjectLoading,
     required TResult Function(T projectData) getProjectSuccess,
     required TResult Function(String error) getProjectError,
-    required TResult Function() deleteProjectLoading,
-    required TResult Function() deleteProjectSuccess,
-    required TResult Function(String error) deleteProjectError,
     required TResult Function() updateProjectLoading,
     required TResult Function() updateProjectSuccess,
     required TResult Function(String error) updateProjectError,
+    required TResult Function(String errorMessage) failure,
+    required TResult Function() getProjectsLoading,
+    required TResult Function(T projectData) getProjectsSuccess,
+    required TResult Function(String error) getProjectsError,
+    required TResult Function() deleteProjectLoading,
+    required TResult Function() deleteProjectSuccess,
+    required TResult Function(String error) deleteProjectError,
     required TResult Function() addProjectLoading,
     required TResult Function() addProjectSuccess,
     required TResult Function(String error) addProjectError,
@@ -2774,18 +1541,19 @@ class _$UpdateProjectErrorImpl<T> implements UpdateProjectError<T> {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
-    TResult? Function()? getProjectsLoading,
-    TResult? Function(T projectData)? getProjectsSuccess,
-    TResult? Function(String error)? getProjectsError,
     TResult? Function()? getProjectLoading,
     TResult? Function(T projectData)? getProjectSuccess,
     TResult? Function(String error)? getProjectError,
-    TResult? Function()? deleteProjectLoading,
-    TResult? Function()? deleteProjectSuccess,
-    TResult? Function(String error)? deleteProjectError,
     TResult? Function()? updateProjectLoading,
     TResult? Function()? updateProjectSuccess,
     TResult? Function(String error)? updateProjectError,
+    TResult? Function(String errorMessage)? failure,
+    TResult? Function()? getProjectsLoading,
+    TResult? Function(T projectData)? getProjectsSuccess,
+    TResult? Function(String error)? getProjectsError,
+    TResult? Function()? deleteProjectLoading,
+    TResult? Function()? deleteProjectSuccess,
+    TResult? Function(String error)? deleteProjectError,
     TResult? Function()? addProjectLoading,
     TResult? Function()? addProjectSuccess,
     TResult? Function(String error)? addProjectError,
@@ -2797,18 +1565,19 @@ class _$UpdateProjectErrorImpl<T> implements UpdateProjectError<T> {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
-    TResult Function()? getProjectsLoading,
-    TResult Function(T projectData)? getProjectsSuccess,
-    TResult Function(String error)? getProjectsError,
     TResult Function()? getProjectLoading,
     TResult Function(T projectData)? getProjectSuccess,
     TResult Function(String error)? getProjectError,
-    TResult Function()? deleteProjectLoading,
-    TResult Function()? deleteProjectSuccess,
-    TResult Function(String error)? deleteProjectError,
     TResult Function()? updateProjectLoading,
     TResult Function()? updateProjectSuccess,
     TResult Function(String error)? updateProjectError,
+    TResult Function(String errorMessage)? failure,
+    TResult Function()? getProjectsLoading,
+    TResult Function(T projectData)? getProjectsSuccess,
+    TResult Function(String error)? getProjectsError,
+    TResult Function()? deleteProjectLoading,
+    TResult Function()? deleteProjectSuccess,
+    TResult Function(String error)? deleteProjectError,
     TResult Function()? addProjectLoading,
     TResult Function()? addProjectSuccess,
     TResult Function(String error)? addProjectError,
@@ -2824,22 +1593,23 @@ class _$UpdateProjectErrorImpl<T> implements UpdateProjectError<T> {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial<T> value) initial,
-    required TResult Function(GetProjectsLoading<T> value) getProjectsLoading,
-    required TResult Function(GetProjectsSuccess<T> value) getProjectsSuccess,
-    required TResult Function(GetProjectsError<T> value) getProjectsError,
     required TResult Function(GetProjectLoading<T> value) getProjectLoading,
     required TResult Function(GetProjectSuccess<T> value) getProjectSuccess,
     required TResult Function(GetProjectError<T> value) getProjectError,
-    required TResult Function(DeleteProjectLoading<T> value)
-        deleteProjectLoading,
-    required TResult Function(DeleteProjectSuccess<T> value)
-        deleteProjectSuccess,
-    required TResult Function(DeleteProjectError<T> value) deleteProjectError,
     required TResult Function(UpdateProjectLoading<T> value)
         updateProjectLoading,
     required TResult Function(UpdateProjectSuccess<T> value)
         updateProjectSuccess,
     required TResult Function(UpdateProjectError<T> value) updateProjectError,
+    required TResult Function(ProjectFailureState<T> value) failure,
+    required TResult Function(GetProjectsLoading<T> value) getProjectsLoading,
+    required TResult Function(GetProjectsSuccess<T> value) getProjectsSuccess,
+    required TResult Function(GetProjectsError<T> value) getProjectsError,
+    required TResult Function(DeleteProjectLoading<T> value)
+        deleteProjectLoading,
+    required TResult Function(DeleteProjectSuccess<T> value)
+        deleteProjectSuccess,
+    required TResult Function(DeleteProjectError<T> value) deleteProjectError,
     required TResult Function(AddProjectLoading<T> value) addProjectLoading,
     required TResult Function(AddProjectSuccess<T> value) addProjectSuccess,
     required TResult Function(AddProjectError<T> value) addProjectError,
@@ -2851,18 +1621,19 @@ class _$UpdateProjectErrorImpl<T> implements UpdateProjectError<T> {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial<T> value)? initial,
-    TResult? Function(GetProjectsLoading<T> value)? getProjectsLoading,
-    TResult? Function(GetProjectsSuccess<T> value)? getProjectsSuccess,
-    TResult? Function(GetProjectsError<T> value)? getProjectsError,
     TResult? Function(GetProjectLoading<T> value)? getProjectLoading,
     TResult? Function(GetProjectSuccess<T> value)? getProjectSuccess,
     TResult? Function(GetProjectError<T> value)? getProjectError,
-    TResult? Function(DeleteProjectLoading<T> value)? deleteProjectLoading,
-    TResult? Function(DeleteProjectSuccess<T> value)? deleteProjectSuccess,
-    TResult? Function(DeleteProjectError<T> value)? deleteProjectError,
     TResult? Function(UpdateProjectLoading<T> value)? updateProjectLoading,
     TResult? Function(UpdateProjectSuccess<T> value)? updateProjectSuccess,
     TResult? Function(UpdateProjectError<T> value)? updateProjectError,
+    TResult? Function(ProjectFailureState<T> value)? failure,
+    TResult? Function(GetProjectsLoading<T> value)? getProjectsLoading,
+    TResult? Function(GetProjectsSuccess<T> value)? getProjectsSuccess,
+    TResult? Function(GetProjectsError<T> value)? getProjectsError,
+    TResult? Function(DeleteProjectLoading<T> value)? deleteProjectLoading,
+    TResult? Function(DeleteProjectSuccess<T> value)? deleteProjectSuccess,
+    TResult? Function(DeleteProjectError<T> value)? deleteProjectError,
     TResult? Function(AddProjectLoading<T> value)? addProjectLoading,
     TResult? Function(AddProjectSuccess<T> value)? addProjectSuccess,
     TResult? Function(AddProjectError<T> value)? addProjectError,
@@ -2874,18 +1645,19 @@ class _$UpdateProjectErrorImpl<T> implements UpdateProjectError<T> {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial<T> value)? initial,
-    TResult Function(GetProjectsLoading<T> value)? getProjectsLoading,
-    TResult Function(GetProjectsSuccess<T> value)? getProjectsSuccess,
-    TResult Function(GetProjectsError<T> value)? getProjectsError,
     TResult Function(GetProjectLoading<T> value)? getProjectLoading,
     TResult Function(GetProjectSuccess<T> value)? getProjectSuccess,
     TResult Function(GetProjectError<T> value)? getProjectError,
-    TResult Function(DeleteProjectLoading<T> value)? deleteProjectLoading,
-    TResult Function(DeleteProjectSuccess<T> value)? deleteProjectSuccess,
-    TResult Function(DeleteProjectError<T> value)? deleteProjectError,
     TResult Function(UpdateProjectLoading<T> value)? updateProjectLoading,
     TResult Function(UpdateProjectSuccess<T> value)? updateProjectSuccess,
     TResult Function(UpdateProjectError<T> value)? updateProjectError,
+    TResult Function(ProjectFailureState<T> value)? failure,
+    TResult Function(GetProjectsLoading<T> value)? getProjectsLoading,
+    TResult Function(GetProjectsSuccess<T> value)? getProjectsSuccess,
+    TResult Function(GetProjectsError<T> value)? getProjectsError,
+    TResult Function(DeleteProjectLoading<T> value)? deleteProjectLoading,
+    TResult Function(DeleteProjectSuccess<T> value)? deleteProjectSuccess,
+    TResult Function(DeleteProjectError<T> value)? deleteProjectError,
     TResult Function(AddProjectLoading<T> value)? addProjectLoading,
     TResult Function(AddProjectSuccess<T> value)? addProjectSuccess,
     TResult Function(AddProjectError<T> value)? addProjectError,
@@ -2908,6 +1680,1555 @@ abstract class UpdateProjectError<T> implements ProjectState<T> {
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
   _$$UpdateProjectErrorImplCopyWith<T, _$UpdateProjectErrorImpl<T>>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$ProjectFailureStateImplCopyWith<T, $Res> {
+  factory _$$ProjectFailureStateImplCopyWith(_$ProjectFailureStateImpl<T> value,
+          $Res Function(_$ProjectFailureStateImpl<T>) then) =
+      __$$ProjectFailureStateImplCopyWithImpl<T, $Res>;
+  @useResult
+  $Res call({String errorMessage});
+}
+
+/// @nodoc
+class __$$ProjectFailureStateImplCopyWithImpl<T, $Res>
+    extends _$ProjectStateCopyWithImpl<T, $Res, _$ProjectFailureStateImpl<T>>
+    implements _$$ProjectFailureStateImplCopyWith<T, $Res> {
+  __$$ProjectFailureStateImplCopyWithImpl(_$ProjectFailureStateImpl<T> _value,
+      $Res Function(_$ProjectFailureStateImpl<T>) _then)
+      : super(_value, _then);
+
+  /// Create a copy of ProjectState
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? errorMessage = null,
+  }) {
+    return _then(_$ProjectFailureStateImpl<T>(
+      errorMessage: null == errorMessage
+          ? _value.errorMessage
+          : errorMessage // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$ProjectFailureStateImpl<T> implements ProjectFailureState<T> {
+  const _$ProjectFailureStateImpl({required this.errorMessage});
+
+  @override
+  final String errorMessage;
+
+  @override
+  String toString() {
+    return 'ProjectState<$T>.failure(errorMessage: $errorMessage)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$ProjectFailureStateImpl<T> &&
+            (identical(other.errorMessage, errorMessage) ||
+                other.errorMessage == errorMessage));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, errorMessage);
+
+  /// Create a copy of ProjectState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$ProjectFailureStateImplCopyWith<T, _$ProjectFailureStateImpl<T>>
+      get copyWith => __$$ProjectFailureStateImplCopyWithImpl<T,
+          _$ProjectFailureStateImpl<T>>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() getProjectLoading,
+    required TResult Function(T projectData) getProjectSuccess,
+    required TResult Function(String error) getProjectError,
+    required TResult Function() updateProjectLoading,
+    required TResult Function() updateProjectSuccess,
+    required TResult Function(String error) updateProjectError,
+    required TResult Function(String errorMessage) failure,
+    required TResult Function() getProjectsLoading,
+    required TResult Function(T projectData) getProjectsSuccess,
+    required TResult Function(String error) getProjectsError,
+    required TResult Function() deleteProjectLoading,
+    required TResult Function() deleteProjectSuccess,
+    required TResult Function(String error) deleteProjectError,
+    required TResult Function() addProjectLoading,
+    required TResult Function() addProjectSuccess,
+    required TResult Function(String error) addProjectError,
+  }) {
+    return failure(errorMessage);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? getProjectLoading,
+    TResult? Function(T projectData)? getProjectSuccess,
+    TResult? Function(String error)? getProjectError,
+    TResult? Function()? updateProjectLoading,
+    TResult? Function()? updateProjectSuccess,
+    TResult? Function(String error)? updateProjectError,
+    TResult? Function(String errorMessage)? failure,
+    TResult? Function()? getProjectsLoading,
+    TResult? Function(T projectData)? getProjectsSuccess,
+    TResult? Function(String error)? getProjectsError,
+    TResult? Function()? deleteProjectLoading,
+    TResult? Function()? deleteProjectSuccess,
+    TResult? Function(String error)? deleteProjectError,
+    TResult? Function()? addProjectLoading,
+    TResult? Function()? addProjectSuccess,
+    TResult? Function(String error)? addProjectError,
+  }) {
+    return failure?.call(errorMessage);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? getProjectLoading,
+    TResult Function(T projectData)? getProjectSuccess,
+    TResult Function(String error)? getProjectError,
+    TResult Function()? updateProjectLoading,
+    TResult Function()? updateProjectSuccess,
+    TResult Function(String error)? updateProjectError,
+    TResult Function(String errorMessage)? failure,
+    TResult Function()? getProjectsLoading,
+    TResult Function(T projectData)? getProjectsSuccess,
+    TResult Function(String error)? getProjectsError,
+    TResult Function()? deleteProjectLoading,
+    TResult Function()? deleteProjectSuccess,
+    TResult Function(String error)? deleteProjectError,
+    TResult Function()? addProjectLoading,
+    TResult Function()? addProjectSuccess,
+    TResult Function(String error)? addProjectError,
+    required TResult orElse(),
+  }) {
+    if (failure != null) {
+      return failure(errorMessage);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial<T> value) initial,
+    required TResult Function(GetProjectLoading<T> value) getProjectLoading,
+    required TResult Function(GetProjectSuccess<T> value) getProjectSuccess,
+    required TResult Function(GetProjectError<T> value) getProjectError,
+    required TResult Function(UpdateProjectLoading<T> value)
+        updateProjectLoading,
+    required TResult Function(UpdateProjectSuccess<T> value)
+        updateProjectSuccess,
+    required TResult Function(UpdateProjectError<T> value) updateProjectError,
+    required TResult Function(ProjectFailureState<T> value) failure,
+    required TResult Function(GetProjectsLoading<T> value) getProjectsLoading,
+    required TResult Function(GetProjectsSuccess<T> value) getProjectsSuccess,
+    required TResult Function(GetProjectsError<T> value) getProjectsError,
+    required TResult Function(DeleteProjectLoading<T> value)
+        deleteProjectLoading,
+    required TResult Function(DeleteProjectSuccess<T> value)
+        deleteProjectSuccess,
+    required TResult Function(DeleteProjectError<T> value) deleteProjectError,
+    required TResult Function(AddProjectLoading<T> value) addProjectLoading,
+    required TResult Function(AddProjectSuccess<T> value) addProjectSuccess,
+    required TResult Function(AddProjectError<T> value) addProjectError,
+  }) {
+    return failure(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial<T> value)? initial,
+    TResult? Function(GetProjectLoading<T> value)? getProjectLoading,
+    TResult? Function(GetProjectSuccess<T> value)? getProjectSuccess,
+    TResult? Function(GetProjectError<T> value)? getProjectError,
+    TResult? Function(UpdateProjectLoading<T> value)? updateProjectLoading,
+    TResult? Function(UpdateProjectSuccess<T> value)? updateProjectSuccess,
+    TResult? Function(UpdateProjectError<T> value)? updateProjectError,
+    TResult? Function(ProjectFailureState<T> value)? failure,
+    TResult? Function(GetProjectsLoading<T> value)? getProjectsLoading,
+    TResult? Function(GetProjectsSuccess<T> value)? getProjectsSuccess,
+    TResult? Function(GetProjectsError<T> value)? getProjectsError,
+    TResult? Function(DeleteProjectLoading<T> value)? deleteProjectLoading,
+    TResult? Function(DeleteProjectSuccess<T> value)? deleteProjectSuccess,
+    TResult? Function(DeleteProjectError<T> value)? deleteProjectError,
+    TResult? Function(AddProjectLoading<T> value)? addProjectLoading,
+    TResult? Function(AddProjectSuccess<T> value)? addProjectSuccess,
+    TResult? Function(AddProjectError<T> value)? addProjectError,
+  }) {
+    return failure?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial<T> value)? initial,
+    TResult Function(GetProjectLoading<T> value)? getProjectLoading,
+    TResult Function(GetProjectSuccess<T> value)? getProjectSuccess,
+    TResult Function(GetProjectError<T> value)? getProjectError,
+    TResult Function(UpdateProjectLoading<T> value)? updateProjectLoading,
+    TResult Function(UpdateProjectSuccess<T> value)? updateProjectSuccess,
+    TResult Function(UpdateProjectError<T> value)? updateProjectError,
+    TResult Function(ProjectFailureState<T> value)? failure,
+    TResult Function(GetProjectsLoading<T> value)? getProjectsLoading,
+    TResult Function(GetProjectsSuccess<T> value)? getProjectsSuccess,
+    TResult Function(GetProjectsError<T> value)? getProjectsError,
+    TResult Function(DeleteProjectLoading<T> value)? deleteProjectLoading,
+    TResult Function(DeleteProjectSuccess<T> value)? deleteProjectSuccess,
+    TResult Function(DeleteProjectError<T> value)? deleteProjectError,
+    TResult Function(AddProjectLoading<T> value)? addProjectLoading,
+    TResult Function(AddProjectSuccess<T> value)? addProjectSuccess,
+    TResult Function(AddProjectError<T> value)? addProjectError,
+    required TResult orElse(),
+  }) {
+    if (failure != null) {
+      return failure(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class ProjectFailureState<T> implements ProjectState<T> {
+  const factory ProjectFailureState({required final String errorMessage}) =
+      _$ProjectFailureStateImpl<T>;
+
+  String get errorMessage;
+
+  /// Create a copy of ProjectState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$ProjectFailureStateImplCopyWith<T, _$ProjectFailureStateImpl<T>>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$GetProjectsLoadingImplCopyWith<T, $Res> {
+  factory _$$GetProjectsLoadingImplCopyWith(_$GetProjectsLoadingImpl<T> value,
+          $Res Function(_$GetProjectsLoadingImpl<T>) then) =
+      __$$GetProjectsLoadingImplCopyWithImpl<T, $Res>;
+}
+
+/// @nodoc
+class __$$GetProjectsLoadingImplCopyWithImpl<T, $Res>
+    extends _$ProjectStateCopyWithImpl<T, $Res, _$GetProjectsLoadingImpl<T>>
+    implements _$$GetProjectsLoadingImplCopyWith<T, $Res> {
+  __$$GetProjectsLoadingImplCopyWithImpl(_$GetProjectsLoadingImpl<T> _value,
+      $Res Function(_$GetProjectsLoadingImpl<T>) _then)
+      : super(_value, _then);
+
+  /// Create a copy of ProjectState
+  /// with the given fields replaced by the non-null parameter values.
+}
+
+/// @nodoc
+
+class _$GetProjectsLoadingImpl<T> implements GetProjectsLoading<T> {
+  const _$GetProjectsLoadingImpl();
+
+  @override
+  String toString() {
+    return 'ProjectState<$T>.getProjectsLoading()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$GetProjectsLoadingImpl<T>);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() getProjectLoading,
+    required TResult Function(T projectData) getProjectSuccess,
+    required TResult Function(String error) getProjectError,
+    required TResult Function() updateProjectLoading,
+    required TResult Function() updateProjectSuccess,
+    required TResult Function(String error) updateProjectError,
+    required TResult Function(String errorMessage) failure,
+    required TResult Function() getProjectsLoading,
+    required TResult Function(T projectData) getProjectsSuccess,
+    required TResult Function(String error) getProjectsError,
+    required TResult Function() deleteProjectLoading,
+    required TResult Function() deleteProjectSuccess,
+    required TResult Function(String error) deleteProjectError,
+    required TResult Function() addProjectLoading,
+    required TResult Function() addProjectSuccess,
+    required TResult Function(String error) addProjectError,
+  }) {
+    return getProjectsLoading();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? getProjectLoading,
+    TResult? Function(T projectData)? getProjectSuccess,
+    TResult? Function(String error)? getProjectError,
+    TResult? Function()? updateProjectLoading,
+    TResult? Function()? updateProjectSuccess,
+    TResult? Function(String error)? updateProjectError,
+    TResult? Function(String errorMessage)? failure,
+    TResult? Function()? getProjectsLoading,
+    TResult? Function(T projectData)? getProjectsSuccess,
+    TResult? Function(String error)? getProjectsError,
+    TResult? Function()? deleteProjectLoading,
+    TResult? Function()? deleteProjectSuccess,
+    TResult? Function(String error)? deleteProjectError,
+    TResult? Function()? addProjectLoading,
+    TResult? Function()? addProjectSuccess,
+    TResult? Function(String error)? addProjectError,
+  }) {
+    return getProjectsLoading?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? getProjectLoading,
+    TResult Function(T projectData)? getProjectSuccess,
+    TResult Function(String error)? getProjectError,
+    TResult Function()? updateProjectLoading,
+    TResult Function()? updateProjectSuccess,
+    TResult Function(String error)? updateProjectError,
+    TResult Function(String errorMessage)? failure,
+    TResult Function()? getProjectsLoading,
+    TResult Function(T projectData)? getProjectsSuccess,
+    TResult Function(String error)? getProjectsError,
+    TResult Function()? deleteProjectLoading,
+    TResult Function()? deleteProjectSuccess,
+    TResult Function(String error)? deleteProjectError,
+    TResult Function()? addProjectLoading,
+    TResult Function()? addProjectSuccess,
+    TResult Function(String error)? addProjectError,
+    required TResult orElse(),
+  }) {
+    if (getProjectsLoading != null) {
+      return getProjectsLoading();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial<T> value) initial,
+    required TResult Function(GetProjectLoading<T> value) getProjectLoading,
+    required TResult Function(GetProjectSuccess<T> value) getProjectSuccess,
+    required TResult Function(GetProjectError<T> value) getProjectError,
+    required TResult Function(UpdateProjectLoading<T> value)
+        updateProjectLoading,
+    required TResult Function(UpdateProjectSuccess<T> value)
+        updateProjectSuccess,
+    required TResult Function(UpdateProjectError<T> value) updateProjectError,
+    required TResult Function(ProjectFailureState<T> value) failure,
+    required TResult Function(GetProjectsLoading<T> value) getProjectsLoading,
+    required TResult Function(GetProjectsSuccess<T> value) getProjectsSuccess,
+    required TResult Function(GetProjectsError<T> value) getProjectsError,
+    required TResult Function(DeleteProjectLoading<T> value)
+        deleteProjectLoading,
+    required TResult Function(DeleteProjectSuccess<T> value)
+        deleteProjectSuccess,
+    required TResult Function(DeleteProjectError<T> value) deleteProjectError,
+    required TResult Function(AddProjectLoading<T> value) addProjectLoading,
+    required TResult Function(AddProjectSuccess<T> value) addProjectSuccess,
+    required TResult Function(AddProjectError<T> value) addProjectError,
+  }) {
+    return getProjectsLoading(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial<T> value)? initial,
+    TResult? Function(GetProjectLoading<T> value)? getProjectLoading,
+    TResult? Function(GetProjectSuccess<T> value)? getProjectSuccess,
+    TResult? Function(GetProjectError<T> value)? getProjectError,
+    TResult? Function(UpdateProjectLoading<T> value)? updateProjectLoading,
+    TResult? Function(UpdateProjectSuccess<T> value)? updateProjectSuccess,
+    TResult? Function(UpdateProjectError<T> value)? updateProjectError,
+    TResult? Function(ProjectFailureState<T> value)? failure,
+    TResult? Function(GetProjectsLoading<T> value)? getProjectsLoading,
+    TResult? Function(GetProjectsSuccess<T> value)? getProjectsSuccess,
+    TResult? Function(GetProjectsError<T> value)? getProjectsError,
+    TResult? Function(DeleteProjectLoading<T> value)? deleteProjectLoading,
+    TResult? Function(DeleteProjectSuccess<T> value)? deleteProjectSuccess,
+    TResult? Function(DeleteProjectError<T> value)? deleteProjectError,
+    TResult? Function(AddProjectLoading<T> value)? addProjectLoading,
+    TResult? Function(AddProjectSuccess<T> value)? addProjectSuccess,
+    TResult? Function(AddProjectError<T> value)? addProjectError,
+  }) {
+    return getProjectsLoading?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial<T> value)? initial,
+    TResult Function(GetProjectLoading<T> value)? getProjectLoading,
+    TResult Function(GetProjectSuccess<T> value)? getProjectSuccess,
+    TResult Function(GetProjectError<T> value)? getProjectError,
+    TResult Function(UpdateProjectLoading<T> value)? updateProjectLoading,
+    TResult Function(UpdateProjectSuccess<T> value)? updateProjectSuccess,
+    TResult Function(UpdateProjectError<T> value)? updateProjectError,
+    TResult Function(ProjectFailureState<T> value)? failure,
+    TResult Function(GetProjectsLoading<T> value)? getProjectsLoading,
+    TResult Function(GetProjectsSuccess<T> value)? getProjectsSuccess,
+    TResult Function(GetProjectsError<T> value)? getProjectsError,
+    TResult Function(DeleteProjectLoading<T> value)? deleteProjectLoading,
+    TResult Function(DeleteProjectSuccess<T> value)? deleteProjectSuccess,
+    TResult Function(DeleteProjectError<T> value)? deleteProjectError,
+    TResult Function(AddProjectLoading<T> value)? addProjectLoading,
+    TResult Function(AddProjectSuccess<T> value)? addProjectSuccess,
+    TResult Function(AddProjectError<T> value)? addProjectError,
+    required TResult orElse(),
+  }) {
+    if (getProjectsLoading != null) {
+      return getProjectsLoading(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class GetProjectsLoading<T> implements ProjectState<T> {
+  const factory GetProjectsLoading() = _$GetProjectsLoadingImpl<T>;
+}
+
+/// @nodoc
+abstract class _$$GetProjectsSuccessImplCopyWith<T, $Res> {
+  factory _$$GetProjectsSuccessImplCopyWith(_$GetProjectsSuccessImpl<T> value,
+          $Res Function(_$GetProjectsSuccessImpl<T>) then) =
+      __$$GetProjectsSuccessImplCopyWithImpl<T, $Res>;
+  @useResult
+  $Res call({T projectData});
+}
+
+/// @nodoc
+class __$$GetProjectsSuccessImplCopyWithImpl<T, $Res>
+    extends _$ProjectStateCopyWithImpl<T, $Res, _$GetProjectsSuccessImpl<T>>
+    implements _$$GetProjectsSuccessImplCopyWith<T, $Res> {
+  __$$GetProjectsSuccessImplCopyWithImpl(_$GetProjectsSuccessImpl<T> _value,
+      $Res Function(_$GetProjectsSuccessImpl<T>) _then)
+      : super(_value, _then);
+
+  /// Create a copy of ProjectState
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? projectData = freezed,
+  }) {
+    return _then(_$GetProjectsSuccessImpl<T>(
+      freezed == projectData
+          ? _value.projectData
+          : projectData // ignore: cast_nullable_to_non_nullable
+              as T,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$GetProjectsSuccessImpl<T> implements GetProjectsSuccess<T> {
+  const _$GetProjectsSuccessImpl(this.projectData);
+
+  @override
+  final T projectData;
+
+  @override
+  String toString() {
+    return 'ProjectState<$T>.getProjectsSuccess(projectData: $projectData)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$GetProjectsSuccessImpl<T> &&
+            const DeepCollectionEquality()
+                .equals(other.projectData, projectData));
+  }
+
+  @override
+  int get hashCode => Object.hash(
+      runtimeType, const DeepCollectionEquality().hash(projectData));
+
+  /// Create a copy of ProjectState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$GetProjectsSuccessImplCopyWith<T, _$GetProjectsSuccessImpl<T>>
+      get copyWith => __$$GetProjectsSuccessImplCopyWithImpl<T,
+          _$GetProjectsSuccessImpl<T>>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() getProjectLoading,
+    required TResult Function(T projectData) getProjectSuccess,
+    required TResult Function(String error) getProjectError,
+    required TResult Function() updateProjectLoading,
+    required TResult Function() updateProjectSuccess,
+    required TResult Function(String error) updateProjectError,
+    required TResult Function(String errorMessage) failure,
+    required TResult Function() getProjectsLoading,
+    required TResult Function(T projectData) getProjectsSuccess,
+    required TResult Function(String error) getProjectsError,
+    required TResult Function() deleteProjectLoading,
+    required TResult Function() deleteProjectSuccess,
+    required TResult Function(String error) deleteProjectError,
+    required TResult Function() addProjectLoading,
+    required TResult Function() addProjectSuccess,
+    required TResult Function(String error) addProjectError,
+  }) {
+    return getProjectsSuccess(projectData);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? getProjectLoading,
+    TResult? Function(T projectData)? getProjectSuccess,
+    TResult? Function(String error)? getProjectError,
+    TResult? Function()? updateProjectLoading,
+    TResult? Function()? updateProjectSuccess,
+    TResult? Function(String error)? updateProjectError,
+    TResult? Function(String errorMessage)? failure,
+    TResult? Function()? getProjectsLoading,
+    TResult? Function(T projectData)? getProjectsSuccess,
+    TResult? Function(String error)? getProjectsError,
+    TResult? Function()? deleteProjectLoading,
+    TResult? Function()? deleteProjectSuccess,
+    TResult? Function(String error)? deleteProjectError,
+    TResult? Function()? addProjectLoading,
+    TResult? Function()? addProjectSuccess,
+    TResult? Function(String error)? addProjectError,
+  }) {
+    return getProjectsSuccess?.call(projectData);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? getProjectLoading,
+    TResult Function(T projectData)? getProjectSuccess,
+    TResult Function(String error)? getProjectError,
+    TResult Function()? updateProjectLoading,
+    TResult Function()? updateProjectSuccess,
+    TResult Function(String error)? updateProjectError,
+    TResult Function(String errorMessage)? failure,
+    TResult Function()? getProjectsLoading,
+    TResult Function(T projectData)? getProjectsSuccess,
+    TResult Function(String error)? getProjectsError,
+    TResult Function()? deleteProjectLoading,
+    TResult Function()? deleteProjectSuccess,
+    TResult Function(String error)? deleteProjectError,
+    TResult Function()? addProjectLoading,
+    TResult Function()? addProjectSuccess,
+    TResult Function(String error)? addProjectError,
+    required TResult orElse(),
+  }) {
+    if (getProjectsSuccess != null) {
+      return getProjectsSuccess(projectData);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial<T> value) initial,
+    required TResult Function(GetProjectLoading<T> value) getProjectLoading,
+    required TResult Function(GetProjectSuccess<T> value) getProjectSuccess,
+    required TResult Function(GetProjectError<T> value) getProjectError,
+    required TResult Function(UpdateProjectLoading<T> value)
+        updateProjectLoading,
+    required TResult Function(UpdateProjectSuccess<T> value)
+        updateProjectSuccess,
+    required TResult Function(UpdateProjectError<T> value) updateProjectError,
+    required TResult Function(ProjectFailureState<T> value) failure,
+    required TResult Function(GetProjectsLoading<T> value) getProjectsLoading,
+    required TResult Function(GetProjectsSuccess<T> value) getProjectsSuccess,
+    required TResult Function(GetProjectsError<T> value) getProjectsError,
+    required TResult Function(DeleteProjectLoading<T> value)
+        deleteProjectLoading,
+    required TResult Function(DeleteProjectSuccess<T> value)
+        deleteProjectSuccess,
+    required TResult Function(DeleteProjectError<T> value) deleteProjectError,
+    required TResult Function(AddProjectLoading<T> value) addProjectLoading,
+    required TResult Function(AddProjectSuccess<T> value) addProjectSuccess,
+    required TResult Function(AddProjectError<T> value) addProjectError,
+  }) {
+    return getProjectsSuccess(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial<T> value)? initial,
+    TResult? Function(GetProjectLoading<T> value)? getProjectLoading,
+    TResult? Function(GetProjectSuccess<T> value)? getProjectSuccess,
+    TResult? Function(GetProjectError<T> value)? getProjectError,
+    TResult? Function(UpdateProjectLoading<T> value)? updateProjectLoading,
+    TResult? Function(UpdateProjectSuccess<T> value)? updateProjectSuccess,
+    TResult? Function(UpdateProjectError<T> value)? updateProjectError,
+    TResult? Function(ProjectFailureState<T> value)? failure,
+    TResult? Function(GetProjectsLoading<T> value)? getProjectsLoading,
+    TResult? Function(GetProjectsSuccess<T> value)? getProjectsSuccess,
+    TResult? Function(GetProjectsError<T> value)? getProjectsError,
+    TResult? Function(DeleteProjectLoading<T> value)? deleteProjectLoading,
+    TResult? Function(DeleteProjectSuccess<T> value)? deleteProjectSuccess,
+    TResult? Function(DeleteProjectError<T> value)? deleteProjectError,
+    TResult? Function(AddProjectLoading<T> value)? addProjectLoading,
+    TResult? Function(AddProjectSuccess<T> value)? addProjectSuccess,
+    TResult? Function(AddProjectError<T> value)? addProjectError,
+  }) {
+    return getProjectsSuccess?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial<T> value)? initial,
+    TResult Function(GetProjectLoading<T> value)? getProjectLoading,
+    TResult Function(GetProjectSuccess<T> value)? getProjectSuccess,
+    TResult Function(GetProjectError<T> value)? getProjectError,
+    TResult Function(UpdateProjectLoading<T> value)? updateProjectLoading,
+    TResult Function(UpdateProjectSuccess<T> value)? updateProjectSuccess,
+    TResult Function(UpdateProjectError<T> value)? updateProjectError,
+    TResult Function(ProjectFailureState<T> value)? failure,
+    TResult Function(GetProjectsLoading<T> value)? getProjectsLoading,
+    TResult Function(GetProjectsSuccess<T> value)? getProjectsSuccess,
+    TResult Function(GetProjectsError<T> value)? getProjectsError,
+    TResult Function(DeleteProjectLoading<T> value)? deleteProjectLoading,
+    TResult Function(DeleteProjectSuccess<T> value)? deleteProjectSuccess,
+    TResult Function(DeleteProjectError<T> value)? deleteProjectError,
+    TResult Function(AddProjectLoading<T> value)? addProjectLoading,
+    TResult Function(AddProjectSuccess<T> value)? addProjectSuccess,
+    TResult Function(AddProjectError<T> value)? addProjectError,
+    required TResult orElse(),
+  }) {
+    if (getProjectsSuccess != null) {
+      return getProjectsSuccess(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class GetProjectsSuccess<T> implements ProjectState<T> {
+  const factory GetProjectsSuccess(final T projectData) =
+      _$GetProjectsSuccessImpl<T>;
+
+  T get projectData;
+
+  /// Create a copy of ProjectState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$GetProjectsSuccessImplCopyWith<T, _$GetProjectsSuccessImpl<T>>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$GetProjectsErrorImplCopyWith<T, $Res> {
+  factory _$$GetProjectsErrorImplCopyWith(_$GetProjectsErrorImpl<T> value,
+          $Res Function(_$GetProjectsErrorImpl<T>) then) =
+      __$$GetProjectsErrorImplCopyWithImpl<T, $Res>;
+  @useResult
+  $Res call({String error});
+}
+
+/// @nodoc
+class __$$GetProjectsErrorImplCopyWithImpl<T, $Res>
+    extends _$ProjectStateCopyWithImpl<T, $Res, _$GetProjectsErrorImpl<T>>
+    implements _$$GetProjectsErrorImplCopyWith<T, $Res> {
+  __$$GetProjectsErrorImplCopyWithImpl(_$GetProjectsErrorImpl<T> _value,
+      $Res Function(_$GetProjectsErrorImpl<T>) _then)
+      : super(_value, _then);
+
+  /// Create a copy of ProjectState
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? error = null,
+  }) {
+    return _then(_$GetProjectsErrorImpl<T>(
+      error: null == error
+          ? _value.error
+          : error // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$GetProjectsErrorImpl<T> implements GetProjectsError<T> {
+  const _$GetProjectsErrorImpl({required this.error});
+
+  @override
+  final String error;
+
+  @override
+  String toString() {
+    return 'ProjectState<$T>.getProjectsError(error: $error)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$GetProjectsErrorImpl<T> &&
+            (identical(other.error, error) || other.error == error));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, error);
+
+  /// Create a copy of ProjectState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$GetProjectsErrorImplCopyWith<T, _$GetProjectsErrorImpl<T>> get copyWith =>
+      __$$GetProjectsErrorImplCopyWithImpl<T, _$GetProjectsErrorImpl<T>>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() getProjectLoading,
+    required TResult Function(T projectData) getProjectSuccess,
+    required TResult Function(String error) getProjectError,
+    required TResult Function() updateProjectLoading,
+    required TResult Function() updateProjectSuccess,
+    required TResult Function(String error) updateProjectError,
+    required TResult Function(String errorMessage) failure,
+    required TResult Function() getProjectsLoading,
+    required TResult Function(T projectData) getProjectsSuccess,
+    required TResult Function(String error) getProjectsError,
+    required TResult Function() deleteProjectLoading,
+    required TResult Function() deleteProjectSuccess,
+    required TResult Function(String error) deleteProjectError,
+    required TResult Function() addProjectLoading,
+    required TResult Function() addProjectSuccess,
+    required TResult Function(String error) addProjectError,
+  }) {
+    return getProjectsError(error);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? getProjectLoading,
+    TResult? Function(T projectData)? getProjectSuccess,
+    TResult? Function(String error)? getProjectError,
+    TResult? Function()? updateProjectLoading,
+    TResult? Function()? updateProjectSuccess,
+    TResult? Function(String error)? updateProjectError,
+    TResult? Function(String errorMessage)? failure,
+    TResult? Function()? getProjectsLoading,
+    TResult? Function(T projectData)? getProjectsSuccess,
+    TResult? Function(String error)? getProjectsError,
+    TResult? Function()? deleteProjectLoading,
+    TResult? Function()? deleteProjectSuccess,
+    TResult? Function(String error)? deleteProjectError,
+    TResult? Function()? addProjectLoading,
+    TResult? Function()? addProjectSuccess,
+    TResult? Function(String error)? addProjectError,
+  }) {
+    return getProjectsError?.call(error);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? getProjectLoading,
+    TResult Function(T projectData)? getProjectSuccess,
+    TResult Function(String error)? getProjectError,
+    TResult Function()? updateProjectLoading,
+    TResult Function()? updateProjectSuccess,
+    TResult Function(String error)? updateProjectError,
+    TResult Function(String errorMessage)? failure,
+    TResult Function()? getProjectsLoading,
+    TResult Function(T projectData)? getProjectsSuccess,
+    TResult Function(String error)? getProjectsError,
+    TResult Function()? deleteProjectLoading,
+    TResult Function()? deleteProjectSuccess,
+    TResult Function(String error)? deleteProjectError,
+    TResult Function()? addProjectLoading,
+    TResult Function()? addProjectSuccess,
+    TResult Function(String error)? addProjectError,
+    required TResult orElse(),
+  }) {
+    if (getProjectsError != null) {
+      return getProjectsError(error);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial<T> value) initial,
+    required TResult Function(GetProjectLoading<T> value) getProjectLoading,
+    required TResult Function(GetProjectSuccess<T> value) getProjectSuccess,
+    required TResult Function(GetProjectError<T> value) getProjectError,
+    required TResult Function(UpdateProjectLoading<T> value)
+        updateProjectLoading,
+    required TResult Function(UpdateProjectSuccess<T> value)
+        updateProjectSuccess,
+    required TResult Function(UpdateProjectError<T> value) updateProjectError,
+    required TResult Function(ProjectFailureState<T> value) failure,
+    required TResult Function(GetProjectsLoading<T> value) getProjectsLoading,
+    required TResult Function(GetProjectsSuccess<T> value) getProjectsSuccess,
+    required TResult Function(GetProjectsError<T> value) getProjectsError,
+    required TResult Function(DeleteProjectLoading<T> value)
+        deleteProjectLoading,
+    required TResult Function(DeleteProjectSuccess<T> value)
+        deleteProjectSuccess,
+    required TResult Function(DeleteProjectError<T> value) deleteProjectError,
+    required TResult Function(AddProjectLoading<T> value) addProjectLoading,
+    required TResult Function(AddProjectSuccess<T> value) addProjectSuccess,
+    required TResult Function(AddProjectError<T> value) addProjectError,
+  }) {
+    return getProjectsError(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial<T> value)? initial,
+    TResult? Function(GetProjectLoading<T> value)? getProjectLoading,
+    TResult? Function(GetProjectSuccess<T> value)? getProjectSuccess,
+    TResult? Function(GetProjectError<T> value)? getProjectError,
+    TResult? Function(UpdateProjectLoading<T> value)? updateProjectLoading,
+    TResult? Function(UpdateProjectSuccess<T> value)? updateProjectSuccess,
+    TResult? Function(UpdateProjectError<T> value)? updateProjectError,
+    TResult? Function(ProjectFailureState<T> value)? failure,
+    TResult? Function(GetProjectsLoading<T> value)? getProjectsLoading,
+    TResult? Function(GetProjectsSuccess<T> value)? getProjectsSuccess,
+    TResult? Function(GetProjectsError<T> value)? getProjectsError,
+    TResult? Function(DeleteProjectLoading<T> value)? deleteProjectLoading,
+    TResult? Function(DeleteProjectSuccess<T> value)? deleteProjectSuccess,
+    TResult? Function(DeleteProjectError<T> value)? deleteProjectError,
+    TResult? Function(AddProjectLoading<T> value)? addProjectLoading,
+    TResult? Function(AddProjectSuccess<T> value)? addProjectSuccess,
+    TResult? Function(AddProjectError<T> value)? addProjectError,
+  }) {
+    return getProjectsError?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial<T> value)? initial,
+    TResult Function(GetProjectLoading<T> value)? getProjectLoading,
+    TResult Function(GetProjectSuccess<T> value)? getProjectSuccess,
+    TResult Function(GetProjectError<T> value)? getProjectError,
+    TResult Function(UpdateProjectLoading<T> value)? updateProjectLoading,
+    TResult Function(UpdateProjectSuccess<T> value)? updateProjectSuccess,
+    TResult Function(UpdateProjectError<T> value)? updateProjectError,
+    TResult Function(ProjectFailureState<T> value)? failure,
+    TResult Function(GetProjectsLoading<T> value)? getProjectsLoading,
+    TResult Function(GetProjectsSuccess<T> value)? getProjectsSuccess,
+    TResult Function(GetProjectsError<T> value)? getProjectsError,
+    TResult Function(DeleteProjectLoading<T> value)? deleteProjectLoading,
+    TResult Function(DeleteProjectSuccess<T> value)? deleteProjectSuccess,
+    TResult Function(DeleteProjectError<T> value)? deleteProjectError,
+    TResult Function(AddProjectLoading<T> value)? addProjectLoading,
+    TResult Function(AddProjectSuccess<T> value)? addProjectSuccess,
+    TResult Function(AddProjectError<T> value)? addProjectError,
+    required TResult orElse(),
+  }) {
+    if (getProjectsError != null) {
+      return getProjectsError(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class GetProjectsError<T> implements ProjectState<T> {
+  const factory GetProjectsError({required final String error}) =
+      _$GetProjectsErrorImpl<T>;
+
+  String get error;
+
+  /// Create a copy of ProjectState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$GetProjectsErrorImplCopyWith<T, _$GetProjectsErrorImpl<T>> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$DeleteProjectLoadingImplCopyWith<T, $Res> {
+  factory _$$DeleteProjectLoadingImplCopyWith(
+          _$DeleteProjectLoadingImpl<T> value,
+          $Res Function(_$DeleteProjectLoadingImpl<T>) then) =
+      __$$DeleteProjectLoadingImplCopyWithImpl<T, $Res>;
+}
+
+/// @nodoc
+class __$$DeleteProjectLoadingImplCopyWithImpl<T, $Res>
+    extends _$ProjectStateCopyWithImpl<T, $Res, _$DeleteProjectLoadingImpl<T>>
+    implements _$$DeleteProjectLoadingImplCopyWith<T, $Res> {
+  __$$DeleteProjectLoadingImplCopyWithImpl(_$DeleteProjectLoadingImpl<T> _value,
+      $Res Function(_$DeleteProjectLoadingImpl<T>) _then)
+      : super(_value, _then);
+
+  /// Create a copy of ProjectState
+  /// with the given fields replaced by the non-null parameter values.
+}
+
+/// @nodoc
+
+class _$DeleteProjectLoadingImpl<T> implements DeleteProjectLoading<T> {
+  const _$DeleteProjectLoadingImpl();
+
+  @override
+  String toString() {
+    return 'ProjectState<$T>.deleteProjectLoading()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$DeleteProjectLoadingImpl<T>);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() getProjectLoading,
+    required TResult Function(T projectData) getProjectSuccess,
+    required TResult Function(String error) getProjectError,
+    required TResult Function() updateProjectLoading,
+    required TResult Function() updateProjectSuccess,
+    required TResult Function(String error) updateProjectError,
+    required TResult Function(String errorMessage) failure,
+    required TResult Function() getProjectsLoading,
+    required TResult Function(T projectData) getProjectsSuccess,
+    required TResult Function(String error) getProjectsError,
+    required TResult Function() deleteProjectLoading,
+    required TResult Function() deleteProjectSuccess,
+    required TResult Function(String error) deleteProjectError,
+    required TResult Function() addProjectLoading,
+    required TResult Function() addProjectSuccess,
+    required TResult Function(String error) addProjectError,
+  }) {
+    return deleteProjectLoading();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? getProjectLoading,
+    TResult? Function(T projectData)? getProjectSuccess,
+    TResult? Function(String error)? getProjectError,
+    TResult? Function()? updateProjectLoading,
+    TResult? Function()? updateProjectSuccess,
+    TResult? Function(String error)? updateProjectError,
+    TResult? Function(String errorMessage)? failure,
+    TResult? Function()? getProjectsLoading,
+    TResult? Function(T projectData)? getProjectsSuccess,
+    TResult? Function(String error)? getProjectsError,
+    TResult? Function()? deleteProjectLoading,
+    TResult? Function()? deleteProjectSuccess,
+    TResult? Function(String error)? deleteProjectError,
+    TResult? Function()? addProjectLoading,
+    TResult? Function()? addProjectSuccess,
+    TResult? Function(String error)? addProjectError,
+  }) {
+    return deleteProjectLoading?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? getProjectLoading,
+    TResult Function(T projectData)? getProjectSuccess,
+    TResult Function(String error)? getProjectError,
+    TResult Function()? updateProjectLoading,
+    TResult Function()? updateProjectSuccess,
+    TResult Function(String error)? updateProjectError,
+    TResult Function(String errorMessage)? failure,
+    TResult Function()? getProjectsLoading,
+    TResult Function(T projectData)? getProjectsSuccess,
+    TResult Function(String error)? getProjectsError,
+    TResult Function()? deleteProjectLoading,
+    TResult Function()? deleteProjectSuccess,
+    TResult Function(String error)? deleteProjectError,
+    TResult Function()? addProjectLoading,
+    TResult Function()? addProjectSuccess,
+    TResult Function(String error)? addProjectError,
+    required TResult orElse(),
+  }) {
+    if (deleteProjectLoading != null) {
+      return deleteProjectLoading();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial<T> value) initial,
+    required TResult Function(GetProjectLoading<T> value) getProjectLoading,
+    required TResult Function(GetProjectSuccess<T> value) getProjectSuccess,
+    required TResult Function(GetProjectError<T> value) getProjectError,
+    required TResult Function(UpdateProjectLoading<T> value)
+        updateProjectLoading,
+    required TResult Function(UpdateProjectSuccess<T> value)
+        updateProjectSuccess,
+    required TResult Function(UpdateProjectError<T> value) updateProjectError,
+    required TResult Function(ProjectFailureState<T> value) failure,
+    required TResult Function(GetProjectsLoading<T> value) getProjectsLoading,
+    required TResult Function(GetProjectsSuccess<T> value) getProjectsSuccess,
+    required TResult Function(GetProjectsError<T> value) getProjectsError,
+    required TResult Function(DeleteProjectLoading<T> value)
+        deleteProjectLoading,
+    required TResult Function(DeleteProjectSuccess<T> value)
+        deleteProjectSuccess,
+    required TResult Function(DeleteProjectError<T> value) deleteProjectError,
+    required TResult Function(AddProjectLoading<T> value) addProjectLoading,
+    required TResult Function(AddProjectSuccess<T> value) addProjectSuccess,
+    required TResult Function(AddProjectError<T> value) addProjectError,
+  }) {
+    return deleteProjectLoading(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial<T> value)? initial,
+    TResult? Function(GetProjectLoading<T> value)? getProjectLoading,
+    TResult? Function(GetProjectSuccess<T> value)? getProjectSuccess,
+    TResult? Function(GetProjectError<T> value)? getProjectError,
+    TResult? Function(UpdateProjectLoading<T> value)? updateProjectLoading,
+    TResult? Function(UpdateProjectSuccess<T> value)? updateProjectSuccess,
+    TResult? Function(UpdateProjectError<T> value)? updateProjectError,
+    TResult? Function(ProjectFailureState<T> value)? failure,
+    TResult? Function(GetProjectsLoading<T> value)? getProjectsLoading,
+    TResult? Function(GetProjectsSuccess<T> value)? getProjectsSuccess,
+    TResult? Function(GetProjectsError<T> value)? getProjectsError,
+    TResult? Function(DeleteProjectLoading<T> value)? deleteProjectLoading,
+    TResult? Function(DeleteProjectSuccess<T> value)? deleteProjectSuccess,
+    TResult? Function(DeleteProjectError<T> value)? deleteProjectError,
+    TResult? Function(AddProjectLoading<T> value)? addProjectLoading,
+    TResult? Function(AddProjectSuccess<T> value)? addProjectSuccess,
+    TResult? Function(AddProjectError<T> value)? addProjectError,
+  }) {
+    return deleteProjectLoading?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial<T> value)? initial,
+    TResult Function(GetProjectLoading<T> value)? getProjectLoading,
+    TResult Function(GetProjectSuccess<T> value)? getProjectSuccess,
+    TResult Function(GetProjectError<T> value)? getProjectError,
+    TResult Function(UpdateProjectLoading<T> value)? updateProjectLoading,
+    TResult Function(UpdateProjectSuccess<T> value)? updateProjectSuccess,
+    TResult Function(UpdateProjectError<T> value)? updateProjectError,
+    TResult Function(ProjectFailureState<T> value)? failure,
+    TResult Function(GetProjectsLoading<T> value)? getProjectsLoading,
+    TResult Function(GetProjectsSuccess<T> value)? getProjectsSuccess,
+    TResult Function(GetProjectsError<T> value)? getProjectsError,
+    TResult Function(DeleteProjectLoading<T> value)? deleteProjectLoading,
+    TResult Function(DeleteProjectSuccess<T> value)? deleteProjectSuccess,
+    TResult Function(DeleteProjectError<T> value)? deleteProjectError,
+    TResult Function(AddProjectLoading<T> value)? addProjectLoading,
+    TResult Function(AddProjectSuccess<T> value)? addProjectSuccess,
+    TResult Function(AddProjectError<T> value)? addProjectError,
+    required TResult orElse(),
+  }) {
+    if (deleteProjectLoading != null) {
+      return deleteProjectLoading(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class DeleteProjectLoading<T> implements ProjectState<T> {
+  const factory DeleteProjectLoading() = _$DeleteProjectLoadingImpl<T>;
+}
+
+/// @nodoc
+abstract class _$$DeleteProjectSuccessImplCopyWith<T, $Res> {
+  factory _$$DeleteProjectSuccessImplCopyWith(
+          _$DeleteProjectSuccessImpl<T> value,
+          $Res Function(_$DeleteProjectSuccessImpl<T>) then) =
+      __$$DeleteProjectSuccessImplCopyWithImpl<T, $Res>;
+}
+
+/// @nodoc
+class __$$DeleteProjectSuccessImplCopyWithImpl<T, $Res>
+    extends _$ProjectStateCopyWithImpl<T, $Res, _$DeleteProjectSuccessImpl<T>>
+    implements _$$DeleteProjectSuccessImplCopyWith<T, $Res> {
+  __$$DeleteProjectSuccessImplCopyWithImpl(_$DeleteProjectSuccessImpl<T> _value,
+      $Res Function(_$DeleteProjectSuccessImpl<T>) _then)
+      : super(_value, _then);
+
+  /// Create a copy of ProjectState
+  /// with the given fields replaced by the non-null parameter values.
+}
+
+/// @nodoc
+
+class _$DeleteProjectSuccessImpl<T> implements DeleteProjectSuccess<T> {
+  const _$DeleteProjectSuccessImpl();
+
+  @override
+  String toString() {
+    return 'ProjectState<$T>.deleteProjectSuccess()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$DeleteProjectSuccessImpl<T>);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() getProjectLoading,
+    required TResult Function(T projectData) getProjectSuccess,
+    required TResult Function(String error) getProjectError,
+    required TResult Function() updateProjectLoading,
+    required TResult Function() updateProjectSuccess,
+    required TResult Function(String error) updateProjectError,
+    required TResult Function(String errorMessage) failure,
+    required TResult Function() getProjectsLoading,
+    required TResult Function(T projectData) getProjectsSuccess,
+    required TResult Function(String error) getProjectsError,
+    required TResult Function() deleteProjectLoading,
+    required TResult Function() deleteProjectSuccess,
+    required TResult Function(String error) deleteProjectError,
+    required TResult Function() addProjectLoading,
+    required TResult Function() addProjectSuccess,
+    required TResult Function(String error) addProjectError,
+  }) {
+    return deleteProjectSuccess();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? getProjectLoading,
+    TResult? Function(T projectData)? getProjectSuccess,
+    TResult? Function(String error)? getProjectError,
+    TResult? Function()? updateProjectLoading,
+    TResult? Function()? updateProjectSuccess,
+    TResult? Function(String error)? updateProjectError,
+    TResult? Function(String errorMessage)? failure,
+    TResult? Function()? getProjectsLoading,
+    TResult? Function(T projectData)? getProjectsSuccess,
+    TResult? Function(String error)? getProjectsError,
+    TResult? Function()? deleteProjectLoading,
+    TResult? Function()? deleteProjectSuccess,
+    TResult? Function(String error)? deleteProjectError,
+    TResult? Function()? addProjectLoading,
+    TResult? Function()? addProjectSuccess,
+    TResult? Function(String error)? addProjectError,
+  }) {
+    return deleteProjectSuccess?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? getProjectLoading,
+    TResult Function(T projectData)? getProjectSuccess,
+    TResult Function(String error)? getProjectError,
+    TResult Function()? updateProjectLoading,
+    TResult Function()? updateProjectSuccess,
+    TResult Function(String error)? updateProjectError,
+    TResult Function(String errorMessage)? failure,
+    TResult Function()? getProjectsLoading,
+    TResult Function(T projectData)? getProjectsSuccess,
+    TResult Function(String error)? getProjectsError,
+    TResult Function()? deleteProjectLoading,
+    TResult Function()? deleteProjectSuccess,
+    TResult Function(String error)? deleteProjectError,
+    TResult Function()? addProjectLoading,
+    TResult Function()? addProjectSuccess,
+    TResult Function(String error)? addProjectError,
+    required TResult orElse(),
+  }) {
+    if (deleteProjectSuccess != null) {
+      return deleteProjectSuccess();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial<T> value) initial,
+    required TResult Function(GetProjectLoading<T> value) getProjectLoading,
+    required TResult Function(GetProjectSuccess<T> value) getProjectSuccess,
+    required TResult Function(GetProjectError<T> value) getProjectError,
+    required TResult Function(UpdateProjectLoading<T> value)
+        updateProjectLoading,
+    required TResult Function(UpdateProjectSuccess<T> value)
+        updateProjectSuccess,
+    required TResult Function(UpdateProjectError<T> value) updateProjectError,
+    required TResult Function(ProjectFailureState<T> value) failure,
+    required TResult Function(GetProjectsLoading<T> value) getProjectsLoading,
+    required TResult Function(GetProjectsSuccess<T> value) getProjectsSuccess,
+    required TResult Function(GetProjectsError<T> value) getProjectsError,
+    required TResult Function(DeleteProjectLoading<T> value)
+        deleteProjectLoading,
+    required TResult Function(DeleteProjectSuccess<T> value)
+        deleteProjectSuccess,
+    required TResult Function(DeleteProjectError<T> value) deleteProjectError,
+    required TResult Function(AddProjectLoading<T> value) addProjectLoading,
+    required TResult Function(AddProjectSuccess<T> value) addProjectSuccess,
+    required TResult Function(AddProjectError<T> value) addProjectError,
+  }) {
+    return deleteProjectSuccess(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial<T> value)? initial,
+    TResult? Function(GetProjectLoading<T> value)? getProjectLoading,
+    TResult? Function(GetProjectSuccess<T> value)? getProjectSuccess,
+    TResult? Function(GetProjectError<T> value)? getProjectError,
+    TResult? Function(UpdateProjectLoading<T> value)? updateProjectLoading,
+    TResult? Function(UpdateProjectSuccess<T> value)? updateProjectSuccess,
+    TResult? Function(UpdateProjectError<T> value)? updateProjectError,
+    TResult? Function(ProjectFailureState<T> value)? failure,
+    TResult? Function(GetProjectsLoading<T> value)? getProjectsLoading,
+    TResult? Function(GetProjectsSuccess<T> value)? getProjectsSuccess,
+    TResult? Function(GetProjectsError<T> value)? getProjectsError,
+    TResult? Function(DeleteProjectLoading<T> value)? deleteProjectLoading,
+    TResult? Function(DeleteProjectSuccess<T> value)? deleteProjectSuccess,
+    TResult? Function(DeleteProjectError<T> value)? deleteProjectError,
+    TResult? Function(AddProjectLoading<T> value)? addProjectLoading,
+    TResult? Function(AddProjectSuccess<T> value)? addProjectSuccess,
+    TResult? Function(AddProjectError<T> value)? addProjectError,
+  }) {
+    return deleteProjectSuccess?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial<T> value)? initial,
+    TResult Function(GetProjectLoading<T> value)? getProjectLoading,
+    TResult Function(GetProjectSuccess<T> value)? getProjectSuccess,
+    TResult Function(GetProjectError<T> value)? getProjectError,
+    TResult Function(UpdateProjectLoading<T> value)? updateProjectLoading,
+    TResult Function(UpdateProjectSuccess<T> value)? updateProjectSuccess,
+    TResult Function(UpdateProjectError<T> value)? updateProjectError,
+    TResult Function(ProjectFailureState<T> value)? failure,
+    TResult Function(GetProjectsLoading<T> value)? getProjectsLoading,
+    TResult Function(GetProjectsSuccess<T> value)? getProjectsSuccess,
+    TResult Function(GetProjectsError<T> value)? getProjectsError,
+    TResult Function(DeleteProjectLoading<T> value)? deleteProjectLoading,
+    TResult Function(DeleteProjectSuccess<T> value)? deleteProjectSuccess,
+    TResult Function(DeleteProjectError<T> value)? deleteProjectError,
+    TResult Function(AddProjectLoading<T> value)? addProjectLoading,
+    TResult Function(AddProjectSuccess<T> value)? addProjectSuccess,
+    TResult Function(AddProjectError<T> value)? addProjectError,
+    required TResult orElse(),
+  }) {
+    if (deleteProjectSuccess != null) {
+      return deleteProjectSuccess(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class DeleteProjectSuccess<T> implements ProjectState<T> {
+  const factory DeleteProjectSuccess() = _$DeleteProjectSuccessImpl<T>;
+}
+
+/// @nodoc
+abstract class _$$DeleteProjectErrorImplCopyWith<T, $Res> {
+  factory _$$DeleteProjectErrorImplCopyWith(_$DeleteProjectErrorImpl<T> value,
+          $Res Function(_$DeleteProjectErrorImpl<T>) then) =
+      __$$DeleteProjectErrorImplCopyWithImpl<T, $Res>;
+  @useResult
+  $Res call({String error});
+}
+
+/// @nodoc
+class __$$DeleteProjectErrorImplCopyWithImpl<T, $Res>
+    extends _$ProjectStateCopyWithImpl<T, $Res, _$DeleteProjectErrorImpl<T>>
+    implements _$$DeleteProjectErrorImplCopyWith<T, $Res> {
+  __$$DeleteProjectErrorImplCopyWithImpl(_$DeleteProjectErrorImpl<T> _value,
+      $Res Function(_$DeleteProjectErrorImpl<T>) _then)
+      : super(_value, _then);
+
+  /// Create a copy of ProjectState
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? error = null,
+  }) {
+    return _then(_$DeleteProjectErrorImpl<T>(
+      error: null == error
+          ? _value.error
+          : error // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$DeleteProjectErrorImpl<T> implements DeleteProjectError<T> {
+  const _$DeleteProjectErrorImpl({required this.error});
+
+  @override
+  final String error;
+
+  @override
+  String toString() {
+    return 'ProjectState<$T>.deleteProjectError(error: $error)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$DeleteProjectErrorImpl<T> &&
+            (identical(other.error, error) || other.error == error));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, error);
+
+  /// Create a copy of ProjectState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$DeleteProjectErrorImplCopyWith<T, _$DeleteProjectErrorImpl<T>>
+      get copyWith => __$$DeleteProjectErrorImplCopyWithImpl<T,
+          _$DeleteProjectErrorImpl<T>>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() getProjectLoading,
+    required TResult Function(T projectData) getProjectSuccess,
+    required TResult Function(String error) getProjectError,
+    required TResult Function() updateProjectLoading,
+    required TResult Function() updateProjectSuccess,
+    required TResult Function(String error) updateProjectError,
+    required TResult Function(String errorMessage) failure,
+    required TResult Function() getProjectsLoading,
+    required TResult Function(T projectData) getProjectsSuccess,
+    required TResult Function(String error) getProjectsError,
+    required TResult Function() deleteProjectLoading,
+    required TResult Function() deleteProjectSuccess,
+    required TResult Function(String error) deleteProjectError,
+    required TResult Function() addProjectLoading,
+    required TResult Function() addProjectSuccess,
+    required TResult Function(String error) addProjectError,
+  }) {
+    return deleteProjectError(error);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? getProjectLoading,
+    TResult? Function(T projectData)? getProjectSuccess,
+    TResult? Function(String error)? getProjectError,
+    TResult? Function()? updateProjectLoading,
+    TResult? Function()? updateProjectSuccess,
+    TResult? Function(String error)? updateProjectError,
+    TResult? Function(String errorMessage)? failure,
+    TResult? Function()? getProjectsLoading,
+    TResult? Function(T projectData)? getProjectsSuccess,
+    TResult? Function(String error)? getProjectsError,
+    TResult? Function()? deleteProjectLoading,
+    TResult? Function()? deleteProjectSuccess,
+    TResult? Function(String error)? deleteProjectError,
+    TResult? Function()? addProjectLoading,
+    TResult? Function()? addProjectSuccess,
+    TResult? Function(String error)? addProjectError,
+  }) {
+    return deleteProjectError?.call(error);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? getProjectLoading,
+    TResult Function(T projectData)? getProjectSuccess,
+    TResult Function(String error)? getProjectError,
+    TResult Function()? updateProjectLoading,
+    TResult Function()? updateProjectSuccess,
+    TResult Function(String error)? updateProjectError,
+    TResult Function(String errorMessage)? failure,
+    TResult Function()? getProjectsLoading,
+    TResult Function(T projectData)? getProjectsSuccess,
+    TResult Function(String error)? getProjectsError,
+    TResult Function()? deleteProjectLoading,
+    TResult Function()? deleteProjectSuccess,
+    TResult Function(String error)? deleteProjectError,
+    TResult Function()? addProjectLoading,
+    TResult Function()? addProjectSuccess,
+    TResult Function(String error)? addProjectError,
+    required TResult orElse(),
+  }) {
+    if (deleteProjectError != null) {
+      return deleteProjectError(error);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial<T> value) initial,
+    required TResult Function(GetProjectLoading<T> value) getProjectLoading,
+    required TResult Function(GetProjectSuccess<T> value) getProjectSuccess,
+    required TResult Function(GetProjectError<T> value) getProjectError,
+    required TResult Function(UpdateProjectLoading<T> value)
+        updateProjectLoading,
+    required TResult Function(UpdateProjectSuccess<T> value)
+        updateProjectSuccess,
+    required TResult Function(UpdateProjectError<T> value) updateProjectError,
+    required TResult Function(ProjectFailureState<T> value) failure,
+    required TResult Function(GetProjectsLoading<T> value) getProjectsLoading,
+    required TResult Function(GetProjectsSuccess<T> value) getProjectsSuccess,
+    required TResult Function(GetProjectsError<T> value) getProjectsError,
+    required TResult Function(DeleteProjectLoading<T> value)
+        deleteProjectLoading,
+    required TResult Function(DeleteProjectSuccess<T> value)
+        deleteProjectSuccess,
+    required TResult Function(DeleteProjectError<T> value) deleteProjectError,
+    required TResult Function(AddProjectLoading<T> value) addProjectLoading,
+    required TResult Function(AddProjectSuccess<T> value) addProjectSuccess,
+    required TResult Function(AddProjectError<T> value) addProjectError,
+  }) {
+    return deleteProjectError(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial<T> value)? initial,
+    TResult? Function(GetProjectLoading<T> value)? getProjectLoading,
+    TResult? Function(GetProjectSuccess<T> value)? getProjectSuccess,
+    TResult? Function(GetProjectError<T> value)? getProjectError,
+    TResult? Function(UpdateProjectLoading<T> value)? updateProjectLoading,
+    TResult? Function(UpdateProjectSuccess<T> value)? updateProjectSuccess,
+    TResult? Function(UpdateProjectError<T> value)? updateProjectError,
+    TResult? Function(ProjectFailureState<T> value)? failure,
+    TResult? Function(GetProjectsLoading<T> value)? getProjectsLoading,
+    TResult? Function(GetProjectsSuccess<T> value)? getProjectsSuccess,
+    TResult? Function(GetProjectsError<T> value)? getProjectsError,
+    TResult? Function(DeleteProjectLoading<T> value)? deleteProjectLoading,
+    TResult? Function(DeleteProjectSuccess<T> value)? deleteProjectSuccess,
+    TResult? Function(DeleteProjectError<T> value)? deleteProjectError,
+    TResult? Function(AddProjectLoading<T> value)? addProjectLoading,
+    TResult? Function(AddProjectSuccess<T> value)? addProjectSuccess,
+    TResult? Function(AddProjectError<T> value)? addProjectError,
+  }) {
+    return deleteProjectError?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial<T> value)? initial,
+    TResult Function(GetProjectLoading<T> value)? getProjectLoading,
+    TResult Function(GetProjectSuccess<T> value)? getProjectSuccess,
+    TResult Function(GetProjectError<T> value)? getProjectError,
+    TResult Function(UpdateProjectLoading<T> value)? updateProjectLoading,
+    TResult Function(UpdateProjectSuccess<T> value)? updateProjectSuccess,
+    TResult Function(UpdateProjectError<T> value)? updateProjectError,
+    TResult Function(ProjectFailureState<T> value)? failure,
+    TResult Function(GetProjectsLoading<T> value)? getProjectsLoading,
+    TResult Function(GetProjectsSuccess<T> value)? getProjectsSuccess,
+    TResult Function(GetProjectsError<T> value)? getProjectsError,
+    TResult Function(DeleteProjectLoading<T> value)? deleteProjectLoading,
+    TResult Function(DeleteProjectSuccess<T> value)? deleteProjectSuccess,
+    TResult Function(DeleteProjectError<T> value)? deleteProjectError,
+    TResult Function(AddProjectLoading<T> value)? addProjectLoading,
+    TResult Function(AddProjectSuccess<T> value)? addProjectSuccess,
+    TResult Function(AddProjectError<T> value)? addProjectError,
+    required TResult orElse(),
+  }) {
+    if (deleteProjectError != null) {
+      return deleteProjectError(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class DeleteProjectError<T> implements ProjectState<T> {
+  const factory DeleteProjectError({required final String error}) =
+      _$DeleteProjectErrorImpl<T>;
+
+  String get error;
+
+  /// Create a copy of ProjectState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$DeleteProjectErrorImplCopyWith<T, _$DeleteProjectErrorImpl<T>>
       get copyWith => throw _privateConstructorUsedError;
 }
 
@@ -2954,18 +3275,19 @@ class _$AddProjectLoadingImpl<T> implements AddProjectLoading<T> {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
-    required TResult Function() getProjectsLoading,
-    required TResult Function(T projectData) getProjectsSuccess,
-    required TResult Function(String error) getProjectsError,
     required TResult Function() getProjectLoading,
     required TResult Function(T projectData) getProjectSuccess,
     required TResult Function(String error) getProjectError,
-    required TResult Function() deleteProjectLoading,
-    required TResult Function() deleteProjectSuccess,
-    required TResult Function(String error) deleteProjectError,
     required TResult Function() updateProjectLoading,
     required TResult Function() updateProjectSuccess,
     required TResult Function(String error) updateProjectError,
+    required TResult Function(String errorMessage) failure,
+    required TResult Function() getProjectsLoading,
+    required TResult Function(T projectData) getProjectsSuccess,
+    required TResult Function(String error) getProjectsError,
+    required TResult Function() deleteProjectLoading,
+    required TResult Function() deleteProjectSuccess,
+    required TResult Function(String error) deleteProjectError,
     required TResult Function() addProjectLoading,
     required TResult Function() addProjectSuccess,
     required TResult Function(String error) addProjectError,
@@ -2977,18 +3299,19 @@ class _$AddProjectLoadingImpl<T> implements AddProjectLoading<T> {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
-    TResult? Function()? getProjectsLoading,
-    TResult? Function(T projectData)? getProjectsSuccess,
-    TResult? Function(String error)? getProjectsError,
     TResult? Function()? getProjectLoading,
     TResult? Function(T projectData)? getProjectSuccess,
     TResult? Function(String error)? getProjectError,
-    TResult? Function()? deleteProjectLoading,
-    TResult? Function()? deleteProjectSuccess,
-    TResult? Function(String error)? deleteProjectError,
     TResult? Function()? updateProjectLoading,
     TResult? Function()? updateProjectSuccess,
     TResult? Function(String error)? updateProjectError,
+    TResult? Function(String errorMessage)? failure,
+    TResult? Function()? getProjectsLoading,
+    TResult? Function(T projectData)? getProjectsSuccess,
+    TResult? Function(String error)? getProjectsError,
+    TResult? Function()? deleteProjectLoading,
+    TResult? Function()? deleteProjectSuccess,
+    TResult? Function(String error)? deleteProjectError,
     TResult? Function()? addProjectLoading,
     TResult? Function()? addProjectSuccess,
     TResult? Function(String error)? addProjectError,
@@ -3000,18 +3323,19 @@ class _$AddProjectLoadingImpl<T> implements AddProjectLoading<T> {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
-    TResult Function()? getProjectsLoading,
-    TResult Function(T projectData)? getProjectsSuccess,
-    TResult Function(String error)? getProjectsError,
     TResult Function()? getProjectLoading,
     TResult Function(T projectData)? getProjectSuccess,
     TResult Function(String error)? getProjectError,
-    TResult Function()? deleteProjectLoading,
-    TResult Function()? deleteProjectSuccess,
-    TResult Function(String error)? deleteProjectError,
     TResult Function()? updateProjectLoading,
     TResult Function()? updateProjectSuccess,
     TResult Function(String error)? updateProjectError,
+    TResult Function(String errorMessage)? failure,
+    TResult Function()? getProjectsLoading,
+    TResult Function(T projectData)? getProjectsSuccess,
+    TResult Function(String error)? getProjectsError,
+    TResult Function()? deleteProjectLoading,
+    TResult Function()? deleteProjectSuccess,
+    TResult Function(String error)? deleteProjectError,
     TResult Function()? addProjectLoading,
     TResult Function()? addProjectSuccess,
     TResult Function(String error)? addProjectError,
@@ -3027,22 +3351,23 @@ class _$AddProjectLoadingImpl<T> implements AddProjectLoading<T> {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial<T> value) initial,
-    required TResult Function(GetProjectsLoading<T> value) getProjectsLoading,
-    required TResult Function(GetProjectsSuccess<T> value) getProjectsSuccess,
-    required TResult Function(GetProjectsError<T> value) getProjectsError,
     required TResult Function(GetProjectLoading<T> value) getProjectLoading,
     required TResult Function(GetProjectSuccess<T> value) getProjectSuccess,
     required TResult Function(GetProjectError<T> value) getProjectError,
-    required TResult Function(DeleteProjectLoading<T> value)
-        deleteProjectLoading,
-    required TResult Function(DeleteProjectSuccess<T> value)
-        deleteProjectSuccess,
-    required TResult Function(DeleteProjectError<T> value) deleteProjectError,
     required TResult Function(UpdateProjectLoading<T> value)
         updateProjectLoading,
     required TResult Function(UpdateProjectSuccess<T> value)
         updateProjectSuccess,
     required TResult Function(UpdateProjectError<T> value) updateProjectError,
+    required TResult Function(ProjectFailureState<T> value) failure,
+    required TResult Function(GetProjectsLoading<T> value) getProjectsLoading,
+    required TResult Function(GetProjectsSuccess<T> value) getProjectsSuccess,
+    required TResult Function(GetProjectsError<T> value) getProjectsError,
+    required TResult Function(DeleteProjectLoading<T> value)
+        deleteProjectLoading,
+    required TResult Function(DeleteProjectSuccess<T> value)
+        deleteProjectSuccess,
+    required TResult Function(DeleteProjectError<T> value) deleteProjectError,
     required TResult Function(AddProjectLoading<T> value) addProjectLoading,
     required TResult Function(AddProjectSuccess<T> value) addProjectSuccess,
     required TResult Function(AddProjectError<T> value) addProjectError,
@@ -3054,18 +3379,19 @@ class _$AddProjectLoadingImpl<T> implements AddProjectLoading<T> {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial<T> value)? initial,
-    TResult? Function(GetProjectsLoading<T> value)? getProjectsLoading,
-    TResult? Function(GetProjectsSuccess<T> value)? getProjectsSuccess,
-    TResult? Function(GetProjectsError<T> value)? getProjectsError,
     TResult? Function(GetProjectLoading<T> value)? getProjectLoading,
     TResult? Function(GetProjectSuccess<T> value)? getProjectSuccess,
     TResult? Function(GetProjectError<T> value)? getProjectError,
-    TResult? Function(DeleteProjectLoading<T> value)? deleteProjectLoading,
-    TResult? Function(DeleteProjectSuccess<T> value)? deleteProjectSuccess,
-    TResult? Function(DeleteProjectError<T> value)? deleteProjectError,
     TResult? Function(UpdateProjectLoading<T> value)? updateProjectLoading,
     TResult? Function(UpdateProjectSuccess<T> value)? updateProjectSuccess,
     TResult? Function(UpdateProjectError<T> value)? updateProjectError,
+    TResult? Function(ProjectFailureState<T> value)? failure,
+    TResult? Function(GetProjectsLoading<T> value)? getProjectsLoading,
+    TResult? Function(GetProjectsSuccess<T> value)? getProjectsSuccess,
+    TResult? Function(GetProjectsError<T> value)? getProjectsError,
+    TResult? Function(DeleteProjectLoading<T> value)? deleteProjectLoading,
+    TResult? Function(DeleteProjectSuccess<T> value)? deleteProjectSuccess,
+    TResult? Function(DeleteProjectError<T> value)? deleteProjectError,
     TResult? Function(AddProjectLoading<T> value)? addProjectLoading,
     TResult? Function(AddProjectSuccess<T> value)? addProjectSuccess,
     TResult? Function(AddProjectError<T> value)? addProjectError,
@@ -3077,18 +3403,19 @@ class _$AddProjectLoadingImpl<T> implements AddProjectLoading<T> {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial<T> value)? initial,
-    TResult Function(GetProjectsLoading<T> value)? getProjectsLoading,
-    TResult Function(GetProjectsSuccess<T> value)? getProjectsSuccess,
-    TResult Function(GetProjectsError<T> value)? getProjectsError,
     TResult Function(GetProjectLoading<T> value)? getProjectLoading,
     TResult Function(GetProjectSuccess<T> value)? getProjectSuccess,
     TResult Function(GetProjectError<T> value)? getProjectError,
-    TResult Function(DeleteProjectLoading<T> value)? deleteProjectLoading,
-    TResult Function(DeleteProjectSuccess<T> value)? deleteProjectSuccess,
-    TResult Function(DeleteProjectError<T> value)? deleteProjectError,
     TResult Function(UpdateProjectLoading<T> value)? updateProjectLoading,
     TResult Function(UpdateProjectSuccess<T> value)? updateProjectSuccess,
     TResult Function(UpdateProjectError<T> value)? updateProjectError,
+    TResult Function(ProjectFailureState<T> value)? failure,
+    TResult Function(GetProjectsLoading<T> value)? getProjectsLoading,
+    TResult Function(GetProjectsSuccess<T> value)? getProjectsSuccess,
+    TResult Function(GetProjectsError<T> value)? getProjectsError,
+    TResult Function(DeleteProjectLoading<T> value)? deleteProjectLoading,
+    TResult Function(DeleteProjectSuccess<T> value)? deleteProjectSuccess,
+    TResult Function(DeleteProjectError<T> value)? deleteProjectError,
     TResult Function(AddProjectLoading<T> value)? addProjectLoading,
     TResult Function(AddProjectSuccess<T> value)? addProjectSuccess,
     TResult Function(AddProjectError<T> value)? addProjectError,
@@ -3148,18 +3475,19 @@ class _$AddProjectSuccessImpl<T> implements AddProjectSuccess<T> {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
-    required TResult Function() getProjectsLoading,
-    required TResult Function(T projectData) getProjectsSuccess,
-    required TResult Function(String error) getProjectsError,
     required TResult Function() getProjectLoading,
     required TResult Function(T projectData) getProjectSuccess,
     required TResult Function(String error) getProjectError,
-    required TResult Function() deleteProjectLoading,
-    required TResult Function() deleteProjectSuccess,
-    required TResult Function(String error) deleteProjectError,
     required TResult Function() updateProjectLoading,
     required TResult Function() updateProjectSuccess,
     required TResult Function(String error) updateProjectError,
+    required TResult Function(String errorMessage) failure,
+    required TResult Function() getProjectsLoading,
+    required TResult Function(T projectData) getProjectsSuccess,
+    required TResult Function(String error) getProjectsError,
+    required TResult Function() deleteProjectLoading,
+    required TResult Function() deleteProjectSuccess,
+    required TResult Function(String error) deleteProjectError,
     required TResult Function() addProjectLoading,
     required TResult Function() addProjectSuccess,
     required TResult Function(String error) addProjectError,
@@ -3171,18 +3499,19 @@ class _$AddProjectSuccessImpl<T> implements AddProjectSuccess<T> {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
-    TResult? Function()? getProjectsLoading,
-    TResult? Function(T projectData)? getProjectsSuccess,
-    TResult? Function(String error)? getProjectsError,
     TResult? Function()? getProjectLoading,
     TResult? Function(T projectData)? getProjectSuccess,
     TResult? Function(String error)? getProjectError,
-    TResult? Function()? deleteProjectLoading,
-    TResult? Function()? deleteProjectSuccess,
-    TResult? Function(String error)? deleteProjectError,
     TResult? Function()? updateProjectLoading,
     TResult? Function()? updateProjectSuccess,
     TResult? Function(String error)? updateProjectError,
+    TResult? Function(String errorMessage)? failure,
+    TResult? Function()? getProjectsLoading,
+    TResult? Function(T projectData)? getProjectsSuccess,
+    TResult? Function(String error)? getProjectsError,
+    TResult? Function()? deleteProjectLoading,
+    TResult? Function()? deleteProjectSuccess,
+    TResult? Function(String error)? deleteProjectError,
     TResult? Function()? addProjectLoading,
     TResult? Function()? addProjectSuccess,
     TResult? Function(String error)? addProjectError,
@@ -3194,18 +3523,19 @@ class _$AddProjectSuccessImpl<T> implements AddProjectSuccess<T> {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
-    TResult Function()? getProjectsLoading,
-    TResult Function(T projectData)? getProjectsSuccess,
-    TResult Function(String error)? getProjectsError,
     TResult Function()? getProjectLoading,
     TResult Function(T projectData)? getProjectSuccess,
     TResult Function(String error)? getProjectError,
-    TResult Function()? deleteProjectLoading,
-    TResult Function()? deleteProjectSuccess,
-    TResult Function(String error)? deleteProjectError,
     TResult Function()? updateProjectLoading,
     TResult Function()? updateProjectSuccess,
     TResult Function(String error)? updateProjectError,
+    TResult Function(String errorMessage)? failure,
+    TResult Function()? getProjectsLoading,
+    TResult Function(T projectData)? getProjectsSuccess,
+    TResult Function(String error)? getProjectsError,
+    TResult Function()? deleteProjectLoading,
+    TResult Function()? deleteProjectSuccess,
+    TResult Function(String error)? deleteProjectError,
     TResult Function()? addProjectLoading,
     TResult Function()? addProjectSuccess,
     TResult Function(String error)? addProjectError,
@@ -3221,22 +3551,23 @@ class _$AddProjectSuccessImpl<T> implements AddProjectSuccess<T> {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial<T> value) initial,
-    required TResult Function(GetProjectsLoading<T> value) getProjectsLoading,
-    required TResult Function(GetProjectsSuccess<T> value) getProjectsSuccess,
-    required TResult Function(GetProjectsError<T> value) getProjectsError,
     required TResult Function(GetProjectLoading<T> value) getProjectLoading,
     required TResult Function(GetProjectSuccess<T> value) getProjectSuccess,
     required TResult Function(GetProjectError<T> value) getProjectError,
-    required TResult Function(DeleteProjectLoading<T> value)
-        deleteProjectLoading,
-    required TResult Function(DeleteProjectSuccess<T> value)
-        deleteProjectSuccess,
-    required TResult Function(DeleteProjectError<T> value) deleteProjectError,
     required TResult Function(UpdateProjectLoading<T> value)
         updateProjectLoading,
     required TResult Function(UpdateProjectSuccess<T> value)
         updateProjectSuccess,
     required TResult Function(UpdateProjectError<T> value) updateProjectError,
+    required TResult Function(ProjectFailureState<T> value) failure,
+    required TResult Function(GetProjectsLoading<T> value) getProjectsLoading,
+    required TResult Function(GetProjectsSuccess<T> value) getProjectsSuccess,
+    required TResult Function(GetProjectsError<T> value) getProjectsError,
+    required TResult Function(DeleteProjectLoading<T> value)
+        deleteProjectLoading,
+    required TResult Function(DeleteProjectSuccess<T> value)
+        deleteProjectSuccess,
+    required TResult Function(DeleteProjectError<T> value) deleteProjectError,
     required TResult Function(AddProjectLoading<T> value) addProjectLoading,
     required TResult Function(AddProjectSuccess<T> value) addProjectSuccess,
     required TResult Function(AddProjectError<T> value) addProjectError,
@@ -3248,18 +3579,19 @@ class _$AddProjectSuccessImpl<T> implements AddProjectSuccess<T> {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial<T> value)? initial,
-    TResult? Function(GetProjectsLoading<T> value)? getProjectsLoading,
-    TResult? Function(GetProjectsSuccess<T> value)? getProjectsSuccess,
-    TResult? Function(GetProjectsError<T> value)? getProjectsError,
     TResult? Function(GetProjectLoading<T> value)? getProjectLoading,
     TResult? Function(GetProjectSuccess<T> value)? getProjectSuccess,
     TResult? Function(GetProjectError<T> value)? getProjectError,
-    TResult? Function(DeleteProjectLoading<T> value)? deleteProjectLoading,
-    TResult? Function(DeleteProjectSuccess<T> value)? deleteProjectSuccess,
-    TResult? Function(DeleteProjectError<T> value)? deleteProjectError,
     TResult? Function(UpdateProjectLoading<T> value)? updateProjectLoading,
     TResult? Function(UpdateProjectSuccess<T> value)? updateProjectSuccess,
     TResult? Function(UpdateProjectError<T> value)? updateProjectError,
+    TResult? Function(ProjectFailureState<T> value)? failure,
+    TResult? Function(GetProjectsLoading<T> value)? getProjectsLoading,
+    TResult? Function(GetProjectsSuccess<T> value)? getProjectsSuccess,
+    TResult? Function(GetProjectsError<T> value)? getProjectsError,
+    TResult? Function(DeleteProjectLoading<T> value)? deleteProjectLoading,
+    TResult? Function(DeleteProjectSuccess<T> value)? deleteProjectSuccess,
+    TResult? Function(DeleteProjectError<T> value)? deleteProjectError,
     TResult? Function(AddProjectLoading<T> value)? addProjectLoading,
     TResult? Function(AddProjectSuccess<T> value)? addProjectSuccess,
     TResult? Function(AddProjectError<T> value)? addProjectError,
@@ -3271,18 +3603,19 @@ class _$AddProjectSuccessImpl<T> implements AddProjectSuccess<T> {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial<T> value)? initial,
-    TResult Function(GetProjectsLoading<T> value)? getProjectsLoading,
-    TResult Function(GetProjectsSuccess<T> value)? getProjectsSuccess,
-    TResult Function(GetProjectsError<T> value)? getProjectsError,
     TResult Function(GetProjectLoading<T> value)? getProjectLoading,
     TResult Function(GetProjectSuccess<T> value)? getProjectSuccess,
     TResult Function(GetProjectError<T> value)? getProjectError,
-    TResult Function(DeleteProjectLoading<T> value)? deleteProjectLoading,
-    TResult Function(DeleteProjectSuccess<T> value)? deleteProjectSuccess,
-    TResult Function(DeleteProjectError<T> value)? deleteProjectError,
     TResult Function(UpdateProjectLoading<T> value)? updateProjectLoading,
     TResult Function(UpdateProjectSuccess<T> value)? updateProjectSuccess,
     TResult Function(UpdateProjectError<T> value)? updateProjectError,
+    TResult Function(ProjectFailureState<T> value)? failure,
+    TResult Function(GetProjectsLoading<T> value)? getProjectsLoading,
+    TResult Function(GetProjectsSuccess<T> value)? getProjectsSuccess,
+    TResult Function(GetProjectsError<T> value)? getProjectsError,
+    TResult Function(DeleteProjectLoading<T> value)? deleteProjectLoading,
+    TResult Function(DeleteProjectSuccess<T> value)? deleteProjectSuccess,
+    TResult Function(DeleteProjectError<T> value)? deleteProjectError,
     TResult Function(AddProjectLoading<T> value)? addProjectLoading,
     TResult Function(AddProjectSuccess<T> value)? addProjectSuccess,
     TResult Function(AddProjectError<T> value)? addProjectError,
@@ -3369,18 +3702,19 @@ class _$AddProjectErrorImpl<T> implements AddProjectError<T> {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
-    required TResult Function() getProjectsLoading,
-    required TResult Function(T projectData) getProjectsSuccess,
-    required TResult Function(String error) getProjectsError,
     required TResult Function() getProjectLoading,
     required TResult Function(T projectData) getProjectSuccess,
     required TResult Function(String error) getProjectError,
-    required TResult Function() deleteProjectLoading,
-    required TResult Function() deleteProjectSuccess,
-    required TResult Function(String error) deleteProjectError,
     required TResult Function() updateProjectLoading,
     required TResult Function() updateProjectSuccess,
     required TResult Function(String error) updateProjectError,
+    required TResult Function(String errorMessage) failure,
+    required TResult Function() getProjectsLoading,
+    required TResult Function(T projectData) getProjectsSuccess,
+    required TResult Function(String error) getProjectsError,
+    required TResult Function() deleteProjectLoading,
+    required TResult Function() deleteProjectSuccess,
+    required TResult Function(String error) deleteProjectError,
     required TResult Function() addProjectLoading,
     required TResult Function() addProjectSuccess,
     required TResult Function(String error) addProjectError,
@@ -3392,18 +3726,19 @@ class _$AddProjectErrorImpl<T> implements AddProjectError<T> {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
-    TResult? Function()? getProjectsLoading,
-    TResult? Function(T projectData)? getProjectsSuccess,
-    TResult? Function(String error)? getProjectsError,
     TResult? Function()? getProjectLoading,
     TResult? Function(T projectData)? getProjectSuccess,
     TResult? Function(String error)? getProjectError,
-    TResult? Function()? deleteProjectLoading,
-    TResult? Function()? deleteProjectSuccess,
-    TResult? Function(String error)? deleteProjectError,
     TResult? Function()? updateProjectLoading,
     TResult? Function()? updateProjectSuccess,
     TResult? Function(String error)? updateProjectError,
+    TResult? Function(String errorMessage)? failure,
+    TResult? Function()? getProjectsLoading,
+    TResult? Function(T projectData)? getProjectsSuccess,
+    TResult? Function(String error)? getProjectsError,
+    TResult? Function()? deleteProjectLoading,
+    TResult? Function()? deleteProjectSuccess,
+    TResult? Function(String error)? deleteProjectError,
     TResult? Function()? addProjectLoading,
     TResult? Function()? addProjectSuccess,
     TResult? Function(String error)? addProjectError,
@@ -3415,18 +3750,19 @@ class _$AddProjectErrorImpl<T> implements AddProjectError<T> {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
-    TResult Function()? getProjectsLoading,
-    TResult Function(T projectData)? getProjectsSuccess,
-    TResult Function(String error)? getProjectsError,
     TResult Function()? getProjectLoading,
     TResult Function(T projectData)? getProjectSuccess,
     TResult Function(String error)? getProjectError,
-    TResult Function()? deleteProjectLoading,
-    TResult Function()? deleteProjectSuccess,
-    TResult Function(String error)? deleteProjectError,
     TResult Function()? updateProjectLoading,
     TResult Function()? updateProjectSuccess,
     TResult Function(String error)? updateProjectError,
+    TResult Function(String errorMessage)? failure,
+    TResult Function()? getProjectsLoading,
+    TResult Function(T projectData)? getProjectsSuccess,
+    TResult Function(String error)? getProjectsError,
+    TResult Function()? deleteProjectLoading,
+    TResult Function()? deleteProjectSuccess,
+    TResult Function(String error)? deleteProjectError,
     TResult Function()? addProjectLoading,
     TResult Function()? addProjectSuccess,
     TResult Function(String error)? addProjectError,
@@ -3442,22 +3778,23 @@ class _$AddProjectErrorImpl<T> implements AddProjectError<T> {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial<T> value) initial,
-    required TResult Function(GetProjectsLoading<T> value) getProjectsLoading,
-    required TResult Function(GetProjectsSuccess<T> value) getProjectsSuccess,
-    required TResult Function(GetProjectsError<T> value) getProjectsError,
     required TResult Function(GetProjectLoading<T> value) getProjectLoading,
     required TResult Function(GetProjectSuccess<T> value) getProjectSuccess,
     required TResult Function(GetProjectError<T> value) getProjectError,
-    required TResult Function(DeleteProjectLoading<T> value)
-        deleteProjectLoading,
-    required TResult Function(DeleteProjectSuccess<T> value)
-        deleteProjectSuccess,
-    required TResult Function(DeleteProjectError<T> value) deleteProjectError,
     required TResult Function(UpdateProjectLoading<T> value)
         updateProjectLoading,
     required TResult Function(UpdateProjectSuccess<T> value)
         updateProjectSuccess,
     required TResult Function(UpdateProjectError<T> value) updateProjectError,
+    required TResult Function(ProjectFailureState<T> value) failure,
+    required TResult Function(GetProjectsLoading<T> value) getProjectsLoading,
+    required TResult Function(GetProjectsSuccess<T> value) getProjectsSuccess,
+    required TResult Function(GetProjectsError<T> value) getProjectsError,
+    required TResult Function(DeleteProjectLoading<T> value)
+        deleteProjectLoading,
+    required TResult Function(DeleteProjectSuccess<T> value)
+        deleteProjectSuccess,
+    required TResult Function(DeleteProjectError<T> value) deleteProjectError,
     required TResult Function(AddProjectLoading<T> value) addProjectLoading,
     required TResult Function(AddProjectSuccess<T> value) addProjectSuccess,
     required TResult Function(AddProjectError<T> value) addProjectError,
@@ -3469,18 +3806,19 @@ class _$AddProjectErrorImpl<T> implements AddProjectError<T> {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial<T> value)? initial,
-    TResult? Function(GetProjectsLoading<T> value)? getProjectsLoading,
-    TResult? Function(GetProjectsSuccess<T> value)? getProjectsSuccess,
-    TResult? Function(GetProjectsError<T> value)? getProjectsError,
     TResult? Function(GetProjectLoading<T> value)? getProjectLoading,
     TResult? Function(GetProjectSuccess<T> value)? getProjectSuccess,
     TResult? Function(GetProjectError<T> value)? getProjectError,
-    TResult? Function(DeleteProjectLoading<T> value)? deleteProjectLoading,
-    TResult? Function(DeleteProjectSuccess<T> value)? deleteProjectSuccess,
-    TResult? Function(DeleteProjectError<T> value)? deleteProjectError,
     TResult? Function(UpdateProjectLoading<T> value)? updateProjectLoading,
     TResult? Function(UpdateProjectSuccess<T> value)? updateProjectSuccess,
     TResult? Function(UpdateProjectError<T> value)? updateProjectError,
+    TResult? Function(ProjectFailureState<T> value)? failure,
+    TResult? Function(GetProjectsLoading<T> value)? getProjectsLoading,
+    TResult? Function(GetProjectsSuccess<T> value)? getProjectsSuccess,
+    TResult? Function(GetProjectsError<T> value)? getProjectsError,
+    TResult? Function(DeleteProjectLoading<T> value)? deleteProjectLoading,
+    TResult? Function(DeleteProjectSuccess<T> value)? deleteProjectSuccess,
+    TResult? Function(DeleteProjectError<T> value)? deleteProjectError,
     TResult? Function(AddProjectLoading<T> value)? addProjectLoading,
     TResult? Function(AddProjectSuccess<T> value)? addProjectSuccess,
     TResult? Function(AddProjectError<T> value)? addProjectError,
@@ -3492,18 +3830,19 @@ class _$AddProjectErrorImpl<T> implements AddProjectError<T> {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial<T> value)? initial,
-    TResult Function(GetProjectsLoading<T> value)? getProjectsLoading,
-    TResult Function(GetProjectsSuccess<T> value)? getProjectsSuccess,
-    TResult Function(GetProjectsError<T> value)? getProjectsError,
     TResult Function(GetProjectLoading<T> value)? getProjectLoading,
     TResult Function(GetProjectSuccess<T> value)? getProjectSuccess,
     TResult Function(GetProjectError<T> value)? getProjectError,
-    TResult Function(DeleteProjectLoading<T> value)? deleteProjectLoading,
-    TResult Function(DeleteProjectSuccess<T> value)? deleteProjectSuccess,
-    TResult Function(DeleteProjectError<T> value)? deleteProjectError,
     TResult Function(UpdateProjectLoading<T> value)? updateProjectLoading,
     TResult Function(UpdateProjectSuccess<T> value)? updateProjectSuccess,
     TResult Function(UpdateProjectError<T> value)? updateProjectError,
+    TResult Function(ProjectFailureState<T> value)? failure,
+    TResult Function(GetProjectsLoading<T> value)? getProjectsLoading,
+    TResult Function(GetProjectsSuccess<T> value)? getProjectsSuccess,
+    TResult Function(GetProjectsError<T> value)? getProjectsError,
+    TResult Function(DeleteProjectLoading<T> value)? deleteProjectLoading,
+    TResult Function(DeleteProjectSuccess<T> value)? deleteProjectSuccess,
+    TResult Function(DeleteProjectError<T> value)? deleteProjectError,
     TResult Function(AddProjectLoading<T> value)? addProjectLoading,
     TResult Function(AddProjectSuccess<T> value)? addProjectSuccess,
     TResult Function(AddProjectError<T> value)? addProjectError,
