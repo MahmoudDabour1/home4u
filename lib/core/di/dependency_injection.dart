@@ -12,6 +12,7 @@ import 'package:home4u/features/auth/sign_up/logic/sign_up_cubit.dart';
 import 'package:home4u/features/auth/sign_up/logic/technical_worker/technical_worker_cubit.dart';
 import 'package:home4u/features/auth/verification/data/data_source/verification_remote_data_source.dart';
 import 'package:home4u/features/profile/data/data_sources/certifications_remote_data_source.dart';
+import 'package:home4u/features/profile/data/data_sources/profile_remote_data_source.dart';
 import 'package:home4u/features/profile/data/data_sources/projects_remote_data_source.dart';
 import 'package:home4u/features/profile/data/repos/certifications_repo.dart';
 import 'package:home4u/features/profile/data/repos/projects_repo.dart';
@@ -28,6 +29,7 @@ import '../../features/auth/sign_up/data/data_source/freelancer_sign_up/freelanc
 import '../../features/auth/sign_up/logic/engineer/engineer_cubit.dart';
 import '../../features/auth/verification/data/repos/verification_repo.dart';
 import '../../features/auth/verification/logic/verification_cubit.dart';
+import '../../features/profile/data/repos/profile_repo.dart';
 import '../../features/profile/logic/profile/profile_cubit.dart';
 import '../localization/app_localization_cubit.dart';
 import '../networking/dio_factory.dart';
@@ -79,12 +81,11 @@ Future<void> setupGetIt() async {
   sl.registerFactory<EngineerCubit>(() => EngineerCubit(sl()));
   sl.registerFactory<TechnicalWorkerCubit>(() => TechnicalWorkerCubit(sl()));
 
-//profile
+//projects
   sl.registerLazySingleton<ProjectsRemoteDataSource>(
       () => ProjectsRemoteDataSource(dio));
   sl.registerLazySingleton<ProjectsRepo>(() => ProjectsRepoImpl(sl()));
   sl.registerFactory<ProjectCubit>(() => ProjectCubit(sl()));
-  sl.registerFactory<ProfileCubit>(() => ProfileCubit());
 
   ///App Localization
   sl.registerLazySingleton<FlutterLocalization>(
@@ -98,18 +99,14 @@ Future<void> setupGetIt() async {
 
   // certifications
   sl.registerLazySingleton<CertificationsRemoteDataSource>(
-          () => CertificationsRemoteDataSource(dio));
-  sl.registerLazySingleton<CertificationsRepo>(() => CertificationsRepoImpl(sl()));
+      () => CertificationsRemoteDataSource(dio));
+  sl.registerLazySingleton<CertificationsRepo>(
+      () => CertificationsRepoImpl(sl()));
   sl.registerFactory<CertificationsCubit>(() => CertificationsCubit(sl()));
 
-  ///Project
-  sl.registerLazySingleton<ProjectsRemoteDataSource>(
-    () => ProjectsRemoteDataSource(dio),
-  );
-
-  sl.registerLazySingleton<ProjectsRepo>(() => ProjectsRepoImpl(sl()));
-
-  sl.registerFactory<ProjectCubit>(
-    () => ProjectCubit(sl()),
-  );
+//profile
+  sl.registerLazySingleton<ProfileRemoteDataSource>(
+      () => ProfileRemoteDataSource(dio));
+  sl.registerLazySingleton<ProfileRepo>(() => ProfileRepoImp(sl()));
+  sl.registerFactory<ProfileCubit>(() => ProfileCubit(sl()));
 }

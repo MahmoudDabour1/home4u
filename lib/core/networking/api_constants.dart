@@ -21,6 +21,10 @@ class ApiConstants {
   static const String getAllCertificationsEp = "/api/v1/certificate/user-certificates";
   static const String addCertificationsEp = "/api/v1/certificate";
   static const String updateCertificationsEp = "/api/v1/certificate";
+  static const String getEngineerByTokenEp = "/api/v1/engineers/user";
+
+  //images
+  static const String getImageBaseUrl = "https://dynamic-mouse-needlessly.ngrok-free.app/api/v1/file/download?fileName=";
 }
 
 class ApiErrors {

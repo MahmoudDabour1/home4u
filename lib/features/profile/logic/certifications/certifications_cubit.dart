@@ -7,6 +7,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:home4u/core/networking/dio_factory.dart';
 import 'package:http_parser/http_parser.dart';
 import 'package:image_picker/image_picker.dart';
+
 import '../../../../core/helpers/helper_methods.dart';
 import '../../data/repos/certifications_repo.dart';
 import 'certifications_state.dart';
@@ -23,7 +24,7 @@ class CertificationsCubit extends Cubit<CertificationsState> {
   final descriptionController = TextEditingController();
   File? image;
 
-  void selectImage({required BuildContext context,ImageSource? source}) {
+  void selectImage({required BuildContext context, ImageSource? source}) {
     ImagePicker.platform
         .getImage(
       source: source!,
@@ -83,9 +84,9 @@ class CertificationsCubit extends Cubit<CertificationsState> {
     }
     emit(CertificationsState.addCertificationLoading());
     try {
-
       final formData = await _createFormData();
-      final response = await _certificationsRepository.addCertification(formData);
+      final response =
+          await _certificationsRepository.addCertification(formData);
       response.when(
         success: (_) {
           showToast(message: "Certification added successfully");
@@ -107,11 +108,12 @@ class CertificationsCubit extends Cubit<CertificationsState> {
     }
   }
 
-  Future<void> updateCertification() async {
+  Future<void> updateCertification(int certificationId) async {
     emit(CertificationsState.updateCertificationLoading());
     try {
-      final formData = await _createFormData();
-      final response = await _certificationsRepository.updateCertification(formData);
+      final formData = await _updateFormData(certificationId);
+      final response =
+          await _certificationsRepository.updateCertification(formData);
       response.when(
         success: (_) {
           showToast(message: "Certification updated successfully");
@@ -130,11 +132,30 @@ class CertificationsCubit extends Cubit<CertificationsState> {
     }
   }
 
-
-
-
   Future<FormData> _createFormData() async {
     final certificateMap = {
+      'name': nameController.text,
+      'description': descriptionController.text,
+    };
+    final certificateJson = json.encode(certificateMap);
+    DioFactory.setContentType("multipart/form-data");
+    final imageFile = await MultipartFile.fromFile(
+      image!.path,
+      filename: image!.path.split('/').last,
+      contentType: MediaType('image', 'jpeg'),
+    );
+    return FormData.fromMap({
+      'certificate': MultipartFile.fromString(
+        certificateJson,
+        contentType: MediaType('application', 'json'),
+      ),
+      'image': imageFile,
+    });
+  }
+
+  Future<FormData> _updateFormData(int certificationId) async {
+    final certificateMap = {
+      'id': certificationId,
       'name': nameController.text,
       'description': descriptionController.text,
     };
