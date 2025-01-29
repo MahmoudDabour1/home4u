@@ -18,7 +18,6 @@ class ProfileCubit extends Cubit<ProfileState> {
         emit(ProfileState.successProfileData(getEngineerData));
       },
       failure: (error) {
-        logger.d("Error: ${error.message}");
         emit(ProfileState.errorProfileData(error: error.message.toString()));
       },
     );
