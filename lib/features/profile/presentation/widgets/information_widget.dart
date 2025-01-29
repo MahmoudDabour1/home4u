@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_localization/flutter_localization.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:home4u/core/utils/spacing.dart';
+import 'package:home4u/features/profile/data/models/profile/get_engineer_response_model.dart';
 import 'package:home4u/features/profile/presentation/widgets/profile_rating_widget.dart';
 
 import '../../../../core/theming/app_styles.dart';
@@ -9,7 +10,8 @@ import '../../../../core/widgets/app_custom_button.dart';
 import '../../../../locale/app_locale.dart';
 
 class InformationWidget extends StatelessWidget {
-  const InformationWidget({super.key});
+  final GetEngineerResponseModel engineerData;
+  const InformationWidget({super.key, required this.engineerData});
 
   @override
   Widget build(BuildContext context) {
@@ -19,19 +21,19 @@ class InformationWidget extends StatelessWidget {
         children: [
           verticalSpace(200),
           Text(
-            "Mahmoud Dabour",
+            "${engineerData.data!.user!.firstName}${engineerData.data!.user!.lastName}" ??"Mahmoud Dabour",
             style: AppStyles.font16BlackSemiBold,
           ),
           verticalSpace(8),
           Text(
-            "Interior designer",
+            engineerData.data!.type!.name!,
             style: AppStyles.font16BlackLight,
           ),
           verticalSpace(8),
           ProfileRatingWidget(),
           verticalSpace(8),
           Text(
-            "An interior designer with experience in designing distinctive spaces.",
+            engineerData.data!.bio!,
             style: AppStyles.font16BlackLight,
             textAlign: TextAlign.center,
           ),
