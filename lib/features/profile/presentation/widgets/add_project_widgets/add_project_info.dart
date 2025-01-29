@@ -37,7 +37,11 @@ class AddProjectInfo extends StatelessWidget {
                 // _buildCoverImagePreview(),
                 SelectImageWidget(cubit: cubit, image: cubit.images),
                 verticalSpace(16),
-                SelectImageWidget(cubit: cubit, image: cubit.coverImage,isCoverImage: true,),
+                SelectImageWidget(
+                  cubit: cubit,
+                  image: cubit.coverImage,
+                  isCoverImage: true,
+                ),
                 verticalSpace(16),
 
                 // SelectImageWidget(cubit: cubit, image: cubit.coverImage),
@@ -149,7 +153,7 @@ class AddProjectInfo extends StatelessWidget {
 
   Widget _buildSubmitButton(BuildContext context, ProjectState state, cubit) {
     return AppCustomButton(
-      isLoading: state is ProjectLoadingState,
+      isLoading: state is AddProjectLoading,
       textButton: AppLocale.confirm,
       btnWidth: MediaQuery.sizeOf(context).width,
       btnHeight: 65.h,

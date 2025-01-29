@@ -25,7 +25,7 @@ class ProjectCubit extends Cubit<ProjectState> {
   final projectNameController = TextEditingController(text: "ncb");
   final projectStartDateController = TextEditingController(text: "2021-09-09");
   final projectEndDateController = TextEditingController(text: "2022-09-09");
-  final projectToolsController = TextEditingController(text:  "fvebbv");
+  final projectToolsController = TextEditingController(text: "fvebbv");
   File? images;
 
   File? coverImage;
@@ -49,7 +49,7 @@ class ProjectCubit extends Cubit<ProjectState> {
 
   void selectImage({required BuildContext context, ImageSource? source}) {
     ImagePicker.platform
-        .getImage(
+        .getImageFromSource(
       source: source!,
     )
         .then((value) {
@@ -63,7 +63,7 @@ class ProjectCubit extends Cubit<ProjectState> {
 
   void selectCover({required BuildContext context, ImageSource? source}) {
     ImagePicker.platform
-        .getImage(
+        .getImageFromSource(
       source: source!,
     )
         .then((value) {
@@ -117,7 +117,7 @@ class ProjectCubit extends Cubit<ProjectState> {
           projectNameController.clear();
           coverImage = null;
           images = null;
-          emit(ProjectState.success(projectResponse));
+          emit(ProjectState.addProjectSuccess());
         },
         failure: (error) {
           emit(ProjectState.failure(errorMessage: error.message.toString()));
