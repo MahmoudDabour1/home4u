@@ -1,4 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:home4u/features/profile/data/models/profile/get_engineer_response_model.dart';
 
 import '../../data/models/certifications/get_certifications_response_model.dart';
 
@@ -8,9 +9,12 @@ part 'profile_state.freezed.dart';
 class ProfileState<T> with _$ProfileState<T> {
   const factory ProfileState.initial() = ProfileInitial;
 
-  //certifications
-  const factory ProfileState.getAllCertificationsLoading() = CertificationsLoadingState;
-  const factory ProfileState.getAllCertificationsSuccess(List<CertificationsData?>? certificationsData) = CertificationsSuccessState;
-  const factory ProfileState.getAllCertificationsFailure({required String errorMessage}) =
-  CertificationsFailureState;
+//get engineer data
+  const factory ProfileState.loadingProfileData() = LoadingProfileData;
+
+  const factory ProfileState.successProfileData(GetEngineerResponseModel engineerData) = SuccessProfileData;
+
+  const factory ProfileState.errorProfileData({required String error}) =
+      ErrorProfileData;
+
 }

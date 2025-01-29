@@ -49,8 +49,8 @@ class ProjectBodyGridViewItem extends StatelessWidget {
             ProjectMenuButtonAndDialog(
               projectId: projectData!.id ?? 0,
             ),
-            Positioned(
-                right: 7.3, bottom: 7.4, child: ProjectBottomRatingWidget()),
+            // Positioned(
+            //     right: 7.3, bottom: 7.4, child: ProjectBottomRatingWidget()),
           ],
         );
       },

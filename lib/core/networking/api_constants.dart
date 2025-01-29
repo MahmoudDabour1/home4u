@@ -21,6 +21,7 @@ class ApiConstants {
   static const String getAllCertificationsEp = "/api/v1/certificate/user-certificates";
   static const String addCertificationsEp = "/api/v1/certificate";
   static const String updateCertificationsEp = "/api/v1/certificate";
+  static const String getEngineerByTokenEp = "/api/v1/engineers/user";
 }
 
 class ApiErrors {
