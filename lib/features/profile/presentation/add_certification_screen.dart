@@ -21,13 +21,14 @@ class AddCertificationScreen extends StatelessWidget {
             create: (context) => sl<CertificationsCubit>(),
             child: BlocBuilder<CertificationsCubit, CertificationsState>(
               builder: (context, state) {
+                final cubit = CertificationsCubit.get(context);
                 return Column(
                   children: [
                     AuthWelcomeData(
                       headText: AppLocale.addCertifications.getString(context),
                       subText: '',
                     ),
-                    AddCertificationsInfo(),
+                    AddCertificationsInfo(isEditing: cubit.selectedCertificationId != null,),
                   ],
                 );
               },

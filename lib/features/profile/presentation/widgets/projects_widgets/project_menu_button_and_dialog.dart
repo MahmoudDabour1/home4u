@@ -11,7 +11,7 @@ class ProjectMenuButtonAndDialog extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ProfileCustomMenuAndDialog(
-      widget: ProjectsDeleteAlertDialog(
+      deleteWidget: ProjectsDeleteAlertDialog(
         projectId: projectId,
       ),
     );

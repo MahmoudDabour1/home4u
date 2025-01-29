@@ -117,6 +117,7 @@ class AppLocale {
   static const String tapToAddImage= 'Tap to Add Image';
   static const String name= 'Name';
   static const String description= 'Description';
+  static const String update= 'Update';
 
 
 
@@ -234,6 +235,7 @@ class AppLocale {
     tapToAddImage: 'Tap to Add Image',
     name: 'Name',
     description: 'Description',
+    update: 'Update',
   };
 
   static const Map<String, dynamic> ar = {
@@ -349,5 +351,6 @@ class AppLocale {
     tapToAddImage: 'انقر لإضافة صورة',
     name: 'الاسم',
     description: 'الوصف',
+    update: 'تحديث',
   };
 }

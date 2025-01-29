@@ -1,14 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:home4u/core/extensions/navigation_extension.dart';
+import 'package:home4u/core/routing/routes.dart';
 
-import '../../../../core/helpers/helper_methods.dart';
 import '../../../../core/theming/app_assets.dart';
 import '../../../../core/widgets/app_custom_drop_down_search_menu.dart';
 
 class ProfileCustomMenuAndDialog extends StatelessWidget {
-  final Widget widget;
+  final Widget deleteWidget;
+  final bool isCertifications;
 
-  const ProfileCustomMenuAndDialog({super.key, required this.widget});
+   const ProfileCustomMenuAndDialog(
+      {super.key, required this.deleteWidget, this.isCertifications = false});
 
   @override
   Widget build(BuildContext context) {
@@ -20,11 +23,14 @@ class ProfileCustomMenuAndDialog extends StatelessWidget {
           if (value == "delete") {
             showDialog(
               context: context,
-              builder: (context) => widget,
+              builder: (context) => deleteWidget,
             );
           }
           if (value == "edit") {
-            showToast(message: "edit");
+
+            isCertifications
+                ? context.pushNamed(Routes.addCertificationScreen)
+                : context.pushNamed(Routes.addProjectScreen);
           }
         },
       ),
