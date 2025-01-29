@@ -2,12 +2,15 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:home4u/features/profile/logic/certifications/certifications_cubit.dart';
+import 'package:home4u/features/profile/logic/profile/profile_cubit.dart';
 import 'package:home4u/features/profile/logic/project/project_cubit.dart';
 import 'package:home4u/features/profile/presentation/widgets/certifications_widgets/certifications_body.dart';
 import 'package:home4u/features/profile/presentation/widgets/profile_upper_widget.dart';
 import 'package:home4u/features/profile/presentation/widgets/projects_widgets/projects_body.dart';
 import 'package:home4u/features/profile/presentation/widgets/services_widget/services_body.dart';
 import 'package:home4u/features/profile/presentation/widgets/tap_bar_widget.dart';
+
+import '../../../core/di/dependency_injection.dart';
 
 class ProfileScreen extends StatefulWidget {
   const ProfileScreen({super.key});
@@ -21,6 +24,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
   void initState() {
     context.read<ProjectCubit>().getProjects();
     context.read<CertificationsCubit>().getAllCertifications();
+    context.read<ProfileCubit>().getProfileData();
     super.initState();
   }
 

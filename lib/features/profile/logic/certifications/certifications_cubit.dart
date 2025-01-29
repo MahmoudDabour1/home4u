@@ -4,11 +4,10 @@ import 'dart:io';
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:home4u/core/extensions/navigation_extension.dart';
 import 'package:home4u/core/networking/dio_factory.dart';
-import 'package:home4u/features/profile/data/models/certifications/get_certifications_response_model.dart';
 import 'package:http_parser/http_parser.dart';
 import 'package:image_picker/image_picker.dart';
+
 import '../../../../core/helpers/helper_methods.dart';
 import '../../data/repos/certifications_repo.dart';
 import 'certifications_state.dart';
@@ -21,18 +20,11 @@ class CertificationsCubit extends Cubit<CertificationsState> {
 
   static CertificationsCubit get(context) => BlocProvider.of(context);
 
-  final  TextEditingController nameController = TextEditingController();
+  final nameController = TextEditingController();
   final descriptionController = TextEditingController();
   File? image;
-  int? selectedCertificationId;
 
-  void setCertificationForEditing(CertificationsData certification) {
-    nameController.text = certification.name!;
-    descriptionController.text = certification.description!;
-    image = File(certification.imagePath!); // Assuming the certification has an imagePath property
-    selectedCertificationId = certification.id!;  // Store the ID of the certification
-  }
-  void selectImage({required BuildContext context,ImageSource? source}) {
+  void selectImage({required BuildContext context, ImageSource? source}) {
     ImagePicker.platform
         .getImage(
       source: source!,
@@ -92,9 +84,9 @@ class CertificationsCubit extends Cubit<CertificationsState> {
     }
     emit(CertificationsState.addCertificationLoading());
     try {
-
       final formData = await _createFormData();
-      final response = await _certificationsRepository.addCertification(formData);
+      final response =
+          await _certificationsRepository.addCertification(formData);
       response.when(
         success: (_) {
           showToast(message: "Certification added successfully");
@@ -116,26 +108,16 @@ class CertificationsCubit extends Cubit<CertificationsState> {
     }
   }
 
-  void updateCertification(BuildContext context) async {
-    if (nameController.text.isEmpty || descriptionController.text.isEmpty) {
-      showToast(message: "Name and description must not be empty", isError: true);
-      return;
-    }
-
-    if (image == null) {
-      showToast(message: "Please select an image", isError: true);
-      return;
-    }
-
+  Future<void> updateCertification(int certificationId) async {
     emit(CertificationsState.updateCertificationLoading());
     try {
-      final formData = await _createFormDataUpdate();
-      final response = await _certificationsRepository.updateCertification(formData);
+      final formData = await _updateFormData(certificationId);
+      final response =
+          await _certificationsRepository.updateCertification(formData);
       response.when(
         success: (_) {
           showToast(message: "Certification updated successfully");
           emit(CertificationsState.updateCertificationSuccess());
-         context.pop();
         },
         failure: (error) {
           showToast(message: error.message.toString(), isError: true);
@@ -149,32 +131,6 @@ class CertificationsCubit extends Cubit<CertificationsState> {
           errorMessage: e.toString()));
     }
   }
-
-
-
-  // Future<void> updateCertification() async {
-  //   emit(CertificationsState.updateCertificationLoading());
-  //   try {
-  //     final formData = await _createFormData();
-  //     final response = await _certificationsRepository.updateCertification(formData);
-  //     response.when(
-  //       success: (_) {
-  //         showToast(message: "Certification updated successfully");
-  //         emit(CertificationsState.updateCertificationSuccess());
-  //       },
-  //       failure: (error) {
-  //         showToast(message: error.message.toString(), isError: true);
-  //         emit(CertificationsState.updateCertificationError(
-  //             errorMessage: error.message.toString()));
-  //       },
-  //     );
-  //   } catch (e) {
-  //     showToast(message: "Error updating certification", isError: true);
-  //     emit(CertificationsState.updateCertificationError(
-  //         errorMessage: e.toString()));
-  //   }
-  // }
-
 
   Future<FormData> _createFormData() async {
     final certificateMap = {
@@ -196,9 +152,10 @@ class CertificationsCubit extends Cubit<CertificationsState> {
       'image': imageFile,
     });
   }
-  Future<FormData> _createFormDataUpdate() async {
+
+  Future<FormData> _updateFormData(int certificationId) async {
     final certificateMap = {
-      'id': selectedCertificationId,
+      'id': certificationId,
       'name': nameController.text,
       'description': descriptionController.text,
     };

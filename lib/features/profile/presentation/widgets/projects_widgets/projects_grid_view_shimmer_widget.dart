@@ -53,11 +53,11 @@ class ProjectsGridViewShimmerWidget extends StatelessWidget {
                     // errorWidget: (context, url, error) => const Icon(Icons.error),
                   ),
                 ),
-                Positioned(
-                  bottom: 8.h,
-                  right: 8.w,
-                  child: ProjectBottomRatingWidget(),
-                ),
+                // Positioned(
+                //   bottom: 8.h,
+                //   right: 8.w,
+                //   child: ProjectBottomRatingWidget(),
+                // ),
               ],
             ),
           );
