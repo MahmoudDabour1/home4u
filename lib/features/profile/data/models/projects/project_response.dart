@@ -1,12 +1,15 @@
-import 'package:json_annotation/json_annotation.dart';
+import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'project_response.g.dart';
 
 @JsonSerializable()
 class ProjectResponse {
+  @JsonKey(name: "success")
   final bool success;
+  @JsonKey(name: "status")
   final int status;
-  final ProjectDataResponse data;
+  @JsonKey(name: "data")
+  final Data data;
 
   ProjectResponse({
     required this.success,
@@ -14,39 +17,44 @@ class ProjectResponse {
     required this.data,
   });
 
-  factory ProjectResponse.fromJson(Map<String, dynamic> json) =>
-      _$ProjectResponseFromJson(json);
+  factory ProjectResponse.fromJson(Map<String, dynamic> json) => _$ProjectResponseFromJson(json);
 
   Map<String, dynamic> toJson() => _$ProjectResponseToJson(this);
 }
 
 @JsonSerializable()
-class ProjectDataResponse {
+class Data {
+  @JsonKey(name: "id")
   final int id;
-  final int? statusCode;
+  @JsonKey(name: "statusCode")
+  final dynamic statusCode;
+  @JsonKey(name: "name")
   final String name;
-  final String? description;
-  final DateTime? startDate;
-  final DateTime? endDate;
-  final String? tools;
+  @JsonKey(name: "description")
+  final String description;
+  @JsonKey(name: "startDate")
+  final DateTime startDate;
+  @JsonKey(name: "endDate")
+  final DateTime endDate;
+  @JsonKey(name: "tools")
+  final String tools;
   @JsonKey(name: "images")
-  final List<Image?>? images;
+  final List<Image> images;
 
-  ProjectDataResponse({
+  Data({
     required this.id,
-    this.statusCode,
+    required this.statusCode,
     required this.name,
     required this.description,
     required this.startDate,
     required this.endDate,
     required this.tools,
-    this.images,
+    required this.images,
   });
 
-  factory ProjectDataResponse.fromJson(Map<String, dynamic> json) =>
-      _$ProjectDataResponseFromJson(json);
+  factory Data.fromJson(Map<String, dynamic> json) => _$DataFromJson(json);
 
-  Map<String, dynamic> toJson() => _$ProjectDataResponseToJson(this);
+  Map<String, dynamic> toJson() => _$DataToJson(this);
 }
 
 @JsonSerializable()

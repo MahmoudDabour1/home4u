@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:home4u/core/extensions/navigation_extension.dart';
 
 import '../../../../core/helpers/helper_methods.dart';
+import '../../../../core/routing/routes.dart';
 import '../../../../core/theming/app_assets.dart';
 import '../../../../core/widgets/app_custom_drop_down_search_menu.dart';
 
@@ -24,7 +26,7 @@ class ProfileCustomMenuAndDialog extends StatelessWidget {
             );
           }
           if (value == "edit") {
-            showToast(message: "edit");
+            context.pushNamed(Routes.addProjectScreen);
           }
         },
       ),

@@ -22,7 +22,6 @@ class ProfileScreen extends StatefulWidget {
 class _ProfileScreenState extends State<ProfileScreen> {
   @override
   void initState() {
-    context.read<ProjectCubit>().getProjects();
     context.read<CertificationsCubit>().getAllCertifications();
     context.read<ProfileCubit>().getProfileData();
     super.initState();
