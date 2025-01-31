@@ -10,8 +10,6 @@ import 'package:home4u/features/profile/presentation/widgets/projects_widgets/pr
 import 'package:home4u/features/profile/presentation/widgets/services_widget/services_body.dart';
 import 'package:home4u/features/profile/presentation/widgets/tap_bar_widget.dart';
 
-import '../../../core/di/dependency_injection.dart';
-
 class ProfileScreen extends StatefulWidget {
   const ProfileScreen({super.key});
 
@@ -22,8 +20,8 @@ class ProfileScreen extends StatefulWidget {
 class _ProfileScreenState extends State<ProfileScreen> {
   @override
   void initState() {
-    context.read<ProjectCubit>().getProjects();
     context.read<CertificationsCubit>().getAllCertifications();
+    context.read<ProjectCubit>().getProjects();
     context.read<ProfileCubit>().getProfileData();
     super.initState();
   }

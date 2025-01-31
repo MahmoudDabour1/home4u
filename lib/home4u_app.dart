@@ -67,7 +67,7 @@ class _Home4uAppState extends State<Home4uApp> {
         BlocProvider<ForgetPasswordCubit>(
             create: (_) => sl<ForgetPasswordCubit>()),
         BlocProvider<ProfileCubit>(create: (_) => sl<ProfileCubit>()),
-        BlocProvider<ProjectCubit>(create: (_) => sl<ProjectCubit>()),
+        BlocProvider<ProjectCubit>(create: (_) => sl<ProjectCubit>()..getProjects()),
         BlocProvider<CertificationsCubit>(create: (_) => sl<CertificationsCubit>()),
       ],
       child: ScreenUtilInit(
@@ -93,7 +93,7 @@ class _Home4uAppState extends State<Home4uApp> {
                 onGenerateRoute: widget.appRouter.generateRoute,
                 debugShowCheckedModeBanner: false,
                 navigatorObservers: [NavigatorObserver()],
-                initialRoute: Routes.bottomNavLayout,
+                initialRoute: Routes.loginScreen,
               ),
             );
           },

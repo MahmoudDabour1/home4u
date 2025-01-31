@@ -7,7 +7,6 @@ import 'package:home4u/features/profile/presentation/widgets/certifications_widg
 
 import '../../../logic/profile/profile_cubit.dart';
 import '../../../logic/profile/profile_state.dart';
-import '../projects_widgets/project_menu_button_and_dialog.dart';
 
 class CertificationsGridViewItem extends StatelessWidget {
   final CertificationsData? certificationsData;
