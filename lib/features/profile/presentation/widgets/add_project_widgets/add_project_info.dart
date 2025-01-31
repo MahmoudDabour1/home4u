@@ -54,7 +54,6 @@ class AddProjectInfo extends StatelessWidget {
     );
   }
 
-  // Widget _buildImagePickerField(BuildContext context) {
   Widget _buildProjectNameField(cubit) {
     return AppTextFormField(
       labelText: "Project Name",
@@ -148,7 +147,7 @@ class AddProjectInfo extends StatelessWidget {
       btnWidth: MediaQuery.sizeOf(context).width,
       btnHeight: 65.h,
       onPressed: () {
-        cubit.addProject();
+        cubit.addProject(context);
       },
     );
   }

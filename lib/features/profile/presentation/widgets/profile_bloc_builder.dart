@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:home4u/features/profile/data/models/profile/get_engineer_response_model.dart';
+import 'package:home4u/features/profile/data/models/profile/profile_response_model.dart';
 import 'package:home4u/features/profile/logic/profile/profile_cubit.dart';
 import 'package:home4u/features/profile/logic/profile/profile_state.dart';
 import 'package:home4u/features/profile/presentation/widgets/profile_data_shimmer.dart';
@@ -13,36 +13,41 @@ class ProfileBlocBuilder extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocBuilder<ProfileCubit,ProfileState>(
-        buildWhen: (previous, current) =>
-            current is LoadingProfileData ||
-            current is SuccessProfileData,
-            // current is ErrorProfileData,
-        builder: (context, state) {
-      return state.maybeWhen(
-          loadingProfileData: () => ProfileDataShimmer(),
-          successProfileData: (engineerData) {
-            return setupSuccessWidget(engineerData);
-          },
-          orElse:(){
-        return const SizedBox.shrink();
-      } );
-    });
+    return BlocBuilder<ProfileCubit, ProfileState>(
+      buildWhen: (previous, current) =>
+          current is LoadingProfileData ||
+          current is SuccessProfileData ||
+          current is ErrorProfileData,
+      builder: (context, state) {
+        return state.maybeWhen(
+          loadingProfileData: () => setupLoading(),
+          successProfileData: (engineerData) =>
+              setupSuccessWidget(engineerData),
+          errorProfileData: (error) => setupError(),
+          orElse: () => const SizedBox.shrink(),
+        );
+      },
+    );
   }
 }
 
-Widget setupSuccessWidget(GetEngineerResponseModel engineerData) {
+Widget setupSuccessWidget(ProfileResponseModel engineerData) {
   return Stack(
     children: [
       InformationWidget(
-        engineerData:engineerData ,
+        profileData: engineerData,
       ),
       UserImageWidget(
-        engineerResponseModel: engineerData,
+        profileData: engineerData,
       ),
     ],
   );
 }
+
 Widget setupError() {
   return const SizedBox.shrink();
+}
+
+Widget setupLoading() {
+  return ProfileDataShimmer();
 }

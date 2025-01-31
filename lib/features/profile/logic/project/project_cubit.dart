@@ -4,6 +4,7 @@ import 'dart:io';
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:home4u/core/extensions/navigation_extension.dart';
 import 'package:home4u/core/helpers/helper_methods.dart';
 import 'package:home4u/features/profile/data/models/projects/add_project_body.dart';
 import 'package:home4u/features/profile/data/models/projects/project_data.dart';
@@ -22,33 +23,16 @@ class ProjectCubit extends Cubit<ProjectState> {
 
   static ProjectCubit get(context) => BlocProvider.of(context);
 
-  final projectDescriptionController = TextEditingController(text: "jhgvbr");
+  final projectDescriptionController = TextEditingController(text: "mmmmm");
 
   final projectNameController = TextEditingController(text: "ncb");
   final projectStartDateController = TextEditingController(text: "2021-09-09");
   final projectEndDateController = TextEditingController(text: "2022-09-09");
-  final projectToolsController = TextEditingController(text: "fvebbv");
+  final projectToolsController = TextEditingController(text: "mahmoud");
   File? images;
 
   File? coverImage;
   Logger printer = Logger();
-
-  // void selectImage({required ImageSource source, required BuildContext context, bool isCoverImage = false}) async {
-  //   final picker = ImagePicker();
-  //   final pickedFile = await picker.pickImage(source: source);
-  //   if (pickedFile != null) {
-  //     final selectedImage = File(pickedFile.path);
-  //
-  //     if (isCoverImage) {
-  //       coverImage = selectedImage;
-  //     } else {
-  //       images = selectedImage;
-  //     }
-  //     emit(ProjectState.addImage()); // You can emit different states as per your logic
-  //   } else {
-  //     emit(ProjectFailureState(errorMessage: "No image selected"));
-  //   }
-  // }
 
   void selectImage({required BuildContext context, ImageSource? source}) {
     ImagePicker.platform
@@ -106,7 +90,7 @@ class ProjectCubit extends Cubit<ProjectState> {
     );
   }
 
-  Future<void> addProject() async {
+  Future<void> addProject(BuildContext context) async {
     emit(ProjectState.addProjectLoading());
     try {
       final formData = await _createProjectFormData();
@@ -122,9 +106,9 @@ class ProjectCubit extends Cubit<ProjectState> {
           projectNameController.clear();
           coverImage = null;
           images = null;
-          printer.w("project added successfully");
-          printer.i(projectResponse);
           emit(ProjectState.addProjectSuccess());
+          context.pop();
+          // getProjects();
         },
         failure: (error) {
           emit(ProjectState.failure(errorMessage: error.message.toString()));

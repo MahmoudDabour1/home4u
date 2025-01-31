@@ -4,7 +4,10 @@ import 'dart:io';
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_localization/flutter_localization.dart';
+import 'package:home4u/core/extensions/navigation_extension.dart';
 import 'package:home4u/core/networking/dio_factory.dart';
+import 'package:home4u/locale/app_locale.dart';
 import 'package:http_parser/http_parser.dart';
 import 'package:image_picker/image_picker.dart';
 
@@ -23,10 +26,11 @@ class CertificationsCubit extends Cubit<CertificationsState> {
   final nameController = TextEditingController();
   final descriptionController = TextEditingController();
   File? image;
+  final formKey = GlobalKey<FormState>();
 
   void selectImage({required BuildContext context, ImageSource? source}) {
     ImagePicker.platform
-        .getImage(
+        .getImageFromSource(
       source: source!,
     )
         .then((value) {
@@ -39,7 +43,7 @@ class CertificationsCubit extends Cubit<CertificationsState> {
   }
 
   Future<void> getAllCertifications() async {
-    emit(CertificationsState.getAllCertificationsLoading());
+    emit(const CertificationsState.getAllCertificationsLoading());
     final response = await _certificationsRepository.getAllCertifications();
     response.when(
       success: (certificationsResponse) {
@@ -57,7 +61,7 @@ class CertificationsCubit extends Cubit<CertificationsState> {
   }
 
   Future<void> deleteCertification(int certificationId) async {
-    emit(CertificationsState.deleteCertificationLoading());
+    emit(const CertificationsState.deleteCertificationLoading());
     final response = await _certificationsRepository
         .deleteCertificationById(certificationId);
     response.when(
@@ -71,15 +75,11 @@ class CertificationsCubit extends Cubit<CertificationsState> {
     );
   }
 
-  Future<void> addCertification() async {
-    if (nameController.text.isEmpty || descriptionController.text.isEmpty) {
-      showToast(
-          message: "Name and description must not be empty", isError: true);
-      return;
-    }
-
+  Future<void> addCertification(BuildContext context) async {
     if (image == null) {
-      showToast(message: "Please select an image", isError: true);
+      showToast(
+          message: AppLocale.pleaseSelectAnImage.getString(context),
+          isError: true);
       return;
     }
     emit(CertificationsState.addCertificationLoading());
@@ -89,11 +89,16 @@ class CertificationsCubit extends Cubit<CertificationsState> {
           await _certificationsRepository.addCertification(formData);
       response.when(
         success: (_) {
-          showToast(message: "Certification added successfully");
+          showToast(
+            message:
+                AppLocale.certificationAddedSuccessfully.getString(context),
+          );
           emit(CertificationsState.addCertificationSuccess());
           nameController.clear();
           descriptionController.clear();
           image = null;
+          context.pop();
+          getAllCertifications();
         },
         failure: (error) {
           showToast(message: error.message.toString(), isError: true);
@@ -102,13 +107,15 @@ class CertificationsCubit extends Cubit<CertificationsState> {
         },
       );
     } catch (e) {
-      showToast(message: "Error uploading certification", isError: true);
+      showToast(
+          message: AppLocale.errorUploadingCertification.getString(context),
+          isError: true);
       emit(CertificationsState.addCertificationError(
           errorMessage: e.toString()));
     }
   }
 
-  Future<void> updateCertification(int certificationId) async {
+  Future<void> updateCertification(int certificationId, context) async {
     emit(CertificationsState.updateCertificationLoading());
     try {
       final formData = await _updateFormData(certificationId);
@@ -116,7 +123,9 @@ class CertificationsCubit extends Cubit<CertificationsState> {
           await _certificationsRepository.updateCertification(formData);
       response.when(
         success: (_) {
-          showToast(message: "Certification updated successfully");
+          showToast(
+              message: AppLocale.certificationUpdatedSuccessfully
+                  .getString(context));
           emit(CertificationsState.updateCertificationSuccess());
         },
         failure: (error) {
@@ -126,7 +135,9 @@ class CertificationsCubit extends Cubit<CertificationsState> {
         },
       );
     } catch (e) {
-      showToast(message: "Error updating certification", isError: true);
+      showToast(
+          message: AppLocale.errorUploadingCertification.getString(context),
+          isError: true);
       emit(CertificationsState.updateCertificationError(
           errorMessage: e.toString()));
     }

@@ -1,10 +1,15 @@
 import 'package:fancy_shimmer_image/fancy_shimmer_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:home4u/features/profile/presentation/widgets/projects_widgets/project_bottom_rating_widget.dart';
+import 'package:home4u/features/profile/presentation/widgets/projects_widgets/project_menu_button_and_dialog.dart';
 import 'package:skeletonizer/skeletonizer.dart';
 
 class ProjectsGridViewShimmerWidget extends StatelessWidget {
-  const ProjectsGridViewShimmerWidget({super.key});
+  final bool isCertification;
+
+  const ProjectsGridViewShimmerWidget(
+      {super.key, this.isCertification = false});
 
   @override
   Widget build(BuildContext context) {
@@ -52,11 +57,15 @@ class ProjectsGridViewShimmerWidget extends StatelessWidget {
                     // errorWidget: (context, url, error) => const Icon(Icons.error),
                   ),
                 ),
-                // Positioned(
-                //   bottom: 8.h,
-                //   right: 8.w,
-                //   child: ProjectBottomRatingWidget(),
-                // ),
+                Skeletonizer(
+                  enabled: true,
+                  child: ProjectMenuButtonAndDialog(
+                    projectId:  0,
+                  ),
+                ),
+                isCertification
+                    ? SizedBox.shrink()
+                    : ProjectBottomRatingWidget(),
               ],
             ),
           );

@@ -4,11 +4,9 @@
 
 import 'package:json_annotation/json_annotation.dart';
 
-part 'get_engineer_response_model.g.dart';
-
-
+part 'profile_response_model.g.dart';
 @JsonSerializable()
-class GetEngineerResponseModel {
+class ProfileResponseModel {
   @JsonKey(name: "success")
   bool? success;
   @JsonKey(name: "status")
@@ -16,14 +14,14 @@ class GetEngineerResponseModel {
   @JsonKey(name: "data")
   Data? data;
 
-  GetEngineerResponseModel({
+  ProfileResponseModel({
     this.success,
     this.status,
     this.data,
   });
 
- factory GetEngineerResponseModel.fromJson(Map<String, dynamic> json) => _$GetEngineerResponseModelFromJson(json);
-  Map<String, dynamic> toJson() => _$GetEngineerResponseModelToJson(this);
+  factory ProfileResponseModel.fromJson(Map<String, dynamic> json) => _$ProfileResponseModelFromJson(json);
+  Map<String, dynamic> toJson() => _$ProfileResponseModelToJson(this);
 
 }
 
