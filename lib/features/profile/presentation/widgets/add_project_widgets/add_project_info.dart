@@ -142,7 +142,7 @@ class AddProjectInfo extends StatelessWidget {
 
   Widget _buildSubmitButton(BuildContext context, ProjectState state, cubit) {
     return AppCustomButton(
-      isLoading: state is ProjectLoadingState,
+      isLoading: state is AddProjectLoading,
       textButton: AppLocale.confirm,
       btnWidth: MediaQuery.sizeOf(context).width,
       btnHeight: 65.h,
