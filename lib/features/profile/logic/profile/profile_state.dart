@@ -1,7 +1,6 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:home4u/features/profile/data/models/profile/get_engineer_response_model.dart';
 
-import '../../data/models/certifications/get_certifications_response_model.dart';
 
 part 'profile_state.freezed.dart';
 

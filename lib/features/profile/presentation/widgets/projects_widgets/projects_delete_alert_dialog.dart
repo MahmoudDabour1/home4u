@@ -25,7 +25,6 @@ class ProjectsDeleteAlertDialog extends StatelessWidget {
             final navigationBack = context.pop();
             await projectCubit.deleteProject(projectId);
             navigationBack;
-            projectCubit.getProjects();
             await showToast(
               message: AppLocale.deletedSuccessfully.getString(context),
             );

@@ -99,7 +99,7 @@ class ProjectDetailsScreen extends StatelessWidget {
                             ),
                             verticalSpace(16),
                             Text(
-                              project.data.description ?? '',
+                              project.data.description,
                               style: AppStyles.font16BlackMedium,
                             ),
                             verticalSpace(8),

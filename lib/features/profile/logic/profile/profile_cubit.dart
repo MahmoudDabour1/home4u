@@ -2,7 +2,6 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:home4u/features/profile/data/repos/profile_repo.dart';
 import 'package:home4u/features/profile/logic/profile/profile_state.dart';
 
-import '../../../../core/routing/router_observer.dart';
 
 class ProfileCubit extends Cubit<ProfileState> {
   final ProfileRepo _profileRepo;

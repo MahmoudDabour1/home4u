@@ -1,7 +1,6 @@
 import 'package:fancy_shimmer_image/fancy_shimmer_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:home4u/features/profile/presentation/widgets/projects_widgets/project_bottom_rating_widget.dart';
 import 'package:skeletonizer/skeletonizer.dart';
 
 class ProjectsGridViewShimmerWidget extends StatelessWidget {

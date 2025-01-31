@@ -1,10 +1,7 @@
-import 'package:dotted_border/dotted_border.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_localization/flutter_localization.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:home4u/core/theming/app_colors.dart';
-import 'package:home4u/core/theming/app_styles.dart';
 import 'package:home4u/core/utils/spacing.dart';
 import 'package:home4u/features/profile/logic/certifications/certifications_cubit.dart';
 import 'package:home4u/features/profile/logic/certifications/certifications_state.dart';
@@ -12,7 +9,6 @@ import 'package:home4u/locale/app_locale.dart';
 
 import '../../../../../core/widgets/app_custom_button.dart';
 import '../../../../../core/widgets/app_text_form_field.dart';
-import '../../../../../core/widgets/bottom_model.dart';
 import '../../../../../core/widgets/select_image_widget.dart';
 
 class AddCertificationsInfo extends StatelessWidget {
@@ -93,7 +89,7 @@ class AddCertificationsInfo extends StatelessWidget {
               // ),
               SelectImageWidget(
                 cubit: cubit,
-                image: cubit?.image,
+                image: cubit.image,
               ),
               verticalSpace(16),
               AppTextFormField(

@@ -3,7 +3,6 @@
 //     final enginner = enginnerFromJson(jsonString);
 
 import 'package:json_annotation/json_annotation.dart';
-import 'dart:convert';
 
 part 'get_engineer_response_model.g.dart';
 

@@ -11,6 +11,7 @@ import 'package:home4u/features/profile/data/repos/projects_repo.dart';
 import 'package:home4u/features/profile/logic/project/project_state.dart';
 import 'package:http_parser/http_parser.dart';
 import 'package:image_picker/image_picker.dart';
+import 'package:logger/logger.dart';
 
 import '../../../../core/networking/dio_factory.dart';
 
@@ -30,6 +31,7 @@ class ProjectCubit extends Cubit<ProjectState> {
   File? images;
 
   File? coverImage;
+  Logger printer = Logger();
 
   // void selectImage({required ImageSource source, required BuildContext context, bool isCoverImage = false}) async {
   //   final picker = ImagePicker();
@@ -91,9 +93,11 @@ class ProjectCubit extends Cubit<ProjectState> {
 
   Future<void> deleteProject(int projectId) async {
     emit(const ProjectState.deleteProjectLoading());
-    final response = await _projectRepository.getProjectsByUserId(projectId);
+    final response = await _projectRepository.deleteProjectsByUserId(projectId);
     response.when(
       success: (deleteProjectResponseModel) {
+        Logger printer = Logger();
+        printer.i(deleteProjectResponseModel);
         emit(const ProjectState.deleteProjectSuccess());
       },
       failure: (error) {
@@ -118,6 +122,8 @@ class ProjectCubit extends Cubit<ProjectState> {
           projectNameController.clear();
           coverImage = null;
           images = null;
+          printer.w("project added successfully");
+          printer.i(projectResponse);
           emit(ProjectState.addProjectSuccess());
         },
         failure: (error) {
