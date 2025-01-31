@@ -17,6 +17,11 @@ abstract class ProjectsRemoteDataSource {
   @GET(ApiConstants.getProjectsEp)
   Future<GetProjectsResponseModel> getProjects();
 
+  @GET("/api/v1/project/{projectId}")
+  Future<ProjectResponse> getProjectById(
+    @Path("projectId") int projectId,
+  );
+
   @DELETE("/api/v1/project/{projectId}")
   Future<DeleteProjectResponseModel> deleteProject(
     @Path("projectId") int projectId,
@@ -24,6 +29,12 @@ abstract class ProjectsRemoteDataSource {
 
   @POST(ApiConstants.projectAddEp)
   Future<ProjectResponse> addProject(
+    @Body() FormData projectData,
+  );
+
+  @PUT("/api/v1/project")
+  @MultiPart()
+  Future<ProjectResponse> updateProject(
     @Body() FormData projectData,
   );
 }

@@ -20,8 +20,9 @@ import 'package:home4u/features/profile/presentation/add_certification_screen.da
 import '../../features/auth/login/presentation/login_screen.dart';
 import '../../features/layout/presentation/bottom_nav_bar_layout.dart';
 import '../../features/onboarding/presentation/onboarding_screen.dart';
-import '../../features/profile/presentation/profile_screen.dart';
 import '../../features/profile/presentation/add_project_screen.dart';
+import '../../features/profile/presentation/profile_screen.dart';
+import '../../features/profile/presentation/project_details_screen.dart';
 import '../../features/settings/presentation/setting_screen.dart';
 import '../di/dependency_injection.dart';
 
@@ -101,9 +102,15 @@ class AppRouter {
       case Routes.settingScreen:
         return MaterialPageRoute(
           builder: (_) => SettingScreen(),
-        );case Routes.addCertificationScreen:
+        );
+      case Routes.addCertificationScreen:
         return MaterialPageRoute(
           builder: (_) => AddCertificationScreen(),
+        );
+      case Routes.projectDetailsScreen:
+        int projectId = settings.arguments as int;
+        return MaterialPageRoute(
+          builder: (_) => ProjectDetailsScreen(projectId: projectId),
         );
       default:
         return null;

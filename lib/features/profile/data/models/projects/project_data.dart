@@ -1,11 +1,13 @@
 class ProjectData {
+  int id;
   final String name;
-  final String? description;
-  final DateTime? startDate;
-  final DateTime? endDate;
-  final String? tools;
+  final String description;
+  final String startDate;
+  final String endDate;
+  final String tools;
 
   ProjectData({
+    required this.id,
     required this.name,
     required this.description,
     required this.startDate,
@@ -15,6 +17,7 @@ class ProjectData {
 
   factory ProjectData.fromJson(Map<String, dynamic> json) {
     return ProjectData(
+      id: json['id'],
       name: json['name'],
       description: json['description'],
       startDate: json['startDate'],
@@ -25,6 +28,7 @@ class ProjectData {
 
   Map<String, dynamic> toJson() {
     return {
+      'id': id,
       'name': name,
       'description': description,
       'startDate': startDate,

@@ -10,10 +10,14 @@ import '../models/projects/project_response.dart';
 abstract class ProjectsRepo {
   Future<ApiResult<GetProjectsResponseModel>> getProjects();
 
-  Future<ApiResult<DeleteProjectResponseModel>> getProjectsByUserId(
-      int projectId);
+  Future<ApiResult<ProjectResponse>> getProjectsByUserId(int projectId,);
+
+  Future<ApiResult<DeleteProjectResponseModel>> deleteProjectsByUserId(
+      int projectId,);
 
   Future<ApiResult<ProjectResponse>> addProject(FormData projectData);
+
+  Future<ApiResult<ProjectResponse>> updateProject(FormData projectData);
 }
 
 class ProjectsRepoImpl implements ProjectsRepo {
@@ -32,8 +36,8 @@ class ProjectsRepoImpl implements ProjectsRepo {
   }
 
   @override
-  Future<ApiResult<DeleteProjectResponseModel>> getProjectsByUserId(
-      int projectId) async {
+  Future<ApiResult<DeleteProjectResponseModel>> deleteProjectsByUserId(
+      int projectId,) async {
     try {
       final response = await _projectsRemoteDataSource.deleteProject(projectId);
       return ApiResult.success(response);
@@ -46,6 +50,28 @@ class ProjectsRepoImpl implements ProjectsRepo {
   Future<ApiResult<ProjectResponse>> addProject(FormData projectData) async {
     try {
       final response = await _projectsRemoteDataSource.addProject(projectData);
+      return ApiResult.success(response);
+    } catch (error) {
+      return ApiResult.failure(ApiErrorHandler.handle(error));
+    }
+  }
+
+  @override
+  Future<ApiResult<ProjectResponse>> getProjectsByUserId(int projectId,) async {
+    try {
+      final response =
+      await _projectsRemoteDataSource.getProjectById(projectId);
+      return ApiResult.success(response);
+    } catch (error) {
+      return ApiResult.failure(ApiErrorHandler.handle(error));
+    }
+  }
+
+  @override
+  Future<ApiResult<ProjectResponse>> updateProject(FormData projectData) async {
+    try {
+      final response =
+      await _projectsRemoteDataSource.updateProject(projectData);
       return ApiResult.success(response);
     } catch (error) {
       return ApiResult.failure(ApiErrorHandler.handle(error));
