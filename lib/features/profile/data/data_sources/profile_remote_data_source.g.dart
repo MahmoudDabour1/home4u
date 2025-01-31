@@ -24,12 +24,12 @@ class _ProfileRemoteDataSource implements ProfileRemoteDataSource {
   final ParseErrorLogger? errorLogger;
 
   @override
-  Future<GetEngineerResponseModel> getEngineerByToken() async {
+  Future<ProfileResponseModel> getEngineerByToken() async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
     const Map<String, dynamic>? _data = null;
-    final _options = _setStreamType<GetEngineerResponseModel>(Options(
+    final _options = _setStreamType<ProfileResponseModel>(Options(
       method: 'GET',
       headers: _headers,
       extra: _extra,
@@ -46,9 +46,9 @@ class _ProfileRemoteDataSource implements ProfileRemoteDataSource {
           baseUrl,
         )));
     final _result = await _dio.fetch<Map<String, dynamic>>(_options);
-    late GetEngineerResponseModel _value;
+    late ProfileResponseModel _value;
     try {
-      _value = GetEngineerResponseModel.fromJson(_result.data!);
+      _value = ProfileResponseModel.fromJson(_result.data!);
     } on Object catch (e, s) {
       errorLogger?.logError(e, s, _options);
       rethrow;

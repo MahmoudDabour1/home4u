@@ -1,14 +1,14 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'get_engineer_response_model.dart';
+part of 'profile_response_model.dart';
 
 // **************************************************************************
 // JsonSerializableGenerator
 // **************************************************************************
 
-GetEngineerResponseModel _$GetEngineerResponseModelFromJson(
+ProfileResponseModel _$ProfileResponseModelFromJson(
         Map<String, dynamic> json) =>
-    GetEngineerResponseModel(
+    ProfileResponseModel(
       success: json['success'] as bool?,
       status: (json['status'] as num?)?.toInt(),
       data: json['data'] == null
@@ -16,8 +16,8 @@ GetEngineerResponseModel _$GetEngineerResponseModelFromJson(
           : Data.fromJson(json['data'] as Map<String, dynamic>),
     );
 
-Map<String, dynamic> _$GetEngineerResponseModelToJson(
-        GetEngineerResponseModel instance) =>
+Map<String, dynamic> _$ProfileResponseModelToJson(
+        ProfileResponseModel instance) =>
     <String, dynamic>{
       'success': instance.success,
       'status': instance.status,

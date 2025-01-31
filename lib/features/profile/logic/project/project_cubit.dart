@@ -101,7 +101,7 @@ class ProjectCubit extends Cubit<ProjectState> {
     );
   }
 
-  Future<void> addProject() async {
+  Future<void> addProject(context) async {
     emit(ProjectState.addProjectLoading());
     try {
       final formData = await _createProjectFormData();
@@ -118,6 +118,8 @@ class ProjectCubit extends Cubit<ProjectState> {
           coverImage = null;
           images = null;
           emit(ProjectState.success(projectResponse));
+          context.pop();
+          // getProjects();
         },
         failure: (error) {
           emit(ProjectState.failure(errorMessage: error.message.toString()));

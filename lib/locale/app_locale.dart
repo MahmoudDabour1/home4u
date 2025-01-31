@@ -118,6 +118,12 @@ class AppLocale {
   static const String name= 'Name';
   static const String description= 'Description';
   static const String update= 'Update';
+  static const String nameCantBeEmpty= 'Name Can\'t be empty';
+  static const String descriptionCantBeEmpty= 'Description Can\'t be empty';
+  static const String pleaseSelectAnImage= 'Please select an image';
+  static const String certificationAddedSuccessfully= 'Certification added successfully';
+  static const String errorUploadingCertification= 'Error uploading certification';
+  static const String certificationUpdatedSuccessfully= 'Certification updated successfully';
 
 
 
@@ -236,6 +242,12 @@ class AppLocale {
     name: 'Name',
     description: 'Description',
     update: 'Update',
+    nameCantBeEmpty: 'Name Can\'t be empty',
+    descriptionCantBeEmpty: 'Description Can\'t be empty',
+    pleaseSelectAnImage: 'Please select an image',
+    certificationAddedSuccessfully: 'Certification added successfully',
+    errorUploadingCertification: 'Error uploading certification',
+    certificationUpdatedSuccessfully: 'Certification updated successfully',
   };
 
   static const Map<String, dynamic> ar = {
@@ -352,5 +364,11 @@ class AppLocale {
     name: 'الاسم',
     description: 'الوصف',
     update: 'تحديث',
+    nameCantBeEmpty: 'لا يمكن ترك الاسم فارغ',
+    descriptionCantBeEmpty: 'لا يمكن ترك الوصف فارغ',
+    pleaseSelectAnImage: 'الرجاء تحديد صورة',
+    certificationAddedSuccessfully: 'تمت إضافة الشهادة بنجاح',
+    errorUploadingCertification: 'حدث خطأ أثناء تحميل الشهادة',
+    certificationUpdatedSuccessfully: 'تم تحديث الشهادة بنجاح',
   };
 }

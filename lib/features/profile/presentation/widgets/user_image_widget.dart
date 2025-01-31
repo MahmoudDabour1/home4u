@@ -1,14 +1,13 @@
-import 'package:fancy_shimmer_image/fancy_shimmer_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:home4u/core/networking/api_constants.dart';
 import 'package:home4u/core/theming/app_assets.dart';
-import 'package:home4u/features/profile/data/models/profile/get_engineer_response_model.dart';
+import 'package:home4u/features/profile/data/models/profile/profile_response_model.dart';
 
 class UserImageWidget extends StatelessWidget {
-  final GetEngineerResponseModel engineerResponseModel;
+  final ProfileResponseModel profileData;
 
-  const UserImageWidget({super.key, required this.engineerResponseModel});
+  const UserImageWidget({super.key, required this.profileData});
 
   @override
   Widget build(BuildContext context) {
@@ -19,11 +18,10 @@ class UserImageWidget extends StatelessWidget {
         clipBehavior: Clip.antiAlias,
         child: CircleAvatar(
           radius: 51.r,
-          foregroundImage: engineerResponseModel.data!.user!.personalPhoto !=
-                  null
+          foregroundImage: profileData.data!.user!.personalPhoto != null
               ? NetworkImage(
-                  "${ApiConstants.getImageBaseUrl}${engineerResponseModel.data!.user!.personalPhoto}")
-              : AssetImage(AppAssets.facebook),
+                  "${ApiConstants.getImageBaseUrl}${profileData.data!.user!.personalPhoto}")
+              : AssetImage(AppAssets.facebook,),
         ),
       ),
     );

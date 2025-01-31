@@ -17,7 +17,7 @@ abstract class CertificationsRemoteDataSource {
   @GET(ApiConstants.getAllCertificationsEp)
   Future<GetCertificationsResponseModel> getCertifications();
 
-  @DELETE("/api/v1/certificate/{certificationId}")
+  @DELETE(ApiConstants.deleteCertificationsEp)
   Future<DeleteCertificationResponseModel> deleteCertification(
     @Path("certificationId") int certificationId,
   );

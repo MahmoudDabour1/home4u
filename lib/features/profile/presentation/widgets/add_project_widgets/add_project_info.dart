@@ -27,20 +27,14 @@ class AddProjectInfo extends StatelessWidget {
             padding: const EdgeInsets.symmetric(horizontal: 24.0).w,
             child: Column(
               children: [
-                // verticalSpace(32),
-                // _buildImagePickerField(context,cubit),
-                // verticalSpace(16),
-                // _buildSelectedImagesList(cubit),
-                // verticalSpace(16),
-                // _buildCoverImagePickerField(),
-                // verticalSpace(16),
-                // _buildCoverImagePreview(),
                 SelectImageWidget(cubit: cubit, image: cubit.images),
                 verticalSpace(16),
-                SelectImageWidget(cubit: cubit, image: cubit.coverImage,isCoverImage: true,),
+                SelectImageWidget(
+                  cubit: cubit,
+                  image: cubit.coverImage,
+                  isCoverImage: true,
+                ),
                 verticalSpace(16),
-
-                // SelectImageWidget(cubit: cubit, image: cubit.coverImage),
                 verticalSpace(16),
                 _buildProjectNameField(cubit),
                 verticalSpace(16),
@@ -60,7 +54,6 @@ class AddProjectInfo extends StatelessWidget {
     );
   }
 
-  // Widget _buildImagePickerField(BuildContext context) {
   Widget _buildProjectNameField(cubit) {
     return AppTextFormField(
       labelText: "Project Name",
@@ -154,62 +147,8 @@ class AddProjectInfo extends StatelessWidget {
       btnWidth: MediaQuery.sizeOf(context).width,
       btnHeight: 65.h,
       onPressed: () {
-        // final cubit = context.read<ProjectCubit>();
-        // DioFactory.setContentType('multipart/form-data');
-        //
-        // final formData = FormData.fromMap({
-        //   "cover": _coverImageMultipart,
-        //   "images": _selectedImagesMultipart,
-        //   "projectData": jsonEncode({
-        //     "name": projectNameController.text,
-        //     "description": projectDescriptionController.text,
-        //     "startDate": projectStartDateController.text,
-        //     "endDate": projectEndDateController.text,
-        //     "tools": projectToolsController.text,
-        //   }),
-        // });
-        // final logger = Logger();
-        // // Debug print to check the FormData
-        // logger.w("FormData: ${formData.fields}");
-        // logger.w("Cover Image: ${_coverImageMultipart?.filename}");
-        // logger.w(
-        //     "Images: ${_selectedImagesMultipart.map((file) => file.filename).toList()}");
-
-        cubit.addProject();
+        cubit.addProject(context);
       },
     );
   }
 }
-
-// class FullScreenImage extends StatelessWidget {
-//   final File imageFile;
-//
-//   const FullScreenImage({super.key, required this.imageFile});
-//
-//   @override
-//   Widget build(BuildContext context) {
-//     return Scaffold(
-//       appBar: AppBar(),
-//       body: Center(
-//         child: Image.file(imageFile),
-//       ),
-//     );
-//   }
-// }
-//
-// MediaType getContentType(File file) {
-//   final extension = path.extension(file.path).toLowerCase();
-//   switch (extension) {
-//     case '.jpg':
-//     case '.jpeg':
-//       return MediaType('image', 'jpeg');
-//     case '.png':
-//       return MediaType('image', 'png');
-//     case '.gif':
-//       return MediaType('image', 'gif');
-//     case '.mp4':
-//       return MediaType('video', 'mp4');
-//     default:
-//       return MediaType('application', 'octet-stream');
-//   }
-// }

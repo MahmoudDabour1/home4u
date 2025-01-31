@@ -1,10 +1,10 @@
 import '../../../../core/networking/api_error_handler.dart';
 import '../../../../core/networking/api_result.dart';
 import '../data_sources/profile_remote_data_source.dart';
-import '../models/profile/get_engineer_response_model.dart';
+import '../models/profile/profile_response_model.dart';
 
 abstract class ProfileRepo {
-  Future<ApiResult<GetEngineerResponseModel>> getEngineerByToken();
+  Future<ApiResult<ProfileResponseModel>> getEngineerByToken();
 }
 
 class ProfileRepoImp implements ProfileRepo {
@@ -13,7 +13,7 @@ class ProfileRepoImp implements ProfileRepo {
   ProfileRepoImp(this._profileRemoteDataSource);
 
   @override
-  Future<ApiResult<GetEngineerResponseModel>> getEngineerByToken() async {
+  Future<ApiResult<ProfileResponseModel>> getEngineerByToken() async {
     try {
       final response = await _profileRemoteDataSource.getEngineerByToken();
       return ApiResult.success(response);

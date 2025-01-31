@@ -3,7 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_localization/flutter_localization.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:home4u/core/utils/spacing.dart';
-import 'package:home4u/features/profile/data/models/profile/get_engineer_response_model.dart';
+import 'package:home4u/features/profile/data/models/profile/profile_response_model.dart';
 import 'package:home4u/features/profile/presentation/widgets/profile_rating_widget.dart';
 import 'package:skeletonizer/skeletonizer.dart';
 
@@ -14,9 +14,9 @@ import '../../logic/profile/profile_cubit.dart';
 import '../../logic/profile/profile_state.dart';
 
 class InformationWidget extends StatelessWidget {
-  final GetEngineerResponseModel engineerData;
+  final ProfileResponseModel profileData;
 
-  const InformationWidget({super.key, required this.engineerData});
+  const InformationWidget({super.key, required this.profileData});
 
   @override
   Widget build(BuildContext context) {
@@ -30,8 +30,7 @@ class InformationWidget extends StatelessWidget {
               Skeletonizer(
                 enabled: state is LoadingProfileData,
                 child: Text(
-                  "${engineerData.data!.user!.firstName}${engineerData.data!.user!
-                      .lastName}" ?? "Mahmoud Dabour",
+                  "${profileData.data!.user!.firstName}${profileData.data!.user!.lastName}",
                   style: AppStyles.font16BlackSemiBold,
                 ),
               ),
@@ -39,7 +38,7 @@ class InformationWidget extends StatelessWidget {
               Skeletonizer(
                 enabled: state is LoadingProfileData,
                 child: Text(
-                  engineerData.data!.type!.name!,
+                  profileData.data!.type!.name!,
                   style: AppStyles.font16BlackLight,
                 ),
               ),
@@ -49,7 +48,7 @@ class InformationWidget extends StatelessWidget {
               Skeletonizer(
                 enabled: state is LoadingProfileData,
                 child: Text(
-                  engineerData.data!.bio!,
+                  profileData.data!.bio!,
                   style: AppStyles.font16BlackLight,
                   textAlign: TextAlign.center,
                 ),
