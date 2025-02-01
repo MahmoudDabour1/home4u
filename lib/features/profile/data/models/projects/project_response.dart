@@ -39,7 +39,7 @@ class Data {
   @JsonKey(name: "tools")
   final String tools;
   @JsonKey(name: "images")
-  final List<Image> images;
+  final List<Image>? images;
 
   Data({
     required this.id,
@@ -49,7 +49,7 @@ class Data {
     required this.startDate,
     required this.endDate,
     required this.tools,
-    required this.images,
+    this.images,
   });
 
   factory Data.fromJson(Map<String, dynamic> json) => _$DataFromJson(json);

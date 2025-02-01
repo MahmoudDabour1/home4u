@@ -43,6 +43,10 @@ class DioFactory {
     };
   }
 
+  static void setContentTypeForMultipart() {
+    dio?.options.headers['Content-Type'] = 'multipart/form-data';
+  }
+
   static void updateLanguageHeader(String languageCode) {
     dio?.options.headers['Accept-Language'] = languageCode;
   }

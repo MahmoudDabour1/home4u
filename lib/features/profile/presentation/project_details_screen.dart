@@ -63,14 +63,14 @@ class ProjectDetailsScreen extends StatelessWidget {
                             ),
                             verticalSpace(32),
                             ...List.generate(
-                              project.data.images.length,
+                              project.data.images!.length,
                               (index) {
                                 return Padding(
                                   padding:
                                       const EdgeInsets.only(bottom: 16.0).h,
                                   child: FancyShimmerImage(
                                     imageUrl:
-                                        "https://dynamic-mouse-needlessly.ngrok-free.app/api/v1/file/download?fileName=${project.data.images[index].path}",
+                                        "https://dynamic-mouse-needlessly.ngrok-free.app/api/v1/file/download?fileName=${project.data.images![index].path}",
                                     width: MediaQuery.sizeOf(context).width,
                                     height:
                                         MediaQuery.sizeOf(context).height * 0.2,

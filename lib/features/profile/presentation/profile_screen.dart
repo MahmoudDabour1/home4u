@@ -10,7 +10,6 @@ import 'package:home4u/features/profile/presentation/widgets/projects_widgets/pr
 import 'package:home4u/features/profile/presentation/widgets/services_widget/services_body.dart';
 import 'package:home4u/features/profile/presentation/widgets/tap_bar_widget.dart';
 
-
 class ProfileScreen extends StatefulWidget {
   const ProfileScreen({super.key});
 
@@ -18,7 +17,11 @@ class ProfileScreen extends StatefulWidget {
   State<ProfileScreen> createState() => _ProfileScreenState();
 }
 
-class _ProfileScreenState extends State<ProfileScreen> {
+class _ProfileScreenState extends State<ProfileScreen>
+    with AutomaticKeepAliveClientMixin {
+  @override
+  bool get wantKeepAlive => true;
+
   @override
   void initState() {
     context.read<ProjectCubit>().getProjects();
@@ -29,6 +32,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
 
   @override
   Widget build(BuildContext context) {
+    super.build(context); // Ensure the mixin is called
     return DefaultTabController(
       length: 4, // Same as the number of tabs
       child: Scaffold(

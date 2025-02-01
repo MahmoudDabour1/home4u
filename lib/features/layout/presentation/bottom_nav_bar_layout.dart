@@ -66,7 +66,10 @@ class BottomNavBarLayout extends StatelessWidget {
               ),
             ),
           ),
-          body: bottomNavCubit.bottomNavScreens[bottomNavCubit.currentIndex],
+          body: IndexedStack(
+            index: bottomNavCubit.currentIndex,
+            children: bottomNavCubit.bottomNavScreens,
+          ),
         );
       },
     );
