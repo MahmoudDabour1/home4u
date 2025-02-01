@@ -23,14 +23,12 @@ class ProjectCubit extends Cubit<ProjectState> {
 
   static ProjectCubit get(context) => BlocProvider.of(context);
 
-  final projectDescriptionController = TextEditingController(text: "mmmmm");
-
-  final projectNameController = TextEditingController(text: "ncb");
-  final projectStartDateController = TextEditingController(text: "2021-09-09");
-  final projectEndDateController = TextEditingController(text: "2022-09-09");
-  final projectToolsController = TextEditingController(text: "mahmoud");
-  File? images;
-
+  final projectDescriptionController = TextEditingController();
+  final projectNameController = TextEditingController();
+  final projectStartDateController = TextEditingController();
+  final projectEndDateController = TextEditingController();
+  final projectToolsController = TextEditingController();
+  List<File> images = [];
   File? coverImage;
   Logger printer = Logger();
 
@@ -41,7 +39,7 @@ class ProjectCubit extends Cubit<ProjectState> {
     )
         .then((value) {
       if (value != null) {
-        images = File(value.path);
+        images.add(File(value.path));
         Navigator.pop(context);
         emit(ProjectState.addImage());
       }
@@ -64,13 +62,19 @@ class ProjectCubit extends Cubit<ProjectState> {
 
   void getProjects() async {
     emit(const ProjectState.getProjectsLoading());
+    final dio = DioFactory.getDio();
+    dio.options.headers.remove('Content-Type');
     final response = await _projectRepository.getProjects();
     response.when(
       success: (getProjectResponseModel) {
-        emit(ProjectState.getProjectsSuccess(getProjectResponseModel.data));
+        if (!isClosed) {
+          emit(ProjectState.getProjectsSuccess(getProjectResponseModel.data));
+        }
       },
       failure: (error) {
-        emit(ProjectState.getProjectsError(error: error.message.toString()));
+        if (!isClosed) {
+          emit(ProjectState.getProjectsError(error: error.message.toString()));
+        }
       },
     );
   }
@@ -82,10 +86,16 @@ class ProjectCubit extends Cubit<ProjectState> {
       success: (deleteProjectResponseModel) {
         Logger printer = Logger();
         printer.i(deleteProjectResponseModel);
-        emit(const ProjectState.deleteProjectSuccess());
+        if (!isClosed) {
+          emit(const ProjectState.deleteProjectSuccess());
+          getProjects();
+        }
       },
       failure: (error) {
-        emit(ProjectState.deleteProjectError(error: error.message.toString()));
+        if (!isClosed) {
+          emit(
+              ProjectState.deleteProjectError(error: error.message.toString()));
+        }
       },
     );
   }
@@ -94,41 +104,62 @@ class ProjectCubit extends Cubit<ProjectState> {
     emit(ProjectState.addProjectLoading());
     try {
       final formData = await _createProjectFormData();
+      Logger()
+          .d("Headers before request: ${DioFactory.getDio().options.headers}");
+
+      // Set Content-Type only when sending FormData
+      DioFactory.setContentTypeForMultipart();
+
       final response = await _projectRepository.addProject(formData);
 
       response.when(
         success: (projectResponse) {
-          showToast(message: "project added successfully");
+          showToast(message: "Project added successfully");
           projectStartDateController.clear();
           projectEndDateController.clear();
           projectDescriptionController.clear();
           projectToolsController.clear();
           projectNameController.clear();
           coverImage = null;
-          images = null;
-          emit(ProjectState.addProjectSuccess());
-          context.pop();
-          // getProjects();
+          images = [];
+          if (!isClosed) {
+            emit(ProjectState.addProjectSuccess());
+            context.pop(); // Close the add project screen
+            getProjects(); // Refresh the project list
+          }
         },
         failure: (error) {
-          emit(ProjectState.failure(errorMessage: error.message.toString()));
+          Logger().e("Error adding project: ${error.message}");
+          if (!isClosed) {
+            emit(ProjectState.failure(errorMessage: error.message.toString()));
+          }
         },
       );
     } catch (e) {
       showToast(message: "Error: $e", isError: true);
-      emit(ProjectState.addProjectError(error: e.toString()));
+      if (!isClosed) {
+        emit(ProjectState.addProjectError(error: e.toString()));
+      }
     }
   }
 
   Future<void> getProjectById(int projectId) async {
     emit(const ProjectState.getProjectLoading());
+    Logger()
+        .d("Headers before request: ${DioFactory.getDio().options.headers}");
+    DioFactory.setContentType("application/json");
+
     final response = await _projectRepository.getProjectsByUserId(projectId);
     response.when(
       success: (projectResponse) {
-        emit(ProjectState.getProjectSuccess(projectResponse));
+        if (!isClosed) {
+          emit(ProjectState.getProjectSuccess(projectResponse));
+        }
       },
       failure: (error) {
-        emit(ProjectState.getProjectError(error: error.message.toString()));
+        if (!isClosed) {
+          emit(ProjectState.getProjectError(error: error.message.toString()));
+        }
       },
     );
   }
@@ -148,16 +179,23 @@ class ProjectCubit extends Cubit<ProjectState> {
           projectToolsController.clear();
           projectNameController.clear();
           coverImage = null;
-          images = null;
-          emit(ProjectState.updateProjectSuccess());
+          images = [];
+          if (!isClosed) {
+            emit(ProjectState.updateProjectSuccess());
+            getProjects();
+          }
         },
         failure: (error) {
-          emit(ProjectState.failure(errorMessage: error.message.toString()));
+          if (!isClosed) {
+            emit(ProjectState.failure(errorMessage: error.message.toString()));
+          }
         },
       );
     } catch (e) {
       showToast(message: "Error: $e", isError: true);
-      emit(ProjectState.updateProjectError(error: e.toString()));
+      if (!isClosed) {
+        emit(ProjectState.updateProjectError(error: e.toString()));
+      }
     }
   }
 
@@ -171,24 +209,29 @@ class ProjectCubit extends Cubit<ProjectState> {
     );
     final projectJson = json.encode(projectMap);
     DioFactory.setContentType("multipart/form-data");
-    final image = MultipartFile.fromFileSync(
-      images!.path,
-      filename: images!.path.split("/").last,
+
+    final imageFiles = images
+        .map((image) => MultipartFile.fromFileSync(
+              image.path,
+              filename: image.path.split("/").last,
+              contentType: MediaType('image', 'jpeg'),
+            ))
+        .toList();
+
+    final coverImageFile = MultipartFile.fromFileSync(
+      coverImage!.path,
+      filename: coverImage!.path.split("/").last,
       contentType: MediaType('image', 'jpeg'),
     );
-    final coverImage = MultipartFile.fromFileSync(
-      this.coverImage!.path,
-      filename: this.coverImage!.path.split("/").last,
-      contentType: MediaType('image', 'jpeg'),
-    );
+
     return FormData.fromMap(
       {
         'projectData': MultipartFile.fromString(
           projectJson,
           contentType: MediaType('application', 'json'),
         ),
-        'images': image,
-        'coverImage': coverImage,
+        'images': imageFiles,
+        'coverImage': coverImageFile,
       },
     );
   }
@@ -204,24 +247,29 @@ class ProjectCubit extends Cubit<ProjectState> {
     );
     final projectJson = json.encode(projectMap);
     DioFactory.setContentType("multipart/form-data");
-    final image = MultipartFile.fromFileSync(
-      images!.path,
-      filename: images!.path.split("/").last,
+
+    final imageFiles = images
+        .map((image) => MultipartFile.fromFileSync(
+              image.path,
+              filename: image.path.split("/").last,
+              contentType: MediaType('image', 'jpeg'),
+            ))
+        .toList();
+
+    final coverImageFile = MultipartFile.fromFileSync(
+      coverImage!.path,
+      filename: coverImage!.path.split("/").last,
       contentType: MediaType('image', 'jpeg'),
     );
-    final coverImage = MultipartFile.fromFileSync(
-      this.coverImage!.path,
-      filename: this.coverImage!.path.split("/").last,
-      contentType: MediaType('image', 'jpeg'),
-    );
+
     return FormData.fromMap(
       {
         'projectData': MultipartFile.fromString(
           projectJson,
           contentType: MediaType('application', 'json'),
         ),
-        'images': image,
-        'coverImage': coverImage,
+        'images': imageFiles,
+        'coverImage': coverImageFile,
       },
     );
   }

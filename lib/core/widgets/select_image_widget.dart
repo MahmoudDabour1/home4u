@@ -13,14 +13,15 @@ import 'bottom_model.dart';
 
 class SelectImageWidget extends StatelessWidget {
   final cubit;
-  final File? image;
+  final List<File> images;
   final bool isCoverImage;
 
-  const SelectImageWidget(
-      {super.key,
-      required this.cubit,
-      required this.image,
-      this.isCoverImage = false});
+  const SelectImageWidget({
+    super.key,
+    required this.cubit,
+    required this.images,
+    this.isCoverImage = false,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -57,30 +58,46 @@ class SelectImageWidget extends StatelessWidget {
           child: Stack(
             alignment: Alignment.center,
             children: [
-              image != null
-                  ? Center(
+              if (isCoverImage && images.isNotEmpty)
+                Image.file(
+                  images.first,
+                  width: 100,
+                  height: 100,
+                  fit: BoxFit.cover,
+                )
+              else if (!isCoverImage && images.isNotEmpty)
+                ListView.builder(
+                  scrollDirection: Axis.horizontal,
+                  itemCount: images.length,
+                  itemBuilder: (context, index) {
+                    return Padding(
+                      padding: const EdgeInsets.all(8.0),
                       child: Image.file(
-                        image!,
-                        width: MediaQuery.sizeOf(context).width - 48.w,
-                        fit: BoxFit.fitWidth,
+                        images[index],
+                        width: 100,
+                        height: 100,
+                        fit: BoxFit.cover,
                       ),
-                    )
-                  : Center(
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Icon(
-                            Icons.camera_alt,
-                            color: AppColors.primaryColor,
-                          ),
-                          verticalSpace(10),
-                          Text(
-                            AppLocale.tapToAddImage.getString(context),
-                            style: AppStyles.font14DarkBlueBold,
-                          ),
-                        ],
+                    );
+                  },
+                )
+              else
+                Center(
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Icon(
+                        Icons.camera_alt,
+                        color: AppColors.primaryColor,
                       ),
-                    ),
+                      verticalSpace(10),
+                      Text(
+                        AppLocale.tapToAddImage.getString(context),
+                        style: AppStyles.font14DarkBlueBold,
+                      ),
+                    ],
+                  ),
+                ),
             ],
           ),
         ),

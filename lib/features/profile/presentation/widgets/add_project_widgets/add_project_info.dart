@@ -27,11 +27,15 @@ class AddProjectInfo extends StatelessWidget {
             padding: const EdgeInsets.symmetric(horizontal: 24.0).w,
             child: Column(
               children: [
-                SelectImageWidget(cubit: cubit, image: cubit.images),
+                SelectImageWidget(
+                  cubit: cubit,
+                  images: cubit.images,
+                  isCoverImage: false,
+                ),
                 verticalSpace(16),
                 SelectImageWidget(
                   cubit: cubit,
-                  image: cubit.coverImage,
+                  images: [if (cubit.coverImage != null) cubit.coverImage!],
                   isCoverImage: true,
                 ),
                 verticalSpace(16),

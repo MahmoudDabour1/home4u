@@ -28,8 +28,8 @@ Data _$DataFromJson(Map<String, dynamic> json) => Data(
       startDate: DateTime.parse(json['startDate'] as String),
       endDate: DateTime.parse(json['endDate'] as String),
       tools: json['tools'] as String,
-      images: (json['images'] as List<dynamic>)
-          .map((e) => Image.fromJson(e as Map<String, dynamic>))
+      images: (json['images'] as List<dynamic>?)
+          ?.map((e) => Image.fromJson(e as Map<String, dynamic>))
           .toList(),
     );
 

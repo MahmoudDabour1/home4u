@@ -14,7 +14,10 @@ class GetProjectsBlocBuilder extends StatelessWidget {
       buildWhen: (previous, current) =>
           current is GetProjectsSuccess ||
           current is GetProjectsLoading ||
-          current is GetProjectsError,
+          current is GetProjectsError ||
+          current is AddProjectSuccess ||
+          current is UpdateProjectSuccess ||
+          current is DeleteProjectSuccess,
       builder: (context, state) {
         return state.maybeWhen(
           getProjectsLoading: () => setupLoading(),
@@ -23,6 +26,18 @@ class GetProjectsBlocBuilder extends StatelessWidget {
             return setupSuccessWidget(projectsList);
           },
           getProjectsError: (errorHandler) => setupError(),
+          // addProjectSuccess: () {
+          //   context.read<ProjectCubit>().getProjects();
+          //   return ProjectsGridViewShimmerWidget();
+          // },
+          // updateProjectSuccess: () {
+          //   context.read<ProjectCubit>().getProjects();
+          //   return ProjectsGridViewShimmerWidget();
+          // },
+          // deleteProjectSuccess: () {
+          //   context.read<ProjectCubit>().getProjects();
+          //   return ProjectsGridViewShimmerWidget();
+          // },
           orElse: () {
             return const SizedBox.shrink();
           },

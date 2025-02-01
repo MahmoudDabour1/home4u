@@ -26,10 +26,10 @@ class AddCertificationsInfo extends StatelessWidget {
             key: cubit.formKey,
             child: Column(
               children: [
-                SelectImageWidget(
-                  cubit: cubit,
-                  image: cubit.image,
-                ),
+                // SelectImageWidget(
+                //   cubit: cubit,
+                //   image: cubit.image,
+                // ),
                 verticalSpace(16),
                 AppTextFormField(
                   labelText: AppLocale.name.getString(context),
