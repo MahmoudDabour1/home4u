@@ -53,8 +53,8 @@ class BottomNavBarLayout extends StatelessWidget {
                         icon: bottomNavCubit.bottomNavIcons[index],
                         text: context.read<AppLocalizationCubit>().appLocale ==
                                 AppLocale.en
-                            ? bottomNavCubit.bottomNavItems[index]
-                            : bottomNavCubit.bottomNavItemsAR[index],
+                            ? AppLocale.bottomNavItems[index]
+                            : AppLocale.bottomNavItemsAR[index],
                       ),
                     ),
                     selectedIndex: bottomNavCubit.currentIndex,
