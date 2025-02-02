@@ -1,19 +1,29 @@
+import 'package:animate_do/animate_do.dart';
 import 'package:fancy_shimmer_image/fancy_shimmer_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:home4u/core/networking/api_constants.dart';
 import 'package:home4u/core/theming/app_styles.dart';
 import 'package:home4u/core/utils/spacing.dart';
 import 'package:home4u/features/profile/logic/project/project_cubit.dart';
 import 'package:home4u/features/profile/logic/project/project_state.dart';
 import 'package:home4u/features/profile/presentation/widgets/projects_widgets/rating_container_item.dart';
 
+import '../../../core/utils/app_constants.dart';
 import '../../auth/widgets/auth_welcome_data.dart';
 
-class ProjectDetailsScreen extends StatelessWidget {
+class ProjectDetailsScreen extends StatefulWidget {
   final int projectId;
 
   const ProjectDetailsScreen({super.key, required this.projectId});
+
+  @override
+  _ProjectDetailsScreenState createState() => _ProjectDetailsScreenState();
+}
+
+class _ProjectDetailsScreenState extends State<ProjectDetailsScreen> {
+  bool showMoreInfo = false;
 
   @override
   Widget build(BuildContext context) {
@@ -69,8 +79,9 @@ class ProjectDetailsScreen extends StatelessWidget {
                                   padding:
                                       const EdgeInsets.only(bottom: 16.0).h,
                                   child: FancyShimmerImage(
-                                    imageUrl:
-                                        "https://dynamic-mouse-needlessly.ngrok-free.app/api/v1/file/download?fileName=${project.data.images![index].path}",
+                                    imageUrl: ApiConstants.getImageBaseUrl(
+                                      project.data.images![index].path,
+                                    ),
                                     width: MediaQuery.sizeOf(context).width,
                                     height:
                                         MediaQuery.sizeOf(context).height * 0.2,
@@ -118,13 +129,73 @@ class ProjectDetailsScreen extends StatelessWidget {
                                 ),
                               ],
                             ),
-                            verticalSpace(16),
-                            Text(
-                              'View Project Information',
-                              style: AppStyles.font16DarkBlueBold.copyWith(
-                                color: Colors.blue,
+                            if (!showMoreInfo)
+                              GestureDetector(
+                                onTap: () {
+                                  setState(() {
+                                    showMoreInfo = true;
+                                  });
+                                },
+                                child: Column(
+                                  children: [
+                                    verticalSpace(16),
+                                    Text(
+                                      'View Project Information',
+                                      style:
+                                          AppStyles.font16DarkBlueBold.copyWith(
+                                        color: Colors.blue,
+                                      ),
+                                    ),
+                                  ],
+                                ),
                               ),
-                            ),
+                            verticalSpace(16),
+                            if (showMoreInfo)
+                              FadeInLeft(
+                                animate: true,
+                                duration: Duration(milliseconds: 300),
+                                curve: Curves.easeInOut,
+                                child: RichText(
+                                  text: TextSpan(
+                                    children: [
+                                      TextSpan(
+                                        text: 'Used Tools : \n',
+                                        style: AppStyles.font16DarkBlueBold
+                                            .copyWith(
+                                          color: Colors.blue,
+                                        ),
+                                      ),
+                                      TextSpan(
+                                        text: '${project.data.tools}\n\n',
+                                        style: AppStyles.font16BlackMedium,
+                                      ),
+                                      TextSpan(
+                                        text: 'Start Date : \n',
+                                        style: AppStyles.font16DarkBlueBold
+                                            .copyWith(
+                                          color: Colors.blue,
+                                        ),
+                                      ),
+                                      TextSpan(
+                                        text:
+                                            '${formatDate(project.data.startDate)}\n\n',
+                                        style: AppStyles.font16BlackMedium,
+                                      ),
+                                      TextSpan(
+                                        text: 'End Date : \n',
+                                        style: AppStyles.font16DarkBlueBold
+                                            .copyWith(
+                                          color: Colors.blue,
+                                        ),
+                                      ),
+                                      TextSpan(
+                                        text: formatDate(project.data.endDate),
+                                        style: AppStyles.font16BlackMedium,
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                              ),
                             verticalSpace(32),
                             Text(
                               'More Projects By Mahmoud Dabour',

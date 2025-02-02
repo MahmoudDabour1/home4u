@@ -20,8 +20,13 @@ class UserImageWidget extends StatelessWidget {
           radius: 51.r,
           foregroundImage: profileData?.data?.user?.personalPhoto != null
               ? NetworkImage(
-                  "${ApiConstants.getImageBaseUrl}${profileData!.data!.user!.personalPhoto}"??"")
-              : AssetImage(AppAssets.facebook,),
+                  ApiConstants.getImageBaseUrl(
+                    profileData!.data!.user!.personalPhoto,
+                  ),
+                )
+              : AssetImage(
+                  AppAssets.facebook,
+                ),
         ),
       ),
     );

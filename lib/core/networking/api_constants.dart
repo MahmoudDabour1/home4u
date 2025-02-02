@@ -1,4 +1,3 @@
-
 class ApiConstants {
   static const String apiBaseUrl = "http://149.102.135.15:5000";
   static const String loginEndPoint = "/api/v1/auth/login";
@@ -18,19 +17,20 @@ class ApiConstants {
   static const String projectAddEp = "/api/v1/project";
 
   ///Certifications
-  static const String getAllCertificationsEp = "/api/v1/certificate/user-certificates";
+  static const String getAllCertificationsEp =
+      "/api/v1/certificate/user-certificates";
   static const String addCertificationsEp = "/api/v1/certificate";
   static const String updateCertificationsEp = "/api/v1/certificate";
-  static const String deleteCertificationsEp = "/api/v1/certificate/{certificationId}";
-  static const String getCertificationByIdEp = "/api/v1/certificate/{certificationId}";
-
-
-
+  static const String deleteCertificationsEp =
+      "/api/v1/certificate/{certificationId}";
+  static const String getCertificationByIdEp =
+      "/api/v1/certificate/{certificationId}";
 
   static const String getEngineerByTokenEp = "/api/v1/engineers/user";
 
   //images
-  static const String getImageBaseUrl = "https://dynamic-mouse-needlessly.ngrok-free.app/api/v1/file/download?fileName=";
+  static String getImageBaseUrl(String path) =>
+      "$apiBaseUrl/api/v1/file/download?fileName=$path";
 }
 
 class ApiErrors {

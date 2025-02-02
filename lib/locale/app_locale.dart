@@ -75,6 +75,7 @@ class AppLocale {
   static const String delete = 'Delete';
   static const String edit = 'Edit';
   static const String uploadProjectImages = 'upload project images';
+  static const String projectName = 'Project Name';
   static const String projectDescription = 'Project Description';
   static const String projectStartData = 'Start Data';
   static const String projectEndData = 'End Data';
@@ -84,7 +85,9 @@ class AppLocale {
   static const String areYouSureYouWantToDeleteThisItem =
       'Are you sure you want to delete this item?';
   static const String addProject = 'Add Project';
-
+  static const String choose = 'Choose';
+  static const String setStartDate = 'Set Start Date';
+  static const String setEndDate = 'Set End Date';
   static const String toggleLanguage = 'Toggle Language';
   static const String editProfile = 'Edit Profile';
   static const String projects = 'Projects';
@@ -111,8 +114,6 @@ class AppLocale {
   static const String loginSuccessfully = 'Login Successfully';
   static const String anUnknownErrorOccurred = 'An unknown error occurred';
   static const String addCertifications = 'Add Certifications';
-  static const String updateCertification = 'Update Certification';
-  static const String updateProject = 'Update Project';
   static const String pleaseSelectImageWay = 'Please Select Image way';
   static const String camera = 'Camera';
   static const String gallery = 'Gallery';
@@ -129,7 +130,24 @@ class AppLocale {
       'Error uploading certification';
   static const String certificationUpdatedSuccessfully =
       'Certification updated successfully';
+  static List<String> bottomNavItems = [
+    'Home',
+    'Projects',
+    'Chats',
+    'Community',
+    'Profile',
+  ];
 
+  static List<String> bottomNavItemsAR = [
+    'الرئيسية',
+    'المشاريع',
+    'المحادثات',
+    'المجتمع',
+    'الملف الشخصي',
+  ];
+
+  static const String updateCertification = 'Update Certification';
+  static const String updateProject = 'Update Project';
   static const Map<String, dynamic> en = {
     onBoardingTitle1: 'Civil works and finishing services',
     onBoardingTitle2: 'Civil works and finishing services 2',
@@ -204,6 +222,7 @@ class AppLocale {
     delete: 'Delete',
     edit: 'Edit',
     uploadProjectImages: 'Upload project images',
+    projectName: 'Project Name',
     projectDescription: 'Project Description',
     projectStartData: 'Start Data',
     projectEndData: 'End Data',
@@ -213,6 +232,9 @@ class AppLocale {
     areYouSureYouWantToDeleteThisItem:
         'Are you sure you want to delete this item?',
     addProject: 'Add Project',
+    choose: 'Choose',
+    setStartDate: 'Set Start Date',
+    setEndDate: 'Set End Date',
     editProfile: 'Edit Profile',
     projects: 'Projects',
     services: 'Services',
@@ -252,7 +274,7 @@ class AppLocale {
     errorUploadingCertification: 'Error uploading certification',
     certificationUpdatedSuccessfully: 'Certification updated successfully',
     updateCertification: 'Update Certification',
-    updateProject: 'Update Project',
+    updateProject: 'Update Project'
   };
 
   static const Map<String, dynamic> ar = {
@@ -329,6 +351,7 @@ class AppLocale {
     delete: 'حذف',
     edit: 'تعديل',
     uploadProjectImages: 'رفع صور المشروع',
+    projectName: 'اسم المشروع',
     projectDescription: 'وصف المشروع',
     projectStartData: 'تاريخ البدء',
     projectEndData: 'تاريخ الانتهاء',
@@ -337,6 +360,9 @@ class AppLocale {
     deletedSuccessfully: 'تم الحذف بنجاح',
     areYouSureYouWantToDeleteThisItem: 'هل أنت متأكد أنك تريد حذف هذا العنصر؟',
     addProject: 'إضافة مشروع',
+    choose: 'اختار',
+    setStartDate: 'تحديد تاريخ البدء',
+    setEndDate: 'تحديد تاريخ الانتهاء',
     editProfile: 'تعديل الملف الشخصي',
     projects: 'المشاريع',
     services: 'الخدمات',

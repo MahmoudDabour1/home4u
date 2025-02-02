@@ -64,9 +64,9 @@ class ProjectsGridViewShimmerWidget extends StatelessWidget {
                 //      projectData: ProjectsData(),
                 //   ),
                 // ),
-                isCertification
-                    ? SizedBox.shrink()
-                    : ProjectBottomRatingWidget(),
+                // isCertification
+                //     ? SizedBox.shrink()
+                //     : ProjectBottomRatingWidget(),
               ],
             ),
           );
