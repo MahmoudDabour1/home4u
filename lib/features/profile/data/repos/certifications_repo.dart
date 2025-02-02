@@ -13,8 +13,14 @@ abstract class CertificationsRepo {
   Future<ApiResult<DeleteCertificationResponseModel>> deleteCertificationById(
       int certificationId);
 
-  Future<ApiResult<AddCertificationResponseModel>> addCertification(FormData formData);
-  Future<ApiResult<AddCertificationResponseModel>> updateCertification(FormData formData);
+  Future<ApiResult<AddCertificationResponseModel>> addCertification(
+      FormData formData);
+
+  Future<ApiResult<AddCertificationResponseModel>> updateCertification(
+      FormData formData);
+
+  Future<ApiResult<GetCertificationsResponseModel>> getCertificationById(
+      int certificationId);
 }
 
 class CertificationsRepoImpl implements CertificationsRepo {
@@ -47,10 +53,11 @@ class CertificationsRepoImpl implements CertificationsRepo {
   }
 
   @override
-  Future<ApiResult<AddCertificationResponseModel>> addCertification(FormData formData) async {
+  Future<ApiResult<AddCertificationResponseModel>> addCertification(
+      FormData formData) async {
     try {
-      final response = await _certificationsRemoteDataSource
-          .addCertification(formData);
+      final response =
+          await _certificationsRemoteDataSource.addCertification(formData);
       return ApiResult.success(response);
     } catch (error) {
       return ApiResult.failure(ApiErrorHandler.handle(error));
@@ -58,10 +65,23 @@ class CertificationsRepoImpl implements CertificationsRepo {
   }
 
   @override
-  Future<ApiResult<AddCertificationResponseModel>> updateCertification(FormData formData)async {
+  Future<ApiResult<AddCertificationResponseModel>> updateCertification(
+      FormData formData) async {
+    try {
+      final response =
+          await _certificationsRemoteDataSource.updateCertification(formData);
+      return ApiResult.success(response);
+    } catch (error) {
+      return ApiResult.failure(ApiErrorHandler.handle(error));
+    }
+  }
+
+  @override
+  Future<ApiResult<GetCertificationsResponseModel>> getCertificationById(
+      int certificationId) async {
     try {
       final response = await _certificationsRemoteDataSource
-          .updateCertification(formData);
+          .getCertificationById(certificationId);
       return ApiResult.success(response);
     } catch (error) {
       return ApiResult.failure(ApiErrorHandler.handle(error));

@@ -30,7 +30,7 @@ class InformationWidget extends StatelessWidget {
               Skeletonizer(
                 enabled: state is LoadingProfileData,
                 child: Text(
-                  "${profileData.data!.user!.firstName}${profileData.data!.user!.lastName}",
+                  "${profileData.data?.user?.firstName}${profileData.data?.user?.lastName}"??"",
                   style: AppStyles.font16BlackSemiBold,
                 ),
               ),
@@ -38,7 +38,7 @@ class InformationWidget extends StatelessWidget {
               Skeletonizer(
                 enabled: state is LoadingProfileData,
                 child: Text(
-                  profileData.data!.type!.name!,
+                  profileData.data?.type?.name??"",
                   style: AppStyles.font16BlackLight,
                 ),
               ),
@@ -48,7 +48,7 @@ class InformationWidget extends StatelessWidget {
               Skeletonizer(
                 enabled: state is LoadingProfileData,
                 child: Text(
-                  profileData.data!.bio!,
+                  profileData.data?.bio??"",
                   style: AppStyles.font16BlackLight,
                   textAlign: TextAlign.center,
                 ),

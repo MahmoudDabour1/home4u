@@ -22,6 +22,8 @@ class ApiConstants {
   static const String addCertificationsEp = "/api/v1/certificate";
   static const String updateCertificationsEp = "/api/v1/certificate";
   static const String deleteCertificationsEp = "/api/v1/certificate/{certificationId}";
+  static const String getCertificationByIdEp = "/api/v1/certificate/{certificationId}";
+
 
 
 

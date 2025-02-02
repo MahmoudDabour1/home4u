@@ -46,4 +46,13 @@ class CertificationsState<T> with _$CertificationsState<T> {
       UpdateCertificationSuccess;
   const factory CertificationsState.updateCertificationError({required String errorMessage})=
       UpdateCertificationError;
+
+  //get Certification by Id
+  const factory CertificationsState.getCertificationByIdLoading() =
+      GetCertificationByIdLoading;
+  const factory CertificationsState.getCertificationByIdSuccess(
+          GetCertificationsResponseModel getCertificationResponseModel) =
+      GetCertificationByIdSuccess;
+  const factory CertificationsState.getCertificationByIdError(
+      {required String errorMessage}) = GetCertificationByIdError;
 }

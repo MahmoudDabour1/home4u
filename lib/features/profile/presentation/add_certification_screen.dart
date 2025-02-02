@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_localization/flutter_localization.dart';
+import 'package:home4u/features/profile/data/models/certifications/get_certifications_response_model.dart';
 import 'package:home4u/features/profile/logic/certifications/certifications_cubit.dart';
 import 'package:home4u/features/profile/presentation/widgets/certifications_widgets/add_certifications_info.dart';
 
@@ -10,7 +11,9 @@ import '../../auth/widgets/auth_welcome_data.dart';
 import '../logic/certifications/certifications_state.dart';
 
 class AddCertificationScreen extends StatelessWidget {
-  const AddCertificationScreen({super.key});
+  final CertificationsData? certificationsData;
+
+  const AddCertificationScreen({super.key, this.certificationsData});
 
   @override
   Widget build(BuildContext context) {
@@ -24,10 +27,14 @@ class AddCertificationScreen extends StatelessWidget {
                 return Column(
                   children: [
                     AuthWelcomeData(
-                      headText: AppLocale.addCertifications.getString(context),
+                      headText: certificationsData != null
+                          ? AppLocale.update.getString(context)
+                          : AppLocale.addCertifications.getString(context),
                       subText: '',
                     ),
-                    AddCertificationsInfo(),
+                    AddCertificationsInfo(
+                      certificationData: certificationsData,
+                    ),
                   ],
                 );
               },

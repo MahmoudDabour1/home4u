@@ -20,6 +20,8 @@ import 'package:home4u/features/profile/presentation/add_certification_screen.da
 import '../../features/auth/login/presentation/login_screen.dart';
 import '../../features/layout/presentation/bottom_nav_bar_layout.dart';
 import '../../features/onboarding/presentation/onboarding_screen.dart';
+import '../../features/profile/data/models/certifications/get_certifications_response_model.dart';
+import '../../features/profile/data/models/projects/get_projects_response_model.dart';
 import '../../features/profile/presentation/add_project_screen.dart';
 import '../../features/profile/presentation/profile_screen.dart';
 import '../../features/profile/presentation/project_details_screen.dart';
@@ -77,8 +79,11 @@ class AppRouter {
           ),
         );
       case Routes.addProjectScreen:
+        final projectData = settings.arguments as ProjectsData?;
         return MaterialPageRoute(
-          builder: (_) => AddProjectScreen(),
+          builder: (_) => AddProjectScreen(
+            projectData: projectData,
+          ),
         );
       case Routes.engineeringOfficeScreen:
         return MaterialPageRoute(
@@ -104,8 +109,11 @@ class AppRouter {
           builder: (_) => SettingScreen(),
         );
       case Routes.addCertificationScreen:
+        final certificationData = settings.arguments as CertificationsData?;
         return MaterialPageRoute(
-          builder: (_) => AddCertificationScreen(),
+          builder: (_) => AddCertificationScreen(
+            certificationsData: certificationData,
+          ),
         );
       case Routes.projectDetailsScreen:
         int projectId = settings.arguments as int;

@@ -1,5 +1,5 @@
-import 'package:bottom_picker/bottom_picker.dart';
-import 'package:bottom_picker/resources/arrays.dart';
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_localization/flutter_localization.dart';
@@ -8,9 +8,12 @@ import 'package:home4u/core/localization/app_localization_cubit.dart';
 import 'package:home4u/core/theming/app_colors.dart';
 import 'package:home4u/core/theming/app_styles.dart';
 import 'package:home4u/core/widgets/get_common_input_decoration.dart';
+import 'package:home4u/features/profile/data/models/projects/get_projects_response_model.dart';
 import 'package:home4u/features/profile/logic/project/project_cubit.dart';
 import 'package:home4u/features/profile/logic/project/project_state.dart';
+import 'package:intl/intl.dart';
 
+import '../../../../../core/helpers/helper_methods.dart';
 import '../../../../../core/utils/spacing.dart';
 import '../../../../../core/widgets/app_custom_button.dart';
 import '../../../../../core/widgets/app_text_form_field.dart';
@@ -18,13 +21,36 @@ import '../../../../../core/widgets/select_image_widget.dart';
 import '../../../../../locale/app_locale.dart';
 
 class AddProjectInfo extends StatelessWidget {
-  const AddProjectInfo({super.key});
+  final ProjectsData? projectData;
+
+  const AddProjectInfo({super.key, this.projectData});
 
   @override
   Widget build(BuildContext context) {
     return BlocBuilder<ProjectCubit, ProjectState>(
       builder: (context, state) {
         final cubit = ProjectCubit.get(context);
+        if (projectData != null) {
+          cubit.projectNameController.text = projectData!.name ?? '';
+          cubit.projectDescriptionController.text =
+              projectData!.description ?? '';
+          cubit.projectStartDateController.text =
+              _formatDate(projectData!.startDate) ?? '';
+          cubit.projectEndDateController.text =
+              _formatDate(projectData!.endDate) ?? '';
+          cubit.projectToolsController.text = projectData!.tools ?? '';
+          if (projectData!.coverPath != null) {
+            final file = File(projectData!.coverPath!);
+            if (file.existsSync()) {
+              cubit.coverImage = file;
+            } else {
+              showToast(
+                message: "fileNotFound",
+                isError: true,
+              );
+            }
+          }
+        }
         if (state is ProjectFailureState) {
           return Center(child: Text(state.errorMessage));
         } else {
@@ -64,6 +90,13 @@ class AddProjectInfo extends StatelessWidget {
   }
 
   Widget _buildProjectNameField(cubit,BuildContext context) {
+  String? _formatDate(DateTime? date) {
+    if (date == null) return null;
+    final formatter = DateFormat('yyyy-MM-dd');
+    return formatter.format(date);
+  }
+
+  Widget _buildProjectNameField(cubit) {
     return AppTextFormField(
       labelText: AppLocale.projectName.getString(context),
       controller: cubit.projectNameController,
@@ -219,10 +252,21 @@ class AddProjectInfo extends StatelessWidget {
     return AppCustomButton(
       isLoading: state is AddProjectLoading,
       textButton: AppLocale.confirm.getString(context),
+      isLoading: state is AddProjectLoading || state is UpdateProjectLoading,
+      textButton: projectData != null
+          ? AppLocale.updateProject.getString(context)
+          : AppLocale.addProject.getString(context),
       btnWidth: MediaQuery.sizeOf(context).width,
       btnHeight: 65.h,
       onPressed: () {
-        cubit.addProject(context);
+        if (projectData != null) {
+          cubit.updateProject(projectData!.id!, context);
+        } else {
+          cubit.addProject(context);
+        }
+        // if (cubit.formKey.currentState!.validate()) {
+        //
+        // }
       },
     );
   }

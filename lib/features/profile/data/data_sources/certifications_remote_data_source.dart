@@ -22,6 +22,11 @@ abstract class CertificationsRemoteDataSource {
     @Path("certificationId") int certificationId,
   );
 
+  @GET(ApiConstants.getCertificationByIdEp)
+  Future<GetCertificationsResponseModel> getCertificationById(
+    @Path("certificationId") int certificationId,
+  );
+
   @POST(ApiConstants.addCertificationsEp)
   Future<AddCertificationResponseModel> addCertification(
       @Body() FormData formData);
