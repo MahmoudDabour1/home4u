@@ -58,12 +58,12 @@ class ProjectsGridViewShimmerWidget extends StatelessWidget {
                     // errorWidget: (context, url, error) => const Icon(Icons.error),
                   ),
                 ),
-                Skeletonizer(
-                  enabled: true,
-                  child: ProjectMenuButtonAndDialog(
-                     projectData: ProjectsData(),
-                  ),
-                ),
+                // Skeletonizer(
+                //   enabled: true,
+                //   child: ProjectMenuButtonAndDialog(
+                //      projectData: ProjectsData(),
+                //   ),
+                // ),
                 isCertification
                     ? SizedBox.shrink()
                     : ProjectBottomRatingWidget(),

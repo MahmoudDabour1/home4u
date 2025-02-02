@@ -61,7 +61,7 @@ class ProjectCubit extends Cubit<ProjectState> {
     });
   }
 
-  void getProjects() async {
+   getProjects() async {
     emit(const ProjectState.getProjectsLoading());
     final dio = DioFactory.getDio();
     dio.options.headers.remove('Content-Type');
