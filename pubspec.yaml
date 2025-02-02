@@ -106,6 +106,8 @@ dependencies:
   #
   http_parser:
   dotted_border: ^2.1.0
+  animate_do: ^3.3.4
+  easy_date_timeline: ^2.0.6
 
 
 dev_dependencies:
