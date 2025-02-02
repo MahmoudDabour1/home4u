@@ -145,32 +145,9 @@ class AppLocale {
     'المجتمع',
     'الملف الشخصي',
   ];
-  static const String appearance = 'Appearance:';
-  static const String changeLanguage = 'Change Language';
-  static const String support = 'Support:';
-  static const String faqs = 'Faqs';
-  static const String loginSuccessfully = 'Login Successfully';
-  static const String anUnknownErrorOccurred = 'An unknown error occurred';
-  static const String addCertifications = 'Add Certifications';
+
   static const String updateCertification = 'Update Certification';
   static const String updateProject = 'Update Project';
-  static const String pleaseSelectImageWay = 'Please Select Image way';
-  static const String camera = 'Camera';
-  static const String gallery = 'Gallery';
-  static const String tapToAddImage = 'Tap to Add Image';
-  static const String name = 'Name';
-  static const String description = 'Description';
-  static const String update = 'Update';
-  static const String nameCantBeEmpty = 'Name Can\'t be empty';
-  static const String descriptionCantBeEmpty = 'Description Can\'t be empty';
-  static const String pleaseSelectAnImage = 'Please select an image';
-  static const String certificationAddedSuccessfully =
-      'Certification added successfully';
-  static const String errorUploadingCertification =
-      'Error uploading certification';
-  static const String certificationUpdatedSuccessfully =
-      'Certification updated successfully';
-
   static const Map<String, dynamic> en = {
     onBoardingTitle1: 'Civil works and finishing services',
     onBoardingTitle2: 'Civil works and finishing services 2',

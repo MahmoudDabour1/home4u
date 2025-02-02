@@ -3,12 +3,14 @@ import 'package:fancy_shimmer_image/fancy_shimmer_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:home4u/core/networking/api_constants.dart';
 import 'package:home4u/core/theming/app_styles.dart';
 import 'package:home4u/core/utils/spacing.dart';
 import 'package:home4u/features/profile/logic/project/project_cubit.dart';
 import 'package:home4u/features/profile/logic/project/project_state.dart';
 import 'package:home4u/features/profile/presentation/widgets/projects_widgets/rating_container_item.dart';
 
+import '../../../core/utils/app_constants.dart';
 import '../../auth/widgets/auth_welcome_data.dart';
 
 class ProjectDetailsScreen extends StatefulWidget {
@@ -77,8 +79,9 @@ class _ProjectDetailsScreenState extends State<ProjectDetailsScreen> {
                                   padding:
                                       const EdgeInsets.only(bottom: 16.0).h,
                                   child: FancyShimmerImage(
-                                    imageUrl:
-                                        "https://dynamic-mouse-needlessly.ngrok-free.app/api/v1/file/download?fileName=${project.data.images![index].path}",
+                                    imageUrl: ApiConstants.getImageBaseUrl(
+                                      project.data.images![index].path,
+                                    ),
                                     width: MediaQuery.sizeOf(context).width,
                                     height:
                                         MediaQuery.sizeOf(context).height * 0.2,
@@ -174,7 +177,8 @@ class _ProjectDetailsScreenState extends State<ProjectDetailsScreen> {
                                         ),
                                       ),
                                       TextSpan(
-                                        text: '${project.data.startDate}\n\n',
+                                        text:
+                                            '${formatDate(project.data.startDate)}\n\n',
                                         style: AppStyles.font16BlackMedium,
                                       ),
                                       TextSpan(
@@ -185,7 +189,7 @@ class _ProjectDetailsScreenState extends State<ProjectDetailsScreen> {
                                         ),
                                       ),
                                       TextSpan(
-                                        text: project.data.endDate.toString(),
+                                        text: formatDate(project.data.endDate),
                                         style: AppStyles.font16BlackMedium,
                                       ),
                                     ],

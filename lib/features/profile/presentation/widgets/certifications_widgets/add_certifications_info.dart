@@ -16,7 +16,6 @@ import '../../../../../core/widgets/select_image_widget.dart';
 import '../../../data/models/certifications/get_certifications_response_model.dart';
 import 'package:path_provider/path_provider.dart';
 
-
 class AddCertificationsInfo extends StatelessWidget {
   final CertificationsData? certificationData;
 
@@ -33,7 +32,8 @@ class AddCertificationsInfo extends StatelessWidget {
             cubit.nameController.text = certificationData!.name ?? '';
             cubit.descriptionController.text =
                 certificationData!.description ?? '';
-            _loadImageFromUrl(context, "${ApiConstants.getImageBaseUrl}${certificationData!.imagePath}");
+            _loadImageFromUrl(context,
+                ApiConstants.getImageBaseUrl(certificationData!.imagePath!));
             // if (certificationData!.imagePath != null) {
             //   final file = File(certificationData!.imagePath!);
             //   if (file.existsSync()) {
@@ -85,7 +85,8 @@ class AddCertificationsInfo extends StatelessWidget {
                       ? AppLocale.update.getString(context)
                       : AppLocale.add.getString(context),
                   btnWidth: MediaQuery.sizeOf(context).width,
-                  isLoading: state is UpdateCertificationLoading||state is AddCertificationLoading,
+                  isLoading: state is UpdateCertificationLoading ||
+                      state is AddCertificationLoading,
                   btnHeight: 60.h,
                   onPressed: () {
                     if (cubit.formKey.currentState!.validate()) {
@@ -105,6 +106,7 @@ class AddCertificationsInfo extends StatelessWidget {
       ),
     );
   }
+
   // Future<void> _loadImageFromUrl(BuildContext context, String url) async {
   //   final cubit = CertificationsCubit.get(context);
   //   try {
@@ -133,7 +135,8 @@ class AddCertificationsInfo extends StatelessWidget {
     final cubit = CertificationsCubit.get(context);
     try {
       final dio = Dio();
-      final response = await dio.get(url, options: Options(responseType: ResponseType.bytes));
+      final response = await dio.get(url,
+          options: Options(responseType: ResponseType.bytes));
       if (response.statusCode == 200) {
         final directory = await getTemporaryDirectory();
         final file = File('${directory.path}/temp_image.jpg');

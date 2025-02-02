@@ -1,5 +1,7 @@
 import 'dart:io';
 
+import 'package:bottom_picker/bottom_picker.dart';
+import 'package:bottom_picker/resources/arrays.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_localization/flutter_localization.dart';
@@ -11,9 +13,9 @@ import 'package:home4u/core/widgets/get_common_input_decoration.dart';
 import 'package:home4u/features/profile/data/models/projects/get_projects_response_model.dart';
 import 'package:home4u/features/profile/logic/project/project_cubit.dart';
 import 'package:home4u/features/profile/logic/project/project_state.dart';
-import 'package:intl/intl.dart';
 
 import '../../../../../core/helpers/helper_methods.dart';
+import '../../../../../core/utils/app_constants.dart';
 import '../../../../../core/utils/spacing.dart';
 import '../../../../../core/widgets/app_custom_button.dart';
 import '../../../../../core/widgets/app_text_form_field.dart';
@@ -35,9 +37,9 @@ class AddProjectInfo extends StatelessWidget {
           cubit.projectDescriptionController.text =
               projectData!.description ?? '';
           cubit.projectStartDateController.text =
-              _formatDate(projectData!.startDate) ?? '';
+              formatDate(projectData!.startDate) ?? '';
           cubit.projectEndDateController.text =
-              _formatDate(projectData!.endDate) ?? '';
+              formatDate(projectData!.endDate) ?? '';
           cubit.projectToolsController.text = projectData!.tools ?? '';
           if (projectData!.coverPath != null) {
             final file = File(projectData!.coverPath!);
@@ -71,13 +73,13 @@ class AddProjectInfo extends StatelessWidget {
                 ),
                 verticalSpace(16),
                 verticalSpace(16),
-                _buildProjectNameField(cubit,context),
+                _buildProjectNameField(cubit, context),
                 verticalSpace(16),
                 _buildProjectDescriptionField(cubit, context),
                 verticalSpace(16),
                 _buildProjectDatesFields(context, cubit),
                 verticalSpace(16),
-                _buildProjectToolsField(cubit,context),
+                _buildProjectToolsField(cubit, context),
                 verticalSpace(32),
                 _buildSubmitButton(context, state, cubit),
                 verticalSpace(64),
@@ -89,14 +91,7 @@ class AddProjectInfo extends StatelessWidget {
     );
   }
 
-  Widget _buildProjectNameField(cubit,BuildContext context) {
-  String? _formatDate(DateTime? date) {
-    if (date == null) return null;
-    final formatter = DateFormat('yyyy-MM-dd');
-    return formatter.format(date);
-  }
-
-  Widget _buildProjectNameField(cubit) {
+  Widget _buildProjectNameField(cubit, BuildContext context) {
     return AppTextFormField(
       labelText: AppLocale.projectName.getString(context),
       controller: cubit.projectNameController,
@@ -234,7 +229,7 @@ class AddProjectInfo extends StatelessWidget {
     ).show(context);
   }
 
-  Widget _buildProjectToolsField(cubit,BuildContext context) {
+  Widget _buildProjectToolsField(cubit, BuildContext context) {
     return AppTextFormField(
       labelText: AppLocale.projectTools.getString(context),
       keyboardType: TextInputType.text,
@@ -250,8 +245,6 @@ class AddProjectInfo extends StatelessWidget {
 
   Widget _buildSubmitButton(BuildContext context, ProjectState state, cubit) {
     return AppCustomButton(
-      isLoading: state is AddProjectLoading,
-      textButton: AppLocale.confirm.getString(context),
       isLoading: state is AddProjectLoading || state is UpdateProjectLoading,
       textButton: projectData != null
           ? AppLocale.updateProject.getString(context)
@@ -264,9 +257,6 @@ class AddProjectInfo extends StatelessWidget {
         } else {
           cubit.addProject(context);
         }
-        // if (cubit.formKey.currentState!.validate()) {
-        //
-        // }
       },
     );
   }
