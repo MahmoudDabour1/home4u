@@ -1,6 +1,6 @@
 
 class ApiConstants {
-  static const String apiBaseUrl = "https://dynamic-mouse-needlessly.ngrok-free.app";
+  static const String apiBaseUrl = "http://149.102.135.15:5000";
   static const String loginEndPoint = "/api/v1/auth/login";
   static const String userTypesEp = "/api/v1/user-types";
   static const String signUpEp = "/api/v1/auth/register";
@@ -22,6 +22,8 @@ class ApiConstants {
   static const String addCertificationsEp = "/api/v1/certificate";
   static const String updateCertificationsEp = "/api/v1/certificate";
   static const String deleteCertificationsEp = "/api/v1/certificate/{certificationId}";
+  static const String getCertificationByIdEp = "/api/v1/certificate/{certificationId}";
+
 
 
 

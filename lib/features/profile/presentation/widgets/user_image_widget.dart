@@ -5,7 +5,7 @@ import 'package:home4u/core/theming/app_assets.dart';
 import 'package:home4u/features/profile/data/models/profile/profile_response_model.dart';
 
 class UserImageWidget extends StatelessWidget {
-  final ProfileResponseModel profileData;
+  final ProfileResponseModel? profileData;
 
   const UserImageWidget({super.key, required this.profileData});
 
@@ -18,9 +18,9 @@ class UserImageWidget extends StatelessWidget {
         clipBehavior: Clip.antiAlias,
         child: CircleAvatar(
           radius: 51.r,
-          foregroundImage: profileData.data!.user!.personalPhoto != null
+          foregroundImage: profileData?.data?.user?.personalPhoto != null
               ? NetworkImage(
-                  "${ApiConstants.getImageBaseUrl}${profileData.data!.user!.personalPhoto}")
+                  "${ApiConstants.getImageBaseUrl}${profileData!.data!.user!.personalPhoto}"??"")
               : AssetImage(AppAssets.facebook,),
         ),
       ),

@@ -44,18 +44,21 @@ class CertificationsCubit extends Cubit<CertificationsState> {
 
   Future<void> getAllCertifications() async {
     emit(const CertificationsState.getAllCertificationsLoading());
+    final dio = DioFactory.getDio();
+    dio.options.headers.remove('Content-Type');
     final response = await _certificationsRepository.getAllCertifications();
     response.when(
       success: (certificationsResponse) {
-        emit(
-          CertificationsState.getAllCertificationsSuccess(
-            certificationsResponse.data,
-          ),
-        );
+        if (!isClosed) {
+          emit(CertificationsState.getAllCertificationsSuccess(
+              certificationsResponse.data));
+        }
       },
       failure: (error) {
-        emit(CertificationsState.getAllCertificationsFailure(
-            errorMessage: error.message.toString()));
+        if (!isClosed) {
+          emit(CertificationsState.getAllCertificationsFailure(
+              errorMessage: error.message.toString()));
+        }
       },
     );
   }
@@ -66,11 +69,15 @@ class CertificationsCubit extends Cubit<CertificationsState> {
         .deleteCertificationById(certificationId);
     response.when(
       success: (deleteCertificationResponseModel) {
-        emit(const CertificationsState.deleteCertificationSuccess());
+        if (!isClosed) {
+          emit(const CertificationsState.deleteCertificationSuccess());
+        }
       },
       failure: (error) {
-        emit(CertificationsState.deleteCertificationError(
-            error: error.message.toString()));
+        if (!isClosed) {
+          emit(CertificationsState.deleteCertificationError(
+              error: error.message.toString()));
+        }
       },
     );
   }
@@ -82,9 +89,10 @@ class CertificationsCubit extends Cubit<CertificationsState> {
           isError: true);
       return;
     }
-    emit(CertificationsState.addCertificationLoading());
+    emit(const CertificationsState.addCertificationLoading());
     try {
       final formData = await _createFormData();
+      DioFactory.setContentTypeForMultipart();
       final response =
           await _certificationsRepository.addCertification(formData);
       response.when(
@@ -93,26 +101,52 @@ class CertificationsCubit extends Cubit<CertificationsState> {
             message:
                 AppLocale.certificationAddedSuccessfully.getString(context),
           );
-          emit(CertificationsState.addCertificationSuccess());
           nameController.clear();
           descriptionController.clear();
           image = null;
-          context.pop();
-          getAllCertifications();
+          if (!isClosed) {
+            emit(const CertificationsState.addCertificationSuccess());
+            context.pop();
+            getAllCertifications();
+          }
         },
         failure: (error) {
           showToast(message: error.message.toString(), isError: true);
-          emit(CertificationsState.addCertificationError(
-              errorMessage: error.message.toString()));
+          if (!isClosed) {
+            emit(CertificationsState.addCertificationError(
+                errorMessage: error.message.toString()));
+          }
         },
       );
     } catch (e) {
       showToast(
           message: AppLocale.errorUploadingCertification.getString(context),
           isError: true);
-      emit(CertificationsState.addCertificationError(
-          errorMessage: e.toString()));
+      if (!isClosed) {
+        emit(CertificationsState.addCertificationError(
+            errorMessage: e.toString()));
+      }
     }
+  }
+
+  Future<void> getCertificationById(int certificationId) async {
+    emit(const CertificationsState.getCertificationByIdLoading());
+    final response =
+        await _certificationsRepository.getCertificationById(certificationId);
+    response.when(
+      success: (certificationResponse) {
+        if (!isClosed) {
+          emit(CertificationsState.getCertificationByIdSuccess(
+              certificationResponse));
+        }
+      },
+      failure: (error) {
+        if (!isClosed) {
+          emit(CertificationsState.getCertificationByIdError(
+              errorMessage: error.message.toString()));
+        }
+      },
+    );
   }
 
   Future<void> updateCertification(int certificationId, context) async {
@@ -126,20 +160,31 @@ class CertificationsCubit extends Cubit<CertificationsState> {
           showToast(
               message: AppLocale.certificationUpdatedSuccessfully
                   .getString(context));
-          emit(CertificationsState.updateCertificationSuccess());
+          nameController.clear();
+          descriptionController.clear();
+          image = null;
+          if (!isClosed) {
+            emit(const CertificationsState.updateCertificationSuccess());
+            context.pop();
+            getAllCertifications();
+          }
         },
         failure: (error) {
           showToast(message: error.message.toString(), isError: true);
-          emit(CertificationsState.updateCertificationError(
-              errorMessage: error.message.toString()));
+          if (!isClosed) {
+            emit(CertificationsState.updateCertificationError(
+                errorMessage: error.message.toString()));
+          }
         },
       );
     } catch (e) {
       showToast(
           message: AppLocale.errorUploadingCertification.getString(context),
           isError: true);
-      emit(CertificationsState.updateCertificationError(
-          errorMessage: e.toString()));
+      if (!isClosed) {
+        emit(CertificationsState.updateCertificationError(
+            errorMessage: e.toString()));
+      }
     }
   }
 

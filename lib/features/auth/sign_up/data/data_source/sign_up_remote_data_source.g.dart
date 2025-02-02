@@ -14,7 +14,7 @@ class _SignUpRemoteDataSource implements SignUpRemoteDataSource {
     this.baseUrl,
     this.errorLogger,
   }) {
-    baseUrl ??= 'https://dynamic-mouse-needlessly.ngrok-free.app';
+    baseUrl ??= 'http://149.102.135.15:5000';
   }
 
   final Dio _dio;

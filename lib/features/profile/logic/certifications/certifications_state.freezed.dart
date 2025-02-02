@@ -33,6 +33,11 @@ mixin _$CertificationsState<T> {
     required TResult Function() updateCertificationLoading,
     required TResult Function() updateCertificationSuccess,
     required TResult Function(String errorMessage) updateCertificationError,
+    required TResult Function() getCertificationByIdLoading,
+    required TResult Function(
+            GetCertificationsResponseModel getCertificationResponseModel)
+        getCertificationByIdSuccess,
+    required TResult Function(String errorMessage) getCertificationByIdError,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -52,6 +57,11 @@ mixin _$CertificationsState<T> {
     TResult? Function()? updateCertificationLoading,
     TResult? Function()? updateCertificationSuccess,
     TResult? Function(String errorMessage)? updateCertificationError,
+    TResult? Function()? getCertificationByIdLoading,
+    TResult? Function(
+            GetCertificationsResponseModel getCertificationResponseModel)?
+        getCertificationByIdSuccess,
+    TResult? Function(String errorMessage)? getCertificationByIdError,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -71,6 +81,11 @@ mixin _$CertificationsState<T> {
     TResult Function()? updateCertificationLoading,
     TResult Function()? updateCertificationSuccess,
     TResult Function(String errorMessage)? updateCertificationError,
+    TResult Function()? getCertificationByIdLoading,
+    TResult Function(
+            GetCertificationsResponseModel getCertificationResponseModel)?
+        getCertificationByIdSuccess,
+    TResult Function(String errorMessage)? getCertificationByIdError,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -102,6 +117,12 @@ mixin _$CertificationsState<T> {
         updateCertificationSuccess,
     required TResult Function(UpdateCertificationError<T> value)
         updateCertificationError,
+    required TResult Function(GetCertificationByIdLoading<T> value)
+        getCertificationByIdLoading,
+    required TResult Function(GetCertificationByIdSuccess<T> value)
+        getCertificationByIdSuccess,
+    required TResult Function(GetCertificationByIdError<T> value)
+        getCertificationByIdError,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -131,6 +152,12 @@ mixin _$CertificationsState<T> {
         updateCertificationSuccess,
     TResult? Function(UpdateCertificationError<T> value)?
         updateCertificationError,
+    TResult? Function(GetCertificationByIdLoading<T> value)?
+        getCertificationByIdLoading,
+    TResult? Function(GetCertificationByIdSuccess<T> value)?
+        getCertificationByIdSuccess,
+    TResult? Function(GetCertificationByIdError<T> value)?
+        getCertificationByIdError,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -158,6 +185,12 @@ mixin _$CertificationsState<T> {
         updateCertificationSuccess,
     TResult Function(UpdateCertificationError<T> value)?
         updateCertificationError,
+    TResult Function(GetCertificationByIdLoading<T> value)?
+        getCertificationByIdLoading,
+    TResult Function(GetCertificationByIdSuccess<T> value)?
+        getCertificationByIdSuccess,
+    TResult Function(GetCertificationByIdError<T> value)?
+        getCertificationByIdError,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -241,6 +274,11 @@ class _$InitialImpl<T> implements _Initial<T> {
     required TResult Function() updateCertificationLoading,
     required TResult Function() updateCertificationSuccess,
     required TResult Function(String errorMessage) updateCertificationError,
+    required TResult Function() getCertificationByIdLoading,
+    required TResult Function(
+            GetCertificationsResponseModel getCertificationResponseModel)
+        getCertificationByIdSuccess,
+    required TResult Function(String errorMessage) getCertificationByIdError,
   }) {
     return initial();
   }
@@ -263,6 +301,11 @@ class _$InitialImpl<T> implements _Initial<T> {
     TResult? Function()? updateCertificationLoading,
     TResult? Function()? updateCertificationSuccess,
     TResult? Function(String errorMessage)? updateCertificationError,
+    TResult? Function()? getCertificationByIdLoading,
+    TResult? Function(
+            GetCertificationsResponseModel getCertificationResponseModel)?
+        getCertificationByIdSuccess,
+    TResult? Function(String errorMessage)? getCertificationByIdError,
   }) {
     return initial?.call();
   }
@@ -285,6 +328,11 @@ class _$InitialImpl<T> implements _Initial<T> {
     TResult Function()? updateCertificationLoading,
     TResult Function()? updateCertificationSuccess,
     TResult Function(String errorMessage)? updateCertificationError,
+    TResult Function()? getCertificationByIdLoading,
+    TResult Function(
+            GetCertificationsResponseModel getCertificationResponseModel)?
+        getCertificationByIdSuccess,
+    TResult Function(String errorMessage)? getCertificationByIdError,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -322,6 +370,12 @@ class _$InitialImpl<T> implements _Initial<T> {
         updateCertificationSuccess,
     required TResult Function(UpdateCertificationError<T> value)
         updateCertificationError,
+    required TResult Function(GetCertificationByIdLoading<T> value)
+        getCertificationByIdLoading,
+    required TResult Function(GetCertificationByIdSuccess<T> value)
+        getCertificationByIdSuccess,
+    required TResult Function(GetCertificationByIdError<T> value)
+        getCertificationByIdError,
   }) {
     return initial(this);
   }
@@ -354,6 +408,12 @@ class _$InitialImpl<T> implements _Initial<T> {
         updateCertificationSuccess,
     TResult? Function(UpdateCertificationError<T> value)?
         updateCertificationError,
+    TResult? Function(GetCertificationByIdLoading<T> value)?
+        getCertificationByIdLoading,
+    TResult? Function(GetCertificationByIdSuccess<T> value)?
+        getCertificationByIdSuccess,
+    TResult? Function(GetCertificationByIdError<T> value)?
+        getCertificationByIdError,
   }) {
     return initial?.call(this);
   }
@@ -384,6 +444,12 @@ class _$InitialImpl<T> implements _Initial<T> {
         updateCertificationSuccess,
     TResult Function(UpdateCertificationError<T> value)?
         updateCertificationError,
+    TResult Function(GetCertificationByIdLoading<T> value)?
+        getCertificationByIdLoading,
+    TResult Function(GetCertificationByIdSuccess<T> value)?
+        getCertificationByIdSuccess,
+    TResult Function(GetCertificationByIdError<T> value)?
+        getCertificationByIdError,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -458,6 +524,11 @@ class _$CertificationsLoadingStateImpl<T>
     required TResult Function() updateCertificationLoading,
     required TResult Function() updateCertificationSuccess,
     required TResult Function(String errorMessage) updateCertificationError,
+    required TResult Function() getCertificationByIdLoading,
+    required TResult Function(
+            GetCertificationsResponseModel getCertificationResponseModel)
+        getCertificationByIdSuccess,
+    required TResult Function(String errorMessage) getCertificationByIdError,
   }) {
     return getAllCertificationsLoading();
   }
@@ -480,6 +551,11 @@ class _$CertificationsLoadingStateImpl<T>
     TResult? Function()? updateCertificationLoading,
     TResult? Function()? updateCertificationSuccess,
     TResult? Function(String errorMessage)? updateCertificationError,
+    TResult? Function()? getCertificationByIdLoading,
+    TResult? Function(
+            GetCertificationsResponseModel getCertificationResponseModel)?
+        getCertificationByIdSuccess,
+    TResult? Function(String errorMessage)? getCertificationByIdError,
   }) {
     return getAllCertificationsLoading?.call();
   }
@@ -502,6 +578,11 @@ class _$CertificationsLoadingStateImpl<T>
     TResult Function()? updateCertificationLoading,
     TResult Function()? updateCertificationSuccess,
     TResult Function(String errorMessage)? updateCertificationError,
+    TResult Function()? getCertificationByIdLoading,
+    TResult Function(
+            GetCertificationsResponseModel getCertificationResponseModel)?
+        getCertificationByIdSuccess,
+    TResult Function(String errorMessage)? getCertificationByIdError,
     required TResult orElse(),
   }) {
     if (getAllCertificationsLoading != null) {
@@ -539,6 +620,12 @@ class _$CertificationsLoadingStateImpl<T>
         updateCertificationSuccess,
     required TResult Function(UpdateCertificationError<T> value)
         updateCertificationError,
+    required TResult Function(GetCertificationByIdLoading<T> value)
+        getCertificationByIdLoading,
+    required TResult Function(GetCertificationByIdSuccess<T> value)
+        getCertificationByIdSuccess,
+    required TResult Function(GetCertificationByIdError<T> value)
+        getCertificationByIdError,
   }) {
     return getAllCertificationsLoading(this);
   }
@@ -571,6 +658,12 @@ class _$CertificationsLoadingStateImpl<T>
         updateCertificationSuccess,
     TResult? Function(UpdateCertificationError<T> value)?
         updateCertificationError,
+    TResult? Function(GetCertificationByIdLoading<T> value)?
+        getCertificationByIdLoading,
+    TResult? Function(GetCertificationByIdSuccess<T> value)?
+        getCertificationByIdSuccess,
+    TResult? Function(GetCertificationByIdError<T> value)?
+        getCertificationByIdError,
   }) {
     return getAllCertificationsLoading?.call(this);
   }
@@ -601,6 +694,12 @@ class _$CertificationsLoadingStateImpl<T>
         updateCertificationSuccess,
     TResult Function(UpdateCertificationError<T> value)?
         updateCertificationError,
+    TResult Function(GetCertificationByIdLoading<T> value)?
+        getCertificationByIdLoading,
+    TResult Function(GetCertificationByIdSuccess<T> value)?
+        getCertificationByIdSuccess,
+    TResult Function(GetCertificationByIdError<T> value)?
+        getCertificationByIdError,
     required TResult orElse(),
   }) {
     if (getAllCertificationsLoading != null) {
@@ -716,6 +815,11 @@ class _$CertificationsSuccessStateImpl<T>
     required TResult Function() updateCertificationLoading,
     required TResult Function() updateCertificationSuccess,
     required TResult Function(String errorMessage) updateCertificationError,
+    required TResult Function() getCertificationByIdLoading,
+    required TResult Function(
+            GetCertificationsResponseModel getCertificationResponseModel)
+        getCertificationByIdSuccess,
+    required TResult Function(String errorMessage) getCertificationByIdError,
   }) {
     return getAllCertificationsSuccess(certificationsData);
   }
@@ -738,6 +842,11 @@ class _$CertificationsSuccessStateImpl<T>
     TResult? Function()? updateCertificationLoading,
     TResult? Function()? updateCertificationSuccess,
     TResult? Function(String errorMessage)? updateCertificationError,
+    TResult? Function()? getCertificationByIdLoading,
+    TResult? Function(
+            GetCertificationsResponseModel getCertificationResponseModel)?
+        getCertificationByIdSuccess,
+    TResult? Function(String errorMessage)? getCertificationByIdError,
   }) {
     return getAllCertificationsSuccess?.call(certificationsData);
   }
@@ -760,6 +869,11 @@ class _$CertificationsSuccessStateImpl<T>
     TResult Function()? updateCertificationLoading,
     TResult Function()? updateCertificationSuccess,
     TResult Function(String errorMessage)? updateCertificationError,
+    TResult Function()? getCertificationByIdLoading,
+    TResult Function(
+            GetCertificationsResponseModel getCertificationResponseModel)?
+        getCertificationByIdSuccess,
+    TResult Function(String errorMessage)? getCertificationByIdError,
     required TResult orElse(),
   }) {
     if (getAllCertificationsSuccess != null) {
@@ -797,6 +911,12 @@ class _$CertificationsSuccessStateImpl<T>
         updateCertificationSuccess,
     required TResult Function(UpdateCertificationError<T> value)
         updateCertificationError,
+    required TResult Function(GetCertificationByIdLoading<T> value)
+        getCertificationByIdLoading,
+    required TResult Function(GetCertificationByIdSuccess<T> value)
+        getCertificationByIdSuccess,
+    required TResult Function(GetCertificationByIdError<T> value)
+        getCertificationByIdError,
   }) {
     return getAllCertificationsSuccess(this);
   }
@@ -829,6 +949,12 @@ class _$CertificationsSuccessStateImpl<T>
         updateCertificationSuccess,
     TResult? Function(UpdateCertificationError<T> value)?
         updateCertificationError,
+    TResult? Function(GetCertificationByIdLoading<T> value)?
+        getCertificationByIdLoading,
+    TResult? Function(GetCertificationByIdSuccess<T> value)?
+        getCertificationByIdSuccess,
+    TResult? Function(GetCertificationByIdError<T> value)?
+        getCertificationByIdError,
   }) {
     return getAllCertificationsSuccess?.call(this);
   }
@@ -859,6 +985,12 @@ class _$CertificationsSuccessStateImpl<T>
         updateCertificationSuccess,
     TResult Function(UpdateCertificationError<T> value)?
         updateCertificationError,
+    TResult Function(GetCertificationByIdLoading<T> value)?
+        getCertificationByIdLoading,
+    TResult Function(GetCertificationByIdSuccess<T> value)?
+        getCertificationByIdSuccess,
+    TResult Function(GetCertificationByIdError<T> value)?
+        getCertificationByIdError,
     required TResult orElse(),
   }) {
     if (getAllCertificationsSuccess != null) {
@@ -973,6 +1105,11 @@ class _$CertificationsFailureStateImpl<T>
     required TResult Function() updateCertificationLoading,
     required TResult Function() updateCertificationSuccess,
     required TResult Function(String errorMessage) updateCertificationError,
+    required TResult Function() getCertificationByIdLoading,
+    required TResult Function(
+            GetCertificationsResponseModel getCertificationResponseModel)
+        getCertificationByIdSuccess,
+    required TResult Function(String errorMessage) getCertificationByIdError,
   }) {
     return getAllCertificationsFailure(errorMessage);
   }
@@ -995,6 +1132,11 @@ class _$CertificationsFailureStateImpl<T>
     TResult? Function()? updateCertificationLoading,
     TResult? Function()? updateCertificationSuccess,
     TResult? Function(String errorMessage)? updateCertificationError,
+    TResult? Function()? getCertificationByIdLoading,
+    TResult? Function(
+            GetCertificationsResponseModel getCertificationResponseModel)?
+        getCertificationByIdSuccess,
+    TResult? Function(String errorMessage)? getCertificationByIdError,
   }) {
     return getAllCertificationsFailure?.call(errorMessage);
   }
@@ -1017,6 +1159,11 @@ class _$CertificationsFailureStateImpl<T>
     TResult Function()? updateCertificationLoading,
     TResult Function()? updateCertificationSuccess,
     TResult Function(String errorMessage)? updateCertificationError,
+    TResult Function()? getCertificationByIdLoading,
+    TResult Function(
+            GetCertificationsResponseModel getCertificationResponseModel)?
+        getCertificationByIdSuccess,
+    TResult Function(String errorMessage)? getCertificationByIdError,
     required TResult orElse(),
   }) {
     if (getAllCertificationsFailure != null) {
@@ -1054,6 +1201,12 @@ class _$CertificationsFailureStateImpl<T>
         updateCertificationSuccess,
     required TResult Function(UpdateCertificationError<T> value)
         updateCertificationError,
+    required TResult Function(GetCertificationByIdLoading<T> value)
+        getCertificationByIdLoading,
+    required TResult Function(GetCertificationByIdSuccess<T> value)
+        getCertificationByIdSuccess,
+    required TResult Function(GetCertificationByIdError<T> value)
+        getCertificationByIdError,
   }) {
     return getAllCertificationsFailure(this);
   }
@@ -1086,6 +1239,12 @@ class _$CertificationsFailureStateImpl<T>
         updateCertificationSuccess,
     TResult? Function(UpdateCertificationError<T> value)?
         updateCertificationError,
+    TResult? Function(GetCertificationByIdLoading<T> value)?
+        getCertificationByIdLoading,
+    TResult? Function(GetCertificationByIdSuccess<T> value)?
+        getCertificationByIdSuccess,
+    TResult? Function(GetCertificationByIdError<T> value)?
+        getCertificationByIdError,
   }) {
     return getAllCertificationsFailure?.call(this);
   }
@@ -1116,6 +1275,12 @@ class _$CertificationsFailureStateImpl<T>
         updateCertificationSuccess,
     TResult Function(UpdateCertificationError<T> value)?
         updateCertificationError,
+    TResult Function(GetCertificationByIdLoading<T> value)?
+        getCertificationByIdLoading,
+    TResult Function(GetCertificationByIdSuccess<T> value)?
+        getCertificationByIdSuccess,
+    TResult Function(GetCertificationByIdError<T> value)?
+        getCertificationByIdError,
     required TResult orElse(),
   }) {
     if (getAllCertificationsFailure != null) {
@@ -1201,6 +1366,11 @@ class _$DeleteCertificationLoadingImpl<T>
     required TResult Function() updateCertificationLoading,
     required TResult Function() updateCertificationSuccess,
     required TResult Function(String errorMessage) updateCertificationError,
+    required TResult Function() getCertificationByIdLoading,
+    required TResult Function(
+            GetCertificationsResponseModel getCertificationResponseModel)
+        getCertificationByIdSuccess,
+    required TResult Function(String errorMessage) getCertificationByIdError,
   }) {
     return deleteCertificationLoading();
   }
@@ -1223,6 +1393,11 @@ class _$DeleteCertificationLoadingImpl<T>
     TResult? Function()? updateCertificationLoading,
     TResult? Function()? updateCertificationSuccess,
     TResult? Function(String errorMessage)? updateCertificationError,
+    TResult? Function()? getCertificationByIdLoading,
+    TResult? Function(
+            GetCertificationsResponseModel getCertificationResponseModel)?
+        getCertificationByIdSuccess,
+    TResult? Function(String errorMessage)? getCertificationByIdError,
   }) {
     return deleteCertificationLoading?.call();
   }
@@ -1245,6 +1420,11 @@ class _$DeleteCertificationLoadingImpl<T>
     TResult Function()? updateCertificationLoading,
     TResult Function()? updateCertificationSuccess,
     TResult Function(String errorMessage)? updateCertificationError,
+    TResult Function()? getCertificationByIdLoading,
+    TResult Function(
+            GetCertificationsResponseModel getCertificationResponseModel)?
+        getCertificationByIdSuccess,
+    TResult Function(String errorMessage)? getCertificationByIdError,
     required TResult orElse(),
   }) {
     if (deleteCertificationLoading != null) {
@@ -1282,6 +1462,12 @@ class _$DeleteCertificationLoadingImpl<T>
         updateCertificationSuccess,
     required TResult Function(UpdateCertificationError<T> value)
         updateCertificationError,
+    required TResult Function(GetCertificationByIdLoading<T> value)
+        getCertificationByIdLoading,
+    required TResult Function(GetCertificationByIdSuccess<T> value)
+        getCertificationByIdSuccess,
+    required TResult Function(GetCertificationByIdError<T> value)
+        getCertificationByIdError,
   }) {
     return deleteCertificationLoading(this);
   }
@@ -1314,6 +1500,12 @@ class _$DeleteCertificationLoadingImpl<T>
         updateCertificationSuccess,
     TResult? Function(UpdateCertificationError<T> value)?
         updateCertificationError,
+    TResult? Function(GetCertificationByIdLoading<T> value)?
+        getCertificationByIdLoading,
+    TResult? Function(GetCertificationByIdSuccess<T> value)?
+        getCertificationByIdSuccess,
+    TResult? Function(GetCertificationByIdError<T> value)?
+        getCertificationByIdError,
   }) {
     return deleteCertificationLoading?.call(this);
   }
@@ -1344,6 +1536,12 @@ class _$DeleteCertificationLoadingImpl<T>
         updateCertificationSuccess,
     TResult Function(UpdateCertificationError<T> value)?
         updateCertificationError,
+    TResult Function(GetCertificationByIdLoading<T> value)?
+        getCertificationByIdLoading,
+    TResult Function(GetCertificationByIdSuccess<T> value)?
+        getCertificationByIdSuccess,
+    TResult Function(GetCertificationByIdError<T> value)?
+        getCertificationByIdError,
     required TResult orElse(),
   }) {
     if (deleteCertificationLoading != null) {
@@ -1419,6 +1617,11 @@ class _$DeleteCertificationSuccessImpl<T>
     required TResult Function() updateCertificationLoading,
     required TResult Function() updateCertificationSuccess,
     required TResult Function(String errorMessage) updateCertificationError,
+    required TResult Function() getCertificationByIdLoading,
+    required TResult Function(
+            GetCertificationsResponseModel getCertificationResponseModel)
+        getCertificationByIdSuccess,
+    required TResult Function(String errorMessage) getCertificationByIdError,
   }) {
     return deleteCertificationSuccess();
   }
@@ -1441,6 +1644,11 @@ class _$DeleteCertificationSuccessImpl<T>
     TResult? Function()? updateCertificationLoading,
     TResult? Function()? updateCertificationSuccess,
     TResult? Function(String errorMessage)? updateCertificationError,
+    TResult? Function()? getCertificationByIdLoading,
+    TResult? Function(
+            GetCertificationsResponseModel getCertificationResponseModel)?
+        getCertificationByIdSuccess,
+    TResult? Function(String errorMessage)? getCertificationByIdError,
   }) {
     return deleteCertificationSuccess?.call();
   }
@@ -1463,6 +1671,11 @@ class _$DeleteCertificationSuccessImpl<T>
     TResult Function()? updateCertificationLoading,
     TResult Function()? updateCertificationSuccess,
     TResult Function(String errorMessage)? updateCertificationError,
+    TResult Function()? getCertificationByIdLoading,
+    TResult Function(
+            GetCertificationsResponseModel getCertificationResponseModel)?
+        getCertificationByIdSuccess,
+    TResult Function(String errorMessage)? getCertificationByIdError,
     required TResult orElse(),
   }) {
     if (deleteCertificationSuccess != null) {
@@ -1500,6 +1713,12 @@ class _$DeleteCertificationSuccessImpl<T>
         updateCertificationSuccess,
     required TResult Function(UpdateCertificationError<T> value)
         updateCertificationError,
+    required TResult Function(GetCertificationByIdLoading<T> value)
+        getCertificationByIdLoading,
+    required TResult Function(GetCertificationByIdSuccess<T> value)
+        getCertificationByIdSuccess,
+    required TResult Function(GetCertificationByIdError<T> value)
+        getCertificationByIdError,
   }) {
     return deleteCertificationSuccess(this);
   }
@@ -1532,6 +1751,12 @@ class _$DeleteCertificationSuccessImpl<T>
         updateCertificationSuccess,
     TResult? Function(UpdateCertificationError<T> value)?
         updateCertificationError,
+    TResult? Function(GetCertificationByIdLoading<T> value)?
+        getCertificationByIdLoading,
+    TResult? Function(GetCertificationByIdSuccess<T> value)?
+        getCertificationByIdSuccess,
+    TResult? Function(GetCertificationByIdError<T> value)?
+        getCertificationByIdError,
   }) {
     return deleteCertificationSuccess?.call(this);
   }
@@ -1562,6 +1787,12 @@ class _$DeleteCertificationSuccessImpl<T>
         updateCertificationSuccess,
     TResult Function(UpdateCertificationError<T> value)?
         updateCertificationError,
+    TResult Function(GetCertificationByIdLoading<T> value)?
+        getCertificationByIdLoading,
+    TResult Function(GetCertificationByIdSuccess<T> value)?
+        getCertificationByIdSuccess,
+    TResult Function(GetCertificationByIdError<T> value)?
+        getCertificationByIdError,
     required TResult orElse(),
   }) {
     if (deleteCertificationSuccess != null) {
@@ -1663,6 +1894,11 @@ class _$DeleteCertificationErrorImpl<T> implements DeleteCertificationError<T> {
     required TResult Function() updateCertificationLoading,
     required TResult Function() updateCertificationSuccess,
     required TResult Function(String errorMessage) updateCertificationError,
+    required TResult Function() getCertificationByIdLoading,
+    required TResult Function(
+            GetCertificationsResponseModel getCertificationResponseModel)
+        getCertificationByIdSuccess,
+    required TResult Function(String errorMessage) getCertificationByIdError,
   }) {
     return deleteCertificationError(error);
   }
@@ -1685,6 +1921,11 @@ class _$DeleteCertificationErrorImpl<T> implements DeleteCertificationError<T> {
     TResult? Function()? updateCertificationLoading,
     TResult? Function()? updateCertificationSuccess,
     TResult? Function(String errorMessage)? updateCertificationError,
+    TResult? Function()? getCertificationByIdLoading,
+    TResult? Function(
+            GetCertificationsResponseModel getCertificationResponseModel)?
+        getCertificationByIdSuccess,
+    TResult? Function(String errorMessage)? getCertificationByIdError,
   }) {
     return deleteCertificationError?.call(error);
   }
@@ -1707,6 +1948,11 @@ class _$DeleteCertificationErrorImpl<T> implements DeleteCertificationError<T> {
     TResult Function()? updateCertificationLoading,
     TResult Function()? updateCertificationSuccess,
     TResult Function(String errorMessage)? updateCertificationError,
+    TResult Function()? getCertificationByIdLoading,
+    TResult Function(
+            GetCertificationsResponseModel getCertificationResponseModel)?
+        getCertificationByIdSuccess,
+    TResult Function(String errorMessage)? getCertificationByIdError,
     required TResult orElse(),
   }) {
     if (deleteCertificationError != null) {
@@ -1744,6 +1990,12 @@ class _$DeleteCertificationErrorImpl<T> implements DeleteCertificationError<T> {
         updateCertificationSuccess,
     required TResult Function(UpdateCertificationError<T> value)
         updateCertificationError,
+    required TResult Function(GetCertificationByIdLoading<T> value)
+        getCertificationByIdLoading,
+    required TResult Function(GetCertificationByIdSuccess<T> value)
+        getCertificationByIdSuccess,
+    required TResult Function(GetCertificationByIdError<T> value)
+        getCertificationByIdError,
   }) {
     return deleteCertificationError(this);
   }
@@ -1776,6 +2028,12 @@ class _$DeleteCertificationErrorImpl<T> implements DeleteCertificationError<T> {
         updateCertificationSuccess,
     TResult? Function(UpdateCertificationError<T> value)?
         updateCertificationError,
+    TResult? Function(GetCertificationByIdLoading<T> value)?
+        getCertificationByIdLoading,
+    TResult? Function(GetCertificationByIdSuccess<T> value)?
+        getCertificationByIdSuccess,
+    TResult? Function(GetCertificationByIdError<T> value)?
+        getCertificationByIdError,
   }) {
     return deleteCertificationError?.call(this);
   }
@@ -1806,6 +2064,12 @@ class _$DeleteCertificationErrorImpl<T> implements DeleteCertificationError<T> {
         updateCertificationSuccess,
     TResult Function(UpdateCertificationError<T> value)?
         updateCertificationError,
+    TResult Function(GetCertificationByIdLoading<T> value)?
+        getCertificationByIdLoading,
+    TResult Function(GetCertificationByIdSuccess<T> value)?
+        getCertificationByIdSuccess,
+    TResult Function(GetCertificationByIdError<T> value)?
+        getCertificationByIdError,
     required TResult orElse(),
   }) {
     if (deleteCertificationError != null) {
@@ -1888,6 +2152,11 @@ class _$AddCertificationLoadingImpl<T> implements AddCertificationLoading<T> {
     required TResult Function() updateCertificationLoading,
     required TResult Function() updateCertificationSuccess,
     required TResult Function(String errorMessage) updateCertificationError,
+    required TResult Function() getCertificationByIdLoading,
+    required TResult Function(
+            GetCertificationsResponseModel getCertificationResponseModel)
+        getCertificationByIdSuccess,
+    required TResult Function(String errorMessage) getCertificationByIdError,
   }) {
     return addCertificationLoading();
   }
@@ -1910,6 +2179,11 @@ class _$AddCertificationLoadingImpl<T> implements AddCertificationLoading<T> {
     TResult? Function()? updateCertificationLoading,
     TResult? Function()? updateCertificationSuccess,
     TResult? Function(String errorMessage)? updateCertificationError,
+    TResult? Function()? getCertificationByIdLoading,
+    TResult? Function(
+            GetCertificationsResponseModel getCertificationResponseModel)?
+        getCertificationByIdSuccess,
+    TResult? Function(String errorMessage)? getCertificationByIdError,
   }) {
     return addCertificationLoading?.call();
   }
@@ -1932,6 +2206,11 @@ class _$AddCertificationLoadingImpl<T> implements AddCertificationLoading<T> {
     TResult Function()? updateCertificationLoading,
     TResult Function()? updateCertificationSuccess,
     TResult Function(String errorMessage)? updateCertificationError,
+    TResult Function()? getCertificationByIdLoading,
+    TResult Function(
+            GetCertificationsResponseModel getCertificationResponseModel)?
+        getCertificationByIdSuccess,
+    TResult Function(String errorMessage)? getCertificationByIdError,
     required TResult orElse(),
   }) {
     if (addCertificationLoading != null) {
@@ -1969,6 +2248,12 @@ class _$AddCertificationLoadingImpl<T> implements AddCertificationLoading<T> {
         updateCertificationSuccess,
     required TResult Function(UpdateCertificationError<T> value)
         updateCertificationError,
+    required TResult Function(GetCertificationByIdLoading<T> value)
+        getCertificationByIdLoading,
+    required TResult Function(GetCertificationByIdSuccess<T> value)
+        getCertificationByIdSuccess,
+    required TResult Function(GetCertificationByIdError<T> value)
+        getCertificationByIdError,
   }) {
     return addCertificationLoading(this);
   }
@@ -2001,6 +2286,12 @@ class _$AddCertificationLoadingImpl<T> implements AddCertificationLoading<T> {
         updateCertificationSuccess,
     TResult? Function(UpdateCertificationError<T> value)?
         updateCertificationError,
+    TResult? Function(GetCertificationByIdLoading<T> value)?
+        getCertificationByIdLoading,
+    TResult? Function(GetCertificationByIdSuccess<T> value)?
+        getCertificationByIdSuccess,
+    TResult? Function(GetCertificationByIdError<T> value)?
+        getCertificationByIdError,
   }) {
     return addCertificationLoading?.call(this);
   }
@@ -2031,6 +2322,12 @@ class _$AddCertificationLoadingImpl<T> implements AddCertificationLoading<T> {
         updateCertificationSuccess,
     TResult Function(UpdateCertificationError<T> value)?
         updateCertificationError,
+    TResult Function(GetCertificationByIdLoading<T> value)?
+        getCertificationByIdLoading,
+    TResult Function(GetCertificationByIdSuccess<T> value)?
+        getCertificationByIdSuccess,
+    TResult Function(GetCertificationByIdError<T> value)?
+        getCertificationByIdError,
     required TResult orElse(),
   }) {
     if (addCertificationLoading != null) {
@@ -2104,6 +2401,11 @@ class _$AddCertificationSuccessImpl<T> implements AddCertificationSuccess<T> {
     required TResult Function() updateCertificationLoading,
     required TResult Function() updateCertificationSuccess,
     required TResult Function(String errorMessage) updateCertificationError,
+    required TResult Function() getCertificationByIdLoading,
+    required TResult Function(
+            GetCertificationsResponseModel getCertificationResponseModel)
+        getCertificationByIdSuccess,
+    required TResult Function(String errorMessage) getCertificationByIdError,
   }) {
     return addCertificationSuccess();
   }
@@ -2126,6 +2428,11 @@ class _$AddCertificationSuccessImpl<T> implements AddCertificationSuccess<T> {
     TResult? Function()? updateCertificationLoading,
     TResult? Function()? updateCertificationSuccess,
     TResult? Function(String errorMessage)? updateCertificationError,
+    TResult? Function()? getCertificationByIdLoading,
+    TResult? Function(
+            GetCertificationsResponseModel getCertificationResponseModel)?
+        getCertificationByIdSuccess,
+    TResult? Function(String errorMessage)? getCertificationByIdError,
   }) {
     return addCertificationSuccess?.call();
   }
@@ -2148,6 +2455,11 @@ class _$AddCertificationSuccessImpl<T> implements AddCertificationSuccess<T> {
     TResult Function()? updateCertificationLoading,
     TResult Function()? updateCertificationSuccess,
     TResult Function(String errorMessage)? updateCertificationError,
+    TResult Function()? getCertificationByIdLoading,
+    TResult Function(
+            GetCertificationsResponseModel getCertificationResponseModel)?
+        getCertificationByIdSuccess,
+    TResult Function(String errorMessage)? getCertificationByIdError,
     required TResult orElse(),
   }) {
     if (addCertificationSuccess != null) {
@@ -2185,6 +2497,12 @@ class _$AddCertificationSuccessImpl<T> implements AddCertificationSuccess<T> {
         updateCertificationSuccess,
     required TResult Function(UpdateCertificationError<T> value)
         updateCertificationError,
+    required TResult Function(GetCertificationByIdLoading<T> value)
+        getCertificationByIdLoading,
+    required TResult Function(GetCertificationByIdSuccess<T> value)
+        getCertificationByIdSuccess,
+    required TResult Function(GetCertificationByIdError<T> value)
+        getCertificationByIdError,
   }) {
     return addCertificationSuccess(this);
   }
@@ -2217,6 +2535,12 @@ class _$AddCertificationSuccessImpl<T> implements AddCertificationSuccess<T> {
         updateCertificationSuccess,
     TResult? Function(UpdateCertificationError<T> value)?
         updateCertificationError,
+    TResult? Function(GetCertificationByIdLoading<T> value)?
+        getCertificationByIdLoading,
+    TResult? Function(GetCertificationByIdSuccess<T> value)?
+        getCertificationByIdSuccess,
+    TResult? Function(GetCertificationByIdError<T> value)?
+        getCertificationByIdError,
   }) {
     return addCertificationSuccess?.call(this);
   }
@@ -2247,6 +2571,12 @@ class _$AddCertificationSuccessImpl<T> implements AddCertificationSuccess<T> {
         updateCertificationSuccess,
     TResult Function(UpdateCertificationError<T> value)?
         updateCertificationError,
+    TResult Function(GetCertificationByIdLoading<T> value)?
+        getCertificationByIdLoading,
+    TResult Function(GetCertificationByIdSuccess<T> value)?
+        getCertificationByIdSuccess,
+    TResult Function(GetCertificationByIdError<T> value)?
+        getCertificationByIdError,
     required TResult orElse(),
   }) {
     if (addCertificationSuccess != null) {
@@ -2348,6 +2678,11 @@ class _$AddCertificationErrorImpl<T> implements AddCertificationError<T> {
     required TResult Function() updateCertificationLoading,
     required TResult Function() updateCertificationSuccess,
     required TResult Function(String errorMessage) updateCertificationError,
+    required TResult Function() getCertificationByIdLoading,
+    required TResult Function(
+            GetCertificationsResponseModel getCertificationResponseModel)
+        getCertificationByIdSuccess,
+    required TResult Function(String errorMessage) getCertificationByIdError,
   }) {
     return addCertificationError(errorMessage);
   }
@@ -2370,6 +2705,11 @@ class _$AddCertificationErrorImpl<T> implements AddCertificationError<T> {
     TResult? Function()? updateCertificationLoading,
     TResult? Function()? updateCertificationSuccess,
     TResult? Function(String errorMessage)? updateCertificationError,
+    TResult? Function()? getCertificationByIdLoading,
+    TResult? Function(
+            GetCertificationsResponseModel getCertificationResponseModel)?
+        getCertificationByIdSuccess,
+    TResult? Function(String errorMessage)? getCertificationByIdError,
   }) {
     return addCertificationError?.call(errorMessage);
   }
@@ -2392,6 +2732,11 @@ class _$AddCertificationErrorImpl<T> implements AddCertificationError<T> {
     TResult Function()? updateCertificationLoading,
     TResult Function()? updateCertificationSuccess,
     TResult Function(String errorMessage)? updateCertificationError,
+    TResult Function()? getCertificationByIdLoading,
+    TResult Function(
+            GetCertificationsResponseModel getCertificationResponseModel)?
+        getCertificationByIdSuccess,
+    TResult Function(String errorMessage)? getCertificationByIdError,
     required TResult orElse(),
   }) {
     if (addCertificationError != null) {
@@ -2429,6 +2774,12 @@ class _$AddCertificationErrorImpl<T> implements AddCertificationError<T> {
         updateCertificationSuccess,
     required TResult Function(UpdateCertificationError<T> value)
         updateCertificationError,
+    required TResult Function(GetCertificationByIdLoading<T> value)
+        getCertificationByIdLoading,
+    required TResult Function(GetCertificationByIdSuccess<T> value)
+        getCertificationByIdSuccess,
+    required TResult Function(GetCertificationByIdError<T> value)
+        getCertificationByIdError,
   }) {
     return addCertificationError(this);
   }
@@ -2461,6 +2812,12 @@ class _$AddCertificationErrorImpl<T> implements AddCertificationError<T> {
         updateCertificationSuccess,
     TResult? Function(UpdateCertificationError<T> value)?
         updateCertificationError,
+    TResult? Function(GetCertificationByIdLoading<T> value)?
+        getCertificationByIdLoading,
+    TResult? Function(GetCertificationByIdSuccess<T> value)?
+        getCertificationByIdSuccess,
+    TResult? Function(GetCertificationByIdError<T> value)?
+        getCertificationByIdError,
   }) {
     return addCertificationError?.call(this);
   }
@@ -2491,6 +2848,12 @@ class _$AddCertificationErrorImpl<T> implements AddCertificationError<T> {
         updateCertificationSuccess,
     TResult Function(UpdateCertificationError<T> value)?
         updateCertificationError,
+    TResult Function(GetCertificationByIdLoading<T> value)?
+        getCertificationByIdLoading,
+    TResult Function(GetCertificationByIdSuccess<T> value)?
+        getCertificationByIdSuccess,
+    TResult Function(GetCertificationByIdError<T> value)?
+        getCertificationByIdError,
     required TResult orElse(),
   }) {
     if (addCertificationError != null) {
@@ -2569,6 +2932,11 @@ class _$AddImageImpl<T> implements AddImage<T> {
     required TResult Function() updateCertificationLoading,
     required TResult Function() updateCertificationSuccess,
     required TResult Function(String errorMessage) updateCertificationError,
+    required TResult Function() getCertificationByIdLoading,
+    required TResult Function(
+            GetCertificationsResponseModel getCertificationResponseModel)
+        getCertificationByIdSuccess,
+    required TResult Function(String errorMessage) getCertificationByIdError,
   }) {
     return addImage();
   }
@@ -2591,6 +2959,11 @@ class _$AddImageImpl<T> implements AddImage<T> {
     TResult? Function()? updateCertificationLoading,
     TResult? Function()? updateCertificationSuccess,
     TResult? Function(String errorMessage)? updateCertificationError,
+    TResult? Function()? getCertificationByIdLoading,
+    TResult? Function(
+            GetCertificationsResponseModel getCertificationResponseModel)?
+        getCertificationByIdSuccess,
+    TResult? Function(String errorMessage)? getCertificationByIdError,
   }) {
     return addImage?.call();
   }
@@ -2613,6 +2986,11 @@ class _$AddImageImpl<T> implements AddImage<T> {
     TResult Function()? updateCertificationLoading,
     TResult Function()? updateCertificationSuccess,
     TResult Function(String errorMessage)? updateCertificationError,
+    TResult Function()? getCertificationByIdLoading,
+    TResult Function(
+            GetCertificationsResponseModel getCertificationResponseModel)?
+        getCertificationByIdSuccess,
+    TResult Function(String errorMessage)? getCertificationByIdError,
     required TResult orElse(),
   }) {
     if (addImage != null) {
@@ -2650,6 +3028,12 @@ class _$AddImageImpl<T> implements AddImage<T> {
         updateCertificationSuccess,
     required TResult Function(UpdateCertificationError<T> value)
         updateCertificationError,
+    required TResult Function(GetCertificationByIdLoading<T> value)
+        getCertificationByIdLoading,
+    required TResult Function(GetCertificationByIdSuccess<T> value)
+        getCertificationByIdSuccess,
+    required TResult Function(GetCertificationByIdError<T> value)
+        getCertificationByIdError,
   }) {
     return addImage(this);
   }
@@ -2682,6 +3066,12 @@ class _$AddImageImpl<T> implements AddImage<T> {
         updateCertificationSuccess,
     TResult? Function(UpdateCertificationError<T> value)?
         updateCertificationError,
+    TResult? Function(GetCertificationByIdLoading<T> value)?
+        getCertificationByIdLoading,
+    TResult? Function(GetCertificationByIdSuccess<T> value)?
+        getCertificationByIdSuccess,
+    TResult? Function(GetCertificationByIdError<T> value)?
+        getCertificationByIdError,
   }) {
     return addImage?.call(this);
   }
@@ -2712,6 +3102,12 @@ class _$AddImageImpl<T> implements AddImage<T> {
         updateCertificationSuccess,
     TResult Function(UpdateCertificationError<T> value)?
         updateCertificationError,
+    TResult Function(GetCertificationByIdLoading<T> value)?
+        getCertificationByIdLoading,
+    TResult Function(GetCertificationByIdSuccess<T> value)?
+        getCertificationByIdSuccess,
+    TResult Function(GetCertificationByIdError<T> value)?
+        getCertificationByIdError,
     required TResult orElse(),
   }) {
     if (addImage != null) {
@@ -2786,6 +3182,11 @@ class _$UpdateCertificationLoadingImpl<T>
     required TResult Function() updateCertificationLoading,
     required TResult Function() updateCertificationSuccess,
     required TResult Function(String errorMessage) updateCertificationError,
+    required TResult Function() getCertificationByIdLoading,
+    required TResult Function(
+            GetCertificationsResponseModel getCertificationResponseModel)
+        getCertificationByIdSuccess,
+    required TResult Function(String errorMessage) getCertificationByIdError,
   }) {
     return updateCertificationLoading();
   }
@@ -2808,6 +3209,11 @@ class _$UpdateCertificationLoadingImpl<T>
     TResult? Function()? updateCertificationLoading,
     TResult? Function()? updateCertificationSuccess,
     TResult? Function(String errorMessage)? updateCertificationError,
+    TResult? Function()? getCertificationByIdLoading,
+    TResult? Function(
+            GetCertificationsResponseModel getCertificationResponseModel)?
+        getCertificationByIdSuccess,
+    TResult? Function(String errorMessage)? getCertificationByIdError,
   }) {
     return updateCertificationLoading?.call();
   }
@@ -2830,6 +3236,11 @@ class _$UpdateCertificationLoadingImpl<T>
     TResult Function()? updateCertificationLoading,
     TResult Function()? updateCertificationSuccess,
     TResult Function(String errorMessage)? updateCertificationError,
+    TResult Function()? getCertificationByIdLoading,
+    TResult Function(
+            GetCertificationsResponseModel getCertificationResponseModel)?
+        getCertificationByIdSuccess,
+    TResult Function(String errorMessage)? getCertificationByIdError,
     required TResult orElse(),
   }) {
     if (updateCertificationLoading != null) {
@@ -2867,6 +3278,12 @@ class _$UpdateCertificationLoadingImpl<T>
         updateCertificationSuccess,
     required TResult Function(UpdateCertificationError<T> value)
         updateCertificationError,
+    required TResult Function(GetCertificationByIdLoading<T> value)
+        getCertificationByIdLoading,
+    required TResult Function(GetCertificationByIdSuccess<T> value)
+        getCertificationByIdSuccess,
+    required TResult Function(GetCertificationByIdError<T> value)
+        getCertificationByIdError,
   }) {
     return updateCertificationLoading(this);
   }
@@ -2899,6 +3316,12 @@ class _$UpdateCertificationLoadingImpl<T>
         updateCertificationSuccess,
     TResult? Function(UpdateCertificationError<T> value)?
         updateCertificationError,
+    TResult? Function(GetCertificationByIdLoading<T> value)?
+        getCertificationByIdLoading,
+    TResult? Function(GetCertificationByIdSuccess<T> value)?
+        getCertificationByIdSuccess,
+    TResult? Function(GetCertificationByIdError<T> value)?
+        getCertificationByIdError,
   }) {
     return updateCertificationLoading?.call(this);
   }
@@ -2929,6 +3352,12 @@ class _$UpdateCertificationLoadingImpl<T>
         updateCertificationSuccess,
     TResult Function(UpdateCertificationError<T> value)?
         updateCertificationError,
+    TResult Function(GetCertificationByIdLoading<T> value)?
+        getCertificationByIdLoading,
+    TResult Function(GetCertificationByIdSuccess<T> value)?
+        getCertificationByIdSuccess,
+    TResult Function(GetCertificationByIdError<T> value)?
+        getCertificationByIdError,
     required TResult orElse(),
   }) {
     if (updateCertificationLoading != null) {
@@ -3004,6 +3433,11 @@ class _$UpdateCertificationSuccessImpl<T>
     required TResult Function() updateCertificationLoading,
     required TResult Function() updateCertificationSuccess,
     required TResult Function(String errorMessage) updateCertificationError,
+    required TResult Function() getCertificationByIdLoading,
+    required TResult Function(
+            GetCertificationsResponseModel getCertificationResponseModel)
+        getCertificationByIdSuccess,
+    required TResult Function(String errorMessage) getCertificationByIdError,
   }) {
     return updateCertificationSuccess();
   }
@@ -3026,6 +3460,11 @@ class _$UpdateCertificationSuccessImpl<T>
     TResult? Function()? updateCertificationLoading,
     TResult? Function()? updateCertificationSuccess,
     TResult? Function(String errorMessage)? updateCertificationError,
+    TResult? Function()? getCertificationByIdLoading,
+    TResult? Function(
+            GetCertificationsResponseModel getCertificationResponseModel)?
+        getCertificationByIdSuccess,
+    TResult? Function(String errorMessage)? getCertificationByIdError,
   }) {
     return updateCertificationSuccess?.call();
   }
@@ -3048,6 +3487,11 @@ class _$UpdateCertificationSuccessImpl<T>
     TResult Function()? updateCertificationLoading,
     TResult Function()? updateCertificationSuccess,
     TResult Function(String errorMessage)? updateCertificationError,
+    TResult Function()? getCertificationByIdLoading,
+    TResult Function(
+            GetCertificationsResponseModel getCertificationResponseModel)?
+        getCertificationByIdSuccess,
+    TResult Function(String errorMessage)? getCertificationByIdError,
     required TResult orElse(),
   }) {
     if (updateCertificationSuccess != null) {
@@ -3085,6 +3529,12 @@ class _$UpdateCertificationSuccessImpl<T>
         updateCertificationSuccess,
     required TResult Function(UpdateCertificationError<T> value)
         updateCertificationError,
+    required TResult Function(GetCertificationByIdLoading<T> value)
+        getCertificationByIdLoading,
+    required TResult Function(GetCertificationByIdSuccess<T> value)
+        getCertificationByIdSuccess,
+    required TResult Function(GetCertificationByIdError<T> value)
+        getCertificationByIdError,
   }) {
     return updateCertificationSuccess(this);
   }
@@ -3117,6 +3567,12 @@ class _$UpdateCertificationSuccessImpl<T>
         updateCertificationSuccess,
     TResult? Function(UpdateCertificationError<T> value)?
         updateCertificationError,
+    TResult? Function(GetCertificationByIdLoading<T> value)?
+        getCertificationByIdLoading,
+    TResult? Function(GetCertificationByIdSuccess<T> value)?
+        getCertificationByIdSuccess,
+    TResult? Function(GetCertificationByIdError<T> value)?
+        getCertificationByIdError,
   }) {
     return updateCertificationSuccess?.call(this);
   }
@@ -3147,6 +3603,12 @@ class _$UpdateCertificationSuccessImpl<T>
         updateCertificationSuccess,
     TResult Function(UpdateCertificationError<T> value)?
         updateCertificationError,
+    TResult Function(GetCertificationByIdLoading<T> value)?
+        getCertificationByIdLoading,
+    TResult Function(GetCertificationByIdSuccess<T> value)?
+        getCertificationByIdSuccess,
+    TResult Function(GetCertificationByIdError<T> value)?
+        getCertificationByIdError,
     required TResult orElse(),
   }) {
     if (updateCertificationSuccess != null) {
@@ -3249,6 +3711,11 @@ class _$UpdateCertificationErrorImpl<T> implements UpdateCertificationError<T> {
     required TResult Function() updateCertificationLoading,
     required TResult Function() updateCertificationSuccess,
     required TResult Function(String errorMessage) updateCertificationError,
+    required TResult Function() getCertificationByIdLoading,
+    required TResult Function(
+            GetCertificationsResponseModel getCertificationResponseModel)
+        getCertificationByIdSuccess,
+    required TResult Function(String errorMessage) getCertificationByIdError,
   }) {
     return updateCertificationError(errorMessage);
   }
@@ -3271,6 +3738,11 @@ class _$UpdateCertificationErrorImpl<T> implements UpdateCertificationError<T> {
     TResult? Function()? updateCertificationLoading,
     TResult? Function()? updateCertificationSuccess,
     TResult? Function(String errorMessage)? updateCertificationError,
+    TResult? Function()? getCertificationByIdLoading,
+    TResult? Function(
+            GetCertificationsResponseModel getCertificationResponseModel)?
+        getCertificationByIdSuccess,
+    TResult? Function(String errorMessage)? getCertificationByIdError,
   }) {
     return updateCertificationError?.call(errorMessage);
   }
@@ -3293,6 +3765,11 @@ class _$UpdateCertificationErrorImpl<T> implements UpdateCertificationError<T> {
     TResult Function()? updateCertificationLoading,
     TResult Function()? updateCertificationSuccess,
     TResult Function(String errorMessage)? updateCertificationError,
+    TResult Function()? getCertificationByIdLoading,
+    TResult Function(
+            GetCertificationsResponseModel getCertificationResponseModel)?
+        getCertificationByIdSuccess,
+    TResult Function(String errorMessage)? getCertificationByIdError,
     required TResult orElse(),
   }) {
     if (updateCertificationError != null) {
@@ -3330,6 +3807,12 @@ class _$UpdateCertificationErrorImpl<T> implements UpdateCertificationError<T> {
         updateCertificationSuccess,
     required TResult Function(UpdateCertificationError<T> value)
         updateCertificationError,
+    required TResult Function(GetCertificationByIdLoading<T> value)
+        getCertificationByIdLoading,
+    required TResult Function(GetCertificationByIdSuccess<T> value)
+        getCertificationByIdSuccess,
+    required TResult Function(GetCertificationByIdError<T> value)
+        getCertificationByIdError,
   }) {
     return updateCertificationError(this);
   }
@@ -3362,6 +3845,12 @@ class _$UpdateCertificationErrorImpl<T> implements UpdateCertificationError<T> {
         updateCertificationSuccess,
     TResult? Function(UpdateCertificationError<T> value)?
         updateCertificationError,
+    TResult? Function(GetCertificationByIdLoading<T> value)?
+        getCertificationByIdLoading,
+    TResult? Function(GetCertificationByIdSuccess<T> value)?
+        getCertificationByIdSuccess,
+    TResult? Function(GetCertificationByIdError<T> value)?
+        getCertificationByIdError,
   }) {
     return updateCertificationError?.call(this);
   }
@@ -3392,6 +3881,12 @@ class _$UpdateCertificationErrorImpl<T> implements UpdateCertificationError<T> {
         updateCertificationSuccess,
     TResult Function(UpdateCertificationError<T> value)?
         updateCertificationError,
+    TResult Function(GetCertificationByIdLoading<T> value)?
+        getCertificationByIdLoading,
+    TResult Function(GetCertificationByIdSuccess<T> value)?
+        getCertificationByIdSuccess,
+    TResult Function(GetCertificationByIdError<T> value)?
+        getCertificationByIdError,
     required TResult orElse(),
   }) {
     if (updateCertificationError != null) {
@@ -3411,5 +3906,840 @@ abstract class UpdateCertificationError<T> implements CertificationsState<T> {
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
   _$$UpdateCertificationErrorImplCopyWith<T, _$UpdateCertificationErrorImpl<T>>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$GetCertificationByIdLoadingImplCopyWith<T, $Res> {
+  factory _$$GetCertificationByIdLoadingImplCopyWith(
+          _$GetCertificationByIdLoadingImpl<T> value,
+          $Res Function(_$GetCertificationByIdLoadingImpl<T>) then) =
+      __$$GetCertificationByIdLoadingImplCopyWithImpl<T, $Res>;
+}
+
+/// @nodoc
+class __$$GetCertificationByIdLoadingImplCopyWithImpl<T, $Res>
+    extends _$CertificationsStateCopyWithImpl<T, $Res,
+        _$GetCertificationByIdLoadingImpl<T>>
+    implements _$$GetCertificationByIdLoadingImplCopyWith<T, $Res> {
+  __$$GetCertificationByIdLoadingImplCopyWithImpl(
+      _$GetCertificationByIdLoadingImpl<T> _value,
+      $Res Function(_$GetCertificationByIdLoadingImpl<T>) _then)
+      : super(_value, _then);
+
+  /// Create a copy of CertificationsState
+  /// with the given fields replaced by the non-null parameter values.
+}
+
+/// @nodoc
+
+class _$GetCertificationByIdLoadingImpl<T>
+    implements GetCertificationByIdLoading<T> {
+  const _$GetCertificationByIdLoadingImpl();
+
+  @override
+  String toString() {
+    return 'CertificationsState<$T>.getCertificationByIdLoading()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$GetCertificationByIdLoadingImpl<T>);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() getAllCertificationsLoading,
+    required TResult Function(List<CertificationsData?>? certificationsData)
+        getAllCertificationsSuccess,
+    required TResult Function(String errorMessage) getAllCertificationsFailure,
+    required TResult Function() deleteCertificationLoading,
+    required TResult Function() deleteCertificationSuccess,
+    required TResult Function(String error) deleteCertificationError,
+    required TResult Function() addCertificationLoading,
+    required TResult Function() addCertificationSuccess,
+    required TResult Function(String errorMessage) addCertificationError,
+    required TResult Function() addImage,
+    required TResult Function() updateCertificationLoading,
+    required TResult Function() updateCertificationSuccess,
+    required TResult Function(String errorMessage) updateCertificationError,
+    required TResult Function() getCertificationByIdLoading,
+    required TResult Function(
+            GetCertificationsResponseModel getCertificationResponseModel)
+        getCertificationByIdSuccess,
+    required TResult Function(String errorMessage) getCertificationByIdError,
+  }) {
+    return getCertificationByIdLoading();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? getAllCertificationsLoading,
+    TResult? Function(List<CertificationsData?>? certificationsData)?
+        getAllCertificationsSuccess,
+    TResult? Function(String errorMessage)? getAllCertificationsFailure,
+    TResult? Function()? deleteCertificationLoading,
+    TResult? Function()? deleteCertificationSuccess,
+    TResult? Function(String error)? deleteCertificationError,
+    TResult? Function()? addCertificationLoading,
+    TResult? Function()? addCertificationSuccess,
+    TResult? Function(String errorMessage)? addCertificationError,
+    TResult? Function()? addImage,
+    TResult? Function()? updateCertificationLoading,
+    TResult? Function()? updateCertificationSuccess,
+    TResult? Function(String errorMessage)? updateCertificationError,
+    TResult? Function()? getCertificationByIdLoading,
+    TResult? Function(
+            GetCertificationsResponseModel getCertificationResponseModel)?
+        getCertificationByIdSuccess,
+    TResult? Function(String errorMessage)? getCertificationByIdError,
+  }) {
+    return getCertificationByIdLoading?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? getAllCertificationsLoading,
+    TResult Function(List<CertificationsData?>? certificationsData)?
+        getAllCertificationsSuccess,
+    TResult Function(String errorMessage)? getAllCertificationsFailure,
+    TResult Function()? deleteCertificationLoading,
+    TResult Function()? deleteCertificationSuccess,
+    TResult Function(String error)? deleteCertificationError,
+    TResult Function()? addCertificationLoading,
+    TResult Function()? addCertificationSuccess,
+    TResult Function(String errorMessage)? addCertificationError,
+    TResult Function()? addImage,
+    TResult Function()? updateCertificationLoading,
+    TResult Function()? updateCertificationSuccess,
+    TResult Function(String errorMessage)? updateCertificationError,
+    TResult Function()? getCertificationByIdLoading,
+    TResult Function(
+            GetCertificationsResponseModel getCertificationResponseModel)?
+        getCertificationByIdSuccess,
+    TResult Function(String errorMessage)? getCertificationByIdError,
+    required TResult orElse(),
+  }) {
+    if (getCertificationByIdLoading != null) {
+      return getCertificationByIdLoading();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial<T> value) initial,
+    required TResult Function(CertificationsLoadingState<T> value)
+        getAllCertificationsLoading,
+    required TResult Function(CertificationsSuccessState<T> value)
+        getAllCertificationsSuccess,
+    required TResult Function(CertificationsFailureState<T> value)
+        getAllCertificationsFailure,
+    required TResult Function(DeleteCertificationLoading<T> value)
+        deleteCertificationLoading,
+    required TResult Function(DeleteCertificationSuccess<T> value)
+        deleteCertificationSuccess,
+    required TResult Function(DeleteCertificationError<T> value)
+        deleteCertificationError,
+    required TResult Function(AddCertificationLoading<T> value)
+        addCertificationLoading,
+    required TResult Function(AddCertificationSuccess<T> value)
+        addCertificationSuccess,
+    required TResult Function(AddCertificationError<T> value)
+        addCertificationError,
+    required TResult Function(AddImage<T> value) addImage,
+    required TResult Function(UpdateCertificationLoading<T> value)
+        updateCertificationLoading,
+    required TResult Function(UpdateCertificationSuccess<T> value)
+        updateCertificationSuccess,
+    required TResult Function(UpdateCertificationError<T> value)
+        updateCertificationError,
+    required TResult Function(GetCertificationByIdLoading<T> value)
+        getCertificationByIdLoading,
+    required TResult Function(GetCertificationByIdSuccess<T> value)
+        getCertificationByIdSuccess,
+    required TResult Function(GetCertificationByIdError<T> value)
+        getCertificationByIdError,
+  }) {
+    return getCertificationByIdLoading(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial<T> value)? initial,
+    TResult? Function(CertificationsLoadingState<T> value)?
+        getAllCertificationsLoading,
+    TResult? Function(CertificationsSuccessState<T> value)?
+        getAllCertificationsSuccess,
+    TResult? Function(CertificationsFailureState<T> value)?
+        getAllCertificationsFailure,
+    TResult? Function(DeleteCertificationLoading<T> value)?
+        deleteCertificationLoading,
+    TResult? Function(DeleteCertificationSuccess<T> value)?
+        deleteCertificationSuccess,
+    TResult? Function(DeleteCertificationError<T> value)?
+        deleteCertificationError,
+    TResult? Function(AddCertificationLoading<T> value)?
+        addCertificationLoading,
+    TResult? Function(AddCertificationSuccess<T> value)?
+        addCertificationSuccess,
+    TResult? Function(AddCertificationError<T> value)? addCertificationError,
+    TResult? Function(AddImage<T> value)? addImage,
+    TResult? Function(UpdateCertificationLoading<T> value)?
+        updateCertificationLoading,
+    TResult? Function(UpdateCertificationSuccess<T> value)?
+        updateCertificationSuccess,
+    TResult? Function(UpdateCertificationError<T> value)?
+        updateCertificationError,
+    TResult? Function(GetCertificationByIdLoading<T> value)?
+        getCertificationByIdLoading,
+    TResult? Function(GetCertificationByIdSuccess<T> value)?
+        getCertificationByIdSuccess,
+    TResult? Function(GetCertificationByIdError<T> value)?
+        getCertificationByIdError,
+  }) {
+    return getCertificationByIdLoading?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial<T> value)? initial,
+    TResult Function(CertificationsLoadingState<T> value)?
+        getAllCertificationsLoading,
+    TResult Function(CertificationsSuccessState<T> value)?
+        getAllCertificationsSuccess,
+    TResult Function(CertificationsFailureState<T> value)?
+        getAllCertificationsFailure,
+    TResult Function(DeleteCertificationLoading<T> value)?
+        deleteCertificationLoading,
+    TResult Function(DeleteCertificationSuccess<T> value)?
+        deleteCertificationSuccess,
+    TResult Function(DeleteCertificationError<T> value)?
+        deleteCertificationError,
+    TResult Function(AddCertificationLoading<T> value)? addCertificationLoading,
+    TResult Function(AddCertificationSuccess<T> value)? addCertificationSuccess,
+    TResult Function(AddCertificationError<T> value)? addCertificationError,
+    TResult Function(AddImage<T> value)? addImage,
+    TResult Function(UpdateCertificationLoading<T> value)?
+        updateCertificationLoading,
+    TResult Function(UpdateCertificationSuccess<T> value)?
+        updateCertificationSuccess,
+    TResult Function(UpdateCertificationError<T> value)?
+        updateCertificationError,
+    TResult Function(GetCertificationByIdLoading<T> value)?
+        getCertificationByIdLoading,
+    TResult Function(GetCertificationByIdSuccess<T> value)?
+        getCertificationByIdSuccess,
+    TResult Function(GetCertificationByIdError<T> value)?
+        getCertificationByIdError,
+    required TResult orElse(),
+  }) {
+    if (getCertificationByIdLoading != null) {
+      return getCertificationByIdLoading(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class GetCertificationByIdLoading<T>
+    implements CertificationsState<T> {
+  const factory GetCertificationByIdLoading() =
+      _$GetCertificationByIdLoadingImpl<T>;
+}
+
+/// @nodoc
+abstract class _$$GetCertificationByIdSuccessImplCopyWith<T, $Res> {
+  factory _$$GetCertificationByIdSuccessImplCopyWith(
+          _$GetCertificationByIdSuccessImpl<T> value,
+          $Res Function(_$GetCertificationByIdSuccessImpl<T>) then) =
+      __$$GetCertificationByIdSuccessImplCopyWithImpl<T, $Res>;
+  @useResult
+  $Res call({GetCertificationsResponseModel getCertificationResponseModel});
+}
+
+/// @nodoc
+class __$$GetCertificationByIdSuccessImplCopyWithImpl<T, $Res>
+    extends _$CertificationsStateCopyWithImpl<T, $Res,
+        _$GetCertificationByIdSuccessImpl<T>>
+    implements _$$GetCertificationByIdSuccessImplCopyWith<T, $Res> {
+  __$$GetCertificationByIdSuccessImplCopyWithImpl(
+      _$GetCertificationByIdSuccessImpl<T> _value,
+      $Res Function(_$GetCertificationByIdSuccessImpl<T>) _then)
+      : super(_value, _then);
+
+  /// Create a copy of CertificationsState
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? getCertificationResponseModel = null,
+  }) {
+    return _then(_$GetCertificationByIdSuccessImpl<T>(
+      null == getCertificationResponseModel
+          ? _value.getCertificationResponseModel
+          : getCertificationResponseModel // ignore: cast_nullable_to_non_nullable
+              as GetCertificationsResponseModel,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$GetCertificationByIdSuccessImpl<T>
+    implements GetCertificationByIdSuccess<T> {
+  const _$GetCertificationByIdSuccessImpl(this.getCertificationResponseModel);
+
+  @override
+  final GetCertificationsResponseModel getCertificationResponseModel;
+
+  @override
+  String toString() {
+    return 'CertificationsState<$T>.getCertificationByIdSuccess(getCertificationResponseModel: $getCertificationResponseModel)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$GetCertificationByIdSuccessImpl<T> &&
+            (identical(other.getCertificationResponseModel,
+                    getCertificationResponseModel) ||
+                other.getCertificationResponseModel ==
+                    getCertificationResponseModel));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, getCertificationResponseModel);
+
+  /// Create a copy of CertificationsState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$GetCertificationByIdSuccessImplCopyWith<T,
+          _$GetCertificationByIdSuccessImpl<T>>
+      get copyWith => __$$GetCertificationByIdSuccessImplCopyWithImpl<T,
+          _$GetCertificationByIdSuccessImpl<T>>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() getAllCertificationsLoading,
+    required TResult Function(List<CertificationsData?>? certificationsData)
+        getAllCertificationsSuccess,
+    required TResult Function(String errorMessage) getAllCertificationsFailure,
+    required TResult Function() deleteCertificationLoading,
+    required TResult Function() deleteCertificationSuccess,
+    required TResult Function(String error) deleteCertificationError,
+    required TResult Function() addCertificationLoading,
+    required TResult Function() addCertificationSuccess,
+    required TResult Function(String errorMessage) addCertificationError,
+    required TResult Function() addImage,
+    required TResult Function() updateCertificationLoading,
+    required TResult Function() updateCertificationSuccess,
+    required TResult Function(String errorMessage) updateCertificationError,
+    required TResult Function() getCertificationByIdLoading,
+    required TResult Function(
+            GetCertificationsResponseModel getCertificationResponseModel)
+        getCertificationByIdSuccess,
+    required TResult Function(String errorMessage) getCertificationByIdError,
+  }) {
+    return getCertificationByIdSuccess(getCertificationResponseModel);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? getAllCertificationsLoading,
+    TResult? Function(List<CertificationsData?>? certificationsData)?
+        getAllCertificationsSuccess,
+    TResult? Function(String errorMessage)? getAllCertificationsFailure,
+    TResult? Function()? deleteCertificationLoading,
+    TResult? Function()? deleteCertificationSuccess,
+    TResult? Function(String error)? deleteCertificationError,
+    TResult? Function()? addCertificationLoading,
+    TResult? Function()? addCertificationSuccess,
+    TResult? Function(String errorMessage)? addCertificationError,
+    TResult? Function()? addImage,
+    TResult? Function()? updateCertificationLoading,
+    TResult? Function()? updateCertificationSuccess,
+    TResult? Function(String errorMessage)? updateCertificationError,
+    TResult? Function()? getCertificationByIdLoading,
+    TResult? Function(
+            GetCertificationsResponseModel getCertificationResponseModel)?
+        getCertificationByIdSuccess,
+    TResult? Function(String errorMessage)? getCertificationByIdError,
+  }) {
+    return getCertificationByIdSuccess?.call(getCertificationResponseModel);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? getAllCertificationsLoading,
+    TResult Function(List<CertificationsData?>? certificationsData)?
+        getAllCertificationsSuccess,
+    TResult Function(String errorMessage)? getAllCertificationsFailure,
+    TResult Function()? deleteCertificationLoading,
+    TResult Function()? deleteCertificationSuccess,
+    TResult Function(String error)? deleteCertificationError,
+    TResult Function()? addCertificationLoading,
+    TResult Function()? addCertificationSuccess,
+    TResult Function(String errorMessage)? addCertificationError,
+    TResult Function()? addImage,
+    TResult Function()? updateCertificationLoading,
+    TResult Function()? updateCertificationSuccess,
+    TResult Function(String errorMessage)? updateCertificationError,
+    TResult Function()? getCertificationByIdLoading,
+    TResult Function(
+            GetCertificationsResponseModel getCertificationResponseModel)?
+        getCertificationByIdSuccess,
+    TResult Function(String errorMessage)? getCertificationByIdError,
+    required TResult orElse(),
+  }) {
+    if (getCertificationByIdSuccess != null) {
+      return getCertificationByIdSuccess(getCertificationResponseModel);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial<T> value) initial,
+    required TResult Function(CertificationsLoadingState<T> value)
+        getAllCertificationsLoading,
+    required TResult Function(CertificationsSuccessState<T> value)
+        getAllCertificationsSuccess,
+    required TResult Function(CertificationsFailureState<T> value)
+        getAllCertificationsFailure,
+    required TResult Function(DeleteCertificationLoading<T> value)
+        deleteCertificationLoading,
+    required TResult Function(DeleteCertificationSuccess<T> value)
+        deleteCertificationSuccess,
+    required TResult Function(DeleteCertificationError<T> value)
+        deleteCertificationError,
+    required TResult Function(AddCertificationLoading<T> value)
+        addCertificationLoading,
+    required TResult Function(AddCertificationSuccess<T> value)
+        addCertificationSuccess,
+    required TResult Function(AddCertificationError<T> value)
+        addCertificationError,
+    required TResult Function(AddImage<T> value) addImage,
+    required TResult Function(UpdateCertificationLoading<T> value)
+        updateCertificationLoading,
+    required TResult Function(UpdateCertificationSuccess<T> value)
+        updateCertificationSuccess,
+    required TResult Function(UpdateCertificationError<T> value)
+        updateCertificationError,
+    required TResult Function(GetCertificationByIdLoading<T> value)
+        getCertificationByIdLoading,
+    required TResult Function(GetCertificationByIdSuccess<T> value)
+        getCertificationByIdSuccess,
+    required TResult Function(GetCertificationByIdError<T> value)
+        getCertificationByIdError,
+  }) {
+    return getCertificationByIdSuccess(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial<T> value)? initial,
+    TResult? Function(CertificationsLoadingState<T> value)?
+        getAllCertificationsLoading,
+    TResult? Function(CertificationsSuccessState<T> value)?
+        getAllCertificationsSuccess,
+    TResult? Function(CertificationsFailureState<T> value)?
+        getAllCertificationsFailure,
+    TResult? Function(DeleteCertificationLoading<T> value)?
+        deleteCertificationLoading,
+    TResult? Function(DeleteCertificationSuccess<T> value)?
+        deleteCertificationSuccess,
+    TResult? Function(DeleteCertificationError<T> value)?
+        deleteCertificationError,
+    TResult? Function(AddCertificationLoading<T> value)?
+        addCertificationLoading,
+    TResult? Function(AddCertificationSuccess<T> value)?
+        addCertificationSuccess,
+    TResult? Function(AddCertificationError<T> value)? addCertificationError,
+    TResult? Function(AddImage<T> value)? addImage,
+    TResult? Function(UpdateCertificationLoading<T> value)?
+        updateCertificationLoading,
+    TResult? Function(UpdateCertificationSuccess<T> value)?
+        updateCertificationSuccess,
+    TResult? Function(UpdateCertificationError<T> value)?
+        updateCertificationError,
+    TResult? Function(GetCertificationByIdLoading<T> value)?
+        getCertificationByIdLoading,
+    TResult? Function(GetCertificationByIdSuccess<T> value)?
+        getCertificationByIdSuccess,
+    TResult? Function(GetCertificationByIdError<T> value)?
+        getCertificationByIdError,
+  }) {
+    return getCertificationByIdSuccess?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial<T> value)? initial,
+    TResult Function(CertificationsLoadingState<T> value)?
+        getAllCertificationsLoading,
+    TResult Function(CertificationsSuccessState<T> value)?
+        getAllCertificationsSuccess,
+    TResult Function(CertificationsFailureState<T> value)?
+        getAllCertificationsFailure,
+    TResult Function(DeleteCertificationLoading<T> value)?
+        deleteCertificationLoading,
+    TResult Function(DeleteCertificationSuccess<T> value)?
+        deleteCertificationSuccess,
+    TResult Function(DeleteCertificationError<T> value)?
+        deleteCertificationError,
+    TResult Function(AddCertificationLoading<T> value)? addCertificationLoading,
+    TResult Function(AddCertificationSuccess<T> value)? addCertificationSuccess,
+    TResult Function(AddCertificationError<T> value)? addCertificationError,
+    TResult Function(AddImage<T> value)? addImage,
+    TResult Function(UpdateCertificationLoading<T> value)?
+        updateCertificationLoading,
+    TResult Function(UpdateCertificationSuccess<T> value)?
+        updateCertificationSuccess,
+    TResult Function(UpdateCertificationError<T> value)?
+        updateCertificationError,
+    TResult Function(GetCertificationByIdLoading<T> value)?
+        getCertificationByIdLoading,
+    TResult Function(GetCertificationByIdSuccess<T> value)?
+        getCertificationByIdSuccess,
+    TResult Function(GetCertificationByIdError<T> value)?
+        getCertificationByIdError,
+    required TResult orElse(),
+  }) {
+    if (getCertificationByIdSuccess != null) {
+      return getCertificationByIdSuccess(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class GetCertificationByIdSuccess<T>
+    implements CertificationsState<T> {
+  const factory GetCertificationByIdSuccess(
+          final GetCertificationsResponseModel getCertificationResponseModel) =
+      _$GetCertificationByIdSuccessImpl<T>;
+
+  GetCertificationsResponseModel get getCertificationResponseModel;
+
+  /// Create a copy of CertificationsState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$GetCertificationByIdSuccessImplCopyWith<T,
+          _$GetCertificationByIdSuccessImpl<T>>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$GetCertificationByIdErrorImplCopyWith<T, $Res> {
+  factory _$$GetCertificationByIdErrorImplCopyWith(
+          _$GetCertificationByIdErrorImpl<T> value,
+          $Res Function(_$GetCertificationByIdErrorImpl<T>) then) =
+      __$$GetCertificationByIdErrorImplCopyWithImpl<T, $Res>;
+  @useResult
+  $Res call({String errorMessage});
+}
+
+/// @nodoc
+class __$$GetCertificationByIdErrorImplCopyWithImpl<T, $Res>
+    extends _$CertificationsStateCopyWithImpl<T, $Res,
+        _$GetCertificationByIdErrorImpl<T>>
+    implements _$$GetCertificationByIdErrorImplCopyWith<T, $Res> {
+  __$$GetCertificationByIdErrorImplCopyWithImpl(
+      _$GetCertificationByIdErrorImpl<T> _value,
+      $Res Function(_$GetCertificationByIdErrorImpl<T>) _then)
+      : super(_value, _then);
+
+  /// Create a copy of CertificationsState
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? errorMessage = null,
+  }) {
+    return _then(_$GetCertificationByIdErrorImpl<T>(
+      errorMessage: null == errorMessage
+          ? _value.errorMessage
+          : errorMessage // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$GetCertificationByIdErrorImpl<T>
+    implements GetCertificationByIdError<T> {
+  const _$GetCertificationByIdErrorImpl({required this.errorMessage});
+
+  @override
+  final String errorMessage;
+
+  @override
+  String toString() {
+    return 'CertificationsState<$T>.getCertificationByIdError(errorMessage: $errorMessage)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$GetCertificationByIdErrorImpl<T> &&
+            (identical(other.errorMessage, errorMessage) ||
+                other.errorMessage == errorMessage));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, errorMessage);
+
+  /// Create a copy of CertificationsState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$GetCertificationByIdErrorImplCopyWith<T,
+          _$GetCertificationByIdErrorImpl<T>>
+      get copyWith => __$$GetCertificationByIdErrorImplCopyWithImpl<T,
+          _$GetCertificationByIdErrorImpl<T>>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() getAllCertificationsLoading,
+    required TResult Function(List<CertificationsData?>? certificationsData)
+        getAllCertificationsSuccess,
+    required TResult Function(String errorMessage) getAllCertificationsFailure,
+    required TResult Function() deleteCertificationLoading,
+    required TResult Function() deleteCertificationSuccess,
+    required TResult Function(String error) deleteCertificationError,
+    required TResult Function() addCertificationLoading,
+    required TResult Function() addCertificationSuccess,
+    required TResult Function(String errorMessage) addCertificationError,
+    required TResult Function() addImage,
+    required TResult Function() updateCertificationLoading,
+    required TResult Function() updateCertificationSuccess,
+    required TResult Function(String errorMessage) updateCertificationError,
+    required TResult Function() getCertificationByIdLoading,
+    required TResult Function(
+            GetCertificationsResponseModel getCertificationResponseModel)
+        getCertificationByIdSuccess,
+    required TResult Function(String errorMessage) getCertificationByIdError,
+  }) {
+    return getCertificationByIdError(errorMessage);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? getAllCertificationsLoading,
+    TResult? Function(List<CertificationsData?>? certificationsData)?
+        getAllCertificationsSuccess,
+    TResult? Function(String errorMessage)? getAllCertificationsFailure,
+    TResult? Function()? deleteCertificationLoading,
+    TResult? Function()? deleteCertificationSuccess,
+    TResult? Function(String error)? deleteCertificationError,
+    TResult? Function()? addCertificationLoading,
+    TResult? Function()? addCertificationSuccess,
+    TResult? Function(String errorMessage)? addCertificationError,
+    TResult? Function()? addImage,
+    TResult? Function()? updateCertificationLoading,
+    TResult? Function()? updateCertificationSuccess,
+    TResult? Function(String errorMessage)? updateCertificationError,
+    TResult? Function()? getCertificationByIdLoading,
+    TResult? Function(
+            GetCertificationsResponseModel getCertificationResponseModel)?
+        getCertificationByIdSuccess,
+    TResult? Function(String errorMessage)? getCertificationByIdError,
+  }) {
+    return getCertificationByIdError?.call(errorMessage);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? getAllCertificationsLoading,
+    TResult Function(List<CertificationsData?>? certificationsData)?
+        getAllCertificationsSuccess,
+    TResult Function(String errorMessage)? getAllCertificationsFailure,
+    TResult Function()? deleteCertificationLoading,
+    TResult Function()? deleteCertificationSuccess,
+    TResult Function(String error)? deleteCertificationError,
+    TResult Function()? addCertificationLoading,
+    TResult Function()? addCertificationSuccess,
+    TResult Function(String errorMessage)? addCertificationError,
+    TResult Function()? addImage,
+    TResult Function()? updateCertificationLoading,
+    TResult Function()? updateCertificationSuccess,
+    TResult Function(String errorMessage)? updateCertificationError,
+    TResult Function()? getCertificationByIdLoading,
+    TResult Function(
+            GetCertificationsResponseModel getCertificationResponseModel)?
+        getCertificationByIdSuccess,
+    TResult Function(String errorMessage)? getCertificationByIdError,
+    required TResult orElse(),
+  }) {
+    if (getCertificationByIdError != null) {
+      return getCertificationByIdError(errorMessage);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial<T> value) initial,
+    required TResult Function(CertificationsLoadingState<T> value)
+        getAllCertificationsLoading,
+    required TResult Function(CertificationsSuccessState<T> value)
+        getAllCertificationsSuccess,
+    required TResult Function(CertificationsFailureState<T> value)
+        getAllCertificationsFailure,
+    required TResult Function(DeleteCertificationLoading<T> value)
+        deleteCertificationLoading,
+    required TResult Function(DeleteCertificationSuccess<T> value)
+        deleteCertificationSuccess,
+    required TResult Function(DeleteCertificationError<T> value)
+        deleteCertificationError,
+    required TResult Function(AddCertificationLoading<T> value)
+        addCertificationLoading,
+    required TResult Function(AddCertificationSuccess<T> value)
+        addCertificationSuccess,
+    required TResult Function(AddCertificationError<T> value)
+        addCertificationError,
+    required TResult Function(AddImage<T> value) addImage,
+    required TResult Function(UpdateCertificationLoading<T> value)
+        updateCertificationLoading,
+    required TResult Function(UpdateCertificationSuccess<T> value)
+        updateCertificationSuccess,
+    required TResult Function(UpdateCertificationError<T> value)
+        updateCertificationError,
+    required TResult Function(GetCertificationByIdLoading<T> value)
+        getCertificationByIdLoading,
+    required TResult Function(GetCertificationByIdSuccess<T> value)
+        getCertificationByIdSuccess,
+    required TResult Function(GetCertificationByIdError<T> value)
+        getCertificationByIdError,
+  }) {
+    return getCertificationByIdError(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial<T> value)? initial,
+    TResult? Function(CertificationsLoadingState<T> value)?
+        getAllCertificationsLoading,
+    TResult? Function(CertificationsSuccessState<T> value)?
+        getAllCertificationsSuccess,
+    TResult? Function(CertificationsFailureState<T> value)?
+        getAllCertificationsFailure,
+    TResult? Function(DeleteCertificationLoading<T> value)?
+        deleteCertificationLoading,
+    TResult? Function(DeleteCertificationSuccess<T> value)?
+        deleteCertificationSuccess,
+    TResult? Function(DeleteCertificationError<T> value)?
+        deleteCertificationError,
+    TResult? Function(AddCertificationLoading<T> value)?
+        addCertificationLoading,
+    TResult? Function(AddCertificationSuccess<T> value)?
+        addCertificationSuccess,
+    TResult? Function(AddCertificationError<T> value)? addCertificationError,
+    TResult? Function(AddImage<T> value)? addImage,
+    TResult? Function(UpdateCertificationLoading<T> value)?
+        updateCertificationLoading,
+    TResult? Function(UpdateCertificationSuccess<T> value)?
+        updateCertificationSuccess,
+    TResult? Function(UpdateCertificationError<T> value)?
+        updateCertificationError,
+    TResult? Function(GetCertificationByIdLoading<T> value)?
+        getCertificationByIdLoading,
+    TResult? Function(GetCertificationByIdSuccess<T> value)?
+        getCertificationByIdSuccess,
+    TResult? Function(GetCertificationByIdError<T> value)?
+        getCertificationByIdError,
+  }) {
+    return getCertificationByIdError?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial<T> value)? initial,
+    TResult Function(CertificationsLoadingState<T> value)?
+        getAllCertificationsLoading,
+    TResult Function(CertificationsSuccessState<T> value)?
+        getAllCertificationsSuccess,
+    TResult Function(CertificationsFailureState<T> value)?
+        getAllCertificationsFailure,
+    TResult Function(DeleteCertificationLoading<T> value)?
+        deleteCertificationLoading,
+    TResult Function(DeleteCertificationSuccess<T> value)?
+        deleteCertificationSuccess,
+    TResult Function(DeleteCertificationError<T> value)?
+        deleteCertificationError,
+    TResult Function(AddCertificationLoading<T> value)? addCertificationLoading,
+    TResult Function(AddCertificationSuccess<T> value)? addCertificationSuccess,
+    TResult Function(AddCertificationError<T> value)? addCertificationError,
+    TResult Function(AddImage<T> value)? addImage,
+    TResult Function(UpdateCertificationLoading<T> value)?
+        updateCertificationLoading,
+    TResult Function(UpdateCertificationSuccess<T> value)?
+        updateCertificationSuccess,
+    TResult Function(UpdateCertificationError<T> value)?
+        updateCertificationError,
+    TResult Function(GetCertificationByIdLoading<T> value)?
+        getCertificationByIdLoading,
+    TResult Function(GetCertificationByIdSuccess<T> value)?
+        getCertificationByIdSuccess,
+    TResult Function(GetCertificationByIdError<T> value)?
+        getCertificationByIdError,
+    required TResult orElse(),
+  }) {
+    if (getCertificationByIdError != null) {
+      return getCertificationByIdError(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class GetCertificationByIdError<T> implements CertificationsState<T> {
+  const factory GetCertificationByIdError(
+          {required final String errorMessage}) =
+      _$GetCertificationByIdErrorImpl<T>;
+
+  String get errorMessage;
+
+  /// Create a copy of CertificationsState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$GetCertificationByIdErrorImplCopyWith<T,
+          _$GetCertificationByIdErrorImpl<T>>
       get copyWith => throw _privateConstructorUsedError;
 }

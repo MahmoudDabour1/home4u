@@ -58,7 +58,7 @@ class ProjectBodyGridViewItem extends StatelessWidget {
                 ),
               ),
               ProjectMenuButtonAndDialog(
-                projectId: projectData!.id ?? 0,
+                projectData: projectData!,
               ),
             ],
           ),

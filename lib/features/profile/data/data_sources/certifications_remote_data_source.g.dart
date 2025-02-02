@@ -15,7 +15,7 @@ class _CertificationsRemoteDataSource
     this.baseUrl,
     this.errorLogger,
   }) {
-    baseUrl ??= 'https://dynamic-mouse-needlessly.ngrok-free.app';
+    baseUrl ??= 'http://149.102.135.15:5000';
   }
 
   final Dio _dio;
@@ -84,6 +84,40 @@ class _CertificationsRemoteDataSource
     late DeleteCertificationResponseModel _value;
     try {
       _value = DeleteCertificationResponseModel.fromJson(_result.data!);
+    } on Object catch (e, s) {
+      errorLogger?.logError(e, s, _options);
+      rethrow;
+    }
+    return _value;
+  }
+
+  @override
+  Future<GetCertificationsResponseModel> getCertificationById(
+      int certificationId) async {
+    final _extra = <String, dynamic>{};
+    final queryParameters = <String, dynamic>{};
+    final _headers = <String, dynamic>{};
+    const Map<String, dynamic>? _data = null;
+    final _options = _setStreamType<GetCertificationsResponseModel>(Options(
+      method: 'GET',
+      headers: _headers,
+      extra: _extra,
+    )
+        .compose(
+          _dio.options,
+          '/api/v1/certificate/${certificationId}',
+          queryParameters: queryParameters,
+          data: _data,
+        )
+        .copyWith(
+            baseUrl: _combineBaseUrls(
+          _dio.options.baseUrl,
+          baseUrl,
+        )));
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
+    late GetCertificationsResponseModel _value;
+    try {
+      _value = GetCertificationsResponseModel.fromJson(_result.data!);
     } on Object catch (e, s) {
       errorLogger?.logError(e, s, _options);
       rethrow;

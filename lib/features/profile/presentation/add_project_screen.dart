@@ -7,9 +7,12 @@ import 'package:home4u/features/profile/presentation/widgets/add_project_widgets
 import '../../../core/di/dependency_injection.dart';
 import '../../../locale/app_locale.dart';
 import '../../auth/widgets/auth_welcome_data.dart';
+import '../data/models/projects/get_projects_response_model.dart';
 
 class AddProjectScreen extends StatelessWidget {
-  const AddProjectScreen({super.key});
+  final ProjectsData? projectData;
+
+  const AddProjectScreen({super.key, required this.projectData});
 
   @override
   Widget build(BuildContext context) {
@@ -21,10 +24,14 @@ class AddProjectScreen extends StatelessWidget {
             child: Column(
               children: [
                 AuthWelcomeData(
-                  headText: AppLocale.addProject.getString(context),
+                  headText: projectData != null
+                      ? AppLocale.updateProject.getString(context)
+                      : AppLocale.addProject.getString(context),
                   subText: '',
                 ),
-                AddProjectInfo(),
+                AddProjectInfo(
+                  projectData: projectData,
+                ),
               ],
             ),
           ),

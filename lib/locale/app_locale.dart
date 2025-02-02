@@ -104,28 +104,31 @@ class AppLocale {
   static const String privacy = 'Privacy:';
   static const String managePermissions = 'Manage permissions';
   static const String privacySettings = 'Privacy settings';
-  static const String appearance= 'Appearance:';
-  static const String changeLanguage= 'Change Language';
-  static const String support= 'Support:';
-  static const String faqs= 'Faqs';
-  static const String loginSuccessfully= 'Login Successfully';
-  static const String anUnknownErrorOccurred= 'An unknown error occurred';
-  static const String addCertifications= 'Add Certifications';
-  static const String pleaseSelectImageWay= 'Please Select Image way';
-  static const String camera= 'Camera';
-  static const String gallery= 'Gallery';
-  static const String tapToAddImage= 'Tap to Add Image';
-  static const String name= 'Name';
-  static const String description= 'Description';
-  static const String update= 'Update';
-  static const String nameCantBeEmpty= 'Name Can\'t be empty';
-  static const String descriptionCantBeEmpty= 'Description Can\'t be empty';
-  static const String pleaseSelectAnImage= 'Please select an image';
-  static const String certificationAddedSuccessfully= 'Certification added successfully';
-  static const String errorUploadingCertification= 'Error uploading certification';
-  static const String certificationUpdatedSuccessfully= 'Certification updated successfully';
-
-
+  static const String appearance = 'Appearance:';
+  static const String changeLanguage = 'Change Language';
+  static const String support = 'Support:';
+  static const String faqs = 'Faqs';
+  static const String loginSuccessfully = 'Login Successfully';
+  static const String anUnknownErrorOccurred = 'An unknown error occurred';
+  static const String addCertifications = 'Add Certifications';
+  static const String updateCertification = 'Update Certification';
+  static const String updateProject = 'Update Project';
+  static const String pleaseSelectImageWay = 'Please Select Image way';
+  static const String camera = 'Camera';
+  static const String gallery = 'Gallery';
+  static const String tapToAddImage = 'Tap to Add Image';
+  static const String name = 'Name';
+  static const String description = 'Description';
+  static const String update = 'Update';
+  static const String nameCantBeEmpty = 'Name Can\'t be empty';
+  static const String descriptionCantBeEmpty = 'Description Can\'t be empty';
+  static const String pleaseSelectAnImage = 'Please select an image';
+  static const String certificationAddedSuccessfully =
+      'Certification added successfully';
+  static const String errorUploadingCertification =
+      'Error uploading certification';
+  static const String certificationUpdatedSuccessfully =
+      'Certification updated successfully';
 
   static const Map<String, dynamic> en = {
     onBoardingTitle1: 'Civil works and finishing services',
@@ -216,7 +219,7 @@ class AppLocale {
     pricing: 'Pricing',
     certifications: 'Certifications',
     addServices: 'Add Services',
-    add:'Add',
+    add: 'Add',
     editService: 'Edit Service',
     settings: 'Settings',
     account: 'Account:',
@@ -248,6 +251,8 @@ class AppLocale {
     certificationAddedSuccessfully: 'Certification added successfully',
     errorUploadingCertification: 'Error uploading certification',
     certificationUpdatedSuccessfully: 'Certification updated successfully',
+    updateCertification: 'Update Certification',
+    updateProject: 'Update Project',
   };
 
   static const Map<String, dynamic> ar = {
@@ -338,7 +343,7 @@ class AppLocale {
     pricing: 'التسعير',
     certifications: 'الشهادات',
     addServices: 'إضافة خدمات',
-    add:'إضافة',
+    add: 'إضافة',
     editService: 'تعديل الخدمة',
     settings: 'الإعدادات',
     account: 'الحساب:',
@@ -370,5 +375,7 @@ class AppLocale {
     certificationAddedSuccessfully: 'تمت إضافة الشهادة بنجاح',
     errorUploadingCertification: 'حدث خطأ أثناء تحميل الشهادة',
     certificationUpdatedSuccessfully: 'تم تحديث الشهادة بنجاح',
+    updateCertification: 'تحديث الشهادة',
+    updateProject: 'تحديث المشروع',
   };
 }

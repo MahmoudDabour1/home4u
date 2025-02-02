@@ -46,7 +46,7 @@ class CertificationsGridViewItem extends StatelessWidget {
               ),
             ),
             CertificationMenuAndDialog(
-              certificationId: certificationsData!.id ?? 0,
+              certificationData: certificationsData!,
             ),
             // ProjectBottomRatingWidget(),
           ],

@@ -15,7 +15,13 @@ class CertificationsBlocBuilder extends StatelessWidget {
       buildWhen: (previous, current) =>
           current is CertificationsLoadingState ||
           current is CertificationsSuccessState ||
-          current is CertificationsFailureState,
+          current is CertificationsFailureState ||
+          current is AddCertificationLoading ||
+          current is AddCertificationError ||
+          current is AddCertificationSuccess ||
+          current is UpdateCertificationLoading ||
+          current is UpdateCertificationError ||
+          current is UpdateCertificationSuccess,
       builder: (context, state) {
         return state.maybeWhen(
           getAllCertificationsLoading: () => setupLoading(),
