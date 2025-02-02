@@ -1,7 +1,12 @@
+import 'package:bottom_picker/bottom_picker.dart';
+import 'package:bottom_picker/resources/arrays.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_localization/flutter_localization.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:home4u/core/localization/app_localization_cubit.dart';
+import 'package:home4u/core/theming/app_colors.dart';
+import 'package:home4u/core/theming/app_styles.dart';
 import 'package:home4u/core/widgets/get_common_input_decoration.dart';
 import 'package:home4u/features/profile/logic/project/project_cubit.dart';
 import 'package:home4u/features/profile/logic/project/project_state.dart';
@@ -40,13 +45,13 @@ class AddProjectInfo extends StatelessWidget {
                 ),
                 verticalSpace(16),
                 verticalSpace(16),
-                _buildProjectNameField(cubit),
+                _buildProjectNameField(cubit,context),
                 verticalSpace(16),
                 _buildProjectDescriptionField(cubit, context),
                 verticalSpace(16),
-                _buildProjectDatesFields(cubit),
+                _buildProjectDatesFields(context, cubit),
                 verticalSpace(16),
-                _buildProjectToolsField(cubit),
+                _buildProjectToolsField(cubit,context),
                 verticalSpace(32),
                 _buildSubmitButton(context, state, cubit),
                 verticalSpace(64),
@@ -58,9 +63,9 @@ class AddProjectInfo extends StatelessWidget {
     );
   }
 
-  Widget _buildProjectNameField(cubit) {
+  Widget _buildProjectNameField(cubit,BuildContext context) {
     return AppTextFormField(
-      labelText: "Project Name",
+      labelText: AppLocale.projectName.getString(context),
       controller: cubit.projectNameController,
       keyboardType: TextInputType.text,
       validator: (value) {
@@ -96,43 +101,109 @@ class AddProjectInfo extends StatelessWidget {
     );
   }
 
-  Widget _buildProjectDatesFields(cubit) {
+  Widget _buildProjectDatesFields(BuildContext context, cubit) {
     return Row(
       children: [
         Expanded(
-          child: AppTextFormField(
-            keyboardType: TextInputType.datetime,
-            controller: cubit.projectStartDateController,
-            labelText: AppLocale.projectStartData,
-            validator: (value) {
-              if (value.isEmpty) {
-                return "Please enter your start date";
-              }
-              return null;
+          child: GestureDetector(
+            onTap: () {
+              _showDatePicker(context, cubit, isStartDate: true);
             },
+            child: AbsorbPointer(
+              child: AppTextFormField(
+                keyboardType: TextInputType.datetime,
+                controller: cubit.projectStartDateController,
+                labelText: AppLocale.projectStartData.getString(context),
+                validator: (value) {
+                  if (value.isEmpty) {
+                    return "Please enter your start date";
+                  }
+                  return null;
+                },
+              ),
+            ),
           ),
         ),
         horizontalSpace(16),
         Expanded(
-          child: AppTextFormField(
-            labelText: AppLocale.projectEndData,
-            keyboardType: TextInputType.datetime,
-            controller: cubit.projectEndDateController,
-            validator: (value) {
-              if (value.isEmpty) {
-                return "Please enter your end date";
-              }
-              return null;
+          child: GestureDetector(
+            onTap: () {
+              _showDatePicker(context, cubit, isStartDate: false);
             },
+            child: AbsorbPointer(
+              child: AppTextFormField(
+                labelText: AppLocale.projectEndData.getString(context),
+                keyboardType: TextInputType.datetime,
+                controller: cubit.projectEndDateController,
+                validator: (value) {
+                  if (value.isEmpty) {
+                    return "Please enter your end date";
+                  }
+                  return null;
+                },
+              ),
+            ),
           ),
         ),
       ],
     );
   }
 
-  Widget _buildProjectToolsField(cubit) {
+  void _showDatePicker(BuildContext context, cubit,
+      {required bool isStartDate}) {
+    BottomPicker.date(
+      pickerTitle: Text(
+        isStartDate
+            ? AppLocale.setStartDate.getString(context)
+            : AppLocale.setEndDate.getString(context),
+        style: AppStyles.font20BlackMedium,
+      ),
+      initialDateTime: DateTime.now(),
+      maxDateTime: DateTime.now(),
+      minDateTime: DateTime(1980),
+      pickerTextStyle: TextStyle(
+        color: Colors.black,
+        fontWeight: FontWeight.bold,
+        fontSize: 16.sp,
+      ),
+      onChange: (index) {
+        print(index);
+      },
+      onSubmit: (index) {
+        String formattedDate =
+            "${index.year}-${index.month.toString().padLeft(2, '0')}-${index.day.toString().padLeft(2, '0')}";
+        if (isStartDate) {
+          cubit.projectStartDateController.text = formattedDate;
+        } else {
+          cubit.projectEndDateController.text = formattedDate;
+        }
+      },
+      bottomPickerTheme: BottomPickerTheme.plumPlate,
+      buttonStyle: BoxDecoration(
+        shape: BoxShape.rectangle,
+        borderRadius: BorderRadius.circular(14).r,
+        color: AppColors.secondaryGradientColor,
+      ),
+      buttonContent: Text(
+        AppLocale.choose.getString(context),
+        style: AppStyles.font16WhiteBold,
+        textAlign: TextAlign.center,
+      ),
+      buttonWidth: MediaQuery.sizeOf(context).width * 0.5,
+      titlePadding: EdgeInsets.symmetric(vertical: 8.h),
+      layoutOrientation: context.read<AppLocalizationCubit>().textDirection ==
+              TextDirection.ltr
+          ? TextDirection.ltr
+          : TextDirection.rtl,
+      closeIconColor: AppColors.blackColor,
+      closeIconSize: 28.r,
+      buttonPadding: 12.h,
+    ).show(context);
+  }
+
+  Widget _buildProjectToolsField(cubit,BuildContext context) {
     return AppTextFormField(
-      labelText: AppLocale.projectTools,
+      labelText: AppLocale.projectTools.getString(context),
       keyboardType: TextInputType.text,
       controller: cubit.projectToolsController,
       validator: (value) {
@@ -147,7 +218,7 @@ class AddProjectInfo extends StatelessWidget {
   Widget _buildSubmitButton(BuildContext context, ProjectState state, cubit) {
     return AppCustomButton(
       isLoading: state is AddProjectLoading,
-      textButton: AppLocale.confirm,
+      textButton: AppLocale.confirm.getString(context),
       btnWidth: MediaQuery.sizeOf(context).width,
       btnHeight: 65.h,
       onPressed: () {

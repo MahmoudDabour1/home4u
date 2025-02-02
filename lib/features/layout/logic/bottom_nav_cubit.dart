@@ -17,22 +17,6 @@ class BottomNavCubit extends Cubit<BottomNavState> {
     emit(BottomNavState.changeBottomNavIndex(index));
   }
 
-  List<String> bottomNavItems = [
-    'Home',
-    'Projects',
-    'Chats',
-    'Community',
-    'Profile',
-  ];
-
-  List<String> bottomNavItemsAR = [
-    'الرئيسية',
-    'المشاريع',
-    'المحادثات',
-    'المجتمع',
-    'الملف الشخصي',
-  ];
-
   List<IconData> bottomNavIcons = [
     CupertinoIcons.home,
     CupertinoIcons.square_stack_3d_up,
