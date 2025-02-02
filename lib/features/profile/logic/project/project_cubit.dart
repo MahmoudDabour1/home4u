@@ -31,6 +31,7 @@ class ProjectCubit extends Cubit<ProjectState> {
   List<File> images = [];
   File? coverImage;
   Logger printer = Logger();
+  final formKey = GlobalKey<FormState>();
 
   void selectImage({required BuildContext context, ImageSource? source}) {
     ImagePicker.platform
@@ -164,7 +165,7 @@ class ProjectCubit extends Cubit<ProjectState> {
     );
   }
 
-  Future<void> updateProject(int projectId) async {
+  Future<void> updateProject(int projectId,BuildContext context) async {
     emit(const ProjectState.updateProjectLoading());
     try {
       final formData = await _updateProjectFormData(projectId);
@@ -182,6 +183,7 @@ class ProjectCubit extends Cubit<ProjectState> {
           images = [];
           if (!isClosed) {
             emit(ProjectState.updateProjectSuccess());
+           Navigator.pop(context);
             getProjects();
           }
         },

@@ -15,12 +15,14 @@ class SelectImageWidget extends StatelessWidget {
   final cubit;
   final List<File> images;
   final bool isCoverImage;
+  final bool isEdit;
 
   const SelectImageWidget({
     super.key,
     required this.cubit,
     required this.images,
     this.isCoverImage = false,
+    this.isEdit = false,
   });
 
   @override
@@ -59,12 +61,19 @@ class SelectImageWidget extends StatelessWidget {
             alignment: Alignment.center,
             children: [
               if (isCoverImage && images.isNotEmpty)
-                Image.file(
-                  images.first,
-                  width: 100,
-                  height: 100,
-                  fit: BoxFit.cover,
-                )
+                isEdit
+                    ? Image.network(
+                        'https://dynamic-mouse-needlessly.ngrok-free.app/api/v1/file/download?fileName=${images.first.path}',
+                        width: 100,
+                        height: 100,
+                        fit: BoxFit.cover,
+                      )
+                    : Image.file(
+                        images.first,
+                        width: 100,
+                        height: 100,
+                        fit: BoxFit.cover,
+                      )
               else if (!isCoverImage && images.isNotEmpty)
                 ListView.builder(
                   scrollDirection: Axis.horizontal,

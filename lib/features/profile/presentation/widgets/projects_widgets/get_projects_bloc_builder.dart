@@ -26,18 +26,6 @@ class GetProjectsBlocBuilder extends StatelessWidget {
             return setupSuccessWidget(projectsList);
           },
           getProjectsError: (errorHandler) => setupError(),
-          // addProjectSuccess: () {
-          //   context.read<ProjectCubit>().getProjects();
-          //   return ProjectsGridViewShimmerWidget();
-          // },
-          // updateProjectSuccess: () {
-          //   context.read<ProjectCubit>().getProjects();
-          //   return ProjectsGridViewShimmerWidget();
-          // },
-          // deleteProjectSuccess: () {
-          //   context.read<ProjectCubit>().getProjects();
-          //   return ProjectsGridViewShimmerWidget();
-          // },
           orElse: () {
             return const SizedBox.shrink();
           },
