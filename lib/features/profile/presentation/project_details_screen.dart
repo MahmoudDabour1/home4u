@@ -3,17 +3,19 @@ import 'package:fancy_shimmer_image/fancy_shimmer_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:hive/hive.dart';
 import 'package:home4u/core/networking/api_constants.dart';
 import 'package:home4u/core/theming/app_styles.dart';
 import 'package:home4u/core/utils/spacing.dart';
 import 'package:home4u/features/profile/logic/project/project_cubit.dart';
 import 'package:home4u/features/profile/logic/project/project_state.dart';
-import 'package:home4u/features/profile/presentation/widgets/projects_widgets/get_projects_bloc_builder.dart';
 import 'package:home4u/features/profile/presentation/widgets/projects_widgets/projects_details_shimmer_widget.dart';
 import 'package:home4u/features/profile/presentation/widgets/projects_widgets/rating_container_item.dart';
 
+import '../../../core/routing/router_observer.dart';
 import '../../../core/utils/app_constants.dart';
 import '../../auth/widgets/auth_welcome_data.dart';
+import '../data/models/profile/profile_response_model.dart';
 
 class ProjectDetailsScreen extends StatefulWidget {
   final int projectId;
@@ -26,12 +28,21 @@ class ProjectDetailsScreen extends StatefulWidget {
 
 class _ProjectDetailsScreenState extends State<ProjectDetailsScreen> {
   bool showMoreInfo = false;
+  ProfileResponseModel? profileDataCached;
 
   @override
   void initState() {
-    context.read<ProjectCubit>().getProjects();
     super.initState();
+    _initializeProfileData();
+    context.read<ProjectCubit>().getProjects();
   }
+
+  Future<void> _initializeProfileData() async {
+    var profileBox = await Hive.openBox<ProfileResponseModel>(kProfileBox);
+    var profileData = profileBox.get(kProfileData);
+    profileDataCached = profileData;
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -39,7 +50,7 @@ class _ProjectDetailsScreenState extends State<ProjectDetailsScreen> {
         child: BlocBuilder<ProjectCubit, ProjectState>(
           builder: (context, state) {
             return state.maybeWhen(
-              getProjectLoading: ()=> ProjectsDetailsShimmerWidget(),
+              getProjectLoading: () => ProjectsDetailsShimmerWidget(),
               getProjectSuccess: (project) {
                 return SingleChildScrollView(
                   child: Column(
@@ -47,7 +58,7 @@ class _ProjectDetailsScreenState extends State<ProjectDetailsScreen> {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       AuthWelcomeData(
-                        headText: project.data.name,
+                        headText: profileDataCached?.data?.type?.name??"",
                         subText: '',
                       ),
                       verticalSpace(32),
@@ -69,7 +80,7 @@ class _ProjectDetailsScreenState extends State<ProjectDetailsScreen> {
                                 ),
                                 horizontalSpace(16),
                                 Text(
-                                  'Mahmoud Dabour',
+                                  "${profileDataCached?.data?.user?.firstName} ${profileDataCached?.data?.user?.lastName}",
                                   style: TextStyle(
                                       fontSize: 16,
                                       fontWeight: FontWeight.bold),
@@ -203,7 +214,7 @@ class _ProjectDetailsScreenState extends State<ProjectDetailsScreen> {
                               ),
                             verticalSpace(32),
                             Text(
-                              'More Projects By Mahmoud Dabour',
+                              'More Projects By ${profileDataCached?.data?.user?.firstName} ${profileDataCached?.data?.user?.lastName}',
                               style: AppStyles.font16BlackSemiBold,
                             ),
                             verticalSpace(16),

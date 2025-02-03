@@ -1,18 +1,22 @@
-// To parse this JSON data, do
-//
-//     final enginner = enginnerFromJson(jsonString);
-
+import 'package:hive/hive.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'profile_response_model.g.dart';
+
+@HiveType(typeId: 70)
 @JsonSerializable()
 class ProfileResponseModel {
+  @HiveField(0)
   @JsonKey(name: "success")
   bool? success;
+
+  @HiveField(1)
   @JsonKey(name: "status")
   int? status;
+
+  @HiveField(2)
   @JsonKey(name: "data")
-  Data? data;
+  FreeLancerData? data;
 
   ProfileResponseModel({
     this.success,
@@ -22,31 +26,48 @@ class ProfileResponseModel {
 
   factory ProfileResponseModel.fromJson(Map<String, dynamic> json) => _$ProfileResponseModelFromJson(json);
   Map<String, dynamic> toJson() => _$ProfileResponseModelToJson(this);
-
 }
 
+@HiveType(typeId: 71)
 @JsonSerializable()
-class Data {
+class FreeLancerData {
+  @HiveField(0)
   @JsonKey(name: "id")
   int? id;
+
+  @HiveField(1)
   @JsonKey(name: "statusCode")
   dynamic statusCode;
+
+  @HiveField(2)
   @JsonKey(name: "user")
-  User? user;
+  FreeLancerUser? user;
+
+  @HiveField(3)
   @JsonKey(name: "type")
-  Type? type;
+  FreeLancerType? type;
+
+  @HiveField(4)
   @JsonKey(name: "yearsOfExperience")
   int? yearsOfExperience;
+
+  @HiveField(5)
   @JsonKey(name: "engineerServ")
-  List<Type>? engineerServ;
+  List<FreeLancerType>? engineerServ;
+
+  @HiveField(6)
   @JsonKey(name: "bio")
   String? bio;
+
+  @HiveField(7)
   @JsonKey(name: "linkedin")
   String? linkedin;
+
+  @HiveField(8)
   @JsonKey(name: "behance")
   String? behance;
 
-  Data({
+  FreeLancerData({
     this.id,
     this.statusCode,
     this.user,
@@ -58,26 +79,38 @@ class Data {
     this.behance,
   });
 
-factory Data.fromJson(Map<String, dynamic> json) => _$DataFromJson(json);
-  Map<String, dynamic> toJson() => _$DataToJson(this);
+ factory FreeLancerData.fromJson(Map<String, dynamic> json) => _$FreeLancerDataFromJson(json);
+  Map<String, dynamic> toJson() => _$FreeLancerDataToJson(this);
 }
 
+@HiveType(typeId: 72)
 @JsonSerializable()
-class Type {
+class FreeLancerType {
+  @HiveField(0)
   @JsonKey(name: "id")
   int? id;
+
+  @HiveField(1)
   @JsonKey(name: "code")
   String? code;
+
+  @HiveField(2)
   @JsonKey(name: "name")
   String? name;
+
+  @HiveField(3)
   @JsonKey(name: "nameAr")
   String? nameAr;
+
+  @HiveField(4)
   @JsonKey(name: "nameEn")
   String? nameEn;
-  @JsonKey(name: "engineerType")
-  Type? engineerType;
 
-  Type({
+  @HiveField(5)
+  @JsonKey(name: "engineerType")
+  FreeLancerType? engineerType;
+
+  FreeLancerType({
     this.id,
     this.code,
     this.name,
@@ -86,41 +119,66 @@ class Type {
     this.engineerType,
   });
 
-  factory Type.fromJson(Map<String, dynamic> json) => _$TypeFromJson(json);
-
-  Map<String, dynamic> toJson() => _$TypeToJson(this);
+  factory FreeLancerType.fromJson(Map<String, dynamic> json) => _$FreeLancerTypeFromJson(json);
+  Map<String, dynamic> toJson() => _$FreeLancerTypeToJson(this);
 }
 
+@HiveType(typeId: 73)
 @JsonSerializable()
-class User {
+class FreeLancerUser {
+  @HiveField(0)
   @JsonKey(name: "id")
   int? id;
+
+  @HiveField(1)
   @JsonKey(name: "firstName")
   String? firstName;
+
+  @HiveField(2)
   @JsonKey(name: "lastName")
   String? lastName;
+
+  @HiveField(3)
   @JsonKey(name: "email")
   String? email;
+
+  @HiveField(4)
   @JsonKey(name: "phone")
   String? phone;
+
+  @HiveField(5)
   @JsonKey(name: "personalPhoto")
   dynamic personalPhoto;
+
+  @HiveField(6)
   @JsonKey(name: "password")
   String? password;
+
+  @HiveField(7)
   @JsonKey(name: "userType")
-  City? userType;
+  FreeLancerCity? userType;
+
+  @HiveField(8)
   @JsonKey(name: "governorate")
-  City? governorate;
+  FreeLancerCity? governorate;
+
+  @HiveField(9)
   @JsonKey(name: "city")
-  City? city;
+  FreeLancerCity? city;
+
+  @HiveField(10)
   @JsonKey(name: "engineer")
   dynamic engineer;
+
+  @HiveField(11)
   @JsonKey(name: "technicalWorker")
   dynamic technicalWorker;
+
+  @HiveField(12)
   @JsonKey(name: "enabled")
   bool? enabled;
 
-  User({
+  FreeLancerUser({
     this.id,
     this.firstName,
     this.lastName,
@@ -135,28 +193,31 @@ class User {
     this.technicalWorker,
     this.enabled,
   });
-
-  factory User.fromJson(Map<String, dynamic> json) => _$UserFromJson(json);
-
-  Map<String, dynamic> toJson() => _$UserToJson(this);
+factory FreeLancerUser.fromJson(Map<String, dynamic> json) => _$FreeLancerUserFromJson(json);
+  Map<String, dynamic> toJson() => _$FreeLancerUserToJson(this);
 }
 
+@HiveType(typeId: 74)
 @JsonSerializable()
-class City {
+class FreeLancerCity {
+  @HiveField(0)
   @JsonKey(name: "id")
   int? id;
+
+  @HiveField(1)
   @JsonKey(name: "code")
   String? code;
+
+  @HiveField(2)
   @JsonKey(name: "name")
   dynamic name;
 
-  City({
+  FreeLancerCity({
     this.id,
     this.code,
     this.name,
   });
 
-  factory City.fromJson(Map<String, dynamic> json) => _$CityFromJson(json);
-
-  Map<String, dynamic> toJson() => _$CityToJson(this);
+  factory FreeLancerCity.fromJson(Map<String, dynamic> json) => _$FreeLancerCityFromJson(json);
+  Map<String, dynamic> toJson() => _$FreeLancerCityToJson(this);
 }

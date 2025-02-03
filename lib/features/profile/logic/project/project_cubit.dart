@@ -154,12 +154,12 @@ class ProjectCubit extends Cubit<ProjectState> {
     response.when(
       success: (projectResponse) {
         if (!isClosed) {
-          emit(ProjectState.getProjectSuccess(projectResponse));
+           emit(ProjectState.getProjectSuccess(projectResponse));
         }
       },
       failure: (error) {
         if (!isClosed) {
-          emit(ProjectState.getProjectError(error: error.message.toString()));
+           emit(ProjectState.getProjectError(error: error.message.toString()));
         }
       },
     );

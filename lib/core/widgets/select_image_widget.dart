@@ -4,6 +4,7 @@ import 'package:dotted_border/dotted_border.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_localization/flutter_localization.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:home4u/core/networking/api_constants.dart';
 
 import '../../locale/app_locale.dart';
 import '../theming/app_colors.dart';
@@ -63,7 +64,7 @@ class SelectImageWidget extends StatelessWidget {
               if (isCoverImage && images.isNotEmpty)
                 isEdit
                     ? Image.network(
-                        'https://dynamic-mouse-needlessly.ngrok-free.app/api/v1/file/download?fileName=${images.first.path}',
+                        ApiConstants.getImageBaseUrl(images.first.path),
                         width: 100,
                         height: 100,
                         fit: BoxFit.cover,

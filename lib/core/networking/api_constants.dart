@@ -25,8 +25,10 @@ class ApiConstants {
       "/api/v1/certificate/{certificationId}";
   static const String getCertificationByIdEp =
       "/api/v1/certificate/{certificationId}";
-
+//profile
   static const String getEngineerByTokenEp = "/api/v1/engineers/user";
+  static const String updateProfileEP = "/api/v1/engineers";
+
 
   //images
   static String getImageBaseUrl(String path) =>

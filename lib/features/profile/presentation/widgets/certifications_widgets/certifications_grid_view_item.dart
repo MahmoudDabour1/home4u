@@ -5,6 +5,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:home4u/features/profile/data/models/certifications/get_certifications_response_model.dart';
 import 'package:home4u/features/profile/presentation/widgets/certifications_widgets/certification_menu_and_dialog.dart';
 
+import '../../../../../core/networking/api_constants.dart';
 import '../../../logic/profile/profile_cubit.dart';
 import '../../../logic/profile/profile_state.dart';
 
