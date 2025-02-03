@@ -14,4 +14,9 @@ abstract class ProfileRemoteDataSource {
 
   @GET(ApiConstants.getEngineerByTokenEp)
   Future<ProfileResponseModel> getEngineerByToken();
+
+  @PUT(ApiConstants.updateProfileEP)
+  Future<ProfileResponseModel> updateProfile(
+    @Body() ProfileResponseModel profileResponseModel,
+  );
 }

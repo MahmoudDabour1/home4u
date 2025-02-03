@@ -5,6 +5,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:home4u/features/profile/data/models/certifications/get_certifications_response_model.dart';
 import 'package:home4u/features/profile/presentation/widgets/certifications_widgets/certification_menu_and_dialog.dart';
 
+import '../../../../../core/networking/api_constants.dart';
 import '../../../logic/profile/profile_cubit.dart';
 import '../../../logic/profile/profile_state.dart';
 
@@ -23,8 +24,8 @@ class CertificationsGridViewItem extends StatelessWidget {
             ClipRRect(
               borderRadius: BorderRadius.circular(16.r),
               child: FancyShimmerImage(
-                imageUrl:
-                    "https://dynamic-mouse-needlessly.ngrok-free.app/api/v1/file/download?fileName=${certificationsData!.imagePath}",
+                imageUrl: ApiConstants.getImageBaseUrl(
+                    certificationsData!.imagePath!),
                 width: MediaQuery.sizeOf(context).width * 0.5,
                 height: MediaQuery.sizeOf(context).height * 0.5,
                 boxFit: BoxFit.fill,

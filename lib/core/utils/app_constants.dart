@@ -2,6 +2,8 @@ import 'package:intl/intl.dart';
 
 const String kGovernoratesBox = 'governorates';
 const String kCitiesBox = 'cities';
+const String kProfileData = 'kProfileData';
+const String kProfileBox = 'kProfileBox';
 
 
 String? formatDate(DateTime? date) {
