@@ -8,6 +8,8 @@ import 'package:home4u/core/theming/app_styles.dart';
 import 'package:home4u/core/utils/spacing.dart';
 import 'package:home4u/features/profile/logic/project/project_cubit.dart';
 import 'package:home4u/features/profile/logic/project/project_state.dart';
+import 'package:home4u/features/profile/presentation/widgets/projects_widgets/get_projects_bloc_builder.dart';
+import 'package:home4u/features/profile/presentation/widgets/projects_widgets/projects_details_shimmer_widget.dart';
 import 'package:home4u/features/profile/presentation/widgets/projects_widgets/rating_container_item.dart';
 
 import '../../../core/utils/app_constants.dart';
@@ -26,15 +28,18 @@ class _ProjectDetailsScreenState extends State<ProjectDetailsScreen> {
   bool showMoreInfo = false;
 
   @override
+  void initState() {
+    context.read<ProjectCubit>().getProjects();
+    super.initState();
+  }
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: SafeArea(
         child: BlocBuilder<ProjectCubit, ProjectState>(
           builder: (context, state) {
             return state.maybeWhen(
-              getProjectLoading: () {
-                return Center(child: CircularProgressIndicator());
-              },
+              getProjectLoading: ()=> ProjectsDetailsShimmerWidget(),
               getProjectSuccess: (project) {
                 return SingleChildScrollView(
                   child: Column(
@@ -212,7 +217,7 @@ class _ProjectDetailsScreenState extends State<ProjectDetailsScreen> {
                 );
               },
               orElse: () {
-                return Center(child: CircularProgressIndicator());
+                return SizedBox.shrink();
               },
             );
           },

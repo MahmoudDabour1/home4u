@@ -23,8 +23,8 @@ class CertificationsGridViewItem extends StatelessWidget {
             ClipRRect(
               borderRadius: BorderRadius.circular(16.r),
               child: FancyShimmerImage(
-                imageUrl:
-                    "https://dynamic-mouse-needlessly.ngrok-free.app/api/v1/file/download?fileName=${certificationsData!.imagePath}",
+                imageUrl: ApiConstants.getImageBaseUrl(
+                    certificationsData!.imagePath!),
                 width: MediaQuery.sizeOf(context).width * 0.5,
                 height: MediaQuery.sizeOf(context).height * 0.5,
                 boxFit: BoxFit.fill,

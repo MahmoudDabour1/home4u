@@ -37,7 +37,7 @@ class ForgetPasswordBody extends StatelessWidget {
                           .getString(context);
                     }
                   },
-                  keyboardType: TextInputType.phone,
+                  keyboardType: TextInputType.emailAddress,
                 ),
                 verticalSpace(32),
                 AppCustomButton(
