@@ -61,7 +61,7 @@ class ProjectCubit extends Cubit<ProjectState> {
     });
   }
 
-   getProjects() async {
+  getProjects() async {
     emit(const ProjectState.getProjectsLoading());
     final dio = DioFactory.getDio();
     dio.options.headers.remove('Content-Type');
@@ -146,26 +146,24 @@ class ProjectCubit extends Cubit<ProjectState> {
 
   Future<void> getProjectById(int projectId) async {
     emit(const ProjectState.getProjectLoading());
-    Logger()
-        .d("Headers before request: ${DioFactory.getDio().options.headers}");
     DioFactory.setContentType("application/json");
 
     final response = await _projectRepository.getProjectsByUserId(projectId);
     response.when(
       success: (projectResponse) {
         if (!isClosed) {
-           emit(ProjectState.getProjectSuccess(projectResponse));
+          emit(ProjectState.getProjectSuccess(projectResponse));
         }
       },
       failure: (error) {
         if (!isClosed) {
-           emit(ProjectState.getProjectError(error: error.message.toString()));
+          emit(ProjectState.getProjectError(error: error.message.toString()));
         }
       },
     );
   }
 
-  Future<void> updateProject(int projectId,BuildContext context) async {
+  Future<void> updateProject(int projectId, BuildContext context) async {
     emit(const ProjectState.updateProjectLoading());
     try {
       final formData = await _updateProjectFormData(projectId);
@@ -183,7 +181,7 @@ class ProjectCubit extends Cubit<ProjectState> {
           images = [];
           if (!isClosed) {
             emit(ProjectState.updateProjectSuccess());
-           Navigator.pop(context);
+            Navigator.pop(context);
             getProjects();
           }
         },

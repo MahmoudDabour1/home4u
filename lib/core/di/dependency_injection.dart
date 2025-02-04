@@ -18,6 +18,7 @@ import 'package:home4u/features/profile/data/data_sources/certifications_remote_
 import 'package:home4u/features/profile/data/data_sources/profile_local_data_source.dart';
 import 'package:home4u/features/profile/data/data_sources/profile_remote_data_source.dart';
 import 'package:home4u/features/profile/data/data_sources/projects_remote_data_source.dart';
+import 'package:home4u/features/profile/data/models/projects/get_projects_response_model.dart';
 import 'package:home4u/features/profile/data/repos/certifications_repo.dart';
 import 'package:home4u/features/profile/data/repos/projects_repo.dart';
 import 'package:home4u/features/profile/logic/certifications/certifications_cubit.dart';
@@ -34,6 +35,7 @@ import '../../features/auth/sign_up/data/data_source/freelancer_sign_up/freelanc
 import '../../features/auth/sign_up/logic/engineer/engineer_cubit.dart';
 import '../../features/auth/verification/data/repos/verification_repo.dart';
 import '../../features/auth/verification/logic/verification_cubit.dart';
+import '../../features/profile/data/data_sources/projects_local_data_source.dart';
 import '../../features/profile/data/repos/profile_repo.dart';
 import '../../features/profile/logic/profile/profile_cubit.dart';
 import '../localization/app_localization_cubit.dart';
@@ -87,9 +89,18 @@ Future<void> setupGetIt() async {
   sl.registerFactory<TechnicalWorkerCubit>(() => TechnicalWorkerCubit(sl()));
 
 //projects
+  sl.registerLazySingleton<Box<GetProjectsResponseModel>>(
+    () => Hive.box<GetProjectsResponseModel>(kProjectsBox),
+  );
   sl.registerLazySingleton<ProjectsRemoteDataSource>(
       () => ProjectsRemoteDataSource(dio));
-  sl.registerLazySingleton<ProjectsRepo>(() => ProjectsRepoImpl(sl()));
+  sl.registerLazySingleton<ProjectsLocalDataSource>(
+    () => ProjectsLocalDataSourceImpl(),
+  );
+  sl.registerLazySingleton<ProjectsRepo>(() => ProjectsRepoImpl(
+        sl(),
+        sl(),
+      ));
   sl.registerFactory<ProjectCubit>(() => ProjectCubit(sl()));
 
   ///App Localization
@@ -109,15 +120,14 @@ Future<void> setupGetIt() async {
       () => CertificationsRepoImpl(sl()));
   sl.registerFactory<CertificationsCubit>(() => CertificationsCubit(sl()));
 
-
   // Register Profile Box with GetIt
-  sl.registerLazySingleton<Box<ProfileResponseModel>>(() => Hive.box<ProfileResponseModel>(kProfileBox));
+  sl.registerLazySingleton<Box<ProfileResponseModel>>(
+      () => Hive.box<ProfileResponseModel>(kProfileBox));
 //profile
   sl.registerLazySingleton<ProfileRemoteDataSource>(
       () => ProfileRemoteDataSource(dio));
   sl.registerLazySingleton<ProfileLocalDataSource>(
       () => ProfileLocalDataSourceImpl());
-  sl.registerLazySingleton<ProfileRepo>(() => ProfileRepoImp(sl(),sl()));
-  sl.registerFactory<ProfileCubit>(() => ProfileCubit(sl(),sl()));
-
- }
+  sl.registerLazySingleton<ProfileRepo>(() => ProfileRepoImp(sl(), sl()));
+  sl.registerFactory<ProfileCubit>(() => ProfileCubit(sl(), sl()));
+}

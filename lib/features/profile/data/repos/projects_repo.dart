@@ -1,19 +1,19 @@
 import 'package:dio/dio.dart';
 import 'package:home4u/core/networking/api_result.dart';
 import 'package:home4u/features/profile/data/data_sources/projects_remote_data_source.dart';
+import 'package:home4u/features/profile/data/data_sources/projects_local_data_source.dart';
 import 'package:home4u/features/profile/data/models/projects/delete_project_response_model.dart';
 import 'package:home4u/features/profile/data/models/projects/get_projects_response_model.dart';
-
 import '../../../../core/networking/api_error_handler.dart';
 import '../models/projects/project_response.dart';
 
 abstract class ProjectsRepo {
   Future<ApiResult<GetProjectsResponseModel>> getProjects();
 
-  Future<ApiResult<ProjectResponse>> getProjectsByUserId(int projectId,);
+  Future<ApiResult<ProjectResponse>> getProjectsByUserId(int projectId);
 
   Future<ApiResult<DeleteProjectResponseModel>> deleteProjectsByUserId(
-      int projectId,);
+      int projectId);
 
   Future<ApiResult<ProjectResponse>> addProject(FormData projectData);
 
@@ -22,22 +22,29 @@ abstract class ProjectsRepo {
 
 class ProjectsRepoImpl implements ProjectsRepo {
   final ProjectsRemoteDataSource _projectsRemoteDataSource;
+  final ProjectsLocalDataSource _projectsLocalDataSource;
 
-  ProjectsRepoImpl(this._projectsRemoteDataSource);
+  ProjectsRepoImpl(
+      this._projectsRemoteDataSource, this._projectsLocalDataSource);
 
   @override
   Future<ApiResult<GetProjectsResponseModel>> getProjects() async {
     try {
       final response = await _projectsRemoteDataSource.getProjects();
+      await _projectsLocalDataSource.cacheProjects(response);
       return ApiResult.success(response);
     } catch (error) {
+      final cachedProjects = _projectsLocalDataSource.getCachedProjects();
+      if (cachedProjects != null) {
+        return ApiResult.success(cachedProjects);
+      }
       return ApiResult.failure(ApiErrorHandler.handle(error));
     }
   }
 
   @override
   Future<ApiResult<DeleteProjectResponseModel>> deleteProjectsByUserId(
-      int projectId,) async {
+      int projectId) async {
     try {
       final response = await _projectsRemoteDataSource.deleteProject(projectId);
       return ApiResult.success(response);
@@ -57,10 +64,10 @@ class ProjectsRepoImpl implements ProjectsRepo {
   }
 
   @override
-  Future<ApiResult<ProjectResponse>> getProjectsByUserId(int projectId,) async {
+  Future<ApiResult<ProjectResponse>> getProjectsByUserId(int projectId) async {
     try {
       final response =
-      await _projectsRemoteDataSource.getProjectById(projectId);
+          await _projectsRemoteDataSource.getProjectById(projectId);
       return ApiResult.success(response);
     } catch (error) {
       return ApiResult.failure(ApiErrorHandler.handle(error));
@@ -71,7 +78,7 @@ class ProjectsRepoImpl implements ProjectsRepo {
   Future<ApiResult<ProjectResponse>> updateProject(FormData projectData) async {
     try {
       final response =
-      await _projectsRemoteDataSource.updateProject(projectData);
+          await _projectsRemoteDataSource.updateProject(projectData);
       return ApiResult.success(response);
     } catch (error) {
       return ApiResult.failure(ApiErrorHandler.handle(error));
