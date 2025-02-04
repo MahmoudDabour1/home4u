@@ -18,9 +18,11 @@ import 'package:home4u/features/profile/data/data_sources/certifications_remote_
 import 'package:home4u/features/profile/data/data_sources/profile_local_data_source.dart';
 import 'package:home4u/features/profile/data/data_sources/profile_remote_data_source.dart';
 import 'package:home4u/features/profile/data/data_sources/projects_remote_data_source.dart';
+import 'package:home4u/features/profile/data/data_sources/services_remote_data_source.dart';
 import 'package:home4u/features/profile/data/models/projects/get_projects_response_model.dart';
 import 'package:home4u/features/profile/data/repos/certifications_repo.dart';
 import 'package:home4u/features/profile/data/repos/projects_repo.dart';
+import 'package:home4u/features/profile/data/repos/services_repository.dart';
 import 'package:home4u/features/profile/logic/certifications/certifications_cubit.dart';
 import 'package:home4u/features/profile/logic/project/project_cubit.dart';
 import 'package:home4u/features/profile/data/models/profile/profile_response_model.dart';
@@ -38,6 +40,7 @@ import '../../features/auth/verification/logic/verification_cubit.dart';
 import '../../features/profile/data/data_sources/projects_local_data_source.dart';
 import '../../features/profile/data/repos/profile_repo.dart';
 import '../../features/profile/logic/profile/profile_cubit.dart';
+import '../../features/profile/logic/services/services_cubit.dart';
 import '../localization/app_localization_cubit.dart';
 import '../networking/dio_factory.dart';
 
@@ -130,4 +133,13 @@ Future<void> setupGetIt() async {
       () => ProfileLocalDataSourceImpl());
   sl.registerLazySingleton<ProfileRepo>(() => ProfileRepoImp(sl(), sl()));
   sl.registerFactory<ProfileCubit>(() => ProfileCubit(sl(), sl()));
+
+  ///Services
+  sl.registerLazySingleton<ServicesRemoteDataSource>(
+    () => ServicesRemoteDataSource(dio),
+  );
+  sl.registerLazySingleton<ServicesRepository>(
+    () => ServicesRepositoryImpl(sl()),
+  );
+  sl.registerFactory<ServicesCubit>(() => ServicesCubit(sl()));
 }

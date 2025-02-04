@@ -7,7 +7,16 @@ import '../../../../../core/theming/app_styles.dart';
 import '../../../../../core/widgets/app_custom_drop_down_search_menu.dart';
 
 class ServicesListViewItem extends StatelessWidget {
-  const ServicesListViewItem({super.key});
+  final String serviceName;
+  final int engineerId;
+  final int serviceId;
+
+  const ServicesListViewItem({
+    super.key,
+    required this.serviceName,
+    required this.engineerId,
+    required this.serviceId,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -18,7 +27,7 @@ class ServicesListViewItem extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           Text(
-            "Material and Finishing Selection",
+            serviceName,
             style: AppStyles.font16BlackLight,
           ),
           AppCustomDropDownSearchMenu(
@@ -26,7 +35,10 @@ class ServicesListViewItem extends StatelessWidget {
               if (value == "delete") {
                 showDialog(
                   context: context,
-                  builder: (context) => ServicesDeleteAlertDialog(),
+                  builder: (context) => ServicesDeleteAlertDialog(
+                    engineerId: engineerId,
+                    serviceId: serviceId,
+                  ),
                 );
               }
               if (value == "edit") {

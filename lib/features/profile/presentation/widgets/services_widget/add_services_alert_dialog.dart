@@ -12,9 +12,8 @@ import '../../../../../core/utils/spacing.dart';
 
 class ServicesAlertDialog extends StatelessWidget {
   const ServicesAlertDialog({super.key, this.isEdit = false});
-  final bool isEdit;
 
-  // final TextEditingController addServicesTextEditingController;
+  final bool isEdit;
 
   @override
   Widget build(BuildContext context) {
