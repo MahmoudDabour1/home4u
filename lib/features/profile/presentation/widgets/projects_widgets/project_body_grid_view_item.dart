@@ -26,14 +26,10 @@ class ProjectBodyGridViewItem extends StatelessWidget {
     return BlocBuilder<ProfileCubit, ProfileState>(
       builder: (context, state) {
         return GestureDetector(
-          onTap: () async{
-            var profileBox = await Hive.openBox<ProfileResponseModel>(kProfileBox);
+          onTap: () async {
+            var profileBox =
+                await Hive.openBox<ProfileResponseModel>(kProfileBox);
             var profileData = profileBox.get(kProfileData);
-            if (profileData != null) {
-              logger.w('Profile Data: ${profileData.data?.user?.firstName.toString()??""}'); // Assuming ProfileResponseModel has a toJson() method
-            } else {
-              logger.d('No profile data found in Hive');
-            }
             final projectCubit = BlocProvider.of<ProjectCubit>(context);
             projectCubit.getProjectById(projectData!.id!);
             context.pushNamed(

@@ -8,6 +8,7 @@ import 'core/di/dependency_injection.dart';
 import 'core/helpers/shared_pref_helper.dart';
 import 'core/helpers/shared_pref_keys.dart';
 import 'core/routing/app_router.dart';
+import 'core/utils/hive_set_up.dart';
 import 'features/profile/data/data_sources/profile_local_data_source.dart';
 import 'firebase_options.dart';
 import 'home4u_app.dart';

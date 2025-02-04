@@ -7,12 +7,13 @@ import 'package:hive/hive.dart';
 import 'package:home4u/core/networking/api_constants.dart';
 import 'package:home4u/core/theming/app_styles.dart';
 import 'package:home4u/core/utils/spacing.dart';
+import 'package:home4u/features/profile/data/models/projects/get_projects_response_model.dart';
 import 'package:home4u/features/profile/logic/project/project_cubit.dart';
 import 'package:home4u/features/profile/logic/project/project_state.dart';
+import 'package:home4u/features/profile/presentation/widgets/projects_widgets/project_body_grid_view_item.dart';
 import 'package:home4u/features/profile/presentation/widgets/projects_widgets/projects_details_shimmer_widget.dart';
 import 'package:home4u/features/profile/presentation/widgets/projects_widgets/rating_container_item.dart';
 
-import '../../../core/routing/router_observer.dart';
 import '../../../core/utils/app_constants.dart';
 import '../../auth/widgets/auth_welcome_data.dart';
 import '../data/models/profile/profile_response_model.dart';
@@ -29,18 +30,21 @@ class ProjectDetailsScreen extends StatefulWidget {
 class _ProjectDetailsScreenState extends State<ProjectDetailsScreen> {
   bool showMoreInfo = false;
   ProfileResponseModel? profileDataCached;
+  GetProjectsResponseModel? projects;
 
   @override
   void initState() {
     super.initState();
     _initializeProfileData();
-    context.read<ProjectCubit>().getProjects();
   }
 
   Future<void> _initializeProfileData() async {
     var profileBox = await Hive.openBox<ProfileResponseModel>(kProfileBox);
     var profileData = profileBox.get(kProfileData);
+    var projectBox = await Hive.openBox<GetProjectsResponseModel>(kProjectsBox);
+    var projectsData = projectBox.get(kProjectsKey);
     profileDataCached = profileData;
+    projects = projectsData;
   }
 
   @override
@@ -58,7 +62,7 @@ class _ProjectDetailsScreenState extends State<ProjectDetailsScreen> {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       AuthWelcomeData(
-                        headText: profileDataCached?.data?.type?.name??"",
+                        headText: profileDataCached?.data?.type?.name ?? "",
                         subText: '',
                       ),
                       verticalSpace(32),
@@ -218,8 +222,24 @@ class _ProjectDetailsScreenState extends State<ProjectDetailsScreen> {
                               style: AppStyles.font16BlackSemiBold,
                             ),
                             verticalSpace(16),
-                            // GetProjectsBlocBuilder(),
-                            // verticalSpace(16),
+                            GridView.builder(
+                              shrinkWrap: true,
+                              physics: ClampingScrollPhysics(),
+                              gridDelegate:
+                                  SliverGridDelegateWithFixedCrossAxisCount(
+                                crossAxisCount: 2,
+                                crossAxisSpacing: 16.w,
+                                mainAxisSpacing: 16.h,
+                                childAspectRatio: 1 / 1,
+                              ),
+                              itemCount: projects?.data?.length,
+                              itemBuilder: (context, index) {
+                                return ProjectBodyGridViewItem(
+                                  projectData: projects?.data?[index],
+                                );
+                              },
+                            ),
+                            verticalSpace(16),
                           ],
                         ),
                       ),

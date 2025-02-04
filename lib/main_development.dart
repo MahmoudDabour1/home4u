@@ -11,6 +11,7 @@ import 'core/di/dependency_injection.dart';
 import 'core/helpers/shared_pref_helper.dart';
 import 'core/helpers/shared_pref_keys.dart';
 import 'core/routing/app_router.dart';
+import 'core/utils/hive_set_up.dart';
 import 'core/utils/my_bloc_observer.dart';
 import 'firebase_options.dart';
 import 'home4u_app.dart';
