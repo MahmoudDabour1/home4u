@@ -10,7 +10,6 @@ import 'package:home4u/features/profile/data/models/projects/get_projects_respon
 import 'package:home4u/features/profile/logic/profile/profile_cubit.dart';
 import 'package:home4u/features/profile/logic/project/project_cubit.dart';
 
-import '../../../../../core/routing/router_observer.dart';
 import '../../../../../core/routing/routes.dart';
 import '../../../data/models/profile/profile_response_model.dart';
 import '../../../logic/profile/profile_state.dart';

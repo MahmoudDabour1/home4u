@@ -23,6 +23,7 @@ import '../../features/onboarding/presentation/onboarding_screen.dart';
 import '../../features/profile/data/models/certifications/get_certifications_response_model.dart';
 import '../../features/profile/data/models/projects/get_projects_response_model.dart';
 import '../../features/profile/presentation/add_project_screen.dart';
+import '../../features/profile/presentation/edit_profile_screen.dart';
 import '../../features/profile/presentation/profile_screen.dart';
 import '../../features/profile/presentation/project_details_screen.dart';
 import '../../features/settings/presentation/setting_screen.dart';
@@ -119,6 +120,11 @@ class AppRouter {
         int projectId = settings.arguments as int;
         return MaterialPageRoute(
           builder: (_) => ProjectDetailsScreen(projectId: projectId),
+        );
+
+        case Routes.editProfileScreen:
+        return MaterialPageRoute(
+          builder: (_) => EditProfileScreen(),
         );
       default:
         return null;

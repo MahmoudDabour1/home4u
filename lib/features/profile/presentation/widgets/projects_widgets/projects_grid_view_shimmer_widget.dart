@@ -33,7 +33,8 @@ class ProjectsGridViewShimmerWidget extends StatelessWidget {
                     ClipRRect(
                       borderRadius: BorderRadius.circular(16.r),
                       child: FancyShimmerImage(
-                        imageUrl: '',
+                        imageUrl:
+                            "https://media.istockphoto.com/id/1142192548/vector/man-avatar-profile-male-face-silhouette-or-icon-isolated-on-white-background-vector.jpg?s=2048x2048&w=is&k=20&c=lyki7QHyULuJNNheEf-BI_DQNCDi2NRYMfVGTQj_4UM=",
                         width: MediaQuery.sizeOf(context).width * 0.5,
                         height: MediaQuery.sizeOf(context).height * 0.5,
                         boxFit: BoxFit.fill,

@@ -19,10 +19,11 @@ class ProfileBlocBuilder extends StatelessWidget {
           current is SuccessProfileData ||
           current is ErrorProfileData,
       builder: (context, state) {
+        final cubit =BlocProvider.of<ProfileCubit>(context);
         return state.maybeWhen(
           loadingProfileData: () => setupLoading(),
           successProfileData: (engineerData) =>
-              setupSuccessWidget(engineerData),
+              setupSuccessWidget(engineerData,cubit),
           errorProfileData: (error) => setupError(),
           orElse: () => const SizedBox.shrink(),
         );
@@ -31,7 +32,7 @@ class ProfileBlocBuilder extends StatelessWidget {
   }
 }
 
-Widget setupSuccessWidget(ProfileResponseModel engineerData) {
+Widget setupSuccessWidget(ProfileResponseModel engineerData,cubit) {
   return Stack(
     children: [
       InformationWidget(
@@ -39,6 +40,7 @@ Widget setupSuccessWidget(ProfileResponseModel engineerData) {
       ),
       UserImageWidget(
         profileData: engineerData,
+        cubit: cubit,
       ),
     ],
   );

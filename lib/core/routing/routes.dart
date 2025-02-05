@@ -15,4 +15,5 @@ abstract class Routes{
   static const String settingScreen = '/settingScreen';
   static const String addCertificationScreen = '/addCertificationScreen';
   static const String projectDetailsScreen = '/projectDetailsScreen';
+  static const String editProfileScreen = '/editProfileScreen';
 }
