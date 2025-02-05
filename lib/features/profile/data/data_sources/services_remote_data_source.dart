@@ -1,7 +1,7 @@
-import 'dart:ffi';
-
 import 'package:dio/dio.dart';
 import 'package:home4u/features/auth/sign_up/data/models/services/freelancer_services.dart';
+import 'package:home4u/features/profile/data/models/projects/delete_project_response_model.dart';
+import 'package:home4u/features/profile/data/models/services/update_service_body.dart';
 import 'package:retrofit/error_logger.dart';
 import 'package:retrofit/http.dart';
 
@@ -21,7 +21,7 @@ abstract class ServicesRemoteDataSource {
 
   @PUT(ApiConstants.updateEngineerServices)
   Future<bool> updateServices(
-    @Body() FormData servicesData,
+    @Body() List<UpdateServiceBody> servicesData,
     @Query("userId") int userId,
   );
 

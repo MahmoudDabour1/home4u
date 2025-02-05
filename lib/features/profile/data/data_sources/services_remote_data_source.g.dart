@@ -58,13 +58,13 @@ class _ServicesRemoteDataSource implements ServicesRemoteDataSource {
 
   @override
   Future<bool> updateServices(
-    FormData servicesData,
+    List<UpdateServiceBody> servicesData,
     int userId,
   ) async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{r'userId': userId};
     final _headers = <String, dynamic>{};
-    final _data = servicesData;
+    final _data = servicesData.map((e) => e.toJson()).toList();
     final _options = _setStreamType<bool>(Options(
       method: 'PUT',
       headers: _headers,

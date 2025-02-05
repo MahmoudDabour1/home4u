@@ -1,6 +1,8 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:home4u/features/auth/sign_up/data/models/services/freelancer_services.dart';
 
+import '../../data/models/projects/delete_project_response_model.dart';
+
 part 'services_state.freezed.dart';
 
 @freezed
@@ -10,8 +12,8 @@ class ServicesState<T> with _$ServicesState<T> {
   ///Get Services
   const factory ServicesState.getServicesLoading() = GetServicesLoading;
 
-  const factory ServicesState.getServicesSuccess(FreelancerServices servicesData) =
-      GetServicesSuccess;
+  const factory ServicesState.getServicesSuccess(
+      FreelancerServices servicesData) = GetServicesSuccess;
 
   const factory ServicesState.getServicesError({required String error}) =
       GetServicesError;

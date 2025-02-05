@@ -29,7 +29,7 @@ class AddCertificationScreen extends StatelessWidget {
                     AuthWelcomeData(
                       headText: certificationsData != null
                           ? AppLocale.update.getString(context)
-                          : AppLocale.addCertifications.getString(context),
+                          : AppLocale.addCertification.getString(context),
                       subText: '',
                     ),
                     AddCertificationsInfo(

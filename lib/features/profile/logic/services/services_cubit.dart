@@ -1,10 +1,10 @@
 import 'package:bloc/bloc.dart';
-import 'package:dio/dio.dart';
-import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:home4u/features/profile/data/repos/services_repository.dart';
 import 'package:home4u/features/profile/logic/services/services_state.dart';
 
+import '../../../../core/networking/dio_factory.dart';
 import '../../../../core/routing/router_observer.dart';
+import '../../data/models/services/update_service_body.dart';
 
 class ServicesCubit extends Cubit<ServicesState> {
   final ServicesRepository _servicesRepository;
@@ -23,28 +23,42 @@ class ServicesCubit extends Cubit<ServicesState> {
         emit(ServicesState.getServicesSuccess(servicesData));
       },
       failure: (error) {
-        emit(ServicesState.getServicesError(error: error.errorsDetails.toString()));
+        logger.e(error.errorsDetails.toString());
+        emit(ServicesState.getServicesError(
+            error: error.errorsDetails.toString()));
       },
     );
   }
 
-  void updateServices({required FormData servicesData, required int userId}) async {
+  Future<void> updateServices({
+    required List<UpdateServiceBody> servicesData,
+    required int userId,
+    required int engineerId,
+  }) async {
     emit(const ServicesState.updateServicesLoading());
+    DioFactory.setContentType('application/json');
+
     final result = await _servicesRepository.updateServices(
       servicesData,
       userId,
     );
     result.when(
       success: (_) {
-        emit(const ServicesState.updateServicesSuccess());
+        logger.t('Services Updated Successfully');
+        emit(ServicesState.updateServicesSuccess());
+        getServices(engineerId: engineerId);
       },
       failure: (error) {
-        emit(ServicesState.updateServicesError(error: error.errorsDetails.toString()));
+        logger.e(error.errorsDetails.toString());
+        emit(
+          ServicesState.updateServicesError(error: "Update doesn't work"),
+        );
       },
     );
   }
 
-  Future<void> deleteService({required int engineerId, required int serviceId}) async {
+  Future<void> deleteService(
+      {required int engineerId, required int serviceId}) async {
     emit(const ServicesState.deleteServiceLoading());
     final result = await _servicesRepository.deleteService(
       engineerId,
@@ -55,7 +69,8 @@ class ServicesCubit extends Cubit<ServicesState> {
         emit(const ServicesState.deleteServiceSuccess());
       },
       failure: (error) {
-        emit(ServicesState.deleteServiceError(error: error.errorsDetails.toString()));
+        emit(ServicesState.deleteServiceError(
+            error: error.errorsDetails.toString()));
       },
     );
   }

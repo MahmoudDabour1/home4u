@@ -5,17 +5,24 @@ import 'package:home4u/features/profile/presentation/widgets/services_widget/ser
 
 import '../../../../../core/theming/app_styles.dart';
 import '../../../../../core/widgets/app_custom_drop_down_search_menu.dart';
+import '../../../../auth/sign_up/data/models/services/freelancer_services.dart';
 
 class ServicesListViewItem extends StatelessWidget {
   final String serviceName;
   final int engineerId;
   final int serviceId;
+  final int userId;
+  final FreelancerServiceData selectedService;
+  final int engineerTypeId;
 
   const ServicesListViewItem({
     super.key,
     required this.serviceName,
     required this.engineerId,
     required this.serviceId,
+    required this.selectedService,
+    required this.userId,
+    required this.engineerTypeId,
   });
 
   @override
@@ -44,9 +51,15 @@ class ServicesListViewItem extends StatelessWidget {
               if (value == "edit") {
                 showDialog(
                   context: context,
-                  builder: (context) => ServicesAlertDialog(
-                    isEdit: true,
-                  ),
+                  builder: (context) {
+                    return ServicesAlertDialog(
+                      isEdit: true,
+                      selectedService: selectedService,
+                      userId: userId,
+                      engineerTypeId: engineerTypeId,
+                      engineerId: engineerId,
+                    );
+                  },
                 );
               }
             },
