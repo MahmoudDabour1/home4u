@@ -149,7 +149,7 @@ class CertificationsCubit extends Cubit<CertificationsState> {
     );
   }
 
-  Future<void> updateCertification(int certificationId, context) async {
+  Future<void> updateCertification(int certificationId, BuildContext context) async {
     emit(CertificationsState.updateCertificationLoading());
     try {
       final formData = await _updateFormData(certificationId);

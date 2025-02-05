@@ -1,7 +1,6 @@
 import 'package:dio/dio.dart';
 import 'package:flutter_localization/flutter_localization.dart';
 import 'package:get_it/get_it.dart';
-import 'package:hive/hive.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import 'package:home4u/core/utils/app_constants.dart';
 import 'package:home4u/features/auth/login/data/data_sources/login_remote_data_source.dart';

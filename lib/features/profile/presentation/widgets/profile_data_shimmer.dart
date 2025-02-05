@@ -36,9 +36,7 @@ class ProfileDataShimmer extends StatelessWidget {
               ),
             ),
             verticalSpace(8),
-            Skeletonizer(
-              enabled: true,
-                child: ProfileRatingWidget()),
+            ProfileRatingWidget(),
             verticalSpace(8),
             Skeletonizer(
               enabled: true,
@@ -49,15 +47,12 @@ class ProfileDataShimmer extends StatelessWidget {
               ),
             ),
             verticalSpace(8),
-            Skeletonizer(
-              enabled: true,
-              child: AppCustomButton(
-                textButton: AppLocale.editProfile.getString(context),
-                btnWidth: 200.w,
-                btnHeight: 30.h,
-                onPressed: () {},
-                radius: 25,
-              ),
+            AppCustomButton(
+              textButton: AppLocale.editProfile.getString(context),
+              btnWidth: 200.w,
+              btnHeight: 30.h,
+              onPressed: () {},
+              radius: 25,
             ),
             verticalSpace(16),
           ],

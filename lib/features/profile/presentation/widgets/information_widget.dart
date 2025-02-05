@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_localization/flutter_localization.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:home4u/core/extensions/navigation_extension.dart';
+import 'package:home4u/core/routing/routes.dart';
 import 'package:home4u/core/utils/spacing.dart';
 import 'package:home4u/features/profile/data/models/profile/profile_response_model.dart';
 import 'package:home4u/features/profile/presentation/widgets/profile_rating_widget.dart';
@@ -30,7 +32,7 @@ class InformationWidget extends StatelessWidget {
               Skeletonizer(
                 enabled: state is LoadingProfileData,
                 child: Text(
-                  "${profileData.data?.user?.firstName}${profileData.data?.user?.lastName}"??"",
+                  "${profileData.data?.user?.firstName} ${profileData.data?.user?.lastName}"??"",
                   style: AppStyles.font16BlackSemiBold,
                 ),
               ),
@@ -58,7 +60,9 @@ class InformationWidget extends StatelessWidget {
                 textButton: AppLocale.editProfile.getString(context),
                 btnWidth: 200.w,
                 btnHeight: 30.h,
-                onPressed: () {},
+                onPressed: () {
+                  context.pushNamed(Routes.editProfileScreen);
+                },
                 radius: 25,
               ),
               verticalSpace(16),

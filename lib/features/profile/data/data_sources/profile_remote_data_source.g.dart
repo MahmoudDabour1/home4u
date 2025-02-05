@@ -58,12 +58,11 @@ class _ProfileRemoteDataSource implements ProfileRemoteDataSource {
 
   @override
   Future<ProfileResponseModel> updateProfile(
-      ProfileResponseModel profileResponseModel) async {
+      String profileResponseModel) async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
-    final _data = <String, dynamic>{};
-    _data.addAll(profileResponseModel.toJson());
+    final _data = profileResponseModel;
     final _options = _setStreamType<ProfileResponseModel>(Options(
       method: 'PUT',
       headers: _headers,
@@ -84,6 +83,40 @@ class _ProfileRemoteDataSource implements ProfileRemoteDataSource {
     late ProfileResponseModel _value;
     try {
       _value = ProfileResponseModel.fromJson(_result.data!);
+    } on Object catch (e, s) {
+      errorLogger?.logError(e, s, _options);
+      rethrow;
+    }
+    return _value;
+  }
+
+  @override
+  Future<UploadProfileImageResponseModel> uploadProfileImage(
+      FormData formData) async {
+    final _extra = <String, dynamic>{};
+    final queryParameters = <String, dynamic>{};
+    final _headers = <String, dynamic>{};
+    final _data = formData;
+    final _options = _setStreamType<UploadProfileImageResponseModel>(Options(
+      method: 'POST',
+      headers: _headers,
+      extra: _extra,
+    )
+        .compose(
+          _dio.options,
+          '/api/v1/users/personal_photo',
+          queryParameters: queryParameters,
+          data: _data,
+        )
+        .copyWith(
+            baseUrl: _combineBaseUrls(
+          _dio.options.baseUrl,
+          baseUrl,
+        )));
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
+    late UploadProfileImageResponseModel _value;
+    try {
+      _value = UploadProfileImageResponseModel.fromJson(_result.data!);
     } on Object catch (e, s) {
       errorLogger?.logError(e, s, _options);
       rethrow;

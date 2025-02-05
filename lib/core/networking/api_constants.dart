@@ -25,12 +25,13 @@ class ApiConstants {
       "/api/v1/certificate/{certificationId}";
   static const String getCertificationByIdEp =
       "/api/v1/certificate/{certificationId}";
-//profile
+
+  ///profile
   static const String getEngineerByTokenEp = "/api/v1/engineers/user";
   static const String updateProfileEP = "/api/v1/engineers";
+  static const String uploadProfileImageEP = "/api/v1/users/personal_photo";
 
-
-  //images
+  ///images
   static String getImageBaseUrl(String path) =>
       "$apiBaseUrl/api/v1/file/download?fileName=$path";
 }
