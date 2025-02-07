@@ -1,5 +1,6 @@
 class ApiConstants {
   static const String apiBaseUrl = "http://149.102.135.15:5000";
+  static const String imageBaseUrl = "http://149.102.135.15:5001/";
   static const String loginEndPoint = "/api/v1/auth/login";
   static const String userTypesEp = "/api/v1/user-types";
   static const String signUpEp = "/api/v1/auth/register";
@@ -33,7 +34,7 @@ class ApiConstants {
 
   ///images
   static String getImageBaseUrl(String path) =>
-      "$apiBaseUrl/api/v1/file/download?fileName=$path";
+      "$imageBaseUrl$path";
 }
 
 class ApiErrors {
