@@ -13,3 +13,4 @@ String? formatDate(DateTime? date) {
   final formatter = DateFormat('yyyy-MM-dd');
   return formatter.format(date);
 }
+bool isLoggedInUser = false;

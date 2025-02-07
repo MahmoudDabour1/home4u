@@ -119,7 +119,6 @@ class _ProjectDetailsScreenState extends State<ProjectDetailsScreen> {
                                     shimmerBaseColor: Colors.grey[300]!,
                                     shimmerHighlightColor:
                                     Colors.grey[100]!,
-                                    shimmerHighlightColor: Colors.grey[100]!,
                                     boxDecoration: BoxDecoration(
                                       borderRadius: BorderRadius.circular(16.r),
                                     ),

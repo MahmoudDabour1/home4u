@@ -44,9 +44,7 @@ class _ProjectsBodyState extends State<ProjectsBody> {
             enablePullDown: true,
             enablePullUp: false,
             header:
-            ClassicHeader(
-
-            ),
+            ClassicHeader(),
             controller: _refreshController,
             onRefresh: _onRefresh,
             onLoading: _onLoading,

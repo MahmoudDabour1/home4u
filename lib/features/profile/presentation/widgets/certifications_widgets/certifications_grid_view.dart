@@ -14,7 +14,7 @@ class CertificationsGridView extends StatelessWidget {
         Expanded(
           child: GridView.builder(
             shrinkWrap: true,
-            physics: ClampingScrollPhysics(),
+            physics: NeverScrollableScrollPhysics(),
             gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
               crossAxisCount: 2,
               crossAxisSpacing: 16.w,
