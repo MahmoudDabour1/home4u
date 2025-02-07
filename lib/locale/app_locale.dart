@@ -94,7 +94,7 @@ class AppLocale {
   static const String services = 'Services';
   static const String pricing = 'Pricing';
   static const String certifications = 'Certifications';
-  static const String addServices = 'Add Services';
+  static const String addService = 'Add Service';
   static const String add = 'Add';
   static const String editService = 'Edit Service';
   static const String settings = 'Settings';
@@ -113,7 +113,7 @@ class AppLocale {
   static const String faqs = 'Faqs';
   static const String loginSuccessfully = 'Login Successfully';
   static const String anUnknownErrorOccurred = 'An unknown error occurred';
-  static const String addCertifications = 'Add Certifications';
+  static const String addCertification = 'Add Certification';
   static const String pleaseSelectImageWay = 'Please Select Image way';
   static const String camera = 'Camera';
   static const String gallery = 'Gallery';
@@ -245,7 +245,7 @@ class AppLocale {
     services: 'Services',
     pricing: 'Pricing',
     certifications: 'Certifications',
-    addServices: 'Add Services',
+    addService: 'Add Service',
     add: 'Add',
     editService: 'Edit Service',
     settings: 'Settings',
@@ -264,7 +264,7 @@ class AppLocale {
     faqs: 'Faqs',
     loginSuccessfully: 'Login Successfully',
     anUnknownErrorOccurred: 'An unknown error occurred',
-    addCertifications: 'Add Certifications',
+    addCertification: 'Add Certification',
     pleaseSelectImageWay: 'Please Select Image way',
     camera: 'Camera',
     gallery: 'Gallery',
@@ -378,7 +378,7 @@ class AppLocale {
     services: 'الخدمات',
     pricing: 'التسعير',
     certifications: 'الشهادات',
-    addServices: 'إضافة خدمات',
+    addService: 'إضافة خدمة',
     add: 'إضافة',
     editService: 'تعديل الخدمة',
     settings: 'الإعدادات',
@@ -397,7 +397,7 @@ class AppLocale {
     faqs: 'الأسئلة الشائعة',
     loginSuccessfully: 'تم تسجيل الدخول بنجاح',
     anUnknownErrorOccurred: 'حدث خطأ غير معروف',
-    addCertifications: 'إضافة الشهادات',
+    addCertification: 'إضافة الشهادة',
     pleaseSelectImageWay: 'الرجاء تحديد طريقة الصورة',
     camera: 'الكاميرا',
     gallery: 'المعرض',
