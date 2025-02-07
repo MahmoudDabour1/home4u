@@ -1,14 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_localization/flutter_localization.dart';
 import 'package:home4u/features/auth/sign_up/logic/engineer/engineer_cubit.dart';
 import 'package:home4u/features/auth/sign_up/logic/engineer/engineer_state.dart';
 import 'package:home4u/features/auth/sign_up/logic/sign_up_cubit.dart';
 
-import '../../../../../../core/theming/app_strings.dart';
 import '../../../../../../core/theming/app_styles.dart';
 import '../../../../../../core/utils/spacing.dart';
 import '../../../../../../core/widgets/app_custom_drop_down_button_form_field.dart';
 import '../../../../../../core/widgets/app_custom_drop_down_multi_select_button.dart';
+import '../../../../../../locale/app_locale.dart';
 
 class EngineerDropDownButtons extends StatefulWidget {
   const EngineerDropDownButtons({super.key});
@@ -59,7 +60,7 @@ class _EngineerDropDownButtonsState extends State<EngineerDropDownButtons> {
               onSaved: (value) {
                 signUpCubit.selectedEngineerType = int.parse(value!);
               },
-              labelText: AppStrings.engineerType,
+              labelText: AppLocale.engineerType.getString(context),
             ),
             verticalSpace(16),
             AppCustomDropDownMultiSelectButton(
@@ -74,7 +75,7 @@ class _EngineerDropDownButtonsState extends State<EngineerDropDownButtons> {
               items: engineerCubit.engineerServices.map((engineerService) {
                 return engineerService.name ?? 'N/A';
               }).toList(),
-              labelText: AppStrings.engineeringServices,
+              labelText: AppLocale.engineeringServices.getString(context),
               onChanged: (List<String> values) {
                 setState(() {
                   selectedEngineerServices = values;

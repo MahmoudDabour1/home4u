@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_localization/flutter_localization.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:home4u/features/auth/new_password/logic/new_password_cubit.dart';
 
-import '../../../../../core/theming/app_strings.dart';
 import '../../../../../core/widgets/app_custom_button.dart';
+import '../../../../../locale/app_locale.dart';
 import '../../logic/new_password_state.dart';
 
 class NewPasswordButton extends StatelessWidget {
@@ -19,7 +20,7 @@ class NewPasswordButton extends StatelessWidget {
           var cubit = NewPasswordCubit.get(context);
           return AppCustomButton(
             isLoading: state is NewPasswordLoading,
-            textButton: AppStrings.confirm,
+            textButton: AppLocale.confirm.getString(context),
             btnWidth: MediaQuery.sizeOf(context).width,
             btnHeight: 65.h,
             onPressed: () {

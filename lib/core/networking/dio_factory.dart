@@ -1,8 +1,7 @@
 import 'package:dio/dio.dart';
+import 'package:home4u/core/helpers/shared_pref_helper.dart';
+import 'package:home4u/core/helpers/shared_pref_keys.dart';
 import 'package:pretty_dio_logger/pretty_dio_logger.dart';
-
-import '../helpers/shared_pref_helper.dart';
-import '../helpers/shared_pref_keys.dart';
 
 class DioFactory {
   DioFactory._();
@@ -10,24 +9,31 @@ class DioFactory {
   static Dio? dio;
 
   static Dio getDio() {
-    Duration timeout = const Duration(seconds: 10);
+    Duration timeout = const Duration(seconds: 30);
     if (dio == null) {
       dio = Dio();
       dio!
         ..options.connectTimeout = timeout
         ..options.receiveTimeout = timeout;
+      addDioHeaders();
       addDioInterceptors();
       return dio!;
     } else {
       return dio!;
     }
   }
+
   static void addDioHeaders() async {
+    final token =
+        await SharedPrefHelper.getSecuredString(SharedPrefKeys.userToken);
+    if (token == null || token.isEmpty) {
+      throw Exception("User token is missing or invalid.");
+    }
     dio?.options.headers = {
       'Accept': 'application/json',
-      'Authorization':
-      'Bearer ${await SharedPrefHelper.getSecuredString(SharedPrefKeys.userToken)}',
-      'Accept-Language' : 'en',
+      'Authorization': 'Bearer $token',
+      'Accept-Language': 'en',
+      'Content-Type': 'application/json',
     };
   }
 
@@ -36,6 +42,23 @@ class DioFactory {
       'Authorization': 'Bearer $token',
     };
   }
+
+  static void setContentTypeForMultipart() {
+    dio?.options.headers['Content-Type'] = 'multipart/form-data';
+  }
+
+  static void updateLanguageHeader(String languageCode) {
+    dio?.options.headers['Accept-Language'] = languageCode;
+  }
+
+  static void setContentType(String contentType) {
+    dio?.options.headers['Content-Type'] = contentType;
+  }
+
+  static void clearTokenFromHeader() {
+    dio?.options.headers.remove('Authorization');
+  }
+
   static void addDioInterceptors() {
     dio?.interceptors.add(
       PrettyDioLogger(

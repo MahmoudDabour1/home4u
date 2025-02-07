@@ -1,13 +1,14 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_localization/flutter_localization.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:home4u/core/theming/app_strings.dart';
 import 'package:home4u/core/widgets/app_custom_button.dart';
 import 'package:home4u/features/onboarding/presentation/widgets/next_button.dart';
 
 import '../../../../core/theming/app_colors.dart';
 import '../../../../core/theming/app_styles.dart';
 import '../../../../core/utils/spacing.dart';
+import '../../../../locale/app_locale.dart';
 import '../../data/model/onboarding_model.dart';
 import 'indicator_widget.dart';
 
@@ -36,16 +37,16 @@ class OnboardingScrollItems extends StatelessWidget {
       child: SingleChildScrollView(
         child: Column(
           children: [
-            _buildSkipButton(),
+            _buildSkipButton(context),
             _buildImageWithIndicator(),
             verticalSpace(32),
-            _buildTitle(),
+            _buildTitle(context),
             index > 2
-                ?SizedBox.shrink()
+                ? SizedBox.shrink()
                 : Column(
                     children: [
                       verticalSpace(16),
-                      _buildDescription(),
+                      _buildDescription(context),
                     ],
                   ),
             verticalSpace(32),
@@ -57,13 +58,13 @@ class OnboardingScrollItems extends StatelessWidget {
     );
   }
 
-  GestureDetector _buildSkipButton() {
+  GestureDetector _buildSkipButton(BuildContext context) {
     return GestureDetector(
       onTap: onSkipPressed,
       child: Align(
         alignment: Alignment.topRight,
         child: Text(
-          AppStrings.skipButton,
+          AppLocale.skipButton.getString(context),
           style: AppStyles.font24BlackMedium,
         ),
       ),
@@ -94,20 +95,20 @@ class OnboardingScrollItems extends StatelessWidget {
     );
   }
 
-  Widget _buildTitle() {
+  Widget _buildTitle(BuildContext context) {
     return AnimatedOpacity(
       opacity: isOut ? 0 : 1,
       duration: Duration(milliseconds: 200),
       child: AutoSizeText(
         textAlign: TextAlign.center,
-        onBoardingItems[index].title,
+        onBoardingItems[index].title.getString(context),
         maxLines: 1,
         style: AppStyles.font20BlackMedium,
       ),
     );
   }
 
-  Widget _buildDescription() {
+  Widget _buildDescription(BuildContext context) {
     return onBoardingItems[index].description.isEmpty
         ? SizedBox.shrink()
         : AnimatedOpacity(
@@ -115,7 +116,7 @@ class OnboardingScrollItems extends StatelessWidget {
             duration: Duration(milliseconds: 200),
             child: AutoSizeText(
               textAlign: TextAlign.center,
-              onBoardingItems[index].description,
+              onBoardingItems[index].description.getString(context),
               maxLines: 5,
               style: AppStyles.font16BlackLight.copyWith(
                 height: 1.5,
@@ -129,7 +130,7 @@ class OnboardingScrollItems extends StatelessWidget {
         ? Column(
             children: [
               AppCustomButton(
-                textButton: AppStrings.signUp,
+                textButton: AppLocale.signUp.getString(context),
                 btnWidth: MediaQuery.sizeOf(context).width,
                 btnHeight: 56.h,
                 onPressed: onPressedToSignUp,
@@ -152,7 +153,7 @@ class OnboardingScrollItems extends StatelessWidget {
                 ),
                 onPressed: onPressedToLogin,
                 child: Text(
-                  AppStrings.login,
+                  AppLocale.login.getString(context),
                   style: AppStyles.font16WhiteBold.copyWith(
                     color: AppColors.blackColor,
                   ),

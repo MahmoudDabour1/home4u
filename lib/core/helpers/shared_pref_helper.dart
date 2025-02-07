@@ -25,7 +25,7 @@ class SharedPrefHelper {
     SharedPreferences sharedPreferences = await SharedPreferences.getInstance();
     debugPrint("SharedPrefHelper : setData with key : $key and value : $value");
     switch (value) {
-      case String _ :
+      case String _:
         await sharedPreferences.setString(key, value);
         break;
       case int _:
@@ -76,6 +76,13 @@ class SharedPrefHelper {
     debugPrint(
         "FlutterSecureStorage : setSecuredString with key : $key and value : $value");
     await flutterSecureStorage.write(key: key, value: value);
+  }
+
+  /// Removes a value from FlutterSecureStorage with given [key].
+  static removeSecuredString(String key) async {
+    const flutterSecureStorage = FlutterSecureStorage();
+    debugPrint('FlutterSecureStorage : removeSecuredString with key : $key');
+    await flutterSecureStorage.delete(key: key);
   }
 
   /// Gets an String value from FlutterSecureStorage with given [key].

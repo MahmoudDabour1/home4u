@@ -2,6 +2,9 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:home4u/core/extensions/navigation_extension.dart';
+import 'package:home4u/core/helpers/shared_pref_helper.dart';
+import 'package:home4u/core/helpers/shared_pref_keys.dart';
+import 'package:home4u/core/utils/app_constants.dart';
 import 'package:home4u/features/onboarding/data/model/onboarding_model.dart';
 import 'package:home4u/features/onboarding/presentation/widgets/onboarding_item.dart';
 import '../../../core/routing/routes.dart';
@@ -93,13 +96,15 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                       isOut: _isOut,
                       onSkipPressed: _onSkipPressed,
                       onNextPressed: _onNextPressed,
-                      onPressedToSignUp: () {
+                      onPressedToSignUp: ()  async{
                         context.pushNameAndRemoveUntil(Routes.signUpScreen,
                             predicate: (Route<dynamic> route) => false);
+                        await SharedPrefHelper.setData(SharedPrefKeys.isFirstTime, false);
                       },
-                      onPressedToLogin: () {
+                      onPressedToLogin: () async{
                         context.pushNameAndRemoveUntil(Routes.loginScreen,
                             predicate: (Route<dynamic> route) => false);
+                        await SharedPrefHelper.setData(SharedPrefKeys.isFirstTime, false);
                       },
                     );
                   },

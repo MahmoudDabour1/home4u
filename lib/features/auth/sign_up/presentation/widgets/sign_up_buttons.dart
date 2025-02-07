@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_localization/flutter_localization.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:home4u/core/extensions/navigation_extension.dart';
 import 'package:home4u/core/theming/app_styles.dart';
@@ -9,7 +10,7 @@ import 'package:home4u/features/auth/sign_up/logic/sign_up_state.dart';
 import '../../../../../core/helpers/shared_pref_helper.dart';
 import '../../../../../core/helpers/shared_pref_keys.dart';
 import '../../../../../core/routing/routes.dart';
-import '../../../../../core/theming/app_strings.dart';
+import '../../../../../locale/app_locale.dart';
 import '../../../../../core/utils/spacing.dart';
 import '../../../../../core/widgets/app_custom_button.dart';
 import '../../../widgets/google_and_facebook_auth_buttons.dart';
@@ -28,7 +29,7 @@ class SignUpButtons extends StatelessWidget {
             children: [
               AppCustomButton(
                 isLoading: state is SignUpLoadingState,
-                textButton: AppStrings.signUp,
+                textButton: AppLocale.signUp.getString(context),
                 onPressed: () async {
                   final checkInputs = context
                       .read<SignUpCubit>()
@@ -54,7 +55,7 @@ class SignUpButtons extends StatelessWidget {
               ),
               verticalSpace(16),
               Text(
-                AppStrings.orContinueWith,
+                AppLocale.orContinueWith.getString(context),
                 style: AppStyles.font16DarkBlueBold,
               ),
               GoogleAndFacebookAuthButtons(

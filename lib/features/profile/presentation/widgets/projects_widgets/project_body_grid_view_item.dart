@@ -1,32 +1,76 @@
-import 'package:cached_network_image/cached_network_image.dart';
+import 'package:fancy_shimmer_image/fancy_shimmer_image.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:home4u/features/profile/presentation/widgets/projects_widgets/project_bottom_rating_widget.dart';
+import 'package:hive/hive.dart';
+import 'package:home4u/core/extensions/navigation_extension.dart';
+import 'package:home4u/core/networking/api_constants.dart';
+import 'package:home4u/core/utils/app_constants.dart';
+import 'package:home4u/features/profile/data/models/projects/get_projects_response_model.dart';
+import 'package:home4u/features/profile/logic/profile/profile_cubit.dart';
+import 'package:home4u/features/profile/logic/project/project_cubit.dart';
 
-import 'menu_button_and_dialog.dart';
+import '../../../../../core/routing/routes.dart';
+import '../../../data/models/profile/profile_response_model.dart';
+import '../../../logic/profile/profile_state.dart';
+import 'project_menu_button_and_dialog.dart';
 
 class ProjectBodyGridViewItem extends StatelessWidget {
-  const ProjectBodyGridViewItem({super.key});
+  final ProjectsData? projectData;
+
+  const ProjectBodyGridViewItem({super.key, required this.projectData});
 
   @override
   Widget build(BuildContext context) {
-    return Stack(
-      clipBehavior: Clip.none,
-      children: [
-        ClipRRect(
-          borderRadius: BorderRadius.circular(16.r),
-          child: CachedNetworkImage(
-            imageUrl:
-                "https://images.unsplash.com/photo-1640434037438-c3e8485687c2?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-            width: 164.w,
-            height: 164.h,
-            fit: BoxFit.fill,
-            alignment: Alignment.center,
+    return BlocBuilder<ProfileCubit, ProfileState>(
+      builder: (context, state) {
+        return GestureDetector(
+          onTap: () async {
+            var profileBox =
+                await Hive.openBox<ProfileResponseModel>(kProfileBox);
+            var profileData = profileBox.get(kProfileData);
+            final projectCubit = BlocProvider.of<ProjectCubit>(context);
+            projectCubit.getProjectById(projectData!.id!);
+            context.pushNamed(
+              Routes.projectDetailsScreen,
+              arguments: projectData!.id,
+            );
+          },
+          child: Stack(
+            clipBehavior: Clip.none,
+            children: [
+              ClipRRect(
+                borderRadius: BorderRadius.circular(16.r),
+                child: FancyShimmerImage(
+                  imageUrl:
+                      ApiConstants.getImageBaseUrl(projectData!.coverPath!),
+                  width: MediaQuery.sizeOf(context).width * 0.5,
+                  height: MediaQuery.sizeOf(context).height * 0.5,
+                  boxFit: BoxFit.fill,
+                  shimmerBaseColor: Colors.grey[300]!,
+                  shimmerHighlightColor: Colors.grey[100]!,
+                  shimmerBackColor: Colors.grey[100]!,
+                  errorWidget: const Center(child: Icon(Icons.error)),
+                  alignment: Alignment.center,
+                  imageBuilder: (context, imageProvider) => Container(
+                    decoration: BoxDecoration(
+                      shape: BoxShape.rectangle,
+                      borderRadius: BorderRadius.circular(16.r),
+                      image: DecorationImage(
+                        image: imageProvider,
+                        fit: BoxFit.cover,
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+              ProjectMenuButtonAndDialog(
+                projectData: projectData!,
+              ),
+            ],
           ),
-        ),
-        MenuButtonAndDialog(),
-        ProjectBottomRatingWidget(),
-      ],
+        );
+      },
     );
   }
 }

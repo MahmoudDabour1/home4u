@@ -1,15 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_localization/flutter_localization.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:home4u/core/helpers/shared_pref_helper.dart';
 import 'package:home4u/core/helpers/shared_pref_keys.dart';
 import 'package:home4u/features/auth/forget_password/logic/forget_password_cubit.dart';
 
 import '../../../../../core/helpers/app_regex.dart';
-import '../../../../../core/theming/app_strings.dart';
 import '../../../../../core/utils/spacing.dart';
 import '../../../../../core/widgets/app_custom_button.dart';
 import '../../../../../core/widgets/app_text_form_field.dart';
+import '../../../../../locale/app_locale.dart';
 import '../../logic/forget_password_state.dart';
 
 class ForgetPasswordBody extends StatelessWidget {
@@ -29,17 +30,18 @@ class ForgetPasswordBody extends StatelessWidget {
                 verticalSpace(32),
                 AppTextFormField(
                   controller: cubit.emailController,
-                  labelText: AppStrings.emailAddress,
+                  labelText: AppLocale.emailAddress.getString(context),
                   validator: (value) {
                     if (value.isEmpty || !AppRegex.isEmailValid(value)) {
-                      return AppStrings.pleaseEnterAValidEmailAddress;
+                      return AppLocale.pleaseEnterAValidEmailAddress
+                          .getString(context);
                     }
                   },
-                  keyboardType: TextInputType.phone,
+                  keyboardType: TextInputType.emailAddress,
                 ),
                 verticalSpace(32),
                 AppCustomButton(
-                  textButton: AppStrings.send,
+                  textButton: AppLocale.send.getString(context),
                   isLoading: state is ForgetPasswordLoading,
                   btnWidth: MediaQuery.sizeOf(context).width,
                   btnHeight: 65.h,
@@ -47,7 +49,8 @@ class ForgetPasswordBody extends StatelessWidget {
                     if (cubit.formKey.currentState!.validate()) {
                       await SharedPrefHelper.setData(
                           SharedPrefKeys.isFromForgetPassword, true);
-                      cubit.emitForgetPasswordStates(cubit.emailController.text);
+                      cubit
+                          .emitForgetPasswordStates(cubit.emailController.text);
                     }
                   },
                 ),

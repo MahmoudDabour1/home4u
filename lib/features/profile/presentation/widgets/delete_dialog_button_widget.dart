@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import '../../../../../core/theming/app_colors.dart';
-import '../../../../../core/theming/app_styles.dart';
+import '../../../../core/theming/app_colors.dart';
+import '../../../../core/theming/app_styles.dart';
+import '../../../../core/widgets/app_custom_loading_indicator.dart';
 
 class DeleteDialogButtonWidget extends StatelessWidget {
   final String text;
@@ -10,14 +11,16 @@ class DeleteDialogButtonWidget extends StatelessWidget {
   final Color? textColor;
   final VoidCallback onPressed;
   final bool isBoarder;
+  final bool isLoading;
 
   const DeleteDialogButtonWidget({
     super.key,
     required this.text,
-     this.backgroundColor=AppColors.primaryColor,
-     this.textColor,
+    this.backgroundColor = AppColors.primaryColor,
+    this.textColor,
     required this.onPressed,
-     this.isBoarder=false,
+    this.isBoarder = false,
+    this.isLoading = false,
   });
 
   @override
@@ -34,21 +37,27 @@ class DeleteDialogButtonWidget extends StatelessWidget {
           shape: WidgetStateProperty.all<RoundedRectangleBorder>(
             RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(16.0).r,
-              side:isBoarder?BorderSide(
-                color: AppColors.primaryColor,
-                width: 1,
-              ): BorderSide.none,
+              side: isBoarder
+                  ? BorderSide(
+                      color: AppColors.primaryColor,
+                      width: 1,
+                    )
+                  : BorderSide.none,
             ),
           ),
         ),
         onPressed: onPressed,
-        child: Text(
-          text,
-          style: AppStyles.font16DarkBlueBold.copyWith(
-            color: textColor??AppColors.whiteColor,
-          ),
-          textAlign: TextAlign.center,
-        ),
+        child: isLoading
+            ? AppCustomLoadingIndicator(
+                loadingColor: AppColors.primaryColor,
+              )
+            : Text(
+                text,
+                style: AppStyles.font16DarkBlueBold.copyWith(
+                  color: textColor ?? AppColors.whiteColor,
+                ),
+                textAlign: TextAlign.center,
+              ),
       ),
     );
   }

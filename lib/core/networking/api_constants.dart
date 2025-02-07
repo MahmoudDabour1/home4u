@@ -1,6 +1,6 @@
-
 class ApiConstants {
-  static const String apiBaseUrl = "https://dynamic-mouse-needlessly.ngrok-free.app";
+  static const String apiBaseUrl = "http://149.102.135.15:5000";
+  static const String imageBaseUrl = "http://149.102.135.15:5001/";
   static const String loginEndPoint = "/api/v1/auth/login";
   static const String userTypesEp = "/api/v1/user-types";
   static const String signUpEp = "/api/v1/auth/register";
@@ -8,12 +8,41 @@ class ApiConstants {
   static const String verificationEP = "/api/v1/auth/activate-the-account";
   static const String newPasswordEP = "/api/v1/auth/reset-password";
   static const String governoratesEp = "/api/v1/governorates";
-
+  static const String getProjectsEp = "/api/v1/project/user-projects";
 
   ///Freelancer
   static const String engineerTypesEp = "/api/v1/engineer-types";
   static const String technicalWorkerTypesEp = "/api/v1/technical-worker-types";
 
+  ///Project
+  static const String projectAddEp = "/api/v1/project";
+
+  ///Certifications
+  static const String getAllCertificationsEp =
+      "/api/v1/certificate/user-certificates";
+  static const String addCertificationsEp = "/api/v1/certificate";
+  static const String updateCertificationsEp = "/api/v1/certificate";
+  static const String deleteCertificationsEp =
+      "/api/v1/certificate/{certificationId}";
+  static const String getCertificationByIdEp =
+      "/api/v1/certificate/{certificationId}";
+
+  ///Services
+  static const String engineerServicesEp =
+      "/api/v1/engineer-services/service";
+  static const String updateEngineerServices =
+      "/api/v1/engineer-services/service/update";
+
+
+  ///profile
+  static const String getEngineerByTokenEp = "/api/v1/engineers/user";
+  static const String updateProfileEP = "/api/v1/engineers";
+  static const String uploadProfileImageEP = "/api/v1/users/personal_photo";
+
+
+  ///images
+  static String getImageBaseUrl(String path) =>
+      "$imageBaseUrl$path";
 }
 
 class ApiErrors {

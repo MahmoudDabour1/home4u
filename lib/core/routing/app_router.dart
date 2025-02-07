@@ -7,7 +7,6 @@ import 'package:home4u/features/auth/login/logic/login_cubit.dart';
 import 'package:home4u/features/auth/new_password/logic/new_password_cubit.dart';
 import 'package:home4u/features/auth/new_password/presentation/new_password_screen.dart';
 import 'package:home4u/features/auth/sign_up/logic/engineer/engineer_cubit.dart';
-import 'package:home4u/features/auth/sign_up/logic/sign_up_cubit.dart';
 import 'package:home4u/features/auth/sign_up/logic/technical_worker/technical_worker_cubit.dart';
 import 'package:home4u/features/auth/sign_up/presentation/engineer_sign_up.dart';
 import 'package:home4u/features/auth/sign_up/presentation/sign_up_screen.dart';
@@ -15,10 +14,19 @@ import 'package:home4u/features/auth/sign_up/presentation/technical_worker_sign_
 import 'package:home4u/features/auth/verification/logic/verification_cubit.dart';
 import 'package:home4u/features/auth/verification/presentation/verification_screen.dart';
 import 'package:home4u/features/home/presentation/home_screen.dart';
+import 'package:home4u/features/layout/logic/bottom_nav_cubit.dart';
+import 'package:home4u/features/profile/presentation/add_certification_screen.dart';
 
 import '../../features/auth/login/presentation/login_screen.dart';
+import '../../features/layout/presentation/bottom_nav_bar_layout.dart';
 import '../../features/onboarding/presentation/onboarding_screen.dart';
+import '../../features/profile/data/models/certifications/get_certifications_response_model.dart';
+import '../../features/profile/data/models/projects/get_projects_response_model.dart';
+import '../../features/profile/presentation/add_project_screen.dart';
+import '../../features/profile/presentation/edit_profile_screen.dart';
 import '../../features/profile/presentation/profile_screen.dart';
+import '../../features/profile/presentation/project_details_screen.dart';
+import '../../features/settings/presentation/setting_screen.dart';
 import '../di/dependency_injection.dart';
 
 class AppRouter {
@@ -71,7 +79,13 @@ class AppRouter {
             child: TechnicalWorkerSignUp(),
           ),
         );
-
+      case Routes.addProjectScreen:
+        final projectData = settings.arguments as ProjectsData?;
+        return MaterialPageRoute(
+          builder: (_) => AddProjectScreen(
+            projectData: projectData,
+          ),
+        );
       case Routes.engineeringOfficeScreen:
         return MaterialPageRoute(
           builder: (_) => EngineeringOfficeScreen(),
@@ -83,6 +97,34 @@ class AppRouter {
       case Routes.homeScreen:
         return MaterialPageRoute(
           builder: (_) => HomeScreen(),
+        );
+      case Routes.bottomNavLayout:
+        return MaterialPageRoute(
+          builder: (_) => BlocProvider<BottomNavCubit>(
+            create: (_) => BottomNavCubit(),
+            child: BottomNavBarLayout(),
+          ),
+        );
+      case Routes.settingScreen:
+        return MaterialPageRoute(
+          builder: (_) => SettingScreen(),
+        );
+      case Routes.addCertificationScreen:
+        final certificationData = settings.arguments as CertificationsData?;
+        return MaterialPageRoute(
+          builder: (_) => AddCertificationScreen(
+            certificationsData: certificationData,
+          ),
+        );
+      case Routes.projectDetailsScreen:
+        int projectId = settings.arguments as int;
+        return MaterialPageRoute(
+          builder: (_) => ProjectDetailsScreen(projectId: projectId),
+        );
+
+        case Routes.editProfileScreen:
+        return MaterialPageRoute(
+          builder: (_) => EditProfileScreen(),
         );
       default:
         return null;
