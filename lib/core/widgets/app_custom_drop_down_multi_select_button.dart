@@ -5,7 +5,6 @@ import 'package:home4u/core/widgets/app_custom_loading_indicator.dart';
 import 'package:home4u/core/widgets/get_common_input_decoration.dart';
 
 import '../theming/app_colors.dart';
-import '../theming/app_styles.dart';
 import '../utils/spacing.dart';
 
 class AppCustomDropDownMultiSelectButton extends StatelessWidget {
@@ -75,7 +74,7 @@ class AppCustomDropDownMultiSelectButton extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             AppCustomLoadingIndicator(
-              indicatorColor: AppColors.primaryColor,
+              loadingColor: AppColors.primaryColor,
             ),
             verticalSpace(16),
             Text(
