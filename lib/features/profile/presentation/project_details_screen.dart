@@ -85,7 +85,9 @@ class _ProjectDetailsScreenState extends State<ProjectDetailsScreen> {
                                 ),
                                 horizontalSpace(16),
                                 Text(
-                                  "${profileDataCached?.data?.user?.firstName} ${profileDataCached?.data?.user?.lastName}",
+                                  "${profileDataCached?.data?.user
+                                      ?.firstName} ${profileDataCached?.data
+                                      ?.user?.lastName}",
                                   style: TextStyle(
                                       fontSize: 16,
                                       fontWeight: FontWeight.bold),
@@ -95,40 +97,51 @@ class _ProjectDetailsScreenState extends State<ProjectDetailsScreen> {
                             verticalSpace(32),
                             ...List.generate(
                               project.data.images!.length,
-                              (index) {
+                                  (index) {
+                                final imageUrl = ApiConstants.getImageBaseUrl(
+                                  project.data.images![index].path,
+                                );
                                 return Padding(
                                   padding:
-                                      const EdgeInsets.only(bottom: 16.0).h,
-                                  child: FancyShimmerImage(
-                                    imageUrl: ApiConstants.getImageBaseUrl(
-                                      project.data.images![index].path,
-                                    ),
-                                    width: MediaQuery.sizeOf(context).width,
-                                    height:
-                                        MediaQuery.sizeOf(context).height * 0.2,
+                                  const EdgeInsets.only(bottom: 16.0).h,
+                                  child: imageUrl.isNotEmpty
+                                      ? FancyShimmerImage(
+                                    imageUrl: imageUrl,
+                                    width:
+                                    MediaQuery
+                                        .sizeOf(context)
+                                        .width,
+                                    height: MediaQuery
+                                        .sizeOf(context)
+                                        .height *
+                                        0.2,
                                     boxFit: BoxFit.fill,
                                     shimmerBaseColor: Colors.grey[300]!,
+                                    shimmerHighlightColor:
+                                    Colors.grey[100]!,
                                     shimmerHighlightColor: Colors.grey[100]!,
                                     boxDecoration: BoxDecoration(
                                       borderRadius: BorderRadius.circular(16.r),
                                     ),
                                     shimmerBackColor: Colors.grey[100]!,
-                                    errorWidget:
-                                        const Center(child: Icon(Icons.error)),
+                                    errorWidget: const Center(
+                                        child: Icon(Icons.error)),
                                     alignment: Alignment.center,
-                                    imageBuilder: (context, imageProvider) =>
+                                    imageBuilder:
+                                        (context, imageProvider) =>
                                         Container(
-                                      decoration: BoxDecoration(
-                                        shape: BoxShape.rectangle,
-                                        borderRadius:
+                                          decoration: BoxDecoration(
+                                            shape: BoxShape.rectangle,
+                                            borderRadius:
                                             BorderRadius.circular(16.r),
-                                        image: DecorationImage(
-                                          image: imageProvider,
-                                          fit: BoxFit.cover,
+                                            image: DecorationImage(
+                                              image: imageProvider,
+                                              fit: BoxFit.cover,
+                                            ),
+                                          ),
                                         ),
-                                      ),
-                                    ),
-                                  ),
+                                  )
+                                      : const Center(child: Icon(Icons.error)),
                                 );
                               },
                             ),
@@ -166,7 +179,7 @@ class _ProjectDetailsScreenState extends State<ProjectDetailsScreen> {
                                     Text(
                                       'View Project Information',
                                       style:
-                                          AppStyles.font16DarkBlueBold.copyWith(
+                                      AppStyles.font16DarkBlueBold.copyWith(
                                         color: Colors.blue,
                                       ),
                                     ),
@@ -202,7 +215,8 @@ class _ProjectDetailsScreenState extends State<ProjectDetailsScreen> {
                                       ),
                                       TextSpan(
                                         text:
-                                            '${formatDate(project.data.startDate)}\n\n',
+                                        '${formatDate(
+                                            project.data.startDate)}\n\n',
                                         style: AppStyles.font16BlackMedium,
                                       ),
                                       TextSpan(
@@ -222,7 +236,9 @@ class _ProjectDetailsScreenState extends State<ProjectDetailsScreen> {
                               ),
                             verticalSpace(32),
                             Text(
-                              'More Projects By ${profileDataCached?.data?.user?.firstName} ${profileDataCached?.data?.user?.lastName}',
+                              'More Projects By ${profileDataCached?.data?.user
+                                  ?.firstName} ${profileDataCached?.data?.user
+                                  ?.lastName}',
                               style: AppStyles.font16BlackSemiBold,
                             ),
                             verticalSpace(16),
@@ -230,7 +246,7 @@ class _ProjectDetailsScreenState extends State<ProjectDetailsScreen> {
                               shrinkWrap: true,
                               physics: ClampingScrollPhysics(),
                               gridDelegate:
-                                  SliverGridDelegateWithFixedCrossAxisCount(
+                              SliverGridDelegateWithFixedCrossAxisCount(
                                 crossAxisCount: 2,
                                 crossAxisSpacing: 16.w,
                                 mainAxisSpacing: 16.h,

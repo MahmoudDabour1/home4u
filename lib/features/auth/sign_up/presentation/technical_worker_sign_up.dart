@@ -16,7 +16,7 @@ class TechnicalWorkerSignUp extends StatelessWidget {
           child: Column(
             children: [
               AuthWelcomeData(
-                headText: AppLocale.engineerInfo.getString(context),
+                headText: AppLocale.technicalInfo.getString(context),
                 subText: AppLocale.welcomeToHome4You.getString(context),
                 isBackButton: true,
               ),

@@ -5,9 +5,25 @@ import 'package:home4u/features/profile/presentation/widgets/services_widget/ser
 
 import '../../../../../core/theming/app_styles.dart';
 import '../../../../../core/widgets/app_custom_drop_down_search_menu.dart';
+import '../../../../auth/sign_up/data/models/services/freelancer_services.dart';
 
 class ServicesListViewItem extends StatelessWidget {
-  const ServicesListViewItem({super.key});
+  final String serviceName;
+  final int engineerId;
+  final int serviceId;
+  final int userId;
+  final FreelancerServiceData selectedService;
+  final int engineerTypeId;
+
+  const ServicesListViewItem({
+    super.key,
+    required this.serviceName,
+    required this.engineerId,
+    required this.serviceId,
+    required this.selectedService,
+    required this.userId,
+    required this.engineerTypeId,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -18,7 +34,7 @@ class ServicesListViewItem extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           Text(
-            "Material and Finishing Selection",
+            serviceName,
             style: AppStyles.font16BlackLight,
           ),
           AppCustomDropDownSearchMenu(
@@ -26,15 +42,24 @@ class ServicesListViewItem extends StatelessWidget {
               if (value == "delete") {
                 showDialog(
                   context: context,
-                  builder: (context) => ServicesDeleteAlertDialog(),
+                  builder: (context) => ServicesDeleteAlertDialog(
+                    engineerId: engineerId,
+                    serviceId: serviceId,
+                  ),
                 );
               }
               if (value == "edit") {
                 showDialog(
                   context: context,
-                  builder: (context) => ServicesAlertDialog(
-                    isEdit: true,
-                  ),
+                  builder: (context) {
+                    return ServicesAlertDialog(
+                      isEdit: true,
+                      selectedService: selectedService,
+                      userId: userId,
+                      engineerTypeId: engineerTypeId,
+                      engineerId: engineerId,
+                    );
+                  },
                 );
               }
             },

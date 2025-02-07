@@ -35,7 +35,7 @@ class _CertificationsBodyState extends State<CertificationsBody> {
     return Column(
       children: [
         AppCustomAddButton(
-          text: AppLocale.addCertifications.getString(context),
+          text: AppLocale.addCertification.getString(context),
           onPressed: () {
             context.pushNamed(Routes.addCertificationScreen);
           },
