@@ -36,12 +36,12 @@ android {
     productFlavors {
         production {
             dimension "default"
-            resValue "string", "app_name", "Home4U Production"
+            resValue "string", "app_name", "ArchiSpace"
         }
         development {
             dimension "default"
             applicationIdSuffix ".dev"
-            resValue "string", "app_name", "Home4U Development"
+            resValue "string", "app_name", "ArchiSpace Development"
         }
     }
 
