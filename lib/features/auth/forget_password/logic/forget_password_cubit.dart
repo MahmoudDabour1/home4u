@@ -16,7 +16,7 @@ class ForgetPasswordCubit extends Cubit<ForgetPasswordState> {
   static ForgetPasswordCubit get(context) => BlocProvider.of(context);
 
   TextEditingController emailController =
-      TextEditingController(text: "mahmoud.dabour1000000@gmail.com");
+      TextEditingController();
   final formKey = GlobalKey<FormState>();
 
   void emitForgetPasswordStates(String? email) async {

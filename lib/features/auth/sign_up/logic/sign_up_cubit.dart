@@ -64,19 +64,19 @@ class SignUpCubit extends Cubit<SignUpState> {
 
   final GlobalKey<FormState> formKey = GlobalKey<FormState>();
   final TextEditingController firstNameController =
-      TextEditingController(text: "Mohamed");
+      TextEditingController();
   final TextEditingController lastNameController =
-      TextEditingController(text: "Ahmed");
+      TextEditingController();
   final TextEditingController emailController =
-      TextEditingController(text: "attia3104@gmail.com");
+      TextEditingController();
   final TextEditingController phoneController =
-      TextEditingController(text: "01099101469");
+      TextEditingController();
   final TextEditingController passwordController =
-      TextEditingController(text: "12345678");
+      TextEditingController();
   final TextEditingController passwordConfirmationController =
-      TextEditingController(text: "12345678");
+      TextEditingController();
   final TextEditingController yearsOfExperienceController =
-      TextEditingController(text: "5");
+      TextEditingController();
 
   UserTypeRequest? selectedUserType;
   EngineerRequest? engineerRequest;

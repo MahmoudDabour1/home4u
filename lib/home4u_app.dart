@@ -3,6 +3,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_localization/flutter_localization.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:fluttertoast/fluttertoast.dart';
+import 'package:home4u/core/helpers/shared_pref_helper.dart';
+import 'package:home4u/core/helpers/shared_pref_keys.dart';
 import 'package:home4u/core/localization/app_localization_state.dart';
 import 'package:home4u/core/routing/app_router.dart';
 import 'package:home4u/core/routing/routes.dart';
@@ -14,6 +16,7 @@ import 'core/di/dependency_injection.dart';
 import 'core/helpers/helper_methods.dart';
 import 'core/localization/app_localization_cubit.dart';
 import 'core/theming/app_theme.dart';
+import 'core/utils/app_constants.dart';
 import 'features/auth/forget_password/logic/forget_password_cubit.dart';
 import 'features/profile/logic/certifications/certifications_cubit.dart';
 import 'features/profile/logic/project/project_cubit.dart';
@@ -22,6 +25,7 @@ import 'locale/app_locale.dart';
 class Home4uApp extends StatefulWidget {
   final AppRouter appRouter;
   final String initialLocale;
+
 
   const Home4uApp({
     super.key,
@@ -60,8 +64,7 @@ class _Home4uAppState extends State<Home4uApp> {
     return MultiBlocProvider(
       providers: [
         BlocProvider<AppLocalizationCubit>(
-            create: (_) =>
-            AppLocalizationCubit(localization)
+            create: (_) => AppLocalizationCubit(localization)
               ..initializeLocaleWith(
                 widget.initialLocale,
               )),
@@ -69,9 +72,8 @@ class _Home4uAppState extends State<Home4uApp> {
         BlocProvider<ForgetPasswordCubit>(
             create: (_) => sl<ForgetPasswordCubit>()),
         BlocProvider<ProfileCubit>(create: (_) => sl<ProfileCubit>()),
-        BlocProvider<ProjectCubit>(create: (_) =>
-        sl<ProjectCubit>()
-          ..getProjects()),
+        BlocProvider<ProjectCubit>(
+            create: (_) => sl<ProjectCubit>()..getProjects()),
         BlocProvider<CertificationsCubit>(
             create: (_) => sl<CertificationsCubit>()),
         BlocProvider<ServicesCubit>(create: (_) => sl<ServicesCubit>()),
@@ -82,9 +84,7 @@ class _Home4uAppState extends State<Home4uApp> {
         child: BlocBuilder<AppLocalizationCubit, AppLocalizationState>(
           builder: (context, state) {
             final TextDirection textDirection =
-                context
-                    .read<AppLocalizationCubit>()
-                    .textDirection;
+                context.read<AppLocalizationCubit>().textDirection;
 
             return Directionality(
               textDirection: textDirection,
@@ -101,7 +101,7 @@ class _Home4uAppState extends State<Home4uApp> {
                 onGenerateRoute: widget.appRouter.generateRoute,
                 debugShowCheckedModeBanner: false,
                 navigatorObservers: [NavigatorObserver()],
-                initialRoute: Routes.onBoardingScreen,
+                initialRoute: isLoggedInUser ? Routes.profileScreen : Routes.loginScreen,
               ),
             );
           },
