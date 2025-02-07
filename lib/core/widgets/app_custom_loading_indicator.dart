@@ -16,7 +16,7 @@ class AppCustomLoadingIndicator extends StatelessWidget {
   Widget build(BuildContext context) {
     return Center(
       child: LoadingAnimationWidget.hexagonDots(
-        color: loadingColor,
+        color: indicatorColor,
         size: 35.r,
       ),
     );

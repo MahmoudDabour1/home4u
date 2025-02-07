@@ -9,8 +9,8 @@ platform :android do
         firebase_cli_token: ENV["FIREBASE_CLI_TOKEN"],
         android_artifact_type: "APK",
         android_artifact_path: "../build/app/outputs/flutter-apk/app-production-release.apk",
-        testers: "attia3104@gmail.com",
-        release_notes: "first release using github actions workflow",
+        testers: "attia3104@gmail.com,sharkawynoo271@gmail.com,yousefshwaly@gmail.com,Samarzeinah@gmail.com,rawaan4321@gmail.com",
+        release_notes: "",
     )
   end
 end
