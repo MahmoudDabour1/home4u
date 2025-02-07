@@ -11,7 +11,6 @@ import 'package:home4u/features/profile/data/models/projects/get_projects_respon
 import 'package:home4u/features/profile/logic/project/project_cubit.dart';
 import 'package:home4u/features/profile/logic/project/project_state.dart';
 import 'package:home4u/features/profile/presentation/widgets/projects_widgets/project_body_grid_view_item.dart';
-import 'package:home4u/features/profile/presentation/widgets/projects_widgets/projects_details_shimmer_widget.dart';
 import 'package:home4u/features/profile/presentation/widgets/projects_widgets/rating_container_item.dart';
 
 import '../../../core/utils/app_constants.dart';
@@ -54,7 +53,7 @@ class _ProjectDetailsScreenState extends State<ProjectDetailsScreen> {
         child: BlocBuilder<ProjectCubit, ProjectState>(
           builder: (context, state) {
             return state.maybeWhen(
-              getProjectLoading: () => ProjectsDetailsShimmerWidget(),
+              // getProjectLoading: () => ProjectsDetailsShimmerWidget(),
               getProjectSuccess: (project) {
                 return SingleChildScrollView(
                   child: Column(
@@ -79,7 +78,9 @@ class _ProjectDetailsScreenState extends State<ProjectDetailsScreen> {
                               children: [
                                 CircleAvatar(
                                   radius: 20,
-                                  backgroundImage: NetworkImage(
+                                  backgroundImage: NetworkImage(ApiConstants
+                                          .getImageBaseUrl(profileDataCached
+                                              ?.data?.user?.personalPhoto) ??
                                       'https://media.istockphoto.com/id/1142192548/vector/man-avatar-profile-male-face-silhouette-or-icon-isolated-on-white-background-vector.jpg?s=2048x2048&w=is&k=20&c=lyki7QHyULuJNNheEf-BI_DQNCDi2NRYMfVGTQj_4UM='),
                                 ),
                                 horizontalSpace(16),
@@ -118,6 +119,10 @@ class _ProjectDetailsScreenState extends State<ProjectDetailsScreen> {
                                     shimmerBaseColor: Colors.grey[300]!,
                                     shimmerHighlightColor:
                                     Colors.grey[100]!,
+                                    shimmerHighlightColor: Colors.grey[100]!,
+                                    boxDecoration: BoxDecoration(
+                                      borderRadius: BorderRadius.circular(16.r),
+                                    ),
                                     shimmerBackColor: Colors.grey[100]!,
                                     errorWidget: const Center(
                                         child: Icon(Icons.error)),

@@ -130,6 +130,11 @@ class AppLocale {
       'Error uploading certification';
   static const String certificationUpdatedSuccessfully =
       'Certification updated successfully';
+  static const String bio = 'Bio';
+  static const String behance = 'Behance';
+  static const String linkedin = 'Linkedin';
+  static const String updateYourProfile = 'Update your profile';
+
   static List<String> bottomNavItems = [
     'Home',
     'Projects',
@@ -274,7 +279,12 @@ class AppLocale {
     errorUploadingCertification: 'Error uploading certification',
     certificationUpdatedSuccessfully: 'Certification updated successfully',
     updateCertification: 'Update Certification',
-    updateProject: 'Update Project'
+    updateProject: 'Update Project',
+    bio: 'Bio',
+    behance: 'Behance',
+    linkedin: 'Linkedin',
+    updateYourProfile: 'Update your profile',
+
   };
 
   static const Map<String, dynamic> ar = {
@@ -403,5 +413,9 @@ class AppLocale {
     certificationUpdatedSuccessfully: 'تم تحديث الشهادة بنجاح',
     updateCertification: 'تحديث الشهادة',
     updateProject: 'تحديث المشروع',
+    bio: 'السيرة الذاتية',
+    behance: 'بيهانس',
+    linkedin: 'لينكد إن',
+    updateYourProfile: 'تحديث ملفك الشخصي',
   };
 }

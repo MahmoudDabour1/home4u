@@ -32,11 +32,14 @@ class ApiConstants {
   static const String updateEngineerServices =
       "/api/v1/engineer-services/service/update";
 
-//profile
+
+  ///profile
   static const String getEngineerByTokenEp = "/api/v1/engineers/user";
   static const String updateProfileEP = "/api/v1/engineers";
+  static const String uploadProfileImageEP = "/api/v1/users/personal_photo";
 
-  //images
+
+  ///images
   static String getImageBaseUrl(String path) =>
       "$apiBaseUrl/api/v1/file/download?fileName=$path";
 }

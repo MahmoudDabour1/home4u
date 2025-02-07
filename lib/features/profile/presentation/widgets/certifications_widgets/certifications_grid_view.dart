@@ -9,23 +9,27 @@ class CertificationsGridView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Expanded(
-      child: GridView.builder(
-        shrinkWrap: true,
-        physics: ClampingScrollPhysics(),
-        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-          crossAxisCount: 2,
-          crossAxisSpacing: 16.w,
-          mainAxisSpacing: 16.h,
-          childAspectRatio: 1 / 1,
+    return Column(
+      children: [
+        Expanded(
+          child: GridView.builder(
+            shrinkWrap: true,
+            physics: ClampingScrollPhysics(),
+            gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+              crossAxisCount: 2,
+              crossAxisSpacing: 16.w,
+              mainAxisSpacing: 16.h,
+              childAspectRatio: 1 / 1,
+            ),
+            itemCount: certificationsList.length,
+            itemBuilder: (context, index) {
+              return CertificationsGridViewItem(
+                certificationsData: certificationsList[index],
+              );
+            },
+          ),
         ),
-        itemCount: certificationsList.length,
-        itemBuilder: (context, index) {
-          return CertificationsGridViewItem(
-            certificationsData: certificationsList[index],
-          );
-        },
-      ),
+      ],
     );
   }
 }

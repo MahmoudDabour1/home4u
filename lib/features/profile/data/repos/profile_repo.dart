@@ -1,12 +1,19 @@
+import 'package:dio/dio.dart';
+import 'package:home4u/core/networking/api_error_handler.dart';
+import 'package:home4u/core/networking/api_result.dart';
 import 'package:home4u/features/profile/data/data_sources/profile_local_data_source.dart';
 import 'package:home4u/features/profile/data/data_sources/profile_remote_data_source.dart';
 import 'package:home4u/features/profile/data/models/profile/profile_response_model.dart';
-import 'package:home4u/core/networking/api_error_handler.dart';
-import 'package:home4u/core/networking/api_result.dart';
+import 'package:home4u/features/profile/data/models/profile/upload_profile_image_response_model.dart';
 
 abstract class ProfileRepo {
   Future<ApiResult<ProfileResponseModel>> getEngineerByToken();
-  Future<ApiResult<ProfileResponseModel>> updateProfile(ProfileResponseModel profileData);
+
+  Future<ApiResult<ProfileResponseModel>> updateProfile(
+      String profileResponseModel);
+
+  Future<ApiResult<UploadProfileImageResponseModel>> uploadProfileImage(
+      FormData formData);
 }
 
 class ProfileRepoImp implements ProfileRepo {
@@ -18,11 +25,24 @@ class ProfileRepoImp implements ProfileRepo {
   @override
   Future<ApiResult<ProfileResponseModel>> getEngineerByToken() async {
     try {
+      final response = await _profileRemoteDataSource.getEngineerByToken();
+      await _profileLocalDataSource.cacheProfileData(response);
+      return ApiResult.success(response);
+    } catch (error) {
       final cachedProfile = await _profileLocalDataSource.getProfileData();
       if (cachedProfile != null) {
         return ApiResult.success(cachedProfile);
       }
-      final response = await _profileRemoteDataSource.getEngineerByToken();
+      return ApiResult.failure(ApiErrorHandler.handle(error));
+    }
+  }
+
+  @override
+  Future<ApiResult<ProfileResponseModel>> updateProfile(
+      String profileResponseModel) async {
+    try {
+      final response =
+          await _profileRemoteDataSource.updateProfile(profileResponseModel);
       await _profileLocalDataSource.cacheProfileData(response);
       return ApiResult.success(response);
     } catch (error) {
@@ -31,10 +51,11 @@ class ProfileRepoImp implements ProfileRepo {
   }
 
   @override
-  Future<ApiResult<ProfileResponseModel>> updateProfile(ProfileResponseModel profileData) async {
+  Future<ApiResult<UploadProfileImageResponseModel>> uploadProfileImage(
+      FormData formData) async {
     try {
-      final response = await _profileRemoteDataSource.updateProfile(profileData);
-      await _profileLocalDataSource.cacheProfileData(response);
+      final response =
+          await _profileRemoteDataSource.uploadProfileImage(formData);
       return ApiResult.success(response);
     } catch (error) {
       return ApiResult.failure(ApiErrorHandler.handle(error));

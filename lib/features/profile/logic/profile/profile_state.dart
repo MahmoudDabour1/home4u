@@ -1,5 +1,6 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:home4u/features/profile/data/models/profile/profile_response_model.dart';
+import 'package:home4u/features/profile/data/models/profile/upload_profile_image_response_model.dart';
 
 part 'profile_state.freezed.dart';
 
@@ -24,4 +25,12 @@ class ProfileState<T> with _$ProfileState<T> {
 
   const factory ProfileState.errorUpdateProfile({required String error}) =
       ErrorUpdateProfile;
+  //upload image
+  const factory ProfileState.loadingUploadImage() = LoadingUploadImage;
+  const factory ProfileState.successUploadImage(UploadProfileImageResponseModel uploadProfileImageResponseModel) = SuccessUploadImage;
+  const factory ProfileState.errorUploadImage({required String error}) =
+      ErrorUploadImage;
+
+  // add image
+  const factory ProfileState.addImage() = AddImage;
 }
