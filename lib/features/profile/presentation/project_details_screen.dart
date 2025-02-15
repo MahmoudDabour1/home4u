@@ -4,9 +4,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:hive/hive.dart';
+import 'package:home4u/core/helpers/shared_pref_helper.dart';
+import 'package:home4u/core/helpers/shared_pref_keys.dart';
 import 'package:home4u/core/networking/api_constants.dart';
 import 'package:home4u/core/theming/app_styles.dart';
 import 'package:home4u/core/utils/spacing.dart';
+import 'package:home4u/features/profile/data/models/profile/technical_worker_profile_response_model.dart';
 import 'package:home4u/features/profile/data/models/projects/get_projects_response_model.dart';
 import 'package:home4u/features/profile/logic/project/project_cubit.dart';
 import 'package:home4u/features/profile/logic/project/project_state.dart';
@@ -15,7 +18,7 @@ import 'package:home4u/features/profile/presentation/widgets/projects_widgets/ra
 
 import '../../../core/utils/app_constants.dart';
 import '../../auth/widgets/auth_welcome_data.dart';
-import '../data/models/profile/profile_response_model.dart';
+import '../data/models/profile/engineer_profile_response_model.dart';
 
 class ProjectDetailsScreen extends StatefulWidget {
   final int projectId;
@@ -28,7 +31,8 @@ class ProjectDetailsScreen extends StatefulWidget {
 
 class _ProjectDetailsScreenState extends State<ProjectDetailsScreen> {
   bool showMoreInfo = false;
-  ProfileResponseModel? profileDataCached;
+  dynamic profileData;
+  dynamic profileDataCached;
   GetProjectsResponseModel? projects;
 
   @override
@@ -38,10 +42,17 @@ class _ProjectDetailsScreenState extends State<ProjectDetailsScreen> {
   }
 
   Future<void> _initializeProfileData() async {
-    var profileBox = await Hive.openBox<ProfileResponseModel>(kProfileBox);
-    var profileData = profileBox.get(kProfileData);
+    var engineerProfileBox =
+        await Hive.openBox<EngineerProfileResponseModel>(kEngineerProfileBox);
+    var technicalWorkerProfileBox =
+        await Hive.openBox<TechnicalWorkerResponseModel>(
+            kTechnicalWorkerProfileBox);
+
     var projectBox = await Hive.openBox<GetProjectsResponseModel>(kProjectsBox);
     var projectsData = projectBox.get(kProjectsKey);
+    final userType = SharedPrefHelper.getString(SharedPrefKeys.userType);
+    profileData = engineerProfileBox.get(kEngineerProfileData) ??
+        technicalWorkerProfileBox.get(kTechnicalWorkerProfileData);
     profileDataCached = profileData;
     projects = projectsData;
   }
@@ -53,7 +64,6 @@ class _ProjectDetailsScreenState extends State<ProjectDetailsScreen> {
         child: BlocBuilder<ProjectCubit, ProjectState>(
           builder: (context, state) {
             return state.maybeWhen(
-              // getProjectLoading: () => ProjectsDetailsShimmerWidget(),
               getProjectSuccess: (project) {
                 return SingleChildScrollView(
                   child: Column(
@@ -61,7 +71,7 @@ class _ProjectDetailsScreenState extends State<ProjectDetailsScreen> {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       AuthWelcomeData(
-                        headText: profileDataCached?.data?.type?.name ?? "",
+                        headText: profileData?.data?.type?.name ?? "",
                         subText: '',
                       ),
                       verticalSpace(32),
@@ -85,9 +95,7 @@ class _ProjectDetailsScreenState extends State<ProjectDetailsScreen> {
                                 ),
                                 horizontalSpace(16),
                                 Text(
-                                  "${profileDataCached?.data?.user
-                                      ?.firstName} ${profileDataCached?.data
-                                      ?.user?.lastName}",
+                                  "${profileDataCached?.data?.user?.firstName ?? ''} ${profileDataCached?.data?.user?.lastName ?? ''}",
                                   style: TextStyle(
                                       fontSize: 16,
                                       fontWeight: FontWeight.bold),
@@ -96,57 +104,55 @@ class _ProjectDetailsScreenState extends State<ProjectDetailsScreen> {
                             ),
                             verticalSpace(32),
                             ...List.generate(
-                              project.data.images!.length,
-                                  (index) {
+                              project.data.images?.length ?? 0,
+                              (index) {
                                 final imageUrl = ApiConstants.getImageBaseUrl(
-                                  project.data.images![index].path,
+                                  project.data.images?[index].path ?? '',
                                 );
                                 return Padding(
                                   padding:
-                                  const EdgeInsets.only(bottom: 16.0).h,
+                                      const EdgeInsets.only(bottom: 16.0).h,
                                   child: imageUrl.isNotEmpty
                                       ? FancyShimmerImage(
-                                    imageUrl: imageUrl,
-                                    width:
-                                    MediaQuery
-                                        .sizeOf(context)
-                                        .width,
-                                    height: MediaQuery
-                                        .sizeOf(context)
-                                        .height *
-                                        0.2,
-                                    boxFit: BoxFit.fill,
-                                    shimmerBaseColor: Colors.grey[300]!,
-                                    shimmerHighlightColor:
-                                    Colors.grey[100]!,
-                                    boxDecoration: BoxDecoration(
-                                      borderRadius: BorderRadius.circular(16.r),
-                                    ),
-                                    shimmerBackColor: Colors.grey[100]!,
-                                    errorWidget: const Center(
-                                        child: Icon(Icons.error)),
-                                    alignment: Alignment.center,
-                                    imageBuilder:
-                                        (context, imageProvider) =>
-                                        Container(
-                                          decoration: BoxDecoration(
-                                            shape: BoxShape.rectangle,
+                                          imageUrl: imageUrl,
+                                          width:
+                                              MediaQuery.sizeOf(context).width,
+                                          height: MediaQuery.sizeOf(context)
+                                                  .height *
+                                              0.2,
+                                          boxFit: BoxFit.fill,
+                                          shimmerBaseColor: Colors.grey[300]!,
+                                          shimmerHighlightColor:
+                                              Colors.grey[100]!,
+                                          boxDecoration: BoxDecoration(
                                             borderRadius:
-                                            BorderRadius.circular(16.r),
-                                            image: DecorationImage(
-                                              image: imageProvider,
-                                              fit: BoxFit.cover,
+                                                BorderRadius.circular(16.r),
+                                          ),
+                                          shimmerBackColor: Colors.grey[100]!,
+                                          errorWidget: const Center(
+                                              child: Icon(Icons.error)),
+                                          alignment: Alignment.center,
+                                          imageBuilder:
+                                              (context, imageProvider) =>
+                                                  Container(
+                                            decoration: BoxDecoration(
+                                              shape: BoxShape.rectangle,
+                                              borderRadius:
+                                                  BorderRadius.circular(16.r),
+                                              image: DecorationImage(
+                                                image: imageProvider,
+                                                fit: BoxFit.cover,
+                                              ),
                                             ),
                                           ),
-                                        ),
-                                  )
+                                        )
                                       : const Center(child: Icon(Icons.error)),
                                 );
                               },
                             ),
                             verticalSpace(16),
                             Text(
-                              project.data.description,
+                              project.data.description ?? '',
                               style: AppStyles.font16BlackMedium,
                             ),
                             verticalSpace(8),
@@ -178,7 +184,7 @@ class _ProjectDetailsScreenState extends State<ProjectDetailsScreen> {
                                     Text(
                                       'View Project Information',
                                       style:
-                                      AppStyles.font16DarkBlueBold.copyWith(
+                                          AppStyles.font16DarkBlueBold.copyWith(
                                         color: Colors.blue,
                                       ),
                                     ),
@@ -202,7 +208,7 @@ class _ProjectDetailsScreenState extends State<ProjectDetailsScreen> {
                                         ),
                                       ),
                                       TextSpan(
-                                        text: '${project.data.tools}\n\n',
+                                        text: '${project.data.tools ?? ''}\n\n',
                                         style: AppStyles.font16BlackMedium,
                                       ),
                                       TextSpan(
@@ -214,8 +220,7 @@ class _ProjectDetailsScreenState extends State<ProjectDetailsScreen> {
                                       ),
                                       TextSpan(
                                         text:
-                                        '${formatDate(
-                                            project.data.startDate)}\n\n',
+                                            '${formatDate(project.data.startDate) ?? ''}\n\n',
                                         style: AppStyles.font16BlackMedium,
                                       ),
                                       TextSpan(
@@ -226,7 +231,9 @@ class _ProjectDetailsScreenState extends State<ProjectDetailsScreen> {
                                         ),
                                       ),
                                       TextSpan(
-                                        text: formatDate(project.data.endDate),
+                                        text:
+                                            formatDate(project.data.endDate) ??
+                                                '',
                                         style: AppStyles.font16BlackMedium,
                                       ),
                                     ],
@@ -235,9 +242,7 @@ class _ProjectDetailsScreenState extends State<ProjectDetailsScreen> {
                               ),
                             verticalSpace(32),
                             Text(
-                              'More Projects By ${profileDataCached?.data?.user
-                                  ?.firstName} ${profileDataCached?.data?.user
-                                  ?.lastName}',
+                              'More Projects By ${profileDataCached?.data?.user?.firstName ?? ''} ${profileDataCached?.data?.user?.lastName ?? ''}',
                               style: AppStyles.font16BlackSemiBold,
                             ),
                             verticalSpace(16),
@@ -245,13 +250,13 @@ class _ProjectDetailsScreenState extends State<ProjectDetailsScreen> {
                               shrinkWrap: true,
                               physics: ClampingScrollPhysics(),
                               gridDelegate:
-                              SliverGridDelegateWithFixedCrossAxisCount(
+                                  SliverGridDelegateWithFixedCrossAxisCount(
                                 crossAxisCount: 2,
                                 crossAxisSpacing: 16.w,
                                 mainAxisSpacing: 16.h,
                                 childAspectRatio: 1 / 1,
                               ),
-                              itemCount: projects?.data?.length,
+                              itemCount: projects?.data?.length ?? 0,
                               itemBuilder: (context, index) {
                                 return ProjectBodyGridViewItem(
                                   projectData: projects?.data?[index],

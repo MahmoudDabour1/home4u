@@ -6,7 +6,11 @@ import '../theming/app_colors.dart';
 
 class AppCustomLoadingIndicator extends StatelessWidget {
   final Color loadingColor;
-  const AppCustomLoadingIndicator({super.key,  this.loadingColor =AppColors.whiteColor});
+
+  const AppCustomLoadingIndicator({
+    super.key,
+    this.loadingColor = AppColors.whiteColor,
+  });
 
   @override
   Widget build(BuildContext context) {

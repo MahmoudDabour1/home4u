@@ -3,14 +3,22 @@ import 'package:home4u/core/networking/api_error_handler.dart';
 import 'package:home4u/core/networking/api_result.dart';
 import 'package:home4u/features/profile/data/data_sources/profile_local_data_source.dart';
 import 'package:home4u/features/profile/data/data_sources/profile_remote_data_source.dart';
-import 'package:home4u/features/profile/data/models/profile/profile_response_model.dart';
+import 'package:home4u/features/profile/data/models/profile/engineer_profile_response_model.dart';
+import 'package:home4u/features/profile/data/models/profile/technical_worker_profile_response_model.dart';
 import 'package:home4u/features/profile/data/models/profile/upload_profile_image_response_model.dart';
 
 abstract class ProfileRepo {
-  Future<ApiResult<ProfileResponseModel>> getEngineerByToken();
+  Future<ApiResult<EngineerProfileResponseModel>> getEngineerByToken();
 
-  Future<ApiResult<ProfileResponseModel>> updateProfile(
-      String profileResponseModel);
+  Future<ApiResult<TechnicalWorkerResponseModel>> getTechnicalWorkerByToken();
+
+  Future<ApiResult<EngineerProfileResponseModel>> updateEngineerProfile(
+    String profileResponseModel,
+  );
+
+  Future<ApiResult<TechnicalWorkerResponseModel>> updateTechnicalWorkerProfile(
+    String profileResponseModel,
+  );
 
   Future<ApiResult<UploadProfileImageResponseModel>> uploadProfileImage(
       FormData formData);
@@ -23,13 +31,14 @@ class ProfileRepoImp implements ProfileRepo {
   ProfileRepoImp(this._profileRemoteDataSource, this._profileLocalDataSource);
 
   @override
-  Future<ApiResult<ProfileResponseModel>> getEngineerByToken() async {
+  Future<ApiResult<EngineerProfileResponseModel>> getEngineerByToken() async {
     try {
       final response = await _profileRemoteDataSource.getEngineerByToken();
-      await _profileLocalDataSource.cacheProfileData(response);
+      await _profileLocalDataSource.cacheEngineerProfileData(response);
       return ApiResult.success(response);
     } catch (error) {
-      final cachedProfile = await _profileLocalDataSource.getProfileData();
+      final cachedProfile =
+          await _profileLocalDataSource.getEngineerProfileData();
       if (cachedProfile != null) {
         return ApiResult.success(cachedProfile);
       }
@@ -38,12 +47,43 @@ class ProfileRepoImp implements ProfileRepo {
   }
 
   @override
-  Future<ApiResult<ProfileResponseModel>> updateProfile(
-      String profileResponseModel) async {
+  Future<ApiResult<TechnicalWorkerResponseModel>>
+      getTechnicalWorkerByToken() async {
     try {
       final response =
-          await _profileRemoteDataSource.updateProfile(profileResponseModel);
-      await _profileLocalDataSource.cacheProfileData(response);
+          await _profileRemoteDataSource.getTechnicalWorkerByToken();
+      await _profileLocalDataSource.cacheTechnicalWorkerProfileData(response);
+      return ApiResult.success(response);
+    } catch (error) {
+      final cachedProfile =
+          await _profileLocalDataSource.getTechnicalWorkerProfileData();
+      if (cachedProfile != null) {
+        return ApiResult.success(cachedProfile);
+      }
+      return ApiResult.failure(ApiErrorHandler.handle(error));
+    }
+  }
+
+  @override
+  Future<ApiResult<EngineerProfileResponseModel>> updateEngineerProfile(
+      String profileResponseModel) async {
+    try {
+      final response = await _profileRemoteDataSource
+          .updateEngineerProfile(profileResponseModel);
+      await _profileLocalDataSource.cacheEngineerProfileData(response);
+      return ApiResult.success(response);
+    } catch (error) {
+      return ApiResult.failure(ApiErrorHandler.handle(error));
+    }
+  }
+
+  @override
+  Future<ApiResult<TechnicalWorkerResponseModel>> updateTechnicalWorkerProfile(
+      String profileResponseModel) async {
+    try {
+      final response = await _profileRemoteDataSource
+          .updateTechnicalWorkerProfile(profileResponseModel);
+      await _profileLocalDataSource.cacheTechnicalWorkerProfileData(response);
       return ApiResult.success(response);
     } catch (error) {
       return ApiResult.failure(ApiErrorHandler.handle(error));

@@ -11,7 +11,7 @@ import 'package:home4u/features/profile/logic/profile/profile_cubit.dart';
 import 'package:home4u/features/profile/logic/project/project_cubit.dart';
 
 import '../../../../../core/routing/routes.dart';
-import '../../../data/models/profile/profile_response_model.dart';
+import '../../../data/models/profile/engineer_profile_response_model.dart';
 import '../../../logic/profile/profile_state.dart';
 import 'project_menu_button_and_dialog.dart';
 
@@ -27,7 +27,7 @@ class ProjectBodyGridViewItem extends StatelessWidget {
         return GestureDetector(
           onTap: () async {
             var profileBox =
-                await Hive.openBox<ProfileResponseModel>(kProfileBox);
+                await Hive.openBox<EngineerProfileResponseModel>(kProfileBox);
             var profileData = profileBox.get(kProfileData);
             final projectCubit = BlocProvider.of<ProjectCubit>(context);
             projectCubit.getProjectById(projectData!.id!);

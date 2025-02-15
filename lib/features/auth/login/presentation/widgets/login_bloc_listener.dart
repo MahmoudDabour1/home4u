@@ -16,7 +16,7 @@ class LoginBlocListener extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocListener<LoginCubit, LoginState>(
       listenWhen: (previous, current) =>
-          current is LoginLoading ||
+      current is LoginLoading ||
           current is LoginError ||
           current is LoginSuccess,
       listener: (context, state) {
@@ -30,9 +30,12 @@ class LoginBlocListener extends StatelessWidget {
                 error == "حسابك غير مفعل.") {
               final forgetPasswordCubit = context.read<ForgetPasswordCubit>();
               final navigatorToVerificationScreen =
-                  context.pushNamed(Routes.verificationScreen);
+              context.pushNamed(Routes.verificationScreen);
               await SharedPrefHelper.setData(SharedPrefKeys.userEmailAddress,
-                  context.read<LoginCubit>().emailOrPhoneController.text);
+                  context
+                      .read<LoginCubit>()
+                      .emailOrPhoneController
+                      .text);
               await SharedPrefHelper.setData(
                   SharedPrefKeys.isFromForgetPassword, false);
               forgetPasswordCubit.emitForgetPasswordStates(

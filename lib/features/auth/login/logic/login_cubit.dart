@@ -15,10 +15,12 @@ class LoginCubit extends Cubit<LoginState> {
   final LoginRepo _loginRepo;
 
   LoginCubit(this._loginRepo) : super(const LoginState.initial());
-  TextEditingController emailOrPhoneController =
-      TextEditingController();
-  TextEditingController passwordController =
-      TextEditingController();
+  TextEditingController emailOrPhoneController = TextEditingController(
+    text: "mohamed.attia.job@gmail.com",
+  );
+  TextEditingController passwordController = TextEditingController(
+    text: "12345678",
+  );
   final formKey = GlobalKey<FormState>();
 
   void emitLoginStates(context) async {
@@ -34,6 +36,7 @@ class LoginCubit extends Cubit<LoginState> {
       await saveUserToken(token!);
       await showToast(message: AppLocale.loginSuccessfully.getString(context));
       emit(LoginState.success(loginResponse));
+      await SharedPrefHelper.setData(SharedPrefKeys.userType, loginResponse.userData!.userInformation?.userType?.code);
     }, failure: (error) async {
       final errorMessage =
           error.message ?? AppLocale.anUnknownErrorOccurred.getString(context);

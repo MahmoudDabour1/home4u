@@ -18,13 +18,14 @@ import 'package:home4u/features/profile/data/data_sources/profile_local_data_sou
 import 'package:home4u/features/profile/data/data_sources/profile_remote_data_source.dart';
 import 'package:home4u/features/profile/data/data_sources/projects_remote_data_source.dart';
 import 'package:home4u/features/profile/data/data_sources/services_remote_data_source.dart';
+import 'package:home4u/features/profile/data/models/profile/engineer_profile_response_model.dart';
+import 'package:home4u/features/profile/data/models/profile/technical_worker_profile_response_model.dart';
 import 'package:home4u/features/profile/data/models/projects/get_projects_response_model.dart';
 import 'package:home4u/features/profile/data/repos/certifications_repo.dart';
 import 'package:home4u/features/profile/data/repos/projects_repo.dart';
 import 'package:home4u/features/profile/data/repos/services_repository.dart';
 import 'package:home4u/features/profile/logic/certifications/certifications_cubit.dart';
 import 'package:home4u/features/profile/logic/project/project_cubit.dart';
-import 'package:home4u/features/profile/data/models/profile/profile_response_model.dart';
 
 import '../../features/auth/forget_password/data/data_source/forget_password_data_source.dart';
 import '../../features/auth/forget_password/data/repos/forget_password_repo.dart';
@@ -90,7 +91,7 @@ Future<void> setupGetIt() async {
   sl.registerFactory<EngineerCubit>(() => EngineerCubit(sl()));
   sl.registerFactory<TechnicalWorkerCubit>(() => TechnicalWorkerCubit(sl()));
 
-//projects
+  ///projects
   sl.registerLazySingleton<Box<GetProjectsResponseModel>>(
     () => Hive.box<GetProjectsResponseModel>(kProjectsBox),
   );
@@ -122,10 +123,13 @@ Future<void> setupGetIt() async {
       () => CertificationsRepoImpl(sl()));
   sl.registerFactory<CertificationsCubit>(() => CertificationsCubit(sl()));
 
-  // Register Profile Box with GetIt
-  sl.registerLazySingleton<Box<ProfileResponseModel>>(
-      () => Hive.box<ProfileResponseModel>(kProfileBox));
-//profile
+  ///profile
+  sl.registerLazySingleton<Box<EngineerProfileResponseModel>>(
+      () => Hive.box<EngineerProfileResponseModel>(kEngineerProfileBox));
+
+  sl.registerLazySingleton<Box<TechnicalWorkerResponseModel>>(
+    () => Hive.box<TechnicalWorkerResponseModel>(kTechnicalWorkerProfileBox),
+  );
   sl.registerLazySingleton<ProfileRemoteDataSource>(
       () => ProfileRemoteDataSource(dio));
   sl.registerLazySingleton<ProfileLocalDataSource>(

@@ -4,7 +4,6 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:home4u/core/extensions/navigation_extension.dart';
 import 'package:home4u/core/helpers/shared_pref_helper.dart';
 import 'package:home4u/core/helpers/shared_pref_keys.dart';
-import 'package:home4u/core/utils/app_constants.dart';
 import 'package:home4u/features/onboarding/data/model/onboarding_model.dart';
 import 'package:home4u/features/onboarding/presentation/widgets/onboarding_item.dart';
 import '../../../core/routing/routes.dart';

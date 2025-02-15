@@ -36,7 +36,9 @@ class ApiConstants {
 
   ///profile
   static const String getEngineerByTokenEp = "/api/v1/engineers/user";
-  static const String updateProfileEP = "/api/v1/engineers";
+  static const String getTechnicalWorkerByTokenEp = "/api/v1/technical-workers/user";
+  static const String updateEngineerProfileEP = "/api/v1/engineers";
+  static const String updateTechnicalWorkerProfileEP = "/api/v1/technical-workers";
   static const String uploadProfileImageEP = "/api/v1/users/personal_photo";
 
 
