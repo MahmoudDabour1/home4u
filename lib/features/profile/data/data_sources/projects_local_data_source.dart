@@ -21,6 +21,5 @@ class ProjectsLocalDataSourceImpl implements ProjectsLocalDataSource {
   @override
   Future<void> cacheProjects(GetProjectsResponseModel projects) async {
     await projectsBox.put(kProjectsKey, projects);
-    logger.w('Projects data cached successfully');
   }
 }

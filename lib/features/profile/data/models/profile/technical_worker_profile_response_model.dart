@@ -10,20 +10,20 @@ part 'technical_worker_profile_response_model.g.dart';
 class TechnicalWorkerResponseModel {
   @HiveField(0)
   @JsonKey(name: "success")
-  final bool success;
+  final bool? success;
 
   @HiveField(1)
   @JsonKey(name: "status")
-  final int status;
+  final int? status;
 
   @HiveField(2)
   @JsonKey(name: "data")
-  final TechnicalData data;
+  final TechnicalData? data;
 
   TechnicalWorkerResponseModel({
-    required this.success,
-    required this.status,
-    required this.data,
+     this.success,
+     this.status,
+     this.data,
   });
 
   factory TechnicalWorkerResponseModel.fromJson(Map<String, dynamic> json) =>
@@ -37,40 +37,40 @@ class TechnicalWorkerResponseModel {
 class TechnicalData {
   @HiveField(0)
   @JsonKey(name: "id")
-  final int id;
+  final int? id;
 
   @HiveField(1)
   @JsonKey(name: "statusCode")
-  final int statusCode;
+  final int? statusCode;
 
   @HiveField(2)
   @JsonKey(name: "user")
-  final FreeLancerUser user;
+  final FreeLancerUser? user;
 
   @HiveField(3)
   @JsonKey(name: "type")
-  final FreeLancerType type;
+  final FreeLancerType? type;
 
   @HiveField(4)
   @JsonKey(name: "yearsOfExperience")
-  final int yearsOfExperience;
+  final int? yearsOfExperience;
 
   @HiveField(5)
   @JsonKey(name: "workerServs")
-  final List<FreeLancerType> workerServs;
+  final List<FreeLancerType>? workerServs;
 
   @HiveField(6)
   @JsonKey(name: "bio")
-  final String bio;
+  final String? bio;
 
   TechnicalData({
-    required this.id,
-    required this.statusCode,
-    required this.user,
-    required this.type,
-    required this.yearsOfExperience,
-    required this.workerServs,
-    required this.bio,
+     this.id,
+     this.statusCode,
+     this.user,
+     this.type,
+     this.yearsOfExperience,
+     this.workerServs,
+     this.bio,
   });
 
   factory TechnicalData.fromJson(Map<String, dynamic> json) =>

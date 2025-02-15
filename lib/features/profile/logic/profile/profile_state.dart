@@ -26,10 +26,10 @@ class ProfileState<T> with _$ProfileState<T> {
   const factory ProfileState.loadingUpdateProfile() = LoadingUpdateProfile;
 
   const factory ProfileState.successUpdateEngineerProfile(
-      EngineerProfileResponseModel profileData) = SuccessUpdateEngineerProfile;
+      EngineerProfileResponseModel? profileData) = SuccessUpdateEngineerProfile;
 
   const factory ProfileState.successUpdateTechnicalWorkerProfile(
-          TechnicalWorkerResponseModel profileData) =
+          TechnicalWorkerResponseModel? profileData) =
       SuccessUpdateTechnicalWorkerProfile;
 
   const factory ProfileState.errorUpdateProfile({required String error}) =
