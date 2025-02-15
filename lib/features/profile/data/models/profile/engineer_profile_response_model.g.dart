@@ -1,22 +1,23 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'profile_response_model.dart';
+part of 'engineer_profile_response_model.dart';
 
 // **************************************************************************
 // TypeAdapterGenerator
 // **************************************************************************
 
-class ProfileResponseModelAdapter extends TypeAdapter<ProfileResponseModel> {
+class EngineerProfileResponseModelAdapter
+    extends TypeAdapter<EngineerProfileResponseModel> {
   @override
   final int typeId = 70;
 
   @override
-  ProfileResponseModel read(BinaryReader reader) {
+  EngineerProfileResponseModel read(BinaryReader reader) {
     final numOfFields = reader.readByte();
     final fields = <int, dynamic>{
       for (int i = 0; i < numOfFields; i++) reader.readByte(): reader.read(),
     };
-    return ProfileResponseModel(
+    return EngineerProfileResponseModel(
       success: fields[0] as bool?,
       status: fields[1] as int?,
       data: fields[2] as FreeLancerData?,
@@ -24,7 +25,7 @@ class ProfileResponseModelAdapter extends TypeAdapter<ProfileResponseModel> {
   }
 
   @override
-  void write(BinaryWriter writer, ProfileResponseModel obj) {
+  void write(BinaryWriter writer, EngineerProfileResponseModel obj) {
     writer
       ..writeByte(3)
       ..writeByte(0)
@@ -41,7 +42,7 @@ class ProfileResponseModelAdapter extends TypeAdapter<ProfileResponseModel> {
   @override
   bool operator ==(Object other) =>
       identical(this, other) ||
-      other is ProfileResponseModelAdapter &&
+      other is EngineerProfileResponseModelAdapter &&
           runtimeType == other.runtimeType &&
           typeId == other.typeId;
 }
@@ -267,9 +268,9 @@ class FreeLancerCityAdapter extends TypeAdapter<FreeLancerCity> {
 // JsonSerializableGenerator
 // **************************************************************************
 
-ProfileResponseModel _$ProfileResponseModelFromJson(
+EngineerProfileResponseModel _$EngineerProfileResponseModelFromJson(
         Map<String, dynamic> json) =>
-    ProfileResponseModel(
+    EngineerProfileResponseModel(
       success: json['success'] as bool?,
       status: (json['status'] as num?)?.toInt(),
       data: json['data'] == null
@@ -277,8 +278,8 @@ ProfileResponseModel _$ProfileResponseModelFromJson(
           : FreeLancerData.fromJson(json['data'] as Map<String, dynamic>),
     );
 
-Map<String, dynamic> _$ProfileResponseModelToJson(
-        ProfileResponseModel instance) =>
+Map<String, dynamic> _$EngineerProfileResponseModelToJson(
+        EngineerProfileResponseModel instance) =>
     <String, dynamic>{
       'success': instance.success,
       'status': instance.status,

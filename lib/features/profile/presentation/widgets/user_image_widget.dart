@@ -4,26 +4,32 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:home4u/core/networking/api_constants.dart';
 import 'package:home4u/core/theming/app_assets.dart';
 import 'package:home4u/core/theming/app_colors.dart';
-import 'package:home4u/features/profile/data/models/profile/profile_response_model.dart';
 
 import '../../../../core/widgets/bottom_model.dart';
+import '../../data/models/profile/engineer_profile_response_model.dart';
+import '../../data/models/profile/technical_worker_profile_response_model.dart';
 import '../../logic/profile/profile_cubit.dart';
 import '../../logic/profile/profile_state.dart';
 
 class UserImageWidget extends StatelessWidget {
-  final ProfileResponseModel? profileData;
+  final EngineerProfileResponseModel? engineerProfileResponseModel;
+  final TechnicalWorkerResponseModel? technicalWorkerProfileData;
   final ProfileCubit cubit;
 
-  const UserImageWidget(
-      {super.key, required this.profileData, required this.cubit});
+  const UserImageWidget({
+    super.key,
+    required this.cubit,
+    required this.engineerProfileResponseModel,
+    required this.technicalWorkerProfileData,
+  });
 
   @override
   Widget build(BuildContext context) {
+    final profileData =
+        engineerProfileResponseModel?.data ?? technicalWorkerProfileData?.data;
     return Positioned(
       top: 70.h,
-      left: MediaQuery
-          .sizeOf(context)
-          .width / 2 - 51.w,
+      left: MediaQuery.sizeOf(context).width / 2 - 51.w,
       child: BlocBuilder<ProfileCubit, ProfileState>(
         builder: (context, state) {
           return GestureDetector(
@@ -54,15 +60,15 @@ class UserImageWidget extends StatelessWidget {
                       child: CircleAvatar(
                         radius: 51.r,
                         foregroundImage:
-                        profileData?.data?.user?.personalPhoto != null
-                            ? NetworkImage(
-                          ApiConstants.getImageBaseUrl(
-                            profileData!.data!.user!.personalPhoto,
-                          ),
-                        )
-                            : AssetImage(
-                          AppAssets.facebook,
-                        ),
+                        (profileData as dynamic)?.user?.personalPhoto != null
+                                ? NetworkImage(
+                                    ApiConstants.getImageBaseUrl(
+                                      (profileData as dynamic)!.user!.personalPhoto,
+                                    ),
+                                  )
+                                : AssetImage(
+                                    AppAssets.facebook,
+                                  ),
                       ),
                     ),
                     Positioned(

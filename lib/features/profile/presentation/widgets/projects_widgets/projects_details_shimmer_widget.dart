@@ -2,6 +2,7 @@ import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:hive/hive.dart';
+import 'package:home4u/features/profile/data/models/profile/engineer_profile_response_model.dart';
 import 'package:home4u/features/profile/presentation/widgets/projects_widgets/project_body_grid_view_item.dart';
 import 'package:home4u/features/profile/presentation/widgets/projects_widgets/rating_container_item.dart';
 import 'package:skeletonizer/skeletonizer.dart';
@@ -10,7 +11,6 @@ import '../../../../../core/theming/app_styles.dart';
 import '../../../../../core/utils/app_constants.dart';
 import '../../../../../core/utils/spacing.dart';
 import '../../../../auth/widgets/auth_welcome_data.dart';
-import '../../../data/models/profile/profile_response_model.dart';
 import '../../../data/models/projects/get_projects_response_model.dart';
 
 class ProjectsDetailsShimmerWidget extends StatefulWidget {
@@ -24,7 +24,7 @@ class ProjectsDetailsShimmerWidget extends StatefulWidget {
 class _ProjectsDetailsShimmerWidgetState
     extends State<ProjectsDetailsShimmerWidget> {
   bool showMoreInfo = false;
-  ProfileResponseModel? profileDataCached;
+  EngineerProfileResponseModel? profileDataCached;
   GetProjectsResponseModel? projects;
 
   @override
@@ -34,8 +34,9 @@ class _ProjectsDetailsShimmerWidgetState
   }
 
   Future<void> _initializeProfileData() async {
-    var profileBox = await Hive.openBox<ProfileResponseModel>(kProfileBox);
-    var profileData = profileBox.get(kProfileData);
+    var engineerBox =
+        await Hive.openBox<EngineerProfileResponseModel>(kEngineerProfileBox);
+    var profileData = engineerBox.get(kEngineerProfileData);
     var projectBox = await Hive.openBox<GetProjectsResponseModel>(kProjectsBox);
     var projectsData = projectBox.get(kProjectsKey);
     profileDataCached = profileData;

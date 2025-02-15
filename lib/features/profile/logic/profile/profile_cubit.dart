@@ -4,35 +4,41 @@ import 'dart:io';
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:hive/hive.dart';
 import 'package:home4u/core/extensions/navigation_extension.dart';
-import 'package:home4u/core/utils/app_constants.dart';
-import 'package:home4u/features/profile/data/models/profile/profile_response_model.dart';
+import 'package:home4u/core/helpers/shared_pref_helper.dart';
+import 'package:home4u/core/helpers/shared_pref_keys.dart';
+import 'package:home4u/features/profile/data/models/profile/engineer_profile_response_model.dart';
+import 'package:home4u/features/profile/data/models/profile/technical_worker_profile_response_model.dart';
 import 'package:home4u/features/profile/data/repos/profile_repo.dart';
 import 'package:home4u/features/profile/logic/profile/profile_state.dart';
 import 'package:http_parser/http_parser.dart';
 import 'package:image_picker/image_picker.dart';
+
 import '../../../../core/helpers/helper_methods.dart';
+import '../../../../core/routing/router_observer.dart';
 import '../../../auth/sign_up/data/models/city_model.dart';
 import '../../../auth/sign_up/data/models/governorate_model.dart';
-import '../../../auth/sign_up/data/models/sign_up_body.dart';
+import '../../data/data_sources/profile_local_data_source.dart';
 
 class ProfileCubit extends Cubit<ProfileState> {
   final ProfileRepo _profileRepo;
-  final Box<ProfileResponseModel> profileBox;
+  final ProfileLocalDataSource _profileLocalDataSource;
 
-  ProfileCubit(this._profileRepo, this.profileBox)
+  ProfileCubit(this._profileRepo, this._profileLocalDataSource)
       : super(const ProfileState.initial());
 
   static ProfileCubit get(context) => BlocProvider.of(context);
 
-  ProfileResponseModel? profileCachedData;
+  EngineerProfileResponseModel? engineerProfileCachedData;
+  TechnicalWorkerResponseModel? technicalWorkerProfileCachedData;
 
   Future<void> initializeProfileData() async {
-    var profileBoxData = await Hive.openBox<ProfileResponseModel>(kProfileBox);
-    var profileData = profileBoxData.get(kProfileData);
-    profileCachedData = profileData;
+    engineerProfileCachedData =
+        await _profileLocalDataSource.getEngineerProfileData();
+    technicalWorkerProfileCachedData =
+        await _profileLocalDataSource.getTechnicalWorkerProfileData();
   }
+
   List<GovernorateDataModel> governorates = [];
   List<CityDataModel> cities = [];
 
@@ -45,6 +51,7 @@ class ProfileCubit extends Cubit<ProfileState> {
   final behanceController = TextEditingController();
   String? selectedGovernorate;
   String? selectedCity;
+
   void selectImage({required BuildContext context, ImageSource? source}) {
     ImagePicker.platform
         .getImageFromSource(
@@ -56,24 +63,21 @@ class ProfileCubit extends Cubit<ProfileState> {
         Navigator.pop(context);
         emit(ProfileState.addImage());
         uploadProfileImage().then((value) {
-          getProfileData();
+          engineerProfileCachedData?.data?.type?.code == "ENGINEER"
+              ? getEngineerProfileData()
+              : getTechnicalWorkerProfileData();
         });
       }
     });
   }
 
-  Future<void> getProfileData() async {
+  Future<void> getEngineerProfileData() async {
     emit(const ProfileState.loadingProfileData());
-    // final cachedProfile = profileBox.get(kProfileData);
-    // if (cachedProfile != null) {
-    //   emit(ProfileState.successProfileData(cachedProfile));
-    //   return;
-    // }
-    final response = await _profileRepo.getEngineerByToken();
-    response.when(
+    final result = await _profileRepo.getEngineerByToken();
+    result.when(
       success: (profileData) async {
-        await profileBox.put(kProfileData, profileData);
-        emit(ProfileState.successProfileData(profileData));
+        await _profileLocalDataSource.cacheEngineerProfileData(profileData);
+        emit(ProfileState.successEngineerProfileData(profileData));
       },
       failure: (error) {
         emit(ProfileState.errorProfileData(error: error.message.toString()));
@@ -81,57 +85,39 @@ class ProfileCubit extends Cubit<ProfileState> {
     );
   }
 
-  Future<void> updateProfileData(BuildContext context) async {
+  Future<void> getTechnicalWorkerProfileData() async {
+    emit(const ProfileState.loadingProfileData());
+
+    final result = await _profileRepo.getTechnicalWorkerByToken();
+    result.when(
+      success: (profileData) async {
+        await _profileLocalDataSource
+            .cacheTechnicalWorkerProfileData(profileData);
+        logger.e("Technical Worker Profile Data Cached $profileData");
+        emit(ProfileState.successTechnicalWorkerProfileData(profileData));
+      },
+      failure: (error) {
+        emit(ProfileState.errorProfileData(error: error.message.toString()));
+      },
+    );
+  }
+
+  Future<void> updateEngineerProfileData(BuildContext context) async {
     try {
       emit(const ProfileState.loadingUpdateProfile());
-      var profileBoxData = await Hive.openBox<ProfileResponseModel>(kProfileBox);
-      var profileData = profileBoxData.get(kProfileData);
-
-      final jsonData = {
-        "id": profileData?.data?.id,
-        "statusCode": profileData?.data?.statusCode,
-        "user": {
-          "id": profileData?.data?.user?.id,
-          "firstName": firstNameController.text,
-          "lastName": lastNameController.text,
-          "email": profileData?.data?.user?.email,
-          // "phone": ProDa,
-          "personalPhoto": profileData?.data?.user?.personalPhoto,
-          "password": profileData?.data?.user?.password,
-          "userType": {
-            "id": profileData?.data?.user?.userType?.id
-          },
-          "governorate": selectedGovernorate != null
-        ? GovernorateRequest(id: int.parse(selectedGovernorate!))
-            : null,
-          "city": selectedCity != null
-        ? CityRequest(id: int.parse(selectedCity!))
-            : null,
-          "engineer": null,
-          "technicalWorker": null,
-          "engineeringOffice": null,
-          "enabled": true
-        },
-        "type": profileData?.data?.type?.toJson(),
-        "yearsOfExperience": profileData?.data?.yearsOfExperience,
-        "engineerServ": profileData?.data?.engineerServ?.map((e) => {"id": e.id}).toList(),
-        "bio": bioController.text,
-        "linkedin": linkedinController.text,
-        "behance": behanceController.text,
-      };
-
-      final jsonString = json.encode(jsonData);
-      final response = await _profileRepo.updateProfile(jsonString);
+      String jsonString = await _prepareUpdateData();
+      final response = await _profileRepo.updateEngineerProfile(jsonString);
       response.when(
         success: (profileData) {
           showToast(message: "Profile Updated Successfully");
-          emit(ProfileState.successUpdateProfile(profileData));
+          emit(ProfileState.successUpdateEngineerProfile(profileData));
           context.pop();
-          getProfileData ();
+          getEngineerProfileData();
         },
         failure: (error) {
           showToast(message: error.message.toString(), isError: true);
-          emit(ProfileState.errorUpdateProfile(error: error.message.toString()));
+          emit(
+              ProfileState.errorUpdateProfile(error: error.message.toString()));
         },
       );
     } catch (e) {
@@ -140,18 +126,112 @@ class ProfileCubit extends Cubit<ProfileState> {
     }
   }
 
+  Future<void> updateTechnicalWorkerProfileData(BuildContext context) async {
+    try {
+      emit(const ProfileState.loadingUpdateProfile());
+      String jsonString = await _prepareUpdateData();
+      final response =
+          await _profileRepo.updateTechnicalWorkerProfile(jsonString);
+      response.when(
+        success: (profileData) {
+          showToast(message: "Profile Updated Successfully");
+          emit(ProfileState.successUpdateTechnicalWorkerProfile(profileData));
+          logger.t("Technical Worker Profile Updated Successfully");
+          context.pop();
+          getTechnicalWorkerProfileData();
+        },
+        failure: (error) {
+          showToast(message: error.message.toString(), isError: true);
+          emit(
+              ProfileState.errorUpdateProfile(error: error.message.toString()));
+        },
+      );
+    } catch (e) {
+      showToast(message: e.toString(), isError: true);
+      emit(ProfileState.errorUpdateProfile(error: e.toString()));
+    }
+  }
+
+  Future<String> _prepareUpdateData() async {
+    var engineerProfileData =
+        await _profileLocalDataSource.getEngineerProfileData();
+    var technicalWorkerProfileData =
+        await _profileLocalDataSource.getTechnicalWorkerProfileData();
+
+    final jsonData = {
+      "id":
+          engineerProfileData?.data?.id ?? technicalWorkerProfileData?.data.id,
+      "statusCode": engineerProfileData?.data?.statusCode ??
+          technicalWorkerProfileData?.data.statusCode,
+      "user": {
+        "id": engineerProfileData?.data?.user?.id ??
+            technicalWorkerProfileData?.data.user.id,
+        "firstName": firstNameController.text,
+        "lastName": lastNameController.text,
+        "email": engineerProfileData?.data?.user?.email ??
+            technicalWorkerProfileData?.data.user.email,
+        "phone": engineerProfileData?.data?.user?.phone ??
+            technicalWorkerProfileData?.data.user.phone,
+        "personalPhoto": engineerProfileData?.data?.user?.personalPhoto ??
+            technicalWorkerProfileData?.data.user.personalPhoto,
+        "password": engineerProfileData?.data?.user?.password ??
+            technicalWorkerProfileData?.data.user.password,
+        "userType": {
+          "id": engineerProfileData?.data?.user?.userType?.id ??
+              technicalWorkerProfileData?.data.user.userType?.id,
+          "code": engineerProfileData?.data?.user?.userType?.code ??
+              technicalWorkerProfileData?.data.user.userType?.code
+        },
+        "governorate": selectedGovernorate != null
+            ? {"id": int.parse(selectedGovernorate!)}
+            : engineerProfileData?.data?.user?.governorate?.toJson() ??
+                technicalWorkerProfileData?.data.user.governorate?.toJson(),
+        "city": selectedCity != null
+            ? {"id": int.parse(selectedCity!)}
+            : engineerProfileData?.data?.user?.city?.toJson() ??
+                technicalWorkerProfileData?.data.user.city?.toJson(),
+        "enabled": true
+      },
+      "type": engineerProfileData?.data?.type?.toJson() ??
+          technicalWorkerProfileData?.data.type.toJson(),
+      "yearsOfExperience": yearsOfExperience.text.isNotEmpty
+          ? int.parse(yearsOfExperience.text)
+          : engineerProfileData?.data?.yearsOfExperience ??
+              technicalWorkerProfileData?.data.yearsOfExperience,
+      "bio": bioController.text,
+      if (SharedPrefHelper.getString(SharedPrefKeys.userType) == "ENGINEER")
+        "linkedin": linkedinController.text,
+      if (SharedPrefHelper.getString(SharedPrefKeys.userType) == "ENGINEER")
+        "behance": behanceController.text,
+      if (engineerProfileData?.data?.user?.userType?.code == "ENGINEER")
+        "engineerServ": engineerProfileData?.data?.engineerServ
+            ?.map((e) => {"id": e.id})
+            .toList(),
+      if (technicalWorkerProfileData?.data.user.userType?.code ==
+          "TECHNICAL_WORKER")
+        "workerServs": technicalWorkerProfileData?.data.workerServs
+            .map((e) => {"id": e.id})
+            .toList(),
+    };
+
+    final jsonString = json.encode(jsonData);
+    return jsonString;
+  }
+
   Future<void> uploadProfileImage() async {
     emit(const ProfileState.loadingUploadImage());
     try {
       final formData = await _createImageFormData();
-      final response = await _profileRepo.uploadProfileImage(formData);
-      response.when(
+      final result = await _profileRepo.uploadProfileImage(formData);
+      result.when(
         success: (uploadProfileImageResponseModel) {
           showToast(message: 'Image Uploaded Successfully');
           if (!isClosed) {
             emit(ProfileState.successUploadImage(
                 uploadProfileImageResponseModel));
-            getProfileData();
+            engineerProfileCachedData?.data?.type?.code == "ENGINEER"
+                ? getEngineerProfileData()
+                : getTechnicalWorkerProfileData();
           }
         },
         failure: (error) {

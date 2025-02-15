@@ -9,10 +9,14 @@ class LoginRepo {
   final LoginRemoteDataSource _loginRemoteDataSource;
 
   LoginRepo(this._loginRemoteDataSource);
-  Future<ApiResult<LoginResponse>> login(LoginRequestBody loginRequestBody) async {
-   try{final response = await _loginRemoteDataSource.login(loginRequestBody);
-   return ApiResult.success(response);}catch(error){
-     return ApiResult.failure(ApiErrorHandler.handle(error));
-   }
+
+  Future<ApiResult<LoginResponse>> login(
+      LoginRequestBody loginRequestBody) async {
+    try {
+      final response = await _loginRemoteDataSource.login(loginRequestBody);
+      return ApiResult.success(response);
+    } catch (error) {
+      return ApiResult.failure(ApiErrorHandler.handle(error));
+    }
   }
 }

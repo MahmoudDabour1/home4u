@@ -14,6 +14,8 @@ class LoginResponse {
 
   factory LoginResponse.fromJson(Map<String, dynamic> json) =>
       _$LoginResponseFromJson(json);
+
+  Map<String, dynamic> toJson() => _$LoginResponseToJson(this);
 }
 
 @JsonSerializable()
@@ -26,6 +28,8 @@ class UserData {
 
   factory UserData.fromJson(Map<String, dynamic> json) =>
       _$UserDataFromJson(json);
+
+  Map<String, dynamic> toJson() => _$UserDataToJson(this);
 }
 
 @JsonSerializable()
@@ -50,6 +54,8 @@ class UserInformation {
 
   factory UserInformation.fromJson(Map<String, dynamic> json) =>
       _$UserInformationFromJson(json);
+
+  Map<String, dynamic> toJson() => _$UserInformationToJson(this);
 }
 
 @JsonSerializable()
@@ -66,4 +72,6 @@ class UserType {
 
   factory UserType.fromJson(Map<String, dynamic> json) =>
       _$UserTypeFromJson(json);
+
+  Map<String, dynamic> toJson() => _$UserTypeToJson(this);
 }

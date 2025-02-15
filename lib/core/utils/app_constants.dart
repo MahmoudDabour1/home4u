@@ -2,8 +2,14 @@ import 'package:intl/intl.dart';
 
 const String kGovernoratesBox = 'governorates';
 const String kCitiesBox = 'cities';
+///Need to modify
 const String kProfileData = 'kProfileData';
 const String kProfileBox = 'kProfileBox';
+const String kEngineerProfileBox = 'kEngineerProfileBox';
+const String kEngineerProfileData = 'kEngineerProfileData';
+const String kTechnicalWorkerProfileBox = 'kTechnicalWorkerBox';
+const String kTechnicalWorkerProfileData = 'kTechnicalWorkerProfileData';
+
 //kProjectsBox
 const String kProjectsBox = 'kProjectsBox';
 const String kProjectsKey = 'kProjectsKey';
