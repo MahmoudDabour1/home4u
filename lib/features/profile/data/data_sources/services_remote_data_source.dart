@@ -1,6 +1,5 @@
 import 'package:dio/dio.dart';
 import 'package:home4u/features/auth/sign_up/data/models/services/freelancer_services.dart';
-import 'package:home4u/features/profile/data/models/projects/delete_project_response_model.dart';
 import 'package:home4u/features/profile/data/models/services/update_service_body.dart';
 import 'package:retrofit/error_logger.dart';
 import 'package:retrofit/http.dart';

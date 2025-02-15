@@ -1,7 +1,6 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:home4u/features/auth/sign_up/data/models/services/freelancer_services.dart';
 
-import '../../data/models/projects/delete_project_response_model.dart';
 
 part 'services_state.freezed.dart';
 

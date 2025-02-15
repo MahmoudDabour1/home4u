@@ -6,7 +6,7 @@ import 'package:home4u/features/profile/logic/services/services_state.dart';
 import 'package:home4u/features/profile/presentation/widgets/services_widget/services_list_view_item.dart';
 
 import '../../../../../core/utils/app_constants.dart';
-import '../../../data/models/profile/profile_response_model.dart';
+import '../../../data/models/profile/engineer_profile_response_model.dart';
 
 class ServicesListView extends StatefulWidget {
   const ServicesListView({super.key});
@@ -28,7 +28,7 @@ class _ServicesListViewState extends State<ServicesListView> {
   }
 
   Future<void> _initializeProfileData() async {
-    var profileBox = await Hive.openBox<ProfileResponseModel>(kProfileBox);
+    var profileBox = await Hive.openBox<EngineerProfileResponseModel>(kProfileBox);
     var profileData = profileBox.get(kProfileData);
     engineerId = profileData?.data?.id ?? 0;
     userId = profileData?.data?.user?.id ?? 0;

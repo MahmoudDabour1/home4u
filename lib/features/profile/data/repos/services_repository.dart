@@ -4,7 +4,6 @@ import '../../../../core/networking/api_error_handler.dart';
 import '../../../../core/networking/api_result.dart';
 import '../../../auth/sign_up/data/models/services/freelancer_services.dart';
 import '../data_sources/services_remote_data_source.dart';
-import '../models/projects/delete_project_response_model.dart';
 
 abstract class ServicesRepository {
   Future<ApiResult<FreelancerServices>> getServices(int engineerId);

@@ -1,11 +1,11 @@
 import 'package:hive/hive.dart';
 import 'package:json_annotation/json_annotation.dart';
 
-part 'profile_response_model.g.dart';
+part 'engineer_profile_response_model.g.dart';
 
 @HiveType(typeId: 70)
 @JsonSerializable()
-class ProfileResponseModel {
+class EngineerProfileResponseModel {
   @HiveField(0)
   @JsonKey(name: "success")
   bool? success;
@@ -18,14 +18,16 @@ class ProfileResponseModel {
   @JsonKey(name: "data")
   FreeLancerData? data;
 
-  ProfileResponseModel({
+  EngineerProfileResponseModel({
     this.success,
     this.status,
     this.data,
   });
 
-  factory ProfileResponseModel.fromJson(Map<String, dynamic> json) => _$ProfileResponseModelFromJson(json);
-  Map<String, dynamic> toJson() => _$ProfileResponseModelToJson(this);
+  factory EngineerProfileResponseModel.fromJson(Map<String, dynamic> json) =>
+      _$EngineerProfileResponseModelFromJson(json);
+
+  Map<String, dynamic> toJson() => _$EngineerProfileResponseModelToJson(this);
 }
 
 @HiveType(typeId: 71)
@@ -79,7 +81,9 @@ class FreeLancerData {
     this.behance,
   });
 
- factory FreeLancerData.fromJson(Map<String, dynamic> json) => _$FreeLancerDataFromJson(json);
+  factory FreeLancerData.fromJson(Map<String, dynamic> json) =>
+      _$FreeLancerDataFromJson(json);
+
   Map<String, dynamic> toJson() => _$FreeLancerDataToJson(this);
 }
 
@@ -119,7 +123,9 @@ class FreeLancerType {
     this.engineerType,
   });
 
-  factory FreeLancerType.fromJson(Map<String, dynamic> json) => _$FreeLancerTypeFromJson(json);
+  factory FreeLancerType.fromJson(Map<String, dynamic> json) =>
+      _$FreeLancerTypeFromJson(json);
+
   Map<String, dynamic> toJson() => _$FreeLancerTypeToJson(this);
 }
 
@@ -193,7 +199,10 @@ class FreeLancerUser {
     this.technicalWorker,
     this.enabled,
   });
-factory FreeLancerUser.fromJson(Map<String, dynamic> json) => _$FreeLancerUserFromJson(json);
+
+  factory FreeLancerUser.fromJson(Map<String, dynamic> json) =>
+      _$FreeLancerUserFromJson(json);
+
   Map<String, dynamic> toJson() => _$FreeLancerUserToJson(this);
 }
 
@@ -218,6 +227,8 @@ class FreeLancerCity {
     this.name,
   });
 
-  factory FreeLancerCity.fromJson(Map<String, dynamic> json) => _$FreeLancerCityFromJson(json);
+  factory FreeLancerCity.fromJson(Map<String, dynamic> json) =>
+      _$FreeLancerCityFromJson(json);
+
   Map<String, dynamic> toJson() => _$FreeLancerCityToJson(this);
 }

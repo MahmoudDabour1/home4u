@@ -30,7 +30,6 @@ void main() async {
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
-
   await FlutterLocalization.instance.ensureInitialized();
 
   final cachedLocale =
@@ -50,13 +49,14 @@ void main() async {
       initialLocale: initialLocale,
     ),
   );
-
 }
+
 checkIfLoggedInUser() async {
-  String userToken = await SharedPrefHelper.getSecuredString(SharedPrefKeys.userToken);
+  String userToken =
+      await SharedPrefHelper.getSecuredString(SharedPrefKeys.userToken);
   if (!userToken.isNullOrEmpty()) {
     isLoggedInUser = true;
-  } else{
+  } else {
     isLoggedInUser = false;
   }
 }
