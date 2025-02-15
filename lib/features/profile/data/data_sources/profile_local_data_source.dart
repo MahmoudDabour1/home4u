@@ -34,7 +34,6 @@ class ProfileLocalDataSourceImpl extends ProfileLocalDataSource {
       TechnicalWorkerResponseModel profileData) async {
     await technicalWorkerProfileBox.put(
         kTechnicalWorkerProfileData, profileData);
-    logger.t('Technical Worker Profile Data Cached ${profileData.data}');
   }
 
   @override

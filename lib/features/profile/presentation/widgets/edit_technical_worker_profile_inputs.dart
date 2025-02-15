@@ -42,8 +42,9 @@ class _EditTechnicalWorkerProfileInputsState
     var profileData = technicalWorkerBox.get(kTechnicalWorkerProfileData);
     setState(() {
       profileCachedData = profileData;
-      selectedGovernorate = profileData?.data.user.governorate?.id?.toString();
-      selectedCity = profileData?.data.user.city?.id?.toString();
+      selectedGovernorate =
+          profileData?.data?.user?.governorate?.id?.toString();
+      selectedCity = profileData?.data?.user?.city?.id?.toString();
       final cubit = context.read<ProfileCubit>();
       cubit.selectedGovernorate = selectedGovernorate;
       cubit.selectedCity = selectedCity;
@@ -58,16 +59,17 @@ class _EditTechnicalWorkerProfileInputsState
         builder: (context, state) {
           final cubit = context.read<ProfileCubit>();
           cubit.firstNameController.text =
-              profileCachedData?.data.user.firstName ?? '';
+              profileCachedData?.data?.user?.firstName ?? '';
           cubit.lastNameController.text =
-              profileCachedData?.data.user.lastName ?? '';
+              profileCachedData?.data?.user?.lastName ?? '';
+
           cubit.yearsOfExperience.text =
-              profileCachedData?.data.yearsOfExperience.toString() ?? '';
-          cubit.bioController.text = profileCachedData?.data.bio ?? '';
+              profileCachedData?.data?.yearsOfExperience.toString() ?? '';
+          cubit.bioController.text = profileCachedData?.data?.bio ?? '';
           cubit.selectedCity =
-              profileCachedData?.data.user.city?.id.toString() ?? '';
+              profileCachedData?.data?.user?.city?.id.toString() ?? '';
           cubit.selectedGovernorate =
-              profileCachedData?.data.user.governorate?.id.toString() ?? '';
+              profileCachedData?.data?.user?.governorate?.id.toString() ?? '';
           return Column(
             children: [
               verticalSpace(32),

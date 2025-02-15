@@ -31,10 +31,15 @@ class EditProfileScreen extends StatelessWidget {
                     orElse: () {
                       return const SizedBox.shrink();
                     },
-                    successEngineerProfileData: (engineerData) {
+                    loadingUpdateProfile: () {
+                      return Center(
+                        child: const CircularProgressIndicator(),
+                      );
+                    },
+                    successEngineerProfileData: (_) {
                       return EditEngineerProfileInputs();
                     },
-                    successTechnicalWorkerProfileData: (technicalWorkerData) {
+                    successTechnicalWorkerProfileData: (_) {
                       return EditTechnicalWorkerProfileInputs();
                     },
                   ),

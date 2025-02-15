@@ -18,9 +18,9 @@ class TechnicalWorkerResponseModelAdapter
       for (int i = 0; i < numOfFields; i++) reader.readByte(): reader.read(),
     };
     return TechnicalWorkerResponseModel(
-      success: fields[0] as bool,
-      status: fields[1] as int,
-      data: fields[2] as TechnicalData,
+      success: fields[0] as bool?,
+      status: fields[1] as int?,
+      data: fields[2] as TechnicalData?,
     );
   }
 
@@ -58,13 +58,13 @@ class TechnicalDataAdapter extends TypeAdapter<TechnicalData> {
       for (int i = 0; i < numOfFields; i++) reader.readByte(): reader.read(),
     };
     return TechnicalData(
-      id: fields[0] as int,
-      statusCode: fields[1] as int,
-      user: fields[2] as FreeLancerUser,
-      type: fields[3] as FreeLancerType,
-      yearsOfExperience: fields[4] as int,
-      workerServs: (fields[5] as List).cast<FreeLancerType>(),
-      bio: fields[6] as String,
+      id: fields[0] as int?,
+      statusCode: fields[1] as int?,
+      user: fields[2] as FreeLancerUser?,
+      type: fields[3] as FreeLancerType?,
+      yearsOfExperience: fields[4] as int?,
+      workerServs: (fields[5] as List?)?.cast<FreeLancerType>(),
+      bio: fields[6] as String?,
     );
   }
 
@@ -106,9 +106,11 @@ class TechnicalDataAdapter extends TypeAdapter<TechnicalData> {
 TechnicalWorkerResponseModel _$TechnicalWorkerResponseModelFromJson(
         Map<String, dynamic> json) =>
     TechnicalWorkerResponseModel(
-      success: json['success'] as bool,
-      status: (json['status'] as num).toInt(),
-      data: TechnicalData.fromJson(json['data'] as Map<String, dynamic>),
+      success: json['success'] as bool?,
+      status: (json['status'] as num?)?.toInt(),
+      data: json['data'] == null
+          ? null
+          : TechnicalData.fromJson(json['data'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$TechnicalWorkerResponseModelToJson(
@@ -121,15 +123,19 @@ Map<String, dynamic> _$TechnicalWorkerResponseModelToJson(
 
 TechnicalData _$TechnicalDataFromJson(Map<String, dynamic> json) =>
     TechnicalData(
-      id: (json['id'] as num).toInt(),
-      statusCode: (json['statusCode'] as num).toInt(),
-      user: FreeLancerUser.fromJson(json['user'] as Map<String, dynamic>),
-      type: FreeLancerType.fromJson(json['type'] as Map<String, dynamic>),
-      yearsOfExperience: (json['yearsOfExperience'] as num).toInt(),
-      workerServs: (json['workerServs'] as List<dynamic>)
-          .map((e) => FreeLancerType.fromJson(e as Map<String, dynamic>))
+      id: (json['id'] as num?)?.toInt(),
+      statusCode: (json['statusCode'] as num?)?.toInt(),
+      user: json['user'] == null
+          ? null
+          : FreeLancerUser.fromJson(json['user'] as Map<String, dynamic>),
+      type: json['type'] == null
+          ? null
+          : FreeLancerType.fromJson(json['type'] as Map<String, dynamic>),
+      yearsOfExperience: (json['yearsOfExperience'] as num?)?.toInt(),
+      workerServs: (json['workerServs'] as List<dynamic>?)
+          ?.map((e) => FreeLancerType.fromJson(e as Map<String, dynamic>))
           .toList(),
-      bio: json['bio'] as String,
+      bio: json['bio'] as String?,
     );
 
 Map<String, dynamic> _$TechnicalDataToJson(TechnicalData instance) =>

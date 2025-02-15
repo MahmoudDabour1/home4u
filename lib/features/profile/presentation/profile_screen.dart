@@ -28,9 +28,12 @@ class _ProfileScreenState extends State<ProfileScreen>
   void initState() {
     context.read<ProjectCubit>().getProjects();
     context.read<CertificationsCubit>().getAllCertifications();
-    SharedPrefHelper.getString(SharedPrefKeys.userType) == "ENGINEER"
-        ? context.read<ProfileCubit>().getEngineerProfileData()
-        : context.read<ProfileCubit>().getTechnicalWorkerProfileData();
+    // final userType = SharedPrefHelper.getString(SharedPrefKeys.userType);
+    // if (userType == "ENGINEER") {
+      context.read<ProfileCubit>().getEngineerProfileData();
+    // } else {
+    //   context.read<ProfileCubit>().getTechnicalWorkerProfileData();
+    // }
     super.initState();
   }
 

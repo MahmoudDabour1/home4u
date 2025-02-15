@@ -24,7 +24,6 @@ class ProfileBlocBuilder extends StatelessWidget {
           current is SuccessUpdateEngineerProfile ||
           current is SuccessUpdateTechnicalWorkerProfile,
       builder: (context, state) {
-        print("State: $state"); // Debug print
         final cubit = BlocProvider.of<ProfileCubit>(context);
         return state.maybeWhen(
           loadingProfileData: () => setupLoading(),
@@ -49,18 +48,6 @@ Widget setupSuccessWidget(
   TechnicalWorkerResponseModel? technicalWorkerData,
   cubit,
 ) {
-  logger.w("Engineer Data: $engineerData"); // Debug print
-  logger.w("Technical Worker Data: $technicalWorkerData"); // Debug print
-
-  // Ensure that the data is not null before accessing its properties
-  if (engineerData != null) {
-    logger.i("Engineer Data: ${engineerData.data}"); // Debug print
-  }
-
-  if (technicalWorkerData != null) {
-    logger
-        .i("Technical Worker Data: ${technicalWorkerData.data}"); // Debug print
-  }
   return Stack(
     children: [
       InformationWidget(
