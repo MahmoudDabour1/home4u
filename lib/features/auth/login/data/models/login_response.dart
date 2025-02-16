@@ -22,6 +22,7 @@ class LoginResponse {
 class UserData {
   String? token;
   String? refreshToken;
+  @JsonKey(name: "user")
   UserInformation? userInformation;
 
   UserData({this.token, this.refreshToken, this.userInformation});

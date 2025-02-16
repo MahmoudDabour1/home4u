@@ -26,15 +26,19 @@ class _ProfileScreenState extends State<ProfileScreen>
 
   @override
   void initState() {
+    super.initState();
+    _initializeProfileData();
+  }
+
+  Future<void> _initializeProfileData() async {
     context.read<ProjectCubit>().getProjects();
     context.read<CertificationsCubit>().getAllCertifications();
-    // final userType = SharedPrefHelper.getString(SharedPrefKeys.userType);
-    // if (userType == "ENGINEER") {
+    final userType = await SharedPrefHelper.getString(SharedPrefKeys.userType);
+    if (userType == "ENGINEER") {
       context.read<ProfileCubit>().getEngineerProfileData();
-    // } else {
-    //   context.read<ProfileCubit>().getTechnicalWorkerProfileData();
-    // }
-    super.initState();
+    } else {
+      context.read<ProfileCubit>().getTechnicalWorkerProfileData();
+    }
   }
 
   @override
