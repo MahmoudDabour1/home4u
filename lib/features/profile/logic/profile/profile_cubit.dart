@@ -331,9 +331,9 @@ class ProfileCubit extends Cubit<ProfileState> {
         "email": engineerProfileData?.data?.user?.email ??
             technicalWorkerProfileData?.data?.user?.email ??
             "",
-        "phone": engineerProfileData?.data?.user?.phone ??
-            technicalWorkerProfileData?.data?.user?.phone ??
-            "",
+        // "phone": engineerProfileData?.data?.user?.phone ??
+        //     technicalWorkerProfileData?.data?.user?.phone ??
+        //     "",
         "personalPhoto": engineerProfileData?.data?.user?.personalPhoto ??
             technicalWorkerProfileData?.data?.user?.personalPhoto ??
             "",

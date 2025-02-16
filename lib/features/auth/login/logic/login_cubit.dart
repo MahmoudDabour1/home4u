@@ -2,6 +2,7 @@ import 'package:bloc/bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_localization/flutter_localization.dart';
 import 'package:home4u/core/helpers/helper_methods.dart';
+import 'package:home4u/core/routing/router_observer.dart';
 import 'package:home4u/features/auth/login/data/repos/login_repo.dart';
 import 'package:home4u/locale/app_locale.dart';
 
@@ -31,18 +32,31 @@ class LoginCubit extends Cubit<LoginState> {
         password: passwordController.text,
       ),
     );
-    response.when(success: (loginResponse) async {
-      final token = loginResponse.userData!.token;
-      await saveUserToken(token!);
-      await showToast(message: AppLocale.loginSuccessfully.getString(context));
-      emit(LoginState.success(loginResponse));
-      await SharedPrefHelper.setData(SharedPrefKeys.userType, loginResponse.userData!.userInformation?.userType?.code);
-    }, failure: (error) async {
-      final errorMessage =
-          error.message ?? AppLocale.anUnknownErrorOccurred.getString(context);
-      await showToast(message: errorMessage, isError: true);
-      emit(LoginState.error(error: errorMessage));
-    });
+    response.when(
+      success: (loginResponse) async {
+        final token = loginResponse.userData!.token;
+        final userType =
+            loginResponse.userData!.userInformation!.userType!.code;
+        await saveUserType(userType!);
+        await saveUserToken(token!);
+        await showToast(
+            message: AppLocale.loginSuccessfully.getString(context));
+        emit(LoginState.success(loginResponse));
+      },
+      failure: (error) async {
+        final errorMessage = error.message ??
+            AppLocale.anUnknownErrorOccurred.getString(context);
+        await showToast(message: errorMessage, isError: true);
+        emit(LoginState.error(error: errorMessage));
+      },
+    );
+  }
+
+  Future<void> saveUserType(String userType) async {
+    if (userType.isEmpty) {
+      throw Exception("User type is empty or invalid.");
+    }
+    await SharedPrefHelper.setData(SharedPrefKeys.userType, userType);
   }
 
   Future<void> saveUserToken(String token) async {
