@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:home4u/features/profile/logic/profile/profile_cubit.dart';
 import 'package:home4u/features/profile/logic/profile/profile_state.dart';
-import 'package:home4u/features/profile/presentation/widgets/profile_bloc_builder.dart';
-import 'package:home4u/features/profile/presentation/widgets/profile_custom_header_shape.dart';
+import 'package:home4u/features/profile/presentation/widgets/profile_widgets/profile_bloc_builder.dart';
+import 'package:home4u/features/profile/presentation/widgets/profile_widgets/profile_custom_header_shape.dart';
 
-import '../../../../core/theming/app_colors.dart';
+import '../../../../../core/theming/app_colors.dart';
 
 class ProfileUpperWidget extends StatelessWidget {
   const ProfileUpperWidget({super.key});

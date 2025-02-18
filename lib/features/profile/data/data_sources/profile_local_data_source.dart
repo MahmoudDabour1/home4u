@@ -1,5 +1,4 @@
 import 'package:hive_flutter/hive_flutter.dart';
-import 'package:home4u/core/routing/router_observer.dart';
 import 'package:home4u/features/profile/data/models/profile/engineer_profile_response_model.dart';
 import 'package:home4u/features/profile/data/models/profile/technical_worker_profile_response_model.dart';
 

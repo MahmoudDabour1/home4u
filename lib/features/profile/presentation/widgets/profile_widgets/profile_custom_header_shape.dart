@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:home4u/features/profile/presentation/widgets/profile_upper_buttons.dart';
+import 'package:home4u/features/profile/presentation/widgets/profile_widgets/profile_upper_buttons.dart';
 
-import '../../../auth/widgets/custom_header_shape.dart';
+import '../../../../auth/widgets/custom_header_shape.dart';
 
 class ProfileCustomHeaderShape extends StatelessWidget {
   const ProfileCustomHeaderShape({super.key});
