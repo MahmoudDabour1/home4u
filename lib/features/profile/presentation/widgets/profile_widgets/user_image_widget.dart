@@ -5,11 +5,11 @@ import 'package:home4u/core/networking/api_constants.dart';
 import 'package:home4u/core/theming/app_assets.dart';
 import 'package:home4u/core/theming/app_colors.dart';
 
-import '../../../../core/widgets/bottom_model.dart';
-import '../../data/models/profile/engineer_profile_response_model.dart';
-import '../../data/models/profile/technical_worker_profile_response_model.dart';
-import '../../logic/profile/profile_cubit.dart';
-import '../../logic/profile/profile_state.dart';
+import '../../../../../core/widgets/bottom_model.dart';
+import '../../../data/models/profile/engineer_profile_response_model.dart';
+import '../../../data/models/profile/technical_worker_profile_response_model.dart';
+import '../../../logic/profile/profile_cubit.dart';
+import '../../../logic/profile/profile_state.dart';
 
 class UserImageWidget extends StatelessWidget {
   final EngineerProfileResponseModel? engineerProfileResponseModel;

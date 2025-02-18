@@ -2,7 +2,6 @@ import 'package:bloc/bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_localization/flutter_localization.dart';
 import 'package:home4u/core/helpers/helper_methods.dart';
-import 'package:home4u/core/routing/router_observer.dart';
 import 'package:home4u/features/auth/login/data/repos/login_repo.dart';
 import 'package:home4u/locale/app_locale.dart';
 

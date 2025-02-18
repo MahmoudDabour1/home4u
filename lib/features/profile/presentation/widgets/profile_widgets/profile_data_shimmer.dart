@@ -2,13 +2,15 @@ import 'package:flutter/material.dart';
 import 'package:flutter_localization/flutter_localization.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:home4u/core/theming/app_assets.dart';
-import 'package:home4u/features/profile/presentation/widgets/profile_rating_widget.dart';
+import 'package:home4u/features/profile/presentation/widgets/profile_widgets/profile_rating_widget.dart';
 import 'package:skeletonizer/skeletonizer.dart';
 
-import '../../../../core/theming/app_styles.dart';
-import '../../../../core/utils/spacing.dart';
-import '../../../../core/widgets/app_custom_button.dart';
-import '../../../../locale/app_locale.dart';
+import '../../../../../core/theming/app_styles.dart';
+import '../../../../../core/utils/spacing.dart';
+import '../../../../../core/widgets/app_custom_button.dart';
+import '../../../../../locale/app_locale.dart';
+
+
 
 class ProfileDataShimmer extends StatelessWidget {
   const ProfileDataShimmer({super.key});

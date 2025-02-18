@@ -4,7 +4,6 @@ import 'package:flutter_localization/flutter_localization.dart';
 import 'package:home4u/core/extensions/navigation_extension.dart';
 import 'package:home4u/core/helpers/helper_methods.dart';
 import 'package:home4u/core/theming/app_colors.dart';
-import 'package:home4u/features/profile/presentation/widgets/delete_dialog_button_widget.dart';
 import 'package:home4u/locale/app_locale.dart';
 
 import '../../../../../core/di/dependency_injection.dart';
@@ -16,6 +15,7 @@ import '../../../../auth/sign_up/logic/engineer/engineer_cubit.dart';
 import '../../../../auth/sign_up/logic/engineer/engineer_state.dart';
 import '../../../data/models/services/update_service_body.dart';
 import '../../../logic/services/services_cubit.dart';
+import '../profile_widgets/delete_dialog_button_widget.dart';
 
 class ServicesAlertDialog extends StatefulWidget {
   final bool isEdit;
