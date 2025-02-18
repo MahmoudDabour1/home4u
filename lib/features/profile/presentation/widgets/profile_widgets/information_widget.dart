@@ -7,14 +7,14 @@ import 'package:home4u/core/routing/routes.dart';
 import 'package:home4u/core/utils/spacing.dart';
 import 'package:home4u/features/profile/data/models/profile/engineer_profile_response_model.dart';
 import 'package:home4u/features/profile/data/models/profile/technical_worker_profile_response_model.dart';
-import 'package:home4u/features/profile/presentation/widgets/profile_rating_widget.dart';
+import 'package:home4u/features/profile/presentation/widgets/profile_widgets/profile_rating_widget.dart';
 import 'package:skeletonizer/skeletonizer.dart';
 
-import '../../../../core/theming/app_styles.dart';
-import '../../../../core/widgets/app_custom_button.dart';
-import '../../../../locale/app_locale.dart';
-import '../../logic/profile/profile_cubit.dart';
-import '../../logic/profile/profile_state.dart';
+import '../../../../../core/theming/app_styles.dart';
+import '../../../../../core/widgets/app_custom_button.dart';
+import '../../../../../locale/app_locale.dart';
+import '../../../logic/profile/profile_cubit.dart';
+import '../../../logic/profile/profile_state.dart';
 
 class InformationWidget extends StatelessWidget {
   final EngineerProfileResponseModel? engineerProfileResponseModel;

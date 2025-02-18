@@ -1,6 +1,5 @@
 import 'package:hive/hive.dart';
 import 'package:home4u/core/utils/app_constants.dart';
-import '../../../../core/routing/router_observer.dart';
 import '../models/projects/get_projects_response_model.dart';
 
 abstract class ProjectsLocalDataSource {
