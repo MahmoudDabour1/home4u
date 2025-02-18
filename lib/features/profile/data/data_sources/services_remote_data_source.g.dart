@@ -14,7 +14,7 @@ class _ServicesRemoteDataSource implements ServicesRemoteDataSource {
     this.baseUrl,
     this.errorLogger,
   }) {
-    baseUrl ??= 'http://149.102.135.15:5000';
+    baseUrl ??= 'http://home4u.gosoftcloud.com';
   }
 
   final Dio _dio;
