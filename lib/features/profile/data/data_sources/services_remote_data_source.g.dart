@@ -24,7 +24,7 @@ class _ServicesRemoteDataSource implements ServicesRemoteDataSource {
   final ParseErrorLogger? errorLogger;
 
   @override
-  Future<FreelancerServices> getServices(int engineerId) async {
+  Future<FreelancerServices> getEngineerServices(int engineerId) async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{r'engineerId': engineerId};
     final _headers = <String, dynamic>{};
@@ -57,7 +57,7 @@ class _ServicesRemoteDataSource implements ServicesRemoteDataSource {
   }
 
   @override
-  Future<bool> updateServices(
+  Future<ServiceUpdateDeleteResponseModel> updateEngineerServices(
     List<UpdateServiceBody> servicesData,
     int userId,
   ) async {
@@ -65,7 +65,7 @@ class _ServicesRemoteDataSource implements ServicesRemoteDataSource {
     final queryParameters = <String, dynamic>{r'userId': userId};
     final _headers = <String, dynamic>{};
     final _data = servicesData.map((e) => e.toJson()).toList();
-    final _options = _setStreamType<bool>(Options(
+    final _options = _setStreamType<ServiceUpdateDeleteResponseModel>(Options(
       method: 'PUT',
       headers: _headers,
       extra: _extra,
@@ -73,6 +73,45 @@ class _ServicesRemoteDataSource implements ServicesRemoteDataSource {
         .compose(
           _dio.options,
           '/api/v1/engineer-services/service/update',
+          queryParameters: queryParameters,
+          data: _data,
+        )
+        .copyWith(
+            baseUrl: _combineBaseUrls(
+          _dio.options.baseUrl,
+          baseUrl,
+        )));
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
+    late ServiceUpdateDeleteResponseModel _value;
+    try {
+      _value = ServiceUpdateDeleteResponseModel.fromJson(_result.data!);
+    } on Object catch (e, s) {
+      errorLogger?.logError(e, s, _options);
+      rethrow;
+    }
+    return _value;
+  }
+
+  @override
+  Future<bool> deleteEngineerService(
+    int engineerId,
+    int serviceId,
+  ) async {
+    final _extra = <String, dynamic>{};
+    final queryParameters = <String, dynamic>{
+      r'engineerId': engineerId,
+      r'serviceId': serviceId,
+    };
+    final _headers = <String, dynamic>{};
+    const Map<String, dynamic>? _data = null;
+    final _options = _setStreamType<bool>(Options(
+      method: 'DELETE',
+      headers: _headers,
+      extra: _extra,
+    )
+        .compose(
+          _dio.options,
+          '/api/v1/engineer-services/service',
           queryParameters: queryParameters,
           data: _data,
         )
@@ -93,13 +132,82 @@ class _ServicesRemoteDataSource implements ServicesRemoteDataSource {
   }
 
   @override
-  Future<bool> deleteService(
-    int engineerId,
+  Future<FreelancerServices> getTechnicalWorkerServices(int workerId) async {
+    final _extra = <String, dynamic>{};
+    final queryParameters = <String, dynamic>{r'workerId': workerId};
+    final _headers = <String, dynamic>{};
+    const Map<String, dynamic>? _data = null;
+    final _options = _setStreamType<FreelancerServices>(Options(
+      method: 'GET',
+      headers: _headers,
+      extra: _extra,
+    )
+        .compose(
+          _dio.options,
+          '/api/v1/technical-worker-services/service',
+          queryParameters: queryParameters,
+          data: _data,
+        )
+        .copyWith(
+            baseUrl: _combineBaseUrls(
+          _dio.options.baseUrl,
+          baseUrl,
+        )));
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
+    late FreelancerServices _value;
+    try {
+      _value = FreelancerServices.fromJson(_result.data!);
+    } on Object catch (e, s) {
+      errorLogger?.logError(e, s, _options);
+      rethrow;
+    }
+    return _value;
+  }
+
+  @override
+  Future<ServiceUpdateDeleteResponseModel> updateTechnicalWorkerServices(
+    List<UpdateServiceBody> servicesData,
+    int userId,
+  ) async {
+    final _extra = <String, dynamic>{};
+    final queryParameters = <String, dynamic>{r'userId': userId};
+    final _headers = <String, dynamic>{};
+    final _data = servicesData.map((e) => e.toJson()).toList();
+    final _options = _setStreamType<ServiceUpdateDeleteResponseModel>(Options(
+      method: 'PUT',
+      headers: _headers,
+      extra: _extra,
+    )
+        .compose(
+          _dio.options,
+          '/api/v1/technical-worker-services/service/update',
+          queryParameters: queryParameters,
+          data: _data,
+        )
+        .copyWith(
+            baseUrl: _combineBaseUrls(
+          _dio.options.baseUrl,
+          baseUrl,
+        )));
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
+    late ServiceUpdateDeleteResponseModel _value;
+    try {
+      _value = ServiceUpdateDeleteResponseModel.fromJson(_result.data!);
+    } on Object catch (e, s) {
+      errorLogger?.logError(e, s, _options);
+      rethrow;
+    }
+    return _value;
+  }
+
+  @override
+  Future<bool> deleteTechnicalWorkerService(
+    int workerId,
     int serviceId,
   ) async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{
-      r'engineerId': engineerId,
+      r'workerId': workerId,
       r'serviceId': serviceId,
     };
     final _headers = <String, dynamic>{};
@@ -111,7 +219,7 @@ class _ServicesRemoteDataSource implements ServicesRemoteDataSource {
     )
         .compose(
           _dio.options,
-          '/api/v1/engineer-services/service',
+          '/api/v1/technical-worker-services/service',
           queryParameters: queryParameters,
           data: _data,
         )

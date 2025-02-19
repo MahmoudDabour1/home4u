@@ -5,6 +5,7 @@ import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:home4u/core/extensions/navigation_extension.dart';
+import 'package:home4u/core/helpers/shared_pref_helper.dart';
 import 'package:home4u/features/profile/data/models/profile/engineer_profile_response_model.dart';
 import 'package:home4u/features/profile/data/models/profile/technical_worker_profile_response_model.dart';
 import 'package:home4u/features/profile/data/repos/profile_repo.dart';
@@ -13,6 +14,7 @@ import 'package:http_parser/http_parser.dart';
 import 'package:image_picker/image_picker.dart';
 
 import '../../../../core/helpers/helper_methods.dart';
+import '../../../../core/helpers/shared_pref_keys.dart';
 import '../../../../core/routing/router_observer.dart';
 import '../../../auth/sign_up/data/models/city_model.dart';
 import '../../../auth/sign_up/data/models/governorate_model.dart';
@@ -60,8 +62,10 @@ class ProfileCubit extends Cubit<ProfileState> {
         image = File(value.path);
         Navigator.pop(context);
         emit(ProfileState.addImage());
-        uploadProfileImage().then((value) {
-          engineerProfileCachedData?.data?.type?.code == "ENGINEER"
+        uploadProfileImage().then((value) async{
+          final userType =
+          await SharedPrefHelper.getString(SharedPrefKeys.userType);
+          userType == "ENGINEER"
               ? getEngineerProfileData()
               : getTechnicalWorkerProfileData();
         });
@@ -154,13 +158,16 @@ class ProfileCubit extends Cubit<ProfileState> {
     try {
       final formData = await _createImageFormData();
       final result = await _profileRepo.uploadProfileImage(formData);
+      final userType =
+      await SharedPrefHelper.getString(SharedPrefKeys.userType);
       result.when(
         success: (uploadProfileImageResponseModel) {
           showToast(message: 'Image Uploaded Successfully');
           if (!isClosed) {
             emit(ProfileState.successUploadImage(
                 uploadProfileImageResponseModel));
-            engineerProfileCachedData?.data?.type?.code == "ENGINEER"
+            logger.w("User Type: $userType");
+            userType == "ENGINEER"
                 ? getEngineerProfileData()
                 : getTechnicalWorkerProfileData();
           }
@@ -194,7 +201,7 @@ class ProfileCubit extends Cubit<ProfileState> {
 
   Future<String> _prepareEngineerUpdateData() async {
     var engineerProfileData =
-    await _profileLocalDataSource.getEngineerProfileData();
+        await _profileLocalDataSource.getEngineerProfileData();
     final jsonEngineerData = {
       "id": engineerProfileData?.data?.id ?? 0,
       "statusCode": engineerProfileData?.data?.statusCode ?? 1,
@@ -233,8 +240,8 @@ class ProfileCubit extends Cubit<ProfileState> {
         "id": engineerProfileData?.data?.type?.id ?? 0,
         "code": engineerProfileData?.data?.type?.code ?? "",
         "name": engineerProfileData?.data?.type?.name ?? "",
-        "nameAr": engineerProfileData?.data?.type?.nameAr ?? "",
-        "nameEn": engineerProfileData?.data?.type?.nameEn ?? "",
+        // "nameAr": engineerProfileData?.data?.type?.nameAr ?? "",
+        // "nameEn": engineerProfileData?.data?.type?.nameEn ?? "",
       },
       "yearsOfExperience": yearsOfExperience.text.isNotEmpty
           ? int.tryParse(yearsOfExperience.text) ?? 0
@@ -243,8 +250,8 @@ class ProfileCubit extends Cubit<ProfileState> {
           ? bioController.text
           : engineerProfileData?.data?.bio ?? "",
       "engineerServ": engineerProfileData?.data?.engineerServ
-          ?.map((e) => {"id": e.id})
-          .toList() ??
+              ?.map((e) => {"id": e.id})
+              .toList() ??
           [],
       "linkedin": linkedinController.text.isNotEmpty
           ? linkedinController.text
@@ -260,7 +267,7 @@ class ProfileCubit extends Cubit<ProfileState> {
 
   Future<String> _prepareTechnicalWorkerUpdateData() async {
     var technicalProfileData =
-    await _profileLocalDataSource.getTechnicalWorkerProfileData();
+        await _profileLocalDataSource.getTechnicalWorkerProfileData();
     final jsonTechnicalWorkerData = {
       "id": technicalProfileData?.data?.id ?? 0,
       "statusCode": technicalProfileData?.data?.statusCode ?? 1,
@@ -299,15 +306,15 @@ class ProfileCubit extends Cubit<ProfileState> {
         "id": technicalProfileData?.data?.type?.id ?? 0,
         "code": technicalProfileData?.data?.type?.code ?? "",
         "name": technicalProfileData?.data?.type?.name ?? "",
-        "nameAr": technicalProfileData?.data?.type?.nameAr ?? "",
-        "nameEn": technicalProfileData?.data?.type?.nameEn ?? "",
+        // "nameAr": technicalProfileData?.data?.type?.nameAr ?? "",
+        // "nameEn": technicalProfileData?.data?.type?.nameEn ?? "",
       },
       "yearsOfExperience": yearsOfExperience.text.isNotEmpty
           ? int.tryParse(yearsOfExperience.text) ?? 0
           : technicalProfileData?.data?.yearsOfExperience ?? 0,
       "workerServs": technicalProfileData?.data?.workerServs
-          ?.map((e) => {"id": e.id})
-          .toList() ??
+              ?.map((e) => {"id": e.id})
+              .toList() ??
           [],
       "bio": bioController.text.isNotEmpty
           ? bioController.text
@@ -317,5 +324,4 @@ class ProfileCubit extends Cubit<ProfileState> {
     final jsonTechnicalWorkerString = json.encode(jsonTechnicalWorkerData);
     return jsonTechnicalWorkerString;
   }
-
 }

@@ -119,28 +119,19 @@ class FreeLancerTypeAdapter extends TypeAdapter<FreeLancerType> {
       id: fields[0] as int?,
       code: fields[1] as String?,
       name: fields[2] as String?,
-      nameAr: fields[3] as String?,
-      nameEn: fields[4] as String?,
-      engineerType: fields[5] as FreeLancerType?,
     );
   }
 
   @override
   void write(BinaryWriter writer, FreeLancerType obj) {
     writer
-      ..writeByte(6)
+      ..writeByte(3)
       ..writeByte(0)
       ..write(obj.id)
       ..writeByte(1)
       ..write(obj.code)
       ..writeByte(2)
-      ..write(obj.name)
-      ..writeByte(3)
-      ..write(obj.nameAr)
-      ..writeByte(4)
-      ..write(obj.nameEn)
-      ..writeByte(5)
-      ..write(obj.engineerType);
+      ..write(obj.name);
   }
 
   @override
@@ -323,12 +314,6 @@ FreeLancerType _$FreeLancerTypeFromJson(Map<String, dynamic> json) =>
       id: (json['id'] as num?)?.toInt(),
       code: json['code'] as String?,
       name: json['name'] as String?,
-      nameAr: json['nameAr'] as String?,
-      nameEn: json['nameEn'] as String?,
-      engineerType: json['engineerType'] == null
-          ? null
-          : FreeLancerType.fromJson(
-              json['engineerType'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$FreeLancerTypeToJson(FreeLancerType instance) =>
@@ -336,9 +321,6 @@ Map<String, dynamic> _$FreeLancerTypeToJson(FreeLancerType instance) =>
       'id': instance.id,
       'code': instance.code,
       'name': instance.name,
-      'nameAr': instance.nameAr,
-      'nameEn': instance.nameEn,
-      'engineerType': instance.engineerType,
     };
 
 FreeLancerUser _$FreeLancerUserFromJson(Map<String, dynamic> json) =>

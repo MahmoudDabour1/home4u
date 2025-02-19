@@ -94,7 +94,7 @@ class AppLocale {
   static const String services = 'Services';
   static const String pricing = 'Pricing';
   static const String certifications = 'Certifications';
-  static const String addService = 'Add Service';
+  static const String addServices = 'Add Services';
   static const String add = 'Add';
   static const String editService = 'Edit Service';
   static const String settings = 'Settings';
@@ -245,7 +245,7 @@ class AppLocale {
     services: 'Services',
     pricing: 'Pricing',
     certifications: 'Certifications',
-    addService: 'Add Service',
+    addServices: 'Add Services',
     add: 'Add',
     editService: 'Edit Service',
     settings: 'Settings',
@@ -378,7 +378,7 @@ class AppLocale {
     services: 'الخدمات',
     pricing: 'التسعير',
     certifications: 'الشهادات',
-    addService: 'إضافة خدمة',
+    addServices: 'إضافة خدمات',
     add: 'إضافة',
     editService: 'تعديل الخدمة',
     settings: 'الإعدادات',

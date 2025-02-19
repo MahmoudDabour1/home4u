@@ -57,7 +57,7 @@ class TechnicalData {
 
   @HiveField(5)
   @JsonKey(name: "workerServs")
-  final List<FreeLancerType>? workerServs;
+  List<FreeLancerType>? workerServs;
 
   @HiveField(6)
   @JsonKey(name: "bio")

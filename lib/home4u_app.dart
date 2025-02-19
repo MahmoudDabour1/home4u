@@ -15,6 +15,8 @@ import 'core/helpers/helper_methods.dart';
 import 'core/localization/app_localization_cubit.dart';
 import 'core/theming/app_theme.dart';
 import 'features/auth/forget_password/logic/forget_password_cubit.dart';
+import 'features/auth/sign_up/logic/engineer/engineer_cubit.dart';
+import 'features/auth/sign_up/logic/technical_worker/technical_worker_cubit.dart';
 import 'features/profile/logic/certifications/certifications_cubit.dart';
 import 'features/profile/logic/project/project_cubit.dart';
 import 'locale/app_locale.dart';
@@ -73,6 +75,12 @@ class _Home4uAppState extends State<Home4uApp> {
         BlocProvider<CertificationsCubit>(
             create: (_) => sl<CertificationsCubit>()),
         BlocProvider<ServicesCubit>(create: (_) => sl<ServicesCubit>()),
+        BlocProvider<EngineerCubit>(
+          create: (_) => sl<EngineerCubit>(),
+        ),
+        BlocProvider<TechnicalWorkerCubit>(
+          create: (_) => sl<TechnicalWorkerCubit>(),
+        ),
       ],
       child: ScreenUtilInit(
         designSize: const Size(393, 852),

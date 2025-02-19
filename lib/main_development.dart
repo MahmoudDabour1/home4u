@@ -19,18 +19,24 @@ import 'home4u_app.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  await setupGetIt();
-  await ScreenUtil.ensureScreenSize();
+  await Future.wait(
+    [
+      setupGetIt(),
+      ScreenUtil.ensureScreenSize(),
+      FlutterLocalization.instance.ensureInitialized(),
+      Hive.initFlutter(),
+      initHive(),
+      checkIfLoggedInUser(),
+    ],
+  );
+
   Bloc.observer = MyBlocObserver();
-  await Hive.initFlutter();
-  await checkIfLoggedInUser();
-  // Hive.registerAdapter<GovernorateDataModel>(GovernorateDataModelAdapter());
+
+// Hive.registerAdapter<GovernorateDataModel>(GovernorateDataModelAdapter());
   // await Hive.openBox<GovernorateDataModel>(kGovernoratesBox);
-  await initHive();
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
-  await FlutterLocalization.instance.ensureInitialized();
 
   final cachedLocale =
       await SharedPrefHelper.getString(SharedPrefKeys.selectedLocale);
@@ -51,7 +57,7 @@ void main() async {
   );
 }
 
-checkIfLoggedInUser() async {
+Future<void> checkIfLoggedInUser() async {
   String userToken =
       await SharedPrefHelper.getSecuredString(SharedPrefKeys.userToken);
   if (!userToken.isNullOrEmpty()) {

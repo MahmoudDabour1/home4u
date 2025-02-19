@@ -102,25 +102,25 @@ class FreeLancerType {
   @JsonKey(name: "name")
   String? name;
 
-  @HiveField(3)
-  @JsonKey(name: "nameAr")
-  String? nameAr;
+  // @HiveField(3)
+  // @JsonKey(name: "nameAr")
+  // String? nameAr;
+  //
+  // @HiveField(4)
+  // @JsonKey(name: "nameEn")
+  // String? nameEn;
 
-  @HiveField(4)
-  @JsonKey(name: "nameEn")
-  String? nameEn;
-
-  @HiveField(5)
-  @JsonKey(name: "engineerType")
-  FreeLancerType? engineerType;
+  // @HiveField(5)
+  // @JsonKey(name: "engineerType")
+  // FreeLancerType? engineerType;
 
   FreeLancerType({
     this.id,
     this.code,
     this.name,
-    this.nameAr,
-    this.nameEn,
-    this.engineerType,
+    // this.nameAr,
+    // this.nameEn,
+    // this.engineerType,
   });
 
   factory FreeLancerType.fromJson(Map<String, dynamic> json) =>
