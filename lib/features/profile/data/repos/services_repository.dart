@@ -24,9 +24,9 @@ abstract class ServicesRepository {
     int userId,
   );
 
-  Future<ApiResult<bool>> deleteEngineerService(int engineerId, int serviceId);
+  Future<ApiResult<ServiceUpdateDeleteResponseModel>> deleteEngineerService(int engineerId, int serviceId);
 
-  Future<ApiResult<bool>> deleteTechnicalWorkerService(
+  Future<ApiResult<ServiceUpdateDeleteResponseModel>> deleteTechnicalWorkerService(
     int workerId,
     int serviceId,
   );
@@ -38,7 +38,7 @@ class ServicesRepositoryImpl implements ServicesRepository {
   ServicesRepositoryImpl(this.servicesRemoteDataSource);
 
   @override
-  Future<ApiResult<bool>> deleteEngineerService(
+  Future<ApiResult<ServiceUpdateDeleteResponseModel>> deleteEngineerService(
       int engineerId, int serviceId) async {
     try {
       final response = await servicesRemoteDataSource.deleteEngineerService(
@@ -76,7 +76,7 @@ class ServicesRepositoryImpl implements ServicesRepository {
   }
 
   @override
-  Future<ApiResult<bool>> deleteTechnicalWorkerService(
+  Future<ApiResult<ServiceUpdateDeleteResponseModel>> deleteTechnicalWorkerService(
     int workerId,
     int serviceId,
   ) async {

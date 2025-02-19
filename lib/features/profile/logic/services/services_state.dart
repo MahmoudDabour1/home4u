@@ -30,7 +30,7 @@ class ServicesState<T> with _$ServicesState<T> {
   ///Delete Service
   const factory ServicesState.deleteServiceLoading() = DeleteServiceLoading;
 
-  const factory ServicesState.deleteServiceSuccess() = DeleteServiceSuccess;
+  const factory ServicesState.deleteServiceSuccess(ServiceUpdateDeleteResponseModel serviceResponse) = DeleteServiceSuccess;
 
   const factory ServicesState.deleteServiceError({required String error}) =
       DeleteServiceError;
