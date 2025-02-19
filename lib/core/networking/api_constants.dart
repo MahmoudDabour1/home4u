@@ -32,6 +32,10 @@ class ApiConstants {
       "/api/v1/engineer-services/service";
   static const String updateEngineerServices =
       "/api/v1/engineer-services/service/update";
+  static const String technicalWorkerServicesEp =
+      "/api/v1/technical-worker-services/service";
+  static const String updateTechnicalWorkerServices =
+      "/api/v1/technical-worker-services/service/update";
 
 
   ///profile

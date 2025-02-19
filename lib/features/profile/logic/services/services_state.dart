@@ -1,6 +1,8 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:home4u/features/auth/sign_up/data/models/services/freelancer_services.dart';
 
+import '../../data/models/services/Service_update_delete_response_model.dart';
+
 
 part 'services_state.freezed.dart';
 
@@ -20,7 +22,7 @@ class ServicesState<T> with _$ServicesState<T> {
   ///Update Services
   const factory ServicesState.updateServicesLoading() = UpdateServicesLoading;
 
-  const factory ServicesState.updateServicesSuccess() = UpdateServicesSuccess;
+  const factory ServicesState.updateServicesSuccess(ServiceUpdateDeleteResponseModel serviceResponse) = UpdateServicesSuccess;
 
   const factory ServicesState.updateServicesError({required String error}) =
       UpdateServicesError;
