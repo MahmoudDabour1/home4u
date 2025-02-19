@@ -93,7 +93,7 @@ class _ServicesRemoteDataSource implements ServicesRemoteDataSource {
   }
 
   @override
-  Future<bool> deleteEngineerService(
+  Future<ServiceUpdateDeleteResponseModel> deleteEngineerService(
     int engineerId,
     int serviceId,
   ) async {
@@ -104,7 +104,7 @@ class _ServicesRemoteDataSource implements ServicesRemoteDataSource {
     };
     final _headers = <String, dynamic>{};
     const Map<String, dynamic>? _data = null;
-    final _options = _setStreamType<bool>(Options(
+    final _options = _setStreamType<ServiceUpdateDeleteResponseModel>(Options(
       method: 'DELETE',
       headers: _headers,
       extra: _extra,
@@ -120,10 +120,10 @@ class _ServicesRemoteDataSource implements ServicesRemoteDataSource {
           _dio.options.baseUrl,
           baseUrl,
         )));
-    final _result = await _dio.fetch<bool>(_options);
-    late bool _value;
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
+    late ServiceUpdateDeleteResponseModel _value;
     try {
-      _value = _result.data!;
+      _value = ServiceUpdateDeleteResponseModel.fromJson(_result.data!);
     } on Object catch (e, s) {
       errorLogger?.logError(e, s, _options);
       rethrow;
@@ -201,7 +201,7 @@ class _ServicesRemoteDataSource implements ServicesRemoteDataSource {
   }
 
   @override
-  Future<bool> deleteTechnicalWorkerService(
+  Future<ServiceUpdateDeleteResponseModel> deleteTechnicalWorkerService(
     int workerId,
     int serviceId,
   ) async {
@@ -212,7 +212,7 @@ class _ServicesRemoteDataSource implements ServicesRemoteDataSource {
     };
     final _headers = <String, dynamic>{};
     const Map<String, dynamic>? _data = null;
-    final _options = _setStreamType<bool>(Options(
+    final _options = _setStreamType<ServiceUpdateDeleteResponseModel>(Options(
       method: 'DELETE',
       headers: _headers,
       extra: _extra,
@@ -228,10 +228,10 @@ class _ServicesRemoteDataSource implements ServicesRemoteDataSource {
           _dio.options.baseUrl,
           baseUrl,
         )));
-    final _result = await _dio.fetch<bool>(_options);
-    late bool _value;
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
+    late ServiceUpdateDeleteResponseModel _value;
     try {
-      _value = _result.data!;
+      _value = ServiceUpdateDeleteResponseModel.fromJson(_result.data!);
     } on Object catch (e, s) {
       errorLogger?.logError(e, s, _options);
       rethrow;

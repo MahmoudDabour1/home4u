@@ -26,7 +26,7 @@ abstract class ServicesRemoteDataSource {
   );
 
   @DELETE(ApiConstants.engineerServicesEp)
-  Future<bool> deleteEngineerService(
+  Future<ServiceUpdateDeleteResponseModel> deleteEngineerService(
     @Query("engineerId") int engineerId,
     @Query("serviceId") int serviceId,
   );
@@ -43,7 +43,7 @@ abstract class ServicesRemoteDataSource {
   );
 
   @DELETE(ApiConstants.technicalWorkerServicesEp)
-  Future<bool> deleteTechnicalWorkerService(
+  Future<ServiceUpdateDeleteResponseModel> deleteTechnicalWorkerService(
     @Query("workerId") int workerId,
     @Query("serviceId") int serviceId,
   );

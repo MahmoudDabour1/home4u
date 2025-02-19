@@ -116,9 +116,9 @@ class ServicesCubit extends Cubit<ServicesState> {
         ? await _servicesRepository.deleteEngineerService(id, serviceId)
         : await _servicesRepository.deleteTechnicalWorkerService(id, serviceId);
     result.when(
-      success: (_) async {
+      success: (response) async {
         // logger.t('Service Deleted Successfully');
-        emit(const ServicesState.deleteServiceSuccess());
+        emit( ServicesState.deleteServiceSuccess(response));
         await getServices(id: id);
         await _updateCache(userId);
       },
