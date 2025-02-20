@@ -17,6 +17,7 @@ import 'package:home4u/features/profile/presentation/widgets/projects_widgets/pr
 import 'package:home4u/features/profile/presentation/widgets/projects_widgets/rating_container_item.dart';
 
 import '../../../core/utils/app_constants.dart';
+import '../../../core/widgets/fancy_image.dart';
 import '../../auth/widgets/auth_welcome_data.dart';
 import '../data/models/profile/engineer_profile_response_model.dart';
 
@@ -32,7 +33,6 @@ class ProjectDetailsScreen extends StatefulWidget {
 class _ProjectDetailsScreenState extends State<ProjectDetailsScreen> {
   bool showMoreInfo = false;
   dynamic profileData;
-  dynamic profileDataCached;
   GetProjectsResponseModel? projects;
 
   @override
@@ -43,18 +43,21 @@ class _ProjectDetailsScreenState extends State<ProjectDetailsScreen> {
 
   Future<void> _initializeProfileData() async {
     var engineerProfileBox =
-    await Hive.openBox<EngineerProfileResponseModel>(kEngineerProfileBox);
+        await Hive.openBox<EngineerProfileResponseModel>(kEngineerProfileBox);
     var technicalWorkerProfileBox =
-    await Hive.openBox<TechnicalWorkerResponseModel>(
-        kTechnicalWorkerProfileBox);
+        await Hive.openBox<TechnicalWorkerResponseModel>(
+            kTechnicalWorkerProfileBox);
 
     var projectBox = await Hive.openBox<GetProjectsResponseModel>(kProjectsBox);
     var projectsData = projectBox.get(kProjectsKey);
-    final userType = SharedPrefHelper.getString(SharedPrefKeys.userType);
-    profileData = engineerProfileBox.get(kEngineerProfileData) ??
-        technicalWorkerProfileBox.get(kTechnicalWorkerProfileData);
-    profileDataCached = profileData;
     projects = projectsData;
+
+    final userType = await SharedPrefHelper.getString(SharedPrefKeys.userType);
+    if (userType == 'ENGINEER') {
+      profileData = engineerProfileBox.get(kEngineerProfileData);
+    } else {
+      profileData = technicalWorkerProfileBox.get(kTechnicalWorkerProfileData);
+    }
   }
 
   @override
@@ -64,6 +67,11 @@ class _ProjectDetailsScreenState extends State<ProjectDetailsScreen> {
         child: BlocBuilder<ProjectCubit, ProjectState>(
           builder: (context, state) {
             return state.maybeWhen(
+              getProjectLoading: () {
+                return Center(
+                  child: CircularProgressIndicator(),
+                );
+              },
               getProjectSuccess: (project) {
                 return SingleChildScrollView(
                   child: Column(
@@ -88,16 +96,17 @@ class _ProjectDetailsScreenState extends State<ProjectDetailsScreen> {
                               children: [
                                 CircleAvatar(
                                   radius: 20,
-                                  backgroundImage: NetworkImage(ApiConstants
-                                      .getImageBaseUrl(profileDataCached
-                                      ?.data?.user?.personalPhoto) ??
-                                      'https://media.istockphoto.com/id/1142192548/vector/man-avatar-profile-male-face-silhouette-or-icon-isolated-on-white-background-vector.jpg?s=2048x2048&w=is&k=20&c=lyki7QHyULuJNNheEf-BI_DQNCDi2NRYMfVGTQj_4UM='),
+                                  backgroundImage: NetworkImage(
+                                    ApiConstants.getImageBaseUrl(
+                                          profileData
+                                              ?.data?.user?.personalPhoto,
+                                        ) ??
+                                        'https://cdn.vectorstock.com/i/1000v/23/81/default-avatar-profile-icon-vector-18942381.jpg',
+                                  ),
                                 ),
                                 horizontalSpace(16),
                                 Text(
-                                  "${profileDataCached?.data?.user?.firstName ??
-                                      ''} ${profileDataCached?.data?.user
-                                      ?.lastName ?? ''}",
+                                  "${profileData?.data?.user?.firstName ?? ''} ${profileData?.data?.user?.lastName ?? ''}",
                                   style: TextStyle(
                                       fontSize: 16,
                                       fontWeight: FontWeight.bold),
@@ -107,50 +116,22 @@ class _ProjectDetailsScreenState extends State<ProjectDetailsScreen> {
                             verticalSpace(32),
                             ...List.generate(
                               project.data.images?.length ?? 0,
-                                  (index) {
+                              (index) {
                                 final imageUrl = ApiConstants.getImageBaseUrl(
                                   project.data.images?[index].path ?? '',
                                 );
                                 return Padding(
                                   padding:
-                                  const EdgeInsets.only(bottom: 16.0).h,
+                                      const EdgeInsets.only(bottom: 16.0).h,
                                   child: imageUrl.isNotEmpty
-                                      ? FancyShimmerImage(
-                                    imageUrl: imageUrl,
-                                    width:
-                                    MediaQuery
-                                        .sizeOf(context)
-                                        .width,
-                                    height: MediaQuery
-                                        .sizeOf(context)
-                                        .height *
-                                        0.2,
-                                    boxFit: BoxFit.fill,
-                                    shimmerBaseColor: Colors.grey[300]!,
-                                    shimmerHighlightColor:
-                                    Colors.grey[100]!,
-                                    boxDecoration: BoxDecoration(
-                                      borderRadius:
-                                      BorderRadius.circular(16.r),
-                                    ),
-                                    shimmerBackColor: Colors.grey[100]!,
-                                    errorWidget: const Center(
-                                        child: Icon(Icons.error)),
-                                    alignment: Alignment.center,
-                                    imageBuilder:
-                                        (context, imageProvider) =>
-                                        Container(
-                                          decoration: BoxDecoration(
-                                            shape: BoxShape.rectangle,
-                                            borderRadius:
-                                            BorderRadius.circular(16.r),
-                                            image: DecorationImage(
-                                              image: imageProvider,
-                                              fit: BoxFit.cover,
-                                            ),
-                                          ),
-                                        ),
-                                  )
+                                      ? FancyImage(
+                                          imagePath: imageUrl,
+                                          width:
+                                              MediaQuery.sizeOf(context).width,
+                                          height: MediaQuery.sizeOf(context)
+                                                  .height *
+                                              0.2,
+                                        )
                                       : const Center(child: Icon(Icons.error)),
                                 );
                               },
@@ -189,7 +170,7 @@ class _ProjectDetailsScreenState extends State<ProjectDetailsScreen> {
                                     Text(
                                       'View Project Information',
                                       style:
-                                      AppStyles.font16DarkBlueBold.copyWith(
+                                          AppStyles.font16DarkBlueBold.copyWith(
                                         color: Colors.blue,
                                       ),
                                     ),
@@ -225,8 +206,7 @@ class _ProjectDetailsScreenState extends State<ProjectDetailsScreen> {
                                       ),
                                       TextSpan(
                                         text:
-                                        '${formatDate(project.data.startDate) ??
-                                            ''}\n\n',
+                                            '${formatDate(project.data.startDate) ?? ''}\n\n',
                                         style: AppStyles.font16BlackMedium,
                                       ),
                                       TextSpan(
@@ -238,8 +218,8 @@ class _ProjectDetailsScreenState extends State<ProjectDetailsScreen> {
                                       ),
                                       TextSpan(
                                         text:
-                                        formatDate(project.data.endDate) ??
-                                            '',
+                                            formatDate(project.data.endDate) ??
+                                                '',
                                         style: AppStyles.font16BlackMedium,
                                       ),
                                     ],
@@ -248,9 +228,7 @@ class _ProjectDetailsScreenState extends State<ProjectDetailsScreen> {
                               ),
                             verticalSpace(32),
                             Text(
-                              'More Projects By ${profileDataCached?.data?.user
-                                  ?.firstName ?? ''} ${profileDataCached?.data
-                                  ?.user?.lastName ?? ''}',
+                              'More Projects By ${profileData?.data?.user?.firstName ?? ''} ${profileData?.data?.user?.lastName ?? ''}',
                               style: AppStyles.font16BlackSemiBold,
                             ),
                             verticalSpace(16),
@@ -258,7 +236,7 @@ class _ProjectDetailsScreenState extends State<ProjectDetailsScreen> {
                               shrinkWrap: true,
                               physics: ClampingScrollPhysics(),
                               gridDelegate:
-                              SliverGridDelegateWithFixedCrossAxisCount(
+                                  SliverGridDelegateWithFixedCrossAxisCount(
                                 crossAxisCount: 2,
                                 crossAxisSpacing: 16.w,
                                 mainAxisSpacing: 16.h,
