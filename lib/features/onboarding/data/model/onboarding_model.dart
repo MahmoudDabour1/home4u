@@ -1,4 +1,5 @@
 import 'package:home4u/core/theming/app_assets.dart';
+import 'package:home4u/locale/app_locale.dart';
 
 class OnboardingModel {
   final String title;
@@ -14,27 +15,23 @@ class OnboardingModel {
 
 List<OnboardingModel> onBoardingItems = [
   OnboardingModel(
-    title: 'Civil works and finishing services',
-    description:
-        "Comprehensive services including civil works and finishing, with engineering consultations and 2D and 3D designs, in addition to free and paid services through our platform.",
+    title: AppLocale.onBoardingTitle1,
+    description: AppLocale.onBoardingDescription1,
     image: AppAssets.onboardingOneFour,
   ),
   OnboardingModel(
-    title: 'Book Your Visit',
-    description:
-    "Comprehensive services including civil works and finishing, with engineering consultations and 2D and 3D designs, in addition to free and paid services through our platform.",
+    title: AppLocale.onBoardingTitle2,
+    description: AppLocale.onBoardingDescription2,
     image: AppAssets.onboardingTwo,
   ),
   OnboardingModel(
-    title: 'Make Your Offer',
-    description:
-    "Comprehensive services including civil works and finishing, with engineering consultations and 2D and 3D designs, in addition to free and paid services through our platform.",
+    title: AppLocale.onBoardingTitle3,
+    description: AppLocale.onBoardingDescription3,
     image: AppAssets.onboardingThree,
   ),
   OnboardingModel(
-    title: 'Make Your Offer',
-    description:
-    "Comprehensive services including civil works and finishing, with engineering consultations and 2D and 3D designs, in addition to free and paid services through our platform.",
+    title: AppLocale.onBoardingTitle4,
+    description: AppLocale.onBoardingDescription4,
     image: AppAssets.onboardingOneFour,
   ),
 ];

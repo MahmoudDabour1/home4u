@@ -13,7 +13,9 @@ class _ApiService implements ApiService {
     this._dio, {
     this.baseUrl,
     this.errorLogger,
-  });
+  }) {
+    baseUrl ??= 'http://home4u.gosoftcloud.com';
+  }
 
   final Dio _dio;
 

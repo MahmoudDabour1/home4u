@@ -23,14 +23,20 @@ class OtherAuthButton extends StatelessWidget {
             height: 32.h,
           ),
           horizontalSpace(16),
-          Text(
-            text,
-            style: AppStyles.font16DarkBlueBold,
+          Flexible(
+            child: Text(
+              text,
+              style: AppStyles.font16DarkBlueBold,
+              overflow: TextOverflow.ellipsis,
+              maxLines: 1,
+              textAlign: TextAlign.center,
+            ),
           ),
         ],
       ),
       style: ButtonStyle(
         padding: WidgetStateProperty.all(EdgeInsets.symmetric(vertical: 16.h)),
+        backgroundColor: WidgetStateProperty.all(AppColors.textFieldFillColor),
         shape: WidgetStateProperty.all(
           RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(16.r),
