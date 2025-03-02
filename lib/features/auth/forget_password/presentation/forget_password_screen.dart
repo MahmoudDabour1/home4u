@@ -14,17 +14,17 @@ class ForgetPasswordScreen extends StatelessWidget {
     return Scaffold(
       body: SafeArea(
           child: SingleChildScrollView(
-        child: Column(
-          children: [
-            AuthWelcomeData(
-              headText: AppLocale.forgetPasswordK.getString(context),
-              subText: AppLocale.enterYourEmailAddress.getString(context),
+            child: Column(
+              children: [
+                AuthWelcomeData(
+                  headText: AppLocale.forgetPasswordK.getString(context),
+                  subText: AppLocale.enterYourEmailAddress.getString(context),
+                ),
+                ForgetPasswordBody(),
+                ForgetPasswordBlocListener(),
+              ],
             ),
-            ForgetPasswordBody(),
-            ForgetPasswordBlocListener(),
-          ],
-        ),
-      )),
+          )),
     );
   }
 }

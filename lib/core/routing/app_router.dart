@@ -22,6 +22,10 @@ import '../../features/layout/presentation/bottom_nav_bar_layout.dart';
 import '../../features/onboarding/presentation/onboarding_screen.dart';
 import '../../features/profile/data/models/certifications/get_certifications_response_model.dart';
 import '../../features/profile/data/models/projects/get_projects_response_model.dart';
+import '../../features/profile/logic/certifications/certifications_cubit.dart';
+import '../../features/profile/logic/profile/profile_cubit.dart';
+import '../../features/profile/logic/project/project_cubit.dart';
+import '../../features/profile/logic/services/services_cubit.dart';
 import '../../features/profile/presentation/add_project_screen.dart';
 import '../../features/profile/presentation/edit_profile_screen.dart';
 import '../../features/profile/presentation/profile_screen.dart';
@@ -122,7 +126,7 @@ class AppRouter {
           builder: (_) => ProjectDetailsScreen(projectId: projectId),
         );
 
-        case Routes.editProfileScreen:
+      case Routes.editProfileScreen:
         return MaterialPageRoute(
           builder: (_) => EditProfileScreen(),
         );
