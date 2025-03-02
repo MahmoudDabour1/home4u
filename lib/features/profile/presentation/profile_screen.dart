@@ -1,15 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:home4u/core/helpers/shared_pref_helper.dart';
 import 'package:home4u/core/helpers/shared_pref_keys.dart';
 import 'package:home4u/features/profile/logic/certifications/certifications_cubit.dart';
 import 'package:home4u/features/profile/logic/profile/profile_cubit.dart';
 import 'package:home4u/features/profile/logic/project/project_cubit.dart';
-import 'package:home4u/features/profile/presentation/widgets/certifications_widgets/certifications_body.dart';
+import 'package:home4u/features/profile/presentation/widgets/profile_widgets/profile_tab_bar_view_body.dart';
 import 'package:home4u/features/profile/presentation/widgets/profile_widgets/profile_upper_widget.dart';
-import 'package:home4u/features/profile/presentation/widgets/projects_widgets/projects_body.dart';
-import 'package:home4u/features/profile/presentation/widgets/services_widget/services_body.dart';
 import 'package:home4u/features/profile/presentation/widgets/profile_widgets/tap_bar_widget.dart';
 
 class ProfileScreen extends StatefulWidget {
@@ -33,7 +30,8 @@ class _ProfileScreenState extends State<ProfileScreen>
   Future<void> _initializeProfileData() async {
     context.read<ProjectCubit>().getProjects();
     context.read<CertificationsCubit>().getAllCertifications();
-    final userType = await SharedPrefHelper.getString(SharedPrefKeys.userType);
+    final String userType =
+    await SharedPrefHelper.getString(SharedPrefKeys.userType);
     if (userType == "ENGINEER") {
       context.read<ProfileCubit>().getEngineerProfileData();
     } else {
@@ -43,9 +41,9 @@ class _ProfileScreenState extends State<ProfileScreen>
 
   @override
   Widget build(BuildContext context) {
-    super.build(context); // Ensure the mixin is called
+    super.build(context);
     return DefaultTabController(
-      length: 4, // Same as the number of tabs
+      length: 4,
       child: Scaffold(
         body: SafeArea(
           child: NestedScrollView(
@@ -56,30 +54,9 @@ class _ProfileScreenState extends State<ProfileScreen>
                 TapBarWidget(),
               ];
             },
-            body: TapBarViewBody(),
+            body: ProfileTapBarViewBody(),
           ),
         ),
-      ),
-    );
-  }
-}
-
-class TapBarViewBody extends StatelessWidget {
-  const TapBarViewBody({
-    super.key,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return Padding(
-      padding: EdgeInsets.symmetric(horizontal: 24.w),
-      child: TabBarView(
-        children: [
-          ProjectsBody(),
-          ServicesBody(),
-          Center(child: Text("Pricing Content")),
-          CertificationsBody(),
-        ],
       ),
     );
   }

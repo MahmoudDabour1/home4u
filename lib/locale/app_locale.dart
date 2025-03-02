@@ -134,6 +134,10 @@ class AppLocale {
   static const String behance = 'Behance';
   static const String linkedin = 'Linkedin';
   static const String updateYourProfile = 'Update your profile';
+  static const String startData = 'Start Date : ';
+  static const String endData = 'End Date : ';
+  static const String usedTools = 'Used Tools : \n';
+  static const String moreProjectsHeader = 'More Projects By ';
 
   static List<String> bottomNavItems = [
     'Home',
@@ -159,11 +163,11 @@ class AppLocale {
     onBoardingTitle3: 'Civil works and finishing services 3',
     onBoardingTitle4: 'Civil works and finishing services 4',
     onBoardingDescription1:
-        'Comprehensive services including civil works and finishing, with engineering consultations and 2D and 3D designs, in addition to free and paid services through our platform.',
+    'Comprehensive services including civil works and finishing, with engineering consultations and 2D and 3D designs, in addition to free and paid services through our platform.',
     onBoardingDescription2:
-        'Comprehensive services including civil works and finishing, with engineering consultations and 2D and 3D designs, in addition to free and paid services through our platform. 2',
+    'Comprehensive services including civil works and finishing, with engineering consultations and 2D and 3D designs, in addition to free and paid services through our platform. 2',
     onBoardingDescription3:
-        'Comprehensive services including civil works and finishing, with engineering consultations and 2D and 3D designs, in addition to free and paid services through our platform. 3',
+    'Comprehensive services including civil works and finishing, with engineering consultations and 2D and 3D designs, in addition to free and paid services through our platform. 3',
     onBoardingDescription4: '',
     toggleLanguage: 'en',
     startButton: 'Start',
@@ -235,7 +239,7 @@ class AppLocale {
     cancel: 'Cancel',
     deletedSuccessfully: 'Deleted Successfully',
     areYouSureYouWantToDeleteThisItem:
-        'Are you sure you want to delete this item?',
+    'Are you sure you want to delete this item?',
     addProject: 'Add Project',
     choose: 'Choose',
     setStartDate: 'Set Start Date',
@@ -284,7 +288,10 @@ class AppLocale {
     behance: 'Behance',
     linkedin: 'Linkedin',
     updateYourProfile: 'Update your profile',
-
+    startData: 'Start Date : ',
+    endData: 'End Date : ',
+    usedTools: 'Used Tools : ',
+    moreProjectsHeader: 'More Projects By ',
   };
 
   static const Map<String, dynamic> ar = {
@@ -293,11 +300,11 @@ class AppLocale {
     onBoardingTitle3: 'خدمات الأعمال المدنية والتشطيب 3',
     onBoardingTitle4: 'خدمات الأعمال المدنية والتشطيب 4',
     onBoardingDescription1:
-        'خدمات شاملة تشمل الأعمال المدنية والتشطيب، مع استشارات هندسية وتصاميم ثنائية وثلاثية الأبعاد، بالإضافة إلى خدمات مجانية ومدفوعة عبر منصتنا.',
+    'خدمات شاملة تشمل الأعمال المدنية والتشطيب، مع استشارات هندسية وتصاميم ثنائية وثلاثية الأبعاد، بالإضافة إلى خدمات مجانية ومدفوعة عبر منصتنا.',
     onBoardingDescription2:
-        'خدمات شاملة تشمل الأعمال المدنية والتشطيب، مع استشارات هندسية وتصاميم ثنائية وثلاثية الأبعاد، بالإضافة إلى خدمات مجانية ومدفوعة عبر منصتنا. 2',
+    'خدمات شاملة تشمل الأعمال المدنية والتشطيب، مع استشارات هندسية وتصاميم ثنائية وثلاثية الأبعاد، بالإضافة إلى خدمات مجانية ومدفوعة عبر منصتنا. 2',
     onBoardingDescription3:
-        'خدمات شاملة تشمل الأعمال المدنية والتشطيب، مع استشارات هندسية وتصاميم ثنائية وثلاثية الأبعاد، بالإضافة إلى خدمات مجانية ومدفوعة عبر منصتنا. 3',
+    'خدمات شاملة تشمل الأعمال المدنية والتشطيب، مع استشارات هندسية وتصاميم ثنائية وثلاثية الأبعاد، بالإضافة إلى خدمات مجانية ومدفوعة عبر منصتنا. 3',
     onBoardingDescription4: '',
     toggleLanguage: 'العربية',
     startButton: 'ابدأ',
@@ -417,5 +424,9 @@ class AppLocale {
     behance: 'بيهانس',
     linkedin: 'لينكد إن',
     updateYourProfile: 'تحديث ملفك الشخصي',
+    startData: 'تاريخ البدء : ',
+    endData: 'تاريخ الانتهاء : ',
+    usedTools: 'الأدوات المستخدمة : ',
+    moreProjectsHeader: 'المزيد من المشاريع لـ ',
   };
 }

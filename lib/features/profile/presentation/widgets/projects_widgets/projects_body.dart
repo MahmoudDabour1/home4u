@@ -5,6 +5,7 @@ import 'package:home4u/core/extensions/navigation_extension.dart';
 import 'package:home4u/core/routing/routes.dart';
 import 'package:pull_to_refresh_flutter3/pull_to_refresh_flutter3.dart';
 
+import '../../../../../core/di/dependency_injection.dart';
 import '../../../../../core/widgets/app_custom_add_button.dart';
 import '../../../../../locale/app_locale.dart';
 import '../../../logic/project/project_cubit.dart';
@@ -19,10 +20,10 @@ class ProjectsBody extends StatefulWidget {
 
 class _ProjectsBodyState extends State<ProjectsBody> {
   final RefreshController _refreshController =
-      RefreshController(initialRefresh: false);
+  RefreshController(initialRefresh: false);
 
   void _onRefresh() async {
-    await context.read<ProjectCubit>().getProjects();
+    // await context.read<ProjectCubit>().getProjects();
     _refreshController.refreshCompleted();
   }
 
