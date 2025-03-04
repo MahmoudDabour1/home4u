@@ -10,37 +10,39 @@ class AppStyles {
     color: AppColors.blackColor,
     fontWeight: FontWeightHelper.medium,
   );
-  static  TextStyle font16BlackLight = TextStyle(
+  static TextStyle font16BlackLight = TextStyle(
     fontSize: 16.sp,
     color: AppColors.blackColor,
     fontWeight: FontWeightHelper.light,
   );
 
-  static  TextStyle font14BlackLight = TextStyle(
+  static TextStyle font14BlackLight = TextStyle(
     fontSize: 14.sp,
     color: AppColors.blackColor,
     fontWeight: FontWeightHelper.light,
   );
 
-  static  TextStyle font16DarkBlueLight = TextStyle(
+  static TextStyle font16DarkBlueLight = TextStyle(
     fontSize: 16.sp,
     color: AppColors.secondaryColor,
     fontWeight: FontWeightHelper.light,
   );
-  static  TextStyle font16DarkBlueBold = TextStyle(
+  static TextStyle font16DarkBlueBold = TextStyle(
     fontSize: 16.sp,
     color: AppColors.secondaryColor,
     fontWeight: FontWeightHelper.bold,
-  ); static  TextStyle font16DarkBlueRegular = TextStyle(
+  );
+  static TextStyle font16DarkBlueRegular = TextStyle(
     fontSize: 16.sp,
     color: AppColors.secondaryColor,
     fontWeight: FontWeightHelper.regular,
   );
-  static  TextStyle font20WhiteBold = TextStyle(
+  static TextStyle font20WhiteBold = TextStyle(
     fontSize: 20.sp,
     color: AppColors.whiteColor,
     fontWeight: FontWeightHelper.bold,
-  );static  TextStyle font14DarkBlueBold= TextStyle(
+  );
+  static TextStyle font14DarkBlueBold = TextStyle(
     fontSize: 14.sp,
     color: AppColors.secondaryColor,
     fontWeight: FontWeightHelper.bold,
@@ -59,7 +61,8 @@ class AppStyles {
     fontSize: 24.sp,
     color: AppColors.blackColor,
     fontWeight: FontWeightHelper.medium,
-  ); static TextStyle font16BlackSemiBold = TextStyle(
+  );
+  static TextStyle font16BlackSemiBold = TextStyle(
     fontSize: 16.sp,
     color: AppColors.blackColor,
     fontWeight: FontWeightHelper.semiBold,

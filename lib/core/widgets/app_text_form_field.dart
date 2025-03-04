@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:home4u/core/theming/app_styles.dart';
 import 'package:home4u/core/widgets/get_common_input_decoration.dart';
 
-
 class AppTextFormField extends StatelessWidget {
   final String labelText;
   final Widget? suffixIcon;
@@ -44,7 +43,10 @@ class AppTextFormField extends StatelessWidget {
         FocusManager.instance.primaryFocus?.unfocus();
       },
       textInputAction: TextInputAction.next,
-      decoration: decoration ?? getCommonInputDecoration(labelText: labelText),
+      decoration: decoration ??
+          getCommonInputDecoration(
+            labelText: labelText,
+          ),
       obscureText: isObscureText ?? false,
       style: AppStyles.font16BlackLight,
       validator: (value) {

@@ -18,6 +18,7 @@ import 'package:home4u/features/layout/logic/bottom_nav_cubit.dart';
 import 'package:home4u/features/profile/presentation/add_certification_screen.dart';
 
 import '../../features/auth/login/presentation/login_screen.dart';
+import '../../features/exhibition/presentation/business_overview_screen.dart';
 import '../../features/layout/presentation/bottom_nav_bar_layout.dart';
 import '../../features/onboarding/presentation/onboarding_screen.dart';
 import '../../features/profile/data/models/certifications/get_certifications_response_model.dart';
@@ -129,6 +130,10 @@ class AppRouter {
       case Routes.editProfileScreen:
         return MaterialPageRoute(
           builder: (_) => EditProfileScreen(),
+        );
+      case Routes.businessOverviewScreen:
+        return MaterialPageRoute(
+          builder: (_) => BusinessOverviewScreen(),
         );
       default:
         return null;
