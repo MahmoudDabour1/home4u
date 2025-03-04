@@ -34,5 +34,5 @@ abstract class AppAssets {
   static const String locationIcon = 'assets/svgs/location.svg';
   static const String phoneCallIcon = 'assets/svgs/phone_call.svg';
   static const String phoneMessageContactIcon = 'assets/svgs/phone_contact.svg';
-
+  static const String overviewIcon = 'assets/svgs/overview.svg';
 }
