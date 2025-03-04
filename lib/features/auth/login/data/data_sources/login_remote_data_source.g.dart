@@ -14,7 +14,7 @@ class _LoginRemoteDataSource implements LoginRemoteDataSource {
     this.baseUrl,
     this.errorLogger,
   }) {
-    baseUrl ??= 'http://home4u.gosoftcloud.com';
+    baseUrl ??= 'https://home4u.gosoftcloud.com';
   }
 
   final Dio _dio;

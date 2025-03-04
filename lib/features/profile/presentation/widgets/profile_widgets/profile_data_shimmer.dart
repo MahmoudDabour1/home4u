@@ -67,8 +67,8 @@ class ProfileDataShimmer extends StatelessWidget {
             child: ClipRRect(
               clipBehavior: Clip.antiAlias,
               child: CircleAvatar(
-                  radius: 51.r,
-                  foregroundImage: AssetImage(AppAssets.facebook)),
+                  radius: 51.r,)
+                  // foregroundImage: AssetImage("assets/images/facebook.png")),
             ),
           ),
         ),
