@@ -151,6 +151,13 @@ class AppLocale {
   static const String instagram = 'Instagram';
   static const String website = 'Website';
   static const String saveChanges = 'Save Changes';
+  static const String review = 'Review';
+  static const String oneStars = '1 Stars';
+  static const String twoStars = '2 Stars';
+  static const String threeStars = '3 Stars';
+  static const String fourStars = '4 Stars';
+  static const String fiveStars = '5 Stars';
+  static const String helpful = 'helpful';
 
   static List<String> bottomNavItems = [
     'Home',
@@ -316,6 +323,13 @@ class AppLocale {
     website: 'Website',
     saveChanges: 'Save Changes',
     overviewDescription : 'Overview Description',
+    review : 'Review',
+    oneStars : '1 Stars',
+    twoStars : '2 Stars',
+    threeStars : '3 Stars',
+    fourStars : '4 Stars',
+    fiveStars : '5 Stars',
+    helpful : 'helpful',
   };
 
   static const Map<String, dynamic> ar = {
@@ -463,5 +477,12 @@ class AppLocale {
     socialMedia: 'وسائل التواصل الاجتماعي',
     saveChanges: 'حفظ التغييرات',
     overviewDescription : 'وصف عام',
+    review : 'التقييم',
+    oneStars : 'نجمة واحدة',
+    twoStars : 'نجمتين',
+    threeStars : 'ثلاث نجوم',
+    fourStars : 'أربع نجوم',
+    fiveStars : 'خمس نجوم',
+    helpful : 'مفيد',
   };
 }

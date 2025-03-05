@@ -14,18 +14,13 @@ class Assets {
   static const String imagesAppIcon = 'assets/images/app_icon.png';
   static const String imagesArrow = 'assets/images/arrow.png';
   static const String imagesFacebook = 'assets/images/facebook.png';
-  static const String imagesForgetPassword = 'assets/images/forget_password.png';
   static const String imagesGoogle = 'assets/images/google.png';
   static const String imagesLock = 'assets/images/lock.png';
-  static const String imagesLoginImage = 'assets/images/login_image.png';
-  static const String imagesNewPassword = 'assets/images/new_password.png';
   static const String imagesOnboardingOneFour = 'assets/images/onboarding_one_four.png';
   static const String imagesOnboardingThree = 'assets/images/onboarding_three.png';
   static const String imagesOnboardingTwo = 'assets/images/onboarding_two.png';
   static const String imagesProfileBackImage = 'assets/images/profile_back_image.png';
-  static const String imagesSignupImage = 'assets/images/signup_image.png';
   static const String imagesSplash = 'assets/images/splash.png';
-  static const String imagesVerification = 'assets/images/verification.png';
   static const String svgsArrowDown = 'assets/svgs/arrow_down.svg';
   static const String svgsArrowLeft = 'assets/svgs/arrow_left.svg';
   static const String svgsArrowRight = 'assets/svgs/arrow_right.svg';
@@ -37,6 +32,7 @@ class Assets {
   static const String svgsFaqs = 'assets/svgs/faqs.svg';
   static const String svgsHouseBuilding = 'assets/svgs/house_building.svg';
   static const String svgsInstagramSvgIcon = 'assets/svgs/instagram_svg_icon.svg';
+  static const String svgsLikeSvgIcon = 'assets/svgs/like_svg_icon.svg';
   static const String svgsLoadImages = 'assets/svgs/load_images.svg';
   static const String svgsLocation = 'assets/svgs/location.svg';
   static const String svgsLockBlack = 'assets/svgs/lock_black.svg';

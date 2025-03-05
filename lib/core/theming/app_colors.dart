@@ -9,5 +9,8 @@ abstract class AppColors {
   static const textFieldFillColor = Color(0xFFFBFAF9);
   static const whiteColor = Color(0xFFFFFFFF);
   static const blackColor = Color(0xFF000000);
-  static const  iconsColor = Color(0xFF656565);
+  static const iconsColor = Color(0xFF656565);
+  static const scaffoldBusinessBackgroundColor = Color(0xffEBEBEB);
+  static const ratingColor = Color(0xffFFE100);
+  static const ratingNotFilledColor = Color(0xffD9D9D9);
 }
