@@ -1,17 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_localization/flutter_localization.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:home4u/core/extensions/navigation_extension.dart';
 import 'package:home4u/core/helpers/shared_pref_helper.dart';
 import 'package:home4u/core/helpers/shared_pref_keys.dart';
 import 'package:home4u/core/routing/routes.dart';
-import 'package:home4u/core/theming/app_colors.dart';
-import 'package:home4u/core/widgets/app_custom_button.dart';
 import 'package:home4u/features/settings/presentation/widgets/switch_list_tile_widget.dart';
 
-import '../../../../core/localization/app_localization_cubit.dart';
-import '../../../../core/localization/app_localization_state.dart';
 import '../../../../core/theming/app_assets.dart';
 import '../../../../core/theming/app_styles.dart';
 import '../../../../core/utils/spacing.dart';

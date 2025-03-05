@@ -27,4 +27,15 @@ abstract class AppAssets {
   static const String managePermissionsImageSvg = 'assets/svgs/manage_permissions.svg';
   static const String notificationImageSvg = 'assets/svgs/notificationsvg.svg';
   static const String faqsImageSvg = 'assets/svgs/faqs.svg';
+  static const String exhibitionHouseBuilding = 'assets/svgs/house_building.svg';
+  static const String facebookIcon = 'assets/svgs/facebook_svg_icon.svg';
+  static const String instagramIcon = 'assets/svgs/instagram_svg_icon.svg';
+  static const String websiteIcon = 'assets/svgs/website.svg';
+  static const String locationIcon = 'assets/svgs/location.svg';
+  static const String phoneCallIcon = 'assets/svgs/phone_call.svg';
+  static const String phoneMessageContactIcon = 'assets/svgs/phone_contact.svg';
+  static const String overviewIcon = 'assets/svgs/overview.svg';
+  static const String reviewIcon = 'assets/svgs/personal_rating.svg';
+  static const String likeIcon = 'assets/svgs/like_svg_icon.svg';
+  static const String productPreviewIcon = 'assets/svgs/product_preview_icon.svg';
 }

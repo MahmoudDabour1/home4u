@@ -16,4 +16,9 @@ abstract class Routes{
   static const String addCertificationScreen = '/addCertificationScreen';
   static const String projectDetailsScreen = '/projectDetailsScreen';
   static const String editProfileScreen = '/editProfileScreen';
+
+  ///Exhibitions ,Stores && Workshops
+  static const String businessOverviewScreen = '/businessOverviewScreen';
+  static const String businessReviewScreen = '/businessReviewScreen';
+  static const String productPreviewScreen = '/productPreviewScreen';
 }
