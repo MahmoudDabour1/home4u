@@ -27,4 +27,19 @@ abstract class AppAssets {
   static const String managePermissionsImageSvg = 'assets/svgs/manage_permissions.svg';
   static const String notificationImageSvg = 'assets/svgs/notificationsvg.svg';
   static const String faqsImageSvg = 'assets/svgs/faqs.svg';
+  static const String editIconSvg = 'assets/svgs/edit_icon_svg.svg';
+  static const String deleteIconSvg = 'assets/svgs/delete_icon_svg.svg';
+  static const String furnitureSvg = 'assets/svgs/furniture_svg.svg';
+  static const String priceSvg = 'assets/svgs/price_svg.svg';
+  static const String stockSvg = 'assets/svgs/stock_svg.svg';
+  static const String arrowRightBlackSvg = 'assets/svgs/arrow_right_black_svg.svg';
+  static const String searchSvg = 'assets/svgs/search_svg.svg';
+  static const String filterSvg = 'assets/svgs/filter_svg.svg';
+  static const String appLogoSvg = 'assets/svgs/app_logo_svg.svg';
+  static const String overViewSvg = 'assets/svgs/over_view_svg.svg';
+  static const String reviewSvg = 'assets/svgs/review_svg.svg';
+  static const String settingDarkGraySvg = 'assets/svgs/settings_drawer_svg.svg';
+  static const String addProductSvg = 'assets/svgs/add_product_svg.svg';
+  static const productSvg = 'assets/svgs/product_svg.svg';
+
 }

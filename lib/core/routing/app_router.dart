@@ -20,6 +20,7 @@ import 'package:home4u/features/profile/presentation/add_certification_screen.da
 import '../../features/auth/login/presentation/login_screen.dart';
 import '../../features/layout/presentation/bottom_nav_bar_layout.dart';
 import '../../features/onboarding/presentation/onboarding_screen.dart';
+import '../../features/products/presentation/products_screen.dart';
 import '../../features/profile/data/models/certifications/get_certifications_response_model.dart';
 import '../../features/profile/data/models/projects/get_projects_response_model.dart';
 import '../../features/profile/logic/certifications/certifications_cubit.dart';
@@ -129,6 +130,9 @@ class AppRouter {
       case Routes.editProfileScreen:
         return MaterialPageRoute(
           builder: (_) => EditProfileScreen(),
+        );case Routes.productsScreen:
+        return MaterialPageRoute(
+          builder: (_) => ProductsScreen(),
         );
       default:
         return null;

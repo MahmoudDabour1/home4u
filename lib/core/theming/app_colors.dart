@@ -10,4 +10,9 @@ abstract class AppColors {
   static const whiteColor = Color(0xFFFFFFFF);
   static const blackColor = Color(0xFF000000);
   static const  iconsColor = Color(0xFF656565);
+  static const  containersColor = Color(0xFFEBEBEB);
+  static const  blueColor = Color(0xFF0000BA);
+  static const  yellowColor = Color(0xFFFFE100);
+  static const  darkGrayColor = Color(0xFF808080);
+  static const  darkBlueColor = Color(0xFF282560);
 }

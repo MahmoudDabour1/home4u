@@ -5,7 +5,9 @@ import 'package:flutter_svg/svg.dart';
 class AppCustomIconButton extends StatelessWidget {
   final String image;
   final VoidCallback onPressed;
-  const AppCustomIconButton({super.key, required this.image, required this.onPressed});
+  final double? width;
+  final double? height;
+  const AppCustomIconButton({super.key, required this.image, required this.onPressed,this.width,this.height});
 
   @override
   Widget build(BuildContext context) {
@@ -13,8 +15,8 @@ class AppCustomIconButton extends StatelessWidget {
       onPressed: onPressed,
       icon: SvgPicture.asset(
         image,
-        width: 24.w,
-        height: 24.h,
+        width:width?? 24.w,
+        height:height?? 24.h,
       ),
     );
   }

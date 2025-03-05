@@ -157,6 +157,7 @@ class AppLocale {
 
   static const String updateCertification = 'Update Certification';
   static const String updateProject = 'Update Project';
+  static const String search = 'Search';
   static const Map<String, dynamic> en = {
     onBoardingTitle1: 'Civil works and finishing services',
     onBoardingTitle2: 'Civil works and finishing services 2',
@@ -292,6 +293,7 @@ class AppLocale {
     endData: 'End Date : ',
     usedTools: 'Used Tools : ',
     moreProjectsHeader: 'More Projects By ',
+    search: 'Search',
   };
 
   static const Map<String, dynamic> ar = {
@@ -428,5 +430,6 @@ class AppLocale {
     endData: 'تاريخ الانتهاء : ',
     usedTools: 'الأدوات المستخدمة : ',
     moreProjectsHeader: 'المزيد من المشاريع لـ ',
+    search: 'بحث',
   };
 }
