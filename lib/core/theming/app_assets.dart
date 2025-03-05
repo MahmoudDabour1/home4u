@@ -42,4 +42,15 @@ abstract class AppAssets {
   static const String addProductSvg = 'assets/svgs/add_product_svg.svg';
   static const productSvg = 'assets/svgs/product_svg.svg';
 
+  static const String exhibitionHouseBuilding = 'assets/svgs/house_building.svg';
+  static const String facebookIcon = 'assets/svgs/facebook_svg_icon.svg';
+  static const String instagramIcon = 'assets/svgs/instagram_svg_icon.svg';
+  static const String websiteIcon = 'assets/svgs/website.svg';
+  static const String locationIcon = 'assets/svgs/location.svg';
+  static const String phoneCallIcon = 'assets/svgs/phone_call.svg';
+  static const String phoneMessageContactIcon = 'assets/svgs/phone_contact.svg';
+  static const String overviewIcon = 'assets/svgs/overview.svg';
+  static const String reviewIcon = 'assets/svgs/personal_rating.svg';
+  static const String likeIcon = 'assets/svgs/like_svg_icon.svg';
+  static const String productPreviewIcon = 'assets/svgs/product_preview_icon.svg';
 }

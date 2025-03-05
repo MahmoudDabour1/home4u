@@ -18,15 +18,14 @@ import 'package:home4u/features/layout/logic/bottom_nav_cubit.dart';
 import 'package:home4u/features/profile/presentation/add_certification_screen.dart';
 
 import '../../features/auth/login/presentation/login_screen.dart';
+import '../../features/exhibition/presentation/business_overview_screen.dart';
+import '../../features/exhibition/presentation/business_review_screen.dart';
+import '../../features/exhibition/presentation/product_preview_screen.dart';
 import '../../features/layout/presentation/bottom_nav_bar_layout.dart';
 import '../../features/onboarding/presentation/onboarding_screen.dart';
 import '../../features/products/presentation/products_screen.dart';
 import '../../features/profile/data/models/certifications/get_certifications_response_model.dart';
 import '../../features/profile/data/models/projects/get_projects_response_model.dart';
-import '../../features/profile/logic/certifications/certifications_cubit.dart';
-import '../../features/profile/logic/profile/profile_cubit.dart';
-import '../../features/profile/logic/project/project_cubit.dart';
-import '../../features/profile/logic/services/services_cubit.dart';
 import '../../features/profile/presentation/add_project_screen.dart';
 import '../../features/profile/presentation/edit_profile_screen.dart';
 import '../../features/profile/presentation/profile_screen.dart';
@@ -134,6 +133,18 @@ class AppRouter {
         return MaterialPageRoute(
           builder: (_) => ProductsScreen(),
         );
+      case Routes.businessOverviewScreen:
+        return MaterialPageRoute(
+          builder: (_) => BusinessOverviewScreen(),
+        );
+      case Routes.businessReviewScreen:
+        return MaterialPageRoute(
+          builder: (_) => BusinessReviewScreen(),
+        );
+        case Routes.productPreviewScreen:
+          return MaterialPageRoute(
+            builder: (_) => ProductPreviewScreen(),
+          );
       default:
         return null;
     }

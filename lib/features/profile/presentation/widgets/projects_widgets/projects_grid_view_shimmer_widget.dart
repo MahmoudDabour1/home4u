@@ -25,6 +25,7 @@ class ProjectsGridViewShimmerWidget extends StatelessWidget {
             ),
             itemCount: 10,
             itemBuilder: (context, index) {
+              ///ToDo : Remove this [Ui Junk]
               return Skeletonizer(
                 enabled: true,
                 child: Stack(

@@ -20,6 +20,7 @@ class AppLocale {
   static const String continueWithGoogle = 'Continue with Google';
   static const String continueWithFacebook = 'Continue with Facebook';
   static const String emailAddress = 'Email Address';
+  static const String address = 'Address';
   static const String phoneNumber = 'Phone Number';
   static const String password = 'password';
   static const String confirmPassword = 'Confirm password';
@@ -77,6 +78,7 @@ class AppLocale {
   static const String uploadProjectImages = 'upload project images';
   static const String projectName = 'Project Name';
   static const String projectDescription = 'Project Description';
+  static const String overviewDescription = 'Overview Description';
   static const String projectStartData = 'Start Data';
   static const String projectEndData = 'End Data';
   static const String projectTools = 'Tools';
@@ -139,6 +141,32 @@ class AppLocale {
   static const String usedTools = 'Used Tools : \n';
   static const String moreProjectsHeader = 'More Projects By ';
 
+  ///Exhibition
+  static const String overview = 'Overview';
+  static const String general = 'General';
+  static const String exhibitionName = 'Exhibition Name';
+  static const String contactInformation = 'Contact Information';
+  static const String socialMedia = 'Social Media';
+  static const String facebook = 'Facebook';
+  static const String instagram = 'Instagram';
+  static const String website = 'Website';
+  static const String saveChanges = 'Save Changes';
+  static const String review = 'Review';
+  static const String oneStars = '1 Stars';
+  static const String twoStars = '2 Stars';
+  static const String threeStars = '3 Stars';
+  static const String fourStars = '4 Stars';
+  static const String fiveStars = '5 Stars';
+  static const String helpful = 'helpful';
+  static const String productPreview = 'Product Preview';
+  static const String productPreviewSubTitle = 'A brief overview highlighting key product\n details.';
+  static const String color = 'Color';
+  static const String price = 'Price';
+  static const String material = 'Material';
+  static const String dimensions = 'Dimensions';
+  static const String stock ='Stock';
+  static const String baseUnit = 'Base Unit';
+
   static List<String> bottomNavItems = [
     'Home',
     'Projects',
@@ -180,6 +208,7 @@ class AppLocale {
     continueWithGoogle: 'Continue with Google',
     continueWithFacebook: 'Continue with Facebook',
     emailAddress: 'Email Address',
+    address : 'Address',
     phoneNumber: 'Phone Number',
     password: 'Password',
     confirmPassword: 'Confirm password',
@@ -294,6 +323,31 @@ class AppLocale {
     usedTools: 'Used Tools : ',
     moreProjectsHeader: 'More Projects By ',
     search: 'Search',
+    overview: 'Overview',
+    general: 'General',
+    exhibitionName: 'Exhibition Name',
+    contactInformation: 'Contact Information',
+    socialMedia: 'Social Media',
+    facebook: 'Facebook',
+    instagram: 'Instagram',
+    website: 'Website',
+    saveChanges: 'Save Changes',
+    overviewDescription : 'Overview Description',
+    review : 'Review',
+    oneStars : '1 Stars',
+    twoStars : '2 Stars',
+    threeStars : '3 Stars',
+    fourStars : '4 Stars',
+    fiveStars : '5 Stars',
+    helpful : 'helpful',
+    productPreview : 'Product Preview',
+    productPreviewSubTitle : 'A brief overview highlighting key product\n details.',
+    color : 'Color',
+    price : 'Price',
+    material : 'Material',
+    dimensions : 'Dimensions',
+    stock : 'Stock',
+    baseUnit : 'Base Unit',
   };
 
   static const Map<String, dynamic> ar = {
@@ -318,6 +372,7 @@ class AppLocale {
     continueWithGoogle: 'المتابعة بحساب جوجل',
     continueWithFacebook: 'المتابعة بحساب الفيسبوك',
     emailAddress: 'البريد الإلكتروني',
+    address : 'العنوان',
     phoneNumber: 'رقم الهاتف',
     password: 'كلمة المرور',
     confirmPassword: 'تأكيد كلمة المرور',
@@ -430,6 +485,31 @@ class AppLocale {
     endData: 'تاريخ الانتهاء : ',
     usedTools: 'الأدوات المستخدمة : ',
     moreProjectsHeader: 'المزيد من المشاريع لـ ',
+    overview: 'نظرة عامة',
+    general: 'عام',
+    exhibitionName: 'اسم المعرض',
+    contactInformation: 'معلومات الاتصال',
+    facebook: 'فيسبوك',
+    instagram: 'انستجرام',
+    website: 'الموقع الإلكتروني',
+    socialMedia: 'وسائل التواصل الاجتماعي',
+    saveChanges: 'حفظ التغييرات',
+    overviewDescription : 'وصف عام',
+    review : 'التقييم',
+    oneStars : 'نجمة واحدة',
+    twoStars : 'نجمتين',
+    threeStars : 'ثلاث نجوم',
+    fourStars : 'أربع نجوم',
+    fiveStars : 'خمس نجوم',
+    helpful : 'مفيد',
+    productPreview : 'معاينة المنتج',
+    productPreviewSubTitle : 'نظرة عامة موجزة تسلط الضوء على تفاصيل المنتج الرئيسية.',
+    color : 'اللون',
+    price : 'السعر',
+    material : 'المادة',
+    dimensions : 'الأبعاد',
+    stock : 'المخزون',
+    baseUnit : 'الوحدة الأساسية',
     search: 'بحث',
   };
 }
