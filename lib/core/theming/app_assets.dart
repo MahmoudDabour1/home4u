@@ -38,4 +38,5 @@ abstract class AppAssets {
   static const String reviewIcon = 'assets/svgs/personal_rating.svg';
   static const String likeIcon = 'assets/svgs/like_svg_icon.svg';
   static const String productPreviewIcon = 'assets/svgs/product_preview_icon.svg';
+  static const String submitIconSvg = 'assets/svgs/submit_svg_icon.svg';
 }

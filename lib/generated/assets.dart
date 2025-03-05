@@ -49,6 +49,7 @@ class Assets {
   static const String svgsPhoneContact = 'assets/svgs/phone_contact.svg';
   static const String svgsProductPreviewIcon = 'assets/svgs/product_preview_icon.svg';
   static const String svgsSettingSvg = 'assets/svgs/setting_svg.svg';
+  static const String svgsSubmitSvgIcon = 'assets/svgs/submit_svg_icon.svg';
   static const String svgsWebsite = 'assets/svgs/website.svg';
 
 }

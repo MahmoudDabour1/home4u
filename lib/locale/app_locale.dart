@@ -166,6 +166,7 @@ class AppLocale {
   static const String dimensions = 'Dimensions';
   static const String stock ='Stock';
   static const String baseUnit = 'Base Unit';
+  static const String submit = 'Submit';
 
   static List<String> bottomNavItems = [
     'Home',
@@ -346,6 +347,7 @@ class AppLocale {
     dimensions : 'Dimensions',
     stock : 'Stock',
     baseUnit : 'Base Unit',
+    submit : 'Submit',
   };
 
   static const Map<String, dynamic> ar = {
@@ -508,5 +510,6 @@ class AppLocale {
     dimensions : 'الأبعاد',
     stock : 'المخزون',
     baseUnit : 'الوحدة الأساسية',
+    submit : 'إرسال',
   };
 }
