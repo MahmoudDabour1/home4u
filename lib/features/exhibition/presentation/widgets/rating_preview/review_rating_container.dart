@@ -3,8 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_localization/flutter_localization.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:home4u/core/theming/app_styles.dart';
-import 'package:home4u/features/exhibition/presentation/widgets/rating_preview_widget/rating_stars_widget.dart';
-import 'package:home4u/features/exhibition/presentation/widgets/rating_preview_widget/slider_rating_box_widget.dart';
+import 'package:home4u/features/exhibition/presentation/widgets/rating_preview/rating_stars_widget.dart';
+import 'package:home4u/features/exhibition/presentation/widgets/rating_preview/slider_rating_box_widget.dart';
 import 'package:home4u/locale/app_locale.dart';
 
 class ReviewRatingContainer extends StatelessWidget {

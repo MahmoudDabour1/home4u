@@ -158,6 +158,14 @@ class AppLocale {
   static const String fourStars = '4 Stars';
   static const String fiveStars = '5 Stars';
   static const String helpful = 'helpful';
+  static const String productPreview = 'Product Preview';
+  static const String productPreviewSubTitle = 'A brief overview highlighting key product\n details.';
+  static const String color = 'Color';
+  static const String price = 'Price';
+  static const String material = 'Material';
+  static const String dimensions = 'Dimensions';
+  static const String stock ='Stock';
+  static const String baseUnit = 'Base Unit';
 
   static List<String> bottomNavItems = [
     'Home',
@@ -330,6 +338,14 @@ class AppLocale {
     fourStars : '4 Stars',
     fiveStars : '5 Stars',
     helpful : 'helpful',
+    productPreview : 'Product Preview',
+    productPreviewSubTitle : 'A brief overview highlighting key product\n details.',
+    color : 'Color',
+    price : 'Price',
+    material : 'Material',
+    dimensions : 'Dimensions',
+    stock : 'Stock',
+    baseUnit : 'Base Unit',
   };
 
   static const Map<String, dynamic> ar = {
@@ -484,5 +500,13 @@ class AppLocale {
     fourStars : 'أربع نجوم',
     fiveStars : 'خمس نجوم',
     helpful : 'مفيد',
+    productPreview : 'معاينة المنتج',
+    productPreviewSubTitle : 'نظرة عامة موجزة تسلط الضوء على تفاصيل المنتج الرئيسية.',
+    color : 'اللون',
+    price : 'السعر',
+    material : 'المادة',
+    dimensions : 'الأبعاد',
+    stock : 'المخزون',
+    baseUnit : 'الوحدة الأساسية',
   };
 }

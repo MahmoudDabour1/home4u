@@ -110,6 +110,8 @@ dependencies:
   pull_to_refresh_flutter3: ^2.0.2
   animate_do: ^3.3.4
   bottom_picker: ^2.11.0
+  #images slider
+  carousel_slider: ^5.0.0
 
 
 dev_dependencies:

@@ -47,6 +47,7 @@ class Assets {
   static const String svgsPersonalRating = 'assets/svgs/personal_rating.svg';
   static const String svgsPhoneCall = 'assets/svgs/phone_call.svg';
   static const String svgsPhoneContact = 'assets/svgs/phone_contact.svg';
+  static const String svgsProductPreviewIcon = 'assets/svgs/product_preview_icon.svg';
   static const String svgsSettingSvg = 'assets/svgs/setting_svg.svg';
   static const String svgsWebsite = 'assets/svgs/website.svg';
 

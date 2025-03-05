@@ -5,7 +5,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:home4u/core/theming/app_assets.dart';
 import 'package:home4u/core/theming/app_colors.dart';
 import 'package:home4u/core/theming/app_styles.dart';
-import 'package:home4u/features/exhibition/presentation/widgets/rating_preview_widget/rating_stars_widget.dart';
+import 'package:home4u/features/exhibition/presentation/widgets/rating_preview/rating_stars_widget.dart';
 
 class UserRatingOfProductItem extends StatelessWidget {
   const UserRatingOfProductItem({super.key});

@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_localization/flutter_localization.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:home4u/core/utils/spacing.dart';
-import 'package:home4u/features/exhibition/presentation/widgets/rating_preview_widget/review_rating_container.dart';
-import 'package:home4u/features/exhibition/presentation/widgets/rating_preview_widget/user_rating_of_product_item.dart';
+import 'package:home4u/features/exhibition/presentation/widgets/rating_preview/review_rating_container.dart';
+import 'package:home4u/features/exhibition/presentation/widgets/rating_preview/user_rating_of_product_item.dart';
 
 import '../../../core/theming/app_assets.dart';
 import '../../../core/theming/app_colors.dart';

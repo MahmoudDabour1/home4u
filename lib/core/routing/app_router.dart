@@ -20,6 +20,7 @@ import 'package:home4u/features/profile/presentation/add_certification_screen.da
 import '../../features/auth/login/presentation/login_screen.dart';
 import '../../features/exhibition/presentation/business_overview_screen.dart';
 import '../../features/exhibition/presentation/business_review_screen.dart';
+import '../../features/exhibition/presentation/product_preview_screen.dart';
 import '../../features/layout/presentation/bottom_nav_bar_layout.dart';
 import '../../features/onboarding/presentation/onboarding_screen.dart';
 import '../../features/profile/data/models/certifications/get_certifications_response_model.dart';
@@ -136,6 +137,10 @@ class AppRouter {
         return MaterialPageRoute(
           builder: (_) => BusinessReviewScreen(),
         );
+        case Routes.productPreviewScreen:
+          return MaterialPageRoute(
+            builder: (_) => ProductPreviewScreen(),
+          );
       default:
         return null;
     }
