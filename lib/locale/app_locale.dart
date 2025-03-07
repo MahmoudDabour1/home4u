@@ -178,7 +178,6 @@ class AppLocale {
   static const String businessType = 'Business Type';
   static const String products = 'Products';
   static const String offers = 'Offers';
-  static const String addProduct = 'Add Product';
   static const String outOfStock = 'Out of Stock';
   static const String filter = 'Filter';
   static const String availability = 'Availability:';
@@ -385,7 +384,6 @@ class AppLocale {
 
     products : 'Products',
     offers : 'Offers',
-    addProduct : 'Add Product',
     outOfStock : 'Out of Stock',
     filter : 'Filter',
     availability : 'Availability:',
@@ -572,7 +570,6 @@ class AppLocale {
     search: 'بحث',
     products : 'المنتجات',
     offers : 'العروض',
-    addProduct : 'إضافة منتج',
     outOfStock : 'نفذ من المخزن',
     filter : 'تصفية',
     availability : 'متوفر:',

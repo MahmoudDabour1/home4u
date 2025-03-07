@@ -20,7 +20,6 @@ class BusinessAddProductScreen extends StatelessWidget {
             BusinessHeaderWidget(
               headerTitle: AppLocale.addProduct.getString(context),
               headerIcon: AppAssets.addProductSvg,
-              menuOnPressed: () {},
             ),
             AddProductInfoStepper(),
           ],
