@@ -119,7 +119,7 @@ class AppLocale {
   static const String pleaseSelectImageWay = 'Please Select Image way';
   static const String camera = 'Camera';
   static const String gallery = 'Gallery';
-  static const String tapToAddImage = 'Tap to Add Image';
+  static const String tapToAddImage = 'Upload Image\n Or drag and drop';
   static const String name = 'Name';
   static const String description = 'Description';
   static const String update = 'Update';
@@ -166,6 +166,16 @@ class AppLocale {
   static const String dimensions = 'Dimensions';
   static const String stock ='Stock';
   static const String baseUnit = 'Base Unit';
+  static const String submit = 'Submit';
+  static const String addProduct = 'Add Product';
+  static const String productNameAr = 'Product Name AR';
+  static const String productNameEn = 'Product Name EN';
+  static const String productDescriptionAr = 'Product Description AR';
+  static const String productDescriptionEn = 'Product Description EN';
+  static const String dimensionLength = 'الطول - Length';
+  static const String dimensionWidth = 'العرض - Width';
+  static const String dimensionHeight = 'الارتفاع - Height';
+  static const String businessType = 'Business Type';
   static const String products = 'Products';
   static const String offers = 'Offers';
   static const String addProduct = 'Add Product';
@@ -362,6 +372,17 @@ class AppLocale {
     dimensions : 'Dimensions',
     stock : 'Stock',
     baseUnit : 'Base Unit',
+    submit : 'Submit',
+    addProduct : 'Add Product',
+    productNameAr : 'Product Name AR',
+    productNameEn : 'Product Name EN',
+    productDescriptionAr : 'Product Description AR',
+    productDescriptionEn : 'Product Description EN',
+    dimensionLength : 'الطول - Length',
+    dimensionWidth : 'العرض - Width',
+    dimensionHeight : 'الارتفاع - Height',
+    businessType : 'Business Type',
+
     products : 'Products',
     offers : 'Offers',
     addProduct : 'Add Product',
@@ -538,6 +559,16 @@ class AppLocale {
     dimensions : 'الأبعاد',
     stock : 'المخزون',
     baseUnit : 'الوحدة الأساسية',
+    submit : 'إرسال',
+    addProduct : 'إضافة منتج',
+    productNameAr : 'اسم المنتج بالعربية',
+    productNameEn : 'اسم المنتج بالإنجليزية',
+    productDescriptionAr : 'وصف المنتج بالعربية',
+    productDescriptionEn : 'وصف المنتج بالإنجليزية',
+    dimensionLength : 'الطول - Length',
+    dimensionWidth : 'العرض - Width',
+    dimensionHeight : 'الارتفاع - Height',
+    businessType : 'نوع العمل',
     search: 'بحث',
     products : 'المنتجات',
     offers : 'العروض',

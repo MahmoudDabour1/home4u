@@ -25,10 +25,13 @@ class Assets {
   static const String imagesVerification = 'assets/images/verification.png';
   static const String svgsAddProductSvg = 'assets/svgs/add_product_svg.svg';
   static const String svgsAppLogoSvg = 'assets/svgs/app_logo_svg.svg';
+  static const String svgsAddProductSvg = 'assets/svgs/add_product_svg.svg';
   static const String svgsArrowDown = 'assets/svgs/arrow_down.svg';
+  static const String svgsArrowDownSvg = 'assets/svgs/arrow_down_svg.svg';
   static const String svgsArrowLeft = 'assets/svgs/arrow_left.svg';
   static const String svgsArrowRight = 'assets/svgs/arrow_right.svg';
   static const String svgsArrowRightBlackSvg = 'assets/svgs/arrow_right_black_svg.svg';
+  static const String svgsArrowUp = 'assets/svgs/arrow_up.svg';
   static const String svgsChangeLanguage = 'assets/svgs/change_language.svg';
   static const String svgsDeleteIconSvg = 'assets/svgs/delete_icon_svg.svg';
   static const String svgsDeleteSvg = 'assets/svgs/delete_svg.svg';
@@ -64,6 +67,8 @@ class Assets {
   static const String svgsReviewSvg = 'assets/svgs/review_svg.svg';
   static const String svgsSearchSvg = 'assets/svgs/search_svg.svg';
   static const String svgsSettingSvg = 'assets/svgs/setting_svg.svg';
+  static const String svgsSubmitSvgIcon = 'assets/svgs/submit_svg_icon.svg';
+  static const String svgsUploadImageIcon = 'assets/svgs/upload_image_icon.svg';
   static const String svgsSettingsDrawerSvg = 'assets/svgs/settings_drawer_svg.svg';
   static const String svgsStarSvg = 'assets/svgs/star_svg.svg';
   static const String svgsStockSvg = 'assets/svgs/stock_svg.svg';

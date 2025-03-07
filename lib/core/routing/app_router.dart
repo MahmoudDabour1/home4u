@@ -19,6 +19,7 @@ import 'package:home4u/features/products/logic/products_cubit.dart';
 import 'package:home4u/features/profile/presentation/add_certification_screen.dart';
 
 import '../../features/auth/login/presentation/login_screen.dart';
+import '../../features/exhibition/presentation/business_add_product_screen.dart';
 import '../../features/exhibition/presentation/business_overview_screen.dart';
 import '../../features/exhibition/presentation/business_review_screen.dart';
 import '../../features/exhibition/presentation/product_preview_screen.dart';
@@ -146,6 +147,14 @@ class AppRouter {
       case Routes.productPreviewScreen:
         return MaterialPageRoute(
           builder: (_) => ProductPreviewScreen(),
+        );
+      case Routes.productPreviewScreen:
+        return MaterialPageRoute(
+          builder: (_) => ProductPreviewScreen(),
+        );
+      case Routes.businessAddProductScreen:
+        return MaterialPageRoute(
+          builder: (_) => BusinessAddProductScreen(),
         );
       default:
         return null;

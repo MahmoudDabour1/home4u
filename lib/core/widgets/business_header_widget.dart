@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_svg/flutter_svg.dart';
-import 'package:home4u/core/theming/app_assets.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:home4u/core/theming/app_styles.dart';
 
 import '../../features/auth/widgets/custom_header_shape.dart';
+import '../theming/app_assets.dart';
 import '../theming/app_colors.dart';
 import '../theming/font_weight_helper.dart';
 

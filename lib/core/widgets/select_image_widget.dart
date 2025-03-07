@@ -1,10 +1,13 @@
+import 'dart:developer';
 import 'dart:io';
 
 import 'package:dotted_border/dotted_border.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_localization/flutter_localization.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:home4u/core/networking/api_constants.dart';
+import 'package:home4u/core/theming/app_assets.dart';
 
 import '../../locale/app_locale.dart';
 import '../theming/app_colors.dart';
@@ -12,6 +15,9 @@ import '../theming/app_styles.dart';
 import '../utils/spacing.dart';
 import 'bottom_model.dart';
 
+
+///ToDo : Need to refactor to work with carousel slider
+///
 class SelectImageWidget extends StatelessWidget {
   final cubit;
   final List<File> images;
@@ -28,6 +34,8 @@ class SelectImageWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    log("height : ${MediaQuery.sizeOf(context).height * 0.245}");
+
     return GestureDetector(
       onTap: () {
         showModalBottomSheet(
@@ -48,7 +56,7 @@ class SelectImageWidget extends StatelessWidget {
         );
       },
       child: SizedBox(
-        height: 120.h,
+        height: MediaQuery.sizeOf(context).height * 0.25,
         width: MediaQuery.sizeOf(context).width - 48.w,
         child: DottedBorder(
           padding: EdgeInsets.all(20.r),
@@ -95,15 +103,17 @@ class SelectImageWidget extends StatelessWidget {
                 Center(
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
+                    spacing : 16.h,
                     children: [
-                      Icon(
-                        Icons.camera_alt,
-                        color: AppColors.primaryColor,
+                      SvgPicture.asset(
+                        AppAssets.uploadImageIcon,
+                        width: 64.w,
+                        height: 64.h,
                       ),
-                      verticalSpace(10),
                       Text(
                         AppLocale.tapToAddImage.getString(context),
-                        style: AppStyles.font14DarkBlueBold,
+                        style: AppStyles.font16BlackLight,
+                        textAlign: TextAlign.center,
                       ),
                     ],
                   ),
