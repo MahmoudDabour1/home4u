@@ -7,9 +7,12 @@ import '../../../../core/theming/app_assets.dart';
 import '../../../../core/theming/app_styles.dart';
 import '../../../../core/utils/spacing.dart';
 import '../../../../core/widgets/app_custom_icon_button.dart';
+import '../../data/models/products_response_model.dart';
 
 class ProductsColorsAndRating extends StatelessWidget {
-  const ProductsColorsAndRating({super.key});
+  final Content? content;
+
+  const ProductsColorsAndRating({super.key, required this.content});
 
   @override
   Widget build(BuildContext context) {
@@ -18,9 +21,12 @@ class ProductsColorsAndRating extends StatelessWidget {
       children: [
         Row(
           children: [
-            ProductsCustomColorContainer(text: "Gray"),
-            horizontalSpace(16),
-            ProductsCustomColorContainer(text: "Red"),
+            Row(
+              children: List.generate(2, (index) {
+                return ProductsCustomColorContainer(
+                    text: content?.colors?[index].name.toString() ?? "");
+              }),
+            ),
             AppCustomIconButton(
               image: AppAssets.arrowRightBlackSvg,
               width: 15.w,
@@ -32,7 +38,7 @@ class ProductsColorsAndRating extends StatelessWidget {
         Row(
           children: [
             Text(
-              "4.5",
+              content?.rate.toString() ?? '3.5',
               style: AppStyles.font14BlackLight,
             ),
             horizontalSpace(4),

@@ -5,10 +5,10 @@ import 'package:home4u/features/products/presentation/widgets/drawer/products_dr
 import '../../../../../core/routing/routes.dart';
 import 'drawer_item_widget.dart';
 
-
 class DrawerListView extends StatefulWidget {
   final DrawerItem selectedItem;
-  const DrawerListView ({super.key, required this.selectedItem});
+
+  const DrawerListView({super.key, required this.selectedItem});
 
   @override
   State<DrawerListView> createState() => _DrawerListViewState();
@@ -16,14 +16,18 @@ class DrawerListView extends StatefulWidget {
 
 class _DrawerListViewState extends State<DrawerListView> {
   late DrawerItem _selectedItem;
+
   @override
   void initState() {
     super.initState();
+
     _selectedItem = widget.selectedItem;
+    _selectedItem = DrawerItem.products;
   }
+
   @override
   Widget build(BuildContext context) {
-    return   Expanded(
+    return Expanded(
       child: ListView(
         children: DrawerItem.values.map((item) {
           return DrawerItemWidget(
@@ -59,7 +63,7 @@ class _DrawerListViewState extends State<DrawerListView> {
         context.pushNamed(Routes.productsScreen);
         break;
       case DrawerItem.addProduct:
-        context.pushNamed(Routes.productsScreen);
+        context.pushNamed(Routes.businessAddProductScreen);
         break;
     }
   }

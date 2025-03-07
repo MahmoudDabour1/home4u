@@ -6,6 +6,7 @@ import 'package:home4u/core/theming/app_assets.dart';
 import 'package:home4u/features/products/logic/products_cubit.dart';
 import 'package:home4u/features/products/presentation/widgets/drawer/products_drawer.dart';
 import 'package:home4u/features/products/presentation/widgets/filter/products_filter_button.dart';
+import 'package:home4u/features/products/presentation/widgets/products_bloc_builder.dart';
 import 'package:home4u/features/products/presentation/widgets/products_list_view.dart';
 import 'package:home4u/locale/app_locale.dart';
 
@@ -25,6 +26,7 @@ class _ProductsScreenState extends State<ProductsScreen> {
   void initState() {
     super.initState();
     context.read<ProductsCubit>().getBusinessConfig();
+    context.read<ProductsCubit>().getProducts();
   }
 
   @override
@@ -59,7 +61,7 @@ class _ProductsScreenState extends State<ProductsScreen> {
               ),
             ),
           ),
-          ProductsListView(),
+          ProductsBlocBuilder()
         ],
       ),
     );

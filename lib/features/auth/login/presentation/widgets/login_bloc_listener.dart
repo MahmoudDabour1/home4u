@@ -37,7 +37,7 @@ class LoginBlocListener extends StatelessWidget {
     switch (userTypeCode) {
       case "EXHIBITION":
       case "STORE":
-        context.pushNamed(Routes.businessOverviewScreen);
+        context.pushNamed(Routes.productsScreen);
         break;
       case "TECHNICAL_WORKER":
       case "ENGINEER":
