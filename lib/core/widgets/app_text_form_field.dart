@@ -15,6 +15,7 @@ class AppTextFormField extends StatelessWidget {
   final InputDecoration? decoration;
   final int? maxLines;
   final bool? enabled;
+  final void Function(String)? onChanged;
 
   const AppTextFormField({
     super.key,
@@ -30,6 +31,7 @@ class AppTextFormField extends StatelessWidget {
     this.decoration,
     this.maxLines = 1,
     this.enabled = true,
+    this.onChanged,
   });
 
   @override
@@ -54,6 +56,7 @@ class AppTextFormField extends StatelessWidget {
       },
       maxLines: maxLines,
       minLines: maxLines,
+      onChanged: onChanged,
     );
   }
 }

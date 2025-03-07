@@ -177,6 +177,19 @@ class AppLocale {
   static const String dimensionWidth = 'العرض - Width';
   static const String dimensionHeight = 'الارتفاع - Height';
   static const String businessType = 'Business Type';
+  static const String products = 'Products';
+  static const String offers = 'Offers';
+  static const String outOfStock = 'Out of Stock';
+  static const String filter = 'Filter';
+  static const String availability = 'Availability:';
+  static const String categories = 'Categories:';
+  static const String materials = 'Materials:';
+  static const String colors = 'Colors:';
+  static const String prices = 'Price:';
+  static const String rating = 'Rating:';
+  static const String minPrice = 'Min Price';
+  static const String maxPrice = 'Max Price';
+
 
   ///BusinessSignUp
   static const String tradeName = 'Trade Name';
@@ -203,6 +216,7 @@ class AppLocale {
 
   static const String updateCertification = 'Update Certification';
   static const String updateProject = 'Update Project';
+  static const String search = 'Search';
   static const Map<String, dynamic> en = {
     onBoardingTitle1: 'Civil works and finishing services',
     onBoardingTitle2: 'Civil works and finishing services 2',
@@ -340,6 +354,7 @@ class AppLocale {
     endData: 'End Date : ',
     usedTools: 'Used Tools : ',
     moreProjectsHeader: 'More Projects By ',
+    search: 'Search',
     overview: 'Overview',
     general: 'General',
     exhibitionName: 'Exhibition Name',
@@ -375,10 +390,22 @@ class AppLocale {
     dimensionWidth : 'العرض - Width',
     dimensionHeight : 'الارتفاع - Height',
     businessType : 'Business Type',
-      tradeName : 'Trade Name',
-      bioAr : 'Bio AR',
-      bioEn : 'Bio EN',
-      businessTypes : 'Business Types',
+    tradeName : 'Trade Name',
+    bioAr : 'Bio AR',
+    bioEn : 'Bio EN',
+    businessTypes : 'Business Types',
+    products : 'Products',
+    offers : 'Offers',
+    outOfStock : 'Out of Stock',
+    filter : 'Filter',
+    availability : 'Availability:',
+    categories : 'Categories:',
+    materials : 'Materials:',
+    colors : 'Colors:',
+    prices : 'Price:',
+    rating : 'Rating:',
+    minPrice : 'Min Price',
+    maxPrice : 'Max Price',
   };
 
   static const Map<String, dynamic> ar = {
@@ -556,5 +583,18 @@ class AppLocale {
     bioAr : 'السيرة الذاتية بالعربية',
     bioEn : 'السيرة الذاتية بالإنجليزية',
     businessTypes : 'أنواع الأعمال',
+    search: 'بحث',
+    products : 'المنتجات',
+    offers : 'العروض',
+    outOfStock : 'نفذ من المخزن',
+    filter : 'تصفية',
+    availability : 'متوفر:',
+    categories : 'الفئات:',
+    materials : 'المواد:',
+    colors : 'الألوان:',
+    prices : 'السعر:',
+    rating : 'التقييم:',
+    minPrice : 'الحد الأدنى للسعر',
+    maxPrice : 'الحد الأقصى للسعر',
   };
 }

@@ -1,9 +1,11 @@
+import 'dart:developer';
+
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../../../core/theming/app_colors.dart';
 import '../../../../../core/theming/app_styles.dart';
-
 
 class SliderRatingBoxWidget extends StatelessWidget {
   final double progress;
@@ -19,11 +21,14 @@ class SliderRatingBoxWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    double fullWidth = 195.w;
+    double fullWidth = MediaQuery.sizeOf(context).width * 0.49;
+    log("fullWidth: $fullWidth");
     return Row(
+      mainAxisAlignment: MainAxisAlignment.start,
+      mainAxisSize: MainAxisSize.min,
       spacing: 16.w,
       children: [
-        Text(
+        AutoSizeText(
           starNumber,
           style: AppStyles.font16BlackLight,
         ),
@@ -47,7 +52,7 @@ class SliderRatingBoxWidget extends StatelessWidget {
             ),
           ],
         ),
-        Text(
+        AutoSizeText(
           "$starPercentage%",
           style: AppStyles.font16BlackMedium,
         ),

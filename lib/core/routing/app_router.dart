@@ -15,6 +15,7 @@ import 'package:home4u/features/auth/verification/logic/verification_cubit.dart'
 import 'package:home4u/features/auth/verification/presentation/verification_screen.dart';
 import 'package:home4u/features/home/presentation/home_screen.dart';
 import 'package:home4u/features/layout/logic/bottom_nav_cubit.dart';
+import 'package:home4u/features/products/logic/products_cubit.dart';
 import 'package:home4u/features/profile/presentation/add_certification_screen.dart';
 
 import '../../features/auth/login/presentation/login_screen.dart';
@@ -25,6 +26,7 @@ import '../../features/exhibition/presentation/business_review_screen.dart';
 import '../../features/exhibition/presentation/product_preview_screen.dart';
 import '../../features/layout/presentation/bottom_nav_bar_layout.dart';
 import '../../features/onboarding/presentation/onboarding_screen.dart';
+import '../../features/products/presentation/products_screen.dart';
 import '../../features/profile/data/models/certifications/get_certifications_response_model.dart';
 import '../../features/profile/data/models/projects/get_projects_response_model.dart';
 import '../../features/profile/presentation/add_project_screen.dart';
@@ -131,6 +133,10 @@ class AppRouter {
         return MaterialPageRoute(
           builder: (_) => EditProfileScreen(),
         );
+      case Routes.productsScreen:
+        return MaterialPageRoute(
+          builder: (_) => ProductsScreen(),
+        );
       case Routes.businessOverviewScreen:
         return MaterialPageRoute(
           builder: (_) => BusinessOverviewScreen(),
@@ -138,6 +144,10 @@ class AppRouter {
       case Routes.businessReviewScreen:
         return MaterialPageRoute(
           builder: (_) => BusinessReviewScreen(),
+        );
+      case Routes.productPreviewScreen:
+        return MaterialPageRoute(
+          builder: (_) => ProductPreviewScreen(),
         );
       case Routes.productPreviewScreen:
         return MaterialPageRoute(

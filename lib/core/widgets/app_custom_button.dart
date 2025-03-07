@@ -12,6 +12,7 @@ class AppCustomButton extends StatelessWidget {
   final VoidCallback onPressed;
   final bool isLoading;
   final double radius;
+  final bool isBorder;
 
   const AppCustomButton({
     super.key,
@@ -20,7 +21,8 @@ class AppCustomButton extends StatelessWidget {
     required this.btnHeight,
     required this.onPressed,
     this.isLoading = false,
-    this.radius=16
+    this.radius=16,
+    this.isBorder = false,
   });
 
   @override
@@ -28,7 +30,12 @@ class AppCustomButton extends StatelessWidget {
     return Container(
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(radius.r),
-        gradient: LinearGradient(
+        border: isBorder?Border.all(
+          color: AppColors.secondaryColor,
+          width: 2,
+        ):null,
+        color: isBorder?AppColors.whiteColor:null,
+        gradient:isBorder?null: LinearGradient(
           colors: [
             AppColors.secondaryGradientColor,
             AppColors.secondaryColor,
@@ -49,7 +56,7 @@ class AppCustomButton extends StatelessWidget {
             ? AppCustomLoadingIndicator()
             : Text(
                 textButton,
-                style: AppStyles.font16WhiteBold,
+                style: isBorder?AppStyles.font16DarkBlueBold:AppStyles.font16WhiteBold,
                 textAlign: TextAlign.center,
               ),
       ),
