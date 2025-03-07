@@ -28,6 +28,9 @@ SignUpBody _$SignUpBodyFromJson(Map<String, dynamic> json) => SignUpBody(
           ? null
           : TechnicalWorkerRequest.fromJson(
               json['technicalWorker'] as Map<String, dynamic>),
+      business: json['business'] == null
+          ? null
+          : BusinessBody.fromJson(json['business'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$SignUpBodyToJson(SignUpBody instance) =>
@@ -42,6 +45,7 @@ Map<String, dynamic> _$SignUpBodyToJson(SignUpBody instance) =>
       'city': instance.city,
       'engineer': instance.engineer,
       'technicalWorker': instance.technicalWorker,
+      'business': instance.business,
     };
 
 UserTypeRequest _$UserTypeRequestFromJson(Map<String, dynamic> json) =>

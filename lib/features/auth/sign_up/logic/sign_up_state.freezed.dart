@@ -31,6 +31,9 @@ mixin _$SignUpState<T> {
     required TResult Function() loadingCities,
     required TResult Function(T data) successCities,
     required TResult Function(String error) errorCities,
+    required TResult Function() loadingBusinessType,
+    required TResult Function(T data) successBusinessType,
+    required TResult Function(String error) errorBusinessType,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -48,6 +51,9 @@ mixin _$SignUpState<T> {
     TResult? Function()? loadingCities,
     TResult? Function(T data)? successCities,
     TResult? Function(String error)? errorCities,
+    TResult? Function()? loadingBusinessType,
+    TResult? Function(T data)? successBusinessType,
+    TResult? Function(String error)? errorBusinessType,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -65,6 +71,9 @@ mixin _$SignUpState<T> {
     TResult Function()? loadingCities,
     TResult Function(T data)? successCities,
     TResult Function(String error)? errorCities,
+    TResult Function()? loadingBusinessType,
+    TResult Function(T data)? successBusinessType,
+    TResult Function(String error)? errorBusinessType,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -83,6 +92,9 @@ mixin _$SignUpState<T> {
     required TResult Function(LoadingCities<T> value) loadingCities,
     required TResult Function(SuccessCities<T> value) successCities,
     required TResult Function(ErrorCities<T> value) errorCities,
+    required TResult Function(LoadingBusinessType<T> value) loadingBusinessType,
+    required TResult Function(SuccessBusinessType<T> value) successBusinessType,
+    required TResult Function(ErrorBusinessType<T> value) errorBusinessType,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -100,6 +112,9 @@ mixin _$SignUpState<T> {
     TResult? Function(LoadingCities<T> value)? loadingCities,
     TResult? Function(SuccessCities<T> value)? successCities,
     TResult? Function(ErrorCities<T> value)? errorCities,
+    TResult? Function(LoadingBusinessType<T> value)? loadingBusinessType,
+    TResult? Function(SuccessBusinessType<T> value)? successBusinessType,
+    TResult? Function(ErrorBusinessType<T> value)? errorBusinessType,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -117,6 +132,9 @@ mixin _$SignUpState<T> {
     TResult Function(LoadingCities<T> value)? loadingCities,
     TResult Function(SuccessCities<T> value)? successCities,
     TResult Function(ErrorCities<T> value)? errorCities,
+    TResult Function(LoadingBusinessType<T> value)? loadingBusinessType,
+    TResult Function(SuccessBusinessType<T> value)? successBusinessType,
+    TResult Function(ErrorBusinessType<T> value)? errorBusinessType,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -197,6 +215,9 @@ class _$InitialImpl<T> implements _Initial<T> {
     required TResult Function() loadingCities,
     required TResult Function(T data) successCities,
     required TResult Function(String error) errorCities,
+    required TResult Function() loadingBusinessType,
+    required TResult Function(T data) successBusinessType,
+    required TResult Function(String error) errorBusinessType,
   }) {
     return initial();
   }
@@ -217,6 +238,9 @@ class _$InitialImpl<T> implements _Initial<T> {
     TResult? Function()? loadingCities,
     TResult? Function(T data)? successCities,
     TResult? Function(String error)? errorCities,
+    TResult? Function()? loadingBusinessType,
+    TResult? Function(T data)? successBusinessType,
+    TResult? Function(String error)? errorBusinessType,
   }) {
     return initial?.call();
   }
@@ -237,6 +261,9 @@ class _$InitialImpl<T> implements _Initial<T> {
     TResult Function()? loadingCities,
     TResult Function(T data)? successCities,
     TResult Function(String error)? errorCities,
+    TResult Function()? loadingBusinessType,
+    TResult Function(T data)? successBusinessType,
+    TResult Function(String error)? errorBusinessType,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -261,6 +288,9 @@ class _$InitialImpl<T> implements _Initial<T> {
     required TResult Function(LoadingCities<T> value) loadingCities,
     required TResult Function(SuccessCities<T> value) successCities,
     required TResult Function(ErrorCities<T> value) errorCities,
+    required TResult Function(LoadingBusinessType<T> value) loadingBusinessType,
+    required TResult Function(SuccessBusinessType<T> value) successBusinessType,
+    required TResult Function(ErrorBusinessType<T> value) errorBusinessType,
   }) {
     return initial(this);
   }
@@ -281,6 +311,9 @@ class _$InitialImpl<T> implements _Initial<T> {
     TResult? Function(LoadingCities<T> value)? loadingCities,
     TResult? Function(SuccessCities<T> value)? successCities,
     TResult? Function(ErrorCities<T> value)? errorCities,
+    TResult? Function(LoadingBusinessType<T> value)? loadingBusinessType,
+    TResult? Function(SuccessBusinessType<T> value)? successBusinessType,
+    TResult? Function(ErrorBusinessType<T> value)? errorBusinessType,
   }) {
     return initial?.call(this);
   }
@@ -301,6 +334,9 @@ class _$InitialImpl<T> implements _Initial<T> {
     TResult Function(LoadingCities<T> value)? loadingCities,
     TResult Function(SuccessCities<T> value)? successCities,
     TResult Function(ErrorCities<T> value)? errorCities,
+    TResult Function(LoadingBusinessType<T> value)? loadingBusinessType,
+    TResult Function(SuccessBusinessType<T> value)? successBusinessType,
+    TResult Function(ErrorBusinessType<T> value)? errorBusinessType,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -369,6 +405,9 @@ class _$LoadingUserTypesImpl<T> implements LoadingUserTypes<T> {
     required TResult Function() loadingCities,
     required TResult Function(T data) successCities,
     required TResult Function(String error) errorCities,
+    required TResult Function() loadingBusinessType,
+    required TResult Function(T data) successBusinessType,
+    required TResult Function(String error) errorBusinessType,
   }) {
     return loadingUserTypes();
   }
@@ -389,6 +428,9 @@ class _$LoadingUserTypesImpl<T> implements LoadingUserTypes<T> {
     TResult? Function()? loadingCities,
     TResult? Function(T data)? successCities,
     TResult? Function(String error)? errorCities,
+    TResult? Function()? loadingBusinessType,
+    TResult? Function(T data)? successBusinessType,
+    TResult? Function(String error)? errorBusinessType,
   }) {
     return loadingUserTypes?.call();
   }
@@ -409,6 +451,9 @@ class _$LoadingUserTypesImpl<T> implements LoadingUserTypes<T> {
     TResult Function()? loadingCities,
     TResult Function(T data)? successCities,
     TResult Function(String error)? errorCities,
+    TResult Function()? loadingBusinessType,
+    TResult Function(T data)? successBusinessType,
+    TResult Function(String error)? errorBusinessType,
     required TResult orElse(),
   }) {
     if (loadingUserTypes != null) {
@@ -433,6 +478,9 @@ class _$LoadingUserTypesImpl<T> implements LoadingUserTypes<T> {
     required TResult Function(LoadingCities<T> value) loadingCities,
     required TResult Function(SuccessCities<T> value) successCities,
     required TResult Function(ErrorCities<T> value) errorCities,
+    required TResult Function(LoadingBusinessType<T> value) loadingBusinessType,
+    required TResult Function(SuccessBusinessType<T> value) successBusinessType,
+    required TResult Function(ErrorBusinessType<T> value) errorBusinessType,
   }) {
     return loadingUserTypes(this);
   }
@@ -453,6 +501,9 @@ class _$LoadingUserTypesImpl<T> implements LoadingUserTypes<T> {
     TResult? Function(LoadingCities<T> value)? loadingCities,
     TResult? Function(SuccessCities<T> value)? successCities,
     TResult? Function(ErrorCities<T> value)? errorCities,
+    TResult? Function(LoadingBusinessType<T> value)? loadingBusinessType,
+    TResult? Function(SuccessBusinessType<T> value)? successBusinessType,
+    TResult? Function(ErrorBusinessType<T> value)? errorBusinessType,
   }) {
     return loadingUserTypes?.call(this);
   }
@@ -473,6 +524,9 @@ class _$LoadingUserTypesImpl<T> implements LoadingUserTypes<T> {
     TResult Function(LoadingCities<T> value)? loadingCities,
     TResult Function(SuccessCities<T> value)? successCities,
     TResult Function(ErrorCities<T> value)? errorCities,
+    TResult Function(LoadingBusinessType<T> value)? loadingBusinessType,
+    TResult Function(SuccessBusinessType<T> value)? successBusinessType,
+    TResult Function(ErrorBusinessType<T> value)? errorBusinessType,
     required TResult orElse(),
   }) {
     if (loadingUserTypes != null) {
@@ -569,6 +623,9 @@ class _$SuccessUserTypesImpl<T> implements SuccessUserTypes<T> {
     required TResult Function() loadingCities,
     required TResult Function(T data) successCities,
     required TResult Function(String error) errorCities,
+    required TResult Function() loadingBusinessType,
+    required TResult Function(T data) successBusinessType,
+    required TResult Function(String error) errorBusinessType,
   }) {
     return successUserTypes(data);
   }
@@ -589,6 +646,9 @@ class _$SuccessUserTypesImpl<T> implements SuccessUserTypes<T> {
     TResult? Function()? loadingCities,
     TResult? Function(T data)? successCities,
     TResult? Function(String error)? errorCities,
+    TResult? Function()? loadingBusinessType,
+    TResult? Function(T data)? successBusinessType,
+    TResult? Function(String error)? errorBusinessType,
   }) {
     return successUserTypes?.call(data);
   }
@@ -609,6 +669,9 @@ class _$SuccessUserTypesImpl<T> implements SuccessUserTypes<T> {
     TResult Function()? loadingCities,
     TResult Function(T data)? successCities,
     TResult Function(String error)? errorCities,
+    TResult Function()? loadingBusinessType,
+    TResult Function(T data)? successBusinessType,
+    TResult Function(String error)? errorBusinessType,
     required TResult orElse(),
   }) {
     if (successUserTypes != null) {
@@ -633,6 +696,9 @@ class _$SuccessUserTypesImpl<T> implements SuccessUserTypes<T> {
     required TResult Function(LoadingCities<T> value) loadingCities,
     required TResult Function(SuccessCities<T> value) successCities,
     required TResult Function(ErrorCities<T> value) errorCities,
+    required TResult Function(LoadingBusinessType<T> value) loadingBusinessType,
+    required TResult Function(SuccessBusinessType<T> value) successBusinessType,
+    required TResult Function(ErrorBusinessType<T> value) errorBusinessType,
   }) {
     return successUserTypes(this);
   }
@@ -653,6 +719,9 @@ class _$SuccessUserTypesImpl<T> implements SuccessUserTypes<T> {
     TResult? Function(LoadingCities<T> value)? loadingCities,
     TResult? Function(SuccessCities<T> value)? successCities,
     TResult? Function(ErrorCities<T> value)? errorCities,
+    TResult? Function(LoadingBusinessType<T> value)? loadingBusinessType,
+    TResult? Function(SuccessBusinessType<T> value)? successBusinessType,
+    TResult? Function(ErrorBusinessType<T> value)? errorBusinessType,
   }) {
     return successUserTypes?.call(this);
   }
@@ -673,6 +742,9 @@ class _$SuccessUserTypesImpl<T> implements SuccessUserTypes<T> {
     TResult Function(LoadingCities<T> value)? loadingCities,
     TResult Function(SuccessCities<T> value)? successCities,
     TResult Function(ErrorCities<T> value)? errorCities,
+    TResult Function(LoadingBusinessType<T> value)? loadingBusinessType,
+    TResult Function(SuccessBusinessType<T> value)? successBusinessType,
+    TResult Function(ErrorBusinessType<T> value)? errorBusinessType,
     required TResult orElse(),
   }) {
     if (successUserTypes != null) {
@@ -776,6 +848,9 @@ class _$ErrorUserTypesImpl<T> implements ErrorUserTypes<T> {
     required TResult Function() loadingCities,
     required TResult Function(T data) successCities,
     required TResult Function(String error) errorCities,
+    required TResult Function() loadingBusinessType,
+    required TResult Function(T data) successBusinessType,
+    required TResult Function(String error) errorBusinessType,
   }) {
     return errorUserTypes(error);
   }
@@ -796,6 +871,9 @@ class _$ErrorUserTypesImpl<T> implements ErrorUserTypes<T> {
     TResult? Function()? loadingCities,
     TResult? Function(T data)? successCities,
     TResult? Function(String error)? errorCities,
+    TResult? Function()? loadingBusinessType,
+    TResult? Function(T data)? successBusinessType,
+    TResult? Function(String error)? errorBusinessType,
   }) {
     return errorUserTypes?.call(error);
   }
@@ -816,6 +894,9 @@ class _$ErrorUserTypesImpl<T> implements ErrorUserTypes<T> {
     TResult Function()? loadingCities,
     TResult Function(T data)? successCities,
     TResult Function(String error)? errorCities,
+    TResult Function()? loadingBusinessType,
+    TResult Function(T data)? successBusinessType,
+    TResult Function(String error)? errorBusinessType,
     required TResult orElse(),
   }) {
     if (errorUserTypes != null) {
@@ -840,6 +921,9 @@ class _$ErrorUserTypesImpl<T> implements ErrorUserTypes<T> {
     required TResult Function(LoadingCities<T> value) loadingCities,
     required TResult Function(SuccessCities<T> value) successCities,
     required TResult Function(ErrorCities<T> value) errorCities,
+    required TResult Function(LoadingBusinessType<T> value) loadingBusinessType,
+    required TResult Function(SuccessBusinessType<T> value) successBusinessType,
+    required TResult Function(ErrorBusinessType<T> value) errorBusinessType,
   }) {
     return errorUserTypes(this);
   }
@@ -860,6 +944,9 @@ class _$ErrorUserTypesImpl<T> implements ErrorUserTypes<T> {
     TResult? Function(LoadingCities<T> value)? loadingCities,
     TResult? Function(SuccessCities<T> value)? successCities,
     TResult? Function(ErrorCities<T> value)? errorCities,
+    TResult? Function(LoadingBusinessType<T> value)? loadingBusinessType,
+    TResult? Function(SuccessBusinessType<T> value)? successBusinessType,
+    TResult? Function(ErrorBusinessType<T> value)? errorBusinessType,
   }) {
     return errorUserTypes?.call(this);
   }
@@ -880,6 +967,9 @@ class _$ErrorUserTypesImpl<T> implements ErrorUserTypes<T> {
     TResult Function(LoadingCities<T> value)? loadingCities,
     TResult Function(SuccessCities<T> value)? successCities,
     TResult Function(ErrorCities<T> value)? errorCities,
+    TResult Function(LoadingBusinessType<T> value)? loadingBusinessType,
+    TResult Function(SuccessBusinessType<T> value)? successBusinessType,
+    TResult Function(ErrorBusinessType<T> value)? errorBusinessType,
     required TResult orElse(),
   }) {
     if (errorUserTypes != null) {
@@ -957,6 +1047,9 @@ class _$SignUpLoadingStateImpl<T> implements SignUpLoadingState<T> {
     required TResult Function() loadingCities,
     required TResult Function(T data) successCities,
     required TResult Function(String error) errorCities,
+    required TResult Function() loadingBusinessType,
+    required TResult Function(T data) successBusinessType,
+    required TResult Function(String error) errorBusinessType,
   }) {
     return loadingSignUp();
   }
@@ -977,6 +1070,9 @@ class _$SignUpLoadingStateImpl<T> implements SignUpLoadingState<T> {
     TResult? Function()? loadingCities,
     TResult? Function(T data)? successCities,
     TResult? Function(String error)? errorCities,
+    TResult? Function()? loadingBusinessType,
+    TResult? Function(T data)? successBusinessType,
+    TResult? Function(String error)? errorBusinessType,
   }) {
     return loadingSignUp?.call();
   }
@@ -997,6 +1093,9 @@ class _$SignUpLoadingStateImpl<T> implements SignUpLoadingState<T> {
     TResult Function()? loadingCities,
     TResult Function(T data)? successCities,
     TResult Function(String error)? errorCities,
+    TResult Function()? loadingBusinessType,
+    TResult Function(T data)? successBusinessType,
+    TResult Function(String error)? errorBusinessType,
     required TResult orElse(),
   }) {
     if (loadingSignUp != null) {
@@ -1021,6 +1120,9 @@ class _$SignUpLoadingStateImpl<T> implements SignUpLoadingState<T> {
     required TResult Function(LoadingCities<T> value) loadingCities,
     required TResult Function(SuccessCities<T> value) successCities,
     required TResult Function(ErrorCities<T> value) errorCities,
+    required TResult Function(LoadingBusinessType<T> value) loadingBusinessType,
+    required TResult Function(SuccessBusinessType<T> value) successBusinessType,
+    required TResult Function(ErrorBusinessType<T> value) errorBusinessType,
   }) {
     return loadingSignUp(this);
   }
@@ -1041,6 +1143,9 @@ class _$SignUpLoadingStateImpl<T> implements SignUpLoadingState<T> {
     TResult? Function(LoadingCities<T> value)? loadingCities,
     TResult? Function(SuccessCities<T> value)? successCities,
     TResult? Function(ErrorCities<T> value)? errorCities,
+    TResult? Function(LoadingBusinessType<T> value)? loadingBusinessType,
+    TResult? Function(SuccessBusinessType<T> value)? successBusinessType,
+    TResult? Function(ErrorBusinessType<T> value)? errorBusinessType,
   }) {
     return loadingSignUp?.call(this);
   }
@@ -1061,6 +1166,9 @@ class _$SignUpLoadingStateImpl<T> implements SignUpLoadingState<T> {
     TResult Function(LoadingCities<T> value)? loadingCities,
     TResult Function(SuccessCities<T> value)? successCities,
     TResult Function(ErrorCities<T> value)? errorCities,
+    TResult Function(LoadingBusinessType<T> value)? loadingBusinessType,
+    TResult Function(SuccessBusinessType<T> value)? successBusinessType,
+    TResult Function(ErrorBusinessType<T> value)? errorBusinessType,
     required TResult orElse(),
   }) {
     if (loadingSignUp != null) {
@@ -1157,6 +1265,9 @@ class _$SignUpSuccessStateImpl<T> implements SignUpSuccessState<T> {
     required TResult Function() loadingCities,
     required TResult Function(T data) successCities,
     required TResult Function(String error) errorCities,
+    required TResult Function() loadingBusinessType,
+    required TResult Function(T data) successBusinessType,
+    required TResult Function(String error) errorBusinessType,
   }) {
     return successSignUp(data);
   }
@@ -1177,6 +1288,9 @@ class _$SignUpSuccessStateImpl<T> implements SignUpSuccessState<T> {
     TResult? Function()? loadingCities,
     TResult? Function(T data)? successCities,
     TResult? Function(String error)? errorCities,
+    TResult? Function()? loadingBusinessType,
+    TResult? Function(T data)? successBusinessType,
+    TResult? Function(String error)? errorBusinessType,
   }) {
     return successSignUp?.call(data);
   }
@@ -1197,6 +1311,9 @@ class _$SignUpSuccessStateImpl<T> implements SignUpSuccessState<T> {
     TResult Function()? loadingCities,
     TResult Function(T data)? successCities,
     TResult Function(String error)? errorCities,
+    TResult Function()? loadingBusinessType,
+    TResult Function(T data)? successBusinessType,
+    TResult Function(String error)? errorBusinessType,
     required TResult orElse(),
   }) {
     if (successSignUp != null) {
@@ -1221,6 +1338,9 @@ class _$SignUpSuccessStateImpl<T> implements SignUpSuccessState<T> {
     required TResult Function(LoadingCities<T> value) loadingCities,
     required TResult Function(SuccessCities<T> value) successCities,
     required TResult Function(ErrorCities<T> value) errorCities,
+    required TResult Function(LoadingBusinessType<T> value) loadingBusinessType,
+    required TResult Function(SuccessBusinessType<T> value) successBusinessType,
+    required TResult Function(ErrorBusinessType<T> value) errorBusinessType,
   }) {
     return successSignUp(this);
   }
@@ -1241,6 +1361,9 @@ class _$SignUpSuccessStateImpl<T> implements SignUpSuccessState<T> {
     TResult? Function(LoadingCities<T> value)? loadingCities,
     TResult? Function(SuccessCities<T> value)? successCities,
     TResult? Function(ErrorCities<T> value)? errorCities,
+    TResult? Function(LoadingBusinessType<T> value)? loadingBusinessType,
+    TResult? Function(SuccessBusinessType<T> value)? successBusinessType,
+    TResult? Function(ErrorBusinessType<T> value)? errorBusinessType,
   }) {
     return successSignUp?.call(this);
   }
@@ -1261,6 +1384,9 @@ class _$SignUpSuccessStateImpl<T> implements SignUpSuccessState<T> {
     TResult Function(LoadingCities<T> value)? loadingCities,
     TResult Function(SuccessCities<T> value)? successCities,
     TResult Function(ErrorCities<T> value)? errorCities,
+    TResult Function(LoadingBusinessType<T> value)? loadingBusinessType,
+    TResult Function(SuccessBusinessType<T> value)? successBusinessType,
+    TResult Function(ErrorBusinessType<T> value)? errorBusinessType,
     required TResult orElse(),
   }) {
     if (successSignUp != null) {
@@ -1364,6 +1490,9 @@ class _$SignUpErrorStateImpl<T> implements SignUpErrorState<T> {
     required TResult Function() loadingCities,
     required TResult Function(T data) successCities,
     required TResult Function(String error) errorCities,
+    required TResult Function() loadingBusinessType,
+    required TResult Function(T data) successBusinessType,
+    required TResult Function(String error) errorBusinessType,
   }) {
     return errorSignUp(error);
   }
@@ -1384,6 +1513,9 @@ class _$SignUpErrorStateImpl<T> implements SignUpErrorState<T> {
     TResult? Function()? loadingCities,
     TResult? Function(T data)? successCities,
     TResult? Function(String error)? errorCities,
+    TResult? Function()? loadingBusinessType,
+    TResult? Function(T data)? successBusinessType,
+    TResult? Function(String error)? errorBusinessType,
   }) {
     return errorSignUp?.call(error);
   }
@@ -1404,6 +1536,9 @@ class _$SignUpErrorStateImpl<T> implements SignUpErrorState<T> {
     TResult Function()? loadingCities,
     TResult Function(T data)? successCities,
     TResult Function(String error)? errorCities,
+    TResult Function()? loadingBusinessType,
+    TResult Function(T data)? successBusinessType,
+    TResult Function(String error)? errorBusinessType,
     required TResult orElse(),
   }) {
     if (errorSignUp != null) {
@@ -1428,6 +1563,9 @@ class _$SignUpErrorStateImpl<T> implements SignUpErrorState<T> {
     required TResult Function(LoadingCities<T> value) loadingCities,
     required TResult Function(SuccessCities<T> value) successCities,
     required TResult Function(ErrorCities<T> value) errorCities,
+    required TResult Function(LoadingBusinessType<T> value) loadingBusinessType,
+    required TResult Function(SuccessBusinessType<T> value) successBusinessType,
+    required TResult Function(ErrorBusinessType<T> value) errorBusinessType,
   }) {
     return errorSignUp(this);
   }
@@ -1448,6 +1586,9 @@ class _$SignUpErrorStateImpl<T> implements SignUpErrorState<T> {
     TResult? Function(LoadingCities<T> value)? loadingCities,
     TResult? Function(SuccessCities<T> value)? successCities,
     TResult? Function(ErrorCities<T> value)? errorCities,
+    TResult? Function(LoadingBusinessType<T> value)? loadingBusinessType,
+    TResult? Function(SuccessBusinessType<T> value)? successBusinessType,
+    TResult? Function(ErrorBusinessType<T> value)? errorBusinessType,
   }) {
     return errorSignUp?.call(this);
   }
@@ -1468,6 +1609,9 @@ class _$SignUpErrorStateImpl<T> implements SignUpErrorState<T> {
     TResult Function(LoadingCities<T> value)? loadingCities,
     TResult Function(SuccessCities<T> value)? successCities,
     TResult Function(ErrorCities<T> value)? errorCities,
+    TResult Function(LoadingBusinessType<T> value)? loadingBusinessType,
+    TResult Function(SuccessBusinessType<T> value)? successBusinessType,
+    TResult Function(ErrorBusinessType<T> value)? errorBusinessType,
     required TResult orElse(),
   }) {
     if (errorSignUp != null) {
@@ -1545,6 +1689,9 @@ class _$LoadingGovernoratesImpl<T> implements LoadingGovernorates<T> {
     required TResult Function() loadingCities,
     required TResult Function(T data) successCities,
     required TResult Function(String error) errorCities,
+    required TResult Function() loadingBusinessType,
+    required TResult Function(T data) successBusinessType,
+    required TResult Function(String error) errorBusinessType,
   }) {
     return loadingGovernorates();
   }
@@ -1565,6 +1712,9 @@ class _$LoadingGovernoratesImpl<T> implements LoadingGovernorates<T> {
     TResult? Function()? loadingCities,
     TResult? Function(T data)? successCities,
     TResult? Function(String error)? errorCities,
+    TResult? Function()? loadingBusinessType,
+    TResult? Function(T data)? successBusinessType,
+    TResult? Function(String error)? errorBusinessType,
   }) {
     return loadingGovernorates?.call();
   }
@@ -1585,6 +1735,9 @@ class _$LoadingGovernoratesImpl<T> implements LoadingGovernorates<T> {
     TResult Function()? loadingCities,
     TResult Function(T data)? successCities,
     TResult Function(String error)? errorCities,
+    TResult Function()? loadingBusinessType,
+    TResult Function(T data)? successBusinessType,
+    TResult Function(String error)? errorBusinessType,
     required TResult orElse(),
   }) {
     if (loadingGovernorates != null) {
@@ -1609,6 +1762,9 @@ class _$LoadingGovernoratesImpl<T> implements LoadingGovernorates<T> {
     required TResult Function(LoadingCities<T> value) loadingCities,
     required TResult Function(SuccessCities<T> value) successCities,
     required TResult Function(ErrorCities<T> value) errorCities,
+    required TResult Function(LoadingBusinessType<T> value) loadingBusinessType,
+    required TResult Function(SuccessBusinessType<T> value) successBusinessType,
+    required TResult Function(ErrorBusinessType<T> value) errorBusinessType,
   }) {
     return loadingGovernorates(this);
   }
@@ -1629,6 +1785,9 @@ class _$LoadingGovernoratesImpl<T> implements LoadingGovernorates<T> {
     TResult? Function(LoadingCities<T> value)? loadingCities,
     TResult? Function(SuccessCities<T> value)? successCities,
     TResult? Function(ErrorCities<T> value)? errorCities,
+    TResult? Function(LoadingBusinessType<T> value)? loadingBusinessType,
+    TResult? Function(SuccessBusinessType<T> value)? successBusinessType,
+    TResult? Function(ErrorBusinessType<T> value)? errorBusinessType,
   }) {
     return loadingGovernorates?.call(this);
   }
@@ -1649,6 +1808,9 @@ class _$LoadingGovernoratesImpl<T> implements LoadingGovernorates<T> {
     TResult Function(LoadingCities<T> value)? loadingCities,
     TResult Function(SuccessCities<T> value)? successCities,
     TResult Function(ErrorCities<T> value)? errorCities,
+    TResult Function(LoadingBusinessType<T> value)? loadingBusinessType,
+    TResult Function(SuccessBusinessType<T> value)? successBusinessType,
+    TResult Function(ErrorBusinessType<T> value)? errorBusinessType,
     required TResult orElse(),
   }) {
     if (loadingGovernorates != null) {
@@ -1745,6 +1907,9 @@ class _$SuccessGovernoratesImpl<T> implements SuccessGovernorates<T> {
     required TResult Function() loadingCities,
     required TResult Function(T data) successCities,
     required TResult Function(String error) errorCities,
+    required TResult Function() loadingBusinessType,
+    required TResult Function(T data) successBusinessType,
+    required TResult Function(String error) errorBusinessType,
   }) {
     return successGovernorates(data);
   }
@@ -1765,6 +1930,9 @@ class _$SuccessGovernoratesImpl<T> implements SuccessGovernorates<T> {
     TResult? Function()? loadingCities,
     TResult? Function(T data)? successCities,
     TResult? Function(String error)? errorCities,
+    TResult? Function()? loadingBusinessType,
+    TResult? Function(T data)? successBusinessType,
+    TResult? Function(String error)? errorBusinessType,
   }) {
     return successGovernorates?.call(data);
   }
@@ -1785,6 +1953,9 @@ class _$SuccessGovernoratesImpl<T> implements SuccessGovernorates<T> {
     TResult Function()? loadingCities,
     TResult Function(T data)? successCities,
     TResult Function(String error)? errorCities,
+    TResult Function()? loadingBusinessType,
+    TResult Function(T data)? successBusinessType,
+    TResult Function(String error)? errorBusinessType,
     required TResult orElse(),
   }) {
     if (successGovernorates != null) {
@@ -1809,6 +1980,9 @@ class _$SuccessGovernoratesImpl<T> implements SuccessGovernorates<T> {
     required TResult Function(LoadingCities<T> value) loadingCities,
     required TResult Function(SuccessCities<T> value) successCities,
     required TResult Function(ErrorCities<T> value) errorCities,
+    required TResult Function(LoadingBusinessType<T> value) loadingBusinessType,
+    required TResult Function(SuccessBusinessType<T> value) successBusinessType,
+    required TResult Function(ErrorBusinessType<T> value) errorBusinessType,
   }) {
     return successGovernorates(this);
   }
@@ -1829,6 +2003,9 @@ class _$SuccessGovernoratesImpl<T> implements SuccessGovernorates<T> {
     TResult? Function(LoadingCities<T> value)? loadingCities,
     TResult? Function(SuccessCities<T> value)? successCities,
     TResult? Function(ErrorCities<T> value)? errorCities,
+    TResult? Function(LoadingBusinessType<T> value)? loadingBusinessType,
+    TResult? Function(SuccessBusinessType<T> value)? successBusinessType,
+    TResult? Function(ErrorBusinessType<T> value)? errorBusinessType,
   }) {
     return successGovernorates?.call(this);
   }
@@ -1849,6 +2026,9 @@ class _$SuccessGovernoratesImpl<T> implements SuccessGovernorates<T> {
     TResult Function(LoadingCities<T> value)? loadingCities,
     TResult Function(SuccessCities<T> value)? successCities,
     TResult Function(ErrorCities<T> value)? errorCities,
+    TResult Function(LoadingBusinessType<T> value)? loadingBusinessType,
+    TResult Function(SuccessBusinessType<T> value)? successBusinessType,
+    TResult Function(ErrorBusinessType<T> value)? errorBusinessType,
     required TResult orElse(),
   }) {
     if (successGovernorates != null) {
@@ -1954,6 +2134,9 @@ class _$ErrorGovernoratesImpl<T> implements ErrorGovernorates<T> {
     required TResult Function() loadingCities,
     required TResult Function(T data) successCities,
     required TResult Function(String error) errorCities,
+    required TResult Function() loadingBusinessType,
+    required TResult Function(T data) successBusinessType,
+    required TResult Function(String error) errorBusinessType,
   }) {
     return errorGovernorates(error);
   }
@@ -1974,6 +2157,9 @@ class _$ErrorGovernoratesImpl<T> implements ErrorGovernorates<T> {
     TResult? Function()? loadingCities,
     TResult? Function(T data)? successCities,
     TResult? Function(String error)? errorCities,
+    TResult? Function()? loadingBusinessType,
+    TResult? Function(T data)? successBusinessType,
+    TResult? Function(String error)? errorBusinessType,
   }) {
     return errorGovernorates?.call(error);
   }
@@ -1994,6 +2180,9 @@ class _$ErrorGovernoratesImpl<T> implements ErrorGovernorates<T> {
     TResult Function()? loadingCities,
     TResult Function(T data)? successCities,
     TResult Function(String error)? errorCities,
+    TResult Function()? loadingBusinessType,
+    TResult Function(T data)? successBusinessType,
+    TResult Function(String error)? errorBusinessType,
     required TResult orElse(),
   }) {
     if (errorGovernorates != null) {
@@ -2018,6 +2207,9 @@ class _$ErrorGovernoratesImpl<T> implements ErrorGovernorates<T> {
     required TResult Function(LoadingCities<T> value) loadingCities,
     required TResult Function(SuccessCities<T> value) successCities,
     required TResult Function(ErrorCities<T> value) errorCities,
+    required TResult Function(LoadingBusinessType<T> value) loadingBusinessType,
+    required TResult Function(SuccessBusinessType<T> value) successBusinessType,
+    required TResult Function(ErrorBusinessType<T> value) errorBusinessType,
   }) {
     return errorGovernorates(this);
   }
@@ -2038,6 +2230,9 @@ class _$ErrorGovernoratesImpl<T> implements ErrorGovernorates<T> {
     TResult? Function(LoadingCities<T> value)? loadingCities,
     TResult? Function(SuccessCities<T> value)? successCities,
     TResult? Function(ErrorCities<T> value)? errorCities,
+    TResult? Function(LoadingBusinessType<T> value)? loadingBusinessType,
+    TResult? Function(SuccessBusinessType<T> value)? successBusinessType,
+    TResult? Function(ErrorBusinessType<T> value)? errorBusinessType,
   }) {
     return errorGovernorates?.call(this);
   }
@@ -2058,6 +2253,9 @@ class _$ErrorGovernoratesImpl<T> implements ErrorGovernorates<T> {
     TResult Function(LoadingCities<T> value)? loadingCities,
     TResult Function(SuccessCities<T> value)? successCities,
     TResult Function(ErrorCities<T> value)? errorCities,
+    TResult Function(LoadingBusinessType<T> value)? loadingBusinessType,
+    TResult Function(SuccessBusinessType<T> value)? successBusinessType,
+    TResult Function(ErrorBusinessType<T> value)? errorBusinessType,
     required TResult orElse(),
   }) {
     if (errorGovernorates != null) {
@@ -2134,6 +2332,9 @@ class _$LoadingCitiesImpl<T> implements LoadingCities<T> {
     required TResult Function() loadingCities,
     required TResult Function(T data) successCities,
     required TResult Function(String error) errorCities,
+    required TResult Function() loadingBusinessType,
+    required TResult Function(T data) successBusinessType,
+    required TResult Function(String error) errorBusinessType,
   }) {
     return loadingCities();
   }
@@ -2154,6 +2355,9 @@ class _$LoadingCitiesImpl<T> implements LoadingCities<T> {
     TResult? Function()? loadingCities,
     TResult? Function(T data)? successCities,
     TResult? Function(String error)? errorCities,
+    TResult? Function()? loadingBusinessType,
+    TResult? Function(T data)? successBusinessType,
+    TResult? Function(String error)? errorBusinessType,
   }) {
     return loadingCities?.call();
   }
@@ -2174,6 +2378,9 @@ class _$LoadingCitiesImpl<T> implements LoadingCities<T> {
     TResult Function()? loadingCities,
     TResult Function(T data)? successCities,
     TResult Function(String error)? errorCities,
+    TResult Function()? loadingBusinessType,
+    TResult Function(T data)? successBusinessType,
+    TResult Function(String error)? errorBusinessType,
     required TResult orElse(),
   }) {
     if (loadingCities != null) {
@@ -2198,6 +2405,9 @@ class _$LoadingCitiesImpl<T> implements LoadingCities<T> {
     required TResult Function(LoadingCities<T> value) loadingCities,
     required TResult Function(SuccessCities<T> value) successCities,
     required TResult Function(ErrorCities<T> value) errorCities,
+    required TResult Function(LoadingBusinessType<T> value) loadingBusinessType,
+    required TResult Function(SuccessBusinessType<T> value) successBusinessType,
+    required TResult Function(ErrorBusinessType<T> value) errorBusinessType,
   }) {
     return loadingCities(this);
   }
@@ -2218,6 +2428,9 @@ class _$LoadingCitiesImpl<T> implements LoadingCities<T> {
     TResult? Function(LoadingCities<T> value)? loadingCities,
     TResult? Function(SuccessCities<T> value)? successCities,
     TResult? Function(ErrorCities<T> value)? errorCities,
+    TResult? Function(LoadingBusinessType<T> value)? loadingBusinessType,
+    TResult? Function(SuccessBusinessType<T> value)? successBusinessType,
+    TResult? Function(ErrorBusinessType<T> value)? errorBusinessType,
   }) {
     return loadingCities?.call(this);
   }
@@ -2238,6 +2451,9 @@ class _$LoadingCitiesImpl<T> implements LoadingCities<T> {
     TResult Function(LoadingCities<T> value)? loadingCities,
     TResult Function(SuccessCities<T> value)? successCities,
     TResult Function(ErrorCities<T> value)? errorCities,
+    TResult Function(LoadingBusinessType<T> value)? loadingBusinessType,
+    TResult Function(SuccessBusinessType<T> value)? successBusinessType,
+    TResult Function(ErrorBusinessType<T> value)? errorBusinessType,
     required TResult orElse(),
   }) {
     if (loadingCities != null) {
@@ -2334,6 +2550,9 @@ class _$SuccessCitiesImpl<T> implements SuccessCities<T> {
     required TResult Function() loadingCities,
     required TResult Function(T data) successCities,
     required TResult Function(String error) errorCities,
+    required TResult Function() loadingBusinessType,
+    required TResult Function(T data) successBusinessType,
+    required TResult Function(String error) errorBusinessType,
   }) {
     return successCities(data);
   }
@@ -2354,6 +2573,9 @@ class _$SuccessCitiesImpl<T> implements SuccessCities<T> {
     TResult? Function()? loadingCities,
     TResult? Function(T data)? successCities,
     TResult? Function(String error)? errorCities,
+    TResult? Function()? loadingBusinessType,
+    TResult? Function(T data)? successBusinessType,
+    TResult? Function(String error)? errorBusinessType,
   }) {
     return successCities?.call(data);
   }
@@ -2374,6 +2596,9 @@ class _$SuccessCitiesImpl<T> implements SuccessCities<T> {
     TResult Function()? loadingCities,
     TResult Function(T data)? successCities,
     TResult Function(String error)? errorCities,
+    TResult Function()? loadingBusinessType,
+    TResult Function(T data)? successBusinessType,
+    TResult Function(String error)? errorBusinessType,
     required TResult orElse(),
   }) {
     if (successCities != null) {
@@ -2398,6 +2623,9 @@ class _$SuccessCitiesImpl<T> implements SuccessCities<T> {
     required TResult Function(LoadingCities<T> value) loadingCities,
     required TResult Function(SuccessCities<T> value) successCities,
     required TResult Function(ErrorCities<T> value) errorCities,
+    required TResult Function(LoadingBusinessType<T> value) loadingBusinessType,
+    required TResult Function(SuccessBusinessType<T> value) successBusinessType,
+    required TResult Function(ErrorBusinessType<T> value) errorBusinessType,
   }) {
     return successCities(this);
   }
@@ -2418,6 +2646,9 @@ class _$SuccessCitiesImpl<T> implements SuccessCities<T> {
     TResult? Function(LoadingCities<T> value)? loadingCities,
     TResult? Function(SuccessCities<T> value)? successCities,
     TResult? Function(ErrorCities<T> value)? errorCities,
+    TResult? Function(LoadingBusinessType<T> value)? loadingBusinessType,
+    TResult? Function(SuccessBusinessType<T> value)? successBusinessType,
+    TResult? Function(ErrorBusinessType<T> value)? errorBusinessType,
   }) {
     return successCities?.call(this);
   }
@@ -2438,6 +2669,9 @@ class _$SuccessCitiesImpl<T> implements SuccessCities<T> {
     TResult Function(LoadingCities<T> value)? loadingCities,
     TResult Function(SuccessCities<T> value)? successCities,
     TResult Function(ErrorCities<T> value)? errorCities,
+    TResult Function(LoadingBusinessType<T> value)? loadingBusinessType,
+    TResult Function(SuccessBusinessType<T> value)? successBusinessType,
+    TResult Function(ErrorBusinessType<T> value)? errorBusinessType,
     required TResult orElse(),
   }) {
     if (successCities != null) {
@@ -2541,6 +2775,9 @@ class _$ErrorCitiesImpl<T> implements ErrorCities<T> {
     required TResult Function() loadingCities,
     required TResult Function(T data) successCities,
     required TResult Function(String error) errorCities,
+    required TResult Function() loadingBusinessType,
+    required TResult Function(T data) successBusinessType,
+    required TResult Function(String error) errorBusinessType,
   }) {
     return errorCities(error);
   }
@@ -2561,6 +2798,9 @@ class _$ErrorCitiesImpl<T> implements ErrorCities<T> {
     TResult? Function()? loadingCities,
     TResult? Function(T data)? successCities,
     TResult? Function(String error)? errorCities,
+    TResult? Function()? loadingBusinessType,
+    TResult? Function(T data)? successBusinessType,
+    TResult? Function(String error)? errorBusinessType,
   }) {
     return errorCities?.call(error);
   }
@@ -2581,6 +2821,9 @@ class _$ErrorCitiesImpl<T> implements ErrorCities<T> {
     TResult Function()? loadingCities,
     TResult Function(T data)? successCities,
     TResult Function(String error)? errorCities,
+    TResult Function()? loadingBusinessType,
+    TResult Function(T data)? successBusinessType,
+    TResult Function(String error)? errorBusinessType,
     required TResult orElse(),
   }) {
     if (errorCities != null) {
@@ -2605,6 +2848,9 @@ class _$ErrorCitiesImpl<T> implements ErrorCities<T> {
     required TResult Function(LoadingCities<T> value) loadingCities,
     required TResult Function(SuccessCities<T> value) successCities,
     required TResult Function(ErrorCities<T> value) errorCities,
+    required TResult Function(LoadingBusinessType<T> value) loadingBusinessType,
+    required TResult Function(SuccessBusinessType<T> value) successBusinessType,
+    required TResult Function(ErrorBusinessType<T> value) errorBusinessType,
   }) {
     return errorCities(this);
   }
@@ -2625,6 +2871,9 @@ class _$ErrorCitiesImpl<T> implements ErrorCities<T> {
     TResult? Function(LoadingCities<T> value)? loadingCities,
     TResult? Function(SuccessCities<T> value)? successCities,
     TResult? Function(ErrorCities<T> value)? errorCities,
+    TResult? Function(LoadingBusinessType<T> value)? loadingBusinessType,
+    TResult? Function(SuccessBusinessType<T> value)? successBusinessType,
+    TResult? Function(ErrorBusinessType<T> value)? errorBusinessType,
   }) {
     return errorCities?.call(this);
   }
@@ -2645,6 +2894,9 @@ class _$ErrorCitiesImpl<T> implements ErrorCities<T> {
     TResult Function(LoadingCities<T> value)? loadingCities,
     TResult Function(SuccessCities<T> value)? successCities,
     TResult Function(ErrorCities<T> value)? errorCities,
+    TResult Function(LoadingBusinessType<T> value)? loadingBusinessType,
+    TResult Function(SuccessBusinessType<T> value)? successBusinessType,
+    TResult Function(ErrorBusinessType<T> value)? errorBusinessType,
     required TResult orElse(),
   }) {
     if (errorCities != null) {
@@ -2665,4 +2917,648 @@ abstract class ErrorCities<T> implements SignUpState<T> {
   @JsonKey(includeFromJson: false, includeToJson: false)
   _$$ErrorCitiesImplCopyWith<T, _$ErrorCitiesImpl<T>> get copyWith =>
       throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$LoadingBusinessTypeImplCopyWith<T, $Res> {
+  factory _$$LoadingBusinessTypeImplCopyWith(_$LoadingBusinessTypeImpl<T> value,
+          $Res Function(_$LoadingBusinessTypeImpl<T>) then) =
+      __$$LoadingBusinessTypeImplCopyWithImpl<T, $Res>;
+}
+
+/// @nodoc
+class __$$LoadingBusinessTypeImplCopyWithImpl<T, $Res>
+    extends _$SignUpStateCopyWithImpl<T, $Res, _$LoadingBusinessTypeImpl<T>>
+    implements _$$LoadingBusinessTypeImplCopyWith<T, $Res> {
+  __$$LoadingBusinessTypeImplCopyWithImpl(_$LoadingBusinessTypeImpl<T> _value,
+      $Res Function(_$LoadingBusinessTypeImpl<T>) _then)
+      : super(_value, _then);
+
+  /// Create a copy of SignUpState
+  /// with the given fields replaced by the non-null parameter values.
+}
+
+/// @nodoc
+
+class _$LoadingBusinessTypeImpl<T> implements LoadingBusinessType<T> {
+  const _$LoadingBusinessTypeImpl();
+
+  @override
+  String toString() {
+    return 'SignUpState<$T>.loadingBusinessType()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$LoadingBusinessTypeImpl<T>);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() loadingUserTypes,
+    required TResult Function(T data) successUserTypes,
+    required TResult Function(String error) errorUserTypes,
+    required TResult Function() loadingSignUp,
+    required TResult Function(T data) successSignUp,
+    required TResult Function(String error) errorSignUp,
+    required TResult Function() loadingGovernorates,
+    required TResult Function(T data) successGovernorates,
+    required TResult Function(String error) errorGovernorates,
+    required TResult Function() loadingCities,
+    required TResult Function(T data) successCities,
+    required TResult Function(String error) errorCities,
+    required TResult Function() loadingBusinessType,
+    required TResult Function(T data) successBusinessType,
+    required TResult Function(String error) errorBusinessType,
+  }) {
+    return loadingBusinessType();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? loadingUserTypes,
+    TResult? Function(T data)? successUserTypes,
+    TResult? Function(String error)? errorUserTypes,
+    TResult? Function()? loadingSignUp,
+    TResult? Function(T data)? successSignUp,
+    TResult? Function(String error)? errorSignUp,
+    TResult? Function()? loadingGovernorates,
+    TResult? Function(T data)? successGovernorates,
+    TResult? Function(String error)? errorGovernorates,
+    TResult? Function()? loadingCities,
+    TResult? Function(T data)? successCities,
+    TResult? Function(String error)? errorCities,
+    TResult? Function()? loadingBusinessType,
+    TResult? Function(T data)? successBusinessType,
+    TResult? Function(String error)? errorBusinessType,
+  }) {
+    return loadingBusinessType?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loadingUserTypes,
+    TResult Function(T data)? successUserTypes,
+    TResult Function(String error)? errorUserTypes,
+    TResult Function()? loadingSignUp,
+    TResult Function(T data)? successSignUp,
+    TResult Function(String error)? errorSignUp,
+    TResult Function()? loadingGovernorates,
+    TResult Function(T data)? successGovernorates,
+    TResult Function(String error)? errorGovernorates,
+    TResult Function()? loadingCities,
+    TResult Function(T data)? successCities,
+    TResult Function(String error)? errorCities,
+    TResult Function()? loadingBusinessType,
+    TResult Function(T data)? successBusinessType,
+    TResult Function(String error)? errorBusinessType,
+    required TResult orElse(),
+  }) {
+    if (loadingBusinessType != null) {
+      return loadingBusinessType();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial<T> value) initial,
+    required TResult Function(LoadingUserTypes<T> value) loadingUserTypes,
+    required TResult Function(SuccessUserTypes<T> value) successUserTypes,
+    required TResult Function(ErrorUserTypes<T> value) errorUserTypes,
+    required TResult Function(SignUpLoadingState<T> value) loadingSignUp,
+    required TResult Function(SignUpSuccessState<T> value) successSignUp,
+    required TResult Function(SignUpErrorState<T> value) errorSignUp,
+    required TResult Function(LoadingGovernorates<T> value) loadingGovernorates,
+    required TResult Function(SuccessGovernorates<T> value) successGovernorates,
+    required TResult Function(ErrorGovernorates<T> value) errorGovernorates,
+    required TResult Function(LoadingCities<T> value) loadingCities,
+    required TResult Function(SuccessCities<T> value) successCities,
+    required TResult Function(ErrorCities<T> value) errorCities,
+    required TResult Function(LoadingBusinessType<T> value) loadingBusinessType,
+    required TResult Function(SuccessBusinessType<T> value) successBusinessType,
+    required TResult Function(ErrorBusinessType<T> value) errorBusinessType,
+  }) {
+    return loadingBusinessType(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial<T> value)? initial,
+    TResult? Function(LoadingUserTypes<T> value)? loadingUserTypes,
+    TResult? Function(SuccessUserTypes<T> value)? successUserTypes,
+    TResult? Function(ErrorUserTypes<T> value)? errorUserTypes,
+    TResult? Function(SignUpLoadingState<T> value)? loadingSignUp,
+    TResult? Function(SignUpSuccessState<T> value)? successSignUp,
+    TResult? Function(SignUpErrorState<T> value)? errorSignUp,
+    TResult? Function(LoadingGovernorates<T> value)? loadingGovernorates,
+    TResult? Function(SuccessGovernorates<T> value)? successGovernorates,
+    TResult? Function(ErrorGovernorates<T> value)? errorGovernorates,
+    TResult? Function(LoadingCities<T> value)? loadingCities,
+    TResult? Function(SuccessCities<T> value)? successCities,
+    TResult? Function(ErrorCities<T> value)? errorCities,
+    TResult? Function(LoadingBusinessType<T> value)? loadingBusinessType,
+    TResult? Function(SuccessBusinessType<T> value)? successBusinessType,
+    TResult? Function(ErrorBusinessType<T> value)? errorBusinessType,
+  }) {
+    return loadingBusinessType?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial<T> value)? initial,
+    TResult Function(LoadingUserTypes<T> value)? loadingUserTypes,
+    TResult Function(SuccessUserTypes<T> value)? successUserTypes,
+    TResult Function(ErrorUserTypes<T> value)? errorUserTypes,
+    TResult Function(SignUpLoadingState<T> value)? loadingSignUp,
+    TResult Function(SignUpSuccessState<T> value)? successSignUp,
+    TResult Function(SignUpErrorState<T> value)? errorSignUp,
+    TResult Function(LoadingGovernorates<T> value)? loadingGovernorates,
+    TResult Function(SuccessGovernorates<T> value)? successGovernorates,
+    TResult Function(ErrorGovernorates<T> value)? errorGovernorates,
+    TResult Function(LoadingCities<T> value)? loadingCities,
+    TResult Function(SuccessCities<T> value)? successCities,
+    TResult Function(ErrorCities<T> value)? errorCities,
+    TResult Function(LoadingBusinessType<T> value)? loadingBusinessType,
+    TResult Function(SuccessBusinessType<T> value)? successBusinessType,
+    TResult Function(ErrorBusinessType<T> value)? errorBusinessType,
+    required TResult orElse(),
+  }) {
+    if (loadingBusinessType != null) {
+      return loadingBusinessType(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class LoadingBusinessType<T> implements SignUpState<T> {
+  const factory LoadingBusinessType() = _$LoadingBusinessTypeImpl<T>;
+}
+
+/// @nodoc
+abstract class _$$SuccessBusinessTypeImplCopyWith<T, $Res> {
+  factory _$$SuccessBusinessTypeImplCopyWith(_$SuccessBusinessTypeImpl<T> value,
+          $Res Function(_$SuccessBusinessTypeImpl<T>) then) =
+      __$$SuccessBusinessTypeImplCopyWithImpl<T, $Res>;
+  @useResult
+  $Res call({T data});
+}
+
+/// @nodoc
+class __$$SuccessBusinessTypeImplCopyWithImpl<T, $Res>
+    extends _$SignUpStateCopyWithImpl<T, $Res, _$SuccessBusinessTypeImpl<T>>
+    implements _$$SuccessBusinessTypeImplCopyWith<T, $Res> {
+  __$$SuccessBusinessTypeImplCopyWithImpl(_$SuccessBusinessTypeImpl<T> _value,
+      $Res Function(_$SuccessBusinessTypeImpl<T>) _then)
+      : super(_value, _then);
+
+  /// Create a copy of SignUpState
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? data = freezed,
+  }) {
+    return _then(_$SuccessBusinessTypeImpl<T>(
+      freezed == data
+          ? _value.data
+          : data // ignore: cast_nullable_to_non_nullable
+              as T,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$SuccessBusinessTypeImpl<T> implements SuccessBusinessType<T> {
+  const _$SuccessBusinessTypeImpl(this.data);
+
+  @override
+  final T data;
+
+  @override
+  String toString() {
+    return 'SignUpState<$T>.successBusinessType(data: $data)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$SuccessBusinessTypeImpl<T> &&
+            const DeepCollectionEquality().equals(other.data, data));
+  }
+
+  @override
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(data));
+
+  /// Create a copy of SignUpState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$SuccessBusinessTypeImplCopyWith<T, _$SuccessBusinessTypeImpl<T>>
+      get copyWith => __$$SuccessBusinessTypeImplCopyWithImpl<T,
+          _$SuccessBusinessTypeImpl<T>>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() loadingUserTypes,
+    required TResult Function(T data) successUserTypes,
+    required TResult Function(String error) errorUserTypes,
+    required TResult Function() loadingSignUp,
+    required TResult Function(T data) successSignUp,
+    required TResult Function(String error) errorSignUp,
+    required TResult Function() loadingGovernorates,
+    required TResult Function(T data) successGovernorates,
+    required TResult Function(String error) errorGovernorates,
+    required TResult Function() loadingCities,
+    required TResult Function(T data) successCities,
+    required TResult Function(String error) errorCities,
+    required TResult Function() loadingBusinessType,
+    required TResult Function(T data) successBusinessType,
+    required TResult Function(String error) errorBusinessType,
+  }) {
+    return successBusinessType(data);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? loadingUserTypes,
+    TResult? Function(T data)? successUserTypes,
+    TResult? Function(String error)? errorUserTypes,
+    TResult? Function()? loadingSignUp,
+    TResult? Function(T data)? successSignUp,
+    TResult? Function(String error)? errorSignUp,
+    TResult? Function()? loadingGovernorates,
+    TResult? Function(T data)? successGovernorates,
+    TResult? Function(String error)? errorGovernorates,
+    TResult? Function()? loadingCities,
+    TResult? Function(T data)? successCities,
+    TResult? Function(String error)? errorCities,
+    TResult? Function()? loadingBusinessType,
+    TResult? Function(T data)? successBusinessType,
+    TResult? Function(String error)? errorBusinessType,
+  }) {
+    return successBusinessType?.call(data);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loadingUserTypes,
+    TResult Function(T data)? successUserTypes,
+    TResult Function(String error)? errorUserTypes,
+    TResult Function()? loadingSignUp,
+    TResult Function(T data)? successSignUp,
+    TResult Function(String error)? errorSignUp,
+    TResult Function()? loadingGovernorates,
+    TResult Function(T data)? successGovernorates,
+    TResult Function(String error)? errorGovernorates,
+    TResult Function()? loadingCities,
+    TResult Function(T data)? successCities,
+    TResult Function(String error)? errorCities,
+    TResult Function()? loadingBusinessType,
+    TResult Function(T data)? successBusinessType,
+    TResult Function(String error)? errorBusinessType,
+    required TResult orElse(),
+  }) {
+    if (successBusinessType != null) {
+      return successBusinessType(data);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial<T> value) initial,
+    required TResult Function(LoadingUserTypes<T> value) loadingUserTypes,
+    required TResult Function(SuccessUserTypes<T> value) successUserTypes,
+    required TResult Function(ErrorUserTypes<T> value) errorUserTypes,
+    required TResult Function(SignUpLoadingState<T> value) loadingSignUp,
+    required TResult Function(SignUpSuccessState<T> value) successSignUp,
+    required TResult Function(SignUpErrorState<T> value) errorSignUp,
+    required TResult Function(LoadingGovernorates<T> value) loadingGovernorates,
+    required TResult Function(SuccessGovernorates<T> value) successGovernorates,
+    required TResult Function(ErrorGovernorates<T> value) errorGovernorates,
+    required TResult Function(LoadingCities<T> value) loadingCities,
+    required TResult Function(SuccessCities<T> value) successCities,
+    required TResult Function(ErrorCities<T> value) errorCities,
+    required TResult Function(LoadingBusinessType<T> value) loadingBusinessType,
+    required TResult Function(SuccessBusinessType<T> value) successBusinessType,
+    required TResult Function(ErrorBusinessType<T> value) errorBusinessType,
+  }) {
+    return successBusinessType(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial<T> value)? initial,
+    TResult? Function(LoadingUserTypes<T> value)? loadingUserTypes,
+    TResult? Function(SuccessUserTypes<T> value)? successUserTypes,
+    TResult? Function(ErrorUserTypes<T> value)? errorUserTypes,
+    TResult? Function(SignUpLoadingState<T> value)? loadingSignUp,
+    TResult? Function(SignUpSuccessState<T> value)? successSignUp,
+    TResult? Function(SignUpErrorState<T> value)? errorSignUp,
+    TResult? Function(LoadingGovernorates<T> value)? loadingGovernorates,
+    TResult? Function(SuccessGovernorates<T> value)? successGovernorates,
+    TResult? Function(ErrorGovernorates<T> value)? errorGovernorates,
+    TResult? Function(LoadingCities<T> value)? loadingCities,
+    TResult? Function(SuccessCities<T> value)? successCities,
+    TResult? Function(ErrorCities<T> value)? errorCities,
+    TResult? Function(LoadingBusinessType<T> value)? loadingBusinessType,
+    TResult? Function(SuccessBusinessType<T> value)? successBusinessType,
+    TResult? Function(ErrorBusinessType<T> value)? errorBusinessType,
+  }) {
+    return successBusinessType?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial<T> value)? initial,
+    TResult Function(LoadingUserTypes<T> value)? loadingUserTypes,
+    TResult Function(SuccessUserTypes<T> value)? successUserTypes,
+    TResult Function(ErrorUserTypes<T> value)? errorUserTypes,
+    TResult Function(SignUpLoadingState<T> value)? loadingSignUp,
+    TResult Function(SignUpSuccessState<T> value)? successSignUp,
+    TResult Function(SignUpErrorState<T> value)? errorSignUp,
+    TResult Function(LoadingGovernorates<T> value)? loadingGovernorates,
+    TResult Function(SuccessGovernorates<T> value)? successGovernorates,
+    TResult Function(ErrorGovernorates<T> value)? errorGovernorates,
+    TResult Function(LoadingCities<T> value)? loadingCities,
+    TResult Function(SuccessCities<T> value)? successCities,
+    TResult Function(ErrorCities<T> value)? errorCities,
+    TResult Function(LoadingBusinessType<T> value)? loadingBusinessType,
+    TResult Function(SuccessBusinessType<T> value)? successBusinessType,
+    TResult Function(ErrorBusinessType<T> value)? errorBusinessType,
+    required TResult orElse(),
+  }) {
+    if (successBusinessType != null) {
+      return successBusinessType(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class SuccessBusinessType<T> implements SignUpState<T> {
+  const factory SuccessBusinessType(final T data) =
+      _$SuccessBusinessTypeImpl<T>;
+
+  T get data;
+
+  /// Create a copy of SignUpState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$SuccessBusinessTypeImplCopyWith<T, _$SuccessBusinessTypeImpl<T>>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$ErrorBusinessTypeImplCopyWith<T, $Res> {
+  factory _$$ErrorBusinessTypeImplCopyWith(_$ErrorBusinessTypeImpl<T> value,
+          $Res Function(_$ErrorBusinessTypeImpl<T>) then) =
+      __$$ErrorBusinessTypeImplCopyWithImpl<T, $Res>;
+  @useResult
+  $Res call({String error});
+}
+
+/// @nodoc
+class __$$ErrorBusinessTypeImplCopyWithImpl<T, $Res>
+    extends _$SignUpStateCopyWithImpl<T, $Res, _$ErrorBusinessTypeImpl<T>>
+    implements _$$ErrorBusinessTypeImplCopyWith<T, $Res> {
+  __$$ErrorBusinessTypeImplCopyWithImpl(_$ErrorBusinessTypeImpl<T> _value,
+      $Res Function(_$ErrorBusinessTypeImpl<T>) _then)
+      : super(_value, _then);
+
+  /// Create a copy of SignUpState
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? error = null,
+  }) {
+    return _then(_$ErrorBusinessTypeImpl<T>(
+      error: null == error
+          ? _value.error
+          : error // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$ErrorBusinessTypeImpl<T> implements ErrorBusinessType<T> {
+  const _$ErrorBusinessTypeImpl({required this.error});
+
+  @override
+  final String error;
+
+  @override
+  String toString() {
+    return 'SignUpState<$T>.errorBusinessType(error: $error)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$ErrorBusinessTypeImpl<T> &&
+            (identical(other.error, error) || other.error == error));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, error);
+
+  /// Create a copy of SignUpState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$ErrorBusinessTypeImplCopyWith<T, _$ErrorBusinessTypeImpl<T>>
+      get copyWith =>
+          __$$ErrorBusinessTypeImplCopyWithImpl<T, _$ErrorBusinessTypeImpl<T>>(
+              this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() loadingUserTypes,
+    required TResult Function(T data) successUserTypes,
+    required TResult Function(String error) errorUserTypes,
+    required TResult Function() loadingSignUp,
+    required TResult Function(T data) successSignUp,
+    required TResult Function(String error) errorSignUp,
+    required TResult Function() loadingGovernorates,
+    required TResult Function(T data) successGovernorates,
+    required TResult Function(String error) errorGovernorates,
+    required TResult Function() loadingCities,
+    required TResult Function(T data) successCities,
+    required TResult Function(String error) errorCities,
+    required TResult Function() loadingBusinessType,
+    required TResult Function(T data) successBusinessType,
+    required TResult Function(String error) errorBusinessType,
+  }) {
+    return errorBusinessType(error);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? loadingUserTypes,
+    TResult? Function(T data)? successUserTypes,
+    TResult? Function(String error)? errorUserTypes,
+    TResult? Function()? loadingSignUp,
+    TResult? Function(T data)? successSignUp,
+    TResult? Function(String error)? errorSignUp,
+    TResult? Function()? loadingGovernorates,
+    TResult? Function(T data)? successGovernorates,
+    TResult? Function(String error)? errorGovernorates,
+    TResult? Function()? loadingCities,
+    TResult? Function(T data)? successCities,
+    TResult? Function(String error)? errorCities,
+    TResult? Function()? loadingBusinessType,
+    TResult? Function(T data)? successBusinessType,
+    TResult? Function(String error)? errorBusinessType,
+  }) {
+    return errorBusinessType?.call(error);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loadingUserTypes,
+    TResult Function(T data)? successUserTypes,
+    TResult Function(String error)? errorUserTypes,
+    TResult Function()? loadingSignUp,
+    TResult Function(T data)? successSignUp,
+    TResult Function(String error)? errorSignUp,
+    TResult Function()? loadingGovernorates,
+    TResult Function(T data)? successGovernorates,
+    TResult Function(String error)? errorGovernorates,
+    TResult Function()? loadingCities,
+    TResult Function(T data)? successCities,
+    TResult Function(String error)? errorCities,
+    TResult Function()? loadingBusinessType,
+    TResult Function(T data)? successBusinessType,
+    TResult Function(String error)? errorBusinessType,
+    required TResult orElse(),
+  }) {
+    if (errorBusinessType != null) {
+      return errorBusinessType(error);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial<T> value) initial,
+    required TResult Function(LoadingUserTypes<T> value) loadingUserTypes,
+    required TResult Function(SuccessUserTypes<T> value) successUserTypes,
+    required TResult Function(ErrorUserTypes<T> value) errorUserTypes,
+    required TResult Function(SignUpLoadingState<T> value) loadingSignUp,
+    required TResult Function(SignUpSuccessState<T> value) successSignUp,
+    required TResult Function(SignUpErrorState<T> value) errorSignUp,
+    required TResult Function(LoadingGovernorates<T> value) loadingGovernorates,
+    required TResult Function(SuccessGovernorates<T> value) successGovernorates,
+    required TResult Function(ErrorGovernorates<T> value) errorGovernorates,
+    required TResult Function(LoadingCities<T> value) loadingCities,
+    required TResult Function(SuccessCities<T> value) successCities,
+    required TResult Function(ErrorCities<T> value) errorCities,
+    required TResult Function(LoadingBusinessType<T> value) loadingBusinessType,
+    required TResult Function(SuccessBusinessType<T> value) successBusinessType,
+    required TResult Function(ErrorBusinessType<T> value) errorBusinessType,
+  }) {
+    return errorBusinessType(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial<T> value)? initial,
+    TResult? Function(LoadingUserTypes<T> value)? loadingUserTypes,
+    TResult? Function(SuccessUserTypes<T> value)? successUserTypes,
+    TResult? Function(ErrorUserTypes<T> value)? errorUserTypes,
+    TResult? Function(SignUpLoadingState<T> value)? loadingSignUp,
+    TResult? Function(SignUpSuccessState<T> value)? successSignUp,
+    TResult? Function(SignUpErrorState<T> value)? errorSignUp,
+    TResult? Function(LoadingGovernorates<T> value)? loadingGovernorates,
+    TResult? Function(SuccessGovernorates<T> value)? successGovernorates,
+    TResult? Function(ErrorGovernorates<T> value)? errorGovernorates,
+    TResult? Function(LoadingCities<T> value)? loadingCities,
+    TResult? Function(SuccessCities<T> value)? successCities,
+    TResult? Function(ErrorCities<T> value)? errorCities,
+    TResult? Function(LoadingBusinessType<T> value)? loadingBusinessType,
+    TResult? Function(SuccessBusinessType<T> value)? successBusinessType,
+    TResult? Function(ErrorBusinessType<T> value)? errorBusinessType,
+  }) {
+    return errorBusinessType?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial<T> value)? initial,
+    TResult Function(LoadingUserTypes<T> value)? loadingUserTypes,
+    TResult Function(SuccessUserTypes<T> value)? successUserTypes,
+    TResult Function(ErrorUserTypes<T> value)? errorUserTypes,
+    TResult Function(SignUpLoadingState<T> value)? loadingSignUp,
+    TResult Function(SignUpSuccessState<T> value)? successSignUp,
+    TResult Function(SignUpErrorState<T> value)? errorSignUp,
+    TResult Function(LoadingGovernorates<T> value)? loadingGovernorates,
+    TResult Function(SuccessGovernorates<T> value)? successGovernorates,
+    TResult Function(ErrorGovernorates<T> value)? errorGovernorates,
+    TResult Function(LoadingCities<T> value)? loadingCities,
+    TResult Function(SuccessCities<T> value)? successCities,
+    TResult Function(ErrorCities<T> value)? errorCities,
+    TResult Function(LoadingBusinessType<T> value)? loadingBusinessType,
+    TResult Function(SuccessBusinessType<T> value)? successBusinessType,
+    TResult Function(ErrorBusinessType<T> value)? errorBusinessType,
+    required TResult orElse(),
+  }) {
+    if (errorBusinessType != null) {
+      return errorBusinessType(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class ErrorBusinessType<T> implements SignUpState<T> {
+  const factory ErrorBusinessType({required final String error}) =
+      _$ErrorBusinessTypeImpl<T>;
+
+  String get error;
+
+  /// Create a copy of SignUpState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$ErrorBusinessTypeImplCopyWith<T, _$ErrorBusinessTypeImpl<T>>
+      get copyWith => throw _privateConstructorUsedError;
 }

@@ -1,6 +1,7 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:home4u/features/auth/sign_up/data/models/worker_body.dart';
 
+import 'business_body.dart';
 import 'engineer_body.dart';
 
 part 'sign_up_body.g.dart';
@@ -17,6 +18,7 @@ class SignUpBody {
   final CityRequest? city;
   final EngineerRequest? engineer;
   final TechnicalWorkerRequest? technicalWorker;
+  final BusinessBody? business;
 
   SignUpBody({
     required this.firstName,
@@ -29,6 +31,7 @@ class SignUpBody {
     this.city,
     this.engineer,
     this.technicalWorker,
+    this.business,
   });
 
   factory SignUpBody.fromJson(Map<String, dynamic> json) =>

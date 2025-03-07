@@ -29,4 +29,9 @@ class SignUpState<T> with _$SignUpState<T> {
   const factory SignUpState.loadingCities() = LoadingCities;
   const factory SignUpState.successCities(T data) = SuccessCities<T>;
   const factory SignUpState.errorCities({required String error}) = ErrorCities;
+
+  ///BusinessType
+  const factory SignUpState.loadingBusinessType() = LoadingBusinessType;
+  const factory SignUpState.successBusinessType(T data) = SuccessBusinessType<T>;
+  const factory SignUpState.errorBusinessType({required String error}) = ErrorBusinessType;
 }
