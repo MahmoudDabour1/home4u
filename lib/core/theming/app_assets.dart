@@ -39,4 +39,8 @@ abstract class AppAssets {
   static const String likeIcon = 'assets/svgs/like_svg_icon.svg';
   static const String productPreviewIcon = 'assets/svgs/product_preview_icon.svg';
   static const String submitIconSvg = 'assets/svgs/submit_svg_icon.svg';
+  static const String addProductSvg = 'assets/svgs/add_product_svg.svg';
+  static const String arrowUpSvg = 'assets/svgs/arrow_up.svg';
+  static const String arrowDownSvg = 'assets/svgs/arrow_down_svg.svg';
+  static const String uploadImageIcon = 'assets/svgs/upload_image_icon.svg';
 }

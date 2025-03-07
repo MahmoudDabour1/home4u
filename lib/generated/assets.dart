@@ -21,9 +21,12 @@ class Assets {
   static const String imagesOnboardingTwo = 'assets/images/onboarding_two.png';
   static const String imagesProfileBackImage = 'assets/images/profile_back_image.png';
   static const String imagesSplash = 'assets/images/splash.png';
+  static const String svgsAddProductSvg = 'assets/svgs/add_product_svg.svg';
   static const String svgsArrowDown = 'assets/svgs/arrow_down.svg';
+  static const String svgsArrowDownSvg = 'assets/svgs/arrow_down_svg.svg';
   static const String svgsArrowLeft = 'assets/svgs/arrow_left.svg';
   static const String svgsArrowRight = 'assets/svgs/arrow_right.svg';
+  static const String svgsArrowUp = 'assets/svgs/arrow_up.svg';
   static const String svgsChangeLanguage = 'assets/svgs/change_language.svg';
   static const String svgsDeleteSvg = 'assets/svgs/delete_svg.svg';
   static const String svgsEditProfle = 'assets/svgs/edit_profle.svg';
@@ -50,6 +53,7 @@ class Assets {
   static const String svgsProductPreviewIcon = 'assets/svgs/product_preview_icon.svg';
   static const String svgsSettingSvg = 'assets/svgs/setting_svg.svg';
   static const String svgsSubmitSvgIcon = 'assets/svgs/submit_svg_icon.svg';
+  static const String svgsUploadImageIcon = 'assets/svgs/upload_image_icon.svg';
   static const String svgsWebsite = 'assets/svgs/website.svg';
 
 }

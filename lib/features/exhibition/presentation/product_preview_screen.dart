@@ -1,16 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_localization/flutter_localization.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_svg/flutter_svg.dart';
-import 'package:home4u/core/theming/app_assets.dart';
 import 'package:home4u/features/exhibition/presentation/widgets/product_preview/product_images_preview_widget.dart';
 import 'package:home4u/features/exhibition/presentation/widgets/product_preview/product_preview_data_content.dart';
 import 'package:home4u/features/exhibition/presentation/widgets/product_preview/product_preview_header_widget.dart';
 import 'package:home4u/features/exhibition/presentation/widgets/product_preview/product_submit_button.dart';
-import 'package:home4u/locale/app_locale.dart';
 
-import '../../../core/theming/app_colors.dart';
-import '../../../core/theming/app_styles.dart';
 import '../../../core/utils/spacing.dart';
 
 class ProductPreviewScreen extends StatelessWidget {
