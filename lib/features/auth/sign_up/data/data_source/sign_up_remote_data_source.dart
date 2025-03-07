@@ -7,6 +7,7 @@ import 'package:retrofit/error_logger.dart';
 import 'package:retrofit/http.dart';
 
 import '../../../../../core/networking/api_constants.dart';
+import '../models/business_type.dart';
 import '../models/sign_up_body.dart';
 
 part 'sign_up_remote_data_source.g.dart';
@@ -30,5 +31,9 @@ abstract class SignUpRemoteDataSource {
   @GET("/api/v1/cities/governorate/{governorateId}")
   Future<CityModel> getCities(
     @Path("governorateId") int governorateId,
+  );
+
+  Future<BusinessTypesModel> getBusinessTypes(
+    @Path("userTypeId") int userTypeId,
   );
 }

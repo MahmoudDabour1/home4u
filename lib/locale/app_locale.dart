@@ -68,6 +68,7 @@ class AppLocale {
   static const String passwordsDoNotMatch = 'Passwords Do Not Match';
   static const String engineerInfo = 'Engineer Information';
   static const String technicalInfo = 'Technical Information';
+  static const String businessInfo = 'Business Information';
   static const String yearsOfExperience = 'Years of Experience';
   static const String engineerType = 'Engineer Type';
   static const String engineeringServices = 'Engineering Services';
@@ -190,6 +191,13 @@ class AppLocale {
   static const String maxPrice = 'Max Price';
 
 
+  ///BusinessSignUp
+  static const String tradeName = 'Trade Name';
+  static const String bioAr = 'Bio AR';
+  static const String bioEn = 'Bio EN';
+  static const String businessTypes = 'Business Types';
+
+
   static List<String> bottomNavItems = [
     'Home',
     'Projects',
@@ -276,6 +284,7 @@ class AppLocale {
     passwordsDoNotMatch: 'Passwords Do Not Match',
     engineerInfo: 'Engineer Information',
     technicalInfo: 'Technical Information',
+    businessInfo : 'Business Information',
     yearsOfExperience: 'Years of Experience',
     engineerType: 'Engineer Type',
     engineeringServices: 'Engineering Services',
@@ -381,7 +390,10 @@ class AppLocale {
     dimensionWidth : 'العرض - Width',
     dimensionHeight : 'الارتفاع - Height',
     businessType : 'Business Type',
-
+    tradeName : 'Trade Name',
+    bioAr : 'Bio AR',
+    bioEn : 'Bio EN',
+    businessTypes : 'Business Types',
     products : 'Products',
     offers : 'Offers',
     outOfStock : 'Out of Stock',
@@ -394,7 +406,6 @@ class AppLocale {
     rating : 'Rating:',
     minPrice : 'Min Price',
     maxPrice : 'Max Price',
-
   };
 
   static const Map<String, dynamic> ar = {
@@ -464,6 +475,7 @@ class AppLocale {
     passwordsDoNotMatch: 'كلمات المرور غير متطابقة',
     engineerInfo: 'معلومات المهندس',
     technicalInfo: 'المعلومات التقنية',
+    businessInfo : 'معلومات الأعمال',
     yearsOfExperience: 'سنوات الخبرة',
     engineerType: 'نوع المهندس',
     engineeringServices: 'الخدمات الهندسية',
@@ -567,6 +579,10 @@ class AppLocale {
     dimensionWidth : 'العرض - Width',
     dimensionHeight : 'الارتفاع - Height',
     businessType : 'نوع العمل',
+    tradeName : 'الاسم التجاري',
+    bioAr : 'السيرة الذاتية بالعربية',
+    bioEn : 'السيرة الذاتية بالإنجليزية',
+    businessTypes : 'أنواع الأعمال',
     search: 'بحث',
     products : 'المنتجات',
     offers : 'العروض',

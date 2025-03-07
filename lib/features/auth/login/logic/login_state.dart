@@ -1,4 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:home4u/features/auth/login/data/models/login_response.dart';
 
 part 'login_state.freezed.dart';
 @freezed
@@ -7,7 +8,7 @@ part 'login_state.freezed.dart';
 
   const factory LoginState.loading() = LoginLoading;
 
-  const factory LoginState.success(T data) = LoginSuccess<T>;
+  const factory LoginState.success(LoginResponse response) = LoginSuccess;
 
   const factory LoginState.error({required String error}) = LoginError;
 
