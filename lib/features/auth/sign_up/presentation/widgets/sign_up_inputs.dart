@@ -94,7 +94,7 @@ class _SignUpInputsState extends State<SignUpInputs> {
       textInputAction: TextInputAction.next,
       keyboardType: TextInputType.emailAddress,
       validator: (value) {
-        if (value.isEmpty || !AppRegex.isEmailValid(value)) {
+        if (value.isEmpty ) {
           return AppLocale.pleaseEnterAValidEmailAddress.getString(context);
         }
       },

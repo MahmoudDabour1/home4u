@@ -39,12 +39,16 @@ class SignUpButtons extends StatelessWidget {
                   final signUpCubit = context.read<SignUpCubit>();
                   await SharedPrefHelper.setData(
                       SharedPrefKeys.isFromForgetPassword, false);
+                  ///ToDo : refactor this code
                   if (checkInputs) {
                     if (signUpCubit.selectedUserType?.code == "ENGINEER") {
                       context.pushNamed(Routes.engineerSignUpScreen);
                     } else if (signUpCubit.selectedUserType?.code ==
                         "TECHNICAL_WORKER") {
                       context.pushNamed(Routes.technicalWorkerSignUpScreen);
+                    } else if(signUpCubit.selectedUserType?.code ==
+                        "EXHIBITION" || signUpCubit.selectedUserType?.code == "STORE") {
+                      context.pushNamed(Routes.businessSignUpScreen);
                     } else {
                       signUpCubit.emitSignUp();
                     }

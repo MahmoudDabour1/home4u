@@ -18,6 +18,7 @@ import 'package:home4u/features/layout/logic/bottom_nav_cubit.dart';
 import 'package:home4u/features/profile/presentation/add_certification_screen.dart';
 
 import '../../features/auth/login/presentation/login_screen.dart';
+import '../../features/auth/sign_up/presentation/business_sign_up_screen.dart';
 import '../../features/exhibition/presentation/business_add_product_screen.dart';
 import '../../features/exhibition/presentation/business_overview_screen.dart';
 import '../../features/exhibition/presentation/business_review_screen.dart';
@@ -145,6 +146,10 @@ class AppRouter {
       case Routes.businessAddProductScreen:
         return MaterialPageRoute(
           builder: (_) => BusinessAddProductScreen(),
+        );
+      case Routes.businessSignUpScreen:
+        return MaterialPageRoute(
+          builder: (_) => BusinessSignUpScreen(),
         );
       default:
         return null;
