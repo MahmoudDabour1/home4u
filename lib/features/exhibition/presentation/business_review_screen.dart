@@ -9,6 +9,7 @@ import '../../../core/theming/app_assets.dart';
 import '../../../core/theming/app_colors.dart';
 import '../../../core/widgets/business_header_widget.dart';
 import '../../../locale/app_locale.dart';
+import '../../products/presentation/widgets/drawer/products_drawer.dart';
 
 class BusinessReviewScreen extends StatelessWidget {
   const BusinessReviewScreen({super.key});
@@ -16,13 +17,13 @@ class BusinessReviewScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      drawer: ProductsDrawer(selectedItem: DrawerItem.review,),
       backgroundColor: AppColors.scaffoldBusinessBackgroundColor,
       body: Column(
         children: [
           BusinessHeaderWidget(
             headerTitle: AppLocale.review.getString(context),
             headerIcon: AppAssets.reviewIcon,
-            menuOnPressed: () {},
           ),
           verticalSpace(32),
           Expanded(

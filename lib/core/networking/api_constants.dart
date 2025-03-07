@@ -46,6 +46,10 @@ class ApiConstants {
   static const String uploadProfileImageEP = "/api/v1/users/personal_photo";
 
 
+  ///exhibitions
+  static const String businessConfigEP = "/api/v1/business-config";
+
+
   ///images
   static String getImageBaseUrl(String path) =>
       "$apiBaseUrl/$path";

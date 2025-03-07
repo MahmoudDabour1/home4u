@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_localization/flutter_localization.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:home4u/features/products/presentation/widgets/products_drawer.dart';
+import 'package:home4u/features/products/presentation/widgets/drawer/products_drawer.dart';
+import 'package:home4u/locale/app_locale.dart';
 
-import '../../../../core/theming/app_assets.dart';
-import '../../../../core/theming/app_colors.dart';
-import '../../../../core/theming/app_styles.dart';
+import '../../../../../core/theming/app_assets.dart';
+import '../../../../../core/theming/app_colors.dart';
+import '../../../../../core/theming/app_styles.dart';
 
 class DrawerItemWidget extends StatelessWidget {
   final DrawerItem item;
@@ -22,7 +24,7 @@ class DrawerItemWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final icon = getIconForItem(item);
-    final text = getTextForItem(item);
+    final text = getTextForItem(item,context);
 
     return Padding(
       padding: EdgeInsets.symmetric(vertical: 4.h),
@@ -66,20 +68,20 @@ class DrawerItemWidget extends StatelessWidget {
     }
   }
 
-  String getTextForItem(DrawerItem item) {
+  String getTextForItem(DrawerItem item, BuildContext context) {
     switch (item) {
       case DrawerItem.products:
-        return "Products";
+        return AppLocale.products.getString(context);
       case DrawerItem.overview:
-        return "Overview";
+        return AppLocale.overview.getString(context);
       case DrawerItem.settings:
-        return "Settings";
+        return AppLocale.settings.getString(context);
       case DrawerItem.review:
-        return "Review";
+        return AppLocale.review.getString(context);
       case DrawerItem.offers:
-        return "Offers";
+        return AppLocale.offers.getString(context);
       case DrawerItem.addProduct:
-        return "Add Product";
+        return AppLocale.addProduct.getString(context);
     }
   }
 }

@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:home4u/core/extensions/navigation_extension.dart';
-import 'package:home4u/features/products/presentation/widgets/products_drawer.dart';
+import 'package:home4u/features/products/presentation/widgets/drawer/products_drawer.dart';
 
-import '../../../../core/routing/routes.dart';
+import '../../../../../core/routing/routes.dart';
 import 'drawer_item_widget.dart';
+
 
 class DrawerListView extends StatefulWidget {
   final DrawerItem selectedItem;
@@ -46,13 +47,13 @@ class _DrawerListViewState extends State<DrawerListView> {
         context.pushNamed(Routes.productsScreen);
         break;
       case DrawerItem.overview:
-        context.pushNamed(Routes.loginScreen);
+        context.pushNamed(Routes.businessOverviewScreen);
         break;
       case DrawerItem.settings:
         context.pushNamed(Routes.productsScreen);
         break;
       case DrawerItem.review:
-        context.pushNamed(Routes.productsScreen);
+        context.pushNamed(Routes.businessReviewScreen);
         break;
       case DrawerItem.offers:
         context.pushNamed(Routes.productsScreen);

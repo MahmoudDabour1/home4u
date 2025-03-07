@@ -166,6 +166,20 @@ class AppLocale {
   static const String dimensions = 'Dimensions';
   static const String stock ='Stock';
   static const String baseUnit = 'Base Unit';
+  static const String products = 'Products';
+  static const String offers = 'Offers';
+  static const String addProduct = 'Add Product';
+  static const String outOfStock = 'Out of Stock';
+  static const String filter = 'Filter';
+  static const String availability = 'Availability:';
+  static const String categories = 'Categories:';
+  static const String materials = 'Materials:';
+  static const String colors = 'Colors:';
+  static const String prices = 'Price:';
+  static const String rating = 'Rating:';
+  static const String minPrice = 'Min Price';
+  static const String maxPrice = 'Max Price';
+
 
   static List<String> bottomNavItems = [
     'Home',
@@ -348,6 +362,20 @@ class AppLocale {
     dimensions : 'Dimensions',
     stock : 'Stock',
     baseUnit : 'Base Unit',
+    products : 'Products',
+    offers : 'Offers',
+    addProduct : 'Add Product',
+    outOfStock : 'Out of Stock',
+    filter : 'Filter',
+    availability : 'Availability:',
+    categories : 'Categories:',
+    materials : 'Materials:',
+    colors : 'Colors:',
+    prices : 'Price:',
+    rating : 'Rating:',
+    minPrice : 'Min Price',
+    maxPrice : 'Max Price',
+
   };
 
   static const Map<String, dynamic> ar = {
@@ -511,5 +539,18 @@ class AppLocale {
     stock : 'المخزون',
     baseUnit : 'الوحدة الأساسية',
     search: 'بحث',
+    products : 'المنتجات',
+    offers : 'العروض',
+    addProduct : 'إضافة منتج',
+    outOfStock : 'نفذ من المخزن',
+    filter : 'تصفية',
+    availability : 'متوفر:',
+    categories : 'الفئات:',
+    materials : 'المواد:',
+    colors : 'الألوان:',
+    prices : 'السعر:',
+    rating : 'التقييم:',
+    minPrice : 'الحد الأدنى للسعر',
+    maxPrice : 'الحد الأقصى للسعر',
   };
 }

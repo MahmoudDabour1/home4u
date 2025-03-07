@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:home4u/features/products/presentation/widgets/products_custom_row_wigdet.dart';
+import 'package:home4u/locale/app_locale.dart';
 
 import '../../../../core/theming/app_assets.dart';
 import '../../../../core/theming/app_styles.dart';
@@ -24,10 +25,10 @@ class ProductsTextItems extends StatelessWidget {
           textStyle: AppStyles.font16BlueMedium,
         ),
         ProductsCustomRowWidget(
-          title: "Stock: 100",
+          title: "${AppLocale.stock}: 100",
           iconImage: AppAssets.stockSvg,
         ),
-        Text("Dimensions:280*180*85cm", style: AppStyles.font16GrayLight),
+        Text("${AppLocale.dimensions}: 280*180*85cm", style: AppStyles.font16GrayLight),
       ],
     );
   }

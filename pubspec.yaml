@@ -182,3 +182,4 @@ flutter:
     - assets/images/
     - assets/svgs/
     - shorebird.yaml
+    - lib/features/products/presentation/widgets/filter/

@@ -40,7 +40,9 @@ abstract class AppAssets {
   static const String reviewSvg = 'assets/svgs/review_svg.svg';
   static const String settingDarkGraySvg = 'assets/svgs/settings_drawer_svg.svg';
   static const String addProductSvg = 'assets/svgs/add_product_svg.svg';
-  static const productSvg = 'assets/svgs/product_svg.svg';
+  static const  String productSvg = 'assets/svgs/product_svg.svg';
+  static const  String productWhiteSvg = 'assets/svgs/product_white_svg.svg';
+  static const String warningSvg = 'assets/svgs/waring_svg.svg';
 
   static const String exhibitionHouseBuilding = 'assets/svgs/house_building.svg';
   static const String facebookIcon = 'assets/svgs/facebook_svg_icon.svg';
@@ -53,4 +55,5 @@ abstract class AppAssets {
   static const String reviewIcon = 'assets/svgs/personal_rating.svg';
   static const String likeIcon = 'assets/svgs/like_svg_icon.svg';
   static const String productPreviewIcon = 'assets/svgs/product_preview_icon.svg';
+  static const String starSvgImage = 'assets/svgs/star_svg.svg';
 }

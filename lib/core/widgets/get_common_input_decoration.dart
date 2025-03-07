@@ -8,13 +8,15 @@ InputDecoration getCommonInputDecoration({
   required String labelText,
   Widget? prefixIcon,
   TextStyle? labelStyle,
+  Color? fillColor,
+  double? verticalPadding,
 }) {
   return InputDecoration(
     isDense: true,
     filled: true,
-    fillColor: AppColors.textFieldFillColor,
+    fillColor: fillColor??AppColors.textFieldFillColor,
     contentPadding: EdgeInsets.symmetric(
-      vertical: 17.h,
+      vertical:verticalPadding?? 17.h,
       horizontal: 20.w,
     ),
     focusedBorder: OutlineInputBorder(

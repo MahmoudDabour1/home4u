@@ -11,13 +11,11 @@ import '../theming/font_weight_helper.dart';
 class BusinessHeaderWidget extends StatelessWidget {
   final String headerTitle;
   final String headerIcon;
-  final VoidCallback menuOnPressed;
 
   const BusinessHeaderWidget({
     super.key,
     required this.headerTitle,
     required this.headerIcon,
-    required this.menuOnPressed,
   });
 
   @override
@@ -31,7 +29,7 @@ class BusinessHeaderWidget extends StatelessWidget {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              _buildHeaderMenu(),
+              _buildHeaderMenu(context),
               Spacer(),
               _buildHeaderTitle(),
               Spacer(),
@@ -43,9 +41,11 @@ class BusinessHeaderWidget extends StatelessWidget {
     );
   }
 
-  Widget _buildHeaderMenu() {
+  Widget _buildHeaderMenu(BuildContext context) {
     return GestureDetector(
-      onTap: menuOnPressed,
+      onTap: (){
+        Scaffold.of(context).openDrawer();
+      },
       child: Icon(
         Icons.menu,
         size: 36.r,
@@ -75,6 +75,10 @@ class BusinessHeaderWidget extends StatelessWidget {
           width: 24.w,
           height: 24.h,
           alignment: Alignment.center,
+          // colorFilter: ColorFilter.mode(
+          //   AppColors.whiteColor,
+          //   BlendMode.srcIn,
+          // ),
         ),
         Text(
           headerTitle,
