@@ -112,6 +112,8 @@ dependencies:
   bottom_picker: ^2.11.0
   #images slider
   carousel_slider: ^5.0.0
+  #easy_stepper
+  easy_stepper: ^0.8.5+1
 
 
 dev_dependencies:
@@ -182,4 +184,3 @@ flutter:
     - assets/images/
     - assets/svgs/
     - shorebird.yaml
-    - lib/features/products/presentation/widgets/filter/
