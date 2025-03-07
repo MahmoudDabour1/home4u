@@ -7,6 +7,7 @@ import '../../../core/utils/spacing.dart';
 import '../../../core/widgets/business_header_widget.dart';
 import '../../../locale/app_locale.dart';
 import '../../../core/widgets/app_custom_button.dart';
+import '../../products/presentation/widgets/drawer/products_drawer.dart';
 
 class BusinessAddProductScreen extends StatelessWidget {
   const BusinessAddProductScreen({super.key});
@@ -14,6 +15,9 @@ class BusinessAddProductScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      drawer: ProductsDrawer(
+        selectedItem: DrawerItem.addProduct,
+      ),
       body: SingleChildScrollView(
         child: Column(
           children: [

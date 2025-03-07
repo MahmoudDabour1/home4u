@@ -16,7 +16,7 @@ class OutOfStockContainer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return content?.stockAmount!=0?SizedBox.shrink():Positioned(
+    return content?.inStock==true?SizedBox.shrink():Positioned(
       right: 16.w,
       top: 16.h,
       child: Container(
