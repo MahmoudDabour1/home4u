@@ -2,10 +2,12 @@ import 'package:fancy_shimmer_image/fancy_shimmer_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+import '../../data/models/products_response_model.dart';
 import 'out_of_stock_container.dart';
 
 class ProductsFancyImage extends StatelessWidget {
-  const ProductsFancyImage({super.key});
+  final Content? content;
+  const ProductsFancyImage({super.key, required this.content});
 
   @override
   Widget build(BuildContext context) {
@@ -35,7 +37,7 @@ class ProductsFancyImage extends StatelessWidget {
             ),
           ),
         ),
-        OutOfStockContainer(),
+        OutOfStockContainer(content: content,),
       ],
     );
   }

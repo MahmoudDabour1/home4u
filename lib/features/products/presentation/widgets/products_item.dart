@@ -5,13 +5,16 @@ import 'package:home4u/features/products/presentation/widgets/products_item_data
 
 import '../../../../core/theming/app_colors.dart';
 import '../../../../core/utils/spacing.dart';
+import '../../data/models/products_response_model.dart';
 
 class ProductsItem extends StatelessWidget {
-  const ProductsItem({super.key});
+  final Content? content;
+
+  const ProductsItem({super.key, required this.content});
 
   @override
   Widget build(BuildContext context) {
-    return  Padding(
+    return Padding(
       padding: EdgeInsets.symmetric(horizontal: 24.w),
       child: Column(
         children: [
@@ -32,8 +35,12 @@ class ProductsItem extends StatelessWidget {
             ),
             child: Column(
               children: [
-                ProductsFancyImage(),
-                ProductsItemData(),
+                ProductsFancyImage(
+                  content: content,
+                ),
+                ProductsItemData(
+                  content: content,
+                ),
               ],
             ),
           ),

@@ -39,7 +39,10 @@ class _EmailAndPasswordState extends State<EmailAndPassword> {
             focusNode: phoneFocusNode,
             textInputAction: TextInputAction.next,
             validator: (value) {
-              if (value.isEmpty || !AppRegex.isEmailValid(value)) {
+              if (value.isEmpty
+              // ||
+                  // !AppRegex.isEmailValid(value)
+              ) {
                 return AppLocale.pleaseEnterAValidEmailAddress
                     .getString(context);
               }

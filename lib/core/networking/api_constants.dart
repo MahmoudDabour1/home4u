@@ -48,6 +48,8 @@ class ApiConstants {
 
   ///exhibitions
   static const String businessConfigEP = "/api/v1/business-config";
+  static const String productsFilterEP = "/api/v1/products/filter";
+  static const String deleteProductEP = "/api/v1/products/{productId}";
 
 
   ///images
