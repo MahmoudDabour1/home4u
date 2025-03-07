@@ -7,6 +7,7 @@ import 'package:home4u/core/localization/app_localization_state.dart';
 import 'package:home4u/core/routing/app_router.dart';
 import 'package:home4u/core/routing/routes.dart';
 import 'package:home4u/features/auth/sign_up/logic/sign_up_cubit.dart';
+import 'package:home4u/features/products/logic/products_cubit.dart';
 import 'package:home4u/features/profile/logic/profile/profile_cubit.dart';
 import 'package:home4u/features/profile/logic/services/services_cubit.dart';
 
@@ -80,6 +81,8 @@ class _Home4uAppState extends State<Home4uApp> {
         ),
         BlocProvider<TechnicalWorkerCubit>(
           create: (_) => sl<TechnicalWorkerCubit>(),
+        ),BlocProvider<ProductsCubit>(
+          create: (_) => sl<ProductsCubit>()..getBusinessConfig(),
         ),
       ],
       child: ScreenUtilInit(
@@ -105,7 +108,7 @@ class _Home4uAppState extends State<Home4uApp> {
                 onGenerateRoute: widget.appRouter.generateRoute,
                 debugShowCheckedModeBanner: false,
                 navigatorObservers: [NavigatorObserver()],
-                initialRoute: Routes.businessAddProductScreen,
+                initialRoute: Routes.productsScreen,
               ),
             );
           },

@@ -10,8 +10,10 @@ class AppCustomDropDownButtonFormField extends StatelessWidget {
   final String labelText;
   final FormFieldValidator<String>? validator;
   final void Function(String?)? onSaved;
+  final Color? fillColor;
+  final double? verticalPadding;
 
-  const  AppCustomDropDownButtonFormField({
+  const AppCustomDropDownButtonFormField({
     super.key,
     required this.value,
     required this.onChanged,
@@ -19,6 +21,8 @@ class AppCustomDropDownButtonFormField extends StatelessWidget {
     required this.labelText,
     this.validator,
     this.onSaved,
+    this.fillColor,
+    this.verticalPadding,
   });
 
   @override
@@ -33,7 +37,11 @@ class AppCustomDropDownButtonFormField extends StatelessWidget {
       items: items,
       onChanged: onChanged,
       onSaved: onSaved,
-      decoration: getCommonInputDecoration(labelText: labelText),
+      decoration: getCommonInputDecoration(
+        labelText: labelText,
+        fillColor: fillColor,
+        verticalPadding: verticalPadding,
+      ),
       dropdownColor: Colors.white,
       validator: validator,
     );

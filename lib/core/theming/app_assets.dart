@@ -43,4 +43,20 @@ abstract class AppAssets {
   static const String arrowUpSvg = 'assets/svgs/arrow_up.svg';
   static const String arrowDownSvg = 'assets/svgs/arrow_down_svg.svg';
   static const String uploadImageIcon = 'assets/svgs/upload_image_icon.svg';
+  static const String productWhiteSvg = 'assets/svgs/product_white_svg.svg';
+  static const String productSvg = 'assets/svgs/product_svg.svg';
+  static const String overViewSvg = 'assets/svgs/over_view_svg.svg';
+  static const String settingDarkGraySvg = 'assets/svgs/settings_drawer_svg.svg';
+  static const String reviewSvg = 'assets/svgs/review_svg.svg';
+  static const String appLogoSvg = 'assets/svgs/app_logo_svg.svg';
+  static const String arrowRightBlackSvg = 'assets/svgs/arrow_right_black_svg.svg';
+  static const String furnitureSvg = 'assets/svgs/furniture_svg.svg';
+  static const String priceSvg = 'assets/svgs/price_svg.svg';
+  static const String stockSvg = 'assets/svgs/stock_svg.svg';
+  static const String editIconSvg = 'assets/svgs/edit_icon_svg.svg';
+  static const String deleteIconSvg = 'assets/svgs/delete_icon_svg.svg';
+  static const String warningSvg = 'assets/svgs/waring_svg.svg';
+  static const String filterSvg = 'assets/svgs/filter_svg.svg';
+  static const String starSvgImage = 'assets/svgs/star_svg.svg';
+
 }
