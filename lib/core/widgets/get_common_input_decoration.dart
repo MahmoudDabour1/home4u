@@ -7,6 +7,7 @@ import '../theming/app_styles.dart';
 InputDecoration getCommonInputDecoration({
   required String labelText,
   Widget? prefixIcon,
+  Widget? suffixIcon,
   TextStyle? labelStyle,
 }) {
   return InputDecoration(
@@ -47,5 +48,6 @@ InputDecoration getCommonInputDecoration({
       style: labelStyle ?? AppStyles.font16BlackLight,
     ),
     prefixIcon: prefixIcon,
+    suffixIcon: suffixIcon,
   );
 }
