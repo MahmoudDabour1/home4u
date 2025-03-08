@@ -99,18 +99,15 @@ class ProductMaterial {
   final int? id;
   @JsonKey(name: "code")
   final String? code;
-  @JsonKey(name: "nameAr")
-  final String? nameAr;
-  @JsonKey(name: "nameEn")
-  final String? nameEn;
+  @JsonKey(name: "name")
+  final String? name;
   @JsonKey(name: "statusCode")
   final int? statusCode;
 
   ProductMaterial({
     this.id,
     this.code,
-    this.nameAr,
-    this.nameEn,
+    this.name,
     this.statusCode,
   });
 

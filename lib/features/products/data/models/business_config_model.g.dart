@@ -78,8 +78,7 @@ ProductMaterial _$ProductMaterialFromJson(Map<String, dynamic> json) =>
     ProductMaterial(
       id: (json['id'] as num?)?.toInt(),
       code: json['code'] as String?,
-      nameAr: json['nameAr'] as String?,
-      nameEn: json['nameEn'] as String?,
+      name : json['name'] as String?,
       statusCode: (json['statusCode'] as num?)?.toInt(),
     );
 
@@ -87,8 +86,7 @@ Map<String, dynamic> _$ProductMaterialToJson(ProductMaterial instance) =>
     <String, dynamic>{
       'id': instance.id,
       'code': instance.code,
-      'nameAr': instance.nameAr,
-      'nameEn': instance.nameEn,
+      'name' : instance.name,
       'statusCode': instance.statusCode,
     };
 

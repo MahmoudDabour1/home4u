@@ -1,13 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_localization/flutter_localization.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:home4u/features/exhibition/presentation/widgets/add_product/up_down_form_field.dart';
 
-import '../../../../../core/theming/app_styles.dart';
-import '../../../../../core/widgets/app_custom_drop_down_button_form_field.dart';
 import '../../../../../core/widgets/app_text_form_field.dart';
 import '../../../../../core/widgets/get_common_input_decoration.dart';
 import '../../../../../locale/app_locale.dart';
+import '../../../logic/business_add_product_cubit.dart';
+import 'basic_details_drop_down_buttons.dart';
 
 class AddProductBasicDetailsStepper extends StatefulWidget {
   const AddProductBasicDetailsStepper({super.key});
@@ -22,13 +23,6 @@ class _AddProductBasicDetailsStepperState
   late FocusNode productNameAr;
   late FocusNode productNameEn;
   late FocusNode priceFocusNode;
-  final double _quantity = 0.0;
-  String? selectedBusinessType;
-  List<String> businessTypes = [
-    'Business Type 1',
-    'Business Type 2',
-    'Business Type 3',
-  ];
 
   @override
   void initState() {
@@ -48,13 +42,15 @@ class _AddProductBasicDetailsStepperState
 
   @override
   Widget build(BuildContext context) {
+    final businessCubit = context.read<BusinessAddProductCubit>();
+
     return Column(
       mainAxisAlignment: MainAxisAlignment.start,
       mainAxisSize: MainAxisSize.min,
       spacing: 16.h,
       children: [
         AppTextFormField(
-          controller: TextEditingController(),
+          controller: businessCubit.productNameArController,
           labelText: AppLocale.productNameAr.getString(context),
           focusNode: productNameAr,
           textInputAction: TextInputAction.next,
@@ -67,7 +63,7 @@ class _AddProductBasicDetailsStepperState
           },
         ),
         AppTextFormField(
-          controller: TextEditingController(),
+          controller: businessCubit.productNameEnController,
           labelText: AppLocale.productNameEn.getString(context),
           focusNode: productNameEn,
           textInputAction: TextInputAction.next,
@@ -79,36 +75,18 @@ class _AddProductBasicDetailsStepperState
             return null;
           },
         ),
+        BasicDetailsDropDownButtons(),
         UpDownFormField(
-          controller: TextEditingController(text: '$_quantity'),
+          controller: businessCubit.productPriceController,
           label: "${AppLocale.price.getString(context)}( £ )",
           focusNode: priceFocusNode,
           validationMessage: "Please enter your product price",
-        ),
-        AppCustomDropDownButtonFormField(
-          value: selectedBusinessType,
-          items: businessTypes.map((type) {
-            return DropdownMenuItem<String>(
-              value: type,
-              child: Text(
-                type,
-                style: AppStyles.font16BlackLight,
-              ),
-            );
-          }).toList(),
-          onChanged: (value) {
-            setState(() {
-              selectedBusinessType = value;
-            });
-          },
-          onSaved: (value) {},
-          labelText: AppLocale.businessType.getString(context),
         ),
         AppTextFormField(
           labelText: AppLocale.productDescriptionAr.getString(context),
           keyboardType: TextInputType.multiline,
           textInputAction: TextInputAction.newline,
-          controller: TextEditingController(),
+          controller: businessCubit.productDescriptionArController,
           decoration: getCommonInputDecoration(
             labelText: AppLocale.productDescriptionAr.getString(context),
           ).copyWith(
@@ -130,7 +108,7 @@ class _AddProductBasicDetailsStepperState
           labelText: AppLocale.productDescriptionEn.getString(context),
           keyboardType: TextInputType.multiline,
           textInputAction: TextInputAction.newline,
-          controller: TextEditingController(),
+          controller: businessCubit.productDescriptionEnController,
           decoration: getCommonInputDecoration(
             labelText: AppLocale.productDescriptionEn.getString(context),
           ).copyWith(

@@ -63,7 +63,7 @@ class _FilterDropDownMenuButtonsState extends State<FilterDropDownMenuButtons> {
                       return DropdownMenuItem<String>(
                         value: color.id.toString(),
                         child: Text(
-                          color.nameEn!,
+                          color.name!,
                           style: AppStyles.font16BlackLight,
                         ),
                       );

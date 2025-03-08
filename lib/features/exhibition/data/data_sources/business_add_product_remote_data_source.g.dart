@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'sign_up_remote_data_source.dart';
+part of 'business_add_product_remote_data_source.dart';
 
 // **************************************************************************
 // RetrofitGenerator
@@ -8,8 +8,9 @@ part of 'sign_up_remote_data_source.dart';
 
 // ignore_for_file: unnecessary_brace_in_string_interps,no_leading_underscores_for_local_identifiers,unused_element,unnecessary_string_interpolations
 
-class _SignUpRemoteDataSource implements SignUpRemoteDataSource {
-  _SignUpRemoteDataSource(
+class _BusinessAddProductRemoteDataSource
+    implements BusinessAddProductRemoteDataSource {
+  _BusinessAddProductRemoteDataSource(
     this._dio, {
     this.baseUrl,
     this.errorLogger,
@@ -24,53 +25,21 @@ class _SignUpRemoteDataSource implements SignUpRemoteDataSource {
   final ParseErrorLogger? errorLogger;
 
   @override
-  Future<UserTypeModel> getUserTypes() async {
-    final _extra = <String, dynamic>{};
-    final queryParameters = <String, dynamic>{};
-    final _headers = <String, dynamic>{};
-    const Map<String, dynamic>? _data = null;
-    final _options = _setStreamType<UserTypeModel>(Options(
-      method: 'GET',
-      headers: _headers,
-      extra: _extra,
-    )
-        .compose(
-          _dio.options,
-          '/api/v1/user-types',
-          queryParameters: queryParameters,
-          data: _data,
-        )
-        .copyWith(
-            baseUrl: _combineBaseUrls(
-          _dio.options.baseUrl,
-          baseUrl,
-        )));
-    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
-    late UserTypeModel _value;
-    try {
-      _value = UserTypeModel.fromJson(_result.data!);
-    } on Object catch (e, s) {
-      errorLogger?.logError(e, s, _options);
-      rethrow;
-    }
-    return _value;
-  }
-
-  @override
-  Future<SignUpResponse> signUp(SignUpBody signUpBody) async {
+  Future<AddProductBusinessResponseModel> addBusinessProduct(
+      BusinessAddProductBody businessAddProductBody) async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
     final _data = <String, dynamic>{};
-    _data.addAll(signUpBody.toJson());
-    final _options = _setStreamType<SignUpResponse>(Options(
+    _data.addAll(businessAddProductBody.toJson());
+    final _options = _setStreamType<AddProductBusinessResponseModel>(Options(
       method: 'POST',
       headers: _headers,
       extra: _extra,
     )
         .compose(
           _dio.options,
-          '/api/v1/auth/register',
+          '/api/v1/products',
           queryParameters: queryParameters,
           data: _data,
         )
@@ -80,9 +49,9 @@ class _SignUpRemoteDataSource implements SignUpRemoteDataSource {
           baseUrl,
         )));
     final _result = await _dio.fetch<Map<String, dynamic>>(_options);
-    late SignUpResponse _value;
+    late AddProductBusinessResponseModel _value;
     try {
-      _value = SignUpResponse.fromJson(_result.data!);
+      _value = AddProductBusinessResponseModel.fromJson(_result.data!);
     } on Object catch (e, s) {
       errorLogger?.logError(e, s, _options);
       rethrow;
@@ -91,19 +60,21 @@ class _SignUpRemoteDataSource implements SignUpRemoteDataSource {
   }
 
   @override
-  Future<GovernorateModel> getGovernorates() async {
+  Future<BusinessAddProductImagesResponse> addBusinessProductImage(
+      BusinessAddProductImagesBody imagesBody) async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
-    const Map<String, dynamic>? _data = null;
-    final _options = _setStreamType<GovernorateModel>(Options(
-      method: 'GET',
+    final _data = <String, dynamic>{};
+    _data.addAll(imagesBody.toJson());
+    final _options = _setStreamType<BusinessAddProductImagesResponse>(Options(
+      method: 'POST',
       headers: _headers,
       extra: _extra,
     )
         .compose(
           _dio.options,
-          '/api/v1/governorates',
+          '/api/v1/product-images/all',
           queryParameters: queryParameters,
           data: _data,
         )
@@ -113,9 +84,9 @@ class _SignUpRemoteDataSource implements SignUpRemoteDataSource {
           baseUrl,
         )));
     final _result = await _dio.fetch<Map<String, dynamic>>(_options);
-    late GovernorateModel _value;
+    late BusinessAddProductImagesResponse _value;
     try {
-      _value = GovernorateModel.fromJson(_result.data!);
+      _value = BusinessAddProductImagesResponse.fromJson(_result.data!);
     } on Object catch (e, s) {
       errorLogger?.logError(e, s, _options);
       rethrow;
@@ -124,19 +95,27 @@ class _SignUpRemoteDataSource implements SignUpRemoteDataSource {
   }
 
   @override
-  Future<CityModel> getCities(int governorateId) async {
+  Future<UploadImageResponse> uploadBusinessImage(
+    String pathId,
+    int id,
+    FormData fileData,
+  ) async {
     final _extra = <String, dynamic>{};
-    final queryParameters = <String, dynamic>{};
+    final queryParameters = <String, dynamic>{
+      r'pathId': pathId,
+      r'id': id,
+    };
     final _headers = <String, dynamic>{};
-    const Map<String, dynamic>? _data = null;
-    final _options = _setStreamType<CityModel>(Options(
-      method: 'GET',
+    final _data = fileData;
+    final _options = _setStreamType<UploadImageResponse>(Options(
+      method: 'POST',
       headers: _headers,
       extra: _extra,
+      contentType: 'multipart/form-data',
     )
         .compose(
           _dio.options,
-          '/api/v1/cities/governorate/${governorateId}',
+          '/api/v1/file',
           queryParameters: queryParameters,
           data: _data,
         )
@@ -146,9 +125,9 @@ class _SignUpRemoteDataSource implements SignUpRemoteDataSource {
           baseUrl,
         )));
     final _result = await _dio.fetch<Map<String, dynamic>>(_options);
-    late CityModel _value;
+    late UploadImageResponse _value;
     try {
-      _value = CityModel.fromJson(_result.data!);
+      _value = UploadImageResponse.fromJson(_result.data!);
     } on Object catch (e, s) {
       errorLogger?.logError(e, s, _options);
       rethrow;
@@ -184,38 +163,5 @@ class _SignUpRemoteDataSource implements SignUpRemoteDataSource {
     }
 
     return Uri.parse(dioBaseUrl).resolveUri(url).toString();
-  }
-
-  @override
-  Future<BusinessTypesModel> getBusinessTypes(int userTypeId) async {
-    final _extra = <String, dynamic>{};
-    final queryParameters = <String, dynamic>{};
-    final _headers = <String, dynamic>{};
-    const Map<String, dynamic>? _data = null;
-    final _options = _setStreamType<BusinessTypesModel>(Options(
-      method: 'GET',
-      headers: _headers,
-      extra: _extra,
-    )
-        .compose(
-          _dio.options,
-          '/api/v1/business-types/user-type/$userTypeId',
-          queryParameters: queryParameters,
-          data: _data,
-        )
-        .copyWith(
-            baseUrl: _combineBaseUrls(
-          _dio.options.baseUrl,
-          baseUrl,
-        )));
-    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
-    late BusinessTypesModel _value;
-    try {
-      _value = BusinessTypesModel.fromJson(_result.data!);
-    } on Object catch (e, s) {
-      errorLogger?.logError(e, s, _options);
-      rethrow;
-    }
-    return _value;
   }
 }
