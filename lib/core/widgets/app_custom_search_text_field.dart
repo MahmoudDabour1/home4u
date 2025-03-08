@@ -8,12 +8,17 @@ import '../theming/app_styles.dart';
 
 class AppCustomSearchTextField extends StatelessWidget {
   final TextEditingController? controller;
-  const AppCustomSearchTextField({super.key, this.controller});
+  final void Function(String)? onChanged;
+  final void Function(String?)? onSaved;
+  const AppCustomSearchTextField({super.key, this.controller, this.onChanged, this.onSaved});
 
   @override
   Widget build(BuildContext context) {
     return TextFormField(
       controller:controller ,
+      onChanged: onChanged,
+      onSaved:  onSaved,
+      keyboardType: TextInputType.text,
       decoration: InputDecoration(
         constraints: BoxConstraints(
           maxHeight: 40.h,

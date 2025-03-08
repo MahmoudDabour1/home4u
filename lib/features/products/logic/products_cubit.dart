@@ -1,8 +1,11 @@
+import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:home4u/features/products/data/models/business_config_model.dart';
 import 'package:home4u/features/products/data/repos/business_config_repo.dart';
 import 'package:home4u/features/products/data/repos/products_repo.dart';
 import 'package:home4u/features/products/logic/products_state.dart';
+
+import '../data/models/products_response_model.dart';
 
 class ProductsCubit extends Cubit<ProductsState> {
   final BusinessConfigRepo _businessConfigRepo;
@@ -14,8 +17,15 @@ class ProductsCubit extends Cubit<ProductsState> {
       : super(ProductsState.initial());
   double? minPrice;
   double? maxPrice;
-  List<int> colorsIds = [];
-  List<int> businessTypeIds = [];
+  List<int?> colorsIds = [];
+  List<int?> businessTypeIds = [];
+  List<int?> materialIds = [];
+  bool? isAvailable;
+  final searchController = TextEditingController();
+
+  int _page = 0;
+  bool _isFetching = false;
+  List<Content> products = [];
 
   static ProductsCubit get(context) => BlocProvider.of(context);
 
@@ -45,21 +55,28 @@ class ProductsCubit extends Cubit<ProductsState> {
 
   Future<void> getProducts() async {
     emit(ProductsState.getProductsLoading());
-
     final requestBody = {
+      "pageNumber": _page,
       "searchCriteria": {
         "businessId": 12,
         "minPrice": minPrice,
         "maxPrice": maxPrice,
         "colorsIds": colorsIds.isEmpty ? null : colorsIds,
         "businessTypeIds": businessTypeIds.isEmpty ? null : businessTypeIds,
+        "inStock": isAvailable ?? false,
+        "name": searchController.text.isEmpty ? null : searchController.text,
+        "materialIds": materialIds.isEmpty ? null : materialIds,
       }
     };
-    final response = await _productsRepo.getProducts(requestBody);
+
+    final response = await _productsRepo.getProducts(
+      requestBody,
+    );
     response.when(
       success: (data) {
         if (!isClosed) {
-          emit(ProductsState.getProductsSuccess(data));
+          emit(ProductsState.getProductsSuccess(
+              data)); // Maintain old + new data
         }
       },
       failure: (error) {
@@ -90,19 +107,19 @@ class ProductsCubit extends Cubit<ProductsState> {
   }
 }
 
-// Future<Map<String, dynamic>> _productsFilterJson(
-//   double? minPrice,
-//   double? maxPrice,
-//   List<int>? colorsIds,
-//   List<int>? businessTypeIds,
-// ) async {
-//   return {
-//     "searchCriteria": {
-//       "businessId": 12,
-//       "minPrice": minPrice,
-//       "maxPrice": maxPrice,
-//       "colorsIds": colorsIds,
-//       "businessTypeIds": businessTypeIds,
-//     }
-//   };
-// }
+Future<Map<String, dynamic>> _productsFilterJson(
+  double? minPrice,
+  double? maxPrice,
+  List<int>? colorsIds,
+  List<int>? businessTypeIds,
+) async {
+  return {
+    "searchCriteria": {
+      "businessId": 12,
+      "minPrice": minPrice,
+      "maxPrice": maxPrice,
+      "colorsIds": colorsIds,
+      "businessTypeIds": businessTypeIds,
+    }
+  };
+}

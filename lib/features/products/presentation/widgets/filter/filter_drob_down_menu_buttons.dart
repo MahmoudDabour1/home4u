@@ -2,12 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_localization/flutter_localization.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:home4u/features/exhibition/data/models/product_material_model.dart';
 import 'package:home4u/features/products/logic/products_cubit.dart';
 
 import '../../../../../core/theming/app_colors.dart';
 import '../../../../../core/theming/app_styles.dart';
 import '../../../../../core/utils/spacing.dart';
 import '../../../../../core/widgets/app_custom_drop_down_button_form_field.dart';
+import '../../../../../core/widgets/app_custom_drop_down_multi_select_button.dart';
 import '../../../../../locale/app_locale.dart';
 import '../../../data/models/business_config_model.dart';
 import '../../../logic/products_state.dart';
@@ -21,9 +23,9 @@ class FilterDropDownMenuButtons extends StatefulWidget {
 }
 
 class _FilterDropDownMenuButtonsState extends State<FilterDropDownMenuButtons> {
-  String? selectedCategories;
-  String? selectedMaterials;
-  String? selectedColor;
+ List<String>? selectedCategories;
+ List<String>? selectedMaterials;
+  List<String>? selectedColor;
 
   @override
   Widget build(BuildContext context) {
@@ -33,103 +35,89 @@ class _FilterDropDownMenuButtonsState extends State<FilterDropDownMenuButtons> {
         return Column(
           children:<Widget> [
             verticalSpace(32),
-            AppCustomDropDownButtonFormField(
-              value: selectedCategories,
+            AppCustomDropDownMultiSelectButton(
+              selectedValues: selectedCategories ?? [],
               items: cubit?.businessConfigModel?.data?.businessTypes
-                      ?.map<DropdownMenuItem<String>>(
-                    (BusinessType businessType) {
-                      return DropdownMenuItem<String>(
-                        value: businessType.id.toString(),
-                        child: Text(
-                          businessType.name!,
-                          style: AppStyles.font16BlackLight,
-                        ),
-                      );
-                    },
-                  ).toList() ??
+                  ?.map((BusinessType businessTypes) => businessTypes.name ?? 'N/A')
+                  .toList() ??
                   [],
-              onChanged: (value) {
+              labelText: AppLocale.businessTypes.getString(context),
+              onChanged: (List<String> values) {
                 setState(() {
-                  if (value != null) {
-                    selectedCategories = value;
-                    final categoryId = int.parse(value);
-                    if (!cubit!.colorsIds.contains(categoryId)) {
-                      cubit.businessTypeIds.add(categoryId);
-                    }
-                  }
+                  selectedCategories = values;
+                  cubit?.businessTypeIds = values.map((name) {
+                    return cubit.businessConfigModel!.data!.businessTypes!
+                        .firstWhere((businessTypes) => businessTypes.name == name)
+                        .id;
+                  }).toList();
                 });
               },
-              labelText: AppLocale.categories.getString(context),
-              fillColor: AppColors.whiteColor,
+              onSaved: (List<String>? values) {
+                if (values != null) {
+                  cubit?.businessTypeIds = values.map((name) {
+                    return cubit.businessConfigModel!.data!.businessTypes!
+                        .firstWhere((color) => color.name == name)
+                        .id;
+                  }).toList();
+                }
+              },
             ),
             verticalSpace(16),
-            AppCustomDropDownButtonFormField(
-              value: selectedMaterials,
+            AppCustomDropDownMultiSelectButton(
+              selectedValues: selectedMaterials ?? [],
               items: cubit?.businessConfigModel?.data?.productMaterial
-                      ?.map<DropdownMenuItem<String>>(
-                    (ProductMaterial materials) {
-                      return DropdownMenuItem<String>(
-                        value: materials.id.toString(),
-                        child: Text(
-                          materials.name??'',
-                          style: AppStyles.font16BlackLight,
-                        ),
-                      );
-                    },
-                  ).toList() ??
+                  ?.map((ProductMaterial material) => material.name ?? 'N/A')
+                  .toList() ??
                   [],
-              onChanged: (value) {
-                setState(() {
-                  selectedColor = value;
-                  cubit?.colorsIds = [int.parse(value!)];
-                });
-              },
               labelText: AppLocale.material.getString(context),
-              fillColor: AppColors.whiteColor,
-            ),
-            verticalSpace(16),
-            AppCustomDropDownButtonFormField(
-              value: selectedColor,
-              items: cubit?.businessConfigModel?.data?.colors
-                      ?.map<DropdownMenuItem<String>>(
-                    (FilterColor color) {
-                      return DropdownMenuItem<String>(
-                        value: color.id.toString(),
-                        child: Row(
-                          children: [
-                            Container(
-                              height: 30.h,
-                              width: 30.w,
-                              decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(16.r),
-                                color: Color(int.parse(
-                                    '0xFF${color.hexColor!.replaceAll('#', '')}')),
-                              ),
-                            ),
-                            horizontalSpace(8),
-                            Text(
-                              color.name??'',
-                              style: AppStyles.font16BlackLight,
-                            ),
-                          ],
-                        ),
-                      );
-                    },
-                  ).toList() ??
-                  [],
-              onChanged: (value) {
+              onChanged: (List<String> values) {
                 setState(() {
-                  if (value != null) {
-                    selectedColor = value;
-                    final colorId = int.parse(value);
-                    if (!cubit!.colorsIds.contains(colorId)) {
-                      cubit.colorsIds.add(colorId);
-                    }
-                  }
+                  selectedMaterials = values;
+                  cubit?.materialIds = values.map((name) {
+                    return cubit.businessConfigModel!.data!.productMaterial!
+                        .firstWhere((material) => material.name == name)
+                        .id;
+                  }).toList();
                 });
               },
+              onSaved: (List<String>? values) {
+                if (values != null) {
+                  cubit?.materialIds = values.map((name) {
+                    return cubit.businessConfigModel!.data!.productMaterial!
+                        .firstWhere((color) => color.name == name)
+                        .id;
+                  }).toList();
+                }
+              },
+            ),
+
+            verticalSpace(16),
+            AppCustomDropDownMultiSelectButton(
+              selectedValues: selectedColor ?? [],
+              items: cubit?.businessConfigModel?.data?.colors
+                  ?.map((FilterColor color) => color.name ?? 'N/A')
+                  .toList() ??
+                  [],
               labelText: AppLocale.colors.getString(context),
-              fillColor: AppColors.whiteColor,
+              onChanged: (List<String> values) {
+                setState(() {
+                  selectedColor = values;
+                  cubit?.colorsIds = values.map((name) {
+                    return cubit.businessConfigModel!.data!.colors!
+                        .firstWhere((color) => color.name == name)
+                        .id;
+                  }).toList();
+                });
+              },
+              onSaved: (List<String>? values) {
+                if (values != null) {
+                  cubit?.colorsIds = values.map((name) {
+                    return cubit.businessConfigModel!.data!.colors!
+                        .firstWhere((color) => color.name == name)
+                        .id;
+                  }).toList();
+                }
+              },
             ),
             verticalSpace(16),
           ],

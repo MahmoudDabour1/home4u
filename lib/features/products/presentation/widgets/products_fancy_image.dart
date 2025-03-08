@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:fancy_shimmer_image/fancy_shimmer_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -17,7 +19,7 @@ class ProductsFancyImage extends StatelessWidget {
           imageUrl:
               "https://res.cloudinary.com/dw4e01qx8/f_auto,q_auto/images/mi1enckymudqw9jzmkna",
           width: MediaQuery.sizeOf(context).width,
-          height: 200.h,
+          height: MediaQuery.sizeOf(context).height*0.211,
           boxFit: BoxFit.fill,
           shimmerBaseColor: Colors.grey[300]!,
           shimmerHighlightColor: Colors.grey[100]!,

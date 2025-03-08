@@ -54,7 +54,14 @@ class _ProductsScreenState extends State<ProductsScreen> {
                 spacing: 16.w,
                 children: [
                   Expanded(
-                    child: AppCustomSearchTextField(),
+                    child: AppCustomSearchTextField(
+                      controller: context.read<ProductsCubit>().searchController,
+                      onChanged: (value){
+                        //apply search
+                        context.read<ProductsCubit>().getProducts();
+                      },
+
+                    ),
                   ),
                   ProductsFilterButton(),
                 ],
