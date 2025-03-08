@@ -38,8 +38,10 @@ class ProductsItem extends StatelessWidget {
                 ProductsFancyImage(
                   content: content,
                 ),
-                ProductsItemData(
-                  content: content,
+                Expanded(
+                  child: ProductsItemData(
+                    content: content,
+                  ),
                 ),
               ],
             ),
