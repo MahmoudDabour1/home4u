@@ -4,17 +4,14 @@ import 'package:home4u/features/products/data/repos/business_config_repo.dart';
 import 'package:home4u/features/products/data/repos/products_repo.dart';
 import 'package:home4u/features/products/logic/products_state.dart';
 
-
 class ProductsCubit extends Cubit<ProductsState> {
   final BusinessConfigRepo _businessConfigRepo;
 
-  ProductsCubit(this._businessConfigRepo, this._productsRepo) : super(ProductsState.initial());
-  BusinessConfigModel ? businessConfigModel;
+  BusinessConfigModel? businessConfigModel;
   final ProductsRepo _productsRepo;
 
   ProductsCubit(this._businessConfigRepo, this._productsRepo)
       : super(ProductsState.initial());
-  BusinessConfigModel? businessConfigModel;
   double? minPrice;
   double? maxPrice;
   List<int> colorsIds = [];
@@ -24,7 +21,6 @@ class ProductsCubit extends Cubit<ProductsState> {
 
   List<ProductMaterial> baseUnits = [];
   List<FilterColor> colors = [];
-
 
   Future<void> getBusinessConfig() async {
     emit(const ProductsState.businessConfigLoading());
@@ -47,8 +43,7 @@ class ProductsCubit extends Cubit<ProductsState> {
     );
   }
 
-  Future<void> getProducts(
-  ) async {
+  Future<void> getProducts() async {
     emit(ProductsState.getProductsLoading());
 
     final requestBody = {
