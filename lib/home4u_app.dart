@@ -82,7 +82,7 @@ class _Home4uAppState extends State<Home4uApp> {
         BlocProvider<TechnicalWorkerCubit>(
           create: (_) => sl<TechnicalWorkerCubit>(),
         ),BlocProvider<ProductsCubit>(
-          create: (_) => sl<ProductsCubit>()..getBusinessConfig(),
+          create: (_) => sl<ProductsCubit>()  ,
         ),
       ],
       child: ScreenUtilInit(

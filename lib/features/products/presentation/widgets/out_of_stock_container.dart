@@ -7,13 +7,16 @@ import '../../../../core/theming/app_assets.dart';
 import '../../../../core/theming/app_colors.dart';
 import '../../../../core/theming/app_styles.dart';
 import '../../../../locale/app_locale.dart';
+import '../../data/models/products_response_model.dart';
 
 class OutOfStockContainer extends StatelessWidget {
-  const OutOfStockContainer({super.key});
+  final Content? content;
+
+  const OutOfStockContainer({super.key, required this.content});
 
   @override
   Widget build(BuildContext context) {
-    return Positioned(
+    return content?.inStock==true?SizedBox.shrink():Positioned(
       right: 16.w,
       top: 16.h,
       child: Container(

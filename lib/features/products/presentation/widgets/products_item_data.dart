@@ -5,9 +5,12 @@ import 'package:home4u/features/products/presentation/widgets/products_first_tex
 import 'package:home4u/features/products/presentation/widgets/products_text_items.dart';
 
 import '../../../../core/utils/spacing.dart';
+import '../../data/models/products_response_model.dart';
 
 class ProductsItemData extends StatelessWidget {
-  const ProductsItemData({super.key});
+  final Content? content;
+
+  const ProductsItemData({super.key, required this.content});
 
   @override
   Widget build(BuildContext context) {
@@ -16,9 +19,9 @@ class ProductsItemData extends StatelessWidget {
       child: Column(
         children: [
           verticalSpace(16),
-          ProductsFirstTextAndButtons(),
-          ProductsTextItems(),
-          ProductsColorsAndRating(),
+          ProductsFirstTextAndButtons(content: content,),
+          ProductsTextItems(content: content,),
+          ProductsColorsAndRating(content: content,),
         ],
       ),
     );

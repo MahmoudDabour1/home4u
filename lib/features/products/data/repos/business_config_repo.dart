@@ -1,6 +1,7 @@
+import 'package:home4u/features/products/data/data_source/products_remote_data_source.dart';
+
 import '../../../../core/networking/api_error_handler.dart';
 import '../../../../core/networking/api_result.dart';
-import '../data_source/business_config_remote_data_source.dart';
 import '../models/business_config_model.dart';
 
 abstract class BusinessConfigRepo {
@@ -8,7 +9,7 @@ abstract class BusinessConfigRepo {
 }
 
 class BusinessConfigRepoImpl implements BusinessConfigRepo {
-  final BusinessConfigRemoteDataSource remoteDataSource;
+  final ProductsRemoteDataSource remoteDataSource;
 
   BusinessConfigRepoImpl({required this.remoteDataSource});
 

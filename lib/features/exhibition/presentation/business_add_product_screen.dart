@@ -1,9 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_localization/flutter_localization.dart';
 import 'package:home4u/features/exhibition/presentation/widgets/add_product/add_product_info_stepper.dart';
+import 'package:home4u/features/exhibition/presentation/widgets/add_product/add_product_materials_and_specs.dart';
 import '../../../core/theming/app_assets.dart';
+import '../../../core/utils/spacing.dart';
 import '../../../core/widgets/business_header_widget.dart';
 import '../../../locale/app_locale.dart';
+import '../../../core/widgets/app_custom_button.dart';
+import '../../products/presentation/widgets/drawer/products_drawer.dart';
 
 class BusinessAddProductScreen extends StatelessWidget {
   const BusinessAddProductScreen({super.key});
@@ -11,6 +15,9 @@ class BusinessAddProductScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      drawer: ProductsDrawer(
+        selectedItem: DrawerItem.addProduct,
+      ),
       body: SingleChildScrollView(
         child: Column(
           children: [

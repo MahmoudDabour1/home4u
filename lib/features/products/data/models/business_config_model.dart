@@ -101,14 +101,10 @@ class ProductMaterial {
   final String? code;
   @JsonKey(name: "name")
   final String? name;
-  @JsonKey(name: "statusCode")
-  final int? statusCode;
 
-  ProductMaterial({
+  ProductMaterial( {
     this.id,
-    this.code,
-    this.name,
-    this.statusCode,
+    this.code,this.name,
   });
 
   factory ProductMaterial.fromJson(Map<String, dynamic> json) => _$ProductMaterialFromJson(json);

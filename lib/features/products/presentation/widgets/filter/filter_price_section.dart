@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_localization/flutter_localization.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:home4u/core/widgets/app_text_form_field.dart';
+import 'package:home4u/features/products/logic/products_cubit.dart';
 import 'package:home4u/features/products/presentation/widgets/filter/price_filter_range_widget.dart';
 import 'package:home4u/locale/app_locale.dart';
 
@@ -36,7 +38,7 @@ class _FilterPriceSectionState extends State<FilterPriceSection> {
     super.dispose();
   }
 
-  void _updateSlider() {
+  void _updateSlider(BuildContext context) {
     double? minPrice = double.tryParse(_minPriceController.text);
     double? maxPrice = double.tryParse(_maxPriceController.text);
 
@@ -45,6 +47,9 @@ class _FilterPriceSectionState extends State<FilterPriceSection> {
         _minPrice = minPrice;
         _maxPrice = maxPrice;
       });
+      final cubit = context.read<ProductsCubit>();
+      cubit.minPrice = _minPrice;
+      cubit.maxPrice = maxPrice;
     }
   }
 
@@ -66,7 +71,7 @@ class _FilterPriceSectionState extends State<FilterPriceSection> {
                 validator: (value) {},
                 controller: _minPriceController,
                 keyboardType: TextInputType.number,
-                onChanged: (value) => _updateSlider(),
+                onChanged: (value) => _updateSlider(context),
               ),
             ),
             Padding(
@@ -79,7 +84,7 @@ class _FilterPriceSectionState extends State<FilterPriceSection> {
                 validator: (value) {},
                 controller: _maxPriceController,
                 keyboardType: TextInputType.number,
-                onChanged: (value) => _updateSlider(),
+                onChanged: (value) => _updateSlider(context),
               ),
             ),
           ],
@@ -87,12 +92,16 @@ class _FilterPriceSectionState extends State<FilterPriceSection> {
         PriceFilterRangeWidget(
           minPrice: _minPrice,
           maxPrice: _maxPrice,
-          onChanged: (values) => setState(() {
-            _minPrice = values.start;
-            _maxPrice = values.end;
-            _minPriceController.text = _minPrice.toStringAsFixed(0);
-            _maxPriceController.text = _maxPrice.toStringAsFixed(0);
-          }),
+          onChanged: (values) {
+            setState(() {
+              _minPrice = values.start;
+              _maxPrice = values.end;
+              _minPriceController.text = _minPrice.toStringAsFixed(0);
+              _maxPriceController.text = _maxPrice.toStringAsFixed(0);
+            });
+            context.read<ProductsCubit>().minPrice = _minPrice;
+            context.read<ProductsCubit>().maxPrice = _maxPrice;
+          },
         ),
         verticalSpace(16),
       ],

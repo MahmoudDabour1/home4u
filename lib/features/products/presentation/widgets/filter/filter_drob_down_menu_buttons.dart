@@ -29,13 +29,13 @@ class _FilterDropDownMenuButtonsState extends State<FilterDropDownMenuButtons> {
   Widget build(BuildContext context) {
     return BlocBuilder<ProductsCubit, ProductsState>(
       builder: (context, state) {
-        final cubit = context.read<ProductsCubit>();
+        final cubit = context.watch<ProductsCubit?>();
         return Column(
           children:<Widget> [
             verticalSpace(32),
             AppCustomDropDownButtonFormField(
               value: selectedCategories,
-              items: cubit.businessConfigModel?.data?.businessTypes
+              items: cubit?.businessConfigModel?.data?.businessTypes
                       ?.map<DropdownMenuItem<String>>(
                     (BusinessType businessType) {
                       return DropdownMenuItem<String>(
@@ -49,7 +49,15 @@ class _FilterDropDownMenuButtonsState extends State<FilterDropDownMenuButtons> {
                   ).toList() ??
                   [],
               onChanged: (value) {
-                print(value);
+                setState(() {
+                  if (value != null) {
+                    selectedCategories = value;
+                    final categoryId = int.parse(value);
+                    if (!cubit!.colorsIds.contains(categoryId)) {
+                      cubit.businessTypeIds.add(categoryId);
+                    }
+                  }
+                });
               },
               labelText: AppLocale.categories.getString(context),
               fillColor: AppColors.whiteColor,
@@ -57,13 +65,13 @@ class _FilterDropDownMenuButtonsState extends State<FilterDropDownMenuButtons> {
             verticalSpace(16),
             AppCustomDropDownButtonFormField(
               value: selectedMaterials,
-              items: cubit.businessConfigModel?.data?.productMaterial
+              items: cubit?.businessConfigModel?.data?.productMaterial
                       ?.map<DropdownMenuItem<String>>(
-                    (ProductMaterial color) {
+                    (ProductMaterial materials) {
                       return DropdownMenuItem<String>(
-                        value: color.id.toString(),
+                        value: materials.id.toString(),
                         child: Text(
-                          color.name!,
+                          materials.name??'',
                           style: AppStyles.font16BlackLight,
                         ),
                       );
@@ -71,7 +79,10 @@ class _FilterDropDownMenuButtonsState extends State<FilterDropDownMenuButtons> {
                   ).toList() ??
                   [],
               onChanged: (value) {
-                print(value);
+                setState(() {
+                  selectedColor = value;
+                  cubit?.colorsIds = [int.parse(value!)];
+                });
               },
               labelText: AppLocale.material.getString(context),
               fillColor: AppColors.whiteColor,
@@ -79,7 +90,7 @@ class _FilterDropDownMenuButtonsState extends State<FilterDropDownMenuButtons> {
             verticalSpace(16),
             AppCustomDropDownButtonFormField(
               value: selectedColor,
-              items: cubit.businessConfigModel?.data?.colors
+              items: cubit?.businessConfigModel?.data?.colors
                       ?.map<DropdownMenuItem<String>>(
                     (FilterColor color) {
                       return DropdownMenuItem<String>(
@@ -97,7 +108,7 @@ class _FilterDropDownMenuButtonsState extends State<FilterDropDownMenuButtons> {
                             ),
                             horizontalSpace(8),
                             Text(
-                              color.name!,
+                              color.name??'',
                               style: AppStyles.font16BlackLight,
                             ),
                           ],
@@ -107,7 +118,15 @@ class _FilterDropDownMenuButtonsState extends State<FilterDropDownMenuButtons> {
                   ).toList() ??
                   [],
               onChanged: (value) {
-                print(value);
+                setState(() {
+                  if (value != null) {
+                    selectedColor = value;
+                    final colorId = int.parse(value);
+                    if (!cubit!.colorsIds.contains(colorId)) {
+                      cubit.colorsIds.add(colorId);
+                    }
+                  }
+                });
               },
               labelText: AppLocale.colors.getString(context),
               fillColor: AppColors.whiteColor,

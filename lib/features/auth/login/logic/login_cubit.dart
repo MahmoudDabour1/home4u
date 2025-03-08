@@ -16,7 +16,7 @@ class LoginCubit extends Cubit<LoginState> {
 
   LoginCubit(this._loginRepo) : super(const LoginState.initial());
   TextEditingController emailOrPhoneController = TextEditingController(
-    text: "mohamed.attia.job@gmail.com",
+    text: "mahmouddabour@std.mans.edu.eg",
   );
   TextEditingController passwordController = TextEditingController(
     text: "12345678",
