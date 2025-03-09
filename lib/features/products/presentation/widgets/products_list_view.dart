@@ -18,16 +18,18 @@ class ProductsListView extends StatelessWidget {
       builder: (context, state) {
         final cubit = context.read<ProductsCubit>();
         return SliverList(
+
           delegate: SliverChildBuilderDelegate(
             (context, index) {
-              if (index == content!.length) {
-                cubit.getProducts();
-                return CircularProgressIndicator();
-              } else {
+              // if (index == content!.length) {
+              //   cubit.getProducts();
+              //   return CircularProgressIndicator();
+              // } else {
+
                 return ProductsItem(
                   content: content![index],
                 );
-              }
+              // }
             },
             childCount: content!.length + 1,
           ),

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_localization/flutter_localization.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:home4u/core/helpers/debouncer_helper.dart';
 import 'package:home4u/core/theming/app_assets.dart';
 import 'package:home4u/features/products/logic/products_cubit.dart';
 import 'package:home4u/features/products/presentation/widgets/drawer/products_drawer.dart';
@@ -22,11 +23,16 @@ class ProductsScreen extends StatefulWidget {
 }
 
 class _ProductsScreenState extends State<ProductsScreen> {
+  final Debouncer _debouncer = Debouncer(milliseconds: 500); // 500ms delay
+
   @override
   void initState() {
     super.initState();
-    context.read<ProductsCubit>().getBusinessConfig();
-    context.read<ProductsCubit>().getProducts();
+    Future.value([
+    context.read<ProductsCubit>().getBusinessConfig(),
+    context.read<ProductsCubit>().getProducts(),
+    ]);
+
   }
 
   @override
@@ -58,9 +64,10 @@ class _ProductsScreenState extends State<ProductsScreen> {
                       controller: context.read<ProductsCubit>().searchController,
                       onChanged: (value){
                         //apply search
-                        context.read<ProductsCubit>().getProducts();
+                        _debouncer.run(() {
+                          context.read<ProductsCubit>().getProducts();
+                        });
                       },
-
                     ),
                   ),
                   ProductsFilterButton(),
