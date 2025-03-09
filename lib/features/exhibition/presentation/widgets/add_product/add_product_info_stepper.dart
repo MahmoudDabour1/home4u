@@ -1,16 +1,21 @@
+import 'dart:developer';
+
 import 'package:easy_stepper/easy_stepper.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_localization/flutter_localization.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:home4u/core/theming/app_assets.dart';
 import 'package:home4u/core/theming/app_colors.dart';
 import 'package:home4u/core/utils/spacing.dart';
+import 'package:home4u/features/exhibition/logic/business_add_product_state.dart';
 
 import '../../../../../core/theming/app_styles.dart';
 import '../../../../../core/widgets/app_custom_button.dart';
 import '../../../../../core/widgets/app_custom_text_button_with_icon.dart';
 import '../../../../../locale/app_locale.dart';
+import '../../../logic/business_add_product_cubit.dart';
 import 'add_product_basic_details_stepper.dart';
 import 'add_product_colors_and_stock.dart';
 import 'add_product_images.dart';
@@ -65,17 +70,79 @@ class _AddProductInfoStepperState extends State<AddProductInfoStepper> {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: EdgeInsets.only(top: 32.h, left: 24.w, right: 24.w),
-      child: Column(
-        children: [
-          _buildStepper(),
-          stepPages[activeStep],
-          verticalSpace(32),
-          if (activeStep == upperBound) _buildPreviewButton(),
-          _buildNavigationButtons(),
-          verticalSpace(32),
-        ],
+    return BlocListener<BusinessAddProductCubit, BusinessAddProductState>(
+      listener: (context, state) {
+        state.maybeWhen(
+          addBusinessProductFailure: (message) {
+            log('Product failure because $message');
+            ScaffoldMessenger.of(context).showSnackBar(
+              SnackBar(
+                content: Text('Product  failure because $message'),
+                backgroundColor: Colors.red,
+              ),
+            );
+          },
+          addBusinessProductImageFailure: (message) {
+            log('addBusinessProductImageFailure because $message');
+            ScaffoldMessenger.of(context).showSnackBar(
+              SnackBar(
+                content:
+                    Text('addBusinessProductImageFailure because $message'),
+                backgroundColor: Colors.red,
+              ),
+            );
+          },
+          uploadBusinessImageFailure: (message) {
+            log('uploadBusinessImageFailure because $message');
+            ScaffoldMessenger.of(context).showSnackBar(
+              SnackBar(
+                content: Text('uploadBusinessImageFailure because $message'),
+                backgroundColor: Colors.red,
+              ),
+            );
+          },
+          addBusinessProductSuccess: (productResponse) {
+            log('Product success because ${productResponse.data.materials}');
+            ScaffoldMessenger.of(context).showSnackBar(
+              SnackBar(
+                content: Text('addBusinessProductSuccess'),
+                backgroundColor: Colors.green,
+              ),
+            );
+          },
+          addBusinessProductImageSuccess: (images) {
+            log('addBusinessProductImageSuccess because ${images.data}');
+            ScaffoldMessenger.of(context).showSnackBar(
+              SnackBar(
+                content: Text('addBusinessProductImageSuccess'),
+                backgroundColor: Colors.green,
+              ),
+            );
+          },
+          uploadBusinessImageSuccess: () {
+            log('uploadBusinessImageSuccess}');
+            ScaffoldMessenger.of(context).showSnackBar(
+              SnackBar(
+                content: Text('uploadBusinessImageSuccess'),
+                backgroundColor: Colors.green,
+              ),
+            );
+          },
+          orElse: () {},
+        );
+      },
+      child: Padding(
+        padding: EdgeInsets.only(top: 32.h, left: 24.w, right: 24.w),
+        child: Column(
+          children: [
+            _buildStepper(),
+            stepPages[activeStep],
+            verticalSpace(32),
+            if (activeStep == upperBound) _buildPreviewButton(),
+            _buildNavigationButtons(),
+            verticalSpace(32),
+          ],
+        ),
       ),
     );
   }
@@ -136,7 +203,9 @@ class _AddProductInfoStepperState extends State<AddProductInfoStepper> {
     return Column(
       children: [
         AppCustomTextButtonWithIcon(
-          onPressed: () {},
+          onPressed: () {
+            // context.read<BusinessAddProductCubit>().addBusinessProduct();
+          },
           svgIcon: AppAssets.productPreviewIcon,
           svgIconColor: AppColors.secondaryColor,
           text: AppLocale.productPreview.getString(context),
@@ -188,7 +257,9 @@ class _AddProductInfoStepperState extends State<AddProductInfoStepper> {
   Widget _buildSubmitButton() {
     return Expanded(
       child: AppCustomTextButtonWithIcon(
-        onPressed: () {},
+        onPressed: () {
+          context.read<BusinessAddProductCubit>().addProductAndImages();
+        },
         svgIcon: AppAssets.submitIconSvg,
         text: AppLocale.submit.getString(context),
         backgroundColor: AppColors.whiteColor,

@@ -5,6 +5,8 @@ import 'package:home4u/features/auth/sign_up/logic/sign_up_state.dart';
 import 'package:logger/logger.dart';
 
 import '../../../../core/helpers/helper_methods.dart';
+import '../../../../core/helpers/shared_pref_helper.dart';
+import '../../../../core/helpers/shared_pref_keys.dart';
 import '../data/models/business_type.dart';
 import '../data/models/city_model.dart';
 import '../data/models/engineer_body.dart';
@@ -87,8 +89,9 @@ class SignUpCubit extends Cubit<SignUpState> {
 
   Future<void> getBusinessTypes() async {
     emit(const SignUpState.loadingBusinessType());
+    final userTypeId = await SharedPrefHelper.getInt(SharedPrefKeys.userTypeId);
     final response =
-        await signUpRepository.getBusinessTypes(selectedUserType!.id);
+        await signUpRepository.getBusinessTypes(userTypeId);
     response.when(
       success: (data) =>
           emit(SignUpState.successBusinessType(businessTypes = data)),

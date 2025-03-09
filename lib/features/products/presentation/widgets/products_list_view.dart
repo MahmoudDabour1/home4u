@@ -18,7 +18,6 @@ class ProductsListView extends StatelessWidget {
       builder: (context, state) {
         final cubit = context.read<ProductsCubit>();
         return SliverList(
-
           delegate: SliverChildBuilderDelegate(
             (context, index) {
               // if (index == content!.length) {
@@ -31,7 +30,8 @@ class ProductsListView extends StatelessWidget {
                 );
               // }
             },
-            childCount: content!.length + 1,
+            childCount: content!.length ,
+                // + 1,
           ),
         );
       },
