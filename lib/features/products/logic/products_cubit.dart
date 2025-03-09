@@ -9,11 +9,12 @@ import '../data/models/products_response_model.dart';
 
 class ProductsCubit extends Cubit<ProductsState> {
   final BusinessConfigRepo _businessConfigRepo;
+
+  BusinessConfigModel? businessConfigModel;
   final ProductsRepo _productsRepo;
 
   ProductsCubit(this._businessConfigRepo, this._productsRepo)
       : super(ProductsState.initial());
-  BusinessConfigModel? businessConfigModel;
   double? minPrice;
   double? maxPrice;
   List<int?> colorsIds = [];
@@ -28,6 +29,10 @@ class ProductsCubit extends Cubit<ProductsState> {
 
   static ProductsCubit get(context) => BlocProvider.of(context);
 
+  List<ProductBaseUnit> baseUnits = [];
+  List<FilterColor> colors = [];
+  List<ProductMaterial> materials = [];
+
   Future<void> getBusinessConfig() async {
     emit(const ProductsState.businessConfigLoading());
     final response = await _businessConfigRepo.getBusinessConfig();
@@ -36,10 +41,15 @@ class ProductsCubit extends Cubit<ProductsState> {
         businessConfigModel = data;
         if (!isClosed) {
           emit(ProductsState.businessConfigSuccess(data));
+          colors = data.data?.colors ?? [];
+          baseUnits = data.data?.productBaseUnits ?? [];
+          materials = data.data?.productMaterial ?? [] ;
         }
       },
       failure: (error) {
         if (!isClosed) {
+          emit(ProductsState.businessConfigFailure(
+              errorMessage: error.message.toString()));
           emit(ProductsState.businessConfigFailure(
               errorMessage: error.message.toString()));
         }

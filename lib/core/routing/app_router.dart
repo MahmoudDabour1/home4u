@@ -13,9 +13,9 @@ import 'package:home4u/features/auth/sign_up/presentation/sign_up_screen.dart';
 import 'package:home4u/features/auth/sign_up/presentation/technical_worker_sign_up.dart';
 import 'package:home4u/features/auth/verification/logic/verification_cubit.dart';
 import 'package:home4u/features/auth/verification/presentation/verification_screen.dart';
+import 'package:home4u/features/exhibition/logic/business_add_product_cubit.dart';
 import 'package:home4u/features/home/presentation/home_screen.dart';
 import 'package:home4u/features/layout/logic/bottom_nav_cubit.dart';
-import 'package:home4u/features/products/logic/products_cubit.dart';
 import 'package:home4u/features/profile/presentation/add_certification_screen.dart';
 
 import '../../features/auth/login/presentation/login_screen.dart';
@@ -149,13 +149,12 @@ class AppRouter {
         return MaterialPageRoute(
           builder: (_) => ProductPreviewScreen(),
         );
-      case Routes.productPreviewScreen:
-        return MaterialPageRoute(
-          builder: (_) => ProductPreviewScreen(),
-        );
       case Routes.businessAddProductScreen:
         return MaterialPageRoute(
-          builder: (_) => BusinessAddProductScreen(),
+          builder: (_) => BlocProvider<BusinessAddProductCubit>(
+            create: (_) => sl<BusinessAddProductCubit>(),
+            child: BusinessAddProductScreen(),
+          ),
         );
       case Routes.businessSignUpScreen:
         return MaterialPageRoute(
