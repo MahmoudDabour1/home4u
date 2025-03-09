@@ -1,9 +1,15 @@
-import 'business_add_product_body.dart';
+import 'package:freezed_annotation/freezed_annotation.dart';
 
+part 'business_add_product_images_response.g.dart';
+
+@JsonSerializable()
 class BusinessAddProductImagesResponse {
+  @JsonKey(name: "success")
   final bool success;
+  @JsonKey(name: "status")
   final int status;
-  final List<BusinessAddProductBody> data;
+  @JsonKey(name: "data")
+  final List<Datum> data;
 
   BusinessAddProductImagesResponse({
     required this.success,
@@ -11,20 +17,27 @@ class BusinessAddProductImagesResponse {
     required this.data,
   });
 
-  factory BusinessAddProductImagesResponse.fromJson(Map<String, dynamic> json) {
-    return BusinessAddProductImagesResponse(
-      success: json["success"],
-      status: json["status"],
-      data: List<BusinessAddProductBody>.from(
-          json["data"].map((x) => BusinessAddProductBody.fromJson(x))),
-    );
-  }
+  factory BusinessAddProductImagesResponse.fromJson(Map<String, dynamic> json) => _$BusinessAddProductImagesResponseFromJson(json);
 
-  Map<String, dynamic> toJson() {
-    return {
-      "success": success,
-      "status": status,
-      "data": List<dynamic>.from(data.map((x) => x.toJson())),
-    };
-  }
+  Map<String, dynamic> toJson() => _$BusinessAddProductImagesResponseToJson(this);
+}
+
+@JsonSerializable()
+class Datum {
+  @JsonKey(name: "id")
+  final int id;
+  @JsonKey(name: "productId")
+  final int productId;
+  @JsonKey(name: "imagePath")
+  final dynamic imagePath;
+
+  Datum({
+    required this.id,
+    required this.productId,
+    required this.imagePath,
+  });
+
+  factory Datum.fromJson(Map<String, dynamic> json) => _$DatumFromJson(json);
+
+  Map<String, dynamic> toJson() => _$DatumToJson(this);
 }

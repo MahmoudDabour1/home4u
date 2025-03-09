@@ -6,6 +6,7 @@ import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:home4u/core/networking/dio_factory.dart';
 import 'package:home4u/core/routing/router_observer.dart';
+import 'package:http_parser/http_parser.dart';
 import 'package:image_picker/image_picker.dart';
 
 import '../data/models/business_add_product_body.dart';
@@ -23,19 +24,21 @@ class BusinessAddProductCubit extends Cubit<BusinessAddProductState> {
   final GlobalKey<FormState> formKey = GlobalKey<FormState>();
 
   /// Basic Details Controllers
-  final productNameArController = TextEditingController(text : "عنوان المنتج");
-  final productNameEnController = TextEditingController(text : "Product Title");
-  final productDescriptionArController = TextEditingController(text : "وصف المنتج");
-  final productDescriptionEnController = TextEditingController(text : "Product Description");
-  final productPriceController = TextEditingController(text : "20.0");
+  final productNameArController = TextEditingController(text: "عنوان المنتج");
+  final productNameEnController = TextEditingController(text: "Product Title");
+  final productDescriptionArController =
+      TextEditingController(text: "وصف المنتج");
+  final productDescriptionEnController =
+      TextEditingController(text: "Product Description");
+  final productPriceController = TextEditingController(text: "20.0");
   int? selectedBaseUnit;
-  int? selectedBusinessType;
+  int? selectedExhibitionBusinessType;
 
   /// Materials and Specs Controllers
   List<int>? selectedMaterials;
-  final productLengthController = TextEditingController(text : "10.0");
-  final productWidthController = TextEditingController(text : "10.0");
-  final productHeightController = TextEditingController(text : "10.0");
+  final productLengthController = TextEditingController(text: "10.0");
+  final productWidthController = TextEditingController(text: "10.0");
+  final productHeightController = TextEditingController(text: "10.0");
 
   /// Colors and Stock Controllers
   final productStockAmountController = TextEditingController();
@@ -71,6 +74,7 @@ class BusinessAddProductCubit extends Cubit<BusinessAddProductState> {
       }
     });
   }
+
   Future<void> addProductAndImages() async {
     /// Step 1: Add Product
     emit(const BusinessAddProductState.addBusinessProductLoading());
@@ -85,20 +89,20 @@ class BusinessAddProductCubit extends Cubit<BusinessAddProductState> {
     logger.t("Selected Materials: $selectedMaterials");
 
     final addProductResult =
-    await _businessAddProductRepository.addBusinessProduct(
+        await _businessAddProductRepository.addBusinessProduct(
       BusinessAddProductBody(
         nameAr: productNameArController.text,
         nameEn: productNameEnController.text,
         descriptionAr: productDescriptionArController.text,
         descriptionEn: productDescriptionEnController.text,
-        businessType: BaseUnit(id: selectedBusinessType!),
+        businessType: BaseUnit(id: selectedExhibitionBusinessType!),
         price: double.parse(productPriceController.text),
         length: double.parse(productLengthController.text),
         width: double.parse(productWidthController.text),
         height: double.parse(productHeightController.text),
         baseUnit: BaseUnit(id: selectedBaseUnit!),
         materials:
-        selectedMaterials?.map((e) => BaseUnit(id: e)).toList() ?? [],
+            selectedMaterials?.map((e) => BaseUnit(id: e)).toList() ?? [],
         stocks: stockList,
         imagePaths: [],
       ),
@@ -114,10 +118,10 @@ class BusinessAddProductCubit extends Cubit<BusinessAddProductState> {
 
         // Prepare a list of BusinessAddProductImagesBody
         final List<BusinessAddProductImagesBody> imageBodies =
-        images.map((imageFile) {
+            images.map((imageFile) {
           return BusinessAddProductImagesBody(
             productId: productResponse.data.id,
-            imagePath: null, // Use the image file path
+            imagePath: null, // Use the image file path if needed
           );
         }).toList();
 
@@ -127,6 +131,8 @@ class BusinessAddProductCubit extends Cubit<BusinessAddProductState> {
 
         addImageResult.when(
           success: (imageResponse) async {
+            logger
+                .e('Image uploaded successfully: ${imageResponse.toString()}');
             emit(BusinessAddProductState.addBusinessProductImageSuccess(
                 imageResponse));
 
@@ -136,17 +142,31 @@ class BusinessAddProductCubit extends Cubit<BusinessAddProductState> {
 
             DioFactory.setContentTypeForMultipart();
 
-            for (var imageFile in images) {
+            final imageFiles = await Future.wait(images.map((image) async {
+              return await MultipartFile.fromFile(
+                image.path,
+                filename: image.path.split('/').last,
+                contentType: MediaType('image', 'jpeg'),
+              );
+            }));
+
+            for (var i = 0; i < imageFiles.length; i++) {
+              final imageFile = imageFiles[i];
+              final imageId = imageResponse.data[i].id;
+
               final uploadResult =
-              await _businessAddProductRepository.uploadBusinessImage(
+                  await _businessAddProductRepository.uploadBusinessImage(
                 "BUSINESS_PRODUCTS",
-                selectedBusinessType!,
-                imageFile, ///ToDo : Check here
+                imageId,
+                FormData.fromMap({
+                  'file': imageFile,
+                }),
               );
 
               uploadResult.when(
                 success: (uploadResponse) {
-                  logger.w('Image uploaded successfully: ${uploadResponse.toString()}'); // Debug log
+                  logger.w(
+                      'Image uploaded successfully: ${uploadResponse.toString()}'); // Debug log
                   if (uploadResponse.success) {
                     emit(BusinessAddProductState.uploadBusinessImageSuccess());
                   } else {
@@ -155,7 +175,8 @@ class BusinessAddProductCubit extends Cubit<BusinessAddProductState> {
                   }
                 },
                 failure: (error) {
-                  logger.d('Image upload failed: ${error.message}'); // Debug log
+                  logger
+                      .d('Image upload failed: ${error.message}'); // Debug log
 
                   emit(BusinessAddProductState.uploadBusinessImageFailure(
                       error.message.toString()));
@@ -164,6 +185,7 @@ class BusinessAddProductCubit extends Cubit<BusinessAddProductState> {
             }
           },
           failure: (error) {
+            logger.e('Image upload failed: ${error.message}');
             emit(BusinessAddProductState.addBusinessProductImageFailure(
                 error.message.toString()));
           },

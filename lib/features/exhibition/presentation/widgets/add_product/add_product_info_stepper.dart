@@ -259,6 +259,14 @@ class _AddProductInfoStepperState extends State<AddProductInfoStepper> {
       child: AppCustomTextButtonWithIcon(
         onPressed: () {
           context.read<BusinessAddProductCubit>().addProductAndImages();
+          // context.read<BusinessAddProductCubit>().addProductImages(
+          //     context.read<BusinessAddProductCubit>().images,
+          //     56,
+          // );
+          // context.read<BusinessAddProductCubit>().uploadImages(
+          //   context.read<BusinessAddProductCubit>().images,
+          //   33,
+          // );
         },
         svgIcon: AppAssets.submitIconSvg,
         text: AppLocale.submit.getString(context),

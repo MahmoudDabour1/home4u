@@ -71,11 +71,11 @@ class _BasicDetailsDropDownButtonsState
               onChanged: (value) {
                 setState(() {
                   selectedBusinessType = value;
-                  businessCubit.selectedBusinessType = int.parse(value!);
+                  businessCubit.selectedExhibitionBusinessType = int.parse(value!);
                 });
               },
               onSaved: (value) {
-                businessCubit.selectedBusinessType = int.parse(value!);
+                businessCubit.selectedExhibitionBusinessType = int.parse(value!);
                 log("selected Business Type: $value");
 
               },
