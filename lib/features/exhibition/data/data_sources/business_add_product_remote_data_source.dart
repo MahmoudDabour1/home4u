@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:dio/dio.dart';
 import 'package:retrofit/error_logger.dart';
 import 'package:retrofit/http.dart';
@@ -23,14 +25,15 @@ abstract class BusinessAddProductRemoteDataSource {
 
   @POST(ApiConstants.addAllProductImagesEp)
   Future<BusinessAddProductImagesResponse> addBusinessProductImage(
-      @Body() BusinessAddProductImagesBody imagesBody,
+      @Body() List<BusinessAddProductImagesBody> imagesBody,
       );
 
+  //{{prod_url}}/api/v1/file?pathId=BUSINESS_PRODUCTS&id=9
   @MultiPart()
   @POST("/api/v1/file")
   Future<UploadImageResponse> uploadBusinessImage(
       @Query("pathId") String pathId,
       @Query("id") int id,
-      @Body() FormData fileData,
+      @Part() File image,
       );
 }

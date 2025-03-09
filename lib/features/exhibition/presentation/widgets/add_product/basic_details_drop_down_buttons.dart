@@ -1,6 +1,10 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:home4u/features/auth/sign_up/logic/sign_up_state.dart';
+import 'package:home4u/features/products/logic/products_state.dart';
 
 import '../../../../../core/widgets/app_custom_drop_down_button_form_field.dart';
 import '../../../../auth/sign_up/logic/sign_up_cubit.dart';
@@ -50,50 +54,61 @@ class _BasicDetailsDropDownButtonsState
       mainAxisAlignment: MainAxisAlignment.start,
       spacing: 16.h,
       children: [
-        AppCustomDropDownButtonFormField(
-          value: selectedBusinessType,
-          items: signUpCubit.businessTypes
-              .map((businessType) {
-            return DropdownMenuItem<String>(
-              value: businessType.id.toString(),
-              child: Text(
-                businessType.name,
-                style: AppStyles.font16BlackLight,
-              ),
+        BlocBuilder<SignUpCubit, SignUpState>(
+          builder: (context, state) {
+            return AppCustomDropDownButtonFormField(
+              value: selectedBusinessType,
+              items: signUpCubit.businessTypes
+                  .map((businessType) {
+                return DropdownMenuItem<String>(
+                  value: businessType.id.toString(),
+                  child: Text(
+                    businessType.name,
+                    style: AppStyles.font16BlackLight,
+                  ),
+                );
+              }).toList(),
+              onChanged: (value) {
+                setState(() {
+                  selectedBusinessType = value;
+                  businessCubit.selectedBusinessType = int.parse(value!);
+                });
+              },
+              onSaved: (value) {
+                businessCubit.selectedBusinessType = int.parse(value!);
+                log("selected Business Type: $value");
+
+              },
+              labelText: AppLocale.businessType.getString(context),
             );
-          }).toList(),
-          onChanged: (value) {
-            setState(() {
-              selectedBusinessType = value;
-            });
           },
-          onSaved: (value) {
-            businessCubit.selectedBusinessType = int.parse(value!);
-          },
-          labelText: AppLocale.businessType.getString(context),
         ),
-        AppCustomDropDownButtonFormField(
-          value: selectedBaseUnit,
-          items: productsCubit.baseUnits.
-          map((material) {
-            return DropdownMenuItem<String>(
-              value: material.id.toString(),
-              child: Text(
-                material.name!,
-                //TODO: check if name is nullable [could cause problem later]
-                style: AppStyles.font16BlackLight,
-              ),
+        BlocBuilder<ProductsCubit, ProductsState>(
+          builder: (context, state) {
+            return AppCustomDropDownButtonFormField(
+              value: selectedBaseUnit,
+              items: productsCubit.baseUnits.map((material) {
+                return DropdownMenuItem<String>(
+                  value: material.id.toString(),
+                  child: Text(
+                    material.name!,
+                    //TODO: check if name is nullable [could cause problem later]
+                    style: AppStyles.font16BlackLight,
+                  ),
+                );
+              }).toList(),
+              onChanged: (value) {
+                setState(() {
+                  selectedBaseUnit = value;
+                  businessCubit.selectedBaseUnit = int.parse(value!);
+                });
+              },
+              onSaved: (value) {
+                businessCubit.selectedBaseUnit = int.parse(value!);
+              },
+              labelText: AppLocale.baseUnit.getString(context),
             );
-          }).toList(),
-          onChanged: (value) {
-            setState(() {
-              selectedBaseUnit = value;
-            });
           },
-          onSaved: (value) {
-            businessCubit.selectedBaseUnit = int.parse(value!);
-          },
-          labelText: AppLocale.baseUnit.getString(context),
         ),
       ],
     );

@@ -36,7 +36,10 @@ class LoginCubit extends Cubit<LoginState> {
         final token = loginResponse.userData!.token;
         final userType =
             loginResponse.userData!.userInformation!.userType!.code;
+        final userTypeId =
+            loginResponse.userData!.userInformation!.userType!.id;
         await saveUserType(userType!);
+        await saveUserTypeId(userTypeId!);
         await saveUserToken(token!);
         await showToast(
             message: AppLocale.loginSuccessfully.getString(context));
@@ -64,6 +67,10 @@ class LoginCubit extends Cubit<LoginState> {
     }
     await SharedPrefHelper.setSecuredString(SharedPrefKeys.userToken, token);
     DioFactory.setTokenIntoHeaderAfterLogin(token);
+  }
+
+  Future<void> saveUserTypeId(int userTypeId) async {
+    await SharedPrefHelper.setData(SharedPrefKeys.userTypeId, userTypeId);
   }
 
   Future<void> clearUserToken() async {

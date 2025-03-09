@@ -1,4 +1,5 @@
-import 'package:dio/dio.dart';
+import 'dart:io';
+
 import 'package:home4u/core/networking/api_result.dart';
 import 'package:home4u/features/exhibition/data/data_sources/business_add_product_remote_data_source.dart';
 
@@ -15,13 +16,13 @@ abstract class BusinessAddProductRepository {
   );
 
   Future<ApiResult<BusinessAddProductImagesResponse>> addBusinessProductImage(
-    BusinessAddProductImagesBody imagesBody,
+    List<BusinessAddProductImagesBody> imagesBody,
   );
 
   Future<ApiResult<UploadImageResponse>> uploadBusinessImage(
     String pathId,
     int id,
-    FormData fileData,
+    File image,
   );
 }
 
@@ -44,7 +45,7 @@ class BusinessAddProductRepositoryImpl implements BusinessAddProductRepository {
 
   @override
   Future<ApiResult<BusinessAddProductImagesResponse>> addBusinessProductImage(
-      BusinessAddProductImagesBody imagesBody) async {
+      List<BusinessAddProductImagesBody> imagesBody) async {
     try {
       final response = await _businessAddProductRemoteDataSource
           .addBusinessProductImage(imagesBody);
@@ -56,10 +57,10 @@ class BusinessAddProductRepositoryImpl implements BusinessAddProductRepository {
 
   @override
   Future<ApiResult<UploadImageResponse>> uploadBusinessImage(
-      String pathId, int id, FormData fileData) async {
+      String pathId, int id, File image) async {
     try {
       final response = await _businessAddProductRemoteDataSource
-          .uploadBusinessImage(pathId, id, fileData);
+          .uploadBusinessImage(pathId, id, image);
       return ApiResult.success(response);
     } catch (error) {
       return ApiResult.failure(ApiErrorHandler.handle(error));

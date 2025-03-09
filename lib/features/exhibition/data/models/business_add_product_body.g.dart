@@ -16,9 +16,9 @@ BusinessAddProductBody _$BusinessAddProductBodyFromJson(
       businessType:
           BaseUnit.fromJson(json['businessType'] as Map<String, dynamic>),
       price: (json['price'] as num).toDouble(),
-      length: (json['length'] as num).toInt(),
+      length: (json['length'] as num).toDouble(),
       width: (json['width'] as num).toDouble(),
-      height: (json['height'] as num).toInt(),
+      height: (json['height'] as num).toDouble(),
       baseUnit: BaseUnit.fromJson(json['baseUnit'] as Map<String, dynamic>),
       materials: (json['materials'] as List<dynamic>)
           .map((e) => BaseUnit.fromJson(e as Map<String, dynamic>))

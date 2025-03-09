@@ -22,7 +22,7 @@ class AddProductColorsAndStock extends StatefulWidget {
 }
 
 class _AddProductColorsAndStockState extends State<AddProductColorsAndStock> {
-  String? selectedColor;
+  String? selectedColorId;
   final List<Map<String, dynamic>> selectedColorsAndStock = [];
 
   @override
@@ -32,12 +32,12 @@ class _AddProductColorsAndStockState extends State<AddProductColorsAndStock> {
 
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
-      spacing: 16.h,
       children: [
+        /// Colors List Dropdown
         BlocBuilder<ProductsCubit, ProductsState>(
           builder: (context, state) {
             return AppCustomDropDownButtonFormField(
-              value: selectedColor,
+              value: selectedColorId,
               items: productsCubit.colors.map((color) {
                 return DropdownMenuItem<String>(
                   value: color.id.toString(),
@@ -49,7 +49,7 @@ class _AddProductColorsAndStockState extends State<AddProductColorsAndStock> {
               }).toList(),
               onChanged: (value) {
                 setState(() {
-                  selectedColor = value;
+                  selectedColorId = value;
                 });
               },
               onSaved: (value) {
@@ -59,8 +59,8 @@ class _AddProductColorsAndStockState extends State<AddProductColorsAndStock> {
             );
           },
         ),
+        SizedBox(height: 16.h),
         Row(
-          spacing: 8.w,
           children: [
             Expanded(
               child: UpDownFormField(
@@ -70,23 +70,33 @@ class _AddProductColorsAndStockState extends State<AddProductColorsAndStock> {
                 validationMessage: "Please enter a valid stock amount",
               ),
             ),
+            SizedBox(width: 8.w),
             Expanded(
               child: AppCustomButton(
                 onPressed: () {
-                  if (selectedColor != null &&
-                      businessCubit
-                          .productStockAmountController.text.isNotEmpty) {
+                  if (selectedColorId != null &&
+                      businessCubit.productStockAmountController.text.isNotEmpty) {
                     int stock = int.parse(
                         businessCubit.productStockAmountController.text);
                     if (stock > 0) {
+                      final selectedColorObject =
+                      productsCubit.colors.firstWhere(
+                            (element) => element.id.toString() == selectedColorId,
+                        orElse: () => throw Exception("Color not found!"),
+                      );
+
+                      selectedColorsAndStock.add({
+                        "colorId": selectedColorObject.id,
+                        "hexColor": selectedColorObject.hexColor,
+                        "stock": stock,
+                      });
+
+                      // ✅ Pass the updated list to the cubit
+                      businessCubit.updateSelectedColorsAndStock(selectedColorsAndStock);
+
                       setState(() {
-                        selectedColorsAndStock.add({
-                          "color": selectedColor!,
-                          "colorObject": productsCubit.colors.firstWhere(
-                                  (element) =>
-                              element.id.toString() == selectedColor),
-                          "stock": stock,
-                        });
+                        selectedColorId = null;
+                        businessCubit.productStockAmountController.clear();
                       });
                     }
                   }
@@ -98,21 +108,23 @@ class _AddProductColorsAndStockState extends State<AddProductColorsAndStock> {
             ),
           ],
         ),
+        SizedBox(height: 16.h),
         if (selectedColorsAndStock.isNotEmpty)
           Wrap(
             spacing: 8.w,
             children: selectedColorsAndStock.map((item) {
-              final colorObj = item["colorObject"];
+              final colorHex = item["hexColor"];
               return Chip(
                 avatar: CircleAvatar(
                   radius: 16.r,
-                  backgroundColor: Color(int.parse(colorObj.colorCode!)),
+                  backgroundColor: _hexToColor(colorHex),
                 ),
                 label: Text('${item["stock"]} pieces'),
                 deleteIcon: Icon(Icons.close),
                 onDeleted: () {
                   setState(() {
                     selectedColorsAndStock.remove(item);
+                    businessCubit.updateSelectedColorsAndStock(selectedColorsAndStock);
                   });
                 },
                 backgroundColor: AppColors.whiteColor,
@@ -121,5 +133,10 @@ class _AddProductColorsAndStockState extends State<AddProductColorsAndStock> {
           ),
       ],
     );
+  }
+
+  Color _hexToColor(String hex) {
+    hex = hex.replaceFirst('#', '');
+    return Color(int.parse('0xFF$hex'));
   }
 }

@@ -28,9 +28,10 @@ mixin _$BusinessAddProductState<T> {
         addBusinessProductImageSuccess,
     required TResult Function(String error) addBusinessProductImageFailure,
     required TResult Function() uploadBusinessImageLoading,
-    required TResult Function(UploadImageResponse uploadedImages)
-        uploadBusinessImageSuccess,
+    required TResult Function() uploadBusinessImageSuccess,
     required TResult Function(String error) uploadBusinessImageFailure,
+    required TResult Function(List<File> images) selectImageSuccess,
+    required TResult Function(String message) selectImageFailure,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -45,9 +46,10 @@ mixin _$BusinessAddProductState<T> {
         addBusinessProductImageSuccess,
     TResult? Function(String error)? addBusinessProductImageFailure,
     TResult? Function()? uploadBusinessImageLoading,
-    TResult? Function(UploadImageResponse uploadedImages)?
-        uploadBusinessImageSuccess,
+    TResult? Function()? uploadBusinessImageSuccess,
     TResult? Function(String error)? uploadBusinessImageFailure,
+    TResult? Function(List<File> images)? selectImageSuccess,
+    TResult? Function(String message)? selectImageFailure,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -62,9 +64,10 @@ mixin _$BusinessAddProductState<T> {
         addBusinessProductImageSuccess,
     TResult Function(String error)? addBusinessProductImageFailure,
     TResult Function()? uploadBusinessImageLoading,
-    TResult Function(UploadImageResponse uploadedImages)?
-        uploadBusinessImageSuccess,
+    TResult Function()? uploadBusinessImageSuccess,
     TResult Function(String error)? uploadBusinessImageFailure,
+    TResult Function(List<File> images)? selectImageSuccess,
+    TResult Function(String message)? selectImageFailure,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -89,6 +92,8 @@ mixin _$BusinessAddProductState<T> {
         uploadBusinessImageSuccess,
     required TResult Function(UploadBusinessImageFailure<T> value)
         uploadBusinessImageFailure,
+    required TResult Function(SelectImageSuccess<T> value) selectImageSuccess,
+    required TResult Function(SelectImageFailure<T> value) selectImageFailure,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -112,6 +117,8 @@ mixin _$BusinessAddProductState<T> {
         uploadBusinessImageSuccess,
     TResult? Function(UploadBusinessImageFailure<T> value)?
         uploadBusinessImageFailure,
+    TResult? Function(SelectImageSuccess<T> value)? selectImageSuccess,
+    TResult? Function(SelectImageFailure<T> value)? selectImageFailure,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -135,6 +142,8 @@ mixin _$BusinessAddProductState<T> {
         uploadBusinessImageSuccess,
     TResult Function(UploadBusinessImageFailure<T> value)?
         uploadBusinessImageFailure,
+    TResult Function(SelectImageSuccess<T> value)? selectImageSuccess,
+    TResult Function(SelectImageFailure<T> value)? selectImageFailure,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -214,9 +223,10 @@ class _$InitialImpl<T> implements _Initial<T> {
         addBusinessProductImageSuccess,
     required TResult Function(String error) addBusinessProductImageFailure,
     required TResult Function() uploadBusinessImageLoading,
-    required TResult Function(UploadImageResponse uploadedImages)
-        uploadBusinessImageSuccess,
+    required TResult Function() uploadBusinessImageSuccess,
     required TResult Function(String error) uploadBusinessImageFailure,
+    required TResult Function(List<File> images) selectImageSuccess,
+    required TResult Function(String message) selectImageFailure,
   }) {
     return initial();
   }
@@ -234,9 +244,10 @@ class _$InitialImpl<T> implements _Initial<T> {
         addBusinessProductImageSuccess,
     TResult? Function(String error)? addBusinessProductImageFailure,
     TResult? Function()? uploadBusinessImageLoading,
-    TResult? Function(UploadImageResponse uploadedImages)?
-        uploadBusinessImageSuccess,
+    TResult? Function()? uploadBusinessImageSuccess,
     TResult? Function(String error)? uploadBusinessImageFailure,
+    TResult? Function(List<File> images)? selectImageSuccess,
+    TResult? Function(String message)? selectImageFailure,
   }) {
     return initial?.call();
   }
@@ -254,9 +265,10 @@ class _$InitialImpl<T> implements _Initial<T> {
         addBusinessProductImageSuccess,
     TResult Function(String error)? addBusinessProductImageFailure,
     TResult Function()? uploadBusinessImageLoading,
-    TResult Function(UploadImageResponse uploadedImages)?
-        uploadBusinessImageSuccess,
+    TResult Function()? uploadBusinessImageSuccess,
     TResult Function(String error)? uploadBusinessImageFailure,
+    TResult Function(List<File> images)? selectImageSuccess,
+    TResult Function(String message)? selectImageFailure,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -287,6 +299,8 @@ class _$InitialImpl<T> implements _Initial<T> {
         uploadBusinessImageSuccess,
     required TResult Function(UploadBusinessImageFailure<T> value)
         uploadBusinessImageFailure,
+    required TResult Function(SelectImageSuccess<T> value) selectImageSuccess,
+    required TResult Function(SelectImageFailure<T> value) selectImageFailure,
   }) {
     return initial(this);
   }
@@ -313,6 +327,8 @@ class _$InitialImpl<T> implements _Initial<T> {
         uploadBusinessImageSuccess,
     TResult? Function(UploadBusinessImageFailure<T> value)?
         uploadBusinessImageFailure,
+    TResult? Function(SelectImageSuccess<T> value)? selectImageSuccess,
+    TResult? Function(SelectImageFailure<T> value)? selectImageFailure,
   }) {
     return initial?.call(this);
   }
@@ -339,6 +355,8 @@ class _$InitialImpl<T> implements _Initial<T> {
         uploadBusinessImageSuccess,
     TResult Function(UploadBusinessImageFailure<T> value)?
         uploadBusinessImageFailure,
+    TResult Function(SelectImageSuccess<T> value)? selectImageSuccess,
+    TResult Function(SelectImageFailure<T> value)? selectImageFailure,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -408,9 +426,10 @@ class _$AddBusinessProductLoadingImpl<T>
         addBusinessProductImageSuccess,
     required TResult Function(String error) addBusinessProductImageFailure,
     required TResult Function() uploadBusinessImageLoading,
-    required TResult Function(UploadImageResponse uploadedImages)
-        uploadBusinessImageSuccess,
+    required TResult Function() uploadBusinessImageSuccess,
     required TResult Function(String error) uploadBusinessImageFailure,
+    required TResult Function(List<File> images) selectImageSuccess,
+    required TResult Function(String message) selectImageFailure,
   }) {
     return addBusinessProductLoading();
   }
@@ -428,9 +447,10 @@ class _$AddBusinessProductLoadingImpl<T>
         addBusinessProductImageSuccess,
     TResult? Function(String error)? addBusinessProductImageFailure,
     TResult? Function()? uploadBusinessImageLoading,
-    TResult? Function(UploadImageResponse uploadedImages)?
-        uploadBusinessImageSuccess,
+    TResult? Function()? uploadBusinessImageSuccess,
     TResult? Function(String error)? uploadBusinessImageFailure,
+    TResult? Function(List<File> images)? selectImageSuccess,
+    TResult? Function(String message)? selectImageFailure,
   }) {
     return addBusinessProductLoading?.call();
   }
@@ -448,9 +468,10 @@ class _$AddBusinessProductLoadingImpl<T>
         addBusinessProductImageSuccess,
     TResult Function(String error)? addBusinessProductImageFailure,
     TResult Function()? uploadBusinessImageLoading,
-    TResult Function(UploadImageResponse uploadedImages)?
-        uploadBusinessImageSuccess,
+    TResult Function()? uploadBusinessImageSuccess,
     TResult Function(String error)? uploadBusinessImageFailure,
+    TResult Function(List<File> images)? selectImageSuccess,
+    TResult Function(String message)? selectImageFailure,
     required TResult orElse(),
   }) {
     if (addBusinessProductLoading != null) {
@@ -481,6 +502,8 @@ class _$AddBusinessProductLoadingImpl<T>
         uploadBusinessImageSuccess,
     required TResult Function(UploadBusinessImageFailure<T> value)
         uploadBusinessImageFailure,
+    required TResult Function(SelectImageSuccess<T> value) selectImageSuccess,
+    required TResult Function(SelectImageFailure<T> value) selectImageFailure,
   }) {
     return addBusinessProductLoading(this);
   }
@@ -507,6 +530,8 @@ class _$AddBusinessProductLoadingImpl<T>
         uploadBusinessImageSuccess,
     TResult? Function(UploadBusinessImageFailure<T> value)?
         uploadBusinessImageFailure,
+    TResult? Function(SelectImageSuccess<T> value)? selectImageSuccess,
+    TResult? Function(SelectImageFailure<T> value)? selectImageFailure,
   }) {
     return addBusinessProductLoading?.call(this);
   }
@@ -533,6 +558,8 @@ class _$AddBusinessProductLoadingImpl<T>
         uploadBusinessImageSuccess,
     TResult Function(UploadBusinessImageFailure<T> value)?
         uploadBusinessImageFailure,
+    TResult Function(SelectImageSuccess<T> value)? selectImageSuccess,
+    TResult Function(SelectImageFailure<T> value)? selectImageFailure,
     required TResult orElse(),
   }) {
     if (addBusinessProductLoading != null) {
@@ -633,9 +660,10 @@ class _$AddBusinessProductSuccessImpl<T>
         addBusinessProductImageSuccess,
     required TResult Function(String error) addBusinessProductImageFailure,
     required TResult Function() uploadBusinessImageLoading,
-    required TResult Function(UploadImageResponse uploadedImages)
-        uploadBusinessImageSuccess,
+    required TResult Function() uploadBusinessImageSuccess,
     required TResult Function(String error) uploadBusinessImageFailure,
+    required TResult Function(List<File> images) selectImageSuccess,
+    required TResult Function(String message) selectImageFailure,
   }) {
     return addBusinessProductSuccess(response);
   }
@@ -653,9 +681,10 @@ class _$AddBusinessProductSuccessImpl<T>
         addBusinessProductImageSuccess,
     TResult? Function(String error)? addBusinessProductImageFailure,
     TResult? Function()? uploadBusinessImageLoading,
-    TResult? Function(UploadImageResponse uploadedImages)?
-        uploadBusinessImageSuccess,
+    TResult? Function()? uploadBusinessImageSuccess,
     TResult? Function(String error)? uploadBusinessImageFailure,
+    TResult? Function(List<File> images)? selectImageSuccess,
+    TResult? Function(String message)? selectImageFailure,
   }) {
     return addBusinessProductSuccess?.call(response);
   }
@@ -673,9 +702,10 @@ class _$AddBusinessProductSuccessImpl<T>
         addBusinessProductImageSuccess,
     TResult Function(String error)? addBusinessProductImageFailure,
     TResult Function()? uploadBusinessImageLoading,
-    TResult Function(UploadImageResponse uploadedImages)?
-        uploadBusinessImageSuccess,
+    TResult Function()? uploadBusinessImageSuccess,
     TResult Function(String error)? uploadBusinessImageFailure,
+    TResult Function(List<File> images)? selectImageSuccess,
+    TResult Function(String message)? selectImageFailure,
     required TResult orElse(),
   }) {
     if (addBusinessProductSuccess != null) {
@@ -706,6 +736,8 @@ class _$AddBusinessProductSuccessImpl<T>
         uploadBusinessImageSuccess,
     required TResult Function(UploadBusinessImageFailure<T> value)
         uploadBusinessImageFailure,
+    required TResult Function(SelectImageSuccess<T> value) selectImageSuccess,
+    required TResult Function(SelectImageFailure<T> value) selectImageFailure,
   }) {
     return addBusinessProductSuccess(this);
   }
@@ -732,6 +764,8 @@ class _$AddBusinessProductSuccessImpl<T>
         uploadBusinessImageSuccess,
     TResult? Function(UploadBusinessImageFailure<T> value)?
         uploadBusinessImageFailure,
+    TResult? Function(SelectImageSuccess<T> value)? selectImageSuccess,
+    TResult? Function(SelectImageFailure<T> value)? selectImageFailure,
   }) {
     return addBusinessProductSuccess?.call(this);
   }
@@ -758,6 +792,8 @@ class _$AddBusinessProductSuccessImpl<T>
         uploadBusinessImageSuccess,
     TResult Function(UploadBusinessImageFailure<T> value)?
         uploadBusinessImageFailure,
+    TResult Function(SelectImageSuccess<T> value)? selectImageSuccess,
+    TResult Function(SelectImageFailure<T> value)? selectImageFailure,
     required TResult orElse(),
   }) {
     if (addBusinessProductSuccess != null) {
@@ -867,9 +903,10 @@ class _$AddBusinessProductFailureImpl<T>
         addBusinessProductImageSuccess,
     required TResult Function(String error) addBusinessProductImageFailure,
     required TResult Function() uploadBusinessImageLoading,
-    required TResult Function(UploadImageResponse uploadedImages)
-        uploadBusinessImageSuccess,
+    required TResult Function() uploadBusinessImageSuccess,
     required TResult Function(String error) uploadBusinessImageFailure,
+    required TResult Function(List<File> images) selectImageSuccess,
+    required TResult Function(String message) selectImageFailure,
   }) {
     return addBusinessProductFailure(error);
   }
@@ -887,9 +924,10 @@ class _$AddBusinessProductFailureImpl<T>
         addBusinessProductImageSuccess,
     TResult? Function(String error)? addBusinessProductImageFailure,
     TResult? Function()? uploadBusinessImageLoading,
-    TResult? Function(UploadImageResponse uploadedImages)?
-        uploadBusinessImageSuccess,
+    TResult? Function()? uploadBusinessImageSuccess,
     TResult? Function(String error)? uploadBusinessImageFailure,
+    TResult? Function(List<File> images)? selectImageSuccess,
+    TResult? Function(String message)? selectImageFailure,
   }) {
     return addBusinessProductFailure?.call(error);
   }
@@ -907,9 +945,10 @@ class _$AddBusinessProductFailureImpl<T>
         addBusinessProductImageSuccess,
     TResult Function(String error)? addBusinessProductImageFailure,
     TResult Function()? uploadBusinessImageLoading,
-    TResult Function(UploadImageResponse uploadedImages)?
-        uploadBusinessImageSuccess,
+    TResult Function()? uploadBusinessImageSuccess,
     TResult Function(String error)? uploadBusinessImageFailure,
+    TResult Function(List<File> images)? selectImageSuccess,
+    TResult Function(String message)? selectImageFailure,
     required TResult orElse(),
   }) {
     if (addBusinessProductFailure != null) {
@@ -940,6 +979,8 @@ class _$AddBusinessProductFailureImpl<T>
         uploadBusinessImageSuccess,
     required TResult Function(UploadBusinessImageFailure<T> value)
         uploadBusinessImageFailure,
+    required TResult Function(SelectImageSuccess<T> value) selectImageSuccess,
+    required TResult Function(SelectImageFailure<T> value) selectImageFailure,
   }) {
     return addBusinessProductFailure(this);
   }
@@ -966,6 +1007,8 @@ class _$AddBusinessProductFailureImpl<T>
         uploadBusinessImageSuccess,
     TResult? Function(UploadBusinessImageFailure<T> value)?
         uploadBusinessImageFailure,
+    TResult? Function(SelectImageSuccess<T> value)? selectImageSuccess,
+    TResult? Function(SelectImageFailure<T> value)? selectImageFailure,
   }) {
     return addBusinessProductFailure?.call(this);
   }
@@ -992,6 +1035,8 @@ class _$AddBusinessProductFailureImpl<T>
         uploadBusinessImageSuccess,
     TResult Function(UploadBusinessImageFailure<T> value)?
         uploadBusinessImageFailure,
+    TResult Function(SelectImageSuccess<T> value)? selectImageSuccess,
+    TResult Function(SelectImageFailure<T> value)? selectImageFailure,
     required TResult orElse(),
   }) {
     if (addBusinessProductFailure != null) {
@@ -1072,9 +1117,10 @@ class _$AddBusinessProductImageLoadingImpl<T>
         addBusinessProductImageSuccess,
     required TResult Function(String error) addBusinessProductImageFailure,
     required TResult Function() uploadBusinessImageLoading,
-    required TResult Function(UploadImageResponse uploadedImages)
-        uploadBusinessImageSuccess,
+    required TResult Function() uploadBusinessImageSuccess,
     required TResult Function(String error) uploadBusinessImageFailure,
+    required TResult Function(List<File> images) selectImageSuccess,
+    required TResult Function(String message) selectImageFailure,
   }) {
     return addBusinessProductImageLoading();
   }
@@ -1092,9 +1138,10 @@ class _$AddBusinessProductImageLoadingImpl<T>
         addBusinessProductImageSuccess,
     TResult? Function(String error)? addBusinessProductImageFailure,
     TResult? Function()? uploadBusinessImageLoading,
-    TResult? Function(UploadImageResponse uploadedImages)?
-        uploadBusinessImageSuccess,
+    TResult? Function()? uploadBusinessImageSuccess,
     TResult? Function(String error)? uploadBusinessImageFailure,
+    TResult? Function(List<File> images)? selectImageSuccess,
+    TResult? Function(String message)? selectImageFailure,
   }) {
     return addBusinessProductImageLoading?.call();
   }
@@ -1112,9 +1159,10 @@ class _$AddBusinessProductImageLoadingImpl<T>
         addBusinessProductImageSuccess,
     TResult Function(String error)? addBusinessProductImageFailure,
     TResult Function()? uploadBusinessImageLoading,
-    TResult Function(UploadImageResponse uploadedImages)?
-        uploadBusinessImageSuccess,
+    TResult Function()? uploadBusinessImageSuccess,
     TResult Function(String error)? uploadBusinessImageFailure,
+    TResult Function(List<File> images)? selectImageSuccess,
+    TResult Function(String message)? selectImageFailure,
     required TResult orElse(),
   }) {
     if (addBusinessProductImageLoading != null) {
@@ -1145,6 +1193,8 @@ class _$AddBusinessProductImageLoadingImpl<T>
         uploadBusinessImageSuccess,
     required TResult Function(UploadBusinessImageFailure<T> value)
         uploadBusinessImageFailure,
+    required TResult Function(SelectImageSuccess<T> value) selectImageSuccess,
+    required TResult Function(SelectImageFailure<T> value) selectImageFailure,
   }) {
     return addBusinessProductImageLoading(this);
   }
@@ -1171,6 +1221,8 @@ class _$AddBusinessProductImageLoadingImpl<T>
         uploadBusinessImageSuccess,
     TResult? Function(UploadBusinessImageFailure<T> value)?
         uploadBusinessImageFailure,
+    TResult? Function(SelectImageSuccess<T> value)? selectImageSuccess,
+    TResult? Function(SelectImageFailure<T> value)? selectImageFailure,
   }) {
     return addBusinessProductImageLoading?.call(this);
   }
@@ -1197,6 +1249,8 @@ class _$AddBusinessProductImageLoadingImpl<T>
         uploadBusinessImageSuccess,
     TResult Function(UploadBusinessImageFailure<T> value)?
         uploadBusinessImageFailure,
+    TResult Function(SelectImageSuccess<T> value)? selectImageSuccess,
+    TResult Function(SelectImageFailure<T> value)? selectImageFailure,
     required TResult orElse(),
   }) {
     if (addBusinessProductImageLoading != null) {
@@ -1296,9 +1350,10 @@ class _$AddBusinessProductImageSuccessImpl<T>
         addBusinessProductImageSuccess,
     required TResult Function(String error) addBusinessProductImageFailure,
     required TResult Function() uploadBusinessImageLoading,
-    required TResult Function(UploadImageResponse uploadedImages)
-        uploadBusinessImageSuccess,
+    required TResult Function() uploadBusinessImageSuccess,
     required TResult Function(String error) uploadBusinessImageFailure,
+    required TResult Function(List<File> images) selectImageSuccess,
+    required TResult Function(String message) selectImageFailure,
   }) {
     return addBusinessProductImageSuccess(images);
   }
@@ -1316,9 +1371,10 @@ class _$AddBusinessProductImageSuccessImpl<T>
         addBusinessProductImageSuccess,
     TResult? Function(String error)? addBusinessProductImageFailure,
     TResult? Function()? uploadBusinessImageLoading,
-    TResult? Function(UploadImageResponse uploadedImages)?
-        uploadBusinessImageSuccess,
+    TResult? Function()? uploadBusinessImageSuccess,
     TResult? Function(String error)? uploadBusinessImageFailure,
+    TResult? Function(List<File> images)? selectImageSuccess,
+    TResult? Function(String message)? selectImageFailure,
   }) {
     return addBusinessProductImageSuccess?.call(images);
   }
@@ -1336,9 +1392,10 @@ class _$AddBusinessProductImageSuccessImpl<T>
         addBusinessProductImageSuccess,
     TResult Function(String error)? addBusinessProductImageFailure,
     TResult Function()? uploadBusinessImageLoading,
-    TResult Function(UploadImageResponse uploadedImages)?
-        uploadBusinessImageSuccess,
+    TResult Function()? uploadBusinessImageSuccess,
     TResult Function(String error)? uploadBusinessImageFailure,
+    TResult Function(List<File> images)? selectImageSuccess,
+    TResult Function(String message)? selectImageFailure,
     required TResult orElse(),
   }) {
     if (addBusinessProductImageSuccess != null) {
@@ -1369,6 +1426,8 @@ class _$AddBusinessProductImageSuccessImpl<T>
         uploadBusinessImageSuccess,
     required TResult Function(UploadBusinessImageFailure<T> value)
         uploadBusinessImageFailure,
+    required TResult Function(SelectImageSuccess<T> value) selectImageSuccess,
+    required TResult Function(SelectImageFailure<T> value) selectImageFailure,
   }) {
     return addBusinessProductImageSuccess(this);
   }
@@ -1395,6 +1454,8 @@ class _$AddBusinessProductImageSuccessImpl<T>
         uploadBusinessImageSuccess,
     TResult? Function(UploadBusinessImageFailure<T> value)?
         uploadBusinessImageFailure,
+    TResult? Function(SelectImageSuccess<T> value)? selectImageSuccess,
+    TResult? Function(SelectImageFailure<T> value)? selectImageFailure,
   }) {
     return addBusinessProductImageSuccess?.call(this);
   }
@@ -1421,6 +1482,8 @@ class _$AddBusinessProductImageSuccessImpl<T>
         uploadBusinessImageSuccess,
     TResult Function(UploadBusinessImageFailure<T> value)?
         uploadBusinessImageFailure,
+    TResult Function(SelectImageSuccess<T> value)? selectImageSuccess,
+    TResult Function(SelectImageFailure<T> value)? selectImageFailure,
     required TResult orElse(),
   }) {
     if (addBusinessProductImageSuccess != null) {
@@ -1530,9 +1593,10 @@ class _$AddBusinessProductImageFailureImpl<T>
         addBusinessProductImageSuccess,
     required TResult Function(String error) addBusinessProductImageFailure,
     required TResult Function() uploadBusinessImageLoading,
-    required TResult Function(UploadImageResponse uploadedImages)
-        uploadBusinessImageSuccess,
+    required TResult Function() uploadBusinessImageSuccess,
     required TResult Function(String error) uploadBusinessImageFailure,
+    required TResult Function(List<File> images) selectImageSuccess,
+    required TResult Function(String message) selectImageFailure,
   }) {
     return addBusinessProductImageFailure(error);
   }
@@ -1550,9 +1614,10 @@ class _$AddBusinessProductImageFailureImpl<T>
         addBusinessProductImageSuccess,
     TResult? Function(String error)? addBusinessProductImageFailure,
     TResult? Function()? uploadBusinessImageLoading,
-    TResult? Function(UploadImageResponse uploadedImages)?
-        uploadBusinessImageSuccess,
+    TResult? Function()? uploadBusinessImageSuccess,
     TResult? Function(String error)? uploadBusinessImageFailure,
+    TResult? Function(List<File> images)? selectImageSuccess,
+    TResult? Function(String message)? selectImageFailure,
   }) {
     return addBusinessProductImageFailure?.call(error);
   }
@@ -1570,9 +1635,10 @@ class _$AddBusinessProductImageFailureImpl<T>
         addBusinessProductImageSuccess,
     TResult Function(String error)? addBusinessProductImageFailure,
     TResult Function()? uploadBusinessImageLoading,
-    TResult Function(UploadImageResponse uploadedImages)?
-        uploadBusinessImageSuccess,
+    TResult Function()? uploadBusinessImageSuccess,
     TResult Function(String error)? uploadBusinessImageFailure,
+    TResult Function(List<File> images)? selectImageSuccess,
+    TResult Function(String message)? selectImageFailure,
     required TResult orElse(),
   }) {
     if (addBusinessProductImageFailure != null) {
@@ -1603,6 +1669,8 @@ class _$AddBusinessProductImageFailureImpl<T>
         uploadBusinessImageSuccess,
     required TResult Function(UploadBusinessImageFailure<T> value)
         uploadBusinessImageFailure,
+    required TResult Function(SelectImageSuccess<T> value) selectImageSuccess,
+    required TResult Function(SelectImageFailure<T> value) selectImageFailure,
   }) {
     return addBusinessProductImageFailure(this);
   }
@@ -1629,6 +1697,8 @@ class _$AddBusinessProductImageFailureImpl<T>
         uploadBusinessImageSuccess,
     TResult? Function(UploadBusinessImageFailure<T> value)?
         uploadBusinessImageFailure,
+    TResult? Function(SelectImageSuccess<T> value)? selectImageSuccess,
+    TResult? Function(SelectImageFailure<T> value)? selectImageFailure,
   }) {
     return addBusinessProductImageFailure?.call(this);
   }
@@ -1655,6 +1725,8 @@ class _$AddBusinessProductImageFailureImpl<T>
         uploadBusinessImageSuccess,
     TResult Function(UploadBusinessImageFailure<T> value)?
         uploadBusinessImageFailure,
+    TResult Function(SelectImageSuccess<T> value)? selectImageSuccess,
+    TResult Function(SelectImageFailure<T> value)? selectImageFailure,
     required TResult orElse(),
   }) {
     if (addBusinessProductImageFailure != null) {
@@ -1735,9 +1807,10 @@ class _$UploadBusinessImageLoadingImpl<T>
         addBusinessProductImageSuccess,
     required TResult Function(String error) addBusinessProductImageFailure,
     required TResult Function() uploadBusinessImageLoading,
-    required TResult Function(UploadImageResponse uploadedImages)
-        uploadBusinessImageSuccess,
+    required TResult Function() uploadBusinessImageSuccess,
     required TResult Function(String error) uploadBusinessImageFailure,
+    required TResult Function(List<File> images) selectImageSuccess,
+    required TResult Function(String message) selectImageFailure,
   }) {
     return uploadBusinessImageLoading();
   }
@@ -1755,9 +1828,10 @@ class _$UploadBusinessImageLoadingImpl<T>
         addBusinessProductImageSuccess,
     TResult? Function(String error)? addBusinessProductImageFailure,
     TResult? Function()? uploadBusinessImageLoading,
-    TResult? Function(UploadImageResponse uploadedImages)?
-        uploadBusinessImageSuccess,
+    TResult? Function()? uploadBusinessImageSuccess,
     TResult? Function(String error)? uploadBusinessImageFailure,
+    TResult? Function(List<File> images)? selectImageSuccess,
+    TResult? Function(String message)? selectImageFailure,
   }) {
     return uploadBusinessImageLoading?.call();
   }
@@ -1775,9 +1849,10 @@ class _$UploadBusinessImageLoadingImpl<T>
         addBusinessProductImageSuccess,
     TResult Function(String error)? addBusinessProductImageFailure,
     TResult Function()? uploadBusinessImageLoading,
-    TResult Function(UploadImageResponse uploadedImages)?
-        uploadBusinessImageSuccess,
+    TResult Function()? uploadBusinessImageSuccess,
     TResult Function(String error)? uploadBusinessImageFailure,
+    TResult Function(List<File> images)? selectImageSuccess,
+    TResult Function(String message)? selectImageFailure,
     required TResult orElse(),
   }) {
     if (uploadBusinessImageLoading != null) {
@@ -1808,6 +1883,8 @@ class _$UploadBusinessImageLoadingImpl<T>
         uploadBusinessImageSuccess,
     required TResult Function(UploadBusinessImageFailure<T> value)
         uploadBusinessImageFailure,
+    required TResult Function(SelectImageSuccess<T> value) selectImageSuccess,
+    required TResult Function(SelectImageFailure<T> value) selectImageFailure,
   }) {
     return uploadBusinessImageLoading(this);
   }
@@ -1834,6 +1911,8 @@ class _$UploadBusinessImageLoadingImpl<T>
         uploadBusinessImageSuccess,
     TResult? Function(UploadBusinessImageFailure<T> value)?
         uploadBusinessImageFailure,
+    TResult? Function(SelectImageSuccess<T> value)? selectImageSuccess,
+    TResult? Function(SelectImageFailure<T> value)? selectImageFailure,
   }) {
     return uploadBusinessImageLoading?.call(this);
   }
@@ -1860,6 +1939,8 @@ class _$UploadBusinessImageLoadingImpl<T>
         uploadBusinessImageSuccess,
     TResult Function(UploadBusinessImageFailure<T> value)?
         uploadBusinessImageFailure,
+    TResult Function(SelectImageSuccess<T> value)? selectImageSuccess,
+    TResult Function(SelectImageFailure<T> value)? selectImageFailure,
     required TResult orElse(),
   }) {
     if (uploadBusinessImageLoading != null) {
@@ -1881,8 +1962,6 @@ abstract class _$$UploadBusinessImageSuccessImplCopyWith<T, $Res> {
           _$UploadBusinessImageSuccessImpl<T> value,
           $Res Function(_$UploadBusinessImageSuccessImpl<T>) then) =
       __$$UploadBusinessImageSuccessImplCopyWithImpl<T, $Res>;
-  @useResult
-  $Res call({UploadImageResponse uploadedImages});
 }
 
 /// @nodoc
@@ -1897,55 +1976,28 @@ class __$$UploadBusinessImageSuccessImplCopyWithImpl<T, $Res>
 
   /// Create a copy of BusinessAddProductState
   /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? uploadedImages = null,
-  }) {
-    return _then(_$UploadBusinessImageSuccessImpl<T>(
-      null == uploadedImages
-          ? _value.uploadedImages
-          : uploadedImages // ignore: cast_nullable_to_non_nullable
-              as UploadImageResponse,
-    ));
-  }
 }
 
 /// @nodoc
 
 class _$UploadBusinessImageSuccessImpl<T>
     implements UploadBusinessImageSuccess<T> {
-  const _$UploadBusinessImageSuccessImpl(this.uploadedImages);
-
-  @override
-  final UploadImageResponse uploadedImages;
+  const _$UploadBusinessImageSuccessImpl();
 
   @override
   String toString() {
-    return 'BusinessAddProductState<$T>.uploadBusinessImageSuccess(uploadedImages: $uploadedImages)';
+    return 'BusinessAddProductState<$T>.uploadBusinessImageSuccess()';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$UploadBusinessImageSuccessImpl<T> &&
-            (identical(other.uploadedImages, uploadedImages) ||
-                other.uploadedImages == uploadedImages));
+            other is _$UploadBusinessImageSuccessImpl<T>);
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, uploadedImages);
-
-  /// Create a copy of BusinessAddProductState
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$UploadBusinessImageSuccessImplCopyWith<T,
-          _$UploadBusinessImageSuccessImpl<T>>
-      get copyWith => __$$UploadBusinessImageSuccessImplCopyWithImpl<T,
-          _$UploadBusinessImageSuccessImpl<T>>(this, _$identity);
+  int get hashCode => runtimeType.hashCode;
 
   @override
   @optionalTypeArgs
@@ -1960,11 +2012,12 @@ class _$UploadBusinessImageSuccessImpl<T>
         addBusinessProductImageSuccess,
     required TResult Function(String error) addBusinessProductImageFailure,
     required TResult Function() uploadBusinessImageLoading,
-    required TResult Function(UploadImageResponse uploadedImages)
-        uploadBusinessImageSuccess,
+    required TResult Function() uploadBusinessImageSuccess,
     required TResult Function(String error) uploadBusinessImageFailure,
+    required TResult Function(List<File> images) selectImageSuccess,
+    required TResult Function(String message) selectImageFailure,
   }) {
-    return uploadBusinessImageSuccess(uploadedImages);
+    return uploadBusinessImageSuccess();
   }
 
   @override
@@ -1980,11 +2033,12 @@ class _$UploadBusinessImageSuccessImpl<T>
         addBusinessProductImageSuccess,
     TResult? Function(String error)? addBusinessProductImageFailure,
     TResult? Function()? uploadBusinessImageLoading,
-    TResult? Function(UploadImageResponse uploadedImages)?
-        uploadBusinessImageSuccess,
+    TResult? Function()? uploadBusinessImageSuccess,
     TResult? Function(String error)? uploadBusinessImageFailure,
+    TResult? Function(List<File> images)? selectImageSuccess,
+    TResult? Function(String message)? selectImageFailure,
   }) {
-    return uploadBusinessImageSuccess?.call(uploadedImages);
+    return uploadBusinessImageSuccess?.call();
   }
 
   @override
@@ -2000,13 +2054,14 @@ class _$UploadBusinessImageSuccessImpl<T>
         addBusinessProductImageSuccess,
     TResult Function(String error)? addBusinessProductImageFailure,
     TResult Function()? uploadBusinessImageLoading,
-    TResult Function(UploadImageResponse uploadedImages)?
-        uploadBusinessImageSuccess,
+    TResult Function()? uploadBusinessImageSuccess,
     TResult Function(String error)? uploadBusinessImageFailure,
+    TResult Function(List<File> images)? selectImageSuccess,
+    TResult Function(String message)? selectImageFailure,
     required TResult orElse(),
   }) {
     if (uploadBusinessImageSuccess != null) {
-      return uploadBusinessImageSuccess(uploadedImages);
+      return uploadBusinessImageSuccess();
     }
     return orElse();
   }
@@ -2033,6 +2088,8 @@ class _$UploadBusinessImageSuccessImpl<T>
         uploadBusinessImageSuccess,
     required TResult Function(UploadBusinessImageFailure<T> value)
         uploadBusinessImageFailure,
+    required TResult Function(SelectImageSuccess<T> value) selectImageSuccess,
+    required TResult Function(SelectImageFailure<T> value) selectImageFailure,
   }) {
     return uploadBusinessImageSuccess(this);
   }
@@ -2059,6 +2116,8 @@ class _$UploadBusinessImageSuccessImpl<T>
         uploadBusinessImageSuccess,
     TResult? Function(UploadBusinessImageFailure<T> value)?
         uploadBusinessImageFailure,
+    TResult? Function(SelectImageSuccess<T> value)? selectImageSuccess,
+    TResult? Function(SelectImageFailure<T> value)? selectImageFailure,
   }) {
     return uploadBusinessImageSuccess?.call(this);
   }
@@ -2085,6 +2144,8 @@ class _$UploadBusinessImageSuccessImpl<T>
         uploadBusinessImageSuccess,
     TResult Function(UploadBusinessImageFailure<T> value)?
         uploadBusinessImageFailure,
+    TResult Function(SelectImageSuccess<T> value)? selectImageSuccess,
+    TResult Function(SelectImageFailure<T> value)? selectImageFailure,
     required TResult orElse(),
   }) {
     if (uploadBusinessImageSuccess != null) {
@@ -2096,18 +2157,8 @@ class _$UploadBusinessImageSuccessImpl<T>
 
 abstract class UploadBusinessImageSuccess<T>
     implements BusinessAddProductState<T> {
-  const factory UploadBusinessImageSuccess(
-          final UploadImageResponse uploadedImages) =
+  const factory UploadBusinessImageSuccess() =
       _$UploadBusinessImageSuccessImpl<T>;
-
-  UploadImageResponse get uploadedImages;
-
-  /// Create a copy of BusinessAddProductState
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$UploadBusinessImageSuccessImplCopyWith<T,
-          _$UploadBusinessImageSuccessImpl<T>>
-      get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -2194,9 +2245,10 @@ class _$UploadBusinessImageFailureImpl<T>
         addBusinessProductImageSuccess,
     required TResult Function(String error) addBusinessProductImageFailure,
     required TResult Function() uploadBusinessImageLoading,
-    required TResult Function(UploadImageResponse uploadedImages)
-        uploadBusinessImageSuccess,
+    required TResult Function() uploadBusinessImageSuccess,
     required TResult Function(String error) uploadBusinessImageFailure,
+    required TResult Function(List<File> images) selectImageSuccess,
+    required TResult Function(String message) selectImageFailure,
   }) {
     return uploadBusinessImageFailure(error);
   }
@@ -2214,9 +2266,10 @@ class _$UploadBusinessImageFailureImpl<T>
         addBusinessProductImageSuccess,
     TResult? Function(String error)? addBusinessProductImageFailure,
     TResult? Function()? uploadBusinessImageLoading,
-    TResult? Function(UploadImageResponse uploadedImages)?
-        uploadBusinessImageSuccess,
+    TResult? Function()? uploadBusinessImageSuccess,
     TResult? Function(String error)? uploadBusinessImageFailure,
+    TResult? Function(List<File> images)? selectImageSuccess,
+    TResult? Function(String message)? selectImageFailure,
   }) {
     return uploadBusinessImageFailure?.call(error);
   }
@@ -2234,9 +2287,10 @@ class _$UploadBusinessImageFailureImpl<T>
         addBusinessProductImageSuccess,
     TResult Function(String error)? addBusinessProductImageFailure,
     TResult Function()? uploadBusinessImageLoading,
-    TResult Function(UploadImageResponse uploadedImages)?
-        uploadBusinessImageSuccess,
+    TResult Function()? uploadBusinessImageSuccess,
     TResult Function(String error)? uploadBusinessImageFailure,
+    TResult Function(List<File> images)? selectImageSuccess,
+    TResult Function(String message)? selectImageFailure,
     required TResult orElse(),
   }) {
     if (uploadBusinessImageFailure != null) {
@@ -2267,6 +2321,8 @@ class _$UploadBusinessImageFailureImpl<T>
         uploadBusinessImageSuccess,
     required TResult Function(UploadBusinessImageFailure<T> value)
         uploadBusinessImageFailure,
+    required TResult Function(SelectImageSuccess<T> value) selectImageSuccess,
+    required TResult Function(SelectImageFailure<T> value) selectImageFailure,
   }) {
     return uploadBusinessImageFailure(this);
   }
@@ -2293,6 +2349,8 @@ class _$UploadBusinessImageFailureImpl<T>
         uploadBusinessImageSuccess,
     TResult? Function(UploadBusinessImageFailure<T> value)?
         uploadBusinessImageFailure,
+    TResult? Function(SelectImageSuccess<T> value)? selectImageSuccess,
+    TResult? Function(SelectImageFailure<T> value)? selectImageFailure,
   }) {
     return uploadBusinessImageFailure?.call(this);
   }
@@ -2319,6 +2377,8 @@ class _$UploadBusinessImageFailureImpl<T>
         uploadBusinessImageSuccess,
     TResult Function(UploadBusinessImageFailure<T> value)?
         uploadBusinessImageFailure,
+    TResult Function(SelectImageSuccess<T> value)? selectImageSuccess,
+    TResult Function(SelectImageFailure<T> value)? selectImageFailure,
     required TResult orElse(),
   }) {
     if (uploadBusinessImageFailure != null) {
@@ -2340,5 +2400,483 @@ abstract class UploadBusinessImageFailure<T>
   @JsonKey(includeFromJson: false, includeToJson: false)
   _$$UploadBusinessImageFailureImplCopyWith<T,
           _$UploadBusinessImageFailureImpl<T>>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$SelectImageSuccessImplCopyWith<T, $Res> {
+  factory _$$SelectImageSuccessImplCopyWith(_$SelectImageSuccessImpl<T> value,
+          $Res Function(_$SelectImageSuccessImpl<T>) then) =
+      __$$SelectImageSuccessImplCopyWithImpl<T, $Res>;
+  @useResult
+  $Res call({List<File> images});
+}
+
+/// @nodoc
+class __$$SelectImageSuccessImplCopyWithImpl<T, $Res>
+    extends _$BusinessAddProductStateCopyWithImpl<T, $Res,
+        _$SelectImageSuccessImpl<T>>
+    implements _$$SelectImageSuccessImplCopyWith<T, $Res> {
+  __$$SelectImageSuccessImplCopyWithImpl(_$SelectImageSuccessImpl<T> _value,
+      $Res Function(_$SelectImageSuccessImpl<T>) _then)
+      : super(_value, _then);
+
+  /// Create a copy of BusinessAddProductState
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? images = null,
+  }) {
+    return _then(_$SelectImageSuccessImpl<T>(
+      null == images
+          ? _value._images
+          : images // ignore: cast_nullable_to_non_nullable
+              as List<File>,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$SelectImageSuccessImpl<T> implements SelectImageSuccess<T> {
+  const _$SelectImageSuccessImpl(final List<File> images) : _images = images;
+
+  final List<File> _images;
+  @override
+  List<File> get images {
+    if (_images is EqualUnmodifiableListView) return _images;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_images);
+  }
+
+  @override
+  String toString() {
+    return 'BusinessAddProductState<$T>.selectImageSuccess(images: $images)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$SelectImageSuccessImpl<T> &&
+            const DeepCollectionEquality().equals(other._images, _images));
+  }
+
+  @override
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(_images));
+
+  /// Create a copy of BusinessAddProductState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$SelectImageSuccessImplCopyWith<T, _$SelectImageSuccessImpl<T>>
+      get copyWith => __$$SelectImageSuccessImplCopyWithImpl<T,
+          _$SelectImageSuccessImpl<T>>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() addBusinessProductLoading,
+    required TResult Function(AddProductBusinessResponseModel response)
+        addBusinessProductSuccess,
+    required TResult Function(String error) addBusinessProductFailure,
+    required TResult Function() addBusinessProductImageLoading,
+    required TResult Function(BusinessAddProductImagesResponse images)
+        addBusinessProductImageSuccess,
+    required TResult Function(String error) addBusinessProductImageFailure,
+    required TResult Function() uploadBusinessImageLoading,
+    required TResult Function() uploadBusinessImageSuccess,
+    required TResult Function(String error) uploadBusinessImageFailure,
+    required TResult Function(List<File> images) selectImageSuccess,
+    required TResult Function(String message) selectImageFailure,
+  }) {
+    return selectImageSuccess(images);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? addBusinessProductLoading,
+    TResult? Function(AddProductBusinessResponseModel response)?
+        addBusinessProductSuccess,
+    TResult? Function(String error)? addBusinessProductFailure,
+    TResult? Function()? addBusinessProductImageLoading,
+    TResult? Function(BusinessAddProductImagesResponse images)?
+        addBusinessProductImageSuccess,
+    TResult? Function(String error)? addBusinessProductImageFailure,
+    TResult? Function()? uploadBusinessImageLoading,
+    TResult? Function()? uploadBusinessImageSuccess,
+    TResult? Function(String error)? uploadBusinessImageFailure,
+    TResult? Function(List<File> images)? selectImageSuccess,
+    TResult? Function(String message)? selectImageFailure,
+  }) {
+    return selectImageSuccess?.call(images);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? addBusinessProductLoading,
+    TResult Function(AddProductBusinessResponseModel response)?
+        addBusinessProductSuccess,
+    TResult Function(String error)? addBusinessProductFailure,
+    TResult Function()? addBusinessProductImageLoading,
+    TResult Function(BusinessAddProductImagesResponse images)?
+        addBusinessProductImageSuccess,
+    TResult Function(String error)? addBusinessProductImageFailure,
+    TResult Function()? uploadBusinessImageLoading,
+    TResult Function()? uploadBusinessImageSuccess,
+    TResult Function(String error)? uploadBusinessImageFailure,
+    TResult Function(List<File> images)? selectImageSuccess,
+    TResult Function(String message)? selectImageFailure,
+    required TResult orElse(),
+  }) {
+    if (selectImageSuccess != null) {
+      return selectImageSuccess(images);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial<T> value) initial,
+    required TResult Function(AddBusinessProductLoading<T> value)
+        addBusinessProductLoading,
+    required TResult Function(AddBusinessProductSuccess<T> value)
+        addBusinessProductSuccess,
+    required TResult Function(AddBusinessProductFailure<T> value)
+        addBusinessProductFailure,
+    required TResult Function(AddBusinessProductImageLoading<T> value)
+        addBusinessProductImageLoading,
+    required TResult Function(AddBusinessProductImageSuccess<T> value)
+        addBusinessProductImageSuccess,
+    required TResult Function(AddBusinessProductImageFailure<T> value)
+        addBusinessProductImageFailure,
+    required TResult Function(UploadBusinessImageLoading<T> value)
+        uploadBusinessImageLoading,
+    required TResult Function(UploadBusinessImageSuccess<T> value)
+        uploadBusinessImageSuccess,
+    required TResult Function(UploadBusinessImageFailure<T> value)
+        uploadBusinessImageFailure,
+    required TResult Function(SelectImageSuccess<T> value) selectImageSuccess,
+    required TResult Function(SelectImageFailure<T> value) selectImageFailure,
+  }) {
+    return selectImageSuccess(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial<T> value)? initial,
+    TResult? Function(AddBusinessProductLoading<T> value)?
+        addBusinessProductLoading,
+    TResult? Function(AddBusinessProductSuccess<T> value)?
+        addBusinessProductSuccess,
+    TResult? Function(AddBusinessProductFailure<T> value)?
+        addBusinessProductFailure,
+    TResult? Function(AddBusinessProductImageLoading<T> value)?
+        addBusinessProductImageLoading,
+    TResult? Function(AddBusinessProductImageSuccess<T> value)?
+        addBusinessProductImageSuccess,
+    TResult? Function(AddBusinessProductImageFailure<T> value)?
+        addBusinessProductImageFailure,
+    TResult? Function(UploadBusinessImageLoading<T> value)?
+        uploadBusinessImageLoading,
+    TResult? Function(UploadBusinessImageSuccess<T> value)?
+        uploadBusinessImageSuccess,
+    TResult? Function(UploadBusinessImageFailure<T> value)?
+        uploadBusinessImageFailure,
+    TResult? Function(SelectImageSuccess<T> value)? selectImageSuccess,
+    TResult? Function(SelectImageFailure<T> value)? selectImageFailure,
+  }) {
+    return selectImageSuccess?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial<T> value)? initial,
+    TResult Function(AddBusinessProductLoading<T> value)?
+        addBusinessProductLoading,
+    TResult Function(AddBusinessProductSuccess<T> value)?
+        addBusinessProductSuccess,
+    TResult Function(AddBusinessProductFailure<T> value)?
+        addBusinessProductFailure,
+    TResult Function(AddBusinessProductImageLoading<T> value)?
+        addBusinessProductImageLoading,
+    TResult Function(AddBusinessProductImageSuccess<T> value)?
+        addBusinessProductImageSuccess,
+    TResult Function(AddBusinessProductImageFailure<T> value)?
+        addBusinessProductImageFailure,
+    TResult Function(UploadBusinessImageLoading<T> value)?
+        uploadBusinessImageLoading,
+    TResult Function(UploadBusinessImageSuccess<T> value)?
+        uploadBusinessImageSuccess,
+    TResult Function(UploadBusinessImageFailure<T> value)?
+        uploadBusinessImageFailure,
+    TResult Function(SelectImageSuccess<T> value)? selectImageSuccess,
+    TResult Function(SelectImageFailure<T> value)? selectImageFailure,
+    required TResult orElse(),
+  }) {
+    if (selectImageSuccess != null) {
+      return selectImageSuccess(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class SelectImageSuccess<T> implements BusinessAddProductState<T> {
+  const factory SelectImageSuccess(final List<File> images) =
+      _$SelectImageSuccessImpl<T>;
+
+  List<File> get images;
+
+  /// Create a copy of BusinessAddProductState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$SelectImageSuccessImplCopyWith<T, _$SelectImageSuccessImpl<T>>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$SelectImageFailureImplCopyWith<T, $Res> {
+  factory _$$SelectImageFailureImplCopyWith(_$SelectImageFailureImpl<T> value,
+          $Res Function(_$SelectImageFailureImpl<T>) then) =
+      __$$SelectImageFailureImplCopyWithImpl<T, $Res>;
+  @useResult
+  $Res call({String message});
+}
+
+/// @nodoc
+class __$$SelectImageFailureImplCopyWithImpl<T, $Res>
+    extends _$BusinessAddProductStateCopyWithImpl<T, $Res,
+        _$SelectImageFailureImpl<T>>
+    implements _$$SelectImageFailureImplCopyWith<T, $Res> {
+  __$$SelectImageFailureImplCopyWithImpl(_$SelectImageFailureImpl<T> _value,
+      $Res Function(_$SelectImageFailureImpl<T>) _then)
+      : super(_value, _then);
+
+  /// Create a copy of BusinessAddProductState
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? message = null,
+  }) {
+    return _then(_$SelectImageFailureImpl<T>(
+      null == message
+          ? _value.message
+          : message // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$SelectImageFailureImpl<T> implements SelectImageFailure<T> {
+  const _$SelectImageFailureImpl(this.message);
+
+  @override
+  final String message;
+
+  @override
+  String toString() {
+    return 'BusinessAddProductState<$T>.selectImageFailure(message: $message)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$SelectImageFailureImpl<T> &&
+            (identical(other.message, message) || other.message == message));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, message);
+
+  /// Create a copy of BusinessAddProductState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$SelectImageFailureImplCopyWith<T, _$SelectImageFailureImpl<T>>
+      get copyWith => __$$SelectImageFailureImplCopyWithImpl<T,
+          _$SelectImageFailureImpl<T>>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() addBusinessProductLoading,
+    required TResult Function(AddProductBusinessResponseModel response)
+        addBusinessProductSuccess,
+    required TResult Function(String error) addBusinessProductFailure,
+    required TResult Function() addBusinessProductImageLoading,
+    required TResult Function(BusinessAddProductImagesResponse images)
+        addBusinessProductImageSuccess,
+    required TResult Function(String error) addBusinessProductImageFailure,
+    required TResult Function() uploadBusinessImageLoading,
+    required TResult Function() uploadBusinessImageSuccess,
+    required TResult Function(String error) uploadBusinessImageFailure,
+    required TResult Function(List<File> images) selectImageSuccess,
+    required TResult Function(String message) selectImageFailure,
+  }) {
+    return selectImageFailure(message);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? addBusinessProductLoading,
+    TResult? Function(AddProductBusinessResponseModel response)?
+        addBusinessProductSuccess,
+    TResult? Function(String error)? addBusinessProductFailure,
+    TResult? Function()? addBusinessProductImageLoading,
+    TResult? Function(BusinessAddProductImagesResponse images)?
+        addBusinessProductImageSuccess,
+    TResult? Function(String error)? addBusinessProductImageFailure,
+    TResult? Function()? uploadBusinessImageLoading,
+    TResult? Function()? uploadBusinessImageSuccess,
+    TResult? Function(String error)? uploadBusinessImageFailure,
+    TResult? Function(List<File> images)? selectImageSuccess,
+    TResult? Function(String message)? selectImageFailure,
+  }) {
+    return selectImageFailure?.call(message);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? addBusinessProductLoading,
+    TResult Function(AddProductBusinessResponseModel response)?
+        addBusinessProductSuccess,
+    TResult Function(String error)? addBusinessProductFailure,
+    TResult Function()? addBusinessProductImageLoading,
+    TResult Function(BusinessAddProductImagesResponse images)?
+        addBusinessProductImageSuccess,
+    TResult Function(String error)? addBusinessProductImageFailure,
+    TResult Function()? uploadBusinessImageLoading,
+    TResult Function()? uploadBusinessImageSuccess,
+    TResult Function(String error)? uploadBusinessImageFailure,
+    TResult Function(List<File> images)? selectImageSuccess,
+    TResult Function(String message)? selectImageFailure,
+    required TResult orElse(),
+  }) {
+    if (selectImageFailure != null) {
+      return selectImageFailure(message);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial<T> value) initial,
+    required TResult Function(AddBusinessProductLoading<T> value)
+        addBusinessProductLoading,
+    required TResult Function(AddBusinessProductSuccess<T> value)
+        addBusinessProductSuccess,
+    required TResult Function(AddBusinessProductFailure<T> value)
+        addBusinessProductFailure,
+    required TResult Function(AddBusinessProductImageLoading<T> value)
+        addBusinessProductImageLoading,
+    required TResult Function(AddBusinessProductImageSuccess<T> value)
+        addBusinessProductImageSuccess,
+    required TResult Function(AddBusinessProductImageFailure<T> value)
+        addBusinessProductImageFailure,
+    required TResult Function(UploadBusinessImageLoading<T> value)
+        uploadBusinessImageLoading,
+    required TResult Function(UploadBusinessImageSuccess<T> value)
+        uploadBusinessImageSuccess,
+    required TResult Function(UploadBusinessImageFailure<T> value)
+        uploadBusinessImageFailure,
+    required TResult Function(SelectImageSuccess<T> value) selectImageSuccess,
+    required TResult Function(SelectImageFailure<T> value) selectImageFailure,
+  }) {
+    return selectImageFailure(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial<T> value)? initial,
+    TResult? Function(AddBusinessProductLoading<T> value)?
+        addBusinessProductLoading,
+    TResult? Function(AddBusinessProductSuccess<T> value)?
+        addBusinessProductSuccess,
+    TResult? Function(AddBusinessProductFailure<T> value)?
+        addBusinessProductFailure,
+    TResult? Function(AddBusinessProductImageLoading<T> value)?
+        addBusinessProductImageLoading,
+    TResult? Function(AddBusinessProductImageSuccess<T> value)?
+        addBusinessProductImageSuccess,
+    TResult? Function(AddBusinessProductImageFailure<T> value)?
+        addBusinessProductImageFailure,
+    TResult? Function(UploadBusinessImageLoading<T> value)?
+        uploadBusinessImageLoading,
+    TResult? Function(UploadBusinessImageSuccess<T> value)?
+        uploadBusinessImageSuccess,
+    TResult? Function(UploadBusinessImageFailure<T> value)?
+        uploadBusinessImageFailure,
+    TResult? Function(SelectImageSuccess<T> value)? selectImageSuccess,
+    TResult? Function(SelectImageFailure<T> value)? selectImageFailure,
+  }) {
+    return selectImageFailure?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial<T> value)? initial,
+    TResult Function(AddBusinessProductLoading<T> value)?
+        addBusinessProductLoading,
+    TResult Function(AddBusinessProductSuccess<T> value)?
+        addBusinessProductSuccess,
+    TResult Function(AddBusinessProductFailure<T> value)?
+        addBusinessProductFailure,
+    TResult Function(AddBusinessProductImageLoading<T> value)?
+        addBusinessProductImageLoading,
+    TResult Function(AddBusinessProductImageSuccess<T> value)?
+        addBusinessProductImageSuccess,
+    TResult Function(AddBusinessProductImageFailure<T> value)?
+        addBusinessProductImageFailure,
+    TResult Function(UploadBusinessImageLoading<T> value)?
+        uploadBusinessImageLoading,
+    TResult Function(UploadBusinessImageSuccess<T> value)?
+        uploadBusinessImageSuccess,
+    TResult Function(UploadBusinessImageFailure<T> value)?
+        uploadBusinessImageFailure,
+    TResult Function(SelectImageSuccess<T> value)? selectImageSuccess,
+    TResult Function(SelectImageFailure<T> value)? selectImageFailure,
+    required TResult orElse(),
+  }) {
+    if (selectImageFailure != null) {
+      return selectImageFailure(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class SelectImageFailure<T> implements BusinessAddProductState<T> {
+  const factory SelectImageFailure(final String message) =
+      _$SelectImageFailureImpl<T>;
+
+  String get message;
+
+  /// Create a copy of BusinessAddProductState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$SelectImageFailureImplCopyWith<T, _$SelectImageFailureImpl<T>>
       get copyWith => throw _privateConstructorUsedError;
 }

@@ -17,11 +17,11 @@ class BusinessAddProductBody {
   @JsonKey(name: "price")
   final double price;
   @JsonKey(name: "length")
-  final int length;
+  final double length;
   @JsonKey(name: "width")
   final double width;
   @JsonKey(name: "height")
-  final int height;
+  final double height;
   @JsonKey(name: "baseUnit")
   final BaseUnit baseUnit;
   @JsonKey(name: "materials")

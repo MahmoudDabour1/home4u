@@ -29,8 +29,9 @@ class ProductsCubit extends Cubit<ProductsState> {
 
   static ProductsCubit get(context) => BlocProvider.of(context);
 
-  List<ProductMaterial> baseUnits = [];
+  List<ProductBaseUnit> baseUnits = [];
   List<FilterColor> colors = [];
+  List<ProductMaterial> materials = [];
 
   Future<void> getBusinessConfig() async {
     emit(const ProductsState.businessConfigLoading());
@@ -40,6 +41,9 @@ class ProductsCubit extends Cubit<ProductsState> {
         businessConfigModel = data;
         if (!isClosed) {
           emit(ProductsState.businessConfigSuccess(data));
+          colors = data.data?.colors ?? [];
+          baseUnits = data.data?.productBaseUnits ?? [];
+          materials = data.data?.productMaterial ?? [] ;
         }
       },
       failure: (error) {

@@ -20,23 +20,20 @@ class ProductsListView extends StatelessWidget {
         return SliverList(
           delegate: SliverChildBuilderDelegate(
             (context, index) {
-              if (index == content!.length) {
-                cubit.getProducts();
-                return CircularProgressIndicator();
-              } else {
-                return ProductsItem(
-                  content: content![index],
-                );
-              }
+              // if (index == content!.length) {
+              //   cubit.getProducts();
+              //   return CircularProgressIndicator();
+              // } else {
+              return ProductsItem(
+                content: content![index],
+              );
+              // }
             },
-            childCount: content!.length + 1,
+            childCount: content!.length ,
+                // + 1,
           ),
         );
       },
     );
   }
 }
-
-
-
-

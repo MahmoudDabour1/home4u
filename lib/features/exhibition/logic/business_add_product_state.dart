@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 import '../data/models/add_product_business_response_model.dart';
@@ -34,8 +36,12 @@ class BusinessAddProductState<T> with _$BusinessAddProductState<T> {
   const factory BusinessAddProductState.uploadBusinessImageLoading() =
       UploadBusinessImageLoading;
 
-  const factory BusinessAddProductState.uploadBusinessImageSuccess(UploadImageResponse uploadedImages) = UploadBusinessImageSuccess;
+  const factory BusinessAddProductState.uploadBusinessImageSuccess( ) = UploadBusinessImageSuccess;
 
   const factory BusinessAddProductState.uploadBusinessImageFailure(
       String error) = UploadBusinessImageFailure;
+
+  ///select image
+  const factory BusinessAddProductState.selectImageSuccess(List<File> images) = SelectImageSuccess;
+  const factory BusinessAddProductState.selectImageFailure(String message) = SelectImageFailure;
 }

@@ -61,12 +61,11 @@ class _BusinessAddProductRemoteDataSource
 
   @override
   Future<BusinessAddProductImagesResponse> addBusinessProductImage(
-      BusinessAddProductImagesBody imagesBody) async {
+      List<BusinessAddProductImagesBody> imagesBody) async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
-    final _data = <String, dynamic>{};
-    _data.addAll(imagesBody.toJson());
+    final _data = imagesBody.map((e) => e.toJson()).toList();
     final _options = _setStreamType<BusinessAddProductImagesResponse>(Options(
       method: 'POST',
       headers: _headers,
@@ -98,7 +97,7 @@ class _BusinessAddProductRemoteDataSource
   Future<UploadImageResponse> uploadBusinessImage(
     String pathId,
     int id,
-    FormData fileData,
+    File image,
   ) async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{
@@ -106,7 +105,14 @@ class _BusinessAddProductRemoteDataSource
       r'id': id,
     };
     final _headers = <String, dynamic>{};
-    final _data = fileData;
+    final _data = FormData();
+    _data.files.add(MapEntry(
+      'image',
+      MultipartFile.fromFileSync(
+        image.path,
+        filename: image.path.split(Platform.pathSeparator).last,
+      ),
+    ));
     final _options = _setStreamType<UploadImageResponse>(Options(
       method: 'POST',
       headers: _headers,

@@ -187,7 +187,7 @@ class _SignUpRemoteDataSource implements SignUpRemoteDataSource {
   }
 
   @override
-  Future<BusinessTypesModel> getBusinessTypes(int userTypeId) async {
+  Future<BusinessTypesModel> getBusinessTypes(int userTypeId) async{
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
@@ -199,7 +199,7 @@ class _SignUpRemoteDataSource implements SignUpRemoteDataSource {
     )
         .compose(
           _dio.options,
-          '/api/v1/business-types/user-type/$userTypeId',
+          '/api/v1/business-types/user-type/${userTypeId}',
           queryParameters: queryParameters,
           data: _data,
         )
