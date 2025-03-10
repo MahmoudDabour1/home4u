@@ -30,8 +30,10 @@ mixin _$ProductsState<T> {
     required TResult Function(DeleteProductModel deleteProductModel)
         deleteProductSuccess,
     required TResult Function(String errorMessage) deleteProductFailure,
-    required TResult Function() paginationLoading,
-    required TResult Function(String errorMessage) paginationFailure,
+    required TResult Function() getProductPreviewLoading,
+    required TResult Function(ProductPreviewResponse product)
+        getProductPreviewSuccess,
+    required TResult Function(String errorMessage) getProductPreviewFailure,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -47,8 +49,9 @@ mixin _$ProductsState<T> {
     TResult? Function(DeleteProductModel deleteProductModel)?
         deleteProductSuccess,
     TResult? Function(String errorMessage)? deleteProductFailure,
-    TResult? Function()? paginationLoading,
-    TResult? Function(String errorMessage)? paginationFailure,
+    TResult? Function()? getProductPreviewLoading,
+    TResult? Function(ProductPreviewResponse product)? getProductPreviewSuccess,
+    TResult? Function(String errorMessage)? getProductPreviewFailure,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -64,8 +67,9 @@ mixin _$ProductsState<T> {
     TResult Function(DeleteProductModel deleteProductModel)?
         deleteProductSuccess,
     TResult Function(String errorMessage)? deleteProductFailure,
-    TResult Function()? paginationLoading,
-    TResult Function(String errorMessage)? paginationFailure,
+    TResult Function()? getProductPreviewLoading,
+    TResult Function(ProductPreviewResponse product)? getProductPreviewSuccess,
+    TResult Function(String errorMessage)? getProductPreviewFailure,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -87,8 +91,12 @@ mixin _$ProductsState<T> {
         deleteProductSuccess,
     required TResult Function(DeleteProductFailure<T> value)
         deleteProductFailure,
-    required TResult Function(PaginationLoading<T> value) paginationLoading,
-    required TResult Function(PaginationFailure<T> value) paginationFailure,
+    required TResult Function(GetProductPreviewLoading<T> value)
+        getProductPreviewLoading,
+    required TResult Function(GetProductPreviewSuccess<T> value)
+        getProductPreviewSuccess,
+    required TResult Function(GetProductPreviewFailure<T> value)
+        getProductPreviewFailure,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -103,8 +111,12 @@ mixin _$ProductsState<T> {
     TResult? Function(DeleteProductLoading<T> value)? deleteProductLoading,
     TResult? Function(DeleteProductSuccess<T> value)? deleteProductSuccess,
     TResult? Function(DeleteProductFailure<T> value)? deleteProductFailure,
-    TResult? Function(PaginationLoading<T> value)? paginationLoading,
-    TResult? Function(PaginationFailure<T> value)? paginationFailure,
+    TResult? Function(GetProductPreviewLoading<T> value)?
+        getProductPreviewLoading,
+    TResult? Function(GetProductPreviewSuccess<T> value)?
+        getProductPreviewSuccess,
+    TResult? Function(GetProductPreviewFailure<T> value)?
+        getProductPreviewFailure,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -119,8 +131,12 @@ mixin _$ProductsState<T> {
     TResult Function(DeleteProductLoading<T> value)? deleteProductLoading,
     TResult Function(DeleteProductSuccess<T> value)? deleteProductSuccess,
     TResult Function(DeleteProductFailure<T> value)? deleteProductFailure,
-    TResult Function(PaginationLoading<T> value)? paginationLoading,
-    TResult Function(PaginationFailure<T> value)? paginationFailure,
+    TResult Function(GetProductPreviewLoading<T> value)?
+        getProductPreviewLoading,
+    TResult Function(GetProductPreviewSuccess<T> value)?
+        getProductPreviewSuccess,
+    TResult Function(GetProductPreviewFailure<T> value)?
+        getProductPreviewFailure,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -200,8 +216,10 @@ class _$InitialImpl<T> implements _Initial<T> {
     required TResult Function(DeleteProductModel deleteProductModel)
         deleteProductSuccess,
     required TResult Function(String errorMessage) deleteProductFailure,
-    required TResult Function() paginationLoading,
-    required TResult Function(String errorMessage) paginationFailure,
+    required TResult Function() getProductPreviewLoading,
+    required TResult Function(ProductPreviewResponse product)
+        getProductPreviewSuccess,
+    required TResult Function(String errorMessage) getProductPreviewFailure,
   }) {
     return initial();
   }
@@ -220,8 +238,9 @@ class _$InitialImpl<T> implements _Initial<T> {
     TResult? Function(DeleteProductModel deleteProductModel)?
         deleteProductSuccess,
     TResult? Function(String errorMessage)? deleteProductFailure,
-    TResult? Function()? paginationLoading,
-    TResult? Function(String errorMessage)? paginationFailure,
+    TResult? Function()? getProductPreviewLoading,
+    TResult? Function(ProductPreviewResponse product)? getProductPreviewSuccess,
+    TResult? Function(String errorMessage)? getProductPreviewFailure,
   }) {
     return initial?.call();
   }
@@ -240,8 +259,9 @@ class _$InitialImpl<T> implements _Initial<T> {
     TResult Function(DeleteProductModel deleteProductModel)?
         deleteProductSuccess,
     TResult Function(String errorMessage)? deleteProductFailure,
-    TResult Function()? paginationLoading,
-    TResult Function(String errorMessage)? paginationFailure,
+    TResult Function()? getProductPreviewLoading,
+    TResult Function(ProductPreviewResponse product)? getProductPreviewSuccess,
+    TResult Function(String errorMessage)? getProductPreviewFailure,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -269,8 +289,12 @@ class _$InitialImpl<T> implements _Initial<T> {
         deleteProductSuccess,
     required TResult Function(DeleteProductFailure<T> value)
         deleteProductFailure,
-    required TResult Function(PaginationLoading<T> value) paginationLoading,
-    required TResult Function(PaginationFailure<T> value) paginationFailure,
+    required TResult Function(GetProductPreviewLoading<T> value)
+        getProductPreviewLoading,
+    required TResult Function(GetProductPreviewSuccess<T> value)
+        getProductPreviewSuccess,
+    required TResult Function(GetProductPreviewFailure<T> value)
+        getProductPreviewFailure,
   }) {
     return initial(this);
   }
@@ -288,8 +312,12 @@ class _$InitialImpl<T> implements _Initial<T> {
     TResult? Function(DeleteProductLoading<T> value)? deleteProductLoading,
     TResult? Function(DeleteProductSuccess<T> value)? deleteProductSuccess,
     TResult? Function(DeleteProductFailure<T> value)? deleteProductFailure,
-    TResult? Function(PaginationLoading<T> value)? paginationLoading,
-    TResult? Function(PaginationFailure<T> value)? paginationFailure,
+    TResult? Function(GetProductPreviewLoading<T> value)?
+        getProductPreviewLoading,
+    TResult? Function(GetProductPreviewSuccess<T> value)?
+        getProductPreviewSuccess,
+    TResult? Function(GetProductPreviewFailure<T> value)?
+        getProductPreviewFailure,
   }) {
     return initial?.call(this);
   }
@@ -307,8 +335,12 @@ class _$InitialImpl<T> implements _Initial<T> {
     TResult Function(DeleteProductLoading<T> value)? deleteProductLoading,
     TResult Function(DeleteProductSuccess<T> value)? deleteProductSuccess,
     TResult Function(DeleteProductFailure<T> value)? deleteProductFailure,
-    TResult Function(PaginationLoading<T> value)? paginationLoading,
-    TResult Function(PaginationFailure<T> value)? paginationFailure,
+    TResult Function(GetProductPreviewLoading<T> value)?
+        getProductPreviewLoading,
+    TResult Function(GetProductPreviewSuccess<T> value)?
+        getProductPreviewSuccess,
+    TResult Function(GetProductPreviewFailure<T> value)?
+        getProductPreviewFailure,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -378,8 +410,10 @@ class _$BusinessConfigLoadingImpl<T> implements BusinessConfigLoading<T> {
     required TResult Function(DeleteProductModel deleteProductModel)
         deleteProductSuccess,
     required TResult Function(String errorMessage) deleteProductFailure,
-    required TResult Function() paginationLoading,
-    required TResult Function(String errorMessage) paginationFailure,
+    required TResult Function() getProductPreviewLoading,
+    required TResult Function(ProductPreviewResponse product)
+        getProductPreviewSuccess,
+    required TResult Function(String errorMessage) getProductPreviewFailure,
   }) {
     return businessConfigLoading();
   }
@@ -398,8 +432,9 @@ class _$BusinessConfigLoadingImpl<T> implements BusinessConfigLoading<T> {
     TResult? Function(DeleteProductModel deleteProductModel)?
         deleteProductSuccess,
     TResult? Function(String errorMessage)? deleteProductFailure,
-    TResult? Function()? paginationLoading,
-    TResult? Function(String errorMessage)? paginationFailure,
+    TResult? Function()? getProductPreviewLoading,
+    TResult? Function(ProductPreviewResponse product)? getProductPreviewSuccess,
+    TResult? Function(String errorMessage)? getProductPreviewFailure,
   }) {
     return businessConfigLoading?.call();
   }
@@ -418,8 +453,9 @@ class _$BusinessConfigLoadingImpl<T> implements BusinessConfigLoading<T> {
     TResult Function(DeleteProductModel deleteProductModel)?
         deleteProductSuccess,
     TResult Function(String errorMessage)? deleteProductFailure,
-    TResult Function()? paginationLoading,
-    TResult Function(String errorMessage)? paginationFailure,
+    TResult Function()? getProductPreviewLoading,
+    TResult Function(ProductPreviewResponse product)? getProductPreviewSuccess,
+    TResult Function(String errorMessage)? getProductPreviewFailure,
     required TResult orElse(),
   }) {
     if (businessConfigLoading != null) {
@@ -447,8 +483,12 @@ class _$BusinessConfigLoadingImpl<T> implements BusinessConfigLoading<T> {
         deleteProductSuccess,
     required TResult Function(DeleteProductFailure<T> value)
         deleteProductFailure,
-    required TResult Function(PaginationLoading<T> value) paginationLoading,
-    required TResult Function(PaginationFailure<T> value) paginationFailure,
+    required TResult Function(GetProductPreviewLoading<T> value)
+        getProductPreviewLoading,
+    required TResult Function(GetProductPreviewSuccess<T> value)
+        getProductPreviewSuccess,
+    required TResult Function(GetProductPreviewFailure<T> value)
+        getProductPreviewFailure,
   }) {
     return businessConfigLoading(this);
   }
@@ -466,8 +506,12 @@ class _$BusinessConfigLoadingImpl<T> implements BusinessConfigLoading<T> {
     TResult? Function(DeleteProductLoading<T> value)? deleteProductLoading,
     TResult? Function(DeleteProductSuccess<T> value)? deleteProductSuccess,
     TResult? Function(DeleteProductFailure<T> value)? deleteProductFailure,
-    TResult? Function(PaginationLoading<T> value)? paginationLoading,
-    TResult? Function(PaginationFailure<T> value)? paginationFailure,
+    TResult? Function(GetProductPreviewLoading<T> value)?
+        getProductPreviewLoading,
+    TResult? Function(GetProductPreviewSuccess<T> value)?
+        getProductPreviewSuccess,
+    TResult? Function(GetProductPreviewFailure<T> value)?
+        getProductPreviewFailure,
   }) {
     return businessConfigLoading?.call(this);
   }
@@ -485,8 +529,12 @@ class _$BusinessConfigLoadingImpl<T> implements BusinessConfigLoading<T> {
     TResult Function(DeleteProductLoading<T> value)? deleteProductLoading,
     TResult Function(DeleteProductSuccess<T> value)? deleteProductSuccess,
     TResult Function(DeleteProductFailure<T> value)? deleteProductFailure,
-    TResult Function(PaginationLoading<T> value)? paginationLoading,
-    TResult Function(PaginationFailure<T> value)? paginationFailure,
+    TResult Function(GetProductPreviewLoading<T> value)?
+        getProductPreviewLoading,
+    TResult Function(GetProductPreviewSuccess<T> value)?
+        getProductPreviewSuccess,
+    TResult Function(GetProductPreviewFailure<T> value)?
+        getProductPreviewFailure,
     required TResult orElse(),
   }) {
     if (businessConfigLoading != null) {
@@ -584,8 +632,10 @@ class _$BusinessConfigSuccessImpl<T> implements BusinessConfigSuccess<T> {
     required TResult Function(DeleteProductModel deleteProductModel)
         deleteProductSuccess,
     required TResult Function(String errorMessage) deleteProductFailure,
-    required TResult Function() paginationLoading,
-    required TResult Function(String errorMessage) paginationFailure,
+    required TResult Function() getProductPreviewLoading,
+    required TResult Function(ProductPreviewResponse product)
+        getProductPreviewSuccess,
+    required TResult Function(String errorMessage) getProductPreviewFailure,
   }) {
     return businessConfigSuccess(data);
   }
@@ -604,8 +654,9 @@ class _$BusinessConfigSuccessImpl<T> implements BusinessConfigSuccess<T> {
     TResult? Function(DeleteProductModel deleteProductModel)?
         deleteProductSuccess,
     TResult? Function(String errorMessage)? deleteProductFailure,
-    TResult? Function()? paginationLoading,
-    TResult? Function(String errorMessage)? paginationFailure,
+    TResult? Function()? getProductPreviewLoading,
+    TResult? Function(ProductPreviewResponse product)? getProductPreviewSuccess,
+    TResult? Function(String errorMessage)? getProductPreviewFailure,
   }) {
     return businessConfigSuccess?.call(data);
   }
@@ -624,8 +675,9 @@ class _$BusinessConfigSuccessImpl<T> implements BusinessConfigSuccess<T> {
     TResult Function(DeleteProductModel deleteProductModel)?
         deleteProductSuccess,
     TResult Function(String errorMessage)? deleteProductFailure,
-    TResult Function()? paginationLoading,
-    TResult Function(String errorMessage)? paginationFailure,
+    TResult Function()? getProductPreviewLoading,
+    TResult Function(ProductPreviewResponse product)? getProductPreviewSuccess,
+    TResult Function(String errorMessage)? getProductPreviewFailure,
     required TResult orElse(),
   }) {
     if (businessConfigSuccess != null) {
@@ -653,8 +705,12 @@ class _$BusinessConfigSuccessImpl<T> implements BusinessConfigSuccess<T> {
         deleteProductSuccess,
     required TResult Function(DeleteProductFailure<T> value)
         deleteProductFailure,
-    required TResult Function(PaginationLoading<T> value) paginationLoading,
-    required TResult Function(PaginationFailure<T> value) paginationFailure,
+    required TResult Function(GetProductPreviewLoading<T> value)
+        getProductPreviewLoading,
+    required TResult Function(GetProductPreviewSuccess<T> value)
+        getProductPreviewSuccess,
+    required TResult Function(GetProductPreviewFailure<T> value)
+        getProductPreviewFailure,
   }) {
     return businessConfigSuccess(this);
   }
@@ -672,8 +728,12 @@ class _$BusinessConfigSuccessImpl<T> implements BusinessConfigSuccess<T> {
     TResult? Function(DeleteProductLoading<T> value)? deleteProductLoading,
     TResult? Function(DeleteProductSuccess<T> value)? deleteProductSuccess,
     TResult? Function(DeleteProductFailure<T> value)? deleteProductFailure,
-    TResult? Function(PaginationLoading<T> value)? paginationLoading,
-    TResult? Function(PaginationFailure<T> value)? paginationFailure,
+    TResult? Function(GetProductPreviewLoading<T> value)?
+        getProductPreviewLoading,
+    TResult? Function(GetProductPreviewSuccess<T> value)?
+        getProductPreviewSuccess,
+    TResult? Function(GetProductPreviewFailure<T> value)?
+        getProductPreviewFailure,
   }) {
     return businessConfigSuccess?.call(this);
   }
@@ -691,8 +751,12 @@ class _$BusinessConfigSuccessImpl<T> implements BusinessConfigSuccess<T> {
     TResult Function(DeleteProductLoading<T> value)? deleteProductLoading,
     TResult Function(DeleteProductSuccess<T> value)? deleteProductSuccess,
     TResult Function(DeleteProductFailure<T> value)? deleteProductFailure,
-    TResult Function(PaginationLoading<T> value)? paginationLoading,
-    TResult Function(PaginationFailure<T> value)? paginationFailure,
+    TResult Function(GetProductPreviewLoading<T> value)?
+        getProductPreviewLoading,
+    TResult Function(GetProductPreviewSuccess<T> value)?
+        getProductPreviewSuccess,
+    TResult Function(GetProductPreviewFailure<T> value)?
+        getProductPreviewFailure,
     required TResult orElse(),
   }) {
     if (businessConfigSuccess != null) {
@@ -799,8 +863,10 @@ class _$BusinessConfigFailureImpl<T> implements BusinessConfigFailure<T> {
     required TResult Function(DeleteProductModel deleteProductModel)
         deleteProductSuccess,
     required TResult Function(String errorMessage) deleteProductFailure,
-    required TResult Function() paginationLoading,
-    required TResult Function(String errorMessage) paginationFailure,
+    required TResult Function() getProductPreviewLoading,
+    required TResult Function(ProductPreviewResponse product)
+        getProductPreviewSuccess,
+    required TResult Function(String errorMessage) getProductPreviewFailure,
   }) {
     return businessConfigFailure(errorMessage);
   }
@@ -819,8 +885,9 @@ class _$BusinessConfigFailureImpl<T> implements BusinessConfigFailure<T> {
     TResult? Function(DeleteProductModel deleteProductModel)?
         deleteProductSuccess,
     TResult? Function(String errorMessage)? deleteProductFailure,
-    TResult? Function()? paginationLoading,
-    TResult? Function(String errorMessage)? paginationFailure,
+    TResult? Function()? getProductPreviewLoading,
+    TResult? Function(ProductPreviewResponse product)? getProductPreviewSuccess,
+    TResult? Function(String errorMessage)? getProductPreviewFailure,
   }) {
     return businessConfigFailure?.call(errorMessage);
   }
@@ -839,8 +906,9 @@ class _$BusinessConfigFailureImpl<T> implements BusinessConfigFailure<T> {
     TResult Function(DeleteProductModel deleteProductModel)?
         deleteProductSuccess,
     TResult Function(String errorMessage)? deleteProductFailure,
-    TResult Function()? paginationLoading,
-    TResult Function(String errorMessage)? paginationFailure,
+    TResult Function()? getProductPreviewLoading,
+    TResult Function(ProductPreviewResponse product)? getProductPreviewSuccess,
+    TResult Function(String errorMessage)? getProductPreviewFailure,
     required TResult orElse(),
   }) {
     if (businessConfigFailure != null) {
@@ -868,8 +936,12 @@ class _$BusinessConfigFailureImpl<T> implements BusinessConfigFailure<T> {
         deleteProductSuccess,
     required TResult Function(DeleteProductFailure<T> value)
         deleteProductFailure,
-    required TResult Function(PaginationLoading<T> value) paginationLoading,
-    required TResult Function(PaginationFailure<T> value) paginationFailure,
+    required TResult Function(GetProductPreviewLoading<T> value)
+        getProductPreviewLoading,
+    required TResult Function(GetProductPreviewSuccess<T> value)
+        getProductPreviewSuccess,
+    required TResult Function(GetProductPreviewFailure<T> value)
+        getProductPreviewFailure,
   }) {
     return businessConfigFailure(this);
   }
@@ -887,8 +959,12 @@ class _$BusinessConfigFailureImpl<T> implements BusinessConfigFailure<T> {
     TResult? Function(DeleteProductLoading<T> value)? deleteProductLoading,
     TResult? Function(DeleteProductSuccess<T> value)? deleteProductSuccess,
     TResult? Function(DeleteProductFailure<T> value)? deleteProductFailure,
-    TResult? Function(PaginationLoading<T> value)? paginationLoading,
-    TResult? Function(PaginationFailure<T> value)? paginationFailure,
+    TResult? Function(GetProductPreviewLoading<T> value)?
+        getProductPreviewLoading,
+    TResult? Function(GetProductPreviewSuccess<T> value)?
+        getProductPreviewSuccess,
+    TResult? Function(GetProductPreviewFailure<T> value)?
+        getProductPreviewFailure,
   }) {
     return businessConfigFailure?.call(this);
   }
@@ -906,8 +982,12 @@ class _$BusinessConfigFailureImpl<T> implements BusinessConfigFailure<T> {
     TResult Function(DeleteProductLoading<T> value)? deleteProductLoading,
     TResult Function(DeleteProductSuccess<T> value)? deleteProductSuccess,
     TResult Function(DeleteProductFailure<T> value)? deleteProductFailure,
-    TResult Function(PaginationLoading<T> value)? paginationLoading,
-    TResult Function(PaginationFailure<T> value)? paginationFailure,
+    TResult Function(GetProductPreviewLoading<T> value)?
+        getProductPreviewLoading,
+    TResult Function(GetProductPreviewSuccess<T> value)?
+        getProductPreviewSuccess,
+    TResult Function(GetProductPreviewFailure<T> value)?
+        getProductPreviewFailure,
     required TResult orElse(),
   }) {
     if (businessConfigFailure != null) {
@@ -984,8 +1064,10 @@ class _$GetProductsLoadingImpl<T> implements GetProductsLoading<T> {
     required TResult Function(DeleteProductModel deleteProductModel)
         deleteProductSuccess,
     required TResult Function(String errorMessage) deleteProductFailure,
-    required TResult Function() paginationLoading,
-    required TResult Function(String errorMessage) paginationFailure,
+    required TResult Function() getProductPreviewLoading,
+    required TResult Function(ProductPreviewResponse product)
+        getProductPreviewSuccess,
+    required TResult Function(String errorMessage) getProductPreviewFailure,
   }) {
     return getProductsLoading();
   }
@@ -1004,8 +1086,9 @@ class _$GetProductsLoadingImpl<T> implements GetProductsLoading<T> {
     TResult? Function(DeleteProductModel deleteProductModel)?
         deleteProductSuccess,
     TResult? Function(String errorMessage)? deleteProductFailure,
-    TResult? Function()? paginationLoading,
-    TResult? Function(String errorMessage)? paginationFailure,
+    TResult? Function()? getProductPreviewLoading,
+    TResult? Function(ProductPreviewResponse product)? getProductPreviewSuccess,
+    TResult? Function(String errorMessage)? getProductPreviewFailure,
   }) {
     return getProductsLoading?.call();
   }
@@ -1024,8 +1107,9 @@ class _$GetProductsLoadingImpl<T> implements GetProductsLoading<T> {
     TResult Function(DeleteProductModel deleteProductModel)?
         deleteProductSuccess,
     TResult Function(String errorMessage)? deleteProductFailure,
-    TResult Function()? paginationLoading,
-    TResult Function(String errorMessage)? paginationFailure,
+    TResult Function()? getProductPreviewLoading,
+    TResult Function(ProductPreviewResponse product)? getProductPreviewSuccess,
+    TResult Function(String errorMessage)? getProductPreviewFailure,
     required TResult orElse(),
   }) {
     if (getProductsLoading != null) {
@@ -1053,8 +1137,12 @@ class _$GetProductsLoadingImpl<T> implements GetProductsLoading<T> {
         deleteProductSuccess,
     required TResult Function(DeleteProductFailure<T> value)
         deleteProductFailure,
-    required TResult Function(PaginationLoading<T> value) paginationLoading,
-    required TResult Function(PaginationFailure<T> value) paginationFailure,
+    required TResult Function(GetProductPreviewLoading<T> value)
+        getProductPreviewLoading,
+    required TResult Function(GetProductPreviewSuccess<T> value)
+        getProductPreviewSuccess,
+    required TResult Function(GetProductPreviewFailure<T> value)
+        getProductPreviewFailure,
   }) {
     return getProductsLoading(this);
   }
@@ -1072,8 +1160,12 @@ class _$GetProductsLoadingImpl<T> implements GetProductsLoading<T> {
     TResult? Function(DeleteProductLoading<T> value)? deleteProductLoading,
     TResult? Function(DeleteProductSuccess<T> value)? deleteProductSuccess,
     TResult? Function(DeleteProductFailure<T> value)? deleteProductFailure,
-    TResult? Function(PaginationLoading<T> value)? paginationLoading,
-    TResult? Function(PaginationFailure<T> value)? paginationFailure,
+    TResult? Function(GetProductPreviewLoading<T> value)?
+        getProductPreviewLoading,
+    TResult? Function(GetProductPreviewSuccess<T> value)?
+        getProductPreviewSuccess,
+    TResult? Function(GetProductPreviewFailure<T> value)?
+        getProductPreviewFailure,
   }) {
     return getProductsLoading?.call(this);
   }
@@ -1091,8 +1183,12 @@ class _$GetProductsLoadingImpl<T> implements GetProductsLoading<T> {
     TResult Function(DeleteProductLoading<T> value)? deleteProductLoading,
     TResult Function(DeleteProductSuccess<T> value)? deleteProductSuccess,
     TResult Function(DeleteProductFailure<T> value)? deleteProductFailure,
-    TResult Function(PaginationLoading<T> value)? paginationLoading,
-    TResult Function(PaginationFailure<T> value)? paginationFailure,
+    TResult Function(GetProductPreviewLoading<T> value)?
+        getProductPreviewLoading,
+    TResult Function(GetProductPreviewSuccess<T> value)?
+        getProductPreviewSuccess,
+    TResult Function(GetProductPreviewFailure<T> value)?
+        getProductPreviewFailure,
     required TResult orElse(),
   }) {
     if (getProductsLoading != null) {
@@ -1188,8 +1284,10 @@ class _$GetProductsSuccessImpl<T> implements GetProductsSuccess<T> {
     required TResult Function(DeleteProductModel deleteProductModel)
         deleteProductSuccess,
     required TResult Function(String errorMessage) deleteProductFailure,
-    required TResult Function() paginationLoading,
-    required TResult Function(String errorMessage) paginationFailure,
+    required TResult Function() getProductPreviewLoading,
+    required TResult Function(ProductPreviewResponse product)
+        getProductPreviewSuccess,
+    required TResult Function(String errorMessage) getProductPreviewFailure,
   }) {
     return getProductsSuccess(responseModel);
   }
@@ -1208,8 +1306,9 @@ class _$GetProductsSuccessImpl<T> implements GetProductsSuccess<T> {
     TResult? Function(DeleteProductModel deleteProductModel)?
         deleteProductSuccess,
     TResult? Function(String errorMessage)? deleteProductFailure,
-    TResult? Function()? paginationLoading,
-    TResult? Function(String errorMessage)? paginationFailure,
+    TResult? Function()? getProductPreviewLoading,
+    TResult? Function(ProductPreviewResponse product)? getProductPreviewSuccess,
+    TResult? Function(String errorMessage)? getProductPreviewFailure,
   }) {
     return getProductsSuccess?.call(responseModel);
   }
@@ -1228,8 +1327,9 @@ class _$GetProductsSuccessImpl<T> implements GetProductsSuccess<T> {
     TResult Function(DeleteProductModel deleteProductModel)?
         deleteProductSuccess,
     TResult Function(String errorMessage)? deleteProductFailure,
-    TResult Function()? paginationLoading,
-    TResult Function(String errorMessage)? paginationFailure,
+    TResult Function()? getProductPreviewLoading,
+    TResult Function(ProductPreviewResponse product)? getProductPreviewSuccess,
+    TResult Function(String errorMessage)? getProductPreviewFailure,
     required TResult orElse(),
   }) {
     if (getProductsSuccess != null) {
@@ -1257,8 +1357,12 @@ class _$GetProductsSuccessImpl<T> implements GetProductsSuccess<T> {
         deleteProductSuccess,
     required TResult Function(DeleteProductFailure<T> value)
         deleteProductFailure,
-    required TResult Function(PaginationLoading<T> value) paginationLoading,
-    required TResult Function(PaginationFailure<T> value) paginationFailure,
+    required TResult Function(GetProductPreviewLoading<T> value)
+        getProductPreviewLoading,
+    required TResult Function(GetProductPreviewSuccess<T> value)
+        getProductPreviewSuccess,
+    required TResult Function(GetProductPreviewFailure<T> value)
+        getProductPreviewFailure,
   }) {
     return getProductsSuccess(this);
   }
@@ -1276,8 +1380,12 @@ class _$GetProductsSuccessImpl<T> implements GetProductsSuccess<T> {
     TResult? Function(DeleteProductLoading<T> value)? deleteProductLoading,
     TResult? Function(DeleteProductSuccess<T> value)? deleteProductSuccess,
     TResult? Function(DeleteProductFailure<T> value)? deleteProductFailure,
-    TResult? Function(PaginationLoading<T> value)? paginationLoading,
-    TResult? Function(PaginationFailure<T> value)? paginationFailure,
+    TResult? Function(GetProductPreviewLoading<T> value)?
+        getProductPreviewLoading,
+    TResult? Function(GetProductPreviewSuccess<T> value)?
+        getProductPreviewSuccess,
+    TResult? Function(GetProductPreviewFailure<T> value)?
+        getProductPreviewFailure,
   }) {
     return getProductsSuccess?.call(this);
   }
@@ -1295,8 +1403,12 @@ class _$GetProductsSuccessImpl<T> implements GetProductsSuccess<T> {
     TResult Function(DeleteProductLoading<T> value)? deleteProductLoading,
     TResult Function(DeleteProductSuccess<T> value)? deleteProductSuccess,
     TResult Function(DeleteProductFailure<T> value)? deleteProductFailure,
-    TResult Function(PaginationLoading<T> value)? paginationLoading,
-    TResult Function(PaginationFailure<T> value)? paginationFailure,
+    TResult Function(GetProductPreviewLoading<T> value)?
+        getProductPreviewLoading,
+    TResult Function(GetProductPreviewSuccess<T> value)?
+        getProductPreviewSuccess,
+    TResult Function(GetProductPreviewFailure<T> value)?
+        getProductPreviewFailure,
     required TResult orElse(),
   }) {
     if (getProductsSuccess != null) {
@@ -1401,8 +1513,10 @@ class _$GetProductsFailureImpl<T> implements GetProductsFailure<T> {
     required TResult Function(DeleteProductModel deleteProductModel)
         deleteProductSuccess,
     required TResult Function(String errorMessage) deleteProductFailure,
-    required TResult Function() paginationLoading,
-    required TResult Function(String errorMessage) paginationFailure,
+    required TResult Function() getProductPreviewLoading,
+    required TResult Function(ProductPreviewResponse product)
+        getProductPreviewSuccess,
+    required TResult Function(String errorMessage) getProductPreviewFailure,
   }) {
     return getProductsFailure(errorMessage);
   }
@@ -1421,8 +1535,9 @@ class _$GetProductsFailureImpl<T> implements GetProductsFailure<T> {
     TResult? Function(DeleteProductModel deleteProductModel)?
         deleteProductSuccess,
     TResult? Function(String errorMessage)? deleteProductFailure,
-    TResult? Function()? paginationLoading,
-    TResult? Function(String errorMessage)? paginationFailure,
+    TResult? Function()? getProductPreviewLoading,
+    TResult? Function(ProductPreviewResponse product)? getProductPreviewSuccess,
+    TResult? Function(String errorMessage)? getProductPreviewFailure,
   }) {
     return getProductsFailure?.call(errorMessage);
   }
@@ -1441,8 +1556,9 @@ class _$GetProductsFailureImpl<T> implements GetProductsFailure<T> {
     TResult Function(DeleteProductModel deleteProductModel)?
         deleteProductSuccess,
     TResult Function(String errorMessage)? deleteProductFailure,
-    TResult Function()? paginationLoading,
-    TResult Function(String errorMessage)? paginationFailure,
+    TResult Function()? getProductPreviewLoading,
+    TResult Function(ProductPreviewResponse product)? getProductPreviewSuccess,
+    TResult Function(String errorMessage)? getProductPreviewFailure,
     required TResult orElse(),
   }) {
     if (getProductsFailure != null) {
@@ -1470,8 +1586,12 @@ class _$GetProductsFailureImpl<T> implements GetProductsFailure<T> {
         deleteProductSuccess,
     required TResult Function(DeleteProductFailure<T> value)
         deleteProductFailure,
-    required TResult Function(PaginationLoading<T> value) paginationLoading,
-    required TResult Function(PaginationFailure<T> value) paginationFailure,
+    required TResult Function(GetProductPreviewLoading<T> value)
+        getProductPreviewLoading,
+    required TResult Function(GetProductPreviewSuccess<T> value)
+        getProductPreviewSuccess,
+    required TResult Function(GetProductPreviewFailure<T> value)
+        getProductPreviewFailure,
   }) {
     return getProductsFailure(this);
   }
@@ -1489,8 +1609,12 @@ class _$GetProductsFailureImpl<T> implements GetProductsFailure<T> {
     TResult? Function(DeleteProductLoading<T> value)? deleteProductLoading,
     TResult? Function(DeleteProductSuccess<T> value)? deleteProductSuccess,
     TResult? Function(DeleteProductFailure<T> value)? deleteProductFailure,
-    TResult? Function(PaginationLoading<T> value)? paginationLoading,
-    TResult? Function(PaginationFailure<T> value)? paginationFailure,
+    TResult? Function(GetProductPreviewLoading<T> value)?
+        getProductPreviewLoading,
+    TResult? Function(GetProductPreviewSuccess<T> value)?
+        getProductPreviewSuccess,
+    TResult? Function(GetProductPreviewFailure<T> value)?
+        getProductPreviewFailure,
   }) {
     return getProductsFailure?.call(this);
   }
@@ -1508,8 +1632,12 @@ class _$GetProductsFailureImpl<T> implements GetProductsFailure<T> {
     TResult Function(DeleteProductLoading<T> value)? deleteProductLoading,
     TResult Function(DeleteProductSuccess<T> value)? deleteProductSuccess,
     TResult Function(DeleteProductFailure<T> value)? deleteProductFailure,
-    TResult Function(PaginationLoading<T> value)? paginationLoading,
-    TResult Function(PaginationFailure<T> value)? paginationFailure,
+    TResult Function(GetProductPreviewLoading<T> value)?
+        getProductPreviewLoading,
+    TResult Function(GetProductPreviewSuccess<T> value)?
+        getProductPreviewSuccess,
+    TResult Function(GetProductPreviewFailure<T> value)?
+        getProductPreviewFailure,
     required TResult orElse(),
   }) {
     if (getProductsFailure != null) {
@@ -1587,8 +1715,10 @@ class _$DeleteProductLoadingImpl<T> implements DeleteProductLoading<T> {
     required TResult Function(DeleteProductModel deleteProductModel)
         deleteProductSuccess,
     required TResult Function(String errorMessage) deleteProductFailure,
-    required TResult Function() paginationLoading,
-    required TResult Function(String errorMessage) paginationFailure,
+    required TResult Function() getProductPreviewLoading,
+    required TResult Function(ProductPreviewResponse product)
+        getProductPreviewSuccess,
+    required TResult Function(String errorMessage) getProductPreviewFailure,
   }) {
     return deleteProductLoading();
   }
@@ -1607,8 +1737,9 @@ class _$DeleteProductLoadingImpl<T> implements DeleteProductLoading<T> {
     TResult? Function(DeleteProductModel deleteProductModel)?
         deleteProductSuccess,
     TResult? Function(String errorMessage)? deleteProductFailure,
-    TResult? Function()? paginationLoading,
-    TResult? Function(String errorMessage)? paginationFailure,
+    TResult? Function()? getProductPreviewLoading,
+    TResult? Function(ProductPreviewResponse product)? getProductPreviewSuccess,
+    TResult? Function(String errorMessage)? getProductPreviewFailure,
   }) {
     return deleteProductLoading?.call();
   }
@@ -1627,8 +1758,9 @@ class _$DeleteProductLoadingImpl<T> implements DeleteProductLoading<T> {
     TResult Function(DeleteProductModel deleteProductModel)?
         deleteProductSuccess,
     TResult Function(String errorMessage)? deleteProductFailure,
-    TResult Function()? paginationLoading,
-    TResult Function(String errorMessage)? paginationFailure,
+    TResult Function()? getProductPreviewLoading,
+    TResult Function(ProductPreviewResponse product)? getProductPreviewSuccess,
+    TResult Function(String errorMessage)? getProductPreviewFailure,
     required TResult orElse(),
   }) {
     if (deleteProductLoading != null) {
@@ -1656,8 +1788,12 @@ class _$DeleteProductLoadingImpl<T> implements DeleteProductLoading<T> {
         deleteProductSuccess,
     required TResult Function(DeleteProductFailure<T> value)
         deleteProductFailure,
-    required TResult Function(PaginationLoading<T> value) paginationLoading,
-    required TResult Function(PaginationFailure<T> value) paginationFailure,
+    required TResult Function(GetProductPreviewLoading<T> value)
+        getProductPreviewLoading,
+    required TResult Function(GetProductPreviewSuccess<T> value)
+        getProductPreviewSuccess,
+    required TResult Function(GetProductPreviewFailure<T> value)
+        getProductPreviewFailure,
   }) {
     return deleteProductLoading(this);
   }
@@ -1675,8 +1811,12 @@ class _$DeleteProductLoadingImpl<T> implements DeleteProductLoading<T> {
     TResult? Function(DeleteProductLoading<T> value)? deleteProductLoading,
     TResult? Function(DeleteProductSuccess<T> value)? deleteProductSuccess,
     TResult? Function(DeleteProductFailure<T> value)? deleteProductFailure,
-    TResult? Function(PaginationLoading<T> value)? paginationLoading,
-    TResult? Function(PaginationFailure<T> value)? paginationFailure,
+    TResult? Function(GetProductPreviewLoading<T> value)?
+        getProductPreviewLoading,
+    TResult? Function(GetProductPreviewSuccess<T> value)?
+        getProductPreviewSuccess,
+    TResult? Function(GetProductPreviewFailure<T> value)?
+        getProductPreviewFailure,
   }) {
     return deleteProductLoading?.call(this);
   }
@@ -1694,8 +1834,12 @@ class _$DeleteProductLoadingImpl<T> implements DeleteProductLoading<T> {
     TResult Function(DeleteProductLoading<T> value)? deleteProductLoading,
     TResult Function(DeleteProductSuccess<T> value)? deleteProductSuccess,
     TResult Function(DeleteProductFailure<T> value)? deleteProductFailure,
-    TResult Function(PaginationLoading<T> value)? paginationLoading,
-    TResult Function(PaginationFailure<T> value)? paginationFailure,
+    TResult Function(GetProductPreviewLoading<T> value)?
+        getProductPreviewLoading,
+    TResult Function(GetProductPreviewSuccess<T> value)?
+        getProductPreviewSuccess,
+    TResult Function(GetProductPreviewFailure<T> value)?
+        getProductPreviewFailure,
     required TResult orElse(),
   }) {
     if (deleteProductLoading != null) {
@@ -1792,8 +1936,10 @@ class _$DeleteProductSuccessImpl<T> implements DeleteProductSuccess<T> {
     required TResult Function(DeleteProductModel deleteProductModel)
         deleteProductSuccess,
     required TResult Function(String errorMessage) deleteProductFailure,
-    required TResult Function() paginationLoading,
-    required TResult Function(String errorMessage) paginationFailure,
+    required TResult Function() getProductPreviewLoading,
+    required TResult Function(ProductPreviewResponse product)
+        getProductPreviewSuccess,
+    required TResult Function(String errorMessage) getProductPreviewFailure,
   }) {
     return deleteProductSuccess(deleteProductModel);
   }
@@ -1812,8 +1958,9 @@ class _$DeleteProductSuccessImpl<T> implements DeleteProductSuccess<T> {
     TResult? Function(DeleteProductModel deleteProductModel)?
         deleteProductSuccess,
     TResult? Function(String errorMessage)? deleteProductFailure,
-    TResult? Function()? paginationLoading,
-    TResult? Function(String errorMessage)? paginationFailure,
+    TResult? Function()? getProductPreviewLoading,
+    TResult? Function(ProductPreviewResponse product)? getProductPreviewSuccess,
+    TResult? Function(String errorMessage)? getProductPreviewFailure,
   }) {
     return deleteProductSuccess?.call(deleteProductModel);
   }
@@ -1832,8 +1979,9 @@ class _$DeleteProductSuccessImpl<T> implements DeleteProductSuccess<T> {
     TResult Function(DeleteProductModel deleteProductModel)?
         deleteProductSuccess,
     TResult Function(String errorMessage)? deleteProductFailure,
-    TResult Function()? paginationLoading,
-    TResult Function(String errorMessage)? paginationFailure,
+    TResult Function()? getProductPreviewLoading,
+    TResult Function(ProductPreviewResponse product)? getProductPreviewSuccess,
+    TResult Function(String errorMessage)? getProductPreviewFailure,
     required TResult orElse(),
   }) {
     if (deleteProductSuccess != null) {
@@ -1861,8 +2009,12 @@ class _$DeleteProductSuccessImpl<T> implements DeleteProductSuccess<T> {
         deleteProductSuccess,
     required TResult Function(DeleteProductFailure<T> value)
         deleteProductFailure,
-    required TResult Function(PaginationLoading<T> value) paginationLoading,
-    required TResult Function(PaginationFailure<T> value) paginationFailure,
+    required TResult Function(GetProductPreviewLoading<T> value)
+        getProductPreviewLoading,
+    required TResult Function(GetProductPreviewSuccess<T> value)
+        getProductPreviewSuccess,
+    required TResult Function(GetProductPreviewFailure<T> value)
+        getProductPreviewFailure,
   }) {
     return deleteProductSuccess(this);
   }
@@ -1880,8 +2032,12 @@ class _$DeleteProductSuccessImpl<T> implements DeleteProductSuccess<T> {
     TResult? Function(DeleteProductLoading<T> value)? deleteProductLoading,
     TResult? Function(DeleteProductSuccess<T> value)? deleteProductSuccess,
     TResult? Function(DeleteProductFailure<T> value)? deleteProductFailure,
-    TResult? Function(PaginationLoading<T> value)? paginationLoading,
-    TResult? Function(PaginationFailure<T> value)? paginationFailure,
+    TResult? Function(GetProductPreviewLoading<T> value)?
+        getProductPreviewLoading,
+    TResult? Function(GetProductPreviewSuccess<T> value)?
+        getProductPreviewSuccess,
+    TResult? Function(GetProductPreviewFailure<T> value)?
+        getProductPreviewFailure,
   }) {
     return deleteProductSuccess?.call(this);
   }
@@ -1899,8 +2055,12 @@ class _$DeleteProductSuccessImpl<T> implements DeleteProductSuccess<T> {
     TResult Function(DeleteProductLoading<T> value)? deleteProductLoading,
     TResult Function(DeleteProductSuccess<T> value)? deleteProductSuccess,
     TResult Function(DeleteProductFailure<T> value)? deleteProductFailure,
-    TResult Function(PaginationLoading<T> value)? paginationLoading,
-    TResult Function(PaginationFailure<T> value)? paginationFailure,
+    TResult Function(GetProductPreviewLoading<T> value)?
+        getProductPreviewLoading,
+    TResult Function(GetProductPreviewSuccess<T> value)?
+        getProductPreviewSuccess,
+    TResult Function(GetProductPreviewFailure<T> value)?
+        getProductPreviewFailure,
     required TResult orElse(),
   }) {
     if (deleteProductSuccess != null) {
@@ -2007,8 +2167,10 @@ class _$DeleteProductFailureImpl<T> implements DeleteProductFailure<T> {
     required TResult Function(DeleteProductModel deleteProductModel)
         deleteProductSuccess,
     required TResult Function(String errorMessage) deleteProductFailure,
-    required TResult Function() paginationLoading,
-    required TResult Function(String errorMessage) paginationFailure,
+    required TResult Function() getProductPreviewLoading,
+    required TResult Function(ProductPreviewResponse product)
+        getProductPreviewSuccess,
+    required TResult Function(String errorMessage) getProductPreviewFailure,
   }) {
     return deleteProductFailure(errorMessage);
   }
@@ -2027,8 +2189,9 @@ class _$DeleteProductFailureImpl<T> implements DeleteProductFailure<T> {
     TResult? Function(DeleteProductModel deleteProductModel)?
         deleteProductSuccess,
     TResult? Function(String errorMessage)? deleteProductFailure,
-    TResult? Function()? paginationLoading,
-    TResult? Function(String errorMessage)? paginationFailure,
+    TResult? Function()? getProductPreviewLoading,
+    TResult? Function(ProductPreviewResponse product)? getProductPreviewSuccess,
+    TResult? Function(String errorMessage)? getProductPreviewFailure,
   }) {
     return deleteProductFailure?.call(errorMessage);
   }
@@ -2047,8 +2210,9 @@ class _$DeleteProductFailureImpl<T> implements DeleteProductFailure<T> {
     TResult Function(DeleteProductModel deleteProductModel)?
         deleteProductSuccess,
     TResult Function(String errorMessage)? deleteProductFailure,
-    TResult Function()? paginationLoading,
-    TResult Function(String errorMessage)? paginationFailure,
+    TResult Function()? getProductPreviewLoading,
+    TResult Function(ProductPreviewResponse product)? getProductPreviewSuccess,
+    TResult Function(String errorMessage)? getProductPreviewFailure,
     required TResult orElse(),
   }) {
     if (deleteProductFailure != null) {
@@ -2076,8 +2240,12 @@ class _$DeleteProductFailureImpl<T> implements DeleteProductFailure<T> {
         deleteProductSuccess,
     required TResult Function(DeleteProductFailure<T> value)
         deleteProductFailure,
-    required TResult Function(PaginationLoading<T> value) paginationLoading,
-    required TResult Function(PaginationFailure<T> value) paginationFailure,
+    required TResult Function(GetProductPreviewLoading<T> value)
+        getProductPreviewLoading,
+    required TResult Function(GetProductPreviewSuccess<T> value)
+        getProductPreviewSuccess,
+    required TResult Function(GetProductPreviewFailure<T> value)
+        getProductPreviewFailure,
   }) {
     return deleteProductFailure(this);
   }
@@ -2095,8 +2263,12 @@ class _$DeleteProductFailureImpl<T> implements DeleteProductFailure<T> {
     TResult? Function(DeleteProductLoading<T> value)? deleteProductLoading,
     TResult? Function(DeleteProductSuccess<T> value)? deleteProductSuccess,
     TResult? Function(DeleteProductFailure<T> value)? deleteProductFailure,
-    TResult? Function(PaginationLoading<T> value)? paginationLoading,
-    TResult? Function(PaginationFailure<T> value)? paginationFailure,
+    TResult? Function(GetProductPreviewLoading<T> value)?
+        getProductPreviewLoading,
+    TResult? Function(GetProductPreviewSuccess<T> value)?
+        getProductPreviewSuccess,
+    TResult? Function(GetProductPreviewFailure<T> value)?
+        getProductPreviewFailure,
   }) {
     return deleteProductFailure?.call(this);
   }
@@ -2114,8 +2286,12 @@ class _$DeleteProductFailureImpl<T> implements DeleteProductFailure<T> {
     TResult Function(DeleteProductLoading<T> value)? deleteProductLoading,
     TResult Function(DeleteProductSuccess<T> value)? deleteProductSuccess,
     TResult Function(DeleteProductFailure<T> value)? deleteProductFailure,
-    TResult Function(PaginationLoading<T> value)? paginationLoading,
-    TResult Function(PaginationFailure<T> value)? paginationFailure,
+    TResult Function(GetProductPreviewLoading<T> value)?
+        getProductPreviewLoading,
+    TResult Function(GetProductPreviewSuccess<T> value)?
+        getProductPreviewSuccess,
+    TResult Function(GetProductPreviewFailure<T> value)?
+        getProductPreviewFailure,
     required TResult orElse(),
   }) {
     if (deleteProductFailure != null) {
@@ -2139,18 +2315,21 @@ abstract class DeleteProductFailure<T> implements ProductsState<T> {
 }
 
 /// @nodoc
-abstract class _$$PaginationLoadingImplCopyWith<T, $Res> {
-  factory _$$PaginationLoadingImplCopyWith(_$PaginationLoadingImpl<T> value,
-          $Res Function(_$PaginationLoadingImpl<T>) then) =
-      __$$PaginationLoadingImplCopyWithImpl<T, $Res>;
+abstract class _$$GetProductPreviewLoadingImplCopyWith<T, $Res> {
+  factory _$$GetProductPreviewLoadingImplCopyWith(
+          _$GetProductPreviewLoadingImpl<T> value,
+          $Res Function(_$GetProductPreviewLoadingImpl<T>) then) =
+      __$$GetProductPreviewLoadingImplCopyWithImpl<T, $Res>;
 }
 
 /// @nodoc
-class __$$PaginationLoadingImplCopyWithImpl<T, $Res>
-    extends _$ProductsStateCopyWithImpl<T, $Res, _$PaginationLoadingImpl<T>>
-    implements _$$PaginationLoadingImplCopyWith<T, $Res> {
-  __$$PaginationLoadingImplCopyWithImpl(_$PaginationLoadingImpl<T> _value,
-      $Res Function(_$PaginationLoadingImpl<T>) _then)
+class __$$GetProductPreviewLoadingImplCopyWithImpl<T, $Res>
+    extends _$ProductsStateCopyWithImpl<T, $Res,
+        _$GetProductPreviewLoadingImpl<T>>
+    implements _$$GetProductPreviewLoadingImplCopyWith<T, $Res> {
+  __$$GetProductPreviewLoadingImplCopyWithImpl(
+      _$GetProductPreviewLoadingImpl<T> _value,
+      $Res Function(_$GetProductPreviewLoadingImpl<T>) _then)
       : super(_value, _then);
 
   /// Create a copy of ProductsState
@@ -2159,19 +2338,19 @@ class __$$PaginationLoadingImplCopyWithImpl<T, $Res>
 
 /// @nodoc
 
-class _$PaginationLoadingImpl<T> implements PaginationLoading<T> {
-  const _$PaginationLoadingImpl();
+class _$GetProductPreviewLoadingImpl<T> implements GetProductPreviewLoading<T> {
+  const _$GetProductPreviewLoadingImpl();
 
   @override
   String toString() {
-    return 'ProductsState<$T>.paginationLoading()';
+    return 'ProductsState<$T>.getProductPreviewLoading()';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$PaginationLoadingImpl<T>);
+            other is _$GetProductPreviewLoadingImpl<T>);
   }
 
   @override
@@ -2192,10 +2371,12 @@ class _$PaginationLoadingImpl<T> implements PaginationLoading<T> {
     required TResult Function(DeleteProductModel deleteProductModel)
         deleteProductSuccess,
     required TResult Function(String errorMessage) deleteProductFailure,
-    required TResult Function() paginationLoading,
-    required TResult Function(String errorMessage) paginationFailure,
+    required TResult Function() getProductPreviewLoading,
+    required TResult Function(ProductPreviewResponse product)
+        getProductPreviewSuccess,
+    required TResult Function(String errorMessage) getProductPreviewFailure,
   }) {
-    return paginationLoading();
+    return getProductPreviewLoading();
   }
 
   @override
@@ -2212,10 +2393,11 @@ class _$PaginationLoadingImpl<T> implements PaginationLoading<T> {
     TResult? Function(DeleteProductModel deleteProductModel)?
         deleteProductSuccess,
     TResult? Function(String errorMessage)? deleteProductFailure,
-    TResult? Function()? paginationLoading,
-    TResult? Function(String errorMessage)? paginationFailure,
+    TResult? Function()? getProductPreviewLoading,
+    TResult? Function(ProductPreviewResponse product)? getProductPreviewSuccess,
+    TResult? Function(String errorMessage)? getProductPreviewFailure,
   }) {
-    return paginationLoading?.call();
+    return getProductPreviewLoading?.call();
   }
 
   @override
@@ -2232,12 +2414,13 @@ class _$PaginationLoadingImpl<T> implements PaginationLoading<T> {
     TResult Function(DeleteProductModel deleteProductModel)?
         deleteProductSuccess,
     TResult Function(String errorMessage)? deleteProductFailure,
-    TResult Function()? paginationLoading,
-    TResult Function(String errorMessage)? paginationFailure,
+    TResult Function()? getProductPreviewLoading,
+    TResult Function(ProductPreviewResponse product)? getProductPreviewSuccess,
+    TResult Function(String errorMessage)? getProductPreviewFailure,
     required TResult orElse(),
   }) {
-    if (paginationLoading != null) {
-      return paginationLoading();
+    if (getProductPreviewLoading != null) {
+      return getProductPreviewLoading();
     }
     return orElse();
   }
@@ -2261,10 +2444,14 @@ class _$PaginationLoadingImpl<T> implements PaginationLoading<T> {
         deleteProductSuccess,
     required TResult Function(DeleteProductFailure<T> value)
         deleteProductFailure,
-    required TResult Function(PaginationLoading<T> value) paginationLoading,
-    required TResult Function(PaginationFailure<T> value) paginationFailure,
+    required TResult Function(GetProductPreviewLoading<T> value)
+        getProductPreviewLoading,
+    required TResult Function(GetProductPreviewSuccess<T> value)
+        getProductPreviewSuccess,
+    required TResult Function(GetProductPreviewFailure<T> value)
+        getProductPreviewFailure,
   }) {
-    return paginationLoading(this);
+    return getProductPreviewLoading(this);
   }
 
   @override
@@ -2280,10 +2467,14 @@ class _$PaginationLoadingImpl<T> implements PaginationLoading<T> {
     TResult? Function(DeleteProductLoading<T> value)? deleteProductLoading,
     TResult? Function(DeleteProductSuccess<T> value)? deleteProductSuccess,
     TResult? Function(DeleteProductFailure<T> value)? deleteProductFailure,
-    TResult? Function(PaginationLoading<T> value)? paginationLoading,
-    TResult? Function(PaginationFailure<T> value)? paginationFailure,
+    TResult? Function(GetProductPreviewLoading<T> value)?
+        getProductPreviewLoading,
+    TResult? Function(GetProductPreviewSuccess<T> value)?
+        getProductPreviewSuccess,
+    TResult? Function(GetProductPreviewFailure<T> value)?
+        getProductPreviewFailure,
   }) {
-    return paginationLoading?.call(this);
+    return getProductPreviewLoading?.call(this);
   }
 
   @override
@@ -2299,36 +2490,43 @@ class _$PaginationLoadingImpl<T> implements PaginationLoading<T> {
     TResult Function(DeleteProductLoading<T> value)? deleteProductLoading,
     TResult Function(DeleteProductSuccess<T> value)? deleteProductSuccess,
     TResult Function(DeleteProductFailure<T> value)? deleteProductFailure,
-    TResult Function(PaginationLoading<T> value)? paginationLoading,
-    TResult Function(PaginationFailure<T> value)? paginationFailure,
+    TResult Function(GetProductPreviewLoading<T> value)?
+        getProductPreviewLoading,
+    TResult Function(GetProductPreviewSuccess<T> value)?
+        getProductPreviewSuccess,
+    TResult Function(GetProductPreviewFailure<T> value)?
+        getProductPreviewFailure,
     required TResult orElse(),
   }) {
-    if (paginationLoading != null) {
-      return paginationLoading(this);
+    if (getProductPreviewLoading != null) {
+      return getProductPreviewLoading(this);
     }
     return orElse();
   }
 }
 
-abstract class PaginationLoading<T> implements ProductsState<T> {
-  const factory PaginationLoading() = _$PaginationLoadingImpl<T>;
+abstract class GetProductPreviewLoading<T> implements ProductsState<T> {
+  const factory GetProductPreviewLoading() = _$GetProductPreviewLoadingImpl<T>;
 }
 
 /// @nodoc
-abstract class _$$PaginationFailureImplCopyWith<T, $Res> {
-  factory _$$PaginationFailureImplCopyWith(_$PaginationFailureImpl<T> value,
-          $Res Function(_$PaginationFailureImpl<T>) then) =
-      __$$PaginationFailureImplCopyWithImpl<T, $Res>;
+abstract class _$$GetProductPreviewSuccessImplCopyWith<T, $Res> {
+  factory _$$GetProductPreviewSuccessImplCopyWith(
+          _$GetProductPreviewSuccessImpl<T> value,
+          $Res Function(_$GetProductPreviewSuccessImpl<T>) then) =
+      __$$GetProductPreviewSuccessImplCopyWithImpl<T, $Res>;
   @useResult
-  $Res call({String errorMessage});
+  $Res call({ProductPreviewResponse product});
 }
 
 /// @nodoc
-class __$$PaginationFailureImplCopyWithImpl<T, $Res>
-    extends _$ProductsStateCopyWithImpl<T, $Res, _$PaginationFailureImpl<T>>
-    implements _$$PaginationFailureImplCopyWith<T, $Res> {
-  __$$PaginationFailureImplCopyWithImpl(_$PaginationFailureImpl<T> _value,
-      $Res Function(_$PaginationFailureImpl<T>) _then)
+class __$$GetProductPreviewSuccessImplCopyWithImpl<T, $Res>
+    extends _$ProductsStateCopyWithImpl<T, $Res,
+        _$GetProductPreviewSuccessImpl<T>>
+    implements _$$GetProductPreviewSuccessImplCopyWith<T, $Res> {
+  __$$GetProductPreviewSuccessImplCopyWithImpl(
+      _$GetProductPreviewSuccessImpl<T> _value,
+      $Res Function(_$GetProductPreviewSuccessImpl<T>) _then)
       : super(_value, _then);
 
   /// Create a copy of ProductsState
@@ -2336,51 +2534,49 @@ class __$$PaginationFailureImplCopyWithImpl<T, $Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? errorMessage = null,
+    Object? product = null,
   }) {
-    return _then(_$PaginationFailureImpl<T>(
-      errorMessage: null == errorMessage
-          ? _value.errorMessage
-          : errorMessage // ignore: cast_nullable_to_non_nullable
-              as String,
+    return _then(_$GetProductPreviewSuccessImpl<T>(
+      null == product
+          ? _value.product
+          : product // ignore: cast_nullable_to_non_nullable
+              as ProductPreviewResponse,
     ));
   }
 }
 
 /// @nodoc
 
-class _$PaginationFailureImpl<T> implements PaginationFailure<T> {
-  const _$PaginationFailureImpl({required this.errorMessage});
+class _$GetProductPreviewSuccessImpl<T> implements GetProductPreviewSuccess<T> {
+  const _$GetProductPreviewSuccessImpl(this.product);
 
   @override
-  final String errorMessage;
+  final ProductPreviewResponse product;
 
   @override
   String toString() {
-    return 'ProductsState<$T>.paginationFailure(errorMessage: $errorMessage)';
+    return 'ProductsState<$T>.getProductPreviewSuccess(product: $product)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$PaginationFailureImpl<T> &&
-            (identical(other.errorMessage, errorMessage) ||
-                other.errorMessage == errorMessage));
+            other is _$GetProductPreviewSuccessImpl<T> &&
+            (identical(other.product, product) || other.product == product));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, errorMessage);
+  int get hashCode => Object.hash(runtimeType, product);
 
   /// Create a copy of ProductsState
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$PaginationFailureImplCopyWith<T, _$PaginationFailureImpl<T>>
-      get copyWith =>
-          __$$PaginationFailureImplCopyWithImpl<T, _$PaginationFailureImpl<T>>(
-              this, _$identity);
+  _$$GetProductPreviewSuccessImplCopyWith<T, _$GetProductPreviewSuccessImpl<T>>
+      get copyWith => __$$GetProductPreviewSuccessImplCopyWithImpl<T,
+          _$GetProductPreviewSuccessImpl<T>>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -2397,10 +2593,12 @@ class _$PaginationFailureImpl<T> implements PaginationFailure<T> {
     required TResult Function(DeleteProductModel deleteProductModel)
         deleteProductSuccess,
     required TResult Function(String errorMessage) deleteProductFailure,
-    required TResult Function() paginationLoading,
-    required TResult Function(String errorMessage) paginationFailure,
+    required TResult Function() getProductPreviewLoading,
+    required TResult Function(ProductPreviewResponse product)
+        getProductPreviewSuccess,
+    required TResult Function(String errorMessage) getProductPreviewFailure,
   }) {
-    return paginationFailure(errorMessage);
+    return getProductPreviewSuccess(product);
   }
 
   @override
@@ -2417,10 +2615,11 @@ class _$PaginationFailureImpl<T> implements PaginationFailure<T> {
     TResult? Function(DeleteProductModel deleteProductModel)?
         deleteProductSuccess,
     TResult? Function(String errorMessage)? deleteProductFailure,
-    TResult? Function()? paginationLoading,
-    TResult? Function(String errorMessage)? paginationFailure,
+    TResult? Function()? getProductPreviewLoading,
+    TResult? Function(ProductPreviewResponse product)? getProductPreviewSuccess,
+    TResult? Function(String errorMessage)? getProductPreviewFailure,
   }) {
-    return paginationFailure?.call(errorMessage);
+    return getProductPreviewSuccess?.call(product);
   }
 
   @override
@@ -2437,12 +2636,13 @@ class _$PaginationFailureImpl<T> implements PaginationFailure<T> {
     TResult Function(DeleteProductModel deleteProductModel)?
         deleteProductSuccess,
     TResult Function(String errorMessage)? deleteProductFailure,
-    TResult Function()? paginationLoading,
-    TResult Function(String errorMessage)? paginationFailure,
+    TResult Function()? getProductPreviewLoading,
+    TResult Function(ProductPreviewResponse product)? getProductPreviewSuccess,
+    TResult Function(String errorMessage)? getProductPreviewFailure,
     required TResult orElse(),
   }) {
-    if (paginationFailure != null) {
-      return paginationFailure(errorMessage);
+    if (getProductPreviewSuccess != null) {
+      return getProductPreviewSuccess(product);
     }
     return orElse();
   }
@@ -2466,10 +2666,14 @@ class _$PaginationFailureImpl<T> implements PaginationFailure<T> {
         deleteProductSuccess,
     required TResult Function(DeleteProductFailure<T> value)
         deleteProductFailure,
-    required TResult Function(PaginationLoading<T> value) paginationLoading,
-    required TResult Function(PaginationFailure<T> value) paginationFailure,
+    required TResult Function(GetProductPreviewLoading<T> value)
+        getProductPreviewLoading,
+    required TResult Function(GetProductPreviewSuccess<T> value)
+        getProductPreviewSuccess,
+    required TResult Function(GetProductPreviewFailure<T> value)
+        getProductPreviewFailure,
   }) {
-    return paginationFailure(this);
+    return getProductPreviewSuccess(this);
   }
 
   @override
@@ -2485,10 +2689,14 @@ class _$PaginationFailureImpl<T> implements PaginationFailure<T> {
     TResult? Function(DeleteProductLoading<T> value)? deleteProductLoading,
     TResult? Function(DeleteProductSuccess<T> value)? deleteProductSuccess,
     TResult? Function(DeleteProductFailure<T> value)? deleteProductFailure,
-    TResult? Function(PaginationLoading<T> value)? paginationLoading,
-    TResult? Function(PaginationFailure<T> value)? paginationFailure,
+    TResult? Function(GetProductPreviewLoading<T> value)?
+        getProductPreviewLoading,
+    TResult? Function(GetProductPreviewSuccess<T> value)?
+        getProductPreviewSuccess,
+    TResult? Function(GetProductPreviewFailure<T> value)?
+        getProductPreviewFailure,
   }) {
-    return paginationFailure?.call(this);
+    return getProductPreviewSuccess?.call(this);
   }
 
   @override
@@ -2504,26 +2712,262 @@ class _$PaginationFailureImpl<T> implements PaginationFailure<T> {
     TResult Function(DeleteProductLoading<T> value)? deleteProductLoading,
     TResult Function(DeleteProductSuccess<T> value)? deleteProductSuccess,
     TResult Function(DeleteProductFailure<T> value)? deleteProductFailure,
-    TResult Function(PaginationLoading<T> value)? paginationLoading,
-    TResult Function(PaginationFailure<T> value)? paginationFailure,
+    TResult Function(GetProductPreviewLoading<T> value)?
+        getProductPreviewLoading,
+    TResult Function(GetProductPreviewSuccess<T> value)?
+        getProductPreviewSuccess,
+    TResult Function(GetProductPreviewFailure<T> value)?
+        getProductPreviewFailure,
     required TResult orElse(),
   }) {
-    if (paginationFailure != null) {
-      return paginationFailure(this);
+    if (getProductPreviewSuccess != null) {
+      return getProductPreviewSuccess(this);
     }
     return orElse();
   }
 }
 
-abstract class PaginationFailure<T> implements ProductsState<T> {
-  const factory PaginationFailure({required final String errorMessage}) =
-      _$PaginationFailureImpl<T>;
+abstract class GetProductPreviewSuccess<T> implements ProductsState<T> {
+  const factory GetProductPreviewSuccess(final ProductPreviewResponse product) =
+      _$GetProductPreviewSuccessImpl<T>;
+
+  ProductPreviewResponse get product;
+
+  /// Create a copy of ProductsState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$GetProductPreviewSuccessImplCopyWith<T, _$GetProductPreviewSuccessImpl<T>>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$GetProductPreviewFailureImplCopyWith<T, $Res> {
+  factory _$$GetProductPreviewFailureImplCopyWith(
+          _$GetProductPreviewFailureImpl<T> value,
+          $Res Function(_$GetProductPreviewFailureImpl<T>) then) =
+      __$$GetProductPreviewFailureImplCopyWithImpl<T, $Res>;
+  @useResult
+  $Res call({String errorMessage});
+}
+
+/// @nodoc
+class __$$GetProductPreviewFailureImplCopyWithImpl<T, $Res>
+    extends _$ProductsStateCopyWithImpl<T, $Res,
+        _$GetProductPreviewFailureImpl<T>>
+    implements _$$GetProductPreviewFailureImplCopyWith<T, $Res> {
+  __$$GetProductPreviewFailureImplCopyWithImpl(
+      _$GetProductPreviewFailureImpl<T> _value,
+      $Res Function(_$GetProductPreviewFailureImpl<T>) _then)
+      : super(_value, _then);
+
+  /// Create a copy of ProductsState
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? errorMessage = null,
+  }) {
+    return _then(_$GetProductPreviewFailureImpl<T>(
+      errorMessage: null == errorMessage
+          ? _value.errorMessage
+          : errorMessage // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$GetProductPreviewFailureImpl<T> implements GetProductPreviewFailure<T> {
+  const _$GetProductPreviewFailureImpl({required this.errorMessage});
+
+  @override
+  final String errorMessage;
+
+  @override
+  String toString() {
+    return 'ProductsState<$T>.getProductPreviewFailure(errorMessage: $errorMessage)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$GetProductPreviewFailureImpl<T> &&
+            (identical(other.errorMessage, errorMessage) ||
+                other.errorMessage == errorMessage));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, errorMessage);
+
+  /// Create a copy of ProductsState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$GetProductPreviewFailureImplCopyWith<T, _$GetProductPreviewFailureImpl<T>>
+      get copyWith => __$$GetProductPreviewFailureImplCopyWithImpl<T,
+          _$GetProductPreviewFailureImpl<T>>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() businessConfigLoading,
+    required TResult Function(T data) businessConfigSuccess,
+    required TResult Function(String errorMessage) businessConfigFailure,
+    required TResult Function() getProductsLoading,
+    required TResult Function(ProductsResponseModel responseModel)
+        getProductsSuccess,
+    required TResult Function(String errorMessage) getProductsFailure,
+    required TResult Function() deleteProductLoading,
+    required TResult Function(DeleteProductModel deleteProductModel)
+        deleteProductSuccess,
+    required TResult Function(String errorMessage) deleteProductFailure,
+    required TResult Function() getProductPreviewLoading,
+    required TResult Function(ProductPreviewResponse product)
+        getProductPreviewSuccess,
+    required TResult Function(String errorMessage) getProductPreviewFailure,
+  }) {
+    return getProductPreviewFailure(errorMessage);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? businessConfigLoading,
+    TResult? Function(T data)? businessConfigSuccess,
+    TResult? Function(String errorMessage)? businessConfigFailure,
+    TResult? Function()? getProductsLoading,
+    TResult? Function(ProductsResponseModel responseModel)? getProductsSuccess,
+    TResult? Function(String errorMessage)? getProductsFailure,
+    TResult? Function()? deleteProductLoading,
+    TResult? Function(DeleteProductModel deleteProductModel)?
+        deleteProductSuccess,
+    TResult? Function(String errorMessage)? deleteProductFailure,
+    TResult? Function()? getProductPreviewLoading,
+    TResult? Function(ProductPreviewResponse product)? getProductPreviewSuccess,
+    TResult? Function(String errorMessage)? getProductPreviewFailure,
+  }) {
+    return getProductPreviewFailure?.call(errorMessage);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? businessConfigLoading,
+    TResult Function(T data)? businessConfigSuccess,
+    TResult Function(String errorMessage)? businessConfigFailure,
+    TResult Function()? getProductsLoading,
+    TResult Function(ProductsResponseModel responseModel)? getProductsSuccess,
+    TResult Function(String errorMessage)? getProductsFailure,
+    TResult Function()? deleteProductLoading,
+    TResult Function(DeleteProductModel deleteProductModel)?
+        deleteProductSuccess,
+    TResult Function(String errorMessage)? deleteProductFailure,
+    TResult Function()? getProductPreviewLoading,
+    TResult Function(ProductPreviewResponse product)? getProductPreviewSuccess,
+    TResult Function(String errorMessage)? getProductPreviewFailure,
+    required TResult orElse(),
+  }) {
+    if (getProductPreviewFailure != null) {
+      return getProductPreviewFailure(errorMessage);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial<T> value) initial,
+    required TResult Function(BusinessConfigLoading<T> value)
+        businessConfigLoading,
+    required TResult Function(BusinessConfigSuccess<T> value)
+        businessConfigSuccess,
+    required TResult Function(BusinessConfigFailure<T> value)
+        businessConfigFailure,
+    required TResult Function(GetProductsLoading<T> value) getProductsLoading,
+    required TResult Function(GetProductsSuccess<T> value) getProductsSuccess,
+    required TResult Function(GetProductsFailure<T> value) getProductsFailure,
+    required TResult Function(DeleteProductLoading<T> value)
+        deleteProductLoading,
+    required TResult Function(DeleteProductSuccess<T> value)
+        deleteProductSuccess,
+    required TResult Function(DeleteProductFailure<T> value)
+        deleteProductFailure,
+    required TResult Function(GetProductPreviewLoading<T> value)
+        getProductPreviewLoading,
+    required TResult Function(GetProductPreviewSuccess<T> value)
+        getProductPreviewSuccess,
+    required TResult Function(GetProductPreviewFailure<T> value)
+        getProductPreviewFailure,
+  }) {
+    return getProductPreviewFailure(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial<T> value)? initial,
+    TResult? Function(BusinessConfigLoading<T> value)? businessConfigLoading,
+    TResult? Function(BusinessConfigSuccess<T> value)? businessConfigSuccess,
+    TResult? Function(BusinessConfigFailure<T> value)? businessConfigFailure,
+    TResult? Function(GetProductsLoading<T> value)? getProductsLoading,
+    TResult? Function(GetProductsSuccess<T> value)? getProductsSuccess,
+    TResult? Function(GetProductsFailure<T> value)? getProductsFailure,
+    TResult? Function(DeleteProductLoading<T> value)? deleteProductLoading,
+    TResult? Function(DeleteProductSuccess<T> value)? deleteProductSuccess,
+    TResult? Function(DeleteProductFailure<T> value)? deleteProductFailure,
+    TResult? Function(GetProductPreviewLoading<T> value)?
+        getProductPreviewLoading,
+    TResult? Function(GetProductPreviewSuccess<T> value)?
+        getProductPreviewSuccess,
+    TResult? Function(GetProductPreviewFailure<T> value)?
+        getProductPreviewFailure,
+  }) {
+    return getProductPreviewFailure?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial<T> value)? initial,
+    TResult Function(BusinessConfigLoading<T> value)? businessConfigLoading,
+    TResult Function(BusinessConfigSuccess<T> value)? businessConfigSuccess,
+    TResult Function(BusinessConfigFailure<T> value)? businessConfigFailure,
+    TResult Function(GetProductsLoading<T> value)? getProductsLoading,
+    TResult Function(GetProductsSuccess<T> value)? getProductsSuccess,
+    TResult Function(GetProductsFailure<T> value)? getProductsFailure,
+    TResult Function(DeleteProductLoading<T> value)? deleteProductLoading,
+    TResult Function(DeleteProductSuccess<T> value)? deleteProductSuccess,
+    TResult Function(DeleteProductFailure<T> value)? deleteProductFailure,
+    TResult Function(GetProductPreviewLoading<T> value)?
+        getProductPreviewLoading,
+    TResult Function(GetProductPreviewSuccess<T> value)?
+        getProductPreviewSuccess,
+    TResult Function(GetProductPreviewFailure<T> value)?
+        getProductPreviewFailure,
+    required TResult orElse(),
+  }) {
+    if (getProductPreviewFailure != null) {
+      return getProductPreviewFailure(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class GetProductPreviewFailure<T> implements ProductsState<T> {
+  const factory GetProductPreviewFailure({required final String errorMessage}) =
+      _$GetProductPreviewFailureImpl<T>;
 
   String get errorMessage;
 
   /// Create a copy of ProductsState
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$PaginationFailureImplCopyWith<T, _$PaginationFailureImpl<T>>
+  _$$GetProductPreviewFailureImplCopyWith<T, _$GetProductPreviewFailureImpl<T>>
       get copyWith => throw _privateConstructorUsedError;
 }

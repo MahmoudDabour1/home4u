@@ -1,23 +1,36 @@
+import 'dart:developer';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_localization/flutter_localization.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:home4u/core/theming/app_styles.dart';
 import 'package:home4u/features/exhibition/presentation/widgets/rating_preview/rating_stars_widget.dart';
 import 'package:home4u/features/exhibition/presentation/widgets/rating_preview/slider_rating_box_widget.dart';
 import 'package:home4u/locale/app_locale.dart';
+import '../../../../../core/localization/app_localization_cubit.dart';
+
 
 class ReviewRatingContainer extends StatelessWidget {
   const ReviewRatingContainer({super.key});
 
   @override
   Widget build(BuildContext context) {
+    log(("sleceted height :: ${(MediaQuery
+        .sizeOf(context)
+        .height * 0.471).toString()}"));
+
     return Container(
-      width: MediaQuery.sizeOf(context).width,
-      height: 400.h,
+      width: MediaQuery
+          .sizeOf(context)
+          .width,
+      height: MediaQuery
+          .sizeOf(context).height * 0.471 ,
       decoration: BoxDecoration(
         color: Colors.white,
-        borderRadius: BorderRadius.circular(16).r,
+        borderRadius: BorderRadius
+            .circular(16)
+            .r,
       ),
       child: Padding(
         padding: const EdgeInsets.all(16.0).h,
@@ -26,7 +39,7 @@ class ReviewRatingContainer extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           spacing: 32.h,
           children: [
-            _buildUsersAverageRating(),
+            _buildUsersAverageRating(context),
             _buildRatingStarsStatusWithPercentage(context),
           ],
         ),
@@ -34,19 +47,26 @@ class ReviewRatingContainer extends StatelessWidget {
     );
   }
 
-  Widget _buildUsersAverageRating() {
+  Widget _buildUsersAverageRating(BuildContext context) {
+    final direction = context
+        .read<AppLocalizationCubit>()
+        .textDirection;
     return Column(
       mainAxisAlignment: MainAxisAlignment.start,
       crossAxisAlignment: CrossAxisAlignment.start,
       spacing: 16.h,
       children: [
         Text(
-          "4.5",
+          direction == TextDirection.ltr
+              ? "4.5"
+              : "٤.٥",
           style: AppStyles.font32BlackSemiBold,
         ),
         RatingStarsWidget(),
         Text(
-          "Based on 128 reviews",
+          direction == TextDirection.ltr
+              ? "Based on 100 reviews"
+              : "بناءً على 100 تقييم",
           style: AppStyles.font24BlackMedium.copyWith(
             color: Color(0xff000000).withOpacity(0.5),
           ),

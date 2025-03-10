@@ -1,5 +1,3 @@
-import 'dart:developer';
-
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -21,42 +19,60 @@ class SliderRatingBoxWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    double fullWidth = MediaQuery.sizeOf(context).width * 0.49;
-    log("fullWidth: $fullWidth");
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.start,
-      mainAxisSize: MainAxisSize.min,
-      spacing: 16.w,
-      children: [
-        AutoSizeText(
-          starNumber,
-          style: AppStyles.font16BlackLight,
-        ),
-        Stack(
-          children: [
-            Container(
-              width: fullWidth,
-              height: 16.h,
-              decoration: BoxDecoration(
-                color: AppColors.ratingNotFilledColor,
-                borderRadius: BorderRadius.circular(16).r,
-              ),
+    double fullWidth = MediaQuery
+        .sizeOf(context)
+        .width * 0.49;
+    return SizedBox(
+      width: double.infinity,
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.start,
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: [
+          Expanded(
+            flex: 1,
+            child: AutoSizeText(
+              starNumber,
+              style: AppStyles.font16BlackLight,
             ),
-            Container(
-              width: fullWidth * progress,
-              height: 16.h,
-              decoration: BoxDecoration(
-                color: AppColors.ratingColor,
-                borderRadius: BorderRadius.circular(16).r,
-              ),
+          ),
+          SizedBox(width: 4.w),
+          Expanded(
+            flex: 4,
+            child: Stack(
+              children: [
+                Container(
+                  width: fullWidth,
+                  height: 16.h,
+                  decoration: BoxDecoration(
+                    color: AppColors.ratingNotFilledColor,
+                    borderRadius: BorderRadius
+                        .circular(16)
+                        .r,
+                  ),
+                ),
+                Container(
+                  width: fullWidth * progress,
+                  height: 16.h,
+                  decoration: BoxDecoration(
+                    color: AppColors.ratingColor,
+                    borderRadius: BorderRadius
+                        .circular(16)
+                        .r,
+                  ),
+                ),
+              ],
             ),
-          ],
-        ),
-        AutoSizeText(
-          "$starPercentage%",
-          style: AppStyles.font16BlackMedium,
-        ),
-      ],
+          ),
+          SizedBox(width: 8.w),
+          Expanded(
+            flex: 1,
+            child: AutoSizeText(
+              "$starPercentage%",
+              style: AppStyles.font16BlackMedium,
+            ),
+          ),
+        ],
+      ),
     );
   }
 }

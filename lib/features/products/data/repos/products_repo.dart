@@ -1,6 +1,7 @@
 import 'package:home4u/core/networking/api_result.dart';
 import 'package:home4u/features/products/data/data_source/products_remote_data_source.dart';
 import 'package:home4u/features/products/data/models/delete_product_model.dart';
+import 'package:home4u/features/products/data/models/product_preview_response.dart';
 import 'package:home4u/features/products/data/models/products_response_model.dart';
 
 import '../../../../core/networking/api_error_handler.dart';
@@ -11,6 +12,10 @@ abstract class ProductsRepo {
   );
 
   Future<ApiResult<DeleteProductModel>> deleteProducts(
+    int productId,
+  );
+
+  Future<ApiResult<ProductPreviewResponse>> getProductDetails(
     int productId,
   );
 }
@@ -36,6 +41,18 @@ class ProductsRepoImpl implements ProductsRepo {
   Future<ApiResult<DeleteProductModel>> deleteProducts(int productId) async {
     try {
       final response = await productsRemoteDataSource.deleteProduct(productId);
+      return ApiResult.success(response);
+    } catch (error) {
+      return ApiResult.failure(ApiErrorHandler.handle(error));
+    }
+  }
+
+  @override
+  Future<ApiResult<ProductPreviewResponse>> getProductDetails(
+      int productId) async {
+    try {
+      final response =
+          await productsRemoteDataSource.getProductDetails(productId);
       return ApiResult.success(response);
     } catch (error) {
       return ApiResult.failure(ApiErrorHandler.handle(error));

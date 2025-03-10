@@ -1,5 +1,6 @@
 import 'package:dio/dio.dart';
 import 'package:home4u/features/products/data/models/delete_product_model.dart';
+import 'package:home4u/features/products/data/models/product_preview_response.dart';
 import 'package:home4u/features/products/data/models/products_response_model.dart';
 import 'package:retrofit/error_logger.dart';
 import 'package:retrofit/http.dart';
@@ -24,6 +25,11 @@ abstract class ProductsRemoteDataSource {
 
   @DELETE(ApiConstants.deleteProductEP)
   Future<DeleteProductModel> deleteProduct(
+    @Path('productId') int productId,
+  );
+
+  @GET(ApiConstants.getProductDetailsEP)
+  Future<ProductPreviewResponse> getProductDetails(
     @Path('productId') int productId,
   );
 }

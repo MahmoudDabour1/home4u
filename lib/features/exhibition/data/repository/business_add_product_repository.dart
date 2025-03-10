@@ -1,5 +1,4 @@
-import 'dart:io';
-
+import 'package:dio/dio.dart';
 import 'package:home4u/core/networking/api_result.dart';
 import 'package:home4u/features/exhibition/data/data_sources/business_add_product_remote_data_source.dart';
 
@@ -22,7 +21,7 @@ abstract class BusinessAddProductRepository {
   Future<ApiResult<UploadImageResponse>> uploadBusinessImage(
     String pathId,
     int id,
-    File image,
+    FormData image,
   );
 }
 
@@ -57,7 +56,7 @@ class BusinessAddProductRepositoryImpl implements BusinessAddProductRepository {
 
   @override
   Future<ApiResult<UploadImageResponse>> uploadBusinessImage(
-      String pathId, int id, File image) async {
+      String pathId, int id, FormData image) async {
     try {
       final response = await _businessAddProductRemoteDataSource
           .uploadBusinessImage(pathId, id, image);

@@ -40,7 +40,7 @@ class ProductsCubit extends Cubit<ProductsState> {
           emit(ProductsState.businessConfigSuccess(data));
           colors = data.data?.colors ?? [];
           baseUnits = data.data?.productBaseUnits ?? [];
-          materials = data.data?.productMaterial ?? [] ;
+          materials = data.data?.productMaterial ?? [];
         }
       },
       failure: (error) {
@@ -101,6 +101,24 @@ class ProductsCubit extends Cubit<ProductsState> {
       failure: (error) {
         if (!isClosed) {
           emit(ProductsState.deleteProductFailure(
+              errorMessage: error.message.toString()));
+        }
+      },
+    );
+  }
+
+  Future<void> getProductById(int productId) async {
+    emit(const ProductsState.getProductPreviewLoading());
+    final response = await _productsRepo.getProductDetails(productId);
+    response.when(
+      success: (product) {
+        if (!isClosed) {
+          emit(ProductsState.getProductPreviewSuccess(product));
+        }
+      },
+      failure: (error) {
+        if (!isClosed) {
+          emit(ProductsState.getProductPreviewFailure(
               errorMessage: error.message.toString()));
         }
       },
