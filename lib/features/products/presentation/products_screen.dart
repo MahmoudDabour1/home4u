@@ -29,7 +29,7 @@ class _ProductsScreenState extends State<ProductsScreen> {
   void initState() {
     super.initState();
     Future.value([
-    context.read<ProductsCubit>().getBusinessConfig(),
+    // context.read<ProductsCubit>().getBusinessConfig(),
     context.read<ProductsCubit>().getProducts(),
     ]);
 

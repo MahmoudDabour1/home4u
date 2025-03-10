@@ -18,5 +18,9 @@ part "products_state.freezed.dart";
   const factory ProductsState.deleteProductLoading() = DeleteProductLoading;
   const factory ProductsState.deleteProductSuccess(DeleteProductModel deleteProductModel) =  DeleteProductSuccess;
   const factory ProductsState.deleteProductFailure({required String errorMessage}) =  DeleteProductFailure;
+//pagination
+  const factory ProductsState.paginationLoading() = PaginationLoading;
+  const factory ProductsState.paginationFailure({required String errorMessage}) =  PaginationFailure;
+
 }
 

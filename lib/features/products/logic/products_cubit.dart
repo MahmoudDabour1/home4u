@@ -22,9 +22,6 @@ class ProductsCubit extends Cubit<ProductsState> {
   List<int?> materialIds = [];
   bool? isAvailable;
   final searchController = TextEditingController();
-
-   int page = 0;
-  // bool _isFetching = false;
   List<Content> products = [];
 
   static ProductsCubit get(context) => BlocProvider.of(context);
@@ -60,7 +57,7 @@ class ProductsCubit extends Cubit<ProductsState> {
   Future<void> getProducts() async {
     emit(ProductsState.getProductsLoading());
     final requestBody = {
-      "pageNumber": page,
+      // "pageNumber": _page,
       "searchCriteria": {
         "businessId": 12,
         "minPrice": minPrice,

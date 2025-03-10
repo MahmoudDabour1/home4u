@@ -22,7 +22,10 @@ class ProductsColorsAndRating extends StatelessWidget {
         Row(
           children: [
             Row(
-              children: List.generate(2, (index) {
+              children: List.generate(
+                  (content?.colors?.length ?? 0) > 2 ? 2 : (content?.colors?.length ?? 0),
+
+                  (index) {
                 return ProductsCustomColorContainer(
                     text: content?.colors?[index].name.toString() ?? "");
               }),
