@@ -1,5 +1,6 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:home4u/features/products/data/models/delete_product_model.dart';
+import 'package:home4u/features/products/data/models/product_preview_response.dart';
 import 'package:home4u/features/products/data/models/products_response_model.dart';
 
 part "products_state.freezed.dart";
@@ -18,5 +19,10 @@ part "products_state.freezed.dart";
   const factory ProductsState.deleteProductLoading() = DeleteProductLoading;
   const factory ProductsState.deleteProductSuccess(DeleteProductModel deleteProductModel) =  DeleteProductSuccess;
   const factory ProductsState.deleteProductFailure({required String errorMessage}) =  DeleteProductFailure;
+
+  ///product preview
+  const factory ProductsState.getProductPreviewLoading() = GetProductPreviewLoading;
+  const factory ProductsState.getProductPreviewSuccess(ProductPreviewResponse product) =  GetProductPreviewSuccess;
+  const factory ProductsState.getProductPreviewFailure({required String errorMessage}) =  GetProductPreviewFailure;
 }
 

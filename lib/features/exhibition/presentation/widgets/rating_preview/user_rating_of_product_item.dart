@@ -1,11 +1,14 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_localization/flutter_localization.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:home4u/core/theming/app_assets.dart';
 import 'package:home4u/core/theming/app_colors.dart';
 import 'package:home4u/core/theming/app_styles.dart';
 import 'package:home4u/features/exhibition/presentation/widgets/rating_preview/rating_stars_widget.dart';
+
+import '../../../../../locale/app_locale.dart';
 
 class UserRatingOfProductItem extends StatelessWidget {
   const UserRatingOfProductItem({super.key});
@@ -47,7 +50,7 @@ class UserRatingOfProductItem extends StatelessWidget {
                       overflow: TextOverflow.ellipsis,
                     ),
                   ),
-                  _checkHelpfulComments(),
+                  _checkHelpfulComments(context),
                 ],
               ),
             ),
@@ -57,7 +60,7 @@ class UserRatingOfProductItem extends StatelessWidget {
     );
   }
 
-  Widget _checkHelpfulComments() {
+  Widget _checkHelpfulComments(BuildContext context) {
     return Row(
       mainAxisAlignment: MainAxisAlignment.start,
       crossAxisAlignment: CrossAxisAlignment.start,
@@ -69,7 +72,7 @@ class UserRatingOfProductItem extends StatelessWidget {
           height: 24.h,
         ),
         Text(
-          "Helpful",
+          AppLocale.helpful.getString(context),
           style: AppStyles.font16BlackLight,
         ),
         Text(

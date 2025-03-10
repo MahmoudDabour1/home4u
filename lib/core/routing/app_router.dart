@@ -145,10 +145,10 @@ class AppRouter {
         return MaterialPageRoute(
           builder: (_) => BusinessReviewScreen(),
         );
-      case Routes.productPreviewScreen:
-        return MaterialPageRoute(
-          builder: (_) => ProductPreviewScreen(),
-        );
+      // case Routes.productPreviewScreen:
+      //   return MaterialPageRoute(
+      //     builder: (_) => ProductPreviewScreen(),
+      //   );
       case Routes.businessAddProductScreen:
         return MaterialPageRoute(
           builder: (_) => BlocProvider<BusinessAddProductCubit>(

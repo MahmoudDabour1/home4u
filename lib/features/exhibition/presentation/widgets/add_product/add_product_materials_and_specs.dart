@@ -63,7 +63,7 @@ class _AddProductMaterialsAndSpecsState
           items: productCubit.materials
               .map((material) => material.name ?? "N/A")
               .toList(),
-          labelText: "Select Materials",
+          labelText: AppLocale.selectMaterials.getString(context),
           onChanged: (List<String> values) {
             setState(() {
               selectedMaterials = values;

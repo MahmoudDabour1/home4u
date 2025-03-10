@@ -97,7 +97,7 @@ class _BusinessAddProductRemoteDataSource
   Future<UploadImageResponse> uploadBusinessImage(
     String pathId,
     int id,
-    File image,
+    FormData image,
   ) async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{
@@ -105,14 +105,7 @@ class _BusinessAddProductRemoteDataSource
       r'id': id,
     };
     final _headers = <String, dynamic>{};
-    final _data = FormData();
-    _data.files.add(MapEntry(
-      'image',
-      MultipartFile.fromFileSync(
-        image.path,
-        filename: image.path.split(Platform.pathSeparator).last,
-      ),
-    ));
+    final _data = image;
     final _options = _setStreamType<UploadImageResponse>(Options(
       method: 'POST',
       headers: _headers,

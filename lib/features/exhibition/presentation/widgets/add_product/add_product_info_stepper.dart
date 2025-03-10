@@ -11,11 +11,13 @@ import 'package:home4u/core/theming/app_colors.dart';
 import 'package:home4u/core/utils/spacing.dart';
 import 'package:home4u/features/exhibition/logic/business_add_product_state.dart';
 
+import '../../../../../core/localization/app_localization_cubit.dart';
 import '../../../../../core/theming/app_styles.dart';
 import '../../../../../core/widgets/app_custom_button.dart';
 import '../../../../../core/widgets/app_custom_text_button_with_icon.dart';
 import '../../../../../locale/app_locale.dart';
 import '../../../logic/business_add_product_cubit.dart';
+import '../../product_preview_screen.dart';
 import 'add_product_basic_details_stepper.dart';
 import 'add_product_colors_and_stock.dart';
 import 'add_product_images.dart';
@@ -34,10 +36,10 @@ class _AddProductInfoStepperState extends State<AddProductInfoStepper> {
 
   /// Steps Data
   final List<String> stepTitles = [
-    'Basic Details',
-    'Materials & Specs',
-    'Colors & Stock',
-    'Upload Images',
+    AppLocale.basicDetails,
+    AppLocale.materialsSpecs,
+    AppLocale.colorsStock,
+    AppLocale.uploadImages,
   ];
 
   final List<String> stepImages = [
@@ -66,6 +68,17 @@ class _AddProductInfoStepperState extends State<AddProductInfoStepper> {
     if (activeStep > 0) {
       setState(() => activeStep--);
     }
+  }
+
+  void _navigateToPreview() {
+    final previewData =
+        context.read<BusinessAddProductCubit>().getPreviewData();
+    Navigator.push(
+      context,
+      MaterialPageRoute(
+        builder: (context) => ProductPreviewScreen(previewData: previewData),
+      ),
+    );
   }
 
   @override
@@ -151,6 +164,7 @@ class _AddProductInfoStepperState extends State<AddProductInfoStepper> {
   Widget _buildStepper() {
     return EasyStepper(
       activeStep: activeStep,
+      internalPadding: 16.h,
       lineStyle: const LineStyle(
         lineLength: 50,
         lineType: LineType.normal,
@@ -169,9 +183,10 @@ class _AddProductInfoStepperState extends State<AddProductInfoStepper> {
       activeStepBorderColor: AppColors.primaryColor,
       finishedStepBackgroundColor: AppColors.whiteColor,
       showLoadingAnimation: false,
+      textDirection: context.read<AppLocalizationCubit>().textDirection,
       steps: List.generate(stepTitles.length, (index) {
         return _buildStep(
-          title: stepTitles[index],
+          title: stepTitles[index].getString(context),
           activeOpacity: activeStep >= index ? 1 : 0.3,
           image: stepImages[index],
         );
@@ -203,9 +218,7 @@ class _AddProductInfoStepperState extends State<AddProductInfoStepper> {
     return Column(
       children: [
         AppCustomTextButtonWithIcon(
-          onPressed: () {
-            // context.read<BusinessAddProductCubit>().addBusinessProduct();
-          },
+          onPressed: () => _navigateToPreview(),
           svgIcon: AppAssets.productPreviewIcon,
           svgIconColor: AppColors.secondaryColor,
           text: AppLocale.productPreview.getString(context),
@@ -231,24 +244,38 @@ class _AddProductInfoStepperState extends State<AddProductInfoStepper> {
   }
 
   /// Build back button
-  /// ToDo : Add Gradient to button
+  /// ToDo : Disable All Buttons When Click on Submit
+  /// ToDo : Add Gradient to button [Done]
   Widget _buildBackButton() {
-    return IconButton(
-      onPressed: _previousStep,
-      style: ButtonStyle(
-        fixedSize: WidgetStateProperty.all<Size>(Size(50.w, 50.h)),
-        backgroundColor:
-            WidgetStateProperty.all(AppColors.secondaryGradientColor),
-        shape: WidgetStateProperty.all(
-          RoundedRectangleBorder(borderRadius: BorderRadius.circular(16).r),
+    final direction = context.read<AppLocalizationCubit>().textDirection;
+    return Container(
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(16).r,
+        gradient: LinearGradient(
+          colors: [
+            AppColors.secondaryGradientColor,
+            AppColors.secondaryColor,
+          ],
         ),
       ),
-      icon: SvgPicture.asset(
-        AppAssets.arrowLeftSvgImage,
-        width: 25.w,
-        height: 25.h,
-        colorFilter:
-            const ColorFilter.mode(AppColors.whiteColor, BlendMode.srcIn),
+      child: IconButton(
+        onPressed: _previousStep,
+        style: ButtonStyle(
+          fixedSize: WidgetStateProperty.all<Size>(Size(50.w, 50.h)),
+          backgroundColor: WidgetStateProperty.all(Colors.transparent),
+          shape: WidgetStateProperty.all(
+            RoundedRectangleBorder(borderRadius: BorderRadius.circular(16).r),
+          ),
+        ),
+        icon: SvgPicture.asset(
+          direction == TextDirection.ltr
+              ? AppAssets.arrowLeftSvgImage
+              : AppAssets.arrowRightSvgImage,
+          width: 25.w,
+          height: 25.h,
+          colorFilter:
+              const ColorFilter.mode(AppColors.whiteColor, BlendMode.srcIn),
+        ),
       ),
     );
   }

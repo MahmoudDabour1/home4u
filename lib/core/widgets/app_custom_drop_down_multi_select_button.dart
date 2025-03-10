@@ -1,6 +1,8 @@
 import 'package:dropdown_search/dropdown_search.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:home4u/core/localization/app_localization_cubit.dart';
 import 'package:home4u/core/widgets/app_custom_loading_indicator.dart';
 import 'package:home4u/core/widgets/get_common_input_decoration.dart';
 
@@ -54,6 +56,7 @@ class AppCustomDropDownMultiSelectButton extends StatelessWidget {
         ),
       ),
       popupProps: PopupPropsMultiSelection.dialog(
+        textDirection: context.read<AppLocalizationCubit>().textDirection,
         dialogProps: DialogProps(
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(16.r),

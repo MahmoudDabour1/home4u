@@ -7,7 +7,9 @@ import 'package:home4u/features/exhibition/presentation/widgets/product_preview/
 import '../../../core/utils/spacing.dart';
 
 class ProductPreviewScreen extends StatelessWidget {
-  const ProductPreviewScreen({super.key});
+  final Map<String, dynamic> previewData;
+
+  const ProductPreviewScreen({super.key, required this.previewData});
 
   @override
   Widget build(BuildContext context) {
@@ -20,9 +22,9 @@ class ProductPreviewScreen extends StatelessWidget {
             children: [
               ProductPreviewHeader(),
               verticalSpace(32),
-              ProductImagesPreviewWidget(),
+              ProductImagesPreviewWidget(images: previewData['images']),
               verticalSpace(26),
-              ProductPreviewDataContent(),
+              ProductPreviewDataContent(previewData: previewData),
               verticalSpace(32),
               ProductSubmitButton(),
               verticalSpace(46),

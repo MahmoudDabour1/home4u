@@ -34,6 +34,6 @@ abstract class BusinessAddProductRemoteDataSource {
   Future<UploadImageResponse> uploadBusinessImage(
       @Query("pathId") String pathId,
       @Query("id") int id,
-      @Part() File image,
+      @Body() FormData image,
       );
 }
