@@ -5,10 +5,10 @@ import 'package:bloc/bloc.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:home4u/core/networking/dio_factory.dart';
-import 'package:home4u/core/routing/router_observer.dart';
 import 'package:http_parser/http_parser.dart';
 import 'package:image_picker/image_picker.dart';
 
+import '../../../core/routing/router_observer.dart';
 import '../data/models/business_add_product_body.dart';
 import '../data/models/business_add_product_images_body.dart';
 import '../data/repository/business_add_product_repository.dart';
@@ -56,6 +56,7 @@ class BusinessAddProductCubit extends Cubit<BusinessAddProductState> {
   /// Images
   List<File> images = [];
 
+  /// Select Image
   void selectImage({required BuildContext context, ImageSource? source}) {
     ImagePicker.platform
         .getImageFromSource(
@@ -196,5 +197,20 @@ class BusinessAddProductCubit extends Cubit<BusinessAddProductState> {
             error.message.toString()));
       },
     );
+  }
+
+  ///Preview
+  Map<String, dynamic> getPreviewData() {
+    return {
+      'productName': productNameEnController.text,
+      'productColor': selectedColor.toString(),
+      'productDescription': productDescriptionEnController.text,
+      'productMaterial': selectedMaterials?.join(', ') ?? '',
+      'productDimensions':
+          '${productLengthController.text} x ${productWidthController.text} x ${productHeightController.text}',
+      'baseUnit': selectedBaseUnit.toString(),
+      'productStock': productStockAmountController.text,
+      'images': images,
+    };
   }
 }

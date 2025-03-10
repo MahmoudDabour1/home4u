@@ -11,16 +11,25 @@ class RatingStarsWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return RatingBar(
-      filledIcon: Icons.star,
-      emptyIcon: Icons.star_outline,
-      halfFilledColor: AppColors.ratingColor,
-      emptyColor: AppColors.grayColor,
-      filledColor: AppColors.ratingColor,
-      size: 38.r,
-      onRatingChanged: (rating) {
-        log(rating.toString());
-      },
+    final isRTL = Directionality.of(context) == TextDirection.rtl;
+
+    return Transform(
+      transform: isRTL ? Matrix4.rotationY(3.14) : Matrix4.identity(),
+      alignment: Alignment.center,
+      child: RatingBar(
+        filledIcon: Icons.star,
+        emptyIcon: Icons.star_outline,
+        halfFilledIcon : Icons.star_half,
+        initialRating: 4.5,
+        halfFilledColor: AppColors.ratingColor,
+        emptyColor: AppColors.grayColor,
+        filledColor: AppColors.ratingColor,
+        isHalfAllowed: true,
+        size: 38.r,
+        onRatingChanged: (rating) {
+          log(rating.toString());
+        },
+      ),
     );
   }
 }

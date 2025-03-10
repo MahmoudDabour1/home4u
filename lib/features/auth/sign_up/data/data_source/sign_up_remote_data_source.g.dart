@@ -187,7 +187,7 @@ class _SignUpRemoteDataSource implements SignUpRemoteDataSource {
   }
 
   @override
-  Future<BusinessTypesModel> getBusinessTypes(int userTypeId) async{
+  Future<BusinessTypesModel> getBusinessTypes(int userTypeId) async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
