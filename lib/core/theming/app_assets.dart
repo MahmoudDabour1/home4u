@@ -58,5 +58,6 @@ abstract class AppAssets {
   static const String warningSvg = 'assets/svgs/waring_svg.svg';
   static const String filterSvg = 'assets/svgs/filter_svg.svg';
   static const String starSvgImage = 'assets/svgs/star_svg.svg';
+  static const String successMissionSvgImage = 'assets/svgs/success_mission.svg';
 
 }

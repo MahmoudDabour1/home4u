@@ -61,15 +61,18 @@ class _BasicDetailsDropDownButtonsState
                 );
               }).toList(),
               onChanged: (value) {
-                setState(() {
-                  selectedBusinessType = value;
-                  businessCubit.selectedExhibitionBusinessType = int.parse(value!);
-                });
+               if(value != null){
+                 setState(() {
+                   selectedBusinessType = value;
+                   businessCubit.selectedExhibitionBusinessType = int.parse(value!);
+                 });
+               }
               },
               onSaved: (value) {
-                businessCubit.selectedExhibitionBusinessType = int.parse(value!);
-                log("selected Business Type: $value");
-
+               if(value != null){
+                 businessCubit.selectedExhibitionBusinessType = int.parse(value!);
+                 log("selected Business Type: $value");
+               }
               },
               labelText: AppLocale.businessType.getString(context),
             );
@@ -84,7 +87,6 @@ class _BasicDetailsDropDownButtonsState
                   value: material.id.toString(),
                   child: Text(
                     material.name!,
-                    //TODO: check if name is nullable [could cause problem later]
                     style: AppStyles.font16BlackLight,
                   ),
                 );

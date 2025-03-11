@@ -5,7 +5,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_localization/flutter_localization.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:home4u/core/theming/app_assets.dart';
 import 'package:home4u/core/theming/app_colors.dart';
 import 'package:home4u/core/utils/spacing.dart';
@@ -15,6 +14,7 @@ import '../../../../../core/localization/app_localization_cubit.dart';
 import '../../../../../core/theming/app_styles.dart';
 import '../../../../../core/widgets/app_custom_button.dart';
 import '../../../../../core/widgets/app_custom_text_button_with_icon.dart';
+import '../../../../../core/widgets/app_rounded_back_button.dart';
 import '../../../../../locale/app_locale.dart';
 import '../../../logic/business_add_product_cubit.dart';
 import '../../product_preview_screen.dart';
@@ -22,6 +22,7 @@ import 'add_product_basic_details_stepper.dart';
 import 'add_product_colors_and_stock.dart';
 import 'add_product_images.dart';
 import 'add_product_materials_and_specs.dart';
+import 'success_mission_dialog.dart';
 
 class AddProductInfoStepper extends StatefulWidget {
   const AddProductInfoStepper({super.key});
@@ -71,12 +72,17 @@ class _AddProductInfoStepperState extends State<AddProductInfoStepper> {
   }
 
   void _navigateToPreview() {
-    final previewData =
-        context.read<BusinessAddProductCubit>().getPreviewData();
+    final cubit = context.read<BusinessAddProductCubit>();
+    final previewData = cubit.getPreviewData(context);
+
     Navigator.push(
       context,
       MaterialPageRoute(
-        builder: (context) => ProductPreviewScreen(previewData: previewData),
+        builder: (context) =>
+            BlocProvider.value(
+              value: cubit,
+              child: ProductPreviewScreen(previewData: previewData),
+            ),
       ),
     );
   }
@@ -95,51 +101,10 @@ class _AddProductInfoStepperState extends State<AddProductInfoStepper> {
               ),
             );
           },
-          addBusinessProductImageFailure: (message) {
-            log('addBusinessProductImageFailure because $message');
-            ScaffoldMessenger.of(context).showSnackBar(
-              SnackBar(
-                content:
-                    Text('addBusinessProductImageFailure because $message'),
-                backgroundColor: Colors.red,
-              ),
-            );
-          },
-          uploadBusinessImageFailure: (message) {
-            log('uploadBusinessImageFailure because $message');
-            ScaffoldMessenger.of(context).showSnackBar(
-              SnackBar(
-                content: Text('uploadBusinessImageFailure because $message'),
-                backgroundColor: Colors.red,
-              ),
-            );
-          },
           addBusinessProductSuccess: (productResponse) {
-            log('Product success because ${productResponse.data.materials}');
-            ScaffoldMessenger.of(context).showSnackBar(
-              SnackBar(
-                content: Text('addBusinessProductSuccess'),
-                backgroundColor: Colors.green,
-              ),
-            );
-          },
-          addBusinessProductImageSuccess: (images) {
-            log('addBusinessProductImageSuccess because ${images.data}');
-            ScaffoldMessenger.of(context).showSnackBar(
-              SnackBar(
-                content: Text('addBusinessProductImageSuccess'),
-                backgroundColor: Colors.green,
-              ),
-            );
-          },
-          uploadBusinessImageSuccess: () {
-            log('uploadBusinessImageSuccess}');
-            ScaffoldMessenger.of(context).showSnackBar(
-              SnackBar(
-                content: Text('uploadBusinessImageSuccess'),
-                backgroundColor: Colors.green,
-              ),
-            );
+            showAdaptiveDialog(context: context, builder:
+                (context) =>SuccessMissionDialog()
+            ,);
           },
           orElse: () {},
         );
@@ -177,13 +142,15 @@ class _AddProductInfoStepperState extends State<AddProductInfoStepper> {
       stepBorderRadius: 16.r,
       borderThickness: 2,
       padding:
-          EdgeInsetsDirectional.symmetric(horizontal: 30.w, vertical: 20.h),
+      EdgeInsetsDirectional.symmetric(horizontal: 30.w, vertical: 20.h),
       stepRadius: 28.r,
       finishedStepBorderColor: AppColors.primaryColor,
       activeStepBorderColor: AppColors.primaryColor,
       finishedStepBackgroundColor: AppColors.whiteColor,
       showLoadingAnimation: false,
-      textDirection: context.read<AppLocalizationCubit>().textDirection,
+      textDirection: context
+          .read<AppLocalizationCubit>()
+          .textDirection,
       steps: List.generate(stepTitles.length, (index) {
         return _buildStep(
           title: stepTitles[index].getString(context),
@@ -203,7 +170,9 @@ class _AddProductInfoStepperState extends State<AddProductInfoStepper> {
   }) {
     return EasyStep(
       customStep: ClipRRect(
-        borderRadius: BorderRadius.circular(16).r,
+        borderRadius: BorderRadius
+            .circular(16)
+            .r,
         child: Opacity(
           opacity: activeOpacity,
           child: Image.asset(image, height: 28.h, width: 28.w),
@@ -247,51 +216,28 @@ class _AddProductInfoStepperState extends State<AddProductInfoStepper> {
   /// ToDo : Disable All Buttons When Click on Submit
   /// ToDo : Add Gradient to button [Done]
   Widget _buildBackButton() {
-    final direction = context.read<AppLocalizationCubit>().textDirection;
-    return Container(
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(16).r,
-        gradient: LinearGradient(
-          colors: [
-            AppColors.secondaryGradientColor,
-            AppColors.secondaryColor,
-          ],
-        ),
-      ),
-      child: IconButton(
-        onPressed: _previousStep,
-        style: ButtonStyle(
-          fixedSize: WidgetStateProperty.all<Size>(Size(50.w, 50.h)),
-          backgroundColor: WidgetStateProperty.all(Colors.transparent),
-          shape: WidgetStateProperty.all(
-            RoundedRectangleBorder(borderRadius: BorderRadius.circular(16).r),
-          ),
-        ),
-        icon: SvgPicture.asset(
-          direction == TextDirection.ltr
-              ? AppAssets.arrowLeftSvgImage
-              : AppAssets.arrowRightSvgImage,
-          width: 25.w,
-          height: 25.h,
-          colorFilter:
-              const ColorFilter.mode(AppColors.whiteColor, BlendMode.srcIn),
-        ),
-      ),
+    return AppRoundedBackButton(
+      onPressed: _previousStep,
     );
   }
 
   /// Build submit button
   Widget _buildSubmitButton() {
-    return Expanded(
-      child: AppCustomTextButtonWithIcon(
-        onPressed: () {
-          context.read<BusinessAddProductCubit>().addProductAndImages();
-        },
-        svgIcon: AppAssets.submitIconSvg,
-        text: AppLocale.submit.getString(context),
-        backgroundColor: AppColors.whiteColor,
-        useGradient: true,
-      ),
+    return BlocBuilder<BusinessAddProductCubit, BusinessAddProductState>(
+      builder: (context, state) {
+        return Expanded(
+          child: AppCustomTextButtonWithIcon(
+            onPressed: () {
+              context.read<BusinessAddProductCubit>().addProductAndImages();
+            },
+            isLoading: state is AddBusinessProductLoading,
+            svgIcon: AppAssets.submitIconSvg,
+            text: AppLocale.submit.getString(context),
+            backgroundColor: AppColors.ratingColor,
+            useGradient: true,
+          ),
+        );
+      },
     );
   }
 
