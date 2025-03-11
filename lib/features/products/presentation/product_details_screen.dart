@@ -18,7 +18,7 @@ class ProductDetailsScreen extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              BusinessHeaderWidget(headerTitle:AppLocale.productPreview.getString(context),
+              BusinessHeaderWidget(headerTitle:AppLocale.productDetails.getString(context),
               isDrawer: false,
               isHasIcon: false,
               ),

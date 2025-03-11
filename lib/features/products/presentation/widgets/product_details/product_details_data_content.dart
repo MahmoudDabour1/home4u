@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_localization/flutter_localization.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+import '../../../../../core/theming/app_colors.dart';
 import '../../../../../core/theming/app_styles.dart';
 import '../../../../../locale/app_locale.dart';
 import '../../../data/models/product_preview_response.dart';
@@ -12,12 +13,6 @@ class ProductDetailsDataContent extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    String? selectedColorId;
-    final List<Map<String, dynamic>> selectedColorsAndStock = [];
-    // final businessCubit = context.read<BusinessAddProductCubit>();
-    // final productsCubit = context.read<ProductsCubit>();
-
-
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 24.0).w,
       child: Column(
@@ -38,44 +33,38 @@ class ProductDetailsDataContent extends StatelessWidget {
             key: AppLocale.material.getString(context),
             value:previewData.data.materials[0].name,
           ),
-          // _buildProductKeyValue(
-          //   key: AppLocale.dimensions.getString(context),
-          //   value: previewData['productDimensions'],
-          // ),
+          _buildProductKeyValue(
+            key: AppLocale.dimensions.getString(context),
+            value: '${previewData.data.width} x ${previewData.data.height} x ${previewData.data.length}',
+          ),
           _buildProductKeyValue(
             key: AppLocale.baseUnit.getString(context),
             value: previewData.data.baseUnit.name,
           ),
           Text("Colors && Stock", style: AppStyles.font16BlackBold),
-          // Wrap(
-          //   spacing: 8.w,
-          //   children: selectedColorsAndStock.map((item) {
-          //     final colorHex = item["hexColor"];
-          //     return Chip(
-          //       avatar: CircleAvatar(
-          //         radius: 16.r,
-          //         backgroundColor: _hexToColor(colorHex),
-          //       ),
-          //       label: Text('${item["stock"]} pieces'),
-          //       backgroundColor: AppColors.whiteColor,
-          //     );
-          //   }).toList(),
-          // ),
-          // _buildProductKeyValue(
-          //   key: AppLocale.stock.getString(context),
-          //   value: previewData['productStock'],
-          // ),
+          Wrap(
+            spacing: 8.w,
+            children:List.generate(previewData.data.stocks.length, (index) {
+    return Chip(
+      avatar: CircleAvatar(
+        radius: 16.r,
+        backgroundColor: _hexToColor('${previewData.data.stocks[index].color.hexColor}'),
+      ),
+      label: Text('${previewData.data.stocks[index].amount} pieces'),
+      backgroundColor: AppColors.whiteColor,
+    );
+          }),
+          )
         ],
       ),
     );
   }
 
+  /// Convert hex color string to Color
   Color _hexToColor(String hex) {
     hex = hex.replaceFirst('#', '');
     return Color(int.parse('0xFF$hex'));
   }
-
-  ///ToDo : Will be refactor later with api data
   Widget _buildProductKeyValue({
     required String key,
     required String value,

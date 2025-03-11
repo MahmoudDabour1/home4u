@@ -122,7 +122,8 @@ class ProductsCubit extends Cubit<ProductsState> {
       failure: (error) {
         if (!isClosed) {
           emit(ProductsState.getProductPreviewFailure(
-              errorMessage: error.message.toString()));
+              errorMessage: error.message.toString())
+          );
         }
       },
     );

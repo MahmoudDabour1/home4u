@@ -17,8 +17,6 @@ class ProductImageDetailsWidget extends StatelessWidget {
     return CarouselSlider(
       items: [
         ...List.generate(previewData.data.imagePaths.length, (index) {
-          logger.w(ApiConstants.getImageBaseUrl(
-              previewData.data.imagePaths[index].imagePath.toString()));
           return FancyImage(
             width: MediaQuery.sizeOf(context).width,
               imagePath: ApiConstants.getImageBaseUrl(

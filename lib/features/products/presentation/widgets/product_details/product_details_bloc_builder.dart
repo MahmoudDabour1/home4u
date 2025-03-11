@@ -4,6 +4,7 @@ import 'package:home4u/features/products/logic/products_cubit.dart';
 import 'package:home4u/features/products/logic/products_state.dart';
 import 'package:home4u/features/products/presentation/widgets/product_details/product_details_data_content.dart';
 import 'package:home4u/features/products/presentation/widgets/product_details/product_image_details_widget.dart';
+import 'package:home4u/features/products/presentation/widgets/product_details/products_details_shimmer.dart';
 
 import '../../../../../core/utils/spacing.dart';
 
@@ -19,9 +20,7 @@ class ProductDetailsBlocBuilder extends StatelessWidget {
           current is GetProductPreviewFailure,
       builder: (context, state) {
         return state.maybeWhen(
-          getProductPreviewLoading: () => Center(
-            child: CircularProgressIndicator(),
-          ),
+          getProductPreviewLoading: () =>ProductsDetailsShimmer(),
           getProductPreviewSuccess: (productDetails) {
             return setupSuccessWidget(productDetails);
           },
