@@ -1,14 +1,15 @@
 import 'dart:developer';
 import 'dart:io';
 
-import 'package:bloc/bloc.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:home4u/core/networking/dio_factory.dart';
 import 'package:home4u/features/exhibition/data/models/business_add_product_images_response.dart';
 import 'package:http_parser/http_parser.dart';
 import 'package:image_picker/image_picker.dart';
 
+import '../../products/logic/products_cubit.dart';
 import '../data/models/business_add_product_body.dart';
 import '../data/models/business_add_product_images_body.dart';
 import '../data/repository/business_add_product_repository.dart';
@@ -27,9 +28,9 @@ class BusinessAddProductCubit extends Cubit<BusinessAddProductState> {
   final productNameArController = TextEditingController(text: "عنوان المنتج");
   final productNameEnController = TextEditingController(text: "Product Title");
   final productDescriptionArController =
-      TextEditingController(text: "وصف المنتج");
+  TextEditingController(text: "وصف المنتج");
   final productDescriptionEnController =
-      TextEditingController(text: "Product Description");
+  TextEditingController(text: "Product Description");
   final productPriceController = TextEditingController(text: "20.0");
   final productLengthController = TextEditingController(text: "10.0");
   final productWidthController = TextEditingController(text: "10.0");
@@ -69,13 +70,19 @@ class BusinessAddProductCubit extends Cubit<BusinessAddProductState> {
 
   ///Step 1: Add Business Product
   Future<void> addProductAndImages() async {
+    if (selectedExhibitionBusinessType == null || selectedBaseUnit == null) {
+      emit(BusinessAddProductState.addBusinessProductFailure(
+          "Please select a business type and base unit."),);
+      return;
+    }
     emit(const BusinessAddProductState.addBusinessProductLoading());
 
     final stockList = selectedColorsAndStock
-        .map((item) => Stock(
-              color: BaseUnit(id: item["colorId"]),
-              amount: item["stock"],
-            ))
+        .map((item) =>
+        Stock(
+          color: BaseUnit(id: item["colorId"]),
+          amount: item["stock"],
+        ))
         .toList();
 
     final productBody = BusinessAddProductBody(
@@ -101,9 +108,10 @@ class BusinessAddProductCubit extends Cubit<BusinessAddProductState> {
             BusinessAddProductState.addBusinessProductSuccess(productResponse));
         await _addBusinessProductImages(productResponse.data.id);
       },
-      failure: (error) => emit(
-          BusinessAddProductState.addBusinessProductFailure(
-              error.message.toString())),
+      failure: (error) =>
+          emit(
+              BusinessAddProductState.addBusinessProductFailure(
+                  error.message.toString())),
     );
   }
 
@@ -112,23 +120,25 @@ class BusinessAddProductCubit extends Cubit<BusinessAddProductState> {
     emit(const BusinessAddProductState.addBusinessProductImageLoading());
 
     final imageBodies = images
-        .map((image) => BusinessAddProductImagesBody(
-              productId: productId,
-              imagePath: null,
-            ))
+        .map((image) =>
+        BusinessAddProductImagesBody(
+          productId: productId,
+          imagePath: null,
+        ))
         .toList();
 
     final addImageResult =
-        await _repository.addBusinessProductImage(imageBodies);
+    await _repository.addBusinessProductImage(imageBodies);
     addImageResult.when(
       success: (imageResponse) async {
         emit(BusinessAddProductState.addBusinessProductImageSuccess(
             imageResponse));
         await _uploadBusinessImages(imageResponse);
       },
-      failure: (error) => emit(
-          BusinessAddProductState.addBusinessProductImageFailure(
-              error.message.toString())),
+      failure: (error) =>
+          emit(
+              BusinessAddProductState.addBusinessProductImageFailure(
+                  error.message.toString())),
     );
   }
 
@@ -139,11 +149,14 @@ class BusinessAddProductCubit extends Cubit<BusinessAddProductState> {
     DioFactory.setContentTypeForMultipart();
 
     final imageFiles =
-        await Future.wait(images.map((image) => MultipartFile.fromFile(
-              image.path,
-              filename: image.path.split('/').last,
-              contentType: MediaType('image', 'jpeg'),
-            )));
+    await Future.wait(images.map((image) =>
+        MultipartFile.fromFile(
+          image.path,
+          filename: image.path
+              .split('/')
+              .last,
+          contentType: MediaType('image', 'jpeg'),
+        )));
 
     for (var i = 0; i < imageFiles.length; i++) {
       final uploadResult = await _repository.uploadBusinessImage(
@@ -160,24 +173,51 @@ class BusinessAddProductCubit extends Cubit<BusinessAddProductState> {
                 uploadResponse.data.toString()));
           }
         },
-        failure: (error) => emit(
-            BusinessAddProductState.uploadBusinessImageFailure(
-                error.message.toString())),
+        failure: (error) =>
+            emit(
+              BusinessAddProductState.uploadBusinessImageFailure(
+                error.message.toString(),),),
       );
     }
   }
 
   ///Product Preview
-  Map<String, dynamic> getPreviewData() {
+  Map<String, dynamic> getPreviewData(BuildContext context) {
+    final productCubit = context.read<ProductsCubit>();
+
+    final materialNames = selectedMaterials?.map((id) {
+      final material = productCubit.materials.firstWhere(
+            (material) => material.id == id,
+      );
+      return material.name ?? 'N/A';
+    }).join(', ') ?? '';
+
+    final baseUnitName = productCubit.baseUnits
+        .firstWhere(
+          (unit) => unit.id == selectedBaseUnit,
+    )
+        .name ?? 'N/A';
+
+    final productStockAndColors = selectedColorsAndStock.map((item) {
+      final color = productCubit.colors.firstWhere(
+            (element) => element.id == item["colorId"],
+      );
+      return {
+        'hexColor': color.hexColor,
+        'stock': item["stock"],
+      };
+    }).toList();
+
     return {
       'productName': productNameEnController.text,
       'productColor': selectedColor.toString(),
       'productDescription': productDescriptionEnController.text,
-      'productMaterial': selectedMaterials?.join(', ') ?? '',
+      'productMaterial': materialNames,
       'productDimensions':
-          '${productLengthController.text} x ${productWidthController.text} x ${productHeightController.text}',
-      'baseUnit': selectedBaseUnit.toString(),
-      'productStock': productStockAmountController.text,
+      '${productLengthController.text} x ${productWidthController
+          .text} x ${productHeightController.text}',
+      'baseUnit': baseUnitName,
+      'productStockAndColors': productStockAndColors,
       'images': images,
     };
   }

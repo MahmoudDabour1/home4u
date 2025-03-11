@@ -4,6 +4,7 @@ import 'package:flutter_svg/svg.dart';
 
 import '../theming/app_colors.dart';
 import '../theming/app_styles.dart';
+import 'app_custom_loading_indicator.dart';
 
 class AppCustomTextButtonWithIcon extends StatelessWidget {
   final String svgIcon;
@@ -16,6 +17,8 @@ class AppCustomTextButtonWithIcon extends StatelessWidget {
   final double btnHeight;
   final bool useGradient;
   final Color? backgroundColor;
+  final bool isLoading;
+  final bool isWhiteLoading;
 
   const AppCustomTextButtonWithIcon({
     super.key,
@@ -29,6 +32,8 @@ class AppCustomTextButtonWithIcon extends StatelessWidget {
     this.btnHeight = 50,
     this.useGradient = true,
     this.backgroundColor,
+    this.isLoading = false,
+    this.isWhiteLoading = true,
   });
 
   @override
@@ -66,29 +71,35 @@ class AppCustomTextButtonWithIcon extends StatelessWidget {
             ),
           ),
         ),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            SvgPicture.asset(
-              svgIcon,
-              width: 24.w,
-              height: 24.h,
-              colorFilter: ColorFilter.mode(
-                svgIconColor ?? AppColors.whiteColor,
-                BlendMode.srcIn,
+        child: isLoading
+            ? AppCustomLoadingIndicator(
+          loadingColor:  isWhiteLoading ? AppColors.whiteColor : AppColors.primaryColor,
+        ) : Center(
+          child : Row(
+            mainAxisSize: MainAxisSize.min,
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              SvgPicture.asset(
+                svgIcon,
+                width: 24.w,
+                height: 24.h,
+                colorFilter: ColorFilter.mode(
+                  svgIconColor ?? AppColors.whiteColor,
+                  BlendMode.srcIn,
+                ),
               ),
-            ),
-            SizedBox(width: 8.w),
-            Flexible(
-              child: Text(
-                text,
-                style: textStyle ?? AppStyles.font16WhiteBold,
-                overflow: TextOverflow.ellipsis,
-                maxLines: 1,
-                textAlign: TextAlign.center,
+              SizedBox(width: 8.w),
+              Flexible(
+                child: Text(
+                  text,
+                  style: textStyle ?? AppStyles.font16WhiteBold,
+                  overflow: TextOverflow.ellipsis,
+                  maxLines: 1,
+                  textAlign: TextAlign.center,
+                ),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );
