@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:home4u/features/exhibition/presentation/widgets/product_preview/product_images_preview_widget.dart';
+import 'package:home4u/features/exhibition/presentation/widgets/product_preview/product_preview_buttons.dart';
 import 'package:home4u/features/exhibition/presentation/widgets/product_preview/product_preview_data_content.dart';
 import 'package:home4u/features/exhibition/presentation/widgets/product_preview/product_preview_header_widget.dart';
-import 'package:home4u/features/exhibition/presentation/widgets/product_preview/product_submit_button.dart';
 
 import '../../../core/utils/spacing.dart';
 
@@ -26,7 +26,7 @@ class ProductPreviewScreen extends StatelessWidget {
               verticalSpace(26),
               ProductPreviewDataContent(previewData: previewData),
               verticalSpace(32),
-              ProductSubmitButton(),
+              ProductPreviewButtons(),
               verticalSpace(46),
             ],
           ),

@@ -191,7 +191,8 @@ class AppLocale {
   static const String minPrice = 'Min Price';
   static const String maxPrice = 'Max Price';
   static const String selectMaterials = 'Select Materials';
-
+  static const String productUploadedSuccessfully = 'Product uploaded\nsuccessfully';
+  static const String goToProductList = 'go to product list';
 
   ///BusinessSignUp
   static const String tradeName = 'Trade Name';
@@ -419,6 +420,8 @@ class AppLocale {
     colorsStock: 'Colors & Stock',
     uploadImages: 'Upload Images',
     selectMaterials: 'Select Materials',
+    productUploadedSuccessfully :  'Product uploaded\nsuccessfully',
+    goToProductList : 'go to product list',
   };
 
   static const Map<String, dynamic> ar = {
@@ -615,5 +618,7 @@ class AppLocale {
     colorsStock: 'الألوان والمخزون',
     uploadImages: 'رفع الصور',
     selectMaterials: ' اختر المواد الخام',
+    productUploadedSuccessfully :  'تم إضافة المنتج بنجاح',
+    goToProductList : 'الذهاب إلى قائمة المنتجات',
   };
 }
