@@ -7,7 +7,7 @@ import 'drawer_list_view.dart';
 class ProductsDrawer extends StatelessWidget {
   final DrawerItem selectedItem;
 
-  const ProductsDrawer({super.key, this.selectedItem = DrawerItem.products});
+  const ProductsDrawer({super.key, required this.selectedItem});
 
   @override
   Widget build(BuildContext context) {

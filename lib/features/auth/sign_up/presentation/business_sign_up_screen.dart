@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_localization/flutter_localization.dart';
 import 'package:home4u/features/auth/sign_up/presentation/widgets/business/business_sign_up_info.dart';
-import 'package:home4u/features/auth/sign_up/presentation/widgets/engineer/sign_up_info.dart';
 
 import '../../../../locale/app_locale.dart';
 import '../../widgets/auth_welcome_data.dart';

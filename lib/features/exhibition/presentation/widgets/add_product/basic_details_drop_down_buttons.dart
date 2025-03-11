@@ -10,18 +10,10 @@ import '../../../../../core/widgets/app_custom_drop_down_button_form_field.dart'
 import '../../../../auth/sign_up/logic/sign_up_cubit.dart';
 import '../../../../products/logic/products_cubit.dart';
 import '../../../logic/business_add_product_cubit.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_localization/flutter_localization.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:home4u/features/exhibition/presentation/widgets/add_product/up_down_form_field.dart';
 
 import '../../../../../core/theming/app_styles.dart';
-import '../../../../../core/widgets/app_custom_drop_down_button_form_field.dart';
-import '../../../../../core/widgets/app_text_form_field.dart';
-import '../../../../../core/widgets/get_common_input_decoration.dart';
 import '../../../../../locale/app_locale.dart';
-import '../../../logic/business_add_product_cubit.dart';
 
 
 class BasicDetailsDropDownButtons extends StatefulWidget {

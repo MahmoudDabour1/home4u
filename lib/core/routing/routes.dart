@@ -17,6 +17,7 @@ abstract class Routes{
   static const String projectDetailsScreen = '/projectDetailsScreen';
   static const String editProfileScreen = '/editProfileScreen';
   static const String productsScreen = '/productsScreen';
+  static const String productsDetailsScreen = '/productsDetailsScreen';
 
   ///Exhibitions ,Stores && Workshops
   static const String businessOverviewScreen = '/businessOverviewScreen';

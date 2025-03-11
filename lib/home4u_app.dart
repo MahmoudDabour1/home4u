@@ -81,8 +81,9 @@ class _Home4uAppState extends State<Home4uApp> {
         ),
         BlocProvider<TechnicalWorkerCubit>(
           create: (_) => sl<TechnicalWorkerCubit>(),
-        ),BlocProvider<ProductsCubit>(
-          create: (_) => sl<ProductsCubit>()  ,
+        ),
+        BlocProvider<ProductsCubit>(
+          create: (_) => sl<ProductsCubit>()
         ),
       ],
       child: ScreenUtilInit(
@@ -108,7 +109,7 @@ class _Home4uAppState extends State<Home4uApp> {
                 onGenerateRoute: widget.appRouter.generateRoute,
                 debugShowCheckedModeBanner: false,
                 navigatorObservers: [NavigatorObserver()],
-                initialRoute: Routes.productsScreen,
+                initialRoute: Routes.loginScreen,
               ),
             );
           },

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:home4u/features/products/data/data_source/products_local_data_source.dart';
 import 'package:home4u/features/products/data/models/business_config_model.dart';
 import 'package:home4u/features/products/data/repos/business_config_repo.dart';
 import 'package:home4u/features/products/data/repos/products_repo.dart';
@@ -12,8 +13,9 @@ class ProductsCubit extends Cubit<ProductsState> {
 
   BusinessConfigModel? businessConfigModel;
   final ProductsRepo _productsRepo;
+  final ProductsLocalDatasource _productsLocalDatasource;
 
-  ProductsCubit(this._businessConfigRepo, this._productsRepo)
+  ProductsCubit(this._businessConfigRepo, this._productsRepo, this._productsLocalDatasource)
       : super(ProductsState.initial());
   double? minPrice;
   double? maxPrice;
@@ -74,7 +76,8 @@ class ProductsCubit extends Cubit<ProductsState> {
       requestBody,
     );
     response.when(
-      success: (data) {
+      success: (data) async{
+        await _productsLocalDatasource.cacheProductsData(data);
         if (!isClosed) {
           emit(ProductsState.getProductsSuccess(
               data)); // Maintain old + new data

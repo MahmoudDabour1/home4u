@@ -22,7 +22,6 @@ class _DrawerListViewState extends State<DrawerListView> {
     super.initState();
 
     _selectedItem = widget.selectedItem;
-    _selectedItem = DrawerItem.products;
   }
 
   @override
