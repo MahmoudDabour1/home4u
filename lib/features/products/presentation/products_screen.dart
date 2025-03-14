@@ -38,7 +38,6 @@ class _ProductsScreenState extends State<ProductsScreen> {
     if (_scrollController.offset >=
             _scrollController.position.maxScrollExtent * 0.7 &&
         !cubit.hasReachedMax) {
-      logger.e('Fetching more products...');
       cubit.getProducts();
     }
   }

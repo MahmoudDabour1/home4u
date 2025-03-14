@@ -35,6 +35,7 @@ class ProductsCubit extends Cubit<ProductsState> {
   int _page = 1;
   bool hasReachedMax = false;
   List<Content> products = [];
+  bool isFetching = false;
 
   /// Counter for function calls
   int _getProductsCallCount = 0;
@@ -49,12 +50,16 @@ class ProductsCubit extends Cubit<ProductsState> {
     final userBusinessId =
         await SharedPrefHelper.getInt(SharedPrefKeys.userTypeId);
 
-    _getProductsCallCount++;
-    logger.w("getProducts called $_getProductsCallCount times");
 
-    log("userBusinessId: ${userBusinessId.toString()}");
 
-    if (!isRefresh && hasReachedMax) return;
+
+    if (isFetching) return;
+    isFetching = true;
+
+    if (!isRefresh && hasReachedMax) {
+      isFetching = false;
+      return;
+    }
     if (isRefresh) {
       _page = 1;
       hasReachedMax = false;
@@ -93,10 +98,9 @@ class ProductsCubit extends Cubit<ProductsState> {
         emit(
           ProductsState.getProductsSuccess(data),
         );
-        // logger.e(
-        //     "Fetched ${newProducts.length} new products. Total: ${products.length}");
-        // logger.d(
-        //     "Current page: $_page, Total pages: ${data.data?.totalPages ?? 1}");
+
+        _getProductsCallCount++;
+        logger.e("getProducts called $_getProductsCallCount times");
       }
     }, failure: (error) {
       if (!isClosed) {
@@ -105,6 +109,7 @@ class ProductsCubit extends Cubit<ProductsState> {
         ));
       }
     });
+    isFetching = false;
   }
 
   Future<void> deleteProduct(int productId) async {

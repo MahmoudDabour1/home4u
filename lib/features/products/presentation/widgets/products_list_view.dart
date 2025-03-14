@@ -16,9 +16,7 @@ class ProductsListView extends StatelessWidget {
     return BlocBuilder<ProductsCubit, ProductsState>(
       builder: (context, state) {
         final cubit = context.read<ProductsCubit>();
-        final isLoadingMore = !cubit.hasReachedMax &&
-            state is GetProductsLoading &&
-            cubit.products.isNotEmpty;
+        final isLoadingMore = cubit.isFetching && cubit.products.isNotEmpty;
 
         return SliverList(
           delegate: SliverChildBuilderDelegate(
