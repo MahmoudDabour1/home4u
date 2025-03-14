@@ -53,7 +53,9 @@ class ApiConstants {
   static const String addAllProductImagesEp = "/api/v1/product-images/all";
   // {{prod_url}}/api/v1/products/57
   static const String getProductDetailsEP = "/api/v1/products/{productId}";
+  static const String updateProductEP = "/api/v1/products";
   // upload Image = {{prod_url}}/api/v1/file?pathId=BUSINESS_PRODUCTS&id=4
+
 
   ///images
   static String getImageBaseUrl(String path) => "$apiBaseUrl/$path";

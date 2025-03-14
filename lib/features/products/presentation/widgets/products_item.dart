@@ -14,8 +14,9 @@ import '../../data/models/products_response_model.dart';
 
 class ProductsItem extends StatelessWidget {
   final Content? content;
+  final int? productIndex;
 
-  const ProductsItem({super.key, required this.content});
+  const ProductsItem({super.key, required this.content,  this.productIndex});
 
   @override
   Widget build(BuildContext context) {
@@ -58,6 +59,7 @@ class ProductsItem extends StatelessWidget {
                   Expanded(
                     child: ProductsItemData(
                       content: content,
+                      productIndex: productIndex,
                     ),
                   ),
                 ],

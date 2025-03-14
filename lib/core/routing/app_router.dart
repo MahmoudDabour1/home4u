@@ -150,10 +150,13 @@ class AppRouter {
       //     builder: (_) => ProductPreviewScreen(),
       //   );
       case Routes.businessAddProductScreen:
+        int? productIndex = settings.arguments as int?;
         return MaterialPageRoute(
           builder: (_) => BlocProvider<BusinessAddProductCubit>(
             create: (_) => sl<BusinessAddProductCubit>(),
-            child: BusinessAddProductScreen(),
+            child: BusinessAddProductScreen(
+              productIndex: productIndex,
+            ),
           ),
         );
       case Routes.businessSignUpScreen:

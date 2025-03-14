@@ -10,7 +10,7 @@ import '../../logic/products_state.dart';
 class ProductsListView extends StatelessWidget {
   final List<Content>? content;
 
-  const ProductsListView({super.key, required this.content});
+  const ProductsListView({super.key,  this.content});
 
   @override
   Widget build(BuildContext context) {
@@ -27,6 +27,7 @@ class ProductsListView extends StatelessWidget {
 
             return ProductsItem(
               content: content![index],
+              productIndex: index,
             );
             // }
           }, itemCount: content!.length,

@@ -27,11 +27,13 @@ BusinessAddProductBody _$BusinessAddProductBodyFromJson(
           .map((e) => Stock.fromJson(e as Map<String, dynamic>))
           .toList(),
       imagePaths: json['imagePaths'] as List<dynamic>,
+      id: (json['id'] as num?)?.toInt(),
     );
 
 Map<String, dynamic> _$BusinessAddProductBodyToJson(
         BusinessAddProductBody instance) =>
     <String, dynamic>{
+      'id': instance.id,
       'nameAr': instance.nameAr,
       'nameEn': instance.nameEn,
       'descriptionAr': instance.descriptionAr,

@@ -16,7 +16,7 @@ class ProductsFancyImage extends StatelessWidget {
     return Stack(
       children: [
         FancyImage(
-          imagePath: ApiConstants.getImageBaseUrl(content!.imagePath!),
+          imagePath: ApiConstants.getImageBaseUrl(content!.imagePath??''),
           width: MediaQuery.sizeOf(context).width,
           height: MediaQuery.sizeOf(context).height * 0.211,
           borderRadiusGeometry: BorderRadius.only(

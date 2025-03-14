@@ -60,6 +60,41 @@ class _BusinessAddProductRemoteDataSource
   }
 
   @override
+  Future<AddProductBusinessResponseModel> updateBusinessProduct(
+      BusinessAddProductBody businessAddProductBody) async {
+    final _extra = <String, dynamic>{};
+    final queryParameters = <String, dynamic>{};
+    final _headers = <String, dynamic>{};
+    final _data = <String, dynamic>{};
+    _data.addAll(businessAddProductBody.toJson());
+    final _options = _setStreamType<AddProductBusinessResponseModel>(Options(
+      method: 'PUT',
+      headers: _headers,
+      extra: _extra,
+    )
+        .compose(
+          _dio.options,
+          '/api/v1/products',
+          queryParameters: queryParameters,
+          data: _data,
+        )
+        .copyWith(
+            baseUrl: _combineBaseUrls(
+          _dio.options.baseUrl,
+          baseUrl,
+        )));
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
+    late AddProductBusinessResponseModel _value;
+    try {
+      _value = AddProductBusinessResponseModel.fromJson(_result.data!);
+    } on Object catch (e, s) {
+      errorLogger?.logError(e, s, _options);
+      rethrow;
+    }
+    return _value;
+  }
+
+  @override
   Future<BusinessAddProductImagesResponse> addBusinessProductImage(
       List<BusinessAddProductImagesBody> imagesBody) async {
     final _extra = <String, dynamic>{};
