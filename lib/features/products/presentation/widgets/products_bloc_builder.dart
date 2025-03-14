@@ -13,9 +13,9 @@ class ProductsBlocBuilder extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocBuilder<ProductsCubit, ProductsState>(
       buildWhen: (previous, current) =>
-          current is! GetProductsLoading ||
-          current is! GetProductsSuccess ||
-          current is! GetProductsFailure,
+          current is GetProductsLoading ||
+          current is GetProductsSuccess ||
+          current is GetProductsFailure,
       builder: (context, state) {
         return state.maybeWhen(
           getProductsLoading: () => setupLoading(),

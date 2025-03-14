@@ -16,6 +16,7 @@ import 'package:home4u/features/auth/verification/presentation/verification_scre
 import 'package:home4u/features/exhibition/logic/business_add_product_cubit.dart';
 import 'package:home4u/features/home/presentation/home_screen.dart';
 import 'package:home4u/features/layout/logic/bottom_nav_cubit.dart';
+import 'package:home4u/features/products/presentation/product_details_screen.dart';
 import 'package:home4u/features/profile/presentation/add_certification_screen.dart';
 
 import '../../features/auth/login/presentation/login_screen.dart';
@@ -23,7 +24,6 @@ import '../../features/auth/sign_up/presentation/business_sign_up_screen.dart';
 import '../../features/exhibition/presentation/business_add_product_screen.dart';
 import '../../features/exhibition/presentation/business_overview_screen.dart';
 import '../../features/exhibition/presentation/business_review_screen.dart';
-import '../../features/exhibition/presentation/product_preview_screen.dart';
 import '../../features/layout/presentation/bottom_nav_bar_layout.dart';
 import '../../features/onboarding/presentation/onboarding_screen.dart';
 import '../../features/products/presentation/products_screen.dart';
@@ -150,15 +150,23 @@ class AppRouter {
       //     builder: (_) => ProductPreviewScreen(),
       //   );
       case Routes.businessAddProductScreen:
+        int? productIndex = settings.arguments as int?;
         return MaterialPageRoute(
           builder: (_) => BlocProvider<BusinessAddProductCubit>(
             create: (_) => sl<BusinessAddProductCubit>(),
-            child: BusinessAddProductScreen(),
+            child: BusinessAddProductScreen(
+              productIndex: productIndex,
+            ),
           ),
         );
       case Routes.businessSignUpScreen:
         return MaterialPageRoute(
           builder: (_) => BusinessSignUpScreen(),
+        );
+      case Routes.productsDetailsScreen:
+        int productId = settings.arguments as int;
+        return MaterialPageRoute(
+          builder: (_) => ProductDetailsScreen(),
         );
       default:
         return null;

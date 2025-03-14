@@ -24,5 +24,9 @@ part "products_state.freezed.dart";
   const factory ProductsState.getProductPreviewLoading() = GetProductPreviewLoading;
   const factory ProductsState.getProductPreviewSuccess(ProductPreviewResponse product) =  GetProductPreviewSuccess;
   const factory ProductsState.getProductPreviewFailure({required String errorMessage}) =  GetProductPreviewFailure;
+//pagination
+  const factory ProductsState.paginationLoading() = PaginationLoading;
+  const factory ProductsState.paginationFailure({required String errorMessage}) =  PaginationFailure;
+
 }
 

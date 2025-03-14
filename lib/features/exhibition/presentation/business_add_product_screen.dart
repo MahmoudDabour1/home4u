@@ -7,7 +7,9 @@ import '../../../locale/app_locale.dart';
 import '../../products/presentation/widgets/drawer/products_drawer.dart';
 
 class BusinessAddProductScreen extends StatelessWidget {
-  const BusinessAddProductScreen({super.key});
+  final int? productIndex;
+
+  const BusinessAddProductScreen({super.key,  this.productIndex});
 
   @override
   Widget build(BuildContext context) {
@@ -22,7 +24,7 @@ class BusinessAddProductScreen extends StatelessWidget {
               headerTitle: AppLocale.addProduct.getString(context),
               headerIcon: AppAssets.addProductSvg,
             ),
-            AddProductInfoStepper(),
+            AddProductInfoStepper(productIndex:productIndex),
           ],
         ),
       ),

@@ -1,4 +1,3 @@
-import 'dart:io';
 
 import 'package:dio/dio.dart';
 import 'package:retrofit/error_logger.dart';
@@ -20,6 +19,11 @@ abstract class BusinessAddProductRemoteDataSource {
 
   @POST(ApiConstants.addProductEp)
   Future<AddProductBusinessResponseModel> addBusinessProduct(
+      @Body() BusinessAddProductBody businessAddProductBody,
+      );
+// Todo change response model
+ @PUT(ApiConstants.updateProductEP)
+  Future<AddProductBusinessResponseModel> updateBusinessProduct(
       @Body() BusinessAddProductBody businessAddProductBody,
       );
 

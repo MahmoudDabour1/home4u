@@ -55,7 +55,7 @@ class ProductSubmitButton extends StatelessWidget {
                   return;
                 }
 
-                cubit.addProductAndImages();
+                cubit.addOrUpdateProduct();
               },
               isWhiteLoading: false,
               svgIcon: AppAssets.submitIconSvg,

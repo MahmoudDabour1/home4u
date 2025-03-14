@@ -3,6 +3,313 @@
 part of 'products_response_model.dart';
 
 // **************************************************************************
+// TypeAdapterGenerator
+// **************************************************************************
+
+class ProductsResponseModelAdapter extends TypeAdapter<ProductsResponseModel> {
+  @override
+  final int typeId = 80;
+
+  @override
+  ProductsResponseModel read(BinaryReader reader) {
+    final numOfFields = reader.readByte();
+    final fields = <int, dynamic>{
+      for (int i = 0; i < numOfFields; i++) reader.readByte(): reader.read(),
+    };
+    return ProductsResponseModel(
+      success: fields[0] as bool?,
+      status: fields[1] as int?,
+      data: fields[2] as Data?,
+    );
+  }
+
+  @override
+  void write(BinaryWriter writer, ProductsResponseModel obj) {
+    writer
+      ..writeByte(3)
+      ..writeByte(0)
+      ..write(obj.success)
+      ..writeByte(1)
+      ..write(obj.status)
+      ..writeByte(2)
+      ..write(obj.data);
+  }
+
+  @override
+  int get hashCode => typeId.hashCode;
+
+  @override
+  bool operator ==(Object other) =>
+      identical(this, other) ||
+      other is ProductsResponseModelAdapter &&
+          runtimeType == other.runtimeType &&
+          typeId == other.typeId;
+}
+
+  class DataAdapter extends TypeAdapter<Data> {
+  @override
+  final int typeId = 81;
+
+  @override
+  Data read(BinaryReader reader) {
+    final numOfFields = reader.readByte();
+    final fields = <int, dynamic>{
+      for (int i = 0; i < numOfFields; i++) reader.readByte(): reader.read(),
+    };
+    return Data(
+      content: (fields[0] as List?)?.cast<Content>(),
+      pageable: fields[1] as Pageable?,
+      totalPages: fields[2] as int?,
+      totalElements: fields[3] as int?,
+      last: fields[4] as bool?,
+      size: fields[5] as int?,
+      number: fields[6] as int?,
+      sort: fields[7] as Sort?,
+      numberOfElements: fields[8] as int?,
+      first: fields[9] as bool?,
+      empty: fields[10] as bool?,
+    );
+  }
+
+  @override
+  void write(BinaryWriter writer, Data obj) {
+    writer
+      ..writeByte(11)
+      ..writeByte(0)
+      ..write(obj.content)
+      ..writeByte(1)
+      ..write(obj.pageable)
+      ..writeByte(2)
+      ..write(obj.totalPages)
+      ..writeByte(3)
+      ..write(obj.totalElements)
+      ..writeByte(4)
+      ..write(obj.last)
+      ..writeByte(5)
+      ..write(obj.size)
+      ..writeByte(6)
+      ..write(obj.number)
+      ..writeByte(7)
+      ..write(obj.sort)
+      ..writeByte(8)
+      ..write(obj.numberOfElements)
+      ..writeByte(9)
+      ..write(obj.first)
+      ..writeByte(10)
+      ..write(obj.empty);
+  }
+
+  @override
+  int get hashCode => typeId.hashCode;
+
+  @override
+  bool operator ==(Object other) =>
+      identical(this, other) ||
+      other is DataAdapter &&
+          runtimeType == other.runtimeType &&
+          typeId == other.typeId;
+}
+
+class ContentAdapter extends TypeAdapter<Content> {
+  @override
+  final int typeId = 82;
+
+  @override
+  Content read(BinaryReader reader) {
+    final numOfFields = reader.readByte();
+    final fields = <int, dynamic>{
+      for (int i = 0; i < numOfFields; i++) reader.readByte(): reader.read(),
+    };
+    return Content(
+      id: fields[0] as int?,
+      name: fields[1] as String?,
+      type: fields[2] as String?,
+      price: fields[3] as double?,
+      stockAmount: fields[4] as int?,
+      length: fields[5] as int?,
+      width: fields[6] as double?,
+      height: fields[7] as int?,
+      rate: fields[8] as int?,
+      colors: (fields[9] as List?)?.cast<Color>(),
+      imagePath: fields[10] as String?,
+      inStock: fields[11] as bool?,
+    );
+  }
+
+  @override
+  void write(BinaryWriter writer, Content obj) {
+    writer
+      ..writeByte(12)
+      ..writeByte(0)
+      ..write(obj.id)
+      ..writeByte(1)
+      ..write(obj.name)
+      ..writeByte(2)
+      ..write(obj.type)
+      ..writeByte(3)
+      ..write(obj.price)
+      ..writeByte(4)
+      ..write(obj.stockAmount)
+      ..writeByte(5)
+      ..write(obj.length)
+      ..writeByte(6)
+      ..write(obj.width)
+      ..writeByte(7)
+      ..write(obj.height)
+      ..writeByte(8)
+      ..write(obj.rate)
+      ..writeByte(9)
+      ..write(obj.colors)
+      ..writeByte(10)
+      ..write(obj.imagePath)
+      ..writeByte(11)
+      ..write(obj.inStock);
+  }
+
+  @override
+  int get hashCode => typeId.hashCode;
+
+  @override
+  bool operator ==(Object other) =>
+      identical(this, other) ||
+      other is ContentAdapter &&
+          runtimeType == other.runtimeType &&
+          typeId == other.typeId;
+}
+
+class ColorAdapter extends TypeAdapter<Color> {
+  @override
+  final int typeId = 83;
+
+  @override
+  Color read(BinaryReader reader) {
+    final numOfFields = reader.readByte();
+    final fields = <int, dynamic>{
+      for (int i = 0; i < numOfFields; i++) reader.readByte(): reader.read(),
+    };
+    return Color(
+      id: fields[0] as int?,
+      code: fields[1] as String?,
+      name: fields[2] as String?,
+      hexColor: fields[3] as String?,
+    );
+  }
+
+  @override
+  void write(BinaryWriter writer, Color obj) {
+    writer
+      ..writeByte(4)
+      ..writeByte(0)
+      ..write(obj.id)
+      ..writeByte(1)
+      ..write(obj.code)
+      ..writeByte(2)
+      ..write(obj.name)
+      ..writeByte(3)
+      ..write(obj.hexColor);
+  }
+
+  @override
+  int get hashCode => typeId.hashCode;
+
+  @override
+  bool operator ==(Object other) =>
+      identical(this, other) ||
+      other is ColorAdapter &&
+          runtimeType == other.runtimeType &&
+          typeId == other.typeId;
+}
+
+class PageableAdapter extends TypeAdapter<Pageable> {
+  @override
+  final int typeId = 84;
+
+  @override
+  Pageable read(BinaryReader reader) {
+    final numOfFields = reader.readByte();
+    final fields = <int, dynamic>{
+      for (int i = 0; i < numOfFields; i++) reader.readByte(): reader.read(),
+    };
+    return Pageable(
+      pageNumber: fields[0] as int?,
+      pageSize: fields[1] as int?,
+      sort: fields[2] as Sort?,
+      offset: fields[3] as int?,
+      paged: fields[4] as bool?,
+      unPaged: fields[5] as bool?,
+    );
+  }
+
+  @override
+  void write(BinaryWriter writer, Pageable obj) {
+    writer
+      ..writeByte(6)
+      ..writeByte(0)
+      ..write(obj.pageNumber)
+      ..writeByte(1)
+      ..write(obj.pageSize)
+      ..writeByte(2)
+      ..write(obj.sort)
+      ..writeByte(3)
+      ..write(obj.offset)
+      ..writeByte(4)
+      ..write(obj.paged)
+      ..writeByte(5)
+      ..write(obj.unPaged);
+  }
+
+  @override
+  int get hashCode => typeId.hashCode;
+
+  @override
+  bool operator ==(Object other) =>
+      identical(this, other) ||
+      other is PageableAdapter &&
+          runtimeType == other.runtimeType &&
+          typeId == other.typeId;
+}
+
+class SortAdapter extends TypeAdapter<Sort> {
+  @override
+  final int typeId = 85;
+
+  @override
+  Sort read(BinaryReader reader) {
+    final numOfFields = reader.readByte();
+    final fields = <int, dynamic>{
+      for (int i = 0; i < numOfFields; i++) reader.readByte(): reader.read(),
+    };
+    return Sort(
+      empty: fields[0] as bool?,
+      sorted: fields[1] as bool?,
+      unsorted: fields[2] as bool?,
+    );
+  }
+
+  @override
+  void write(BinaryWriter writer, Sort obj) {
+    writer
+      ..writeByte(3)
+      ..writeByte(0)
+      ..write(obj.empty)
+      ..writeByte(1)
+      ..write(obj.sorted)
+      ..writeByte(2)
+      ..write(obj.unsorted);
+  }
+
+  @override
+  int get hashCode => typeId.hashCode;
+
+  @override
+  bool operator ==(Object other) =>
+      identical(this, other) ||
+      other is SortAdapter &&
+          runtimeType == other.runtimeType &&
+          typeId == other.typeId;
+}
+
+// **************************************************************************
 // JsonSerializableGenerator
 // **************************************************************************
 

@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:home4u/core/extensions/navigation_extension.dart';
+import 'package:home4u/core/routing/router_observer.dart';
 import 'package:home4u/features/products/data/models/products_response_model.dart';
 
+import '../../../../core/routing/app_router.dart';
+import '../../../../core/routing/routes.dart';
 import '../../../../core/theming/app_assets.dart';
 import '../../../../core/theming/app_styles.dart';
 import '../../../../core/widgets/app_custom_icon_button.dart';
@@ -8,8 +12,10 @@ import 'product_delete_alert_dialog.dart';
 
 class ProductsFirstTextAndButtons extends StatelessWidget {
   final Content? content;
+  final int? productIndex;
 
-  const ProductsFirstTextAndButtons({super.key, required this.content});
+  const ProductsFirstTextAndButtons(
+      {super.key, required this.content, this.productIndex});
 
   @override
   Widget build(BuildContext context) {
@@ -23,7 +29,13 @@ class ProductsFirstTextAndButtons extends StatelessWidget {
         Row(
           children: [
             AppCustomIconButton(
-              onPressed: () {},
+              onPressed: () {
+                logger.w(productIndex);
+                context.pushNamed(
+                  Routes.businessAddProductScreen,
+                  arguments: productIndex,
+                );
+              },
               image: AppAssets.editIconSvg,
             ),
             AppCustomIconButton(

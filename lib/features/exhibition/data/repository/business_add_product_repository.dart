@@ -11,8 +11,9 @@ import '../models/upload_image_response.dart';
 
 abstract class BusinessAddProductRepository {
   Future<ApiResult<AddProductBusinessResponseModel>> addBusinessProduct(
-    BusinessAddProductBody businessAddProductBody,
-  );
+      BusinessAddProductBody businessAddProductBody);
+  Future<ApiResult<AddProductBusinessResponseModel>> updateBusinessProduct(
+      BusinessAddProductBody businessAddProductBody);
 
   Future<ApiResult<BusinessAddProductImagesResponse>> addBusinessProductImage(
     List<BusinessAddProductImagesBody> imagesBody,
@@ -60,6 +61,16 @@ class BusinessAddProductRepositoryImpl implements BusinessAddProductRepository {
     try {
       final response = await _businessAddProductRemoteDataSource
           .uploadBusinessImage(pathId, id, image);
+      return ApiResult.success(response);
+    } catch (error) {
+      return ApiResult.failure(ApiErrorHandler.handle(error));
+    }
+  }
+
+  @override
+  Future<ApiResult<AddProductBusinessResponseModel>> updateBusinessProduct(BusinessAddProductBody businessAddProductBody) async{
+    try {
+      final response = await _businessAddProductRemoteDataSource.updateBusinessProduct(businessAddProductBody);
       return ApiResult.success(response);
     } catch (error) {
       return ApiResult.failure(ApiErrorHandler.handle(error));

@@ -1,18 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_localization/flutter_localization.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:home4u/core/theming/app_assets.dart';
+import 'package:hive/hive.dart';
+import 'package:home4u/core/routing/router_observer.dart';
+import 'package:home4u/core/utils/app_constants.dart';
+import 'package:home4u/features/products/data/models/products_response_model.dart';
 import 'package:home4u/features/products/logic/products_cubit.dart';
 import 'package:home4u/features/products/presentation/widgets/drawer/products_drawer.dart';
-import 'package:home4u/features/products/presentation/widgets/filter/products_filter_button.dart';
 import 'package:home4u/features/products/presentation/widgets/products_bloc_builder.dart';
-import 'package:home4u/features/products/presentation/widgets/products_list_view.dart';
-import 'package:home4u/locale/app_locale.dart';
+import 'package:home4u/features/products/presentation/widgets/products_header_widget.dart';
+import 'package:home4u/features/products/presentation/widgets/products_search_and_filter_row_widget.dart';
 
 import '../../../core/theming/app_colors.dart';
-import '../../../core/widgets/app_custom_search_text_field.dart';
-import '../../../core/widgets/business_header_widget.dart';
 
 class ProductsScreen extends StatefulWidget {
   const ProductsScreen({super.key});
@@ -21,56 +20,54 @@ class ProductsScreen extends StatefulWidget {
   State<ProductsScreen> createState() => _ProductsScreenState();
 }
 
-class _ProductsScreenState extends State<ProductsScreen> {
+class _ProductsScreenState extends State<ProductsScreen>
+    with AutomaticKeepAliveClientMixin {
+  var data;
+  @override
+  bool get wantKeepAlive => true;
+
   @override
   void initState() {
     super.initState();
-    context.read<ProductsCubit>().getBusinessConfig();
-    context.read<ProductsCubit>().getProducts();
+    context.read<ProductsCubit>().getProducts().then((value) {
+      context.read<ProductsCubit>().getBusinessConfig();
+    });
+    cachedData();
+  }
+  void cachedData()async{
+    var productsBox = await Hive.openBox<ProductsResponseModel>(kProductsBox);
+    var products = productsBox.get(kProductsData);
+  data = products;
   }
 
   @override
   Widget build(BuildContext context) {
+    super.build(context);
     return Scaffold(
       backgroundColor: AppColors.containersColor,
       drawer: ProductsDrawer(
         selectedItem: DrawerItem.products,
       ),
-      body: CustomScrollView(
-        slivers: [
-          SliverToBoxAdapter(
-            child: Builder(
-              builder: (context) => BusinessHeaderWidget(
-                headerTitle: AppLocale.products.getString(context),
-                headerIcon: AppAssets.productWhiteSvg,
-              ),
-            ),
-          ),
-          SliverPadding(
-            padding: EdgeInsets.only(
-                left: 24.w, right: 24.w, top: 16.h, bottom: 32.h),
-            sliver: SliverToBoxAdapter(
-              child: Row(
-                spacing: 16.w,
-                children: [
-                  Expanded(
-                    child: AppCustomSearchTextField(
-                      controller: context.read<ProductsCubit>().searchController,
-                      onChanged: (value){
-                        //apply search
-                        context.read<ProductsCubit>().getProducts();
-                      },
-
-                    ),
-                  ),
-                  ProductsFilterButton(),
-                ],
-              ),
-            ),
-          ),
-          ProductsBlocBuilder()
-        ],
+      body: RefreshIndicator(
+        backgroundColor: AppColors.primaryColor,
+        color: AppColors.whiteColor,
+        onRefresh: () => _onRefresh(context),
+        displacement: 100.h,
+        child: CustomScrollView(
+          slivers: [
+            ProductsHeaderWidget(),
+            ProductsSearchAndFilterRowWidget(),
+            ProductsBlocBuilder()
+          ],
+        ),
       ),
     );
+  }
+
+  Future<void> _onRefresh(BuildContext context) async {
+    await Future.delayed(Duration(seconds: 1), () {
+      context.read<ProductsCubit>().getProducts();
+      context.read<ProductsCubit>().searchController.clear();
+    });
   }
 }
