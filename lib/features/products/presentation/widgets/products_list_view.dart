@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:home4u/features/products/logic/products_cubit.dart';
 import 'package:home4u/features/products/logic/products_state.dart';
 import 'package:home4u/features/products/presentation/widgets/products_item.dart';
@@ -16,15 +17,21 @@ class ProductsListView extends StatelessWidget {
     return BlocBuilder<ProductsCubit, ProductsState>(
       builder: (context, state) {
         final cubit = context.read<ProductsCubit>();
-        final isLoadingMore = cubit.isFetching && cubit.products.isNotEmpty;
+        final isLoadingMore = cubit.isFetching && !cubit.hasReachedMax;
 
         return SliverList(
           delegate: SliverChildBuilderDelegate(
             (context, index) {
-              if (index == cubit.products.length) {
-                return const Center(child: CircularProgressIndicator());
+              if (index < cubit.products.length) {
+                return ProductsItem(content: cubit.products[index]);
+              } else {
+                return Center(
+                  child: Padding(
+                    padding: EdgeInsets.all(8.h),
+                    child: CircularProgressIndicator(),
+                  ),
+                );
               }
-              return ProductsItem(content: cubit.products[index]);
             },
             childCount: cubit.products.length + (isLoadingMore ? 1 : 0),
           ),

@@ -50,8 +50,7 @@ class ProductsCubit extends Cubit<ProductsState> {
     final userBusinessId =
         await SharedPrefHelper.getInt(SharedPrefKeys.userTypeId);
 
-
-
+    log("userBusinessId: $userBusinessId");
 
     if (isFetching) return;
     isFetching = true;
@@ -64,8 +63,11 @@ class ProductsCubit extends Cubit<ProductsState> {
       _page = 1;
       hasReachedMax = false;
       products.clear();
+    } else if (_page > 1) {
+      emit(ProductsState.paginationLoading());
+    } else {
+      emit(ProductsState.getProductsLoading());
     }
-    if (_page == 1) emit(ProductsState.getProductsLoading());
 
     final requestBody = {
       "pageNumber": _page,
@@ -117,6 +119,7 @@ class ProductsCubit extends Cubit<ProductsState> {
     response.when(
       success: (data) {
         if (!isClosed) {
+          products.removeWhere((product) => product.id == productId);
           emit(ProductsState.deleteProductSuccess(data));
           getProducts();
         }
@@ -124,7 +127,8 @@ class ProductsCubit extends Cubit<ProductsState> {
       failure: (error) {
         if (!isClosed) {
           emit(ProductsState.deleteProductFailure(
-              errorMessage: error.message.toString()));
+            errorMessage: error.message.toString(),
+          ));
         }
       },
     );
