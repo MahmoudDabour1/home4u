@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_localization/flutter_localization.dart';
@@ -28,6 +30,25 @@ class _ProductsScreenState extends State<ProductsScreen> {
     super.initState();
     context.read<ProductsCubit>().getBusinessConfig();
     context.read<ProductsCubit>().getProducts();
+    _scrollController = ScrollController()..addListener(_scrollListener);
+  }
+
+  void _scrollListener() {
+    final cubit = context.read<ProductsCubit>();
+
+    if (_scrollController.offset >=
+            _scrollController.position.maxScrollExtent - 200 &&
+        !cubit.hasReachedMax) {
+      log('Fetching more products...');
+      cubit.getProducts();
+    }
+  }
+
+  @override
+  void dispose() {
+    _scrollController.removeListener(_scrollListener);
+    _scrollController.dispose();
+    super.dispose();
   }
 
   @override
@@ -38,6 +59,7 @@ class _ProductsScreenState extends State<ProductsScreen> {
         selectedItem: DrawerItem.products,
       ),
       body: CustomScrollView(
+        controller: _scrollController,
         slivers: [
           SliverToBoxAdapter(
             child: Builder(
@@ -56,12 +78,13 @@ class _ProductsScreenState extends State<ProductsScreen> {
                 children: [
                   Expanded(
                     child: AppCustomSearchTextField(
-                      controller: context.read<ProductsCubit>().searchController,
-                      onChanged: (value){
-                        //apply search
-                        context.read<ProductsCubit>().getProducts();
+                      controller:
+                          context.read<ProductsCubit>().searchController,
+                      onChanged: (value) {
+                        context
+                            .read<ProductsCubit>()
+                            .getProducts(isRefresh: true);
                       },
-
                     ),
                   ),
                   ProductsFilterButton(),

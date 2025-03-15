@@ -13,9 +13,9 @@ class ProductsBlocBuilder extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocBuilder<ProductsCubit, ProductsState>(
       buildWhen: (previous, current) =>
-          current is! GetProductsLoading ||
-          current is! GetProductsSuccess ||
-          current is! GetProductsFailure,
+          current is GetProductsLoading ||
+          current is GetProductsSuccess ||
+          current is GetProductsFailure,
       builder: (context, state) {
         return state.maybeWhen(
           getProductsLoading: () => setupLoading(),
@@ -29,15 +29,21 @@ class ProductsBlocBuilder extends StatelessWidget {
 
   Widget setupSuccess(ProductsResponseModel products) {
     return ProductsListView(
-      content: products.data?.content,
+      content: products.data?.content ?? [],
     );
   }
 
   Widget setupFailure(message) {
-    return SliverToBoxAdapter(child: Center(child: Text(message)));
+    return SliverFillRemaining(
+      hasScrollBody: false,
+      child: Center(child: Text(message, style: TextStyle(color: Colors.red))),
+    );
   }
 
   Widget setupLoading() {
-    return ProductShimmerWidget();
+    return const SliverFillRemaining(
+      hasScrollBody: false,
+      child: ProductShimmerWidget(),
+    );
   }
 }

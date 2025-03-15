@@ -1,5 +1,9 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:home4u/core/helpers/shared_pref_helper.dart';
+import 'package:home4u/core/helpers/shared_pref_keys.dart';
 import 'package:home4u/features/products/data/models/business_config_model.dart';
 import 'package:home4u/features/products/data/repos/business_config_repo.dart';
 import 'package:home4u/features/products/data/repos/products_repo.dart';
@@ -23,8 +27,9 @@ class ProductsCubit extends Cubit<ProductsState> {
   bool? isAvailable;
   final searchController = TextEditingController();
 
-  final int _page = 0;
-  final bool _isFetching = false;
+  ///pagination
+  int _page = 1;
+  bool hasReachedMax = false;
   List<Content> products = [];
 
   static ProductsCubit get(context) => BlocProvider.of(context);
@@ -33,32 +38,19 @@ class ProductsCubit extends Cubit<ProductsState> {
   List<FilterColor> colors = [];
   List<ProductMaterial> materials = [];
 
-  Future<void> getBusinessConfig() async {
-    emit(const ProductsState.businessConfigLoading());
-    final response = await _businessConfigRepo.getBusinessConfig();
-    response.when(
-      success: (data) {
-        businessConfigModel = data;
-        if (!isClosed) {
-          emit(ProductsState.businessConfigSuccess(data));
-          colors = data.data?.colors ?? [];
-          baseUnits = data.data?.productBaseUnits ?? [];
-          materials = data.data?.productMaterial ?? [];
-        }
-      },
-      failure: (error) {
-        if (!isClosed) {
-          emit(ProductsState.businessConfigFailure(
-              errorMessage: error.message.toString()));
-          emit(ProductsState.businessConfigFailure(
-              errorMessage: error.message.toString()));
-        }
-      },
-    );
-  }
+  Future<void> getProducts({bool isRefresh = false}) async {
+    final userBusinessId =
+        await SharedPrefHelper.getInt(SharedPrefKeys.userTypeId);
+    log("userBusinessId: ${userBusinessId.toString()}");
 
-  Future<void> getProducts() async {
-    emit(ProductsState.getProductsLoading());
+    if (!isRefresh && hasReachedMax) return;
+    if (isRefresh) {
+      _page = 1;
+      hasReachedMax = false;
+      products.clear();
+    }
+    if (_page == 1) emit(ProductsState.getProductsLoading());
+
     final requestBody = {
       "pageNumber": _page,
       "searchCriteria": {
@@ -73,14 +65,23 @@ class ProductsCubit extends Cubit<ProductsState> {
       }
     };
 
-    final response = await _productsRepo.getProducts(
-      requestBody,
-    );
+    final response = await _productsRepo.getProducts(requestBody);
+
     response.when(
       success: (data) {
+        final newProducts = data.data?.content ?? [];
+        if (newProducts.isEmpty) {
+          hasReachedMax = true;
+        } else {
+          products.addAll(newProducts);
+          _page++;
+          hasReachedMax = _page >= (data.data?.totalPages ?? 1);
+        }
         if (!isClosed) {
-          emit(ProductsState.getProductsSuccess(
-              data)); // Maintain old + new data
+          emit(
+            ProductsState.getProductsSuccess(data),
+          );
+          log("Fetched ${newProducts.length} new products. Total: ${products.length}");
         }
       },
       failure: (error) {
@@ -122,6 +123,30 @@ class ProductsCubit extends Cubit<ProductsState> {
       failure: (error) {
         if (!isClosed) {
           emit(ProductsState.getProductPreviewFailure(
+              errorMessage: error.message.toString()));
+        }
+      },
+    );
+  }
+
+  Future<void> getBusinessConfig() async {
+    emit(const ProductsState.businessConfigLoading());
+    final response = await _businessConfigRepo.getBusinessConfig();
+    response.when(
+      success: (data) {
+        businessConfigModel = data;
+        if (!isClosed) {
+          emit(ProductsState.businessConfigSuccess(data));
+          colors = data.data?.colors ?? [];
+          baseUnits = data.data?.productBaseUnits ?? [];
+          materials = data.data?.productMaterial ?? [];
+        }
+      },
+      failure: (error) {
+        if (!isClosed) {
+          emit(ProductsState.businessConfigFailure(
+              errorMessage: error.message.toString()));
+          emit(ProductsState.businessConfigFailure(
               errorMessage: error.message.toString()));
         }
       },
