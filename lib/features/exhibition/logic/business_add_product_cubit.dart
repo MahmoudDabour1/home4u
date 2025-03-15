@@ -4,11 +4,14 @@ import 'dart:io';
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:hive/hive.dart';
 import 'package:home4u/core/networking/dio_factory.dart';
 import 'package:home4u/features/exhibition/data/models/business_add_product_images_response.dart';
 import 'package:http_parser/http_parser.dart';
 import 'package:image_picker/image_picker.dart';
 
+import '../../../core/utils/app_constants.dart';
+import '../../products/data/models/products_response_model.dart';
 import '../../products/logic/products_cubit.dart';
 import '../data/models/business_add_product_body.dart';
 import '../data/models/business_add_product_images_body.dart';
@@ -218,11 +221,18 @@ class BusinessAddProductCubit extends Cubit<BusinessAddProductState> {
   //   }
   // }
 
+
+
   Future<void> addOrUpdateProduct({bool isUpdate = false,int? productId}) async {
     if (selectedExhibitionBusinessType == null || selectedBaseUnit == null) {
       emit(BusinessAddProductState.addBusinessProductFailure("Please select a business type and base unit."));
       return;
     }
+
+    ///caching
+    var productsBox = await Hive.openBox<ProductsResponseModel>(kProductsBox);
+    var productData = productsBox.get(kProductsData);
+
     emit(const BusinessAddProductState.addBusinessProductLoading());
 
     final productBody = _createProductBody(isUpdate? productId:null);
@@ -232,6 +242,9 @@ class BusinessAddProductCubit extends Cubit<BusinessAddProductState> {
       success: (productResponse) async {
         emit(BusinessAddProductState.addBusinessProductSuccess(productResponse));
         await _addBusinessProductImages(productResponse.data.id);
+
+        ///i need after success to put item to list of cache
+        ///ToDo : عيييييييييييييييييييييييييييييييييش :)
       },
       failure: (error) => emit(BusinessAddProductState.addBusinessProductFailure(error.message.toString())),
     );

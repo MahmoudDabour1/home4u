@@ -46,7 +46,7 @@ class ProductsResponseModelAdapter extends TypeAdapter<ProductsResponseModel> {
           typeId == other.typeId;
 }
 
-  class DataAdapter extends TypeAdapter<Data> {
+class DataAdapter extends TypeAdapter<Data> {
   @override
   final int typeId = 81;
 

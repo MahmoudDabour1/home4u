@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_localization/flutter_localization.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:flutter_localization/flutter_localization.dart';
-
 import 'package:home4u/core/extensions/navigation_extension.dart';
 import 'package:home4u/core/routing/routes.dart';
 import 'package:home4u/core/theming/app_assets.dart';
@@ -11,6 +11,9 @@ import 'package:home4u/core/theming/app_styles.dart';
 import 'package:home4u/core/widgets/app_custom_button.dart';
 import 'package:home4u/core/widgets/app_custom_text_button_with_icon.dart';
 import 'package:home4u/locale/app_locale.dart';
+
+import '../../../logic/business_add_product_cubit.dart';
+import '../../../logic/business_add_product_state.dart';
 
 class SuccessMissionDialog extends StatelessWidget {
   const SuccessMissionDialog({super.key});
@@ -58,15 +61,29 @@ class SuccessMissionDialog extends StatelessWidget {
   Widget _buildButtons(BuildContext context) {
     return Column(
       children: [
-        AppCustomTextButtonWithIcon(
-          onPressed: () {},
-          isWhiteLoading: false,
-          svgIcon: AppAssets.editIconSvg,
-          text: AppLocale.edit.getString(context),
-          textStyle: AppStyles.font16DarkBlueBold,
-          backgroundColor: AppColors.whiteColor,
-          svgIconColor: AppColors.secondaryColor,
-          useGradient: false,
+        BlocBuilder<BusinessAddProductCubit, BusinessAddProductState>(
+          builder: (context, state) {
+            return AppCustomTextButtonWithIcon(
+              onPressed: () {
+                state.maybeWhen(
+                  addBusinessProductSuccess: (response) {
+                    context.pushNamed(
+                      Routes.businessAddProductScreen,
+                      arguments: response.data.id,
+                    );
+                  },
+                  orElse: () {},
+                );
+              },
+              isWhiteLoading: false,
+              svgIcon: AppAssets.editIconSvg,
+              text: AppLocale.edit.getString(context),
+              textStyle: AppStyles.font16DarkBlueBold,
+              backgroundColor: AppColors.whiteColor,
+              svgIconColor: AppColors.secondaryColor,
+              useGradient: false,
+            );
+          },
         ),
         SizedBox(height: 16.h),
         AppCustomButton(

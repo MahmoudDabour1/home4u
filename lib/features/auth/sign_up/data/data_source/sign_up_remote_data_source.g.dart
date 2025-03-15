@@ -10,10 +10,10 @@ part of 'sign_up_remote_data_source.dart';
 
 class _SignUpRemoteDataSource implements SignUpRemoteDataSource {
   _SignUpRemoteDataSource(
-    this._dio, {
-    this.baseUrl,
-    this.errorLogger,
-  }) {
+      this._dio, {
+        this.baseUrl,
+        this.errorLogger,
+      }) {
     baseUrl ??= 'https://home4u.gosoftcloud.com';
   }
 
@@ -35,13 +35,13 @@ class _SignUpRemoteDataSource implements SignUpRemoteDataSource {
       extra: _extra,
     )
         .compose(
-          _dio.options,
-          '/api/v1/user-types',
-          queryParameters: queryParameters,
-          data: _data,
-        )
+      _dio.options,
+      '/api/v1/user-types',
+      queryParameters: queryParameters,
+      data: _data,
+    )
         .copyWith(
-            baseUrl: _combineBaseUrls(
+        baseUrl: _combineBaseUrls(
           _dio.options.baseUrl,
           baseUrl,
         )));
@@ -69,13 +69,13 @@ class _SignUpRemoteDataSource implements SignUpRemoteDataSource {
       extra: _extra,
     )
         .compose(
-          _dio.options,
-          '/api/v1/auth/register',
-          queryParameters: queryParameters,
-          data: _data,
-        )
+      _dio.options,
+      '/api/v1/auth/register',
+      queryParameters: queryParameters,
+      data: _data,
+    )
         .copyWith(
-            baseUrl: _combineBaseUrls(
+        baseUrl: _combineBaseUrls(
           _dio.options.baseUrl,
           baseUrl,
         )));
@@ -102,13 +102,13 @@ class _SignUpRemoteDataSource implements SignUpRemoteDataSource {
       extra: _extra,
     )
         .compose(
-          _dio.options,
-          '/api/v1/governorates',
-          queryParameters: queryParameters,
-          data: _data,
-        )
+      _dio.options,
+      '/api/v1/governorates',
+      queryParameters: queryParameters,
+      data: _data,
+    )
         .copyWith(
-            baseUrl: _combineBaseUrls(
+        baseUrl: _combineBaseUrls(
           _dio.options.baseUrl,
           baseUrl,
         )));
@@ -135,13 +135,13 @@ class _SignUpRemoteDataSource implements SignUpRemoteDataSource {
       extra: _extra,
     )
         .compose(
-          _dio.options,
-          '/api/v1/cities/governorate/${governorateId}',
-          queryParameters: queryParameters,
-          data: _data,
-        )
+      _dio.options,
+      '/api/v1/cities/governorate/${governorateId}',
+      queryParameters: queryParameters,
+      data: _data,
+    )
         .copyWith(
-            baseUrl: _combineBaseUrls(
+        baseUrl: _combineBaseUrls(
           _dio.options.baseUrl,
           baseUrl,
         )));
@@ -170,9 +170,9 @@ class _SignUpRemoteDataSource implements SignUpRemoteDataSource {
   }
 
   String _combineBaseUrls(
-    String dioBaseUrl,
-    String? baseUrl,
-  ) {
+      String dioBaseUrl,
+      String? baseUrl,
+      ) {
     if (baseUrl == null || baseUrl.trim().isEmpty) {
       return dioBaseUrl;
     }
@@ -198,13 +198,13 @@ class _SignUpRemoteDataSource implements SignUpRemoteDataSource {
       extra: _extra,
     )
         .compose(
-          _dio.options,
-          '/api/v1/business-types/user-type/${userTypeId}',
-          queryParameters: queryParameters,
-          data: _data,
-        )
+      _dio.options,
+      '/api/v1/business-types/user-type/${userTypeId}',
+      queryParameters: queryParameters,
+      data: _data,
+    )
         .copyWith(
-            baseUrl: _combineBaseUrls(
+        baseUrl: _combineBaseUrls(
           _dio.options.baseUrl,
           baseUrl,
         )));

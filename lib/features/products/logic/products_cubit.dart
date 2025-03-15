@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:home4u/core/helpers/shared_pref_helper.dart';
 import 'package:home4u/core/helpers/shared_pref_keys.dart';
+import 'package:home4u/core/networking/dio_factory.dart';
 import 'package:home4u/features/products/data/data_source/products_local_data_source.dart';
 import 'package:home4u/features/products/data/models/business_config_model.dart';
 import 'package:home4u/features/products/data/repos/business_config_repo.dart';
@@ -47,7 +48,7 @@ class ProductsCubit extends Cubit<ProductsState> {
   List<ProductMaterial> materials = [];
 
   Future<void> getProducts({bool isRefresh = false}) async {
-    final userBusinessId =
+    final int userBusinessId =
         await SharedPrefHelper.getInt(SharedPrefKeys.userTypeId);
 
     log("userBusinessId: $userBusinessId");
@@ -59,6 +60,7 @@ class ProductsCubit extends Cubit<ProductsState> {
       isFetching = false;
       return;
     }
+
     if (isRefresh) {
       _page = 1;
       hasReachedMax = false;
@@ -154,6 +156,8 @@ class ProductsCubit extends Cubit<ProductsState> {
 
   Future<void> getBusinessConfig() async {
     emit(const ProductsState.businessConfigLoading());
+
+    DioFactory.setContentType("application/json");
     final response = await _businessConfigRepo.getBusinessConfig();
     response.when(
       success: (data) {

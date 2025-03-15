@@ -3,11 +3,9 @@ import 'dart:developer';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:hive/hive.dart';
 import 'package:home4u/features/auth/sign_up/logic/sign_up_state.dart';
 import 'package:home4u/features/products/logic/products_state.dart';
 
-import '../../../../../core/utils/app_constants.dart';
 import '../../../../../core/widgets/app_custom_drop_down_button_form_field.dart';
 import '../../../../auth/sign_up/logic/sign_up_cubit.dart';
 import '../../../../products/data/models/products_response_model.dart';
@@ -37,9 +35,10 @@ class _BasicDetailsDropDownButtonsState
   @override
   void initState() {
     super.initState();
-    context
-        .read<SignUpCubit>()
-        .getBusinessTypes(context.read<SignUpCubit>().selectedUserType!.id);
+
+    ///ToDo : expected problem here
+    context.read<SignUpCubit>().getBusinessTypes(
+        context.read<SignUpCubit>().selectedUserType?.id ?? 3);
   }
 
   @override
@@ -69,14 +68,14 @@ class _BasicDetailsDropDownButtonsState
                   setState(() {
                     selectedBusinessType = value;
                     businessCubit.selectedExhibitionBusinessType =
-                        int.parse(value!);
+                        int.parse(value);
                   });
                 }
               },
               onSaved: (value) {
                 if (value != null) {
                   businessCubit.selectedExhibitionBusinessType =
-                      int.parse(value!);
+                      int.parse(value);
                   log("selected Business Type: $value");
                 }
               },
