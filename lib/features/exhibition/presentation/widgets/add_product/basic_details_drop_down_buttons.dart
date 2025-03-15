@@ -18,7 +18,6 @@ import 'package:flutter_localization/flutter_localization.dart';
 import '../../../../../core/theming/app_styles.dart';
 import '../../../../../locale/app_locale.dart';
 
-
 class BasicDetailsDropDownButtons extends StatefulWidget {
   final ProductsResponseModel? productCachedData;
 
@@ -31,7 +30,6 @@ class BasicDetailsDropDownButtons extends StatefulWidget {
 
 class _BasicDetailsDropDownButtonsState
     extends State<BasicDetailsDropDownButtons> {
-
   String? selectedBusinessType;
   String? selectedBaseUnit;
   ProductsResponseModel? productCachedData;
@@ -39,7 +37,9 @@ class _BasicDetailsDropDownButtonsState
   @override
   void initState() {
     super.initState();
-    context.read<SignUpCubit>().getBusinessTypes();
+    context
+        .read<SignUpCubit>()
+        .getBusinessTypes(context.read<SignUpCubit>().selectedUserType!.id);
   }
 
   @override
@@ -55,8 +55,7 @@ class _BasicDetailsDropDownButtonsState
           builder: (context, state) {
             return AppCustomDropDownButtonFormField(
               value: selectedBusinessType,
-              items: signUpCubit.businessTypes
-                  .map((businessType) {
+              items: signUpCubit.businessTypes.map((businessType) {
                 return DropdownMenuItem<String>(
                   value: businessType.id.toString(),
                   child: Text(
@@ -66,18 +65,20 @@ class _BasicDetailsDropDownButtonsState
                 );
               }).toList(),
               onChanged: (value) {
-               if(value != null){
-                 setState(() {
-                   selectedBusinessType = value;
-                   businessCubit.selectedExhibitionBusinessType = int.parse(value!);
-                 });
-               }
+                if (value != null) {
+                  setState(() {
+                    selectedBusinessType = value;
+                    businessCubit.selectedExhibitionBusinessType =
+                        int.parse(value!);
+                  });
+                }
               },
               onSaved: (value) {
-               if(value != null){
-                 businessCubit.selectedExhibitionBusinessType = int.parse(value!);
-                 log("selected Business Type: $value");
-               }
+                if (value != null) {
+                  businessCubit.selectedExhibitionBusinessType =
+                      int.parse(value!);
+                  log("selected Business Type: $value");
+                }
               },
               labelText: AppLocale.businessType.getString(context),
             );

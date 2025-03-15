@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:home4u/core/widgets/app_custom_loading_indicator.dart';
 import 'package:home4u/features/products/data/models/products_response_model.dart';
 import 'package:home4u/features/products/logic/products_cubit.dart';
 import 'package:home4u/features/products/logic/products_state.dart';
@@ -34,16 +35,18 @@ class ProductsBlocBuilder extends StatelessWidget {
   }
 
   Widget setupFailure(message) {
-    return SliverFillRemaining(
-      hasScrollBody: false,
+    return SliverToBoxAdapter(
       child: Center(child: Text(message, style: TextStyle(color: Colors.red))),
     );
   }
 
   Widget setupLoading() {
-    return const SliverFillRemaining(
-      hasScrollBody: false,
-      child: ProductShimmerWidget(),
+    return const SliverToBoxAdapter(
+      child:Center(
+        child :  AppCustomLoadingIndicator(
+          loadingColor: Colors.red,
+        ),
+      ),
     );
   }
 }
