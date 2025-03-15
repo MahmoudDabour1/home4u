@@ -1,5 +1,3 @@
-import 'dart:developer';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_localization/flutter_localization.dart';
@@ -11,6 +9,7 @@ import 'package:home4u/features/products/presentation/widgets/filter/products_fi
 import 'package:home4u/features/products/presentation/widgets/products_bloc_builder.dart';
 import 'package:home4u/locale/app_locale.dart';
 
+import '../../../core/routing/router_observer.dart';
 import '../../../core/theming/app_colors.dart';
 import '../../../core/widgets/app_custom_search_text_field.dart';
 import '../../../core/widgets/business_header_widget.dart';
@@ -37,9 +36,9 @@ class _ProductsScreenState extends State<ProductsScreen> {
     final cubit = context.read<ProductsCubit>();
 
     if (_scrollController.offset >=
-            _scrollController.position.maxScrollExtent - 200 &&
+            _scrollController.position.maxScrollExtent * 0.7 &&
         !cubit.hasReachedMax) {
-      log('Fetching more products...');
+      logger.e('Fetching more products...');
       cubit.getProducts();
     }
   }

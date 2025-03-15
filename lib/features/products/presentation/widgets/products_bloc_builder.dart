@@ -4,7 +4,6 @@ import 'package:home4u/core/widgets/app_custom_loading_indicator.dart';
 import 'package:home4u/features/products/data/models/products_response_model.dart';
 import 'package:home4u/features/products/logic/products_cubit.dart';
 import 'package:home4u/features/products/logic/products_state.dart';
-import 'package:home4u/features/products/presentation/widgets/product_shimmer_widget.dart';
 import 'package:home4u/features/products/presentation/widgets/products_list_view.dart';
 
 class ProductsBlocBuilder extends StatelessWidget {
@@ -14,7 +13,7 @@ class ProductsBlocBuilder extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocBuilder<ProductsCubit, ProductsState>(
       buildWhen: (previous, current) =>
-          current is GetProductsLoading ||
+      current is GetProductsLoading ||
           current is GetProductsSuccess ||
           current is GetProductsFailure,
       builder: (context, state) {
@@ -42,8 +41,8 @@ class ProductsBlocBuilder extends StatelessWidget {
 
   Widget setupLoading() {
     return const SliverToBoxAdapter(
-      child:Center(
-        child :  AppCustomLoadingIndicator(
+      child: Center(
+        child: AppCustomLoadingIndicator(
           loadingColor: Colors.red,
         ),
       ),
