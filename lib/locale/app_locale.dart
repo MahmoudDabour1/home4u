@@ -225,6 +225,10 @@ class AppLocale {
   static const String updateCertification = 'Update Certification';
   static const String updateProject = 'Update Project';
   static const String search = 'Search';
+  static const String productDetails = 'Product Details';
+
+
+
   static const Map<String, dynamic> en = {
     onBoardingTitle1: 'Civil works and finishing services',
     onBoardingTitle2: 'Civil works and finishing services 2',
@@ -422,6 +426,7 @@ class AppLocale {
     selectMaterials: 'Select Materials',
     productUploadedSuccessfully :  'Product uploaded\nsuccessfully',
     goToProductList : 'go to product list',
+    productDetails : 'Product Details',
   };
 
   static const Map<String, dynamic> ar = {
@@ -620,5 +625,6 @@ class AppLocale {
     selectMaterials: ' اختر المواد الخام',
     productUploadedSuccessfully :  'تم إضافة المنتج بنجاح',
     goToProductList : 'الذهاب إلى قائمة المنتجات',
+    productDetails : 'تفاصيل المنتج',
   };
 }

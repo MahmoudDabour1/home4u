@@ -2,16 +2,24 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_localization/flutter_localization.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:hive/hive.dart';
 import 'package:home4u/features/exhibition/presentation/widgets/add_product/up_down_form_field.dart';
 
+import '../../../../../core/utils/app_constants.dart';
 import '../../../../../core/widgets/app_text_form_field.dart';
 import '../../../../../core/widgets/get_common_input_decoration.dart';
 import '../../../../../locale/app_locale.dart';
+import '../../../../products/data/models/products_response_model.dart';
 import '../../../logic/business_add_product_cubit.dart';
 import 'basic_details_drop_down_buttons.dart';
 
 class AddProductBasicDetailsStepper extends StatefulWidget {
-  const AddProductBasicDetailsStepper({super.key});
+  final int? productIndex;
+
+  const AddProductBasicDetailsStepper({
+    super.key,
+     this.productIndex,
+  });
 
   @override
   State<AddProductBasicDetailsStepper> createState() =>
@@ -23,6 +31,7 @@ class _AddProductBasicDetailsStepperState
   late FocusNode productNameAr;
   late FocusNode productNameEn;
   late FocusNode priceFocusNode;
+  ProductsResponseModel? productCachedData;
 
   @override
   void initState() {
@@ -30,6 +39,7 @@ class _AddProductBasicDetailsStepperState
     productNameAr = FocusNode();
     productNameEn = FocusNode();
     priceFocusNode = FocusNode();
+    _loadProductData();
   }
 
   @override
@@ -40,9 +50,29 @@ class _AddProductBasicDetailsStepperState
     super.dispose();
   }
 
+  void _loadProductData() async {
+    var productsBox = await Hive.openBox<ProductsResponseModel>(kProductsBox);
+    var productData = productsBox.get(kProductsData);
+    productCachedData = productData;
+    setState(() {});
+  }
+
   @override
   Widget build(BuildContext context) {
     final businessCubit = context.read<BusinessAddProductCubit>();
+    if (widget.productIndex != null) {
+      businessCubit.productNameEnController.text =
+          productCachedData?.data?.content?[widget.productIndex ?? 0].name ?? "";
+      businessCubit.productNameArController.text =
+          productCachedData?.data?.content?[widget.productIndex ?? 0].name ?? "";
+      businessCubit.productPriceController.text =
+          productCachedData?.data?.content?[widget.productIndex ?? 0].price.toString() ?? "";
+      // businessCubit.productDescriptionEnController.text =
+      //     productCachedData?.data?.content?[widget.productIndex ?? 0]. ?? "";
+    }else{
+      businessCubit.productNameEnController.clear();
+      businessCubit.productNameArController.clear();
+    }
 
     return Column(
       mainAxisAlignment: MainAxisAlignment.start,

@@ -30,6 +30,10 @@ mixin _$BusinessAddProductState<T> {
     required TResult Function() uploadBusinessImageLoading,
     required TResult Function() uploadBusinessImageSuccess,
     required TResult Function(String error) uploadBusinessImageFailure,
+    required TResult Function() updateProductLoading,
+    required TResult Function(AddProductBusinessResponseModel response)
+        updateProductSuccess,
+    required TResult Function(String message) updateProductFailure,
     required TResult Function(List<File> images) selectImageSuccess,
     required TResult Function(String message) selectImageFailure,
   }) =>
@@ -48,6 +52,10 @@ mixin _$BusinessAddProductState<T> {
     TResult? Function()? uploadBusinessImageLoading,
     TResult? Function()? uploadBusinessImageSuccess,
     TResult? Function(String error)? uploadBusinessImageFailure,
+    TResult? Function()? updateProductLoading,
+    TResult? Function(AddProductBusinessResponseModel response)?
+        updateProductSuccess,
+    TResult? Function(String message)? updateProductFailure,
     TResult? Function(List<File> images)? selectImageSuccess,
     TResult? Function(String message)? selectImageFailure,
   }) =>
@@ -66,6 +74,10 @@ mixin _$BusinessAddProductState<T> {
     TResult Function()? uploadBusinessImageLoading,
     TResult Function()? uploadBusinessImageSuccess,
     TResult Function(String error)? uploadBusinessImageFailure,
+    TResult Function()? updateProductLoading,
+    TResult Function(AddProductBusinessResponseModel response)?
+        updateProductSuccess,
+    TResult Function(String message)? updateProductFailure,
     TResult Function(List<File> images)? selectImageSuccess,
     TResult Function(String message)? selectImageFailure,
     required TResult orElse(),
@@ -92,6 +104,12 @@ mixin _$BusinessAddProductState<T> {
         uploadBusinessImageSuccess,
     required TResult Function(UploadBusinessImageFailure<T> value)
         uploadBusinessImageFailure,
+    required TResult Function(UpdateProductLoading<T> value)
+        updateProductLoading,
+    required TResult Function(UpdateProductSuccess<T> value)
+        updateProductSuccess,
+    required TResult Function(UpdateProductFailure<T> value)
+        updateProductFailure,
     required TResult Function(SelectImageSuccess<T> value) selectImageSuccess,
     required TResult Function(SelectImageFailure<T> value) selectImageFailure,
   }) =>
@@ -117,6 +135,9 @@ mixin _$BusinessAddProductState<T> {
         uploadBusinessImageSuccess,
     TResult? Function(UploadBusinessImageFailure<T> value)?
         uploadBusinessImageFailure,
+    TResult? Function(UpdateProductLoading<T> value)? updateProductLoading,
+    TResult? Function(UpdateProductSuccess<T> value)? updateProductSuccess,
+    TResult? Function(UpdateProductFailure<T> value)? updateProductFailure,
     TResult? Function(SelectImageSuccess<T> value)? selectImageSuccess,
     TResult? Function(SelectImageFailure<T> value)? selectImageFailure,
   }) =>
@@ -142,6 +163,9 @@ mixin _$BusinessAddProductState<T> {
         uploadBusinessImageSuccess,
     TResult Function(UploadBusinessImageFailure<T> value)?
         uploadBusinessImageFailure,
+    TResult Function(UpdateProductLoading<T> value)? updateProductLoading,
+    TResult Function(UpdateProductSuccess<T> value)? updateProductSuccess,
+    TResult Function(UpdateProductFailure<T> value)? updateProductFailure,
     TResult Function(SelectImageSuccess<T> value)? selectImageSuccess,
     TResult Function(SelectImageFailure<T> value)? selectImageFailure,
     required TResult orElse(),
@@ -225,6 +249,10 @@ class _$InitialImpl<T> implements _Initial<T> {
     required TResult Function() uploadBusinessImageLoading,
     required TResult Function() uploadBusinessImageSuccess,
     required TResult Function(String error) uploadBusinessImageFailure,
+    required TResult Function() updateProductLoading,
+    required TResult Function(AddProductBusinessResponseModel response)
+        updateProductSuccess,
+    required TResult Function(String message) updateProductFailure,
     required TResult Function(List<File> images) selectImageSuccess,
     required TResult Function(String message) selectImageFailure,
   }) {
@@ -246,6 +274,10 @@ class _$InitialImpl<T> implements _Initial<T> {
     TResult? Function()? uploadBusinessImageLoading,
     TResult? Function()? uploadBusinessImageSuccess,
     TResult? Function(String error)? uploadBusinessImageFailure,
+    TResult? Function()? updateProductLoading,
+    TResult? Function(AddProductBusinessResponseModel response)?
+        updateProductSuccess,
+    TResult? Function(String message)? updateProductFailure,
     TResult? Function(List<File> images)? selectImageSuccess,
     TResult? Function(String message)? selectImageFailure,
   }) {
@@ -267,6 +299,10 @@ class _$InitialImpl<T> implements _Initial<T> {
     TResult Function()? uploadBusinessImageLoading,
     TResult Function()? uploadBusinessImageSuccess,
     TResult Function(String error)? uploadBusinessImageFailure,
+    TResult Function()? updateProductLoading,
+    TResult Function(AddProductBusinessResponseModel response)?
+        updateProductSuccess,
+    TResult Function(String message)? updateProductFailure,
     TResult Function(List<File> images)? selectImageSuccess,
     TResult Function(String message)? selectImageFailure,
     required TResult orElse(),
@@ -299,6 +335,12 @@ class _$InitialImpl<T> implements _Initial<T> {
         uploadBusinessImageSuccess,
     required TResult Function(UploadBusinessImageFailure<T> value)
         uploadBusinessImageFailure,
+    required TResult Function(UpdateProductLoading<T> value)
+        updateProductLoading,
+    required TResult Function(UpdateProductSuccess<T> value)
+        updateProductSuccess,
+    required TResult Function(UpdateProductFailure<T> value)
+        updateProductFailure,
     required TResult Function(SelectImageSuccess<T> value) selectImageSuccess,
     required TResult Function(SelectImageFailure<T> value) selectImageFailure,
   }) {
@@ -327,6 +369,9 @@ class _$InitialImpl<T> implements _Initial<T> {
         uploadBusinessImageSuccess,
     TResult? Function(UploadBusinessImageFailure<T> value)?
         uploadBusinessImageFailure,
+    TResult? Function(UpdateProductLoading<T> value)? updateProductLoading,
+    TResult? Function(UpdateProductSuccess<T> value)? updateProductSuccess,
+    TResult? Function(UpdateProductFailure<T> value)? updateProductFailure,
     TResult? Function(SelectImageSuccess<T> value)? selectImageSuccess,
     TResult? Function(SelectImageFailure<T> value)? selectImageFailure,
   }) {
@@ -355,6 +400,9 @@ class _$InitialImpl<T> implements _Initial<T> {
         uploadBusinessImageSuccess,
     TResult Function(UploadBusinessImageFailure<T> value)?
         uploadBusinessImageFailure,
+    TResult Function(UpdateProductLoading<T> value)? updateProductLoading,
+    TResult Function(UpdateProductSuccess<T> value)? updateProductSuccess,
+    TResult Function(UpdateProductFailure<T> value)? updateProductFailure,
     TResult Function(SelectImageSuccess<T> value)? selectImageSuccess,
     TResult Function(SelectImageFailure<T> value)? selectImageFailure,
     required TResult orElse(),
@@ -428,6 +476,10 @@ class _$AddBusinessProductLoadingImpl<T>
     required TResult Function() uploadBusinessImageLoading,
     required TResult Function() uploadBusinessImageSuccess,
     required TResult Function(String error) uploadBusinessImageFailure,
+    required TResult Function() updateProductLoading,
+    required TResult Function(AddProductBusinessResponseModel response)
+        updateProductSuccess,
+    required TResult Function(String message) updateProductFailure,
     required TResult Function(List<File> images) selectImageSuccess,
     required TResult Function(String message) selectImageFailure,
   }) {
@@ -449,6 +501,10 @@ class _$AddBusinessProductLoadingImpl<T>
     TResult? Function()? uploadBusinessImageLoading,
     TResult? Function()? uploadBusinessImageSuccess,
     TResult? Function(String error)? uploadBusinessImageFailure,
+    TResult? Function()? updateProductLoading,
+    TResult? Function(AddProductBusinessResponseModel response)?
+        updateProductSuccess,
+    TResult? Function(String message)? updateProductFailure,
     TResult? Function(List<File> images)? selectImageSuccess,
     TResult? Function(String message)? selectImageFailure,
   }) {
@@ -470,6 +526,10 @@ class _$AddBusinessProductLoadingImpl<T>
     TResult Function()? uploadBusinessImageLoading,
     TResult Function()? uploadBusinessImageSuccess,
     TResult Function(String error)? uploadBusinessImageFailure,
+    TResult Function()? updateProductLoading,
+    TResult Function(AddProductBusinessResponseModel response)?
+        updateProductSuccess,
+    TResult Function(String message)? updateProductFailure,
     TResult Function(List<File> images)? selectImageSuccess,
     TResult Function(String message)? selectImageFailure,
     required TResult orElse(),
@@ -502,6 +562,12 @@ class _$AddBusinessProductLoadingImpl<T>
         uploadBusinessImageSuccess,
     required TResult Function(UploadBusinessImageFailure<T> value)
         uploadBusinessImageFailure,
+    required TResult Function(UpdateProductLoading<T> value)
+        updateProductLoading,
+    required TResult Function(UpdateProductSuccess<T> value)
+        updateProductSuccess,
+    required TResult Function(UpdateProductFailure<T> value)
+        updateProductFailure,
     required TResult Function(SelectImageSuccess<T> value) selectImageSuccess,
     required TResult Function(SelectImageFailure<T> value) selectImageFailure,
   }) {
@@ -530,6 +596,9 @@ class _$AddBusinessProductLoadingImpl<T>
         uploadBusinessImageSuccess,
     TResult? Function(UploadBusinessImageFailure<T> value)?
         uploadBusinessImageFailure,
+    TResult? Function(UpdateProductLoading<T> value)? updateProductLoading,
+    TResult? Function(UpdateProductSuccess<T> value)? updateProductSuccess,
+    TResult? Function(UpdateProductFailure<T> value)? updateProductFailure,
     TResult? Function(SelectImageSuccess<T> value)? selectImageSuccess,
     TResult? Function(SelectImageFailure<T> value)? selectImageFailure,
   }) {
@@ -558,6 +627,9 @@ class _$AddBusinessProductLoadingImpl<T>
         uploadBusinessImageSuccess,
     TResult Function(UploadBusinessImageFailure<T> value)?
         uploadBusinessImageFailure,
+    TResult Function(UpdateProductLoading<T> value)? updateProductLoading,
+    TResult Function(UpdateProductSuccess<T> value)? updateProductSuccess,
+    TResult Function(UpdateProductFailure<T> value)? updateProductFailure,
     TResult Function(SelectImageSuccess<T> value)? selectImageSuccess,
     TResult Function(SelectImageFailure<T> value)? selectImageFailure,
     required TResult orElse(),
@@ -662,6 +734,10 @@ class _$AddBusinessProductSuccessImpl<T>
     required TResult Function() uploadBusinessImageLoading,
     required TResult Function() uploadBusinessImageSuccess,
     required TResult Function(String error) uploadBusinessImageFailure,
+    required TResult Function() updateProductLoading,
+    required TResult Function(AddProductBusinessResponseModel response)
+        updateProductSuccess,
+    required TResult Function(String message) updateProductFailure,
     required TResult Function(List<File> images) selectImageSuccess,
     required TResult Function(String message) selectImageFailure,
   }) {
@@ -683,6 +759,10 @@ class _$AddBusinessProductSuccessImpl<T>
     TResult? Function()? uploadBusinessImageLoading,
     TResult? Function()? uploadBusinessImageSuccess,
     TResult? Function(String error)? uploadBusinessImageFailure,
+    TResult? Function()? updateProductLoading,
+    TResult? Function(AddProductBusinessResponseModel response)?
+        updateProductSuccess,
+    TResult? Function(String message)? updateProductFailure,
     TResult? Function(List<File> images)? selectImageSuccess,
     TResult? Function(String message)? selectImageFailure,
   }) {
@@ -704,6 +784,10 @@ class _$AddBusinessProductSuccessImpl<T>
     TResult Function()? uploadBusinessImageLoading,
     TResult Function()? uploadBusinessImageSuccess,
     TResult Function(String error)? uploadBusinessImageFailure,
+    TResult Function()? updateProductLoading,
+    TResult Function(AddProductBusinessResponseModel response)?
+        updateProductSuccess,
+    TResult Function(String message)? updateProductFailure,
     TResult Function(List<File> images)? selectImageSuccess,
     TResult Function(String message)? selectImageFailure,
     required TResult orElse(),
@@ -736,6 +820,12 @@ class _$AddBusinessProductSuccessImpl<T>
         uploadBusinessImageSuccess,
     required TResult Function(UploadBusinessImageFailure<T> value)
         uploadBusinessImageFailure,
+    required TResult Function(UpdateProductLoading<T> value)
+        updateProductLoading,
+    required TResult Function(UpdateProductSuccess<T> value)
+        updateProductSuccess,
+    required TResult Function(UpdateProductFailure<T> value)
+        updateProductFailure,
     required TResult Function(SelectImageSuccess<T> value) selectImageSuccess,
     required TResult Function(SelectImageFailure<T> value) selectImageFailure,
   }) {
@@ -764,6 +854,9 @@ class _$AddBusinessProductSuccessImpl<T>
         uploadBusinessImageSuccess,
     TResult? Function(UploadBusinessImageFailure<T> value)?
         uploadBusinessImageFailure,
+    TResult? Function(UpdateProductLoading<T> value)? updateProductLoading,
+    TResult? Function(UpdateProductSuccess<T> value)? updateProductSuccess,
+    TResult? Function(UpdateProductFailure<T> value)? updateProductFailure,
     TResult? Function(SelectImageSuccess<T> value)? selectImageSuccess,
     TResult? Function(SelectImageFailure<T> value)? selectImageFailure,
   }) {
@@ -792,6 +885,9 @@ class _$AddBusinessProductSuccessImpl<T>
         uploadBusinessImageSuccess,
     TResult Function(UploadBusinessImageFailure<T> value)?
         uploadBusinessImageFailure,
+    TResult Function(UpdateProductLoading<T> value)? updateProductLoading,
+    TResult Function(UpdateProductSuccess<T> value)? updateProductSuccess,
+    TResult Function(UpdateProductFailure<T> value)? updateProductFailure,
     TResult Function(SelectImageSuccess<T> value)? selectImageSuccess,
     TResult Function(SelectImageFailure<T> value)? selectImageFailure,
     required TResult orElse(),
@@ -905,6 +1001,10 @@ class _$AddBusinessProductFailureImpl<T>
     required TResult Function() uploadBusinessImageLoading,
     required TResult Function() uploadBusinessImageSuccess,
     required TResult Function(String error) uploadBusinessImageFailure,
+    required TResult Function() updateProductLoading,
+    required TResult Function(AddProductBusinessResponseModel response)
+        updateProductSuccess,
+    required TResult Function(String message) updateProductFailure,
     required TResult Function(List<File> images) selectImageSuccess,
     required TResult Function(String message) selectImageFailure,
   }) {
@@ -926,6 +1026,10 @@ class _$AddBusinessProductFailureImpl<T>
     TResult? Function()? uploadBusinessImageLoading,
     TResult? Function()? uploadBusinessImageSuccess,
     TResult? Function(String error)? uploadBusinessImageFailure,
+    TResult? Function()? updateProductLoading,
+    TResult? Function(AddProductBusinessResponseModel response)?
+        updateProductSuccess,
+    TResult? Function(String message)? updateProductFailure,
     TResult? Function(List<File> images)? selectImageSuccess,
     TResult? Function(String message)? selectImageFailure,
   }) {
@@ -947,6 +1051,10 @@ class _$AddBusinessProductFailureImpl<T>
     TResult Function()? uploadBusinessImageLoading,
     TResult Function()? uploadBusinessImageSuccess,
     TResult Function(String error)? uploadBusinessImageFailure,
+    TResult Function()? updateProductLoading,
+    TResult Function(AddProductBusinessResponseModel response)?
+        updateProductSuccess,
+    TResult Function(String message)? updateProductFailure,
     TResult Function(List<File> images)? selectImageSuccess,
     TResult Function(String message)? selectImageFailure,
     required TResult orElse(),
@@ -979,6 +1087,12 @@ class _$AddBusinessProductFailureImpl<T>
         uploadBusinessImageSuccess,
     required TResult Function(UploadBusinessImageFailure<T> value)
         uploadBusinessImageFailure,
+    required TResult Function(UpdateProductLoading<T> value)
+        updateProductLoading,
+    required TResult Function(UpdateProductSuccess<T> value)
+        updateProductSuccess,
+    required TResult Function(UpdateProductFailure<T> value)
+        updateProductFailure,
     required TResult Function(SelectImageSuccess<T> value) selectImageSuccess,
     required TResult Function(SelectImageFailure<T> value) selectImageFailure,
   }) {
@@ -1007,6 +1121,9 @@ class _$AddBusinessProductFailureImpl<T>
         uploadBusinessImageSuccess,
     TResult? Function(UploadBusinessImageFailure<T> value)?
         uploadBusinessImageFailure,
+    TResult? Function(UpdateProductLoading<T> value)? updateProductLoading,
+    TResult? Function(UpdateProductSuccess<T> value)? updateProductSuccess,
+    TResult? Function(UpdateProductFailure<T> value)? updateProductFailure,
     TResult? Function(SelectImageSuccess<T> value)? selectImageSuccess,
     TResult? Function(SelectImageFailure<T> value)? selectImageFailure,
   }) {
@@ -1035,6 +1152,9 @@ class _$AddBusinessProductFailureImpl<T>
         uploadBusinessImageSuccess,
     TResult Function(UploadBusinessImageFailure<T> value)?
         uploadBusinessImageFailure,
+    TResult Function(UpdateProductLoading<T> value)? updateProductLoading,
+    TResult Function(UpdateProductSuccess<T> value)? updateProductSuccess,
+    TResult Function(UpdateProductFailure<T> value)? updateProductFailure,
     TResult Function(SelectImageSuccess<T> value)? selectImageSuccess,
     TResult Function(SelectImageFailure<T> value)? selectImageFailure,
     required TResult orElse(),
@@ -1119,6 +1239,10 @@ class _$AddBusinessProductImageLoadingImpl<T>
     required TResult Function() uploadBusinessImageLoading,
     required TResult Function() uploadBusinessImageSuccess,
     required TResult Function(String error) uploadBusinessImageFailure,
+    required TResult Function() updateProductLoading,
+    required TResult Function(AddProductBusinessResponseModel response)
+        updateProductSuccess,
+    required TResult Function(String message) updateProductFailure,
     required TResult Function(List<File> images) selectImageSuccess,
     required TResult Function(String message) selectImageFailure,
   }) {
@@ -1140,6 +1264,10 @@ class _$AddBusinessProductImageLoadingImpl<T>
     TResult? Function()? uploadBusinessImageLoading,
     TResult? Function()? uploadBusinessImageSuccess,
     TResult? Function(String error)? uploadBusinessImageFailure,
+    TResult? Function()? updateProductLoading,
+    TResult? Function(AddProductBusinessResponseModel response)?
+        updateProductSuccess,
+    TResult? Function(String message)? updateProductFailure,
     TResult? Function(List<File> images)? selectImageSuccess,
     TResult? Function(String message)? selectImageFailure,
   }) {
@@ -1161,6 +1289,10 @@ class _$AddBusinessProductImageLoadingImpl<T>
     TResult Function()? uploadBusinessImageLoading,
     TResult Function()? uploadBusinessImageSuccess,
     TResult Function(String error)? uploadBusinessImageFailure,
+    TResult Function()? updateProductLoading,
+    TResult Function(AddProductBusinessResponseModel response)?
+        updateProductSuccess,
+    TResult Function(String message)? updateProductFailure,
     TResult Function(List<File> images)? selectImageSuccess,
     TResult Function(String message)? selectImageFailure,
     required TResult orElse(),
@@ -1193,6 +1325,12 @@ class _$AddBusinessProductImageLoadingImpl<T>
         uploadBusinessImageSuccess,
     required TResult Function(UploadBusinessImageFailure<T> value)
         uploadBusinessImageFailure,
+    required TResult Function(UpdateProductLoading<T> value)
+        updateProductLoading,
+    required TResult Function(UpdateProductSuccess<T> value)
+        updateProductSuccess,
+    required TResult Function(UpdateProductFailure<T> value)
+        updateProductFailure,
     required TResult Function(SelectImageSuccess<T> value) selectImageSuccess,
     required TResult Function(SelectImageFailure<T> value) selectImageFailure,
   }) {
@@ -1221,6 +1359,9 @@ class _$AddBusinessProductImageLoadingImpl<T>
         uploadBusinessImageSuccess,
     TResult? Function(UploadBusinessImageFailure<T> value)?
         uploadBusinessImageFailure,
+    TResult? Function(UpdateProductLoading<T> value)? updateProductLoading,
+    TResult? Function(UpdateProductSuccess<T> value)? updateProductSuccess,
+    TResult? Function(UpdateProductFailure<T> value)? updateProductFailure,
     TResult? Function(SelectImageSuccess<T> value)? selectImageSuccess,
     TResult? Function(SelectImageFailure<T> value)? selectImageFailure,
   }) {
@@ -1249,6 +1390,9 @@ class _$AddBusinessProductImageLoadingImpl<T>
         uploadBusinessImageSuccess,
     TResult Function(UploadBusinessImageFailure<T> value)?
         uploadBusinessImageFailure,
+    TResult Function(UpdateProductLoading<T> value)? updateProductLoading,
+    TResult Function(UpdateProductSuccess<T> value)? updateProductSuccess,
+    TResult Function(UpdateProductFailure<T> value)? updateProductFailure,
     TResult Function(SelectImageSuccess<T> value)? selectImageSuccess,
     TResult Function(SelectImageFailure<T> value)? selectImageFailure,
     required TResult orElse(),
@@ -1352,6 +1496,10 @@ class _$AddBusinessProductImageSuccessImpl<T>
     required TResult Function() uploadBusinessImageLoading,
     required TResult Function() uploadBusinessImageSuccess,
     required TResult Function(String error) uploadBusinessImageFailure,
+    required TResult Function() updateProductLoading,
+    required TResult Function(AddProductBusinessResponseModel response)
+        updateProductSuccess,
+    required TResult Function(String message) updateProductFailure,
     required TResult Function(List<File> images) selectImageSuccess,
     required TResult Function(String message) selectImageFailure,
   }) {
@@ -1373,6 +1521,10 @@ class _$AddBusinessProductImageSuccessImpl<T>
     TResult? Function()? uploadBusinessImageLoading,
     TResult? Function()? uploadBusinessImageSuccess,
     TResult? Function(String error)? uploadBusinessImageFailure,
+    TResult? Function()? updateProductLoading,
+    TResult? Function(AddProductBusinessResponseModel response)?
+        updateProductSuccess,
+    TResult? Function(String message)? updateProductFailure,
     TResult? Function(List<File> images)? selectImageSuccess,
     TResult? Function(String message)? selectImageFailure,
   }) {
@@ -1394,6 +1546,10 @@ class _$AddBusinessProductImageSuccessImpl<T>
     TResult Function()? uploadBusinessImageLoading,
     TResult Function()? uploadBusinessImageSuccess,
     TResult Function(String error)? uploadBusinessImageFailure,
+    TResult Function()? updateProductLoading,
+    TResult Function(AddProductBusinessResponseModel response)?
+        updateProductSuccess,
+    TResult Function(String message)? updateProductFailure,
     TResult Function(List<File> images)? selectImageSuccess,
     TResult Function(String message)? selectImageFailure,
     required TResult orElse(),
@@ -1426,6 +1582,12 @@ class _$AddBusinessProductImageSuccessImpl<T>
         uploadBusinessImageSuccess,
     required TResult Function(UploadBusinessImageFailure<T> value)
         uploadBusinessImageFailure,
+    required TResult Function(UpdateProductLoading<T> value)
+        updateProductLoading,
+    required TResult Function(UpdateProductSuccess<T> value)
+        updateProductSuccess,
+    required TResult Function(UpdateProductFailure<T> value)
+        updateProductFailure,
     required TResult Function(SelectImageSuccess<T> value) selectImageSuccess,
     required TResult Function(SelectImageFailure<T> value) selectImageFailure,
   }) {
@@ -1454,6 +1616,9 @@ class _$AddBusinessProductImageSuccessImpl<T>
         uploadBusinessImageSuccess,
     TResult? Function(UploadBusinessImageFailure<T> value)?
         uploadBusinessImageFailure,
+    TResult? Function(UpdateProductLoading<T> value)? updateProductLoading,
+    TResult? Function(UpdateProductSuccess<T> value)? updateProductSuccess,
+    TResult? Function(UpdateProductFailure<T> value)? updateProductFailure,
     TResult? Function(SelectImageSuccess<T> value)? selectImageSuccess,
     TResult? Function(SelectImageFailure<T> value)? selectImageFailure,
   }) {
@@ -1482,6 +1647,9 @@ class _$AddBusinessProductImageSuccessImpl<T>
         uploadBusinessImageSuccess,
     TResult Function(UploadBusinessImageFailure<T> value)?
         uploadBusinessImageFailure,
+    TResult Function(UpdateProductLoading<T> value)? updateProductLoading,
+    TResult Function(UpdateProductSuccess<T> value)? updateProductSuccess,
+    TResult Function(UpdateProductFailure<T> value)? updateProductFailure,
     TResult Function(SelectImageSuccess<T> value)? selectImageSuccess,
     TResult Function(SelectImageFailure<T> value)? selectImageFailure,
     required TResult orElse(),
@@ -1595,6 +1763,10 @@ class _$AddBusinessProductImageFailureImpl<T>
     required TResult Function() uploadBusinessImageLoading,
     required TResult Function() uploadBusinessImageSuccess,
     required TResult Function(String error) uploadBusinessImageFailure,
+    required TResult Function() updateProductLoading,
+    required TResult Function(AddProductBusinessResponseModel response)
+        updateProductSuccess,
+    required TResult Function(String message) updateProductFailure,
     required TResult Function(List<File> images) selectImageSuccess,
     required TResult Function(String message) selectImageFailure,
   }) {
@@ -1616,6 +1788,10 @@ class _$AddBusinessProductImageFailureImpl<T>
     TResult? Function()? uploadBusinessImageLoading,
     TResult? Function()? uploadBusinessImageSuccess,
     TResult? Function(String error)? uploadBusinessImageFailure,
+    TResult? Function()? updateProductLoading,
+    TResult? Function(AddProductBusinessResponseModel response)?
+        updateProductSuccess,
+    TResult? Function(String message)? updateProductFailure,
     TResult? Function(List<File> images)? selectImageSuccess,
     TResult? Function(String message)? selectImageFailure,
   }) {
@@ -1637,6 +1813,10 @@ class _$AddBusinessProductImageFailureImpl<T>
     TResult Function()? uploadBusinessImageLoading,
     TResult Function()? uploadBusinessImageSuccess,
     TResult Function(String error)? uploadBusinessImageFailure,
+    TResult Function()? updateProductLoading,
+    TResult Function(AddProductBusinessResponseModel response)?
+        updateProductSuccess,
+    TResult Function(String message)? updateProductFailure,
     TResult Function(List<File> images)? selectImageSuccess,
     TResult Function(String message)? selectImageFailure,
     required TResult orElse(),
@@ -1669,6 +1849,12 @@ class _$AddBusinessProductImageFailureImpl<T>
         uploadBusinessImageSuccess,
     required TResult Function(UploadBusinessImageFailure<T> value)
         uploadBusinessImageFailure,
+    required TResult Function(UpdateProductLoading<T> value)
+        updateProductLoading,
+    required TResult Function(UpdateProductSuccess<T> value)
+        updateProductSuccess,
+    required TResult Function(UpdateProductFailure<T> value)
+        updateProductFailure,
     required TResult Function(SelectImageSuccess<T> value) selectImageSuccess,
     required TResult Function(SelectImageFailure<T> value) selectImageFailure,
   }) {
@@ -1697,6 +1883,9 @@ class _$AddBusinessProductImageFailureImpl<T>
         uploadBusinessImageSuccess,
     TResult? Function(UploadBusinessImageFailure<T> value)?
         uploadBusinessImageFailure,
+    TResult? Function(UpdateProductLoading<T> value)? updateProductLoading,
+    TResult? Function(UpdateProductSuccess<T> value)? updateProductSuccess,
+    TResult? Function(UpdateProductFailure<T> value)? updateProductFailure,
     TResult? Function(SelectImageSuccess<T> value)? selectImageSuccess,
     TResult? Function(SelectImageFailure<T> value)? selectImageFailure,
   }) {
@@ -1725,6 +1914,9 @@ class _$AddBusinessProductImageFailureImpl<T>
         uploadBusinessImageSuccess,
     TResult Function(UploadBusinessImageFailure<T> value)?
         uploadBusinessImageFailure,
+    TResult Function(UpdateProductLoading<T> value)? updateProductLoading,
+    TResult Function(UpdateProductSuccess<T> value)? updateProductSuccess,
+    TResult Function(UpdateProductFailure<T> value)? updateProductFailure,
     TResult Function(SelectImageSuccess<T> value)? selectImageSuccess,
     TResult Function(SelectImageFailure<T> value)? selectImageFailure,
     required TResult orElse(),
@@ -1809,6 +2001,10 @@ class _$UploadBusinessImageLoadingImpl<T>
     required TResult Function() uploadBusinessImageLoading,
     required TResult Function() uploadBusinessImageSuccess,
     required TResult Function(String error) uploadBusinessImageFailure,
+    required TResult Function() updateProductLoading,
+    required TResult Function(AddProductBusinessResponseModel response)
+        updateProductSuccess,
+    required TResult Function(String message) updateProductFailure,
     required TResult Function(List<File> images) selectImageSuccess,
     required TResult Function(String message) selectImageFailure,
   }) {
@@ -1830,6 +2026,10 @@ class _$UploadBusinessImageLoadingImpl<T>
     TResult? Function()? uploadBusinessImageLoading,
     TResult? Function()? uploadBusinessImageSuccess,
     TResult? Function(String error)? uploadBusinessImageFailure,
+    TResult? Function()? updateProductLoading,
+    TResult? Function(AddProductBusinessResponseModel response)?
+        updateProductSuccess,
+    TResult? Function(String message)? updateProductFailure,
     TResult? Function(List<File> images)? selectImageSuccess,
     TResult? Function(String message)? selectImageFailure,
   }) {
@@ -1851,6 +2051,10 @@ class _$UploadBusinessImageLoadingImpl<T>
     TResult Function()? uploadBusinessImageLoading,
     TResult Function()? uploadBusinessImageSuccess,
     TResult Function(String error)? uploadBusinessImageFailure,
+    TResult Function()? updateProductLoading,
+    TResult Function(AddProductBusinessResponseModel response)?
+        updateProductSuccess,
+    TResult Function(String message)? updateProductFailure,
     TResult Function(List<File> images)? selectImageSuccess,
     TResult Function(String message)? selectImageFailure,
     required TResult orElse(),
@@ -1883,6 +2087,12 @@ class _$UploadBusinessImageLoadingImpl<T>
         uploadBusinessImageSuccess,
     required TResult Function(UploadBusinessImageFailure<T> value)
         uploadBusinessImageFailure,
+    required TResult Function(UpdateProductLoading<T> value)
+        updateProductLoading,
+    required TResult Function(UpdateProductSuccess<T> value)
+        updateProductSuccess,
+    required TResult Function(UpdateProductFailure<T> value)
+        updateProductFailure,
     required TResult Function(SelectImageSuccess<T> value) selectImageSuccess,
     required TResult Function(SelectImageFailure<T> value) selectImageFailure,
   }) {
@@ -1911,6 +2121,9 @@ class _$UploadBusinessImageLoadingImpl<T>
         uploadBusinessImageSuccess,
     TResult? Function(UploadBusinessImageFailure<T> value)?
         uploadBusinessImageFailure,
+    TResult? Function(UpdateProductLoading<T> value)? updateProductLoading,
+    TResult? Function(UpdateProductSuccess<T> value)? updateProductSuccess,
+    TResult? Function(UpdateProductFailure<T> value)? updateProductFailure,
     TResult? Function(SelectImageSuccess<T> value)? selectImageSuccess,
     TResult? Function(SelectImageFailure<T> value)? selectImageFailure,
   }) {
@@ -1939,6 +2152,9 @@ class _$UploadBusinessImageLoadingImpl<T>
         uploadBusinessImageSuccess,
     TResult Function(UploadBusinessImageFailure<T> value)?
         uploadBusinessImageFailure,
+    TResult Function(UpdateProductLoading<T> value)? updateProductLoading,
+    TResult Function(UpdateProductSuccess<T> value)? updateProductSuccess,
+    TResult Function(UpdateProductFailure<T> value)? updateProductFailure,
     TResult Function(SelectImageSuccess<T> value)? selectImageSuccess,
     TResult Function(SelectImageFailure<T> value)? selectImageFailure,
     required TResult orElse(),
@@ -2014,6 +2230,10 @@ class _$UploadBusinessImageSuccessImpl<T>
     required TResult Function() uploadBusinessImageLoading,
     required TResult Function() uploadBusinessImageSuccess,
     required TResult Function(String error) uploadBusinessImageFailure,
+    required TResult Function() updateProductLoading,
+    required TResult Function(AddProductBusinessResponseModel response)
+        updateProductSuccess,
+    required TResult Function(String message) updateProductFailure,
     required TResult Function(List<File> images) selectImageSuccess,
     required TResult Function(String message) selectImageFailure,
   }) {
@@ -2035,6 +2255,10 @@ class _$UploadBusinessImageSuccessImpl<T>
     TResult? Function()? uploadBusinessImageLoading,
     TResult? Function()? uploadBusinessImageSuccess,
     TResult? Function(String error)? uploadBusinessImageFailure,
+    TResult? Function()? updateProductLoading,
+    TResult? Function(AddProductBusinessResponseModel response)?
+        updateProductSuccess,
+    TResult? Function(String message)? updateProductFailure,
     TResult? Function(List<File> images)? selectImageSuccess,
     TResult? Function(String message)? selectImageFailure,
   }) {
@@ -2056,6 +2280,10 @@ class _$UploadBusinessImageSuccessImpl<T>
     TResult Function()? uploadBusinessImageLoading,
     TResult Function()? uploadBusinessImageSuccess,
     TResult Function(String error)? uploadBusinessImageFailure,
+    TResult Function()? updateProductLoading,
+    TResult Function(AddProductBusinessResponseModel response)?
+        updateProductSuccess,
+    TResult Function(String message)? updateProductFailure,
     TResult Function(List<File> images)? selectImageSuccess,
     TResult Function(String message)? selectImageFailure,
     required TResult orElse(),
@@ -2088,6 +2316,12 @@ class _$UploadBusinessImageSuccessImpl<T>
         uploadBusinessImageSuccess,
     required TResult Function(UploadBusinessImageFailure<T> value)
         uploadBusinessImageFailure,
+    required TResult Function(UpdateProductLoading<T> value)
+        updateProductLoading,
+    required TResult Function(UpdateProductSuccess<T> value)
+        updateProductSuccess,
+    required TResult Function(UpdateProductFailure<T> value)
+        updateProductFailure,
     required TResult Function(SelectImageSuccess<T> value) selectImageSuccess,
     required TResult Function(SelectImageFailure<T> value) selectImageFailure,
   }) {
@@ -2116,6 +2350,9 @@ class _$UploadBusinessImageSuccessImpl<T>
         uploadBusinessImageSuccess,
     TResult? Function(UploadBusinessImageFailure<T> value)?
         uploadBusinessImageFailure,
+    TResult? Function(UpdateProductLoading<T> value)? updateProductLoading,
+    TResult? Function(UpdateProductSuccess<T> value)? updateProductSuccess,
+    TResult? Function(UpdateProductFailure<T> value)? updateProductFailure,
     TResult? Function(SelectImageSuccess<T> value)? selectImageSuccess,
     TResult? Function(SelectImageFailure<T> value)? selectImageFailure,
   }) {
@@ -2144,6 +2381,9 @@ class _$UploadBusinessImageSuccessImpl<T>
         uploadBusinessImageSuccess,
     TResult Function(UploadBusinessImageFailure<T> value)?
         uploadBusinessImageFailure,
+    TResult Function(UpdateProductLoading<T> value)? updateProductLoading,
+    TResult Function(UpdateProductSuccess<T> value)? updateProductSuccess,
+    TResult Function(UpdateProductFailure<T> value)? updateProductFailure,
     TResult Function(SelectImageSuccess<T> value)? selectImageSuccess,
     TResult Function(SelectImageFailure<T> value)? selectImageFailure,
     required TResult orElse(),
@@ -2247,6 +2487,10 @@ class _$UploadBusinessImageFailureImpl<T>
     required TResult Function() uploadBusinessImageLoading,
     required TResult Function() uploadBusinessImageSuccess,
     required TResult Function(String error) uploadBusinessImageFailure,
+    required TResult Function() updateProductLoading,
+    required TResult Function(AddProductBusinessResponseModel response)
+        updateProductSuccess,
+    required TResult Function(String message) updateProductFailure,
     required TResult Function(List<File> images) selectImageSuccess,
     required TResult Function(String message) selectImageFailure,
   }) {
@@ -2268,6 +2512,10 @@ class _$UploadBusinessImageFailureImpl<T>
     TResult? Function()? uploadBusinessImageLoading,
     TResult? Function()? uploadBusinessImageSuccess,
     TResult? Function(String error)? uploadBusinessImageFailure,
+    TResult? Function()? updateProductLoading,
+    TResult? Function(AddProductBusinessResponseModel response)?
+        updateProductSuccess,
+    TResult? Function(String message)? updateProductFailure,
     TResult? Function(List<File> images)? selectImageSuccess,
     TResult? Function(String message)? selectImageFailure,
   }) {
@@ -2289,6 +2537,10 @@ class _$UploadBusinessImageFailureImpl<T>
     TResult Function()? uploadBusinessImageLoading,
     TResult Function()? uploadBusinessImageSuccess,
     TResult Function(String error)? uploadBusinessImageFailure,
+    TResult Function()? updateProductLoading,
+    TResult Function(AddProductBusinessResponseModel response)?
+        updateProductSuccess,
+    TResult Function(String message)? updateProductFailure,
     TResult Function(List<File> images)? selectImageSuccess,
     TResult Function(String message)? selectImageFailure,
     required TResult orElse(),
@@ -2321,6 +2573,12 @@ class _$UploadBusinessImageFailureImpl<T>
         uploadBusinessImageSuccess,
     required TResult Function(UploadBusinessImageFailure<T> value)
         uploadBusinessImageFailure,
+    required TResult Function(UpdateProductLoading<T> value)
+        updateProductLoading,
+    required TResult Function(UpdateProductSuccess<T> value)
+        updateProductSuccess,
+    required TResult Function(UpdateProductFailure<T> value)
+        updateProductFailure,
     required TResult Function(SelectImageSuccess<T> value) selectImageSuccess,
     required TResult Function(SelectImageFailure<T> value) selectImageFailure,
   }) {
@@ -2349,6 +2607,9 @@ class _$UploadBusinessImageFailureImpl<T>
         uploadBusinessImageSuccess,
     TResult? Function(UploadBusinessImageFailure<T> value)?
         uploadBusinessImageFailure,
+    TResult? Function(UpdateProductLoading<T> value)? updateProductLoading,
+    TResult? Function(UpdateProductSuccess<T> value)? updateProductSuccess,
+    TResult? Function(UpdateProductFailure<T> value)? updateProductFailure,
     TResult? Function(SelectImageSuccess<T> value)? selectImageSuccess,
     TResult? Function(SelectImageFailure<T> value)? selectImageFailure,
   }) {
@@ -2377,6 +2638,9 @@ class _$UploadBusinessImageFailureImpl<T>
         uploadBusinessImageSuccess,
     TResult Function(UploadBusinessImageFailure<T> value)?
         uploadBusinessImageFailure,
+    TResult Function(UpdateProductLoading<T> value)? updateProductLoading,
+    TResult Function(UpdateProductSuccess<T> value)? updateProductSuccess,
+    TResult Function(UpdateProductFailure<T> value)? updateProductFailure,
     TResult Function(SelectImageSuccess<T> value)? selectImageSuccess,
     TResult Function(SelectImageFailure<T> value)? selectImageFailure,
     required TResult orElse(),
@@ -2400,6 +2664,755 @@ abstract class UploadBusinessImageFailure<T>
   @JsonKey(includeFromJson: false, includeToJson: false)
   _$$UploadBusinessImageFailureImplCopyWith<T,
           _$UploadBusinessImageFailureImpl<T>>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$UpdateProductLoadingImplCopyWith<T, $Res> {
+  factory _$$UpdateProductLoadingImplCopyWith(
+          _$UpdateProductLoadingImpl<T> value,
+          $Res Function(_$UpdateProductLoadingImpl<T>) then) =
+      __$$UpdateProductLoadingImplCopyWithImpl<T, $Res>;
+}
+
+/// @nodoc
+class __$$UpdateProductLoadingImplCopyWithImpl<T, $Res>
+    extends _$BusinessAddProductStateCopyWithImpl<T, $Res,
+        _$UpdateProductLoadingImpl<T>>
+    implements _$$UpdateProductLoadingImplCopyWith<T, $Res> {
+  __$$UpdateProductLoadingImplCopyWithImpl(_$UpdateProductLoadingImpl<T> _value,
+      $Res Function(_$UpdateProductLoadingImpl<T>) _then)
+      : super(_value, _then);
+
+  /// Create a copy of BusinessAddProductState
+  /// with the given fields replaced by the non-null parameter values.
+}
+
+/// @nodoc
+
+class _$UpdateProductLoadingImpl<T> implements UpdateProductLoading<T> {
+  const _$UpdateProductLoadingImpl();
+
+  @override
+  String toString() {
+    return 'BusinessAddProductState<$T>.updateProductLoading()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$UpdateProductLoadingImpl<T>);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() addBusinessProductLoading,
+    required TResult Function(AddProductBusinessResponseModel response)
+        addBusinessProductSuccess,
+    required TResult Function(String error) addBusinessProductFailure,
+    required TResult Function() addBusinessProductImageLoading,
+    required TResult Function(BusinessAddProductImagesResponse images)
+        addBusinessProductImageSuccess,
+    required TResult Function(String error) addBusinessProductImageFailure,
+    required TResult Function() uploadBusinessImageLoading,
+    required TResult Function() uploadBusinessImageSuccess,
+    required TResult Function(String error) uploadBusinessImageFailure,
+    required TResult Function() updateProductLoading,
+    required TResult Function(AddProductBusinessResponseModel response)
+        updateProductSuccess,
+    required TResult Function(String message) updateProductFailure,
+    required TResult Function(List<File> images) selectImageSuccess,
+    required TResult Function(String message) selectImageFailure,
+  }) {
+    return updateProductLoading();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? addBusinessProductLoading,
+    TResult? Function(AddProductBusinessResponseModel response)?
+        addBusinessProductSuccess,
+    TResult? Function(String error)? addBusinessProductFailure,
+    TResult? Function()? addBusinessProductImageLoading,
+    TResult? Function(BusinessAddProductImagesResponse images)?
+        addBusinessProductImageSuccess,
+    TResult? Function(String error)? addBusinessProductImageFailure,
+    TResult? Function()? uploadBusinessImageLoading,
+    TResult? Function()? uploadBusinessImageSuccess,
+    TResult? Function(String error)? uploadBusinessImageFailure,
+    TResult? Function()? updateProductLoading,
+    TResult? Function(AddProductBusinessResponseModel response)?
+        updateProductSuccess,
+    TResult? Function(String message)? updateProductFailure,
+    TResult? Function(List<File> images)? selectImageSuccess,
+    TResult? Function(String message)? selectImageFailure,
+  }) {
+    return updateProductLoading?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? addBusinessProductLoading,
+    TResult Function(AddProductBusinessResponseModel response)?
+        addBusinessProductSuccess,
+    TResult Function(String error)? addBusinessProductFailure,
+    TResult Function()? addBusinessProductImageLoading,
+    TResult Function(BusinessAddProductImagesResponse images)?
+        addBusinessProductImageSuccess,
+    TResult Function(String error)? addBusinessProductImageFailure,
+    TResult Function()? uploadBusinessImageLoading,
+    TResult Function()? uploadBusinessImageSuccess,
+    TResult Function(String error)? uploadBusinessImageFailure,
+    TResult Function()? updateProductLoading,
+    TResult Function(AddProductBusinessResponseModel response)?
+        updateProductSuccess,
+    TResult Function(String message)? updateProductFailure,
+    TResult Function(List<File> images)? selectImageSuccess,
+    TResult Function(String message)? selectImageFailure,
+    required TResult orElse(),
+  }) {
+    if (updateProductLoading != null) {
+      return updateProductLoading();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial<T> value) initial,
+    required TResult Function(AddBusinessProductLoading<T> value)
+        addBusinessProductLoading,
+    required TResult Function(AddBusinessProductSuccess<T> value)
+        addBusinessProductSuccess,
+    required TResult Function(AddBusinessProductFailure<T> value)
+        addBusinessProductFailure,
+    required TResult Function(AddBusinessProductImageLoading<T> value)
+        addBusinessProductImageLoading,
+    required TResult Function(AddBusinessProductImageSuccess<T> value)
+        addBusinessProductImageSuccess,
+    required TResult Function(AddBusinessProductImageFailure<T> value)
+        addBusinessProductImageFailure,
+    required TResult Function(UploadBusinessImageLoading<T> value)
+        uploadBusinessImageLoading,
+    required TResult Function(UploadBusinessImageSuccess<T> value)
+        uploadBusinessImageSuccess,
+    required TResult Function(UploadBusinessImageFailure<T> value)
+        uploadBusinessImageFailure,
+    required TResult Function(UpdateProductLoading<T> value)
+        updateProductLoading,
+    required TResult Function(UpdateProductSuccess<T> value)
+        updateProductSuccess,
+    required TResult Function(UpdateProductFailure<T> value)
+        updateProductFailure,
+    required TResult Function(SelectImageSuccess<T> value) selectImageSuccess,
+    required TResult Function(SelectImageFailure<T> value) selectImageFailure,
+  }) {
+    return updateProductLoading(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial<T> value)? initial,
+    TResult? Function(AddBusinessProductLoading<T> value)?
+        addBusinessProductLoading,
+    TResult? Function(AddBusinessProductSuccess<T> value)?
+        addBusinessProductSuccess,
+    TResult? Function(AddBusinessProductFailure<T> value)?
+        addBusinessProductFailure,
+    TResult? Function(AddBusinessProductImageLoading<T> value)?
+        addBusinessProductImageLoading,
+    TResult? Function(AddBusinessProductImageSuccess<T> value)?
+        addBusinessProductImageSuccess,
+    TResult? Function(AddBusinessProductImageFailure<T> value)?
+        addBusinessProductImageFailure,
+    TResult? Function(UploadBusinessImageLoading<T> value)?
+        uploadBusinessImageLoading,
+    TResult? Function(UploadBusinessImageSuccess<T> value)?
+        uploadBusinessImageSuccess,
+    TResult? Function(UploadBusinessImageFailure<T> value)?
+        uploadBusinessImageFailure,
+    TResult? Function(UpdateProductLoading<T> value)? updateProductLoading,
+    TResult? Function(UpdateProductSuccess<T> value)? updateProductSuccess,
+    TResult? Function(UpdateProductFailure<T> value)? updateProductFailure,
+    TResult? Function(SelectImageSuccess<T> value)? selectImageSuccess,
+    TResult? Function(SelectImageFailure<T> value)? selectImageFailure,
+  }) {
+    return updateProductLoading?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial<T> value)? initial,
+    TResult Function(AddBusinessProductLoading<T> value)?
+        addBusinessProductLoading,
+    TResult Function(AddBusinessProductSuccess<T> value)?
+        addBusinessProductSuccess,
+    TResult Function(AddBusinessProductFailure<T> value)?
+        addBusinessProductFailure,
+    TResult Function(AddBusinessProductImageLoading<T> value)?
+        addBusinessProductImageLoading,
+    TResult Function(AddBusinessProductImageSuccess<T> value)?
+        addBusinessProductImageSuccess,
+    TResult Function(AddBusinessProductImageFailure<T> value)?
+        addBusinessProductImageFailure,
+    TResult Function(UploadBusinessImageLoading<T> value)?
+        uploadBusinessImageLoading,
+    TResult Function(UploadBusinessImageSuccess<T> value)?
+        uploadBusinessImageSuccess,
+    TResult Function(UploadBusinessImageFailure<T> value)?
+        uploadBusinessImageFailure,
+    TResult Function(UpdateProductLoading<T> value)? updateProductLoading,
+    TResult Function(UpdateProductSuccess<T> value)? updateProductSuccess,
+    TResult Function(UpdateProductFailure<T> value)? updateProductFailure,
+    TResult Function(SelectImageSuccess<T> value)? selectImageSuccess,
+    TResult Function(SelectImageFailure<T> value)? selectImageFailure,
+    required TResult orElse(),
+  }) {
+    if (updateProductLoading != null) {
+      return updateProductLoading(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class UpdateProductLoading<T> implements BusinessAddProductState<T> {
+  const factory UpdateProductLoading() = _$UpdateProductLoadingImpl<T>;
+}
+
+/// @nodoc
+abstract class _$$UpdateProductSuccessImplCopyWith<T, $Res> {
+  factory _$$UpdateProductSuccessImplCopyWith(
+          _$UpdateProductSuccessImpl<T> value,
+          $Res Function(_$UpdateProductSuccessImpl<T>) then) =
+      __$$UpdateProductSuccessImplCopyWithImpl<T, $Res>;
+  @useResult
+  $Res call({AddProductBusinessResponseModel response});
+}
+
+/// @nodoc
+class __$$UpdateProductSuccessImplCopyWithImpl<T, $Res>
+    extends _$BusinessAddProductStateCopyWithImpl<T, $Res,
+        _$UpdateProductSuccessImpl<T>>
+    implements _$$UpdateProductSuccessImplCopyWith<T, $Res> {
+  __$$UpdateProductSuccessImplCopyWithImpl(_$UpdateProductSuccessImpl<T> _value,
+      $Res Function(_$UpdateProductSuccessImpl<T>) _then)
+      : super(_value, _then);
+
+  /// Create a copy of BusinessAddProductState
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? response = null,
+  }) {
+    return _then(_$UpdateProductSuccessImpl<T>(
+      null == response
+          ? _value.response
+          : response // ignore: cast_nullable_to_non_nullable
+              as AddProductBusinessResponseModel,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$UpdateProductSuccessImpl<T> implements UpdateProductSuccess<T> {
+  const _$UpdateProductSuccessImpl(this.response);
+
+  @override
+  final AddProductBusinessResponseModel response;
+
+  @override
+  String toString() {
+    return 'BusinessAddProductState<$T>.updateProductSuccess(response: $response)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$UpdateProductSuccessImpl<T> &&
+            (identical(other.response, response) ||
+                other.response == response));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, response);
+
+  /// Create a copy of BusinessAddProductState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$UpdateProductSuccessImplCopyWith<T, _$UpdateProductSuccessImpl<T>>
+      get copyWith => __$$UpdateProductSuccessImplCopyWithImpl<T,
+          _$UpdateProductSuccessImpl<T>>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() addBusinessProductLoading,
+    required TResult Function(AddProductBusinessResponseModel response)
+        addBusinessProductSuccess,
+    required TResult Function(String error) addBusinessProductFailure,
+    required TResult Function() addBusinessProductImageLoading,
+    required TResult Function(BusinessAddProductImagesResponse images)
+        addBusinessProductImageSuccess,
+    required TResult Function(String error) addBusinessProductImageFailure,
+    required TResult Function() uploadBusinessImageLoading,
+    required TResult Function() uploadBusinessImageSuccess,
+    required TResult Function(String error) uploadBusinessImageFailure,
+    required TResult Function() updateProductLoading,
+    required TResult Function(AddProductBusinessResponseModel response)
+        updateProductSuccess,
+    required TResult Function(String message) updateProductFailure,
+    required TResult Function(List<File> images) selectImageSuccess,
+    required TResult Function(String message) selectImageFailure,
+  }) {
+    return updateProductSuccess(response);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? addBusinessProductLoading,
+    TResult? Function(AddProductBusinessResponseModel response)?
+        addBusinessProductSuccess,
+    TResult? Function(String error)? addBusinessProductFailure,
+    TResult? Function()? addBusinessProductImageLoading,
+    TResult? Function(BusinessAddProductImagesResponse images)?
+        addBusinessProductImageSuccess,
+    TResult? Function(String error)? addBusinessProductImageFailure,
+    TResult? Function()? uploadBusinessImageLoading,
+    TResult? Function()? uploadBusinessImageSuccess,
+    TResult? Function(String error)? uploadBusinessImageFailure,
+    TResult? Function()? updateProductLoading,
+    TResult? Function(AddProductBusinessResponseModel response)?
+        updateProductSuccess,
+    TResult? Function(String message)? updateProductFailure,
+    TResult? Function(List<File> images)? selectImageSuccess,
+    TResult? Function(String message)? selectImageFailure,
+  }) {
+    return updateProductSuccess?.call(response);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? addBusinessProductLoading,
+    TResult Function(AddProductBusinessResponseModel response)?
+        addBusinessProductSuccess,
+    TResult Function(String error)? addBusinessProductFailure,
+    TResult Function()? addBusinessProductImageLoading,
+    TResult Function(BusinessAddProductImagesResponse images)?
+        addBusinessProductImageSuccess,
+    TResult Function(String error)? addBusinessProductImageFailure,
+    TResult Function()? uploadBusinessImageLoading,
+    TResult Function()? uploadBusinessImageSuccess,
+    TResult Function(String error)? uploadBusinessImageFailure,
+    TResult Function()? updateProductLoading,
+    TResult Function(AddProductBusinessResponseModel response)?
+        updateProductSuccess,
+    TResult Function(String message)? updateProductFailure,
+    TResult Function(List<File> images)? selectImageSuccess,
+    TResult Function(String message)? selectImageFailure,
+    required TResult orElse(),
+  }) {
+    if (updateProductSuccess != null) {
+      return updateProductSuccess(response);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial<T> value) initial,
+    required TResult Function(AddBusinessProductLoading<T> value)
+        addBusinessProductLoading,
+    required TResult Function(AddBusinessProductSuccess<T> value)
+        addBusinessProductSuccess,
+    required TResult Function(AddBusinessProductFailure<T> value)
+        addBusinessProductFailure,
+    required TResult Function(AddBusinessProductImageLoading<T> value)
+        addBusinessProductImageLoading,
+    required TResult Function(AddBusinessProductImageSuccess<T> value)
+        addBusinessProductImageSuccess,
+    required TResult Function(AddBusinessProductImageFailure<T> value)
+        addBusinessProductImageFailure,
+    required TResult Function(UploadBusinessImageLoading<T> value)
+        uploadBusinessImageLoading,
+    required TResult Function(UploadBusinessImageSuccess<T> value)
+        uploadBusinessImageSuccess,
+    required TResult Function(UploadBusinessImageFailure<T> value)
+        uploadBusinessImageFailure,
+    required TResult Function(UpdateProductLoading<T> value)
+        updateProductLoading,
+    required TResult Function(UpdateProductSuccess<T> value)
+        updateProductSuccess,
+    required TResult Function(UpdateProductFailure<T> value)
+        updateProductFailure,
+    required TResult Function(SelectImageSuccess<T> value) selectImageSuccess,
+    required TResult Function(SelectImageFailure<T> value) selectImageFailure,
+  }) {
+    return updateProductSuccess(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial<T> value)? initial,
+    TResult? Function(AddBusinessProductLoading<T> value)?
+        addBusinessProductLoading,
+    TResult? Function(AddBusinessProductSuccess<T> value)?
+        addBusinessProductSuccess,
+    TResult? Function(AddBusinessProductFailure<T> value)?
+        addBusinessProductFailure,
+    TResult? Function(AddBusinessProductImageLoading<T> value)?
+        addBusinessProductImageLoading,
+    TResult? Function(AddBusinessProductImageSuccess<T> value)?
+        addBusinessProductImageSuccess,
+    TResult? Function(AddBusinessProductImageFailure<T> value)?
+        addBusinessProductImageFailure,
+    TResult? Function(UploadBusinessImageLoading<T> value)?
+        uploadBusinessImageLoading,
+    TResult? Function(UploadBusinessImageSuccess<T> value)?
+        uploadBusinessImageSuccess,
+    TResult? Function(UploadBusinessImageFailure<T> value)?
+        uploadBusinessImageFailure,
+    TResult? Function(UpdateProductLoading<T> value)? updateProductLoading,
+    TResult? Function(UpdateProductSuccess<T> value)? updateProductSuccess,
+    TResult? Function(UpdateProductFailure<T> value)? updateProductFailure,
+    TResult? Function(SelectImageSuccess<T> value)? selectImageSuccess,
+    TResult? Function(SelectImageFailure<T> value)? selectImageFailure,
+  }) {
+    return updateProductSuccess?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial<T> value)? initial,
+    TResult Function(AddBusinessProductLoading<T> value)?
+        addBusinessProductLoading,
+    TResult Function(AddBusinessProductSuccess<T> value)?
+        addBusinessProductSuccess,
+    TResult Function(AddBusinessProductFailure<T> value)?
+        addBusinessProductFailure,
+    TResult Function(AddBusinessProductImageLoading<T> value)?
+        addBusinessProductImageLoading,
+    TResult Function(AddBusinessProductImageSuccess<T> value)?
+        addBusinessProductImageSuccess,
+    TResult Function(AddBusinessProductImageFailure<T> value)?
+        addBusinessProductImageFailure,
+    TResult Function(UploadBusinessImageLoading<T> value)?
+        uploadBusinessImageLoading,
+    TResult Function(UploadBusinessImageSuccess<T> value)?
+        uploadBusinessImageSuccess,
+    TResult Function(UploadBusinessImageFailure<T> value)?
+        uploadBusinessImageFailure,
+    TResult Function(UpdateProductLoading<T> value)? updateProductLoading,
+    TResult Function(UpdateProductSuccess<T> value)? updateProductSuccess,
+    TResult Function(UpdateProductFailure<T> value)? updateProductFailure,
+    TResult Function(SelectImageSuccess<T> value)? selectImageSuccess,
+    TResult Function(SelectImageFailure<T> value)? selectImageFailure,
+    required TResult orElse(),
+  }) {
+    if (updateProductSuccess != null) {
+      return updateProductSuccess(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class UpdateProductSuccess<T> implements BusinessAddProductState<T> {
+  const factory UpdateProductSuccess(
+          final AddProductBusinessResponseModel response) =
+      _$UpdateProductSuccessImpl<T>;
+
+  AddProductBusinessResponseModel get response;
+
+  /// Create a copy of BusinessAddProductState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$UpdateProductSuccessImplCopyWith<T, _$UpdateProductSuccessImpl<T>>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$UpdateProductFailureImplCopyWith<T, $Res> {
+  factory _$$UpdateProductFailureImplCopyWith(
+          _$UpdateProductFailureImpl<T> value,
+          $Res Function(_$UpdateProductFailureImpl<T>) then) =
+      __$$UpdateProductFailureImplCopyWithImpl<T, $Res>;
+  @useResult
+  $Res call({String message});
+}
+
+/// @nodoc
+class __$$UpdateProductFailureImplCopyWithImpl<T, $Res>
+    extends _$BusinessAddProductStateCopyWithImpl<T, $Res,
+        _$UpdateProductFailureImpl<T>>
+    implements _$$UpdateProductFailureImplCopyWith<T, $Res> {
+  __$$UpdateProductFailureImplCopyWithImpl(_$UpdateProductFailureImpl<T> _value,
+      $Res Function(_$UpdateProductFailureImpl<T>) _then)
+      : super(_value, _then);
+
+  /// Create a copy of BusinessAddProductState
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? message = null,
+  }) {
+    return _then(_$UpdateProductFailureImpl<T>(
+      null == message
+          ? _value.message
+          : message // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$UpdateProductFailureImpl<T> implements UpdateProductFailure<T> {
+  const _$UpdateProductFailureImpl(this.message);
+
+  @override
+  final String message;
+
+  @override
+  String toString() {
+    return 'BusinessAddProductState<$T>.updateProductFailure(message: $message)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$UpdateProductFailureImpl<T> &&
+            (identical(other.message, message) || other.message == message));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, message);
+
+  /// Create a copy of BusinessAddProductState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$UpdateProductFailureImplCopyWith<T, _$UpdateProductFailureImpl<T>>
+      get copyWith => __$$UpdateProductFailureImplCopyWithImpl<T,
+          _$UpdateProductFailureImpl<T>>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() addBusinessProductLoading,
+    required TResult Function(AddProductBusinessResponseModel response)
+        addBusinessProductSuccess,
+    required TResult Function(String error) addBusinessProductFailure,
+    required TResult Function() addBusinessProductImageLoading,
+    required TResult Function(BusinessAddProductImagesResponse images)
+        addBusinessProductImageSuccess,
+    required TResult Function(String error) addBusinessProductImageFailure,
+    required TResult Function() uploadBusinessImageLoading,
+    required TResult Function() uploadBusinessImageSuccess,
+    required TResult Function(String error) uploadBusinessImageFailure,
+    required TResult Function() updateProductLoading,
+    required TResult Function(AddProductBusinessResponseModel response)
+        updateProductSuccess,
+    required TResult Function(String message) updateProductFailure,
+    required TResult Function(List<File> images) selectImageSuccess,
+    required TResult Function(String message) selectImageFailure,
+  }) {
+    return updateProductFailure(message);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? addBusinessProductLoading,
+    TResult? Function(AddProductBusinessResponseModel response)?
+        addBusinessProductSuccess,
+    TResult? Function(String error)? addBusinessProductFailure,
+    TResult? Function()? addBusinessProductImageLoading,
+    TResult? Function(BusinessAddProductImagesResponse images)?
+        addBusinessProductImageSuccess,
+    TResult? Function(String error)? addBusinessProductImageFailure,
+    TResult? Function()? uploadBusinessImageLoading,
+    TResult? Function()? uploadBusinessImageSuccess,
+    TResult? Function(String error)? uploadBusinessImageFailure,
+    TResult? Function()? updateProductLoading,
+    TResult? Function(AddProductBusinessResponseModel response)?
+        updateProductSuccess,
+    TResult? Function(String message)? updateProductFailure,
+    TResult? Function(List<File> images)? selectImageSuccess,
+    TResult? Function(String message)? selectImageFailure,
+  }) {
+    return updateProductFailure?.call(message);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? addBusinessProductLoading,
+    TResult Function(AddProductBusinessResponseModel response)?
+        addBusinessProductSuccess,
+    TResult Function(String error)? addBusinessProductFailure,
+    TResult Function()? addBusinessProductImageLoading,
+    TResult Function(BusinessAddProductImagesResponse images)?
+        addBusinessProductImageSuccess,
+    TResult Function(String error)? addBusinessProductImageFailure,
+    TResult Function()? uploadBusinessImageLoading,
+    TResult Function()? uploadBusinessImageSuccess,
+    TResult Function(String error)? uploadBusinessImageFailure,
+    TResult Function()? updateProductLoading,
+    TResult Function(AddProductBusinessResponseModel response)?
+        updateProductSuccess,
+    TResult Function(String message)? updateProductFailure,
+    TResult Function(List<File> images)? selectImageSuccess,
+    TResult Function(String message)? selectImageFailure,
+    required TResult orElse(),
+  }) {
+    if (updateProductFailure != null) {
+      return updateProductFailure(message);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial<T> value) initial,
+    required TResult Function(AddBusinessProductLoading<T> value)
+        addBusinessProductLoading,
+    required TResult Function(AddBusinessProductSuccess<T> value)
+        addBusinessProductSuccess,
+    required TResult Function(AddBusinessProductFailure<T> value)
+        addBusinessProductFailure,
+    required TResult Function(AddBusinessProductImageLoading<T> value)
+        addBusinessProductImageLoading,
+    required TResult Function(AddBusinessProductImageSuccess<T> value)
+        addBusinessProductImageSuccess,
+    required TResult Function(AddBusinessProductImageFailure<T> value)
+        addBusinessProductImageFailure,
+    required TResult Function(UploadBusinessImageLoading<T> value)
+        uploadBusinessImageLoading,
+    required TResult Function(UploadBusinessImageSuccess<T> value)
+        uploadBusinessImageSuccess,
+    required TResult Function(UploadBusinessImageFailure<T> value)
+        uploadBusinessImageFailure,
+    required TResult Function(UpdateProductLoading<T> value)
+        updateProductLoading,
+    required TResult Function(UpdateProductSuccess<T> value)
+        updateProductSuccess,
+    required TResult Function(UpdateProductFailure<T> value)
+        updateProductFailure,
+    required TResult Function(SelectImageSuccess<T> value) selectImageSuccess,
+    required TResult Function(SelectImageFailure<T> value) selectImageFailure,
+  }) {
+    return updateProductFailure(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial<T> value)? initial,
+    TResult? Function(AddBusinessProductLoading<T> value)?
+        addBusinessProductLoading,
+    TResult? Function(AddBusinessProductSuccess<T> value)?
+        addBusinessProductSuccess,
+    TResult? Function(AddBusinessProductFailure<T> value)?
+        addBusinessProductFailure,
+    TResult? Function(AddBusinessProductImageLoading<T> value)?
+        addBusinessProductImageLoading,
+    TResult? Function(AddBusinessProductImageSuccess<T> value)?
+        addBusinessProductImageSuccess,
+    TResult? Function(AddBusinessProductImageFailure<T> value)?
+        addBusinessProductImageFailure,
+    TResult? Function(UploadBusinessImageLoading<T> value)?
+        uploadBusinessImageLoading,
+    TResult? Function(UploadBusinessImageSuccess<T> value)?
+        uploadBusinessImageSuccess,
+    TResult? Function(UploadBusinessImageFailure<T> value)?
+        uploadBusinessImageFailure,
+    TResult? Function(UpdateProductLoading<T> value)? updateProductLoading,
+    TResult? Function(UpdateProductSuccess<T> value)? updateProductSuccess,
+    TResult? Function(UpdateProductFailure<T> value)? updateProductFailure,
+    TResult? Function(SelectImageSuccess<T> value)? selectImageSuccess,
+    TResult? Function(SelectImageFailure<T> value)? selectImageFailure,
+  }) {
+    return updateProductFailure?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial<T> value)? initial,
+    TResult Function(AddBusinessProductLoading<T> value)?
+        addBusinessProductLoading,
+    TResult Function(AddBusinessProductSuccess<T> value)?
+        addBusinessProductSuccess,
+    TResult Function(AddBusinessProductFailure<T> value)?
+        addBusinessProductFailure,
+    TResult Function(AddBusinessProductImageLoading<T> value)?
+        addBusinessProductImageLoading,
+    TResult Function(AddBusinessProductImageSuccess<T> value)?
+        addBusinessProductImageSuccess,
+    TResult Function(AddBusinessProductImageFailure<T> value)?
+        addBusinessProductImageFailure,
+    TResult Function(UploadBusinessImageLoading<T> value)?
+        uploadBusinessImageLoading,
+    TResult Function(UploadBusinessImageSuccess<T> value)?
+        uploadBusinessImageSuccess,
+    TResult Function(UploadBusinessImageFailure<T> value)?
+        uploadBusinessImageFailure,
+    TResult Function(UpdateProductLoading<T> value)? updateProductLoading,
+    TResult Function(UpdateProductSuccess<T> value)? updateProductSuccess,
+    TResult Function(UpdateProductFailure<T> value)? updateProductFailure,
+    TResult Function(SelectImageSuccess<T> value)? selectImageSuccess,
+    TResult Function(SelectImageFailure<T> value)? selectImageFailure,
+    required TResult orElse(),
+  }) {
+    if (updateProductFailure != null) {
+      return updateProductFailure(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class UpdateProductFailure<T> implements BusinessAddProductState<T> {
+  const factory UpdateProductFailure(final String message) =
+      _$UpdateProductFailureImpl<T>;
+
+  String get message;
+
+  /// Create a copy of BusinessAddProductState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$UpdateProductFailureImplCopyWith<T, _$UpdateProductFailureImpl<T>>
       get copyWith => throw _privateConstructorUsedError;
 }
 
@@ -2491,6 +3504,10 @@ class _$SelectImageSuccessImpl<T> implements SelectImageSuccess<T> {
     required TResult Function() uploadBusinessImageLoading,
     required TResult Function() uploadBusinessImageSuccess,
     required TResult Function(String error) uploadBusinessImageFailure,
+    required TResult Function() updateProductLoading,
+    required TResult Function(AddProductBusinessResponseModel response)
+        updateProductSuccess,
+    required TResult Function(String message) updateProductFailure,
     required TResult Function(List<File> images) selectImageSuccess,
     required TResult Function(String message) selectImageFailure,
   }) {
@@ -2512,6 +3529,10 @@ class _$SelectImageSuccessImpl<T> implements SelectImageSuccess<T> {
     TResult? Function()? uploadBusinessImageLoading,
     TResult? Function()? uploadBusinessImageSuccess,
     TResult? Function(String error)? uploadBusinessImageFailure,
+    TResult? Function()? updateProductLoading,
+    TResult? Function(AddProductBusinessResponseModel response)?
+        updateProductSuccess,
+    TResult? Function(String message)? updateProductFailure,
     TResult? Function(List<File> images)? selectImageSuccess,
     TResult? Function(String message)? selectImageFailure,
   }) {
@@ -2533,6 +3554,10 @@ class _$SelectImageSuccessImpl<T> implements SelectImageSuccess<T> {
     TResult Function()? uploadBusinessImageLoading,
     TResult Function()? uploadBusinessImageSuccess,
     TResult Function(String error)? uploadBusinessImageFailure,
+    TResult Function()? updateProductLoading,
+    TResult Function(AddProductBusinessResponseModel response)?
+        updateProductSuccess,
+    TResult Function(String message)? updateProductFailure,
     TResult Function(List<File> images)? selectImageSuccess,
     TResult Function(String message)? selectImageFailure,
     required TResult orElse(),
@@ -2565,6 +3590,12 @@ class _$SelectImageSuccessImpl<T> implements SelectImageSuccess<T> {
         uploadBusinessImageSuccess,
     required TResult Function(UploadBusinessImageFailure<T> value)
         uploadBusinessImageFailure,
+    required TResult Function(UpdateProductLoading<T> value)
+        updateProductLoading,
+    required TResult Function(UpdateProductSuccess<T> value)
+        updateProductSuccess,
+    required TResult Function(UpdateProductFailure<T> value)
+        updateProductFailure,
     required TResult Function(SelectImageSuccess<T> value) selectImageSuccess,
     required TResult Function(SelectImageFailure<T> value) selectImageFailure,
   }) {
@@ -2593,6 +3624,9 @@ class _$SelectImageSuccessImpl<T> implements SelectImageSuccess<T> {
         uploadBusinessImageSuccess,
     TResult? Function(UploadBusinessImageFailure<T> value)?
         uploadBusinessImageFailure,
+    TResult? Function(UpdateProductLoading<T> value)? updateProductLoading,
+    TResult? Function(UpdateProductSuccess<T> value)? updateProductSuccess,
+    TResult? Function(UpdateProductFailure<T> value)? updateProductFailure,
     TResult? Function(SelectImageSuccess<T> value)? selectImageSuccess,
     TResult? Function(SelectImageFailure<T> value)? selectImageFailure,
   }) {
@@ -2621,6 +3655,9 @@ class _$SelectImageSuccessImpl<T> implements SelectImageSuccess<T> {
         uploadBusinessImageSuccess,
     TResult Function(UploadBusinessImageFailure<T> value)?
         uploadBusinessImageFailure,
+    TResult Function(UpdateProductLoading<T> value)? updateProductLoading,
+    TResult Function(UpdateProductSuccess<T> value)? updateProductSuccess,
+    TResult Function(UpdateProductFailure<T> value)? updateProductFailure,
     TResult Function(SelectImageSuccess<T> value)? selectImageSuccess,
     TResult Function(SelectImageFailure<T> value)? selectImageFailure,
     required TResult orElse(),
@@ -2727,6 +3764,10 @@ class _$SelectImageFailureImpl<T> implements SelectImageFailure<T> {
     required TResult Function() uploadBusinessImageLoading,
     required TResult Function() uploadBusinessImageSuccess,
     required TResult Function(String error) uploadBusinessImageFailure,
+    required TResult Function() updateProductLoading,
+    required TResult Function(AddProductBusinessResponseModel response)
+        updateProductSuccess,
+    required TResult Function(String message) updateProductFailure,
     required TResult Function(List<File> images) selectImageSuccess,
     required TResult Function(String message) selectImageFailure,
   }) {
@@ -2748,6 +3789,10 @@ class _$SelectImageFailureImpl<T> implements SelectImageFailure<T> {
     TResult? Function()? uploadBusinessImageLoading,
     TResult? Function()? uploadBusinessImageSuccess,
     TResult? Function(String error)? uploadBusinessImageFailure,
+    TResult? Function()? updateProductLoading,
+    TResult? Function(AddProductBusinessResponseModel response)?
+        updateProductSuccess,
+    TResult? Function(String message)? updateProductFailure,
     TResult? Function(List<File> images)? selectImageSuccess,
     TResult? Function(String message)? selectImageFailure,
   }) {
@@ -2769,6 +3814,10 @@ class _$SelectImageFailureImpl<T> implements SelectImageFailure<T> {
     TResult Function()? uploadBusinessImageLoading,
     TResult Function()? uploadBusinessImageSuccess,
     TResult Function(String error)? uploadBusinessImageFailure,
+    TResult Function()? updateProductLoading,
+    TResult Function(AddProductBusinessResponseModel response)?
+        updateProductSuccess,
+    TResult Function(String message)? updateProductFailure,
     TResult Function(List<File> images)? selectImageSuccess,
     TResult Function(String message)? selectImageFailure,
     required TResult orElse(),
@@ -2801,6 +3850,12 @@ class _$SelectImageFailureImpl<T> implements SelectImageFailure<T> {
         uploadBusinessImageSuccess,
     required TResult Function(UploadBusinessImageFailure<T> value)
         uploadBusinessImageFailure,
+    required TResult Function(UpdateProductLoading<T> value)
+        updateProductLoading,
+    required TResult Function(UpdateProductSuccess<T> value)
+        updateProductSuccess,
+    required TResult Function(UpdateProductFailure<T> value)
+        updateProductFailure,
     required TResult Function(SelectImageSuccess<T> value) selectImageSuccess,
     required TResult Function(SelectImageFailure<T> value) selectImageFailure,
   }) {
@@ -2829,6 +3884,9 @@ class _$SelectImageFailureImpl<T> implements SelectImageFailure<T> {
         uploadBusinessImageSuccess,
     TResult? Function(UploadBusinessImageFailure<T> value)?
         uploadBusinessImageFailure,
+    TResult? Function(UpdateProductLoading<T> value)? updateProductLoading,
+    TResult? Function(UpdateProductSuccess<T> value)? updateProductSuccess,
+    TResult? Function(UpdateProductFailure<T> value)? updateProductFailure,
     TResult? Function(SelectImageSuccess<T> value)? selectImageSuccess,
     TResult? Function(SelectImageFailure<T> value)? selectImageFailure,
   }) {
@@ -2857,6 +3915,9 @@ class _$SelectImageFailureImpl<T> implements SelectImageFailure<T> {
         uploadBusinessImageSuccess,
     TResult Function(UploadBusinessImageFailure<T> value)?
         uploadBusinessImageFailure,
+    TResult Function(UpdateProductLoading<T> value)? updateProductLoading,
+    TResult Function(UpdateProductSuccess<T> value)? updateProductSuccess,
+    TResult Function(UpdateProductFailure<T> value)? updateProductFailure,
     TResult Function(SelectImageSuccess<T> value)? selectImageSuccess,
     TResult Function(SelectImageFailure<T> value)? selectImageFailure,
     required TResult orElse(),

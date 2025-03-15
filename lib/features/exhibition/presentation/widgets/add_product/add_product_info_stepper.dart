@@ -26,7 +26,9 @@ import 'add_product_materials_and_specs.dart';
 import 'success_mission_dialog.dart';
 
 class AddProductInfoStepper extends StatefulWidget {
-  const AddProductInfoStepper({super.key});
+  final int? productIndex;
+
+  const AddProductInfoStepper({super.key,  this.productIndex});
 
   @override
   State<AddProductInfoStepper> createState() => _AddProductInfoStepperState();
@@ -51,12 +53,7 @@ class _AddProductInfoStepperState extends State<AddProductInfoStepper> {
     AppAssets.uploadImageIcon,
   ];
 
-  final List<Widget> stepPages = [
-    AddProductBasicDetailsStepper(),
-    AddProductMaterialsAndSpecs(),
-    AddProductColorsAndStock(),
-    AddProductImages(),
-  ];
+  late final List<Widget> stepPages ;
 
   /// Move to next step
   void _nextStep() {
@@ -86,7 +83,16 @@ class _AddProductInfoStepperState extends State<AddProductInfoStepper> {
       ),
     );
   }
-
+@override
+  void initState() {
+    super.initState();
+    stepPages = [
+      AddProductBasicDetailsStepper(productIndex:widget.productIndex,),
+      AddProductMaterialsAndSpecs(),
+      AddProductColorsAndStock(),
+      AddProductImages(),
+    ];
+  }
   @override
   Widget build(BuildContext context) {
     return BlocListener<BusinessAddProductCubit, BusinessAddProductState>(
@@ -118,7 +124,7 @@ class _AddProductInfoStepperState extends State<AddProductInfoStepper> {
             stepPages[activeStep],
             verticalSpace(32),
             if (activeStep == upperBound) _buildPreviewButton(),
-            _buildNavigationButtons(),
+            _buildNavigationButtons(widget.productIndex),
             verticalSpace(32),
           ],
         ),
@@ -201,13 +207,13 @@ class _AddProductInfoStepperState extends State<AddProductInfoStepper> {
   }
 
   /// Build navigation buttons (Previous & Next)
-  Widget _buildNavigationButtons() {
+  Widget _buildNavigationButtons(int ? productIndex) {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
         if (activeStep > 0) _buildBackButton(),
         if (activeStep > 0) SizedBox(width: 16.w),
-        activeStep == upperBound ? _buildSubmitButton() : _buildNextButton(),
+        activeStep == upperBound ? _buildSubmitButton(productIndex) : _buildNextButton(),
       ],
     );
   }
@@ -222,13 +228,16 @@ class _AddProductInfoStepperState extends State<AddProductInfoStepper> {
   }
 
   /// Build submit button
-  Widget _buildSubmitButton() {
+  Widget _buildSubmitButton(int? productIndex) {
     return BlocBuilder<BusinessAddProductCubit, BusinessAddProductState>(
       builder: (context, state) {
         return Expanded(
           child: AppCustomTextButtonWithIcon(
             onPressed: () {
-              context.read<BusinessAddProductCubit>().addProductAndImages();
+              context.read<BusinessAddProductCubit>().addOrUpdateProduct(
+                isUpdate: productIndex !=null ?true:false,
+                productId:94,
+              );
             },
             isLoading: state is AddBusinessProductLoading,
             svgIcon: AppAssets.submitIconSvg,

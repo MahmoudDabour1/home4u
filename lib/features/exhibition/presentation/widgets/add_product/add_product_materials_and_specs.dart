@@ -2,10 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_localization/flutter_localization.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:hive/hive.dart';
 import 'package:home4u/features/exhibition/presentation/widgets/add_product/up_down_form_field.dart';
 
+import '../../../../../core/utils/app_constants.dart';
 import '../../../../../core/widgets/app_custom_drop_down_multi_select_button.dart';
 import '../../../../../locale/app_locale.dart';
+import '../../../../products/data/models/products_response_model.dart';
 import '../../../../products/logic/products_cubit.dart';
 import '../../../logic/business_add_product_cubit.dart';
 
@@ -23,6 +26,7 @@ class _AddProductMaterialsAndSpecsState
   late FocusNode lengthFocusNode;
   late FocusNode widthFocusNode;
   late FocusNode heightFocusNode;
+  ProductsResponseModel? productCachedData;
 
 
   @override
@@ -41,12 +45,18 @@ class _AddProductMaterialsAndSpecsState
     heightFocusNode.dispose();
     super.dispose();
   }
+  void _loadProductData() async {
+    var productsBox = await Hive.openBox<ProductsResponseModel>(kProductsBox);
+    var productData = productsBox.get(kProductsData);
+    productCachedData = productData;
+    setState(() {});
+  }
 
   @override
   Widget build(BuildContext context) {
     final productCubit = context.read<ProductsCubit>();
     final businessCubit = context.read<BusinessAddProductCubit>();
-
+// productCubit.materials = productCachedData?.data?.content[0]. ?? [];
     return Column(
       mainAxisAlignment: MainAxisAlignment.start,
       spacing: 16.h,

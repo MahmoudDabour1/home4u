@@ -187,7 +187,7 @@ class _SignUpRemoteDataSource implements SignUpRemoteDataSource {
   }
 
   @override
-  Future<BusinessTypesModel> getBusinessTypes(int userTypeId) async {
+  Future<BusinessTypesModel> getBusinessTypes(int userTypeId) {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
@@ -208,14 +208,7 @@ class _SignUpRemoteDataSource implements SignUpRemoteDataSource {
           _dio.options.baseUrl,
           baseUrl,
         )));
-    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
-    late BusinessTypesModel _value;
-    try {
-      _value = BusinessTypesModel.fromJson(_result.data!);
-    } on Object catch (e, s) {
-      errorLogger?.logError(e, s, _options);
-      rethrow;
-    }
-    return _value;
+    return _dio.fetch<Map<String, dynamic>>(_options).then((value) =>
+        BusinessTypesModel.fromJson(value.data!));
   }
 }

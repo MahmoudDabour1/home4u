@@ -1,4 +1,5 @@
 import 'package:home4u/core/networking/api_result.dart';
+import 'package:home4u/features/products/data/data_source/products_local_data_source.dart';
 import 'package:home4u/features/products/data/data_source/products_remote_data_source.dart';
 import 'package:home4u/features/products/data/models/delete_product_model.dart';
 import 'package:home4u/features/products/data/models/product_preview_response.dart';
@@ -22,8 +23,9 @@ abstract class ProductsRepo {
 
 class ProductsRepoImpl implements ProductsRepo {
   final ProductsRemoteDataSource productsRemoteDataSource;
+  final ProductsLocalDatasource productsLocalDataSource;
 
-  ProductsRepoImpl({required this.productsRemoteDataSource});
+  ProductsRepoImpl( {required this.productsRemoteDataSource,required this.productsLocalDataSource,});
 
   @override
   Future<ApiResult<ProductsResponseModel>> getProducts(
@@ -31,8 +33,13 @@ class ProductsRepoImpl implements ProductsRepo {
     try {
       final response =
           await productsRemoteDataSource.getProducts(productsFilter);
+      await productsLocalDataSource.cacheProductsData(response);
       return ApiResult.success(response);
     } catch (error) {
+      final cachedProductsData = await productsLocalDataSource.getProductsData();
+      if (cachedProductsData != null) {
+        return ApiResult.success(cachedProductsData);
+      }
       return ApiResult.failure(ApiErrorHandler.handle(error));
     }
   }

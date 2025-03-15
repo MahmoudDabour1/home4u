@@ -39,6 +39,10 @@ class BusinessAddProductState<T> with _$BusinessAddProductState<T> {
 
   const factory BusinessAddProductState.uploadBusinessImageFailure(
       String error) = UploadBusinessImageFailure;
+  ///update product
+  const factory BusinessAddProductState.updateProductLoading() = UpdateProductLoading;
+  const factory BusinessAddProductState.updateProductSuccess(AddProductBusinessResponseModel response) = UpdateProductSuccess;
+  const factory BusinessAddProductState.updateProductFailure(String message) = UpdateProductFailure;
 
   ///select image
   const factory BusinessAddProductState.selectImageSuccess(List<File> images) = SelectImageSuccess;

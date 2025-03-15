@@ -6,12 +6,14 @@ class FancyImage extends StatelessWidget {
   final String imagePath;
   final double? width;
   final double? height;
+  final BorderRadiusGeometry? borderRadiusGeometry;
 
   const FancyImage({
     super.key,
     required this.imagePath,
     this.width,
     this.height,
+    this.borderRadiusGeometry,
   });
 
   @override
@@ -30,7 +32,7 @@ class FancyImage extends StatelessWidget {
         return Container(
           decoration: BoxDecoration(
             shape: BoxShape.rectangle,
-            borderRadius: BorderRadius.circular(16.r),
+            borderRadius:borderRadiusGeometry?? BorderRadius.circular(16.r),
             image: DecorationImage(
               image: imageProvider,
               fit: BoxFit.cover,

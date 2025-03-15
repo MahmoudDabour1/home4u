@@ -4,6 +4,8 @@ part 'business_add_product_body.g.dart';
 
 @JsonSerializable()
 class BusinessAddProductBody {
+  @JsonKey(name: "id")
+  final int? id;
   @JsonKey(name: "nameAr")
   final String nameAr;
   @JsonKey(name: "nameEn")
@@ -45,6 +47,7 @@ class BusinessAddProductBody {
     required this.materials,
     required this.stocks,
     required this.imagePaths,
+    this.id
   });
 
   factory BusinessAddProductBody.fromJson(Map<String, dynamic> json) =>

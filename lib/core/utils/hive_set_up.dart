@@ -1,4 +1,5 @@
 import 'package:hive_flutter/hive_flutter.dart';
+import 'package:home4u/features/products/data/models/products_response_model.dart';
 
 import '../../features/profile/data/models/profile/engineer_profile_response_model.dart';
 import '../../features/profile/data/models/profile/technical_worker_profile_response_model.dart';
@@ -11,6 +12,7 @@ Future<void> initHive() async {
   await Hive.openBox<EngineerProfileResponseModel>(kEngineerProfileBox);
   await Hive.openBox<TechnicalWorkerResponseModel>(kTechnicalWorkerProfileBox);
   await Hive.openBox<GetProjectsResponseModel>(kProjectsBox);
+  await Hive.openBox<ProductsResponseModel>(kProductsBox);
 }
 
 void _registerHiveAdapters() {
@@ -41,5 +43,23 @@ void _registerHiveAdapters() {
   }
   if (!Hive.isAdapterRegistered(11)) {
     Hive.registerAdapter(ProjectsDataAdapter());
+  }
+  if (!Hive.isAdapterRegistered(80)) {
+    Hive.registerAdapter(ProductsResponseModelAdapter());
+  }
+  if (!Hive.isAdapterRegistered(81)) {
+    Hive.registerAdapter(DataAdapter());
+  }
+  if (!Hive.isAdapterRegistered(82)) {
+    Hive.registerAdapter(ContentAdapter());
+  }
+  if (!Hive.isAdapterRegistered(83)) {
+    Hive.registerAdapter(ColorAdapter());
+  }
+  if (!Hive.isAdapterRegistered(84)) {
+    Hive.registerAdapter(PageableAdapter());
+  }
+  if (!Hive.isAdapterRegistered(85)) {
+    Hive.registerAdapter(SortAdapter());
   }
 }

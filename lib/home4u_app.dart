@@ -86,7 +86,7 @@ class _Home4uAppState extends State<Home4uApp> {
           create: (_) => sl<TechnicalWorkerCubit>(),
         ),
         BlocProvider<ProductsCubit>(
-          create: (_) => sl<ProductsCubit>(),
+          create: (_) => sl<ProductsCubit>()
         ),
           BlocProvider<BusinessAddProductCubit>(
           create: (_) => sl<BusinessAddProductCubit>(),

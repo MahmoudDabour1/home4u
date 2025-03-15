@@ -14,16 +14,17 @@ class ProductsCustomColorContainer extends StatelessWidget {
     return Row(
       children: [
         Container(
-          width: 45.w,
-          height: 29.h,
           decoration: BoxDecoration(
             color: AppColors.containersColor,
             borderRadius: BorderRadius.circular(10.r),
           ),
           child: Center(
-            child: Text(
-              text,
-              style: AppStyles.font14BlackLight,
+            child: Padding(
+              padding:  EdgeInsets.all(8.0.w),
+              child: Text(
+                text,
+                style: AppStyles.font14BlackLight,
+              ),
             ),
           ),
         ),

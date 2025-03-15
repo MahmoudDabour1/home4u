@@ -4,11 +4,13 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:home4u/core/helpers/shared_pref_helper.dart';
 import 'package:home4u/core/helpers/shared_pref_keys.dart';
+import 'package:home4u/features/products/data/data_source/products_local_data_source.dart';
 import 'package:home4u/features/products/data/models/business_config_model.dart';
 import 'package:home4u/features/products/data/repos/business_config_repo.dart';
 import 'package:home4u/features/products/data/repos/products_repo.dart';
 import 'package:home4u/features/products/logic/products_state.dart';
 
+import '../data/data_source/products_local_data_source.dart';
 import '../data/models/products_response_model.dart';
 
 class ProductsCubit extends Cubit<ProductsState> {
@@ -16,8 +18,9 @@ class ProductsCubit extends Cubit<ProductsState> {
 
   BusinessConfigModel? businessConfigModel;
   final ProductsRepo _productsRepo;
+  final ProductsLocalDatasource _productsLocalDatasource;
 
-  ProductsCubit(this._businessConfigRepo, this._productsRepo)
+  ProductsCubit(this._businessConfigRepo, this._productsRepo, this._productsLocalDatasource)
       : super(ProductsState.initial());
   double? minPrice;
   double? maxPrice;
@@ -68,6 +71,8 @@ class ProductsCubit extends Cubit<ProductsState> {
     final response = await _productsRepo.getProducts(requestBody);
 
     response.when(
+      success: (data) async{
+        await _productsLocalDatasource.cacheProductsData(data);
       success: (data) {
         final newProducts = data.data?.content ?? [];
         if (newProducts.isEmpty) {
@@ -123,7 +128,8 @@ class ProductsCubit extends Cubit<ProductsState> {
       failure: (error) {
         if (!isClosed) {
           emit(ProductsState.getProductPreviewFailure(
-              errorMessage: error.message.toString()));
+              errorMessage: error.message.toString())
+          );
         }
       },
     );

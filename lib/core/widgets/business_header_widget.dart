@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:home4u/core/theming/app_styles.dart';
+import 'package:home4u/core/widgets/app_back_button.dart';
 
 import '../../features/auth/widgets/custom_header_shape.dart';
 import '../theming/app_assets.dart';
@@ -10,12 +11,19 @@ import '../theming/font_weight_helper.dart';
 
 class BusinessHeaderWidget extends StatelessWidget {
   final String headerTitle;
-  final String headerIcon;
+  final String? headerIcon;
+  final bool isBackButton;
+
+  final bool isDrawer;
+  final bool isHasIcon ;
 
   const BusinessHeaderWidget({
     super.key,
     required this.headerTitle,
-    required this.headerIcon,
+    this.headerIcon,
+    this.isBackButton = false,
+    this.isDrawer = true,
+    this.isHasIcon = true,
   });
 
   @override
@@ -29,9 +37,9 @@ class BusinessHeaderWidget extends StatelessWidget {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              _buildHeaderMenu(context),
+              _buildHeaderMenu(context,isDrawer: isDrawer),
               Spacer(),
-              _buildHeaderTitle(),
+              _buildHeaderTitle(isHasIcon: isHasIcon),
               Spacer(),
               _buildHeaderNotification(),
             ],
@@ -41,16 +49,16 @@ class BusinessHeaderWidget extends StatelessWidget {
     );
   }
 
-  Widget _buildHeaderMenu(BuildContext context) {
+  Widget _buildHeaderMenu(BuildContext context,{required bool isDrawer }) {
     return GestureDetector(
-      onTap: (){
-        Scaffold.of(context).openDrawer();
+      onTap: () {
+       isDrawer==true? Scaffold.of(context).openDrawer():null;
       },
-      child: Icon(
+      child: isDrawer==true? Icon(
         Icons.menu,
         size: 36.r,
         color: AppColors.whiteColor,
-      ),
+      ):AppBackButton(),
     );
   }
 
@@ -66,12 +74,12 @@ class BusinessHeaderWidget extends StatelessWidget {
     );
   }
 
-  Widget _buildHeaderTitle() {
+  Widget _buildHeaderTitle({required isHasIcon}) {
     return Row(
-      spacing: 4.w,
+      spacing:  isHasIcon==true?4.w:0,
       children: [
-        SvgPicture.asset(
-          headerIcon,
+      isHasIcon==true?  SvgPicture.asset(
+          headerIcon ?? '',
           width: 24.w,
           height: 24.h,
           alignment: Alignment.center,
@@ -79,7 +87,7 @@ class BusinessHeaderWidget extends StatelessWidget {
           //   AppColors.whiteColor,
           //   BlendMode.srcIn,
           // ),
-        ),
+        ):SizedBox.shrink(),
         Text(
           headerTitle,
           style: AppStyles.font20WhiteBold.copyWith(
