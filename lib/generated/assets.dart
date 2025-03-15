@@ -12,6 +12,8 @@ class Assets {
   static const String home4uShorebird = 'shorebird.yaml';
   static const String imagesAndroid12Splash = 'assets/images/android_12_splash.png';
   static const String imagesAppIcon = 'assets/images/app_icon.png';
+  static const String imagesArchispaceLogo = 'assets/images/archispace_logo.png';
+  static const String imagesArchispaceLogo512 = 'assets/images/archispace_logo_512.png';
   static const String imagesArrow = 'assets/images/arrow.png';
   static const String imagesFacebook = 'assets/images/facebook.png';
   static const String imagesGoogle = 'assets/images/google.png';
@@ -35,12 +37,12 @@ class Assets {
   static const String svgsEditIconSvg = 'assets/svgs/edit_icon_svg.svg';
   static const String svgsEditProfle = 'assets/svgs/edit_profle.svg';
   static const String svgsEditSvg = 'assets/svgs/edit_svg.svg';
-  static const String svgsFacebookSvgIcon = 'assets/svgs/facebook_svg_icon.svg';
+  static const String svgsFacebookLogo = 'assets/svgs/facebook_logo.svg';
   static const String svgsFaqs = 'assets/svgs/faqs.svg';
   static const String svgsFilterSvg = 'assets/svgs/filter_svg.svg';
   static const String svgsFurnitureSvg = 'assets/svgs/furniture_svg.svg';
   static const String svgsHouseBuilding = 'assets/svgs/house_building.svg';
-  static const String svgsInstagramSvgIcon = 'assets/svgs/instagram_svg_icon.svg';
+  static const String svgsInstagramLogo = 'assets/svgs/instagram_logo.svg';
   static const String svgsLikeSvgIcon = 'assets/svgs/like_svg_icon.svg';
   static const String svgsLoadImages = 'assets/svgs/load_images.svg';
   static const String svgsLocation = 'assets/svgs/location.svg';
@@ -66,6 +68,9 @@ class Assets {
   static const String svgsSettingSvg = 'assets/svgs/setting_svg.svg';
   static const String svgsSettingsDrawerSvg = 'assets/svgs/settings_drawer_svg.svg';
   static const String svgsStarSvg = 'assets/svgs/star_svg.svg';
+  static const String svgsStepperBasicDetails = 'assets/svgs/stepper_basic_details.svg';
+  static const String svgsStepperColorsAndStock = 'assets/svgs/stepper_colors_and_stock.svg';
+  static const String svgsStepperMaterialsAndSpecs = 'assets/svgs/stepper_materials_and_specs.svg';
   static const String svgsStockSvg = 'assets/svgs/stock_svg.svg';
   static const String svgsSubmitSvgIcon = 'assets/svgs/submit_svg_icon.svg';
   static const String svgsSuccessMission = 'assets/svgs/success_mission.svg';

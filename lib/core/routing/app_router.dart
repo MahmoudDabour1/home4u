@@ -23,7 +23,6 @@ import '../../features/auth/sign_up/presentation/business_sign_up_screen.dart';
 import '../../features/exhibition/presentation/business_add_product_screen.dart';
 import '../../features/exhibition/presentation/business_overview_screen.dart';
 import '../../features/exhibition/presentation/business_review_screen.dart';
-import '../../features/exhibition/presentation/product_preview_screen.dart';
 import '../../features/layout/presentation/bottom_nav_bar_layout.dart';
 import '../../features/onboarding/presentation/onboarding_screen.dart';
 import '../../features/products/presentation/products_screen.dart';

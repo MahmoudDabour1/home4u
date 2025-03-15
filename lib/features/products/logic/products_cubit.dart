@@ -23,8 +23,8 @@ class ProductsCubit extends Cubit<ProductsState> {
   bool? isAvailable;
   final searchController = TextEditingController();
 
-  int _page = 0;
-  bool _isFetching = false;
+  final int _page = 0;
+  final bool _isFetching = false;
   List<Content> products = [];
 
   static ProductsCubit get(context) => BlocProvider.of(context);

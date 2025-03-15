@@ -59,16 +59,18 @@ class UserImageWidget extends StatelessWidget {
                       clipBehavior: Clip.antiAlias,
                       child: CircleAvatar(
                         radius: 51.r,
-                        foregroundImage:
-                        (profileData as dynamic)?.user?.personalPhoto != null
-                                ? NetworkImage(
-                                    ApiConstants.getImageBaseUrl(
-                                      (profileData as dynamic)!.user!.personalPhoto,
-                                    ),
-                                  )
-                                : AssetImage(
-                                    AppAssets.facebook,
-                                  ),
+                        foregroundImage: (profileData as dynamic)
+                                    ?.user
+                                    ?.personalPhoto !=
+                                null
+                            ? NetworkImage(
+                                ApiConstants.getImageBaseUrl(
+                                  (profileData as dynamic)!.user!.personalPhoto,
+                                ),
+                              )
+                            : AssetImage(
+                                AppAssets.facebook,
+                              ) as ImageProvider,
                       ),
                     ),
                     Positioned(

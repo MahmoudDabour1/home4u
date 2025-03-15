@@ -28,9 +28,9 @@ class BusinessAddProductCubit extends Cubit<BusinessAddProductState> {
   final productNameArController = TextEditingController(text: "عنوان المنتج");
   final productNameEnController = TextEditingController(text: "Product Title");
   final productDescriptionArController =
-  TextEditingController(text: "وصف المنتج");
+      TextEditingController(text: "وصف المنتج");
   final productDescriptionEnController =
-  TextEditingController(text: "Product Description");
+      TextEditingController(text: "Product Description");
   final productPriceController = TextEditingController(text: "20.0");
   final productLengthController = TextEditingController(text: "10.0");
   final productWidthController = TextEditingController(text: "10.0");
@@ -71,18 +71,19 @@ class BusinessAddProductCubit extends Cubit<BusinessAddProductState> {
   ///Step 1: Add Business Product
   Future<void> addProductAndImages() async {
     if (selectedExhibitionBusinessType == null || selectedBaseUnit == null) {
-      emit(BusinessAddProductState.addBusinessProductFailure(
-          "Please select a business type and base unit."),);
+      emit(
+        BusinessAddProductState.addBusinessProductFailure(
+            "Please select a business type and base unit."),
+      );
       return;
     }
     emit(const BusinessAddProductState.addBusinessProductLoading());
 
     final stockList = selectedColorsAndStock
-        .map((item) =>
-        Stock(
-          color: BaseUnit(id: item["colorId"]),
-          amount: item["stock"],
-        ))
+        .map((item) => Stock(
+              color: BaseUnit(id: item["colorId"]),
+              amount: item["stock"],
+            ))
         .toList();
 
     final productBody = BusinessAddProductBody(
@@ -108,10 +109,9 @@ class BusinessAddProductCubit extends Cubit<BusinessAddProductState> {
             BusinessAddProductState.addBusinessProductSuccess(productResponse));
         await _addBusinessProductImages(productResponse.data.id);
       },
-      failure: (error) =>
-          emit(
-              BusinessAddProductState.addBusinessProductFailure(
-                  error.message.toString())),
+      failure: (error) => emit(
+          BusinessAddProductState.addBusinessProductFailure(
+              error.message.toString())),
     );
   }
 
@@ -120,43 +120,39 @@ class BusinessAddProductCubit extends Cubit<BusinessAddProductState> {
     emit(const BusinessAddProductState.addBusinessProductImageLoading());
 
     final imageBodies = images
-        .map((image) =>
-        BusinessAddProductImagesBody(
-          productId: productId,
-          imagePath: null,
-        ))
+        .map((image) => BusinessAddProductImagesBody(
+              productId: productId,
+              imagePath: null,
+            ))
         .toList();
 
     final addImageResult =
-    await _repository.addBusinessProductImage(imageBodies);
+        await _repository.addBusinessProductImage(imageBodies);
     addImageResult.when(
       success: (imageResponse) async {
         emit(BusinessAddProductState.addBusinessProductImageSuccess(
             imageResponse));
         await _uploadBusinessImages(imageResponse);
       },
-      failure: (error) =>
-          emit(
-              BusinessAddProductState.addBusinessProductImageFailure(
-                  error.message.toString())),
+      failure: (error) => emit(
+          BusinessAddProductState.addBusinessProductImageFailure(
+              error.message.toString())),
     );
   }
 
   ///Step 3: Upload Business Images
   Future<void> _uploadBusinessImages(
       BusinessAddProductImagesResponse imageResponse) async {
-    emit(const BusinessAddProductState.uploadBusinessImageLoading());
     DioFactory.setContentTypeForMultipart();
 
+    emit(const BusinessAddProductState.uploadBusinessImageLoading());
+
     final imageFiles =
-    await Future.wait(images.map((image) =>
-        MultipartFile.fromFile(
-          image.path,
-          filename: image.path
-              .split('/')
-              .last,
-          contentType: MediaType('image', 'jpeg'),
-        )));
+        await Future.wait(images.map((image) => MultipartFile.fromFile(
+              image.path,
+              filename: image.path.split('/').last,
+              contentType: MediaType('image', 'jpeg'),
+            )));
 
     for (var i = 0; i < imageFiles.length; i++) {
       final uploadResult = await _repository.uploadBusinessImage(
@@ -173,10 +169,11 @@ class BusinessAddProductCubit extends Cubit<BusinessAddProductState> {
                 uploadResponse.data.toString()));
           }
         },
-        failure: (error) =>
-            emit(
-              BusinessAddProductState.uploadBusinessImageFailure(
-                error.message.toString(),),),
+        failure: (error) => emit(
+          BusinessAddProductState.uploadBusinessImageFailure(
+            error.message.toString(),
+          ),
+        ),
       );
     }
   }
@@ -186,21 +183,23 @@ class BusinessAddProductCubit extends Cubit<BusinessAddProductState> {
     final productCubit = context.read<ProductsCubit>();
 
     final materialNames = selectedMaterials?.map((id) {
-      final material = productCubit.materials.firstWhere(
+          final material = productCubit.materials.firstWhere(
             (material) => material.id == id,
-      );
-      return material.name ?? 'N/A';
-    }).join(', ') ?? '';
+          );
+          return material.name ?? 'N/A';
+        }).join(', ') ??
+        '';
 
     final baseUnitName = productCubit.baseUnits
-        .firstWhere(
-          (unit) => unit.id == selectedBaseUnit,
-    )
-        .name ?? 'N/A';
+            .firstWhere(
+              (unit) => unit.id == selectedBaseUnit,
+            )
+            .name ??
+        'N/A';
 
     final productStockAndColors = selectedColorsAndStock.map((item) {
       final color = productCubit.colors.firstWhere(
-            (element) => element.id == item["colorId"],
+        (element) => element.id == item["colorId"],
       );
       return {
         'hexColor': color.hexColor,
@@ -214,11 +213,10 @@ class BusinessAddProductCubit extends Cubit<BusinessAddProductState> {
       'productDescription': productDescriptionEnController.text,
       'productMaterial': materialNames,
       'productDimensions':
-      '${productLengthController.text} x ${productWidthController
-          .text} x ${productHeightController.text}',
+          '${productLengthController.text} x ${productWidthController.text} x ${productHeightController.text}',
       'baseUnit': baseUnitName,
       'productStockAndColors': productStockAndColors,
-      'images': images,
+      'images': images.map((file) => file.path).toList(),
     };
   }
 }
