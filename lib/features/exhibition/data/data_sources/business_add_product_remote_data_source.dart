@@ -4,6 +4,7 @@ import 'package:retrofit/error_logger.dart';
 import 'package:retrofit/http.dart';
 
 import '../../../../core/networking/api_constants.dart';
+import '../../../products/data/models/update_product_response_model.dart';
 import '../models/add_product_business_response_model.dart';
 import '../models/business_add_product_body.dart';
 import '../models/business_add_product_images_body.dart';
@@ -23,7 +24,7 @@ abstract class BusinessAddProductRemoteDataSource {
       );
 // Todo change response model
  @PUT(ApiConstants.updateProductEP)
-  Future<AddProductBusinessResponseModel> updateBusinessProduct(
+  Future<UpdateProductsResponseModel> updateBusinessProduct(
       @Body() BusinessAddProductBody businessAddProductBody,
       );
 

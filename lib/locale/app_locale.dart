@@ -124,6 +124,7 @@ class AppLocale {
   static const String name = 'Name';
   static const String description = 'Description';
   static const String update = 'Update';
+  static const String updateProduct = 'Update Product';
   static const String nameCantBeEmpty = 'Name Can\'t be empty';
   static const String descriptionCantBeEmpty = 'Description Can\'t be empty';
   static const String pleaseSelectAnImage = 'Please select an image';
@@ -193,6 +194,7 @@ class AppLocale {
   static const String selectMaterials = 'Select Materials';
   static const String productUploadedSuccessfully = 'Product uploaded\nsuccessfully';
   static const String goToProductList = 'go to product list';
+  static const String productUpdatedSuccessfully = 'Product Updated Successfully';
 
   ///BusinessSignUp
   static const String tradeName = 'Trade Name';
@@ -427,6 +429,8 @@ class AppLocale {
     productUploadedSuccessfully :  'Product uploaded\nsuccessfully',
     goToProductList : 'go to product list',
     productDetails : 'Product Details',
+    updateProduct : 'Update Product',
+    productUpdatedSuccessfully : 'Product Updated Successfully',
   };
 
   static const Map<String, dynamic> ar = {
@@ -626,5 +630,7 @@ class AppLocale {
     productUploadedSuccessfully :  'تم إضافة المنتج بنجاح',
     goToProductList : 'الذهاب إلى قائمة المنتجات',
     productDetails : 'تفاصيل المنتج',
+    updateProduct : 'تحديث المنتج',
+    productUpdatedSuccessfully : 'تم تحديث المنتج بنجاح',
   };
 }

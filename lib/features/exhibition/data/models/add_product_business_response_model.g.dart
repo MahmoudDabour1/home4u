@@ -36,14 +36,15 @@ BusinessAddProductData _$BusinessAddProductDataFromJson(
       length: (json['length'] as num).toInt(),
       width: (json['width'] as num).toInt(),
       height: (json['height'] as num).toInt(),
-      businessType:
-          BaseUnit.fromJson(json['businessType'] as Map<String, dynamic>),
-      baseUnit: BaseUnit.fromJson(json['baseUnit'] as Map<String, dynamic>),
+      businessType: AddProductBaseUnit.fromJson(
+          json['businessType'] as Map<String, dynamic>),
+      baseUnit:
+          AddProductBaseUnit.fromJson(json['baseUnit'] as Map<String, dynamic>),
       materials: (json['materials'] as List<dynamic>)
-          .map((e) => BaseUnit.fromJson(e as Map<String, dynamic>))
+          .map((e) => AddProductBaseUnit.fromJson(e as Map<String, dynamic>))
           .toList(),
       stocks: (json['stocks'] as List<dynamic>)
-          .map((e) => Stock.fromJson(e as Map<String, dynamic>))
+          .map((e) => AddProductStock.fromJson(e as Map<String, dynamic>))
           .toList(),
       imagePaths: json['imagePaths'] as List<dynamic>,
     );
@@ -68,28 +69,32 @@ Map<String, dynamic> _$BusinessAddProductDataToJson(
       'imagePaths': instance.imagePaths,
     };
 
-BaseUnit _$BaseUnitFromJson(Map<String, dynamic> json) => BaseUnit(
+AddProductBaseUnit _$AddProductBaseUnitFromJson(Map<String, dynamic> json) =>
+    AddProductBaseUnit(
       id: (json['id'] as num).toInt(),
       code: json['code'],
       name: json['name'],
       hexColor: json['hexColor'],
     );
 
-Map<String, dynamic> _$BaseUnitToJson(BaseUnit instance) => <String, dynamic>{
+Map<String, dynamic> _$AddProductBaseUnitToJson(AddProductBaseUnit instance) =>
+    <String, dynamic>{
       'id': instance.id,
       'code': instance.code,
       'name': instance.name,
       'hexColor': instance.hexColor,
     };
 
-Stock _$StockFromJson(Map<String, dynamic> json) => Stock(
+AddProductStock _$AddProductStockFromJson(Map<String, dynamic> json) =>
+    AddProductStock(
       id: (json['id'] as num).toInt(),
       statusCode: json['statusCode'],
-      color: BaseUnit.fromJson(json['color'] as Map<String, dynamic>),
+      color: AddProductBaseUnit.fromJson(json['color'] as Map<String, dynamic>),
       amount: (json['amount'] as num).toInt(),
     );
 
-Map<String, dynamic> _$StockToJson(Stock instance) => <String, dynamic>{
+Map<String, dynamic> _$AddProductStockToJson(AddProductStock instance) =>
+    <String, dynamic>{
       'id': instance.id,
       'statusCode': instance.statusCode,
       'color': instance.color,

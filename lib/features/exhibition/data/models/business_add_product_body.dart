@@ -73,12 +73,15 @@ class BaseUnit {
 
 @JsonSerializable()
 class Stock {
+  @JsonKey(name: "id")
+  final int? id;
   @JsonKey(name: "amount")
   final int amount;
   @JsonKey(name: "color")
   final BaseUnit color;
 
-  Stock({
+  Stock( {
+    this.id,
     required this.amount,
     required this.color,
   });

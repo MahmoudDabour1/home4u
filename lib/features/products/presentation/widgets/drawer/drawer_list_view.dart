@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:home4u/core/extensions/navigation_extension.dart';
 import 'package:home4u/features/products/presentation/widgets/drawer/products_drawer.dart';
 
-import '../../../../../core/routing/app_router.dart';
 import '../../../../../core/routing/routes.dart';
 import 'drawer_item_widget.dart';
 

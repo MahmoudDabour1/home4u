@@ -3,6 +3,7 @@ import 'package:home4u/core/networking/api_result.dart';
 import 'package:home4u/features/exhibition/data/data_sources/business_add_product_remote_data_source.dart';
 
 import '../../../../core/networking/api_error_handler.dart';
+import '../../../products/data/models/update_product_response_model.dart';
 import '../models/add_product_business_response_model.dart';
 import '../models/business_add_product_body.dart';
 import '../models/business_add_product_images_body.dart';
@@ -12,7 +13,7 @@ import '../models/upload_image_response.dart';
 abstract class BusinessAddProductRepository {
   Future<ApiResult<AddProductBusinessResponseModel>> addBusinessProduct(
       BusinessAddProductBody businessAddProductBody);
-  Future<ApiResult<AddProductBusinessResponseModel>> updateBusinessProduct(
+  Future<ApiResult<UpdateProductsResponseModel>> updateBusinessProduct(
       BusinessAddProductBody businessAddProductBody);
 
   Future<ApiResult<BusinessAddProductImagesResponse>> addBusinessProductImage(
@@ -68,7 +69,7 @@ class BusinessAddProductRepositoryImpl implements BusinessAddProductRepository {
   }
 
   @override
-  Future<ApiResult<AddProductBusinessResponseModel>> updateBusinessProduct(BusinessAddProductBody businessAddProductBody) async{
+  Future<ApiResult<UpdateProductsResponseModel>> updateBusinessProduct(BusinessAddProductBody businessAddProductBody) async{
     try {
       final response = await _businessAddProductRemoteDataSource.updateBusinessProduct(businessAddProductBody);
       return ApiResult.success(response);

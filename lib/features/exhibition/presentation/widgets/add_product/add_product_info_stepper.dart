@@ -16,6 +16,7 @@ import '../../../../../core/widgets/app_custom_button.dart';
 import '../../../../../core/widgets/app_custom_text_button_with_icon.dart';
 import '../../../../../core/widgets/app_rounded_back_button.dart';
 import '../../../../../locale/app_locale.dart';
+import '../../../../products/data/models/product_preview_response.dart';
 import '../../../logic/business_add_product_cubit.dart';
 import '../../product_preview_screen.dart';
 import 'add_product_basic_details_stepper.dart';
@@ -25,9 +26,9 @@ import 'add_product_materials_and_specs.dart';
 import 'success_mission_dialog.dart';
 
 class AddProductInfoStepper extends StatefulWidget {
-  final int? productIndex;
+  final ProductPreviewResponse? productData;
 
-  const AddProductInfoStepper({super.key,  this.productIndex});
+  const AddProductInfoStepper({super.key, this.productData});
 
   @override
   State<AddProductInfoStepper> createState() => _AddProductInfoStepperState();
@@ -52,7 +53,7 @@ class _AddProductInfoStepperState extends State<AddProductInfoStepper> {
     'assets/images/onboarding_three.png',
   ];
 
-  late final List<Widget> stepPages ;
+  late final List<Widget> stepPages;
 
   /// Move to next step
   void _nextStep() {
@@ -75,24 +76,31 @@ class _AddProductInfoStepperState extends State<AddProductInfoStepper> {
     Navigator.push(
       context,
       MaterialPageRoute(
-        builder: (context) =>
-            BlocProvider.value(
-              value: cubit,
-              child: ProductPreviewScreen(previewData: previewData),
-            ),
+        builder: (context) => BlocProvider.value(
+          value: cubit,
+          child: ProductPreviewScreen(previewData: previewData),
+        ),
       ),
     );
   }
-@override
+
+  @override
   void initState() {
     super.initState();
     stepPages = [
-      AddProductBasicDetailsStepper(productIndex:widget.productIndex,),
-      AddProductMaterialsAndSpecs(),
-      AddProductColorsAndStock(),
+      AddProductBasicDetailsStepper(
+        productData: widget.productData,
+      ),
+      AddProductMaterialsAndSpecs(
+        productData: widget.productData,
+      ),
+      AddProductColorsAndStock(
+        productData: widget.productData,
+      ),
       AddProductImages(),
     ];
   }
+
   @override
   Widget build(BuildContext context) {
     return BlocListener<BusinessAddProductCubit, BusinessAddProductState>(
@@ -107,11 +115,22 @@ class _AddProductInfoStepperState extends State<AddProductInfoStepper> {
               ),
             );
           },
-          addBusinessProductSuccess: (productResponse) {
-            showAdaptiveDialog(context: context, builder:
-                (context) =>SuccessMissionDialog()
-            ,);
+          uploadBusinessImageSuccess: () {
+            showAdaptiveDialog(
+              context: context,
+              builder: (context) => SuccessMissionDialog(),
+            );
           },
+          // addBusinessProductSuccess: (productResponse) {
+          //   showAdaptiveDialog(context: context, builder:
+          //       (context) =>SuccessMissionDialog()
+          //     ,);
+          // },
+          // updateProductSuccess: (productResponse) {
+          //   showAdaptiveDialog(context: context, builder:
+          //       (context) =>SuccessMissionDialog(isUpdate: true,)
+          //     ,);
+          // },
           orElse: () {},
         );
       },
@@ -123,7 +142,7 @@ class _AddProductInfoStepperState extends State<AddProductInfoStepper> {
             stepPages[activeStep],
             verticalSpace(32),
             if (activeStep == upperBound) _buildPreviewButton(),
-            _buildNavigationButtons(widget.productIndex),
+            _buildNavigationButtons(widget.productData),
             verticalSpace(32),
           ],
         ),
@@ -148,15 +167,13 @@ class _AddProductInfoStepperState extends State<AddProductInfoStepper> {
       stepBorderRadius: 16.r,
       borderThickness: 2,
       padding:
-      EdgeInsetsDirectional.symmetric(horizontal: 30.w, vertical: 20.h),
+          EdgeInsetsDirectional.symmetric(horizontal: 30.w, vertical: 20.h),
       stepRadius: 28.r,
       finishedStepBorderColor: AppColors.primaryColor,
       activeStepBorderColor: AppColors.primaryColor,
       finishedStepBackgroundColor: AppColors.whiteColor,
       showLoadingAnimation: false,
-      textDirection: context
-          .read<AppLocalizationCubit>()
-          .textDirection,
+      textDirection: context.read<AppLocalizationCubit>().textDirection,
       steps: List.generate(stepTitles.length, (index) {
         return _buildStep(
           title: stepTitles[index].getString(context),
@@ -176,9 +193,7 @@ class _AddProductInfoStepperState extends State<AddProductInfoStepper> {
   }) {
     return EasyStep(
       customStep: ClipRRect(
-        borderRadius: BorderRadius
-            .circular(16)
-            .r,
+        borderRadius: BorderRadius.circular(16).r,
         child: Opacity(
           opacity: activeOpacity,
           child: Image.asset(image, height: 28.h, width: 28.w),
@@ -207,13 +222,15 @@ class _AddProductInfoStepperState extends State<AddProductInfoStepper> {
   }
 
   /// Build navigation buttons (Previous & Next)
-  Widget _buildNavigationButtons(int ? productIndex) {
+  Widget _buildNavigationButtons(productData) {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
         if (activeStep > 0) _buildBackButton(),
         if (activeStep > 0) SizedBox(width: 16.w),
-        activeStep == upperBound ? _buildSubmitButton(productIndex) : _buildNextButton(),
+        activeStep == upperBound
+            ? _buildSubmitButton(productData)
+            : _buildNextButton(),
       ],
     );
   }
@@ -228,18 +245,20 @@ class _AddProductInfoStepperState extends State<AddProductInfoStepper> {
   }
 
   /// Build submit button
-  Widget _buildSubmitButton(int? productIndex) {
+  Widget _buildSubmitButton(productData) {
     return BlocBuilder<BusinessAddProductCubit, BusinessAddProductState>(
       builder: (context, state) {
         return Expanded(
           child: AppCustomTextButtonWithIcon(
             onPressed: () {
               context.read<BusinessAddProductCubit>().addOrUpdateProduct(
-                isUpdate: productIndex !=null ?true:false,
-                productId:94,
-              );
+                    isUpdate: productData != null ? true : false,
+                    productId: productData?.data.id,
+                    productData: productData,
+                  );
             },
-            isLoading: state is AddBusinessProductLoading,
+            isLoading: state is AddBusinessProductLoading ||
+                state is UpdateProductLoading,
             svgIcon: AppAssets.submitIconSvg,
             text: AppLocale.submit.getString(context),
             backgroundColor: AppColors.ratingColor,
