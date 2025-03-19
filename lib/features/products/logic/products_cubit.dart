@@ -12,7 +12,6 @@ import 'package:home4u/features/products/data/repos/business_config_repo.dart';
 import 'package:home4u/features/products/data/repos/products_repo.dart';
 import 'package:home4u/features/products/logic/products_state.dart';
 
-import '../../../core/routing/router_observer.dart';
 import '../data/models/product_preview_response.dart';
 import '../data/models/products_response_model.dart';
 
@@ -35,7 +34,7 @@ class ProductsCubit extends Cubit<ProductsState> {
   final searchController = TextEditingController();
 
   ///pagination
-  int _page = 1;
+  int _page = 0;
   bool hasReachedMax = false;
   List<Content> products = [];
   bool isFetching = false;

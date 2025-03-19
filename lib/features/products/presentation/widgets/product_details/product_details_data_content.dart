@@ -31,7 +31,7 @@ class ProductDetailsDataContent extends StatelessWidget {
           ),
           _buildProductKeyValue(
             key: AppLocale.material.getString(context),
-            value:previewData.data.materials[0].name,
+            value:previewData.data.materials.map((e) => e.name).join(', '),
           ),
           _buildProductKeyValue(
             key: AppLocale.dimensions.getString(context),

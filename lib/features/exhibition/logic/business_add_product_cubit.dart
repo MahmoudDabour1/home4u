@@ -217,6 +217,8 @@ class BusinessAddProductCubit extends Cubit<BusinessAddProductState> {
       ),
     );
 
+    int successCount = 0;
+
     for (var i = 0; i < imageFiles.length; i++) {
       final result = await _repository.uploadBusinessImage("BUSINESS_PRODUCTS",
           imageResponse.data[i].id, FormData.fromMap({'file': imageFiles[i]}));
@@ -224,7 +226,11 @@ class BusinessAddProductCubit extends Cubit<BusinessAddProductState> {
       result.when(
         success: (uploadResponse) {
           if (uploadResponse.success) {
-            emit(BusinessAddProductState.uploadBusinessImageSuccess());
+            successCount++;
+            if (successCount == imageFiles.length) {
+              DioFactory.setContentType('application/json');
+              emit(const BusinessAddProductState.uploadBusinessImageSuccess());
+            }
           } else {
             emit(
               BusinessAddProductState.uploadBusinessImageFailure(
@@ -240,7 +246,6 @@ class BusinessAddProductCubit extends Cubit<BusinessAddProductState> {
         ),
       );
     }
-    // DioFactory.setContentType('application/json');
   }
 
   Map<String, dynamic> getPreviewData(BuildContext context) {
