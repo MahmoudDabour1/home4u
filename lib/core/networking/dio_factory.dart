@@ -26,13 +26,17 @@ class DioFactory {
   static void addDioHeaders() async {
     final token =
         await SharedPrefHelper.getSecuredString(SharedPrefKeys.userToken);
+
+    final locale =
+        await SharedPrefHelper.getString(SharedPrefKeys.selectedLocale) ?? 'en';
+
     if (token == null || token.isEmpty) {
       throw Exception("User token is missing or invalid.");
     }
     dio?.options.headers = {
       'Accept': 'application/json',
       'Authorization': 'Bearer $token',
-      'Accept-Language': 'en',
+      'Accept-Language': locale,
       'Content-Type': 'application/json',
     };
   }

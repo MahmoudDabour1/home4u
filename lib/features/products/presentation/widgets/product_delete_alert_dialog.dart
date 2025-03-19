@@ -21,14 +21,12 @@ class ProductDeleteAlertDialog extends StatelessWidget {
 
       return AppCustomAlertDialog(
         onDeleteButtonPressed: () async {
-          final navigationBack = context.pop();
-          await cubit.deleteProduct(productId!)
-              .then(
-                (value) => navigationBack,
-              );
+          await cubit.deleteProduct(productId!);
+          if (!context.mounted) return;
           await showToast(
             message: AppLocale.deletedSuccessfully.getString(context),
           );
+          context.pop();
         },
         isLoading: state is DeleteProductLoading,
       );

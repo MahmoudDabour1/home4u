@@ -33,7 +33,11 @@ class _BasicDetailsDropDownButtonsState
   @override
   void initState() {
     super.initState();
-    context.read<SignUpCubit>().getBusinessTypes();
+
+    ///ToDo : expected problem here
+    context.read<SignUpCubit>().getBusinessTypes(
+        context.read<SignUpCubit>().selectedUserType?.id ?? 3);
+
     if (widget.productData != null) {
       selectedBusinessType =
           widget.productData!.data.businessType.id.toString();

@@ -195,8 +195,10 @@ class BusinessAddProductCubit extends Cubit<BusinessAddProductState> {
         await _uploadBusinessImages(imageResponse);
       },
       failure: (error) => emit(
-          BusinessAddProductState.addBusinessProductImageFailure(
-              error.message.toString())),
+        BusinessAddProductState.addBusinessProductImageFailure(
+          error.message.toString(),
+        ),
+      ),
     );
   }
 
@@ -205,10 +207,17 @@ class BusinessAddProductCubit extends Cubit<BusinessAddProductState> {
     emit(const BusinessAddProductState.uploadBusinessImageLoading());
     DioFactory.setContentTypeForMultipart();
 
-    final imageFiles = await Future.wait(images.map((image) =>
-        MultipartFile.fromFile(image.path,
-            filename: image.path.split('/').last,
-            contentType: MediaType('image', 'jpeg'))));
+    final imageFiles = await Future.wait(
+      images.map(
+        (image) => MultipartFile.fromFile(
+          image.path,
+          filename: image.path.split('/').last,
+          contentType: MediaType('image', 'jpeg'),
+        ),
+      ),
+    );
+
+    int successCount = 0;
 
     for (var i = 0; i < imageFiles.length; i++) {
       final result = await _repository.uploadBusinessImage("BUSINESS_PRODUCTS",
@@ -217,15 +226,24 @@ class BusinessAddProductCubit extends Cubit<BusinessAddProductState> {
       result.when(
         success: (uploadResponse) {
           if (uploadResponse.success) {
-            emit(BusinessAddProductState.uploadBusinessImageSuccess());
+            successCount++;
+            if (successCount == imageFiles.length) {
+              DioFactory.setContentType('application/json');
+              emit(const BusinessAddProductState.uploadBusinessImageSuccess());
+            }
           } else {
-            emit(BusinessAddProductState.uploadBusinessImageFailure(
-                uploadResponse.data.toString()));
+            emit(
+              BusinessAddProductState.uploadBusinessImageFailure(
+                uploadResponse.data.toString(),
+              ),
+            );
           }
         },
         failure: (error) => emit(
-            BusinessAddProductState.uploadBusinessImageFailure(
-                error.message.toString())),
+          BusinessAddProductState.uploadBusinessImageFailure(
+            error.message.toString(),
+          ),
+        ),
       );
     }
   }

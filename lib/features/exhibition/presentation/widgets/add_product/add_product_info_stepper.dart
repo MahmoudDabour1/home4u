@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_localization/flutter_localization.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:home4u/core/theming/app_assets.dart';
 import 'package:home4u/core/theming/app_colors.dart';
 import 'package:home4u/core/utils/spacing.dart';
@@ -47,10 +48,10 @@ class _AddProductInfoStepperState extends State<AddProductInfoStepper> {
   ];
 
   final List<String> stepImages = [
-    'assets/images/google.png',
-    'assets/images/onboarding_three.png',
-    'assets/images/google.png',
-    'assets/images/onboarding_three.png',
+    AppAssets.stepperBasicDetailsSvg,
+    AppAssets.stepperMaterialsAndSpecsSvg,
+    AppAssets.stepperColorsAndStockSvg,
+    AppAssets.uploadImageIcon,
   ];
 
   late final List<Widget> stepPages;
@@ -169,8 +170,8 @@ class _AddProductInfoStepperState extends State<AddProductInfoStepper> {
       padding:
           EdgeInsetsDirectional.symmetric(horizontal: 30.w, vertical: 20.h),
       stepRadius: 28.r,
-      finishedStepBorderColor: AppColors.primaryColor,
-      activeStepBorderColor: AppColors.primaryColor,
+      finishedStepBorderColor: Color(0xff7F7FB3),
+      activeStepBorderColor: Color(0xff2D2D4C),
       finishedStepBackgroundColor: AppColors.whiteColor,
       showLoadingAnimation: false,
       textDirection: context.read<AppLocalizationCubit>().textDirection,
@@ -192,11 +193,14 @@ class _AddProductInfoStepperState extends State<AddProductInfoStepper> {
     required String image,
   }) {
     return EasyStep(
-      customStep: ClipRRect(
-        borderRadius: BorderRadius.circular(16).r,
-        child: Opacity(
-          opacity: activeOpacity,
-          child: Image.asset(image, height: 28.h, width: 28.w),
+      customStep: Opacity(
+        opacity: activeOpacity,
+        child: Center(
+          child: SvgPicture.asset(
+            image,
+            height: 28.h,
+            width: 28.w,
+          ),
         ),
       ),
       customTitle: Text(title, textAlign: TextAlign.center),

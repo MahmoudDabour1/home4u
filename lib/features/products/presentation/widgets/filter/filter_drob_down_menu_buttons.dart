@@ -2,6 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_localization/flutter_localization.dart';
 import 'package:home4u/features/products/logic/products_cubit.dart';
+
+import '../../../../../core/theming/app_colors.dart';
+import '../../../../../core/theming/app_styles.dart';
 import '../../../../../core/utils/spacing.dart';
 import '../../../../../core/widgets/app_custom_drop_down_multi_select_button.dart';
 import '../../../../../locale/app_locale.dart';

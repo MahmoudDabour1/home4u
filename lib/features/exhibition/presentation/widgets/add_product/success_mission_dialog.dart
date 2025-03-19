@@ -13,6 +13,9 @@ import 'package:home4u/core/widgets/app_custom_text_button_with_icon.dart';
 import 'package:home4u/features/products/logic/products_cubit.dart';
 import 'package:home4u/locale/app_locale.dart';
 
+import '../../../logic/business_add_product_cubit.dart';
+import '../../../logic/business_add_product_state.dart';
+
 class SuccessMissionDialog extends StatelessWidget {
   final bool isUpdate;
   const SuccessMissionDialog({super.key,  this.isUpdate = false});
@@ -61,15 +64,29 @@ class SuccessMissionDialog extends StatelessWidget {
     var cubit = context.read<ProductsCubit>();
     return Column(
       children: [
-        AppCustomTextButtonWithIcon(
-          onPressed: () {},
-          isWhiteLoading: false,
-          svgIcon: AppAssets.editIconSvg,
-          text: AppLocale.edit.getString(context),
-          textStyle: AppStyles.font16DarkBlueBold,
-          backgroundColor: AppColors.whiteColor,
-          svgIconColor: AppColors.secondaryColor,
-          useGradient: false,
+        BlocBuilder<BusinessAddProductCubit, BusinessAddProductState>(
+          builder: (context, state) {
+            return AppCustomTextButtonWithIcon(
+              onPressed: () {
+                state.maybeWhen(
+                  addBusinessProductSuccess: (response) {
+                    context.pushNamed(
+                      Routes.businessAddProductScreen,
+                      arguments: response.data.id,
+                    );
+                  },
+                  orElse: () {},
+                );
+              },
+              isWhiteLoading: false,
+              svgIcon: AppAssets.editIconSvg,
+              text: AppLocale.edit.getString(context),
+              textStyle: AppStyles.font16DarkBlueBold,
+              backgroundColor: AppColors.whiteColor,
+              svgIconColor: AppColors.secondaryColor,
+              useGradient: false,
+            );
+          },
         ),
         SizedBox(height: 16.h),
         AppCustomButton(

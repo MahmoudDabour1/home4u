@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_localization/flutter_localization.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:home4u/core/utils/spacing.dart';
 import 'package:home4u/features/products/data/models/products_response_model.dart';
@@ -29,11 +30,11 @@ class ProductsTextItems extends StatelessWidget {
           textStyle: AppStyles.font16BlueMedium,
         ),
         ProductsCustomRowWidget(
-          title: "${AppLocale.stock}: ${content?.stockAmount}",
+          title: "${AppLocale.stock.getString(context)}: ${content?.stockAmount}",
           iconImage: AppAssets.stockSvg,
         ),
         Text(
-            "${AppLocale.dimensions}: ${content?.height}*${content?.width}*${content?.length}cm",
+            "${AppLocale.dimensions.getString(context)}: ${content?.height}*${content?.width}*${content?.length}",
             style: AppStyles.font16GrayLight),
         verticalSpace(8),
       ],

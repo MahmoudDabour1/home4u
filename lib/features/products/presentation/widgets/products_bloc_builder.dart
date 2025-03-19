@@ -18,7 +18,7 @@ class ProductsBlocBuilder extends StatelessWidget {
           current is GetProductsFailure,
       builder: (context, state) {
         return state.maybeWhen(
-          getProductsLoading: () => setupLoading(),
+          getProductsLoading: () => ProductShimmerWidget(),
           getProductsSuccess: (products) => setupSuccess(products),
           getProductsFailure: (message) => setupFailure(message),
           orElse: () => const SliverToBoxAdapter(child: SizedBox.shrink()),
@@ -29,15 +29,13 @@ class ProductsBlocBuilder extends StatelessWidget {
 
   Widget setupSuccess(ProductsResponseModel products) {
     return ProductsListView(
-      content: products.data?.content,
+      content: products.data?.content ?? [],
     );
   }
 
   Widget setupFailure(message) {
-    return SliverToBoxAdapter(child: Center(child: Text(message)));
-  }
-
-  Widget setupLoading() {
-    return ProductShimmerWidget();
+    return SliverToBoxAdapter(
+      child: Center(child: Text(message, style: TextStyle(color: Colors.red))),
+    );
   }
 }

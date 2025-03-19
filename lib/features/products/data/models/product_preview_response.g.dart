@@ -96,7 +96,7 @@ Map<String, dynamic> _$ImagePathToJson(ImagePath instance) => <String, dynamic>{
 
 ResponseStock _$ResponseStockFromJson(Map<String, dynamic> json) =>
     ResponseStock(
-      id: (json['id'] as num).toInt(),
+      id: (json['id'] as num?)?.toInt(),
       statusCode: json['statusCode'],
       color: ResponseBaseUnit.fromJson(json['color'] as Map<String, dynamic>),
       amount: (json['amount'] as num).toInt(),

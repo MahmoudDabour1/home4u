@@ -31,7 +31,6 @@ class _BusinessSignUpInfoState extends State<BusinessSignUpInfo> {
     _bioArFocusNode = FocusNode();
     _bioEnFocusNode = FocusNode();
     _businessTypesFocusNode = FocusNode();
-    context.read<SignUpCubit>().getBusinessTypes();
   }
 
   @override
@@ -93,8 +92,9 @@ class _BusinessSignUpInfoState extends State<BusinessSignUpInfo> {
               return null;
             },
           ),
+
+          ///ToDo : problem when choose exhibition and go to second screen ,then return and choose store show the same data first and then show store data and vice versa is true
           AppCustomDropDownMultiSelectButton(
-            isEnabled: signUpCubit.businessTypes.isNotEmpty,
             validator: (value) {
               if (value?.isEmpty ?? true) {
                 return "Please select at least one service";

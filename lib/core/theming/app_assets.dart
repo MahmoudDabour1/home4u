@@ -20,16 +20,19 @@ abstract class AppAssets {
   static const String deleteSvgImage = 'assets/svgs/delete_svg.svg';
   static const String editSvgImage = 'assets/svgs/edit_svg.svg';
   static const String menuBlackImageSvg = 'assets/svgs/menu-dots-black_svg.svg';
-  static const String changeLanguageImageSvg = 'assets/svgs/change_language.svg';
+  static const String changeLanguageImageSvg =
+      'assets/svgs/change_language.svg';
   static const String editProfileImageSvg = 'assets/svgs/edit_profle.svg';
   static const String lockBlackImageSvg = 'assets/svgs/lock_black.svg';
   static const String logOutImageSvg = 'assets/svgs/log_out.svg';
-  static const String managePermissionsImageSvg = 'assets/svgs/manage_permissions.svg';
+  static const String managePermissionsImageSvg =
+      'assets/svgs/manage_permissions.svg';
   static const String notificationImageSvg = 'assets/svgs/notificationsvg.svg';
   static const String faqsImageSvg = 'assets/svgs/faqs.svg';
-  static const String exhibitionHouseBuilding = 'assets/svgs/house_building.svg';
-  static const String facebookIcon = 'assets/svgs/facebook_svg_icon.svg';
-  static const String instagramIcon = 'assets/svgs/instagram_svg_icon.svg';
+  static const String exhibitionHouseBuilding =
+      'assets/svgs/house_building.svg';
+  static const String facebookIcon = 'assets/svgs/facebook_logo.svg';
+  static const String instagramIcon = 'assets/svgs/instagram_logo.svg';
   static const String websiteIcon = 'assets/svgs/website.svg';
   static const String locationIcon = 'assets/svgs/location.svg';
   static const String phoneCallIcon = 'assets/svgs/phone_call.svg';
@@ -37,7 +40,8 @@ abstract class AppAssets {
   static const String overviewIcon = 'assets/svgs/overview.svg';
   static const String reviewIcon = 'assets/svgs/personal_rating.svg';
   static const String likeIcon = 'assets/svgs/like_svg_icon.svg';
-  static const String productPreviewIcon = 'assets/svgs/product_preview_icon.svg';
+  static const String productPreviewIcon =
+      'assets/svgs/product_preview_icon.svg';
   static const String submitIconSvg = 'assets/svgs/submit_svg_icon.svg';
   static const String addProductSvg = 'assets/svgs/add_product_svg.svg';
   static const String arrowUpSvg = 'assets/svgs/arrow_up.svg';
@@ -46,10 +50,12 @@ abstract class AppAssets {
   static const String productWhiteSvg = 'assets/svgs/product_white_svg.svg';
   static const String productSvg = 'assets/svgs/product_svg.svg';
   static const String overViewSvg = 'assets/svgs/over_view_svg.svg';
-  static const String settingDarkGraySvg = 'assets/svgs/settings_drawer_svg.svg';
+  static const String settingDarkGraySvg =
+      'assets/svgs/settings_drawer_svg.svg';
   static const String reviewSvg = 'assets/svgs/review_svg.svg';
   static const String appLogoSvg = 'assets/svgs/app_logo_svg.svg';
-  static const String arrowRightBlackSvg = 'assets/svgs/arrow_right_black_svg.svg';
+  static const String arrowRightBlackSvg =
+      'assets/svgs/arrow_right_black_svg.svg';
   static const String furnitureSvg = 'assets/svgs/furniture_svg.svg';
   static const String priceSvg = 'assets/svgs/price_svg.svg';
   static const String stockSvg = 'assets/svgs/stock_svg.svg';
@@ -58,6 +64,12 @@ abstract class AppAssets {
   static const String warningSvg = 'assets/svgs/waring_svg.svg';
   static const String filterSvg = 'assets/svgs/filter_svg.svg';
   static const String starSvgImage = 'assets/svgs/star_svg.svg';
-  static const String successMissionSvgImage = 'assets/svgs/success_mission.svg';
-
+  static const String successMissionSvgImage =
+      'assets/svgs/success_mission.svg';
+  static const String stepperBasicDetailsSvg =
+      'assets/svgs/stepper_basic_details.svg';
+  static const String stepperMaterialsAndSpecsSvg =
+      'assets/svgs/stepper_materials_and_specs.svg';
+  static const String stepperColorsAndStockSvg =
+      'assets/svgs/stepper_colors_and_stock.svg';
 }

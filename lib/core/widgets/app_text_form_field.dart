@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:home4u/core/theming/app_styles.dart';
 import 'package:home4u/core/widgets/get_common_input_decoration.dart';
 
@@ -48,6 +49,10 @@ class AppTextFormField extends StatelessWidget {
       decoration: decoration ??
           getCommonInputDecoration(
             labelText: labelText,
+            suffixIcon: Padding(
+              padding: EdgeInsetsDirectional.only(end: 12.w),
+              child: suffixIcon,
+            ),
           ),
       obscureText: isObscureText ?? false,
       style: AppStyles.font16BlackLight,

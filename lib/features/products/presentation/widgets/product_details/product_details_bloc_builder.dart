@@ -56,10 +56,9 @@ class ProductDetailsBlocBuilder extends StatelessWidget {
   }
 
   Widget setupLoading() {
-    return Center(
-      child: AppCustomLoadingIndicator(
-        loadingColor: AppColors.secondaryColor,
-      ),
+    ///ToDo : center the loading indicator in the main screen
+    return AppCustomLoadingIndicator(
+      loadingColor: AppColors.secondaryColor,
     );
   }
 }

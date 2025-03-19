@@ -19,150 +19,156 @@ class ProductShimmerWidget extends StatelessWidget {
     return SliverList(
       delegate: SliverChildBuilderDelegate(
         (context, index) {
-          return Padding(
-            padding: EdgeInsets.symmetric(horizontal: 24.w),
+          return ProductShimmerItem();
+        },
+        childCount: 5,
+      ),
+    );
+  }
+}
+
+class ProductShimmerItem extends StatelessWidget {
+  const ProductShimmerItem({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: EdgeInsets.symmetric(horizontal: 24.w),
+      child: Column(
+        children: [
+          Container(
+            height: MediaQuery.sizeOf(context).height * 0.52,
+            width: MediaQuery.sizeOf(context).width,
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(16.r),
+              color: AppColors.whiteColor,
+              boxShadow: [
+                BoxShadow(
+                  color: AppColors.blackColor.withOpacity(0.1),
+                  blurRadius: 10,
+                  spreadRadius: 1,
+                  offset: Offset(0, 4),
+                ),
+              ],
+            ),
             child: Column(
               children: [
-                Container(
-                  height: MediaQuery.sizeOf(context).height * 0.52,
-                  width: MediaQuery.sizeOf(context).width,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(16.r),
-                    color: AppColors.whiteColor,
-                    boxShadow: [
-                      BoxShadow(
-                        color: AppColors.blackColor.withOpacity(0.1),
-                        blurRadius: 10,
-                        spreadRadius: 1,
-                        offset: Offset(0, 4),
-                      ),
-                    ],
-                  ),
-                  child: Column(
-                    children: [
-                      Skeletonizer(
-                        enabled: true,
-                        child: SizedBox(
-                          height: MediaQuery.sizeOf(context).height * 0.211,
-                          width: double.infinity.w,
-                        ),
-                      ),
-                      verticalSpace(16),
-                      Expanded(
-                        child: Padding(
-                          padding: EdgeInsets.symmetric(horizontal: 16.w),
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            spacing: 7,
-                            children: [
-                              Skeletonizer(
-                                enabled: true,
-                                child: Row(
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceBetween,
-                                  children: [
-                                    Text(
-                                      "Modern l-Shaped Sofa",
-                                      style: AppStyles.font16BlackLight,
-                                    ),
-                                    Row(
-                                      children: [
-                                        AppCustomIconButton(
-                                          onPressed: () {},
-                                          image: AppAssets.editIconSvg,
-                                        ),
-                                        AppCustomIconButton(
-                                          onPressed: () {},
-                                          image: AppAssets.deleteIconSvg,
-                                        ),
-                                      ],
-                                    ),
-                                  ],
-                                ),
-                              ),
-                              Skeletonizer(
-                                enabled: true,
-                                child: ProductsCustomRowWidget(
-                                  title: "-اثاث Furniture",
-                                  iconImage: AppAssets.furnitureSvg,
-                                ),
-                              ),
-
-                              Skeletonizer(
-                                enabled: true,
-                                child: ProductsCustomRowWidget(
-                                  title: "\$150.0",
-                                  iconImage: AppAssets.priceSvg,
-                                  textStyle: AppStyles.font16BlueMedium,
-                                ),
-                              ),
-                              Skeletonizer(
-                                enabled: true,
-                                child: ProductsCustomRowWidget(
-                                  title: "${AppLocale.stock}: 100",
-                                  iconImage: AppAssets.stockSvg,
-                                ),
-                              ),
-                              Skeletonizer(
-                                enabled: true,
-                                child: Text(
-                                    "${AppLocale.dimensions}:180*180*180cm",
-                                    style: AppStyles.font16GrayLight),
-                              ),
-                              Row(
-                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                                children: [
-                                  Row(
-                                    children: [
-                                      Row(
-                                        children: List.generate(2, (index) {
-                                          return Skeletonizer(
-                                            enabled: true,
-                                            child: ProductsCustomColorContainer(
-                                                text: "White"),
-                                          );
-                                        }),
-                                      ),
-                                      AppCustomIconButton(
-                                        image: AppAssets.arrowRightBlackSvg,
-                                        width: 15.w,
-                                        height: 15.h,
-                                        onPressed: () {},
-                                      ),
-                                    ],
-                                  ),
-                                  Row(
-                                    children: [
-                                      Skeletonizer(
-                                        enabled: true,
-                                        child: Text(
-                                          '3.5',
-                                          style: AppStyles.font14BlackLight,
-                                        ),
-                                      ),
-                                      horizontalSpace(4),
-                                      Icon(
-                                        Icons.star,
-                                        color: AppColors.yellowColor,
-                                      ),
-                                    ],
-                                  ),
-                                ],
-                              ),
-                              verticalSpace(8),
-                            ],
-                          ),
-                        ),
-                      ),
-                    ],
+                Skeletonizer(
+                  enabled: true,
+                  child: SizedBox(
+                    height: MediaQuery.sizeOf(context).height * 0.211,
+                    width: double.infinity.w,
                   ),
                 ),
                 verticalSpace(16),
+                Expanded(
+                  child: Padding(
+                    padding: EdgeInsets.symmetric(horizontal: 16.w),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      spacing: 7,
+                      children: [
+                        Skeletonizer(
+                          enabled: true,
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Text(
+                                "Modern l-Shaped Sofa",
+                                style: AppStyles.font16BlackLight,
+                              ),
+                              Row(
+                                children: [
+                                  AppCustomIconButton(
+                                    onPressed: () {},
+                                    image: AppAssets.editIconSvg,
+                                  ),
+                                  AppCustomIconButton(
+                                    onPressed: () {},
+                                    image: AppAssets.deleteIconSvg,
+                                  ),
+                                ],
+                              ),
+                            ],
+                          ),
+                        ),
+                        Skeletonizer(
+                          enabled: true,
+                          child: ProductsCustomRowWidget(
+                            title: "-اثاث Furniture",
+                            iconImage: AppAssets.furnitureSvg,
+                          ),
+                        ),
+                        Skeletonizer(
+                          enabled: true,
+                          child: ProductsCustomRowWidget(
+                            title: "\$150.0",
+                            iconImage: AppAssets.priceSvg,
+                            textStyle: AppStyles.font16BlueMedium,
+                          ),
+                        ),
+                        Skeletonizer(
+                          enabled: true,
+                          child: ProductsCustomRowWidget(
+                            title: "${AppLocale.stock}: 100",
+                            iconImage: AppAssets.stockSvg,
+                          ),
+                        ),
+                        Skeletonizer(
+                          enabled: true,
+                          child: Text("${AppLocale.dimensions}:180*180*180cm",
+                              style: AppStyles.font16GrayLight),
+                        ),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Row(
+                              children: [
+                                Row(
+                                  children: List.generate(2, (index) {
+                                    return Skeletonizer(
+                                      enabled: true,
+                                      child: ProductsCustomColorContainer(
+                                          text: "White"),
+                                    );
+                                  }),
+                                ),
+                                AppCustomIconButton(
+                                  image: AppAssets.arrowRightBlackSvg,
+                                  width: 15.w,
+                                  height: 15.h,
+                                  onPressed: () {},
+                                ),
+                              ],
+                            ),
+                            Row(
+                              children: [
+                                Skeletonizer(
+                                  enabled: true,
+                                  child: Text(
+                                    '3.5',
+                                    style: AppStyles.font14BlackLight,
+                                  ),
+                                ),
+                                horizontalSpace(4),
+                                Icon(
+                                  Icons.star,
+                                  color: AppColors.yellowColor,
+                                ),
+                              ],
+                            ),
+                          ],
+                        ),
+                        verticalSpace(8),
+                      ],
+                    ),
+                  ),
+                ),
               ],
             ),
-          );
-        },
-        childCount: 5,
+          ),
+          verticalSpace(16),
+        ],
       ),
     );
   }

@@ -87,9 +87,8 @@ class SignUpCubit extends Cubit<SignUpState> {
   List<int>? selectedWorkerServices;
   List<int>? selectedBusinessTypes;
 
-  Future<void> getBusinessTypes() async {
+  Future<void> getBusinessTypes(int userTypeId) async {
     emit(const SignUpState.loadingBusinessType());
-    final userTypeId = await SharedPrefHelper.getInt(SharedPrefKeys.userTypeId);
     final response =
         await signUpRepository.getBusinessTypes(userTypeId);
     response.when(

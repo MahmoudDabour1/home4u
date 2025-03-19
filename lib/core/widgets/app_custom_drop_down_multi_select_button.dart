@@ -81,7 +81,7 @@ class AppCustomDropDownMultiSelectButton extends StatelessWidget {
             ),
             verticalSpace(16),
             Text(
-              "Choose your engineer type first",
+              "Loading items...",
               style: TextStyle(
                 color: AppColors.primaryColor,
                 fontSize: 16.sp,
