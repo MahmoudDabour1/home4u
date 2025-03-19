@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:home4u/features/products/logic/products_cubit.dart';
 import 'package:home4u/features/products/presentation/widgets/drawer/products_drawer.dart';
 import 'package:home4u/features/products/presentation/widgets/products_bloc_builder.dart';
 import 'package:home4u/features/products/presentation/widgets/products_header_widget.dart';
@@ -18,6 +20,13 @@ class _ProductsScreenState extends State<ProductsScreen>
   @override
   bool get wantKeepAlive => true;
 
+  @override
+  void initState() {
+    super.initState();
+    context.read<ProductsCubit>().getProducts().then((value) {
+      context.read<ProductsCubit>().getBusinessConfig();
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
