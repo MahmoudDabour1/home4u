@@ -1,21 +1,21 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'product_preview_response.dart';
+part of 'product_update_response.dart';
 
 // **************************************************************************
 // JsonSerializableGenerator
 // **************************************************************************
 
-ProductPreviewResponse _$ProductPreviewResponseFromJson(
+ProductUpdateResponse _$ProductUpdateResponseFromJson(
         Map<String, dynamic> json) =>
-    ProductPreviewResponse(
+    ProductUpdateResponse(
       success: json['success'] as bool,
       status: (json['status'] as num).toInt(),
       data: Data.fromJson(json['data'] as Map<String, dynamic>),
     );
 
-Map<String, dynamic> _$ProductPreviewResponseToJson(
-        ProductPreviewResponse instance) =>
+Map<String, dynamic> _$ProductUpdateResponseToJson(
+        ProductUpdateResponse instance) =>
     <String, dynamic>{
       'success': instance.success,
       'status': instance.status,
@@ -24,28 +24,25 @@ Map<String, dynamic> _$ProductPreviewResponseToJson(
 
 Data _$DataFromJson(Map<String, dynamic> json) => Data(
       id: (json['id'] as num).toInt(),
-      statusCode: (json['statusCode'] as num?)?.toInt(),
+      statusCode: (json['statusCode'] as num).toInt(),
       nameAr: json['nameAr'] as String,
       nameEn: json['nameEn'] as String,
       descriptionAr: json['descriptionAr'] as String,
       descriptionEn: json['descriptionEn'] as String,
-      price: (json['price'] as num).toInt(),
+      price: (json['price'] as num).toDouble(),
       length: (json['length'] as num).toInt(),
-      width: (json['width'] as num).toInt(),
+      width: (json['width'] as num).toDouble(),
       height: (json['height'] as num).toInt(),
-      businessType: ResponseBaseUnit.fromJson(
-          json['businessType'] as Map<String, dynamic>),
-      baseUnit:
-          ResponseBaseUnit.fromJson(json['baseUnit'] as Map<String, dynamic>),
+      businessType:
+          BaseUnit.fromJson(json['businessType'] as Map<String, dynamic>),
+      baseUnit: BaseUnit.fromJson(json['baseUnit'] as Map<String, dynamic>),
       materials: (json['materials'] as List<dynamic>)
-          .map((e) => ResponseBaseUnit.fromJson(e as Map<String, dynamic>))
+          .map((e) => BaseUnit.fromJson(e as Map<String, dynamic>))
           .toList(),
       stocks: (json['stocks'] as List<dynamic>)
-          .map((e) => ResponseStock.fromJson(e as Map<String, dynamic>))
+          .map((e) => Stock.fromJson(e as Map<String, dynamic>))
           .toList(),
-      imagePaths: (json['imagePaths'] as List<dynamic>)
-          .map((e) => ImagePath.fromJson(e as Map<String, dynamic>))
-          .toList(),
+      imagePaths: json['imagePaths'] as List<dynamic>,
     );
 
 Map<String, dynamic> _$DataToJson(Data instance) => <String, dynamic>{
@@ -66,44 +63,28 @@ Map<String, dynamic> _$DataToJson(Data instance) => <String, dynamic>{
       'imagePaths': instance.imagePaths,
     };
 
-ResponseBaseUnit _$ResponseBaseUnitFromJson(Map<String, dynamic> json) =>
-    ResponseBaseUnit(
+BaseUnit _$BaseUnitFromJson(Map<String, dynamic> json) => BaseUnit(
       id: (json['id'] as num).toInt(),
       code: json['code'] as String,
       name: json['name'] as String,
       hexColor: json['hexColor'] as String?,
     );
 
-Map<String, dynamic> _$ResponseBaseUnitToJson(ResponseBaseUnit instance) =>
-    <String, dynamic>{
+Map<String, dynamic> _$BaseUnitToJson(BaseUnit instance) => <String, dynamic>{
       'id': instance.id,
       'code': instance.code,
       'name': instance.name,
       'hexColor': instance.hexColor,
     };
 
-ImagePath _$ImagePathFromJson(Map<String, dynamic> json) => ImagePath(
+Stock _$StockFromJson(Map<String, dynamic> json) => Stock(
       id: (json['id'] as num).toInt(),
-      productId: (json['productId'] as num).toInt(),
-      imagePath: json['imagePath'] as String,
-    );
-
-Map<String, dynamic> _$ImagePathToJson(ImagePath instance) => <String, dynamic>{
-      'id': instance.id,
-      'productId': instance.productId,
-      'imagePath': instance.imagePath,
-    };
-
-ResponseStock _$ResponseStockFromJson(Map<String, dynamic> json) =>
-    ResponseStock(
-      id: (json['id'] as num?)?.toInt(),
       statusCode: json['statusCode'],
-      color: ResponseBaseUnit.fromJson(json['color'] as Map<String, dynamic>),
+      color: BaseUnit.fromJson(json['color'] as Map<String, dynamic>),
       amount: (json['amount'] as num).toInt(),
     );
 
-Map<String, dynamic> _$ResponseStockToJson(ResponseStock instance) =>
-    <String, dynamic>{
+Map<String, dynamic> _$StockToJson(Stock instance) => <String, dynamic>{
       'id': instance.id,
       'statusCode': instance.statusCode,
       'color': instance.color,

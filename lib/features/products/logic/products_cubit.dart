@@ -5,6 +5,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:home4u/core/helpers/shared_pref_helper.dart';
 import 'package:home4u/core/helpers/shared_pref_keys.dart';
 import 'package:home4u/core/networking/dio_factory.dart';
+import 'package:home4u/core/routing/router_observer.dart';
 import 'package:home4u/features/products/data/data_source/products_local_data_source.dart';
 import 'package:home4u/features/products/data/models/business_config_model.dart';
 import 'package:home4u/features/products/data/repos/business_config_repo.dart';
@@ -12,6 +13,7 @@ import 'package:home4u/features/products/data/repos/products_repo.dart';
 import 'package:home4u/features/products/logic/products_state.dart';
 
 import '../../../core/routing/router_observer.dart';
+import '../data/models/product_preview_response.dart';
 import '../data/models/products_response_model.dart';
 
 class ProductsCubit extends Cubit<ProductsState> {
@@ -46,6 +48,7 @@ class ProductsCubit extends Cubit<ProductsState> {
   List<ProductBaseUnit> baseUnits = [];
   List<FilterColor> colors = [];
   List<ProductMaterial> materials = [];
+  ProductPreviewResponse? productPreviewResponse; // Add this
 
   Future<void> getProducts({bool isRefresh = false}) async {
     final int userBusinessId =
@@ -123,7 +126,6 @@ class ProductsCubit extends Cubit<ProductsState> {
         if (!isClosed) {
           products.removeWhere((product) => product.id == productId);
           emit(ProductsState.deleteProductSuccess(data));
-          getProducts();
         }
       },
       failure: (error) {
@@ -141,11 +143,14 @@ class ProductsCubit extends Cubit<ProductsState> {
     final response = await _productsRepo.getProductDetails(productId);
     response.when(
       success: (product) {
+        productPreviewResponse = product;
         if (!isClosed) {
           emit(ProductsState.getProductPreviewSuccess(product));
         }
+        return product;
       },
       failure: (error) {
+        logger.e("getProductById failed: ${error.message}", error: error);
         if (!isClosed) {
           emit(ProductsState.getProductPreviewFailure(
               errorMessage: error.message.toString()));

@@ -10,13 +10,15 @@ import 'package:home4u/core/theming/app_colors.dart';
 import 'package:home4u/core/theming/app_styles.dart';
 import 'package:home4u/core/widgets/app_custom_button.dart';
 import 'package:home4u/core/widgets/app_custom_text_button_with_icon.dart';
+import 'package:home4u/features/products/logic/products_cubit.dart';
 import 'package:home4u/locale/app_locale.dart';
 
 import '../../../logic/business_add_product_cubit.dart';
 import '../../../logic/business_add_product_state.dart';
 
 class SuccessMissionDialog extends StatelessWidget {
-  const SuccessMissionDialog({super.key});
+  final bool isUpdate;
+  const SuccessMissionDialog({super.key,  this.isUpdate = false});
 
   @override
   Widget build(BuildContext context) {
@@ -46,7 +48,7 @@ class SuccessMissionDialog extends StatelessWidget {
             ),
             SizedBox(height: 32.h),
             Text(
-              AppLocale.productUploadedSuccessfully.getString(context),
+              isUpdate?AppLocale.productUpdatedSuccessfully.getString(context):AppLocale.productUploadedSuccessfully.getString(context),
               style: AppStyles.font24BlackMedium,
               textAlign: TextAlign.center,
             ),
@@ -59,6 +61,7 @@ class SuccessMissionDialog extends StatelessWidget {
   }
 
   Widget _buildButtons(BuildContext context) {
+    var cubit = context.read<ProductsCubit>();
     return Column(
       children: [
         BlocBuilder<BusinessAddProductCubit, BusinessAddProductState>(
@@ -87,7 +90,11 @@ class SuccessMissionDialog extends StatelessWidget {
         ),
         SizedBox(height: 16.h),
         AppCustomButton(
-          onPressed: () => context.pushNamed(Routes.productsScreen),
+          onPressed: () {
+
+            context.pushNamed(Routes.productsScreen);
+            cubit.getProducts();
+          },
           textButton: AppLocale.goToProductList.getString(context),
           btnHeight: 50.h,
           btnWidth: MediaQuery.sizeOf(context).width,

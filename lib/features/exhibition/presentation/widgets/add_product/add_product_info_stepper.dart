@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_localization/flutter_localization.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_svg/flutter_svg.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:home4u/core/theming/app_assets.dart';
 import 'package:home4u/core/theming/app_colors.dart';
 import 'package:home4u/core/utils/spacing.dart';
@@ -17,6 +17,7 @@ import '../../../../../core/widgets/app_custom_button.dart';
 import '../../../../../core/widgets/app_custom_text_button_with_icon.dart';
 import '../../../../../core/widgets/app_rounded_back_button.dart';
 import '../../../../../locale/app_locale.dart';
+import '../../../../products/data/models/product_preview_response.dart';
 import '../../../logic/business_add_product_cubit.dart';
 import '../../product_preview_screen.dart';
 import 'add_product_basic_details_stepper.dart';
@@ -26,9 +27,9 @@ import 'add_product_materials_and_specs.dart';
 import 'success_mission_dialog.dart';
 
 class AddProductInfoStepper extends StatefulWidget {
-  final int? productIndex;
+  final ProductPreviewResponse? productData;
 
-  const AddProductInfoStepper({super.key, this.productIndex});
+  const AddProductInfoStepper({super.key, this.productData});
 
   @override
   State<AddProductInfoStepper> createState() => _AddProductInfoStepperState();
@@ -89,10 +90,14 @@ class _AddProductInfoStepperState extends State<AddProductInfoStepper> {
     super.initState();
     stepPages = [
       AddProductBasicDetailsStepper(
-        productIndex: widget.productIndex,
+        productData: widget.productData,
       ),
-      AddProductMaterialsAndSpecs(),
-      AddProductColorsAndStock(),
+      AddProductMaterialsAndSpecs(
+        productData: widget.productData,
+      ),
+      AddProductColorsAndStock(
+        productData: widget.productData,
+      ),
       AddProductImages(),
     ];
   }
@@ -117,6 +122,16 @@ class _AddProductInfoStepperState extends State<AddProductInfoStepper> {
               builder: (context) => SuccessMissionDialog(),
             );
           },
+          // addBusinessProductSuccess: (productResponse) {
+          //   showAdaptiveDialog(context: context, builder:
+          //       (context) =>SuccessMissionDialog()
+          //     ,);
+          // },
+          // updateProductSuccess: (productResponse) {
+          //   showAdaptiveDialog(context: context, builder:
+          //       (context) =>SuccessMissionDialog(isUpdate: true,)
+          //     ,);
+          // },
           orElse: () {},
         );
       },
@@ -128,7 +143,7 @@ class _AddProductInfoStepperState extends State<AddProductInfoStepper> {
             stepPages[activeStep],
             verticalSpace(32),
             if (activeStep == upperBound) _buildPreviewButton(),
-            _buildNavigationButtons(widget.productIndex),
+            _buildNavigationButtons(widget.productData),
             verticalSpace(32),
           ],
         ),
@@ -211,14 +226,14 @@ class _AddProductInfoStepperState extends State<AddProductInfoStepper> {
   }
 
   /// Build navigation buttons (Previous & Next)
-  Widget _buildNavigationButtons(int? productIndex) {
+  Widget _buildNavigationButtons(productData) {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
         if (activeStep > 0) _buildBackButton(),
         if (activeStep > 0) SizedBox(width: 16.w),
         activeStep == upperBound
-            ? _buildSubmitButton(productIndex)
+            ? _buildSubmitButton(productData)
             : _buildNextButton(),
       ],
     );
@@ -234,18 +249,19 @@ class _AddProductInfoStepperState extends State<AddProductInfoStepper> {
   }
 
   /// Build submit button
-  Widget _buildSubmitButton(int? productIndex) {
+  Widget _buildSubmitButton(productData) {
     return BlocBuilder<BusinessAddProductCubit, BusinessAddProductState>(
       builder: (context, state) {
         return Expanded(
           child: AppCustomTextButtonWithIcon(
             onPressed: () {
               context.read<BusinessAddProductCubit>().addOrUpdateProduct(
-                    isUpdate: productIndex != null ? true : false,
+                    isUpdate: productData != null ? true : false,
+                    productId: productData?.data.id,
+                    productData: productData,
                   );
             },
             isLoading: state is AddBusinessProductLoading ||
-                state is UploadBusinessImageLoading ||
                 state is UpdateProductLoading,
             svgIcon: AppAssets.submitIconSvg,
             text: AppLocale.submit.getString(context),

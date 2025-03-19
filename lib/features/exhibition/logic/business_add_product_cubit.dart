@@ -4,14 +4,15 @@ import 'dart:io';
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:hive/hive.dart';
 import 'package:home4u/core/networking/dio_factory.dart';
+import 'package:home4u/core/routing/router_observer.dart';
+import 'package:home4u/features/exhibition/data/models/add_product_business_response_model.dart';
 import 'package:home4u/features/exhibition/data/models/business_add_product_images_response.dart';
+import 'package:home4u/features/products/data/models/update_product_response_model.dart';
 import 'package:http_parser/http_parser.dart';
 import 'package:image_picker/image_picker.dart';
 
-import '../../../core/utils/app_constants.dart';
-import '../../products/data/models/products_response_model.dart';
+import '../../products/data/models/product_preview_response.dart';
 import '../../products/logic/products_cubit.dart';
 import '../data/models/business_add_product_body.dart';
 import '../data/models/business_add_product_images_body.dart';
@@ -24,36 +25,34 @@ class BusinessAddProductCubit extends Cubit<BusinessAddProductState> {
   BusinessAddProductCubit(this._repository)
       : super(const BusinessAddProductState.initial());
 
-  /// Form Key
   final formKey = GlobalKey<FormState>();
 
   /// Controllers
-  final productNameArController = TextEditingController(text: "عنوان المنتج");
-  final productNameEnController = TextEditingController(text: "Product Title");
-  final productDescriptionArController =
-  TextEditingController(text: "وصف المنتج");
-  final productDescriptionEnController =
-  TextEditingController(text: "Product Description");
-  final productPriceController = TextEditingController(text: "20.0");
-  final productLengthController = TextEditingController(text: "10.0");
-  final productWidthController = TextEditingController(text: "10.0");
-  final productHeightController = TextEditingController(text: "10.0");
+  final productNameArController = TextEditingController();
+  final productNameEnController = TextEditingController();
+  final productDescriptionArController = TextEditingController();
+  final productDescriptionEnController = TextEditingController();
+  final productPriceController = TextEditingController();
+  final productLengthController = TextEditingController();
+  final productWidthController = TextEditingController();
+  final productHeightController = TextEditingController();
   final productStockAmountController = TextEditingController();
 
-  /// Dropdown Selections
   int? selectedBaseUnit;
   int? selectedExhibitionBusinessType;
   List<int>? selectedMaterials;
   int? selectedColor;
+
+  bool isUpdateData = false;
   final List<Map<String, dynamic>> selectedColorsAndStock = [];
 
-  /// Images
-  final List<File> images = [];
+  late List<File> images = [];
 
   void updateSelectedColorsAndStock(List<Map<String, dynamic>> newList) {
     selectedColorsAndStock
       ..clear()
       ..addAll(newList);
+    emit(BusinessAddProductState.uploadBusinessImageLoading());
   }
 
   void selectImage(
@@ -71,186 +70,97 @@ class BusinessAddProductCubit extends Cubit<BusinessAddProductState> {
     Navigator.pop(context);
   }
 
-  ///Step 1: Add Business Product
-  // Future<void> addProductAndImages() async {
-  //   if (selectedExhibitionBusinessType == null || selectedBaseUnit == null) {
-  //     emit(BusinessAddProductState.addBusinessProductFailure(
-  //         "Please select a business type and base unit."),);
-  //     return;
-  //   }
-  //   emit(const BusinessAddProductState.addBusinessProductLoading());
-  //
-  //   final stockList = selectedColorsAndStock
-  //       .map((item) =>
-  //       Stock(
-  //         color: BaseUnit(id: item["colorId"]),
-  //         amount: item["stock"],
-  //       ))
-  //       .toList();
-  //
-  //   final productBody = BusinessAddProductBody(
-  //     nameAr: productNameArController.text,
-  //     nameEn: productNameEnController.text,
-  //     descriptionAr: productDescriptionArController.text,
-  //     descriptionEn: productDescriptionEnController.text,
-  //     businessType: BaseUnit(id: selectedExhibitionBusinessType!),
-  //     price: double.parse(productPriceController.text),
-  //     length: double.parse(productLengthController.text),
-  //     width: double.parse(productWidthController.text),
-  //     height: double.parse(productHeightController.text),
-  //     baseUnit: BaseUnit(id: selectedBaseUnit!),
-  //     materials: selectedMaterials?.map((e) => BaseUnit(id: e)).toList() ?? [],
-  //     stocks: stockList,
-  //     imagePaths: [],
-  //   );
-  //
-  //   final addProductResult = await _repository.addBusinessProduct(
-  //       productBody);
-  //   addProductResult.when(
-  //     success: (productResponse) async {
-  //       emit(
-  //           BusinessAddProductState.addBusinessProductSuccess(productResponse));
-  //       await _addBusinessProductImages(productResponse.data.id);
-  //     },
-  //     failure: (error) =>
-  //         emit(
-  //             BusinessAddProductState.addBusinessProductFailure(
-  //                 error.message.toString())),
-  //   );
-  // }
-  // Future<void> addOrUpdateProduct({bool isUpdate = false}) async {
-  //   if (selectedExhibitionBusinessType == null || selectedBaseUnit == null) {
-  //     emit(BusinessAddProductState.addBusinessProductFailure("Please select a business type and base unit."));
-  //     return;
-  //   }
-  //   emit(const BusinessAddProductState.addBusinessProductLoading());
-  //
-  //   final productBody = _createProductBody();
-  //   final result = isUpdate ? await _repository.updateBusinessProduct(productBody) : await _repository.addBusinessProduct(productBody);
-  //
-  //   result.when(
-  //     success: (productResponse) async {
-  //       emit(BusinessAddProductState.addBusinessProductSuccess(productResponse));
-  //       await _addBusinessProductImages(productResponse.data.id);
-  //     },
-  //     failure: (error) => emit(BusinessAddProductState.addBusinessProductFailure(error.message.toString())),
-  //   );
-  // }
-  //
-  // BusinessAddProductBody _createProductBody() {
-  //   return BusinessAddProductBody(
-  //     nameAr: productNameArController.text,
-  //     nameEn: productNameEnController.text,
-  //     descriptionAr: productDescriptionArController.text,
-  //     descriptionEn: productDescriptionEnController.text,
-  //     businessType: BaseUnit(id: selectedExhibitionBusinessType!),
-  //     price: double.parse(productPriceController.text),
-  //     length: double.parse(productLengthController.text),
-  //     width: double.parse(productWidthController.text),
-  //     height: double.parse(productHeightController.text),
-  //     baseUnit: BaseUnit(id: selectedBaseUnit!),
-  //     materials: selectedMaterials?.map((e) => BaseUnit(id: e)).toList() ?? [],
-  //     stocks: selectedColorsAndStock.map((item) => Stock(color: BaseUnit(id: item["colorId"]), amount: item["stock"])).toList(),
-  //     imagePaths: [],
-  //   );
-  // }
-  //
-  // ///Step 2: Add Business Product Images
-  // Future<void> _addBusinessProductImages(int productId) async {
-  //   emit(const BusinessAddProductState.addBusinessProductImageLoading());
-  //
-  //   final imageBodies = images
-  //       .map((image) =>
-  //       BusinessAddProductImagesBody(
-  //         productId: productId,
-  //         imagePath: null,
-  //       ))
-  //       .toList();
-  //
-  //   final addImageResult =
-  //   await _repository.addBusinessProductImage(imageBodies);
-  //   addImageResult.when(
-  //     success: (imageResponse) async {
-  //       emit(BusinessAddProductState.addBusinessProductImageSuccess(
-  //           imageResponse));
-  //       await _uploadBusinessImages(imageResponse);
-  //     },
-  //     failure: (error) =>
-  //         emit(
-  //             BusinessAddProductState.addBusinessProductImageFailure(
-  //                 error.message.toString())),
-  //   );
-  // }
-  //
-  // ///Step 3: Upload Business Images
-  // Future<void> _uploadBusinessImages(
-  //     BusinessAddProductImagesResponse imageResponse) async {
-  //   emit(const BusinessAddProductState.uploadBusinessImageLoading());
-  //   DioFactory.setContentTypeForMultipart();
-  //
-  //   final imageFiles =
-  //   await Future.wait(images.map((image) =>
-  //       MultipartFile.fromFile(
-  //         image.path,
-  //         filename: image.path
-  //             .split('/')
-  //             .last,
-  //         contentType: MediaType('image', 'jpeg'),
-  //       )));
-  //
-  //   for (var i = 0; i < imageFiles.length; i++) {
-  //     final uploadResult = await _repository.uploadBusinessImage(
-  //       "BUSINESS_PRODUCTS",
-  //       imageResponse.data[i].id,
-  //       FormData.fromMap({'file': imageFiles[i]}),
-  //     );
-  //     uploadResult.when(
-  //       success: (uploadResponse) {
-  //         if (uploadResponse.success) {
-  //           emit(BusinessAddProductState.uploadBusinessImageSuccess());
-  //         } else {
-  //           emit(BusinessAddProductState.uploadBusinessImageFailure(
-  //               uploadResponse.data.toString()));
-  //         }
-  //       },
-  //       failure: (error) =>
-  //           emit(
-  //             BusinessAddProductState.uploadBusinessImageFailure(
-  //               error.message.toString(),),),
-  //     );
-  //   }
-  // }
-
-
-
-  Future<void> addOrUpdateProduct({bool isUpdate = false,int? productId}) async {
+  Future<void> addOrUpdateProduct({
+    bool isUpdate = false,
+    int? productId,
+    ProductPreviewResponse? productData,
+  }) async {
+    isUpdateData = isUpdate;
     if (selectedExhibitionBusinessType == null || selectedBaseUnit == null) {
-      emit(BusinessAddProductState.addBusinessProductFailure("Please select a business type and base unit."));
+      emit(BusinessAddProductState.addBusinessProductFailure(
+          "Please select a business type and base unit."));
       return;
     }
+    isUpdate
+        ? emit(const BusinessAddProductState.updateProductLoading())
+        : emit(const BusinessAddProductState.addBusinessProductLoading());
 
-    ///caching
-    var productsBox = await Hive.openBox<ProductsResponseModel>(kProductsBox);
-    var productData = productsBox.get(kProductsData);
-
-    emit(const BusinessAddProductState.addBusinessProductLoading());
-
-    final productBody = _createProductBody(isUpdate? productId:null);
-    final result = isUpdate ? await _repository.updateBusinessProduct(productBody) : await _repository.addBusinessProduct(productBody);
+    final productBody = _createProductBody(
+      isUpdate ? productId : null,
+      productData,
+    );
+    final result = isUpdate
+        ? await _repository.updateBusinessProduct(productBody)
+        : await _repository.addBusinessProduct(productBody);
 
     result.when(
       success: (productResponse) async {
-        emit(BusinessAddProductState.addBusinessProductSuccess(productResponse));
-        await _addBusinessProductImages(productResponse.data.id);
-
-        ///i need after success to put item to list of cache
-        ///ToDo : عيييييييييييييييييييييييييييييييييش :)
+        if (isUpdate) {
+          if (productResponse is UpdateProductsResponseModel) {
+            logger.w(
+              selectedColorsAndStock // Use selectedColorsAndStock for new additions
+                  .map((item) => Stock(
+                      id: item['id'],
+                      color: BaseUnit(id: item["colorId"]),
+                      amount: item["stock"]))
+                  .toList(),
+            );
+            // type check
+            emit(BusinessAddProductState.updateProductSuccess(productResponse));
+            await _addBusinessProductImages(productResponse.data!.id!);
+          } else {
+            emit(BusinessAddProductState.addBusinessProductFailure(
+                "Unexpected response type for update."));
+          }
+        } else {
+          if (productResponse is AddProductBusinessResponseModel) {
+            // type check
+            emit(BusinessAddProductState.addBusinessProductSuccess(
+                productResponse));
+            await _addBusinessProductImages(productResponse.data.id);
+          } else {
+            emit(BusinessAddProductState.addBusinessProductFailure(
+                "Unexpected response type for add."));
+          }
+        }
       },
-      failure: (error) => emit(BusinessAddProductState.addBusinessProductFailure(error.message.toString())),
+      failure: (error) => emit(
+          BusinessAddProductState.addBusinessProductFailure(
+              error.message.toString())),
     );
   }
 
-  BusinessAddProductBody _createProductBody(int? productId) {
+  BusinessAddProductBody _createProductBody(
+    int? productId,
+    ProductPreviewResponse? productData,
+  ) {
+    final uniqueStocks = <Stock>[];
+    final seen = <int>{};
+
+    for (final item in selectedColorsAndStock) {
+      final colorId = item["colorId"];
+      final stockAmount = item["stock"];
+
+      final existingStock = productData?.data.stocks.firstWhere(
+        (stock) => stock.color.id == colorId,
+        orElse: () => ResponseStock(
+          id: null,
+          color: ResponseBaseUnit(id: colorId, code: "", name: ""),
+          amount: stockAmount,
+          statusCode: null,
+        ),
+      );
+
+      if (!seen.contains(colorId)) {
+        seen.add(colorId);
+        uniqueStocks.add(Stock(
+          id: existingStock?.id,
+          color: BaseUnit(id: colorId),
+          amount: stockAmount,
+        ));
+      }
+    }
+
     return BusinessAddProductBody(
       id: productId,
       nameAr: productNameArController.text,
@@ -264,87 +174,96 @@ class BusinessAddProductCubit extends Cubit<BusinessAddProductState> {
       height: double.parse(productHeightController.text),
       baseUnit: BaseUnit(id: selectedBaseUnit!),
       materials: selectedMaterials?.map((e) => BaseUnit(id: e)).toList() ?? [],
-      stocks: selectedColorsAndStock.map((item) => Stock(color: BaseUnit(id: item["colorId"]), amount: item["stock"])).toList(),
+      stocks: uniqueStocks,
       imagePaths: [],
     );
   }
 
-  // BusinessAddProductBody _updateProductBody(int? productId) {
-  //   return BusinessAddProductBody(
-  //     id:productId ,
-  //     nameAr: productNameArController.text,
-  //     nameEn: productNameEnController.text,
-  //     descriptionAr: productDescriptionArController.text,
-  //     descriptionEn: productDescriptionEnController.text,
-  //     businessType: BaseUnit(id: selectedExhibitionBusinessType!),
-  //     price: double.parse(productPriceController.text),
-  //     length: double.parse(productLengthController.text),
-  //     width: double.parse(productWidthController.text),
-  //     height: double.parse(productHeightController.text),
-  //     baseUnit: BaseUnit(id: selectedBaseUnit!),
-  //     materials: selectedMaterials?.map((e) => BaseUnit(id: e)).toList() ?? [],
-  //     stocks: selectedColorsAndStock.map((item) => Stock(color: BaseUnit(id: item["colorId"]), amount: item["stock"])).toList(),
-  //     imagePaths: [],
-  //   );
-  // }
-
   Future<void> _addBusinessProductImages(int productId) async {
     emit(const BusinessAddProductState.addBusinessProductImageLoading());
 
-    final imageBodies = images.map((image) => BusinessAddProductImagesBody(productId: productId, imagePath: null)).toList();
+    final imageBodies = images
+        .map((image) =>
+            BusinessAddProductImagesBody(productId: productId, imagePath: null))
+        .toList();
     final result = await _repository.addBusinessProductImage(imageBodies);
 
     result.when(
       success: (imageResponse) async {
-        emit(BusinessAddProductState.addBusinessProductImageSuccess(imageResponse));
+        emit(BusinessAddProductState.addBusinessProductImageSuccess(
+            imageResponse));
         await _uploadBusinessImages(imageResponse);
       },
-      failure: (error) => emit(BusinessAddProductState.addBusinessProductImageFailure(error.message.toString())),
+      failure: (error) => emit(
+        BusinessAddProductState.addBusinessProductImageFailure(
+          error.message.toString(),
+        ),
+      ),
     );
   }
 
-  Future<void> _uploadBusinessImages(BusinessAddProductImagesResponse imageResponse) async {
+  Future<void> _uploadBusinessImages(
+      BusinessAddProductImagesResponse imageResponse) async {
     emit(const BusinessAddProductState.uploadBusinessImageLoading());
     DioFactory.setContentTypeForMultipart();
 
-    final imageFiles = await Future.wait(images.map((image) => MultipartFile.fromFile(image.path, filename: image.path.split('/').last, contentType: MediaType('image', 'jpeg'))));
+    final imageFiles = await Future.wait(
+      images.map(
+        (image) => MultipartFile.fromFile(
+          image.path,
+          filename: image.path.split('/').last,
+          contentType: MediaType('image', 'jpeg'),
+        ),
+      ),
+    );
 
     for (var i = 0; i < imageFiles.length; i++) {
-      final result = await _repository.uploadBusinessImage("BUSINESS_PRODUCTS", imageResponse.data[i].id, FormData.fromMap({'file': imageFiles[i]}));
+      final result = await _repository.uploadBusinessImage("BUSINESS_PRODUCTS",
+          imageResponse.data[i].id, FormData.fromMap({'file': imageFiles[i]}));
 
       result.when(
         success: (uploadResponse) {
           if (uploadResponse.success) {
             emit(BusinessAddProductState.uploadBusinessImageSuccess());
           } else {
-            emit(BusinessAddProductState.uploadBusinessImageFailure(uploadResponse.data.toString()));
+            emit(
+              BusinessAddProductState.uploadBusinessImageFailure(
+                uploadResponse.data.toString(),
+              ),
+            );
           }
         },
-        failure: (error) => emit(BusinessAddProductState.uploadBusinessImageFailure(error.message.toString())),
+        failure: (error) => emit(
+          BusinessAddProductState.uploadBusinessImageFailure(
+            error.message.toString(),
+          ),
+        ),
       );
     }
+    // DioFactory.setContentType('application/json');
   }
 
-  ///Product Preview
   Map<String, dynamic> getPreviewData(BuildContext context) {
     final productCubit = context.read<ProductsCubit>();
 
     final materialNames = selectedMaterials?.map((id) {
-      final material = productCubit.materials.firstWhere(
+          final material = productCubit.materials.firstWhere(
             (material) => material.id == id,
-      );
-      return material.name ?? 'N/A';
-    }).join(', ') ?? '';
+          );
+          return material.name ?? 'N/A';
+        }).join(', ') ??
+        '';
 
     final baseUnitName = productCubit.baseUnits
-        .firstWhere(
-          (unit) => unit.id == selectedBaseUnit,
-    )
-        .name ?? 'N/A';
+            .firstWhere(
+              (unit) => unit.id == selectedBaseUnit,
+            )
+            .name ??
+        'N/A';
 
     final productStockAndColors = selectedColorsAndStock.map((item) {
       final color = productCubit.colors.firstWhere(
-            (element) => element.id == item["colorId"],
+        (element) => element.id == item["colorId"],
       );
       return {
         'hexColor': color.hexColor,
@@ -358,55 +277,10 @@ class BusinessAddProductCubit extends Cubit<BusinessAddProductState> {
       'productDescription': productDescriptionEnController.text,
       'productMaterial': materialNames,
       'productDimensions':
-      '${productLengthController.text} x ${productWidthController
-          .text} x ${productHeightController.text}',
+          '${productLengthController.text} x ${productWidthController.text} x ${productHeightController.text}',
       'baseUnit': baseUnitName,
       'productStockAndColors': productStockAndColors,
       'images': images,
     };
   }
-
-
-  ///update product
-  // Future<void> updateProductAndImages() async {
-  //   emit(const BusinessAddProductState.updateProductLoading());
-  //
-  //   final stockList = selectedColorsAndStock
-  //       .map((item) =>
-  //       Stock(
-  //         color: BaseUnit(id: item["colorId"]),
-  //         amount: item["stock"],
-  //       ))
-  //       .toList();
-  //
-  //   final productBody = BusinessAddProductBody(
-  //     nameAr: productNameArController.text,
-  //     nameEn: productNameEnController.text,
-  //     descriptionAr: productDescriptionArController.text,
-  //     descriptionEn: productDescriptionEnController.text,
-  //     businessType: BaseUnit(id: selectedExhibitionBusinessType!),
-  //     price: double.parse(productPriceController.text),
-  //     length: double.parse(productLengthController.text),
-  //     width: double.parse(productWidthController.text),
-  //     height: double.parse(productHeightController.text),
-  //     baseUnit: BaseUnit(id: selectedBaseUnit!),
-  //     materials: selectedMaterials?.map((e) => BaseUnit(id: e)).toList() ?? [],
-  //     stocks: stockList,
-  //     imagePaths: [],
-  //   );
-  //
-  //   final updateProductResult = await _repository.updateBusinessProduct(
-  //       productBody);
-  //   updateProductResult.when(
-  //     success: (productResponse) async {
-  //       emit(
-  //           BusinessAddProductState.updateProductSuccess(productResponse));
-  //       await _addBusinessProductImages(productResponse.data.id);
-  //     },
-  //     failure: (error) =>
-  //         emit(
-  //             BusinessAddProductState.updateProductFailure(
-  //                 error.message.toString())),
-  //   );
-  // }
 }

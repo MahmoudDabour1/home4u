@@ -21,14 +21,18 @@ class ProductsScreen extends StatefulWidget {
   State<ProductsScreen> createState() => _ProductsScreenState();
 }
 
-class _ProductsScreenState extends State<ProductsScreen> {
+class _ProductsScreenState extends State<ProductsScreen>
+    with AutomaticKeepAliveClientMixin {
+  @override
+  bool get wantKeepAlive => true;
   late ScrollController _scrollController;
 
   @override
   void initState() {
     super.initState();
-    context.read<ProductsCubit>().getBusinessConfig();
-    context.read<ProductsCubit>().getProducts();
+    context.read<ProductsCubit>().getProducts().then((value) {
+      context.read<ProductsCubit>().getBusinessConfig();
+    });
     _scrollController = ScrollController()..addListener(_scrollListener);
   }
 
@@ -51,6 +55,7 @@ class _ProductsScreenState extends State<ProductsScreen> {
 
   @override
   Widget build(BuildContext context) {
+    super.build(context);
     return Scaffold(
       backgroundColor: AppColors.containersColor,
       drawer: ProductsDrawer(

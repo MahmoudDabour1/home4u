@@ -1,25 +1,24 @@
 import 'dart:developer';
 
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_localization/flutter_localization.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:home4u/features/auth/sign_up/logic/sign_up_state.dart';
+import 'package:home4u/features/products/data/models/product_preview_response.dart';
 import 'package:home4u/features/products/logic/products_state.dart';
 
+import '../../../../../core/theming/app_styles.dart';
 import '../../../../../core/widgets/app_custom_drop_down_button_form_field.dart';
+import '../../../../../locale/app_locale.dart';
 import '../../../../auth/sign_up/logic/sign_up_cubit.dart';
-import '../../../../products/data/models/products_response_model.dart';
 import '../../../../products/logic/products_cubit.dart';
 import '../../../logic/business_add_product_cubit.dart';
-import 'package:flutter_localization/flutter_localization.dart';
-
-import '../../../../../core/theming/app_styles.dart';
-import '../../../../../locale/app_locale.dart';
 
 class BasicDetailsDropDownButtons extends StatefulWidget {
-  final ProductsResponseModel? productCachedData;
+  final ProductPreviewResponse? productData;
 
-  const BasicDetailsDropDownButtons({super.key, this.productCachedData});
+  const BasicDetailsDropDownButtons({super.key, this.productData});
 
   @override
   State<BasicDetailsDropDownButtons> createState() =>
@@ -30,7 +29,6 @@ class _BasicDetailsDropDownButtonsState
     extends State<BasicDetailsDropDownButtons> {
   String? selectedBusinessType;
   String? selectedBaseUnit;
-  ProductsResponseModel? productCachedData;
 
   @override
   void initState() {
@@ -39,6 +37,20 @@ class _BasicDetailsDropDownButtonsState
     ///ToDo : expected problem here
     context.read<SignUpCubit>().getBusinessTypes(
         context.read<SignUpCubit>().selectedUserType?.id ?? 3);
+
+    if (widget.productData != null) {
+      selectedBusinessType =
+          widget.productData!.data.businessType.id.toString();
+      selectedBaseUnit = widget.productData!.data.baseUnit.id.toString();
+      final businessCubit = context.read<BusinessAddProductCubit>();
+
+      businessCubit.selectedExhibitionBusinessType =
+          selectedBusinessType != null
+              ? int.parse(selectedBusinessType!)
+              : null;
+      businessCubit.selectedBaseUnit =
+          selectedBaseUnit != null ? int.parse(selectedBaseUnit!) : null;
+    }
   }
 
   @override

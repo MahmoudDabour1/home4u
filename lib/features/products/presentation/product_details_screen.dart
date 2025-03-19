@@ -13,18 +13,20 @@ class ProductDetailsScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: SingleChildScrollView(
-          child: Column(
-            spacing: 16.h,
-            mainAxisAlignment: MainAxisAlignment.start,
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              BusinessHeaderWidget(headerTitle:AppLocale.productDetails.getString(context),
+        child: Column(
+          spacing: 16.h,
+          mainAxisAlignment: MainAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            BusinessHeaderWidget(
+              headerTitle: AppLocale.productDetails.getString(context),
               isDrawer: false,
               isHasIcon: false,
-              ),
-              ProductDetailsBlocBuilder(),
-            ],
-          )),
+            ),
+            ProductDetailsBlocBuilder(),
+          ],
+        ),
+      ),
     );
   }
 }

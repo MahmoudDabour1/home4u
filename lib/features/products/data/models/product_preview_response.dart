@@ -28,7 +28,7 @@ class Data {
   @JsonKey(name: "id")
   final int id;
   @JsonKey(name: "statusCode")
-  final int statusCode;
+  final int? statusCode;
   @JsonKey(name: "nameAr")
   final String nameAr;
   @JsonKey(name: "nameEn")
@@ -46,13 +46,13 @@ class Data {
   @JsonKey(name: "height")
   final int height;
   @JsonKey(name: "businessType")
-  final BaseUnit businessType;
+  final ResponseBaseUnit businessType;
   @JsonKey(name: "baseUnit")
-  final BaseUnit baseUnit;
+  final ResponseBaseUnit baseUnit;
   @JsonKey(name: "materials")
-  final List<BaseUnit> materials;
+  final List<ResponseBaseUnit> materials;
   @JsonKey(name: "stocks")
-  final List<Stock> stocks;
+  final List<ResponseStock> stocks;
   @JsonKey(name: "imagePaths")
   final List<ImagePath> imagePaths;
 
@@ -80,7 +80,7 @@ class Data {
 }
 
 @JsonSerializable()
-class BaseUnit {
+class ResponseBaseUnit {
   @JsonKey(name: "id")
   final int id;
   @JsonKey(name: "code")
@@ -90,17 +90,17 @@ class BaseUnit {
   @JsonKey(name: "hexColor")
   final String? hexColor;
 
-  BaseUnit({
+  ResponseBaseUnit({
     required this.id,
     required this.code,
     required this.name,
     this.hexColor,
   });
 
-  factory BaseUnit.fromJson(Map<String, dynamic> json) =>
-      _$BaseUnitFromJson(json);
+  factory ResponseBaseUnit.fromJson(Map<String, dynamic> json) =>
+      _$ResponseBaseUnitFromJson(json);
 
-  Map<String, dynamic> toJson() => _$BaseUnitToJson(this);
+  Map<String, dynamic> toJson() => _$ResponseBaseUnitToJson(this);
 }
 
 @JsonSerializable()
@@ -125,24 +125,24 @@ class ImagePath {
 }
 
 @JsonSerializable()
-class Stock {
+class ResponseStock {
   @JsonKey(name: "id")
-  final int id;
+  final int? id;
   @JsonKey(name: "statusCode")
   final dynamic statusCode;
   @JsonKey(name: "color")
-  final BaseUnit color;
+  final ResponseBaseUnit color;
   @JsonKey(name: "amount")
   final int amount;
 
-  Stock({
+  ResponseStock({
     required this.id,
     required this.statusCode,
     required this.color,
     required this.amount,
   });
 
-  factory Stock.fromJson(Map<String, dynamic> json) => _$StockFromJson(json);
+  factory ResponseStock.fromJson(Map<String, dynamic> json) => _$ResponseStockFromJson(json);
 
-  Map<String, dynamic> toJson() => _$StockToJson(this);
+  Map<String, dynamic> toJson() => _$ResponseStockToJson(this);
 }

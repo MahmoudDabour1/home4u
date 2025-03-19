@@ -2,6 +2,7 @@ import 'dart:io';
 
 import 'package:freezed_annotation/freezed_annotation.dart';
 
+import '../../products/data/models/update_product_response_model.dart';
 import '../data/models/add_product_business_response_model.dart';
 import '../data/models/business_add_product_images_response.dart';
 
@@ -41,7 +42,7 @@ class BusinessAddProductState<T> with _$BusinessAddProductState<T> {
       String error) = UploadBusinessImageFailure;
   ///update product
   const factory BusinessAddProductState.updateProductLoading() = UpdateProductLoading;
-  const factory BusinessAddProductState.updateProductSuccess(AddProductBusinessResponseModel response) = UpdateProductSuccess;
+  const factory BusinessAddProductState.updateProductSuccess(UpdateProductsResponseModel response) = UpdateProductSuccess;
   const factory BusinessAddProductState.updateProductFailure(String message) = UpdateProductFailure;
 
   ///select image
