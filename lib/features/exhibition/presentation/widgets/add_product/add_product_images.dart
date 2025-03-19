@@ -1,20 +1,38 @@
+import 'dart:io';
+
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:home4u/features/exhibition/logic/business_add_product_cubit.dart';
 import 'package:home4u/features/exhibition/logic/business_add_product_state.dart';
+import 'package:home4u/features/products/data/models/product_preview_response.dart';
 
 import '../../../../../core/widgets/select_image_widget.dart';
 
 class AddProductImages extends StatefulWidget {
-  const AddProductImages({super.key});
+  final ProductPreviewResponse? productData;
+  const AddProductImages({super.key, this.productData});
 
   @override
   State<AddProductImages> createState() => _AddProductImagesState();
 }
 
 class _AddProductImagesState extends State<AddProductImages> {
+
+  @override
+  void initState() {
+    super.initState();
+    final businessCubit = context.read<BusinessAddProductCubit>();
+
+    if (widget.productData?.data.imagePaths.isNotEmpty == true) {
+      businessCubit.images = widget.productData!.data.imagePaths
+          .map((imageUrl) => imageUrl).cast<File>() // Ensure proper URL handling
+          .toList();
+      businessCubit.emit(BusinessAddProductState.selectImageSuccess(businessCubit.images));
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return BlocBuilder<BusinessAddProductCubit, BusinessAddProductState>(

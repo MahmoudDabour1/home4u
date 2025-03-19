@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_localization/flutter_localization.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:flutter_localization/flutter_localization.dart';
-
 import 'package:home4u/core/extensions/navigation_extension.dart';
 import 'package:home4u/core/routing/routes.dart';
 import 'package:home4u/core/theming/app_assets.dart';
@@ -10,10 +10,12 @@ import 'package:home4u/core/theming/app_colors.dart';
 import 'package:home4u/core/theming/app_styles.dart';
 import 'package:home4u/core/widgets/app_custom_button.dart';
 import 'package:home4u/core/widgets/app_custom_text_button_with_icon.dart';
+import 'package:home4u/features/products/logic/products_cubit.dart';
 import 'package:home4u/locale/app_locale.dart';
 
 class SuccessMissionDialog extends StatelessWidget {
-  const SuccessMissionDialog({super.key});
+  final bool isUpdate;
+  const SuccessMissionDialog({super.key,  this.isUpdate = false});
 
   @override
   Widget build(BuildContext context) {
@@ -43,7 +45,7 @@ class SuccessMissionDialog extends StatelessWidget {
             ),
             SizedBox(height: 32.h),
             Text(
-              AppLocale.productUploadedSuccessfully.getString(context),
+              isUpdate?AppLocale.productUpdatedSuccessfully.getString(context):AppLocale.productUploadedSuccessfully.getString(context),
               style: AppStyles.font24BlackMedium,
               textAlign: TextAlign.center,
             ),
@@ -56,6 +58,7 @@ class SuccessMissionDialog extends StatelessWidget {
   }
 
   Widget _buildButtons(BuildContext context) {
+    var cubit = context.read<ProductsCubit>();
     return Column(
       children: [
         AppCustomTextButtonWithIcon(
@@ -70,7 +73,11 @@ class SuccessMissionDialog extends StatelessWidget {
         ),
         SizedBox(height: 16.h),
         AppCustomButton(
-          onPressed: () => context.pushNamed(Routes.productsScreen),
+          onPressed: () {
+
+            context.pushNamed(Routes.productsScreen);
+            cubit.getProducts();
+          },
           textButton: AppLocale.goToProductList.getString(context),
           btnHeight: 50.h,
           btnWidth: MediaQuery.sizeOf(context).width,

@@ -46,13 +46,13 @@ class BusinessAddProductData {
   @JsonKey(name: "height")
   final int height;
   @JsonKey(name: "businessType")
-  final BaseUnit businessType;
+  final AddProductBaseUnit businessType;
   @JsonKey(name: "baseUnit")
-  final BaseUnit baseUnit;
+  final AddProductBaseUnit baseUnit;
   @JsonKey(name: "materials")
-  final List<BaseUnit> materials;
+  final List<AddProductBaseUnit> materials;
   @JsonKey(name: "stocks")
-  final List<Stock> stocks;
+  final List<AddProductStock> stocks;
   @JsonKey(name: "imagePaths")
   final List<dynamic> imagePaths;
 
@@ -81,7 +81,7 @@ class BusinessAddProductData {
 }
 
 @JsonSerializable()
-class BaseUnit {
+class AddProductBaseUnit {
   @JsonKey(name: "id")
   final int id;
   @JsonKey(name: "code")
@@ -91,38 +91,38 @@ class BaseUnit {
   @JsonKey(name: "hexColor")
   final dynamic hexColor;
 
-  BaseUnit({
+  AddProductBaseUnit({
     required this.id,
     required this.code,
     required this.name,
     this.hexColor,
   });
 
-  factory BaseUnit.fromJson(Map<String, dynamic> json) =>
-      _$BaseUnitFromJson(json);
+  factory AddProductBaseUnit.fromJson(Map<String, dynamic> json) =>
+      _$AddProductBaseUnitFromJson(json);
 
-  Map<String, dynamic> toJson() => _$BaseUnitToJson(this);
+  Map<String, dynamic> toJson() => _$AddProductBaseUnitToJson(this);
 }
 
 @JsonSerializable()
-class Stock {
+class AddProductStock {
   @JsonKey(name: "id")
   final int id;
   @JsonKey(name: "statusCode")
   final dynamic statusCode;
   @JsonKey(name: "color")
-  final BaseUnit color;
+  final AddProductBaseUnit color;
   @JsonKey(name: "amount")
   final int amount;
 
-  Stock({
+  AddProductStock({
     required this.id,
     required this.statusCode,
     required this.color,
     required this.amount,
   });
 
-  factory Stock.fromJson(Map<String, dynamic> json) => _$StockFromJson(json);
+  factory AddProductStock.fromJson(Map<String, dynamic> json) => _$AddProductStockFromJson(json);
 
-  Map<String, dynamic> toJson() => _$StockToJson(this);
+  Map<String, dynamic> toJson() => _$AddProductStockToJson(this);
 }

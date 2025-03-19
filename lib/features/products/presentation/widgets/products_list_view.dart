@@ -10,7 +10,7 @@ import '../../logic/products_state.dart';
 class ProductsListView extends StatelessWidget {
   final List<Content>? content;
 
-  const ProductsListView({super.key,  this.content});
+  const ProductsListView({super.key, this.content});
 
   @override
   Widget build(BuildContext context) {
@@ -18,46 +18,18 @@ class ProductsListView extends StatelessWidget {
       buildWhen: (previous, current) => current is! GetProductsLoading,
       builder: (context, state) {
         final cubit = context.read<ProductsCubit>();
-        return SliverInfiniteListView(delegate:PaginationDelegate(
-          itemBuilder:  (context, index) {
-            // if (index == content!.length) {
-            //   cubit.getProducts();
-            //   return CircularProgressIndicator();
-            // } else {
-
-            return ProductsItem(
-              content: content![index],
-              productIndex: index,
-            );
-            // }
-          }, itemCount: content!.length,
-          onFetchData: () {  } ,
-        )
+        return SliverInfiniteListView(
+          delegate: PaginationDelegate(
+            itemBuilder: (context, index) {
+              return ProductsItem(
+                content: content![index],
+              );
+            },
+            itemCount: content!.length,
+            onFetchData: () {},
+          ),
         );
-
-        //   SliverList(
-        //   delegate: SliverChildBuilderDelegate(
-        //     (context, index) {
-        //       // if (index == content!.length) {
-        //       //   cubit.getProducts();
-        //       //   return CircularProgressIndicator();
-        //       // } else {
-        //
-        //         return ProductsItem(
-        //           content: content![index],
-        //         );
-        //       // }
-        //     },
-        //     childCount: content!.length ,
-        //         // + 1,
-        //   ),
-        // );
       },
     );
   }
 }
-
-
-
-
-

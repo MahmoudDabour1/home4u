@@ -60,14 +60,14 @@ class _BusinessAddProductRemoteDataSource
   }
 
   @override
-  Future<AddProductBusinessResponseModel> updateBusinessProduct(
+  Future<UpdateProductsResponseModel> updateBusinessProduct(
       BusinessAddProductBody businessAddProductBody) async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
     final _data = <String, dynamic>{};
     _data.addAll(businessAddProductBody.toJson());
-    final _options = _setStreamType<AddProductBusinessResponseModel>(Options(
+    final _options = _setStreamType<UpdateProductsResponseModel>(Options(
       method: 'PUT',
       headers: _headers,
       extra: _extra,
@@ -84,9 +84,9 @@ class _BusinessAddProductRemoteDataSource
           baseUrl,
         )));
     final _result = await _dio.fetch<Map<String, dynamic>>(_options);
-    late AddProductBusinessResponseModel _value;
+    late UpdateProductsResponseModel _value;
     try {
-      _value = AddProductBusinessResponseModel.fromJson(_result.data!);
+      _value = UpdateProductsResponseModel.fromJson(_result.data!);
     } on Object catch (e, s) {
       errorLogger?.logError(e, s, _options);
       rethrow;

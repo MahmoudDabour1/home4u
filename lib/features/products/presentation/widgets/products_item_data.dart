@@ -9,9 +9,8 @@ import '../../data/models/products_response_model.dart';
 
 class ProductsItemData extends StatelessWidget {
   final Content? content;
-  final int? productIndex;
 
-  const ProductsItemData({super.key, required this.content, this.productIndex});
+  const ProductsItemData({super.key, required this.content});
 
   @override
   Widget build(BuildContext context) {
@@ -20,9 +19,9 @@ class ProductsItemData extends StatelessWidget {
       child: Column(
         children: [
           verticalSpace(16),
-          ProductsFirstTextAndButtons(content: content,productIndex: productIndex,),
-          ProductsTextItems(content: content,),
-          ProductsColorsAndRating(content: content,),
+          ProductsFirstTextAndButtons(content: content),
+          ProductsTextItems(content: content),
+          ProductsColorsAndRating(content: content),
         ],
       ),
     );

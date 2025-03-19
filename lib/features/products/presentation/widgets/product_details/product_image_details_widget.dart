@@ -4,7 +4,6 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:home4u/core/networking/api_constants.dart';
 import 'package:home4u/core/widgets/fancy_image.dart';
 
-import '../../../../../core/routing/router_observer.dart';
 import '../../../data/models/product_preview_response.dart';
 
 class ProductImageDetailsWidget extends StatelessWidget {

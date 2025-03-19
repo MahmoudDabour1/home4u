@@ -58,11 +58,13 @@ Map<String, dynamic> _$BaseUnitToJson(BaseUnit instance) => <String, dynamic>{
     };
 
 Stock _$StockFromJson(Map<String, dynamic> json) => Stock(
+      id: (json['id'] as num?)?.toInt(),
       amount: (json['amount'] as num).toInt(),
       color: BaseUnit.fromJson(json['color'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$StockToJson(Stock instance) => <String, dynamic>{
+      'id': instance.id,
       'amount': instance.amount,
       'color': instance.color,
     };
