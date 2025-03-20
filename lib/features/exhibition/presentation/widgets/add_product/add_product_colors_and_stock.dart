@@ -170,16 +170,95 @@ class _AddProductColorsAndStockState extends State<AddProductColorsAndStock> {
         backgroundColor: _hexToColor(colorHex),
       ),
       label: Text('${item["stock"]} pieces'),
-      deleteIcon: Icon(Icons.close, color: Colors.black),
-      onDeleted: () {
-        setState(() {
-          selectedColorsAndStock.remove(item);
-          cubit.updateSelectedColorsAndStock(
-            selectedColorsAndStock,
-          );
-        });
-      },
+      deleteIcon: SizedBox(
+        width: 32.w,
+        height: 32.h,
+        child: PopupMenuButton<String>(
+          padding: EdgeInsets.zero,
+          color: AppColors.whiteColor,
+          icon: Icon(Icons.more_vert, color: Colors.black),
+          onSelected: (value) {
+            if (value == "edit") {
+              _showEditStockDialog(context, item, cubit);
+            } else if (value == "delete") {
+              setState(() {
+                selectedColorsAndStock.remove(item);
+                cubit.updateSelectedColorsAndStock(selectedColorsAndStock);
+              });
+            }
+          },
+          itemBuilder: (context) => [
+            PopupMenuItem(
+              value: "edit",
+              child: Row(
+                children: [
+                  Icon(Icons.edit, color: Colors.black),
+                  SizedBox(width: 8),
+                  Text("Edit"),
+                ],
+              ),
+            ),
+            PopupMenuItem(
+              value: "delete",
+              child: Row(
+                children: [
+                  Icon(Icons.delete, color: Colors.red),
+                  SizedBox(width: 8),
+                  Text("Delete"),
+                ],
+              ),
+            ),
+          ],
+        ),
+      ),
+      onDeleted: () {},
       backgroundColor: AppColors.whiteColor,
+    );
+  }
+
+  void _showEditStockDialog(
+    BuildContext context,
+    Map<String, dynamic> item,
+    BusinessAddProductCubit cubit,
+  ) {
+    TextEditingController stockController =
+        TextEditingController(text: item["stock"].toString());
+
+    showDialog(
+      context: context,
+      builder: (context) {
+        return AlertDialog(
+          title: Text("Edit Stock"),
+          backgroundColor: AppColors.whiteColor,
+          content: TextField(
+            controller: stockController,
+            keyboardType: TextInputType.number,
+            decoration: InputDecoration(
+              labelText: "Stock Amount",
+              border: OutlineInputBorder(),
+            ),
+          ),
+          actions: [
+            TextButton(
+              onPressed: () => Navigator.pop(context),
+              child: Text("Cancel"),
+            ),
+            ElevatedButton(
+              onPressed: () {
+                int? newStock = int.tryParse(stockController.text);
+                if (newStock != null && newStock > 0) {
+                  setState(() {
+                    item["stock"] = newStock; // Update stock
+                    cubit.updateSelectedColorsAndStock(selectedColorsAndStock);
+                  });
+                  Navigator.pop(context);
+                }
+              },
+              child: Text("Update"),
+            ),
+          ],
+        );
+      },
     );
   }
 }
