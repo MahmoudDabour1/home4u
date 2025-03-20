@@ -47,6 +47,7 @@ class BusinessAddProductCubit extends Cubit<BusinessAddProductState> {
   final List<Map<String, dynamic>> selectedColorsAndStock = [];
 
   late List<File> images = [];
+  List<ImagePath> storedImages = [];
 
   void updateSelectedColorsAndStock(List<Map<String, dynamic>> newList) {
     selectedColorsAndStock
@@ -61,7 +62,9 @@ class BusinessAddProductCubit extends Cubit<BusinessAddProductState> {
     if (pickedFile != null) {
       final imageFile = File(pickedFile.path);
       log("Selected image path: ${imageFile.path}");
-      images.add(imageFile);
+
+      final updatedImages = List<File>.from(images)..add(imageFile);
+      images = updatedImages;
       emit(BusinessAddProductState.selectImageSuccess(images));
     } else {
       emit(
@@ -161,6 +164,16 @@ class BusinessAddProductCubit extends Cubit<BusinessAddProductState> {
       }
     }
 
+    List<ImagePath> beforeAddedImages = storedImages
+        .map(
+          (img) => ImagePath(
+            id: img.id,
+            productId: img.productId,
+            imagePath: img.imagePath,
+          ),
+        )
+        .toList();
+
     return BusinessAddProductBody(
       id: productId,
       nameAr: productNameArController.text,
@@ -175,7 +188,7 @@ class BusinessAddProductCubit extends Cubit<BusinessAddProductState> {
       baseUnit: BaseUnit(id: selectedBaseUnit!),
       materials: selectedMaterials?.map((e) => BaseUnit(id: e)).toList() ?? [],
       stocks: uniqueStocks,
-      imagePaths: [],
+      imagePaths: isUpdateData ? beforeAddedImages : [],
     );
   }
 
@@ -183,8 +196,12 @@ class BusinessAddProductCubit extends Cubit<BusinessAddProductState> {
     emit(const BusinessAddProductState.addBusinessProductImageLoading());
 
     final imageBodies = images
-        .map((image) =>
-            BusinessAddProductImagesBody(productId: productId, imagePath: null))
+        .map(
+          (image) => BusinessAddProductImagesBody(
+            productId: productId,
+            imagePath: null,
+          ),
+        )
         .toList();
     final result = await _repository.addBusinessProductImage(imageBodies);
 

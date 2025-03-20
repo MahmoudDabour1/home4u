@@ -22,7 +22,7 @@ abstract class BusinessAddProductRemoteDataSource {
   Future<AddProductBusinessResponseModel> addBusinessProduct(
       @Body() BusinessAddProductBody businessAddProductBody,
       );
-// Todo change response model
+
  @PUT(ApiConstants.updateProductEP)
   Future<UpdateProductsResponseModel> updateBusinessProduct(
       @Body() BusinessAddProductBody businessAddProductBody,

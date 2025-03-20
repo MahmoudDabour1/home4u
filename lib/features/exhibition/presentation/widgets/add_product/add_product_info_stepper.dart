@@ -262,7 +262,9 @@ class _AddProductInfoStepperState extends State<AddProductInfoStepper> {
                   );
             },
             isLoading: state is AddBusinessProductLoading ||
-                state is UpdateProductLoading,
+                state is UpdateProductLoading ||
+                state is UploadBusinessImageLoading ||
+                state is AddBusinessProductImageLoading,
             svgIcon: AppAssets.submitIconSvg,
             text: AppLocale.submit.getString(context),
             backgroundColor: AppColors.ratingColor,
