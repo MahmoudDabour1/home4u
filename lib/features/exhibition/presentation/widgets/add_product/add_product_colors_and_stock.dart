@@ -33,23 +33,23 @@ class _AddProductColorsAndStockState extends State<AddProductColorsAndStock> {
   void initState() {
     super.initState();
     final businessCubit = context.read<BusinessAddProductCubit>();
-    if (widget.productData != null) {
-      selectedColorsAndStock = widget.productData?.data.stocks
-              .map(
-                (stock) => {
-                  "colorId": stock.color.id,
-                  "hexColor": stock.color.hexColor,
-                  "stock": stock.amount,
-                },
-              )
-              .toList() ??
-          [];
+    if (widget.productData != null && widget.productData!.data.stocks.isNotEmpty) {
+      selectedColorsAndStock = widget.productData!.data.stocks.map((stock) {
+        return {
+          "colorId": stock.color.id,
+          "hexColor": stock.color.hexColor,
+          "stock": stock.amount,
+        };
+      }).toList();
+
+      // Set the selectedColor to the first item
       businessCubit.selectedColor = selectedColorsAndStock.isNotEmpty
           ? selectedColorsAndStock.first["colorId"]
           : null;
     } else {
       selectedColorsAndStock = [];
     }
+    businessCubit.updateSelectedColorsAndStock(selectedColorsAndStock);
   }
 
   @override
@@ -101,19 +101,18 @@ class _AddProductColorsAndStockState extends State<AddProductColorsAndStock> {
               child: AppCustomButton(
                 onPressed: () {
                   if (selectedColorId != null &&
-                      businessCubit
-                          .productStockAmountController.text.isNotEmpty) {
+                      businessCubit.productStockAmountController.text.isNotEmpty) {
                     int stock = int.parse(
                         businessCubit.productStockAmountController.text);
                     if (stock > 0) {
                       final selectedColorObject =
-                          productsCubit.colors.firstWhere(
-                        (element) => element.id.toString() == selectedColorId,
+                      productsCubit.colors.firstWhere(
+                            (element) => element.id.toString() == selectedColorId,
                         orElse: () => throw Exception("Color not found!"),
                       );
 
                       final existingIndex = selectedColorsAndStock.indexWhere(
-                          (item) => item["colorId"] == selectedColorObject.id);
+                              (item) => item["colorId"] == selectedColorObject.id);
 
                       if (existingIndex != -1) {
                         selectedColorsAndStock[existingIndex]["stock"] += stock;
@@ -123,11 +122,10 @@ class _AddProductColorsAndStockState extends State<AddProductColorsAndStock> {
                           "hexColor": selectedColorObject.hexColor,
                           "stock": stock,
                         });
-                        logger.w(
-                            "selectedColorsAndStock: $selectedColorsAndStock");
                       }
-                      businessCubit
-                          .updateSelectedColorsAndStock(selectedColorsAndStock);
+
+                      businessCubit.updateSelectedColorsAndStock(selectedColorsAndStock);
+
                       setState(() {
                         selectedColorId = null;
                         businessCubit.productStockAmountController.clear();
@@ -135,6 +133,7 @@ class _AddProductColorsAndStockState extends State<AddProductColorsAndStock> {
                     }
                   }
                 },
+
                 textButton: AppLocale.add.getString(context),
                 btnHeight: 60.h,
                 btnWidth: 200.w,

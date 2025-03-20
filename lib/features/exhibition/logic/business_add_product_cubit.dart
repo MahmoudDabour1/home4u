@@ -130,23 +130,35 @@ class BusinessAddProductCubit extends Cubit<BusinessAddProductState> {
       final colorId = item["colorId"];
       final stockAmount = item["stock"];
 
-      final existingStock = productData?.data.stocks.firstWhere(
-        (stock) => stock.color.id == colorId,
-        orElse: () => ResponseStock(
-          id: null,
-          color: ResponseBaseUnit(id: colorId, code: "", name: ""),
-          amount: stockAmount,
-          statusCode: null,
-        ),
-      );
+      final existingStocks = productData?.data.stocks.map((stock) => Stock(
+        id: stock.id,
+        color: BaseUnit(id: stock.color.id),
+        amount: stock.amount,
+      )).toList() ?? [];
 
-      if (!seen.contains(colorId)) {
-        seen.add(colorId);
-        uniqueStocks.add(Stock(
-          id: existingStock?.id,
-          color: BaseUnit(id: colorId),
-          amount: stockAmount,
-        ));
+      if (selectedColorsAndStock.isEmpty && productData != null) {
+        uniqueStocks.addAll(existingStocks);
+      } else {
+        for (final item in selectedColorsAndStock) {
+          final colorId = item["colorId"];
+          final stockAmount = item["stock"];
+
+          final existingStock = existingStocks.firstWhere(
+                (stock) => stock.color.id == colorId,
+            orElse: () =>
+                Stock(id: null,
+                    color: BaseUnit(id: colorId),
+                    amount: stockAmount),
+          );
+          if (!seen.contains(colorId)) {
+            seen.add(colorId);
+            uniqueStocks.add(Stock(
+              id: existingStock?.id,
+              color: BaseUnit(id: colorId),
+              amount: stockAmount,
+            ));
+          }
+        }
       }
     }
 
@@ -172,7 +184,9 @@ class BusinessAddProductCubit extends Cubit<BusinessAddProductState> {
       width: double.parse(productWidthController.text),
       height: double.parse(productHeightController.text),
       baseUnit: BaseUnit(id: selectedBaseUnit!),
-      materials: selectedMaterials?.map((e) => BaseUnit(id: e)).toList() ?? [],
+      materials: (selectedMaterials != null && selectedMaterials!.isNotEmpty)
+          ? selectedMaterials!.map((e) => BaseUnit(id: e)).toList()
+          : productData?.data.materials.map((e) => BaseUnit(id: e.id)).toList() ?? [],
       stocks: uniqueStocks,
       imagePaths: isUpdateData ? beforeAddedImages : [],
     );
