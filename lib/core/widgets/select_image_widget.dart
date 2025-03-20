@@ -33,7 +33,6 @@ class SelectImageWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    log("height : ${MediaQuery.sizeOf(context).height * 0.245}");
 
     return GestureDetector(
       onTap: () {

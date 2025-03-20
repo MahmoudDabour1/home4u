@@ -30,6 +30,7 @@ class _ProductsScreenState extends State<ProductsScreen>
   @override
   void initState() {
     super.initState();
+    context.read<ProductsCubit>().resetPagination();
     context.read<ProductsCubit>().getProducts().then((value) {
       context.read<ProductsCubit>().getBusinessConfig();
     });
@@ -48,6 +49,8 @@ class _ProductsScreenState extends State<ProductsScreen>
 
   @override
   void dispose() {
+    final cubit = context.read<ProductsCubit>();
+    cubit.resetPagination();
     _scrollController.removeListener(_scrollListener);
     _scrollController.dispose();
     super.dispose();

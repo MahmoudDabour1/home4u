@@ -20,10 +20,9 @@ class ProductsCubit extends Cubit<ProductsState> {
 
   BusinessConfigModel? businessConfigModel;
   final ProductsRepo _productsRepo;
-  final ProductsLocalDatasource _productsLocalDatasource;
+  // final ProductsLocalDatasource _productsLocalDatasource;
 
-  ProductsCubit(this._businessConfigRepo, this._productsRepo,
-      this._productsLocalDatasource)
+  ProductsCubit(this._businessConfigRepo, this._productsRepo)
       : super(ProductsState.initial());
   double? minPrice;
   double? maxPrice;
@@ -64,10 +63,10 @@ class ProductsCubit extends Cubit<ProductsState> {
     }
 
     if (isRefresh) {
-      _page = 1;
+      _page = 0;
       hasReachedMax = false;
       products.clear();
-    } else if (_page > 1) {
+    } else if (_page > 0) {
       emit(ProductsState.paginationLoading());
     } else {
       emit(ProductsState.getProductsLoading());
@@ -90,7 +89,7 @@ class ProductsCubit extends Cubit<ProductsState> {
     final response = await _productsRepo.getProducts(requestBody);
 
     response.when(success: (data) async {
-      await _productsLocalDatasource.cacheProductsData(data);
+      // await _productsLocalDatasource.cacheProductsData(data);
 
       final newProducts = data.data?.content ?? [];
       if (newProducts.isEmpty) {
@@ -183,6 +182,21 @@ class ProductsCubit extends Cubit<ProductsState> {
       },
     );
   }
+
+
+  void resetPagination() {
+    _page = 0;
+    _getProductsCallCount = 0;
+    hasReachedMax = false;
+    products.clear();
+  }
+
+  @override
+  Future<void> close() {
+    resetPagination();
+    return super.close();
+  }
+
 }
 
 Future<Map<String, dynamic>> _productsFilterJson(

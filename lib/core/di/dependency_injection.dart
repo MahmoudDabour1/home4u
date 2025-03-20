@@ -15,7 +15,6 @@ import 'package:home4u/features/auth/sign_up/logic/technical_worker/technical_wo
 import 'package:home4u/features/auth/verification/data/data_source/verification_remote_data_source.dart';
 import 'package:home4u/features/exhibition/data/data_sources/business_add_product_remote_data_source.dart';
 import 'package:home4u/features/exhibition/logic/business_add_product_cubit.dart';
-import 'package:home4u/features/products/data/data_source/products_local_data_source.dart';
 import 'package:home4u/features/products/data/data_source/products_remote_data_source.dart';
 import 'package:home4u/features/products/data/repos/products_repo.dart';
 import 'package:home4u/features/products/logic/products_cubit.dart';
@@ -160,11 +159,11 @@ Future<void> setupGetIt() async {
       () => ProductsRemoteDataSource(dio));
   sl.registerLazySingleton<BusinessConfigRepo>(
       () => BusinessConfigRepoImpl(remoteDataSource: sl()));
-  sl.registerLazySingleton<ProductsLocalDatasource>(
-      () => ProductsLocalDatasourceImpl());
-  sl.registerLazySingleton<ProductsRepo>(() => ProductsRepoImpl(
-      productsRemoteDataSource: sl(), productsLocalDataSource: sl()));
-  sl.registerFactory<ProductsCubit>(() => ProductsCubit(sl(), sl(), sl()));
+  // sl.registerLazySingleton<ProductsLocalDatasource>(
+  //     () => ProductsLocalDatasourceImpl());
+  sl.registerLazySingleton<ProductsRepo>(
+      () => ProductsRepoImpl(productsRemoteDataSource: sl()));
+  sl.registerFactory<ProductsCubit>(() => ProductsCubit(sl(), sl()));
 
   //Business Add Product
   sl.registerLazySingleton<BusinessAddProductRemoteDataSource>(

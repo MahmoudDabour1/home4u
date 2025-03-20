@@ -23,9 +23,9 @@ abstract class ProductsRepo {
 
 class ProductsRepoImpl implements ProductsRepo {
   final ProductsRemoteDataSource productsRemoteDataSource;
-  final ProductsLocalDatasource productsLocalDataSource;
+  // final ProductsLocalDatasource productsLocalDataSource;
 
-  ProductsRepoImpl( {required this.productsRemoteDataSource,required this.productsLocalDataSource,});
+  ProductsRepoImpl( {required this.productsRemoteDataSource});
 
   @override
   Future<ApiResult<ProductsResponseModel>> getProducts(
