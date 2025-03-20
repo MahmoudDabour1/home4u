@@ -6,7 +6,6 @@ import 'package:home4u/core/helpers/shared_pref_helper.dart';
 import 'package:home4u/core/helpers/shared_pref_keys.dart';
 import 'package:home4u/core/networking/dio_factory.dart';
 import 'package:home4u/core/routing/router_observer.dart';
-import 'package:home4u/features/products/data/data_source/products_local_data_source.dart';
 import 'package:home4u/features/products/data/models/business_config_model.dart';
 import 'package:home4u/features/products/data/repos/business_config_repo.dart';
 import 'package:home4u/features/products/data/repos/products_repo.dart';
@@ -20,6 +19,7 @@ class ProductsCubit extends Cubit<ProductsState> {
 
   BusinessConfigModel? businessConfigModel;
   final ProductsRepo _productsRepo;
+
   // final ProductsLocalDatasource _productsLocalDatasource;
 
   ProductsCubit(this._businessConfigRepo, this._productsRepo)
@@ -85,6 +85,7 @@ class ProductsCubit extends Cubit<ProductsState> {
         "materialIds": materialIds.isEmpty ? null : materialIds,
       }
     };
+    DioFactory.setContentType("application/json");
 
     final response = await _productsRepo.getProducts(requestBody);
 
@@ -183,7 +184,6 @@ class ProductsCubit extends Cubit<ProductsState> {
     );
   }
 
-
   void resetPagination() {
     _page = 0;
     _getProductsCallCount = 0;
@@ -196,7 +196,6 @@ class ProductsCubit extends Cubit<ProductsState> {
     resetPagination();
     return super.close();
   }
-
 }
 
 Future<Map<String, dynamic>> _productsFilterJson(

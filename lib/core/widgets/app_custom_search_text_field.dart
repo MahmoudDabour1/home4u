@@ -18,6 +18,9 @@ class AppCustomSearchTextField extends StatelessWidget {
       controller:controller ,
       onChanged: onChanged,
       onSaved:  onSaved,
+      onTapOutside: (event) {
+        FocusManager.instance.primaryFocus?.unfocus();
+      },
       keyboardType: TextInputType.text,
       decoration: InputDecoration(
         constraints: BoxConstraints(
