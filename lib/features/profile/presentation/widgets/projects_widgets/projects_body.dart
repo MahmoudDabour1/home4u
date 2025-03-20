@@ -3,33 +3,14 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_localization/flutter_localization.dart';
 import 'package:home4u/core/extensions/navigation_extension.dart';
 import 'package:home4u/core/routing/routes.dart';
-import 'package:pull_to_refresh_flutter3/pull_to_refresh_flutter3.dart';
 
 import '../../../../../core/widgets/app_custom_add_button.dart';
 import '../../../../../locale/app_locale.dart';
 import '../../../logic/project/project_cubit.dart';
 import 'get_projects_bloc_builder.dart';
 
-class ProjectsBody extends StatefulWidget {
+class ProjectsBody extends StatelessWidget {
   const ProjectsBody({super.key});
-
-  @override
-  State<ProjectsBody> createState() => _ProjectsBodyState();
-}
-
-class _ProjectsBodyState extends State<ProjectsBody> {
-  final RefreshController _refreshController =
-      RefreshController(initialRefresh: false);
-
-  void _onRefresh() async {
-    await context.read<ProjectCubit>().getProjects();
-    _refreshController.refreshCompleted();
-  }
-
-  void _onLoading() async {
-    await context.read<ProjectCubit>().getProjects();
-    _refreshController.loadComplete();
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -40,18 +21,18 @@ class _ProjectsBodyState extends State<ProjectsBody> {
           onPressed: () => context.pushNamed(Routes.addProjectScreen),
         ),
         Expanded(
-          child: SmartRefresher(
-            enablePullDown: true,
-            enablePullUp: false,
-            header:
-            ClassicHeader(),
-            controller: _refreshController,
-            onRefresh: _onRefresh,
-            onLoading: _onLoading,
+          child: RefreshIndicator(
+            onRefresh: () => _onRefresh(context),
             child: GetProjectsBlocBuilder(),
           ),
         ),
       ],
     );
+  }
+
+  Future<void> _onRefresh(BuildContext context) async {
+    await Future.delayed(Duration(seconds: 1), () {
+      context.read<ProjectCubit>().getProjects();
+    });
   }
 }

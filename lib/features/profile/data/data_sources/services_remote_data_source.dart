@@ -1,6 +1,6 @@
 import 'package:dio/dio.dart';
 import 'package:home4u/features/auth/sign_up/data/models/services/freelancer_services.dart';
-import 'package:home4u/features/profile/data/models/projects/delete_project_response_model.dart';
+import 'package:home4u/features/profile/data/models/services/Service_update_delete_response_model.dart';
 import 'package:home4u/features/profile/data/models/services/update_service_body.dart';
 import 'package:retrofit/error_logger.dart';
 import 'package:retrofit/http.dart';
@@ -15,19 +15,36 @@ abstract class ServicesRemoteDataSource {
       _ServicesRemoteDataSource;
 
   @GET(ApiConstants.engineerServicesEp)
-  Future<FreelancerServices> getServices(
+  Future<FreelancerServices> getEngineerServices(
     @Query("engineerId") int engineerId,
   );
 
   @PUT(ApiConstants.updateEngineerServices)
-  Future<bool> updateServices(
+  Future<ServiceUpdateDeleteResponseModel> updateEngineerServices(
     @Body() List<UpdateServiceBody> servicesData,
     @Query("userId") int userId,
   );
 
   @DELETE(ApiConstants.engineerServicesEp)
-  Future<bool> deleteService(
+  Future<ServiceUpdateDeleteResponseModel> deleteEngineerService(
     @Query("engineerId") int engineerId,
+    @Query("serviceId") int serviceId,
+  );
+
+  @GET(ApiConstants.technicalWorkerServicesEp)
+  Future<FreelancerServices> getTechnicalWorkerServices(
+    @Query("workerId") int workerId,
+  );
+
+  @PUT(ApiConstants.updateTechnicalWorkerServices)
+  Future<ServiceUpdateDeleteResponseModel>  updateTechnicalWorkerServices(
+    @Body() List<UpdateServiceBody> servicesData,
+    @Query("userId") int userId,
+  );
+
+  @DELETE(ApiConstants.technicalWorkerServicesEp)
+  Future<ServiceUpdateDeleteResponseModel> deleteTechnicalWorkerService(
+    @Query("workerId") int workerId,
     @Query("serviceId") int serviceId,
   );
 }

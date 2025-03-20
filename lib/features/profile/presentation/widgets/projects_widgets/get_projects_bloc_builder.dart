@@ -12,7 +12,7 @@ class GetProjectsBlocBuilder extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocBuilder<ProjectCubit, ProjectState>(
       buildWhen: (previous, current) =>
-          current is GetProjectsSuccess ||
+      current is GetProjectsSuccess ||
           current is GetProjectsLoading ||
           current is GetProjectsError ||
           current is AddProjectSuccess ||

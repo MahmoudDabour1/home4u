@@ -1,5 +1,6 @@
 import 'package:dio/dio.dart';
-import 'package:home4u/features/profile/data/models/profile/profile_response_model.dart';
+import 'package:home4u/features/profile/data/models/profile/engineer_profile_response_model.dart';
+import 'package:home4u/features/profile/data/models/profile/technical_worker_profile_response_model.dart';
 import 'package:home4u/features/profile/data/models/profile/upload_profile_image_response_model.dart';
 import 'package:retrofit/error_logger.dart';
 import 'package:retrofit/http.dart';
@@ -13,10 +14,18 @@ abstract class ProfileRemoteDataSource {
       _ProfileRemoteDataSource;
 
   @GET(ApiConstants.getEngineerByTokenEp)
-  Future<ProfileResponseModel> getEngineerByToken();
+  Future<EngineerProfileResponseModel> getEngineerByToken();
 
-  @PUT(ApiConstants.updateProfileEP)
-  Future<ProfileResponseModel> updateProfile(
+  @GET(ApiConstants.getTechnicalWorkerByTokenEp)
+  Future<TechnicalWorkerResponseModel> getTechnicalWorkerByToken();
+
+  @PUT(ApiConstants.updateEngineerProfileEP)
+  Future<EngineerProfileResponseModel> updateEngineerProfile(
+    @Body() String profileResponseModel,
+  );
+
+  @PUT(ApiConstants.updateTechnicalWorkerProfileEP)
+  Future<TechnicalWorkerResponseModel> updateTechnicalWorkerProfile(
     @Body() String profileResponseModel,
   );
 

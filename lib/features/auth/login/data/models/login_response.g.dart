@@ -25,16 +25,15 @@ Map<String, dynamic> _$LoginResponseToJson(LoginResponse instance) =>
 UserData _$UserDataFromJson(Map<String, dynamic> json) => UserData(
       token: json['token'] as String?,
       refreshToken: json['refreshToken'] as String?,
-      userInformation: json['userInformation'] == null
+      userInformation: json['user'] == null
           ? null
-          : UserInformation.fromJson(
-              json['userInformation'] as Map<String, dynamic>),
+          : UserInformation.fromJson(json['user'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$UserDataToJson(UserData instance) => <String, dynamic>{
       'token': instance.token,
       'refreshToken': instance.refreshToken,
-      'userInformation': instance.userInformation,
+      'user': instance.userInformation,
     };
 
 UserInformation _$UserInformationFromJson(Map<String, dynamic> json) =>

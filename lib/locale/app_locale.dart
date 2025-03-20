@@ -20,6 +20,7 @@ class AppLocale {
   static const String continueWithGoogle = 'Continue with Google';
   static const String continueWithFacebook = 'Continue with Facebook';
   static const String emailAddress = 'Email Address';
+  static const String address = 'Address';
   static const String phoneNumber = 'Phone Number';
   static const String password = 'password';
   static const String confirmPassword = 'Confirm password';
@@ -67,6 +68,7 @@ class AppLocale {
   static const String passwordsDoNotMatch = 'Passwords Do Not Match';
   static const String engineerInfo = 'Engineer Information';
   static const String technicalInfo = 'Technical Information';
+  static const String businessInfo = 'Business Information';
   static const String yearsOfExperience = 'Years of Experience';
   static const String engineerType = 'Engineer Type';
   static const String engineeringServices = 'Engineering Services';
@@ -77,6 +79,7 @@ class AppLocale {
   static const String uploadProjectImages = 'upload project images';
   static const String projectName = 'Project Name';
   static const String projectDescription = 'Project Description';
+  static const String overviewDescription = 'Overview Description';
   static const String projectStartData = 'Start Data';
   static const String projectEndData = 'End Data';
   static const String projectTools = 'Tools';
@@ -94,7 +97,7 @@ class AppLocale {
   static const String services = 'Services';
   static const String pricing = 'Pricing';
   static const String certifications = 'Certifications';
-  static const String addService = 'Add Service';
+  static const String addServices = 'Add Services';
   static const String add = 'Add';
   static const String editService = 'Edit Service';
   static const String settings = 'Settings';
@@ -117,10 +120,11 @@ class AppLocale {
   static const String pleaseSelectImageWay = 'Please Select Image way';
   static const String camera = 'Camera';
   static const String gallery = 'Gallery';
-  static const String tapToAddImage = 'Tap to Add Image';
+  static const String tapToAddImage = 'Upload Image\n Or drag and drop';
   static const String name = 'Name';
   static const String description = 'Description';
   static const String update = 'Update';
+  static const String updateProduct = 'Update Product';
   static const String nameCantBeEmpty = 'Name Can\'t be empty';
   static const String descriptionCantBeEmpty = 'Description Can\'t be empty';
   static const String pleaseSelectAnImage = 'Please select an image';
@@ -134,6 +138,75 @@ class AppLocale {
   static const String behance = 'Behance';
   static const String linkedin = 'Linkedin';
   static const String updateYourProfile = 'Update your profile';
+  static const String startData = 'Start Date : ';
+  static const String endData = 'End Date : ';
+  static const String usedTools = 'Used Tools : \n';
+  static const String moreProjectsHeader = 'More Projects By ';
+
+  ///Exhibition
+  static const String overview = 'Overview';
+  static const String general = 'General';
+  static const String exhibitionName = 'Exhibition Name';
+  static const String contactInformation = 'Contact Information';
+  static const String socialMedia = 'Social Media';
+  static const String facebook = 'Facebook';
+  static const String instagram = 'Instagram';
+  static const String website = 'Website';
+  static const String saveChanges = 'Save Changes';
+  static const String review = 'Review';
+  static const String oneStars = '1 Stars';
+  static const String twoStars = '2 Stars';
+  static const String threeStars = '3 Stars';
+  static const String fourStars = '4 Stars';
+  static const String fiveStars = '5 Stars';
+  static const String helpful = 'helpful';
+  static const String productPreview = 'Product Preview';
+  static const String productPreviewSubTitle =
+      'A brief overview highlighting key product\n details.';
+  static const String color = 'Color';
+  static const String price = 'Price';
+  static const String material = 'Material';
+  static const String dimensions = 'Dimensions';
+  static const String stock = 'Stock';
+  static const String baseUnit = 'Base Unit';
+  static const String submit = 'Submit';
+  static const String addProduct = 'Add Product';
+  static const String productNameAr = 'Product Name AR';
+  static const String productNameEn = 'Product Name EN';
+  static const String productDescriptionAr = 'Product Description AR';
+  static const String productDescriptionEn = 'Product Description EN';
+  static const String dimensionLength = 'الطول - Length';
+  static const String dimensionWidth = 'العرض - Width';
+  static const String dimensionHeight = 'الارتفاع - Height';
+  static const String businessType = 'Business Type';
+  static const String products = 'Products';
+  static const String offers = 'Offers';
+  static const String outOfStock = 'Out of Stock';
+  static const String filter = 'Filter';
+  static const String availability = 'Availability:';
+  static const String categories = 'Categories:';
+  static const String materials = 'Materials:';
+  static const String colors = 'Colors:';
+  static const String prices = 'Price:';
+  static const String rating = 'Rating:';
+  static const String minPrice = 'Min Price';
+  static const String maxPrice = 'Max Price';
+  static const String selectMaterials = 'Select Materials';
+  static const String productUploadedSuccessfully = 'Product uploaded\nsuccessfully';
+  static const String goToProductList = 'go to product list';
+  static const String productUpdatedSuccessfully = 'Product Updated Successfully';
+
+  ///BusinessSignUp
+  static const String tradeName = 'Trade Name';
+  static const String bioAr = 'Bio AR';
+  static const String bioEn = 'Bio EN';
+  static const String businessTypes = 'Business Types';
+
+  ///Stepper Titles
+  static const String basicDetails = 'Basic Details';
+  static const String materialsSpecs = 'Materials & Specs';
+  static const String colorsStock = 'Colors & Stock';
+  static const String uploadImages = 'Upload Images';
 
   static List<String> bottomNavItems = [
     'Home',
@@ -153,17 +226,22 @@ class AppLocale {
 
   static const String updateCertification = 'Update Certification';
   static const String updateProject = 'Update Project';
+  static const String search = 'Search';
+  static const String productDetails = 'Product Details';
+
+
+
   static const Map<String, dynamic> en = {
     onBoardingTitle1: 'Civil works and finishing services',
     onBoardingTitle2: 'Civil works and finishing services 2',
     onBoardingTitle3: 'Civil works and finishing services 3',
     onBoardingTitle4: 'Civil works and finishing services 4',
     onBoardingDescription1:
-        'Comprehensive services including civil works and finishing, with engineering consultations and 2D and 3D designs, in addition to free and paid services through our platform.',
+    'Comprehensive services including civil works and finishing, with engineering consultations and 2D and 3D designs, in addition to free and paid services through our platform.',
     onBoardingDescription2:
-        'Comprehensive services including civil works and finishing, with engineering consultations and 2D and 3D designs, in addition to free and paid services through our platform. 2',
+    'Comprehensive services including civil works and finishing, with engineering consultations and 2D and 3D designs, in addition to free and paid services through our platform. 2',
     onBoardingDescription3:
-        'Comprehensive services including civil works and finishing, with engineering consultations and 2D and 3D designs, in addition to free and paid services through our platform. 3',
+    'Comprehensive services including civil works and finishing, with engineering consultations and 2D and 3D designs, in addition to free and paid services through our platform. 3',
     onBoardingDescription4: '',
     toggleLanguage: 'en',
     startButton: 'Start',
@@ -175,6 +253,7 @@ class AppLocale {
     continueWithGoogle: 'Continue with Google',
     continueWithFacebook: 'Continue with Facebook',
     emailAddress: 'Email Address',
+    address: 'Address',
     phoneNumber: 'Phone Number',
     password: 'Password',
     confirmPassword: 'Confirm password',
@@ -219,6 +298,7 @@ class AppLocale {
     passwordsDoNotMatch: 'Passwords Do Not Match',
     engineerInfo: 'Engineer Information',
     technicalInfo: 'Technical Information',
+    businessInfo: 'Business Information',
     yearsOfExperience: 'Years of Experience',
     engineerType: 'Engineer Type',
     engineeringServices: 'Engineering Services',
@@ -235,7 +315,7 @@ class AppLocale {
     cancel: 'Cancel',
     deletedSuccessfully: 'Deleted Successfully',
     areYouSureYouWantToDeleteThisItem:
-        'Are you sure you want to delete this item?',
+    'Are you sure you want to delete this item?',
     addProject: 'Add Project',
     choose: 'Choose',
     setStartDate: 'Set Start Date',
@@ -245,7 +325,7 @@ class AppLocale {
     services: 'Services',
     pricing: 'Pricing',
     certifications: 'Certifications',
-    addService: 'Add Service',
+    addServices: 'Add Services',
     add: 'Add',
     editService: 'Edit Service',
     settings: 'Settings',
@@ -284,7 +364,73 @@ class AppLocale {
     behance: 'Behance',
     linkedin: 'Linkedin',
     updateYourProfile: 'Update your profile',
-
+    startData: 'Start Date : ',
+    endData: 'End Date : ',
+    usedTools: 'Used Tools : ',
+    moreProjectsHeader: 'More Projects By ',
+    search: 'Search',
+    overview: 'Overview',
+    general: 'General',
+    exhibitionName: 'Exhibition Name',
+    contactInformation: 'Contact Information',
+    socialMedia: 'Social Media',
+    facebook: 'Facebook',
+    instagram: 'Instagram',
+    website: 'Website',
+    saveChanges: 'Save Changes',
+    overviewDescription: 'Overview Description',
+    review: 'Review',
+    oneStars: '1 Stars',
+    twoStars: '2 Stars',
+    threeStars: '3 Stars',
+    fourStars: '4 Stars',
+    fiveStars: '5 Stars',
+    helpful: 'helpful',
+    productPreview: 'Product Preview',
+    productPreviewSubTitle:
+    'A brief overview highlighting key product\n details.',
+    color: 'Color',
+    price: 'Price',
+    material: 'Material',
+    dimensions: 'Dimensions',
+    stock: 'Stock',
+    baseUnit: 'Base Unit',
+    submit: 'Submit',
+    addProduct: 'Add Product',
+    productNameAr: 'Product Name AR',
+    productNameEn: 'Product Name EN',
+    productDescriptionAr: 'Product Description AR',
+    productDescriptionEn: 'Product Description EN',
+    dimensionLength: 'الطول - Length',
+    dimensionWidth: 'العرض - Width',
+    dimensionHeight: 'الارتفاع - Height',
+    businessType: 'Business Type',
+    tradeName: 'Trade Name',
+    bioAr: 'Bio AR',
+    bioEn: 'Bio EN',
+    businessTypes: 'Business Types',
+    products: 'Products',
+    offers: 'Offers',
+    outOfStock: 'Out of Stock',
+    filter: 'Filter',
+    availability: 'Availability:',
+    categories: 'Categories:',
+    materials: 'Materials:',
+    colors: 'Colors:',
+    prices: 'Price:',
+    rating: 'Rating:',
+    minPrice: 'Min Price',
+    maxPrice: 'Max Price',
+    basicDetails: 'Basic Details',
+    materialsSpecs: 'Materials & Specs',
+    colorsStock: 'Colors & Stock',
+    uploadImages: 'Upload Images',
+    selectMaterials: 'Select Materials',
+    productUploadedSuccessfully :  'Product uploaded\nsuccessfully',
+    goToProductList : 'go to product list',
+    productDetails : 'Product Details',
+    updateProduct : 'Update Product',
+    productUpdatedSuccessfully : 'Product Updated Successfully',
   };
 
   static const Map<String, dynamic> ar = {
@@ -293,11 +439,11 @@ class AppLocale {
     onBoardingTitle3: 'خدمات الأعمال المدنية والتشطيب 3',
     onBoardingTitle4: 'خدمات الأعمال المدنية والتشطيب 4',
     onBoardingDescription1:
-        'خدمات شاملة تشمل الأعمال المدنية والتشطيب، مع استشارات هندسية وتصاميم ثنائية وثلاثية الأبعاد، بالإضافة إلى خدمات مجانية ومدفوعة عبر منصتنا.',
+    'خدمات شاملة تشمل الأعمال المدنية والتشطيب، مع استشارات هندسية وتصاميم ثنائية وثلاثية الأبعاد، بالإضافة إلى خدمات مجانية ومدفوعة عبر منصتنا.',
     onBoardingDescription2:
-        'خدمات شاملة تشمل الأعمال المدنية والتشطيب، مع استشارات هندسية وتصاميم ثنائية وثلاثية الأبعاد، بالإضافة إلى خدمات مجانية ومدفوعة عبر منصتنا. 2',
+    'خدمات شاملة تشمل الأعمال المدنية والتشطيب، مع استشارات هندسية وتصاميم ثنائية وثلاثية الأبعاد، بالإضافة إلى خدمات مجانية ومدفوعة عبر منصتنا. 2',
     onBoardingDescription3:
-        'خدمات شاملة تشمل الأعمال المدنية والتشطيب، مع استشارات هندسية وتصاميم ثنائية وثلاثية الأبعاد، بالإضافة إلى خدمات مجانية ومدفوعة عبر منصتنا. 3',
+    'خدمات شاملة تشمل الأعمال المدنية والتشطيب، مع استشارات هندسية وتصاميم ثنائية وثلاثية الأبعاد، بالإضافة إلى خدمات مجانية ومدفوعة عبر منصتنا. 3',
     onBoardingDescription4: '',
     toggleLanguage: 'العربية',
     startButton: 'ابدأ',
@@ -309,6 +455,7 @@ class AppLocale {
     continueWithGoogle: 'المتابعة بحساب جوجل',
     continueWithFacebook: 'المتابعة بحساب الفيسبوك',
     emailAddress: 'البريد الإلكتروني',
+    address: 'العنوان',
     phoneNumber: 'رقم الهاتف',
     password: 'كلمة المرور',
     confirmPassword: 'تأكيد كلمة المرور',
@@ -353,6 +500,7 @@ class AppLocale {
     passwordsDoNotMatch: 'كلمات المرور غير متطابقة',
     engineerInfo: 'معلومات المهندس',
     technicalInfo: 'المعلومات التقنية',
+    businessInfo: 'معلومات الأعمال',
     yearsOfExperience: 'سنوات الخبرة',
     engineerType: 'نوع المهندس',
     engineeringServices: 'الخدمات الهندسية',
@@ -378,7 +526,7 @@ class AppLocale {
     services: 'الخدمات',
     pricing: 'التسعير',
     certifications: 'الشهادات',
-    addService: 'إضافة خدمة',
+    addServices: 'إضافة خدمات',
     add: 'إضافة',
     editService: 'تعديل الخدمة',
     settings: 'الإعدادات',
@@ -417,5 +565,72 @@ class AppLocale {
     behance: 'بيهانس',
     linkedin: 'لينكد إن',
     updateYourProfile: 'تحديث ملفك الشخصي',
+    startData: 'تاريخ البدء : ',
+    endData: 'تاريخ الانتهاء : ',
+    usedTools: 'الأدوات المستخدمة : ',
+    moreProjectsHeader: 'المزيد من المشاريع لـ ',
+    overview: 'نظرة عامة',
+    general: 'عام',
+    exhibitionName: 'اسم المعرض',
+    contactInformation: 'معلومات الاتصال',
+    facebook: 'فيسبوك',
+    instagram: 'انستجرام',
+    website: 'الموقع الإلكتروني',
+    socialMedia: 'وسائل التواصل الاجتماعي',
+    saveChanges: 'حفظ التغييرات',
+    overviewDescription: 'وصف عام',
+    review: 'التقييم',
+    oneStars: '١ نجوم',
+    twoStars: '٢ نجوم',
+    threeStars: '٣ نجوم',
+    fourStars: '٤ نجوم',
+    fiveStars: '٥ نجوم',
+    helpful: 'مفيد',
+    productPreview: 'معاينة المنتج',
+    productPreviewSubTitle:
+    'نظرة عامة موجزة تسلط الضوء على تفاصيل المنتج الرئيسية.',
+    color: 'اللون',
+    price: 'السعر',
+    material: 'المادة',
+    dimensions: 'الأبعاد',
+    stock: 'المخزون',
+    baseUnit: 'الوحدة الأساسية',
+    submit: 'إرسال',
+    addProduct: 'إضافة منتج',
+    productNameAr: 'اسم المنتج بالعربية',
+    productNameEn: 'اسم المنتج بالإنجليزية',
+    productDescriptionAr: 'وصف المنتج بالعربية',
+    productDescriptionEn: 'وصف المنتج بالإنجليزية',
+    dimensionLength: 'الطول - Length',
+    dimensionWidth: 'العرض - Width',
+    dimensionHeight: 'الارتفاع - Height',
+    businessType: 'نوع العمل',
+    tradeName: 'الاسم التجاري',
+    bioAr: 'السيرة الذاتية بالعربية',
+    bioEn: 'السيرة الذاتية بالإنجليزية',
+    businessTypes: 'أنواع الأعمال',
+    search: 'بحث',
+    products: 'المنتجات',
+    offers: 'العروض',
+    outOfStock: 'نفذ من المخزن',
+    filter: 'تصفية',
+    availability: 'متوفر:',
+    categories: 'الفئات:',
+    materials: 'المواد:',
+    colors: 'الألوان:',
+    prices: 'السعر:',
+    rating: 'التقييم:',
+    minPrice: 'الحد الأدنى للسعر',
+    maxPrice: 'الحد الأقصى للسعر',
+    basicDetails: 'البيانات الأساسية',
+    materialsSpecs: 'المواد الخام والمواصفات',
+    colorsStock: 'الألوان والمخزون',
+    uploadImages: 'رفع الصور',
+    selectMaterials: ' اختر المواد الخام',
+    productUploadedSuccessfully :  'تم إضافة المنتج بنجاح',
+    goToProductList : 'الذهاب إلى قائمة المنتجات',
+    productDetails : 'تفاصيل المنتج',
+    updateProduct : 'تحديث المنتج',
+    productUpdatedSuccessfully : 'تم تحديث المنتج بنجاح',
   };
 }

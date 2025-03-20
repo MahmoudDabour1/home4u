@@ -1,21 +1,16 @@
-import 'package:animate_do/animate_do.dart';
-import 'package:fancy_shimmer_image/fancy_shimmer_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:hive/hive.dart';
-import 'package:home4u/core/networking/api_constants.dart';
-import 'package:home4u/core/theming/app_styles.dart';
-import 'package:home4u/core/utils/spacing.dart';
+import 'package:home4u/core/helpers/shared_pref_helper.dart';
+import 'package:home4u/core/helpers/shared_pref_keys.dart';
+import 'package:home4u/features/profile/data/models/profile/technical_worker_profile_response_model.dart';
 import 'package:home4u/features/profile/data/models/projects/get_projects_response_model.dart';
 import 'package:home4u/features/profile/logic/project/project_cubit.dart';
 import 'package:home4u/features/profile/logic/project/project_state.dart';
-import 'package:home4u/features/profile/presentation/widgets/projects_widgets/project_body_grid_view_item.dart';
-import 'package:home4u/features/profile/presentation/widgets/projects_widgets/rating_container_item.dart';
+import 'package:home4u/features/profile/presentation/widgets/project_details_widgets/project_details_content.dart';
 
 import '../../../core/utils/app_constants.dart';
-import '../../auth/widgets/auth_welcome_data.dart';
-import '../data/models/profile/profile_response_model.dart';
+import '../data/models/profile/engineer_profile_response_model.dart';
 
 class ProjectDetailsScreen extends StatefulWidget {
   final int projectId;
@@ -28,7 +23,7 @@ class ProjectDetailsScreen extends StatefulWidget {
 
 class _ProjectDetailsScreenState extends State<ProjectDetailsScreen> {
   bool showMoreInfo = false;
-  ProfileResponseModel? profileDataCached;
+  dynamic profileData;
   GetProjectsResponseModel? projects;
 
   @override
@@ -38,12 +33,22 @@ class _ProjectDetailsScreenState extends State<ProjectDetailsScreen> {
   }
 
   Future<void> _initializeProfileData() async {
-    var profileBox = await Hive.openBox<ProfileResponseModel>(kProfileBox);
-    var profileData = profileBox.get(kProfileData);
+    var engineerProfileBox =
+        await Hive.openBox<EngineerProfileResponseModel>(kEngineerProfileBox);
+    var technicalWorkerProfileBox =
+        await Hive.openBox<TechnicalWorkerResponseModel>(
+            kTechnicalWorkerProfileBox);
+
     var projectBox = await Hive.openBox<GetProjectsResponseModel>(kProjectsBox);
     var projectsData = projectBox.get(kProjectsKey);
-    profileDataCached = profileData;
     projects = projectsData;
+
+    final userType = await SharedPrefHelper.getString(SharedPrefKeys.userType);
+    if (userType == 'ENGINEER') {
+      profileData = engineerProfileBox.get(kEngineerProfileData);
+    } else {
+      profileData = technicalWorkerProfileBox.get(kTechnicalWorkerProfileData);
+    }
   }
 
   @override
@@ -53,222 +58,20 @@ class _ProjectDetailsScreenState extends State<ProjectDetailsScreen> {
         child: BlocBuilder<ProjectCubit, ProjectState>(
           builder: (context, state) {
             return state.maybeWhen(
-              // getProjectLoading: () => ProjectsDetailsShimmerWidget(),
-              getProjectSuccess: (project) {
-                return SingleChildScrollView(
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      AuthWelcomeData(
-                        headText: profileDataCached?.data?.type?.name ?? "",
-                        subText: '',
-                      ),
-                      verticalSpace(32),
-                      Padding(
-                        padding: EdgeInsets.symmetric(
-                          horizontal: 24.0.w,
-                          vertical: 16.0.h,
-                        ),
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.start,
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Row(
-                              children: [
-                                CircleAvatar(
-                                  radius: 20,
-                                  backgroundImage: NetworkImage(ApiConstants
-                                          .getImageBaseUrl(profileDataCached
-                                              ?.data?.user?.personalPhoto) ??
-                                      'https://media.istockphoto.com/id/1142192548/vector/man-avatar-profile-male-face-silhouette-or-icon-isolated-on-white-background-vector.jpg?s=2048x2048&w=is&k=20&c=lyki7QHyULuJNNheEf-BI_DQNCDi2NRYMfVGTQj_4UM='),
-                                ),
-                                horizontalSpace(16),
-                                Text(
-                                  "${profileDataCached?.data?.user
-                                      ?.firstName} ${profileDataCached?.data
-                                      ?.user?.lastName}",
-                                  style: TextStyle(
-                                      fontSize: 16,
-                                      fontWeight: FontWeight.bold),
-                                ),
-                              ],
-                            ),
-                            verticalSpace(32),
-                            ...List.generate(
-                              project.data.images!.length,
-                                  (index) {
-                                final imageUrl = ApiConstants.getImageBaseUrl(
-                                  project.data.images![index].path,
-                                );
-                                return Padding(
-                                  padding:
-                                  const EdgeInsets.only(bottom: 16.0).h,
-                                  child: imageUrl.isNotEmpty
-                                      ? FancyShimmerImage(
-                                    imageUrl: imageUrl,
-                                    width:
-                                    MediaQuery
-                                        .sizeOf(context)
-                                        .width,
-                                    height: MediaQuery
-                                        .sizeOf(context)
-                                        .height *
-                                        0.2,
-                                    boxFit: BoxFit.fill,
-                                    shimmerBaseColor: Colors.grey[300]!,
-                                    shimmerHighlightColor:
-                                    Colors.grey[100]!,
-                                    boxDecoration: BoxDecoration(
-                                      borderRadius: BorderRadius.circular(16.r),
-                                    ),
-                                    shimmerBackColor: Colors.grey[100]!,
-                                    errorWidget: const Center(
-                                        child: Icon(Icons.error)),
-                                    alignment: Alignment.center,
-                                    imageBuilder:
-                                        (context, imageProvider) =>
-                                        Container(
-                                          decoration: BoxDecoration(
-                                            shape: BoxShape.rectangle,
-                                            borderRadius:
-                                            BorderRadius.circular(16.r),
-                                            image: DecorationImage(
-                                              image: imageProvider,
-                                              fit: BoxFit.cover,
-                                            ),
-                                          ),
-                                        ),
-                                  )
-                                      : const Center(child: Icon(Icons.error)),
-                                );
-                              },
-                            ),
-                            verticalSpace(16),
-                            Text(
-                              project.data.description,
-                              style: AppStyles.font16BlackMedium,
-                            ),
-                            verticalSpace(8),
-                            Row(
-                              children: [
-                                RatingContainerItem(
-                                  icon: Icons.star,
-                                  ratingText: '4.5',
-                                  iconColor: Colors.yellow,
-                                ),
-                                horizontalSpace(8),
-                                RatingContainerItem(
-                                  icon: Icons.remove_red_eye_outlined,
-                                  ratingText: '9k',
-                                  iconColor: Colors.black,
-                                ),
-                              ],
-                            ),
-                            if (!showMoreInfo)
-                              GestureDetector(
-                                onTap: () {
-                                  setState(() {
-                                    showMoreInfo = true;
-                                  });
-                                },
-                                child: Column(
-                                  children: [
-                                    verticalSpace(16),
-                                    Text(
-                                      'View Project Information',
-                                      style:
-                                      AppStyles.font16DarkBlueBold.copyWith(
-                                        color: Colors.blue,
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                              ),
-                            verticalSpace(16),
-                            if (showMoreInfo)
-                              FadeInLeft(
-                                animate: true,
-                                duration: Duration(milliseconds: 300),
-                                curve: Curves.easeInOut,
-                                child: RichText(
-                                  text: TextSpan(
-                                    children: [
-                                      TextSpan(
-                                        text: 'Used Tools : \n',
-                                        style: AppStyles.font16DarkBlueBold
-                                            .copyWith(
-                                          color: Colors.blue,
-                                        ),
-                                      ),
-                                      TextSpan(
-                                        text: '${project.data.tools}\n\n',
-                                        style: AppStyles.font16BlackMedium,
-                                      ),
-                                      TextSpan(
-                                        text: 'Start Date : \n',
-                                        style: AppStyles.font16DarkBlueBold
-                                            .copyWith(
-                                          color: Colors.blue,
-                                        ),
-                                      ),
-                                      TextSpan(
-                                        text:
-                                        '${formatDate(
-                                            project.data.startDate)}\n\n',
-                                        style: AppStyles.font16BlackMedium,
-                                      ),
-                                      TextSpan(
-                                        text: 'End Date : \n',
-                                        style: AppStyles.font16DarkBlueBold
-                                            .copyWith(
-                                          color: Colors.blue,
-                                        ),
-                                      ),
-                                      TextSpan(
-                                        text: formatDate(project.data.endDate),
-                                        style: AppStyles.font16BlackMedium,
-                                      ),
-                                    ],
-                                  ),
-                                ),
-                              ),
-                            verticalSpace(32),
-                            Text(
-                              'More Projects By ${profileDataCached?.data?.user
-                                  ?.firstName} ${profileDataCached?.data?.user
-                                  ?.lastName}',
-                              style: AppStyles.font16BlackSemiBold,
-                            ),
-                            verticalSpace(16),
-                            GridView.builder(
-                              shrinkWrap: true,
-                              physics: ClampingScrollPhysics(),
-                              gridDelegate:
-                              SliverGridDelegateWithFixedCrossAxisCount(
-                                crossAxisCount: 2,
-                                crossAxisSpacing: 16.w,
-                                mainAxisSpacing: 16.h,
-                                childAspectRatio: 1 / 1,
-                              ),
-                              itemCount: projects?.data?.length,
-                              itemBuilder: (context, index) {
-                                return ProjectBodyGridViewItem(
-                                  projectData: projects?.data?[index],
-                                );
-                              },
-                            ),
-                            verticalSpace(16),
-                          ],
-                        ),
-                      ),
-                    ],
-                  ),
-                );
-              },
-              orElse: () {
-                return SizedBox.shrink();
-              },
+              getProjectLoading: () =>
+                  Center(child: CircularProgressIndicator()),
+              getProjectSuccess: (project) => ProjectDetailsContent(
+                profileData: profileData,
+                project: project,
+                projects: projects,
+                showMoreInfo: showMoreInfo,
+                onShowMoreInfo: () {
+                  setState(() {
+                    showMoreInfo = true;
+                  });
+                },
+              ),
+              orElse: () => SizedBox.shrink(),
             );
           },
         ),

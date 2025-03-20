@@ -13,18 +13,24 @@ import 'package:home4u/features/auth/sign_up/data/repos/sign_up_repository.dart'
 import 'package:home4u/features/auth/sign_up/logic/sign_up_cubit.dart';
 import 'package:home4u/features/auth/sign_up/logic/technical_worker/technical_worker_cubit.dart';
 import 'package:home4u/features/auth/verification/data/data_source/verification_remote_data_source.dart';
+import 'package:home4u/features/exhibition/data/data_sources/business_add_product_remote_data_source.dart';
+import 'package:home4u/features/exhibition/logic/business_add_product_cubit.dart';
+import 'package:home4u/features/products/data/data_source/products_remote_data_source.dart';
+import 'package:home4u/features/products/data/repos/products_repo.dart';
+import 'package:home4u/features/products/logic/products_cubit.dart';
 import 'package:home4u/features/profile/data/data_sources/certifications_remote_data_source.dart';
 import 'package:home4u/features/profile/data/data_sources/profile_local_data_source.dart';
 import 'package:home4u/features/profile/data/data_sources/profile_remote_data_source.dart';
 import 'package:home4u/features/profile/data/data_sources/projects_remote_data_source.dart';
 import 'package:home4u/features/profile/data/data_sources/services_remote_data_source.dart';
+import 'package:home4u/features/profile/data/models/profile/engineer_profile_response_model.dart';
+import 'package:home4u/features/profile/data/models/profile/technical_worker_profile_response_model.dart';
 import 'package:home4u/features/profile/data/models/projects/get_projects_response_model.dart';
 import 'package:home4u/features/profile/data/repos/certifications_repo.dart';
 import 'package:home4u/features/profile/data/repos/projects_repo.dart';
 import 'package:home4u/features/profile/data/repos/services_repository.dart';
 import 'package:home4u/features/profile/logic/certifications/certifications_cubit.dart';
 import 'package:home4u/features/profile/logic/project/project_cubit.dart';
-import 'package:home4u/features/profile/data/models/profile/profile_response_model.dart';
 
 import '../../features/auth/forget_password/data/data_source/forget_password_data_source.dart';
 import '../../features/auth/forget_password/data/repos/forget_password_repo.dart';
@@ -36,6 +42,8 @@ import '../../features/auth/sign_up/data/data_source/freelancer_sign_up/freelanc
 import '../../features/auth/sign_up/logic/engineer/engineer_cubit.dart';
 import '../../features/auth/verification/data/repos/verification_repo.dart';
 import '../../features/auth/verification/logic/verification_cubit.dart';
+import '../../features/exhibition/data/repository/business_add_product_repository.dart';
+import '../../features/products/data/repos/business_config_repo.dart';
 import '../../features/profile/data/data_sources/projects_local_data_source.dart';
 import '../../features/profile/data/repos/profile_repo.dart';
 import '../../features/profile/logic/profile/profile_cubit.dart';
@@ -90,7 +98,7 @@ Future<void> setupGetIt() async {
   sl.registerFactory<EngineerCubit>(() => EngineerCubit(sl()));
   sl.registerFactory<TechnicalWorkerCubit>(() => TechnicalWorkerCubit(sl()));
 
-//projects
+  ///projects
   sl.registerLazySingleton<Box<GetProjectsResponseModel>>(
     () => Hive.box<GetProjectsResponseModel>(kProjectsBox),
   );
@@ -122,10 +130,13 @@ Future<void> setupGetIt() async {
       () => CertificationsRepoImpl(sl()));
   sl.registerFactory<CertificationsCubit>(() => CertificationsCubit(sl()));
 
-  // Register Profile Box with GetIt
-  sl.registerLazySingleton<Box<ProfileResponseModel>>(
-      () => Hive.box<ProfileResponseModel>(kProfileBox));
-//profile
+  ///profile
+  sl.registerLazySingleton<Box<EngineerProfileResponseModel>>(
+      () => Hive.box<EngineerProfileResponseModel>(kEngineerProfileBox));
+
+  sl.registerLazySingleton<Box<TechnicalWorkerResponseModel>>(
+    () => Hive.box<TechnicalWorkerResponseModel>(kTechnicalWorkerProfileBox),
+  );
   sl.registerLazySingleton<ProfileRemoteDataSource>(
       () => ProfileRemoteDataSource(dio));
   sl.registerLazySingleton<ProfileLocalDataSource>(
@@ -141,4 +152,24 @@ Future<void> setupGetIt() async {
     () => ServicesRepositoryImpl(sl()),
   );
   sl.registerFactory<ServicesCubit>(() => ServicesCubit(sl()));
+
+  ///Exhibitions
+  // business config
+  sl.registerLazySingleton<ProductsRemoteDataSource>(
+      () => ProductsRemoteDataSource(dio));
+  sl.registerLazySingleton<BusinessConfigRepo>(
+      () => BusinessConfigRepoImpl(remoteDataSource: sl()));
+  // sl.registerLazySingleton<ProductsLocalDatasource>(
+  //     () => ProductsLocalDatasourceImpl());
+  sl.registerLazySingleton<ProductsRepo>(
+      () => ProductsRepoImpl(productsRemoteDataSource: sl()));
+  sl.registerFactory<ProductsCubit>(() => ProductsCubit(sl(), sl()));
+
+  //Business Add Product
+  sl.registerLazySingleton<BusinessAddProductRemoteDataSource>(
+      () => BusinessAddProductRemoteDataSource(dio));
+  sl.registerLazySingleton<BusinessAddProductRepository>(
+      () => BusinessAddProductRepositoryImpl(sl()));
+  sl.registerFactory<BusinessAddProductCubit>(
+      () => BusinessAddProductCubit(sl()));
 }

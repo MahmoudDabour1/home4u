@@ -14,7 +14,7 @@ class _ProfileRemoteDataSource implements ProfileRemoteDataSource {
     this.baseUrl,
     this.errorLogger,
   }) {
-    baseUrl ??= 'http://149.102.135.15:5000';
+    baseUrl ??= 'https://home4u.gosoftcloud.com';
   }
 
   final Dio _dio;
@@ -24,12 +24,12 @@ class _ProfileRemoteDataSource implements ProfileRemoteDataSource {
   final ParseErrorLogger? errorLogger;
 
   @override
-  Future<ProfileResponseModel> getEngineerByToken() async {
+  Future<EngineerProfileResponseModel> getEngineerByToken() async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
     const Map<String, dynamic>? _data = null;
-    final _options = _setStreamType<ProfileResponseModel>(Options(
+    final _options = _setStreamType<EngineerProfileResponseModel>(Options(
       method: 'GET',
       headers: _headers,
       extra: _extra,
@@ -46,9 +46,9 @@ class _ProfileRemoteDataSource implements ProfileRemoteDataSource {
           baseUrl,
         )));
     final _result = await _dio.fetch<Map<String, dynamic>>(_options);
-    late ProfileResponseModel _value;
+    late EngineerProfileResponseModel _value;
     try {
-      _value = ProfileResponseModel.fromJson(_result.data!);
+      _value = EngineerProfileResponseModel.fromJson(_result.data!);
     } on Object catch (e, s) {
       errorLogger?.logError(e, s, _options);
       rethrow;
@@ -57,13 +57,46 @@ class _ProfileRemoteDataSource implements ProfileRemoteDataSource {
   }
 
   @override
-  Future<ProfileResponseModel> updateProfile(
+  Future<TechnicalWorkerResponseModel> getTechnicalWorkerByToken() async {
+    final _extra = <String, dynamic>{};
+    final queryParameters = <String, dynamic>{};
+    final _headers = <String, dynamic>{};
+    const Map<String, dynamic>? _data = null;
+    final _options = _setStreamType<TechnicalWorkerResponseModel>(Options(
+      method: 'GET',
+      headers: _headers,
+      extra: _extra,
+    )
+        .compose(
+          _dio.options,
+          '/api/v1/technical-workers/user',
+          queryParameters: queryParameters,
+          data: _data,
+        )
+        .copyWith(
+            baseUrl: _combineBaseUrls(
+          _dio.options.baseUrl,
+          baseUrl,
+        )));
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
+    late TechnicalWorkerResponseModel _value;
+    try {
+      _value = TechnicalWorkerResponseModel.fromJson(_result.data!);
+    } on Object catch (e, s) {
+      errorLogger?.logError(e, s, _options);
+      rethrow;
+    }
+    return _value;
+  }
+
+  @override
+  Future<EngineerProfileResponseModel> updateEngineerProfile(
       String profileResponseModel) async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
     final _data = profileResponseModel;
-    final _options = _setStreamType<ProfileResponseModel>(Options(
+    final _options = _setStreamType<EngineerProfileResponseModel>(Options(
       method: 'PUT',
       headers: _headers,
       extra: _extra,
@@ -80,9 +113,43 @@ class _ProfileRemoteDataSource implements ProfileRemoteDataSource {
           baseUrl,
         )));
     final _result = await _dio.fetch<Map<String, dynamic>>(_options);
-    late ProfileResponseModel _value;
+    late EngineerProfileResponseModel _value;
     try {
-      _value = ProfileResponseModel.fromJson(_result.data!);
+      _value = EngineerProfileResponseModel.fromJson(_result.data!);
+    } on Object catch (e, s) {
+      errorLogger?.logError(e, s, _options);
+      rethrow;
+    }
+    return _value;
+  }
+
+  @override
+  Future<TechnicalWorkerResponseModel> updateTechnicalWorkerProfile(
+      String profileResponseModel) async {
+    final _extra = <String, dynamic>{};
+    final queryParameters = <String, dynamic>{};
+    final _headers = <String, dynamic>{};
+    final _data = profileResponseModel;
+    final _options = _setStreamType<TechnicalWorkerResponseModel>(Options(
+      method: 'PUT',
+      headers: _headers,
+      extra: _extra,
+    )
+        .compose(
+          _dio.options,
+          '/api/v1/technical-workers',
+          queryParameters: queryParameters,
+          data: _data,
+        )
+        .copyWith(
+            baseUrl: _combineBaseUrls(
+          _dio.options.baseUrl,
+          baseUrl,
+        )));
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
+    late TechnicalWorkerResponseModel _value;
+    try {
+      _value = TechnicalWorkerResponseModel.fromJson(_result.data!);
     } on Object catch (e, s) {
       errorLogger?.logError(e, s, _options);
       rethrow;

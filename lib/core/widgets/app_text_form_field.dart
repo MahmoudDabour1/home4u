@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:home4u/core/theming/app_styles.dart';
 import 'package:home4u/core/widgets/get_common_input_decoration.dart';
-
 
 class AppTextFormField extends StatelessWidget {
   final String labelText;
@@ -16,6 +16,7 @@ class AppTextFormField extends StatelessWidget {
   final InputDecoration? decoration;
   final int? maxLines;
   final bool? enabled;
+  final void Function(String)? onChanged;
 
   const AppTextFormField({
     super.key,
@@ -31,6 +32,7 @@ class AppTextFormField extends StatelessWidget {
     this.decoration,
     this.maxLines = 1,
     this.enabled = true,
+    this.onChanged,
   });
 
   @override
@@ -44,7 +46,14 @@ class AppTextFormField extends StatelessWidget {
         FocusManager.instance.primaryFocus?.unfocus();
       },
       textInputAction: TextInputAction.next,
-      decoration: decoration ?? getCommonInputDecoration(labelText: labelText),
+      decoration: decoration ??
+          getCommonInputDecoration(
+            labelText: labelText,
+            suffixIcon: Padding(
+              padding: EdgeInsetsDirectional.only(end: 12.w),
+              child: suffixIcon,
+            ),
+          ),
       obscureText: isObscureText ?? false,
       style: AppStyles.font16BlackLight,
       validator: (value) {
@@ -52,6 +61,7 @@ class AppTextFormField extends StatelessWidget {
       },
       maxLines: maxLines,
       minLines: maxLines,
+      onChanged: onChanged,
     );
   }
 }

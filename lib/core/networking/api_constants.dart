@@ -1,6 +1,6 @@
 class ApiConstants {
-  static const String apiBaseUrl = "http://149.102.135.15:5000";
-  static const String imageBaseUrl = "http://149.102.135.15:5001/";
+  static const String apiBaseUrl = "https://home4u.gosoftcloud.com";
+  static const String imageBaseUrl = "https://149.102.135.15:5001/";
   static const String loginEndPoint = "/api/v1/auth/login";
   static const String userTypesEp = "/api/v1/user-types";
   static const String signUpEp = "/api/v1/auth/register";
@@ -28,21 +28,37 @@ class ApiConstants {
       "/api/v1/certificate/{certificationId}";
 
   ///Services
-  static const String engineerServicesEp =
-      "/api/v1/engineer-services/service";
+  static const String engineerServicesEp = "/api/v1/engineer-services/service";
   static const String updateEngineerServices =
       "/api/v1/engineer-services/service/update";
-
+  static const String technicalWorkerServicesEp =
+      "/api/v1/technical-worker-services/service";
+  static const String updateTechnicalWorkerServices =
+      "/api/v1/technical-worker-services/service/update";
 
   ///profile
   static const String getEngineerByTokenEp = "/api/v1/engineers/user";
-  static const String updateProfileEP = "/api/v1/engineers";
+  static const String getTechnicalWorkerByTokenEp =
+      "/api/v1/technical-workers/user";
+  static const String updateEngineerProfileEP = "/api/v1/engineers";
+  static const String updateTechnicalWorkerProfileEP =
+      "/api/v1/technical-workers";
   static const String uploadProfileImageEP = "/api/v1/users/personal_photo";
+
+  ///exhibitions
+  static const String businessConfigEP = "/api/v1/business-config";
+  static const String productsFilterEP = "/api/v1/products/filter";
+  static const String deleteProductEP = "/api/v1/products/{productId}";
+  static const String addProductEp = "/api/v1/products";
+  static const String addAllProductImagesEp = "/api/v1/product-images/all";
+  // {{prod_url}}/api/v1/products/57
+  static const String getProductDetailsEP = "/api/v1/products/{productId}";
+  static const String updateProductEP = "/api/v1/products";
+  // upload Image = {{prod_url}}/api/v1/file?pathId=BUSINESS_PRODUCTS&id=4
 
 
   ///images
-  static String getImageBaseUrl(String path) =>
-      "$imageBaseUrl$path";
+  static String getImageBaseUrl(String path) => "$apiBaseUrl/$path";
 }
 
 class ApiErrors {

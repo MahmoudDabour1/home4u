@@ -2,17 +2,14 @@ import 'package:fancy_shimmer_image/fancy_shimmer_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:hive/hive.dart';
 import 'package:home4u/core/extensions/navigation_extension.dart';
 import 'package:home4u/core/networking/api_constants.dart';
-import 'package:home4u/core/utils/app_constants.dart';
 import 'package:home4u/features/profile/data/models/projects/get_projects_response_model.dart';
 import 'package:home4u/features/profile/logic/profile/profile_cubit.dart';
-import 'package:home4u/features/profile/logic/project/project_cubit.dart';
 
 import '../../../../../core/routing/routes.dart';
-import '../../../data/models/profile/profile_response_model.dart';
 import '../../../logic/profile/profile_state.dart';
+import '../../../logic/project/project_cubit.dart';
 import 'project_menu_button_and_dialog.dart';
 
 class ProjectBodyGridViewItem extends StatelessWidget {
@@ -26,9 +23,6 @@ class ProjectBodyGridViewItem extends StatelessWidget {
       builder: (context, state) {
         return GestureDetector(
           onTap: () async {
-            var profileBox =
-                await Hive.openBox<ProfileResponseModel>(kProfileBox);
-            var profileData = profileBox.get(kProfileData);
             final projectCubit = BlocProvider.of<ProjectCubit>(context);
             projectCubit.getProjectById(projectData!.id!);
             context.pushNamed(

@@ -24,10 +24,12 @@ mixin _$ServicesState<T> {
         getServicesSuccess,
     required TResult Function(String error) getServicesError,
     required TResult Function() updateServicesLoading,
-    required TResult Function() updateServicesSuccess,
+    required TResult Function(ServiceUpdateDeleteResponseModel serviceResponse)
+        updateServicesSuccess,
     required TResult Function(String error) updateServicesError,
     required TResult Function() deleteServiceLoading,
-    required TResult Function() deleteServiceSuccess,
+    required TResult Function(ServiceUpdateDeleteResponseModel serviceResponse)
+        deleteServiceSuccess,
     required TResult Function(String error) deleteServiceError,
   }) =>
       throw _privateConstructorUsedError;
@@ -38,10 +40,12 @@ mixin _$ServicesState<T> {
     TResult? Function(FreelancerServices servicesData)? getServicesSuccess,
     TResult? Function(String error)? getServicesError,
     TResult? Function()? updateServicesLoading,
-    TResult? Function()? updateServicesSuccess,
+    TResult? Function(ServiceUpdateDeleteResponseModel serviceResponse)?
+        updateServicesSuccess,
     TResult? Function(String error)? updateServicesError,
     TResult? Function()? deleteServiceLoading,
-    TResult? Function()? deleteServiceSuccess,
+    TResult? Function(ServiceUpdateDeleteResponseModel serviceResponse)?
+        deleteServiceSuccess,
     TResult? Function(String error)? deleteServiceError,
   }) =>
       throw _privateConstructorUsedError;
@@ -52,10 +56,12 @@ mixin _$ServicesState<T> {
     TResult Function(FreelancerServices servicesData)? getServicesSuccess,
     TResult Function(String error)? getServicesError,
     TResult Function()? updateServicesLoading,
-    TResult Function()? updateServicesSuccess,
+    TResult Function(ServiceUpdateDeleteResponseModel serviceResponse)?
+        updateServicesSuccess,
     TResult Function(String error)? updateServicesError,
     TResult Function()? deleteServiceLoading,
-    TResult Function()? deleteServiceSuccess,
+    TResult Function(ServiceUpdateDeleteResponseModel serviceResponse)?
+        deleteServiceSuccess,
     TResult Function(String error)? deleteServiceError,
     required TResult orElse(),
   }) =>
@@ -177,10 +183,12 @@ class _$InitialImpl<T> implements _Initial<T> {
         getServicesSuccess,
     required TResult Function(String error) getServicesError,
     required TResult Function() updateServicesLoading,
-    required TResult Function() updateServicesSuccess,
+    required TResult Function(ServiceUpdateDeleteResponseModel serviceResponse)
+        updateServicesSuccess,
     required TResult Function(String error) updateServicesError,
     required TResult Function() deleteServiceLoading,
-    required TResult Function() deleteServiceSuccess,
+    required TResult Function(ServiceUpdateDeleteResponseModel serviceResponse)
+        deleteServiceSuccess,
     required TResult Function(String error) deleteServiceError,
   }) {
     return initial();
@@ -194,10 +202,12 @@ class _$InitialImpl<T> implements _Initial<T> {
     TResult? Function(FreelancerServices servicesData)? getServicesSuccess,
     TResult? Function(String error)? getServicesError,
     TResult? Function()? updateServicesLoading,
-    TResult? Function()? updateServicesSuccess,
+    TResult? Function(ServiceUpdateDeleteResponseModel serviceResponse)?
+        updateServicesSuccess,
     TResult? Function(String error)? updateServicesError,
     TResult? Function()? deleteServiceLoading,
-    TResult? Function()? deleteServiceSuccess,
+    TResult? Function(ServiceUpdateDeleteResponseModel serviceResponse)?
+        deleteServiceSuccess,
     TResult? Function(String error)? deleteServiceError,
   }) {
     return initial?.call();
@@ -211,10 +221,12 @@ class _$InitialImpl<T> implements _Initial<T> {
     TResult Function(FreelancerServices servicesData)? getServicesSuccess,
     TResult Function(String error)? getServicesError,
     TResult Function()? updateServicesLoading,
-    TResult Function()? updateServicesSuccess,
+    TResult Function(ServiceUpdateDeleteResponseModel serviceResponse)?
+        updateServicesSuccess,
     TResult Function(String error)? updateServicesError,
     TResult Function()? deleteServiceLoading,
-    TResult Function()? deleteServiceSuccess,
+    TResult Function(ServiceUpdateDeleteResponseModel serviceResponse)?
+        deleteServiceSuccess,
     TResult Function(String error)? deleteServiceError,
     required TResult orElse(),
   }) {
@@ -336,10 +348,12 @@ class _$GetServicesLoadingImpl<T> implements GetServicesLoading<T> {
         getServicesSuccess,
     required TResult Function(String error) getServicesError,
     required TResult Function() updateServicesLoading,
-    required TResult Function() updateServicesSuccess,
+    required TResult Function(ServiceUpdateDeleteResponseModel serviceResponse)
+        updateServicesSuccess,
     required TResult Function(String error) updateServicesError,
     required TResult Function() deleteServiceLoading,
-    required TResult Function() deleteServiceSuccess,
+    required TResult Function(ServiceUpdateDeleteResponseModel serviceResponse)
+        deleteServiceSuccess,
     required TResult Function(String error) deleteServiceError,
   }) {
     return getServicesLoading();
@@ -353,10 +367,12 @@ class _$GetServicesLoadingImpl<T> implements GetServicesLoading<T> {
     TResult? Function(FreelancerServices servicesData)? getServicesSuccess,
     TResult? Function(String error)? getServicesError,
     TResult? Function()? updateServicesLoading,
-    TResult? Function()? updateServicesSuccess,
+    TResult? Function(ServiceUpdateDeleteResponseModel serviceResponse)?
+        updateServicesSuccess,
     TResult? Function(String error)? updateServicesError,
     TResult? Function()? deleteServiceLoading,
-    TResult? Function()? deleteServiceSuccess,
+    TResult? Function(ServiceUpdateDeleteResponseModel serviceResponse)?
+        deleteServiceSuccess,
     TResult? Function(String error)? deleteServiceError,
   }) {
     return getServicesLoading?.call();
@@ -370,10 +386,12 @@ class _$GetServicesLoadingImpl<T> implements GetServicesLoading<T> {
     TResult Function(FreelancerServices servicesData)? getServicesSuccess,
     TResult Function(String error)? getServicesError,
     TResult Function()? updateServicesLoading,
-    TResult Function()? updateServicesSuccess,
+    TResult Function(ServiceUpdateDeleteResponseModel serviceResponse)?
+        updateServicesSuccess,
     TResult Function(String error)? updateServicesError,
     TResult Function()? deleteServiceLoading,
-    TResult Function()? deleteServiceSuccess,
+    TResult Function(ServiceUpdateDeleteResponseModel serviceResponse)?
+        deleteServiceSuccess,
     TResult Function(String error)? deleteServiceError,
     required TResult orElse(),
   }) {
@@ -523,10 +541,12 @@ class _$GetServicesSuccessImpl<T> implements GetServicesSuccess<T> {
         getServicesSuccess,
     required TResult Function(String error) getServicesError,
     required TResult Function() updateServicesLoading,
-    required TResult Function() updateServicesSuccess,
+    required TResult Function(ServiceUpdateDeleteResponseModel serviceResponse)
+        updateServicesSuccess,
     required TResult Function(String error) updateServicesError,
     required TResult Function() deleteServiceLoading,
-    required TResult Function() deleteServiceSuccess,
+    required TResult Function(ServiceUpdateDeleteResponseModel serviceResponse)
+        deleteServiceSuccess,
     required TResult Function(String error) deleteServiceError,
   }) {
     return getServicesSuccess(servicesData);
@@ -540,10 +560,12 @@ class _$GetServicesSuccessImpl<T> implements GetServicesSuccess<T> {
     TResult? Function(FreelancerServices servicesData)? getServicesSuccess,
     TResult? Function(String error)? getServicesError,
     TResult? Function()? updateServicesLoading,
-    TResult? Function()? updateServicesSuccess,
+    TResult? Function(ServiceUpdateDeleteResponseModel serviceResponse)?
+        updateServicesSuccess,
     TResult? Function(String error)? updateServicesError,
     TResult? Function()? deleteServiceLoading,
-    TResult? Function()? deleteServiceSuccess,
+    TResult? Function(ServiceUpdateDeleteResponseModel serviceResponse)?
+        deleteServiceSuccess,
     TResult? Function(String error)? deleteServiceError,
   }) {
     return getServicesSuccess?.call(servicesData);
@@ -557,10 +579,12 @@ class _$GetServicesSuccessImpl<T> implements GetServicesSuccess<T> {
     TResult Function(FreelancerServices servicesData)? getServicesSuccess,
     TResult Function(String error)? getServicesError,
     TResult Function()? updateServicesLoading,
-    TResult Function()? updateServicesSuccess,
+    TResult Function(ServiceUpdateDeleteResponseModel serviceResponse)?
+        updateServicesSuccess,
     TResult Function(String error)? updateServicesError,
     TResult Function()? deleteServiceLoading,
-    TResult Function()? deleteServiceSuccess,
+    TResult Function(ServiceUpdateDeleteResponseModel serviceResponse)?
+        deleteServiceSuccess,
     TResult Function(String error)? deleteServiceError,
     required TResult orElse(),
   }) {
@@ -718,10 +742,12 @@ class _$GetServicesErrorImpl<T> implements GetServicesError<T> {
         getServicesSuccess,
     required TResult Function(String error) getServicesError,
     required TResult Function() updateServicesLoading,
-    required TResult Function() updateServicesSuccess,
+    required TResult Function(ServiceUpdateDeleteResponseModel serviceResponse)
+        updateServicesSuccess,
     required TResult Function(String error) updateServicesError,
     required TResult Function() deleteServiceLoading,
-    required TResult Function() deleteServiceSuccess,
+    required TResult Function(ServiceUpdateDeleteResponseModel serviceResponse)
+        deleteServiceSuccess,
     required TResult Function(String error) deleteServiceError,
   }) {
     return getServicesError(error);
@@ -735,10 +761,12 @@ class _$GetServicesErrorImpl<T> implements GetServicesError<T> {
     TResult? Function(FreelancerServices servicesData)? getServicesSuccess,
     TResult? Function(String error)? getServicesError,
     TResult? Function()? updateServicesLoading,
-    TResult? Function()? updateServicesSuccess,
+    TResult? Function(ServiceUpdateDeleteResponseModel serviceResponse)?
+        updateServicesSuccess,
     TResult? Function(String error)? updateServicesError,
     TResult? Function()? deleteServiceLoading,
-    TResult? Function()? deleteServiceSuccess,
+    TResult? Function(ServiceUpdateDeleteResponseModel serviceResponse)?
+        deleteServiceSuccess,
     TResult? Function(String error)? deleteServiceError,
   }) {
     return getServicesError?.call(error);
@@ -752,10 +780,12 @@ class _$GetServicesErrorImpl<T> implements GetServicesError<T> {
     TResult Function(FreelancerServices servicesData)? getServicesSuccess,
     TResult Function(String error)? getServicesError,
     TResult Function()? updateServicesLoading,
-    TResult Function()? updateServicesSuccess,
+    TResult Function(ServiceUpdateDeleteResponseModel serviceResponse)?
+        updateServicesSuccess,
     TResult Function(String error)? updateServicesError,
     TResult Function()? deleteServiceLoading,
-    TResult Function()? deleteServiceSuccess,
+    TResult Function(ServiceUpdateDeleteResponseModel serviceResponse)?
+        deleteServiceSuccess,
     TResult Function(String error)? deleteServiceError,
     required TResult orElse(),
   }) {
@@ -888,10 +918,12 @@ class _$UpdateServicesLoadingImpl<T> implements UpdateServicesLoading<T> {
         getServicesSuccess,
     required TResult Function(String error) getServicesError,
     required TResult Function() updateServicesLoading,
-    required TResult Function() updateServicesSuccess,
+    required TResult Function(ServiceUpdateDeleteResponseModel serviceResponse)
+        updateServicesSuccess,
     required TResult Function(String error) updateServicesError,
     required TResult Function() deleteServiceLoading,
-    required TResult Function() deleteServiceSuccess,
+    required TResult Function(ServiceUpdateDeleteResponseModel serviceResponse)
+        deleteServiceSuccess,
     required TResult Function(String error) deleteServiceError,
   }) {
     return updateServicesLoading();
@@ -905,10 +937,12 @@ class _$UpdateServicesLoadingImpl<T> implements UpdateServicesLoading<T> {
     TResult? Function(FreelancerServices servicesData)? getServicesSuccess,
     TResult? Function(String error)? getServicesError,
     TResult? Function()? updateServicesLoading,
-    TResult? Function()? updateServicesSuccess,
+    TResult? Function(ServiceUpdateDeleteResponseModel serviceResponse)?
+        updateServicesSuccess,
     TResult? Function(String error)? updateServicesError,
     TResult? Function()? deleteServiceLoading,
-    TResult? Function()? deleteServiceSuccess,
+    TResult? Function(ServiceUpdateDeleteResponseModel serviceResponse)?
+        deleteServiceSuccess,
     TResult? Function(String error)? deleteServiceError,
   }) {
     return updateServicesLoading?.call();
@@ -922,10 +956,12 @@ class _$UpdateServicesLoadingImpl<T> implements UpdateServicesLoading<T> {
     TResult Function(FreelancerServices servicesData)? getServicesSuccess,
     TResult Function(String error)? getServicesError,
     TResult Function()? updateServicesLoading,
-    TResult Function()? updateServicesSuccess,
+    TResult Function(ServiceUpdateDeleteResponseModel serviceResponse)?
+        updateServicesSuccess,
     TResult Function(String error)? updateServicesError,
     TResult Function()? deleteServiceLoading,
-    TResult Function()? deleteServiceSuccess,
+    TResult Function(ServiceUpdateDeleteResponseModel serviceResponse)?
+        deleteServiceSuccess,
     TResult Function(String error)? deleteServiceError,
     required TResult orElse(),
   }) {
@@ -1005,6 +1041,8 @@ abstract class _$$UpdateServicesSuccessImplCopyWith<T, $Res> {
           _$UpdateServicesSuccessImpl<T> value,
           $Res Function(_$UpdateServicesSuccessImpl<T>) then) =
       __$$UpdateServicesSuccessImplCopyWithImpl<T, $Res>;
+  @useResult
+  $Res call({ServiceUpdateDeleteResponseModel serviceResponse});
 }
 
 /// @nodoc
@@ -1018,27 +1056,53 @@ class __$$UpdateServicesSuccessImplCopyWithImpl<T, $Res>
 
   /// Create a copy of ServicesState
   /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? serviceResponse = null,
+  }) {
+    return _then(_$UpdateServicesSuccessImpl<T>(
+      null == serviceResponse
+          ? _value.serviceResponse
+          : serviceResponse // ignore: cast_nullable_to_non_nullable
+              as ServiceUpdateDeleteResponseModel,
+    ));
+  }
 }
 
 /// @nodoc
 
 class _$UpdateServicesSuccessImpl<T> implements UpdateServicesSuccess<T> {
-  const _$UpdateServicesSuccessImpl();
+  const _$UpdateServicesSuccessImpl(this.serviceResponse);
+
+  @override
+  final ServiceUpdateDeleteResponseModel serviceResponse;
 
   @override
   String toString() {
-    return 'ServicesState<$T>.updateServicesSuccess()';
+    return 'ServicesState<$T>.updateServicesSuccess(serviceResponse: $serviceResponse)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$UpdateServicesSuccessImpl<T>);
+            other is _$UpdateServicesSuccessImpl<T> &&
+            (identical(other.serviceResponse, serviceResponse) ||
+                other.serviceResponse == serviceResponse));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode;
+  int get hashCode => Object.hash(runtimeType, serviceResponse);
+
+  /// Create a copy of ServicesState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$UpdateServicesSuccessImplCopyWith<T, _$UpdateServicesSuccessImpl<T>>
+      get copyWith => __$$UpdateServicesSuccessImplCopyWithImpl<T,
+          _$UpdateServicesSuccessImpl<T>>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -1049,13 +1113,15 @@ class _$UpdateServicesSuccessImpl<T> implements UpdateServicesSuccess<T> {
         getServicesSuccess,
     required TResult Function(String error) getServicesError,
     required TResult Function() updateServicesLoading,
-    required TResult Function() updateServicesSuccess,
+    required TResult Function(ServiceUpdateDeleteResponseModel serviceResponse)
+        updateServicesSuccess,
     required TResult Function(String error) updateServicesError,
     required TResult Function() deleteServiceLoading,
-    required TResult Function() deleteServiceSuccess,
+    required TResult Function(ServiceUpdateDeleteResponseModel serviceResponse)
+        deleteServiceSuccess,
     required TResult Function(String error) deleteServiceError,
   }) {
-    return updateServicesSuccess();
+    return updateServicesSuccess(serviceResponse);
   }
 
   @override
@@ -1066,13 +1132,15 @@ class _$UpdateServicesSuccessImpl<T> implements UpdateServicesSuccess<T> {
     TResult? Function(FreelancerServices servicesData)? getServicesSuccess,
     TResult? Function(String error)? getServicesError,
     TResult? Function()? updateServicesLoading,
-    TResult? Function()? updateServicesSuccess,
+    TResult? Function(ServiceUpdateDeleteResponseModel serviceResponse)?
+        updateServicesSuccess,
     TResult? Function(String error)? updateServicesError,
     TResult? Function()? deleteServiceLoading,
-    TResult? Function()? deleteServiceSuccess,
+    TResult? Function(ServiceUpdateDeleteResponseModel serviceResponse)?
+        deleteServiceSuccess,
     TResult? Function(String error)? deleteServiceError,
   }) {
-    return updateServicesSuccess?.call();
+    return updateServicesSuccess?.call(serviceResponse);
   }
 
   @override
@@ -1083,15 +1151,17 @@ class _$UpdateServicesSuccessImpl<T> implements UpdateServicesSuccess<T> {
     TResult Function(FreelancerServices servicesData)? getServicesSuccess,
     TResult Function(String error)? getServicesError,
     TResult Function()? updateServicesLoading,
-    TResult Function()? updateServicesSuccess,
+    TResult Function(ServiceUpdateDeleteResponseModel serviceResponse)?
+        updateServicesSuccess,
     TResult Function(String error)? updateServicesError,
     TResult Function()? deleteServiceLoading,
-    TResult Function()? deleteServiceSuccess,
+    TResult Function(ServiceUpdateDeleteResponseModel serviceResponse)?
+        deleteServiceSuccess,
     TResult Function(String error)? deleteServiceError,
     required TResult orElse(),
   }) {
     if (updateServicesSuccess != null) {
-      return updateServicesSuccess();
+      return updateServicesSuccess(serviceResponse);
     }
     return orElse();
   }
@@ -1157,7 +1227,17 @@ class _$UpdateServicesSuccessImpl<T> implements UpdateServicesSuccess<T> {
 }
 
 abstract class UpdateServicesSuccess<T> implements ServicesState<T> {
-  const factory UpdateServicesSuccess() = _$UpdateServicesSuccessImpl<T>;
+  const factory UpdateServicesSuccess(
+          final ServiceUpdateDeleteResponseModel serviceResponse) =
+      _$UpdateServicesSuccessImpl<T>;
+
+  ServiceUpdateDeleteResponseModel get serviceResponse;
+
+  /// Create a copy of ServicesState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$UpdateServicesSuccessImplCopyWith<T, _$UpdateServicesSuccessImpl<T>>
+      get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -1235,10 +1315,12 @@ class _$UpdateServicesErrorImpl<T> implements UpdateServicesError<T> {
         getServicesSuccess,
     required TResult Function(String error) getServicesError,
     required TResult Function() updateServicesLoading,
-    required TResult Function() updateServicesSuccess,
+    required TResult Function(ServiceUpdateDeleteResponseModel serviceResponse)
+        updateServicesSuccess,
     required TResult Function(String error) updateServicesError,
     required TResult Function() deleteServiceLoading,
-    required TResult Function() deleteServiceSuccess,
+    required TResult Function(ServiceUpdateDeleteResponseModel serviceResponse)
+        deleteServiceSuccess,
     required TResult Function(String error) deleteServiceError,
   }) {
     return updateServicesError(error);
@@ -1252,10 +1334,12 @@ class _$UpdateServicesErrorImpl<T> implements UpdateServicesError<T> {
     TResult? Function(FreelancerServices servicesData)? getServicesSuccess,
     TResult? Function(String error)? getServicesError,
     TResult? Function()? updateServicesLoading,
-    TResult? Function()? updateServicesSuccess,
+    TResult? Function(ServiceUpdateDeleteResponseModel serviceResponse)?
+        updateServicesSuccess,
     TResult? Function(String error)? updateServicesError,
     TResult? Function()? deleteServiceLoading,
-    TResult? Function()? deleteServiceSuccess,
+    TResult? Function(ServiceUpdateDeleteResponseModel serviceResponse)?
+        deleteServiceSuccess,
     TResult? Function(String error)? deleteServiceError,
   }) {
     return updateServicesError?.call(error);
@@ -1269,10 +1353,12 @@ class _$UpdateServicesErrorImpl<T> implements UpdateServicesError<T> {
     TResult Function(FreelancerServices servicesData)? getServicesSuccess,
     TResult Function(String error)? getServicesError,
     TResult Function()? updateServicesLoading,
-    TResult Function()? updateServicesSuccess,
+    TResult Function(ServiceUpdateDeleteResponseModel serviceResponse)?
+        updateServicesSuccess,
     TResult Function(String error)? updateServicesError,
     TResult Function()? deleteServiceLoading,
-    TResult Function()? deleteServiceSuccess,
+    TResult Function(ServiceUpdateDeleteResponseModel serviceResponse)?
+        deleteServiceSuccess,
     TResult Function(String error)? deleteServiceError,
     required TResult orElse(),
   }) {
@@ -1404,10 +1490,12 @@ class _$DeleteServiceLoadingImpl<T> implements DeleteServiceLoading<T> {
         getServicesSuccess,
     required TResult Function(String error) getServicesError,
     required TResult Function() updateServicesLoading,
-    required TResult Function() updateServicesSuccess,
+    required TResult Function(ServiceUpdateDeleteResponseModel serviceResponse)
+        updateServicesSuccess,
     required TResult Function(String error) updateServicesError,
     required TResult Function() deleteServiceLoading,
-    required TResult Function() deleteServiceSuccess,
+    required TResult Function(ServiceUpdateDeleteResponseModel serviceResponse)
+        deleteServiceSuccess,
     required TResult Function(String error) deleteServiceError,
   }) {
     return deleteServiceLoading();
@@ -1421,10 +1509,12 @@ class _$DeleteServiceLoadingImpl<T> implements DeleteServiceLoading<T> {
     TResult? Function(FreelancerServices servicesData)? getServicesSuccess,
     TResult? Function(String error)? getServicesError,
     TResult? Function()? updateServicesLoading,
-    TResult? Function()? updateServicesSuccess,
+    TResult? Function(ServiceUpdateDeleteResponseModel serviceResponse)?
+        updateServicesSuccess,
     TResult? Function(String error)? updateServicesError,
     TResult? Function()? deleteServiceLoading,
-    TResult? Function()? deleteServiceSuccess,
+    TResult? Function(ServiceUpdateDeleteResponseModel serviceResponse)?
+        deleteServiceSuccess,
     TResult? Function(String error)? deleteServiceError,
   }) {
     return deleteServiceLoading?.call();
@@ -1438,10 +1528,12 @@ class _$DeleteServiceLoadingImpl<T> implements DeleteServiceLoading<T> {
     TResult Function(FreelancerServices servicesData)? getServicesSuccess,
     TResult Function(String error)? getServicesError,
     TResult Function()? updateServicesLoading,
-    TResult Function()? updateServicesSuccess,
+    TResult Function(ServiceUpdateDeleteResponseModel serviceResponse)?
+        updateServicesSuccess,
     TResult Function(String error)? updateServicesError,
     TResult Function()? deleteServiceLoading,
-    TResult Function()? deleteServiceSuccess,
+    TResult Function(ServiceUpdateDeleteResponseModel serviceResponse)?
+        deleteServiceSuccess,
     TResult Function(String error)? deleteServiceError,
     required TResult orElse(),
   }) {
@@ -1521,6 +1613,8 @@ abstract class _$$DeleteServiceSuccessImplCopyWith<T, $Res> {
           _$DeleteServiceSuccessImpl<T> value,
           $Res Function(_$DeleteServiceSuccessImpl<T>) then) =
       __$$DeleteServiceSuccessImplCopyWithImpl<T, $Res>;
+  @useResult
+  $Res call({ServiceUpdateDeleteResponseModel serviceResponse});
 }
 
 /// @nodoc
@@ -1533,27 +1627,53 @@ class __$$DeleteServiceSuccessImplCopyWithImpl<T, $Res>
 
   /// Create a copy of ServicesState
   /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? serviceResponse = null,
+  }) {
+    return _then(_$DeleteServiceSuccessImpl<T>(
+      null == serviceResponse
+          ? _value.serviceResponse
+          : serviceResponse // ignore: cast_nullable_to_non_nullable
+              as ServiceUpdateDeleteResponseModel,
+    ));
+  }
 }
 
 /// @nodoc
 
 class _$DeleteServiceSuccessImpl<T> implements DeleteServiceSuccess<T> {
-  const _$DeleteServiceSuccessImpl();
+  const _$DeleteServiceSuccessImpl(this.serviceResponse);
+
+  @override
+  final ServiceUpdateDeleteResponseModel serviceResponse;
 
   @override
   String toString() {
-    return 'ServicesState<$T>.deleteServiceSuccess()';
+    return 'ServicesState<$T>.deleteServiceSuccess(serviceResponse: $serviceResponse)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$DeleteServiceSuccessImpl<T>);
+            other is _$DeleteServiceSuccessImpl<T> &&
+            (identical(other.serviceResponse, serviceResponse) ||
+                other.serviceResponse == serviceResponse));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode;
+  int get hashCode => Object.hash(runtimeType, serviceResponse);
+
+  /// Create a copy of ServicesState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$DeleteServiceSuccessImplCopyWith<T, _$DeleteServiceSuccessImpl<T>>
+      get copyWith => __$$DeleteServiceSuccessImplCopyWithImpl<T,
+          _$DeleteServiceSuccessImpl<T>>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -1564,13 +1684,15 @@ class _$DeleteServiceSuccessImpl<T> implements DeleteServiceSuccess<T> {
         getServicesSuccess,
     required TResult Function(String error) getServicesError,
     required TResult Function() updateServicesLoading,
-    required TResult Function() updateServicesSuccess,
+    required TResult Function(ServiceUpdateDeleteResponseModel serviceResponse)
+        updateServicesSuccess,
     required TResult Function(String error) updateServicesError,
     required TResult Function() deleteServiceLoading,
-    required TResult Function() deleteServiceSuccess,
+    required TResult Function(ServiceUpdateDeleteResponseModel serviceResponse)
+        deleteServiceSuccess,
     required TResult Function(String error) deleteServiceError,
   }) {
-    return deleteServiceSuccess();
+    return deleteServiceSuccess(serviceResponse);
   }
 
   @override
@@ -1581,13 +1703,15 @@ class _$DeleteServiceSuccessImpl<T> implements DeleteServiceSuccess<T> {
     TResult? Function(FreelancerServices servicesData)? getServicesSuccess,
     TResult? Function(String error)? getServicesError,
     TResult? Function()? updateServicesLoading,
-    TResult? Function()? updateServicesSuccess,
+    TResult? Function(ServiceUpdateDeleteResponseModel serviceResponse)?
+        updateServicesSuccess,
     TResult? Function(String error)? updateServicesError,
     TResult? Function()? deleteServiceLoading,
-    TResult? Function()? deleteServiceSuccess,
+    TResult? Function(ServiceUpdateDeleteResponseModel serviceResponse)?
+        deleteServiceSuccess,
     TResult? Function(String error)? deleteServiceError,
   }) {
-    return deleteServiceSuccess?.call();
+    return deleteServiceSuccess?.call(serviceResponse);
   }
 
   @override
@@ -1598,15 +1722,17 @@ class _$DeleteServiceSuccessImpl<T> implements DeleteServiceSuccess<T> {
     TResult Function(FreelancerServices servicesData)? getServicesSuccess,
     TResult Function(String error)? getServicesError,
     TResult Function()? updateServicesLoading,
-    TResult Function()? updateServicesSuccess,
+    TResult Function(ServiceUpdateDeleteResponseModel serviceResponse)?
+        updateServicesSuccess,
     TResult Function(String error)? updateServicesError,
     TResult Function()? deleteServiceLoading,
-    TResult Function()? deleteServiceSuccess,
+    TResult Function(ServiceUpdateDeleteResponseModel serviceResponse)?
+        deleteServiceSuccess,
     TResult Function(String error)? deleteServiceError,
     required TResult orElse(),
   }) {
     if (deleteServiceSuccess != null) {
-      return deleteServiceSuccess();
+      return deleteServiceSuccess(serviceResponse);
     }
     return orElse();
   }
@@ -1672,7 +1798,17 @@ class _$DeleteServiceSuccessImpl<T> implements DeleteServiceSuccess<T> {
 }
 
 abstract class DeleteServiceSuccess<T> implements ServicesState<T> {
-  const factory DeleteServiceSuccess() = _$DeleteServiceSuccessImpl<T>;
+  const factory DeleteServiceSuccess(
+          final ServiceUpdateDeleteResponseModel serviceResponse) =
+      _$DeleteServiceSuccessImpl<T>;
+
+  ServiceUpdateDeleteResponseModel get serviceResponse;
+
+  /// Create a copy of ServicesState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$DeleteServiceSuccessImplCopyWith<T, _$DeleteServiceSuccessImpl<T>>
+      get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -1750,10 +1886,12 @@ class _$DeleteServiceErrorImpl<T> implements DeleteServiceError<T> {
         getServicesSuccess,
     required TResult Function(String error) getServicesError,
     required TResult Function() updateServicesLoading,
-    required TResult Function() updateServicesSuccess,
+    required TResult Function(ServiceUpdateDeleteResponseModel serviceResponse)
+        updateServicesSuccess,
     required TResult Function(String error) updateServicesError,
     required TResult Function() deleteServiceLoading,
-    required TResult Function() deleteServiceSuccess,
+    required TResult Function(ServiceUpdateDeleteResponseModel serviceResponse)
+        deleteServiceSuccess,
     required TResult Function(String error) deleteServiceError,
   }) {
     return deleteServiceError(error);
@@ -1767,10 +1905,12 @@ class _$DeleteServiceErrorImpl<T> implements DeleteServiceError<T> {
     TResult? Function(FreelancerServices servicesData)? getServicesSuccess,
     TResult? Function(String error)? getServicesError,
     TResult? Function()? updateServicesLoading,
-    TResult? Function()? updateServicesSuccess,
+    TResult? Function(ServiceUpdateDeleteResponseModel serviceResponse)?
+        updateServicesSuccess,
     TResult? Function(String error)? updateServicesError,
     TResult? Function()? deleteServiceLoading,
-    TResult? Function()? deleteServiceSuccess,
+    TResult? Function(ServiceUpdateDeleteResponseModel serviceResponse)?
+        deleteServiceSuccess,
     TResult? Function(String error)? deleteServiceError,
   }) {
     return deleteServiceError?.call(error);
@@ -1784,10 +1924,12 @@ class _$DeleteServiceErrorImpl<T> implements DeleteServiceError<T> {
     TResult Function(FreelancerServices servicesData)? getServicesSuccess,
     TResult Function(String error)? getServicesError,
     TResult Function()? updateServicesLoading,
-    TResult Function()? updateServicesSuccess,
+    TResult Function(ServiceUpdateDeleteResponseModel serviceResponse)?
+        updateServicesSuccess,
     TResult Function(String error)? updateServicesError,
     TResult Function()? deleteServiceLoading,
-    TResult Function()? deleteServiceSuccess,
+    TResult Function(ServiceUpdateDeleteResponseModel serviceResponse)?
+        deleteServiceSuccess,
     TResult Function(String error)? deleteServiceError,
     required TResult orElse(),
   }) {

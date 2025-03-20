@@ -7,6 +7,7 @@ import 'package:home4u/core/localization/app_localization_state.dart';
 import 'package:home4u/core/routing/app_router.dart';
 import 'package:home4u/core/routing/routes.dart';
 import 'package:home4u/features/auth/sign_up/logic/sign_up_cubit.dart';
+import 'package:home4u/features/products/logic/products_cubit.dart';
 import 'package:home4u/features/profile/logic/profile/profile_cubit.dart';
 import 'package:home4u/features/profile/logic/services/services_cubit.dart';
 
@@ -15,6 +16,9 @@ import 'core/helpers/helper_methods.dart';
 import 'core/localization/app_localization_cubit.dart';
 import 'core/theming/app_theme.dart';
 import 'features/auth/forget_password/logic/forget_password_cubit.dart';
+import 'features/auth/sign_up/logic/engineer/engineer_cubit.dart';
+import 'features/auth/sign_up/logic/technical_worker/technical_worker_cubit.dart';
+import 'features/exhibition/logic/business_add_product_cubit.dart';
 import 'features/profile/logic/certifications/certifications_cubit.dart';
 import 'features/profile/logic/project/project_cubit.dart';
 import 'locale/app_locale.dart';
@@ -35,6 +39,7 @@ class Home4uApp extends StatefulWidget {
 
 class _Home4uAppState extends State<Home4uApp> {
   final FlutterLocalization localization = FlutterLocalization.instance;
+  final RouteObserver<ModalRoute> _routeObserver = RouteObserver<ModalRoute>();
 
   @override
   void initState() {
@@ -64,7 +69,9 @@ class _Home4uAppState extends State<Home4uApp> {
               ..initializeLocaleWith(
                 widget.initialLocale,
               )),
+        ///ToDo : can change its position
         BlocProvider<SignUpCubit>(create: (_) => sl<SignUpCubit>()),
+        ///ToDo : can change its position
         BlocProvider<ForgetPasswordCubit>(
             create: (_) => sl<ForgetPasswordCubit>()),
         BlocProvider<ProfileCubit>(create: (_) => sl<ProfileCubit>()),
@@ -73,6 +80,18 @@ class _Home4uAppState extends State<Home4uApp> {
         BlocProvider<CertificationsCubit>(
             create: (_) => sl<CertificationsCubit>()),
         BlocProvider<ServicesCubit>(create: (_) => sl<ServicesCubit>()),
+        BlocProvider<EngineerCubit>(
+          create: (_) => sl<EngineerCubit>(),
+        ),
+        BlocProvider<TechnicalWorkerCubit>(
+          create: (_) => sl<TechnicalWorkerCubit>(),
+        ),
+        BlocProvider<ProductsCubit>(
+          create: (_) => sl<ProductsCubit>()
+        ),
+          BlocProvider<BusinessAddProductCubit>(
+          create: (_) => sl<BusinessAddProductCubit>(),
+          ),
       ],
       child: ScreenUtilInit(
         designSize: const Size(393, 852),
@@ -96,8 +115,8 @@ class _Home4uAppState extends State<Home4uApp> {
                     : Locale(widget.initialLocale),
                 onGenerateRoute: widget.appRouter.generateRoute,
                 debugShowCheckedModeBanner: false,
-                navigatorObservers: [NavigatorObserver()],
-                initialRoute: Routes.onBoardingScreen,
+                navigatorObservers: [NavigatorObserver(),_routeObserver],
+                initialRoute: Routes.loginScreen,
               ),
             );
           },

@@ -13,13 +13,21 @@ import 'package:home4u/features/auth/sign_up/presentation/sign_up_screen.dart';
 import 'package:home4u/features/auth/sign_up/presentation/technical_worker_sign_up.dart';
 import 'package:home4u/features/auth/verification/logic/verification_cubit.dart';
 import 'package:home4u/features/auth/verification/presentation/verification_screen.dart';
+import 'package:home4u/features/exhibition/logic/business_add_product_cubit.dart';
 import 'package:home4u/features/home/presentation/home_screen.dart';
 import 'package:home4u/features/layout/logic/bottom_nav_cubit.dart';
+import 'package:home4u/features/products/data/models/product_preview_response.dart';
+import 'package:home4u/features/products/presentation/product_details_screen.dart';
 import 'package:home4u/features/profile/presentation/add_certification_screen.dart';
 
 import '../../features/auth/login/presentation/login_screen.dart';
+import '../../features/auth/sign_up/presentation/business_sign_up_screen.dart';
+import '../../features/exhibition/presentation/business_add_product_screen.dart';
+import '../../features/exhibition/presentation/business_overview_screen.dart';
+import '../../features/exhibition/presentation/business_review_screen.dart';
 import '../../features/layout/presentation/bottom_nav_bar_layout.dart';
 import '../../features/onboarding/presentation/onboarding_screen.dart';
+import '../../features/products/presentation/products_screen.dart';
 import '../../features/profile/data/models/certifications/get_certifications_response_model.dart';
 import '../../features/profile/data/models/projects/get_projects_response_model.dart';
 import '../../features/profile/presentation/add_project_screen.dart';
@@ -122,9 +130,44 @@ class AppRouter {
           builder: (_) => ProjectDetailsScreen(projectId: projectId),
         );
 
-        case Routes.editProfileScreen:
+      case Routes.editProfileScreen:
         return MaterialPageRoute(
           builder: (_) => EditProfileScreen(),
+        );
+      case Routes.productsScreen:
+        return MaterialPageRoute(
+          builder: (_) => ProductsScreen(),
+        );
+      case Routes.businessOverviewScreen:
+        return MaterialPageRoute(
+          builder: (_) => BusinessOverviewScreen(),
+        );
+      case Routes.businessReviewScreen:
+        return MaterialPageRoute(
+          builder: (_) => BusinessReviewScreen(),
+        );
+      // case Routes.productPreviewScreen:
+      //   return MaterialPageRoute(
+      //     builder: (_) => ProductPreviewScreen(),
+      //   );
+      case Routes.businessAddProductScreen:
+        final  productData = settings.arguments as ProductPreviewResponse ? ;
+        return MaterialPageRoute(
+          builder: (_) => BlocProvider<BusinessAddProductCubit>(
+            create: (_) => sl<BusinessAddProductCubit>(),
+            child: BusinessAddProductScreen(
+              productData: productData,
+            ),
+          ),
+        );
+      case Routes.businessSignUpScreen:
+        return MaterialPageRoute(
+          builder: (_) => BusinessSignUpScreen(),
+        );
+      case Routes.productsDetailsScreen:
+        int productId = settings.arguments as int;
+        return MaterialPageRoute(
+          builder: (_) => ProductDetailsScreen(),
         );
       default:
         return null;

@@ -15,10 +15,8 @@ class LoginCubit extends Cubit<LoginState> {
   final LoginRepo _loginRepo;
 
   LoginCubit(this._loginRepo) : super(const LoginState.initial());
-  TextEditingController emailOrPhoneController =
-      TextEditingController();
-  TextEditingController passwordController =
-      TextEditingController();
+  TextEditingController emailOrPhoneController = TextEditingController();
+  TextEditingController passwordController = TextEditingController();
   final formKey = GlobalKey<FormState>();
 
   void emitLoginStates(context) async {
@@ -29,17 +27,34 @@ class LoginCubit extends Cubit<LoginState> {
         password: passwordController.text,
       ),
     );
-    response.when(success: (loginResponse) async {
-      final token = loginResponse.userData!.token;
-      await saveUserToken(token!);
-      await showToast(message: AppLocale.loginSuccessfully.getString(context));
-      emit(LoginState.success(loginResponse));
-    }, failure: (error) async {
-      final errorMessage =
-          error.message ?? AppLocale.anUnknownErrorOccurred.getString(context);
-      await showToast(message: errorMessage, isError: true);
-      emit(LoginState.error(error: errorMessage));
-    });
+    response.when(
+      success: (loginResponse) async {
+        final token = loginResponse.userData!.token;
+        final userType =
+            loginResponse.userData!.userInformation!.userType!.code;
+        final userTypeId =
+            loginResponse.userData!.userInformation!.userType!.id;
+        await saveUserType(userType!);
+        await saveUserTypeId(userTypeId!);
+        await saveUserToken(token!);
+        await showToast(
+            message: AppLocale.loginSuccessfully.getString(context));
+        emit(LoginState.success(loginResponse));
+      },
+      failure: (error) async {
+        final errorMessage = error.message ??
+            AppLocale.anUnknownErrorOccurred.getString(context);
+        await showToast(message: errorMessage, isError: true);
+        emit(LoginState.error(error: errorMessage));
+      },
+    );
+  }
+
+  Future<void> saveUserType(String userType) async {
+    if (userType.isEmpty) {
+      throw Exception("User type is empty or invalid.");
+    }
+    await SharedPrefHelper.setData(SharedPrefKeys.userType, userType);
   }
 
   Future<void> saveUserToken(String token) async {
@@ -48,6 +63,10 @@ class LoginCubit extends Cubit<LoginState> {
     }
     await SharedPrefHelper.setSecuredString(SharedPrefKeys.userToken, token);
     DioFactory.setTokenIntoHeaderAfterLogin(token);
+  }
+
+  Future<void> saveUserTypeId(int userTypeId) async {
+    await SharedPrefHelper.setData(SharedPrefKeys.userTypeId, userTypeId);
   }
 
   Future<void> clearUserToken() async {

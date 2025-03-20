@@ -4,7 +4,6 @@ import 'package:flutter_localization/flutter_localization.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:home4u/features/auth/login/logic/login_cubit.dart';
 
-import '../../../../../core/helpers/app_regex.dart';
 import '../../../../../core/theming/app_colors.dart';
 import '../../../../../core/utils/spacing.dart';
 import '../../../../../core/widgets/app_text_form_field.dart';
@@ -39,7 +38,10 @@ class _EmailAndPasswordState extends State<EmailAndPassword> {
             focusNode: phoneFocusNode,
             textInputAction: TextInputAction.next,
             validator: (value) {
-              if (value.isEmpty || !AppRegex.isEmailValid(value)) {
+              if (value.isEmpty
+              // ||
+                  // !AppRegex.isEmailValid(value)
+              ) {
                 return AppLocale.pleaseEnterAValidEmailAddress
                     .getString(context);
               }

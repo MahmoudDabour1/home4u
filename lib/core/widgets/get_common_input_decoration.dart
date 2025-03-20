@@ -6,14 +6,18 @@ import '../theming/app_styles.dart';
 
 InputDecoration getCommonInputDecoration({
   required String labelText,
+  Widget? prefixIcon,
+  Widget? suffixIcon,
   TextStyle? labelStyle,
+  Color? fillColor,
+  double? verticalPadding,
 }) {
   return InputDecoration(
     isDense: true,
     filled: true,
-    fillColor: AppColors.textFieldFillColor,
+    fillColor: fillColor??AppColors.textFieldFillColor,
     contentPadding: EdgeInsets.symmetric(
-      vertical: 17.h,
+      vertical:verticalPadding?? 17.h,
       horizontal: 20.w,
     ),
     focusedBorder: OutlineInputBorder(
@@ -45,5 +49,7 @@ InputDecoration getCommonInputDecoration({
       labelText,
       style: labelStyle ?? AppStyles.font16BlackLight,
     ),
+    prefixIcon: prefixIcon,
+    suffixIcon: suffixIcon,
   );
 }

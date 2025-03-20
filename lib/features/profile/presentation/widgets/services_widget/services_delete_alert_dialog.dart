@@ -10,13 +10,15 @@ import '../../../../../core/widgets/app_custom_alert_dialog.dart';
 import '../../../../../locale/app_locale.dart';
 
 class ServicesDeleteAlertDialog extends StatelessWidget {
-  final int engineerId;
+  final int id;
   final int serviceId;
+  final int userId;
 
   const ServicesDeleteAlertDialog({
     super.key,
-    required this.engineerId,
+    required this.id,
     required this.serviceId,
+    required this.userId,
   });
 
   @override
@@ -29,10 +31,11 @@ class ServicesDeleteAlertDialog extends StatelessWidget {
           onDeleteButtonPressed: () async {
             final navigationBack = context.pop();
             await serviceCubit.deleteService(
-              engineerId: engineerId,
+              id: id,
               serviceId: serviceId,
+              userId: userId,
             );
-            serviceCubit.getServices(engineerId: engineerId);
+            serviceCubit.getServices(id: id);
             navigationBack;
             await showToast(
               message: AppLocale.deletedSuccessfully.getString(context),

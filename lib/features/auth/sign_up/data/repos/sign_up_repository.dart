@@ -1,5 +1,6 @@
 import 'package:home4u/core/networking/api_result.dart';
 import 'package:home4u/features/auth/sign_up/data/data_source/common_local_data_source.dart';
+import 'package:home4u/features/auth/sign_up/data/models/business_type.dart';
 import 'package:home4u/features/auth/sign_up/data/models/governorate_model.dart';
 import 'package:home4u/features/auth/sign_up/data/models/sign_up_body.dart';
 import 'package:home4u/features/auth/sign_up/data/models/sign_up_response.dart';
@@ -15,6 +16,8 @@ abstract class SignUpRepository {
   Future<ApiResult<List<GovernorateDataModel>>> getGovernorates();
 
   Future<ApiResult<List<CityDataModel>>> getCities(int governorateId);
+
+  Future<ApiResult<List<BaseData>>> getBusinessTypes(int userTypeId);
 
   Future<ApiResult<SignUpResponse>> signUp(SignUpBody signUpBody);
 }
@@ -67,6 +70,16 @@ class SignUpRepositoryImpl implements SignUpRepository {
     try {
       final cities = await remoteDataSource.getCities(governorateId);
       return ApiResult.success(cities.data);
+    } catch (error) {
+      return Future.value(ApiResult.failure(ApiErrorHandler.handle(error)));
+    }
+  }
+
+  @override
+  Future<ApiResult<List<BaseData>>> getBusinessTypes(int userTypeId) async{
+    try {
+      final businessTypes = await remoteDataSource.getBusinessTypes(userTypeId);
+      return ApiResult.success(businessTypes.data);
     } catch (error) {
       return Future.value(ApiResult.failure(ApiErrorHandler.handle(error)));
     }

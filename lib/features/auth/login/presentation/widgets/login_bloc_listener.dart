@@ -16,38 +16,55 @@ class LoginBlocListener extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocListener<LoginCubit, LoginState>(
       listenWhen: (previous, current) =>
-      current is LoginLoading ||
+          current is LoginLoading ||
           current is LoginError ||
           current is LoginSuccess,
       listener: (context, state) {
         state.whenOrNull(
-          success: (loginResponse) {
-            context.pop();
-            context.pushNamed(Routes.bottomNavLayout);
-          },
-          error: (error) async {
-            if (error == "Your account is not enabled" ||
-                error == "حسابك غير مفعل.") {
-              final forgetPasswordCubit = context.read<ForgetPasswordCubit>();
-              final navigatorToVerificationScreen =
-              context.pushNamed(Routes.verificationScreen);
-              await SharedPrefHelper.setData(SharedPrefKeys.userEmailAddress,
-                  context
-                      .read<LoginCubit>()
-                      .emailOrPhoneController
-                      .text);
-              await SharedPrefHelper.setData(
-                  SharedPrefKeys.isFromForgetPassword, false);
-              forgetPasswordCubit.emitForgetPasswordStates(
-                await SharedPrefHelper.getString(
-                    SharedPrefKeys.userEmailAddress),
-              );
-              navigatorToVerificationScreen;
-            }
-          },
+          success: (loginResponse) => _handleSuccess(context, loginResponse),
+          error: (error) => _handleError(context, error),
         );
       },
       child: const SizedBox.shrink(),
     );
+  }
+
+  void _handleSuccess(BuildContext context, dynamic loginResponse) {
+    context.pop();
+    final String userTypeCode =
+        loginResponse.userData?.userInformation?.userType?.code;
+
+    switch (userTypeCode) {
+      case "EXHIBITION":
+      case "STORE":
+        context.pushNamed(Routes.productsScreen);
+        break;
+      case "TECHNICAL_WORKER":
+      case "ENGINEER":
+        context.pushNamed(Routes.bottomNavLayout);
+        break;
+      default:
+        context.pushNamed(Routes.homeScreen);
+    }
+  }
+
+  Future<void> _handleError(BuildContext context, String error) async {
+    if (error == "Your account is not enabled" || error == "حسابك غير مفعل.") {
+      final forgetPasswordCubit = context.read<ForgetPasswordCubit>();
+      final loginCubit = context.read<LoginCubit>();
+
+      await SharedPrefHelper.setData(
+        SharedPrefKeys.userEmailAddress,
+        loginCubit.emailOrPhoneController.text,
+      );
+      await SharedPrefHelper.setData(
+          SharedPrefKeys.isFromForgetPassword, false);
+
+      forgetPasswordCubit.emitForgetPasswordStates(
+        await SharedPrefHelper.getString(SharedPrefKeys.userEmailAddress),
+      );
+
+      context.pushNamed(Routes.verificationScreen);
+    }
   }
 }
