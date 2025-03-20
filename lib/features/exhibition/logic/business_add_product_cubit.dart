@@ -1,4 +1,3 @@
-import 'dart:developer';
 import 'dart:io';
 
 import 'package:dio/dio.dart';
@@ -10,7 +9,6 @@ import 'package:home4u/features/exhibition/data/models/add_product_business_resp
 import 'package:home4u/features/exhibition/data/models/business_add_product_images_response.dart';
 import 'package:home4u/features/products/data/models/update_product_response_model.dart';
 import 'package:http_parser/http_parser.dart';
-import 'package:image_picker/image_picker.dart';
 
 import '../../products/data/models/product_preview_response.dart';
 import '../../products/logic/products_cubit.dart';
@@ -56,21 +54,9 @@ class BusinessAddProductCubit extends Cubit<BusinessAddProductState> {
     emit(BusinessAddProductState.uploadBusinessImageLoading());
   }
 
-  void selectImage(
-      {required BuildContext context, required ImageSource source}) async {
-    final pickedFile = await ImagePicker().pickImage(source: source);
-    if (pickedFile != null) {
-      final imageFile = File(pickedFile.path);
-      log("Selected image path: ${imageFile.path}");
-
-      final updatedImages = List<File>.from(images)..add(imageFile);
-      images = updatedImages;
-      emit(BusinessAddProductState.selectImageSuccess(images));
-    } else {
-      emit(
-          BusinessAddProductState.selectImageFailure("Image selection failed"));
-    }
-    Navigator.pop(context);
+  void updateSelectedImages(List<File> newImages) {
+    images = [...images, ...newImages];
+    emit(BusinessAddProductState.selectImageSuccess(images));
   }
 
   Future<void> addOrUpdateProduct({

@@ -9,7 +9,6 @@ import 'package:home4u/features/products/presentation/widgets/product_shimmer_wi
 import 'package:home4u/features/products/presentation/widgets/products_list_view.dart';
 
 import '../../../../core/routing/router_observer.dart';
-import '../../../exhibition/logic/business_add_product_cubit.dart';
 
 class ProductsBlocBuilder extends StatefulWidget {
   const ProductsBlocBuilder({super.key});
@@ -20,7 +19,6 @@ class ProductsBlocBuilder extends StatefulWidget {
 
 class _ProductsBlocBuilderState extends State<ProductsBlocBuilder>
     with RouteAware {
-  late BusinessAddProductCubit _addProductCubit;
   final RouteObserver<ModalRoute> _routeObserver = RouteObserver<ModalRoute>();
 
   @override

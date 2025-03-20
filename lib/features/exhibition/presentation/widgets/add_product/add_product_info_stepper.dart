@@ -129,11 +129,12 @@ class _AddProductInfoStepperState extends State<AddProductInfoStepper> {
           //       (context) =>SuccessMissionDialog()
           //     ,);
           // },
-          // updateProductSuccess: (productResponse) {
-          //   showAdaptiveDialog(context: context, builder:
-          //       (context) =>SuccessMissionDialog(isUpdate: true,)
-          //     ,);
-          // },
+          updateProductSuccess: (productResponse) {
+            ///ToDo : if user upload more the images it with listen first to updateProductSuccess
+            showAdaptiveDialog(context: context, builder:
+                (context) =>SuccessMissionDialog(isUpdate: true,)
+              ,);
+          },
           orElse: () {},
         );
       },

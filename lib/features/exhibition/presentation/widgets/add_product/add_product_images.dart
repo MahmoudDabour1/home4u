@@ -27,7 +27,6 @@ class _AddProductImagesState extends State<AddProductImages> {
         return Column(
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.start,
-          spacing: 16.h,
           children: [
             SelectImageWidget(
               cubit: businessCubit,
@@ -42,9 +41,9 @@ class _AddProductImagesState extends State<AddProductImages> {
                       children: [
                         Container(
                           width: MediaQuery.sizeOf(context).width,
-                          margin: EdgeInsets.all(6.0).h,
+                          margin: EdgeInsets.all(6.0),
                           decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(8.0).r,
+                            borderRadius: BorderRadius.circular(8.0),
                           ),
                           child: FancyImage(
                             imagePath: ApiConstants.getImageBaseUrl(
@@ -60,7 +59,7 @@ class _AddProductImagesState extends State<AddProductImages> {
                             onPressed: () {
                               setState(() {
                                 businessCubit.storedImages.remove(image);
-                                ///ToDo : remove also this image from cache
+                                // ToDo: remove also this image from cache
                               });
                             },
                           ),
@@ -72,9 +71,9 @@ class _AddProductImagesState extends State<AddProductImages> {
                     return Stack(
                       children: [
                         Container(
-                          margin: EdgeInsets.all(6.0).h,
+                          margin: EdgeInsets.all(6.0),
                           decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(8.0).r,
+                            borderRadius: BorderRadius.circular(8.0),
                             image: DecorationImage(
                               image: FileImage(imageFile),
                               fit: BoxFit.cover,
