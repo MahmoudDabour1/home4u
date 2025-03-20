@@ -88,31 +88,27 @@ class _AddProductMaterialsAndSpecsState
           labelText: AppLocale.selectMaterials.getString(context),
           onChanged: (List<String> values) {
             setState(() {
-              selectedMaterials = values;
+              selectedMaterials = values.isNotEmpty ? values : selectedMaterials;
             });
-            businessCubit.selectedMaterials = values
-                .map((name) {
-                  return productCubit.materials
-                      .firstWhere(
-                        (material) => material.name == name,
-                      )
-                      .id;
-                })
-                .whereType<int>()
-                .toList();
+            businessCubit.selectedMaterials = values.isNotEmpty
+                ? values.map((name) {
+              return productCubit.materials.firstWhere(
+                    (material) => material.name == name,
+              ).id;
+            }).whereType<int>().toList()
+                : businessCubit.selectedMaterials;
+
           },
           onSaved: (value) {
-            businessCubit.selectedMaterials = value
-                ?.map((name) {
-                  return productCubit.materials
-                      .firstWhere(
-                        (material) => material.name == name,
-                      )
-                      .id;
-                })
-                .whereType<int>()
-                .toList();
+            businessCubit.selectedMaterials = value != null && value.isNotEmpty
+                ? value.map((name) {
+              return productCubit.materials.firstWhere(
+                    (material) => material.name == name,
+              ).id;
+            }).whereType<int>().toList()
+                : businessCubit.selectedMaterials;
           },
+
         ),
         UpDownFormField(
           label: AppLocale.dimensionLength.getString(context),

@@ -37,7 +37,7 @@ class SliderRatingBoxWidget extends StatelessWidget {
           ),
           SizedBox(width: 4.w),
           Expanded(
-            flex: 4,
+            flex: 3,
             child: Stack(
               children: [
                 Container(
