@@ -32,7 +32,7 @@ class LoginBlocListener extends StatelessWidget {
   void _handleSuccess(BuildContext context, dynamic loginResponse) {
     context.pop();
     final String userTypeCode =
-        loginResponse.userData?.userInformation?.userType?.code;
+        loginResponse.data?.user?.userType?.code;
 
     switch (userTypeCode) {
       case "EXHIBITION":

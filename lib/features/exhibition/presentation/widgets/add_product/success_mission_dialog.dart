@@ -91,9 +91,7 @@ class SuccessMissionDialog extends StatelessWidget {
         SizedBox(height: 16.h),
         AppCustomButton(
           onPressed: () {
-
             context.pushNamed(Routes.productsScreen);
-            cubit.getProducts();
           },
           textButton: AppLocale.goToProductList.getString(context),
           btnHeight: 50.h,

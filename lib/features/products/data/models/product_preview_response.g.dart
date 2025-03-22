@@ -83,8 +83,8 @@ Map<String, dynamic> _$ResponseBaseUnitToJson(ResponseBaseUnit instance) =>
     };
 
 ImagePath _$ImagePathFromJson(Map<String, dynamic> json) => ImagePath(
-      id: (json['id'] as num).toInt(),
-      productId: (json['productId'] as num).toInt(),
+      id: (json['id'] as num?)?.toInt(),
+      productId: (json['productId'] as num?)?.toInt(),
       imagePath: json['imagePath'] as String,
     );
 

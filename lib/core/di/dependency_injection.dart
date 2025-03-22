@@ -43,6 +43,7 @@ import '../../features/auth/sign_up/logic/engineer/engineer_cubit.dart';
 import '../../features/auth/verification/data/repos/verification_repo.dart';
 import '../../features/auth/verification/logic/verification_cubit.dart';
 import '../../features/exhibition/data/repository/business_add_product_repository.dart';
+import '../../features/products/data/data_source/products_local_data_source.dart';
 import '../../features/products/data/repos/business_config_repo.dart';
 import '../../features/profile/data/data_sources/projects_local_data_source.dart';
 import '../../features/profile/data/repos/profile_repo.dart';
@@ -59,7 +60,8 @@ Future<void> setupGetIt() async {
   //login
   sl.registerLazySingleton<LoginRemoteDataSource>(
       () => LoginRemoteDataSource(dio));
-  sl.registerLazySingleton<LoginRepo>(() => LoginRepo(sl()));
+  sl.registerLazySingleton<LoginRepo>(
+      () => LoginRepoImpl(loginRemoteDataSource: sl()));
   sl.registerFactory<LoginCubit>(() => LoginCubit(sl()));
 
   //signUp
@@ -159,11 +161,11 @@ Future<void> setupGetIt() async {
       () => ProductsRemoteDataSource(dio));
   sl.registerLazySingleton<BusinessConfigRepo>(
       () => BusinessConfigRepoImpl(remoteDataSource: sl()));
-  // sl.registerLazySingleton<ProductsLocalDatasource>(
-  //     () => ProductsLocalDatasourceImpl());
-  sl.registerLazySingleton<ProductsRepo>(
-      () => ProductsRepoImpl(productsRemoteDataSource: sl()));
-  sl.registerFactory<ProductsCubit>(() => ProductsCubit(sl(), sl()));
+  sl.registerLazySingleton<ProductsLocalDatasource>(
+      () => ProductsLocalDatasourceImpl());
+  sl.registerLazySingleton<ProductsRepo>(() => ProductsRepoImpl(
+      productsRemoteDataSource: sl(), productsLocalDataSource: sl()));
+  sl.registerFactory<ProductsCubit>(() => ProductsCubit(sl(), sl(), sl()));
 
   //Business Add Product
   sl.registerLazySingleton<BusinessAddProductRemoteDataSource>(

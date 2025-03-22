@@ -11,6 +11,7 @@ import 'package:home4u/features/products/data/repos/business_config_repo.dart';
 import 'package:home4u/features/products/data/repos/products_repo.dart';
 import 'package:home4u/features/products/logic/products_state.dart';
 
+import '../data/data_source/products_local_data_source.dart';
 import '../data/models/product_preview_response.dart';
 import '../data/models/products_response_model.dart';
 
@@ -20,10 +21,13 @@ class ProductsCubit extends Cubit<ProductsState> {
   BusinessConfigModel? businessConfigModel;
   final ProductsRepo _productsRepo;
 
-  // final ProductsLocalDatasource _productsLocalDatasource;
+  final ProductsLocalDatasource _productsLocalDatasource;
 
-  ProductsCubit(this._businessConfigRepo, this._productsRepo)
-      : super(ProductsState.initial());
+  ProductsCubit(
+    this._businessConfigRepo,
+    this._productsRepo,
+    this._productsLocalDatasource,
+  ) : super(ProductsState.initial());
   double? minPrice;
   double? maxPrice;
   List<int?> colorsIds = [];
@@ -52,6 +56,9 @@ class ProductsCubit extends Cubit<ProductsState> {
     final int userBusinessId =
         await SharedPrefHelper.getInt(SharedPrefKeys.userTypeId);
 
+    final String userBusinessTypeId =
+        await SharedPrefHelper.getString(SharedPrefKeys.userBusinessTypeId);
+
     log("userBusinessId: $userBusinessId");
 
     if (isFetching) return;
@@ -75,7 +82,7 @@ class ProductsCubit extends Cubit<ProductsState> {
     final requestBody = {
       "pageNumber": _page,
       "searchCriteria": {
-        "businessId": 12,
+        "businessId": int.parse(userBusinessTypeId),
         "minPrice": minPrice,
         "maxPrice": maxPrice,
         "colorsIds": colorsIds.isEmpty ? null : colorsIds,
@@ -90,7 +97,7 @@ class ProductsCubit extends Cubit<ProductsState> {
     final response = await _productsRepo.getProducts(requestBody);
 
     response.when(success: (data) async {
-      // await _productsLocalDatasource.cacheProductsData(data);
+      await _productsLocalDatasource.cacheProductsData(data);
 
       final newProducts = data.data?.content ?? [];
       if (newProducts.isEmpty) {

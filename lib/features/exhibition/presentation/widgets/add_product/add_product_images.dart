@@ -27,6 +27,7 @@ class _AddProductImagesState extends State<AddProductImages> {
         return Column(
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.start,
+          spacing: 32.h,
           children: [
             SelectImageWidget(
               cubit: businessCubit,

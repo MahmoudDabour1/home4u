@@ -1,16 +1,21 @@
-import 'package:json_annotation/json_annotation.dart';
+import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'login_response.g.dart';
 
 @JsonSerializable()
 class LoginResponse {
+  @JsonKey(name: "success")
   bool? success;
   @JsonKey(name: "status")
-  int? statusCode;
+  int? status;
   @JsonKey(name: "data")
-  UserData? userData;
+  Data? data;
 
-  LoginResponse({this.success, this.statusCode, this.userData});
+  LoginResponse({
+    this.success,
+    this.status,
+    this.data,
+  });
 
   factory LoginResponse.fromJson(Map<String, dynamic> json) =>
       _$LoginResponseFromJson(json);
@@ -19,60 +24,99 @@ class LoginResponse {
 }
 
 @JsonSerializable()
-class UserData {
+class Data {
+  @JsonKey(name: "token")
   String? token;
+  @JsonKey(name: "refreshToken")
   String? refreshToken;
   @JsonKey(name: "user")
-  UserInformation? userInformation;
+  User? user;
 
-  UserData({this.token, this.refreshToken, this.userInformation});
+  Data({
+    this.token,
+    this.refreshToken,
+    this.user,
+  });
 
-  factory UserData.fromJson(Map<String, dynamic> json) =>
-      _$UserDataFromJson(json);
+  factory Data.fromJson(Map<String, dynamic> json) => _$DataFromJson(json);
 
-  Map<String, dynamic> toJson() => _$UserDataToJson(this);
+  Map<String, dynamic> toJson() => _$DataToJson(this);
 }
 
 @JsonSerializable()
-class UserInformation {
+class User {
+  @JsonKey(name: "id")
   int? id;
+  @JsonKey(name: "statusCode")
   int? statusCode;
-  @JsonKey(name: 'username')
-  String? userName;
+  @JsonKey(name: "username")
+  String? username;
+  @JsonKey(name: "email")
   String? email;
+  @JsonKey(name: "phone")
   String? phone;
-  @JsonKey(name: 'userType')
-  UserType? userType;
+  @JsonKey(name: "userType")
+  BaseData? userType;
+  @JsonKey(name: "governorate")
+  BaseData? governorate;
+  @JsonKey(name: "city")
+  BaseData? city;
+  @JsonKey(name: "business")
+  Business? business;
 
-  UserInformation({
+  User({
     this.id,
-    this.userName,
+    this.statusCode,
+    this.username,
     this.email,
     this.phone,
     this.userType,
-    this.statusCode,
+    this.governorate,
+    this.city,
+    this.business,
   });
 
-  factory UserInformation.fromJson(Map<String, dynamic> json) =>
-      _$UserInformationFromJson(json);
+  factory User.fromJson(Map<String, dynamic> json) => _$UserFromJson(json);
 
-  Map<String, dynamic> toJson() => _$UserInformationToJson(this);
+  Map<String, dynamic> toJson() => _$UserToJson(this);
+
 }
 
 @JsonSerializable()
-class UserType {
+class Business {
+  @JsonKey(name: "businessId")
+  String? businessId;
+  @JsonKey(name: "tradName")
+  String? tradName;
+
+  Business({
+    this.businessId,
+    this.tradName,
+  });
+
+  factory Business.fromJson(Map<String, dynamic> json) => _$BusinessFromJson(json);
+
+  Map<String, dynamic> toJson() => _$BusinessToJson(this);
+}
+
+
+@JsonSerializable()
+class BaseData {
+  @JsonKey(name: "id")
   int? id;
+  @JsonKey(name: "code")
   String? code;
+  @JsonKey(name: "name")
   String? name;
 
-  UserType({
+  BaseData({
     this.id,
     this.code,
     this.name,
   });
 
-  factory UserType.fromJson(Map<String, dynamic> json) =>
-      _$UserTypeFromJson(json);
+  factory BaseData.fromJson(Map<String, dynamic> json) =>
+      _$BaseDataFromJson(json);
 
-  Map<String, dynamic> toJson() => _$UserTypeToJson(this);
+  Map<String, dynamic> toJson() => _$BaseDataToJson(this);
 }

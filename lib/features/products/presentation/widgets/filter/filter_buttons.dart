@@ -22,7 +22,9 @@ class FilterButtons extends StatelessWidget {
             btnWidth: MediaQuery.sizeOf(context).width,
             btnHeight: 50.h,
             onPressed: () {
-              context.read<ProductsCubit>().getProducts();
+              final cubit = context.read<ProductsCubit>();
+              cubit.resetPagination();
+              cubit.getProducts();
               context.pop();
             }),
         verticalSpace(16),

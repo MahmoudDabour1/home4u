@@ -33,6 +33,7 @@ abstract class SignUpRemoteDataSource {
     @Path("governorateId") int governorateId,
   );
 
+  @GET("/api/v1/business-types/user-type/{userTypeId}")
   Future<BusinessTypesModel> getBusinessTypes(
     @Path("userTypeId") int userTypeId,
   );
