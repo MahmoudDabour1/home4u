@@ -6,10 +6,12 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_localization/flutter_localization.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:home4u/core/extensions/navigation_extension.dart';
 import 'package:home4u/core/theming/app_assets.dart';
 import 'package:home4u/core/theming/app_colors.dart';
 import 'package:home4u/core/utils/spacing.dart';
 import 'package:home4u/features/exhibition/logic/business_add_product_state.dart';
+import 'package:home4u/features/products/logic/products_cubit.dart';
 
 import '../../../../../core/localization/app_localization_cubit.dart';
 import '../../../../../core/theming/app_styles.dart';
@@ -127,11 +129,12 @@ class _AddProductInfoStepperState extends State<AddProductInfoStepper> {
           //       (context) =>SuccessMissionDialog()
           //     ,);
           // },
-          // updateProductSuccess: (productResponse) {
-          //   showAdaptiveDialog(context: context, builder:
-          //       (context) =>SuccessMissionDialog(isUpdate: true,)
-          //     ,);
-          // },
+          updateProductSuccess: (productResponse) {
+            ///ToDo : if user upload more the images it with listen first to updateProductSuccess
+            showAdaptiveDialog(context: context, builder:
+                (context) =>SuccessMissionDialog(isUpdate: true,)
+              ,);
+          },
           orElse: () {},
         );
       },
@@ -260,9 +263,15 @@ class _AddProductInfoStepperState extends State<AddProductInfoStepper> {
                     productId: productData?.data.id,
                     productData: productData,
                   );
+
+              if(state is AddBusinessProductSuccess || state is UpdateProductSuccess){
+                context.pop();
+              }
+
             },
             isLoading: state is AddBusinessProductLoading ||
-                state is UpdateProductLoading,
+                state is UpdateProductLoading ||
+                state is AddBusinessProductImageLoading,
             svgIcon: AppAssets.submitIconSvg,
             text: AppLocale.submit.getString(context),
             backgroundColor: AppColors.ratingColor,

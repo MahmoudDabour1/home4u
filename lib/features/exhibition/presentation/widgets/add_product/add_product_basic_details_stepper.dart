@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_localization/flutter_localization.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:home4u/core/routing/router_observer.dart';
 import 'package:home4u/features/exhibition/presentation/widgets/add_product/up_down_form_field.dart';
 
 import '../../../../../core/widgets/app_text_form_field.dart';
@@ -9,6 +10,7 @@ import '../../../../../core/widgets/get_common_input_decoration.dart';
 import '../../../../../locale/app_locale.dart';
 import '../../../../products/data/models/product_preview_response.dart';
 import '../../../../products/data/models/products_response_model.dart';
+import '../../../data/models/business_add_product_body.dart';
 import '../../../logic/business_add_product_cubit.dart';
 import 'basic_details_drop_down_buttons.dart';
 
@@ -62,6 +64,7 @@ class _AddProductBasicDetailsStepperState
           widget.productData?.data.descriptionAr ?? "";
       businessCubit.productDescriptionEnController.text =
           widget.productData?.data.descriptionEn ?? "";
+      businessCubit.storedImages = widget.productData?.data.imagePaths ?? [];
     }
     return Column(
       mainAxisAlignment: MainAxisAlignment.start,
@@ -94,7 +97,9 @@ class _AddProductBasicDetailsStepperState
             return null;
           },
         ),
-        BasicDetailsDropDownButtons(productData: widget.productData,),
+        BasicDetailsDropDownButtons(
+          productData: widget.productData,
+        ),
         UpDownFormField(
           controller: businessCubit.productPriceController,
           label: "${AppLocale.price.getString(context)}( £ )",

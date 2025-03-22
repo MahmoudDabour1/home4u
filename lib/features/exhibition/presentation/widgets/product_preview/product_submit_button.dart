@@ -32,33 +32,35 @@ class ProductSubmitButton extends StatelessWidget {
                   ),
                 );
               },
-              addBusinessProductSuccess: (_) {
-                showAdaptiveDialog(context: context, builder:
-                    (context) => SuccessMissionDialog()
-                  ,);
+              uploadBusinessImageSuccess: () {
+                showAdaptiveDialog(
+                  context: context,
+                  builder: (context) => SuccessMissionDialog(),
+                );
               },
               orElse: () {},
             );
           },
-
           builder: (context, state) {
             return AppCustomTextButtonWithIcon(
               onPressed: () {
                 final cubit = context.read<BusinessAddProductCubit>();
-                log("Selected Business Type: ${cubit
-                    .selectedExhibitionBusinessType}");
+                log("Selected Business Type: ${cubit.selectedExhibitionBusinessType}");
                 log("Selected Base Unit: ${cubit.selectedBaseUnit}");
+                log("selected length unit: ${cubit.productLengthController}");
 
                 if (cubit.selectedExhibitionBusinessType == null ||
                     cubit.selectedBaseUnit == null) {
                   _showSnackBar(context);
                   return;
                 }
+                cubit.addOrUpdateProduct();
               },
               isWhiteLoading: false,
               svgIcon: AppAssets.submitIconSvg,
               text: AppLocale.submit.getString(context),
-              isLoading: state is AddBusinessProductLoading,
+              isLoading: state is UploadBusinessImageLoading ||
+                  state is AddBusinessProductImageLoading,
               textStyle: AppStyles.font16DarkBlueBold,
               backgroundColor: AppColors.whiteColor,
               svgIconColor: AppColors.secondaryColor,
@@ -73,8 +75,7 @@ class ProductSubmitButton extends StatelessWidget {
   void _showSnackBar(BuildContext context) {
     ScaffoldMessenger.of(context).showSnackBar(
       SnackBar(
-        content: Text(
-            "Please select a business type and base unit."),
+        content: Text("Please select a business type and base unit."),
         backgroundColor: Colors.red,
       ),
     );

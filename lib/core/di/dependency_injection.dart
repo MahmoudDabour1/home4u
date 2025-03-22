@@ -15,7 +15,6 @@ import 'package:home4u/features/auth/sign_up/logic/technical_worker/technical_wo
 import 'package:home4u/features/auth/verification/data/data_source/verification_remote_data_source.dart';
 import 'package:home4u/features/exhibition/data/data_sources/business_add_product_remote_data_source.dart';
 import 'package:home4u/features/exhibition/logic/business_add_product_cubit.dart';
-import 'package:home4u/features/products/data/data_source/products_local_data_source.dart';
 import 'package:home4u/features/products/data/data_source/products_remote_data_source.dart';
 import 'package:home4u/features/products/data/repos/products_repo.dart';
 import 'package:home4u/features/products/logic/products_cubit.dart';
@@ -44,6 +43,7 @@ import '../../features/auth/sign_up/logic/engineer/engineer_cubit.dart';
 import '../../features/auth/verification/data/repos/verification_repo.dart';
 import '../../features/auth/verification/logic/verification_cubit.dart';
 import '../../features/exhibition/data/repository/business_add_product_repository.dart';
+import '../../features/products/data/data_source/products_local_data_source.dart';
 import '../../features/products/data/repos/business_config_repo.dart';
 import '../../features/profile/data/data_sources/projects_local_data_source.dart';
 import '../../features/profile/data/repos/profile_repo.dart';
@@ -60,7 +60,8 @@ Future<void> setupGetIt() async {
   //login
   sl.registerLazySingleton<LoginRemoteDataSource>(
       () => LoginRemoteDataSource(dio));
-  sl.registerLazySingleton<LoginRepo>(() => LoginRepo(sl()));
+  sl.registerLazySingleton<LoginRepo>(
+      () => LoginRepoImpl(loginRemoteDataSource: sl()));
   sl.registerFactory<LoginCubit>(() => LoginCubit(sl()));
 
   //signUp

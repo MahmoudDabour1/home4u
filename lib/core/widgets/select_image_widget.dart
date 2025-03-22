@@ -7,16 +7,14 @@ import 'package:flutter_localization/flutter_localization.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:home4u/core/networking/api_constants.dart';
+import 'package:home4u/core/services/image_picker_services.dart';
 import 'package:home4u/core/theming/app_assets.dart';
+import 'package:home4u/core/theming/app_colors.dart';
+import 'package:home4u/core/theming/app_styles.dart';
+import 'package:image_picker/image_picker.dart';
 
 import '../../locale/app_locale.dart';
-import '../theming/app_colors.dart';
-import '../theming/app_styles.dart';
-import 'bottom_model.dart';
 
-
-///ToDo : Need to refactor to work with carousel slider
-///
 class SelectImageWidget extends StatelessWidget {
   final cubit;
   final List<File> images;
@@ -45,11 +43,42 @@ class SelectImageWidget extends StatelessWidget {
               topRight: Radius.circular(20.r),
             ),
           ),
+          backgroundColor: AppColors.whiteColor,
           context: context,
           builder: (context) {
             return SizedBox(
               height: 150.h,
-              child: BottomModel(cubit: cubit, isCoverImage: isCoverImage),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  ListTile(
+                    leading: const Icon(Icons.camera_alt),
+                    title: Text(AppLocale.camera.getString(context)),
+                    onTap: () async {
+                      Navigator.pop(context);
+                      final imagePickerService = ImagePickerService();
+                      final pickedImage = await imagePickerService.pickImage(
+                          source: ImageSource.camera);
+                      if (pickedImage != null) {
+                        cubit.updateSelectedImages([pickedImage]);
+                      }
+                    },
+                  ),
+                  ListTile(
+                    leading: const Icon(Icons.photo_library),
+                    title: Text(AppLocale.gallery.getString(context)),
+                    onTap: () async {
+                      Navigator.pop(context);
+                      final imagePickerService = ImagePickerService();
+                      final pickedImages =
+                          await imagePickerService.pickMultipleImages();
+                      if (pickedImages.isNotEmpty) {
+                        cubit.updateSelectedImages(pickedImages);
+                      }
+                    },
+                  ),
+                ],
+              ),
             );
           },
         );
@@ -102,7 +131,6 @@ class SelectImageWidget extends StatelessWidget {
                 Center(
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
-                    spacing : 16.h,
                     children: [
                       SvgPicture.asset(
                         AppAssets.uploadImageIcon,

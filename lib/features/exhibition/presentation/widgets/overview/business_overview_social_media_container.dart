@@ -10,7 +10,6 @@ import '../../../../../core/widgets/get_common_input_decoration.dart';
 import '../../../../../locale/app_locale.dart';
 import 'business_text_field_prefix_icon.dart';
 
-
 class BusinessOverviewSocialMediaContainer extends StatelessWidget {
   const BusinessOverviewSocialMediaContainer({super.key});
 
@@ -62,7 +61,7 @@ class BusinessOverviewSocialMediaContainer extends StatelessWidget {
           decoration: getCommonInputDecoration(
             labelText: AppLocale.facebook.getString(context),
             prefixIcon: BusinessTextFieldPrefixIcon(
-              svgIcon: AppAssets.facebook,
+              svgIcon: AppAssets.facebookIcon,
             ),
           ),
           validator: (value) {

@@ -39,6 +39,7 @@ class Home4uApp extends StatefulWidget {
 
 class _Home4uAppState extends State<Home4uApp> {
   final FlutterLocalization localization = FlutterLocalization.instance;
+  final RouteObserver<ModalRoute> _routeObserver = RouteObserver<ModalRoute>();
 
   @override
   void initState() {
@@ -114,7 +115,7 @@ class _Home4uAppState extends State<Home4uApp> {
                     : Locale(widget.initialLocale),
                 onGenerateRoute: widget.appRouter.generateRoute,
                 debugShowCheckedModeBanner: false,
-                navigatorObservers: [NavigatorObserver()],
+                navigatorObservers: [NavigatorObserver(),_routeObserver],
                 initialRoute: Routes.loginScreen,
               ),
             );

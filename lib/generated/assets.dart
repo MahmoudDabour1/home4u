@@ -15,8 +15,10 @@ class Assets {
   static const String imagesArchispaceLogo = 'assets/images/archispace_logo.png';
   static const String imagesArchispaceLogo512 = 'assets/images/archispace_logo_512.png';
   static const String imagesArrow = 'assets/images/arrow.png';
+  static const String imagesEmptyState = 'assets/images/empty_state.jpg';
   static const String imagesFacebook = 'assets/images/facebook.png';
   static const String imagesGoogle = 'assets/images/google.png';
+  static const String imagesKhabyLamePNGImage = 'assets/images/Khaby-Lame-PNG-Image.png';
   static const String imagesLock = 'assets/images/lock.png';
   static const String imagesOnboardingOneFour = 'assets/images/onboarding_one_four.png';
   static const String imagesOnboardingThree = 'assets/images/onboarding_three.png';

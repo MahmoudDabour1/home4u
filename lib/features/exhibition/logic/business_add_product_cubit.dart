@@ -1,4 +1,3 @@
-import 'dart:developer';
 import 'dart:io';
 
 import 'package:dio/dio.dart';
@@ -10,7 +9,6 @@ import 'package:home4u/features/exhibition/data/models/add_product_business_resp
 import 'package:home4u/features/exhibition/data/models/business_add_product_images_response.dart';
 import 'package:home4u/features/products/data/models/update_product_response_model.dart';
 import 'package:http_parser/http_parser.dart';
-import 'package:image_picker/image_picker.dart';
 
 import '../../products/data/models/product_preview_response.dart';
 import '../../products/logic/products_cubit.dart';
@@ -47,6 +45,7 @@ class BusinessAddProductCubit extends Cubit<BusinessAddProductState> {
   final List<Map<String, dynamic>> selectedColorsAndStock = [];
 
   late List<File> images = [];
+  List<ImagePath> storedImages = [];
 
   void updateSelectedColorsAndStock(List<Map<String, dynamic>> newList) {
     selectedColorsAndStock
@@ -55,19 +54,9 @@ class BusinessAddProductCubit extends Cubit<BusinessAddProductState> {
     emit(BusinessAddProductState.uploadBusinessImageLoading());
   }
 
-  void selectImage(
-      {required BuildContext context, required ImageSource source}) async {
-    final pickedFile = await ImagePicker().pickImage(source: source);
-    if (pickedFile != null) {
-      final imageFile = File(pickedFile.path);
-      log("Selected image path: ${imageFile.path}");
-      images.add(imageFile);
-      emit(BusinessAddProductState.selectImageSuccess(images));
-    } else {
-      emit(
-          BusinessAddProductState.selectImageFailure("Image selection failed"));
-    }
-    Navigator.pop(context);
+  void updateSelectedImages(List<File> newImages) {
+    images = [...images, ...newImages];
+    emit(BusinessAddProductState.selectImageSuccess(images));
   }
 
   Future<void> addOrUpdateProduct({
@@ -173,6 +162,16 @@ class BusinessAddProductCubit extends Cubit<BusinessAddProductState> {
       }
     }
 
+    List<ImagePath> beforeAddedImages = storedImages
+        .map(
+          (img) => ImagePath(
+            id: img.id,
+            productId: img.productId,
+            imagePath: img.imagePath,
+          ),
+        )
+        .toList();
+
     return BusinessAddProductBody(
       id: productId,
       nameAr: productNameArController.text,
@@ -189,7 +188,7 @@ class BusinessAddProductCubit extends Cubit<BusinessAddProductState> {
           ? selectedMaterials!.map((e) => BaseUnit(id: e)).toList()
           : productData?.data.materials.map((e) => BaseUnit(id: e.id)).toList() ?? [],
       stocks: uniqueStocks,
-      imagePaths: [],
+      imagePaths: isUpdateData ? beforeAddedImages : [],
     );
   }
 
@@ -197,8 +196,12 @@ class BusinessAddProductCubit extends Cubit<BusinessAddProductState> {
     emit(const BusinessAddProductState.addBusinessProductImageLoading());
 
     final imageBodies = images
-        .map((image) =>
-            BusinessAddProductImagesBody(productId: productId, imagePath: null))
+        .map(
+          (image) => BusinessAddProductImagesBody(
+            productId: productId,
+            imagePath: null,
+          ),
+        )
         .toList();
     final result = await _repository.addBusinessProductImage(imageBodies);
 

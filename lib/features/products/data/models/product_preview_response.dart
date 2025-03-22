@@ -106,15 +106,15 @@ class ResponseBaseUnit {
 @JsonSerializable()
 class ImagePath {
   @JsonKey(name: "id")
-  final int id;
+  final int? id;
   @JsonKey(name: "productId")
-  final int productId;
+  final int? productId;
   @JsonKey(name: "imagePath")
   final String imagePath;
 
   ImagePath({
-    required this.id,
-    required this.productId,
+    this.id,
+    this.productId,
     required this.imagePath,
   });
 

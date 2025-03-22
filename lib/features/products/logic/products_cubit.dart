@@ -6,12 +6,12 @@ import 'package:home4u/core/helpers/shared_pref_helper.dart';
 import 'package:home4u/core/helpers/shared_pref_keys.dart';
 import 'package:home4u/core/networking/dio_factory.dart';
 import 'package:home4u/core/routing/router_observer.dart';
-import 'package:home4u/features/products/data/data_source/products_local_data_source.dart';
 import 'package:home4u/features/products/data/models/business_config_model.dart';
 import 'package:home4u/features/products/data/repos/business_config_repo.dart';
 import 'package:home4u/features/products/data/repos/products_repo.dart';
 import 'package:home4u/features/products/logic/products_state.dart';
 
+import '../data/data_source/products_local_data_source.dart';
 import '../data/models/product_preview_response.dart';
 import '../data/models/products_response_model.dart';
 
@@ -20,11 +20,14 @@ class ProductsCubit extends Cubit<ProductsState> {
 
   BusinessConfigModel? businessConfigModel;
   final ProductsRepo _productsRepo;
+
   final ProductsLocalDatasource _productsLocalDatasource;
 
-  ProductsCubit(this._businessConfigRepo, this._productsRepo,
-      this._productsLocalDatasource)
-      : super(ProductsState.initial());
+  ProductsCubit(
+    this._businessConfigRepo,
+    this._productsRepo,
+    this._productsLocalDatasource,
+  ) : super(ProductsState.initial());
   double? minPrice;
   double? maxPrice;
   List<int?> colorsIds = [];
@@ -53,6 +56,9 @@ class ProductsCubit extends Cubit<ProductsState> {
     final int userBusinessId =
         await SharedPrefHelper.getInt(SharedPrefKeys.userTypeId);
 
+    final String userBusinessTypeId =
+        await SharedPrefHelper.getString(SharedPrefKeys.userBusinessTypeId);
+
     log("userBusinessId: $userBusinessId");
 
     if (isFetching) return;
@@ -64,10 +70,10 @@ class ProductsCubit extends Cubit<ProductsState> {
     }
 
     if (isRefresh) {
-      _page = 1;
+      _page = 0;
       hasReachedMax = false;
       products.clear();
-    } else if (_page > 1) {
+    } else if (_page > 0) {
       emit(ProductsState.paginationLoading());
     } else {
       emit(ProductsState.getProductsLoading());
@@ -76,7 +82,7 @@ class ProductsCubit extends Cubit<ProductsState> {
     final requestBody = {
       "pageNumber": _page,
       "searchCriteria": {
-        "businessId": 12,
+        "businessId": int.parse(userBusinessTypeId),
         "minPrice": minPrice,
         "maxPrice": maxPrice,
         "colorsIds": colorsIds.isEmpty ? null : colorsIds,
@@ -86,6 +92,7 @@ class ProductsCubit extends Cubit<ProductsState> {
         "materialIds": materialIds.isEmpty ? null : materialIds,
       }
     };
+    DioFactory.setContentType("application/json");
 
     final response = await _productsRepo.getProducts(requestBody);
 
@@ -182,6 +189,19 @@ class ProductsCubit extends Cubit<ProductsState> {
         }
       },
     );
+  }
+
+  void resetPagination() {
+    _page = 0;
+    _getProductsCallCount = 0;
+    hasReachedMax = false;
+    products.clear();
+  }
+
+  @override
+  Future<void> close() {
+    resetPagination();
+    return super.close();
   }
 }
 

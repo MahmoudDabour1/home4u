@@ -21,7 +21,7 @@ class ProductDetailsBlocBuilder extends StatelessWidget {
           current is GetProductPreviewFailure,
       builder: (context, state) {
         return state.maybeWhen(
-          getProductPreviewLoading: () => setupLoading(),
+          getProductPreviewLoading: () => setupLoading(context),
           getProductPreviewSuccess: (productDetails) {
             return setupSuccessWidget(productDetails);
           },
@@ -55,10 +55,13 @@ class ProductDetailsBlocBuilder extends StatelessWidget {
     return SizedBox.shrink();
   }
 
-  Widget setupLoading() {
+  Widget setupLoading(BuildContext context) {
     ///ToDo : center the loading indicator in the main screen
-    return AppCustomLoadingIndicator(
-      loadingColor: AppColors.secondaryColor,
+    return SizedBox(
+      height: MediaQuery.sizeOf(context).height * 0.7 ,
+      child: AppCustomLoadingIndicator(
+        loadingColor: AppColors.secondaryColor,
+      ),
     );
   }
 }
