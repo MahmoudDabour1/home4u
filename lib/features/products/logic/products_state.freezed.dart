@@ -36,6 +36,7 @@ mixin _$ProductsState<T> {
     required TResult Function(String errorMessage) getProductPreviewFailure,
     required TResult Function() paginationLoading,
     required TResult Function(String errorMessage) paginationFailure,
+    required TResult Function() resetFilter,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -56,6 +57,7 @@ mixin _$ProductsState<T> {
     TResult? Function(String errorMessage)? getProductPreviewFailure,
     TResult? Function()? paginationLoading,
     TResult? Function(String errorMessage)? paginationFailure,
+    TResult? Function()? resetFilter,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -76,6 +78,7 @@ mixin _$ProductsState<T> {
     TResult Function(String errorMessage)? getProductPreviewFailure,
     TResult Function()? paginationLoading,
     TResult Function(String errorMessage)? paginationFailure,
+    TResult Function()? resetFilter,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -105,6 +108,7 @@ mixin _$ProductsState<T> {
         getProductPreviewFailure,
     required TResult Function(PaginationLoading<T> value) paginationLoading,
     required TResult Function(PaginationFailure<T> value) paginationFailure,
+    required TResult Function(ResetFilter<T> value) resetFilter,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -127,6 +131,7 @@ mixin _$ProductsState<T> {
         getProductPreviewFailure,
     TResult? Function(PaginationLoading<T> value)? paginationLoading,
     TResult? Function(PaginationFailure<T> value)? paginationFailure,
+    TResult? Function(ResetFilter<T> value)? resetFilter,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -149,6 +154,7 @@ mixin _$ProductsState<T> {
         getProductPreviewFailure,
     TResult Function(PaginationLoading<T> value)? paginationLoading,
     TResult Function(PaginationFailure<T> value)? paginationFailure,
+    TResult Function(ResetFilter<T> value)? resetFilter,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -234,6 +240,7 @@ class _$InitialImpl<T> implements _Initial<T> {
     required TResult Function(String errorMessage) getProductPreviewFailure,
     required TResult Function() paginationLoading,
     required TResult Function(String errorMessage) paginationFailure,
+    required TResult Function() resetFilter,
   }) {
     return initial();
   }
@@ -257,6 +264,7 @@ class _$InitialImpl<T> implements _Initial<T> {
     TResult? Function(String errorMessage)? getProductPreviewFailure,
     TResult? Function()? paginationLoading,
     TResult? Function(String errorMessage)? paginationFailure,
+    TResult? Function()? resetFilter,
   }) {
     return initial?.call();
   }
@@ -280,6 +288,7 @@ class _$InitialImpl<T> implements _Initial<T> {
     TResult Function(String errorMessage)? getProductPreviewFailure,
     TResult Function()? paginationLoading,
     TResult Function(String errorMessage)? paginationFailure,
+    TResult Function()? resetFilter,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -315,6 +324,7 @@ class _$InitialImpl<T> implements _Initial<T> {
         getProductPreviewFailure,
     required TResult Function(PaginationLoading<T> value) paginationLoading,
     required TResult Function(PaginationFailure<T> value) paginationFailure,
+    required TResult Function(ResetFilter<T> value) resetFilter,
   }) {
     return initial(this);
   }
@@ -340,6 +350,7 @@ class _$InitialImpl<T> implements _Initial<T> {
         getProductPreviewFailure,
     TResult? Function(PaginationLoading<T> value)? paginationLoading,
     TResult? Function(PaginationFailure<T> value)? paginationFailure,
+    TResult? Function(ResetFilter<T> value)? resetFilter,
   }) {
     return initial?.call(this);
   }
@@ -365,6 +376,7 @@ class _$InitialImpl<T> implements _Initial<T> {
         getProductPreviewFailure,
     TResult Function(PaginationLoading<T> value)? paginationLoading,
     TResult Function(PaginationFailure<T> value)? paginationFailure,
+    TResult Function(ResetFilter<T> value)? resetFilter,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -440,6 +452,7 @@ class _$BusinessConfigLoadingImpl<T> implements BusinessConfigLoading<T> {
     required TResult Function(String errorMessage) getProductPreviewFailure,
     required TResult Function() paginationLoading,
     required TResult Function(String errorMessage) paginationFailure,
+    required TResult Function() resetFilter,
   }) {
     return businessConfigLoading();
   }
@@ -463,6 +476,7 @@ class _$BusinessConfigLoadingImpl<T> implements BusinessConfigLoading<T> {
     TResult? Function(String errorMessage)? getProductPreviewFailure,
     TResult? Function()? paginationLoading,
     TResult? Function(String errorMessage)? paginationFailure,
+    TResult? Function()? resetFilter,
   }) {
     return businessConfigLoading?.call();
   }
@@ -486,6 +500,7 @@ class _$BusinessConfigLoadingImpl<T> implements BusinessConfigLoading<T> {
     TResult Function(String errorMessage)? getProductPreviewFailure,
     TResult Function()? paginationLoading,
     TResult Function(String errorMessage)? paginationFailure,
+    TResult Function()? resetFilter,
     required TResult orElse(),
   }) {
     if (businessConfigLoading != null) {
@@ -521,6 +536,7 @@ class _$BusinessConfigLoadingImpl<T> implements BusinessConfigLoading<T> {
         getProductPreviewFailure,
     required TResult Function(PaginationLoading<T> value) paginationLoading,
     required TResult Function(PaginationFailure<T> value) paginationFailure,
+    required TResult Function(ResetFilter<T> value) resetFilter,
   }) {
     return businessConfigLoading(this);
   }
@@ -546,6 +562,7 @@ class _$BusinessConfigLoadingImpl<T> implements BusinessConfigLoading<T> {
         getProductPreviewFailure,
     TResult? Function(PaginationLoading<T> value)? paginationLoading,
     TResult? Function(PaginationFailure<T> value)? paginationFailure,
+    TResult? Function(ResetFilter<T> value)? resetFilter,
   }) {
     return businessConfigLoading?.call(this);
   }
@@ -571,6 +588,7 @@ class _$BusinessConfigLoadingImpl<T> implements BusinessConfigLoading<T> {
         getProductPreviewFailure,
     TResult Function(PaginationLoading<T> value)? paginationLoading,
     TResult Function(PaginationFailure<T> value)? paginationFailure,
+    TResult Function(ResetFilter<T> value)? resetFilter,
     required TResult orElse(),
   }) {
     if (businessConfigLoading != null) {
@@ -674,6 +692,7 @@ class _$BusinessConfigSuccessImpl<T> implements BusinessConfigSuccess<T> {
     required TResult Function(String errorMessage) getProductPreviewFailure,
     required TResult Function() paginationLoading,
     required TResult Function(String errorMessage) paginationFailure,
+    required TResult Function() resetFilter,
   }) {
     return businessConfigSuccess(data);
   }
@@ -697,6 +716,7 @@ class _$BusinessConfigSuccessImpl<T> implements BusinessConfigSuccess<T> {
     TResult? Function(String errorMessage)? getProductPreviewFailure,
     TResult? Function()? paginationLoading,
     TResult? Function(String errorMessage)? paginationFailure,
+    TResult? Function()? resetFilter,
   }) {
     return businessConfigSuccess?.call(data);
   }
@@ -720,6 +740,7 @@ class _$BusinessConfigSuccessImpl<T> implements BusinessConfigSuccess<T> {
     TResult Function(String errorMessage)? getProductPreviewFailure,
     TResult Function()? paginationLoading,
     TResult Function(String errorMessage)? paginationFailure,
+    TResult Function()? resetFilter,
     required TResult orElse(),
   }) {
     if (businessConfigSuccess != null) {
@@ -755,6 +776,7 @@ class _$BusinessConfigSuccessImpl<T> implements BusinessConfigSuccess<T> {
         getProductPreviewFailure,
     required TResult Function(PaginationLoading<T> value) paginationLoading,
     required TResult Function(PaginationFailure<T> value) paginationFailure,
+    required TResult Function(ResetFilter<T> value) resetFilter,
   }) {
     return businessConfigSuccess(this);
   }
@@ -780,6 +802,7 @@ class _$BusinessConfigSuccessImpl<T> implements BusinessConfigSuccess<T> {
         getProductPreviewFailure,
     TResult? Function(PaginationLoading<T> value)? paginationLoading,
     TResult? Function(PaginationFailure<T> value)? paginationFailure,
+    TResult? Function(ResetFilter<T> value)? resetFilter,
   }) {
     return businessConfigSuccess?.call(this);
   }
@@ -805,6 +828,7 @@ class _$BusinessConfigSuccessImpl<T> implements BusinessConfigSuccess<T> {
         getProductPreviewFailure,
     TResult Function(PaginationLoading<T> value)? paginationLoading,
     TResult Function(PaginationFailure<T> value)? paginationFailure,
+    TResult Function(ResetFilter<T> value)? resetFilter,
     required TResult orElse(),
   }) {
     if (businessConfigSuccess != null) {
@@ -917,6 +941,7 @@ class _$BusinessConfigFailureImpl<T> implements BusinessConfigFailure<T> {
     required TResult Function(String errorMessage) getProductPreviewFailure,
     required TResult Function() paginationLoading,
     required TResult Function(String errorMessage) paginationFailure,
+    required TResult Function() resetFilter,
   }) {
     return businessConfigFailure(errorMessage);
   }
@@ -940,6 +965,7 @@ class _$BusinessConfigFailureImpl<T> implements BusinessConfigFailure<T> {
     TResult? Function(String errorMessage)? getProductPreviewFailure,
     TResult? Function()? paginationLoading,
     TResult? Function(String errorMessage)? paginationFailure,
+    TResult? Function()? resetFilter,
   }) {
     return businessConfigFailure?.call(errorMessage);
   }
@@ -963,6 +989,7 @@ class _$BusinessConfigFailureImpl<T> implements BusinessConfigFailure<T> {
     TResult Function(String errorMessage)? getProductPreviewFailure,
     TResult Function()? paginationLoading,
     TResult Function(String errorMessage)? paginationFailure,
+    TResult Function()? resetFilter,
     required TResult orElse(),
   }) {
     if (businessConfigFailure != null) {
@@ -998,6 +1025,7 @@ class _$BusinessConfigFailureImpl<T> implements BusinessConfigFailure<T> {
         getProductPreviewFailure,
     required TResult Function(PaginationLoading<T> value) paginationLoading,
     required TResult Function(PaginationFailure<T> value) paginationFailure,
+    required TResult Function(ResetFilter<T> value) resetFilter,
   }) {
     return businessConfigFailure(this);
   }
@@ -1023,6 +1051,7 @@ class _$BusinessConfigFailureImpl<T> implements BusinessConfigFailure<T> {
         getProductPreviewFailure,
     TResult? Function(PaginationLoading<T> value)? paginationLoading,
     TResult? Function(PaginationFailure<T> value)? paginationFailure,
+    TResult? Function(ResetFilter<T> value)? resetFilter,
   }) {
     return businessConfigFailure?.call(this);
   }
@@ -1048,6 +1077,7 @@ class _$BusinessConfigFailureImpl<T> implements BusinessConfigFailure<T> {
         getProductPreviewFailure,
     TResult Function(PaginationLoading<T> value)? paginationLoading,
     TResult Function(PaginationFailure<T> value)? paginationFailure,
+    TResult Function(ResetFilter<T> value)? resetFilter,
     required TResult orElse(),
   }) {
     if (businessConfigFailure != null) {
@@ -1130,6 +1160,7 @@ class _$GetProductsLoadingImpl<T> implements GetProductsLoading<T> {
     required TResult Function(String errorMessage) getProductPreviewFailure,
     required TResult Function() paginationLoading,
     required TResult Function(String errorMessage) paginationFailure,
+    required TResult Function() resetFilter,
   }) {
     return getProductsLoading();
   }
@@ -1153,6 +1184,7 @@ class _$GetProductsLoadingImpl<T> implements GetProductsLoading<T> {
     TResult? Function(String errorMessage)? getProductPreviewFailure,
     TResult? Function()? paginationLoading,
     TResult? Function(String errorMessage)? paginationFailure,
+    TResult? Function()? resetFilter,
   }) {
     return getProductsLoading?.call();
   }
@@ -1176,6 +1208,7 @@ class _$GetProductsLoadingImpl<T> implements GetProductsLoading<T> {
     TResult Function(String errorMessage)? getProductPreviewFailure,
     TResult Function()? paginationLoading,
     TResult Function(String errorMessage)? paginationFailure,
+    TResult Function()? resetFilter,
     required TResult orElse(),
   }) {
     if (getProductsLoading != null) {
@@ -1211,6 +1244,7 @@ class _$GetProductsLoadingImpl<T> implements GetProductsLoading<T> {
         getProductPreviewFailure,
     required TResult Function(PaginationLoading<T> value) paginationLoading,
     required TResult Function(PaginationFailure<T> value) paginationFailure,
+    required TResult Function(ResetFilter<T> value) resetFilter,
   }) {
     return getProductsLoading(this);
   }
@@ -1236,6 +1270,7 @@ class _$GetProductsLoadingImpl<T> implements GetProductsLoading<T> {
         getProductPreviewFailure,
     TResult? Function(PaginationLoading<T> value)? paginationLoading,
     TResult? Function(PaginationFailure<T> value)? paginationFailure,
+    TResult? Function(ResetFilter<T> value)? resetFilter,
   }) {
     return getProductsLoading?.call(this);
   }
@@ -1261,6 +1296,7 @@ class _$GetProductsLoadingImpl<T> implements GetProductsLoading<T> {
         getProductPreviewFailure,
     TResult Function(PaginationLoading<T> value)? paginationLoading,
     TResult Function(PaginationFailure<T> value)? paginationFailure,
+    TResult Function(ResetFilter<T> value)? resetFilter,
     required TResult orElse(),
   }) {
     if (getProductsLoading != null) {
@@ -1362,6 +1398,7 @@ class _$GetProductsSuccessImpl<T> implements GetProductsSuccess<T> {
     required TResult Function(String errorMessage) getProductPreviewFailure,
     required TResult Function() paginationLoading,
     required TResult Function(String errorMessage) paginationFailure,
+    required TResult Function() resetFilter,
   }) {
     return getProductsSuccess(responseModel);
   }
@@ -1385,6 +1422,7 @@ class _$GetProductsSuccessImpl<T> implements GetProductsSuccess<T> {
     TResult? Function(String errorMessage)? getProductPreviewFailure,
     TResult? Function()? paginationLoading,
     TResult? Function(String errorMessage)? paginationFailure,
+    TResult? Function()? resetFilter,
   }) {
     return getProductsSuccess?.call(responseModel);
   }
@@ -1408,6 +1446,7 @@ class _$GetProductsSuccessImpl<T> implements GetProductsSuccess<T> {
     TResult Function(String errorMessage)? getProductPreviewFailure,
     TResult Function()? paginationLoading,
     TResult Function(String errorMessage)? paginationFailure,
+    TResult Function()? resetFilter,
     required TResult orElse(),
   }) {
     if (getProductsSuccess != null) {
@@ -1443,6 +1482,7 @@ class _$GetProductsSuccessImpl<T> implements GetProductsSuccess<T> {
         getProductPreviewFailure,
     required TResult Function(PaginationLoading<T> value) paginationLoading,
     required TResult Function(PaginationFailure<T> value) paginationFailure,
+    required TResult Function(ResetFilter<T> value) resetFilter,
   }) {
     return getProductsSuccess(this);
   }
@@ -1468,6 +1508,7 @@ class _$GetProductsSuccessImpl<T> implements GetProductsSuccess<T> {
         getProductPreviewFailure,
     TResult? Function(PaginationLoading<T> value)? paginationLoading,
     TResult? Function(PaginationFailure<T> value)? paginationFailure,
+    TResult? Function(ResetFilter<T> value)? resetFilter,
   }) {
     return getProductsSuccess?.call(this);
   }
@@ -1493,6 +1534,7 @@ class _$GetProductsSuccessImpl<T> implements GetProductsSuccess<T> {
         getProductPreviewFailure,
     TResult Function(PaginationLoading<T> value)? paginationLoading,
     TResult Function(PaginationFailure<T> value)? paginationFailure,
+    TResult Function(ResetFilter<T> value)? resetFilter,
     required TResult orElse(),
   }) {
     if (getProductsSuccess != null) {
@@ -1603,6 +1645,7 @@ class _$GetProductsFailureImpl<T> implements GetProductsFailure<T> {
     required TResult Function(String errorMessage) getProductPreviewFailure,
     required TResult Function() paginationLoading,
     required TResult Function(String errorMessage) paginationFailure,
+    required TResult Function() resetFilter,
   }) {
     return getProductsFailure(errorMessage);
   }
@@ -1626,6 +1669,7 @@ class _$GetProductsFailureImpl<T> implements GetProductsFailure<T> {
     TResult? Function(String errorMessage)? getProductPreviewFailure,
     TResult? Function()? paginationLoading,
     TResult? Function(String errorMessage)? paginationFailure,
+    TResult? Function()? resetFilter,
   }) {
     return getProductsFailure?.call(errorMessage);
   }
@@ -1649,6 +1693,7 @@ class _$GetProductsFailureImpl<T> implements GetProductsFailure<T> {
     TResult Function(String errorMessage)? getProductPreviewFailure,
     TResult Function()? paginationLoading,
     TResult Function(String errorMessage)? paginationFailure,
+    TResult Function()? resetFilter,
     required TResult orElse(),
   }) {
     if (getProductsFailure != null) {
@@ -1684,6 +1729,7 @@ class _$GetProductsFailureImpl<T> implements GetProductsFailure<T> {
         getProductPreviewFailure,
     required TResult Function(PaginationLoading<T> value) paginationLoading,
     required TResult Function(PaginationFailure<T> value) paginationFailure,
+    required TResult Function(ResetFilter<T> value) resetFilter,
   }) {
     return getProductsFailure(this);
   }
@@ -1709,6 +1755,7 @@ class _$GetProductsFailureImpl<T> implements GetProductsFailure<T> {
         getProductPreviewFailure,
     TResult? Function(PaginationLoading<T> value)? paginationLoading,
     TResult? Function(PaginationFailure<T> value)? paginationFailure,
+    TResult? Function(ResetFilter<T> value)? resetFilter,
   }) {
     return getProductsFailure?.call(this);
   }
@@ -1734,6 +1781,7 @@ class _$GetProductsFailureImpl<T> implements GetProductsFailure<T> {
         getProductPreviewFailure,
     TResult Function(PaginationLoading<T> value)? paginationLoading,
     TResult Function(PaginationFailure<T> value)? paginationFailure,
+    TResult Function(ResetFilter<T> value)? resetFilter,
     required TResult orElse(),
   }) {
     if (getProductsFailure != null) {
@@ -1817,6 +1865,7 @@ class _$DeleteProductLoadingImpl<T> implements DeleteProductLoading<T> {
     required TResult Function(String errorMessage) getProductPreviewFailure,
     required TResult Function() paginationLoading,
     required TResult Function(String errorMessage) paginationFailure,
+    required TResult Function() resetFilter,
   }) {
     return deleteProductLoading();
   }
@@ -1840,6 +1889,7 @@ class _$DeleteProductLoadingImpl<T> implements DeleteProductLoading<T> {
     TResult? Function(String errorMessage)? getProductPreviewFailure,
     TResult? Function()? paginationLoading,
     TResult? Function(String errorMessage)? paginationFailure,
+    TResult? Function()? resetFilter,
   }) {
     return deleteProductLoading?.call();
   }
@@ -1863,6 +1913,7 @@ class _$DeleteProductLoadingImpl<T> implements DeleteProductLoading<T> {
     TResult Function(String errorMessage)? getProductPreviewFailure,
     TResult Function()? paginationLoading,
     TResult Function(String errorMessage)? paginationFailure,
+    TResult Function()? resetFilter,
     required TResult orElse(),
   }) {
     if (deleteProductLoading != null) {
@@ -1898,6 +1949,7 @@ class _$DeleteProductLoadingImpl<T> implements DeleteProductLoading<T> {
         getProductPreviewFailure,
     required TResult Function(PaginationLoading<T> value) paginationLoading,
     required TResult Function(PaginationFailure<T> value) paginationFailure,
+    required TResult Function(ResetFilter<T> value) resetFilter,
   }) {
     return deleteProductLoading(this);
   }
@@ -1923,6 +1975,7 @@ class _$DeleteProductLoadingImpl<T> implements DeleteProductLoading<T> {
         getProductPreviewFailure,
     TResult? Function(PaginationLoading<T> value)? paginationLoading,
     TResult? Function(PaginationFailure<T> value)? paginationFailure,
+    TResult? Function(ResetFilter<T> value)? resetFilter,
   }) {
     return deleteProductLoading?.call(this);
   }
@@ -1948,6 +2001,7 @@ class _$DeleteProductLoadingImpl<T> implements DeleteProductLoading<T> {
         getProductPreviewFailure,
     TResult Function(PaginationLoading<T> value)? paginationLoading,
     TResult Function(PaginationFailure<T> value)? paginationFailure,
+    TResult Function(ResetFilter<T> value)? resetFilter,
     required TResult orElse(),
   }) {
     if (deleteProductLoading != null) {
@@ -2050,6 +2104,7 @@ class _$DeleteProductSuccessImpl<T> implements DeleteProductSuccess<T> {
     required TResult Function(String errorMessage) getProductPreviewFailure,
     required TResult Function() paginationLoading,
     required TResult Function(String errorMessage) paginationFailure,
+    required TResult Function() resetFilter,
   }) {
     return deleteProductSuccess(deleteProductModel);
   }
@@ -2073,6 +2128,7 @@ class _$DeleteProductSuccessImpl<T> implements DeleteProductSuccess<T> {
     TResult? Function(String errorMessage)? getProductPreviewFailure,
     TResult? Function()? paginationLoading,
     TResult? Function(String errorMessage)? paginationFailure,
+    TResult? Function()? resetFilter,
   }) {
     return deleteProductSuccess?.call(deleteProductModel);
   }
@@ -2096,6 +2152,7 @@ class _$DeleteProductSuccessImpl<T> implements DeleteProductSuccess<T> {
     TResult Function(String errorMessage)? getProductPreviewFailure,
     TResult Function()? paginationLoading,
     TResult Function(String errorMessage)? paginationFailure,
+    TResult Function()? resetFilter,
     required TResult orElse(),
   }) {
     if (deleteProductSuccess != null) {
@@ -2131,6 +2188,7 @@ class _$DeleteProductSuccessImpl<T> implements DeleteProductSuccess<T> {
         getProductPreviewFailure,
     required TResult Function(PaginationLoading<T> value) paginationLoading,
     required TResult Function(PaginationFailure<T> value) paginationFailure,
+    required TResult Function(ResetFilter<T> value) resetFilter,
   }) {
     return deleteProductSuccess(this);
   }
@@ -2156,6 +2214,7 @@ class _$DeleteProductSuccessImpl<T> implements DeleteProductSuccess<T> {
         getProductPreviewFailure,
     TResult? Function(PaginationLoading<T> value)? paginationLoading,
     TResult? Function(PaginationFailure<T> value)? paginationFailure,
+    TResult? Function(ResetFilter<T> value)? resetFilter,
   }) {
     return deleteProductSuccess?.call(this);
   }
@@ -2181,6 +2240,7 @@ class _$DeleteProductSuccessImpl<T> implements DeleteProductSuccess<T> {
         getProductPreviewFailure,
     TResult Function(PaginationLoading<T> value)? paginationLoading,
     TResult Function(PaginationFailure<T> value)? paginationFailure,
+    TResult Function(ResetFilter<T> value)? resetFilter,
     required TResult orElse(),
   }) {
     if (deleteProductSuccess != null) {
@@ -2293,6 +2353,7 @@ class _$DeleteProductFailureImpl<T> implements DeleteProductFailure<T> {
     required TResult Function(String errorMessage) getProductPreviewFailure,
     required TResult Function() paginationLoading,
     required TResult Function(String errorMessage) paginationFailure,
+    required TResult Function() resetFilter,
   }) {
     return deleteProductFailure(errorMessage);
   }
@@ -2316,6 +2377,7 @@ class _$DeleteProductFailureImpl<T> implements DeleteProductFailure<T> {
     TResult? Function(String errorMessage)? getProductPreviewFailure,
     TResult? Function()? paginationLoading,
     TResult? Function(String errorMessage)? paginationFailure,
+    TResult? Function()? resetFilter,
   }) {
     return deleteProductFailure?.call(errorMessage);
   }
@@ -2339,6 +2401,7 @@ class _$DeleteProductFailureImpl<T> implements DeleteProductFailure<T> {
     TResult Function(String errorMessage)? getProductPreviewFailure,
     TResult Function()? paginationLoading,
     TResult Function(String errorMessage)? paginationFailure,
+    TResult Function()? resetFilter,
     required TResult orElse(),
   }) {
     if (deleteProductFailure != null) {
@@ -2374,6 +2437,7 @@ class _$DeleteProductFailureImpl<T> implements DeleteProductFailure<T> {
         getProductPreviewFailure,
     required TResult Function(PaginationLoading<T> value) paginationLoading,
     required TResult Function(PaginationFailure<T> value) paginationFailure,
+    required TResult Function(ResetFilter<T> value) resetFilter,
   }) {
     return deleteProductFailure(this);
   }
@@ -2399,6 +2463,7 @@ class _$DeleteProductFailureImpl<T> implements DeleteProductFailure<T> {
         getProductPreviewFailure,
     TResult? Function(PaginationLoading<T> value)? paginationLoading,
     TResult? Function(PaginationFailure<T> value)? paginationFailure,
+    TResult? Function(ResetFilter<T> value)? resetFilter,
   }) {
     return deleteProductFailure?.call(this);
   }
@@ -2424,6 +2489,7 @@ class _$DeleteProductFailureImpl<T> implements DeleteProductFailure<T> {
         getProductPreviewFailure,
     TResult Function(PaginationLoading<T> value)? paginationLoading,
     TResult Function(PaginationFailure<T> value)? paginationFailure,
+    TResult Function(ResetFilter<T> value)? resetFilter,
     required TResult orElse(),
   }) {
     if (deleteProductFailure != null) {
@@ -2509,6 +2575,7 @@ class _$GetProductPreviewLoadingImpl<T> implements GetProductPreviewLoading<T> {
     required TResult Function(String errorMessage) getProductPreviewFailure,
     required TResult Function() paginationLoading,
     required TResult Function(String errorMessage) paginationFailure,
+    required TResult Function() resetFilter,
   }) {
     return getProductPreviewLoading();
   }
@@ -2532,6 +2599,7 @@ class _$GetProductPreviewLoadingImpl<T> implements GetProductPreviewLoading<T> {
     TResult? Function(String errorMessage)? getProductPreviewFailure,
     TResult? Function()? paginationLoading,
     TResult? Function(String errorMessage)? paginationFailure,
+    TResult? Function()? resetFilter,
   }) {
     return getProductPreviewLoading?.call();
   }
@@ -2555,6 +2623,7 @@ class _$GetProductPreviewLoadingImpl<T> implements GetProductPreviewLoading<T> {
     TResult Function(String errorMessage)? getProductPreviewFailure,
     TResult Function()? paginationLoading,
     TResult Function(String errorMessage)? paginationFailure,
+    TResult Function()? resetFilter,
     required TResult orElse(),
   }) {
     if (getProductPreviewLoading != null) {
@@ -2590,6 +2659,7 @@ class _$GetProductPreviewLoadingImpl<T> implements GetProductPreviewLoading<T> {
         getProductPreviewFailure,
     required TResult Function(PaginationLoading<T> value) paginationLoading,
     required TResult Function(PaginationFailure<T> value) paginationFailure,
+    required TResult Function(ResetFilter<T> value) resetFilter,
   }) {
     return getProductPreviewLoading(this);
   }
@@ -2615,6 +2685,7 @@ class _$GetProductPreviewLoadingImpl<T> implements GetProductPreviewLoading<T> {
         getProductPreviewFailure,
     TResult? Function(PaginationLoading<T> value)? paginationLoading,
     TResult? Function(PaginationFailure<T> value)? paginationFailure,
+    TResult? Function(ResetFilter<T> value)? resetFilter,
   }) {
     return getProductPreviewLoading?.call(this);
   }
@@ -2640,6 +2711,7 @@ class _$GetProductPreviewLoadingImpl<T> implements GetProductPreviewLoading<T> {
         getProductPreviewFailure,
     TResult Function(PaginationLoading<T> value)? paginationLoading,
     TResult Function(PaginationFailure<T> value)? paginationFailure,
+    TResult Function(ResetFilter<T> value)? resetFilter,
     required TResult orElse(),
   }) {
     if (getProductPreviewLoading != null) {
@@ -2743,6 +2815,7 @@ class _$GetProductPreviewSuccessImpl<T> implements GetProductPreviewSuccess<T> {
     required TResult Function(String errorMessage) getProductPreviewFailure,
     required TResult Function() paginationLoading,
     required TResult Function(String errorMessage) paginationFailure,
+    required TResult Function() resetFilter,
   }) {
     return getProductPreviewSuccess(product);
   }
@@ -2766,6 +2839,7 @@ class _$GetProductPreviewSuccessImpl<T> implements GetProductPreviewSuccess<T> {
     TResult? Function(String errorMessage)? getProductPreviewFailure,
     TResult? Function()? paginationLoading,
     TResult? Function(String errorMessage)? paginationFailure,
+    TResult? Function()? resetFilter,
   }) {
     return getProductPreviewSuccess?.call(product);
   }
@@ -2789,6 +2863,7 @@ class _$GetProductPreviewSuccessImpl<T> implements GetProductPreviewSuccess<T> {
     TResult Function(String errorMessage)? getProductPreviewFailure,
     TResult Function()? paginationLoading,
     TResult Function(String errorMessage)? paginationFailure,
+    TResult Function()? resetFilter,
     required TResult orElse(),
   }) {
     if (getProductPreviewSuccess != null) {
@@ -2824,6 +2899,7 @@ class _$GetProductPreviewSuccessImpl<T> implements GetProductPreviewSuccess<T> {
         getProductPreviewFailure,
     required TResult Function(PaginationLoading<T> value) paginationLoading,
     required TResult Function(PaginationFailure<T> value) paginationFailure,
+    required TResult Function(ResetFilter<T> value) resetFilter,
   }) {
     return getProductPreviewSuccess(this);
   }
@@ -2849,6 +2925,7 @@ class _$GetProductPreviewSuccessImpl<T> implements GetProductPreviewSuccess<T> {
         getProductPreviewFailure,
     TResult? Function(PaginationLoading<T> value)? paginationLoading,
     TResult? Function(PaginationFailure<T> value)? paginationFailure,
+    TResult? Function(ResetFilter<T> value)? resetFilter,
   }) {
     return getProductPreviewSuccess?.call(this);
   }
@@ -2874,6 +2951,7 @@ class _$GetProductPreviewSuccessImpl<T> implements GetProductPreviewSuccess<T> {
         getProductPreviewFailure,
     TResult Function(PaginationLoading<T> value)? paginationLoading,
     TResult Function(PaginationFailure<T> value)? paginationFailure,
+    TResult Function(ResetFilter<T> value)? resetFilter,
     required TResult orElse(),
   }) {
     if (getProductPreviewSuccess != null) {
@@ -2987,6 +3065,7 @@ class _$GetProductPreviewFailureImpl<T> implements GetProductPreviewFailure<T> {
     required TResult Function(String errorMessage) getProductPreviewFailure,
     required TResult Function() paginationLoading,
     required TResult Function(String errorMessage) paginationFailure,
+    required TResult Function() resetFilter,
   }) {
     return getProductPreviewFailure(errorMessage);
   }
@@ -3010,6 +3089,7 @@ class _$GetProductPreviewFailureImpl<T> implements GetProductPreviewFailure<T> {
     TResult? Function(String errorMessage)? getProductPreviewFailure,
     TResult? Function()? paginationLoading,
     TResult? Function(String errorMessage)? paginationFailure,
+    TResult? Function()? resetFilter,
   }) {
     return getProductPreviewFailure?.call(errorMessage);
   }
@@ -3033,6 +3113,7 @@ class _$GetProductPreviewFailureImpl<T> implements GetProductPreviewFailure<T> {
     TResult Function(String errorMessage)? getProductPreviewFailure,
     TResult Function()? paginationLoading,
     TResult Function(String errorMessage)? paginationFailure,
+    TResult Function()? resetFilter,
     required TResult orElse(),
   }) {
     if (getProductPreviewFailure != null) {
@@ -3068,6 +3149,7 @@ class _$GetProductPreviewFailureImpl<T> implements GetProductPreviewFailure<T> {
         getProductPreviewFailure,
     required TResult Function(PaginationLoading<T> value) paginationLoading,
     required TResult Function(PaginationFailure<T> value) paginationFailure,
+    required TResult Function(ResetFilter<T> value) resetFilter,
   }) {
     return getProductPreviewFailure(this);
   }
@@ -3093,6 +3175,7 @@ class _$GetProductPreviewFailureImpl<T> implements GetProductPreviewFailure<T> {
         getProductPreviewFailure,
     TResult? Function(PaginationLoading<T> value)? paginationLoading,
     TResult? Function(PaginationFailure<T> value)? paginationFailure,
+    TResult? Function(ResetFilter<T> value)? resetFilter,
   }) {
     return getProductPreviewFailure?.call(this);
   }
@@ -3118,6 +3201,7 @@ class _$GetProductPreviewFailureImpl<T> implements GetProductPreviewFailure<T> {
         getProductPreviewFailure,
     TResult Function(PaginationLoading<T> value)? paginationLoading,
     TResult Function(PaginationFailure<T> value)? paginationFailure,
+    TResult Function(ResetFilter<T> value)? resetFilter,
     required TResult orElse(),
   }) {
     if (getProductPreviewFailure != null) {
@@ -3200,6 +3284,7 @@ class _$PaginationLoadingImpl<T> implements PaginationLoading<T> {
     required TResult Function(String errorMessage) getProductPreviewFailure,
     required TResult Function() paginationLoading,
     required TResult Function(String errorMessage) paginationFailure,
+    required TResult Function() resetFilter,
   }) {
     return paginationLoading();
   }
@@ -3223,6 +3308,7 @@ class _$PaginationLoadingImpl<T> implements PaginationLoading<T> {
     TResult? Function(String errorMessage)? getProductPreviewFailure,
     TResult? Function()? paginationLoading,
     TResult? Function(String errorMessage)? paginationFailure,
+    TResult? Function()? resetFilter,
   }) {
     return paginationLoading?.call();
   }
@@ -3246,6 +3332,7 @@ class _$PaginationLoadingImpl<T> implements PaginationLoading<T> {
     TResult Function(String errorMessage)? getProductPreviewFailure,
     TResult Function()? paginationLoading,
     TResult Function(String errorMessage)? paginationFailure,
+    TResult Function()? resetFilter,
     required TResult orElse(),
   }) {
     if (paginationLoading != null) {
@@ -3281,6 +3368,7 @@ class _$PaginationLoadingImpl<T> implements PaginationLoading<T> {
         getProductPreviewFailure,
     required TResult Function(PaginationLoading<T> value) paginationLoading,
     required TResult Function(PaginationFailure<T> value) paginationFailure,
+    required TResult Function(ResetFilter<T> value) resetFilter,
   }) {
     return paginationLoading(this);
   }
@@ -3306,6 +3394,7 @@ class _$PaginationLoadingImpl<T> implements PaginationLoading<T> {
         getProductPreviewFailure,
     TResult? Function(PaginationLoading<T> value)? paginationLoading,
     TResult? Function(PaginationFailure<T> value)? paginationFailure,
+    TResult? Function(ResetFilter<T> value)? resetFilter,
   }) {
     return paginationLoading?.call(this);
   }
@@ -3331,6 +3420,7 @@ class _$PaginationLoadingImpl<T> implements PaginationLoading<T> {
         getProductPreviewFailure,
     TResult Function(PaginationLoading<T> value)? paginationLoading,
     TResult Function(PaginationFailure<T> value)? paginationFailure,
+    TResult Function(ResetFilter<T> value)? resetFilter,
     required TResult orElse(),
   }) {
     if (paginationLoading != null) {
@@ -3433,6 +3523,7 @@ class _$PaginationFailureImpl<T> implements PaginationFailure<T> {
     required TResult Function(String errorMessage) getProductPreviewFailure,
     required TResult Function() paginationLoading,
     required TResult Function(String errorMessage) paginationFailure,
+    required TResult Function() resetFilter,
   }) {
     return paginationFailure(errorMessage);
   }
@@ -3456,6 +3547,7 @@ class _$PaginationFailureImpl<T> implements PaginationFailure<T> {
     TResult? Function(String errorMessage)? getProductPreviewFailure,
     TResult? Function()? paginationLoading,
     TResult? Function(String errorMessage)? paginationFailure,
+    TResult? Function()? resetFilter,
   }) {
     return paginationFailure?.call(errorMessage);
   }
@@ -3479,6 +3571,7 @@ class _$PaginationFailureImpl<T> implements PaginationFailure<T> {
     TResult Function(String errorMessage)? getProductPreviewFailure,
     TResult Function()? paginationLoading,
     TResult Function(String errorMessage)? paginationFailure,
+    TResult Function()? resetFilter,
     required TResult orElse(),
   }) {
     if (paginationFailure != null) {
@@ -3514,6 +3607,7 @@ class _$PaginationFailureImpl<T> implements PaginationFailure<T> {
         getProductPreviewFailure,
     required TResult Function(PaginationLoading<T> value) paginationLoading,
     required TResult Function(PaginationFailure<T> value) paginationFailure,
+    required TResult Function(ResetFilter<T> value) resetFilter,
   }) {
     return paginationFailure(this);
   }
@@ -3539,6 +3633,7 @@ class _$PaginationFailureImpl<T> implements PaginationFailure<T> {
         getProductPreviewFailure,
     TResult? Function(PaginationLoading<T> value)? paginationLoading,
     TResult? Function(PaginationFailure<T> value)? paginationFailure,
+    TResult? Function(ResetFilter<T> value)? resetFilter,
   }) {
     return paginationFailure?.call(this);
   }
@@ -3564,6 +3659,7 @@ class _$PaginationFailureImpl<T> implements PaginationFailure<T> {
         getProductPreviewFailure,
     TResult Function(PaginationLoading<T> value)? paginationLoading,
     TResult Function(PaginationFailure<T> value)? paginationFailure,
+    TResult Function(ResetFilter<T> value)? resetFilter,
     required TResult orElse(),
   }) {
     if (paginationFailure != null) {
@@ -3584,4 +3680,213 @@ abstract class PaginationFailure<T> implements ProductsState<T> {
   @JsonKey(includeFromJson: false, includeToJson: false)
   _$$PaginationFailureImplCopyWith<T, _$PaginationFailureImpl<T>>
       get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$ResetFilterImplCopyWith<T, $Res> {
+  factory _$$ResetFilterImplCopyWith(_$ResetFilterImpl<T> value,
+          $Res Function(_$ResetFilterImpl<T>) then) =
+      __$$ResetFilterImplCopyWithImpl<T, $Res>;
+}
+
+/// @nodoc
+class __$$ResetFilterImplCopyWithImpl<T, $Res>
+    extends _$ProductsStateCopyWithImpl<T, $Res, _$ResetFilterImpl<T>>
+    implements _$$ResetFilterImplCopyWith<T, $Res> {
+  __$$ResetFilterImplCopyWithImpl(
+      _$ResetFilterImpl<T> _value, $Res Function(_$ResetFilterImpl<T>) _then)
+      : super(_value, _then);
+
+  /// Create a copy of ProductsState
+  /// with the given fields replaced by the non-null parameter values.
+}
+
+/// @nodoc
+
+class _$ResetFilterImpl<T> implements ResetFilter<T> {
+  const _$ResetFilterImpl();
+
+  @override
+  String toString() {
+    return 'ProductsState<$T>.resetFilter()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$ResetFilterImpl<T>);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() businessConfigLoading,
+    required TResult Function(T data) businessConfigSuccess,
+    required TResult Function(String errorMessage) businessConfigFailure,
+    required TResult Function() getProductsLoading,
+    required TResult Function(ProductsResponseModel responseModel)
+        getProductsSuccess,
+    required TResult Function(String errorMessage) getProductsFailure,
+    required TResult Function() deleteProductLoading,
+    required TResult Function(DeleteProductModel deleteProductModel)
+        deleteProductSuccess,
+    required TResult Function(String errorMessage) deleteProductFailure,
+    required TResult Function() getProductPreviewLoading,
+    required TResult Function(ProductPreviewResponse product)
+        getProductPreviewSuccess,
+    required TResult Function(String errorMessage) getProductPreviewFailure,
+    required TResult Function() paginationLoading,
+    required TResult Function(String errorMessage) paginationFailure,
+    required TResult Function() resetFilter,
+  }) {
+    return resetFilter();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? businessConfigLoading,
+    TResult? Function(T data)? businessConfigSuccess,
+    TResult? Function(String errorMessage)? businessConfigFailure,
+    TResult? Function()? getProductsLoading,
+    TResult? Function(ProductsResponseModel responseModel)? getProductsSuccess,
+    TResult? Function(String errorMessage)? getProductsFailure,
+    TResult? Function()? deleteProductLoading,
+    TResult? Function(DeleteProductModel deleteProductModel)?
+        deleteProductSuccess,
+    TResult? Function(String errorMessage)? deleteProductFailure,
+    TResult? Function()? getProductPreviewLoading,
+    TResult? Function(ProductPreviewResponse product)? getProductPreviewSuccess,
+    TResult? Function(String errorMessage)? getProductPreviewFailure,
+    TResult? Function()? paginationLoading,
+    TResult? Function(String errorMessage)? paginationFailure,
+    TResult? Function()? resetFilter,
+  }) {
+    return resetFilter?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? businessConfigLoading,
+    TResult Function(T data)? businessConfigSuccess,
+    TResult Function(String errorMessage)? businessConfigFailure,
+    TResult Function()? getProductsLoading,
+    TResult Function(ProductsResponseModel responseModel)? getProductsSuccess,
+    TResult Function(String errorMessage)? getProductsFailure,
+    TResult Function()? deleteProductLoading,
+    TResult Function(DeleteProductModel deleteProductModel)?
+        deleteProductSuccess,
+    TResult Function(String errorMessage)? deleteProductFailure,
+    TResult Function()? getProductPreviewLoading,
+    TResult Function(ProductPreviewResponse product)? getProductPreviewSuccess,
+    TResult Function(String errorMessage)? getProductPreviewFailure,
+    TResult Function()? paginationLoading,
+    TResult Function(String errorMessage)? paginationFailure,
+    TResult Function()? resetFilter,
+    required TResult orElse(),
+  }) {
+    if (resetFilter != null) {
+      return resetFilter();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial<T> value) initial,
+    required TResult Function(BusinessConfigLoading<T> value)
+        businessConfigLoading,
+    required TResult Function(BusinessConfigSuccess<T> value)
+        businessConfigSuccess,
+    required TResult Function(BusinessConfigFailure<T> value)
+        businessConfigFailure,
+    required TResult Function(GetProductsLoading<T> value) getProductsLoading,
+    required TResult Function(GetProductsSuccess<T> value) getProductsSuccess,
+    required TResult Function(GetProductsFailure<T> value) getProductsFailure,
+    required TResult Function(DeleteProductLoading<T> value)
+        deleteProductLoading,
+    required TResult Function(DeleteProductSuccess<T> value)
+        deleteProductSuccess,
+    required TResult Function(DeleteProductFailure<T> value)
+        deleteProductFailure,
+    required TResult Function(GetProductPreviewLoading<T> value)
+        getProductPreviewLoading,
+    required TResult Function(GetProductPreviewSuccess<T> value)
+        getProductPreviewSuccess,
+    required TResult Function(GetProductPreviewFailure<T> value)
+        getProductPreviewFailure,
+    required TResult Function(PaginationLoading<T> value) paginationLoading,
+    required TResult Function(PaginationFailure<T> value) paginationFailure,
+    required TResult Function(ResetFilter<T> value) resetFilter,
+  }) {
+    return resetFilter(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial<T> value)? initial,
+    TResult? Function(BusinessConfigLoading<T> value)? businessConfigLoading,
+    TResult? Function(BusinessConfigSuccess<T> value)? businessConfigSuccess,
+    TResult? Function(BusinessConfigFailure<T> value)? businessConfigFailure,
+    TResult? Function(GetProductsLoading<T> value)? getProductsLoading,
+    TResult? Function(GetProductsSuccess<T> value)? getProductsSuccess,
+    TResult? Function(GetProductsFailure<T> value)? getProductsFailure,
+    TResult? Function(DeleteProductLoading<T> value)? deleteProductLoading,
+    TResult? Function(DeleteProductSuccess<T> value)? deleteProductSuccess,
+    TResult? Function(DeleteProductFailure<T> value)? deleteProductFailure,
+    TResult? Function(GetProductPreviewLoading<T> value)?
+        getProductPreviewLoading,
+    TResult? Function(GetProductPreviewSuccess<T> value)?
+        getProductPreviewSuccess,
+    TResult? Function(GetProductPreviewFailure<T> value)?
+        getProductPreviewFailure,
+    TResult? Function(PaginationLoading<T> value)? paginationLoading,
+    TResult? Function(PaginationFailure<T> value)? paginationFailure,
+    TResult? Function(ResetFilter<T> value)? resetFilter,
+  }) {
+    return resetFilter?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial<T> value)? initial,
+    TResult Function(BusinessConfigLoading<T> value)? businessConfigLoading,
+    TResult Function(BusinessConfigSuccess<T> value)? businessConfigSuccess,
+    TResult Function(BusinessConfigFailure<T> value)? businessConfigFailure,
+    TResult Function(GetProductsLoading<T> value)? getProductsLoading,
+    TResult Function(GetProductsSuccess<T> value)? getProductsSuccess,
+    TResult Function(GetProductsFailure<T> value)? getProductsFailure,
+    TResult Function(DeleteProductLoading<T> value)? deleteProductLoading,
+    TResult Function(DeleteProductSuccess<T> value)? deleteProductSuccess,
+    TResult Function(DeleteProductFailure<T> value)? deleteProductFailure,
+    TResult Function(GetProductPreviewLoading<T> value)?
+        getProductPreviewLoading,
+    TResult Function(GetProductPreviewSuccess<T> value)?
+        getProductPreviewSuccess,
+    TResult Function(GetProductPreviewFailure<T> value)?
+        getProductPreviewFailure,
+    TResult Function(PaginationLoading<T> value)? paginationLoading,
+    TResult Function(PaginationFailure<T> value)? paginationFailure,
+    TResult Function(ResetFilter<T> value)? resetFilter,
+    required TResult orElse(),
+  }) {
+    if (resetFilter != null) {
+      return resetFilter(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class ResetFilter<T> implements ProductsState<T> {
+  const factory ResetFilter() = _$ResetFilterImpl<T>;
 }

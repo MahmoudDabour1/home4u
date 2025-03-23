@@ -13,6 +13,8 @@ import 'package:home4u/features/profile/logic/services/services_cubit.dart';
 
 import 'core/di/dependency_injection.dart';
 import 'core/helpers/helper_methods.dart';
+import 'core/helpers/shared_pref_helper.dart';
+import 'core/helpers/shared_pref_keys.dart';
 import 'core/localization/app_localization_cubit.dart';
 import 'core/theming/app_theme.dart';
 import 'features/auth/forget_password/logic/forget_password_cubit.dart';
@@ -41,6 +43,9 @@ class _Home4uAppState extends State<Home4uApp> {
   final FlutterLocalization localization = FlutterLocalization.instance;
   final RouteObserver<ModalRoute> _routeObserver = RouteObserver<ModalRoute>();
 
+  String? userTypeCode;
+  bool isLoggedInUser = false;
+
   @override
   void initState() {
     super.initState();
@@ -60,68 +65,88 @@ class _Home4uAppState extends State<Home4uApp> {
     }
   }
 
+  Future<String> _getInitialRoute() async {
+    String userToken = await SharedPrefHelper.getSecuredString(SharedPrefKeys.userToken);
+
+    if (userToken.isNotEmpty) {
+      isLoggedInUser = true;
+      userTypeCode = await SharedPrefHelper.getString(SharedPrefKeys.userType);
+
+      switch (userTypeCode) {
+        case "EXHIBITION":
+        case "STORE":
+          return Routes.productsScreen;
+        case "TECHNICAL_WORKER":
+        case "ENGINEER":
+          return Routes.bottomNavLayout;
+        default:
+          return Routes.homeScreen;
+      }
+    }
+    return Routes.loginScreen;
+  }
+
   @override
   Widget build(BuildContext context) {
-    return MultiBlocProvider(
-      providers: [
-        BlocProvider<AppLocalizationCubit>(
-            create: (_) => AppLocalizationCubit(localization)
-              ..initializeLocaleWith(
-                widget.initialLocale,
-              )),
-        ///ToDo : can change its position
-        BlocProvider<SignUpCubit>(create: (_) => sl<SignUpCubit>()),
-        ///ToDo : can change its position
-        BlocProvider<ForgetPasswordCubit>(
-            create: (_) => sl<ForgetPasswordCubit>()),
-        BlocProvider<ProfileCubit>(create: (_) => sl<ProfileCubit>()),
-        BlocProvider<ProjectCubit>(
-            create: (_) => sl<ProjectCubit>()..getProjects()),
-        BlocProvider<CertificationsCubit>(
-            create: (_) => sl<CertificationsCubit>()),
-        BlocProvider<ServicesCubit>(create: (_) => sl<ServicesCubit>()),
-        BlocProvider<EngineerCubit>(
-          create: (_) => sl<EngineerCubit>(),
-        ),
-        BlocProvider<TechnicalWorkerCubit>(
-          create: (_) => sl<TechnicalWorkerCubit>(),
-        ),
-        BlocProvider<ProductsCubit>(
-          create: (_) => sl<ProductsCubit>()
-        ),
-          BlocProvider<BusinessAddProductCubit>(
-          create: (_) => sl<BusinessAddProductCubit>(),
-          ),
-      ],
-      child: ScreenUtilInit(
-        designSize: const Size(393, 852),
-        minTextAdapt: true,
-        child: BlocBuilder<AppLocalizationCubit, AppLocalizationState>(
-          builder: (context, state) {
-            final TextDirection textDirection =
-                context.read<AppLocalizationCubit>().textDirection;
+    return FutureBuilder<String>(
+      future: _getInitialRoute(),
+      builder: (context, snapshot) {
+        if (!snapshot.hasData) {
+          // Show loading screen while waiting
+          return const MaterialApp(
+            home: Scaffold(
+              body: Center(child: CircularProgressIndicator()),
+            ),
+          );
+        }
 
-            return Directionality(
-              textDirection: textDirection,
-              child: MaterialApp(
-                title: 'Home4u App',
-                theme: appTheme,
-                navigatorKey: navigatorKey,
-                supportedLocales: localization.supportedLocales,
-                localizationsDelegates: localization.localizationsDelegates,
-                builder: FToastBuilder(),
-                locale: state is LoadedLocale
-                    ? Locale(state.locale)
-                    : Locale(widget.initialLocale),
-                onGenerateRoute: widget.appRouter.generateRoute,
-                debugShowCheckedModeBanner: false,
-                navigatorObservers: [NavigatorObserver(),_routeObserver],
-                initialRoute: Routes.loginScreen,
-              ),
-            );
-          },
-        ),
-      ),
+        return MultiBlocProvider(
+          providers: [
+            BlocProvider<AppLocalizationCubit>(
+              create: (_) => AppLocalizationCubit(localization)
+                ..initializeLocaleWith(widget.initialLocale),
+            ),
+            BlocProvider<SignUpCubit>(create: (_) => sl<SignUpCubit>()),
+            BlocProvider<ForgetPasswordCubit>(create: (_) => sl<ForgetPasswordCubit>()),
+            BlocProvider<ProfileCubit>(create: (_) => sl<ProfileCubit>()),
+            BlocProvider<ProjectCubit>(create: (_) => sl<ProjectCubit>()..getProjects()),
+            BlocProvider<CertificationsCubit>(create: (_) => sl<CertificationsCubit>()),
+            BlocProvider<ServicesCubit>(create: (_) => sl<ServicesCubit>()),
+            BlocProvider<EngineerCubit>(create: (_) => sl<EngineerCubit>()),
+            BlocProvider<TechnicalWorkerCubit>(create: (_) => sl<TechnicalWorkerCubit>()),
+            BlocProvider<ProductsCubit>(create: (_) => sl<ProductsCubit>()),
+            BlocProvider<BusinessAddProductCubit>(create: (_) => sl<BusinessAddProductCubit>()),
+          ],
+          child: ScreenUtilInit(
+            designSize: const Size(393, 852),
+            minTextAdapt: true,
+            child: BlocBuilder<AppLocalizationCubit, AppLocalizationState>(
+              builder: (context, state) {
+                final TextDirection textDirection = context.read<AppLocalizationCubit>().textDirection;
+
+                return Directionality(
+                  textDirection: textDirection,
+                  child: MaterialApp(
+                    title: 'Home4u App',
+                    theme: appTheme,
+                    navigatorKey: navigatorKey,
+                    supportedLocales: localization.supportedLocales,
+                    localizationsDelegates: localization.localizationsDelegates,
+                    builder: FToastBuilder(),
+                    locale: state is LoadedLocale
+                        ? Locale(state.locale)
+                        : Locale(widget.initialLocale),
+                    onGenerateRoute: widget.appRouter.generateRoute,
+                    debugShowCheckedModeBanner: false,
+                    navigatorObservers: [NavigatorObserver(), _routeObserver],
+                    initialRoute: snapshot.data!,
+                  ),
+                );
+              },
+            ),
+          ),
+        );
+      },
     );
   }
 }

@@ -1,10 +1,12 @@
 import 'package:bloc/bloc.dart';
 import 'package:flutter/material.dart';
+import 'package:home4u/core/helpers/shared_pref_keys.dart';
 import 'package:home4u/features/auth/sign_up/data/models/business_body.dart';
 import 'package:home4u/features/auth/sign_up/logic/sign_up_state.dart';
 import 'package:logger/logger.dart';
 
 import '../../../../core/helpers/helper_methods.dart';
+import '../../../../core/helpers/shared_pref_helper.dart';
 import '../data/models/business_type.dart';
 import '../data/models/city_model.dart';
 import '../data/models/engineer_body.dart';
@@ -102,6 +104,7 @@ class SignUpCubit extends Cubit<SignUpState> {
       return;
     }
     emit(const SignUpState.loadingSignUp());
+    await SharedPrefHelper.setData(SharedPrefKeys.userEmailAddress, emailController.text);
     _prepareSignUpData();
     final response = await signUpRepository.signUp(_buildSignUpBody());
     response.when(

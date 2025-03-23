@@ -1,3 +1,4 @@
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:home4u/core/extensions/navigation_extension.dart';
@@ -24,10 +25,15 @@ class ProductsFirstTextAndButtons extends StatelessWidget {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
-        Text(
-          content!.name ?? "Modern l-Shaped Sofa",
-          style: AppStyles.font16BlackLight,
-        ),
+       Expanded(
+         child: Text(
+            content!.name ?? "Modern l-Shaped Sofa",
+            overflow:TextOverflow.ellipsis,
+            maxLines: 1,
+            softWrap: true,
+            style: AppStyles.font16BlackLight,
+          ),
+       ),
         Row(
           children: [
             AppCustomIconButton(

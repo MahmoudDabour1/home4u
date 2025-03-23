@@ -18,8 +18,8 @@ class FilterPriceSection extends StatefulWidget {
 }
 
 class _FilterPriceSectionState extends State<FilterPriceSection> {
-  double _minPrice = 100;
-  double _maxPrice = 500;
+  // double _minPrice = 100;
+  // double _maxPrice = 500;
 
   late TextEditingController _minPriceController;
   late TextEditingController _maxPriceController;
@@ -27,8 +27,13 @@ class _FilterPriceSectionState extends State<FilterPriceSection> {
   @override
   void initState() {
     super.initState();
-    _minPriceController = TextEditingController(text: _minPrice.toString());
-    _maxPriceController = TextEditingController(text: _maxPrice.toString());
+    final cubit = context.read<ProductsCubit>();
+
+    double minPrice = cubit.minPrice ?? 100;
+    double maxPrice = cubit.maxPrice ?? 500;
+
+    _minPriceController = TextEditingController(text: minPrice.toString());
+    _maxPriceController = TextEditingController(text: maxPrice.toString());
   }
 
   @override
@@ -43,18 +48,26 @@ class _FilterPriceSectionState extends State<FilterPriceSection> {
     double? maxPrice = double.tryParse(_maxPriceController.text);
 
     if (minPrice != null && maxPrice != null && minPrice <= maxPrice) {
-      setState(() {
-        _minPrice = minPrice;
-        _maxPrice = maxPrice;
-      });
       final cubit = context.read<ProductsCubit>();
-      cubit.minPrice = _minPrice;
+
+      cubit.minPrice = minPrice;
       cubit.maxPrice = maxPrice;
+      setState(() {
+
+      });
+      // setState(() {
+      //   _minPrice = minPrice;
+      //   _maxPrice = maxPrice;
+      // });
+      // final cubit = context.read<ProductsCubit>();
+      // cubit.minPrice = _minPrice;
+      // cubit.maxPrice = maxPrice;
     }
   }
 
   @override
   Widget build(BuildContext context) {
+    final cubit = context.watch<ProductsCubit>();
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
@@ -90,17 +103,21 @@ class _FilterPriceSectionState extends State<FilterPriceSection> {
           ],
         ),
         PriceFilterRangeWidget(
-          minPrice: _minPrice,
-          maxPrice: _maxPrice,
+          minPrice: cubit.minPrice ?? 100,
+          maxPrice: cubit.maxPrice ?? 500,
           onChanged: (values) {
             setState(() {
-              _minPrice = values.start;
-              _maxPrice = values.end;
-              _minPriceController.text = _minPrice.toStringAsFixed(0);
-              _maxPriceController.text = _maxPrice.toStringAsFixed(0);
+              // _minPrice = values.start;
+              // _maxPrice = values.end;
+              // _minPriceController.text = _minPrice.toStringAsFixed(0);
+              // _maxPriceController.text = _maxPrice.toStringAsFixed(0);
+              _minPriceController.text = values.start.toStringAsFixed(0);
+              _maxPriceController.text = values.end.toStringAsFixed(0);
             });
-            context.read<ProductsCubit>().minPrice = _minPrice;
-            context.read<ProductsCubit>().maxPrice = _maxPrice;
+            // context.read<ProductsCubit>().minPrice = _minPrice;
+            // context.read<ProductsCubit>().maxPrice = _maxPrice;
+            cubit.minPrice = values.start;
+            cubit.maxPrice = values.end;
           },
         ),
         verticalSpace(16),

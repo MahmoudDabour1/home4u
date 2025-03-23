@@ -24,12 +24,10 @@ class VerificationCubit extends Cubit<VerificationState> {
       otpValve!.toString(),
     );
     response.when(
-      success: (
-        verificationResponse,
-      ) async {
+      success: (verificationResponse,) async {
         await showToast(
             message:
-                verificationResponse.data ?? "Email Verified Successfully");
+            verificationResponse.data ?? "Email Verified Successfully");
         emit(VerificationState.success(verificationResponse));
       },
       failure: (error) async {

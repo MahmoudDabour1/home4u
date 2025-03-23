@@ -269,14 +269,14 @@ class BusinessAddProductCubit extends Cubit<BusinessAddProductState> {
     final productCubit = context.read<ProductsCubit>();
 
     final materialNames = selectedMaterials?.map((id) {
-          final material = productCubit.materials.firstWhere(
+          final material = productCubit.materials!.firstWhere(
             (material) => material.id == id,
           );
           return material.name ?? 'N/A';
         }).join(', ') ??
         '';
 
-    final baseUnitName = productCubit.baseUnits
+    final baseUnitName = productCubit.baseUnits!
             .firstWhere(
               (unit) => unit.id == selectedBaseUnit,
             )
@@ -284,7 +284,7 @@ class BusinessAddProductCubit extends Cubit<BusinessAddProductState> {
         'N/A';
 
     final productStockAndColors = selectedColorsAndStock.map((item) {
-      final color = productCubit.colors.firstWhere(
+      final color = productCubit.colors!.firstWhere(
         (element) => element.id == item["colorId"],
       );
       return {

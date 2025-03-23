@@ -64,7 +64,7 @@ class _AddProductColorsAndStockState extends State<AddProductColorsAndStock> {
           builder: (context, state) {
             return AppCustomDropDownButtonFormField(
               value: selectedColorId,
-              items: productsCubit.colors.map((color) {
+              items: productsCubit.colors!.map((color) {
                 return DropdownMenuItem<String>(
                   value: color.id.toString(),
                   child: Text(
@@ -106,7 +106,7 @@ class _AddProductColorsAndStockState extends State<AddProductColorsAndStock> {
                         businessCubit.productStockAmountController.text);
                     if (stock > 0) {
                       final selectedColorObject =
-                      productsCubit.colors.firstWhere(
+                      productsCubit.colors!.firstWhere(
                             (element) => element.id.toString() == selectedColorId,
                         orElse: () => throw Exception("Color not found!"),
                       );

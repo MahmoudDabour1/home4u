@@ -16,10 +16,19 @@ class FilterAvailabilitySection extends StatefulWidget {
 }
 
 class _FilterAvailabilitySectionState extends State<FilterAvailabilitySection> {
-  bool isAvailable = false;
+ late bool isAvailable ;
+
+  @override
+  void initState() {
+    super.initState();
+    final cubit = context.read<ProductsCubit>();
+
+    isAvailable = cubit.isAvailable ?? false;
+  }
 
   @override
   Widget build(BuildContext context) {
+    final cubit = context.watch<ProductsCubit>();
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
@@ -30,12 +39,12 @@ class _FilterAvailabilitySectionState extends State<FilterAvailabilitySection> {
         AnimatedSwitcher(
           duration: Duration(seconds: 1),
           child: Switch(
-            value: isAvailable,
+            value: cubit.isAvailable ?? false,
             onChanged: (value) {
               setState(() {
                 isAvailable = !isAvailable;
                 isAvailable = value;
-                context.read<ProductsCubit>().isAvailable = isAvailable;
+                cubit.isAvailable = isAvailable;
               });
             },
             activeColor: AppColors.whiteColor,
