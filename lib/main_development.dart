@@ -26,7 +26,6 @@ void main() async {
       FlutterLocalization.instance.ensureInitialized(),
       Hive.initFlutter(),
       initHive(),
-      checkIfLoggedInUser(),
     ],
   );
 
@@ -57,12 +56,4 @@ void main() async {
   );
 }
 
-Future<void> checkIfLoggedInUser() async {
-  String userToken =
-      await SharedPrefHelper.getSecuredString(SharedPrefKeys.userToken);
-  if (!userToken.isNullOrEmpty()) {
-    isLoggedInUser = true;
-  } else {
-    isLoggedInUser = false;
-  }
-}
+

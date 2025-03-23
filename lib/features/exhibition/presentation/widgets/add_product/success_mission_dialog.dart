@@ -91,7 +91,7 @@ class SuccessMissionDialog extends StatelessWidget {
         SizedBox(height: 16.h),
         AppCustomButton(
           onPressed: () {
-            context.pushNamed(Routes.productsScreen);
+            context.pushNameAndRemoveUntil(Routes.productsScreen, predicate: (route) => false, );
           },
           textButton: AppLocale.goToProductList.getString(context),
           btnHeight: 50.h,

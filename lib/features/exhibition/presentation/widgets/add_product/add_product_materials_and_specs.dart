@@ -44,7 +44,7 @@ class _AddProductMaterialsAndSpecsState
     } else {
       selectedMaterials = [];
     }
-    if (productCubit.materials.isEmpty) {
+    if (productCubit.materials!.isEmpty) {
       productCubit.getBusinessConfig();
     }
   }
@@ -82,7 +82,7 @@ class _AddProductMaterialsAndSpecsState
             return null;
           },
           selectedValues: selectedMaterials ?? [],
-          items: productCubit.materials
+          items: productCubit.materials!
               .map((material) => material.name ?? "N/A")
               .toList(),
           labelText: AppLocale.selectMaterials.getString(context),
@@ -92,7 +92,7 @@ class _AddProductMaterialsAndSpecsState
             });
             businessCubit.selectedMaterials = values.isNotEmpty
                 ? values.map((name) {
-              return productCubit.materials.firstWhere(
+              return productCubit.materials!.firstWhere(
                     (material) => material.name == name,
               ).id;
             }).whereType<int>().toList()
@@ -102,7 +102,7 @@ class _AddProductMaterialsAndSpecsState
           onSaved: (value) {
             businessCubit.selectedMaterials = value != null && value.isNotEmpty
                 ? value.map((name) {
-              return productCubit.materials.firstWhere(
+              return productCubit.materials!.firstWhere(
                     (material) => material.name == name,
               ).id;
             }).whereType<int>().toList()

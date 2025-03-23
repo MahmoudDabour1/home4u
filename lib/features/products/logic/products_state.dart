@@ -27,6 +27,7 @@ part "products_state.freezed.dart";
 //pagination
   const factory ProductsState.paginationLoading() = PaginationLoading;
   const factory ProductsState.paginationFailure({required String errorMessage}) =  PaginationFailure;
-
+//reset Filter
+  const factory ProductsState.resetFilter() = ResetFilter;
 }
 

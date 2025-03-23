@@ -16,11 +16,15 @@ import 'home4u_app.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  await setupGetIt();
-  await ScreenUtil.ensureScreenSize();
-  await Hive.initFlutter();
-  await initHive();
-  await checkIfLoggedInUser();
+  await Future.wait(
+    [
+      setupGetIt(),
+      ScreenUtil.ensureScreenSize(),
+      FlutterLocalization.instance.ensureInitialized(),
+      Hive.initFlutter(),
+      initHive(),
+    ],
+  );
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
@@ -35,13 +39,4 @@ void main() async {
       initialLocale: initialLocale,
     ),
   );
-}
-
-checkIfLoggedInUser() async {
-  String userToken = await SharedPrefHelper.getSecuredString(SharedPrefKeys.userToken);
-  if (!userToken.isNullOrEmpty()) {
-    isLoggedInUser = true;
-  } else{
-    isLoggedInUser = false;
-  }
 }

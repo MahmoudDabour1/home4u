@@ -207,6 +207,7 @@ class AppLocale {
   static const String materialsSpecs = 'Materials & Specs';
   static const String colorsStock = 'Colors & Stock';
   static const String uploadImages = 'Upload Images';
+  static const String clear = 'Clear';
 
   static List<String> bottomNavItems = [
     'Home',
@@ -431,6 +432,7 @@ class AppLocale {
     productDetails : 'Product Details',
     updateProduct : 'Update Product',
     productUpdatedSuccessfully : 'Product Updated Successfully',
+    clear : 'Clear',
   };
 
   static const Map<String, dynamic> ar = {
@@ -632,5 +634,6 @@ class AppLocale {
     productDetails : 'تفاصيل المنتج',
     updateProduct : 'تحديث المنتج',
     productUpdatedSuccessfully : 'تم تحديث المنتج بنجاح',
+    clear : 'مسح',
   };
 }

@@ -72,6 +72,7 @@ class _ProductsScreenState extends State<ProductsScreen>
               builder: (context) => BusinessHeaderWidget(
                 headerTitle: AppLocale.products.getString(context),
                 headerIcon: AppAssets.productWhiteSvg,
+
               ),
             ),
           ),

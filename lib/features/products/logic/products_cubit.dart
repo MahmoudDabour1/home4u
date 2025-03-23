@@ -47,10 +47,16 @@ class ProductsCubit extends Cubit<ProductsState> {
 
   static ProductsCubit get(context) => BlocProvider.of(context);
 
-  List<ProductBaseUnit> baseUnits = [];
-  List<FilterColor> colors = [];
-  List<ProductMaterial> materials = [];
-  ProductPreviewResponse? productPreviewResponse; // Add this
+  List<ProductBaseUnit>? baseUnits = [];
+  List<FilterColor>? colors = [];
+  List<ProductMaterial>? materials = [];
+  ProductPreviewResponse? productPreviewResponse;// Add this
+
+  //resolve filter
+  List<String>? selectedBusinessTypeNames = [];
+  List<String> ?selectedMaterialNames = [];
+  List<String>? selectedColorNames = [];
+
 
   Future<void> getProducts({bool isRefresh = false}) async {
     final int userBusinessId =
@@ -97,7 +103,7 @@ class ProductsCubit extends Cubit<ProductsState> {
     final response = await _productsRepo.getProducts(requestBody);
 
     response.when(success: (data) async {
-      await _productsLocalDatasource.cacheProductsData(data);
+      // await _productsLocalDatasource.cacheProductsData(data);
 
       final newProducts = data.data?.content ?? [];
       if (newProducts.isEmpty) {
@@ -198,26 +204,24 @@ class ProductsCubit extends Cubit<ProductsState> {
     products.clear();
   }
 
+  void resetFilters() {
+    selectedBusinessTypeNames = null;
+    selectedMaterialNames = null;
+    selectedColorNames = null;
+    colors = null;
+    baseUnits = null;
+    materials = null;
+    minPrice = null;
+    colorsIds= [];
+    materialIds =  [];
+    businessTypeIds= [];
+    maxPrice = null;
+    isAvailable = null;
+    emit(ProductsState.resetFilter());
+  }
   @override
   Future<void> close() {
     resetPagination();
     return super.close();
   }
-}
-
-Future<Map<String, dynamic>> _productsFilterJson(
-  double? minPrice,
-  double? maxPrice,
-  List<int>? colorsIds,
-  List<int>? businessTypeIds,
-) async {
-  return {
-    "searchCriteria": {
-      "businessId": 12,
-      "minPrice": minPrice,
-      "maxPrice": maxPrice,
-      "colorsIds": colorsIds,
-      "businessTypeIds": businessTypeIds,
-    }
-  };
 }

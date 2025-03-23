@@ -99,7 +99,7 @@ class _BasicDetailsDropDownButtonsState
           builder: (context, state) {
             return AppCustomDropDownButtonFormField(
               value: selectedBaseUnit,
-              items: productsCubit.baseUnits.map((material) {
+              items: productsCubit.baseUnits!.map((material) {
                 return DropdownMenuItem<String>(
                   value: material.id.toString(),
                   child: Text(

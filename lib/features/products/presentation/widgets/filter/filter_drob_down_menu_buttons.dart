@@ -24,11 +24,15 @@ class _FilterDropDownMenuButtonsState extends State<FilterDropDownMenuButtons> {
  List<String>? selectedMaterials;
   List<String>? selectedColor;
 
+
   @override
   Widget build(BuildContext context) {
     return BlocBuilder<ProductsCubit, ProductsState>(
       builder: (context, state) {
         final cubit = context.watch<ProductsCubit?>();
+        selectedCategories = cubit?.selectedBusinessTypeNames ?? [];
+        selectedMaterials = cubit?.selectedMaterialNames ?? [];
+        selectedColor = cubit?.selectedColorNames ?? [];
         return Column(
           children:<Widget> [
             verticalSpace(32),
@@ -47,6 +51,7 @@ class _FilterDropDownMenuButtonsState extends State<FilterDropDownMenuButtons> {
                         .firstWhere((businessTypes) => businessTypes.name == name)
                         .id;
                   }).toList();
+                  cubit?.selectedBusinessTypeNames = values;
                 });
               },
               onSaved: (List<String>? values) {
@@ -56,6 +61,7 @@ class _FilterDropDownMenuButtonsState extends State<FilterDropDownMenuButtons> {
                         .firstWhere((color) => color.name == name)
                         .id;
                   }).toList();
+                  cubit?.selectedBusinessTypeNames = values;
                 }
               },
             ),
@@ -75,6 +81,7 @@ class _FilterDropDownMenuButtonsState extends State<FilterDropDownMenuButtons> {
                         .firstWhere((material) => material.name == name)
                         .id;
                   }).toList();
+                  cubit?.selectedMaterialNames = values;
                 });
               },
               onSaved: (List<String>? values) {
@@ -84,6 +91,7 @@ class _FilterDropDownMenuButtonsState extends State<FilterDropDownMenuButtons> {
                         .firstWhere((color) => color.name == name)
                         .id;
                   }).toList();
+                  cubit?.selectedMaterialNames = values;
                 }
               },
             ),
@@ -104,6 +112,7 @@ class _FilterDropDownMenuButtonsState extends State<FilterDropDownMenuButtons> {
                         .firstWhere((color) => color.name == name)
                         .id;
                   }).toList();
+                  cubit?.selectedColorNames = values;
                 });
               },
               onSaved: (List<String>? values) {
@@ -113,6 +122,7 @@ class _FilterDropDownMenuButtonsState extends State<FilterDropDownMenuButtons> {
                         .firstWhere((color) => color.name == name)
                         .id;
                   }).toList();
+                  cubit?.selectedColorNames = values;
                 }
               },
             ),
