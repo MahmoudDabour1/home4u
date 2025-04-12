@@ -2,6 +2,7 @@ import 'package:bloc/bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:home4u/core/helpers/shared_pref_keys.dart';
 import 'package:home4u/features/auth/sign_up/data/models/business_body.dart';
+import 'package:home4u/features/auth/sign_up/data/models/engineering_office_body.dart';
 import 'package:home4u/features/auth/sign_up/logic/sign_up_state.dart';
 import 'package:logger/logger.dart';
 
@@ -62,6 +63,8 @@ class SignUpCubit extends Cubit<SignUpState> {
   }
 
   final GlobalKey<FormState> formKey = GlobalKey<FormState>();
+
+  ///base
   final TextEditingController firstNameController = TextEditingController();
   final TextEditingController lastNameController = TextEditingController();
   final TextEditingController emailController = TextEditingController();
@@ -69,16 +72,22 @@ class SignUpCubit extends Cubit<SignUpState> {
   final TextEditingController passwordController = TextEditingController();
   final TextEditingController passwordConfirmationController =
       TextEditingController();
+
+  ///engineer && technical worker
   final TextEditingController yearsOfExperienceController =
       TextEditingController();
+
+  ///engineering office && business
   final TextEditingController tradNameController = TextEditingController();
   final TextEditingController bioArController = TextEditingController();
   final TextEditingController bioEnController = TextEditingController();
+  final TextEditingController descriptionController = TextEditingController();
 
   UserTypeRequest? selectedUserType;
   EngineerRequest? engineerRequest;
   TechnicalWorkerRequest? technicalWorkerRequest;
   BusinessBody? businessTypeRequest;
+  EngineeringOfficeBody? engineeringOfficeRequest;
   String? selectedGovernorate;
   String? selectedCity;
   int? selectedEngineerType;
@@ -86,6 +95,8 @@ class SignUpCubit extends Cubit<SignUpState> {
   int? selectedWorkerType;
   List<int>? selectedWorkerServices;
   List<int>? selectedBusinessTypes;
+  int? selectedEngineeringOfficeField;
+  List<int>? selectedEngineeringOfficeDepartments;
 
   Future<void> getBusinessTypes(int userTypeId) async {
     emit(const SignUpState.loadingBusinessType());
@@ -104,7 +115,8 @@ class SignUpCubit extends Cubit<SignUpState> {
       return;
     }
     emit(const SignUpState.loadingSignUp());
-    await SharedPrefHelper.setData(SharedPrefKeys.userEmailAddress, emailController.text);
+    await SharedPrefHelper.setData(
+        SharedPrefKeys.userEmailAddress, emailController.text);
     _prepareSignUpData();
     final response = await signUpRepository.signUp(_buildSignUpBody());
     response.when(
@@ -151,6 +163,25 @@ class SignUpCubit extends Cubit<SignUpState> {
               .toList(),
         );
         break;
+      case "ENGINEERING_OFFICE":
+        if (selectedEngineeringOfficeField == null ||
+            selectedEngineeringOfficeDepartments == null) {
+          emit(SignUpState.errorSignUp(
+              error: "Please complete engineering office details"));
+          return;
+        }
+        engineeringOfficeRequest = EngineeringOfficeBody(
+          tradeName: tradNameController.text,
+          description: descriptionController.text,
+          engineeringOfficeField: selectedEngineeringOfficeField != null
+              ? EngineeringOfficeId(id: selectedEngineeringOfficeField!)
+              : null,
+          engineeringOfficeDepartments: selectedEngineeringOfficeDepartments!
+              .map((id) => EngineeringOfficeId(id: id))
+              .toList(),
+        );
+
+        break;
       case "EXHIBITION":
       case "STORE":
         if (selectedBusinessTypes == null) {
@@ -186,5 +217,6 @@ class SignUpCubit extends Cubit<SignUpState> {
         engineer: engineerRequest,
         technicalWorker: technicalWorkerRequest,
         business: businessTypeRequest,
+        engineeringOffice: engineeringOfficeRequest,
       );
 }

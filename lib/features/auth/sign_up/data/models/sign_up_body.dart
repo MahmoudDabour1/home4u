@@ -3,6 +3,7 @@ import 'package:home4u/features/auth/sign_up/data/models/worker_body.dart';
 
 import 'business_body.dart';
 import 'engineer_body.dart';
+import 'engineering_office_body.dart';
 
 part 'sign_up_body.g.dart';
 
@@ -19,6 +20,7 @@ class SignUpBody {
   final EngineerRequest? engineer;
   final TechnicalWorkerRequest? technicalWorker;
   final BusinessBody? business;
+  final EngineeringOfficeBody? engineeringOffice;
 
   SignUpBody({
     required this.firstName,
@@ -32,6 +34,7 @@ class SignUpBody {
     this.engineer,
     this.technicalWorker,
     this.business,
+    this.engineeringOffice,
   });
 
   factory SignUpBody.fromJson(Map<String, dynamic> json) =>
