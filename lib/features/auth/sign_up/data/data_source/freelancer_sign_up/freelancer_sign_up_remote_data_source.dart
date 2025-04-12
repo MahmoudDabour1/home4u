@@ -30,4 +30,12 @@ abstract class FreelancerSignUpRemoteDataSource {
   Future<FreelancerServices> getTechnicalWorkerServices(
     @Path("technicalWorkerTypeId") int technicalWorkerTypeId,
   );
+
+  @GET(ApiConstants.engineeringOfficeFieldsEp)
+  Future<FreelancerTypes> getEngineeringOfficeFields();
+
+  @GET("/api/v1/engineering-office-department/field/{engineeringOfficeFieldId}")
+  Future<FreelancerServices> getEngineeringOfficeServices(
+    @Path("engineeringOfficeFieldId") int engineeringOfficeFieldId,
+  );
 }

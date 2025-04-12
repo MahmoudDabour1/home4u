@@ -34,28 +34,23 @@ class ProjectCubit extends Cubit<ProjectState> {
   final formKey = GlobalKey<FormState>();
 
   void selectImage({required BuildContext context, ImageSource? source}) {
-    ImagePicker.platform
-        .getImageFromSource(
-      source: source!,
-    )
-        .then((value) {
+    final navigator = Navigator.of(context);
+    ImagePicker().pickImage(source: source!).then((value) {
       if (value != null) {
         images.add(File(value.path));
-        Navigator.pop(context);
+        navigator.pop();
         emit(ProjectState.addImage());
       }
     });
   }
 
   void selectCover({required BuildContext context, ImageSource? source}) {
-    ImagePicker.platform
-        .getImageFromSource(
-      source: source!,
-    )
-        .then((value) {
+    final picker = ImagePicker();
+    final navigator = Navigator.of(context);
+    picker.pickImage(source: source!).then((value) {
       if (value != null) {
         coverImage = File(value.path);
-        Navigator.pop(context);
+        navigator.pop();
         emit(ProjectState.addCover());
       }
     });

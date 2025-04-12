@@ -10,6 +10,7 @@ import 'package:home4u/features/auth/sign_up/data/data_source/common_local_data_
 import 'package:home4u/features/auth/sign_up/data/data_source/sign_up_remote_data_source.dart';
 import 'package:home4u/features/auth/sign_up/data/repos/freelancer_sign_up_repository.dart';
 import 'package:home4u/features/auth/sign_up/data/repos/sign_up_repository.dart';
+import 'package:home4u/features/auth/sign_up/logic/engineering_office/engineering_office_cubit.dart';
 import 'package:home4u/features/auth/sign_up/logic/sign_up_cubit.dart';
 import 'package:home4u/features/auth/sign_up/logic/technical_worker/technical_worker_cubit.dart';
 import 'package:home4u/features/auth/verification/data/data_source/verification_remote_data_source.dart';
@@ -99,6 +100,7 @@ Future<void> setupGetIt() async {
       () => FreelancerSignUpRepositoryImpl(remoteDataSource: sl()));
   sl.registerFactory<EngineerCubit>(() => EngineerCubit(sl()));
   sl.registerFactory<TechnicalWorkerCubit>(() => TechnicalWorkerCubit(sl()));
+  sl.registerFactory<EngineeringOfficeCubit>(() => EngineeringOfficeCubit(sl()));
 
   ///projects
   sl.registerLazySingleton<Box<GetProjectsResponseModel>>(

@@ -53,18 +53,15 @@ class ProfileCubit extends Cubit<ProfileState> {
   String? selectedCity;
 
   void selectImage({required BuildContext context, ImageSource? source}) {
-    ImagePicker.platform
-        .getImageFromSource(
-      source: source!,
-    )
-        .then((value) {
+    final nav = Navigator.of(context);
+    ImagePicker().pickImage(source: source!).then((value) {
       if (value != null) {
         image = File(value.path);
-        Navigator.pop(context);
+        nav.pop();
         emit(ProfileState.addImage());
-        uploadProfileImage().then((value) async{
+        uploadProfileImage().then((value) async {
           final userType =
-          await SharedPrefHelper.getString(SharedPrefKeys.userType);
+              await SharedPrefHelper.getString(SharedPrefKeys.userType);
           userType == "ENGINEER"
               ? getEngineerProfileData()
               : getTechnicalWorkerProfileData();
@@ -159,7 +156,7 @@ class ProfileCubit extends Cubit<ProfileState> {
       final formData = await _createImageFormData();
       final result = await _profileRepo.uploadProfileImage(formData);
       final userType =
-      await SharedPrefHelper.getString(SharedPrefKeys.userType);
+          await SharedPrefHelper.getString(SharedPrefKeys.userType);
       result.when(
         success: (uploadProfileImageResponseModel) {
           showToast(message: 'Image Uploaded Successfully');

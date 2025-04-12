@@ -17,7 +17,7 @@ class EngineerSignUp extends StatelessWidget {
             children: [
               AuthWelcomeData(
                 headText: AppLocale.engineerInfo.getString(context),
-                subText: AppLocale.welcomeToHome4You.getString(context),
+                subText: AppLocale.welcomeToArchiSpace.getString(context),
                 isBackButton: true,
               ),
               SignUpInfo(),
