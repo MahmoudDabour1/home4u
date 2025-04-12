@@ -13,6 +13,7 @@ class ApiConstants {
   ///Freelancer
   static const String engineerTypesEp = "/api/v1/engineer-types";
   static const String technicalWorkerTypesEp = "/api/v1/technical-worker-types";
+  static const String engineeringOfficeFieldsEp = "/api/v1/engineering-office-field";
 
   ///Project
   static const String projectAddEp = "/api/v1/project";

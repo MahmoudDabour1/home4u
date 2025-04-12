@@ -57,20 +57,15 @@ class ProfileCubit extends Cubit<ProfileState> {
   String? selectedCity;
 
   void selectImage({required BuildContext context, ImageSource? source}) {
-    ImagePicker.platform
-        .getImageFromSource(
-      source: source!,
-    )
-        .then(
-      (value) {
-        if (value != null) {
-          image = File(value.path);
-          Navigator.pop(context);
-          emit(ProfileState.addImage());
-          uploadProfileImage();
-        }
-      },
-    );
+    final nav = Navigator.of(context);
+    ImagePicker().pickImage(source: source!).then((value) {
+      if (value != null) {
+        image = File(value.path);
+        nav.pop();
+        emit(ProfileState.addImage());
+        uploadProfileImage();
+      }
+    });
   }
 
   Future<void> getEngineerProfileData() async {

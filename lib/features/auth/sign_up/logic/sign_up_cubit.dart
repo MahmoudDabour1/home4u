@@ -1,12 +1,18 @@
+import 'dart:io';
+
 import 'package:bloc/bloc.dart';
+import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:home4u/core/helpers/shared_pref_keys.dart';
 import 'package:home4u/features/auth/sign_up/data/models/business_body.dart';
+import 'package:home4u/features/auth/sign_up/data/models/engineering_office_body.dart';
 import 'package:home4u/features/auth/sign_up/logic/sign_up_state.dart';
+import 'package:http_parser/http_parser.dart';
 import 'package:logger/logger.dart';
 
 import '../../../../core/helpers/helper_methods.dart';
 import '../../../../core/helpers/shared_pref_helper.dart';
+import '../../../../core/routing/router_observer.dart';
 import '../data/models/business_type.dart';
 import '../data/models/city_model.dart';
 import '../data/models/engineer_body.dart';
@@ -62,23 +68,43 @@ class SignUpCubit extends Cubit<SignUpState> {
   }
 
   final GlobalKey<FormState> formKey = GlobalKey<FormState>();
-  final TextEditingController firstNameController = TextEditingController();
-  final TextEditingController lastNameController = TextEditingController();
+
+  ///base
+  final TextEditingController firstNameController =
+      TextEditingController(text: "Mohamed");
+  final TextEditingController lastNameController =
+      TextEditingController(text: "Attia");
   final TextEditingController emailController = TextEditingController();
-  final TextEditingController phoneController = TextEditingController();
-  final TextEditingController passwordController = TextEditingController();
+  final TextEditingController phoneController =
+      TextEditingController(text: "01000000000");
+  final TextEditingController passwordController =
+      TextEditingController(text: "12345678");
   final TextEditingController passwordConfirmationController =
-      TextEditingController();
+      TextEditingController(text: "12345678");
+
+  ///engineer && technical worker
   final TextEditingController yearsOfExperienceController =
       TextEditingController();
+
+  ///engineering office && business
   final TextEditingController tradNameController = TextEditingController();
   final TextEditingController bioArController = TextEditingController();
   final TextEditingController bioEnController = TextEditingController();
+  final TextEditingController descriptionController = TextEditingController();
+  // File? commercialRegisterImage;
+  // File? taxCardImage;
+  // File? personalCardImage;
+  // List<String> imagePathCode = [
+  //   "COMMERCIAL_REGISTER",
+  //   "TAX_CARD",
+  //   "PERSONAL_CARD",
+  // ];
 
   UserTypeRequest? selectedUserType;
   EngineerRequest? engineerRequest;
   TechnicalWorkerRequest? technicalWorkerRequest;
   BusinessBody? businessTypeRequest;
+  EngineeringOfficeBody? engineeringOfficeRequest;
   String? selectedGovernorate;
   String? selectedCity;
   int? selectedEngineerType;
@@ -86,6 +112,8 @@ class SignUpCubit extends Cubit<SignUpState> {
   int? selectedWorkerType;
   List<int>? selectedWorkerServices;
   List<int>? selectedBusinessTypes;
+  int? selectedEngineeringOfficeField;
+  List<int>? selectedEngineeringOfficeDepartments;
 
   Future<void> getBusinessTypes(int userTypeId) async {
     emit(const SignUpState.loadingBusinessType());
@@ -104,11 +132,21 @@ class SignUpCubit extends Cubit<SignUpState> {
       return;
     }
     emit(const SignUpState.loadingSignUp());
-    await SharedPrefHelper.setData(SharedPrefKeys.userEmailAddress, emailController.text);
+    await SharedPrefHelper.setData(
+      SharedPrefKeys.userEmailAddress,
+      emailController.text,
+    );
     _prepareSignUpData();
     final response = await signUpRepository.signUp(_buildSignUpBody());
     response.when(
       success: (data) async {
+        // if (selectedUserType!.code == "ENGINEERING_OFFICE" &&
+        //     data.data?.id != null) {
+        //   final uploadSuccess =
+        //       await _uploadAllEngineeringOfficeImages(data.data!.id!);
+        //   if (!uploadSuccess) return;
+        // }
+
         await showToast(message: "Sign Up Successfully");
         emit(SignUpState.successSignUp(data));
       },
@@ -151,6 +189,54 @@ class SignUpCubit extends Cubit<SignUpState> {
               .toList(),
         );
         break;
+      case "ENGINEERING_OFFICE":
+        if (selectedEngineeringOfficeField == null ||
+            selectedEngineeringOfficeDepartments == null) {
+          emit(SignUpState.errorSignUp(
+              error: "Please complete engineering office details"));
+          return;
+        }
+        // for (var i in imagePathCode) {
+        //   if (i == "COMMERCIAL_REGISTER") {
+        //     if (commercialRegisterImage == null) {
+        //       emit(SignUpState.errorSignUp(
+        //           error: "Please upload commercial register image"));
+        //       return;
+        //     }
+        //   } else if (i == "TAX_CARD") {
+        //     if (taxCardImage == null) {
+        //       emit(SignUpState.errorSignUp(
+        //           error: "Please upload tax card image"));
+        //       return;
+        //     }
+        //   } else if (i == "PERSONAL_CARD") {
+        //     if (personalCardImage == null) {
+        //       emit(SignUpState.errorSignUp(
+        //           error: "Please upload personal card image"));
+        //       return;
+        //     }
+        //   }
+        // }
+
+        logger.i("Preparing Engineering Office SignUp Data:");
+        logger.i("Trade Name: ${tradNameController.text}");
+        logger.i("Description: ${descriptionController.text}");
+        logger.i("Selected Field: $selectedEngineeringOfficeField");
+        logger.i("Selected Departments: $selectedEngineeringOfficeDepartments");
+
+        engineeringOfficeRequest = EngineeringOfficeBody(
+          tradeName: tradNameController.text,
+          description: descriptionController.text,
+          engineeringOfficeField: selectedEngineeringOfficeField != null
+              ? EngineeringOfficeId(id: selectedEngineeringOfficeField!)
+              : null,
+          engineeringOfficeDepartments: selectedEngineeringOfficeDepartments!
+              .map((id) => EngineeringOfficeId(id: id))
+              .toList(),
+        );
+
+        logger.i("EngineeringOfficeRequest: $engineeringOfficeRequest");
+        break;
       case "EXHIBITION":
       case "STORE":
         if (selectedBusinessTypes == null) {
@@ -186,5 +272,64 @@ class SignUpCubit extends Cubit<SignUpState> {
         engineer: engineerRequest,
         technicalWorker: technicalWorkerRequest,
         business: businessTypeRequest,
+        engineeringOffice: engineeringOfficeRequest,
       );
+
+  // Future<bool> _uploadAllEngineeringOfficeImages(int userId) async {
+  //   final Map<String, File?> images = {
+  //     "COMMERCIAL_REGISTER": commercialRegisterImage,
+  //     "TAX_CARD": taxCardImage,
+  //     "PERSONAL_CARD": personalCardImage,
+  //   };
+  //
+  //   for (final entry in images.entries) {
+  //     final pathCode = entry.key;
+  //     final file = entry.value;
+  //
+  //     if (file == null) {
+  //       emit(SignUpState.errorEngineeringOfficeUploadImages(
+  //         error: "Missing image for $pathCode",
+  //       ));
+  //       return false;
+  //     }
+  //
+  //     emit(SignUpState.loadingEngineeringOfficeUploadImages());
+  //
+  //     final formData = FormData.fromMap({
+  //       'file': await MultipartFile.fromFile(
+  //         file.path,
+  //         filename: file.path.split('/').last,
+  //         contentType: MediaType('image', 'jpeg'),
+  //       ),
+  //     });
+  //
+  //     final result = await signUpRepository.uploadEngineeringOfficeImages(
+  //       pathCode,
+  //       userId,
+  //       formData,
+  //     );
+  //
+  //     final success = result.when(
+  //       success: (data) {
+  //         if (data.success) {
+  //           emit(SignUpState.successEngineeringOfficeUploadImages());
+  //           return true;
+  //         } else {
+  //           emit(SignUpState.errorEngineeringOfficeUploadImages(
+  //               error: "Failed to upload $pathCode"));
+  //           return false;
+  //         }
+  //       },
+  //       failure: (error) {
+  //         emit(SignUpState.errorEngineeringOfficeUploadImages(
+  //             error: error.message ?? "Error uploading $pathCode"));
+  //         return false;
+  //       },
+  //     );
+  //
+  //     if (!success) return false;
+  //   }
+  //
+  //   return true;
+  // }
 }

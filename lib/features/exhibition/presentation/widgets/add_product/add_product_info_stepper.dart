@@ -11,7 +11,6 @@ import 'package:home4u/core/theming/app_assets.dart';
 import 'package:home4u/core/theming/app_colors.dart';
 import 'package:home4u/core/utils/spacing.dart';
 import 'package:home4u/features/exhibition/logic/business_add_product_state.dart';
-import 'package:home4u/features/products/logic/products_cubit.dart';
 
 import '../../../../../core/localization/app_localization_cubit.dart';
 import '../../../../../core/theming/app_styles.dart';

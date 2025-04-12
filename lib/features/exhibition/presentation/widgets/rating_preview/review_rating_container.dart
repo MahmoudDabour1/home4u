@@ -68,7 +68,7 @@ class ReviewRatingContainer extends StatelessWidget {
               ? "Based on 100 reviews"
               : "بناءً على 100 تقييم",
           style: AppStyles.font24BlackMedium.copyWith(
-            color: Color(0xff000000).withOpacity(0.5),
+            color: Color(0xff000000).withValues(alpha:0.5),
           ),
         ),
       ],

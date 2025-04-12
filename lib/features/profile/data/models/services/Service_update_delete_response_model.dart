@@ -1,4 +1,3 @@
-
 class ServiceUpdateDeleteResponseModel {
   ServiceUpdateDeleteResponseModel({
       this.success, 

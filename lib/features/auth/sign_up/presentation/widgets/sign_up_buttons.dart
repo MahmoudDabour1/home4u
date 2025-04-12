@@ -72,6 +72,9 @@ class SignUpButtons extends StatelessWidget {
       case "TECHNICAL_WORKER":
         context.pushNamed(Routes.technicalWorkerSignUpScreen);
         break;
+      case "ENGINEERING_OFFICE":
+        context.pushNamed(Routes.engineeringOfficeScreen);
+        break;
       case "EXHIBITION":
       case "STORE":
         context.read<SignUpCubit>().getBusinessTypes(userTypeId!);

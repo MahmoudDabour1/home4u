@@ -153,7 +153,7 @@ class BusinessAddProductCubit extends Cubit<BusinessAddProductState> {
           if (!seen.contains(colorId)) {
             seen.add(colorId);
             uniqueStocks.add(Stock(
-              id: existingStock?.id,
+              id: existingStock.id,
               color: BaseUnit(id: colorId),
               amount: stockAmount,
             ));
@@ -192,6 +192,7 @@ class BusinessAddProductCubit extends Cubit<BusinessAddProductState> {
     );
   }
 
+  ///Step :: 2
   Future<void> _addBusinessProductImages(int productId) async {
     emit(const BusinessAddProductState.addBusinessProductImageLoading());
 
@@ -219,6 +220,7 @@ class BusinessAddProductCubit extends Cubit<BusinessAddProductState> {
     );
   }
 
+  ///Step :: 3
   Future<void> _uploadBusinessImages(
       BusinessAddProductImagesResponse imageResponse) async {
     emit(const BusinessAddProductState.uploadBusinessImageLoading());

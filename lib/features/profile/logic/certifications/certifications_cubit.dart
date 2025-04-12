@@ -29,14 +29,11 @@ class CertificationsCubit extends Cubit<CertificationsState> {
   final formKey = GlobalKey<FormState>();
 
   void selectImage({required BuildContext context, ImageSource? source}) {
-    ImagePicker.platform
-        .getImageFromSource(
-      source: source!,
-    )
-        .then((value) {
+    final nav = Navigator.of(context);
+    ImagePicker().pickImage(source: source!).then((value) {
       if (value != null) {
         image = File(value.path);
-        Navigator.pop(context);
+        nav.pop();
         emit(CertificationsState.addImage());
       }
     });
@@ -149,7 +146,8 @@ class CertificationsCubit extends Cubit<CertificationsState> {
     );
   }
 
-  Future<void> updateCertification(int certificationId, BuildContext context) async {
+  Future<void> updateCertification(
+      int certificationId, BuildContext context) async {
     emit(CertificationsState.updateCertificationLoading());
     try {
       final formData = await _updateFormData(certificationId);

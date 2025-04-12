@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:home4u/core/routing/routes.dart';
-import 'package:home4u/features/auth/engineering_office/presentation/engineering_office_screen.dart';
+import 'package:home4u/features/auth/sign_up/presentation/engineering_office_screen.dart';
 import 'package:home4u/features/auth/forget_password/presentation/forget_password_screen.dart';
 import 'package:home4u/features/auth/login/logic/login_cubit.dart';
 import 'package:home4u/features/auth/new_password/logic/new_password_cubit.dart';

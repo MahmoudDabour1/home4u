@@ -17,7 +17,7 @@ class BusinessSignUpScreen extends StatelessWidget {
             children: [
               AuthWelcomeData(
                 headText: AppLocale.businessInfo.getString(context),
-                subText: AppLocale.welcomeToHome4You.getString(context),
+                subText: AppLocale.welcomeToArchiSpace.getString(context),
                 isBackButton: true,
               ),
               BusinessSignUpInfo(),

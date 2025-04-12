@@ -6,10 +6,7 @@ import 'package:flutter_svg/svg.dart';
 import 'package:home4u/core/extensions/navigation_extension.dart';
 import 'package:home4u/core/theming/app_styles.dart';
 import 'package:home4u/core/widgets/app_custom_button.dart';
-import 'package:home4u/core/widgets/app_custom_icon_button.dart';
-import 'package:home4u/core/widgets/app_custom_text_button_with_icon.dart';
 
-import '../../../../../core/routing/router_observer.dart';
 import '../../../../../core/theming/app_assets.dart';
 import '../../../../../core/theming/app_colors.dart';
 import '../../../../../core/utils/spacing.dart';

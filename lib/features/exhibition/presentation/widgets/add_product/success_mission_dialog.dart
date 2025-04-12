@@ -10,7 +10,6 @@ import 'package:home4u/core/theming/app_colors.dart';
 import 'package:home4u/core/theming/app_styles.dart';
 import 'package:home4u/core/widgets/app_custom_button.dart';
 import 'package:home4u/core/widgets/app_custom_text_button_with_icon.dart';
-import 'package:home4u/features/products/logic/products_cubit.dart';
 import 'package:home4u/locale/app_locale.dart';
 
 import '../../../logic/business_add_product_cubit.dart';
@@ -61,7 +60,6 @@ class SuccessMissionDialog extends StatelessWidget {
   }
 
   Widget _buildButtons(BuildContext context) {
-    var cubit = context.read<ProductsCubit>();
     return Column(
       children: [
         BlocBuilder<BusinessAddProductCubit, BusinessAddProductState>(

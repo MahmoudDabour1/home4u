@@ -31,7 +31,7 @@ class _AppCustomMenuState extends State<AppCustomMenu> {
           borderRadius: BorderRadius.circular(16.r),
           boxShadow: [
             BoxShadow(
-              color: Colors.black.withOpacity(0.1),
+              color: Colors.black.withValues(alpha:0.1),
               blurRadius: 8,
               offset: Offset(0, 4),
             ),

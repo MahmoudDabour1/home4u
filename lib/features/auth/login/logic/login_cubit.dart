@@ -51,7 +51,7 @@ class LoginCubit extends Cubit<LoginState> {
           saveUserBusinessTypeId(userBusinessTypeId.toString()),
 
           ///ToDo :  the problem is inside model of login response
-          ///ToDo :  tell backend to fix it [make business id as int not string]
+          ///ToDo :  tell backend to fix it "Business Id" [make business id as int not string]
         ]);
         await showToast(
           message: AppLocale.loginSuccessfully.getString(context),
