@@ -1,15 +1,18 @@
 import 'dart:io';
 
 import 'package:bloc/bloc.dart';
+import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:home4u/core/helpers/shared_pref_keys.dart';
 import 'package:home4u/features/auth/sign_up/data/models/business_body.dart';
 import 'package:home4u/features/auth/sign_up/data/models/engineering_office_body.dart';
 import 'package:home4u/features/auth/sign_up/logic/sign_up_state.dart';
+import 'package:http_parser/http_parser.dart';
 import 'package:logger/logger.dart';
 
 import '../../../../core/helpers/helper_methods.dart';
 import '../../../../core/helpers/shared_pref_helper.dart';
+import '../../../../core/routing/router_observer.dart';
 import '../data/models/business_type.dart';
 import '../data/models/city_model.dart';
 import '../data/models/engineer_body.dart';
@@ -67,13 +70,17 @@ class SignUpCubit extends Cubit<SignUpState> {
   final GlobalKey<FormState> formKey = GlobalKey<FormState>();
 
   ///base
-  final TextEditingController firstNameController = TextEditingController();
-  final TextEditingController lastNameController = TextEditingController();
+  final TextEditingController firstNameController =
+      TextEditingController(text: "Mohamed");
+  final TextEditingController lastNameController =
+      TextEditingController(text: "Attia");
   final TextEditingController emailController = TextEditingController();
-  final TextEditingController phoneController = TextEditingController();
-  final TextEditingController passwordController = TextEditingController();
+  final TextEditingController phoneController =
+      TextEditingController(text: "01000000000");
+  final TextEditingController passwordController =
+      TextEditingController(text: "12345678");
   final TextEditingController passwordConfirmationController =
-      TextEditingController();
+      TextEditingController(text: "12345678");
 
   ///engineer && technical worker
   final TextEditingController yearsOfExperienceController =
@@ -84,9 +91,14 @@ class SignUpCubit extends Cubit<SignUpState> {
   final TextEditingController bioArController = TextEditingController();
   final TextEditingController bioEnController = TextEditingController();
   final TextEditingController descriptionController = TextEditingController();
-  File? commercialRegisterImage;
-  File? taxCardImage;
-  File? personalCardImage;
+  // File? commercialRegisterImage;
+  // File? taxCardImage;
+  // File? personalCardImage;
+  // List<String> imagePathCode = [
+  //   "COMMERCIAL_REGISTER",
+  //   "TAX_CARD",
+  //   "PERSONAL_CARD",
+  // ];
 
   UserTypeRequest? selectedUserType;
   EngineerRequest? engineerRequest;
@@ -121,11 +133,20 @@ class SignUpCubit extends Cubit<SignUpState> {
     }
     emit(const SignUpState.loadingSignUp());
     await SharedPrefHelper.setData(
-        SharedPrefKeys.userEmailAddress, emailController.text);
+      SharedPrefKeys.userEmailAddress,
+      emailController.text,
+    );
     _prepareSignUpData();
     final response = await signUpRepository.signUp(_buildSignUpBody());
     response.when(
       success: (data) async {
+        // if (selectedUserType!.code == "ENGINEERING_OFFICE" &&
+        //     data.data?.id != null) {
+        //   final uploadSuccess =
+        //       await _uploadAllEngineeringOfficeImages(data.data!.id!);
+        //   if (!uploadSuccess) return;
+        // }
+
         await showToast(message: "Sign Up Successfully");
         emit(SignUpState.successSignUp(data));
       },
@@ -175,7 +196,34 @@ class SignUpCubit extends Cubit<SignUpState> {
               error: "Please complete engineering office details"));
           return;
         }
-        ///need to check here first that all images have been uploaded successfully
+        // for (var i in imagePathCode) {
+        //   if (i == "COMMERCIAL_REGISTER") {
+        //     if (commercialRegisterImage == null) {
+        //       emit(SignUpState.errorSignUp(
+        //           error: "Please upload commercial register image"));
+        //       return;
+        //     }
+        //   } else if (i == "TAX_CARD") {
+        //     if (taxCardImage == null) {
+        //       emit(SignUpState.errorSignUp(
+        //           error: "Please upload tax card image"));
+        //       return;
+        //     }
+        //   } else if (i == "PERSONAL_CARD") {
+        //     if (personalCardImage == null) {
+        //       emit(SignUpState.errorSignUp(
+        //           error: "Please upload personal card image"));
+        //       return;
+        //     }
+        //   }
+        // }
+
+        logger.i("Preparing Engineering Office SignUp Data:");
+        logger.i("Trade Name: ${tradNameController.text}");
+        logger.i("Description: ${descriptionController.text}");
+        logger.i("Selected Field: $selectedEngineeringOfficeField");
+        logger.i("Selected Departments: $selectedEngineeringOfficeDepartments");
+
         engineeringOfficeRequest = EngineeringOfficeBody(
           tradeName: tradNameController.text,
           description: descriptionController.text,
@@ -187,6 +235,7 @@ class SignUpCubit extends Cubit<SignUpState> {
               .toList(),
         );
 
+        logger.i("EngineeringOfficeRequest: $engineeringOfficeRequest");
         break;
       case "EXHIBITION":
       case "STORE":
@@ -226,55 +275,61 @@ class SignUpCubit extends Cubit<SignUpState> {
         engineeringOffice: engineeringOfficeRequest,
       );
 
-  void _uploadEngineeringOfficeImages(int imageId){
-
-  }
+  // Future<bool> _uploadAllEngineeringOfficeImages(int userId) async {
+  //   final Map<String, File?> images = {
+  //     "COMMERCIAL_REGISTER": commercialRegisterImage,
+  //     "TAX_CARD": taxCardImage,
+  //     "PERSONAL_CARD": personalCardImage,
+  //   };
+  //
+  //   for (final entry in images.entries) {
+  //     final pathCode = entry.key;
+  //     final file = entry.value;
+  //
+  //     if (file == null) {
+  //       emit(SignUpState.errorEngineeringOfficeUploadImages(
+  //         error: "Missing image for $pathCode",
+  //       ));
+  //       return false;
+  //     }
+  //
+  //     emit(SignUpState.loadingEngineeringOfficeUploadImages());
+  //
+  //     final formData = FormData.fromMap({
+  //       'file': await MultipartFile.fromFile(
+  //         file.path,
+  //         filename: file.path.split('/').last,
+  //         contentType: MediaType('image', 'jpeg'),
+  //       ),
+  //     });
+  //
+  //     final result = await signUpRepository.uploadEngineeringOfficeImages(
+  //       pathCode,
+  //       userId,
+  //       formData,
+  //     );
+  //
+  //     final success = result.when(
+  //       success: (data) {
+  //         if (data.success) {
+  //           emit(SignUpState.successEngineeringOfficeUploadImages());
+  //           return true;
+  //         } else {
+  //           emit(SignUpState.errorEngineeringOfficeUploadImages(
+  //               error: "Failed to upload $pathCode"));
+  //           return false;
+  //         }
+  //       },
+  //       failure: (error) {
+  //         emit(SignUpState.errorEngineeringOfficeUploadImages(
+  //             error: error.message ?? "Error uploading $pathCode"));
+  //         return false;
+  //       },
+  //     );
+  //
+  //     if (!success) return false;
+  //   }
+  //
+  //   return true;
+  // }
 }
-
-//
-// ///Step :: 3
-// Future<void> _uploadBusinessImages(
-//     BusinessAddProductImagesResponse imageResponse) async {
-//   emit(const BusinessAddProductState.uploadBusinessImageLoading());
-//   DioFactory.setContentTypeForMultipart();
-//
-//   final imageFiles = await Future.wait(
-//     images.map(
-//           (image) => MultipartFile.fromFile(
-//         image.path,
-//         filename: image.path.split('/').last,
-//         contentType: MediaType('image', 'jpeg'),
-//       ),
-//     ),
-//   );
-//
-//   int successCount = 0;
-//
-//   for (var i = 0; i < imageFiles.length; i++) {
-//     final result = await _repository.uploadBusinessImage("BUSINESS_PRODUCTS",
-//         imageResponse.data[i].id, FormData.fromMap({'file': imageFiles[i]}));
-//
-//     result.when(
-//       success: (uploadResponse) {
-//         if (uploadResponse.success) {
-//           successCount++;
-//           if (successCount == imageFiles.length) {
-//             DioFactory.setContentType('application/json');
-//             emit(const BusinessAddProductState.uploadBusinessImageSuccess());
-//           }
-//         } else {
-//           emit(
-//             BusinessAddProductState.uploadBusinessImageFailure(
-//               uploadResponse.data.toString(),
-//             ),
-//           );
-//         }
-//       },
-//       failure: (error) => emit(
-//         BusinessAddProductState.uploadBusinessImageFailure(
-//           error.message.toString(),
-//         ),
-//       ),
-//     );
-//   }
-// }

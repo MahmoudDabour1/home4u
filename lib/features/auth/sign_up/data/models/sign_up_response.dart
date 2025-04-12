@@ -1,19 +1,37 @@
+import 'package:freezed_annotation/freezed_annotation.dart';
+
+part 'sign_up_response.g.dart';
+
+@JsonSerializable()
 class SignUpResponse {
-  final bool success;
-  final int status;
-  final String data;
+  @JsonKey(name: "success")
+  bool? success;
+  @JsonKey(name: "status")
+  int? status;
+  @JsonKey(name: "data")
+  Data? data;
 
   SignUpResponse({
-    required this.success,
-    required this.status,
-    required this.data,
+    this.success,
+    this.status,
+    this.data,
   });
 
-  factory SignUpResponse.fromJson(Map<String, dynamic> json) {
-    return SignUpResponse(
-      success: json["success"],
-      status: json["status"],
-      data: json["data"],
-    );
-  }
+  factory SignUpResponse.fromJson(Map<String, dynamic> json) =>
+      _$SignUpResponseFromJson(json);
+}
+
+@JsonSerializable()
+class Data {
+  @JsonKey(name: "id")
+  int? id;
+  @JsonKey(name: "message")
+  String? message;
+
+  Data({
+    this.id,
+    this.message,
+  });
+
+  factory Data.fromJson(Map<String, dynamic> json) => _$DataFromJson(json);
 }

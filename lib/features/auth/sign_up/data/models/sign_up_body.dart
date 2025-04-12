@@ -20,6 +20,7 @@ class SignUpBody {
   final EngineerRequest? engineer;
   final TechnicalWorkerRequest? technicalWorker;
   final BusinessBody? business;
+  @JsonKey(name: "engineeringOffice")
   final EngineeringOfficeBody? engineeringOffice;
 
   SignUpBody({
