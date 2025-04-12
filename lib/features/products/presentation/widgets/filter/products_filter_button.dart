@@ -62,8 +62,8 @@ class ProductsFilterButton extends StatelessWidget {
         );
       },
       child: Container(
-        width: 40.w,
-        height: 40.h,
+        width: 53.w,
+        height: 53.h,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(16.r),
           color: AppColors.whiteColor,
@@ -71,8 +71,8 @@ class ProductsFilterButton extends StatelessWidget {
         child: Align(
           child: SvgPicture.asset(
             AppAssets.filterSvg,
-            width: 24.w,
-            height: 24.h,
+            width: 28.w,
+            height: 28.h,
           ),
         ),
       ),

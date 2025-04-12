@@ -32,10 +32,18 @@ class _ProfileScreenState extends State<ProfileScreen>
     context.read<CertificationsCubit>().getAllCertifications();
     final String userType =
     await SharedPrefHelper.getString(SharedPrefKeys.userType);
-    if (userType == "ENGINEER") {
-      context.read<ProfileCubit>().getEngineerProfileData();
-    } else {
-      context.read<ProfileCubit>().getTechnicalWorkerProfileData();
+    switch (userType) {
+      case "ENGINEER":
+        context.read<ProfileCubit>().getEngineerProfileData();
+        break;
+      case "TECHNICAL_WORKER":
+        context.read<ProfileCubit>().getTechnicalWorkerProfileData();
+        break;
+      case "ENGINEERING_OFFICE":
+        context.read<ProfileCubit>().getEngineeringOfficeProfileData();
+        break;
+      default:
+        break;
     }
   }
 

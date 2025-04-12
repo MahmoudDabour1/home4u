@@ -23,9 +23,9 @@ class AppCustomSearchTextField extends StatelessWidget {
       },
       keyboardType: TextInputType.text,
       decoration: InputDecoration(
-        constraints: BoxConstraints(
-          maxHeight: 40.h,
-        ),
+        // constraints: BoxConstraints(
+        //   maxHeight: 40.h,
+        // ),
         hintText: AppLocale.search.getString(context),
         prefixIcon: Icon(
           Icons.search_outlined,

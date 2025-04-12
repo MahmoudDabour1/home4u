@@ -36,7 +36,7 @@ class ProductsItem extends StatelessWidget {
         child: Column(
           children: [
             Container(
-              height: MediaQuery.sizeOf(context).height * 0.52,
+              height: MediaQuery.sizeOf(context).height * 0.50,
               width: MediaQuery.sizeOf(context).width,
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(16.r),

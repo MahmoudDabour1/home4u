@@ -25,6 +25,7 @@ class Assets {
   static const String imagesOnboardingTwo = 'assets/images/onboarding_two.png';
   static const String imagesProfileBackImage = 'assets/images/profile_back_image.png';
   static const String imagesSplash = 'assets/images/splash.png';
+  static const String jsonsEmptyList = 'assets/jsons/empty_list.json';
   static const String svgsAddProductSvg = 'assets/svgs/add_product_svg.svg';
   static const String svgsAppLogoSvg = 'assets/svgs/app_logo_svg.svg';
   static const String svgsArrowDown = 'assets/svgs/arrow_down.svg';
