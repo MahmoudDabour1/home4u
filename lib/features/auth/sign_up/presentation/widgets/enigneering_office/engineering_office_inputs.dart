@@ -4,9 +4,9 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:home4u/core/utils/spacing.dart';
 import 'package:home4u/core/widgets/app_custom_drop_down_button_form_field.dart';
 
-import '../../../../../core/theming/app_styles.dart';
-import '../../../../../locale/app_locale.dart';
-import '../../../sign_up/presentation/widgets/egypt_locations_list.dart';
+import '../../../../../../core/theming/app_styles.dart';
+import '../../../../../../locale/app_locale.dart';
+import '../egypt_locations_list.dart';
 import 'engineering_office_images_fields.dart';
 
 class EngineeringOfficeInputs extends StatefulWidget {

@@ -6,7 +6,7 @@ import 'package:home4u/core/theming/app_assets.dart';
 import 'package:home4u/core/utils/spacing.dart';
 import 'package:home4u/core/widgets/app_text_form_field.dart';
 
-import '../../../../../locale/app_locale.dart';
+import '../../../../../../locale/app_locale.dart';
 
 class EngineeringOfficeImagesFields extends StatelessWidget {
   const EngineeringOfficeImagesFields({super.key});
