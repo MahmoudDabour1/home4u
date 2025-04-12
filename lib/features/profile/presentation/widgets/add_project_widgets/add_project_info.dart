@@ -1,3 +1,4 @@
+import 'dart:developer';
 import 'dart:io';
 
 import 'package:bottom_picker/bottom_picker.dart';
@@ -195,7 +196,7 @@ class AddProjectInfo extends StatelessWidget {
         fontSize: 16.sp,
       ),
       onChange: (index) {
-        print(index);
+        log(index);
       },
       onSubmit: (index) {
         String formattedDate =

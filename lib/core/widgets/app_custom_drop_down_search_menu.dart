@@ -28,7 +28,7 @@ class AppCustomDropDownSearchMenu extends StatelessWidget {
         menuProps: MenuProps(
           align: MenuAlign.bottomCenter,
           backgroundColor: AppColors.whiteColor,
-          shadowColor: AppColors.blackColor.withOpacity(0.8),
+          shadowColor: AppColors.blackColor.withValues(alpha: 0.8),
           borderRadius: BorderRadius.circular(16.r),
         ),
         fit: FlexFit.loose,

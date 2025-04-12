@@ -1,3 +1,4 @@
+import 'dart:developer';
 import 'dart:io';
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
@@ -142,20 +143,20 @@ class AddCertificationsInfo extends StatelessWidget {
         final file = File('${directory.path}/temp_image.jpg');
         await file.writeAsBytes(response.data);
         cubit.image = file;
-        print('Image loaded successfully: ${file.path}');
+        log('Image loaded successfully: ${file.path}');
       } else {
         showToast(
           message: "Failed to load image",
           isError: true,
         );
-        print('Failed to load image: ${response.statusCode}');
+        log('Failed to load image: ${response.statusCode}');
       }
     } catch (e) {
       showToast(
         message: "Error loading image: $e",
         isError: true,
       );
-      print('Error loading image: $e');
+      log('Error loading image: $e');
     }
   }
 }

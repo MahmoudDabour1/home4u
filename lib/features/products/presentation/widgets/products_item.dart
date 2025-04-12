@@ -43,7 +43,7 @@ class ProductsItem extends StatelessWidget {
                 color: AppColors.whiteColor,
                 boxShadow: [
                   BoxShadow(
-                    color: AppColors.blackColor.withOpacity(0.1),
+                    color: AppColors.blackColor.withValues(alpha:0.1),
                     blurRadius: 10,
                     spreadRadius: 1,
                     offset: Offset(0, 4),
