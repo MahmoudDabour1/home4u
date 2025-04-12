@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:bloc/bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:home4u/core/helpers/shared_pref_keys.dart';
@@ -82,6 +84,9 @@ class SignUpCubit extends Cubit<SignUpState> {
   final TextEditingController bioArController = TextEditingController();
   final TextEditingController bioEnController = TextEditingController();
   final TextEditingController descriptionController = TextEditingController();
+  File? commercialRegisterImage;
+  File? taxCardImage;
+  File? personalCardImage;
 
   UserTypeRequest? selectedUserType;
   EngineerRequest? engineerRequest;
@@ -170,6 +175,7 @@ class SignUpCubit extends Cubit<SignUpState> {
               error: "Please complete engineering office details"));
           return;
         }
+        ///need to check here first that all images have been uploaded successfully
         engineeringOfficeRequest = EngineeringOfficeBody(
           tradeName: tradNameController.text,
           description: descriptionController.text,
@@ -219,4 +225,56 @@ class SignUpCubit extends Cubit<SignUpState> {
         business: businessTypeRequest,
         engineeringOffice: engineeringOfficeRequest,
       );
+
+  void _uploadEngineeringOfficeImages(int imageId){
+
+  }
 }
+
+//
+// ///Step :: 3
+// Future<void> _uploadBusinessImages(
+//     BusinessAddProductImagesResponse imageResponse) async {
+//   emit(const BusinessAddProductState.uploadBusinessImageLoading());
+//   DioFactory.setContentTypeForMultipart();
+//
+//   final imageFiles = await Future.wait(
+//     images.map(
+//           (image) => MultipartFile.fromFile(
+//         image.path,
+//         filename: image.path.split('/').last,
+//         contentType: MediaType('image', 'jpeg'),
+//       ),
+//     ),
+//   );
+//
+//   int successCount = 0;
+//
+//   for (var i = 0; i < imageFiles.length; i++) {
+//     final result = await _repository.uploadBusinessImage("BUSINESS_PRODUCTS",
+//         imageResponse.data[i].id, FormData.fromMap({'file': imageFiles[i]}));
+//
+//     result.when(
+//       success: (uploadResponse) {
+//         if (uploadResponse.success) {
+//           successCount++;
+//           if (successCount == imageFiles.length) {
+//             DioFactory.setContentType('application/json');
+//             emit(const BusinessAddProductState.uploadBusinessImageSuccess());
+//           }
+//         } else {
+//           emit(
+//             BusinessAddProductState.uploadBusinessImageFailure(
+//               uploadResponse.data.toString(),
+//             ),
+//           );
+//         }
+//       },
+//       failure: (error) => emit(
+//         BusinessAddProductState.uploadBusinessImageFailure(
+//           error.message.toString(),
+//         ),
+//       ),
+//     );
+//   }
+// }

@@ -12,7 +12,7 @@ class EngineeringOfficeCubit extends Cubit<EngineeringOfficeState> {
       : super(const EngineeringOfficeState.initial());
 
   List<FreelancerTypeData> engineeringOfficeFields = [];
-  List<FreelancerServiceData> engineeringOfficeServices = [];
+  List<FreelancerServiceData> engineeringOfficeDepartments = [];
 
   void getEngineeringOfficeFields() async {
     emit(const EngineeringOfficeState.loadingEngineeringOfficeFields());
@@ -38,7 +38,7 @@ class EngineeringOfficeCubit extends Cubit<EngineeringOfficeState> {
       final result = await freelancerSignUpRepository
           .getEngineeringOfficeServices(engineeringOfficeFieldId);
       result.when(success: (data) {
-        engineeringOfficeServices = data;
+        engineeringOfficeDepartments = data;
         emit(EngineeringOfficeState.successEngineeringOfficeServices(data));
       }, failure: (error) {
         emit(EngineeringOfficeState.errorEngineeringOfficeServices(

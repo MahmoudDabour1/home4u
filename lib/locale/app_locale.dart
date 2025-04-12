@@ -56,7 +56,9 @@ class AppLocale {
   static const String theCity = 'The City';
   static const String chooseYourAccountType = 'Choose your account type';
   static const String welcomeToArchiSpace = 'Welcome to ArchiSpace';
-  static const String engineeringOffice = 'Engineering office';
+  static const String engineeringOffice = 'Engineering Office';
+  static const String engineeringOfficeFields = 'Engineering Office Fields';
+  static const String engineeringOfficeDepartments =  'Engineering Office Departments';
   static const String scopeOfWork = 'Scope of work';
   static const String enterTheBio = 'Enter the bio';
   static const String enterTheServices = 'Enter the services';
@@ -287,7 +289,9 @@ class AppLocale {
     theCity: 'The City',
     chooseYourAccountType: 'Choose your account type',
     welcomeToArchiSpace: 'Welcome to Home 4 you',
-    engineeringOffice: 'Engineering office',
+    engineeringOffice: 'Engineering Office',
+    engineeringOfficeFields: 'Engineering Office Fields',
+    engineeringOfficeDepartments: 'Engineering Office Departments',
     scopeOfWork: 'Scope of work',
     enterTheBio: 'Enter the bio',
     enterTheServices: 'Enter the services',
@@ -491,6 +495,8 @@ class AppLocale {
     chooseYourAccountType: 'اختر نوع حسابك',
     welcomeToArchiSpace: 'مرحباً بك في هوم فور يو',
     engineeringOffice: 'مكتب هندسي',
+    engineeringOfficeFields: 'مجالات المكتب الهندسي',
+    engineeringOfficeDepartments: 'أقسام المكتب الهندسي',
     scopeOfWork: 'نطاق العمل',
     enterTheBio: 'أدخل السيرة الذاتية',
     enterTheServices: 'أدخل الخدمات',
