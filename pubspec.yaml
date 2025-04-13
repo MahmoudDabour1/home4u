@@ -184,4 +184,5 @@ flutter:
   assets:
     - assets/images/
     - assets/svgs/
+    - assets/jsons/
     - shorebird.yaml
