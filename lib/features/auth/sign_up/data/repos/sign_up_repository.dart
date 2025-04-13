@@ -53,7 +53,7 @@ class SignUpRepositoryImpl implements SignUpRepository {
       final response = await remoteDataSource.signUp(signUpBody);
       return ApiResult.success(response);
     } catch (error) {
-      return Future.value(ApiResult.failure(ApiErrorHandler.handle(error)));
+      return ApiResult.failure(ApiErrorHandler.handle(error));
     }
   }
 
