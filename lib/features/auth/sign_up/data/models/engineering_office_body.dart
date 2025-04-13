@@ -3,36 +3,38 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 part 'engineering_office_body.g.dart';
 
 @JsonSerializable()
-class EngineeringOfficeBody {
+class EngineeringOfficeRequest {
   @JsonKey(name: "tradeName")
-  String? tradeName;
+  final String tradeName;
   @JsonKey(name: "description")
-  String? description;
+  final String description;
   @JsonKey(name: "engineeringOfficeField")
-  EngineeringOfficeId? engineeringOfficeField;
+  final EngineeringOffice engineeringOfficeField;
   @JsonKey(name: "engineeringOfficeDepartments")
-  List<EngineeringOfficeId>? engineeringOfficeDepartments;
+  final List<EngineeringOffice> engineeringOfficeDepartments;
 
-  EngineeringOfficeBody({
-    this.tradeName,
-    this.description,
-    this.engineeringOfficeField,
-    this.engineeringOfficeDepartments,
+  EngineeringOfficeRequest({
+    required this.tradeName,
+    required this.description,
+    required this.engineeringOfficeField,
+    required this.engineeringOfficeDepartments,
   });
 
-  factory EngineeringOfficeBody.fromJson(Map<String, dynamic> json) =>
-      _$EngineeringOfficeBodyFromJson(json);
+  factory EngineeringOfficeRequest.fromJson(Map<String, dynamic> json) => _$EngineeringOfficeRequestFromJson(json);
+
+  Map<String, dynamic> toJson() => _$EngineeringOfficeRequestToJson(this);
 }
 
 @JsonSerializable()
-class EngineeringOfficeId {
+class EngineeringOffice {
   @JsonKey(name: "id")
-  int? id;
+  final int id;
 
-  EngineeringOfficeId({
-    this.id,
+  EngineeringOffice({
+    required this.id,
   });
 
-  factory EngineeringOfficeId.fromJson(Map<String, dynamic> json) =>
-      _$EngineeringOfficeIdFromJson(json);
+  factory EngineeringOffice.fromJson(Map<String, dynamic> json) => _$EngineeringOfficeFromJson(json);
+
+  Map<String, dynamic> toJson() => _$EngineeringOfficeToJson(this);
 }

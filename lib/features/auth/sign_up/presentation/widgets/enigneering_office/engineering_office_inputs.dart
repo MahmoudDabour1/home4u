@@ -42,7 +42,7 @@ class _EngineeringOfficeInputsState extends State<EngineeringOfficeInputs> {
       children: [
         verticalSpace(16),
         AppTextFormField(
-          controller: signUpCubit.tradNameController,
+          controller: signUpCubit.engineeringOfficeTradNameController,
           labelText: AppLocale.tradeName.getString(context),
           focusNode: _tradeNameFocusNode,
           textInputAction: TextInputAction.next,
@@ -55,7 +55,7 @@ class _EngineeringOfficeInputsState extends State<EngineeringOfficeInputs> {
           },
         ),
         AppTextFormField(
-          controller: signUpCubit.descriptionController,
+          controller: signUpCubit.engineeringOfficeDescriptionController,
           labelText: AppLocale.description.getString(context),
           focusNode: _descriptionFocusNode,
           textInputAction: TextInputAction.next,

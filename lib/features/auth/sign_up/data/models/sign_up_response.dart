@@ -24,7 +24,7 @@ class SignUpResponse {
 @JsonSerializable()
 class Data {
   @JsonKey(name: "id")
-  int? id;
+  dynamic id;
   @JsonKey(name: "message")
   String? message;
 
