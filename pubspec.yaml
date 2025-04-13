@@ -115,6 +115,7 @@ dependencies:
   #easy_stepper
   easy_stepper: ^0.8.5+1
   easy_infinite_pagination: ^0.0.6
+  lottie: ^3.3.1
 
 dev_dependencies:
   flutter_test:
@@ -183,4 +184,5 @@ flutter:
   assets:
     - assets/images/
     - assets/svgs/
+    - assets/jsons/
     - shorebird.yaml

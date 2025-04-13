@@ -6,6 +6,7 @@ import 'package:home4u/core/extensions/navigation_extension.dart';
 import 'package:home4u/core/routing/routes.dart';
 import 'package:home4u/core/utils/spacing.dart';
 import 'package:home4u/features/profile/data/models/profile/engineer_profile_response_model.dart';
+import 'package:home4u/features/profile/data/models/profile/engineering_office_profile_response_model.dart';
 import 'package:home4u/features/profile/data/models/profile/technical_worker_profile_response_model.dart';
 import 'package:home4u/features/profile/presentation/widgets/profile_widgets/profile_rating_widget.dart';
 import 'package:skeletonizer/skeletonizer.dart';
@@ -19,17 +20,20 @@ import '../../../logic/profile/profile_state.dart';
 class InformationWidget extends StatelessWidget {
   final EngineerProfileResponseModel? engineerProfileResponseModel;
   final TechnicalWorkerResponseModel? technicalWorkerProfileData;
+  final EngineeringOfficeProfileResponseModel? engineeringOfficeProfileData;
 
   const InformationWidget({
     super.key,
     this.engineerProfileResponseModel,
     this.technicalWorkerProfileData,
+    this.engineeringOfficeProfileData,
   });
 
   @override
   Widget build(BuildContext context) {
-    final profileData =
-        engineerProfileResponseModel?.data ?? technicalWorkerProfileData?.data;
+    final profileData = engineerProfileResponseModel?.data ??
+        technicalWorkerProfileData?.data ??
+        engineeringOfficeProfileData?.data;
 
     return Padding(
       padding: EdgeInsets.symmetric(horizontal: 24.w),
@@ -50,21 +54,27 @@ class InformationWidget extends StatelessWidget {
               Skeletonizer(
                 enabled: state is LoadingProfileData,
                 child: Text(
-                  (profileData as dynamic)?.type?.name ?? "",
+                  engineeringOfficeProfileData?.data == null
+                      ? (profileData as dynamic)?.type?.name
+                      : (profileData as dynamic)?.user.userType?.name ??
+                          "" ??
+                          "",
                   style: AppStyles.font16BlackLight,
                 ),
               ),
               verticalSpace(8),
               ProfileRatingWidget(),
               verticalSpace(8),
-              Skeletonizer(
-                enabled: state is LoadingProfileData,
-                child: Text(
-                  (profileData as dynamic)?.bio ?? "",
-                  style: AppStyles.font16BlackLight,
-                  textAlign: TextAlign.center,
-                ),
-              ),
+              engineeringOfficeProfileData?.data == null
+                  ? Skeletonizer(
+                      enabled: state is LoadingProfileData,
+                      child: Text(
+                        (profileData as dynamic)?.bio ?? "",
+                        style: AppStyles.font16BlackLight,
+                        textAlign: TextAlign.center,
+                      ),
+                    )
+                  : SizedBox.shrink(),
               verticalSpace(8),
               AppCustomButton(
                 textButton: AppLocale.editProfile.getString(context),

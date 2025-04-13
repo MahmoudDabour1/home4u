@@ -10,21 +10,16 @@ class DrawerHeaderWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: [
-        SvgPicture.asset(
+    return Padding(
+      padding:  EdgeInsets.symmetric(horizontal: 16.w),
+      child: Align(
+        alignment: Alignment.topLeft,
+        child: SvgPicture.asset(
           AppAssets.appLogoSvg,
-          height: 46.h,
-          width: 95.w,
+          height: 100.h,
+          width: 100.w,
         ),
-        horizontalSpace(18.w),
-        SvgPicture.asset(
-          AppAssets.arrowRightBlackSvg,
-          height: 20.h,
-          width: 25.w,
-        ),
-      ],
+      ),
     );
   }
 }

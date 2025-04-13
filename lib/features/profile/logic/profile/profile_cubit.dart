@@ -7,6 +7,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:home4u/core/extensions/navigation_extension.dart';
 import 'package:home4u/core/helpers/shared_pref_helper.dart';
 import 'package:home4u/features/profile/data/models/profile/engineer_profile_response_model.dart';
+import 'package:home4u/features/profile/data/models/profile/engineering_office_profile_response_model.dart';
 import 'package:home4u/features/profile/data/models/profile/technical_worker_profile_response_model.dart';
 import 'package:home4u/features/profile/data/repos/profile_repo.dart';
 import 'package:home4u/features/profile/logic/profile/profile_state.dart';
@@ -31,12 +32,15 @@ class ProfileCubit extends Cubit<ProfileState> {
 
   EngineerProfileResponseModel? engineerProfileCachedData;
   TechnicalWorkerResponseModel? technicalWorkerProfileCachedData;
+  EngineeringOfficeProfileResponseModel? engineeringOfficeProfileCachedData;
 
   Future<void> initializeProfileData() async {
     engineerProfileCachedData =
         await _profileLocalDataSource.getEngineerProfileData();
     technicalWorkerProfileCachedData =
         await _profileLocalDataSource.getTechnicalWorkerProfileData();
+    engineeringOfficeProfileCachedData =
+        await _profileLocalDataSource.getEngineeringOfficeProfileData();
   }
 
   List<GovernorateDataModel> governorates = [];
@@ -59,13 +63,7 @@ class ProfileCubit extends Cubit<ProfileState> {
         image = File(value.path);
         nav.pop();
         emit(ProfileState.addImage());
-        uploadProfileImage().then((value) async {
-          final userType =
-              await SharedPrefHelper.getString(SharedPrefKeys.userType);
-          userType == "ENGINEER"
-              ? getEngineerProfileData()
-              : getTechnicalWorkerProfileData();
-        });
+        uploadProfileImage();
       }
     });
   }
@@ -94,6 +92,22 @@ class ProfileCubit extends Cubit<ProfileState> {
             .cacheTechnicalWorkerProfileData(profileData);
         logger.e("Technical Worker Profile Data Cached $profileData");
         emit(ProfileState.successTechnicalWorkerProfileData(profileData));
+      },
+      failure: (error) {
+        emit(ProfileState.errorProfileData(error: error.message.toString()));
+      },
+    );
+  }
+
+  Future<void> getEngineeringOfficeProfileData() async {
+    emit(const ProfileState.loadingProfileData());
+    final result = await _profileRepo.getEngineeringOfficeByToken();
+    result.when(
+      success: (profileData) async {
+        await _profileLocalDataSource
+            .cacheEngineeringOfficeProfileData(profileData);
+        logger.e("Engineering Office Profile Data Cached $profileData");
+        emit(ProfileState.successEngineeringOfficeProfileData(profileData));
       },
       failure: (error) {
         emit(ProfileState.errorProfileData(error: error.message.toString()));
@@ -164,9 +178,20 @@ class ProfileCubit extends Cubit<ProfileState> {
             emit(ProfileState.successUploadImage(
                 uploadProfileImageResponseModel));
             logger.w("User Type: $userType");
-            userType == "ENGINEER"
-                ? getEngineerProfileData()
-                : getTechnicalWorkerProfileData();
+            switch (userType) {
+              case "ENGINEER":
+                getEngineerProfileData();
+                break;
+              case "TECHNICAL_WORKER":
+                getTechnicalWorkerProfileData();
+                break;
+              case "ENGINEERING_OFFICE":
+                getEngineeringOfficeProfileData();
+                break;
+              default:
+                getEngineeringOfficeProfileData();
+                break;
+            }
           }
         },
         failure: (error) {

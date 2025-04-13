@@ -27,11 +27,12 @@ class DrawerItemWidget extends StatelessWidget {
     final text = getTextForItem(item,context);
 
     return Padding(
-      padding: EdgeInsets.symmetric(vertical: 4.h),
+      padding: EdgeInsets.symmetric(vertical: 5.h,horizontal: 10.w),
       child: Container(
-        height: 62.h,
+        height: 50.h,
         decoration: BoxDecoration(
           color: isSelected ? AppColors.darkBlueColor : Colors.transparent,
+          borderRadius: BorderRadius.circular(15.r),
         ),
         child: ListTile(
           leading: SvgPicture.asset(
