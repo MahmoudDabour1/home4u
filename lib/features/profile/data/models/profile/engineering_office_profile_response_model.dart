@@ -71,7 +71,7 @@ class EngineeringOfficeData {
 
   @HiveField(9)
   @JsonKey(name: "engineeringOfficeDepartments")
-  final List<EngineeringOffice>? engineeringOfficeDepartments;
+  List<EngineeringOffice>? engineeringOfficeDepartments;
 
   EngineeringOfficeData({
     this.id,

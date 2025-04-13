@@ -1,4 +1,5 @@
 import 'package:bloc/bloc.dart';
+import 'package:hive/hive.dart';
 import 'package:home4u/features/profile/data/repos/services_repository.dart';
 import 'package:home4u/features/profile/logic/services/services_state.dart';
 
@@ -7,7 +8,11 @@ import '../../../../core/helpers/shared_pref_keys.dart';
 import '../../../../core/networking/api_result.dart';
 import '../../../../core/networking/dio_factory.dart';
 import '../../../../core/routing/router_observer.dart';
+import '../../../../core/utils/app_constants.dart';
 import '../../../auth/sign_up/data/models/services/freelancer_services.dart';
+import '../../data/models/profile/engineer_profile_response_model.dart';
+import '../../data/models/profile/engineering_office_profile_response_model.dart';
+import '../../data/models/profile/technical_worker_profile_response_model.dart';
 import '../../data/models/services/Service_update_delete_response_model.dart';
 import '../../data/models/services/update_service_body.dart';
 
@@ -61,7 +66,7 @@ class ServicesCubit extends Cubit<ServicesState> {
           logger.t('Services Updated Successfully');
           emit(ServicesState.updateServicesSuccess(response));
           await getServices(id: id);
-          // await _updateCache(userId);
+          await _updateCache();
         },
         failure: (error) {
           logger.e(error.message.toString());
@@ -74,37 +79,74 @@ class ServicesCubit extends Cubit<ServicesState> {
     }
   }
 
-  // Future<void> _updateCache(int userId) async {
-  //   if (isEngineer) {
-  //     var engineerBox =
-  //         await Hive.openBox<EngineerProfileResponseModel>(kEngineerProfileBox);
-  //     var engineerProfileData = engineerBox.get(kEngineerProfileData);
-  //     if (engineerProfileData != null) {
-  //       engineerProfileData.data?.engineerServ = services
-  //           ?.map((e) => FreeLancerType(
-  //                 id: e.id,
-  //                 name: e.name,
-  //                 code: e.code,
-  //               ))
-  //           .toList();
-  //       logger.i(engineerProfileData.data?.engineerServ);
-  //       logger.w("Engineer Services Updated $services");
-  //       await engineerBox.put(kEngineerProfileData, engineerProfileData);
-  //     }
-  //   } else {
-  //     var technicalWorkerBox = await Hive.openBox<TechnicalWorkerResponseModel>(
-  //         kTechnicalWorkerProfileBox);
-  //     var technicalWorkerProfileData =
-  //         technicalWorkerBox.get(kTechnicalWorkerProfileData);
-  //     if (technicalWorkerProfileData != null) {
-  //       technicalWorkerProfileData.data?.workerServs = services
-  //           ?.map((e) => FreeLancerType(id: e.id, name: e.name))
-  //           .toList();
-  //       await technicalWorkerBox.put(
-  //           kTechnicalWorkerProfileData, technicalWorkerProfileData);
-  //     }
-  //   }
-  // }
+  Future<void> _updateCache() async {
+    final userType = await _getUserType();
+    switch (userType) {
+      case "ENGINEER":
+        await _updateEngineerCache();
+        break;
+      case "TECHNICAL_WORKER":
+        await _updateTechnicalWorkerCache();
+        break;
+      case "ENGINEERING_OFFICE":
+        await _updateEngineeringOfficeCache();
+        break;
+      default:
+        throw Exception("Invalid user type");
+    }
+    await _updateEngineerCache();
+
+    await _updateEngineeringOfficeCache();
+
+    await _updateTechnicalWorkerCache();
+  }
+
+  Future<void> _updateTechnicalWorkerCache() async {
+    var technicalWorkerBox = await Hive.openBox<TechnicalWorkerResponseModel>(
+        kTechnicalWorkerProfileBox);
+    var technicalWorkerProfileData =
+        technicalWorkerBox.get(kTechnicalWorkerProfileData);
+    if (technicalWorkerProfileData != null) {
+      technicalWorkerProfileData.data?.workerServs =
+          services?.map((e) => FreeLancerType(id: e.id, name: e.name)).toList();
+      await technicalWorkerBox.put(
+          kTechnicalWorkerProfileData, technicalWorkerProfileData);
+    }
+  }
+
+  Future<void> _updateEngineeringOfficeCache() async {
+    var engineeringOfficeBox =
+        await Hive.openBox<EngineeringOfficeProfileResponseModel>(
+            kEngineeringOfficeProfileBox);
+    var engineeringOfficeProfileData =
+        engineeringOfficeBox.get(kEngineeringOfficeProfileData);
+    if (engineeringOfficeProfileData != null) {
+      engineeringOfficeProfileData.data?.engineeringOfficeDepartments = services
+          ?.map((e) => EngineeringOffice(id: e.id, name: e.name))
+          .toList();
+
+      await engineeringOfficeBox.put(
+          kEngineeringOfficeProfileData, engineeringOfficeProfileData);
+    }
+  }
+
+  Future<void> _updateEngineerCache() async {
+    var engineerBox =
+        await Hive.openBox<EngineerProfileResponseModel>(kEngineerProfileBox);
+    var engineerProfileData = engineerBox.get(kEngineerProfileData);
+    if (engineerProfileData != null) {
+      engineerProfileData.data?.engineerServ = services
+          ?.map((e) => FreeLancerType(
+                id: e.id,
+                name: e.name,
+                code: e.code,
+              ))
+          .toList();
+      logger.i(engineerProfileData.data?.engineerServ);
+      logger.w("Engineer Services Updated $services");
+      await engineerBox.put(kEngineerProfileData, engineerProfileData);
+    }
+  }
 
   Future<void> deleteService({
     required int id,
@@ -120,8 +162,10 @@ class ServicesCubit extends Cubit<ServicesState> {
       result.when(
         success: (response) async {
           emit(ServicesState.deleteServiceSuccess(response));
-          await getServices(id: id);
-          // await _updateCache(userId);
+          // await getServices(id: id);
+          selectedServices?.remove(
+              services?.firstWhere((element) => element.id == serviceId).id);
+          await _updateCache();
         },
         failure: (error) {
           logger.e(error.message.toString());
