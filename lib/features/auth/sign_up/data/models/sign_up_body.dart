@@ -21,7 +21,7 @@ class SignUpBody {
   final TechnicalWorkerRequest? technicalWorker;
   final BusinessBody? business;
   @JsonKey(name: "engineeringOffice")
-  final EngineeringOfficeBody? engineeringOffice;
+  final EngineeringOfficeRequest? engineeringOffice;
 
   SignUpBody({
     required this.firstName,
@@ -87,4 +87,3 @@ class CityRequest {
 
   Map<String, dynamic> toJson() => _$CityRequestToJson(this);
 }
-

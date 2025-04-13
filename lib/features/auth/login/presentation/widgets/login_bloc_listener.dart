@@ -39,6 +39,7 @@ class LoginBlocListener extends StatelessWidget {
         context.pushNamed(Routes.productsScreen);
         break;
       case "TECHNICAL_WORKER":
+      case "ENGINEERING_OFFICE":
       case "ENGINEER":
       case "ENGINEERING_OFFICE":
         context.pushNamed(Routes.bottomNavLayout);

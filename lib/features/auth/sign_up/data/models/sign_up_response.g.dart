@@ -23,7 +23,7 @@ Map<String, dynamic> _$SignUpResponseToJson(SignUpResponse instance) =>
     };
 
 Data _$DataFromJson(Map<String, dynamic> json) => Data(
-      id: (json['id'] as num?)?.toInt(),
+      id: json['id'],
       message: json['message'] as String?,
     );
 
