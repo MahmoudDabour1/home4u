@@ -32,6 +32,7 @@ class _ServicesListViewState extends State<ServicesListView> {
     _initializeProfileData();
   }
 
+  ///ToDo : Loading behaviour try to change them , to appear there is nothing happen while delete and update
   Future<void> _initializeProfileData() async {
     final userType = await SharedPrefHelper.getString(SharedPrefKeys.userType);
 
@@ -69,7 +70,6 @@ class _ServicesListViewState extends State<ServicesListView> {
         throw Exception("Invalid user type");
     }
 
-    ///Todo : refactor again
     context.read<ServicesCubit>().getServices(id: id);
   }
 
