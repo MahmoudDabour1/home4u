@@ -33,7 +33,7 @@ SignUpBody _$SignUpBodyFromJson(Map<String, dynamic> json) => SignUpBody(
           : BusinessBody.fromJson(json['business'] as Map<String, dynamic>),
       engineeringOffice: json['engineeringOffice'] == null
           ? null
-          : EngineeringOfficeBody.fromJson(
+          : EngineeringOfficeRequest.fromJson(
               json['engineeringOffice'] as Map<String, dynamic>),
     );
 
