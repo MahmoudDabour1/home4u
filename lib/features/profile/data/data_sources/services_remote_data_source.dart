@@ -47,4 +47,21 @@ abstract class ServicesRemoteDataSource {
     @Query("workerId") int workerId,
     @Query("serviceId") int serviceId,
   );
+
+  @GET(ApiConstants.engineeringOfficeServicesEp)
+  Future<FreelancerServices> getEngineeringOfficeServices(
+    @Query("engineeringOfficeId") int engineeringOfficeId,
+  );
+
+  @PUT(ApiConstants.updateEngineeringOfficeServices)
+  Future<ServiceUpdateDeleteResponseModel> updateEngineeringOfficeServices(
+    @Body() List<UpdateServiceBody> servicesData,
+    @Query("userId") int userId,
+  );
+
+  @DELETE(ApiConstants.engineeringOfficeServicesEp)
+  Future<ServiceUpdateDeleteResponseModel> deleteEngineeringOfficeService(
+    @Query("engineeringOfficeId") int engineeringOfficeId,
+    @Query("engineeringOfficeDepartmentId") int departmentId,
+  );
 }

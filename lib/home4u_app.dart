@@ -66,7 +66,8 @@ class _Home4uAppState extends State<Home4uApp> {
   }
 
   Future<String> _getInitialRoute() async {
-    String userToken = await SharedPrefHelper.getSecuredString(SharedPrefKeys.userToken);
+    String userToken =
+        await SharedPrefHelper.getSecuredString(SharedPrefKeys.userToken);
 
     if (userToken.isNotEmpty) {
       isLoggedInUser = true;
@@ -77,6 +78,7 @@ class _Home4uAppState extends State<Home4uApp> {
         case "STORE":
           return Routes.productsScreen;
         case "TECHNICAL_WORKER":
+        case "ENGINEERING_OFFICE":
         case "ENGINEER":
           return Routes.bottomNavLayout;
         default:
@@ -107,22 +109,28 @@ class _Home4uAppState extends State<Home4uApp> {
                 ..initializeLocaleWith(widget.initialLocale),
             ),
             BlocProvider<SignUpCubit>(create: (_) => sl<SignUpCubit>()),
-            BlocProvider<ForgetPasswordCubit>(create: (_) => sl<ForgetPasswordCubit>()),
+            BlocProvider<ForgetPasswordCubit>(
+                create: (_) => sl<ForgetPasswordCubit>()),
             BlocProvider<ProfileCubit>(create: (_) => sl<ProfileCubit>()),
-            BlocProvider<ProjectCubit>(create: (_) => sl<ProjectCubit>()..getProjects()),
-            BlocProvider<CertificationsCubit>(create: (_) => sl<CertificationsCubit>()),
+            BlocProvider<ProjectCubit>(
+                create: (_) => sl<ProjectCubit>()..getProjects()),
+            BlocProvider<CertificationsCubit>(
+                create: (_) => sl<CertificationsCubit>()),
             BlocProvider<ServicesCubit>(create: (_) => sl<ServicesCubit>()),
             BlocProvider<EngineerCubit>(create: (_) => sl<EngineerCubit>()),
-            BlocProvider<TechnicalWorkerCubit>(create: (_) => sl<TechnicalWorkerCubit>()),
+            BlocProvider<TechnicalWorkerCubit>(
+                create: (_) => sl<TechnicalWorkerCubit>()),
             BlocProvider<ProductsCubit>(create: (_) => sl<ProductsCubit>()),
-            BlocProvider<BusinessAddProductCubit>(create: (_) => sl<BusinessAddProductCubit>()),
+            BlocProvider<BusinessAddProductCubit>(
+                create: (_) => sl<BusinessAddProductCubit>()),
           ],
           child: ScreenUtilInit(
             designSize: const Size(393, 852),
             minTextAdapt: true,
             child: BlocBuilder<AppLocalizationCubit, AppLocalizationState>(
               builder: (context, state) {
-                final TextDirection textDirection = context.read<AppLocalizationCubit>().textDirection;
+                final TextDirection textDirection =
+                    context.read<AppLocalizationCubit>().textDirection;
 
                 return Directionality(
                   textDirection: textDirection,

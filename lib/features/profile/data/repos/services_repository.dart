@@ -13,6 +13,10 @@ abstract class ServicesRepository {
     int workerId,
   );
 
+  Future<ApiResult<FreelancerServices>> getEngineeringOfficeServices(
+    int engineeringOfficeId,
+  );
+
   Future<ApiResult<ServiceUpdateDeleteResponseModel>> updateEngineerServices(
     List<UpdateServiceBody> servicesData,
     int userId,
@@ -24,10 +28,24 @@ abstract class ServicesRepository {
     int userId,
   );
 
-  Future<ApiResult<ServiceUpdateDeleteResponseModel>> deleteEngineerService(int engineerId, int serviceId);
+  Future<ApiResult<ServiceUpdateDeleteResponseModel>>
+      updateEngineeringOfficeServices(
+    List<UpdateServiceBody> servicesData,
+    int userId,
+  );
 
-  Future<ApiResult<ServiceUpdateDeleteResponseModel>> deleteTechnicalWorkerService(
+  Future<ApiResult<ServiceUpdateDeleteResponseModel>> deleteEngineerService(
+      int engineerId, int serviceId);
+
+  Future<ApiResult<ServiceUpdateDeleteResponseModel>>
+      deleteTechnicalWorkerService(
     int workerId,
+    int serviceId,
+  );
+
+  Future<ApiResult<ServiceUpdateDeleteResponseModel>>
+      deleteEngineeringOfficeService(
+    int engineeringOfficeId,
     int serviceId,
   );
 }
@@ -76,7 +94,8 @@ class ServicesRepositoryImpl implements ServicesRepository {
   }
 
   @override
-  Future<ApiResult<ServiceUpdateDeleteResponseModel>> deleteTechnicalWorkerService(
+  Future<ApiResult<ServiceUpdateDeleteResponseModel>>
+      deleteTechnicalWorkerService(
     int workerId,
     int serviceId,
   ) async {
@@ -111,6 +130,49 @@ class ServicesRepositoryImpl implements ServicesRepository {
     try {
       final response = await servicesRemoteDataSource
           .updateTechnicalWorkerServices(servicesData, userId);
+      return ApiResult.success(response);
+    } catch (error) {
+      return ApiResult.failure(ApiErrorHandler.handle(error));
+    }
+  }
+
+  @override
+  Future<ApiResult<ServiceUpdateDeleteResponseModel>>
+      deleteEngineeringOfficeService(
+    int engineeringOfficeId,
+    int serviceId,
+  ) async {
+    try {
+      final response = await servicesRemoteDataSource
+          .deleteEngineeringOfficeService(engineeringOfficeId, serviceId);
+      return ApiResult.success(response);
+    } catch (error) {
+      return ApiResult.failure(ApiErrorHandler.handle(error));
+    }
+  }
+
+  @override
+  Future<ApiResult<FreelancerServices>> getEngineeringOfficeServices(
+    int engineeringOfficeId,
+  ) async {
+    try {
+      final response = await servicesRemoteDataSource
+          .getEngineeringOfficeServices(engineeringOfficeId);
+      return ApiResult.success(response);
+    } catch (error) {
+      return ApiResult.failure(ApiErrorHandler.handle(error));
+    }
+  }
+
+  @override
+  Future<ApiResult<ServiceUpdateDeleteResponseModel>>
+      updateEngineeringOfficeServices(
+    List<UpdateServiceBody> servicesData,
+    int userId,
+  ) async {
+    try {
+      final response = await servicesRemoteDataSource
+          .updateEngineeringOfficeServices(servicesData, userId);
       return ApiResult.success(response);
     } catch (error) {
       return ApiResult.failure(ApiErrorHandler.handle(error));
