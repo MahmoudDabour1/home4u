@@ -13,20 +13,17 @@ class EngineeringOfficeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocProvider<EngineeringOfficeCubit>(
-      create: (context) => sl<EngineeringOfficeCubit>(),
-      child: Scaffold(
-        body: SafeArea(
-          child: SingleChildScrollView(
-            child: Column(
-              children: [
-                AuthWelcomeData(
-                  headText: AppLocale.engineeringOffice.getString(context),
-                  subText: AppLocale.welcomeToArchiSpace.getString(context),
-                ),
-                EngineeringOfficeSignUpInfo(),
-              ],
-            ),
+    return Scaffold(
+      body: SafeArea(
+        child: SingleChildScrollView(
+          child: Column(
+            children: [
+              AuthWelcomeData(
+                headText: AppLocale.engineeringOffice.getString(context),
+                subText: AppLocale.welcomeToArchiSpace.getString(context),
+              ),
+              EngineeringOfficeSignUpInfo(),
+            ],
           ),
         ),
       ),
