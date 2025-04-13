@@ -4,6 +4,7 @@ import 'package:home4u/core/networking/api_result.dart';
 import 'package:home4u/features/profile/data/data_sources/profile_local_data_source.dart';
 import 'package:home4u/features/profile/data/data_sources/profile_remote_data_source.dart';
 import 'package:home4u/features/profile/data/models/profile/engineer_profile_response_model.dart';
+import 'package:home4u/features/profile/data/models/profile/engineering_office_profile_response_model.dart';
 import 'package:home4u/features/profile/data/models/profile/technical_worker_profile_response_model.dart';
 import 'package:home4u/features/profile/data/models/profile/upload_profile_image_response_model.dart';
 
@@ -11,6 +12,9 @@ abstract class ProfileRepo {
   Future<ApiResult<EngineerProfileResponseModel>> getEngineerByToken();
 
   Future<ApiResult<TechnicalWorkerResponseModel>> getTechnicalWorkerByToken();
+
+  Future<ApiResult<EngineeringOfficeProfileResponseModel>>
+      getEngineeringOfficeByToken();
 
   Future<ApiResult<EngineerProfileResponseModel>> updateEngineerProfile(
     String profileResponseModel,
@@ -60,6 +64,19 @@ class ProfileRepoImp implements ProfileRepo {
       if (cachedProfile != null) {
         return ApiResult.success(cachedProfile);
       }
+      return ApiResult.failure(ApiErrorHandler.handle(error));
+    }
+  }
+
+  @override
+  Future<ApiResult<EngineeringOfficeProfileResponseModel>>
+      getEngineeringOfficeByToken() async {
+    try {
+      final response =
+          await _profileRemoteDataSource.getEngineeringOfficeByToken();
+      // await _profileLocalDataSource.cacheEngineerProfileData(response);
+      return ApiResult.success(response!);
+    } catch (error) {
       return ApiResult.failure(ApiErrorHandler.handle(error));
     }
   }

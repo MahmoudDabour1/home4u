@@ -57,6 +57,7 @@ class _ServicesListViewState extends State<ServicesListView> {
   @override
   Widget build(BuildContext context) {
     return FutureBuilder<void>(
+      initialData: _profileDataFuture,
       future: _profileDataFuture,
       builder: (context, snapshot) {
         if (snapshot.connectionState == ConnectionState.waiting) {

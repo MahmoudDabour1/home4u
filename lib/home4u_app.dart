@@ -147,8 +147,8 @@ class _Home4uAppState extends State<Home4uApp> {
                     onGenerateRoute: widget.appRouter.generateRoute,
                     debugShowCheckedModeBanner: false,
                     navigatorObservers: [NavigatorObserver(), _routeObserver],
-                    initialRoute: snapshot.data!,
-                    // initialRoute: Routes.engineeringOfficeScreen,
+                    initialRoute: Routes.loginScreen,
+                    // snapshot.data!,
                   ),
                 );
               },

@@ -9,6 +9,8 @@ const String kEngineerProfileBox = 'kEngineerProfileBox';
 const String kEngineerProfileData = 'kEngineerProfileData';
 const String kTechnicalWorkerProfileBox = 'kTechnicalWorkerBox';
 const String kTechnicalWorkerProfileData = 'kTechnicalWorkerProfileData';
+const String kEngineeringOfficeProfileBox = 'kEngineeringOfficeBox';
+const String kEngineeringOfficeProfileData = 'kEngineeringOfficeProfileData';
 const String kProductsBox = 'kProductsBox';
 const String kProductsData = 'kProductsData';
 

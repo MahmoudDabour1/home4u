@@ -1,5 +1,6 @@
 import 'package:hive_flutter/hive_flutter.dart';
 import 'package:home4u/features/profile/data/models/profile/engineer_profile_response_model.dart';
+import 'package:home4u/features/profile/data/models/profile/engineering_office_profile_response_model.dart';
 import 'package:home4u/features/profile/data/models/profile/technical_worker_profile_response_model.dart';
 
 import '../../../../core/utils/app_constants.dart';
@@ -9,11 +10,17 @@ abstract class ProfileLocalDataSource {
 
   Future<TechnicalWorkerResponseModel?> getTechnicalWorkerProfileData();
 
+  Future<EngineeringOfficeProfileResponseModel?>
+      getEngineeringOfficeProfileData();
+
   Future<void> cacheEngineerProfileData(
       EngineerProfileResponseModel profileData);
 
   Future<void> cacheTechnicalWorkerProfileData(
       TechnicalWorkerResponseModel profileData);
+
+  Future<void> cacheEngineeringOfficeProfileData(
+      EngineeringOfficeProfileResponseModel profileData);
 }
 
 class ProfileLocalDataSourceImpl extends ProfileLocalDataSource {
@@ -21,6 +28,9 @@ class ProfileLocalDataSourceImpl extends ProfileLocalDataSource {
       Hive.box<EngineerProfileResponseModel>(kEngineerProfileBox);
   final Box<TechnicalWorkerResponseModel> technicalWorkerProfileBox =
       Hive.box<TechnicalWorkerResponseModel>(kTechnicalWorkerProfileBox);
+  final Box<EngineeringOfficeProfileResponseModel> engineeringOfficeProfileBox =
+      Hive.box<EngineeringOfficeProfileResponseModel>(
+          kEngineeringOfficeProfileBox);
 
   @override
   Future<void> cacheEngineerProfileData(
@@ -43,5 +53,18 @@ class ProfileLocalDataSourceImpl extends ProfileLocalDataSource {
   @override
   Future<TechnicalWorkerResponseModel?> getTechnicalWorkerProfileData() async {
     return technicalWorkerProfileBox.get(kTechnicalWorkerProfileData);
+  }
+
+  @override
+  Future<void> cacheEngineeringOfficeProfileData(
+      EngineeringOfficeProfileResponseModel profileData) async {
+    await engineeringOfficeProfileBox.put(
+        kEngineeringOfficeProfileData, profileData);
+  }
+
+  @override
+  Future<EngineeringOfficeProfileResponseModel?>
+      getEngineeringOfficeProfileData() async {
+    return engineeringOfficeProfileBox.get(kEngineeringOfficeProfileData);
   }
 }
