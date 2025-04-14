@@ -53,8 +53,14 @@ class ProfileCubit extends Cubit<ProfileState> {
   final bioController = TextEditingController();
   final linkedinController = TextEditingController();
   final behanceController = TextEditingController();
+
+  final tradeNameController = TextEditingController();
+  final descriptionController = TextEditingController();
+
+
   String? selectedGovernorate;
   String? selectedCity;
+  String? selectEngineeringOfficeField;
 
   void selectImage({required BuildContext context, ImageSource? source}) {
     final nav = Navigator.of(context);
@@ -151,6 +157,31 @@ class ProfileCubit extends Cubit<ProfileState> {
           emit(ProfileState.successUpdateTechnicalWorkerProfile(profileData));
           context.pop();
           getTechnicalWorkerProfileData();
+        },
+        failure: (error) {
+          showToast(message: error.message.toString(), isError: true);
+          emit(
+              ProfileState.errorUpdateProfile(error: error.message.toString()));
+        },
+      );
+    } catch (e) {
+      showToast(message: e.toString(), isError: true);
+      emit(ProfileState.errorUpdateProfile(error: e.toString()));
+    }
+  }
+
+  Future<void> updateEngineeringOfficeProfileData(BuildContext context) async {
+    try {
+      emit(const ProfileState.loadingUpdateProfile());
+      String jsonString = await _prepareEngineeringOfficeUpdateData();
+      final response =
+          await _profileRepo.updateEngineeringOfficeProfile(jsonString);
+      response.when(
+        success: (profileData) {
+          showToast(message: "Profile Updated Successfully");
+          emit(ProfileState.successEngineeringOfficeProfileData(profileData));
+          context.pop();
+          getEngineeringOfficeProfileData();
         },
         failure: (error) {
           showToast(message: error.message.toString(), isError: true);
@@ -345,5 +376,61 @@ class ProfileCubit extends Cubit<ProfileState> {
 
     final jsonTechnicalWorkerString = json.encode(jsonTechnicalWorkerData);
     return jsonTechnicalWorkerString;
+  }
+
+  Future<String> _prepareEngineeringOfficeUpdateData() async {
+    var engineeringOfficeData =
+    await _profileLocalDataSource.getEngineeringOfficeProfileData();
+    final jsonEngineeringOfficeData = {
+      "id": engineeringOfficeData?.data?.id ?? 0,
+      "statusCode": engineeringOfficeData?.data?.statusCode ?? 1,
+      "user": {
+        "id": engineeringOfficeData?.data?.user?.id??0,
+        "firstName": firstNameController.text.isNotEmpty
+            ? firstNameController.text
+            :engineeringOfficeData?.data?.user?.firstName??"",
+        "lastName":lastNameController.text.isNotEmpty
+            ? lastNameController.text
+            : engineeringOfficeData?.data?.user?.lastName??"",
+        // "email": "medomagdy7070@gmail.com",
+        // "phone": "01661092296",
+        "personalPhoto": engineeringOfficeData?.data?.user?.personalPhoto??"",
+        "userType": {
+          "id": engineeringOfficeData?.data?.user?.userType?.id??0,
+        },
+        "governorate": selectedGovernorate != null
+            ? {"id": int.parse(selectedGovernorate!)}
+            : {"id": engineeringOfficeData?.data?.user?.governorate?.id ?? 0},
+        "city": selectedCity != null
+            ? {"id": int.parse(selectedCity!)}
+            : {"id": engineeringOfficeData?.data?.user?.city?.id ?? 0},
+        "engineer": null,
+        "technicalWorker": null,
+        "engineeringOffice": null,
+        "enabled": true,
+        "business": null
+      },
+      "tradeName":tradeNameController.text.isNotEmpty?tradeNameController.text: engineeringOfficeData?.data?.name??"",
+      "description":descriptionController.text.isNotEmpty?descriptionController.text: engineeringOfficeData?.data?.description??"",
+      "commercialRegisterPath": null,
+      "taxCardPath": null,
+      "personalCardPath": null,
+      "engineeringOfficeField": selectEngineeringOfficeField != null
+          ? {"id": int.parse(selectEngineeringOfficeField!)}
+          : {"id": engineeringOfficeData?.data?.engineeringOfficeField?.id ?? 0},
+      "engineeringOfficeDepartments": engineeringOfficeData?.data?.engineeringOfficeDepartments
+          ?.map((e) => {"id": e.id})
+          .toList() ?? [],
+      // "engineeringOfficeField": selectEngineeringOfficeField != null
+      //     ? {"id": int.parse(selectedGovernorate!)}
+      //     : engineeringOfficeData?.data?.user?.governorate?.toJson(),
+      // "engineeringOfficeDepartments": engineeringOfficeData?.data?.engineeringOfficeDepartments
+      //     ?.map((e) => {"id": e.id})
+      //     .toList() ??
+      //     [],
+        };
+
+    final jsonEngineeringOfficeString = json.encode(jsonEngineeringOfficeData);
+    return jsonEngineeringOfficeString;
   }
 }

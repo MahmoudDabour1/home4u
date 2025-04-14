@@ -6,6 +6,7 @@ import 'package:fluttertoast/fluttertoast.dart';
 import 'package:home4u/core/localization/app_localization_state.dart';
 import 'package:home4u/core/routing/app_router.dart';
 import 'package:home4u/core/routing/routes.dart';
+import 'package:home4u/features/auth/sign_up/logic/engineering_office/engineering_office_cubit.dart';
 import 'package:home4u/features/auth/sign_up/logic/sign_up_cubit.dart';
 import 'package:home4u/features/products/logic/products_cubit.dart';
 import 'package:home4u/features/profile/logic/profile/profile_cubit.dart';
@@ -116,6 +117,7 @@ class _Home4uAppState extends State<Home4uApp> {
             BlocProvider<TechnicalWorkerCubit>(create: (_) => sl<TechnicalWorkerCubit>()),
             BlocProvider<ProductsCubit>(create: (_) => sl<ProductsCubit>()),
             BlocProvider<BusinessAddProductCubit>(create: (_) => sl<BusinessAddProductCubit>()),
+            BlocProvider<EngineeringOfficeCubit>(create: (_) => sl<EngineeringOfficeCubit>()),
           ],
           child: ScreenUtilInit(
             designSize: const Size(393, 852),
