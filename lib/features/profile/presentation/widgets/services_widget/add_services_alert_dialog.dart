@@ -14,11 +14,13 @@ import '../../../../../core/theming/app_styles.dart';
 import '../../../../../core/utils/app_constants.dart';
 import '../../../../../core/utils/spacing.dart';
 import '../../../data/models/profile/engineer_profile_response_model.dart';
+import '../../../data/models/profile/engineering_office_profile_response_model.dart';
 import '../../../data/models/profile/technical_worker_profile_response_model.dart';
 import '../../../data/models/services/update_service_body.dart';
 import '../../../logic/services/services_cubit.dart';
 import '../profile_widgets/delete_dialog_button_widget.dart';
 import 'engineer_services_dropdown_button.dart';
+import 'engineering_office_drop_down_button.dart';
 
 class AddServicesAlertDialog extends StatefulWidget {
   const AddServicesAlertDialog({
@@ -32,21 +34,13 @@ class AddServicesAlertDialog extends StatefulWidget {
 class _AddServicesAlertDialogState extends State<AddServicesAlertDialog> {
   late int userId;
   late int id;
-  bool? isEngineer;
+  late String userType;
+  bool isLoading = true;
 
   @override
   void initState() {
     super.initState();
-    _loadUserType();
-  }
-
-  void _loadUserType() async {
-    final String userType =
-        await SharedPrefHelper.getString(SharedPrefKeys.userType);
-    setState(() {
-      isEngineer = userType == "ENGINEER";
-      _initializeProfileData();
-    });
+    _initializeProfileData();
   }
 
   Future<void> _initializeProfileData() async {
@@ -57,21 +51,38 @@ class _AddServicesAlertDialogState extends State<AddServicesAlertDialog> {
         kTechnicalWorkerProfileBox);
     var technicalWorkerProfileData =
         technicalWorkerBox.get(kTechnicalWorkerProfileData);
+    var engineeringOfficeBox =
+        await Hive.openBox<EngineeringOfficeProfileResponseModel>(
+            kEngineeringOfficeProfileBox);
+    var engineeringOfficeProfileData =
+        engineeringOfficeBox.get(kEngineeringOfficeProfileData);
 
-    if (isEngineer == true) {
-      userId = engineerProfileData?.data?.user?.id ?? 0;
-      id = engineerProfileData?.data?.id ?? 0;
-    } else {
-      userId = technicalWorkerProfileData?.data?.user?.id ?? 0;
-      id = technicalWorkerProfileData?.data?.id ?? 0;
+    userType = await SharedPrefHelper.getString(SharedPrefKeys.userType);
+
+    switch (userType) {
+      case "ENGINEER":
+        id = engineerProfileData?.data?.id ?? 0;
+        userId = engineerProfileData?.data?.user?.id ?? 0;
+        break;
+      case "ENGINEERING_OFFICE":
+        id = engineeringOfficeProfileData?.data?.id ?? 0;
+        userId = engineeringOfficeProfileData?.data?.user?.id ?? 0;
+        break;
+      case "TECHNICAL_WORKER":
+        id = technicalWorkerProfileData?.data?.id ?? 0;
+        userId = technicalWorkerProfileData?.data?.user?.id ?? 0;
+        break;
     }
+    setState(() {
+      isLoading = false;
+    });
   }
 
   @override
   Widget build(BuildContext context) {
     final servicesCubit = context.read<ServicesCubit>();
-    if (isEngineer == null) {
-      return Center(child: CircularProgressIndicator());
+    if (isLoading) {
+      return const Center(child: CircularProgressIndicator());
     }
     return AlertDialog(
       backgroundColor: AppColors.whiteColor,
@@ -85,9 +96,7 @@ class _AddServicesAlertDialogState extends State<AddServicesAlertDialog> {
             textAlign: TextAlign.center,
           ),
           verticalSpace(32),
-          isEngineer == true
-              ? EngineerServicesDropdownButton()
-              : TechnicalWorkerServicesDropdownButton(),
+          _buildDropdownButton(),
         ],
       ),
       actions: [
@@ -134,5 +143,18 @@ class _AddServicesAlertDialogState extends State<AddServicesAlertDialog> {
         ),
       ],
     );
+  }
+
+  Widget _buildDropdownButton() {
+    switch (userType) {
+      case "ENGINEER":
+        return const EngineerServicesDropdownButton();
+      case "ENGINEERING_OFFICE":
+        return const EngineeringOfficeServicesDropDownButton();
+      case "TECHNICAL_WORKER":
+        return const TechnicalWorkerServicesDropdownButton();
+      default:
+        return const SizedBox.shrink();
+    }
   }
 }

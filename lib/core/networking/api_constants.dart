@@ -13,7 +13,8 @@ class ApiConstants {
   ///Freelancer
   static const String engineerTypesEp = "/api/v1/engineer-types";
   static const String technicalWorkerTypesEp = "/api/v1/technical-worker-types";
-  static const String engineeringOfficeFieldsEp = "/api/v1/engineering-office-field";
+  static const String engineeringOfficeFieldsEp =
+      "/api/v1/engineering-office-field";
 
   ///Project
   static const String projectAddEp = "/api/v1/project";
@@ -34,8 +35,12 @@ class ApiConstants {
       "/api/v1/engineer-services/service/update";
   static const String technicalWorkerServicesEp =
       "/api/v1/technical-worker-services/service";
+  static const String engineeringOfficeServicesEp =
+      "/api/v1/engineering-office-department/department";
   static const String updateTechnicalWorkerServices =
       "/api/v1/technical-worker-services/service/update";
+  static const String updateEngineeringOfficeServices =
+      "/api/v1/engineering-office-department/department/update";
 
   ///profile
   static const String getEngineerByTokenEp = "/api/v1/engineers/user";
@@ -55,11 +60,12 @@ class ApiConstants {
   static const String deleteProductEP = "/api/v1/products/{productId}";
   static const String addProductEp = "/api/v1/products";
   static const String addAllProductImagesEp = "/api/v1/product-images/all";
+
   // {{prod_url}}/api/v1/products/57
   static const String getProductDetailsEP = "/api/v1/products/{productId}";
   static const String updateProductEP = "/api/v1/products";
-  // upload Image = {{prod_url}}/api/v1/file?pathId=BUSINESS_PRODUCTS&id=4
 
+  // upload Image = {{prod_url}}/api/v1/file?pathId=BUSINESS_PRODUCTS&id=4
 
   ///images
   static String getImageBaseUrl(String path) => "$apiBaseUrl/$path";

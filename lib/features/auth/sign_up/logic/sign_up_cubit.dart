@@ -139,12 +139,12 @@ class SignUpCubit extends Cubit<SignUpState> {
           SharedPrefKeys.userEmailAddress,
           emailController.text,
         );
-        // if (selectedUserType!.code == "ENGINEERING_OFFICE" &&
-        //     data.data?.id != null) {
-        //   final uploadSuccess =
-        //       await _uploadAllEngineeringOfficeImages(data.data!.id!);
-        //   if (!uploadSuccess) return;
-        // }
+        if (selectedUserType!.code == "ENGINEERING_OFFICE" &&
+            data.data?.id != null) {
+          final uploadSuccess =
+              await _uploadAllEngineeringOfficeImages(data.data!.id!);
+          if (!uploadSuccess) return;
+        }
         await showToast(message: "Sign Up Successfully");
         emit(SignUpState.successSignUp(data));
       },
@@ -204,33 +204,33 @@ class SignUpCubit extends Cubit<SignUpState> {
         );
         break;
       case "ENGINEERING_OFFICE":
-        // if (selectedEngineeringOfficeField == null ||
-        //     selectedEngineeringOfficeDepartments == null) {
-        //   emit(SignUpState.errorSignUp(
-        //       error: "Please complete engineering office details"));
-        //   return;
-        // }
-        // for (var i in imagePathCode) {
-        //   if (i == "COMMERCIAL_REGISTER") {
-        //     if (commercialRegisterImage == null) {
-        //       emit(SignUpState.errorSignUp(
-        //           error: "Please upload commercial register image"));
-        //       return;
-        //     }
-        //   } else if (i == "TAX_CARD") {
-        //     if (taxCardImage == null) {
-        //       emit(SignUpState.errorSignUp(
-        //           error: "Please upload tax card image"));
-        //       return;
-        //     }
-        //   } else if (i == "PERSONAL_CARD") {
-        //     if (personalCardImage == null) {
-        //       emit(SignUpState.errorSignUp(
-        //           error: "Please upload personal card image"));
-        //       return;
-        //     }
-        //   }
-        // }
+        if (selectedEngineeringOfficeField == null ||
+            selectedEngineeringOfficeDepartments == null) {
+          emit(SignUpState.errorSignUp(
+              error: "Please complete engineering office details"));
+          return;
+        }
+        for (var i in imagePathCode) {
+          if (i == "COMMERCIAL_REGISTER") {
+            if (commercialRegisterImage == null) {
+              emit(SignUpState.errorSignUp(
+                  error: "Please upload commercial register image"));
+              return;
+            }
+          } else if (i == "TAX_CARD") {
+            if (taxCardImage == null) {
+              emit(SignUpState.errorSignUp(
+                  error: "Please upload tax card image"));
+              return;
+            }
+          } else if (i == "PERSONAL_CARD") {
+            if (personalCardImage == null) {
+              emit(SignUpState.errorSignUp(
+                  error: "Please upload personal card image"));
+              return;
+            }
+          }
+        }
 
         engineeringOfficeRequest = EngineeringOfficeRequest(
           tradeName: engineeringOfficeTradNameController.text,
