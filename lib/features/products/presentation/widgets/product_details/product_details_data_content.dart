@@ -9,6 +9,7 @@ import '../../../data/models/product_preview_response.dart';
 
 class ProductDetailsDataContent extends StatelessWidget {
   final ProductPreviewResponse previewData;
+
   const ProductDetailsDataContent({super.key, required this.previewData});
 
   @override
@@ -24,18 +25,18 @@ class ProductDetailsDataContent extends StatelessWidget {
             key: AppLocale.name.getString(context),
             value: previewData.data.nameEn,
           ),
-
           _buildProductKeyValue(
             key: AppLocale.description.getString(context),
             value: previewData.data.descriptionEn,
           ),
           _buildProductKeyValue(
             key: AppLocale.material.getString(context),
-            value:previewData.data.materials.map((e) => e.name).join(', '),
+            value: previewData.data.materials.map((e) => e.name).join(', '),
           ),
           _buildProductKeyValue(
             key: AppLocale.dimensions.getString(context),
-            value: '${previewData.data.width} x ${previewData.data.height} x ${previewData.data.length}',
+            value:
+                '${previewData.data.width} x ${previewData.data.height} x ${previewData.data.length}',
           ),
           _buildProductKeyValue(
             key: AppLocale.baseUnit.getString(context),
@@ -44,16 +45,17 @@ class ProductDetailsDataContent extends StatelessWidget {
           Text("Colors && Stock", style: AppStyles.font16BlackBold),
           Wrap(
             spacing: 8.w,
-            children:List.generate(previewData.data.stocks.length, (index) {
-    return Chip(
-      avatar: CircleAvatar(
-        radius: 16.r,
-        backgroundColor: _hexToColor('${previewData.data.stocks[index].color.hexColor}'),
-      ),
-      label: Text('${previewData.data.stocks[index].amount} pieces'),
-      backgroundColor: AppColors.whiteColor,
-    );
-          }),
+            children: List.generate(previewData.data.stocks.length, (index) {
+              return Chip(
+                avatar: CircleAvatar(
+                  radius: 16.r,
+                  backgroundColor: _hexToColor(
+                      '${previewData.data.stocks[index].color.hexColor}'),
+                ),
+                label: Text('${previewData.data.stocks[index].amount} pieces'),
+                backgroundColor: AppColors.whiteColor,
+              );
+            }),
           )
         ],
       ),
@@ -65,6 +67,7 @@ class ProductDetailsDataContent extends StatelessWidget {
     hex = hex.replaceFirst('#', '');
     return Color(int.parse('0xFF$hex'));
   }
+
   Widget _buildProductKeyValue({
     required String key,
     required String value,

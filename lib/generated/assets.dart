@@ -35,6 +35,8 @@ class Assets {
   static const String svgsArrowRightBlackSvg = 'assets/svgs/arrow_right_black_svg.svg';
   static const String svgsArrowUp = 'assets/svgs/arrow_up.svg';
   static const String svgsChangeLanguage = 'assets/svgs/change_language.svg';
+  static const String svgsCustomFurnitureSvg = 'assets/svgs/custom_furniture_svg.svg';
+  static const String svgsDecorSvg = 'assets/svgs/decor_svg.svg';
   static const String svgsDeleteIconSvg = 'assets/svgs/delete_icon_svg.svg';
   static const String svgsDeleteSvg = 'assets/svgs/delete_svg.svg';
   static const String svgsEditIconSvg = 'assets/svgs/edit_icon_svg.svg';
@@ -67,6 +69,7 @@ class Assets {
   static const String svgsProductSvg = 'assets/svgs/product_svg.svg';
   static const String svgsProductWhiteSvg = 'assets/svgs/product_white_svg.svg';
   static const String svgsReviewSvg = 'assets/svgs/review_svg.svg';
+  static const String svgsSaveIconSvg = 'assets/svgs/save_icon_svg.svg';
   static const String svgsSearchSvg = 'assets/svgs/search_svg.svg';
   static const String svgsSettingSvg = 'assets/svgs/setting_svg.svg';
   static const String svgsSettingsDrawerSvg = 'assets/svgs/settings_drawer_svg.svg';
