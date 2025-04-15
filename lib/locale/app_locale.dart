@@ -58,7 +58,8 @@ class AppLocale {
   static const String welcomeToArchiSpace = 'Welcome to ArchiSpace';
   static const String engineeringOffice = 'Engineering Office';
   static const String engineeringOfficeFields = 'Engineering Office Fields';
-  static const String engineeringOfficeDepartments =  'Engineering Office Departments';
+  static const String engineeringOfficeDepartments =
+      'Engineering Office Departments';
   static const String scopeOfWork = 'Scope of work';
   static const String enterTheBio = 'Enter the bio';
   static const String enterTheServices = 'Enter the services';
@@ -194,9 +195,11 @@ class AppLocale {
   static const String minPrice = 'Min Price';
   static const String maxPrice = 'Max Price';
   static const String selectMaterials = 'Select Materials';
-  static const String productUploadedSuccessfully = 'Product uploaded\nsuccessfully';
+  static const String productUploadedSuccessfully =
+      'Product uploaded\nsuccessfully';
   static const String goToProductList = 'go to product list';
-  static const String productUpdatedSuccessfully = 'Product Updated Successfully';
+  static const String productUpdatedSuccessfully =
+      'Product Updated Successfully';
 
   ///BusinessSignUp
   static const String tradeName = 'Trade Name';
@@ -232,6 +235,21 @@ class AppLocale {
   static const String search = 'Search';
   static const String productDetails = 'Product Details';
 
+  ///cart
+  static const String customFurniture = 'Custom Furniture';
+  static const String customFurnitureSubTitle =
+      'Customized furniture for\n your needs.';
+  static const String decor = 'Decor';
+  static const String decorSubTitle =
+      'Decor enhanced a space\'s\n look and feel.';
+  static const String addToCart = 'Add to Cart';
+  static const String myCart = 'My Cart';
+  static const String total = 'Total: ';
+  static const String addToCartSuccessfully = 'Added to cart successfully';
+  static const String cartEmpty = 'Your cart is empty';
+  static const String cartEmptySubTitle =
+      'Add items to your cart and they will appear here.';
+  static const String favorites = 'Favorites';
   ///User
   static const String home = 'Home';
   static const String seeAll = 'See all';
@@ -269,11 +287,11 @@ class AppLocale {
     onBoardingTitle3: 'Civil works and finishing services 3',
     onBoardingTitle4: 'Civil works and finishing services 4',
     onBoardingDescription1:
-    'Comprehensive services including civil works and finishing, with engineering consultations and 2D and 3D designs, in addition to free and paid services through our platform.',
+        'Comprehensive services including civil works and finishing, with engineering consultations and 2D and 3D designs, in addition to free and paid services through our platform.',
     onBoardingDescription2:
-    'Comprehensive services including civil works and finishing, with engineering consultations and 2D and 3D designs, in addition to free and paid services through our platform. 2',
+        'Comprehensive services including civil works and finishing, with engineering consultations and 2D and 3D designs, in addition to free and paid services through our platform. 2',
     onBoardingDescription3:
-    'Comprehensive services including civil works and finishing, with engineering consultations and 2D and 3D designs, in addition to free and paid services through our platform. 3',
+        'Comprehensive services including civil works and finishing, with engineering consultations and 2D and 3D designs, in addition to free and paid services through our platform. 3',
     onBoardingDescription4: '',
     toggleLanguage: 'en',
     startButton: 'Start',
@@ -349,7 +367,7 @@ class AppLocale {
     cancel: 'Cancel',
     deletedSuccessfully: 'Deleted Successfully',
     areYouSureYouWantToDeleteThisItem:
-    'Are you sure you want to delete this item?',
+        'Are you sure you want to delete this item?',
     addProject: 'Add Project',
     choose: 'Choose',
     setStartDate: 'Set Start Date',
@@ -422,7 +440,7 @@ class AppLocale {
     helpful: 'helpful',
     productPreview: 'Product Preview',
     productPreviewSubTitle:
-    'A brief overview highlighting key product\n details.',
+        'A brief overview highlighting key product\n details.',
     color: 'Color',
     price: 'Price',
     material: 'Material',
@@ -460,6 +478,23 @@ class AppLocale {
     colorsStock: 'Colors & Stock',
     uploadImages: 'Upload Images',
     selectMaterials: 'Select Materials',
+    productUploadedSuccessfully: 'Product uploaded\nsuccessfully',
+    goToProductList: 'go to product list',
+    productDetails: 'Product Details',
+    updateProduct: 'Update Product',
+    productUpdatedSuccessfully: 'Product Updated Successfully',
+    clear: 'Clear',
+    customFurniture : 'Custom Furniture',
+    customFurnitureSubTitle : 'Customized furniture for\n your needs.',
+    decor : 'Decor',
+    decorSubTitle : 'Decor enhanced a space\'s\n look and feel.',
+    addToCart : 'Add to Cart',
+    myCart : 'My Cart',
+    total : 'Total: ',
+    addToCartSuccessfully : 'Added to cart successfully',
+    cartEmpty : 'Your cart is empty',
+    cartEmptySubTitle : 'Add items to your cart and they will appear here.',
+    favorites : 'Favorites',
     productUploadedSuccessfully :  'Product uploaded\nsuccessfully',
     goToProductList : 'go to product list',
     productDetails : 'Product Details',
@@ -496,11 +531,11 @@ class AppLocale {
     onBoardingTitle3: 'خدمات الأعمال المدنية والتشطيب 3',
     onBoardingTitle4: 'خدمات الأعمال المدنية والتشطيب 4',
     onBoardingDescription1:
-    'خدمات شاملة تشمل الأعمال المدنية والتشطيب، مع استشارات هندسية وتصاميم ثنائية وثلاثية الأبعاد، بالإضافة إلى خدمات مجانية ومدفوعة عبر منصتنا.',
+        'خدمات شاملة تشمل الأعمال المدنية والتشطيب، مع استشارات هندسية وتصاميم ثنائية وثلاثية الأبعاد، بالإضافة إلى خدمات مجانية ومدفوعة عبر منصتنا.',
     onBoardingDescription2:
-    'خدمات شاملة تشمل الأعمال المدنية والتشطيب، مع استشارات هندسية وتصاميم ثنائية وثلاثية الأبعاد، بالإضافة إلى خدمات مجانية ومدفوعة عبر منصتنا. 2',
+        'خدمات شاملة تشمل الأعمال المدنية والتشطيب، مع استشارات هندسية وتصاميم ثنائية وثلاثية الأبعاد، بالإضافة إلى خدمات مجانية ومدفوعة عبر منصتنا. 2',
     onBoardingDescription3:
-    'خدمات شاملة تشمل الأعمال المدنية والتشطيب، مع استشارات هندسية وتصاميم ثنائية وثلاثية الأبعاد، بالإضافة إلى خدمات مجانية ومدفوعة عبر منصتنا. 3',
+        'خدمات شاملة تشمل الأعمال المدنية والتشطيب، مع استشارات هندسية وتصاميم ثنائية وثلاثية الأبعاد، بالإضافة إلى خدمات مجانية ومدفوعة عبر منصتنا. 3',
     onBoardingDescription4: '',
     toggleLanguage: 'العربية',
     startButton: 'ابدأ',
@@ -647,7 +682,7 @@ class AppLocale {
     helpful: 'مفيد',
     productPreview: 'معاينة المنتج',
     productPreviewSubTitle:
-    'نظرة عامة موجزة تسلط الضوء على تفاصيل المنتج الرئيسية.',
+        'نظرة عامة موجزة تسلط الضوء على تفاصيل المنتج الرئيسية.',
     color: 'اللون',
     price: 'السعر',
     material: 'المادة',
@@ -686,6 +721,23 @@ class AppLocale {
     colorsStock: 'الألوان والمخزون',
     uploadImages: 'رفع الصور',
     selectMaterials: ' اختر المواد الخام',
+    productUploadedSuccessfully: 'تم إضافة المنتج بنجاح',
+    goToProductList: 'الذهاب إلى قائمة المنتجات',
+    productDetails: 'تفاصيل المنتج',
+    updateProduct: 'تحديث المنتج',
+    productUpdatedSuccessfully: 'تم تحديث المنتج بنجاح',
+    clear: 'مسح',
+    customFurniture: 'الأثاث المخصص',
+    customFurnitureSubTitle : 'أثاث مخصص لاحتياجاتك.',
+    decor: 'الديكور',
+    decorSubTitle: 'الديكور يعزز مظهر ومشاعر المكان.',
+    addToCart: 'إضافة إلى السلة',
+    myCart: 'عربتي',
+    total: 'الإجمالي: ',
+    addToCartSuccessfully: 'تمت الإضافة إلى السلة بنجاح',
+    cartEmpty: 'عربتك فارغة',
+    cartEmptySubTitle: 'أضف عناصر إلى عربتك وستظهر هنا.',
+    favorites: 'المفضلة',
     productUploadedSuccessfully :  'تم إضافة المنتج بنجاح',
     goToProductList : 'الذهاب إلى قائمة المنتجات',
     productDetails : 'تفاصيل المنتج',

@@ -13,6 +13,7 @@ import 'package:home4u/features/auth/sign_up/presentation/sign_up_screen.dart';
 import 'package:home4u/features/auth/sign_up/presentation/technical_worker_sign_up.dart';
 import 'package:home4u/features/auth/verification/logic/verification_cubit.dart';
 import 'package:home4u/features/auth/verification/presentation/verification_screen.dart';
+import 'package:home4u/features/cart/presentation/order_details_screen.dart';
 import 'package:home4u/features/exhibition/logic/business_add_product_cubit.dart';
 import 'package:home4u/features/layout/logic/bottom_nav_cubit.dart';
 import 'package:home4u/features/products/data/models/product_preview_response.dart';
@@ -23,6 +24,9 @@ import 'package:home4u/features/user/home/presentation/best_show_rooms_screen.da
 
 import '../../features/auth/login/presentation/login_screen.dart';
 import '../../features/auth/sign_up/presentation/business_sign_up_screen.dart';
+import '../../features/cart/presentation/cart_screen.dart';
+import '../../features/cart/presentation/user_favorite_screen.dart';
+import '../../features/cart/presentation/widgets/cart_details_widgets/cart_product_details_screen.dart';
 import '../../features/exhibition/presentation/business_add_product_screen.dart';
 import '../../features/exhibition/presentation/business_overview_screen.dart';
 import '../../features/exhibition/presentation/business_review_screen.dart';
@@ -171,8 +175,22 @@ class AppRouter {
         return MaterialPageRoute(
           builder: (_) => ProductDetailsScreen(),
         );
-
-      ///User
+      case Routes.cartScreen:
+        return MaterialPageRoute(
+          builder: (_) => CartScreen(),
+        );
+      case Routes.cartProductDetailsScreen:
+        // int productId = settings.arguments as int;
+        return MaterialPageRoute(
+          builder: (_) => CartProductDetailsScreen(),
+        );
+      case Routes.orderDetailsScreen:
+        return MaterialPageRoute(
+          builder: (_) => OrderDetailsScreen(),
+        );
+      case Routes.userFavoriteScreen:
+        return MaterialPageRoute(
+          builder: (_) => UserFavoriteScreen(),
       case Routes.userHomeScreen:
         return MaterialPageRoute(
           builder: (_) => HomeScreen(),
