@@ -15,11 +15,12 @@ import 'package:home4u/features/auth/verification/logic/verification_cubit.dart'
 import 'package:home4u/features/auth/verification/presentation/verification_screen.dart';
 import 'package:home4u/features/cart/presentation/order_details_screen.dart';
 import 'package:home4u/features/exhibition/logic/business_add_product_cubit.dart';
-import 'package:home4u/features/home/presentation/home_screen.dart';
 import 'package:home4u/features/layout/logic/bottom_nav_cubit.dart';
 import 'package:home4u/features/products/data/models/product_preview_response.dart';
 import 'package:home4u/features/products/presentation/product_details_screen.dart';
 import 'package:home4u/features/profile/presentation/add_certification_screen.dart';
+import 'package:home4u/features/user/home/presentation/best_offices_screen.dart';
+import 'package:home4u/features/user/home/presentation/best_show_rooms_screen.dart';
 
 import '../../features/auth/login/presentation/login_screen.dart';
 import '../../features/auth/sign_up/presentation/business_sign_up_screen.dart';
@@ -39,6 +40,7 @@ import '../../features/profile/presentation/edit_profile_screen.dart';
 import '../../features/profile/presentation/profile_screen.dart';
 import '../../features/profile/presentation/project_details_screen.dart';
 import '../../features/settings/presentation/setting_screen.dart';
+import '../../features/user/home/presentation/home_screen.dart';
 import '../di/dependency_injection.dart';
 
 class AppRouter {
@@ -189,6 +191,17 @@ class AppRouter {
       case Routes.userFavoriteScreen:
         return MaterialPageRoute(
           builder: (_) => UserFavoriteScreen(),
+      case Routes.userHomeScreen:
+        return MaterialPageRoute(
+          builder: (_) => HomeScreen(),
+        );
+      case Routes.bestOfficesScreen:
+        return MaterialPageRoute(
+          builder: (_) => BestOfficesScreen(),
+        );
+      case Routes.bestShowRoomsScreen:
+        return MaterialPageRoute(
+          builder: (_) => BestShowRoomsScreen(),
         );
       default:
         return null;

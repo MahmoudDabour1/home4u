@@ -44,6 +44,13 @@ class ProfileLocalDataSourceImpl extends ProfileLocalDataSource {
     await technicalWorkerProfileBox.put(
         kTechnicalWorkerProfileData, profileData);
   }
+  @override
+  Future<void> cacheEngineeringOfficeProfileData(
+      EngineeringOfficeProfileResponseModel profileData) async {
+    await engineeringOfficeProfileBox.put(
+        kEngineeringOfficeProfileData, profileData);
+  }
+
 
   @override
   Future<EngineerProfileResponseModel?> getEngineerProfileData() async {
@@ -55,12 +62,7 @@ class ProfileLocalDataSourceImpl extends ProfileLocalDataSource {
     return technicalWorkerProfileBox.get(kTechnicalWorkerProfileData);
   }
 
-  @override
-  Future<void> cacheEngineeringOfficeProfileData(
-      EngineeringOfficeProfileResponseModel profileData) async {
-    await engineeringOfficeProfileBox.put(
-        kEngineeringOfficeProfileData, profileData);
-  }
+
 
   @override
   Future<EngineeringOfficeProfileResponseModel?>

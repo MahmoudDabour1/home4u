@@ -36,6 +36,9 @@ class ProfileState<T> with _$ProfileState<T> {
           TechnicalWorkerResponseModel? profileData) =
       SuccessUpdateTechnicalWorkerProfile;
 
+  const factory ProfileState.successUpdateEngineeringOfficeProfile(
+          EngineeringOfficeProfileResponseModel? profileData) = SuccessUpdateEngineeringOfficeProfile;
+
   const factory ProfileState.errorUpdateProfile({required String error}) =
       ErrorUpdateProfile;
 

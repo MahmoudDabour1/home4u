@@ -158,6 +158,41 @@ class _ProfileRemoteDataSource implements ProfileRemoteDataSource {
   }
 
   @override
+  Future<EngineeringOfficeProfileResponseModel> updateEngineeringOfficeProfile(
+      String profileResponseModel) async {
+    final _extra = <String, dynamic>{};
+    final queryParameters = <String, dynamic>{};
+    final _headers = <String, dynamic>{};
+    final _data = profileResponseModel;
+    final _options =
+        _setStreamType<EngineeringOfficeProfileResponseModel>(Options(
+      method: 'PUT',
+      headers: _headers,
+      extra: _extra,
+    )
+            .compose(
+              _dio.options,
+              '/api/v1/engineering-office',
+              queryParameters: queryParameters,
+              data: _data,
+            )
+            .copyWith(
+                baseUrl: _combineBaseUrls(
+              _dio.options.baseUrl,
+              baseUrl,
+            )));
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
+    late EngineeringOfficeProfileResponseModel _value;
+    try {
+      _value = EngineeringOfficeProfileResponseModel.fromJson(_result.data!);
+    } on Object catch (e, s) {
+      errorLogger?.logError(e, s, _options);
+      rethrow;
+    }
+    return _value;
+  }
+
+  @override
   Future<UploadProfileImageResponseModel> uploadProfileImage(
       FormData formData) async {
     final _extra = <String, dynamic>{};

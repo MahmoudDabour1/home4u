@@ -31,4 +31,9 @@ abstract class Routes{
   static const String cartProductDetailsScreen = '/cartProductDetailsScreen';
   static const String orderDetailsScreen = '/orderDetailsScreen';
   static const String userFavoriteScreen = '/userFavoriteScreen';
+
+  ///User
+  static const String userHomeScreen = '/userHomeScreen';
+  static const String bestOfficesScreen = '/bestOfficesScreen';
+  static const String bestShowRoomsScreen = '/bestShowRoomsScreen';
 }

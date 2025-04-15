@@ -68,7 +68,7 @@ class _Home4uAppState extends State<Home4uApp> {
 
   Future<String> _getInitialRoute() async {
     String userToken =
-        await SharedPrefHelper.getSecuredString(SharedPrefKeys.userToken);
+    await SharedPrefHelper.getSecuredString(SharedPrefKeys.userToken);
 
     if (userToken.isNotEmpty) {
       isLoggedInUser = true;
@@ -106,7 +106,8 @@ class _Home4uAppState extends State<Home4uApp> {
         return MultiBlocProvider(
           providers: [
             BlocProvider<AppLocalizationCubit>(
-              create: (_) => AppLocalizationCubit(localization)
+              create: (_) =>
+              AppLocalizationCubit(localization)
                 ..initializeLocaleWith(widget.initialLocale),
             ),
             BlocProvider<SignUpCubit>(create: (_) => sl<SignUpCubit>()),
@@ -114,7 +115,9 @@ class _Home4uAppState extends State<Home4uApp> {
                 create: (_) => sl<ForgetPasswordCubit>()),
             BlocProvider<ProfileCubit>(create: (_) => sl<ProfileCubit>()),
             BlocProvider<ProjectCubit>(
-                create: (_) => sl<ProjectCubit>()..getProjects()),
+                create: (_) =>
+                sl<ProjectCubit>()
+                  ..getProjects()),
             BlocProvider<CertificationsCubit>(
                 create: (_) => sl<CertificationsCubit>()),
             BlocProvider<ServicesCubit>(create: (_) => sl<ServicesCubit>()),
@@ -127,6 +130,8 @@ class _Home4uAppState extends State<Home4uApp> {
             BlocProvider<EngineeringOfficeCubit>(
               create: (context) => sl<EngineeringOfficeCubit>(),
             ),
+            BlocProvider<BusinessAddProductCubit>(
+                create: (_) => sl<BusinessAddProductCubit>()),
           ],
           child: ScreenUtilInit(
             designSize: const Size(393, 852),
@@ -134,7 +139,9 @@ class _Home4uAppState extends State<Home4uApp> {
             child: BlocBuilder<AppLocalizationCubit, AppLocalizationState>(
               builder: (context, state) {
                 final TextDirection textDirection =
-                    context.read<AppLocalizationCubit>().textDirection;
+                    context
+                        .read<AppLocalizationCubit>()
+                        .textDirection;
 
                 return Directionality(
                   textDirection: textDirection,
@@ -151,9 +158,8 @@ class _Home4uAppState extends State<Home4uApp> {
                     onGenerateRoute: widget.appRouter.generateRoute,
                     debugShowCheckedModeBanner: false,
                     navigatorObservers: [NavigatorObserver(), _routeObserver],
-                    initialRoute:
-                        Routes.userFavoriteScreen,
-                        // snapshot.data!,
+                    initialRoute: Routes.userHomeScreen,
+                    // snapshot.data!,
                   ),
                 );
               },

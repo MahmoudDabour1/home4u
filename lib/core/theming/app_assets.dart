@@ -72,10 +72,19 @@ abstract class AppAssets {
       'assets/svgs/stepper_materials_and_specs.svg';
   static const String stepperColorsAndStockSvg =
       'assets/svgs/stepper_colors_and_stock.svg';
-
   static const String customFurnitureSvg =
       "assets/svgs/custom_furniture_svg.svg";
   static const String decorSvg = "assets/svgs/decor_svg.svg";
   static const String saveIconSvg =
       "assets/svgs/save_icon_svg.svg";
+
+  ///User
+static const String shopSvg = 'assets/svgs/shop_svg.svg';
+static const String requestDesignSvg = 'assets/svgs/request_design_svg.svg';
+static const String renovateSvg = 'assets/svgs/renovate_svg.svg';
+static const String kitchensSvg = 'assets/svgs/kitchens_svg.svg';
+static const String homeSvg = 'assets/svgs/home_svg.svg';
+static const String askEngineerSvg = 'assets/svgs/ask_engineer_svg.svg';
+static const String askTechnicalSvg = 'assets/svgs/ask_technical.svg';
+
 }

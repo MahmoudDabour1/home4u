@@ -250,6 +250,36 @@ class AppLocale {
   static const String cartEmptySubTitle =
       'Add items to your cart and they will appear here.';
   static const String favorites = 'Favorites';
+  ///User
+  static const String home = 'Home';
+  static const String seeAll = 'See all';
+  static const String furnishTitle = 'Furnish your home';
+  static const String furnishSubtitle = 'Find comfortable and elegant furniture.';
+
+  static const String requestDesignTitle = 'Request design';
+  static const String requestDesignSubtitle = 'Get a custom design for interiors or decor.';
+
+  static const String kitchensTitle = 'Kitchens and dressing';
+  static const String kitchensSubtitle = 'Modern solutions kitchens and wardrobes.';
+
+  static const String renovateTitle = 'Renovate Your Home';
+  static const String renovateSubtitle = 'Upgrade with finishing and renovation services.';
+
+  static const String engineerTitle = 'Ask to Engineer';
+  static const String engineerSubtitle = 'Expert finish and remodel for a better home.';
+
+  static const String technicalTitle = 'Ask to Technical';
+  static const String technicalSubtitle = 'Transform your home with stylish finishing touches.';
+  static const String shopNowTitle = 'Shop now';
+  static const String shopSubtitle = 'Browse and buy home essentials.';
+  static const String theBestOffices = 'The best offices';
+  static const String theBestShowrooms = 'The best showrooms';
+  static const String todayOffers = 'Today\'s Offers';
+  static const String specialOffers = 'Special Offers';
+  static const String getSpecialOffer = 'Get Special Offer\nUp to';
+  static const String claim = 'Claim';
+
+
 
   static const Map<String, dynamic> en = {
     onBoardingTitle1: 'Civil works and finishing services',
@@ -465,6 +495,34 @@ class AppLocale {
     cartEmpty : 'Your cart is empty',
     cartEmptySubTitle : 'Add items to your cart and they will appear here.',
     favorites : 'Favorites',
+    productUploadedSuccessfully :  'Product uploaded\nsuccessfully',
+    goToProductList : 'go to product list',
+    productDetails : 'Product Details',
+    updateProduct : 'Update Product',
+    productUpdatedSuccessfully : 'Product Updated Successfully',
+    clear : 'Clear',
+    home: 'Home',
+    seeAll: 'See all',
+    furnishTitle: 'Furnish your home',
+    furnishSubtitle: 'Find comfortable and elegant furniture.',
+    requestDesignTitle: 'Request design',
+    requestDesignSubtitle: 'Get a custom design for interiors or decor.',
+    kitchensTitle: 'Kitchens and dressing',
+    kitchensSubtitle: 'Modern solutions kitchens and wardrobes.',
+    renovateTitle: 'Renovate Your Home',
+    renovateSubtitle: 'Upgrade with finishing and renovation services.',
+    engineerTitle: 'Ask to Engineer',
+    engineerSubtitle: 'Expert finish and remodel for a better home.',
+    technicalTitle: 'Ask to Technical',
+    technicalSubtitle: 'Transform your home with stylish finishing touches.',
+  shopNowTitle : 'Shop now',
+  shopSubtitle : 'Browse and buy home essentials.',
+  theBestOffices : 'The best offices',
+  theBestShowrooms : 'The best showrooms',
+  todayOffers : 'Today\'s Offers',
+  specialOffers : 'Special Offers',
+  getSpecialOffer : 'Get Special Offer\nUp to',
+  claim : 'Claim',
   };
 
   static const Map<String, dynamic> ar = {
@@ -680,5 +738,33 @@ class AppLocale {
     cartEmpty: 'عربتك فارغة',
     cartEmptySubTitle: 'أضف عناصر إلى عربتك وستظهر هنا.',
     favorites: 'المفضلة',
+    productUploadedSuccessfully :  'تم إضافة المنتج بنجاح',
+    goToProductList : 'الذهاب إلى قائمة المنتجات',
+    productDetails : 'تفاصيل المنتج',
+    updateProduct : 'تحديث المنتج',
+    productUpdatedSuccessfully : 'تم تحديث المنتج بنجاح',
+    clear : 'مسح',
+    home: 'الرئيسية',
+    seeAll: 'عرض الكل',
+    furnishTitle: 'أثاث منزلك',
+    furnishSubtitle: 'ابحث عن أثاث مريح وأنيق.',
+    requestDesignTitle: 'طلب تصميم',
+    requestDesignSubtitle: 'احصل على تصميم مخصص للديكورات الداخلية أو الزخارف.',
+    kitchensTitle: 'المطابخ والتجهيزات',
+    kitchensSubtitle: 'حلول حديثة للمطابخ والخزائن.',
+    renovateTitle: 'تجديد منزلك',
+    renovateSubtitle: 'تحديث مع خدمات التشطيب والتجديد.',
+    engineerTitle: 'استشارة مهندس',
+    engineerSubtitle: 'تشطيب احترافي وتجديد لمنزل أفضل.',
+    technicalTitle: 'استشارة فني',
+    technicalSubtitle: 'حوّل منزلك مع لمسات تشطيب أنيقة.',
+    shopNowTitle : 'تسوق الآن',
+    shopSubtitle : 'تصفح واشتري مستلزمات المنزل.',
+    theBestOffices : 'أفضل المكاتب الهندسية',
+    theBestShowrooms : 'أفضل المعارض',
+    todayOffers : 'عروض اليوم',
+    specialOffers : 'عروض خاصة',
+    getSpecialOffer : 'احصل على عرض خاص\nحتى',
+    claim : 'استرداد',
   };
 }
