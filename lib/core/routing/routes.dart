@@ -28,4 +28,6 @@ abstract class Routes{
 
   ///User
   static const String userHomeScreen = '/userHomeScreen';
+  static const String bestOfficesScreen = '/bestOfficesScreen';
+  static const String bestShowRoomsScreen = '/bestShowRoomsScreen';
 }

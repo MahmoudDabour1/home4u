@@ -10,7 +10,8 @@ class AppCustomSearchTextField extends StatelessWidget {
   final TextEditingController? controller;
   final void Function(String)? onChanged;
   final void Function(String?)? onSaved;
-  const AppCustomSearchTextField({super.key, this.controller, this.onChanged, this.onSaved});
+  final Color? fillColor;
+  const AppCustomSearchTextField({super.key, this.controller, this.onChanged, this.onSaved, this.fillColor});
 
   @override
   Widget build(BuildContext context) {
@@ -37,7 +38,7 @@ class AppCustomSearchTextField extends StatelessWidget {
           borderSide: BorderSide.none,
         ),
         hintStyle: AppStyles.font16GrayLight,
-        fillColor: AppColors.whiteColor,
+        fillColor:fillColor?? AppColors.whiteColor,
         filled: true,
         // hoverColor: AppColors.blueColor,
       ),
