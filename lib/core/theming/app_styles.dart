@@ -80,6 +80,10 @@ class AppStyles {
     fontSize: 24.sp,
     color: AppColors.blackColor,
     fontWeight: FontWeightHelper.medium,
+  ); static TextStyle font24BlackBold = TextStyle(
+    fontSize: 24.sp,
+    color: AppColors.blackColor,
+    fontWeight: FontWeightHelper.bold,
   );
   static TextStyle font24DarkGrayMedium = TextStyle(
     fontSize: 24.sp,

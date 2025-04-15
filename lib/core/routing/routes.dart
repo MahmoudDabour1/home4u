@@ -28,4 +28,5 @@ abstract class Routes{
 
   ///User Flow
   static const String cartScreen = '/cartScreen';
+  static const String cartProductDetailsScreen = '/cartProductDetailsScreen';
 }

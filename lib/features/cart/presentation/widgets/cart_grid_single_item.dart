@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_svg/flutter_svg.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:home4u/core/theming/app_colors.dart';
 import 'package:home4u/core/theming/app_styles.dart';
 import 'package:home4u/features/cart/presentation/widgets/quantity_controller_button.dart';
@@ -57,7 +57,7 @@ class CartGridSingleItem extends StatelessWidget {
                     ),
                     verticalSpace(4.h),
                     Text(
-                      '4.5',
+                      "4.5",
                       style: TextStyle(
                         fontSize: 10.sp,
                         color: AppColors.ratingColor,
