@@ -4,7 +4,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:home4u/core/theming/app_styles.dart';
 import 'package:home4u/core/utils/spacing.dart';
-import 'package:home4u/features/cart/presentation/cart_product_details_colors_list_view.dart';
+import 'package:home4u/features/cart/presentation/widgets/cart_details_widgets/cart_product_details_colors_list_view.dart';
 import 'package:home4u/features/cart/presentation/widgets/cart_details_widgets/cart_product_details_favorite_button.dart';
 import 'package:home4u/features/cart/presentation/widgets/cart_details_widgets/cart_product_details_screen_carousel_slider.dart'
     show CartProductDetailsScreenCarouselSlider;
@@ -12,9 +12,9 @@ import 'package:home4u/features/cart/presentation/widgets/cart_details_widgets/e
 import 'package:home4u/features/cart/presentation/widgets/cart_details_widgets/plus_and_minus_controll_buttons.dart';
 import 'package:home4u/locale/app_locale.dart';
 
-import '../../../../../core/theming/app_assets.dart';
-import '../../../../../core/theming/app_colors.dart';
-import '../../../../../core/widgets/app_custom_button.dart';
+import '../../../core/theming/app_assets.dart';
+import '../../../core/theming/app_colors.dart';
+import '../../../core/widgets/app_custom_button.dart';
 
 class CartProductDetailsScreen extends StatelessWidget {
   const CartProductDetailsScreen({super.key});
@@ -106,19 +106,22 @@ class CartProductDetailsScreen extends StatelessWidget {
                     ),
                     verticalSpace(16),
                     CartProductDetailsColorsListView(),
-                    verticalSpace(32),
+                    verticalSpace(64),
                     Row(
                       children: [
                         CartProductDetailsFavoriteButton(),
                         horizontalSpace(16),
-                        AppCustomButton(
-                          btnHeight: 50.h,
-                          btnWidth: 278.w,
-                          textButton: AppLocale.addToCart.getString(context),
-                          onPressed: () {},
+                        Expanded(
+                          child: AppCustomButton(
+                            btnHeight: 50.h,
+                            btnWidth: 278.w,
+                            textButton: AppLocale.addToCart.getString(context),
+                            onPressed: () {},
+                          ),
                         ),
                       ],
                     ),
+                    verticalSpace(32),
                   ],
                 ),
               ),

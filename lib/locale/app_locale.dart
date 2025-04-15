@@ -241,7 +241,7 @@ class AppLocale {
       'Customized furniture for\n your needs.';
   static const String decor = 'Decor';
   static const String decorSubTitle =
-      'Decor enhanced a space\'s\n look and feel.';
+      'Decor enhanced look\n and feel.';
   static const String addToCart = 'Add to Cart';
   static const String myCart = 'My Cart';
   static const String total = 'Total: ';
@@ -487,7 +487,7 @@ class AppLocale {
     customFurniture : 'Custom Furniture',
     customFurnitureSubTitle : 'Customized furniture for\n your needs.',
     decor : 'Decor',
-    decorSubTitle : 'Decor enhanced a space\'s\n look and feel.',
+    decorSubTitle : 'Decor enhanced look\n and feel.',
     addToCart : 'Add to Cart',
     myCart : 'My Cart',
     total : 'Total: ',
@@ -495,12 +495,6 @@ class AppLocale {
     cartEmpty : 'Your cart is empty',
     cartEmptySubTitle : 'Add items to your cart and they will appear here.',
     favorites : 'Favorites',
-    productUploadedSuccessfully :  'Product uploaded\nsuccessfully',
-    goToProductList : 'go to product list',
-    productDetails : 'Product Details',
-    updateProduct : 'Update Product',
-    productUpdatedSuccessfully : 'Product Updated Successfully',
-    clear : 'Clear',
     home: 'Home',
     seeAll: 'See all',
     furnishTitle: 'Furnish your home',
@@ -738,12 +732,6 @@ class AppLocale {
     cartEmpty: 'عربتك فارغة',
     cartEmptySubTitle: 'أضف عناصر إلى عربتك وستظهر هنا.',
     favorites: 'المفضلة',
-    productUploadedSuccessfully :  'تم إضافة المنتج بنجاح',
-    goToProductList : 'الذهاب إلى قائمة المنتجات',
-    productDetails : 'تفاصيل المنتج',
-    updateProduct : 'تحديث المنتج',
-    productUpdatedSuccessfully : 'تم تحديث المنتج بنجاح',
-    clear : 'مسح',
     home: 'الرئيسية',
     seeAll: 'عرض الكل',
     furnishTitle: 'أثاث منزلك',

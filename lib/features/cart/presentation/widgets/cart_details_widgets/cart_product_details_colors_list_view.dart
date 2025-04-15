@@ -5,7 +5,7 @@ import 'package:home4u/core/theming/app_styles.dart';
 import 'package:home4u/core/utils/spacing.dart';
 import 'package:home4u/locale/app_locale.dart';
 
-import '../../../core/theming/app_colors.dart';
+import '../../../../../core/theming/app_colors.dart';
 
 class CartProductDetailsColorsListView extends StatelessWidget {
   const CartProductDetailsColorsListView({
