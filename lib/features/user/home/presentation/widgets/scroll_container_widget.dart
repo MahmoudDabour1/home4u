@@ -12,7 +12,12 @@ class ScrollContainerWidget extends StatelessWidget {
   final String image;
   final String title;
   final String starCount;
-  const ScrollContainerWidget({super.key, required this.image, required this.title, required this.starCount});
+
+  const ScrollContainerWidget(
+      {super.key,
+      required this.image,
+      required this.title,
+      required this.starCount});
 
   @override
   Widget build(BuildContext context) {
@@ -34,7 +39,7 @@ class ScrollContainerWidget extends StatelessWidget {
               children: [
                 Image.asset(
                   image,
-                  height: 122.h,
+                  height:122.h,
                   width: MediaQuery.sizeOf(context).width,
                   fit: BoxFit.cover,
                 ),
@@ -49,7 +54,7 @@ class ScrollContainerWidget extends StatelessWidget {
                       color: AppColors.offWhiteColor,
                     ),
                     child: Icon(
-                     SolarIconsBold.heart,
+                      SolarIconsBold.heart,
                       color: Colors.red,
                       size: 24.h,
                     ),
@@ -58,8 +63,9 @@ class ScrollContainerWidget extends StatelessWidget {
               ],
             ),
           ),
+          verticalSpace(16),
           Padding(
-            padding: EdgeInsets.all(16.r),
+            padding: EdgeInsets.symmetric(horizontal: 16.h),
             child: Row(
               children: [
                 Text(
