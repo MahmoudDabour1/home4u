@@ -30,6 +30,11 @@ abstract class ProfileRemoteDataSource {
     @Body() String profileResponseModel,
   );
 
+  @PUT(ApiConstants.updateEngineeringOfficeProfileEP)
+  Future<EngineeringOfficeProfileResponseModel> updateEngineeringOfficeProfile(
+    @Body() String profileResponseModel,
+  );
+
   @POST(ApiConstants.uploadProfileImageEP)
   Future<UploadProfileImageResponseModel> uploadProfileImage(
     @Body() FormData formData,

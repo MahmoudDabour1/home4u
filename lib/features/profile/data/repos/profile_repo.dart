@@ -23,6 +23,10 @@ abstract class ProfileRepo {
   Future<ApiResult<TechnicalWorkerResponseModel>> updateTechnicalWorkerProfile(
     String profileResponseModel,
   );
+  Future<ApiResult<EngineeringOfficeProfileResponseModel>> updateEngineeringOfficeProfile(
+    String profileResponseModel,
+  );
+
 
   Future<ApiResult<UploadProfileImageResponseModel>> uploadProfileImage(
       FormData formData);
@@ -108,6 +112,18 @@ class ProfileRepoImp implements ProfileRepo {
   }
 
   @override
+  Future<ApiResult<EngineeringOfficeProfileResponseModel>> updateEngineeringOfficeProfile(String profileResponseModel) async{
+try{
+  final response = await _profileRemoteDataSource
+          .updateEngineeringOfficeProfile(profileResponseModel);
+      await _profileLocalDataSource.cacheEngineeringOfficeProfileData(response);
+      return ApiResult.success(response);
+}catch(error){
+  return ApiResult.failure(ApiErrorHandler.handle(error));
+}
+  }
+
+  @override
   Future<ApiResult<UploadProfileImageResponseModel>> uploadProfileImage(
       FormData formData) async {
     try {
@@ -118,4 +134,5 @@ class ProfileRepoImp implements ProfileRepo {
       return ApiResult.failure(ApiErrorHandler.handle(error));
     }
   }
+
 }

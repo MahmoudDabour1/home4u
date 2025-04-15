@@ -52,7 +52,8 @@ class ApiConstants {
   static const String uploadProfileImageEP = "/api/v1/users/personal_photo";
   static const String getEngineeringOfficeByTokenEp =
       "/api/v1/engineering-office/user";
-
+  static const String updateEngineeringOfficeProfileEP =
+      "/api/v1/engineering-office";
   ///exhibitions
   static const String businessConfigEP = "/api/v1/business-config";
   static const String productsFilterEP = "/api/v1/products/filter";

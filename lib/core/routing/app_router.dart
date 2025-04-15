@@ -35,6 +35,7 @@ import '../../features/profile/presentation/edit_profile_screen.dart';
 import '../../features/profile/presentation/profile_screen.dart';
 import '../../features/profile/presentation/project_details_screen.dart';
 import '../../features/settings/presentation/setting_screen.dart';
+import '../../features/user/home/presentation/home_screen.dart';
 import '../di/dependency_injection.dart';
 
 class AppRouter {
@@ -168,6 +169,12 @@ class AppRouter {
         int productId = settings.arguments as int;
         return MaterialPageRoute(
           builder: (_) => ProductDetailsScreen(),
+        );
+
+        ///User
+      case Routes.userHomeScreen:
+        return MaterialPageRoute(
+          builder: (_) => HomeScreen(),
         );
       default:
         return null;
