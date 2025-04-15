@@ -72,4 +72,10 @@ abstract class AppAssets {
       'assets/svgs/stepper_materials_and_specs.svg';
   static const String stepperColorsAndStockSvg =
       'assets/svgs/stepper_colors_and_stock.svg';
+
+  static const String customFurnitureSvg =
+      "assets/svgs/custom_furniture_svg.svg";
+  static const String decorSvg = "assets/svgs/decor_svg.svg";
+  static const String saveIconSvg =
+      "assets/svgs/save_icon_svg.svg";
 }

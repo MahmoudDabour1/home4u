@@ -25,4 +25,7 @@ abstract class Routes{
   static const String productPreviewScreen = '/productPreviewScreen';
   static const String businessAddProductScreen =  '/businessAddProductScreen';
   static const String businessSignUpScreen = '/businessSignUpScreen';
+
+  ///User Flow
+  static const String cartScreen = '/cartScreen';
 }

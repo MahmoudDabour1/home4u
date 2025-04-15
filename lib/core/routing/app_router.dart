@@ -22,6 +22,7 @@ import 'package:home4u/features/profile/presentation/add_certification_screen.da
 
 import '../../features/auth/login/presentation/login_screen.dart';
 import '../../features/auth/sign_up/presentation/business_sign_up_screen.dart';
+import '../../features/cart/presentation/cart_screen.dart';
 import '../../features/exhibition/presentation/business_add_product_screen.dart';
 import '../../features/exhibition/presentation/business_overview_screen.dart';
 import '../../features/exhibition/presentation/business_review_screen.dart';
@@ -168,6 +169,10 @@ class AppRouter {
         int productId = settings.arguments as int;
         return MaterialPageRoute(
           builder: (_) => ProductDetailsScreen(),
+        );
+      case Routes.cartScreen:
+        return MaterialPageRoute(
+          builder: (_) => CartScreen(),
         );
       default:
         return null;
