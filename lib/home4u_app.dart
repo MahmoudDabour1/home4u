@@ -152,7 +152,7 @@ class _Home4uAppState extends State<Home4uApp> {
                     debugShowCheckedModeBanner: false,
                     navigatorObservers: [NavigatorObserver(), _routeObserver],
                     initialRoute:
-                        Routes.orderDetailsScreen,
+                        Routes.userFavoriteScreen,
                         // snapshot.data!,
                   ),
                 );

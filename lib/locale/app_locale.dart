@@ -245,6 +245,11 @@ class AppLocale {
   static const String addToCart = 'Add to Cart';
   static const String myCart = 'My Cart';
   static const String total = 'Total: ';
+  static const String addToCartSuccessfully = 'Added to cart successfully';
+  static const String cartEmpty = 'Your cart is empty';
+  static const String cartEmptySubTitle =
+      'Add items to your cart and they will appear here.';
+  static const String favorites = 'Favorites';
 
   static const Map<String, dynamic> en = {
     onBoardingTitle1: 'Civil works and finishing services',
@@ -456,6 +461,10 @@ class AppLocale {
     addToCart : 'Add to Cart',
     myCart : 'My Cart',
     total : 'Total: ',
+    addToCartSuccessfully : 'Added to cart successfully',
+    cartEmpty : 'Your cart is empty',
+    cartEmptySubTitle : 'Add items to your cart and they will appear here.',
+    favorites : 'Favorites',
   };
 
   static const Map<String, dynamic> ar = {
@@ -667,5 +676,9 @@ class AppLocale {
     addToCart: 'إضافة إلى السلة',
     myCart: 'عربتي',
     total: 'الإجمالي: ',
+    addToCartSuccessfully: 'تمت الإضافة إلى السلة بنجاح',
+    cartEmpty: 'عربتك فارغة',
+    cartEmptySubTitle: 'أضف عناصر إلى عربتك وستظهر هنا.',
+    favorites: 'المفضلة',
   };
 }

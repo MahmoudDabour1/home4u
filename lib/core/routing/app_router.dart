@@ -24,6 +24,7 @@ import 'package:home4u/features/profile/presentation/add_certification_screen.da
 import '../../features/auth/login/presentation/login_screen.dart';
 import '../../features/auth/sign_up/presentation/business_sign_up_screen.dart';
 import '../../features/cart/presentation/cart_screen.dart';
+import '../../features/cart/presentation/user_favorite_screen.dart';
 import '../../features/cart/presentation/widgets/cart_details_widgets/cart_product_details_screen.dart';
 import '../../features/exhibition/presentation/business_add_product_screen.dart';
 import '../../features/exhibition/presentation/business_overview_screen.dart';
@@ -184,6 +185,10 @@ class AppRouter {
       case Routes.orderDetailsScreen:
         return MaterialPageRoute(
           builder: (_) => OrderDetailsScreen(),
+        );
+      case Routes.userFavoriteScreen:
+        return MaterialPageRoute(
+          builder: (_) => UserFavoriteScreen(),
         );
       default:
         return null;
