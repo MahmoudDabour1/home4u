@@ -2,7 +2,6 @@ import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_localization/flutter_localization.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_svg/svg.dart';
 
 import '../../../../../../core/theming/app_colors.dart';
 import '../../../../../../core/theming/app_styles.dart';
@@ -35,15 +34,14 @@ class _TodayOffersWidgetState extends State<TodayOffersWidget> {
           items: [
             ...List.generate(5, (index) {
               return Container(
-                width: double.infinity,
-                height: 180.h,
+                width: double.infinity.w,
+                height: MediaQuery.sizeOf(context).height * 0.282,
                 decoration: BoxDecoration(
                   color: AppColors.scaffoldBusinessBackgroundColor,
                   borderRadius: BorderRadius.circular(16.r),
                 ),
                 child: Padding(
-                  padding:
-                      EdgeInsets.only(left: 16.w),
+                  padding: EdgeInsets.only(left: 16.w),
                   child: Row(
                     children: [
                       Column(
@@ -71,8 +69,14 @@ class _TodayOffersWidgetState extends State<TodayOffersWidget> {
                           verticalSpace(20),
                         ],
                       ),
-                     Spacer(),
-                     Image.asset("assets/images/girl.png"),
+                      horizontalSpace(8),
+                      // Spacer(),
+                      Expanded(
+                          child: Image.asset(
+                        "assets/images/girl.png",
+                            height: MediaQuery.sizeOf(context).height,
+                            fit: BoxFit.fill,
+                      )),
                     ],
                   ),
                 ),
