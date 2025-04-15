@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_localization/flutter_localization.dart';
+import 'package:home4u/core/extensions/navigation_extension.dart';
+import 'package:home4u/core/routing/routes.dart';
 
 import '../../../../../../core/utils/spacing.dart';
 import '../../../../../../locale/app_locale.dart';
@@ -16,7 +18,9 @@ class BestOfficeWidget extends StatelessWidget {
         verticalSpace(32),
         CustomSeeAllRowWidget(
           text: AppLocale.theBestOffices.getString(context),
-          onPressed: () {},
+          onPressed: () {
+            context.pushNamed(Routes.bestOfficesScreen);
+          },
         ),
         verticalSpace(16),
         BestOfficeListView(),

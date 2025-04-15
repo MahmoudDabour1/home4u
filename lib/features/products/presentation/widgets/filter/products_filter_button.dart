@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_svg/svg.dart';
 import 'package:home4u/core/utils/spacing.dart';
+import 'package:home4u/core/widgets/app_custom_filter_button.dart';
 
-import '../../../../../core/theming/app_assets.dart';
 import '../../../../../core/theming/app_colors.dart';
 import 'filter_availability_section.dart';
 import 'filter_buttons.dart';
@@ -17,8 +16,8 @@ class ProductsFilterButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return GestureDetector(
-      onTap: () {
+    return AppCustomFilterButton(
+      onPressed: () {
         showModalBottomSheet(
           isScrollControlled: true,
           context: context,
@@ -61,21 +60,6 @@ class ProductsFilterButton extends StatelessWidget {
           },
         );
       },
-      child: Container(
-        width: 53.w,
-        height: 53.h,
-        decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(16.r),
-          color: AppColors.whiteColor,
-        ),
-        child: Align(
-          child: SvgPicture.asset(
-            AppAssets.filterSvg,
-            width: 28.w,
-            height: 28.h,
-          ),
-        ),
-      ),
     );
   }
 }
