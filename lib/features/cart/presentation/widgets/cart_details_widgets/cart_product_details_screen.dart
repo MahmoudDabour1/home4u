@@ -4,15 +4,17 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:home4u/core/theming/app_styles.dart';
 import 'package:home4u/core/utils/spacing.dart';
+import 'package:home4u/features/cart/presentation/cart_product_details_colors_list_view.dart';
 import 'package:home4u/features/cart/presentation/widgets/cart_details_widgets/cart_product_details_favorite_button.dart';
-import 'package:home4u/features/cart/presentation/widgets/cart_details_widgets/cart_product_details_screen_carousel_slider.dart' show CartProductDetailsScreenCarouselSlider;
+import 'package:home4u/features/cart/presentation/widgets/cart_details_widgets/cart_product_details_screen_carousel_slider.dart'
+    show CartProductDetailsScreenCarouselSlider;
 import 'package:home4u/features/cart/presentation/widgets/cart_details_widgets/expandable_text.dart';
 import 'package:home4u/features/cart/presentation/widgets/cart_details_widgets/plus_and_minus_controll_buttons.dart';
 import 'package:home4u/locale/app_locale.dart';
 
-import '../../../core/theming/app_assets.dart';
-import '../../../core/theming/app_colors.dart';
-import '../../../core/widgets/app_custom_button.dart';
+import '../../../../../core/theming/app_assets.dart';
+import '../../../../../core/theming/app_colors.dart';
+import '../../../../../core/widgets/app_custom_button.dart';
 
 class CartProductDetailsScreen extends StatelessWidget {
   const CartProductDetailsScreen({super.key});
@@ -103,42 +105,7 @@ class CartProductDetailsScreen extends StatelessWidget {
                       style: AppStyles.font16BlackLight,
                     ),
                     verticalSpace(16),
-                    Wrap(
-                      children: [
-                        Text(
-                          AppLocale.color.getString(context),
-                          style: AppStyles.font16BlackBold,
-                        ),
-                        horizontalSpace(16),
-                        ...List.generate(
-                          8,
-                          (index) {
-                            return Container(
-                              width: 30.w,
-                              height: 30.h,
-                              margin: EdgeInsetsDirectional.only(end: 8.w),
-                              decoration: BoxDecoration(
-                                shape: BoxShape.circle,
-                                border: Border.all(
-                                  color: AppColors.grayColor,
-                                  width: 2.w,
-                                ),
-                              ),
-                              child: Center(
-                                child: Container(
-                                  width: 20.w,
-                                  height: 20.h,
-                                  decoration: BoxDecoration(
-                                    color: AppColors.primaryColor,
-                                    shape: BoxShape.circle,
-                                  ),
-                                ),
-                              ),
-                            );
-                          },
-                        ),
-                      ],
-                    ),
+                    CartProductDetailsColorsListView(),
                     verticalSpace(32),
                     Row(
                       children: [
@@ -146,8 +113,8 @@ class CartProductDetailsScreen extends StatelessWidget {
                         horizontalSpace(16),
                         AppCustomButton(
                           btnHeight: 50.h,
-                          btnWidth: 270.w,
-                          textButton: "Add to cart",
+                          btnWidth: 278.w,
+                          textButton: AppLocale.addToCart.getString(context),
                           onPressed: () {},
                         ),
                       ],

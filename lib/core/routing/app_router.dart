@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:home4u/core/routing/routes.dart';
-import 'package:home4u/features/auth/sign_up/presentation/engineering_office_screen.dart';
 import 'package:home4u/features/auth/forget_password/presentation/forget_password_screen.dart';
 import 'package:home4u/features/auth/login/logic/login_cubit.dart';
 import 'package:home4u/features/auth/new_password/logic/new_password_cubit.dart';
@@ -9,10 +8,12 @@ import 'package:home4u/features/auth/new_password/presentation/new_password_scre
 import 'package:home4u/features/auth/sign_up/logic/engineer/engineer_cubit.dart';
 import 'package:home4u/features/auth/sign_up/logic/technical_worker/technical_worker_cubit.dart';
 import 'package:home4u/features/auth/sign_up/presentation/engineer_sign_up.dart';
+import 'package:home4u/features/auth/sign_up/presentation/engineering_office_screen.dart';
 import 'package:home4u/features/auth/sign_up/presentation/sign_up_screen.dart';
 import 'package:home4u/features/auth/sign_up/presentation/technical_worker_sign_up.dart';
 import 'package:home4u/features/auth/verification/logic/verification_cubit.dart';
 import 'package:home4u/features/auth/verification/presentation/verification_screen.dart';
+import 'package:home4u/features/cart/presentation/order_details_screen.dart';
 import 'package:home4u/features/exhibition/logic/business_add_product_cubit.dart';
 import 'package:home4u/features/home/presentation/home_screen.dart';
 import 'package:home4u/features/layout/logic/bottom_nav_cubit.dart';
@@ -22,8 +23,8 @@ import 'package:home4u/features/profile/presentation/add_certification_screen.da
 
 import '../../features/auth/login/presentation/login_screen.dart';
 import '../../features/auth/sign_up/presentation/business_sign_up_screen.dart';
-import '../../features/cart/presentation/cart_product_details_screen.dart';
 import '../../features/cart/presentation/cart_screen.dart';
+import '../../features/cart/presentation/widgets/cart_details_widgets/cart_product_details_screen.dart';
 import '../../features/exhibition/presentation/business_add_product_screen.dart';
 import '../../features/exhibition/presentation/business_overview_screen.dart';
 import '../../features/exhibition/presentation/business_review_screen.dart';
@@ -153,7 +154,7 @@ class AppRouter {
       //     builder: (_) => ProductPreviewScreen(),
       //   );
       case Routes.businessAddProductScreen:
-        final  productData = settings.arguments as ProductPreviewResponse ? ;
+        final productData = settings.arguments as ProductPreviewResponse?;
         return MaterialPageRoute(
           builder: (_) => BlocProvider<BusinessAddProductCubit>(
             create: (_) => sl<BusinessAddProductCubit>(),
@@ -175,10 +176,14 @@ class AppRouter {
         return MaterialPageRoute(
           builder: (_) => CartScreen(),
         );
-        case Routes.cartProductDetailsScreen:
+      case Routes.cartProductDetailsScreen:
         // int productId = settings.arguments as int;
         return MaterialPageRoute(
           builder: (_) => CartProductDetailsScreen(),
+        );
+      case Routes.orderDetailsScreen:
+        return MaterialPageRoute(
+          builder: (_) => OrderDetailsScreen(),
         );
       default:
         return null;

@@ -242,6 +242,9 @@ class AppLocale {
   static const String decor = 'Decor';
   static const String decorSubTitle =
       'Decor enhanced a space\'s\n look and feel.';
+  static const String addToCart = 'Add to Cart';
+  static const String myCart = 'My Cart';
+  static const String total = 'Total: ';
 
   static const Map<String, dynamic> en = {
     onBoardingTitle1: 'Civil works and finishing services',
@@ -450,6 +453,9 @@ class AppLocale {
     customFurnitureSubTitle : 'Customized furniture for\n your needs.',
     decor : 'Decor',
     decorSubTitle : 'Decor enhanced a space\'s\n look and feel.',
+    addToCart : 'Add to Cart',
+    myCart : 'My Cart',
+    total : 'Total: ',
   };
 
   static const Map<String, dynamic> ar = {
@@ -658,5 +664,8 @@ class AppLocale {
     customFurnitureSubTitle : 'أثاث مخصص لاحتياجاتك.',
     decor: 'الديكور',
     decorSubTitle: 'الديكور يعزز مظهر ومشاعر المكان.',
+    addToCart: 'إضافة إلى السلة',
+    myCart: 'عربتي',
+    total: 'الإجمالي: ',
   };
 }
