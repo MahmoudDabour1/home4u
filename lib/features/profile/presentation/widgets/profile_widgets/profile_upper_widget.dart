@@ -18,7 +18,7 @@ class ProfileUpperWidget extends StatelessWidget {
           children: [
             Stack(
               children: [
-                ProfileCustomHeaderShape(),
+                // ProfileCustomHeaderShape(),
                 ProfileBlocBuilder ()
               ],
             ),

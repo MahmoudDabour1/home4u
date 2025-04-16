@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_localization/flutter_localization.dart';
 import 'package:home4u/core/extensions/navigation_extension.dart';
 import 'package:home4u/features/user/home/presentation/widgets/custom_see_all_row_widget.dart';
 import 'package:home4u/locale/app_locale.dart';
@@ -16,7 +17,7 @@ class BestShowRoomsWidget extends StatelessWidget {
       children: [
         verticalSpace(32),
         CustomSeeAllRowWidget(
-          text: AppLocale.theBestShowrooms,
+          text: AppLocale.theBestShowrooms.getString(context),
           onPressed: () {
             context.pushNamed(Routes.bestShowRoomsScreen);
           },
