@@ -180,13 +180,14 @@ class EngineeringOfficeUserAdapter extends TypeAdapter<EngineeringOfficeUser> {
       engineeringOffice: fields[11] as dynamic,
       enabled: fields[12] as bool?,
       business: fields[13] as dynamic,
+      coverPhoto: fields[14] as dynamic,
     );
   }
 
   @override
   void write(BinaryWriter writer, EngineeringOfficeUser obj) {
     writer
-      ..writeByte(14)
+      ..writeByte(15)
       ..writeByte(0)
       ..write(obj.id)
       ..writeByte(1)
@@ -214,7 +215,9 @@ class EngineeringOfficeUserAdapter extends TypeAdapter<EngineeringOfficeUser> {
       ..writeByte(12)
       ..write(obj.enabled)
       ..writeByte(13)
-      ..write(obj.business);
+      ..write(obj.business)
+      ..writeByte(14)
+      ..write(obj.coverPhoto);
   }
 
   @override
@@ -375,6 +378,7 @@ EngineeringOfficeUser _$EngineeringOfficeUserFromJson(
       engineeringOffice: json['engineeringOffice'],
       enabled: json['enabled'] as bool?,
       business: json['business'],
+      coverPhoto: json['coverPhoto'],
     );
 
 Map<String, dynamic> _$EngineeringOfficeUserToJson(
@@ -394,6 +398,7 @@ Map<String, dynamic> _$EngineeringOfficeUserToJson(
       'engineeringOffice': instance.engineeringOffice,
       'enabled': instance.enabled,
       'business': instance.business,
+      'coverPhoto': instance.coverPhoto,
     };
 
 EngineeringOfficeCity _$EngineeringOfficeCityFromJson(

@@ -57,7 +57,6 @@ class ProfileCubit extends Cubit<ProfileState> {
   final tradeNameController = TextEditingController();
   final descriptionController = TextEditingController();
 
-
   String? selectedGovernorate;
   String? selectedCity;
   String? selectEngineeringOfficeField;
@@ -380,23 +379,23 @@ class ProfileCubit extends Cubit<ProfileState> {
 
   Future<String> _prepareEngineeringOfficeUpdateData() async {
     var engineeringOfficeData =
-    await _profileLocalDataSource.getEngineeringOfficeProfileData();
+        await _profileLocalDataSource.getEngineeringOfficeProfileData();
     final jsonEngineeringOfficeData = {
       "id": engineeringOfficeData?.data?.id ?? 0,
       "statusCode": engineeringOfficeData?.data?.statusCode ?? 1,
       "user": {
-        "id": engineeringOfficeData?.data?.user?.id??0,
+        "id": engineeringOfficeData?.data?.user?.id ?? 0,
         "firstName": firstNameController.text.isNotEmpty
             ? firstNameController.text
-            :engineeringOfficeData?.data?.user?.firstName??"",
-        "lastName":lastNameController.text.isNotEmpty
+            : engineeringOfficeData?.data?.user?.firstName ?? "",
+        "lastName": lastNameController.text.isNotEmpty
             ? lastNameController.text
-            : engineeringOfficeData?.data?.user?.lastName??"",
-        // "email": "medomagdy7070@gmail.com",
-        // "phone": "01661092296",
-        "personalPhoto": engineeringOfficeData?.data?.user?.personalPhoto??"",
+            : engineeringOfficeData?.data?.user?.lastName ?? "",
+        "email": engineeringOfficeData?.data?.user?.email ?? '',
+        "phone": engineeringOfficeData?.data?.user?.phone ?? '',
+        "personalPhoto": engineeringOfficeData?.data?.user?.personalPhoto ?? "",
         "userType": {
-          "id": engineeringOfficeData?.data?.user?.userType?.id??0,
+          "id": engineeringOfficeData?.data?.user?.userType?.id ?? 0,
         },
         "governorate": selectedGovernorate != null
             ? {"id": int.parse(selectedGovernorate!)}
@@ -410,25 +409,26 @@ class ProfileCubit extends Cubit<ProfileState> {
         "enabled": true,
         "business": null
       },
-      "tradeName":tradeNameController.text.isNotEmpty?tradeNameController.text: engineeringOfficeData?.data?.name??"",
-      "description":descriptionController.text.isNotEmpty?descriptionController.text: engineeringOfficeData?.data?.description??"",
+      "tradeName": tradeNameController.text.isNotEmpty
+          ? tradeNameController.text
+          : engineeringOfficeData?.data?.name ?? "",
+      "description": descriptionController.text.isNotEmpty
+          ? descriptionController.text
+          : engineeringOfficeData?.data?.description ?? "",
       "commercialRegisterPath": null,
       "taxCardPath": null,
       "personalCardPath": null,
       "engineeringOfficeField": selectEngineeringOfficeField != null
           ? {"id": int.parse(selectEngineeringOfficeField!)}
-          : {"id": engineeringOfficeData?.data?.engineeringOfficeField?.id ?? 0},
-      "engineeringOfficeDepartments": engineeringOfficeData?.data?.engineeringOfficeDepartments
-          ?.map((e) => {"id": e.id})
-          .toList() ?? [],
-      // "engineeringOfficeField": selectEngineeringOfficeField != null
-      //     ? {"id": int.parse(selectedGovernorate!)}
-      //     : engineeringOfficeData?.data?.user?.governorate?.toJson(),
-      // "engineeringOfficeDepartments": engineeringOfficeData?.data?.engineeringOfficeDepartments
-      //     ?.map((e) => {"id": e.id})
-      //     .toList() ??
-      //     [],
-        };
+          : {
+              "id": engineeringOfficeData?.data?.engineeringOfficeField?.id ?? 0
+            },
+      "engineeringOfficeDepartments": engineeringOfficeData
+              ?.data?.engineeringOfficeDepartments
+              ?.map((e) => {"id": e.id})
+              .toList() ??
+          [],
+    };
 
     final jsonEngineeringOfficeString = json.encode(jsonEngineeringOfficeData);
     return jsonEngineeringOfficeString;

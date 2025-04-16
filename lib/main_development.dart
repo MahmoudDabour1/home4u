@@ -42,17 +42,17 @@ void main() async {
   final initialLocale = cachedLocale.isNotEmpty ? cachedLocale : 'en';
 
   runApp(
-    DevicePreview(
-      enabled: !kReleaseMode,
-      builder: (context) => Home4uApp(
-        appRouter: AppRouter(),
-        initialLocale: initialLocale,
-      ),
-    ),
-    // Home4uApp(
-    //   appRouter: AppRouter(),
-    //   initialLocale: initialLocale,
+    // DevicePreview(
+    //   enabled: !kReleaseMode,
+    //   builder: (context) => Home4uApp(
+    //     appRouter: AppRouter(),
+    //     initialLocale: initialLocale,
+    //   ),
     // ),
+    Home4uApp(
+      appRouter: AppRouter(),
+      initialLocale: initialLocale,
+    ),
   );
 }
 

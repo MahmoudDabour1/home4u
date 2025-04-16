@@ -86,5 +86,6 @@ static const String kitchensSvg = 'assets/svgs/kitchens_svg.svg';
 static const String homeSvg = 'assets/svgs/home_svg.svg';
 static const String askEngineerSvg = 'assets/svgs/ask_engineer_svg.svg';
 static const String askTechnicalSvg = 'assets/svgs/ask_technical.svg';
+static const String homeGirlImage = 'assets/images/girl.png';
 
 }

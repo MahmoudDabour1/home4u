@@ -26,10 +26,11 @@ class HomeScreen extends StatelessWidget {
         centerTitle: true,
         backgroundColor: AppColors.whiteColor,
         elevation: 0,
-        leading: Padding(
-          padding: const EdgeInsets.all(8.0),
-          child: AppBackButton(),
-        ),
+        automaticallyImplyLeading: false,
+        // leading: Padding(
+        //   padding: const EdgeInsets.all(8.0),
+        //   child: AppBackButton(),
+        // ),
       ),
       body: SingleChildScrollView(
         child: SafeArea(

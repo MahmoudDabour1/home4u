@@ -190,7 +190,7 @@ class AppRouter {
         );
       case Routes.userFavoriteScreen:
         return MaterialPageRoute(
-          builder: (_) => UserFavoriteScreen(),
+          builder: (_) => UserFavoriteScreen(),);
       case Routes.userHomeScreen:
         return MaterialPageRoute(
           builder: (_) => HomeScreen(),
