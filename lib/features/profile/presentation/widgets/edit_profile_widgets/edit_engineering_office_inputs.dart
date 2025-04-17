@@ -99,7 +99,7 @@ class _EditEngineeringOfficeInputsState
                       labelText: AppLocale.lastName.getString(context),
                       keyboardType: TextInputType.name,
                       validator: (value) {
-                        if (value?.isEmpty ?? true) {
+                        if (value.isEmpty ?? true) {
                           return AppLocale.enterValidName.getString(context);
                         }
                         return null;
@@ -118,7 +118,7 @@ class _EditEngineeringOfficeInputsState
                 textInputAction: TextInputAction.next,
                 keyboardType: TextInputType.text,
                 validator: (value) {
-                  if (value?.isEmpty ?? true) {
+                  if (value.isEmpty ?? true) {
                     return "Please enter your trade name";
                   }
                   return null;
