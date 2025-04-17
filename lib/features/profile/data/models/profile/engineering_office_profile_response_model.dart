@@ -187,8 +187,11 @@ class EngineeringOfficeUser {
   @HiveField(13)
   @JsonKey(name: "business")
   final dynamic business;
+  @HiveField(14)
+  @JsonKey(name: "coverPhoto")
+  final dynamic coverPhoto;
 
-  EngineeringOfficeUser({
+  EngineeringOfficeUser( {
     this.id,
     this.firstName,
     this.lastName,
@@ -203,7 +206,7 @@ class EngineeringOfficeUser {
     this.engineeringOffice,
     this.enabled,
     this.business,
-
+    this.coverPhoto,
   });
 
   factory EngineeringOfficeUser.fromJson(Map<String, dynamic> json) =>

@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:home4u/features/profile/data/models/profile/engineering_office_profile_response_model.dart';
 import 'package:home4u/features/profile/logic/profile/profile_cubit.dart';
 import 'package:home4u/features/profile/logic/profile/profile_state.dart';
+import 'package:home4u/features/profile/presentation/widgets/profile_widgets/profile_custom_header_shape.dart';
 import 'package:home4u/features/profile/presentation/widgets/profile_widgets/profile_data_shimmer.dart';
 import 'package:home4u/features/profile/presentation/widgets/profile_widgets/user_image_widget.dart';
 
@@ -50,6 +51,8 @@ Widget setupSuccessWidget(
 ) {
   return Stack(
     children: [
+      ProfileCustomHeaderShape(profileCachedData: engineeringOfficeData,),
+
       InformationWidget(
         engineerProfileResponseModel: engineerData,
         technicalWorkerProfileData: technicalWorkerData,

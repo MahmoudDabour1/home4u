@@ -15,6 +15,7 @@ class ServicesGridViewItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: MediaQuery.sizeOf(context).width,
+      height: MediaQuery.sizeOf(context).height * 0.232,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(16.r),
         border: Border.all(color: AppColors.grayColor, width: 1),
@@ -24,28 +25,32 @@ class ServicesGridViewItem extends StatelessWidget {
         EdgeInsets.symmetric(horizontal: 16.w, vertical: 8.h),
         child: Column(
           children: [
-            SvgPicture.asset(
-              imageUrl,
-              width: 56.w,
-              height: 56.h,
+            Expanded(
+              child: SvgPicture.asset(
+                imageUrl,
+                width: MediaQuery.sizeOf(context).width*0.088,
+                height: MediaQuery.sizeOf(context).height*0.088,
+              ),
             ),
             Padding(
               padding: EdgeInsets.symmetric(vertical: 8.h),
               child: Text(
                 title,
                 textAlign: TextAlign.center,
-                maxLines: 1,
+                maxLines: 2,
                 style: AppStyles.font16BlackLight,
               ),
             ),
-            Text(
-              subTitle,
-              maxLines: 2,
-              overflow: TextOverflow.ellipsis,
-              textAlign: TextAlign.center,
-              style: AppStyles.font16BlackLight.copyWith(
-                color: Colors.black.withOpacity(0.4),
+            Expanded(
+              child: Text(
+                subTitle,
+                maxLines: 2,
                 overflow: TextOverflow.ellipsis,
+                textAlign: TextAlign.center,
+                style: AppStyles.font16BlackLight.copyWith(
+                  color: Colors.black.withOpacity(0.4),
+                  overflow: TextOverflow.ellipsis,
+                ),
               ),
             ),
           ],

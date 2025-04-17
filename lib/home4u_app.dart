@@ -153,7 +153,7 @@ class _Home4uAppState extends State<Home4uApp> {
                     onGenerateRoute: widget.appRouter.generateRoute,
                     debugShowCheckedModeBanner: false,
                     navigatorObservers: [NavigatorObserver(), _routeObserver],
-                    initialRoute: Routes.cartScreen,
+                    initialRoute: Routes.loginScreen,
                     // snapshot.data!,
                   ),
                 );

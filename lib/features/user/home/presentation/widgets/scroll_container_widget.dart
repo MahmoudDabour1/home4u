@@ -8,11 +8,23 @@ import '../../../../../core/theming/app_colors.dart';
 import '../../../../../core/theming/app_styles.dart';
 import '../../../../../core/utils/spacing.dart';
 
-class ScrollContainerWidget extends StatelessWidget {
+class ScrollContainerWidget extends StatefulWidget {
   final String image;
   final String title;
   final String starCount;
-  const ScrollContainerWidget({super.key, required this.image, required this.title, required this.starCount});
+
+  const ScrollContainerWidget(
+      {super.key,
+      required this.image,
+      required this.title,
+      required this.starCount});
+
+  @override
+  State<ScrollContainerWidget> createState() => _ScrollContainerWidgetState();
+}
+
+class _ScrollContainerWidgetState extends State<ScrollContainerWidget> {
+  bool isFavorite = false;
 
   @override
   Widget build(BuildContext context) {
@@ -33,7 +45,7 @@ class ScrollContainerWidget extends StatelessWidget {
             child: Stack(
               children: [
                 Image.asset(
-                  image,
+                  widget.image,
                   height: 122.h,
                   width: MediaQuery.sizeOf(context).width,
                   fit: BoxFit.cover,
@@ -48,29 +60,37 @@ class ScrollContainerWidget extends StatelessWidget {
                       shape: BoxShape.circle,
                       color: AppColors.offWhiteColor,
                     ),
-                    child: Icon(
-                     SolarIconsBold.heart,
-                      color: Colors.red,
-                      size: 24.h,
+                    child: IconButton(
+                      icon: Icon(
+                        SolarIconsBold.heart,
+                        color: isFavorite? Colors.red:AppColors.grayColor,
+                        size: 24.h,
+                      ),
+                      onPressed: () {
+                        setState(() {
+                          isFavorite = !isFavorite;
+                        });
+                      },
                     ),
                   ),
                 ),
               ],
             ),
           ),
+          verticalSpace(16),
           Padding(
-            padding: EdgeInsets.all(16.r),
+            padding: EdgeInsets.symmetric(horizontal: 16.h),
             child: Row(
               children: [
                 Text(
-                  title,
+                  widget.title,
                   style: AppStyles.font16BlackMedium,
                 ),
                 const Spacer(),
                 Row(
                   children: [
                     Text(
-                      starCount,
+                      widget.starCount,
                       style: AppStyles.font16BlackLight,
                     ),
                     horizontalSpace(4),
