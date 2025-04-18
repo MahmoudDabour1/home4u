@@ -5,6 +5,7 @@ import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:home4u/core/helpers/shared_pref_helper.dart';
 import 'package:home4u/core/helpers/shared_pref_keys.dart';
+import 'package:home4u/core/routing/router_observer.dart';
 import 'package:home4u/features/auth/sign_up/data/models/business_body.dart';
 import 'package:home4u/features/auth/sign_up/data/models/engineering_office_body.dart';
 import 'package:home4u/features/auth/sign_up/logic/sign_up_state.dart';
@@ -30,6 +31,35 @@ class SignUpCubit extends Cubit<SignUpState> {
   List<GovernorateDataModel> governorates = [];
   List<CityDataModel> cities = [];
   List<BaseData> businessTypes = [];
+  List<File> images= [];
+  File ? commercialRegisterImage;
+  File ? taxCardImage;
+  File ? personalCardImage;
+
+  void updateSelectedImages(List<File> newImages) {
+    images = [...newImages];
+    logger.w(images);
+    emit(SignUpState.selectImageSuccess(images));
+  }
+
+  void updateCommercialRegisterImage(File image) {
+    commercialRegisterImage = image;
+    logger.w('Commercial Register Image: $commercialRegisterImage');
+    emit(SignUpState.selectSingleImageSuccess(commercialRegisterImage!));
+  }
+
+  void updateTaxCardImage(File image) {
+    taxCardImage = image;
+    logger.w('Tax Card Image: $taxCardImage');
+    emit(SignUpState.selectSingleImageSuccess(taxCardImage!));
+  }
+
+  void updatePersonalCardImage(File image) {
+    personalCardImage = image;
+    logger.w('Personal Card Image: $personalCardImage');
+    emit(SignUpState.selectSingleImageSuccess(personalCardImage!));
+  }
+
 
   Future<void> getUserTypes() async {
     if (userTypes.isNotEmpty) {
@@ -90,9 +120,6 @@ class SignUpCubit extends Cubit<SignUpState> {
       TextEditingController();
   final TextEditingController engineeringOfficeDescriptionController =
       TextEditingController();
-  File? commercialRegisterImage;
-  File? taxCardImage;
-  File? personalCardImage;
   List<String> imagePathCode = [
     "COMMERCIAL_REGISTER",
     "TAX_CARD",
