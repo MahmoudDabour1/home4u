@@ -76,7 +76,7 @@ class UserImageWidget extends StatelessWidget {
                           ),
                         )
                             : AssetImage(
-                          AppAssets.facebook,
+                          "assets/images/user.jpg",
                         ) as ImageProvider,
                       ),
                     ),

@@ -33,8 +33,8 @@ class AddCertificationsInfo extends StatelessWidget {
             cubit.nameController.text = certificationData!.name ?? '';
             cubit.descriptionController.text =
                 certificationData!.description ?? '';
-            _loadImageFromUrl(context,
-                ApiConstants.getImageBaseUrl(certificationData!.imagePath!));
+            // _loadImageFromUrl(context,
+            //     ApiConstants.getImageBaseUrl(certificationData!.imagePath!));
             // if (certificationData!.imagePath != null) {
             //   final file = File(certificationData!.imagePath!);
             //   if (file.existsSync()) {
@@ -55,9 +55,8 @@ class AddCertificationsInfo extends StatelessWidget {
               children: [
                 SelectImageWidget(
                   cubit: cubit,
-                  images: [if (cubit.image != null) cubit.image!],
-                  isCoverImage: false,
-                  isEdit: certificationData != null,
+                  images: cubit.image,
+                  updateImageCallback: cubit.updateSelectedImages,
                 ),
                 verticalSpace(16),
                 AppTextFormField(
@@ -142,7 +141,7 @@ class AddCertificationsInfo extends StatelessWidget {
         final directory = await getTemporaryDirectory();
         final file = File('${directory.path}/temp_image.jpg');
         await file.writeAsBytes(response.data);
-        cubit.image = file;
+        cubit.image = file as List<File>;
         log('Image loaded successfully: ${file.path}');
       } else {
         showToast(

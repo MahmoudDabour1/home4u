@@ -56,4 +56,8 @@ class SignUpState<T> with _$SignUpState<T> {
 
   const factory SignUpState.errorEngineeringOfficeUploadImages(
       {required String error}) = ErrorEngineeringOfficeUploadImages;
+
+  const factory SignUpState.selectImageSuccess(List<File> images) = SelectImageSuccess;
+  const factory SignUpState.selectSingleImageSuccess(File images) = SelectSingleImageSuccess;
+
 }

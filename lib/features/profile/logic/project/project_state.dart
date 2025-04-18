@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:home4u/features/profile/data/models/projects/project_response.dart';
 
@@ -55,7 +57,7 @@ class ProjectState<T> with _$ProjectState<T> {
       AddProjectError;
 
   ///addImage
-  const factory ProjectState.addImage() = AddImage;
+  const factory ProjectState.addImage(List<File> images) = AddImage;
 
-  const factory ProjectState.addCover() = AddCover;
+  const factory ProjectState.addCover(List<File> images) = AddCover;
 }

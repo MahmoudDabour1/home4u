@@ -42,17 +42,17 @@ class AddProjectInfo extends StatelessWidget {
           cubit.projectEndDateController.text =
               formatDate(projectData!.endDate) ?? '';
           cubit.projectToolsController.text = projectData!.tools ?? '';
-          if (projectData!.coverPath != null) {
-            final file = File(projectData!.coverPath!);
-            if (file.existsSync()) {
-              cubit.coverImage = file;
-            } else {
-              showToast(
-                message: "fileNotFound",
-                isError: true,
-              );
-            }
-          }
+          // if (projectData!.coverPath != null) {
+          //   final file = File(projectData!.coverPath!);
+          //   if (file.existsSync()) {
+          //     cubit.coverImage = file;
+          //   } else {
+          //     showToast(
+          //       message: "fileNotFound",
+          //       isError: true,
+          //     );
+          //   }
+          // }
         }
         if (state is ProjectFailureState) {
           return Center(child: Text(state.errorMessage));
@@ -64,13 +64,13 @@ class AddProjectInfo extends StatelessWidget {
                 SelectImageWidget(
                   cubit: cubit,
                   images: cubit.images,
-                  isCoverImage: false,
+                  updateImageCallback: cubit.updateSelectedImages,
                 ),
                 verticalSpace(16),
                 SelectImageWidget(
                   cubit: cubit,
-                  images: [if (cubit.coverImage != null) cubit.coverImage!],
-                  isCoverImage: true,
+                  images: cubit.coverImage,
+                  updateImageCallback: cubit.updateSelectedCoversImages,
                 ),
                 verticalSpace(16),
                 verticalSpace(16),

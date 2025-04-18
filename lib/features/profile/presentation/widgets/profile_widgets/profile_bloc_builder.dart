@@ -52,7 +52,6 @@ Widget setupSuccessWidget(
   return Stack(
     children: [
       ProfileCustomHeaderShape(profileCachedData: engineeringOfficeData,),
-
       InformationWidget(
         engineerProfileResponseModel: engineerData,
         technicalWorkerProfileData: technicalWorkerData,
