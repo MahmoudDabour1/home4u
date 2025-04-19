@@ -23,12 +23,13 @@ import 'package:home4u/features/products/presentation/product_details_screen.dar
 import 'package:home4u/features/profile/presentation/add_certification_screen.dart';
 import 'package:home4u/features/user/home/presentation/best_offices_screen.dart';
 import 'package:home4u/features/user/home/presentation/best_show_rooms_screen.dart';
+import 'package:home4u/features/user/renovate_your_house/logic/renovate_your_house_cubit.dart';
 
 import '../../features/auth/login/presentation/login_screen.dart';
 import '../../features/auth/sign_up/presentation/business_sign_up_screen.dart';
+import '../../features/cart/presentation/cart_product_details_screen.dart';
 import '../../features/cart/presentation/cart_screen.dart';
 import '../../features/cart/presentation/user_favorite_screen.dart';
-import '../../features/cart/presentation/widgets/cart_details_widgets/cart_product_details_screen.dart';
 import '../../features/exhibition/presentation/business_add_product_screen.dart';
 import '../../features/exhibition/presentation/business_overview_screen.dart';
 import '../../features/exhibition/presentation/business_review_screen.dart';
@@ -42,7 +43,9 @@ import '../../features/profile/presentation/edit_profile_screen.dart';
 import '../../features/profile/presentation/profile_screen.dart';
 import '../../features/profile/presentation/project_details_screen.dart';
 import '../../features/settings/presentation/setting_screen.dart';
-import '../../features/user/home/presentation/home_screen.dart';
+import '../../features/user/home/presentation/user_home_screen.dart';
+import '../../features/user/renovate_your_house/presentation/renovate_your_house_first_screen.dart';
+import '../../features/user/renovate_your_house/presentation/renovate_your_house_second_screen.dart';
 import '../di/dependency_injection.dart';
 
 class AppRouter {
@@ -112,7 +115,7 @@ class AppRouter {
         );
       case Routes.homeScreen:
         return MaterialPageRoute(
-          builder: (_) => HomeScreen(),
+          builder: (_) => UserHomeScreen(),
         );
       case Routes.bottomNavLayout:
         return MaterialPageRoute(
@@ -196,7 +199,7 @@ class AppRouter {
         );
       case Routes.userHomeScreen:
         return MaterialPageRoute(
-          builder: (_) => HomeScreen(),
+          builder: (_) => UserHomeScreen(),
         );
       case Routes.bestOfficesScreen:
         return MaterialPageRoute(
@@ -205,6 +208,14 @@ class AppRouter {
       case Routes.bestShowRoomsScreen:
         return MaterialPageRoute(
           builder: (_) => BestShowRoomsScreen(),
+        );
+      case Routes.renovateYourHouseScreen:
+        return MaterialPageRoute(
+          builder: (_) => RenovateYourHouseFirstScreen(),
+        );
+      case Routes.renovateYourHouseSecondScreen:
+        return MaterialPageRoute(
+          builder: (_) => RenovateYourHouseSecondScreen(),
         );
       case Routes.askEngineerScreen:
         return MaterialPageRoute(

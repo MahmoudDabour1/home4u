@@ -61,6 +61,13 @@ class ApiConstants {
   static const String addProductEp = "/api/v1/products";
   static const String addAllProductImagesEp = "/api/v1/product-images/all";
 
+  ///RenovateYourHouse
+  static const String renovateYourHouseEp = "/api/v1/home-renovate";
+  static const String renovateYourHouseChooseFixedPackageEp = "/api/v1/select-custom-package";
+  static const String renovateYourHouseLookUpsEp = "/api/v1/home-renovate/lkps";
+  static const String renovateYourHouseFixedPackagesEp = "/api/v1/custom-package";
+
+
   // {{prod_url}}/api/v1/products/57
   static const String getProductDetailsEP = "/api/v1/products/{productId}";
   static const String updateProductEP = "/api/v1/products";

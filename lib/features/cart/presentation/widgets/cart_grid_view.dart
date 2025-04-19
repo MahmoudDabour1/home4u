@@ -15,7 +15,7 @@ class CartGridView extends StatelessWidget {
       padding: EdgeInsets.zero,
       shrinkWrap: true,
       physics: const NeverScrollableScrollPhysics(),
-      childAspectRatio: 1 / 1.55,
+      childAspectRatio: 1.0/1.7,
       crossAxisSpacing: 16.w,
       mainAxisSpacing: 16.h,
       children: List.generate(

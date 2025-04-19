@@ -1,3 +1,4 @@
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
@@ -16,8 +17,6 @@ class CartGridSingleItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 270.h,
-      width: 170.h,
       decoration: BoxDecoration(
         color: AppColors.whiteColor,
         borderRadius: BorderRadius.circular(16.r),
@@ -31,7 +30,7 @@ class CartGridSingleItem extends StatelessWidget {
             ),
             child: Image.asset(
               'assets/images/Main_Product_ Image.png',
-              width: 170.w,
+              // width: 180.w,
               height: 170.h,
               fit: BoxFit.cover,
             ),
@@ -44,9 +43,14 @@ class CartGridSingleItem extends StatelessWidget {
               textBaseline: TextBaseline.alphabetic,
               crossAxisAlignment: CrossAxisAlignment.baseline,
               children: [
-                Text(
-                  'Product Name',
-                  style: AppStyles.font16BlackLight,
+                Expanded(
+                  child: AutoSizeText(
+                    'Product Name',
+                    style: AppStyles.font16BlackLight,
+                    maxLines: 1,
+                    overflow: TextOverflow.ellipsis,
+                    textAlign: TextAlign.start,
+                  ),
                 ),
                 Row(
                   children: [
