@@ -37,6 +37,8 @@ mixin _$SignUpState<T> {
     required TResult Function() loadingEngineeringOfficeUploadImages,
     required TResult Function() successEngineeringOfficeUploadImages,
     required TResult Function(String error) errorEngineeringOfficeUploadImages,
+    required TResult Function(List<File> images) selectImageSuccess,
+    required TResult Function(File images) selectSingleImageSuccess,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -60,6 +62,8 @@ mixin _$SignUpState<T> {
     TResult? Function()? loadingEngineeringOfficeUploadImages,
     TResult? Function()? successEngineeringOfficeUploadImages,
     TResult? Function(String error)? errorEngineeringOfficeUploadImages,
+    TResult? Function(List<File> images)? selectImageSuccess,
+    TResult? Function(File images)? selectSingleImageSuccess,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -83,6 +87,8 @@ mixin _$SignUpState<T> {
     TResult Function()? loadingEngineeringOfficeUploadImages,
     TResult Function()? successEngineeringOfficeUploadImages,
     TResult Function(String error)? errorEngineeringOfficeUploadImages,
+    TResult Function(List<File> images)? selectImageSuccess,
+    TResult Function(File images)? selectSingleImageSuccess,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -110,6 +116,9 @@ mixin _$SignUpState<T> {
         successEngineeringOfficeUploadImages,
     required TResult Function(ErrorEngineeringOfficeUploadImages<T> value)
         errorEngineeringOfficeUploadImages,
+    required TResult Function(SelectImageSuccess<T> value) selectImageSuccess,
+    required TResult Function(SelectSingleImageSuccess<T> value)
+        selectSingleImageSuccess,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -136,6 +145,9 @@ mixin _$SignUpState<T> {
         successEngineeringOfficeUploadImages,
     TResult? Function(ErrorEngineeringOfficeUploadImages<T> value)?
         errorEngineeringOfficeUploadImages,
+    TResult? Function(SelectImageSuccess<T> value)? selectImageSuccess,
+    TResult? Function(SelectSingleImageSuccess<T> value)?
+        selectSingleImageSuccess,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -162,6 +174,9 @@ mixin _$SignUpState<T> {
         successEngineeringOfficeUploadImages,
     TResult Function(ErrorEngineeringOfficeUploadImages<T> value)?
         errorEngineeringOfficeUploadImages,
+    TResult Function(SelectImageSuccess<T> value)? selectImageSuccess,
+    TResult Function(SelectSingleImageSuccess<T> value)?
+        selectSingleImageSuccess,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -248,6 +263,8 @@ class _$InitialImpl<T> implements _Initial<T> {
     required TResult Function() loadingEngineeringOfficeUploadImages,
     required TResult Function() successEngineeringOfficeUploadImages,
     required TResult Function(String error) errorEngineeringOfficeUploadImages,
+    required TResult Function(List<File> images) selectImageSuccess,
+    required TResult Function(File images) selectSingleImageSuccess,
   }) {
     return initial();
   }
@@ -274,6 +291,8 @@ class _$InitialImpl<T> implements _Initial<T> {
     TResult? Function()? loadingEngineeringOfficeUploadImages,
     TResult? Function()? successEngineeringOfficeUploadImages,
     TResult? Function(String error)? errorEngineeringOfficeUploadImages,
+    TResult? Function(List<File> images)? selectImageSuccess,
+    TResult? Function(File images)? selectSingleImageSuccess,
   }) {
     return initial?.call();
   }
@@ -300,6 +319,8 @@ class _$InitialImpl<T> implements _Initial<T> {
     TResult Function()? loadingEngineeringOfficeUploadImages,
     TResult Function()? successEngineeringOfficeUploadImages,
     TResult Function(String error)? errorEngineeringOfficeUploadImages,
+    TResult Function(List<File> images)? selectImageSuccess,
+    TResult Function(File images)? selectSingleImageSuccess,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -333,6 +354,9 @@ class _$InitialImpl<T> implements _Initial<T> {
         successEngineeringOfficeUploadImages,
     required TResult Function(ErrorEngineeringOfficeUploadImages<T> value)
         errorEngineeringOfficeUploadImages,
+    required TResult Function(SelectImageSuccess<T> value) selectImageSuccess,
+    required TResult Function(SelectSingleImageSuccess<T> value)
+        selectSingleImageSuccess,
   }) {
     return initial(this);
   }
@@ -362,6 +386,9 @@ class _$InitialImpl<T> implements _Initial<T> {
         successEngineeringOfficeUploadImages,
     TResult? Function(ErrorEngineeringOfficeUploadImages<T> value)?
         errorEngineeringOfficeUploadImages,
+    TResult? Function(SelectImageSuccess<T> value)? selectImageSuccess,
+    TResult? Function(SelectSingleImageSuccess<T> value)?
+        selectSingleImageSuccess,
   }) {
     return initial?.call(this);
   }
@@ -391,6 +418,9 @@ class _$InitialImpl<T> implements _Initial<T> {
         successEngineeringOfficeUploadImages,
     TResult Function(ErrorEngineeringOfficeUploadImages<T> value)?
         errorEngineeringOfficeUploadImages,
+    TResult Function(SelectImageSuccess<T> value)? selectImageSuccess,
+    TResult Function(SelectSingleImageSuccess<T> value)?
+        selectSingleImageSuccess,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -465,6 +495,8 @@ class _$LoadingUserTypesImpl<T> implements LoadingUserTypes<T> {
     required TResult Function() loadingEngineeringOfficeUploadImages,
     required TResult Function() successEngineeringOfficeUploadImages,
     required TResult Function(String error) errorEngineeringOfficeUploadImages,
+    required TResult Function(List<File> images) selectImageSuccess,
+    required TResult Function(File images) selectSingleImageSuccess,
   }) {
     return loadingUserTypes();
   }
@@ -491,6 +523,8 @@ class _$LoadingUserTypesImpl<T> implements LoadingUserTypes<T> {
     TResult? Function()? loadingEngineeringOfficeUploadImages,
     TResult? Function()? successEngineeringOfficeUploadImages,
     TResult? Function(String error)? errorEngineeringOfficeUploadImages,
+    TResult? Function(List<File> images)? selectImageSuccess,
+    TResult? Function(File images)? selectSingleImageSuccess,
   }) {
     return loadingUserTypes?.call();
   }
@@ -517,6 +551,8 @@ class _$LoadingUserTypesImpl<T> implements LoadingUserTypes<T> {
     TResult Function()? loadingEngineeringOfficeUploadImages,
     TResult Function()? successEngineeringOfficeUploadImages,
     TResult Function(String error)? errorEngineeringOfficeUploadImages,
+    TResult Function(List<File> images)? selectImageSuccess,
+    TResult Function(File images)? selectSingleImageSuccess,
     required TResult orElse(),
   }) {
     if (loadingUserTypes != null) {
@@ -550,6 +586,9 @@ class _$LoadingUserTypesImpl<T> implements LoadingUserTypes<T> {
         successEngineeringOfficeUploadImages,
     required TResult Function(ErrorEngineeringOfficeUploadImages<T> value)
         errorEngineeringOfficeUploadImages,
+    required TResult Function(SelectImageSuccess<T> value) selectImageSuccess,
+    required TResult Function(SelectSingleImageSuccess<T> value)
+        selectSingleImageSuccess,
   }) {
     return loadingUserTypes(this);
   }
@@ -579,6 +618,9 @@ class _$LoadingUserTypesImpl<T> implements LoadingUserTypes<T> {
         successEngineeringOfficeUploadImages,
     TResult? Function(ErrorEngineeringOfficeUploadImages<T> value)?
         errorEngineeringOfficeUploadImages,
+    TResult? Function(SelectImageSuccess<T> value)? selectImageSuccess,
+    TResult? Function(SelectSingleImageSuccess<T> value)?
+        selectSingleImageSuccess,
   }) {
     return loadingUserTypes?.call(this);
   }
@@ -608,6 +650,9 @@ class _$LoadingUserTypesImpl<T> implements LoadingUserTypes<T> {
         successEngineeringOfficeUploadImages,
     TResult Function(ErrorEngineeringOfficeUploadImages<T> value)?
         errorEngineeringOfficeUploadImages,
+    TResult Function(SelectImageSuccess<T> value)? selectImageSuccess,
+    TResult Function(SelectSingleImageSuccess<T> value)?
+        selectSingleImageSuccess,
     required TResult orElse(),
   }) {
     if (loadingUserTypes != null) {
@@ -710,6 +755,8 @@ class _$SuccessUserTypesImpl<T> implements SuccessUserTypes<T> {
     required TResult Function() loadingEngineeringOfficeUploadImages,
     required TResult Function() successEngineeringOfficeUploadImages,
     required TResult Function(String error) errorEngineeringOfficeUploadImages,
+    required TResult Function(List<File> images) selectImageSuccess,
+    required TResult Function(File images) selectSingleImageSuccess,
   }) {
     return successUserTypes(data);
   }
@@ -736,6 +783,8 @@ class _$SuccessUserTypesImpl<T> implements SuccessUserTypes<T> {
     TResult? Function()? loadingEngineeringOfficeUploadImages,
     TResult? Function()? successEngineeringOfficeUploadImages,
     TResult? Function(String error)? errorEngineeringOfficeUploadImages,
+    TResult? Function(List<File> images)? selectImageSuccess,
+    TResult? Function(File images)? selectSingleImageSuccess,
   }) {
     return successUserTypes?.call(data);
   }
@@ -762,6 +811,8 @@ class _$SuccessUserTypesImpl<T> implements SuccessUserTypes<T> {
     TResult Function()? loadingEngineeringOfficeUploadImages,
     TResult Function()? successEngineeringOfficeUploadImages,
     TResult Function(String error)? errorEngineeringOfficeUploadImages,
+    TResult Function(List<File> images)? selectImageSuccess,
+    TResult Function(File images)? selectSingleImageSuccess,
     required TResult orElse(),
   }) {
     if (successUserTypes != null) {
@@ -795,6 +846,9 @@ class _$SuccessUserTypesImpl<T> implements SuccessUserTypes<T> {
         successEngineeringOfficeUploadImages,
     required TResult Function(ErrorEngineeringOfficeUploadImages<T> value)
         errorEngineeringOfficeUploadImages,
+    required TResult Function(SelectImageSuccess<T> value) selectImageSuccess,
+    required TResult Function(SelectSingleImageSuccess<T> value)
+        selectSingleImageSuccess,
   }) {
     return successUserTypes(this);
   }
@@ -824,6 +878,9 @@ class _$SuccessUserTypesImpl<T> implements SuccessUserTypes<T> {
         successEngineeringOfficeUploadImages,
     TResult? Function(ErrorEngineeringOfficeUploadImages<T> value)?
         errorEngineeringOfficeUploadImages,
+    TResult? Function(SelectImageSuccess<T> value)? selectImageSuccess,
+    TResult? Function(SelectSingleImageSuccess<T> value)?
+        selectSingleImageSuccess,
   }) {
     return successUserTypes?.call(this);
   }
@@ -853,6 +910,9 @@ class _$SuccessUserTypesImpl<T> implements SuccessUserTypes<T> {
         successEngineeringOfficeUploadImages,
     TResult Function(ErrorEngineeringOfficeUploadImages<T> value)?
         errorEngineeringOfficeUploadImages,
+    TResult Function(SelectImageSuccess<T> value)? selectImageSuccess,
+    TResult Function(SelectSingleImageSuccess<T> value)?
+        selectSingleImageSuccess,
     required TResult orElse(),
   }) {
     if (successUserTypes != null) {
@@ -962,6 +1022,8 @@ class _$ErrorUserTypesImpl<T> implements ErrorUserTypes<T> {
     required TResult Function() loadingEngineeringOfficeUploadImages,
     required TResult Function() successEngineeringOfficeUploadImages,
     required TResult Function(String error) errorEngineeringOfficeUploadImages,
+    required TResult Function(List<File> images) selectImageSuccess,
+    required TResult Function(File images) selectSingleImageSuccess,
   }) {
     return errorUserTypes(error);
   }
@@ -988,6 +1050,8 @@ class _$ErrorUserTypesImpl<T> implements ErrorUserTypes<T> {
     TResult? Function()? loadingEngineeringOfficeUploadImages,
     TResult? Function()? successEngineeringOfficeUploadImages,
     TResult? Function(String error)? errorEngineeringOfficeUploadImages,
+    TResult? Function(List<File> images)? selectImageSuccess,
+    TResult? Function(File images)? selectSingleImageSuccess,
   }) {
     return errorUserTypes?.call(error);
   }
@@ -1014,6 +1078,8 @@ class _$ErrorUserTypesImpl<T> implements ErrorUserTypes<T> {
     TResult Function()? loadingEngineeringOfficeUploadImages,
     TResult Function()? successEngineeringOfficeUploadImages,
     TResult Function(String error)? errorEngineeringOfficeUploadImages,
+    TResult Function(List<File> images)? selectImageSuccess,
+    TResult Function(File images)? selectSingleImageSuccess,
     required TResult orElse(),
   }) {
     if (errorUserTypes != null) {
@@ -1047,6 +1113,9 @@ class _$ErrorUserTypesImpl<T> implements ErrorUserTypes<T> {
         successEngineeringOfficeUploadImages,
     required TResult Function(ErrorEngineeringOfficeUploadImages<T> value)
         errorEngineeringOfficeUploadImages,
+    required TResult Function(SelectImageSuccess<T> value) selectImageSuccess,
+    required TResult Function(SelectSingleImageSuccess<T> value)
+        selectSingleImageSuccess,
   }) {
     return errorUserTypes(this);
   }
@@ -1076,6 +1145,9 @@ class _$ErrorUserTypesImpl<T> implements ErrorUserTypes<T> {
         successEngineeringOfficeUploadImages,
     TResult? Function(ErrorEngineeringOfficeUploadImages<T> value)?
         errorEngineeringOfficeUploadImages,
+    TResult? Function(SelectImageSuccess<T> value)? selectImageSuccess,
+    TResult? Function(SelectSingleImageSuccess<T> value)?
+        selectSingleImageSuccess,
   }) {
     return errorUserTypes?.call(this);
   }
@@ -1105,6 +1177,9 @@ class _$ErrorUserTypesImpl<T> implements ErrorUserTypes<T> {
         successEngineeringOfficeUploadImages,
     TResult Function(ErrorEngineeringOfficeUploadImages<T> value)?
         errorEngineeringOfficeUploadImages,
+    TResult Function(SelectImageSuccess<T> value)? selectImageSuccess,
+    TResult Function(SelectSingleImageSuccess<T> value)?
+        selectSingleImageSuccess,
     required TResult orElse(),
   }) {
     if (errorUserTypes != null) {
@@ -1188,6 +1263,8 @@ class _$SignUpLoadingStateImpl<T> implements SignUpLoadingState<T> {
     required TResult Function() loadingEngineeringOfficeUploadImages,
     required TResult Function() successEngineeringOfficeUploadImages,
     required TResult Function(String error) errorEngineeringOfficeUploadImages,
+    required TResult Function(List<File> images) selectImageSuccess,
+    required TResult Function(File images) selectSingleImageSuccess,
   }) {
     return loadingSignUp();
   }
@@ -1214,6 +1291,8 @@ class _$SignUpLoadingStateImpl<T> implements SignUpLoadingState<T> {
     TResult? Function()? loadingEngineeringOfficeUploadImages,
     TResult? Function()? successEngineeringOfficeUploadImages,
     TResult? Function(String error)? errorEngineeringOfficeUploadImages,
+    TResult? Function(List<File> images)? selectImageSuccess,
+    TResult? Function(File images)? selectSingleImageSuccess,
   }) {
     return loadingSignUp?.call();
   }
@@ -1240,6 +1319,8 @@ class _$SignUpLoadingStateImpl<T> implements SignUpLoadingState<T> {
     TResult Function()? loadingEngineeringOfficeUploadImages,
     TResult Function()? successEngineeringOfficeUploadImages,
     TResult Function(String error)? errorEngineeringOfficeUploadImages,
+    TResult Function(List<File> images)? selectImageSuccess,
+    TResult Function(File images)? selectSingleImageSuccess,
     required TResult orElse(),
   }) {
     if (loadingSignUp != null) {
@@ -1273,6 +1354,9 @@ class _$SignUpLoadingStateImpl<T> implements SignUpLoadingState<T> {
         successEngineeringOfficeUploadImages,
     required TResult Function(ErrorEngineeringOfficeUploadImages<T> value)
         errorEngineeringOfficeUploadImages,
+    required TResult Function(SelectImageSuccess<T> value) selectImageSuccess,
+    required TResult Function(SelectSingleImageSuccess<T> value)
+        selectSingleImageSuccess,
   }) {
     return loadingSignUp(this);
   }
@@ -1302,6 +1386,9 @@ class _$SignUpLoadingStateImpl<T> implements SignUpLoadingState<T> {
         successEngineeringOfficeUploadImages,
     TResult? Function(ErrorEngineeringOfficeUploadImages<T> value)?
         errorEngineeringOfficeUploadImages,
+    TResult? Function(SelectImageSuccess<T> value)? selectImageSuccess,
+    TResult? Function(SelectSingleImageSuccess<T> value)?
+        selectSingleImageSuccess,
   }) {
     return loadingSignUp?.call(this);
   }
@@ -1331,6 +1418,9 @@ class _$SignUpLoadingStateImpl<T> implements SignUpLoadingState<T> {
         successEngineeringOfficeUploadImages,
     TResult Function(ErrorEngineeringOfficeUploadImages<T> value)?
         errorEngineeringOfficeUploadImages,
+    TResult Function(SelectImageSuccess<T> value)? selectImageSuccess,
+    TResult Function(SelectSingleImageSuccess<T> value)?
+        selectSingleImageSuccess,
     required TResult orElse(),
   }) {
     if (loadingSignUp != null) {
@@ -1433,6 +1523,8 @@ class _$SignUpSuccessStateImpl<T> implements SignUpSuccessState<T> {
     required TResult Function() loadingEngineeringOfficeUploadImages,
     required TResult Function() successEngineeringOfficeUploadImages,
     required TResult Function(String error) errorEngineeringOfficeUploadImages,
+    required TResult Function(List<File> images) selectImageSuccess,
+    required TResult Function(File images) selectSingleImageSuccess,
   }) {
     return successSignUp(data);
   }
@@ -1459,6 +1551,8 @@ class _$SignUpSuccessStateImpl<T> implements SignUpSuccessState<T> {
     TResult? Function()? loadingEngineeringOfficeUploadImages,
     TResult? Function()? successEngineeringOfficeUploadImages,
     TResult? Function(String error)? errorEngineeringOfficeUploadImages,
+    TResult? Function(List<File> images)? selectImageSuccess,
+    TResult? Function(File images)? selectSingleImageSuccess,
   }) {
     return successSignUp?.call(data);
   }
@@ -1485,6 +1579,8 @@ class _$SignUpSuccessStateImpl<T> implements SignUpSuccessState<T> {
     TResult Function()? loadingEngineeringOfficeUploadImages,
     TResult Function()? successEngineeringOfficeUploadImages,
     TResult Function(String error)? errorEngineeringOfficeUploadImages,
+    TResult Function(List<File> images)? selectImageSuccess,
+    TResult Function(File images)? selectSingleImageSuccess,
     required TResult orElse(),
   }) {
     if (successSignUp != null) {
@@ -1518,6 +1614,9 @@ class _$SignUpSuccessStateImpl<T> implements SignUpSuccessState<T> {
         successEngineeringOfficeUploadImages,
     required TResult Function(ErrorEngineeringOfficeUploadImages<T> value)
         errorEngineeringOfficeUploadImages,
+    required TResult Function(SelectImageSuccess<T> value) selectImageSuccess,
+    required TResult Function(SelectSingleImageSuccess<T> value)
+        selectSingleImageSuccess,
   }) {
     return successSignUp(this);
   }
@@ -1547,6 +1646,9 @@ class _$SignUpSuccessStateImpl<T> implements SignUpSuccessState<T> {
         successEngineeringOfficeUploadImages,
     TResult? Function(ErrorEngineeringOfficeUploadImages<T> value)?
         errorEngineeringOfficeUploadImages,
+    TResult? Function(SelectImageSuccess<T> value)? selectImageSuccess,
+    TResult? Function(SelectSingleImageSuccess<T> value)?
+        selectSingleImageSuccess,
   }) {
     return successSignUp?.call(this);
   }
@@ -1576,6 +1678,9 @@ class _$SignUpSuccessStateImpl<T> implements SignUpSuccessState<T> {
         successEngineeringOfficeUploadImages,
     TResult Function(ErrorEngineeringOfficeUploadImages<T> value)?
         errorEngineeringOfficeUploadImages,
+    TResult Function(SelectImageSuccess<T> value)? selectImageSuccess,
+    TResult Function(SelectSingleImageSuccess<T> value)?
+        selectSingleImageSuccess,
     required TResult orElse(),
   }) {
     if (successSignUp != null) {
@@ -1685,6 +1790,8 @@ class _$SignUpErrorStateImpl<T> implements SignUpErrorState<T> {
     required TResult Function() loadingEngineeringOfficeUploadImages,
     required TResult Function() successEngineeringOfficeUploadImages,
     required TResult Function(String error) errorEngineeringOfficeUploadImages,
+    required TResult Function(List<File> images) selectImageSuccess,
+    required TResult Function(File images) selectSingleImageSuccess,
   }) {
     return errorSignUp(error);
   }
@@ -1711,6 +1818,8 @@ class _$SignUpErrorStateImpl<T> implements SignUpErrorState<T> {
     TResult? Function()? loadingEngineeringOfficeUploadImages,
     TResult? Function()? successEngineeringOfficeUploadImages,
     TResult? Function(String error)? errorEngineeringOfficeUploadImages,
+    TResult? Function(List<File> images)? selectImageSuccess,
+    TResult? Function(File images)? selectSingleImageSuccess,
   }) {
     return errorSignUp?.call(error);
   }
@@ -1737,6 +1846,8 @@ class _$SignUpErrorStateImpl<T> implements SignUpErrorState<T> {
     TResult Function()? loadingEngineeringOfficeUploadImages,
     TResult Function()? successEngineeringOfficeUploadImages,
     TResult Function(String error)? errorEngineeringOfficeUploadImages,
+    TResult Function(List<File> images)? selectImageSuccess,
+    TResult Function(File images)? selectSingleImageSuccess,
     required TResult orElse(),
   }) {
     if (errorSignUp != null) {
@@ -1770,6 +1881,9 @@ class _$SignUpErrorStateImpl<T> implements SignUpErrorState<T> {
         successEngineeringOfficeUploadImages,
     required TResult Function(ErrorEngineeringOfficeUploadImages<T> value)
         errorEngineeringOfficeUploadImages,
+    required TResult Function(SelectImageSuccess<T> value) selectImageSuccess,
+    required TResult Function(SelectSingleImageSuccess<T> value)
+        selectSingleImageSuccess,
   }) {
     return errorSignUp(this);
   }
@@ -1799,6 +1913,9 @@ class _$SignUpErrorStateImpl<T> implements SignUpErrorState<T> {
         successEngineeringOfficeUploadImages,
     TResult? Function(ErrorEngineeringOfficeUploadImages<T> value)?
         errorEngineeringOfficeUploadImages,
+    TResult? Function(SelectImageSuccess<T> value)? selectImageSuccess,
+    TResult? Function(SelectSingleImageSuccess<T> value)?
+        selectSingleImageSuccess,
   }) {
     return errorSignUp?.call(this);
   }
@@ -1828,6 +1945,9 @@ class _$SignUpErrorStateImpl<T> implements SignUpErrorState<T> {
         successEngineeringOfficeUploadImages,
     TResult Function(ErrorEngineeringOfficeUploadImages<T> value)?
         errorEngineeringOfficeUploadImages,
+    TResult Function(SelectImageSuccess<T> value)? selectImageSuccess,
+    TResult Function(SelectSingleImageSuccess<T> value)?
+        selectSingleImageSuccess,
     required TResult orElse(),
   }) {
     if (errorSignUp != null) {
@@ -1911,6 +2031,8 @@ class _$LoadingGovernoratesImpl<T> implements LoadingGovernorates<T> {
     required TResult Function() loadingEngineeringOfficeUploadImages,
     required TResult Function() successEngineeringOfficeUploadImages,
     required TResult Function(String error) errorEngineeringOfficeUploadImages,
+    required TResult Function(List<File> images) selectImageSuccess,
+    required TResult Function(File images) selectSingleImageSuccess,
   }) {
     return loadingGovernorates();
   }
@@ -1937,6 +2059,8 @@ class _$LoadingGovernoratesImpl<T> implements LoadingGovernorates<T> {
     TResult? Function()? loadingEngineeringOfficeUploadImages,
     TResult? Function()? successEngineeringOfficeUploadImages,
     TResult? Function(String error)? errorEngineeringOfficeUploadImages,
+    TResult? Function(List<File> images)? selectImageSuccess,
+    TResult? Function(File images)? selectSingleImageSuccess,
   }) {
     return loadingGovernorates?.call();
   }
@@ -1963,6 +2087,8 @@ class _$LoadingGovernoratesImpl<T> implements LoadingGovernorates<T> {
     TResult Function()? loadingEngineeringOfficeUploadImages,
     TResult Function()? successEngineeringOfficeUploadImages,
     TResult Function(String error)? errorEngineeringOfficeUploadImages,
+    TResult Function(List<File> images)? selectImageSuccess,
+    TResult Function(File images)? selectSingleImageSuccess,
     required TResult orElse(),
   }) {
     if (loadingGovernorates != null) {
@@ -1996,6 +2122,9 @@ class _$LoadingGovernoratesImpl<T> implements LoadingGovernorates<T> {
         successEngineeringOfficeUploadImages,
     required TResult Function(ErrorEngineeringOfficeUploadImages<T> value)
         errorEngineeringOfficeUploadImages,
+    required TResult Function(SelectImageSuccess<T> value) selectImageSuccess,
+    required TResult Function(SelectSingleImageSuccess<T> value)
+        selectSingleImageSuccess,
   }) {
     return loadingGovernorates(this);
   }
@@ -2025,6 +2154,9 @@ class _$LoadingGovernoratesImpl<T> implements LoadingGovernorates<T> {
         successEngineeringOfficeUploadImages,
     TResult? Function(ErrorEngineeringOfficeUploadImages<T> value)?
         errorEngineeringOfficeUploadImages,
+    TResult? Function(SelectImageSuccess<T> value)? selectImageSuccess,
+    TResult? Function(SelectSingleImageSuccess<T> value)?
+        selectSingleImageSuccess,
   }) {
     return loadingGovernorates?.call(this);
   }
@@ -2054,6 +2186,9 @@ class _$LoadingGovernoratesImpl<T> implements LoadingGovernorates<T> {
         successEngineeringOfficeUploadImages,
     TResult Function(ErrorEngineeringOfficeUploadImages<T> value)?
         errorEngineeringOfficeUploadImages,
+    TResult Function(SelectImageSuccess<T> value)? selectImageSuccess,
+    TResult Function(SelectSingleImageSuccess<T> value)?
+        selectSingleImageSuccess,
     required TResult orElse(),
   }) {
     if (loadingGovernorates != null) {
@@ -2156,6 +2291,8 @@ class _$SuccessGovernoratesImpl<T> implements SuccessGovernorates<T> {
     required TResult Function() loadingEngineeringOfficeUploadImages,
     required TResult Function() successEngineeringOfficeUploadImages,
     required TResult Function(String error) errorEngineeringOfficeUploadImages,
+    required TResult Function(List<File> images) selectImageSuccess,
+    required TResult Function(File images) selectSingleImageSuccess,
   }) {
     return successGovernorates(data);
   }
@@ -2182,6 +2319,8 @@ class _$SuccessGovernoratesImpl<T> implements SuccessGovernorates<T> {
     TResult? Function()? loadingEngineeringOfficeUploadImages,
     TResult? Function()? successEngineeringOfficeUploadImages,
     TResult? Function(String error)? errorEngineeringOfficeUploadImages,
+    TResult? Function(List<File> images)? selectImageSuccess,
+    TResult? Function(File images)? selectSingleImageSuccess,
   }) {
     return successGovernorates?.call(data);
   }
@@ -2208,6 +2347,8 @@ class _$SuccessGovernoratesImpl<T> implements SuccessGovernorates<T> {
     TResult Function()? loadingEngineeringOfficeUploadImages,
     TResult Function()? successEngineeringOfficeUploadImages,
     TResult Function(String error)? errorEngineeringOfficeUploadImages,
+    TResult Function(List<File> images)? selectImageSuccess,
+    TResult Function(File images)? selectSingleImageSuccess,
     required TResult orElse(),
   }) {
     if (successGovernorates != null) {
@@ -2241,6 +2382,9 @@ class _$SuccessGovernoratesImpl<T> implements SuccessGovernorates<T> {
         successEngineeringOfficeUploadImages,
     required TResult Function(ErrorEngineeringOfficeUploadImages<T> value)
         errorEngineeringOfficeUploadImages,
+    required TResult Function(SelectImageSuccess<T> value) selectImageSuccess,
+    required TResult Function(SelectSingleImageSuccess<T> value)
+        selectSingleImageSuccess,
   }) {
     return successGovernorates(this);
   }
@@ -2270,6 +2414,9 @@ class _$SuccessGovernoratesImpl<T> implements SuccessGovernorates<T> {
         successEngineeringOfficeUploadImages,
     TResult? Function(ErrorEngineeringOfficeUploadImages<T> value)?
         errorEngineeringOfficeUploadImages,
+    TResult? Function(SelectImageSuccess<T> value)? selectImageSuccess,
+    TResult? Function(SelectSingleImageSuccess<T> value)?
+        selectSingleImageSuccess,
   }) {
     return successGovernorates?.call(this);
   }
@@ -2299,6 +2446,9 @@ class _$SuccessGovernoratesImpl<T> implements SuccessGovernorates<T> {
         successEngineeringOfficeUploadImages,
     TResult Function(ErrorEngineeringOfficeUploadImages<T> value)?
         errorEngineeringOfficeUploadImages,
+    TResult Function(SelectImageSuccess<T> value)? selectImageSuccess,
+    TResult Function(SelectSingleImageSuccess<T> value)?
+        selectSingleImageSuccess,
     required TResult orElse(),
   }) {
     if (successGovernorates != null) {
@@ -2410,6 +2560,8 @@ class _$ErrorGovernoratesImpl<T> implements ErrorGovernorates<T> {
     required TResult Function() loadingEngineeringOfficeUploadImages,
     required TResult Function() successEngineeringOfficeUploadImages,
     required TResult Function(String error) errorEngineeringOfficeUploadImages,
+    required TResult Function(List<File> images) selectImageSuccess,
+    required TResult Function(File images) selectSingleImageSuccess,
   }) {
     return errorGovernorates(error);
   }
@@ -2436,6 +2588,8 @@ class _$ErrorGovernoratesImpl<T> implements ErrorGovernorates<T> {
     TResult? Function()? loadingEngineeringOfficeUploadImages,
     TResult? Function()? successEngineeringOfficeUploadImages,
     TResult? Function(String error)? errorEngineeringOfficeUploadImages,
+    TResult? Function(List<File> images)? selectImageSuccess,
+    TResult? Function(File images)? selectSingleImageSuccess,
   }) {
     return errorGovernorates?.call(error);
   }
@@ -2462,6 +2616,8 @@ class _$ErrorGovernoratesImpl<T> implements ErrorGovernorates<T> {
     TResult Function()? loadingEngineeringOfficeUploadImages,
     TResult Function()? successEngineeringOfficeUploadImages,
     TResult Function(String error)? errorEngineeringOfficeUploadImages,
+    TResult Function(List<File> images)? selectImageSuccess,
+    TResult Function(File images)? selectSingleImageSuccess,
     required TResult orElse(),
   }) {
     if (errorGovernorates != null) {
@@ -2495,6 +2651,9 @@ class _$ErrorGovernoratesImpl<T> implements ErrorGovernorates<T> {
         successEngineeringOfficeUploadImages,
     required TResult Function(ErrorEngineeringOfficeUploadImages<T> value)
         errorEngineeringOfficeUploadImages,
+    required TResult Function(SelectImageSuccess<T> value) selectImageSuccess,
+    required TResult Function(SelectSingleImageSuccess<T> value)
+        selectSingleImageSuccess,
   }) {
     return errorGovernorates(this);
   }
@@ -2524,6 +2683,9 @@ class _$ErrorGovernoratesImpl<T> implements ErrorGovernorates<T> {
         successEngineeringOfficeUploadImages,
     TResult? Function(ErrorEngineeringOfficeUploadImages<T> value)?
         errorEngineeringOfficeUploadImages,
+    TResult? Function(SelectImageSuccess<T> value)? selectImageSuccess,
+    TResult? Function(SelectSingleImageSuccess<T> value)?
+        selectSingleImageSuccess,
   }) {
     return errorGovernorates?.call(this);
   }
@@ -2553,6 +2715,9 @@ class _$ErrorGovernoratesImpl<T> implements ErrorGovernorates<T> {
         successEngineeringOfficeUploadImages,
     TResult Function(ErrorEngineeringOfficeUploadImages<T> value)?
         errorEngineeringOfficeUploadImages,
+    TResult Function(SelectImageSuccess<T> value)? selectImageSuccess,
+    TResult Function(SelectSingleImageSuccess<T> value)?
+        selectSingleImageSuccess,
     required TResult orElse(),
   }) {
     if (errorGovernorates != null) {
@@ -2635,6 +2800,8 @@ class _$LoadingCitiesImpl<T> implements LoadingCities<T> {
     required TResult Function() loadingEngineeringOfficeUploadImages,
     required TResult Function() successEngineeringOfficeUploadImages,
     required TResult Function(String error) errorEngineeringOfficeUploadImages,
+    required TResult Function(List<File> images) selectImageSuccess,
+    required TResult Function(File images) selectSingleImageSuccess,
   }) {
     return loadingCities();
   }
@@ -2661,6 +2828,8 @@ class _$LoadingCitiesImpl<T> implements LoadingCities<T> {
     TResult? Function()? loadingEngineeringOfficeUploadImages,
     TResult? Function()? successEngineeringOfficeUploadImages,
     TResult? Function(String error)? errorEngineeringOfficeUploadImages,
+    TResult? Function(List<File> images)? selectImageSuccess,
+    TResult? Function(File images)? selectSingleImageSuccess,
   }) {
     return loadingCities?.call();
   }
@@ -2687,6 +2856,8 @@ class _$LoadingCitiesImpl<T> implements LoadingCities<T> {
     TResult Function()? loadingEngineeringOfficeUploadImages,
     TResult Function()? successEngineeringOfficeUploadImages,
     TResult Function(String error)? errorEngineeringOfficeUploadImages,
+    TResult Function(List<File> images)? selectImageSuccess,
+    TResult Function(File images)? selectSingleImageSuccess,
     required TResult orElse(),
   }) {
     if (loadingCities != null) {
@@ -2720,6 +2891,9 @@ class _$LoadingCitiesImpl<T> implements LoadingCities<T> {
         successEngineeringOfficeUploadImages,
     required TResult Function(ErrorEngineeringOfficeUploadImages<T> value)
         errorEngineeringOfficeUploadImages,
+    required TResult Function(SelectImageSuccess<T> value) selectImageSuccess,
+    required TResult Function(SelectSingleImageSuccess<T> value)
+        selectSingleImageSuccess,
   }) {
     return loadingCities(this);
   }
@@ -2749,6 +2923,9 @@ class _$LoadingCitiesImpl<T> implements LoadingCities<T> {
         successEngineeringOfficeUploadImages,
     TResult? Function(ErrorEngineeringOfficeUploadImages<T> value)?
         errorEngineeringOfficeUploadImages,
+    TResult? Function(SelectImageSuccess<T> value)? selectImageSuccess,
+    TResult? Function(SelectSingleImageSuccess<T> value)?
+        selectSingleImageSuccess,
   }) {
     return loadingCities?.call(this);
   }
@@ -2778,6 +2955,9 @@ class _$LoadingCitiesImpl<T> implements LoadingCities<T> {
         successEngineeringOfficeUploadImages,
     TResult Function(ErrorEngineeringOfficeUploadImages<T> value)?
         errorEngineeringOfficeUploadImages,
+    TResult Function(SelectImageSuccess<T> value)? selectImageSuccess,
+    TResult Function(SelectSingleImageSuccess<T> value)?
+        selectSingleImageSuccess,
     required TResult orElse(),
   }) {
     if (loadingCities != null) {
@@ -2880,6 +3060,8 @@ class _$SuccessCitiesImpl<T> implements SuccessCities<T> {
     required TResult Function() loadingEngineeringOfficeUploadImages,
     required TResult Function() successEngineeringOfficeUploadImages,
     required TResult Function(String error) errorEngineeringOfficeUploadImages,
+    required TResult Function(List<File> images) selectImageSuccess,
+    required TResult Function(File images) selectSingleImageSuccess,
   }) {
     return successCities(data);
   }
@@ -2906,6 +3088,8 @@ class _$SuccessCitiesImpl<T> implements SuccessCities<T> {
     TResult? Function()? loadingEngineeringOfficeUploadImages,
     TResult? Function()? successEngineeringOfficeUploadImages,
     TResult? Function(String error)? errorEngineeringOfficeUploadImages,
+    TResult? Function(List<File> images)? selectImageSuccess,
+    TResult? Function(File images)? selectSingleImageSuccess,
   }) {
     return successCities?.call(data);
   }
@@ -2932,6 +3116,8 @@ class _$SuccessCitiesImpl<T> implements SuccessCities<T> {
     TResult Function()? loadingEngineeringOfficeUploadImages,
     TResult Function()? successEngineeringOfficeUploadImages,
     TResult Function(String error)? errorEngineeringOfficeUploadImages,
+    TResult Function(List<File> images)? selectImageSuccess,
+    TResult Function(File images)? selectSingleImageSuccess,
     required TResult orElse(),
   }) {
     if (successCities != null) {
@@ -2965,6 +3151,9 @@ class _$SuccessCitiesImpl<T> implements SuccessCities<T> {
         successEngineeringOfficeUploadImages,
     required TResult Function(ErrorEngineeringOfficeUploadImages<T> value)
         errorEngineeringOfficeUploadImages,
+    required TResult Function(SelectImageSuccess<T> value) selectImageSuccess,
+    required TResult Function(SelectSingleImageSuccess<T> value)
+        selectSingleImageSuccess,
   }) {
     return successCities(this);
   }
@@ -2994,6 +3183,9 @@ class _$SuccessCitiesImpl<T> implements SuccessCities<T> {
         successEngineeringOfficeUploadImages,
     TResult? Function(ErrorEngineeringOfficeUploadImages<T> value)?
         errorEngineeringOfficeUploadImages,
+    TResult? Function(SelectImageSuccess<T> value)? selectImageSuccess,
+    TResult? Function(SelectSingleImageSuccess<T> value)?
+        selectSingleImageSuccess,
   }) {
     return successCities?.call(this);
   }
@@ -3023,6 +3215,9 @@ class _$SuccessCitiesImpl<T> implements SuccessCities<T> {
         successEngineeringOfficeUploadImages,
     TResult Function(ErrorEngineeringOfficeUploadImages<T> value)?
         errorEngineeringOfficeUploadImages,
+    TResult Function(SelectImageSuccess<T> value)? selectImageSuccess,
+    TResult Function(SelectSingleImageSuccess<T> value)?
+        selectSingleImageSuccess,
     required TResult orElse(),
   }) {
     if (successCities != null) {
@@ -3132,6 +3327,8 @@ class _$ErrorCitiesImpl<T> implements ErrorCities<T> {
     required TResult Function() loadingEngineeringOfficeUploadImages,
     required TResult Function() successEngineeringOfficeUploadImages,
     required TResult Function(String error) errorEngineeringOfficeUploadImages,
+    required TResult Function(List<File> images) selectImageSuccess,
+    required TResult Function(File images) selectSingleImageSuccess,
   }) {
     return errorCities(error);
   }
@@ -3158,6 +3355,8 @@ class _$ErrorCitiesImpl<T> implements ErrorCities<T> {
     TResult? Function()? loadingEngineeringOfficeUploadImages,
     TResult? Function()? successEngineeringOfficeUploadImages,
     TResult? Function(String error)? errorEngineeringOfficeUploadImages,
+    TResult? Function(List<File> images)? selectImageSuccess,
+    TResult? Function(File images)? selectSingleImageSuccess,
   }) {
     return errorCities?.call(error);
   }
@@ -3184,6 +3383,8 @@ class _$ErrorCitiesImpl<T> implements ErrorCities<T> {
     TResult Function()? loadingEngineeringOfficeUploadImages,
     TResult Function()? successEngineeringOfficeUploadImages,
     TResult Function(String error)? errorEngineeringOfficeUploadImages,
+    TResult Function(List<File> images)? selectImageSuccess,
+    TResult Function(File images)? selectSingleImageSuccess,
     required TResult orElse(),
   }) {
     if (errorCities != null) {
@@ -3217,6 +3418,9 @@ class _$ErrorCitiesImpl<T> implements ErrorCities<T> {
         successEngineeringOfficeUploadImages,
     required TResult Function(ErrorEngineeringOfficeUploadImages<T> value)
         errorEngineeringOfficeUploadImages,
+    required TResult Function(SelectImageSuccess<T> value) selectImageSuccess,
+    required TResult Function(SelectSingleImageSuccess<T> value)
+        selectSingleImageSuccess,
   }) {
     return errorCities(this);
   }
@@ -3246,6 +3450,9 @@ class _$ErrorCitiesImpl<T> implements ErrorCities<T> {
         successEngineeringOfficeUploadImages,
     TResult? Function(ErrorEngineeringOfficeUploadImages<T> value)?
         errorEngineeringOfficeUploadImages,
+    TResult? Function(SelectImageSuccess<T> value)? selectImageSuccess,
+    TResult? Function(SelectSingleImageSuccess<T> value)?
+        selectSingleImageSuccess,
   }) {
     return errorCities?.call(this);
   }
@@ -3275,6 +3482,9 @@ class _$ErrorCitiesImpl<T> implements ErrorCities<T> {
         successEngineeringOfficeUploadImages,
     TResult Function(ErrorEngineeringOfficeUploadImages<T> value)?
         errorEngineeringOfficeUploadImages,
+    TResult Function(SelectImageSuccess<T> value)? selectImageSuccess,
+    TResult Function(SelectSingleImageSuccess<T> value)?
+        selectSingleImageSuccess,
     required TResult orElse(),
   }) {
     if (errorCities != null) {
@@ -3358,6 +3568,8 @@ class _$LoadingBusinessTypeImpl<T> implements LoadingBusinessType<T> {
     required TResult Function() loadingEngineeringOfficeUploadImages,
     required TResult Function() successEngineeringOfficeUploadImages,
     required TResult Function(String error) errorEngineeringOfficeUploadImages,
+    required TResult Function(List<File> images) selectImageSuccess,
+    required TResult Function(File images) selectSingleImageSuccess,
   }) {
     return loadingBusinessType();
   }
@@ -3384,6 +3596,8 @@ class _$LoadingBusinessTypeImpl<T> implements LoadingBusinessType<T> {
     TResult? Function()? loadingEngineeringOfficeUploadImages,
     TResult? Function()? successEngineeringOfficeUploadImages,
     TResult? Function(String error)? errorEngineeringOfficeUploadImages,
+    TResult? Function(List<File> images)? selectImageSuccess,
+    TResult? Function(File images)? selectSingleImageSuccess,
   }) {
     return loadingBusinessType?.call();
   }
@@ -3410,6 +3624,8 @@ class _$LoadingBusinessTypeImpl<T> implements LoadingBusinessType<T> {
     TResult Function()? loadingEngineeringOfficeUploadImages,
     TResult Function()? successEngineeringOfficeUploadImages,
     TResult Function(String error)? errorEngineeringOfficeUploadImages,
+    TResult Function(List<File> images)? selectImageSuccess,
+    TResult Function(File images)? selectSingleImageSuccess,
     required TResult orElse(),
   }) {
     if (loadingBusinessType != null) {
@@ -3443,6 +3659,9 @@ class _$LoadingBusinessTypeImpl<T> implements LoadingBusinessType<T> {
         successEngineeringOfficeUploadImages,
     required TResult Function(ErrorEngineeringOfficeUploadImages<T> value)
         errorEngineeringOfficeUploadImages,
+    required TResult Function(SelectImageSuccess<T> value) selectImageSuccess,
+    required TResult Function(SelectSingleImageSuccess<T> value)
+        selectSingleImageSuccess,
   }) {
     return loadingBusinessType(this);
   }
@@ -3472,6 +3691,9 @@ class _$LoadingBusinessTypeImpl<T> implements LoadingBusinessType<T> {
         successEngineeringOfficeUploadImages,
     TResult? Function(ErrorEngineeringOfficeUploadImages<T> value)?
         errorEngineeringOfficeUploadImages,
+    TResult? Function(SelectImageSuccess<T> value)? selectImageSuccess,
+    TResult? Function(SelectSingleImageSuccess<T> value)?
+        selectSingleImageSuccess,
   }) {
     return loadingBusinessType?.call(this);
   }
@@ -3501,6 +3723,9 @@ class _$LoadingBusinessTypeImpl<T> implements LoadingBusinessType<T> {
         successEngineeringOfficeUploadImages,
     TResult Function(ErrorEngineeringOfficeUploadImages<T> value)?
         errorEngineeringOfficeUploadImages,
+    TResult Function(SelectImageSuccess<T> value)? selectImageSuccess,
+    TResult Function(SelectSingleImageSuccess<T> value)?
+        selectSingleImageSuccess,
     required TResult orElse(),
   }) {
     if (loadingBusinessType != null) {
@@ -3603,6 +3828,8 @@ class _$SuccessBusinessTypeImpl<T> implements SuccessBusinessType<T> {
     required TResult Function() loadingEngineeringOfficeUploadImages,
     required TResult Function() successEngineeringOfficeUploadImages,
     required TResult Function(String error) errorEngineeringOfficeUploadImages,
+    required TResult Function(List<File> images) selectImageSuccess,
+    required TResult Function(File images) selectSingleImageSuccess,
   }) {
     return successBusinessType(data);
   }
@@ -3629,6 +3856,8 @@ class _$SuccessBusinessTypeImpl<T> implements SuccessBusinessType<T> {
     TResult? Function()? loadingEngineeringOfficeUploadImages,
     TResult? Function()? successEngineeringOfficeUploadImages,
     TResult? Function(String error)? errorEngineeringOfficeUploadImages,
+    TResult? Function(List<File> images)? selectImageSuccess,
+    TResult? Function(File images)? selectSingleImageSuccess,
   }) {
     return successBusinessType?.call(data);
   }
@@ -3655,6 +3884,8 @@ class _$SuccessBusinessTypeImpl<T> implements SuccessBusinessType<T> {
     TResult Function()? loadingEngineeringOfficeUploadImages,
     TResult Function()? successEngineeringOfficeUploadImages,
     TResult Function(String error)? errorEngineeringOfficeUploadImages,
+    TResult Function(List<File> images)? selectImageSuccess,
+    TResult Function(File images)? selectSingleImageSuccess,
     required TResult orElse(),
   }) {
     if (successBusinessType != null) {
@@ -3688,6 +3919,9 @@ class _$SuccessBusinessTypeImpl<T> implements SuccessBusinessType<T> {
         successEngineeringOfficeUploadImages,
     required TResult Function(ErrorEngineeringOfficeUploadImages<T> value)
         errorEngineeringOfficeUploadImages,
+    required TResult Function(SelectImageSuccess<T> value) selectImageSuccess,
+    required TResult Function(SelectSingleImageSuccess<T> value)
+        selectSingleImageSuccess,
   }) {
     return successBusinessType(this);
   }
@@ -3717,6 +3951,9 @@ class _$SuccessBusinessTypeImpl<T> implements SuccessBusinessType<T> {
         successEngineeringOfficeUploadImages,
     TResult? Function(ErrorEngineeringOfficeUploadImages<T> value)?
         errorEngineeringOfficeUploadImages,
+    TResult? Function(SelectImageSuccess<T> value)? selectImageSuccess,
+    TResult? Function(SelectSingleImageSuccess<T> value)?
+        selectSingleImageSuccess,
   }) {
     return successBusinessType?.call(this);
   }
@@ -3746,6 +3983,9 @@ class _$SuccessBusinessTypeImpl<T> implements SuccessBusinessType<T> {
         successEngineeringOfficeUploadImages,
     TResult Function(ErrorEngineeringOfficeUploadImages<T> value)?
         errorEngineeringOfficeUploadImages,
+    TResult Function(SelectImageSuccess<T> value)? selectImageSuccess,
+    TResult Function(SelectSingleImageSuccess<T> value)?
+        selectSingleImageSuccess,
     required TResult orElse(),
   }) {
     if (successBusinessType != null) {
@@ -3857,6 +4097,8 @@ class _$ErrorBusinessTypeImpl<T> implements ErrorBusinessType<T> {
     required TResult Function() loadingEngineeringOfficeUploadImages,
     required TResult Function() successEngineeringOfficeUploadImages,
     required TResult Function(String error) errorEngineeringOfficeUploadImages,
+    required TResult Function(List<File> images) selectImageSuccess,
+    required TResult Function(File images) selectSingleImageSuccess,
   }) {
     return errorBusinessType(error);
   }
@@ -3883,6 +4125,8 @@ class _$ErrorBusinessTypeImpl<T> implements ErrorBusinessType<T> {
     TResult? Function()? loadingEngineeringOfficeUploadImages,
     TResult? Function()? successEngineeringOfficeUploadImages,
     TResult? Function(String error)? errorEngineeringOfficeUploadImages,
+    TResult? Function(List<File> images)? selectImageSuccess,
+    TResult? Function(File images)? selectSingleImageSuccess,
   }) {
     return errorBusinessType?.call(error);
   }
@@ -3909,6 +4153,8 @@ class _$ErrorBusinessTypeImpl<T> implements ErrorBusinessType<T> {
     TResult Function()? loadingEngineeringOfficeUploadImages,
     TResult Function()? successEngineeringOfficeUploadImages,
     TResult Function(String error)? errorEngineeringOfficeUploadImages,
+    TResult Function(List<File> images)? selectImageSuccess,
+    TResult Function(File images)? selectSingleImageSuccess,
     required TResult orElse(),
   }) {
     if (errorBusinessType != null) {
@@ -3942,6 +4188,9 @@ class _$ErrorBusinessTypeImpl<T> implements ErrorBusinessType<T> {
         successEngineeringOfficeUploadImages,
     required TResult Function(ErrorEngineeringOfficeUploadImages<T> value)
         errorEngineeringOfficeUploadImages,
+    required TResult Function(SelectImageSuccess<T> value) selectImageSuccess,
+    required TResult Function(SelectSingleImageSuccess<T> value)
+        selectSingleImageSuccess,
   }) {
     return errorBusinessType(this);
   }
@@ -3971,6 +4220,9 @@ class _$ErrorBusinessTypeImpl<T> implements ErrorBusinessType<T> {
         successEngineeringOfficeUploadImages,
     TResult? Function(ErrorEngineeringOfficeUploadImages<T> value)?
         errorEngineeringOfficeUploadImages,
+    TResult? Function(SelectImageSuccess<T> value)? selectImageSuccess,
+    TResult? Function(SelectSingleImageSuccess<T> value)?
+        selectSingleImageSuccess,
   }) {
     return errorBusinessType?.call(this);
   }
@@ -4000,6 +4252,9 @@ class _$ErrorBusinessTypeImpl<T> implements ErrorBusinessType<T> {
         successEngineeringOfficeUploadImages,
     TResult Function(ErrorEngineeringOfficeUploadImages<T> value)?
         errorEngineeringOfficeUploadImages,
+    TResult Function(SelectImageSuccess<T> value)? selectImageSuccess,
+    TResult Function(SelectSingleImageSuccess<T> value)?
+        selectSingleImageSuccess,
     required TResult orElse(),
   }) {
     if (errorBusinessType != null) {
@@ -4087,6 +4342,8 @@ class _$LoadingEngineeringOfficeUploadImagesImpl<T>
     required TResult Function() loadingEngineeringOfficeUploadImages,
     required TResult Function() successEngineeringOfficeUploadImages,
     required TResult Function(String error) errorEngineeringOfficeUploadImages,
+    required TResult Function(List<File> images) selectImageSuccess,
+    required TResult Function(File images) selectSingleImageSuccess,
   }) {
     return loadingEngineeringOfficeUploadImages();
   }
@@ -4113,6 +4370,8 @@ class _$LoadingEngineeringOfficeUploadImagesImpl<T>
     TResult? Function()? loadingEngineeringOfficeUploadImages,
     TResult? Function()? successEngineeringOfficeUploadImages,
     TResult? Function(String error)? errorEngineeringOfficeUploadImages,
+    TResult? Function(List<File> images)? selectImageSuccess,
+    TResult? Function(File images)? selectSingleImageSuccess,
   }) {
     return loadingEngineeringOfficeUploadImages?.call();
   }
@@ -4139,6 +4398,8 @@ class _$LoadingEngineeringOfficeUploadImagesImpl<T>
     TResult Function()? loadingEngineeringOfficeUploadImages,
     TResult Function()? successEngineeringOfficeUploadImages,
     TResult Function(String error)? errorEngineeringOfficeUploadImages,
+    TResult Function(List<File> images)? selectImageSuccess,
+    TResult Function(File images)? selectSingleImageSuccess,
     required TResult orElse(),
   }) {
     if (loadingEngineeringOfficeUploadImages != null) {
@@ -4172,6 +4433,9 @@ class _$LoadingEngineeringOfficeUploadImagesImpl<T>
         successEngineeringOfficeUploadImages,
     required TResult Function(ErrorEngineeringOfficeUploadImages<T> value)
         errorEngineeringOfficeUploadImages,
+    required TResult Function(SelectImageSuccess<T> value) selectImageSuccess,
+    required TResult Function(SelectSingleImageSuccess<T> value)
+        selectSingleImageSuccess,
   }) {
     return loadingEngineeringOfficeUploadImages(this);
   }
@@ -4201,6 +4465,9 @@ class _$LoadingEngineeringOfficeUploadImagesImpl<T>
         successEngineeringOfficeUploadImages,
     TResult? Function(ErrorEngineeringOfficeUploadImages<T> value)?
         errorEngineeringOfficeUploadImages,
+    TResult? Function(SelectImageSuccess<T> value)? selectImageSuccess,
+    TResult? Function(SelectSingleImageSuccess<T> value)?
+        selectSingleImageSuccess,
   }) {
     return loadingEngineeringOfficeUploadImages?.call(this);
   }
@@ -4230,6 +4497,9 @@ class _$LoadingEngineeringOfficeUploadImagesImpl<T>
         successEngineeringOfficeUploadImages,
     TResult Function(ErrorEngineeringOfficeUploadImages<T> value)?
         errorEngineeringOfficeUploadImages,
+    TResult Function(SelectImageSuccess<T> value)? selectImageSuccess,
+    TResult Function(SelectSingleImageSuccess<T> value)?
+        selectSingleImageSuccess,
     required TResult orElse(),
   }) {
     if (loadingEngineeringOfficeUploadImages != null) {
@@ -4310,6 +4580,8 @@ class _$SuccessEngineeringOfficeUploadImagesImpl<T>
     required TResult Function() loadingEngineeringOfficeUploadImages,
     required TResult Function() successEngineeringOfficeUploadImages,
     required TResult Function(String error) errorEngineeringOfficeUploadImages,
+    required TResult Function(List<File> images) selectImageSuccess,
+    required TResult Function(File images) selectSingleImageSuccess,
   }) {
     return successEngineeringOfficeUploadImages();
   }
@@ -4336,6 +4608,8 @@ class _$SuccessEngineeringOfficeUploadImagesImpl<T>
     TResult? Function()? loadingEngineeringOfficeUploadImages,
     TResult? Function()? successEngineeringOfficeUploadImages,
     TResult? Function(String error)? errorEngineeringOfficeUploadImages,
+    TResult? Function(List<File> images)? selectImageSuccess,
+    TResult? Function(File images)? selectSingleImageSuccess,
   }) {
     return successEngineeringOfficeUploadImages?.call();
   }
@@ -4362,6 +4636,8 @@ class _$SuccessEngineeringOfficeUploadImagesImpl<T>
     TResult Function()? loadingEngineeringOfficeUploadImages,
     TResult Function()? successEngineeringOfficeUploadImages,
     TResult Function(String error)? errorEngineeringOfficeUploadImages,
+    TResult Function(List<File> images)? selectImageSuccess,
+    TResult Function(File images)? selectSingleImageSuccess,
     required TResult orElse(),
   }) {
     if (successEngineeringOfficeUploadImages != null) {
@@ -4395,6 +4671,9 @@ class _$SuccessEngineeringOfficeUploadImagesImpl<T>
         successEngineeringOfficeUploadImages,
     required TResult Function(ErrorEngineeringOfficeUploadImages<T> value)
         errorEngineeringOfficeUploadImages,
+    required TResult Function(SelectImageSuccess<T> value) selectImageSuccess,
+    required TResult Function(SelectSingleImageSuccess<T> value)
+        selectSingleImageSuccess,
   }) {
     return successEngineeringOfficeUploadImages(this);
   }
@@ -4424,6 +4703,9 @@ class _$SuccessEngineeringOfficeUploadImagesImpl<T>
         successEngineeringOfficeUploadImages,
     TResult? Function(ErrorEngineeringOfficeUploadImages<T> value)?
         errorEngineeringOfficeUploadImages,
+    TResult? Function(SelectImageSuccess<T> value)? selectImageSuccess,
+    TResult? Function(SelectSingleImageSuccess<T> value)?
+        selectSingleImageSuccess,
   }) {
     return successEngineeringOfficeUploadImages?.call(this);
   }
@@ -4453,6 +4735,9 @@ class _$SuccessEngineeringOfficeUploadImagesImpl<T>
         successEngineeringOfficeUploadImages,
     TResult Function(ErrorEngineeringOfficeUploadImages<T> value)?
         errorEngineeringOfficeUploadImages,
+    TResult Function(SelectImageSuccess<T> value)? selectImageSuccess,
+    TResult Function(SelectSingleImageSuccess<T> value)?
+        selectSingleImageSuccess,
     required TResult orElse(),
   }) {
     if (successEngineeringOfficeUploadImages != null) {
@@ -4561,6 +4846,8 @@ class _$ErrorEngineeringOfficeUploadImagesImpl<T>
     required TResult Function() loadingEngineeringOfficeUploadImages,
     required TResult Function() successEngineeringOfficeUploadImages,
     required TResult Function(String error) errorEngineeringOfficeUploadImages,
+    required TResult Function(List<File> images) selectImageSuccess,
+    required TResult Function(File images) selectSingleImageSuccess,
   }) {
     return errorEngineeringOfficeUploadImages(error);
   }
@@ -4587,6 +4874,8 @@ class _$ErrorEngineeringOfficeUploadImagesImpl<T>
     TResult? Function()? loadingEngineeringOfficeUploadImages,
     TResult? Function()? successEngineeringOfficeUploadImages,
     TResult? Function(String error)? errorEngineeringOfficeUploadImages,
+    TResult? Function(List<File> images)? selectImageSuccess,
+    TResult? Function(File images)? selectSingleImageSuccess,
   }) {
     return errorEngineeringOfficeUploadImages?.call(error);
   }
@@ -4613,6 +4902,8 @@ class _$ErrorEngineeringOfficeUploadImagesImpl<T>
     TResult Function()? loadingEngineeringOfficeUploadImages,
     TResult Function()? successEngineeringOfficeUploadImages,
     TResult Function(String error)? errorEngineeringOfficeUploadImages,
+    TResult Function(List<File> images)? selectImageSuccess,
+    TResult Function(File images)? selectSingleImageSuccess,
     required TResult orElse(),
   }) {
     if (errorEngineeringOfficeUploadImages != null) {
@@ -4646,6 +4937,9 @@ class _$ErrorEngineeringOfficeUploadImagesImpl<T>
         successEngineeringOfficeUploadImages,
     required TResult Function(ErrorEngineeringOfficeUploadImages<T> value)
         errorEngineeringOfficeUploadImages,
+    required TResult Function(SelectImageSuccess<T> value) selectImageSuccess,
+    required TResult Function(SelectSingleImageSuccess<T> value)
+        selectSingleImageSuccess,
   }) {
     return errorEngineeringOfficeUploadImages(this);
   }
@@ -4675,6 +4969,9 @@ class _$ErrorEngineeringOfficeUploadImagesImpl<T>
         successEngineeringOfficeUploadImages,
     TResult? Function(ErrorEngineeringOfficeUploadImages<T> value)?
         errorEngineeringOfficeUploadImages,
+    TResult? Function(SelectImageSuccess<T> value)? selectImageSuccess,
+    TResult? Function(SelectSingleImageSuccess<T> value)?
+        selectSingleImageSuccess,
   }) {
     return errorEngineeringOfficeUploadImages?.call(this);
   }
@@ -4704,6 +5001,9 @@ class _$ErrorEngineeringOfficeUploadImagesImpl<T>
         successEngineeringOfficeUploadImages,
     TResult Function(ErrorEngineeringOfficeUploadImages<T> value)?
         errorEngineeringOfficeUploadImages,
+    TResult Function(SelectImageSuccess<T> value)? selectImageSuccess,
+    TResult Function(SelectSingleImageSuccess<T> value)?
+        selectSingleImageSuccess,
     required TResult orElse(),
   }) {
     if (errorEngineeringOfficeUploadImages != null) {
@@ -4725,5 +5025,550 @@ abstract class ErrorEngineeringOfficeUploadImages<T> implements SignUpState<T> {
   @JsonKey(includeFromJson: false, includeToJson: false)
   _$$ErrorEngineeringOfficeUploadImagesImplCopyWith<T,
           _$ErrorEngineeringOfficeUploadImagesImpl<T>>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$SelectImageSuccessImplCopyWith<T, $Res> {
+  factory _$$SelectImageSuccessImplCopyWith(_$SelectImageSuccessImpl<T> value,
+          $Res Function(_$SelectImageSuccessImpl<T>) then) =
+      __$$SelectImageSuccessImplCopyWithImpl<T, $Res>;
+  @useResult
+  $Res call({List<File> images});
+}
+
+/// @nodoc
+class __$$SelectImageSuccessImplCopyWithImpl<T, $Res>
+    extends _$SignUpStateCopyWithImpl<T, $Res, _$SelectImageSuccessImpl<T>>
+    implements _$$SelectImageSuccessImplCopyWith<T, $Res> {
+  __$$SelectImageSuccessImplCopyWithImpl(_$SelectImageSuccessImpl<T> _value,
+      $Res Function(_$SelectImageSuccessImpl<T>) _then)
+      : super(_value, _then);
+
+  /// Create a copy of SignUpState
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? images = null,
+  }) {
+    return _then(_$SelectImageSuccessImpl<T>(
+      null == images
+          ? _value._images
+          : images // ignore: cast_nullable_to_non_nullable
+              as List<File>,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$SelectImageSuccessImpl<T> implements SelectImageSuccess<T> {
+  const _$SelectImageSuccessImpl(final List<File> images) : _images = images;
+
+  final List<File> _images;
+  @override
+  List<File> get images {
+    if (_images is EqualUnmodifiableListView) return _images;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_images);
+  }
+
+  @override
+  String toString() {
+    return 'SignUpState<$T>.selectImageSuccess(images: $images)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$SelectImageSuccessImpl<T> &&
+            const DeepCollectionEquality().equals(other._images, _images));
+  }
+
+  @override
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(_images));
+
+  /// Create a copy of SignUpState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$SelectImageSuccessImplCopyWith<T, _$SelectImageSuccessImpl<T>>
+      get copyWith => __$$SelectImageSuccessImplCopyWithImpl<T,
+          _$SelectImageSuccessImpl<T>>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() loadingUserTypes,
+    required TResult Function(T data) successUserTypes,
+    required TResult Function(String error) errorUserTypes,
+    required TResult Function() loadingSignUp,
+    required TResult Function(T data) successSignUp,
+    required TResult Function(String error) errorSignUp,
+    required TResult Function() loadingGovernorates,
+    required TResult Function(T data) successGovernorates,
+    required TResult Function(String error) errorGovernorates,
+    required TResult Function() loadingCities,
+    required TResult Function(T data) successCities,
+    required TResult Function(String error) errorCities,
+    required TResult Function() loadingBusinessType,
+    required TResult Function(T data) successBusinessType,
+    required TResult Function(String error) errorBusinessType,
+    required TResult Function() loadingEngineeringOfficeUploadImages,
+    required TResult Function() successEngineeringOfficeUploadImages,
+    required TResult Function(String error) errorEngineeringOfficeUploadImages,
+    required TResult Function(List<File> images) selectImageSuccess,
+    required TResult Function(File images) selectSingleImageSuccess,
+  }) {
+    return selectImageSuccess(images);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? loadingUserTypes,
+    TResult? Function(T data)? successUserTypes,
+    TResult? Function(String error)? errorUserTypes,
+    TResult? Function()? loadingSignUp,
+    TResult? Function(T data)? successSignUp,
+    TResult? Function(String error)? errorSignUp,
+    TResult? Function()? loadingGovernorates,
+    TResult? Function(T data)? successGovernorates,
+    TResult? Function(String error)? errorGovernorates,
+    TResult? Function()? loadingCities,
+    TResult? Function(T data)? successCities,
+    TResult? Function(String error)? errorCities,
+    TResult? Function()? loadingBusinessType,
+    TResult? Function(T data)? successBusinessType,
+    TResult? Function(String error)? errorBusinessType,
+    TResult? Function()? loadingEngineeringOfficeUploadImages,
+    TResult? Function()? successEngineeringOfficeUploadImages,
+    TResult? Function(String error)? errorEngineeringOfficeUploadImages,
+    TResult? Function(List<File> images)? selectImageSuccess,
+    TResult? Function(File images)? selectSingleImageSuccess,
+  }) {
+    return selectImageSuccess?.call(images);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loadingUserTypes,
+    TResult Function(T data)? successUserTypes,
+    TResult Function(String error)? errorUserTypes,
+    TResult Function()? loadingSignUp,
+    TResult Function(T data)? successSignUp,
+    TResult Function(String error)? errorSignUp,
+    TResult Function()? loadingGovernorates,
+    TResult Function(T data)? successGovernorates,
+    TResult Function(String error)? errorGovernorates,
+    TResult Function()? loadingCities,
+    TResult Function(T data)? successCities,
+    TResult Function(String error)? errorCities,
+    TResult Function()? loadingBusinessType,
+    TResult Function(T data)? successBusinessType,
+    TResult Function(String error)? errorBusinessType,
+    TResult Function()? loadingEngineeringOfficeUploadImages,
+    TResult Function()? successEngineeringOfficeUploadImages,
+    TResult Function(String error)? errorEngineeringOfficeUploadImages,
+    TResult Function(List<File> images)? selectImageSuccess,
+    TResult Function(File images)? selectSingleImageSuccess,
+    required TResult orElse(),
+  }) {
+    if (selectImageSuccess != null) {
+      return selectImageSuccess(images);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial<T> value) initial,
+    required TResult Function(LoadingUserTypes<T> value) loadingUserTypes,
+    required TResult Function(SuccessUserTypes<T> value) successUserTypes,
+    required TResult Function(ErrorUserTypes<T> value) errorUserTypes,
+    required TResult Function(SignUpLoadingState<T> value) loadingSignUp,
+    required TResult Function(SignUpSuccessState<T> value) successSignUp,
+    required TResult Function(SignUpErrorState<T> value) errorSignUp,
+    required TResult Function(LoadingGovernorates<T> value) loadingGovernorates,
+    required TResult Function(SuccessGovernorates<T> value) successGovernorates,
+    required TResult Function(ErrorGovernorates<T> value) errorGovernorates,
+    required TResult Function(LoadingCities<T> value) loadingCities,
+    required TResult Function(SuccessCities<T> value) successCities,
+    required TResult Function(ErrorCities<T> value) errorCities,
+    required TResult Function(LoadingBusinessType<T> value) loadingBusinessType,
+    required TResult Function(SuccessBusinessType<T> value) successBusinessType,
+    required TResult Function(ErrorBusinessType<T> value) errorBusinessType,
+    required TResult Function(LoadingEngineeringOfficeUploadImages<T> value)
+        loadingEngineeringOfficeUploadImages,
+    required TResult Function(SuccessEngineeringOfficeUploadImages<T> value)
+        successEngineeringOfficeUploadImages,
+    required TResult Function(ErrorEngineeringOfficeUploadImages<T> value)
+        errorEngineeringOfficeUploadImages,
+    required TResult Function(SelectImageSuccess<T> value) selectImageSuccess,
+    required TResult Function(SelectSingleImageSuccess<T> value)
+        selectSingleImageSuccess,
+  }) {
+    return selectImageSuccess(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial<T> value)? initial,
+    TResult? Function(LoadingUserTypes<T> value)? loadingUserTypes,
+    TResult? Function(SuccessUserTypes<T> value)? successUserTypes,
+    TResult? Function(ErrorUserTypes<T> value)? errorUserTypes,
+    TResult? Function(SignUpLoadingState<T> value)? loadingSignUp,
+    TResult? Function(SignUpSuccessState<T> value)? successSignUp,
+    TResult? Function(SignUpErrorState<T> value)? errorSignUp,
+    TResult? Function(LoadingGovernorates<T> value)? loadingGovernorates,
+    TResult? Function(SuccessGovernorates<T> value)? successGovernorates,
+    TResult? Function(ErrorGovernorates<T> value)? errorGovernorates,
+    TResult? Function(LoadingCities<T> value)? loadingCities,
+    TResult? Function(SuccessCities<T> value)? successCities,
+    TResult? Function(ErrorCities<T> value)? errorCities,
+    TResult? Function(LoadingBusinessType<T> value)? loadingBusinessType,
+    TResult? Function(SuccessBusinessType<T> value)? successBusinessType,
+    TResult? Function(ErrorBusinessType<T> value)? errorBusinessType,
+    TResult? Function(LoadingEngineeringOfficeUploadImages<T> value)?
+        loadingEngineeringOfficeUploadImages,
+    TResult? Function(SuccessEngineeringOfficeUploadImages<T> value)?
+        successEngineeringOfficeUploadImages,
+    TResult? Function(ErrorEngineeringOfficeUploadImages<T> value)?
+        errorEngineeringOfficeUploadImages,
+    TResult? Function(SelectImageSuccess<T> value)? selectImageSuccess,
+    TResult? Function(SelectSingleImageSuccess<T> value)?
+        selectSingleImageSuccess,
+  }) {
+    return selectImageSuccess?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial<T> value)? initial,
+    TResult Function(LoadingUserTypes<T> value)? loadingUserTypes,
+    TResult Function(SuccessUserTypes<T> value)? successUserTypes,
+    TResult Function(ErrorUserTypes<T> value)? errorUserTypes,
+    TResult Function(SignUpLoadingState<T> value)? loadingSignUp,
+    TResult Function(SignUpSuccessState<T> value)? successSignUp,
+    TResult Function(SignUpErrorState<T> value)? errorSignUp,
+    TResult Function(LoadingGovernorates<T> value)? loadingGovernorates,
+    TResult Function(SuccessGovernorates<T> value)? successGovernorates,
+    TResult Function(ErrorGovernorates<T> value)? errorGovernorates,
+    TResult Function(LoadingCities<T> value)? loadingCities,
+    TResult Function(SuccessCities<T> value)? successCities,
+    TResult Function(ErrorCities<T> value)? errorCities,
+    TResult Function(LoadingBusinessType<T> value)? loadingBusinessType,
+    TResult Function(SuccessBusinessType<T> value)? successBusinessType,
+    TResult Function(ErrorBusinessType<T> value)? errorBusinessType,
+    TResult Function(LoadingEngineeringOfficeUploadImages<T> value)?
+        loadingEngineeringOfficeUploadImages,
+    TResult Function(SuccessEngineeringOfficeUploadImages<T> value)?
+        successEngineeringOfficeUploadImages,
+    TResult Function(ErrorEngineeringOfficeUploadImages<T> value)?
+        errorEngineeringOfficeUploadImages,
+    TResult Function(SelectImageSuccess<T> value)? selectImageSuccess,
+    TResult Function(SelectSingleImageSuccess<T> value)?
+        selectSingleImageSuccess,
+    required TResult orElse(),
+  }) {
+    if (selectImageSuccess != null) {
+      return selectImageSuccess(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class SelectImageSuccess<T> implements SignUpState<T> {
+  const factory SelectImageSuccess(final List<File> images) =
+      _$SelectImageSuccessImpl<T>;
+
+  List<File> get images;
+
+  /// Create a copy of SignUpState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$SelectImageSuccessImplCopyWith<T, _$SelectImageSuccessImpl<T>>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$SelectSingleImageSuccessImplCopyWith<T, $Res> {
+  factory _$$SelectSingleImageSuccessImplCopyWith(
+          _$SelectSingleImageSuccessImpl<T> value,
+          $Res Function(_$SelectSingleImageSuccessImpl<T>) then) =
+      __$$SelectSingleImageSuccessImplCopyWithImpl<T, $Res>;
+  @useResult
+  $Res call({File images});
+}
+
+/// @nodoc
+class __$$SelectSingleImageSuccessImplCopyWithImpl<T, $Res>
+    extends _$SignUpStateCopyWithImpl<T, $Res,
+        _$SelectSingleImageSuccessImpl<T>>
+    implements _$$SelectSingleImageSuccessImplCopyWith<T, $Res> {
+  __$$SelectSingleImageSuccessImplCopyWithImpl(
+      _$SelectSingleImageSuccessImpl<T> _value,
+      $Res Function(_$SelectSingleImageSuccessImpl<T>) _then)
+      : super(_value, _then);
+
+  /// Create a copy of SignUpState
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? images = null,
+  }) {
+    return _then(_$SelectSingleImageSuccessImpl<T>(
+      null == images
+          ? _value.images
+          : images // ignore: cast_nullable_to_non_nullable
+              as File,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$SelectSingleImageSuccessImpl<T> implements SelectSingleImageSuccess<T> {
+  const _$SelectSingleImageSuccessImpl(this.images);
+
+  @override
+  final File images;
+
+  @override
+  String toString() {
+    return 'SignUpState<$T>.selectSingleImageSuccess(images: $images)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$SelectSingleImageSuccessImpl<T> &&
+            (identical(other.images, images) || other.images == images));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, images);
+
+  /// Create a copy of SignUpState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$SelectSingleImageSuccessImplCopyWith<T, _$SelectSingleImageSuccessImpl<T>>
+      get copyWith => __$$SelectSingleImageSuccessImplCopyWithImpl<T,
+          _$SelectSingleImageSuccessImpl<T>>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() loadingUserTypes,
+    required TResult Function(T data) successUserTypes,
+    required TResult Function(String error) errorUserTypes,
+    required TResult Function() loadingSignUp,
+    required TResult Function(T data) successSignUp,
+    required TResult Function(String error) errorSignUp,
+    required TResult Function() loadingGovernorates,
+    required TResult Function(T data) successGovernorates,
+    required TResult Function(String error) errorGovernorates,
+    required TResult Function() loadingCities,
+    required TResult Function(T data) successCities,
+    required TResult Function(String error) errorCities,
+    required TResult Function() loadingBusinessType,
+    required TResult Function(T data) successBusinessType,
+    required TResult Function(String error) errorBusinessType,
+    required TResult Function() loadingEngineeringOfficeUploadImages,
+    required TResult Function() successEngineeringOfficeUploadImages,
+    required TResult Function(String error) errorEngineeringOfficeUploadImages,
+    required TResult Function(List<File> images) selectImageSuccess,
+    required TResult Function(File images) selectSingleImageSuccess,
+  }) {
+    return selectSingleImageSuccess(images);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? loadingUserTypes,
+    TResult? Function(T data)? successUserTypes,
+    TResult? Function(String error)? errorUserTypes,
+    TResult? Function()? loadingSignUp,
+    TResult? Function(T data)? successSignUp,
+    TResult? Function(String error)? errorSignUp,
+    TResult? Function()? loadingGovernorates,
+    TResult? Function(T data)? successGovernorates,
+    TResult? Function(String error)? errorGovernorates,
+    TResult? Function()? loadingCities,
+    TResult? Function(T data)? successCities,
+    TResult? Function(String error)? errorCities,
+    TResult? Function()? loadingBusinessType,
+    TResult? Function(T data)? successBusinessType,
+    TResult? Function(String error)? errorBusinessType,
+    TResult? Function()? loadingEngineeringOfficeUploadImages,
+    TResult? Function()? successEngineeringOfficeUploadImages,
+    TResult? Function(String error)? errorEngineeringOfficeUploadImages,
+    TResult? Function(List<File> images)? selectImageSuccess,
+    TResult? Function(File images)? selectSingleImageSuccess,
+  }) {
+    return selectSingleImageSuccess?.call(images);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loadingUserTypes,
+    TResult Function(T data)? successUserTypes,
+    TResult Function(String error)? errorUserTypes,
+    TResult Function()? loadingSignUp,
+    TResult Function(T data)? successSignUp,
+    TResult Function(String error)? errorSignUp,
+    TResult Function()? loadingGovernorates,
+    TResult Function(T data)? successGovernorates,
+    TResult Function(String error)? errorGovernorates,
+    TResult Function()? loadingCities,
+    TResult Function(T data)? successCities,
+    TResult Function(String error)? errorCities,
+    TResult Function()? loadingBusinessType,
+    TResult Function(T data)? successBusinessType,
+    TResult Function(String error)? errorBusinessType,
+    TResult Function()? loadingEngineeringOfficeUploadImages,
+    TResult Function()? successEngineeringOfficeUploadImages,
+    TResult Function(String error)? errorEngineeringOfficeUploadImages,
+    TResult Function(List<File> images)? selectImageSuccess,
+    TResult Function(File images)? selectSingleImageSuccess,
+    required TResult orElse(),
+  }) {
+    if (selectSingleImageSuccess != null) {
+      return selectSingleImageSuccess(images);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial<T> value) initial,
+    required TResult Function(LoadingUserTypes<T> value) loadingUserTypes,
+    required TResult Function(SuccessUserTypes<T> value) successUserTypes,
+    required TResult Function(ErrorUserTypes<T> value) errorUserTypes,
+    required TResult Function(SignUpLoadingState<T> value) loadingSignUp,
+    required TResult Function(SignUpSuccessState<T> value) successSignUp,
+    required TResult Function(SignUpErrorState<T> value) errorSignUp,
+    required TResult Function(LoadingGovernorates<T> value) loadingGovernorates,
+    required TResult Function(SuccessGovernorates<T> value) successGovernorates,
+    required TResult Function(ErrorGovernorates<T> value) errorGovernorates,
+    required TResult Function(LoadingCities<T> value) loadingCities,
+    required TResult Function(SuccessCities<T> value) successCities,
+    required TResult Function(ErrorCities<T> value) errorCities,
+    required TResult Function(LoadingBusinessType<T> value) loadingBusinessType,
+    required TResult Function(SuccessBusinessType<T> value) successBusinessType,
+    required TResult Function(ErrorBusinessType<T> value) errorBusinessType,
+    required TResult Function(LoadingEngineeringOfficeUploadImages<T> value)
+        loadingEngineeringOfficeUploadImages,
+    required TResult Function(SuccessEngineeringOfficeUploadImages<T> value)
+        successEngineeringOfficeUploadImages,
+    required TResult Function(ErrorEngineeringOfficeUploadImages<T> value)
+        errorEngineeringOfficeUploadImages,
+    required TResult Function(SelectImageSuccess<T> value) selectImageSuccess,
+    required TResult Function(SelectSingleImageSuccess<T> value)
+        selectSingleImageSuccess,
+  }) {
+    return selectSingleImageSuccess(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial<T> value)? initial,
+    TResult? Function(LoadingUserTypes<T> value)? loadingUserTypes,
+    TResult? Function(SuccessUserTypes<T> value)? successUserTypes,
+    TResult? Function(ErrorUserTypes<T> value)? errorUserTypes,
+    TResult? Function(SignUpLoadingState<T> value)? loadingSignUp,
+    TResult? Function(SignUpSuccessState<T> value)? successSignUp,
+    TResult? Function(SignUpErrorState<T> value)? errorSignUp,
+    TResult? Function(LoadingGovernorates<T> value)? loadingGovernorates,
+    TResult? Function(SuccessGovernorates<T> value)? successGovernorates,
+    TResult? Function(ErrorGovernorates<T> value)? errorGovernorates,
+    TResult? Function(LoadingCities<T> value)? loadingCities,
+    TResult? Function(SuccessCities<T> value)? successCities,
+    TResult? Function(ErrorCities<T> value)? errorCities,
+    TResult? Function(LoadingBusinessType<T> value)? loadingBusinessType,
+    TResult? Function(SuccessBusinessType<T> value)? successBusinessType,
+    TResult? Function(ErrorBusinessType<T> value)? errorBusinessType,
+    TResult? Function(LoadingEngineeringOfficeUploadImages<T> value)?
+        loadingEngineeringOfficeUploadImages,
+    TResult? Function(SuccessEngineeringOfficeUploadImages<T> value)?
+        successEngineeringOfficeUploadImages,
+    TResult? Function(ErrorEngineeringOfficeUploadImages<T> value)?
+        errorEngineeringOfficeUploadImages,
+    TResult? Function(SelectImageSuccess<T> value)? selectImageSuccess,
+    TResult? Function(SelectSingleImageSuccess<T> value)?
+        selectSingleImageSuccess,
+  }) {
+    return selectSingleImageSuccess?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial<T> value)? initial,
+    TResult Function(LoadingUserTypes<T> value)? loadingUserTypes,
+    TResult Function(SuccessUserTypes<T> value)? successUserTypes,
+    TResult Function(ErrorUserTypes<T> value)? errorUserTypes,
+    TResult Function(SignUpLoadingState<T> value)? loadingSignUp,
+    TResult Function(SignUpSuccessState<T> value)? successSignUp,
+    TResult Function(SignUpErrorState<T> value)? errorSignUp,
+    TResult Function(LoadingGovernorates<T> value)? loadingGovernorates,
+    TResult Function(SuccessGovernorates<T> value)? successGovernorates,
+    TResult Function(ErrorGovernorates<T> value)? errorGovernorates,
+    TResult Function(LoadingCities<T> value)? loadingCities,
+    TResult Function(SuccessCities<T> value)? successCities,
+    TResult Function(ErrorCities<T> value)? errorCities,
+    TResult Function(LoadingBusinessType<T> value)? loadingBusinessType,
+    TResult Function(SuccessBusinessType<T> value)? successBusinessType,
+    TResult Function(ErrorBusinessType<T> value)? errorBusinessType,
+    TResult Function(LoadingEngineeringOfficeUploadImages<T> value)?
+        loadingEngineeringOfficeUploadImages,
+    TResult Function(SuccessEngineeringOfficeUploadImages<T> value)?
+        successEngineeringOfficeUploadImages,
+    TResult Function(ErrorEngineeringOfficeUploadImages<T> value)?
+        errorEngineeringOfficeUploadImages,
+    TResult Function(SelectImageSuccess<T> value)? selectImageSuccess,
+    TResult Function(SelectSingleImageSuccess<T> value)?
+        selectSingleImageSuccess,
+    required TResult orElse(),
+  }) {
+    if (selectSingleImageSuccess != null) {
+      return selectSingleImageSuccess(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class SelectSingleImageSuccess<T> implements SignUpState<T> {
+  const factory SelectSingleImageSuccess(final File images) =
+      _$SelectSingleImageSuccessImpl<T>;
+
+  File get images;
+
+  /// Create a copy of SignUpState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$SelectSingleImageSuccessImplCopyWith<T, _$SelectSingleImageSuccessImpl<T>>
       get copyWith => throw _privateConstructorUsedError;
 }

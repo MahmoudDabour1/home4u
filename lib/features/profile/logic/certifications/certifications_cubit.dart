@@ -25,18 +25,23 @@ class CertificationsCubit extends Cubit<CertificationsState> {
 
   final nameController = TextEditingController();
   final descriptionController = TextEditingController();
-  File? image;
+  List<File> image=[];
   final formKey = GlobalKey<FormState>();
 
-  void selectImage({required BuildContext context, ImageSource? source}) {
-    final nav = Navigator.of(context);
-    ImagePicker().pickImage(source: source!).then((value) {
-      if (value != null) {
-        image = File(value.path);
-        nav.pop();
-        emit(CertificationsState.addImage());
-      }
-    });
+  // void selectImage({required BuildContext context, ImageSource? source}) {
+  //   final nav = Navigator.of(context);
+  //   ImagePicker().pickImage(source: source!).then((value) {
+  //     if (value != null) {
+  //       image = File(value.path);
+  //       nav.pop();
+  //       emit(CertificationsState.addImage());
+  //     }
+  //   });
+  // }
+
+  void updateSelectedImages(List<File> newImages) {
+    image = [ ...newImages];
+    emit(CertificationsState.addImage());
   }
 
   Future<void> getAllCertifications() async {
@@ -100,7 +105,7 @@ class CertificationsCubit extends Cubit<CertificationsState> {
           );
           nameController.clear();
           descriptionController.clear();
-          image = null;
+          image = [];
           if (!isClosed) {
             emit(const CertificationsState.addCertificationSuccess());
             context.pop();
@@ -160,7 +165,7 @@ class CertificationsCubit extends Cubit<CertificationsState> {
                   .getString(context));
           nameController.clear();
           descriptionController.clear();
-          image = null;
+          image = [];
           if (!isClosed) {
             emit(const CertificationsState.updateCertificationSuccess());
             context.pop();
@@ -193,17 +198,24 @@ class CertificationsCubit extends Cubit<CertificationsState> {
     };
     final certificateJson = json.encode(certificateMap);
     DioFactory.setContentType("multipart/form-data");
-    final imageFile = await MultipartFile.fromFile(
-      image!.path,
-      filename: image!.path.split('/').last,
+    // final imageFile = await MultipartFile.fromFile(
+    //   image!.path,
+    //   filename: image!.path.split('/').last,
+    //   contentType: MediaType('image', 'jpeg'),
+    // );
+    final imageFiles = image!
+        .map((image) => MultipartFile.fromFileSync(
+      image.path,
+      filename: image.path.split("/").last,
       contentType: MediaType('image', 'jpeg'),
-    );
+    ))
+        .toList();
     return FormData.fromMap({
       'certificate': MultipartFile.fromString(
         certificateJson,
         contentType: MediaType('application', 'json'),
       ),
-      'image': imageFile,
+      'image': imageFiles,
     });
   }
 
@@ -215,17 +227,24 @@ class CertificationsCubit extends Cubit<CertificationsState> {
     };
     final certificateJson = json.encode(certificateMap);
     DioFactory.setContentType("multipart/form-data");
-    final imageFile = await MultipartFile.fromFile(
-      image!.path,
-      filename: image!.path.split('/').last,
+    // final imageFile = await MultipartFile.fromFile(
+    //   image!.path,
+    //   filename: image!.path.split('/').last,
+    //   contentType: MediaType('image', 'jpeg'),
+    // );
+    final imageFiles = image!
+        .map((image) => MultipartFile.fromFileSync(
+      image.path,
+      filename: image.path.split("/").last,
       contentType: MediaType('image', 'jpeg'),
-    );
+    ))
+        .toList();
     return FormData.fromMap({
       'certificate': MultipartFile.fromString(
         certificateJson,
         contentType: MediaType('application', 'json'),
       ),
-      'image': imageFile,
+      'image': imageFiles,
     });
   }
 }

@@ -32,6 +32,7 @@ class _AddProductImagesState extends State<AddProductImages> {
             SelectImageWidget(
               cubit: businessCubit,
               images: images,
+              updateImageCallback: businessCubit.updateSelectedImages,
             ),
             if (businessCubit.images.isNotEmpty ||
                 businessCubit.storedImages.isNotEmpty)
