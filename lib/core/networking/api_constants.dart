@@ -76,6 +76,19 @@ class ApiConstants {
 
   ///images
   static String getImageBaseUrl(String path) => "$apiBaseUrl/$path";
+
+///ask engineer
+  static const String askEngineerIkpEp = "/api/v1/ask-engineer/lkps";
+  static const String askEngineerEp = "/api/v1/ask-engineer";
+  static const String addAllAskEngineerImagesEp =
+      "/api/v1/ask-engineer-photos/all";
+ ///ask worker
+  static const String askWorkerIkpEp = "/api/v1/ask-worker/lkps";
+  static const String askWorkerEp = "/api/v1/ask-worker";
+  static const String addAllAskWorkerImagesEp =
+      "/api/v1/ask-worker-photos/all";
+  static const String uploadImageEP = "/api/v1/file";
+
 }
 
 class ApiErrors {

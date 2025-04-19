@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:home4u/core/routing/routes.dart';
+import 'package:home4u/features/ask_engineer/presentation/ask_engineer_finish_data_and_image.dart';
+import 'package:home4u/features/ask_engineer/presentation/ask_engineer_screen.dart';
 import 'package:home4u/features/auth/forget_password/presentation/forget_password_screen.dart';
 import 'package:home4u/features/auth/login/logic/login_cubit.dart';
 import 'package:home4u/features/auth/new_password/logic/new_password_cubit.dart';
@@ -214,6 +216,17 @@ class AppRouter {
       case Routes.renovateYourHouseSecondScreen:
         return MaterialPageRoute(
           builder: (_) => RenovateYourHouseSecondScreen(),
+        );
+      case Routes.askEngineerScreen:
+        return MaterialPageRoute(
+          builder: (_) => AskEngineerScreen(),
+        );
+      case Routes.askWorkerScreen:
+        return MaterialPageRoute(
+          builder: (_) => AskEngineerScreen(),
+        ); case Routes.askEngineerFinishDataAndImage:
+        return MaterialPageRoute(
+          builder: (_) => AskEngineerFinishDataAndImage(),
         );
       default:
         return null;

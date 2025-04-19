@@ -34,6 +34,9 @@ import 'package:home4u/features/profile/logic/certifications/certifications_cubi
 import 'package:home4u/features/profile/logic/project/project_cubit.dart';
 import 'package:home4u/features/user/renovate_your_house/logic/renovate_your_house_cubit.dart';
 
+import '../../features/ask_engineer/data/data_source/ask_engineer_remote_data_source.dart';
+import '../../features/ask_engineer/data/repos/ask_engineer_repo.dart';
+import '../../features/ask_engineer/logic/ask_engineer_cubit.dart';
 import '../../features/auth/forget_password/data/data_source/forget_password_data_source.dart';
 import '../../features/auth/forget_password/data/repos/forget_password_repo.dart';
 import '../../features/auth/forget_password/logic/forget_password_cubit.dart';
@@ -181,6 +184,13 @@ Future<void> setupGetIt() async {
       () => BusinessAddProductRepositoryImpl(sl()));
   sl.registerFactory<BusinessAddProductCubit>(
       () => BusinessAddProductCubit(sl()));
+
+  //ask Engineer
+  sl.registerLazySingleton<AskEngineerRemoteDataSource>(
+      () => AskEngineerRemoteDataSource(dio));
+  sl.registerLazySingleton<AskEngineerRepo>(
+      () => AskEngineerRepoImpl(sl()));
+  sl.registerFactory<AskEngineerCubit>(() => AskEngineerCubit(sl()));
 
   ///Renovate Your House
   sl.registerLazySingleton<RenovateYourHouseRemoteDataSource>(

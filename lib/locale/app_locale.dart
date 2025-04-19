@@ -308,6 +308,22 @@ class AppLocale {
   static const String specialOffers = 'Special Offers';
   static const String getSpecialOffer = 'Get Special Offer\nUp to';
   static const String claim = 'Claim';
+  static const String engineeringTypeSelection = 'Engineering type selection';
+  static const String unitTypeSelection = 'Unit type selection';
+  static const String budget = 'Budget';
+  static const String urgencyLevel = 'Urgency Level';
+  static const String theNext = 'The Next';
+  static const String pleaseEnterAProjectName = 'Please enter a project name';
+  static const String pleaseEnterAPhoneNumber = 'Please enter a Phone Number';
+  static const String pleaseEnterAProjectDescription = 'Please enter a Project Description';
+  static const String pleaseEnterABudget = 'Please enter a Budget';
+  static const String pleaseSelectEngineeringType = 'Please Select Engineering Type';
+  static const String pleaseSelectUnitType = 'Please Select Unit Type';
+  static const String pleaseSelectGovernorate = 'Please Select Governorate';
+  static const String pleaseSelectCity = 'Please Select City';
+  static const String pleaseSelectProjectDeadline = 'Please Select project deadline';
+  static const String pleaseSelectUrgencyLevel = 'Please Select urgency Level';
+  static const String projectDeadline = 'Project Deadline';
 
   static const Map<String, dynamic> en = {
     onBoardingTitle1: 'Civil works and finishing services',
@@ -537,6 +553,31 @@ class AppLocale {
     engineerSubtitle: 'Expert finish and remodel for a better home.',
     technicalTitle: 'Ask to Technical',
     technicalSubtitle: 'Transform your home with stylish finishing touches.',
+  shopNowTitle : 'Shop now',
+  shopSubtitle : 'Browse and buy home essentials.',
+  theBestOffices : 'The best offices',
+  theBestShowrooms : 'The best showrooms',
+  todayOffers : 'Today\'s Offers',
+  specialOffers : 'Special Offers',
+  getSpecialOffer : 'Get Special Offer\nUp to',
+  claim : 'Claim',
+  engineeringTypeSelection : 'Engineering type selection',
+  unitTypeSelection : 'Unit type selection',
+  budget : 'Budget',
+  urgencyLevel : 'Urgency Level',
+  theNext : 'The Next',
+  pleaseEnterAProjectName : 'Please enter a project name',
+  pleaseEnterAPhoneNumber : 'Please enter a Phone Number',
+  pleaseEnterAProjectDescription : 'Please enter a Project Description',
+  pleaseEnterABudget : 'Please enter a Budget',
+  pleaseSelectEngineeringType : 'Please Select Engineering Type',
+  pleaseSelectUnitType : 'Please Select Unit Type',
+  pleaseSelectGovernorate : 'Please Select Governorate',
+  pleaseSelectCity : 'Please Select City',
+  pleaseSelectProjectDeadline : 'Please Select project deadline',
+  pleaseSelectUrgencyLevel : 'Please Select urgency Level',
+  projectDeadline : 'Project Deadline',
+
     shopNowTitle: 'Shop now',
     shopSubtitle: 'Browse and buy home essentials.',
     theBestOffices: 'The best offices',
@@ -796,6 +837,30 @@ class AppLocale {
     engineerSubtitle: 'تشطيب احترافي وتجديد لمنزل أفضل.',
     technicalTitle: 'استشارة فني',
     technicalSubtitle: 'حوّل منزلك مع لمسات تشطيب أنيقة.',
+    shopNowTitle : 'تسوق الآن',
+    shopSubtitle : 'تصفح واشتري مستلزمات المنزل.',
+    theBestOffices : 'أفضل المكاتب الهندسية',
+    theBestShowrooms : 'أفضل المعارض',
+    todayOffers : 'عروض اليوم',
+    specialOffers : 'عروض خاصة',
+    getSpecialOffer : 'احصل على عرض خاص\nحتى',
+    claim : 'استرداد',
+    engineeringTypeSelection: 'اختيار نوع الهندسة',
+    unitTypeSelection: 'اختيار نوع الوحدة',
+    budget: 'الميزانية',
+    urgencyLevel: 'مستوى الاستعجال',
+    theNext: 'التالي',
+    pleaseEnterAProjectName: 'الرجاء إدخال اسم المشروع',
+    pleaseEnterAPhoneNumber: 'الرجاء إدخال رقم الهاتف',
+    pleaseEnterAProjectDescription: 'الرجاء إدخال وصف المشروع',
+    pleaseEnterABudget: 'الرجاء إدخال الميزانية',
+    pleaseSelectEngineeringType: 'الرجاء اختيار نوع الهندسة',
+    pleaseSelectUnitType: 'الرجاء اختيار نوع الوحدة',
+    pleaseSelectGovernorate: 'الرجاء اختيار المحافظة',
+    pleaseSelectCity: 'الرجاء اختيار المدينة',
+    pleaseSelectProjectDeadline: 'الرجاء اختيار موعد تسليم المشروع',
+    pleaseSelectUrgencyLevel: 'الرجاء اختيار مستوى الاستعجال',
+    projectDeadline: 'موعد تسليم المشروع',
     shopNowTitle: 'تسوق الآن',
     shopSubtitle: 'تصفح واشتري مستلزمات المنزل.',
     theBestOffices: 'أفضل المكاتب الهندسية',

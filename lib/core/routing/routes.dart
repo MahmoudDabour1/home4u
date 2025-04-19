@@ -36,6 +36,9 @@ abstract class Routes{
   static const String userHomeScreen = '/userHomeScreen';
   static const String bestOfficesScreen = '/bestOfficesScreen';
   static const String bestShowRoomsScreen = '/bestShowRoomsScreen';
+  static const String askEngineerScreen = '/askEngineerScreen';
+  static const String askWorkerScreen = '/askWorkerScreen';
+  static const String askEngineerFinishDataAndImage = '/askEngineerFinishDataAndImage';
   static const String renovateYourHouseScreen = '/renovateYourHouseScreen';
   static const String renovateYourHouseSecondScreen = '/renovateYourHouseSecondScreen';
 
