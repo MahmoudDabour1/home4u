@@ -1,4 +1,5 @@
 import 'package:home4u/core/networking/api_result.dart';
+import 'package:home4u/core/routing/router_observer.dart';
 import 'package:home4u/features/user/renovate_your_house/data/models/renovate_your_house_fixed_packages_model.dart';
 import 'package:home4u/features/user/renovate_your_house/data/models/renovate_your_house_look_ups_model.dart';
 
@@ -81,6 +82,9 @@ class RenovateYourHouseRepositoryImpl implements RenovateYourHouseRepository {
     try {
       final remoteData = await remoteDataSource
           .addCustomPackageRenovateYourHouse(addRenovateHouseCustomPackageBody);
+      logger.d(
+        "addCustomPackageRenovateYourHouse: ${remoteData.toJson()}",
+      );
       return ApiResult.success(remoteData);
     } catch (e) {
       return ApiResult.failure(ApiErrorHandler.handle(e));

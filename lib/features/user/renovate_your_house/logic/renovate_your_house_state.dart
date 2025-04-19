@@ -25,4 +25,24 @@ class RenovateYourHouseState<T> with _$RenovateYourHouseState<T> {
 
   factory RenovateYourHouseState.renovateYourHouseLookUpsError(
       {required String error}) = RenovateYourHouseLookUpsError;
+
+  ///AddCustomPackageRenovateYourHouse
+  factory RenovateYourHouseState.addCustomPackageRenovateYourHouseLoading() =
+      AddCustomPackageRenovateYourHouseLoading;
+
+  factory RenovateYourHouseState.addCustomPackageRenovateYourHouseLoaded(
+      T data) = AddCustomPackageRenovateYourHouseLoaded;
+
+  factory RenovateYourHouseState.addCustomPackageRenovateYourHouseError(
+      {required String error}) = AddCustomPackageRenovateYourHouseError;
+
+  ///ChooseFixedPackageRenovateYourHouse
+  factory RenovateYourHouseState.chooseFixedPackageRenovateYourHouseLoading() =
+      ChooseFixedPackageRenovateYourHouseLoading;
+
+  factory RenovateYourHouseState.chooseFixedPackageRenovateYourHouseLoaded(
+      T data) = ChooseFixedPackageRenovateYourHouseLoaded;
+
+  factory RenovateYourHouseState.chooseFixedPackageRenovateYourHouseError(
+      {required String error}) = ChooseFixedPackageRenovateYourHouseError;
 }

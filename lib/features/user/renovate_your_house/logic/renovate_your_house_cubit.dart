@@ -1,5 +1,6 @@
 import 'package:bloc/bloc.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:home4u/core/networking/dio_factory.dart';
 import 'package:home4u/features/user/renovate_your_house/logic/renovate_your_house_state.dart';
 
 import '../../../../core/helpers/helper_methods.dart';
@@ -86,15 +87,22 @@ class RenovateYourHouseCubit extends Cubit<RenovateYourHouseState> {
   Future<void> addCustomPackageRenovateYourHouse(
     AddRenovateHouseCustomPackageBody addRenovateHouseCustomPackageBody,
   ) async {
-    emit(RenovateYourHouseState.renovateYourHouseFixedPackagesLoading());
+    emit(RenovateYourHouseState.addCustomPackageRenovateYourHouseLoading());
+    DioFactory.setContentType('application/json');
+
     final result = await renovateYourHouseRepository
         .addCustomPackageRenovateYourHouse(addRenovateHouseCustomPackageBody);
     result.when(
-      success: (data) {
-        emit(RenovateYourHouseState.renovateYourHouseFixedPackagesLoaded(data));
+      success: (data) async {
+        emit(RenovateYourHouseState.addCustomPackageRenovateYourHouseLoaded(
+          data,
+        ));
+        await showToast(
+          message: "Your Package has been recorded successfully",
+        );
       },
       failure: (error) {
-        emit(RenovateYourHouseState.renovateYourHouseFixedPackagesError(
+        emit(RenovateYourHouseState.addCustomPackageRenovateYourHouseError(
           error: error.message.toString(),
         ));
       },
@@ -105,22 +113,27 @@ class RenovateYourHouseCubit extends Cubit<RenovateYourHouseState> {
     RenovateYourHouseChooseFixedPackageBody
         renovateYourHouseChooseFixedPackageBody,
   ) async {
-    emit(RenovateYourHouseState.renovateYourHouseFixedPackagesLoading());
+    emit(RenovateYourHouseState.chooseFixedPackageRenovateYourHouseLoading());
     final result =
         await renovateYourHouseRepository.chooseFixedPackageRenovateYourHouse(
       renovateYourHouseChooseFixedPackageBody,
     );
     result.when(
       success: (data) async {
-        emit(RenovateYourHouseState.renovateYourHouseFixedPackagesLoaded(data));
+        emit(RenovateYourHouseState.chooseFixedPackageRenovateYourHouseLoaded(
+            data));
         await showToast(
           message: "Your Package has been recorded successfully",
         );
       },
-      failure: (error) {
-        emit(RenovateYourHouseState.renovateYourHouseFixedPackagesError(
+      failure: (error) async {
+        emit(RenovateYourHouseState.chooseFixedPackageRenovateYourHouseError(
           error: error.message.toString(),
         ));
+        await showToast(
+          message: "Your Package haven't been recorded",
+          isError: true,
+        );
       },
     );
   }

@@ -13,17 +13,14 @@ class RenovateCustomPackagesBody extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
-      child: Form(
-        key: context.read<RenovateYourHouseCubit>().validationKey,
-        child: Column(
-          children: [
-            RenovateCustomPackagesDropDownButtons(),
-            verticalSpace(16),
-            RenovateCustomPackageInputs(),
-            verticalSpace(32),
-            RenovateCustomPackageConfirmButton(),
-          ],
-        ),
+      child: Column(
+        children: [
+          RenovateCustomPackagesDropDownButtons(),
+          verticalSpace(16),
+          RenovateCustomPackageInputs(),
+          verticalSpace(32),
+          RenovateCustomPackageConfirmButton(),
+        ],
       ),
     );
   }
