@@ -117,6 +117,10 @@ dependencies:
   easy_infinite_pagination: ^0.0.6
   lottie: ^3.3.1
   solar_icons: ^0.0.5
+  # convert from HTML to Json
+  flutter_html: ^3.0.0
+  flutter_widget_from_html: ^0.16.0
+
 
 dev_dependencies:
   flutter_test:
