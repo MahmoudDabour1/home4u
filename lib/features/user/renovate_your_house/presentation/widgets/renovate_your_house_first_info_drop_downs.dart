@@ -20,7 +20,7 @@ class RenovateYourHouseFirstInfoDropDowns extends StatefulWidget {
 class _RenovateYourHouseFirstInfoDropDownsState
     extends State<RenovateYourHouseFirstInfoDropDowns> {
   String? selectedUnitType;
-  bool isInsideCompound = false;
+  bool? isInsideCompound;
 
   @override
   void initState() {
@@ -60,7 +60,11 @@ class _RenovateYourHouseFirstInfoDropDownsState
               labelText: AppLocale.unitType.getString(context),
             ),
             AppCustomDropDownButtonFormField(
-              value: isInsideCompound ? 'true' : 'false',
+              value: isInsideCompound == null
+                  ? null
+                  : isInsideCompound!
+                      ? 'true'
+                      : 'false',
               items: [
                 DropdownMenuItem<String>(
                   value: 'true',

@@ -17,8 +17,7 @@ class RenovateYourHouseResponseModel {
     required this.data,
   });
 
-  factory RenovateYourHouseResponseModel.fromJson(Map<String, dynamic> json) =>
-      _$RenovateYourHouseResponseModelFromJson(json);
+  factory RenovateYourHouseResponseModel.fromJson(Map<String, dynamic> json) => _$RenovateYourHouseResponseModelFromJson(json);
 
   Map<String, dynamic> toJson() => _$RenovateYourHouseResponseModelToJson(this);
 }
@@ -42,9 +41,9 @@ class Data {
   @JsonKey(name: "workSkills")
   final UnitStatuses workSkills;
   @JsonKey(name: "city")
-  final BaseModel city;
+  final City city;
   @JsonKey(name: "governorate")
-  final BaseModel governorate;
+  final City governorate;
   @JsonKey(name: "unitArea")
   final int unitArea;
   @JsonKey(name: "budget")
@@ -86,7 +85,7 @@ class Data {
 }
 
 @JsonSerializable()
-class BaseModel {
+class City {
   @JsonKey(name: "id")
   final int id;
   @JsonKey(name: "code")
@@ -94,16 +93,15 @@ class BaseModel {
   @JsonKey(name: "name")
   final String name;
 
-  BaseModel({
+  City({
     required this.id,
     required this.code,
     required this.name,
   });
 
-  factory BaseModel.fromJson(Map<String, dynamic> json) =>
-      _$BaseModelFromJson(json);
+  factory City.fromJson(Map<String, dynamic> json) => _$CityFromJson(json);
 
-  Map<String, dynamic> toJson() => _$BaseModelToJson(this);
+  Map<String, dynamic> toJson() => _$CityToJson(this);
 }
 
 @JsonSerializable()
@@ -127,8 +125,7 @@ class UnitStatuses {
     required this.nameEn,
   });
 
-  factory UnitStatuses.fromJson(Map<String, dynamic> json) =>
-      _$UnitStatusesFromJson(json);
+  factory UnitStatuses.fromJson(Map<String, dynamic> json) => _$UnitStatusesFromJson(json);
 
   Map<String, dynamic> toJson() => _$UnitStatusesToJson(this);
 }

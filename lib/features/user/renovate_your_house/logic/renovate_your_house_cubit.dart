@@ -121,20 +121,21 @@ class RenovateYourHouseCubit extends Cubit<RenovateYourHouseState> {
     );
     result.when(
       success: (data) async {
-        emit(RenovateYourHouseState.chooseFixedPackageRenovateYourHouseLoaded(
-            data));
         await showToast(
           message: "Your Package has been recorded successfully",
         );
+        emit(RenovateYourHouseState.chooseFixedPackageRenovateYourHouseLoaded(
+          data,
+        ));
       },
       failure: (error) async {
-        emit(RenovateYourHouseState.chooseFixedPackageRenovateYourHouseError(
-          error: error.message.toString(),
-        ));
         await showToast(
           message: "Your Package haven't been recorded",
           isError: true,
         );
+        emit(RenovateYourHouseState.chooseFixedPackageRenovateYourHouseError(
+          error: error.message.toString(),
+        ));
       },
     );
   }
@@ -161,10 +162,10 @@ class RenovateYourHouseCubit extends Cubit<RenovateYourHouseState> {
 
   RenovateYourHouseChooseFixedPackageBody prepareFixedPackageBody() {
     return RenovateYourHouseChooseFixedPackageBody(
-        phoneNumber: phoneNumberController.text,
-        isInsideCompound: isInsideCompound!,
-        unitType: CustomPackage(id: selectedUnitType!),
-        customPackage: CustomPackage(id: selectedFixedPackageId!),
+      phoneNumber: phoneNumberController.text,
+      isInsideCompound: isInsideCompound!,
+      unitType: CustomPackage(id: selectedUnitType!),
+      customPackage: CustomPackage(id: selectedFixedPackageId!),
     );
   }
 }

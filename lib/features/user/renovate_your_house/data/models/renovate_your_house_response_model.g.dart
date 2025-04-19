@@ -34,9 +34,8 @@ Data _$DataFromJson(Map<String, dynamic> json) => Data(
           UnitStatuses.fromJson(json['unitWorkTypes'] as Map<String, dynamic>),
       workSkills:
           UnitStatuses.fromJson(json['workSkills'] as Map<String, dynamic>),
-      city: BaseModel.fromJson(json['city'] as Map<String, dynamic>),
-      governorate:
-          BaseModel.fromJson(json['governorate'] as Map<String, dynamic>),
+      city: City.fromJson(json['city'] as Map<String, dynamic>),
+      governorate: City.fromJson(json['governorate'] as Map<String, dynamic>),
       unitArea: (json['unitArea'] as num).toInt(),
       budget: (json['budget'] as num).toInt(),
       region: (json['region'] as num).toInt(),
@@ -66,13 +65,13 @@ Map<String, dynamic> _$DataToJson(Data instance) => <String, dynamic>{
       'notes': instance.notes,
     };
 
-BaseModel _$BaseModelFromJson(Map<String, dynamic> json) => BaseModel(
+City _$CityFromJson(Map<String, dynamic> json) => City(
       id: (json['id'] as num).toInt(),
       code: json['code'] as String,
       name: json['name'] as String,
     );
 
-Map<String, dynamic> _$BaseModelToJson(BaseModel instance) => <String, dynamic>{
+Map<String, dynamic> _$CityToJson(City instance) => <String, dynamic>{
       'id': instance.id,
       'code': instance.code,
       'name': instance.name,

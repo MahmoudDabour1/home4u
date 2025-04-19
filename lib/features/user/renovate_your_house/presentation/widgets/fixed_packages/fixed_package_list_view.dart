@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:home4u/core/widgets/app_custom_loading_indicator.dart';
 import 'package:home4u/features/user/renovate_your_house/logic/renovate_your_house_cubit.dart';
 import 'package:home4u/features/user/renovate_your_house/logic/renovate_your_house_state.dart';
 
@@ -47,6 +48,9 @@ class _FixedPackageListViewState extends State<FixedPackageListView>
               },
               itemCount: fixedPackages.data.length,
             );
+          },
+          renovateYourHouseFixedPackagesLoading: () {
+            return AppCustomLoadingIndicator();
           },
           orElse: () {
             return const SizedBox();

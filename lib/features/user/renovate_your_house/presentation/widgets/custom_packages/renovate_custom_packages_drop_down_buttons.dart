@@ -10,6 +10,7 @@ import 'package:home4u/features/user/renovate_your_house/logic/renovate_your_hou
 import '../../../../../../core/theming/app_styles.dart';
 import '../../../../../../core/widgets/app_custom_drop_down_button_form_field.dart';
 import '../../../../../../locale/app_locale.dart';
+import '../../../../../auth/sign_up/logic/sign_up_state.dart';
 
 class RenovateCustomPackagesDropDownButtons extends StatefulWidget {
   const RenovateCustomPackagesDropDownButtons({super.key});
@@ -153,29 +154,32 @@ class _RenovateCustomPackagesDropDownButtonsState
               },
               labelText: AppLocale.theGovernorate.getString(context),
             ),
-            AppCustomDropDownButtonFormField(
-              value: selectedCity,
-              items: selectedGovernorate != null
-                  ? signUpCubit.cities
-                      .map((city) {
-                        return DropdownMenuItem<String>(
-                          value: city.id.toString(),
-                          child: Text(
-                            city.name,
-                            style: AppStyles.font16BlackLight,
-                          ),
-                        );
-                      })
-                      .toSet()
-                      .toList()
-                  : [],
-              onChanged: (value) {
-                setState(() {
-                  selectedCity = value;
-                  cubit.selectedCity = int.parse(value!);
-                });
+            BlocBuilder<SignUpCubit, SignUpState>(
+              builder: (context, state) {
+                final cities = signUpCubit.cities;
+
+                return AppCustomDropDownButtonFormField(
+                  value: selectedCity,
+                  items: selectedGovernorate != null
+                      ? cities.map((city) {
+                          return DropdownMenuItem<String>(
+                            value: city.id.toString(),
+                            child: Text(
+                              city.name,
+                              style: AppStyles.font16BlackLight,
+                            ),
+                          );
+                        }).toList()
+                      : [],
+                  onChanged: (value) {
+                    setState(() {
+                      selectedCity = value;
+                      cubit.selectedCity = int.parse(value!);
+                    });
+                  },
+                  labelText: AppLocale.theCity.getString(context),
+                );
               },
-              labelText: AppLocale.theCity.getString(context),
             ),
           ],
         );
