@@ -11,7 +11,6 @@ import 'package:home4u/features/profile/data/models/projects/project_data.dart';
 import 'package:home4u/features/profile/data/repos/projects_repo.dart';
 import 'package:home4u/features/profile/logic/project/project_state.dart';
 import 'package:http_parser/http_parser.dart';
-import 'package:image_picker/image_picker.dart';
 import 'package:logger/logger.dart';
 
 import '../../../../core/networking/dio_factory.dart';

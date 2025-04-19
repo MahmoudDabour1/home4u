@@ -5,7 +5,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_localization/flutter_localization.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:home4u/core/networking/api_constants.dart';
 import 'package:home4u/core/utils/spacing.dart';
 import 'package:home4u/features/profile/logic/certifications/certifications_cubit.dart';
 import 'package:home4u/features/profile/logic/certifications/certifications_state.dart';

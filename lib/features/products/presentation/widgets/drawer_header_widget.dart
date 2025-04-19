@@ -3,7 +3,6 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 
 import '../../../../core/theming/app_assets.dart';
-import '../../../../core/utils/spacing.dart';
 
 class DrawerHeaderWidget extends StatelessWidget {
   const DrawerHeaderWidget({super.key});

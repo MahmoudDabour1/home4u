@@ -78,7 +78,7 @@ class ProductPreviewDataContent extends StatelessWidget {
        return Color(int.parse('0xFF$hex'));
      }
 
-  /// Build a key-value pair widget
+  /// Build a key-value pair widgets
   Widget _buildProductKeyValue({
     required String key,
     required String value,

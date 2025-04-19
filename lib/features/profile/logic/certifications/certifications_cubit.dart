@@ -9,7 +9,6 @@ import 'package:home4u/core/extensions/navigation_extension.dart';
 import 'package:home4u/core/networking/dio_factory.dart';
 import 'package:home4u/locale/app_locale.dart';
 import 'package:http_parser/http_parser.dart';
-import 'package:image_picker/image_picker.dart';
 
 import '../../../../core/helpers/helper_methods.dart';
 import '../../data/repos/certifications_repo.dart';
@@ -85,12 +84,6 @@ class CertificationsCubit extends Cubit<CertificationsState> {
   }
 
   Future<void> addCertification(BuildContext context) async {
-    if (image == null) {
-      showToast(
-          message: AppLocale.pleaseSelectAnImage.getString(context),
-          isError: true);
-      return;
-    }
     emit(const CertificationsState.addCertificationLoading());
     try {
       final formData = await _createFormData();
@@ -203,7 +196,7 @@ class CertificationsCubit extends Cubit<CertificationsState> {
     //   filename: image!.path.split('/').last,
     //   contentType: MediaType('image', 'jpeg'),
     // );
-    final imageFiles = image!
+    final imageFiles = image
         .map((image) => MultipartFile.fromFileSync(
       image.path,
       filename: image.path.split("/").last,
@@ -232,7 +225,7 @@ class CertificationsCubit extends Cubit<CertificationsState> {
     //   filename: image!.path.split('/').last,
     //   contentType: MediaType('image', 'jpeg'),
     // );
-    final imageFiles = image!
+    final imageFiles = image
         .map((image) => MultipartFile.fromFileSync(
       image.path,
       filename: image.path.split("/").last,
