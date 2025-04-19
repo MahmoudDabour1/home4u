@@ -8,7 +8,6 @@ import '../../../../../../core/utils/spacing.dart';
 import '../../../../../../locale/app_locale.dart';
 import '../custom_see_all_row_widget.dart';
 
-
 class ServicesWidget extends StatelessWidget {
   const ServicesWidget({super.key});
 
@@ -24,9 +23,10 @@ class ServicesWidget extends StatelessWidget {
         ServicesGridView(),
         verticalSpace(16),
         ServicesGridViewItem(
-          title:AppLocale.shopNowTitle .getString(context),
+          title: AppLocale.shopNowTitle.getString(context),
           subTitle: AppLocale.shopSubtitle.getString(context),
           imageUrl: AppAssets.shopSvg,
+          onPressed: () {},
         ),
       ],
     );

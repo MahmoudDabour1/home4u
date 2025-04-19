@@ -12,7 +12,7 @@ class CertificationsGridView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        if (certificationsList?.isEmpty ?? true)
+        if (certificationsList.isEmpty ?? true)
           Lottie.asset(
             "assets/jsons/empty_list.json",
             height: 200.h,

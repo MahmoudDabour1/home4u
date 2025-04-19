@@ -25,7 +25,7 @@ class _CustomChooseDecorOrFurnitureItemsState
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       crossAxisAlignment: CrossAxisAlignment.center,
-      spacing: 16.w,
+      spacing: 12.w,
       children: [
         CustomChooseFurnitureOrDecorWidget(
           image: AppAssets.customFurnitureSvg,

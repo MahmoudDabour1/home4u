@@ -21,7 +21,8 @@ class ServicesListView extends StatefulWidget {
   State<ServicesListView> createState() => _ServicesListViewState();
 }
 
-class _ServicesListViewState extends State<ServicesListView> {
+class _ServicesListViewState extends State<ServicesListView>
+    with AutomaticKeepAliveClientMixin {
   late int id;
   late int userId;
   late int typeId;
@@ -31,6 +32,9 @@ class _ServicesListViewState extends State<ServicesListView> {
     super.initState();
     _initializeProfileData();
   }
+
+  @override
+  bool get wantKeepAlive => true;
 
   ///ToDo : Loading behaviour try to change them , to appear there is nothing happen while delete and update
   Future<void> _initializeProfileData() async {
@@ -75,6 +79,7 @@ class _ServicesListViewState extends State<ServicesListView> {
 
   @override
   Widget build(BuildContext context) {
+    super.build(context);
     return BlocBuilder<ServicesCubit, ServicesState>(
       buildWhen: (previous, current) {
         return current is DeleteServiceSuccess ||
