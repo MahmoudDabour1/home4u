@@ -1,6 +1,7 @@
 import 'package:hive/hive.dart';
 import 'package:home4u/core/utils/app_constants.dart';
 
+import '../../../../../core/routing/router_observer.dart';
 import '../models/renovate_your_house_fixed_packages_model.dart';
 import '../models/renovate_your_house_look_ups_model.dart';
 
@@ -49,6 +50,7 @@ class RenovateYourHouseLocalDataSourceImpl
       kRenovateYourHouseFixedPackagesData,
       renovateYourHouseFixedPackagesModel,
     );
+    logger.i("✅ FixedPackages cached successfully.");
   }
 
   @override
@@ -59,5 +61,6 @@ class RenovateYourHouseLocalDataSourceImpl
       kRenovateYourHouseLookUpsData,
       renovateYourHouseLookUpsModel,
     );
+    logger.i("✅ LookUps cached successfully.");
   }
 }

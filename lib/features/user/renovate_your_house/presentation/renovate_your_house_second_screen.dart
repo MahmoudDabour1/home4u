@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_localization/flutter_localization.dart';
+import 'package:home4u/core/theming/app_colors.dart';
 import 'package:home4u/core/utils/spacing.dart';
 import 'package:home4u/features/auth/widgets/auth_welcome_data.dart';
 import 'package:home4u/features/user/renovate_your_house/presentation/widgets/renovate_tab_bar/renovate_tab_bar.dart';
@@ -26,7 +27,7 @@ class RenovateYourHouseSecondScreen extends StatelessWidget {
                     subText: '',
                   ),
                 ),
-                SliverToBoxAdapter(child: verticalSpace(32)),
+                SliverToBoxAdapter(child: verticalSpace(16)),
                 RenovateTabBar(),
               ];
             },

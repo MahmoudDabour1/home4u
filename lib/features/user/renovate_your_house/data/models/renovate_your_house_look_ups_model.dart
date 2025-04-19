@@ -27,7 +27,7 @@ class RenovateYourHouseLookUpsModel {
   Map<String, dynamic> toJson() => _$RenovateYourHouseLookUpsModelToJson(this);
 }
 
-@HiveType(typeId: 2)
+@HiveType(typeId: 96)
 @JsonSerializable()
 class Data {
   @HiveField(1)
@@ -59,7 +59,7 @@ class Data {
   Map<String, dynamic> toJson() => _$DataToJson(this);
 }
 
-@HiveType(typeId: 3)
+@HiveType(typeId: 97)
 @JsonSerializable()
 class Governorate {
   @HiveField(1)
@@ -83,7 +83,7 @@ class Governorate {
   Map<String, dynamic> toJson() => _$GovernorateToJson(this);
 }
 
-@HiveType(typeId: 4)
+@HiveType(typeId: 98)
 @JsonSerializable()
 class UnitStatus {
   @HiveField(1)

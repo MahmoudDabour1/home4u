@@ -9,7 +9,7 @@ part of 'renovate_your_house_fixed_packages_model.dart';
 class RenovateYourHouseFixedPackagesModelAdapter
     extends TypeAdapter<RenovateYourHouseFixedPackagesModel> {
   @override
-  final int typeId = 96;
+  final int typeId = 99;
 
   @override
   RenovateYourHouseFixedPackagesModel read(BinaryReader reader) {
@@ -49,7 +49,7 @@ class RenovateYourHouseFixedPackagesModelAdapter
 
 class FixedPackageDataModelAdapter extends TypeAdapter<FixedPackageDataModel> {
   @override
-  final int typeId = 2;
+  final int typeId = 100;
 
   @override
   FixedPackageDataModel read(BinaryReader reader) {

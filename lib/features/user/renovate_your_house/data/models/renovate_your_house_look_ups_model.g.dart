@@ -49,7 +49,7 @@ class RenovateYourHouseLookUpsModelAdapter
 
 class DataAdapter extends TypeAdapter<Data> {
   @override
-  final int typeId = 2;
+  final int typeId = 96;
 
   @override
   Data read(BinaryReader reader) {
@@ -95,7 +95,7 @@ class DataAdapter extends TypeAdapter<Data> {
 
 class GovernorateAdapter extends TypeAdapter<Governorate> {
   @override
-  final int typeId = 3;
+  final int typeId = 97;
 
   @override
   Governorate read(BinaryReader reader) {
@@ -135,7 +135,7 @@ class GovernorateAdapter extends TypeAdapter<Governorate> {
 
 class UnitStatusAdapter extends TypeAdapter<UnitStatus> {
   @override
-  final int typeId = 4;
+  final int typeId = 98;
 
   @override
   UnitStatus read(BinaryReader reader) {

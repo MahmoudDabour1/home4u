@@ -1,5 +1,7 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 
+import '../data/models/renovate_your_house_fixed_packages_model.dart';
+
 part 'renovate_your_house_state.freezed.dart';
 
 @freezed
@@ -10,7 +12,7 @@ class RenovateYourHouseState<T> with _$RenovateYourHouseState<T> {
   factory RenovateYourHouseState.renovateYourHouseFixedPackagesLoading() =
       RenovateYourHouseFixedPackagesLoading;
 
-  factory RenovateYourHouseState.renovateYourHouseFixedPackagesLoaded(T data) =
+  factory RenovateYourHouseState.renovateYourHouseFixedPackagesLoaded(RenovateYourHouseFixedPackagesModel data) =
       RenovateYourHouseFixedPackagesLoaded;
 
   factory RenovateYourHouseState.renovateYourHouseFixedPackagesError(

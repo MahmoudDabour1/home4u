@@ -1,30 +1,21 @@
 import 'package:flutter/cupertino.dart';
+import 'package:home4u/core/utils/spacing.dart';
+
+import 'fixed_packages/fixed_package_list_view.dart';
 
 class RenovateFixedPackagesBody extends StatelessWidget {
   const RenovateFixedPackagesBody({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        const Text(
-          'Fixed Packages',
-          style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
-        ),
-        const SizedBox(height: 16),
-        const Text(
-          'Choose a package that suits your needs.',
-          style: TextStyle(fontSize: 16),
-        ),
-        const SizedBox(height: 32),
-        CupertinoButton(
-          onPressed: () {
-            // Handle button press
-          },
-          color: CupertinoColors.activeBlue,
-          child: const Text('Select Package'),
-        ),
-      ],
+    return SingleChildScrollView(
+      child: Column(
+        children: [
+          verticalSpace(16),
+          FixedPackageListView(),
+          verticalSpace(32),
+        ],
+      ),
     );
   }
 }

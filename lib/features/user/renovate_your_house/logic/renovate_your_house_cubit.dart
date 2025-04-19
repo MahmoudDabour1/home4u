@@ -44,6 +44,7 @@ class RenovateYourHouseCubit extends Cubit<RenovateYourHouseState> {
   int? selectedGovernorate;
   int? selectedCity;
   bool? isInsideCompound;
+  int? selectedFixedPackageId;
 
   Future<void> getRenovateYourHouseLookUps() async {
     emit(RenovateYourHouseState.renovateYourHouseLookUpsLoading());
@@ -155,6 +156,15 @@ class RenovateYourHouseCubit extends Cubit<RenovateYourHouseState> {
       numberOfBathrooms: int.parse(numberOfBathRoomsController.text),
       requiredDuration: int.parse(requiredDurationInDaysController.text),
       notes: notesController.text,
+    );
+  }
+
+  RenovateYourHouseChooseFixedPackageBody prepareFixedPackageBody() {
+    return RenovateYourHouseChooseFixedPackageBody(
+        phoneNumber: phoneNumberController.text,
+        isInsideCompound: isInsideCompound!,
+        unitType: CustomPackage(id: selectedUnitType!),
+        customPackage: CustomPackage(id: selectedFixedPackageId!),
     );
   }
 }

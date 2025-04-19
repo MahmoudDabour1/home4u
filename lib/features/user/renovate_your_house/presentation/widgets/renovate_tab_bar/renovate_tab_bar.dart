@@ -26,14 +26,14 @@ class RenovateTabBar extends StatelessWidget {
               padding: EdgeInsets.symmetric(horizontal: 24.w),
               enableFeedback: true,
               splashBorderRadius: BorderRadius.circular(16.r),
-              tabAlignment: TabAlignment.start,
+              tabAlignment: TabAlignment.center,
               dividerColor: Colors.transparent,
               labelColor: AppColors.whiteColor,
               labelStyle: AppStyles.font16BlackMedium.copyWith(
                 color: AppColors.whiteColor,
               ),
-              unselectedLabelColor: Colors.grey,
-              unselectedLabelStyle: AppStyles.font16BlackLight,
+              unselectedLabelColor: Colors.black,
+              unselectedLabelStyle: AppStyles.font16BlackMedium,
               indicatorSize: TabBarIndicatorSize.tab,
               indicator: BoxDecoration(
                 borderRadius: BorderRadius.circular(16.r),

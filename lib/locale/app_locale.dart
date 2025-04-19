@@ -229,7 +229,7 @@ class AppLocale {
   static const String insideCompound = 'Inside Compound';
   static const String outsideCompound = 'Outside Compound';
   static const String notes = 'Notes';
-
+  static const String bookPackage =  'Book Package';
 
   ///Stepper Titles
   static const String basicDetails = 'Basic Details';
@@ -566,6 +566,7 @@ class AppLocale {
     insideCompound: 'Inside Compound',
     outsideCompound: 'Outside Compound',
     notes: 'Notes',
+    bookPackage : 'Book Package',
   };
 
   static const Map<String, dynamic> ar = {
@@ -823,5 +824,6 @@ class AppLocale {
     insideCompound: 'داخل المجمع',
     outsideCompound: 'خارج المجمع',
     notes: 'ملاحظات',
+    bookPackage : 'احجز باقة',
   };
 }

@@ -20,7 +20,8 @@ mixin _$RenovateYourHouseState<T> {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() renovateYourHouseFixedPackagesLoading,
-    required TResult Function(T data) renovateYourHouseFixedPackagesLoaded,
+    required TResult Function(RenovateYourHouseFixedPackagesModel data)
+        renovateYourHouseFixedPackagesLoaded,
     required TResult Function(String error) renovateYourHouseFixedPackagesError,
     required TResult Function() renovateYourHouseLookUpsLoading,
     required TResult Function(T data) renovateYourHouseLookUpsLoaded,
@@ -39,7 +40,8 @@ mixin _$RenovateYourHouseState<T> {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? renovateYourHouseFixedPackagesLoading,
-    TResult? Function(T data)? renovateYourHouseFixedPackagesLoaded,
+    TResult? Function(RenovateYourHouseFixedPackagesModel data)?
+        renovateYourHouseFixedPackagesLoaded,
     TResult? Function(String error)? renovateYourHouseFixedPackagesError,
     TResult? Function()? renovateYourHouseLookUpsLoading,
     TResult? Function(T data)? renovateYourHouseLookUpsLoaded,
@@ -56,7 +58,8 @@ mixin _$RenovateYourHouseState<T> {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? renovateYourHouseFixedPackagesLoading,
-    TResult Function(T data)? renovateYourHouseFixedPackagesLoaded,
+    TResult Function(RenovateYourHouseFixedPackagesModel data)?
+        renovateYourHouseFixedPackagesLoaded,
     TResult Function(String error)? renovateYourHouseFixedPackagesError,
     TResult Function()? renovateYourHouseLookUpsLoading,
     TResult Function(T data)? renovateYourHouseLookUpsLoaded,
@@ -227,7 +230,8 @@ class _$InitialImpl<T> implements _Initial<T> {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() renovateYourHouseFixedPackagesLoading,
-    required TResult Function(T data) renovateYourHouseFixedPackagesLoaded,
+    required TResult Function(RenovateYourHouseFixedPackagesModel data)
+        renovateYourHouseFixedPackagesLoaded,
     required TResult Function(String error) renovateYourHouseFixedPackagesError,
     required TResult Function() renovateYourHouseLookUpsLoading,
     required TResult Function(T data) renovateYourHouseLookUpsLoaded,
@@ -249,7 +253,8 @@ class _$InitialImpl<T> implements _Initial<T> {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? renovateYourHouseFixedPackagesLoading,
-    TResult? Function(T data)? renovateYourHouseFixedPackagesLoaded,
+    TResult? Function(RenovateYourHouseFixedPackagesModel data)?
+        renovateYourHouseFixedPackagesLoaded,
     TResult? Function(String error)? renovateYourHouseFixedPackagesError,
     TResult? Function()? renovateYourHouseLookUpsLoading,
     TResult? Function(T data)? renovateYourHouseLookUpsLoaded,
@@ -269,7 +274,8 @@ class _$InitialImpl<T> implements _Initial<T> {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? renovateYourHouseFixedPackagesLoading,
-    TResult Function(T data)? renovateYourHouseFixedPackagesLoaded,
+    TResult Function(RenovateYourHouseFixedPackagesModel data)?
+        renovateYourHouseFixedPackagesLoaded,
     TResult Function(String error)? renovateYourHouseFixedPackagesError,
     TResult Function()? renovateYourHouseLookUpsLoading,
     TResult Function(T data)? renovateYourHouseLookUpsLoaded,
@@ -443,7 +449,8 @@ class _$RenovateYourHouseFixedPackagesLoadingImpl<T>
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() renovateYourHouseFixedPackagesLoading,
-    required TResult Function(T data) renovateYourHouseFixedPackagesLoaded,
+    required TResult Function(RenovateYourHouseFixedPackagesModel data)
+        renovateYourHouseFixedPackagesLoaded,
     required TResult Function(String error) renovateYourHouseFixedPackagesError,
     required TResult Function() renovateYourHouseLookUpsLoading,
     required TResult Function(T data) renovateYourHouseLookUpsLoaded,
@@ -465,7 +472,8 @@ class _$RenovateYourHouseFixedPackagesLoadingImpl<T>
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? renovateYourHouseFixedPackagesLoading,
-    TResult? Function(T data)? renovateYourHouseFixedPackagesLoaded,
+    TResult? Function(RenovateYourHouseFixedPackagesModel data)?
+        renovateYourHouseFixedPackagesLoaded,
     TResult? Function(String error)? renovateYourHouseFixedPackagesError,
     TResult? Function()? renovateYourHouseLookUpsLoading,
     TResult? Function(T data)? renovateYourHouseLookUpsLoaded,
@@ -485,7 +493,8 @@ class _$RenovateYourHouseFixedPackagesLoadingImpl<T>
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? renovateYourHouseFixedPackagesLoading,
-    TResult Function(T data)? renovateYourHouseFixedPackagesLoaded,
+    TResult Function(RenovateYourHouseFixedPackagesModel data)?
+        renovateYourHouseFixedPackagesLoaded,
     TResult Function(String error)? renovateYourHouseFixedPackagesError,
     TResult Function()? renovateYourHouseLookUpsLoading,
     TResult Function(T data)? renovateYourHouseLookUpsLoaded,
@@ -620,7 +629,7 @@ abstract class _$$RenovateYourHouseFixedPackagesLoadedImplCopyWith<T, $Res> {
           $Res Function(_$RenovateYourHouseFixedPackagesLoadedImpl<T>) then) =
       __$$RenovateYourHouseFixedPackagesLoadedImplCopyWithImpl<T, $Res>;
   @useResult
-  $Res call({T data});
+  $Res call({RenovateYourHouseFixedPackagesModel data});
 }
 
 /// @nodoc
@@ -638,13 +647,13 @@ class __$$RenovateYourHouseFixedPackagesLoadedImplCopyWithImpl<T, $Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? data = freezed,
+    Object? data = null,
   }) {
     return _then(_$RenovateYourHouseFixedPackagesLoadedImpl<T>(
-      freezed == data
+      null == data
           ? _value.data
           : data // ignore: cast_nullable_to_non_nullable
-              as T,
+              as RenovateYourHouseFixedPackagesModel,
     ));
   }
 }
@@ -656,7 +665,7 @@ class _$RenovateYourHouseFixedPackagesLoadedImpl<T>
   _$RenovateYourHouseFixedPackagesLoadedImpl(this.data);
 
   @override
-  final T data;
+  final RenovateYourHouseFixedPackagesModel data;
 
   @override
   String toString() {
@@ -668,12 +677,11 @@ class _$RenovateYourHouseFixedPackagesLoadedImpl<T>
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$RenovateYourHouseFixedPackagesLoadedImpl<T> &&
-            const DeepCollectionEquality().equals(other.data, data));
+            (identical(other.data, data) || other.data == data));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(data));
+  int get hashCode => Object.hash(runtimeType, data);
 
   /// Create a copy of RenovateYourHouseState
   /// with the given fields replaced by the non-null parameter values.
@@ -690,7 +698,8 @@ class _$RenovateYourHouseFixedPackagesLoadedImpl<T>
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() renovateYourHouseFixedPackagesLoading,
-    required TResult Function(T data) renovateYourHouseFixedPackagesLoaded,
+    required TResult Function(RenovateYourHouseFixedPackagesModel data)
+        renovateYourHouseFixedPackagesLoaded,
     required TResult Function(String error) renovateYourHouseFixedPackagesError,
     required TResult Function() renovateYourHouseLookUpsLoading,
     required TResult Function(T data) renovateYourHouseLookUpsLoaded,
@@ -712,7 +721,8 @@ class _$RenovateYourHouseFixedPackagesLoadedImpl<T>
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? renovateYourHouseFixedPackagesLoading,
-    TResult? Function(T data)? renovateYourHouseFixedPackagesLoaded,
+    TResult? Function(RenovateYourHouseFixedPackagesModel data)?
+        renovateYourHouseFixedPackagesLoaded,
     TResult? Function(String error)? renovateYourHouseFixedPackagesError,
     TResult? Function()? renovateYourHouseLookUpsLoading,
     TResult? Function(T data)? renovateYourHouseLookUpsLoaded,
@@ -732,7 +742,8 @@ class _$RenovateYourHouseFixedPackagesLoadedImpl<T>
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? renovateYourHouseFixedPackagesLoading,
-    TResult Function(T data)? renovateYourHouseFixedPackagesLoaded,
+    TResult Function(RenovateYourHouseFixedPackagesModel data)?
+        renovateYourHouseFixedPackagesLoaded,
     TResult Function(String error)? renovateYourHouseFixedPackagesError,
     TResult Function()? renovateYourHouseLookUpsLoading,
     TResult Function(T data)? renovateYourHouseLookUpsLoaded,
@@ -856,10 +867,11 @@ class _$RenovateYourHouseFixedPackagesLoadedImpl<T>
 
 abstract class RenovateYourHouseFixedPackagesLoaded<T>
     implements RenovateYourHouseState<T> {
-  factory RenovateYourHouseFixedPackagesLoaded(final T data) =
+  factory RenovateYourHouseFixedPackagesLoaded(
+          final RenovateYourHouseFixedPackagesModel data) =
       _$RenovateYourHouseFixedPackagesLoadedImpl<T>;
 
-  T get data;
+  RenovateYourHouseFixedPackagesModel get data;
 
   /// Create a copy of RenovateYourHouseState
   /// with the given fields replaced by the non-null parameter values.
@@ -945,7 +957,8 @@ class _$RenovateYourHouseFixedPackagesErrorImpl<T>
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() renovateYourHouseFixedPackagesLoading,
-    required TResult Function(T data) renovateYourHouseFixedPackagesLoaded,
+    required TResult Function(RenovateYourHouseFixedPackagesModel data)
+        renovateYourHouseFixedPackagesLoaded,
     required TResult Function(String error) renovateYourHouseFixedPackagesError,
     required TResult Function() renovateYourHouseLookUpsLoading,
     required TResult Function(T data) renovateYourHouseLookUpsLoaded,
@@ -967,7 +980,8 @@ class _$RenovateYourHouseFixedPackagesErrorImpl<T>
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? renovateYourHouseFixedPackagesLoading,
-    TResult? Function(T data)? renovateYourHouseFixedPackagesLoaded,
+    TResult? Function(RenovateYourHouseFixedPackagesModel data)?
+        renovateYourHouseFixedPackagesLoaded,
     TResult? Function(String error)? renovateYourHouseFixedPackagesError,
     TResult? Function()? renovateYourHouseLookUpsLoading,
     TResult? Function(T data)? renovateYourHouseLookUpsLoaded,
@@ -987,7 +1001,8 @@ class _$RenovateYourHouseFixedPackagesErrorImpl<T>
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? renovateYourHouseFixedPackagesLoading,
-    TResult Function(T data)? renovateYourHouseFixedPackagesLoaded,
+    TResult Function(RenovateYourHouseFixedPackagesModel data)?
+        renovateYourHouseFixedPackagesLoaded,
     TResult Function(String error)? renovateYourHouseFixedPackagesError,
     TResult Function()? renovateYourHouseLookUpsLoading,
     TResult Function(T data)? renovateYourHouseLookUpsLoaded,
@@ -1172,7 +1187,8 @@ class _$RenovateYourHouseLookUpsLoadingImpl<T>
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() renovateYourHouseFixedPackagesLoading,
-    required TResult Function(T data) renovateYourHouseFixedPackagesLoaded,
+    required TResult Function(RenovateYourHouseFixedPackagesModel data)
+        renovateYourHouseFixedPackagesLoaded,
     required TResult Function(String error) renovateYourHouseFixedPackagesError,
     required TResult Function() renovateYourHouseLookUpsLoading,
     required TResult Function(T data) renovateYourHouseLookUpsLoaded,
@@ -1194,7 +1210,8 @@ class _$RenovateYourHouseLookUpsLoadingImpl<T>
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? renovateYourHouseFixedPackagesLoading,
-    TResult? Function(T data)? renovateYourHouseFixedPackagesLoaded,
+    TResult? Function(RenovateYourHouseFixedPackagesModel data)?
+        renovateYourHouseFixedPackagesLoaded,
     TResult? Function(String error)? renovateYourHouseFixedPackagesError,
     TResult? Function()? renovateYourHouseLookUpsLoading,
     TResult? Function(T data)? renovateYourHouseLookUpsLoaded,
@@ -1214,7 +1231,8 @@ class _$RenovateYourHouseLookUpsLoadingImpl<T>
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? renovateYourHouseFixedPackagesLoading,
-    TResult Function(T data)? renovateYourHouseFixedPackagesLoaded,
+    TResult Function(RenovateYourHouseFixedPackagesModel data)?
+        renovateYourHouseFixedPackagesLoaded,
     TResult Function(String error)? renovateYourHouseFixedPackagesError,
     TResult Function()? renovateYourHouseLookUpsLoading,
     TResult Function(T data)? renovateYourHouseLookUpsLoaded,
@@ -1419,7 +1437,8 @@ class _$RenovateYourHouseLookUpsLoadedImpl<T>
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() renovateYourHouseFixedPackagesLoading,
-    required TResult Function(T data) renovateYourHouseFixedPackagesLoaded,
+    required TResult Function(RenovateYourHouseFixedPackagesModel data)
+        renovateYourHouseFixedPackagesLoaded,
     required TResult Function(String error) renovateYourHouseFixedPackagesError,
     required TResult Function() renovateYourHouseLookUpsLoading,
     required TResult Function(T data) renovateYourHouseLookUpsLoaded,
@@ -1441,7 +1460,8 @@ class _$RenovateYourHouseLookUpsLoadedImpl<T>
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? renovateYourHouseFixedPackagesLoading,
-    TResult? Function(T data)? renovateYourHouseFixedPackagesLoaded,
+    TResult? Function(RenovateYourHouseFixedPackagesModel data)?
+        renovateYourHouseFixedPackagesLoaded,
     TResult? Function(String error)? renovateYourHouseFixedPackagesError,
     TResult? Function()? renovateYourHouseLookUpsLoading,
     TResult? Function(T data)? renovateYourHouseLookUpsLoaded,
@@ -1461,7 +1481,8 @@ class _$RenovateYourHouseLookUpsLoadedImpl<T>
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? renovateYourHouseFixedPackagesLoading,
-    TResult Function(T data)? renovateYourHouseFixedPackagesLoaded,
+    TResult Function(RenovateYourHouseFixedPackagesModel data)?
+        renovateYourHouseFixedPackagesLoaded,
     TResult Function(String error)? renovateYourHouseFixedPackagesError,
     TResult Function()? renovateYourHouseLookUpsLoading,
     TResult Function(T data)? renovateYourHouseLookUpsLoaded,
@@ -1674,7 +1695,8 @@ class _$RenovateYourHouseLookUpsErrorImpl<T>
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() renovateYourHouseFixedPackagesLoading,
-    required TResult Function(T data) renovateYourHouseFixedPackagesLoaded,
+    required TResult Function(RenovateYourHouseFixedPackagesModel data)
+        renovateYourHouseFixedPackagesLoaded,
     required TResult Function(String error) renovateYourHouseFixedPackagesError,
     required TResult Function() renovateYourHouseLookUpsLoading,
     required TResult Function(T data) renovateYourHouseLookUpsLoaded,
@@ -1696,7 +1718,8 @@ class _$RenovateYourHouseLookUpsErrorImpl<T>
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? renovateYourHouseFixedPackagesLoading,
-    TResult? Function(T data)? renovateYourHouseFixedPackagesLoaded,
+    TResult? Function(RenovateYourHouseFixedPackagesModel data)?
+        renovateYourHouseFixedPackagesLoaded,
     TResult? Function(String error)? renovateYourHouseFixedPackagesError,
     TResult? Function()? renovateYourHouseLookUpsLoading,
     TResult? Function(T data)? renovateYourHouseLookUpsLoaded,
@@ -1716,7 +1739,8 @@ class _$RenovateYourHouseLookUpsErrorImpl<T>
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? renovateYourHouseFixedPackagesLoading,
-    TResult Function(T data)? renovateYourHouseFixedPackagesLoaded,
+    TResult Function(RenovateYourHouseFixedPackagesModel data)?
+        renovateYourHouseFixedPackagesLoaded,
     TResult Function(String error)? renovateYourHouseFixedPackagesError,
     TResult Function()? renovateYourHouseLookUpsLoading,
     TResult Function(T data)? renovateYourHouseLookUpsLoaded,
@@ -1904,7 +1928,8 @@ class _$AddCustomPackageRenovateYourHouseLoadingImpl<T>
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() renovateYourHouseFixedPackagesLoading,
-    required TResult Function(T data) renovateYourHouseFixedPackagesLoaded,
+    required TResult Function(RenovateYourHouseFixedPackagesModel data)
+        renovateYourHouseFixedPackagesLoaded,
     required TResult Function(String error) renovateYourHouseFixedPackagesError,
     required TResult Function() renovateYourHouseLookUpsLoading,
     required TResult Function(T data) renovateYourHouseLookUpsLoaded,
@@ -1926,7 +1951,8 @@ class _$AddCustomPackageRenovateYourHouseLoadingImpl<T>
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? renovateYourHouseFixedPackagesLoading,
-    TResult? Function(T data)? renovateYourHouseFixedPackagesLoaded,
+    TResult? Function(RenovateYourHouseFixedPackagesModel data)?
+        renovateYourHouseFixedPackagesLoaded,
     TResult? Function(String error)? renovateYourHouseFixedPackagesError,
     TResult? Function()? renovateYourHouseLookUpsLoading,
     TResult? Function(T data)? renovateYourHouseLookUpsLoaded,
@@ -1946,7 +1972,8 @@ class _$AddCustomPackageRenovateYourHouseLoadingImpl<T>
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? renovateYourHouseFixedPackagesLoading,
-    TResult Function(T data)? renovateYourHouseFixedPackagesLoaded,
+    TResult Function(RenovateYourHouseFixedPackagesModel data)?
+        renovateYourHouseFixedPackagesLoaded,
     TResult Function(String error)? renovateYourHouseFixedPackagesError,
     TResult Function()? renovateYourHouseLookUpsLoading,
     TResult Function(T data)? renovateYourHouseLookUpsLoaded,
@@ -2154,7 +2181,8 @@ class _$AddCustomPackageRenovateYourHouseLoadedImpl<T>
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() renovateYourHouseFixedPackagesLoading,
-    required TResult Function(T data) renovateYourHouseFixedPackagesLoaded,
+    required TResult Function(RenovateYourHouseFixedPackagesModel data)
+        renovateYourHouseFixedPackagesLoaded,
     required TResult Function(String error) renovateYourHouseFixedPackagesError,
     required TResult Function() renovateYourHouseLookUpsLoading,
     required TResult Function(T data) renovateYourHouseLookUpsLoaded,
@@ -2176,7 +2204,8 @@ class _$AddCustomPackageRenovateYourHouseLoadedImpl<T>
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? renovateYourHouseFixedPackagesLoading,
-    TResult? Function(T data)? renovateYourHouseFixedPackagesLoaded,
+    TResult? Function(RenovateYourHouseFixedPackagesModel data)?
+        renovateYourHouseFixedPackagesLoaded,
     TResult? Function(String error)? renovateYourHouseFixedPackagesError,
     TResult? Function()? renovateYourHouseLookUpsLoading,
     TResult? Function(T data)? renovateYourHouseLookUpsLoaded,
@@ -2196,7 +2225,8 @@ class _$AddCustomPackageRenovateYourHouseLoadedImpl<T>
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? renovateYourHouseFixedPackagesLoading,
-    TResult Function(T data)? renovateYourHouseFixedPackagesLoaded,
+    TResult Function(RenovateYourHouseFixedPackagesModel data)?
+        renovateYourHouseFixedPackagesLoaded,
     TResult Function(String error)? renovateYourHouseFixedPackagesError,
     TResult Function()? renovateYourHouseLookUpsLoading,
     TResult Function(T data)? renovateYourHouseLookUpsLoaded,
@@ -2411,7 +2441,8 @@ class _$AddCustomPackageRenovateYourHouseErrorImpl<T>
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() renovateYourHouseFixedPackagesLoading,
-    required TResult Function(T data) renovateYourHouseFixedPackagesLoaded,
+    required TResult Function(RenovateYourHouseFixedPackagesModel data)
+        renovateYourHouseFixedPackagesLoaded,
     required TResult Function(String error) renovateYourHouseFixedPackagesError,
     required TResult Function() renovateYourHouseLookUpsLoading,
     required TResult Function(T data) renovateYourHouseLookUpsLoaded,
@@ -2433,7 +2464,8 @@ class _$AddCustomPackageRenovateYourHouseErrorImpl<T>
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? renovateYourHouseFixedPackagesLoading,
-    TResult? Function(T data)? renovateYourHouseFixedPackagesLoaded,
+    TResult? Function(RenovateYourHouseFixedPackagesModel data)?
+        renovateYourHouseFixedPackagesLoaded,
     TResult? Function(String error)? renovateYourHouseFixedPackagesError,
     TResult? Function()? renovateYourHouseLookUpsLoading,
     TResult? Function(T data)? renovateYourHouseLookUpsLoaded,
@@ -2453,7 +2485,8 @@ class _$AddCustomPackageRenovateYourHouseErrorImpl<T>
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? renovateYourHouseFixedPackagesLoading,
-    TResult Function(T data)? renovateYourHouseFixedPackagesLoaded,
+    TResult Function(RenovateYourHouseFixedPackagesModel data)?
+        renovateYourHouseFixedPackagesLoaded,
     TResult Function(String error)? renovateYourHouseFixedPackagesError,
     TResult Function()? renovateYourHouseLookUpsLoading,
     TResult Function(T data)? renovateYourHouseLookUpsLoaded,
@@ -2642,7 +2675,8 @@ class _$ChooseFixedPackageRenovateYourHouseLoadingImpl<T>
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() renovateYourHouseFixedPackagesLoading,
-    required TResult Function(T data) renovateYourHouseFixedPackagesLoaded,
+    required TResult Function(RenovateYourHouseFixedPackagesModel data)
+        renovateYourHouseFixedPackagesLoaded,
     required TResult Function(String error) renovateYourHouseFixedPackagesError,
     required TResult Function() renovateYourHouseLookUpsLoading,
     required TResult Function(T data) renovateYourHouseLookUpsLoaded,
@@ -2664,7 +2698,8 @@ class _$ChooseFixedPackageRenovateYourHouseLoadingImpl<T>
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? renovateYourHouseFixedPackagesLoading,
-    TResult? Function(T data)? renovateYourHouseFixedPackagesLoaded,
+    TResult? Function(RenovateYourHouseFixedPackagesModel data)?
+        renovateYourHouseFixedPackagesLoaded,
     TResult? Function(String error)? renovateYourHouseFixedPackagesError,
     TResult? Function()? renovateYourHouseLookUpsLoading,
     TResult? Function(T data)? renovateYourHouseLookUpsLoaded,
@@ -2684,7 +2719,8 @@ class _$ChooseFixedPackageRenovateYourHouseLoadingImpl<T>
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? renovateYourHouseFixedPackagesLoading,
-    TResult Function(T data)? renovateYourHouseFixedPackagesLoaded,
+    TResult Function(RenovateYourHouseFixedPackagesModel data)?
+        renovateYourHouseFixedPackagesLoaded,
     TResult Function(String error)? renovateYourHouseFixedPackagesError,
     TResult Function()? renovateYourHouseLookUpsLoading,
     TResult Function(T data)? renovateYourHouseLookUpsLoaded,
@@ -2894,7 +2930,8 @@ class _$ChooseFixedPackageRenovateYourHouseLoadedImpl<T>
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() renovateYourHouseFixedPackagesLoading,
-    required TResult Function(T data) renovateYourHouseFixedPackagesLoaded,
+    required TResult Function(RenovateYourHouseFixedPackagesModel data)
+        renovateYourHouseFixedPackagesLoaded,
     required TResult Function(String error) renovateYourHouseFixedPackagesError,
     required TResult Function() renovateYourHouseLookUpsLoading,
     required TResult Function(T data) renovateYourHouseLookUpsLoaded,
@@ -2916,7 +2953,8 @@ class _$ChooseFixedPackageRenovateYourHouseLoadedImpl<T>
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? renovateYourHouseFixedPackagesLoading,
-    TResult? Function(T data)? renovateYourHouseFixedPackagesLoaded,
+    TResult? Function(RenovateYourHouseFixedPackagesModel data)?
+        renovateYourHouseFixedPackagesLoaded,
     TResult? Function(String error)? renovateYourHouseFixedPackagesError,
     TResult? Function()? renovateYourHouseLookUpsLoading,
     TResult? Function(T data)? renovateYourHouseLookUpsLoaded,
@@ -2936,7 +2974,8 @@ class _$ChooseFixedPackageRenovateYourHouseLoadedImpl<T>
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? renovateYourHouseFixedPackagesLoading,
-    TResult Function(T data)? renovateYourHouseFixedPackagesLoaded,
+    TResult Function(RenovateYourHouseFixedPackagesModel data)?
+        renovateYourHouseFixedPackagesLoaded,
     TResult Function(String error)? renovateYourHouseFixedPackagesError,
     TResult Function()? renovateYourHouseLookUpsLoading,
     TResult Function(T data)? renovateYourHouseLookUpsLoaded,
@@ -3154,7 +3193,8 @@ class _$ChooseFixedPackageRenovateYourHouseErrorImpl<T>
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() renovateYourHouseFixedPackagesLoading,
-    required TResult Function(T data) renovateYourHouseFixedPackagesLoaded,
+    required TResult Function(RenovateYourHouseFixedPackagesModel data)
+        renovateYourHouseFixedPackagesLoaded,
     required TResult Function(String error) renovateYourHouseFixedPackagesError,
     required TResult Function() renovateYourHouseLookUpsLoading,
     required TResult Function(T data) renovateYourHouseLookUpsLoaded,
@@ -3176,7 +3216,8 @@ class _$ChooseFixedPackageRenovateYourHouseErrorImpl<T>
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? renovateYourHouseFixedPackagesLoading,
-    TResult? Function(T data)? renovateYourHouseFixedPackagesLoaded,
+    TResult? Function(RenovateYourHouseFixedPackagesModel data)?
+        renovateYourHouseFixedPackagesLoaded,
     TResult? Function(String error)? renovateYourHouseFixedPackagesError,
     TResult? Function()? renovateYourHouseLookUpsLoading,
     TResult? Function(T data)? renovateYourHouseLookUpsLoaded,
@@ -3196,7 +3237,8 @@ class _$ChooseFixedPackageRenovateYourHouseErrorImpl<T>
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? renovateYourHouseFixedPackagesLoading,
-    TResult Function(T data)? renovateYourHouseFixedPackagesLoaded,
+    TResult Function(RenovateYourHouseFixedPackagesModel data)?
+        renovateYourHouseFixedPackagesLoaded,
     TResult Function(String error)? renovateYourHouseFixedPackagesError,
     TResult Function()? renovateYourHouseLookUpsLoading,
     TResult Function(T data)? renovateYourHouseLookUpsLoaded,

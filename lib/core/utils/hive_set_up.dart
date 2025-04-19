@@ -87,6 +87,18 @@ void _registerHiveAdapters() {
     Hive.registerAdapter(RenovateYourHouseLookUpsModelAdapter());
   }
   if (!Hive.isAdapterRegistered(96)) {
+    Hive.registerAdapter(DataAdapter());
+  }
+  if (!Hive.isAdapterRegistered(97)) {
+    Hive.registerAdapter(GovernorateAdapter());
+  }
+  if (!Hive.isAdapterRegistered(98)) {
+    Hive.registerAdapter(UnitStatusAdapter());
+  }
+  if (!Hive.isAdapterRegistered(99)) {
     Hive.registerAdapter(RenovateYourHouseFixedPackagesModelAdapter());
+  }
+  if (!Hive.isAdapterRegistered(100)) {
+    Hive.registerAdapter(FixedPackageDataModelAdapter());
   }
 }

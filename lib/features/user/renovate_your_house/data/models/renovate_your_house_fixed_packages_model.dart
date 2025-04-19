@@ -2,7 +2,7 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:hive/hive.dart';
 part 'renovate_your_house_fixed_packages_model.g.dart';
 
-@HiveType(typeId: 96)
+@HiveType(typeId: 99)
 @JsonSerializable()
 class RenovateYourHouseFixedPackagesModel {
   @HiveField(1)
@@ -29,7 +29,7 @@ class RenovateYourHouseFixedPackagesModel {
       _$RenovateYourHouseFixedPackagesModelToJson(this);
 }
 
-@HiveType(typeId: 2)
+@HiveType(typeId: 100)
 @JsonSerializable()
 class FixedPackageDataModel {
   @HiveField(1)

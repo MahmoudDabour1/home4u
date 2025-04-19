@@ -43,15 +43,15 @@ class RenovateYourHouseRepositoryImpl implements RenovateYourHouseRepository {
       getRenovateYourHouseLookUps() async {
     try {
       final remoteData = await remoteDataSource.getRenovateYourHouseLookUps();
-      // await localDataSource.saveRenovateYourHouseLookUps(remoteData);
+      await localDataSource.saveRenovateYourHouseLookUps(remoteData);
       return ApiResult.success(remoteData);
     } catch (e) {
-      // final localData = await localDataSource.getRenovateYourHouseLookUps();
-      // if (localData != null) {
-      //   return ApiResult.success(localData);
-      // } else {
+      final localData = await localDataSource.getRenovateYourHouseLookUps();
+      if (localData != null) {
+        return ApiResult.success(localData);
+      } else {
         return ApiResult.failure(ApiErrorHandler.handle(e));
-      // }
+      }
     }
   }
 
@@ -61,16 +61,16 @@ class RenovateYourHouseRepositoryImpl implements RenovateYourHouseRepository {
     try {
       final remoteData =
           await remoteDataSource.getRenovateYourHouseFixedPackages();
-      // await localDataSource.saveRenovateYourHouseFixedPackages(remoteData);
+      await localDataSource.saveRenovateYourHouseFixedPackages(remoteData);
       return ApiResult.success(remoteData);
     } catch (e) {
-      // final localData =
-      //     await localDataSource.getRenovateYourHouseFixedPackages();
-      // if (localData != null) {
-      //   return ApiResult.success(localData);
-      // } else {
+      final localData =
+          await localDataSource.getRenovateYourHouseFixedPackages();
+      if (localData != null) {
+        return ApiResult.success(localData);
+      } else {
         return ApiResult.failure(ApiErrorHandler.handle(e));
-      // }
+      }
     }
   }
 
