@@ -207,6 +207,30 @@ class AppLocale {
   static const String bioEn = 'Bio EN';
   static const String businessTypes = 'Business Types';
 
+  ///RenovateYourHouse
+  static const String renovateYourHouse = 'Renovate Your House';
+  static const String renovateYourHouseDescription =
+      "\"Finish Your House\" - Complete your home\'s\n setup effortlessly.";
+  static const String unitInsideCompound = 'Unit Inside Compound';
+  static const String outDoor = 'Out Door';
+  static const String skills = 'Skills';
+  static const String unitStatus = 'Unit Status';
+  static const String unitType = 'Unit Type';
+  static const String unitWorkType = 'Unit Work Type';
+  static const String unitArea = 'Unit Area';
+  static const String budget = 'Budget';
+  static const String region = 'Region';
+  static const String numberOfRooms = 'Number Of Rooms';
+  static const String numberOfBathrooms = 'Number Of Bathrooms';
+  static const String worksNeeded = 'Works Needed';
+  static const String customPackage = 'Custom Package';
+  static const String fixedPackage = 'Fixed Package';
+  static const String durationInDays = 'Duration In Days';
+  static const String insideCompound = 'Inside Compound';
+  static const String outsideCompound = 'Outside Compound';
+  static const String notes = 'Notes';
+
+
   ///Stepper Titles
   static const String basicDetails = 'Basic Details';
   static const String materialsSpecs = 'Materials & Specs';
@@ -240,8 +264,7 @@ class AppLocale {
   static const String customFurnitureSubTitle =
       'Customized furniture for\n your needs.';
   static const String decor = 'Decor';
-  static const String decorSubTitle =
-      'Decor enhanced look\n and feel.';
+  static const String decorSubTitle = 'Decor enhanced look\n and feel.';
   static const String addToCart = 'Add to Cart';
   static const String myCart = 'My Cart';
   static const String total = 'Total: ';
@@ -250,26 +273,33 @@ class AppLocale {
   static const String cartEmptySubTitle =
       'Add items to your cart and they will appear here.';
   static const String favorites = 'Favorites';
+
   ///User
   static const String home = 'Home';
   static const String seeAll = 'See all';
   static const String furnishTitle = 'Furnish your home';
-  static const String furnishSubtitle = 'Find comfortable and elegant furniture.';
+  static const String furnishSubtitle =
+      'Find comfortable and elegant furniture.';
 
   static const String requestDesignTitle = 'Request design';
-  static const String requestDesignSubtitle = 'Get a custom design for interiors or decor.';
+  static const String requestDesignSubtitle =
+      'Get a custom design for interiors or decor.';
 
   static const String kitchensTitle = 'Kitchens and dressing';
-  static const String kitchensSubtitle = 'Modern solutions kitchens and wardrobes.';
+  static const String kitchensSubtitle =
+      'Modern solutions kitchens and wardrobes.';
 
   static const String renovateTitle = 'Renovate Your Home';
-  static const String renovateSubtitle = 'Upgrade with finishing and renovation services.';
+  static const String renovateSubtitle =
+      'Upgrade with finishing and renovation services.';
 
   static const String engineerTitle = 'Ask to Engineer';
-  static const String engineerSubtitle = 'Expert finish and remodel for a better home.';
+  static const String engineerSubtitle =
+      'Expert finish and remodel for a better home.';
 
   static const String technicalTitle = 'Ask to Technical';
-  static const String technicalSubtitle = 'Transform your home with stylish finishing touches.';
+  static const String technicalSubtitle =
+      'Transform your home with stylish finishing touches.';
   static const String shopNowTitle = 'Shop now';
   static const String shopSubtitle = 'Browse and buy home essentials.';
   static const String theBestOffices = 'The best offices';
@@ -278,8 +308,6 @@ class AppLocale {
   static const String specialOffers = 'Special Offers';
   static const String getSpecialOffer = 'Get Special Offer\nUp to';
   static const String claim = 'Claim';
-
-
 
   static const Map<String, dynamic> en = {
     onBoardingTitle1: 'Civil works and finishing services',
@@ -484,17 +512,17 @@ class AppLocale {
     updateProduct: 'Update Product',
     productUpdatedSuccessfully: 'Product Updated Successfully',
     clear: 'Clear',
-    customFurniture : 'Custom Furniture',
-    customFurnitureSubTitle : 'Customized furniture for\n your needs.',
-    decor : 'Decor',
-    decorSubTitle : 'Decor enhanced look\n and feel.',
-    addToCart : 'Add to Cart',
-    myCart : 'My Cart',
-    total : 'Total: ',
-    addToCartSuccessfully : 'Added to cart successfully',
-    cartEmpty : 'Your cart is empty',
-    cartEmptySubTitle : 'Add items to your cart and they will appear here.',
-    favorites : 'Favorites',
+    customFurniture: 'Custom Furniture',
+    customFurnitureSubTitle: 'Customized furniture for\n your needs.',
+    decor: 'Decor',
+    decorSubTitle: 'Decor enhanced look\n and feel.',
+    addToCart: 'Add to Cart',
+    myCart: 'My Cart',
+    total: 'Total: ',
+    addToCartSuccessfully: 'Added to cart successfully',
+    cartEmpty: 'Your cart is empty',
+    cartEmptySubTitle: 'Add items to your cart and they will appear here.',
+    favorites: 'Favorites',
     home: 'Home',
     seeAll: 'See all',
     furnishTitle: 'Furnish your home',
@@ -509,14 +537,35 @@ class AppLocale {
     engineerSubtitle: 'Expert finish and remodel for a better home.',
     technicalTitle: 'Ask to Technical',
     technicalSubtitle: 'Transform your home with stylish finishing touches.',
-  shopNowTitle : 'Shop now',
-  shopSubtitle : 'Browse and buy home essentials.',
-  theBestOffices : 'The best offices',
-  theBestShowrooms : 'The best showrooms',
-  todayOffers : 'Today\'s Offers',
-  specialOffers : 'Special Offers',
-  getSpecialOffer : 'Get Special Offer\nUp to',
-  claim : 'Claim',
+    shopNowTitle: 'Shop now',
+    shopSubtitle: 'Browse and buy home essentials.',
+    theBestOffices: 'The best offices',
+    theBestShowrooms: 'The best showrooms',
+    todayOffers: 'Today\'s Offers',
+    specialOffers: 'Special Offers',
+    getSpecialOffer: 'Get Special Offer\nUp to',
+    claim: 'Claim',
+    renovateYourHouse: 'Renovate Your House',
+    renovateYourHouseDescription:
+        "\"Finish Your House\" - Complete your home\'s\n setup effortlessly.",
+    unitInsideCompound: 'Unit Inside Compound',
+    outDoor: 'Out Door',
+    skills: 'Skills',
+    unitStatus: 'Unit Status',
+    unitType: 'Unit Type',
+    unitWorkType: 'Unit Work Type',
+    unitArea: 'Unit Area',
+    budget: 'Budget',
+    region: 'Region',
+    numberOfRooms: 'Number Of Rooms',
+    numberOfBathrooms: 'Number Of Bathrooms',
+    worksNeeded: 'Works Needed',
+    customPackage: 'Custom Package',
+    fixedPackage: 'Fixed Package',
+    durationInDays: 'Duration In Days',
+    insideCompound: 'Inside Compound',
+    outsideCompound: 'Outside Compound',
+    notes: 'Notes',
   };
 
   static const Map<String, dynamic> ar = {
@@ -722,7 +771,7 @@ class AppLocale {
     productUpdatedSuccessfully: 'تم تحديث المنتج بنجاح',
     clear: 'مسح',
     customFurniture: 'الأثاث المخصص',
-    customFurnitureSubTitle : 'أثاث مخصص لاحتياجاتك.',
+    customFurnitureSubTitle: 'أثاث مخصص لاحتياجاتك.',
     decor: 'الديكور',
     decorSubTitle: 'الديكور يعزز مظهر ومشاعر المكان.',
     addToCart: 'إضافة إلى السلة',
@@ -746,13 +795,33 @@ class AppLocale {
     engineerSubtitle: 'تشطيب احترافي وتجديد لمنزل أفضل.',
     technicalTitle: 'استشارة فني',
     technicalSubtitle: 'حوّل منزلك مع لمسات تشطيب أنيقة.',
-    shopNowTitle : 'تسوق الآن',
-    shopSubtitle : 'تصفح واشتري مستلزمات المنزل.',
-    theBestOffices : 'أفضل المكاتب الهندسية',
-    theBestShowrooms : 'أفضل المعارض',
-    todayOffers : 'عروض اليوم',
-    specialOffers : 'عروض خاصة',
-    getSpecialOffer : 'احصل على عرض خاص\nحتى',
-    claim : 'استرداد',
+    shopNowTitle: 'تسوق الآن',
+    shopSubtitle: 'تصفح واشتري مستلزمات المنزل.',
+    theBestOffices: 'أفضل المكاتب الهندسية',
+    theBestShowrooms: 'أفضل المعارض',
+    todayOffers: 'عروض اليوم',
+    specialOffers: 'عروض خاصة',
+    getSpecialOffer: 'احصل على عرض خاص\nحتى',
+    claim: 'استرداد',
+    renovateYourHouse: 'شطب بيتك',
+    renovateYourHouseDescription: "\"شطب بيتك\" - أكمل إعداد منزلك بسهولة.",
+    unitInsideCompound: 'وحدة داخل مجمع سكني',
+    outDoor: 'وحدة خارجية',
+    skills: 'المهارات',
+    unitStatus: 'حالة الوحدة',
+    unitType: 'نوع الوحدة',
+    unitWorkType: 'نوع العمل في الوحدة',
+    unitArea: 'مساحة الوحدة',
+    budget: 'الميزانية',
+    region: 'المنطقة',
+    numberOfRooms: 'عدد الغرف',
+    numberOfBathrooms: 'عدد الحمامات',
+    worksNeeded: 'الأعمال المطلوبة',
+    customPackage: 'باقة مخصصة',
+    fixedPackage: 'باقة ثابتة',
+    durationInDays: 'المدة بالأيام',
+    insideCompound: 'داخل المجمع',
+    outsideCompound: 'خارج المجمع',
+    notes: 'ملاحظات',
   };
 }

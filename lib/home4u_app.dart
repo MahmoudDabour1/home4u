@@ -24,6 +24,7 @@ import 'features/auth/sign_up/logic/technical_worker/technical_worker_cubit.dart
 import 'features/exhibition/logic/business_add_product_cubit.dart';
 import 'features/profile/logic/certifications/certifications_cubit.dart';
 import 'features/profile/logic/project/project_cubit.dart';
+import 'features/user/renovate_your_house/logic/renovate_your_house_cubit.dart';
 import 'locale/app_locale.dart';
 
 class Home4uApp extends StatefulWidget {
@@ -129,6 +130,9 @@ class _Home4uAppState extends State<Home4uApp> {
             ),
             BlocProvider<BusinessAddProductCubit>(
                 create: (_) => sl<BusinessAddProductCubit>()),
+            BlocProvider<RenovateYourHouseCubit>(
+              create: (context) => sl<RenovateYourHouseCubit>(),
+            ),
           ],
           child: ScreenUtilInit(
             designSize: const Size(393, 852),

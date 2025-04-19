@@ -1,6 +1,8 @@
 import 'package:hive_flutter/hive_flutter.dart';
 import 'package:home4u/features/products/data/models/products_response_model.dart';
 import 'package:home4u/features/profile/data/models/profile/engineering_office_profile_response_model.dart' ;
+import 'package:home4u/features/user/renovate_your_house/data/models/renovate_your_house_fixed_packages_model.dart';
+import 'package:home4u/features/user/renovate_your_house/data/models/renovate_your_house_look_ups_model.dart';
 
 import '../../features/profile/data/models/profile/engineer_profile_response_model.dart' ;
 import '../../features/profile/data/models/profile/technical_worker_profile_response_model.dart' ;
@@ -15,6 +17,8 @@ Future<void> initHive() async {
   await Hive.openBox<EngineeringOfficeProfileResponseModel>(kEngineeringOfficeProfileBox);
   await Hive.openBox<GetProjectsResponseModel>(kProjectsBox);
   await Hive.openBox<ProductsResponseModel>(kProductsBox);
+  await Hive.openBox<RenovateYourHouseLookUpsModel>(kRenovateYourHouseLookUpsBox);
+  await Hive.openBox<RenovateYourHouseFixedPackagesModel>(kRenovateYourHouseFixedPackagesBox);
 }
 
 void _registerHiveAdapters() {
@@ -50,7 +54,7 @@ void _registerHiveAdapters() {
     Hive.registerAdapter(ProductsResponseModelAdapter());
   }
   if (!Hive.isAdapterRegistered(81)) {
-    Hive.registerAdapter(DataAdapter());
+    Hive.registerAdapter(ProductDataAdapter());
   }
   if (!Hive.isAdapterRegistered(82)) {
     Hive.registerAdapter(ContentAdapter());
@@ -78,5 +82,11 @@ void _registerHiveAdapters() {
   }
   if (!Hive.isAdapterRegistered(94)) {
     Hive.registerAdapter(EngineeringOfficeCityAdapter());
+  }
+  if (!Hive.isAdapterRegistered(95)) {
+    Hive.registerAdapter(RenovateYourHouseLookUpsModelAdapter());
+  }
+  if (!Hive.isAdapterRegistered(96)) {
+    Hive.registerAdapter(RenovateYourHouseFixedPackagesModelAdapter());
   }
 }

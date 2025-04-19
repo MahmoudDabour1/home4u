@@ -10,8 +10,8 @@ import 'package:home4u/features/user/home/presentation/widgets/services_widget/s
 import 'package:home4u/features/user/home/presentation/widgets/today_offer-widget/today_offers_widget.dart';
 import 'package:home4u/locale/app_locale.dart';
 
-class HomeScreen extends StatelessWidget {
-  const HomeScreen({super.key});
+class UserHomeScreen extends StatelessWidget {
+  const UserHomeScreen({super.key});
 
   @override
   Widget build(BuildContext context) {

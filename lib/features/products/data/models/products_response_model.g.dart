@@ -19,7 +19,7 @@ class ProductsResponseModelAdapter extends TypeAdapter<ProductsResponseModel> {
     return ProductsResponseModel(
       success: fields[0] as bool?,
       status: fields[1] as int?,
-      data: fields[2] as Data?,
+      data: fields[2] as ProductData?,
     );
   }
 
@@ -46,17 +46,17 @@ class ProductsResponseModelAdapter extends TypeAdapter<ProductsResponseModel> {
           typeId == other.typeId;
 }
 
-class DataAdapter extends TypeAdapter<Data> {
+class ProductDataAdapter extends TypeAdapter<ProductData> {
   @override
   final int typeId = 81;
 
   @override
-  Data read(BinaryReader reader) {
+  ProductData read(BinaryReader reader) {
     final numOfFields = reader.readByte();
     final fields = <int, dynamic>{
       for (int i = 0; i < numOfFields; i++) reader.readByte(): reader.read(),
     };
-    return Data(
+    return ProductData(
       content: (fields[0] as List?)?.cast<Content>(),
       pageable: fields[1] as Pageable?,
       totalPages: fields[2] as int?,
@@ -72,7 +72,7 @@ class DataAdapter extends TypeAdapter<Data> {
   }
 
   @override
-  void write(BinaryWriter writer, Data obj) {
+  void write(BinaryWriter writer, ProductData obj) {
     writer
       ..writeByte(11)
       ..writeByte(0)
@@ -105,7 +105,7 @@ class DataAdapter extends TypeAdapter<Data> {
   @override
   bool operator ==(Object other) =>
       identical(this, other) ||
-      other is DataAdapter &&
+      other is ProductDataAdapter &&
           runtimeType == other.runtimeType &&
           typeId == other.typeId;
 }
@@ -320,7 +320,7 @@ ProductsResponseModel _$ProductsResponseModelFromJson(
       status: (json['status'] as num?)?.toInt(),
       data: json['data'] == null
           ? null
-          : Data.fromJson(json['data'] as Map<String, dynamic>),
+          : ProductData.fromJson(json['data'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$ProductsResponseModelToJson(
@@ -331,7 +331,7 @@ Map<String, dynamic> _$ProductsResponseModelToJson(
       'data': instance.data,
     };
 
-Data _$DataFromJson(Map<String, dynamic> json) => Data(
+ProductData _$ProductDataFromJson(Map<String, dynamic> json) => ProductData(
       content: (json['content'] as List<dynamic>?)
           ?.map((e) => Content.fromJson(e as Map<String, dynamic>))
           .toList(),
@@ -351,7 +351,8 @@ Data _$DataFromJson(Map<String, dynamic> json) => Data(
       empty: json['empty'] as bool?,
     );
 
-Map<String, dynamic> _$DataToJson(Data instance) => <String, dynamic>{
+Map<String, dynamic> _$ProductDataToJson(ProductData instance) =>
+    <String, dynamic>{
       'content': instance.content,
       'pageable': instance.pageable,
       'totalPages': instance.totalPages,
