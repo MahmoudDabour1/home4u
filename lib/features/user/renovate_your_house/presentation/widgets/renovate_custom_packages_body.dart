@@ -18,6 +18,7 @@ class RenovateCustomPackagesBody extends StatelessWidget {
           RenovateCustomPackageInputs(),
           verticalSpace(32),
           RenovateCustomPackageConfirmButton(),
+          verticalSpace(32),
         ],
       ),
     );

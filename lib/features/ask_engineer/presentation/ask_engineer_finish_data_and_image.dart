@@ -51,6 +51,7 @@ class _AskEngineerFinishDataAndImageState
                     Padding(
                       padding: EdgeInsets.symmetric(horizontal: 24.w),
                       child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           GestureDetector(
                             onTap: () {
@@ -101,6 +102,11 @@ class _AskEngineerFinishDataAndImageState
                             },
                           ),
                           verticalSpace(16),
+                          Text(
+                            AppLocale.attachedImages.getString(context),
+                            style: AppStyles.font16BlackLight,
+                          ),
+                          verticalSpace(8),
                           SelectImageWidget(
                             cubit: askEngineerCubit,
                             images: askEngineerCubit.images,
@@ -138,8 +144,10 @@ class _AskEngineerFinishDataAndImageState
         style: AppStyles.font20BlackMedium,
       ),
       initialDateTime: DateTime.now(),
-      maxDateTime: DateTime.now(),
-      minDateTime: DateTime(1980),
+      maxDateTime: DateTime(
+        DateTime.now().year + 2,
+      ),
+      minDateTime: DateTime(DateTime.now().year),
       pickerTextStyle: TextStyle(
         color: Colors.black,
         fontWeight: FontWeight.bold,

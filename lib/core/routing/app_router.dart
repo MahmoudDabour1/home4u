@@ -24,6 +24,7 @@ import 'package:home4u/features/products/presentation/product_details_screen.dar
 import 'package:home4u/features/profile/presentation/add_certification_screen.dart';
 import 'package:home4u/features/user/home/presentation/best_offices_screen.dart';
 import 'package:home4u/features/user/home/presentation/best_show_rooms_screen.dart';
+import 'package:home4u/features/user/request_design/presentation/request_design_screen.dart';
 
 import '../../features/ask_technical_worker/presentation/ask_technical_screen.dart';
 import '../../features/auth/login/presentation/login_screen.dart';
@@ -229,6 +230,10 @@ class AppRouter {
       case Routes.askEngineerFinishDataAndImage:
         return MaterialPageRoute(
           builder: (_) => AskEngineerFinishDataAndImage(),
+        );
+      case Routes.requestDesignScreen:
+        return MaterialPageRoute(
+          builder: (_) => RequestDesignScreen(),
         );
       case Routes.askTechnicalFinishAndImage:
         return MaterialPageRoute(

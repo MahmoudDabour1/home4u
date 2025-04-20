@@ -54,6 +54,7 @@ class ApiConstants {
       "/api/v1/engineering-office/user";
   static const String updateEngineeringOfficeProfileEP =
       "/api/v1/engineering-office";
+
   ///exhibitions
   static const String businessConfigEP = "/api/v1/business-config";
   static const String productsFilterEP = "/api/v1/products/filter";
@@ -63,12 +64,16 @@ class ApiConstants {
 
   ///RenovateYourHouse
   static const String renovateYourHouseEp = "/api/v1/home-renovate";
-  static const String renovateYourHouseChooseFixedPackageEp = "/api/v1/select-custom-package";
+  static const String renovateYourHouseChooseFixedPackageEp =
+      "/api/v1/select-custom-package";
   static const String renovateYourHouseLookUpsEp = "/api/v1/home-renovate/lkps";
-  static const String renovateYourHouseFixedPackagesEp = "/api/v1/custom-package";
+  static const String renovateYourHouseFixedPackagesEp =
+      "/api/v1/custom-package";
 
+  ///RequestDesign
+  static const String requestDesignEp = "/api/v1/request-design";
 
-  // {{prod_url}}/api/v1/products/57
+  ///Product
   static const String getProductDetailsEP = "/api/v1/products/{productId}";
   static const String updateProductEP = "/api/v1/products";
 
@@ -77,12 +82,13 @@ class ApiConstants {
   ///images
   static String getImageBaseUrl(String path) => "$apiBaseUrl/$path";
 
-///ask engineer
+  ///ask engineer
   static const String askEngineerIkpEp = "/api/v1/ask-engineer/lkps";
   static const String askEngineerEp = "/api/v1/ask-engineer";
   static const String addAllAskEngineerImagesEp =
       "/api/v1/ask-engineer-photos/all";
- ///ask worker
+
+  ///ask worker
   static const String askWorkerIkpEp = "/api/v1/ask-worker/lkps";
   static const String askWorkerEp = "/api/v1/ask-worker";
   static const String addAllAskWorkerImagesEp =

@@ -23,7 +23,7 @@ class ServicesGridView extends StatelessWidget {
         "title": AppLocale.requestDesignTitle.getString(context),
         "subtitle": AppLocale.requestDesignSubtitle.getString(context),
         "icon": AppAssets.requestDesignSvg,
-        "onPressed": () {},
+        "onPressed": () => context.pushNamed(Routes.requestDesignScreen),
       },
       {
         "title": AppLocale.kitchensTitle.getString(context),

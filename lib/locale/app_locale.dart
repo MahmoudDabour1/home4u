@@ -231,6 +231,12 @@ class AppLocale {
   static const String notes = 'Notes';
   static const String bookPackage = 'Book Package';
 
+  ///RequestDesign
+  static const String requestDesign = 'Request Design';
+  static const String design = 'Design';
+  static const String ai = 'Ai';
+
+
   ///Stepper Titles
   static const String basicDetails = 'Basic Details';
   static const String materialsSpecs = 'Materials & Specs';
@@ -281,9 +287,9 @@ class AppLocale {
   static const String furnishSubtitle =
       'Find comfortable and elegant furniture.';
 
-  static const String requestDesignTitle = 'Request design';
+  static const String requestDesignTitle = 'Request custom_design';
   static const String requestDesignSubtitle =
-      'Get a custom design for interiors or decor.';
+      'Get a custom custom_design for interiors or decor.';
 
   static const String kitchensTitle = 'Kitchens and dressing';
   static const String kitchensSubtitle =
@@ -326,6 +332,7 @@ class AppLocale {
       'Please Select project deadline';
   static const String pleaseSelectUrgencyLevel = 'Please Select urgency Level';
   static const String projectDeadline = 'Project Deadline';
+  static const String attachedImages = 'Attached Images';
   static const String askTechnical = 'Ask Technical';
   static const String workerTypeSelection = 'Worker type';
   static const String pleaseSelectWorkerType = 'Please Select Worker Type';
@@ -550,8 +557,8 @@ class AppLocale {
     seeAll: 'See all',
     furnishTitle: 'Furnish your home',
     furnishSubtitle: 'Find comfortable and elegant furniture.',
-    requestDesignTitle: 'Request design',
-    requestDesignSubtitle: 'Get a custom design for interiors or decor.',
+    requestDesignTitle: 'Request custom_design',
+    requestDesignSubtitle: 'Get a custom custom_design for interiors or decor.',
     kitchensTitle: 'Kitchens and dressing',
     kitchensSubtitle: 'Modern solutions kitchens and wardrobes.',
     renovateTitle: 'Renovate Your Home',
@@ -604,6 +611,11 @@ class AppLocale {
     insideCompound: 'Inside Compound',
     outsideCompound: 'Outside Compound',
     notes: 'Notes',
+    bookPackage: 'Book Package',
+    attachedImages : 'Attached Images',
+    requestDesign : 'Request Design',
+    design : 'Design',
+    ai : 'Ai',
     bookPackage: 'Book Package',
     workerTypeSelection: 'Worker type',
     pleaseSelectWorkerType: 'Please Select Worker Type',
@@ -881,6 +893,11 @@ class AppLocale {
     insideCompound: 'داخل المجمع',
     outsideCompound: 'خارج المجمع',
     notes: 'ملاحظات',
+    bookPackage: 'احجز باقة',
+    attachedImages : 'الصور المرفقة',
+    requestDesign : 'اطلب تصميم',
+    design : 'تصميم مخصص',
+    ai : 'ذكاء اصطناعي',
     bookPackage: 'احجز باقة',
     workerTypeSelection: 'اختيار نوع العامل',
     pleaseSelectWorkerType: 'الرجاء اختيار نوع العامل',
