@@ -47,7 +47,7 @@ class ServicesGridView extends StatelessWidget {
         "title": AppLocale.technicalTitle.getString(context),
         "subtitle": AppLocale.technicalSubtitle.getString(context),
         "icon": AppAssets.askTechnicalSvg,
-        "onPressed": () {},
+        "onPressed": () => context.pushNamed(Routes.askTechnicalScreen),
       },
     ];
     return GridView.builder(
