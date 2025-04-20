@@ -12,6 +12,7 @@ import 'package:home4u/features/auth/sign_up/logic/sign_up_cubit.dart';
 import 'package:home4u/features/products/logic/products_cubit.dart';
 import 'package:home4u/features/profile/logic/profile/profile_cubit.dart';
 import 'package:home4u/features/profile/logic/services/services_cubit.dart';
+import 'package:home4u/features/user/request_design/logic/request_design_cubit.dart';
 
 import 'core/di/dependency_injection.dart';
 import 'core/helpers/helper_methods.dart';
@@ -136,6 +137,9 @@ class _Home4uAppState extends State<Home4uApp> {
             ),
             BlocProvider<AskEngineerCubit>(
                 create: (_) => sl<AskEngineerCubit>()),
+            BlocProvider<RequestDesignCubit>(
+              create: (_) => sl<RequestDesignCubit>(),
+            )
           ],
           child: ScreenUtilInit(
             designSize: const Size(393, 852),
@@ -160,8 +164,9 @@ class _Home4uAppState extends State<Home4uApp> {
                     onGenerateRoute: widget.appRouter.generateRoute,
                     debugShowCheckedModeBanner: false,
                     navigatorObservers: [NavigatorObserver(), _routeObserver],
-                    initialRoute: Routes.askEngineerScreen,
-                    // snapshot.data!,
+                    initialRoute:
+                        // Routes.askEngineerScreen,
+                        snapshot.data!,
                   ),
                 );
               },

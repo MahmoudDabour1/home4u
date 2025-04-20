@@ -5,19 +5,20 @@ part 'renovate_your_house_response_model.g.dart';
 @JsonSerializable()
 class RenovateYourHouseResponseModel {
   @JsonKey(name: "success")
-  final bool success;
+  final bool? success;
   @JsonKey(name: "status")
-  final int status;
+  final int? status;
   @JsonKey(name: "data")
-  final Data data;
+  final Data? data;
 
   RenovateYourHouseResponseModel({
-    required this.success,
-    required this.status,
-    required this.data,
+    this.success,
+    this.status,
+    this.data,
   });
 
-  factory RenovateYourHouseResponseModel.fromJson(Map<String, dynamic> json) => _$RenovateYourHouseResponseModelFromJson(json);
+  factory RenovateYourHouseResponseModel.fromJson(Map<String, dynamic> json) =>
+      _$RenovateYourHouseResponseModelFromJson(json);
 
   Map<String, dynamic> toJson() => _$RenovateYourHouseResponseModelToJson(this);
 }
@@ -25,58 +26,58 @@ class RenovateYourHouseResponseModel {
 @JsonSerializable()
 class Data {
   @JsonKey(name: "id")
-  final int id;
+  final int? id;
   @JsonKey(name: "statusCode")
-  final int statusCode;
+  final int? statusCode;
   @JsonKey(name: "phoneNumber")
-  final String phoneNumber;
+  final String? phoneNumber;
   @JsonKey(name: "isInsideCompound")
-  final bool isInsideCompound;
+  final bool? isInsideCompound;
   @JsonKey(name: "unitType")
-  final UnitStatuses unitType;
+  final UnitStatuses? unitType;
   @JsonKey(name: "unitStatuses")
-  final UnitStatuses unitStatuses;
+  final UnitStatuses? unitStatuses;
   @JsonKey(name: "unitWorkTypes")
-  final UnitStatuses unitWorkTypes;
+  final UnitStatuses? unitWorkTypes;
   @JsonKey(name: "workSkills")
-  final UnitStatuses workSkills;
+  final UnitStatuses? workSkills;
   @JsonKey(name: "city")
-  final City city;
+  final City? city;
   @JsonKey(name: "governorate")
-  final City governorate;
+  final City? governorate;
   @JsonKey(name: "unitArea")
-  final int unitArea;
+  final int? unitArea;
   @JsonKey(name: "budget")
-  final int budget;
+  final int? budget;
   @JsonKey(name: "region")
-  final int region;
+  final int? region;
   @JsonKey(name: "numberOfRooms")
-  final int numberOfRooms;
+  final int? numberOfRooms;
   @JsonKey(name: "numberOfBathrooms")
-  final int numberOfBathrooms;
+  final int? numberOfBathrooms;
   @JsonKey(name: "requiredDuration")
-  final int requiredDuration;
+  final int? requiredDuration;
   @JsonKey(name: "notes")
-  final String notes;
+  final String? notes;
 
   Data({
-    required this.id,
-    required this.statusCode,
-    required this.phoneNumber,
-    required this.isInsideCompound,
-    required this.unitType,
-    required this.unitStatuses,
-    required this.unitWorkTypes,
-    required this.workSkills,
-    required this.city,
-    required this.governorate,
-    required this.unitArea,
-    required this.budget,
-    required this.region,
-    required this.numberOfRooms,
-    required this.numberOfBathrooms,
-    required this.requiredDuration,
-    required this.notes,
+    this.id,
+    this.statusCode,
+    this.phoneNumber,
+    this.isInsideCompound,
+    this.unitType,
+    this.unitStatuses,
+    this.unitWorkTypes,
+    this.workSkills,
+    this.city,
+    this.governorate,
+    this.unitArea,
+    this.budget,
+    this.region,
+    this.numberOfRooms,
+    this.numberOfBathrooms,
+    this.requiredDuration,
+    this.notes,
   });
 
   factory Data.fromJson(Map<String, dynamic> json) => _$DataFromJson(json);
@@ -87,16 +88,16 @@ class Data {
 @JsonSerializable()
 class City {
   @JsonKey(name: "id")
-  final int id;
+  final int? id;
   @JsonKey(name: "code")
-  final String code;
+  final String? code;
   @JsonKey(name: "name")
-  final String name;
+  final String? name;
 
   City({
-    required this.id,
-    required this.code,
-    required this.name,
+    this.id,
+    this.code,
+    this.name,
   });
 
   factory City.fromJson(Map<String, dynamic> json) => _$CityFromJson(json);
@@ -107,25 +108,26 @@ class City {
 @JsonSerializable()
 class UnitStatuses {
   @JsonKey(name: "id")
-  final int id;
+  final int? id;
   @JsonKey(name: "code")
-  final String code;
+  final String? code;
   @JsonKey(name: "name")
-  final String name;
+  final String? name;
   @JsonKey(name: "nameAr")
-  final String nameAr;
+  final String? nameAr;
   @JsonKey(name: "nameEn")
-  final String nameEn;
+  final String? nameEn;
 
   UnitStatuses({
-    required this.id,
-    required this.code,
-    required this.name,
-    required this.nameAr,
-    required this.nameEn,
+    this.id,
+    this.code,
+    this.name,
+    this.nameAr,
+    this.nameEn,
   });
 
-  factory UnitStatuses.fromJson(Map<String, dynamic> json) => _$UnitStatusesFromJson(json);
+  factory UnitStatuses.fromJson(Map<String, dynamic> json) =>
+      _$UnitStatusesFromJson(json);
 
   Map<String, dynamic> toJson() => _$UnitStatusesToJson(this);
 }

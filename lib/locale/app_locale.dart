@@ -210,7 +210,7 @@ class AppLocale {
   ///RenovateYourHouse
   static const String renovateYourHouse = 'Renovate Your House';
   static const String renovateYourHouseDescription =
-      "\"Finish Your House\" - Complete your home\'s\n setup effortlessly.";
+      "\"Finish Your House\" - Complete your home's\n setup effortlessly.";
   static const String unitInsideCompound = 'Unit Inside Compound';
   static const String outDoor = 'Out Door';
   static const String skills = 'Skills';
@@ -229,7 +229,13 @@ class AppLocale {
   static const String insideCompound = 'Inside Compound';
   static const String outsideCompound = 'Outside Compound';
   static const String notes = 'Notes';
-  static const String bookPackage =  'Book Package';
+  static const String bookPackage = 'Book Package';
+
+  ///RequestDesign
+  static const String requestDesign = 'Request Design';
+  static const String design = 'Design';
+  static const String ai = 'Ai';
+
 
   ///Stepper Titles
   static const String basicDetails = 'Basic Details';
@@ -281,9 +287,9 @@ class AppLocale {
   static const String furnishSubtitle =
       'Find comfortable and elegant furniture.';
 
-  static const String requestDesignTitle = 'Request design';
+  static const String requestDesignTitle = 'Request custom_design';
   static const String requestDesignSubtitle =
-      'Get a custom design for interiors or decor.';
+      'Get a custom custom_design for interiors or decor.';
 
   static const String kitchensTitle = 'Kitchens and dressing';
   static const String kitchensSubtitle =
@@ -310,20 +316,23 @@ class AppLocale {
   static const String claim = 'Claim';
   static const String engineeringTypeSelection = 'Engineering type selection';
   static const String unitTypeSelection = 'Unit type selection';
-  static const String budget = 'Budget';
   static const String urgencyLevel = 'Urgency Level';
   static const String theNext = 'The Next';
   static const String pleaseEnterAProjectName = 'Please enter a project name';
   static const String pleaseEnterAPhoneNumber = 'Please enter a Phone Number';
-  static const String pleaseEnterAProjectDescription = 'Please enter a Project Description';
+  static const String pleaseEnterAProjectDescription =
+      'Please enter a Project Description';
   static const String pleaseEnterABudget = 'Please enter a Budget';
-  static const String pleaseSelectEngineeringType = 'Please Select Engineering Type';
+  static const String pleaseSelectEngineeringType =
+      'Please Select Engineering Type';
   static const String pleaseSelectUnitType = 'Please Select Unit Type';
   static const String pleaseSelectGovernorate = 'Please Select Governorate';
   static const String pleaseSelectCity = 'Please Select City';
-  static const String pleaseSelectProjectDeadline = 'Please Select project deadline';
+  static const String pleaseSelectProjectDeadline =
+      'Please Select project deadline';
   static const String pleaseSelectUrgencyLevel = 'Please Select urgency Level';
   static const String projectDeadline = 'Project Deadline';
+  static const String attachedImages = 'Attached Images';
 
   static const Map<String, dynamic> en = {
     onBoardingTitle1: 'Civil works and finishing services',
@@ -543,8 +552,8 @@ class AppLocale {
     seeAll: 'See all',
     furnishTitle: 'Furnish your home',
     furnishSubtitle: 'Find comfortable and elegant furniture.',
-    requestDesignTitle: 'Request design',
-    requestDesignSubtitle: 'Get a custom design for interiors or decor.',
+    requestDesignTitle: 'Request custom_design',
+    requestDesignSubtitle: 'Get a custom custom_design for interiors or decor.',
     kitchensTitle: 'Kitchens and dressing',
     kitchensSubtitle: 'Modern solutions kitchens and wardrobes.',
     renovateTitle: 'Renovate Your Home',
@@ -553,31 +562,6 @@ class AppLocale {
     engineerSubtitle: 'Expert finish and remodel for a better home.',
     technicalTitle: 'Ask to Technical',
     technicalSubtitle: 'Transform your home with stylish finishing touches.',
-  shopNowTitle : 'Shop now',
-  shopSubtitle : 'Browse and buy home essentials.',
-  theBestOffices : 'The best offices',
-  theBestShowrooms : 'The best showrooms',
-  todayOffers : 'Today\'s Offers',
-  specialOffers : 'Special Offers',
-  getSpecialOffer : 'Get Special Offer\nUp to',
-  claim : 'Claim',
-  engineeringTypeSelection : 'Engineering type selection',
-  unitTypeSelection : 'Unit type selection',
-  budget : 'Budget',
-  urgencyLevel : 'Urgency Level',
-  theNext : 'The Next',
-  pleaseEnterAProjectName : 'Please enter a project name',
-  pleaseEnterAPhoneNumber : 'Please enter a Phone Number',
-  pleaseEnterAProjectDescription : 'Please enter a Project Description',
-  pleaseEnterABudget : 'Please enter a Budget',
-  pleaseSelectEngineeringType : 'Please Select Engineering Type',
-  pleaseSelectUnitType : 'Please Select Unit Type',
-  pleaseSelectGovernorate : 'Please Select Governorate',
-  pleaseSelectCity : 'Please Select City',
-  pleaseSelectProjectDeadline : 'Please Select project deadline',
-  pleaseSelectUrgencyLevel : 'Please Select urgency Level',
-  projectDeadline : 'Project Deadline',
-
     shopNowTitle: 'Shop now',
     shopSubtitle: 'Browse and buy home essentials.',
     theBestOffices: 'The best offices',
@@ -586,9 +570,25 @@ class AppLocale {
     specialOffers: 'Special Offers',
     getSpecialOffer: 'Get Special Offer\nUp to',
     claim: 'Claim',
+    engineeringTypeSelection: 'Engineering type selection',
+    unitTypeSelection: 'Unit type selection',
+    budget: 'Budget',
+    urgencyLevel: 'Urgency Level',
+    theNext: 'The Next',
+    pleaseEnterAProjectName: 'Please enter a project name',
+    pleaseEnterAPhoneNumber: 'Please enter a Phone Number',
+    pleaseEnterAProjectDescription: 'Please enter a Project Description',
+    pleaseEnterABudget: 'Please enter a Budget',
+    pleaseSelectEngineeringType: 'Please Select Engineering Type',
+    pleaseSelectUnitType: 'Please Select Unit Type',
+    pleaseSelectGovernorate: 'Please Select Governorate',
+    pleaseSelectCity: 'Please Select City',
+    pleaseSelectProjectDeadline: 'Please Select project deadline',
+    pleaseSelectUrgencyLevel: 'Please Select urgency Level',
+    projectDeadline: 'Project Deadline',
     renovateYourHouse: 'Renovate Your House',
     renovateYourHouseDescription:
-        "\"Finish Your House\" - Complete your home\'s\n setup effortlessly.",
+        "\"Finish Your House\" - Complete your home's\n setup effortlessly.",
     unitInsideCompound: 'Unit Inside Compound',
     outDoor: 'Out Door',
     skills: 'Skills',
@@ -596,7 +596,6 @@ class AppLocale {
     unitType: 'Unit Type',
     unitWorkType: 'Unit Work Type',
     unitArea: 'Unit Area',
-    budget: 'Budget',
     region: 'Region',
     numberOfRooms: 'Number Of Rooms',
     numberOfBathrooms: 'Number Of Bathrooms',
@@ -607,7 +606,11 @@ class AppLocale {
     insideCompound: 'Inside Compound',
     outsideCompound: 'Outside Compound',
     notes: 'Notes',
-    bookPackage : 'Book Package',
+    bookPackage: 'Book Package',
+    attachedImages : 'Attached Images',
+    requestDesign : 'Request Design',
+    design : 'Design',
+    ai : 'Ai',
   };
 
   static const Map<String, dynamic> ar = {
@@ -837,14 +840,14 @@ class AppLocale {
     engineerSubtitle: 'تشطيب احترافي وتجديد لمنزل أفضل.',
     technicalTitle: 'استشارة فني',
     technicalSubtitle: 'حوّل منزلك مع لمسات تشطيب أنيقة.',
-    shopNowTitle : 'تسوق الآن',
-    shopSubtitle : 'تصفح واشتري مستلزمات المنزل.',
-    theBestOffices : 'أفضل المكاتب الهندسية',
-    theBestShowrooms : 'أفضل المعارض',
-    todayOffers : 'عروض اليوم',
-    specialOffers : 'عروض خاصة',
-    getSpecialOffer : 'احصل على عرض خاص\nحتى',
-    claim : 'استرداد',
+    shopNowTitle: 'تسوق الآن',
+    shopSubtitle: 'تصفح واشتري مستلزمات المنزل.',
+    theBestOffices: 'أفضل المكاتب الهندسية',
+    theBestShowrooms: 'أفضل المعارض',
+    todayOffers: 'عروض اليوم',
+    specialOffers: 'عروض خاصة',
+    getSpecialOffer: 'احصل على عرض خاص\nحتى',
+    claim: 'استرداد',
     engineeringTypeSelection: 'اختيار نوع الهندسة',
     unitTypeSelection: 'اختيار نوع الوحدة',
     budget: 'الميزانية',
@@ -861,14 +864,6 @@ class AppLocale {
     pleaseSelectProjectDeadline: 'الرجاء اختيار موعد تسليم المشروع',
     pleaseSelectUrgencyLevel: 'الرجاء اختيار مستوى الاستعجال',
     projectDeadline: 'موعد تسليم المشروع',
-    shopNowTitle: 'تسوق الآن',
-    shopSubtitle: 'تصفح واشتري مستلزمات المنزل.',
-    theBestOffices: 'أفضل المكاتب الهندسية',
-    theBestShowrooms: 'أفضل المعارض',
-    todayOffers: 'عروض اليوم',
-    specialOffers: 'عروض خاصة',
-    getSpecialOffer: 'احصل على عرض خاص\nحتى',
-    claim: 'استرداد',
     renovateYourHouse: 'شطب بيتك',
     renovateYourHouseDescription: "\"شطب بيتك\" - أكمل إعداد منزلك بسهولة.",
     unitInsideCompound: 'وحدة داخل مجمع سكني',
@@ -878,7 +873,6 @@ class AppLocale {
     unitType: 'نوع الوحدة',
     unitWorkType: 'نوع العمل في الوحدة',
     unitArea: 'مساحة الوحدة',
-    budget: 'الميزانية',
     region: 'المنطقة',
     numberOfRooms: 'عدد الغرف',
     numberOfBathrooms: 'عدد الحمامات',
@@ -889,6 +883,10 @@ class AppLocale {
     insideCompound: 'داخل المجمع',
     outsideCompound: 'خارج المجمع',
     notes: 'ملاحظات',
-    bookPackage : 'احجز باقة',
+    bookPackage: 'احجز باقة',
+    attachedImages : 'الصور المرفقة',
+    requestDesign : 'اطلب تصميم',
+    design : 'تصميم مخصص',
+    ai : 'ذكاء اصطناعي',
   };
 }
