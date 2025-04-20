@@ -87,8 +87,6 @@ class ApiConstants {
   static const String askWorkerEp = "/api/v1/ask-worker";
   static const String addAllAskWorkerImagesEp =
       "/api/v1/ask-worker-photos/all";
-  static const String uploadImageEP = "/api/v1/file";
-
 }
 
 class ApiErrors {

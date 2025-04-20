@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:home4u/core/routing/routes.dart';
 import 'package:home4u/features/ask_engineer/presentation/ask_engineer_finish_data_and_image.dart';
 import 'package:home4u/features/ask_engineer/presentation/ask_engineer_screen.dart';
+import 'package:home4u/features/ask_technical_worker/presentation/ask_technical_finish_and_image.dart';
 import 'package:home4u/features/auth/forget_password/presentation/forget_password_screen.dart';
 import 'package:home4u/features/auth/login/logic/login_cubit.dart';
 import 'package:home4u/features/auth/new_password/logic/new_password_cubit.dart';
@@ -23,8 +24,8 @@ import 'package:home4u/features/products/presentation/product_details_screen.dar
 import 'package:home4u/features/profile/presentation/add_certification_screen.dart';
 import 'package:home4u/features/user/home/presentation/best_offices_screen.dart';
 import 'package:home4u/features/user/home/presentation/best_show_rooms_screen.dart';
-import 'package:home4u/features/user/renovate_your_house/logic/renovate_your_house_cubit.dart';
 
+import '../../features/ask_technical_worker/presentation/ask_technical_screen.dart';
 import '../../features/auth/login/presentation/login_screen.dart';
 import '../../features/auth/sign_up/presentation/business_sign_up_screen.dart';
 import '../../features/cart/presentation/cart_product_details_screen.dart';
@@ -221,12 +222,17 @@ class AppRouter {
         return MaterialPageRoute(
           builder: (_) => AskEngineerScreen(),
         );
-      case Routes.askWorkerScreen:
+      case Routes.askTechnicalScreen:
         return MaterialPageRoute(
-          builder: (_) => AskEngineerScreen(),
-        ); case Routes.askEngineerFinishDataAndImage:
+          builder: (_) => AskTechnicalWorkerScreen(),
+        );
+      case Routes.askEngineerFinishDataAndImage:
         return MaterialPageRoute(
           builder: (_) => AskEngineerFinishDataAndImage(),
+        );
+      case Routes.askTechnicalFinishAndImage:
+        return MaterialPageRoute(
+          builder: (_) => AskTechnicalFinishAndImage(),
         );
       default:
         return null;

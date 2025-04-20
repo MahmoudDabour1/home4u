@@ -1,60 +1,57 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_localization/flutter_localization.dart';
-import 'package:home4u/features/ask_engineer/logic/ask_engineer_cubit.dart';
-import 'package:home4u/features/auth/sign_up/logic/sign_up_cubit.dart';
-import 'package:home4u/features/auth/sign_up/logic/sign_up_state.dart';
+import 'package:home4u/features/ask_technical_worker/logic/ask_technical_cubit.dart';
 
 import '../../../../core/theming/app_styles.dart';
 import '../../../../core/utils/spacing.dart';
 import '../../../../core/widgets/app_custom_drop_down_button_form_field.dart';
 import '../../../../locale/app_locale.dart';
-import '../../logic/ask_engineer_state.dart';
+import '../../../auth/sign_up/logic/sign_up_cubit.dart';
+import '../../../auth/sign_up/logic/sign_up_state.dart';
+import '../../logic/ask_technical_state.dart';
 
-class AskEngineerDropDownButtons extends StatefulWidget {
-  const AskEngineerDropDownButtons({super.key});
+class AskTechnicalDropDownButtons extends StatefulWidget {
+  const AskTechnicalDropDownButtons({super.key});
 
   @override
-  State<AskEngineerDropDownButtons> createState() =>
-      _AskEngineerDropDownButtonsState();
+  State<AskTechnicalDropDownButtons> createState() => _AskTechnicalDropDownButtonsState();
 }
 
-class _AskEngineerDropDownButtonsState
-    extends State<AskEngineerDropDownButtons> {
-  String? selectEngineerType;
+class _AskTechnicalDropDownButtonsState extends State<AskTechnicalDropDownButtons> {
+  String? selectWorkerType;
   String? selectUnitType;
   String? selectedGovernorate;
   String? selectedCity;
-
   @override
   Widget build(BuildContext context) {
-    return BlocBuilder<AskEngineerCubit, AskEngineerState>(
+    return BlocBuilder<AskTechnicalCubit, AskTechnicalState>(
       builder: (context, state) {
-        final askEngineerCubit = context.read<AskEngineerCubit>();
+        final askTechnicalCubit = context.read<AskTechnicalCubit>();
         final signUpCubit = context.read<SignUpCubit>();
         return Column(
           children: [
             verticalSpace(16),
             AppCustomDropDownButtonFormField(
-              value: selectEngineerType,
-              items: askEngineerCubit.engineerTypesList.map((engineeringType) {
+              value: selectWorkerType,
+              items: askTechnicalCubit.selectWorkerTypeList.map((workerType) {
                 return DropdownMenuItem<String>(
-                  value: engineeringType.id.toString(),
+                  value: workerType.id.toString(),
                   child: Text(
-                    engineeringType.name ?? '',
+                    workerType.name ?? '',
                     style: AppStyles.font16BlackLight,
                   ),
                 );
               }).toList(),
               onChanged: (value) {
                 setState(() {
-                  askEngineerCubit.selectEngineerType = value;
+                  askTechnicalCubit.selectWorkerType = value;
                 });
               },
-              labelText: AppLocale.engineeringTypeSelection.getString(context),
+              labelText: AppLocale.workerTypeSelection.getString(context),
               validator: (value) {
                 if (value == null) {
-                  return AppLocale.pleaseSelectEngineeringType.getString(
+                  return AppLocale.pleaseSelectWorkerType.getString(
                       context);
                 }
                 return null;
@@ -63,7 +60,7 @@ class _AskEngineerDropDownButtonsState
             verticalSpace(16),
             AppCustomDropDownButtonFormField(
               value: selectUnitType,
-              items: askEngineerCubit.unitTypesList.map((unitType) {
+              items: askTechnicalCubit.selectUnitTypeList.map((unitType) {
                 return DropdownMenuItem<String>(
                   value: unitType.id.toString(),
                   child: Text(
@@ -74,7 +71,7 @@ class _AskEngineerDropDownButtonsState
               }).toList(),
               onChanged: (value) {
                 setState(() {
-                  askEngineerCubit.selectUnitType = value;
+                  askTechnicalCubit.selectUnitType = value;
                 });
               },
               labelText: AppLocale.unitTypeSelection.getString(context),
@@ -86,10 +83,12 @@ class _AskEngineerDropDownButtonsState
               },
 
             ),
+
+
             verticalSpace(16),
             AppCustomDropDownButtonFormField(
               value: selectedGovernorate,
-              items: askEngineerCubit.governmentList.map((governorate) {
+              items: askTechnicalCubit.governmentList.map((governorate) {
                 return DropdownMenuItem<String>(
                   value: governorate.id.toString(),
                   child: Text(
@@ -103,7 +102,7 @@ class _AskEngineerDropDownButtonsState
                   selectedGovernorate = value;
                   selectedCity = null;
                   signUpCubit.getCities(int.parse(value!));
-                  askEngineerCubit.selectedGovernorate = value;
+                  askTechnicalCubit.selectedGovernorate = value;
                 });
               },
               labelText: AppLocale.theGovernorate.getString(context),
@@ -135,7 +134,7 @@ class _AskEngineerDropDownButtonsState
                   onChanged: (value) {
                     setState(() {
                       selectedCity = value;
-                      askEngineerCubit.selectedCity = value;
+                      askTechnicalCubit.selectedCity = value;
                     });
                   },
                   labelText: AppLocale.theCity.getString(context),

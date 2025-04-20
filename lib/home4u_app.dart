@@ -7,6 +7,7 @@ import 'package:home4u/core/localization/app_localization_state.dart';
 import 'package:home4u/core/routing/app_router.dart';
 import 'package:home4u/core/routing/routes.dart';
 import 'package:home4u/features/ask_engineer/logic/ask_engineer_cubit.dart';
+import 'package:home4u/features/ask_technical_worker/logic/ask_technical_cubit.dart';
 import 'package:home4u/features/auth/sign_up/logic/engineering_office/engineering_office_cubit.dart';
 import 'package:home4u/features/auth/sign_up/logic/sign_up_cubit.dart';
 import 'package:home4u/features/products/logic/products_cubit.dart';
@@ -136,6 +137,8 @@ class _Home4uAppState extends State<Home4uApp> {
             ),
             BlocProvider<AskEngineerCubit>(
                 create: (_) => sl<AskEngineerCubit>()),
+            BlocProvider<AskTechnicalCubit>(
+                create: (_) => sl<AskTechnicalCubit>()),
           ],
           child: ScreenUtilInit(
             designSize: const Size(393, 852),
@@ -160,7 +163,7 @@ class _Home4uAppState extends State<Home4uApp> {
                     onGenerateRoute: widget.appRouter.generateRoute,
                     debugShowCheckedModeBanner: false,
                     navigatorObservers: [NavigatorObserver(), _routeObserver],
-                    initialRoute: Routes.askEngineerScreen,
+                    initialRoute: Routes.homeScreen,
                     // snapshot.data!,
                   ),
                 );
