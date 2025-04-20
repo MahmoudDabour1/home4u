@@ -41,5 +41,6 @@ abstract class Routes{
   static const String askEngineerFinishDataAndImage = '/askEngineerFinishDataAndImage';
   static const String renovateYourHouseScreen = '/renovateYourHouseScreen';
   static const String renovateYourHouseSecondScreen = '/renovateYourHouseSecondScreen';
+  static const String requestDesignScreen = '/requestDesignScreen';
 
 }

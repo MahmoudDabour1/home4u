@@ -57,6 +57,9 @@ import '../../features/profile/logic/services/services_cubit.dart';
 import '../../features/user/renovate_your_house/data/data_source/renovate_your_house_local_data_source.dart';
 import '../../features/user/renovate_your_house/data/data_source/renovate_your_house_remote_data_source.dart';
 import '../../features/user/renovate_your_house/data/repository/renovate_your_house_repository.dart';
+import '../../features/user/request_design/data/data_source/request_design_remote_data_source.dart';
+import '../../features/user/request_design/data/repository/request_design_repository.dart';
+import '../../features/user/request_design/logic/request_design_cubit.dart';
 import '../localization/app_localization_cubit.dart';
 import '../networking/dio_factory.dart';
 
@@ -188,8 +191,7 @@ Future<void> setupGetIt() async {
   //ask Engineer
   sl.registerLazySingleton<AskEngineerRemoteDataSource>(
       () => AskEngineerRemoteDataSource(dio));
-  sl.registerLazySingleton<AskEngineerRepo>(
-      () => AskEngineerRepoImpl(sl()));
+  sl.registerLazySingleton<AskEngineerRepo>(() => AskEngineerRepoImpl(sl()));
   sl.registerFactory<AskEngineerCubit>(() => AskEngineerCubit(sl()));
 
   ///Renovate Your House
@@ -206,4 +208,16 @@ Future<void> setupGetIt() async {
   sl.registerFactory<RenovateYourHouseCubit>(
     () => RenovateYourHouseCubit(sl()),
   );
+
+  ///Request Design
+  sl.registerLazySingleton<RequestDesignRemoteDataSource>(
+      () => RequestDesignRemoteDataSource(dio));
+
+  sl.registerLazySingleton<RequestDesignRepository>(
+    () => RequestDesignRepositoryImpl(
+      remoteDataSource: sl(),
+    ),
+  );
+
+  sl.registerFactory<RequestDesignCubit>(() => RequestDesignCubit(sl()));
 }

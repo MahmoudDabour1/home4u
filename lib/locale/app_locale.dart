@@ -231,6 +231,12 @@ class AppLocale {
   static const String notes = 'Notes';
   static const String bookPackage = 'Book Package';
 
+  ///RequestDesign
+  static const String requestDesign = 'Request Design';
+  static const String design = 'Design';
+  static const String ai = 'Ai';
+
+
   ///Stepper Titles
   static const String basicDetails = 'Basic Details';
   static const String materialsSpecs = 'Materials & Specs';
@@ -281,9 +287,9 @@ class AppLocale {
   static const String furnishSubtitle =
       'Find comfortable and elegant furniture.';
 
-  static const String requestDesignTitle = 'Request design';
+  static const String requestDesignTitle = 'Request custom_design';
   static const String requestDesignSubtitle =
-      'Get a custom design for interiors or decor.';
+      'Get a custom custom_design for interiors or decor.';
 
   static const String kitchensTitle = 'Kitchens and dressing';
   static const String kitchensSubtitle =
@@ -546,8 +552,8 @@ class AppLocale {
     seeAll: 'See all',
     furnishTitle: 'Furnish your home',
     furnishSubtitle: 'Find comfortable and elegant furniture.',
-    requestDesignTitle: 'Request design',
-    requestDesignSubtitle: 'Get a custom design for interiors or decor.',
+    requestDesignTitle: 'Request custom_design',
+    requestDesignSubtitle: 'Get a custom custom_design for interiors or decor.',
     kitchensTitle: 'Kitchens and dressing',
     kitchensSubtitle: 'Modern solutions kitchens and wardrobes.',
     renovateTitle: 'Renovate Your Home',
@@ -602,6 +608,9 @@ class AppLocale {
     notes: 'Notes',
     bookPackage: 'Book Package',
     attachedImages : 'Attached Images',
+    requestDesign : 'Request Design',
+    design : 'Design',
+    ai : 'Ai',
   };
 
   static const Map<String, dynamic> ar = {
@@ -876,5 +885,8 @@ class AppLocale {
     notes: 'ملاحظات',
     bookPackage: 'احجز باقة',
     attachedImages : 'الصور المرفقة',
+    requestDesign : 'اطلب تصميم',
+    design : 'تصميم مخصص',
+    ai : 'ذكاء اصطناعي',
   };
 }
