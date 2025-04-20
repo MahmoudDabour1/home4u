@@ -140,7 +140,7 @@ class _Home4uAppState extends State<Home4uApp> {
                 create: (_) => sl<AskEngineerCubit>()),
             BlocProvider<RequestDesignCubit>(
               create: (_) => sl<RequestDesignCubit>(),
-            )
+            ),
             BlocProvider<AskTechnicalCubit>(
                 create: (_) => sl<AskTechnicalCubit>()),
           ],
