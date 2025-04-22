@@ -333,6 +333,11 @@ class AppLocale {
   static const String pleaseSelectUrgencyLevel = 'Please Select urgency Level';
   static const String projectDeadline = 'Project Deadline';
   static const String attachedImages = 'Attached Images';
+  static const String askTechnical = 'Ask Technical';
+  static const String workerTypeSelection = 'Worker type';
+  static const String pleaseSelectWorkerType = 'Please Select Worker Type';
+  static const String materialNeeded = 'Material needed';
+  static const String pleaseSelectMaterialNeeded = 'Please Select Material needed';
 
   static const Map<String, dynamic> en = {
     onBoardingTitle1: 'Civil works and finishing services',
@@ -611,6 +616,10 @@ class AppLocale {
     requestDesign : 'Request Design',
     design : 'Design',
     ai : 'Ai',
+    workerTypeSelection: 'Worker type',
+    pleaseSelectWorkerType: 'Please Select Worker Type',
+    materialNeeded: 'Material needed',
+    pleaseSelectMaterialNeeded: 'Please Select Material needed',
   };
 
   static const Map<String, dynamic> ar = {
@@ -888,5 +897,9 @@ class AppLocale {
     requestDesign : 'اطلب تصميم',
     design : 'تصميم مخصص',
     ai : 'ذكاء اصطناعي',
+    workerTypeSelection: 'اختيار نوع العامل',
+    pleaseSelectWorkerType: 'الرجاء اختيار نوع العامل',
+    materialNeeded: 'المواد المطلوبة',
+    pleaseSelectMaterialNeeded: 'الرجاء اختيار المواد المطلوبة',
   };
 }
