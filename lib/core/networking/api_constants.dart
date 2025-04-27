@@ -54,6 +54,7 @@ class ApiConstants {
       "/api/v1/engineering-office/user";
   static const String updateEngineeringOfficeProfileEP =
       "/api/v1/engineering-office";
+
   ///exhibitions
   static const String businessConfigEP = "/api/v1/business-config";
   static const String productsFilterEP = "/api/v1/products/filter";
@@ -63,10 +64,15 @@ class ApiConstants {
 
   ///RenovateYourHouse
   static const String renovateYourHouseEp = "/api/v1/home-renovate";
-  static const String renovateYourHouseChooseFixedPackageEp = "/api/v1/select-custom-package";
+  static const String renovateYourHouseCustomFilterEp =
+      "/api/v1/select-custom-package/filter";
+  static const String renovateYourHouseFixedPackagesFilterEp =
+      "/api/v1/home-renovate/filter";
+  static const String renovateYourHouseChooseFixedPackageEp =
+      "/api/v1/select-custom-package";
   static const String renovateYourHouseLookUpsEp = "/api/v1/home-renovate/lkps";
-  static const String renovateYourHouseFixedPackagesEp = "/api/v1/custom-package";
-
+  static const String renovateYourHouseFixedPackagesEp =
+      "/api/v1/custom-package";
 
   // {{prod_url}}/api/v1/products/57
   static const String getProductDetailsEP = "/api/v1/products/{productId}";
@@ -77,18 +83,17 @@ class ApiConstants {
   ///images
   static String getImageBaseUrl(String path) => "$apiBaseUrl/$path";
 
-///ask engineer
+  ///ask engineer
   static const String askEngineerIkpEp = "/api/v1/ask-engineer/lkps";
   static const String askEngineerEp = "/api/v1/ask-engineer";
   static const String addAllAskEngineerImagesEp =
       "/api/v1/ask-engineer-photos/all";
- ///ask worker
+
+  ///ask worker
   static const String askWorkerIkpEp = "/api/v1/ask-worker/lkps";
   static const String askWorkerEp = "/api/v1/ask-worker";
-  static const String addAllAskWorkerImagesEp =
-      "/api/v1/ask-worker-photos/all";
+  static const String addAllAskWorkerImagesEp = "/api/v1/ask-worker-photos/all";
   static const String uploadImageEP = "/api/v1/file";
-
 }
 
 class ApiErrors {
