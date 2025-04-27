@@ -9,9 +9,9 @@ class RenovateYourHouseChooseFixedPackageBody {
   @JsonKey(name: "isInsideCompound")
   final bool isInsideCompound;
   @JsonKey(name: "unitType")
-  final CustomPackage unitType;
+  final RenovateCustomPackageBody unitType;
   @JsonKey(name: "customPackage")
-  final CustomPackage customPackage;
+  final RenovateCustomPackageBody customPackage;
 
   RenovateYourHouseChooseFixedPackageBody({
     required this.phoneNumber,
@@ -29,16 +29,16 @@ class RenovateYourHouseChooseFixedPackageBody {
 }
 
 @JsonSerializable()
-class CustomPackage {
+class RenovateCustomPackageBody {
   @JsonKey(name: "id")
   final int id;
 
-  CustomPackage({
+  RenovateCustomPackageBody({
     required this.id,
   });
 
-  factory CustomPackage.fromJson(Map<String, dynamic> json) =>
-      _$CustomPackageFromJson(json);
+  factory RenovateCustomPackageBody.fromJson(Map<String, dynamic> json) =>
+      _$RenovateCustomPackageBodyFromJson(json);
 
-  Map<String, dynamic> toJson() => _$CustomPackageToJson(this);
+  Map<String, dynamic> toJson() => _$RenovateCustomPackageBodyToJson(this);
 }

@@ -1,9 +1,12 @@
 import 'package:bloc/bloc.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:home4u/core/networking/dio_factory.dart';
+import 'package:home4u/features/user/renovate_your_house/data/models/renovate_your_house_custom_packages_filter_response.dart';
+import 'package:home4u/features/user/renovate_your_house/data/models/renovate_your_house_fixed_packages_filter_response.dart';
 import 'package:home4u/features/user/renovate_your_house/logic/renovate_your_house_state.dart';
 
 import '../../../../core/helpers/helper_methods.dart';
+import '../../../../core/routing/router_observer.dart';
 import '../data/models/add_renovate_house_custom_package_body.dart';
 import '../data/models/renovate_your_house_choose_fixed_package_body.dart';
 import '../data/models/renovate_your_house_look_ups_model.dart';
@@ -164,8 +167,157 @@ class RenovateYourHouseCubit extends Cubit<RenovateYourHouseState> {
     return RenovateYourHouseChooseFixedPackageBody(
       phoneNumber: phoneNumberController.text,
       isInsideCompound: isInsideCompound!,
-      unitType: CustomPackage(id: selectedUnitType!),
-      customPackage: CustomPackage(id: selectedFixedPackageId!),
+      unitType: RenovateCustomPackageBody(id: selectedUnitType!),
+      customPackage: RenovateCustomPackageBody(id: selectedFixedPackageId!),
     );
+  }
+
+  ///pagination
+  int _page = 0;
+  bool hasReachedMax = false;
+  List<RenovateFixedFilterContent> fixedPackages = [];
+  List<CustomPackagesContent> customPackages = [];
+  bool isFetching = false;
+
+  /// Counter for function calls
+  int _getProductsCallCount = 0;
+
+  Future<void> getCustomPackagesFilter({bool isRefresh = false}) async {
+    if (isFetching) return;
+
+    isFetching = true;
+
+    if (!isRefresh && hasReachedMax) {
+      isFetching = false;
+      return;
+    }
+    if (isRefresh) {
+      _page = 0;
+      hasReachedMax = false;
+      customPackages.clear();
+    } else if (_page > 0) {
+      emit(RenovateYourHouseState.paginationLoading());
+    } else {
+      emit(RenovateYourHouseState
+          .renovateYourHouseCustomPackagesFilterLoading());
+    }
+    final requestBody = {
+      "pageNumber": 0,
+      "searchCriteria": {
+        "userId": null,
+        "unitTypeId": null,
+        "customPackageId": null,
+        "isInsideCompound": null
+      }
+    };
+    DioFactory.setContentType("application/json");
+
+    final result = await renovateYourHouseRepository
+        .getRenovateYourHouseCustomFilter(requestBody);
+
+    result.when(
+      success: (data) {
+        final newCustomPackages = data.data?.content ?? [];
+        if (newCustomPackages.isEmpty) {
+          hasReachedMax = true;
+        } else {
+          customPackages.addAll(newCustomPackages);
+          _page++;
+          hasReachedMax = _page >= (data.data?.totalPages ?? 1);
+        }
+        if (!isClosed) {
+          emit(
+            RenovateYourHouseState.renovateYourHouseCustomPackagesFilterLoaded(
+                data),
+          );
+
+          _getProductsCallCount++;
+          logger.e("get custom packages called $_getProductsCallCount times");
+        }
+      },
+      failure: (error) {
+        if (!isClosed) {
+          emit(
+              RenovateYourHouseState.renovateYourHouseCustomPackagesFilterError(
+            error: error.message.toString(),
+          ));
+        }
+      },
+    );
+    isFetching = false;
+  }
+
+  Future<void> getFixedPackagesFilter({bool isRefresh = false}) async {
+    if (isFetching) return;
+
+    isFetching = true;
+
+    if (!isRefresh && hasReachedMax) {
+      isFetching = false;
+      return;
+    }
+    if (isRefresh) {
+      _page = 0;
+      hasReachedMax = false;
+      fixedPackages.clear();
+    } else if (_page > 0) {
+      emit(RenovateYourHouseState.paginationLoading());
+    } else {
+      emit(
+          RenovateYourHouseState.renovateYourHouseFixedPackagesFilterLoading());
+    }
+
+    final requestBody = {
+      "pageNumber": 0,
+      "searchCriteria": {
+        "userId": null,
+        "unitTypeId": null,
+        "governorateId": null,
+        "unitWorkTypeId": null,
+        "workSkillId": null,
+        "unitStatusId": null,
+        "cityId": null,
+        "requiredDurationFrom": null,
+        "requiredDurationTo": null,
+        "unitAreaFrom": null,
+        "unitAreaTo": null,
+        "budgetFrom": 1500,
+        "budgetTo": 240000
+      }
+    };
+
+    final result = await renovateYourHouseRepository
+        .getRenovateYourHouseFixedPackagesFilter(requestBody);
+
+    result.when(
+      success: (data) {
+        final newFixedPackages = data.data?.content ?? [];
+        if (newFixedPackages.isEmpty) {
+          hasReachedMax = true;
+        } else {
+          fixedPackages.addAll(newFixedPackages);
+          _page++;
+          hasReachedMax = _page >= (data.data?.totalPages ?? 1);
+        }
+        if (!isClosed) {
+          emit(
+            RenovateYourHouseState.renovateYourHouseFixedPackagesFilterLoaded(
+              data,
+            ),
+          );
+
+          _getProductsCallCount++;
+          logger.e("get fixed packages called $_getProductsCallCount times");
+        }
+      },
+      failure: (error) {
+        if (!isClosed) {
+          emit(RenovateYourHouseState.renovateYourHouseFixedPackagesFilterError(
+            error: error.message.toString(),
+          ));
+        }
+      },
+    );
+    isFetching = false;
   }
 }
