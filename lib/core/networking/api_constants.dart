@@ -72,6 +72,7 @@ class ApiConstants {
 
   ///RequestDesign
   static const String requestDesignEp = "/api/v1/request-design";
+  static const String requestDesignFilterEp = "/api/v1/request-design/filter";
 
   ///Product
   static const String getProductDetailsEP = "/api/v1/products/{productId}";

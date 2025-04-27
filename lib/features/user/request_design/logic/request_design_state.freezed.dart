@@ -22,6 +22,11 @@ mixin _$RequestDesignState<T> {
     required TResult Function() addRequestDesignLoading,
     required TResult Function(T data) addRequestDesignSuccess,
     required TResult Function(String error) addRequestDesignFailure,
+    required TResult Function() requestDesignFilterLoading,
+    required TResult Function(T data) requestDesignFilterSuccess,
+    required TResult Function(String error) requestDesignFilterFailure,
+    required TResult Function() paginationLoading,
+    required TResult Function(String error) paginationFailure,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -30,6 +35,11 @@ mixin _$RequestDesignState<T> {
     TResult? Function()? addRequestDesignLoading,
     TResult? Function(T data)? addRequestDesignSuccess,
     TResult? Function(String error)? addRequestDesignFailure,
+    TResult? Function()? requestDesignFilterLoading,
+    TResult? Function(T data)? requestDesignFilterSuccess,
+    TResult? Function(String error)? requestDesignFilterFailure,
+    TResult? Function()? paginationLoading,
+    TResult? Function(String error)? paginationFailure,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -38,6 +48,11 @@ mixin _$RequestDesignState<T> {
     TResult Function()? addRequestDesignLoading,
     TResult Function(T data)? addRequestDesignSuccess,
     TResult Function(String error)? addRequestDesignFailure,
+    TResult Function()? requestDesignFilterLoading,
+    TResult Function(T data)? requestDesignFilterSuccess,
+    TResult Function(String error)? requestDesignFilterFailure,
+    TResult Function()? paginationLoading,
+    TResult Function(String error)? paginationFailure,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -50,6 +65,16 @@ mixin _$RequestDesignState<T> {
         addRequestDesignSuccess,
     required TResult Function(AddRequestDesignFailure<T> value)
         addRequestDesignFailure,
+    required TResult Function(RequestDesignFilterLoading<T> value)
+        requestDesignFilterLoading,
+    required TResult Function(RequestDesignFilterSuccess<T> value)
+        requestDesignFilterSuccess,
+    required TResult Function(RequestDesignFilterFailure<T> value)
+        requestDesignFilterFailure,
+    required TResult Function(RequestDesignPaginationLoading<T> value)
+        paginationLoading,
+    required TResult Function(RequestDesignPaginationFailure<T> value)
+        paginationFailure,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -61,6 +86,16 @@ mixin _$RequestDesignState<T> {
         addRequestDesignSuccess,
     TResult? Function(AddRequestDesignFailure<T> value)?
         addRequestDesignFailure,
+    TResult? Function(RequestDesignFilterLoading<T> value)?
+        requestDesignFilterLoading,
+    TResult? Function(RequestDesignFilterSuccess<T> value)?
+        requestDesignFilterSuccess,
+    TResult? Function(RequestDesignFilterFailure<T> value)?
+        requestDesignFilterFailure,
+    TResult? Function(RequestDesignPaginationLoading<T> value)?
+        paginationLoading,
+    TResult? Function(RequestDesignPaginationFailure<T> value)?
+        paginationFailure,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -69,6 +104,16 @@ mixin _$RequestDesignState<T> {
     TResult Function(AddRequestDesignLoading<T> value)? addRequestDesignLoading,
     TResult Function(AddRequestDesignSuccess<T> value)? addRequestDesignSuccess,
     TResult Function(AddRequestDesignFailure<T> value)? addRequestDesignFailure,
+    TResult Function(RequestDesignFilterLoading<T> value)?
+        requestDesignFilterLoading,
+    TResult Function(RequestDesignFilterSuccess<T> value)?
+        requestDesignFilterSuccess,
+    TResult Function(RequestDesignFilterFailure<T> value)?
+        requestDesignFilterFailure,
+    TResult Function(RequestDesignPaginationLoading<T> value)?
+        paginationLoading,
+    TResult Function(RequestDesignPaginationFailure<T> value)?
+        paginationFailure,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -141,6 +186,11 @@ class _$InitialImpl<T> implements _Initial<T> {
     required TResult Function() addRequestDesignLoading,
     required TResult Function(T data) addRequestDesignSuccess,
     required TResult Function(String error) addRequestDesignFailure,
+    required TResult Function() requestDesignFilterLoading,
+    required TResult Function(T data) requestDesignFilterSuccess,
+    required TResult Function(String error) requestDesignFilterFailure,
+    required TResult Function() paginationLoading,
+    required TResult Function(String error) paginationFailure,
   }) {
     return initial();
   }
@@ -152,6 +202,11 @@ class _$InitialImpl<T> implements _Initial<T> {
     TResult? Function()? addRequestDesignLoading,
     TResult? Function(T data)? addRequestDesignSuccess,
     TResult? Function(String error)? addRequestDesignFailure,
+    TResult? Function()? requestDesignFilterLoading,
+    TResult? Function(T data)? requestDesignFilterSuccess,
+    TResult? Function(String error)? requestDesignFilterFailure,
+    TResult? Function()? paginationLoading,
+    TResult? Function(String error)? paginationFailure,
   }) {
     return initial?.call();
   }
@@ -163,6 +218,11 @@ class _$InitialImpl<T> implements _Initial<T> {
     TResult Function()? addRequestDesignLoading,
     TResult Function(T data)? addRequestDesignSuccess,
     TResult Function(String error)? addRequestDesignFailure,
+    TResult Function()? requestDesignFilterLoading,
+    TResult Function(T data)? requestDesignFilterSuccess,
+    TResult Function(String error)? requestDesignFilterFailure,
+    TResult Function()? paginationLoading,
+    TResult Function(String error)? paginationFailure,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -181,6 +241,16 @@ class _$InitialImpl<T> implements _Initial<T> {
         addRequestDesignSuccess,
     required TResult Function(AddRequestDesignFailure<T> value)
         addRequestDesignFailure,
+    required TResult Function(RequestDesignFilterLoading<T> value)
+        requestDesignFilterLoading,
+    required TResult Function(RequestDesignFilterSuccess<T> value)
+        requestDesignFilterSuccess,
+    required TResult Function(RequestDesignFilterFailure<T> value)
+        requestDesignFilterFailure,
+    required TResult Function(RequestDesignPaginationLoading<T> value)
+        paginationLoading,
+    required TResult Function(RequestDesignPaginationFailure<T> value)
+        paginationFailure,
   }) {
     return initial(this);
   }
@@ -195,6 +265,16 @@ class _$InitialImpl<T> implements _Initial<T> {
         addRequestDesignSuccess,
     TResult? Function(AddRequestDesignFailure<T> value)?
         addRequestDesignFailure,
+    TResult? Function(RequestDesignFilterLoading<T> value)?
+        requestDesignFilterLoading,
+    TResult? Function(RequestDesignFilterSuccess<T> value)?
+        requestDesignFilterSuccess,
+    TResult? Function(RequestDesignFilterFailure<T> value)?
+        requestDesignFilterFailure,
+    TResult? Function(RequestDesignPaginationLoading<T> value)?
+        paginationLoading,
+    TResult? Function(RequestDesignPaginationFailure<T> value)?
+        paginationFailure,
   }) {
     return initial?.call(this);
   }
@@ -206,6 +286,16 @@ class _$InitialImpl<T> implements _Initial<T> {
     TResult Function(AddRequestDesignLoading<T> value)? addRequestDesignLoading,
     TResult Function(AddRequestDesignSuccess<T> value)? addRequestDesignSuccess,
     TResult Function(AddRequestDesignFailure<T> value)? addRequestDesignFailure,
+    TResult Function(RequestDesignFilterLoading<T> value)?
+        requestDesignFilterLoading,
+    TResult Function(RequestDesignFilterSuccess<T> value)?
+        requestDesignFilterSuccess,
+    TResult Function(RequestDesignFilterFailure<T> value)?
+        requestDesignFilterFailure,
+    TResult Function(RequestDesignPaginationLoading<T> value)?
+        paginationLoading,
+    TResult Function(RequestDesignPaginationFailure<T> value)?
+        paginationFailure,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -268,6 +358,11 @@ class _$AddRequestDesignLoadingImpl<T> implements AddRequestDesignLoading<T> {
     required TResult Function() addRequestDesignLoading,
     required TResult Function(T data) addRequestDesignSuccess,
     required TResult Function(String error) addRequestDesignFailure,
+    required TResult Function() requestDesignFilterLoading,
+    required TResult Function(T data) requestDesignFilterSuccess,
+    required TResult Function(String error) requestDesignFilterFailure,
+    required TResult Function() paginationLoading,
+    required TResult Function(String error) paginationFailure,
   }) {
     return addRequestDesignLoading();
   }
@@ -279,6 +374,11 @@ class _$AddRequestDesignLoadingImpl<T> implements AddRequestDesignLoading<T> {
     TResult? Function()? addRequestDesignLoading,
     TResult? Function(T data)? addRequestDesignSuccess,
     TResult? Function(String error)? addRequestDesignFailure,
+    TResult? Function()? requestDesignFilterLoading,
+    TResult? Function(T data)? requestDesignFilterSuccess,
+    TResult? Function(String error)? requestDesignFilterFailure,
+    TResult? Function()? paginationLoading,
+    TResult? Function(String error)? paginationFailure,
   }) {
     return addRequestDesignLoading?.call();
   }
@@ -290,6 +390,11 @@ class _$AddRequestDesignLoadingImpl<T> implements AddRequestDesignLoading<T> {
     TResult Function()? addRequestDesignLoading,
     TResult Function(T data)? addRequestDesignSuccess,
     TResult Function(String error)? addRequestDesignFailure,
+    TResult Function()? requestDesignFilterLoading,
+    TResult Function(T data)? requestDesignFilterSuccess,
+    TResult Function(String error)? requestDesignFilterFailure,
+    TResult Function()? paginationLoading,
+    TResult Function(String error)? paginationFailure,
     required TResult orElse(),
   }) {
     if (addRequestDesignLoading != null) {
@@ -308,6 +413,16 @@ class _$AddRequestDesignLoadingImpl<T> implements AddRequestDesignLoading<T> {
         addRequestDesignSuccess,
     required TResult Function(AddRequestDesignFailure<T> value)
         addRequestDesignFailure,
+    required TResult Function(RequestDesignFilterLoading<T> value)
+        requestDesignFilterLoading,
+    required TResult Function(RequestDesignFilterSuccess<T> value)
+        requestDesignFilterSuccess,
+    required TResult Function(RequestDesignFilterFailure<T> value)
+        requestDesignFilterFailure,
+    required TResult Function(RequestDesignPaginationLoading<T> value)
+        paginationLoading,
+    required TResult Function(RequestDesignPaginationFailure<T> value)
+        paginationFailure,
   }) {
     return addRequestDesignLoading(this);
   }
@@ -322,6 +437,16 @@ class _$AddRequestDesignLoadingImpl<T> implements AddRequestDesignLoading<T> {
         addRequestDesignSuccess,
     TResult? Function(AddRequestDesignFailure<T> value)?
         addRequestDesignFailure,
+    TResult? Function(RequestDesignFilterLoading<T> value)?
+        requestDesignFilterLoading,
+    TResult? Function(RequestDesignFilterSuccess<T> value)?
+        requestDesignFilterSuccess,
+    TResult? Function(RequestDesignFilterFailure<T> value)?
+        requestDesignFilterFailure,
+    TResult? Function(RequestDesignPaginationLoading<T> value)?
+        paginationLoading,
+    TResult? Function(RequestDesignPaginationFailure<T> value)?
+        paginationFailure,
   }) {
     return addRequestDesignLoading?.call(this);
   }
@@ -333,6 +458,16 @@ class _$AddRequestDesignLoadingImpl<T> implements AddRequestDesignLoading<T> {
     TResult Function(AddRequestDesignLoading<T> value)? addRequestDesignLoading,
     TResult Function(AddRequestDesignSuccess<T> value)? addRequestDesignSuccess,
     TResult Function(AddRequestDesignFailure<T> value)? addRequestDesignFailure,
+    TResult Function(RequestDesignFilterLoading<T> value)?
+        requestDesignFilterLoading,
+    TResult Function(RequestDesignFilterSuccess<T> value)?
+        requestDesignFilterSuccess,
+    TResult Function(RequestDesignFilterFailure<T> value)?
+        requestDesignFilterFailure,
+    TResult Function(RequestDesignPaginationLoading<T> value)?
+        paginationLoading,
+    TResult Function(RequestDesignPaginationFailure<T> value)?
+        paginationFailure,
     required TResult orElse(),
   }) {
     if (addRequestDesignLoading != null) {
@@ -423,6 +558,11 @@ class _$AddRequestDesignSuccessImpl<T> implements AddRequestDesignSuccess<T> {
     required TResult Function() addRequestDesignLoading,
     required TResult Function(T data) addRequestDesignSuccess,
     required TResult Function(String error) addRequestDesignFailure,
+    required TResult Function() requestDesignFilterLoading,
+    required TResult Function(T data) requestDesignFilterSuccess,
+    required TResult Function(String error) requestDesignFilterFailure,
+    required TResult Function() paginationLoading,
+    required TResult Function(String error) paginationFailure,
   }) {
     return addRequestDesignSuccess(data);
   }
@@ -434,6 +574,11 @@ class _$AddRequestDesignSuccessImpl<T> implements AddRequestDesignSuccess<T> {
     TResult? Function()? addRequestDesignLoading,
     TResult? Function(T data)? addRequestDesignSuccess,
     TResult? Function(String error)? addRequestDesignFailure,
+    TResult? Function()? requestDesignFilterLoading,
+    TResult? Function(T data)? requestDesignFilterSuccess,
+    TResult? Function(String error)? requestDesignFilterFailure,
+    TResult? Function()? paginationLoading,
+    TResult? Function(String error)? paginationFailure,
   }) {
     return addRequestDesignSuccess?.call(data);
   }
@@ -445,6 +590,11 @@ class _$AddRequestDesignSuccessImpl<T> implements AddRequestDesignSuccess<T> {
     TResult Function()? addRequestDesignLoading,
     TResult Function(T data)? addRequestDesignSuccess,
     TResult Function(String error)? addRequestDesignFailure,
+    TResult Function()? requestDesignFilterLoading,
+    TResult Function(T data)? requestDesignFilterSuccess,
+    TResult Function(String error)? requestDesignFilterFailure,
+    TResult Function()? paginationLoading,
+    TResult Function(String error)? paginationFailure,
     required TResult orElse(),
   }) {
     if (addRequestDesignSuccess != null) {
@@ -463,6 +613,16 @@ class _$AddRequestDesignSuccessImpl<T> implements AddRequestDesignSuccess<T> {
         addRequestDesignSuccess,
     required TResult Function(AddRequestDesignFailure<T> value)
         addRequestDesignFailure,
+    required TResult Function(RequestDesignFilterLoading<T> value)
+        requestDesignFilterLoading,
+    required TResult Function(RequestDesignFilterSuccess<T> value)
+        requestDesignFilterSuccess,
+    required TResult Function(RequestDesignFilterFailure<T> value)
+        requestDesignFilterFailure,
+    required TResult Function(RequestDesignPaginationLoading<T> value)
+        paginationLoading,
+    required TResult Function(RequestDesignPaginationFailure<T> value)
+        paginationFailure,
   }) {
     return addRequestDesignSuccess(this);
   }
@@ -477,6 +637,16 @@ class _$AddRequestDesignSuccessImpl<T> implements AddRequestDesignSuccess<T> {
         addRequestDesignSuccess,
     TResult? Function(AddRequestDesignFailure<T> value)?
         addRequestDesignFailure,
+    TResult? Function(RequestDesignFilterLoading<T> value)?
+        requestDesignFilterLoading,
+    TResult? Function(RequestDesignFilterSuccess<T> value)?
+        requestDesignFilterSuccess,
+    TResult? Function(RequestDesignFilterFailure<T> value)?
+        requestDesignFilterFailure,
+    TResult? Function(RequestDesignPaginationLoading<T> value)?
+        paginationLoading,
+    TResult? Function(RequestDesignPaginationFailure<T> value)?
+        paginationFailure,
   }) {
     return addRequestDesignSuccess?.call(this);
   }
@@ -488,6 +658,16 @@ class _$AddRequestDesignSuccessImpl<T> implements AddRequestDesignSuccess<T> {
     TResult Function(AddRequestDesignLoading<T> value)? addRequestDesignLoading,
     TResult Function(AddRequestDesignSuccess<T> value)? addRequestDesignSuccess,
     TResult Function(AddRequestDesignFailure<T> value)? addRequestDesignFailure,
+    TResult Function(RequestDesignFilterLoading<T> value)?
+        requestDesignFilterLoading,
+    TResult Function(RequestDesignFilterSuccess<T> value)?
+        requestDesignFilterSuccess,
+    TResult Function(RequestDesignFilterFailure<T> value)?
+        requestDesignFilterFailure,
+    TResult Function(RequestDesignPaginationLoading<T> value)?
+        paginationLoading,
+    TResult Function(RequestDesignPaginationFailure<T> value)?
+        paginationFailure,
     required TResult orElse(),
   }) {
     if (addRequestDesignSuccess != null) {
@@ -586,6 +766,11 @@ class _$AddRequestDesignFailureImpl<T> implements AddRequestDesignFailure<T> {
     required TResult Function() addRequestDesignLoading,
     required TResult Function(T data) addRequestDesignSuccess,
     required TResult Function(String error) addRequestDesignFailure,
+    required TResult Function() requestDesignFilterLoading,
+    required TResult Function(T data) requestDesignFilterSuccess,
+    required TResult Function(String error) requestDesignFilterFailure,
+    required TResult Function() paginationLoading,
+    required TResult Function(String error) paginationFailure,
   }) {
     return addRequestDesignFailure(error);
   }
@@ -597,6 +782,11 @@ class _$AddRequestDesignFailureImpl<T> implements AddRequestDesignFailure<T> {
     TResult? Function()? addRequestDesignLoading,
     TResult? Function(T data)? addRequestDesignSuccess,
     TResult? Function(String error)? addRequestDesignFailure,
+    TResult? Function()? requestDesignFilterLoading,
+    TResult? Function(T data)? requestDesignFilterSuccess,
+    TResult? Function(String error)? requestDesignFilterFailure,
+    TResult? Function()? paginationLoading,
+    TResult? Function(String error)? paginationFailure,
   }) {
     return addRequestDesignFailure?.call(error);
   }
@@ -608,6 +798,11 @@ class _$AddRequestDesignFailureImpl<T> implements AddRequestDesignFailure<T> {
     TResult Function()? addRequestDesignLoading,
     TResult Function(T data)? addRequestDesignSuccess,
     TResult Function(String error)? addRequestDesignFailure,
+    TResult Function()? requestDesignFilterLoading,
+    TResult Function(T data)? requestDesignFilterSuccess,
+    TResult Function(String error)? requestDesignFilterFailure,
+    TResult Function()? paginationLoading,
+    TResult Function(String error)? paginationFailure,
     required TResult orElse(),
   }) {
     if (addRequestDesignFailure != null) {
@@ -626,6 +821,16 @@ class _$AddRequestDesignFailureImpl<T> implements AddRequestDesignFailure<T> {
         addRequestDesignSuccess,
     required TResult Function(AddRequestDesignFailure<T> value)
         addRequestDesignFailure,
+    required TResult Function(RequestDesignFilterLoading<T> value)
+        requestDesignFilterLoading,
+    required TResult Function(RequestDesignFilterSuccess<T> value)
+        requestDesignFilterSuccess,
+    required TResult Function(RequestDesignFilterFailure<T> value)
+        requestDesignFilterFailure,
+    required TResult Function(RequestDesignPaginationLoading<T> value)
+        paginationLoading,
+    required TResult Function(RequestDesignPaginationFailure<T> value)
+        paginationFailure,
   }) {
     return addRequestDesignFailure(this);
   }
@@ -640,6 +845,16 @@ class _$AddRequestDesignFailureImpl<T> implements AddRequestDesignFailure<T> {
         addRequestDesignSuccess,
     TResult? Function(AddRequestDesignFailure<T> value)?
         addRequestDesignFailure,
+    TResult? Function(RequestDesignFilterLoading<T> value)?
+        requestDesignFilterLoading,
+    TResult? Function(RequestDesignFilterSuccess<T> value)?
+        requestDesignFilterSuccess,
+    TResult? Function(RequestDesignFilterFailure<T> value)?
+        requestDesignFilterFailure,
+    TResult? Function(RequestDesignPaginationLoading<T> value)?
+        paginationLoading,
+    TResult? Function(RequestDesignPaginationFailure<T> value)?
+        paginationFailure,
   }) {
     return addRequestDesignFailure?.call(this);
   }
@@ -651,6 +866,16 @@ class _$AddRequestDesignFailureImpl<T> implements AddRequestDesignFailure<T> {
     TResult Function(AddRequestDesignLoading<T> value)? addRequestDesignLoading,
     TResult Function(AddRequestDesignSuccess<T> value)? addRequestDesignSuccess,
     TResult Function(AddRequestDesignFailure<T> value)? addRequestDesignFailure,
+    TResult Function(RequestDesignFilterLoading<T> value)?
+        requestDesignFilterLoading,
+    TResult Function(RequestDesignFilterSuccess<T> value)?
+        requestDesignFilterSuccess,
+    TResult Function(RequestDesignFilterFailure<T> value)?
+        requestDesignFilterFailure,
+    TResult Function(RequestDesignPaginationLoading<T> value)?
+        paginationLoading,
+    TResult Function(RequestDesignPaginationFailure<T> value)?
+        paginationFailure,
     required TResult orElse(),
   }) {
     if (addRequestDesignFailure != null) {
@@ -670,5 +895,988 @@ abstract class AddRequestDesignFailure<T> implements RequestDesignState<T> {
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
   _$$AddRequestDesignFailureImplCopyWith<T, _$AddRequestDesignFailureImpl<T>>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$RequestDesignFilterLoadingImplCopyWith<T, $Res> {
+  factory _$$RequestDesignFilterLoadingImplCopyWith(
+          _$RequestDesignFilterLoadingImpl<T> value,
+          $Res Function(_$RequestDesignFilterLoadingImpl<T>) then) =
+      __$$RequestDesignFilterLoadingImplCopyWithImpl<T, $Res>;
+}
+
+/// @nodoc
+class __$$RequestDesignFilterLoadingImplCopyWithImpl<T, $Res>
+    extends _$RequestDesignStateCopyWithImpl<T, $Res,
+        _$RequestDesignFilterLoadingImpl<T>>
+    implements _$$RequestDesignFilterLoadingImplCopyWith<T, $Res> {
+  __$$RequestDesignFilterLoadingImplCopyWithImpl(
+      _$RequestDesignFilterLoadingImpl<T> _value,
+      $Res Function(_$RequestDesignFilterLoadingImpl<T>) _then)
+      : super(_value, _then);
+
+  /// Create a copy of RequestDesignState
+  /// with the given fields replaced by the non-null parameter values.
+}
+
+/// @nodoc
+
+class _$RequestDesignFilterLoadingImpl<T>
+    implements RequestDesignFilterLoading<T> {
+  _$RequestDesignFilterLoadingImpl();
+
+  @override
+  String toString() {
+    return 'RequestDesignState<$T>.requestDesignFilterLoading()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$RequestDesignFilterLoadingImpl<T>);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() addRequestDesignLoading,
+    required TResult Function(T data) addRequestDesignSuccess,
+    required TResult Function(String error) addRequestDesignFailure,
+    required TResult Function() requestDesignFilterLoading,
+    required TResult Function(T data) requestDesignFilterSuccess,
+    required TResult Function(String error) requestDesignFilterFailure,
+    required TResult Function() paginationLoading,
+    required TResult Function(String error) paginationFailure,
+  }) {
+    return requestDesignFilterLoading();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? addRequestDesignLoading,
+    TResult? Function(T data)? addRequestDesignSuccess,
+    TResult? Function(String error)? addRequestDesignFailure,
+    TResult? Function()? requestDesignFilterLoading,
+    TResult? Function(T data)? requestDesignFilterSuccess,
+    TResult? Function(String error)? requestDesignFilterFailure,
+    TResult? Function()? paginationLoading,
+    TResult? Function(String error)? paginationFailure,
+  }) {
+    return requestDesignFilterLoading?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? addRequestDesignLoading,
+    TResult Function(T data)? addRequestDesignSuccess,
+    TResult Function(String error)? addRequestDesignFailure,
+    TResult Function()? requestDesignFilterLoading,
+    TResult Function(T data)? requestDesignFilterSuccess,
+    TResult Function(String error)? requestDesignFilterFailure,
+    TResult Function()? paginationLoading,
+    TResult Function(String error)? paginationFailure,
+    required TResult orElse(),
+  }) {
+    if (requestDesignFilterLoading != null) {
+      return requestDesignFilterLoading();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial<T> value) initial,
+    required TResult Function(AddRequestDesignLoading<T> value)
+        addRequestDesignLoading,
+    required TResult Function(AddRequestDesignSuccess<T> value)
+        addRequestDesignSuccess,
+    required TResult Function(AddRequestDesignFailure<T> value)
+        addRequestDesignFailure,
+    required TResult Function(RequestDesignFilterLoading<T> value)
+        requestDesignFilterLoading,
+    required TResult Function(RequestDesignFilterSuccess<T> value)
+        requestDesignFilterSuccess,
+    required TResult Function(RequestDesignFilterFailure<T> value)
+        requestDesignFilterFailure,
+    required TResult Function(RequestDesignPaginationLoading<T> value)
+        paginationLoading,
+    required TResult Function(RequestDesignPaginationFailure<T> value)
+        paginationFailure,
+  }) {
+    return requestDesignFilterLoading(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial<T> value)? initial,
+    TResult? Function(AddRequestDesignLoading<T> value)?
+        addRequestDesignLoading,
+    TResult? Function(AddRequestDesignSuccess<T> value)?
+        addRequestDesignSuccess,
+    TResult? Function(AddRequestDesignFailure<T> value)?
+        addRequestDesignFailure,
+    TResult? Function(RequestDesignFilterLoading<T> value)?
+        requestDesignFilterLoading,
+    TResult? Function(RequestDesignFilterSuccess<T> value)?
+        requestDesignFilterSuccess,
+    TResult? Function(RequestDesignFilterFailure<T> value)?
+        requestDesignFilterFailure,
+    TResult? Function(RequestDesignPaginationLoading<T> value)?
+        paginationLoading,
+    TResult? Function(RequestDesignPaginationFailure<T> value)?
+        paginationFailure,
+  }) {
+    return requestDesignFilterLoading?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial<T> value)? initial,
+    TResult Function(AddRequestDesignLoading<T> value)? addRequestDesignLoading,
+    TResult Function(AddRequestDesignSuccess<T> value)? addRequestDesignSuccess,
+    TResult Function(AddRequestDesignFailure<T> value)? addRequestDesignFailure,
+    TResult Function(RequestDesignFilterLoading<T> value)?
+        requestDesignFilterLoading,
+    TResult Function(RequestDesignFilterSuccess<T> value)?
+        requestDesignFilterSuccess,
+    TResult Function(RequestDesignFilterFailure<T> value)?
+        requestDesignFilterFailure,
+    TResult Function(RequestDesignPaginationLoading<T> value)?
+        paginationLoading,
+    TResult Function(RequestDesignPaginationFailure<T> value)?
+        paginationFailure,
+    required TResult orElse(),
+  }) {
+    if (requestDesignFilterLoading != null) {
+      return requestDesignFilterLoading(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class RequestDesignFilterLoading<T> implements RequestDesignState<T> {
+  factory RequestDesignFilterLoading() = _$RequestDesignFilterLoadingImpl<T>;
+}
+
+/// @nodoc
+abstract class _$$RequestDesignFilterSuccessImplCopyWith<T, $Res> {
+  factory _$$RequestDesignFilterSuccessImplCopyWith(
+          _$RequestDesignFilterSuccessImpl<T> value,
+          $Res Function(_$RequestDesignFilterSuccessImpl<T>) then) =
+      __$$RequestDesignFilterSuccessImplCopyWithImpl<T, $Res>;
+  @useResult
+  $Res call({T data});
+}
+
+/// @nodoc
+class __$$RequestDesignFilterSuccessImplCopyWithImpl<T, $Res>
+    extends _$RequestDesignStateCopyWithImpl<T, $Res,
+        _$RequestDesignFilterSuccessImpl<T>>
+    implements _$$RequestDesignFilterSuccessImplCopyWith<T, $Res> {
+  __$$RequestDesignFilterSuccessImplCopyWithImpl(
+      _$RequestDesignFilterSuccessImpl<T> _value,
+      $Res Function(_$RequestDesignFilterSuccessImpl<T>) _then)
+      : super(_value, _then);
+
+  /// Create a copy of RequestDesignState
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? data = freezed,
+  }) {
+    return _then(_$RequestDesignFilterSuccessImpl<T>(
+      freezed == data
+          ? _value.data
+          : data // ignore: cast_nullable_to_non_nullable
+              as T,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$RequestDesignFilterSuccessImpl<T>
+    implements RequestDesignFilterSuccess<T> {
+  _$RequestDesignFilterSuccessImpl(this.data);
+
+  @override
+  final T data;
+
+  @override
+  String toString() {
+    return 'RequestDesignState<$T>.requestDesignFilterSuccess(data: $data)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$RequestDesignFilterSuccessImpl<T> &&
+            const DeepCollectionEquality().equals(other.data, data));
+  }
+
+  @override
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(data));
+
+  /// Create a copy of RequestDesignState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$RequestDesignFilterSuccessImplCopyWith<T,
+          _$RequestDesignFilterSuccessImpl<T>>
+      get copyWith => __$$RequestDesignFilterSuccessImplCopyWithImpl<T,
+          _$RequestDesignFilterSuccessImpl<T>>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() addRequestDesignLoading,
+    required TResult Function(T data) addRequestDesignSuccess,
+    required TResult Function(String error) addRequestDesignFailure,
+    required TResult Function() requestDesignFilterLoading,
+    required TResult Function(T data) requestDesignFilterSuccess,
+    required TResult Function(String error) requestDesignFilterFailure,
+    required TResult Function() paginationLoading,
+    required TResult Function(String error) paginationFailure,
+  }) {
+    return requestDesignFilterSuccess(data);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? addRequestDesignLoading,
+    TResult? Function(T data)? addRequestDesignSuccess,
+    TResult? Function(String error)? addRequestDesignFailure,
+    TResult? Function()? requestDesignFilterLoading,
+    TResult? Function(T data)? requestDesignFilterSuccess,
+    TResult? Function(String error)? requestDesignFilterFailure,
+    TResult? Function()? paginationLoading,
+    TResult? Function(String error)? paginationFailure,
+  }) {
+    return requestDesignFilterSuccess?.call(data);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? addRequestDesignLoading,
+    TResult Function(T data)? addRequestDesignSuccess,
+    TResult Function(String error)? addRequestDesignFailure,
+    TResult Function()? requestDesignFilterLoading,
+    TResult Function(T data)? requestDesignFilterSuccess,
+    TResult Function(String error)? requestDesignFilterFailure,
+    TResult Function()? paginationLoading,
+    TResult Function(String error)? paginationFailure,
+    required TResult orElse(),
+  }) {
+    if (requestDesignFilterSuccess != null) {
+      return requestDesignFilterSuccess(data);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial<T> value) initial,
+    required TResult Function(AddRequestDesignLoading<T> value)
+        addRequestDesignLoading,
+    required TResult Function(AddRequestDesignSuccess<T> value)
+        addRequestDesignSuccess,
+    required TResult Function(AddRequestDesignFailure<T> value)
+        addRequestDesignFailure,
+    required TResult Function(RequestDesignFilterLoading<T> value)
+        requestDesignFilterLoading,
+    required TResult Function(RequestDesignFilterSuccess<T> value)
+        requestDesignFilterSuccess,
+    required TResult Function(RequestDesignFilterFailure<T> value)
+        requestDesignFilterFailure,
+    required TResult Function(RequestDesignPaginationLoading<T> value)
+        paginationLoading,
+    required TResult Function(RequestDesignPaginationFailure<T> value)
+        paginationFailure,
+  }) {
+    return requestDesignFilterSuccess(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial<T> value)? initial,
+    TResult? Function(AddRequestDesignLoading<T> value)?
+        addRequestDesignLoading,
+    TResult? Function(AddRequestDesignSuccess<T> value)?
+        addRequestDesignSuccess,
+    TResult? Function(AddRequestDesignFailure<T> value)?
+        addRequestDesignFailure,
+    TResult? Function(RequestDesignFilterLoading<T> value)?
+        requestDesignFilterLoading,
+    TResult? Function(RequestDesignFilterSuccess<T> value)?
+        requestDesignFilterSuccess,
+    TResult? Function(RequestDesignFilterFailure<T> value)?
+        requestDesignFilterFailure,
+    TResult? Function(RequestDesignPaginationLoading<T> value)?
+        paginationLoading,
+    TResult? Function(RequestDesignPaginationFailure<T> value)?
+        paginationFailure,
+  }) {
+    return requestDesignFilterSuccess?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial<T> value)? initial,
+    TResult Function(AddRequestDesignLoading<T> value)? addRequestDesignLoading,
+    TResult Function(AddRequestDesignSuccess<T> value)? addRequestDesignSuccess,
+    TResult Function(AddRequestDesignFailure<T> value)? addRequestDesignFailure,
+    TResult Function(RequestDesignFilterLoading<T> value)?
+        requestDesignFilterLoading,
+    TResult Function(RequestDesignFilterSuccess<T> value)?
+        requestDesignFilterSuccess,
+    TResult Function(RequestDesignFilterFailure<T> value)?
+        requestDesignFilterFailure,
+    TResult Function(RequestDesignPaginationLoading<T> value)?
+        paginationLoading,
+    TResult Function(RequestDesignPaginationFailure<T> value)?
+        paginationFailure,
+    required TResult orElse(),
+  }) {
+    if (requestDesignFilterSuccess != null) {
+      return requestDesignFilterSuccess(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class RequestDesignFilterSuccess<T> implements RequestDesignState<T> {
+  factory RequestDesignFilterSuccess(final T data) =
+      _$RequestDesignFilterSuccessImpl<T>;
+
+  T get data;
+
+  /// Create a copy of RequestDesignState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$RequestDesignFilterSuccessImplCopyWith<T,
+          _$RequestDesignFilterSuccessImpl<T>>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$RequestDesignFilterFailureImplCopyWith<T, $Res> {
+  factory _$$RequestDesignFilterFailureImplCopyWith(
+          _$RequestDesignFilterFailureImpl<T> value,
+          $Res Function(_$RequestDesignFilterFailureImpl<T>) then) =
+      __$$RequestDesignFilterFailureImplCopyWithImpl<T, $Res>;
+  @useResult
+  $Res call({String error});
+}
+
+/// @nodoc
+class __$$RequestDesignFilterFailureImplCopyWithImpl<T, $Res>
+    extends _$RequestDesignStateCopyWithImpl<T, $Res,
+        _$RequestDesignFilterFailureImpl<T>>
+    implements _$$RequestDesignFilterFailureImplCopyWith<T, $Res> {
+  __$$RequestDesignFilterFailureImplCopyWithImpl(
+      _$RequestDesignFilterFailureImpl<T> _value,
+      $Res Function(_$RequestDesignFilterFailureImpl<T>) _then)
+      : super(_value, _then);
+
+  /// Create a copy of RequestDesignState
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? error = null,
+  }) {
+    return _then(_$RequestDesignFilterFailureImpl<T>(
+      error: null == error
+          ? _value.error
+          : error // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$RequestDesignFilterFailureImpl<T>
+    implements RequestDesignFilterFailure<T> {
+  _$RequestDesignFilterFailureImpl({required this.error});
+
+  @override
+  final String error;
+
+  @override
+  String toString() {
+    return 'RequestDesignState<$T>.requestDesignFilterFailure(error: $error)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$RequestDesignFilterFailureImpl<T> &&
+            (identical(other.error, error) || other.error == error));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, error);
+
+  /// Create a copy of RequestDesignState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$RequestDesignFilterFailureImplCopyWith<T,
+          _$RequestDesignFilterFailureImpl<T>>
+      get copyWith => __$$RequestDesignFilterFailureImplCopyWithImpl<T,
+          _$RequestDesignFilterFailureImpl<T>>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() addRequestDesignLoading,
+    required TResult Function(T data) addRequestDesignSuccess,
+    required TResult Function(String error) addRequestDesignFailure,
+    required TResult Function() requestDesignFilterLoading,
+    required TResult Function(T data) requestDesignFilterSuccess,
+    required TResult Function(String error) requestDesignFilterFailure,
+    required TResult Function() paginationLoading,
+    required TResult Function(String error) paginationFailure,
+  }) {
+    return requestDesignFilterFailure(error);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? addRequestDesignLoading,
+    TResult? Function(T data)? addRequestDesignSuccess,
+    TResult? Function(String error)? addRequestDesignFailure,
+    TResult? Function()? requestDesignFilterLoading,
+    TResult? Function(T data)? requestDesignFilterSuccess,
+    TResult? Function(String error)? requestDesignFilterFailure,
+    TResult? Function()? paginationLoading,
+    TResult? Function(String error)? paginationFailure,
+  }) {
+    return requestDesignFilterFailure?.call(error);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? addRequestDesignLoading,
+    TResult Function(T data)? addRequestDesignSuccess,
+    TResult Function(String error)? addRequestDesignFailure,
+    TResult Function()? requestDesignFilterLoading,
+    TResult Function(T data)? requestDesignFilterSuccess,
+    TResult Function(String error)? requestDesignFilterFailure,
+    TResult Function()? paginationLoading,
+    TResult Function(String error)? paginationFailure,
+    required TResult orElse(),
+  }) {
+    if (requestDesignFilterFailure != null) {
+      return requestDesignFilterFailure(error);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial<T> value) initial,
+    required TResult Function(AddRequestDesignLoading<T> value)
+        addRequestDesignLoading,
+    required TResult Function(AddRequestDesignSuccess<T> value)
+        addRequestDesignSuccess,
+    required TResult Function(AddRequestDesignFailure<T> value)
+        addRequestDesignFailure,
+    required TResult Function(RequestDesignFilterLoading<T> value)
+        requestDesignFilterLoading,
+    required TResult Function(RequestDesignFilterSuccess<T> value)
+        requestDesignFilterSuccess,
+    required TResult Function(RequestDesignFilterFailure<T> value)
+        requestDesignFilterFailure,
+    required TResult Function(RequestDesignPaginationLoading<T> value)
+        paginationLoading,
+    required TResult Function(RequestDesignPaginationFailure<T> value)
+        paginationFailure,
+  }) {
+    return requestDesignFilterFailure(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial<T> value)? initial,
+    TResult? Function(AddRequestDesignLoading<T> value)?
+        addRequestDesignLoading,
+    TResult? Function(AddRequestDesignSuccess<T> value)?
+        addRequestDesignSuccess,
+    TResult? Function(AddRequestDesignFailure<T> value)?
+        addRequestDesignFailure,
+    TResult? Function(RequestDesignFilterLoading<T> value)?
+        requestDesignFilterLoading,
+    TResult? Function(RequestDesignFilterSuccess<T> value)?
+        requestDesignFilterSuccess,
+    TResult? Function(RequestDesignFilterFailure<T> value)?
+        requestDesignFilterFailure,
+    TResult? Function(RequestDesignPaginationLoading<T> value)?
+        paginationLoading,
+    TResult? Function(RequestDesignPaginationFailure<T> value)?
+        paginationFailure,
+  }) {
+    return requestDesignFilterFailure?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial<T> value)? initial,
+    TResult Function(AddRequestDesignLoading<T> value)? addRequestDesignLoading,
+    TResult Function(AddRequestDesignSuccess<T> value)? addRequestDesignSuccess,
+    TResult Function(AddRequestDesignFailure<T> value)? addRequestDesignFailure,
+    TResult Function(RequestDesignFilterLoading<T> value)?
+        requestDesignFilterLoading,
+    TResult Function(RequestDesignFilterSuccess<T> value)?
+        requestDesignFilterSuccess,
+    TResult Function(RequestDesignFilterFailure<T> value)?
+        requestDesignFilterFailure,
+    TResult Function(RequestDesignPaginationLoading<T> value)?
+        paginationLoading,
+    TResult Function(RequestDesignPaginationFailure<T> value)?
+        paginationFailure,
+    required TResult orElse(),
+  }) {
+    if (requestDesignFilterFailure != null) {
+      return requestDesignFilterFailure(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class RequestDesignFilterFailure<T> implements RequestDesignState<T> {
+  factory RequestDesignFilterFailure({required final String error}) =
+      _$RequestDesignFilterFailureImpl<T>;
+
+  String get error;
+
+  /// Create a copy of RequestDesignState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$RequestDesignFilterFailureImplCopyWith<T,
+          _$RequestDesignFilterFailureImpl<T>>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$RequestDesignPaginationLoadingImplCopyWith<T, $Res> {
+  factory _$$RequestDesignPaginationLoadingImplCopyWith(
+          _$RequestDesignPaginationLoadingImpl<T> value,
+          $Res Function(_$RequestDesignPaginationLoadingImpl<T>) then) =
+      __$$RequestDesignPaginationLoadingImplCopyWithImpl<T, $Res>;
+}
+
+/// @nodoc
+class __$$RequestDesignPaginationLoadingImplCopyWithImpl<T, $Res>
+    extends _$RequestDesignStateCopyWithImpl<T, $Res,
+        _$RequestDesignPaginationLoadingImpl<T>>
+    implements _$$RequestDesignPaginationLoadingImplCopyWith<T, $Res> {
+  __$$RequestDesignPaginationLoadingImplCopyWithImpl(
+      _$RequestDesignPaginationLoadingImpl<T> _value,
+      $Res Function(_$RequestDesignPaginationLoadingImpl<T>) _then)
+      : super(_value, _then);
+
+  /// Create a copy of RequestDesignState
+  /// with the given fields replaced by the non-null parameter values.
+}
+
+/// @nodoc
+
+class _$RequestDesignPaginationLoadingImpl<T>
+    implements RequestDesignPaginationLoading<T> {
+  _$RequestDesignPaginationLoadingImpl();
+
+  @override
+  String toString() {
+    return 'RequestDesignState<$T>.paginationLoading()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$RequestDesignPaginationLoadingImpl<T>);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() addRequestDesignLoading,
+    required TResult Function(T data) addRequestDesignSuccess,
+    required TResult Function(String error) addRequestDesignFailure,
+    required TResult Function() requestDesignFilterLoading,
+    required TResult Function(T data) requestDesignFilterSuccess,
+    required TResult Function(String error) requestDesignFilterFailure,
+    required TResult Function() paginationLoading,
+    required TResult Function(String error) paginationFailure,
+  }) {
+    return paginationLoading();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? addRequestDesignLoading,
+    TResult? Function(T data)? addRequestDesignSuccess,
+    TResult? Function(String error)? addRequestDesignFailure,
+    TResult? Function()? requestDesignFilterLoading,
+    TResult? Function(T data)? requestDesignFilterSuccess,
+    TResult? Function(String error)? requestDesignFilterFailure,
+    TResult? Function()? paginationLoading,
+    TResult? Function(String error)? paginationFailure,
+  }) {
+    return paginationLoading?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? addRequestDesignLoading,
+    TResult Function(T data)? addRequestDesignSuccess,
+    TResult Function(String error)? addRequestDesignFailure,
+    TResult Function()? requestDesignFilterLoading,
+    TResult Function(T data)? requestDesignFilterSuccess,
+    TResult Function(String error)? requestDesignFilterFailure,
+    TResult Function()? paginationLoading,
+    TResult Function(String error)? paginationFailure,
+    required TResult orElse(),
+  }) {
+    if (paginationLoading != null) {
+      return paginationLoading();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial<T> value) initial,
+    required TResult Function(AddRequestDesignLoading<T> value)
+        addRequestDesignLoading,
+    required TResult Function(AddRequestDesignSuccess<T> value)
+        addRequestDesignSuccess,
+    required TResult Function(AddRequestDesignFailure<T> value)
+        addRequestDesignFailure,
+    required TResult Function(RequestDesignFilterLoading<T> value)
+        requestDesignFilterLoading,
+    required TResult Function(RequestDesignFilterSuccess<T> value)
+        requestDesignFilterSuccess,
+    required TResult Function(RequestDesignFilterFailure<T> value)
+        requestDesignFilterFailure,
+    required TResult Function(RequestDesignPaginationLoading<T> value)
+        paginationLoading,
+    required TResult Function(RequestDesignPaginationFailure<T> value)
+        paginationFailure,
+  }) {
+    return paginationLoading(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial<T> value)? initial,
+    TResult? Function(AddRequestDesignLoading<T> value)?
+        addRequestDesignLoading,
+    TResult? Function(AddRequestDesignSuccess<T> value)?
+        addRequestDesignSuccess,
+    TResult? Function(AddRequestDesignFailure<T> value)?
+        addRequestDesignFailure,
+    TResult? Function(RequestDesignFilterLoading<T> value)?
+        requestDesignFilterLoading,
+    TResult? Function(RequestDesignFilterSuccess<T> value)?
+        requestDesignFilterSuccess,
+    TResult? Function(RequestDesignFilterFailure<T> value)?
+        requestDesignFilterFailure,
+    TResult? Function(RequestDesignPaginationLoading<T> value)?
+        paginationLoading,
+    TResult? Function(RequestDesignPaginationFailure<T> value)?
+        paginationFailure,
+  }) {
+    return paginationLoading?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial<T> value)? initial,
+    TResult Function(AddRequestDesignLoading<T> value)? addRequestDesignLoading,
+    TResult Function(AddRequestDesignSuccess<T> value)? addRequestDesignSuccess,
+    TResult Function(AddRequestDesignFailure<T> value)? addRequestDesignFailure,
+    TResult Function(RequestDesignFilterLoading<T> value)?
+        requestDesignFilterLoading,
+    TResult Function(RequestDesignFilterSuccess<T> value)?
+        requestDesignFilterSuccess,
+    TResult Function(RequestDesignFilterFailure<T> value)?
+        requestDesignFilterFailure,
+    TResult Function(RequestDesignPaginationLoading<T> value)?
+        paginationLoading,
+    TResult Function(RequestDesignPaginationFailure<T> value)?
+        paginationFailure,
+    required TResult orElse(),
+  }) {
+    if (paginationLoading != null) {
+      return paginationLoading(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class RequestDesignPaginationLoading<T>
+    implements RequestDesignState<T> {
+  factory RequestDesignPaginationLoading() =
+      _$RequestDesignPaginationLoadingImpl<T>;
+}
+
+/// @nodoc
+abstract class _$$RequestDesignPaginationFailureImplCopyWith<T, $Res> {
+  factory _$$RequestDesignPaginationFailureImplCopyWith(
+          _$RequestDesignPaginationFailureImpl<T> value,
+          $Res Function(_$RequestDesignPaginationFailureImpl<T>) then) =
+      __$$RequestDesignPaginationFailureImplCopyWithImpl<T, $Res>;
+  @useResult
+  $Res call({String error});
+}
+
+/// @nodoc
+class __$$RequestDesignPaginationFailureImplCopyWithImpl<T, $Res>
+    extends _$RequestDesignStateCopyWithImpl<T, $Res,
+        _$RequestDesignPaginationFailureImpl<T>>
+    implements _$$RequestDesignPaginationFailureImplCopyWith<T, $Res> {
+  __$$RequestDesignPaginationFailureImplCopyWithImpl(
+      _$RequestDesignPaginationFailureImpl<T> _value,
+      $Res Function(_$RequestDesignPaginationFailureImpl<T>) _then)
+      : super(_value, _then);
+
+  /// Create a copy of RequestDesignState
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? error = null,
+  }) {
+    return _then(_$RequestDesignPaginationFailureImpl<T>(
+      error: null == error
+          ? _value.error
+          : error // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$RequestDesignPaginationFailureImpl<T>
+    implements RequestDesignPaginationFailure<T> {
+  _$RequestDesignPaginationFailureImpl({required this.error});
+
+  @override
+  final String error;
+
+  @override
+  String toString() {
+    return 'RequestDesignState<$T>.paginationFailure(error: $error)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$RequestDesignPaginationFailureImpl<T> &&
+            (identical(other.error, error) || other.error == error));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, error);
+
+  /// Create a copy of RequestDesignState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$RequestDesignPaginationFailureImplCopyWith<T,
+          _$RequestDesignPaginationFailureImpl<T>>
+      get copyWith => __$$RequestDesignPaginationFailureImplCopyWithImpl<T,
+          _$RequestDesignPaginationFailureImpl<T>>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() addRequestDesignLoading,
+    required TResult Function(T data) addRequestDesignSuccess,
+    required TResult Function(String error) addRequestDesignFailure,
+    required TResult Function() requestDesignFilterLoading,
+    required TResult Function(T data) requestDesignFilterSuccess,
+    required TResult Function(String error) requestDesignFilterFailure,
+    required TResult Function() paginationLoading,
+    required TResult Function(String error) paginationFailure,
+  }) {
+    return paginationFailure(error);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? addRequestDesignLoading,
+    TResult? Function(T data)? addRequestDesignSuccess,
+    TResult? Function(String error)? addRequestDesignFailure,
+    TResult? Function()? requestDesignFilterLoading,
+    TResult? Function(T data)? requestDesignFilterSuccess,
+    TResult? Function(String error)? requestDesignFilterFailure,
+    TResult? Function()? paginationLoading,
+    TResult? Function(String error)? paginationFailure,
+  }) {
+    return paginationFailure?.call(error);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? addRequestDesignLoading,
+    TResult Function(T data)? addRequestDesignSuccess,
+    TResult Function(String error)? addRequestDesignFailure,
+    TResult Function()? requestDesignFilterLoading,
+    TResult Function(T data)? requestDesignFilterSuccess,
+    TResult Function(String error)? requestDesignFilterFailure,
+    TResult Function()? paginationLoading,
+    TResult Function(String error)? paginationFailure,
+    required TResult orElse(),
+  }) {
+    if (paginationFailure != null) {
+      return paginationFailure(error);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial<T> value) initial,
+    required TResult Function(AddRequestDesignLoading<T> value)
+        addRequestDesignLoading,
+    required TResult Function(AddRequestDesignSuccess<T> value)
+        addRequestDesignSuccess,
+    required TResult Function(AddRequestDesignFailure<T> value)
+        addRequestDesignFailure,
+    required TResult Function(RequestDesignFilterLoading<T> value)
+        requestDesignFilterLoading,
+    required TResult Function(RequestDesignFilterSuccess<T> value)
+        requestDesignFilterSuccess,
+    required TResult Function(RequestDesignFilterFailure<T> value)
+        requestDesignFilterFailure,
+    required TResult Function(RequestDesignPaginationLoading<T> value)
+        paginationLoading,
+    required TResult Function(RequestDesignPaginationFailure<T> value)
+        paginationFailure,
+  }) {
+    return paginationFailure(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial<T> value)? initial,
+    TResult? Function(AddRequestDesignLoading<T> value)?
+        addRequestDesignLoading,
+    TResult? Function(AddRequestDesignSuccess<T> value)?
+        addRequestDesignSuccess,
+    TResult? Function(AddRequestDesignFailure<T> value)?
+        addRequestDesignFailure,
+    TResult? Function(RequestDesignFilterLoading<T> value)?
+        requestDesignFilterLoading,
+    TResult? Function(RequestDesignFilterSuccess<T> value)?
+        requestDesignFilterSuccess,
+    TResult? Function(RequestDesignFilterFailure<T> value)?
+        requestDesignFilterFailure,
+    TResult? Function(RequestDesignPaginationLoading<T> value)?
+        paginationLoading,
+    TResult? Function(RequestDesignPaginationFailure<T> value)?
+        paginationFailure,
+  }) {
+    return paginationFailure?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial<T> value)? initial,
+    TResult Function(AddRequestDesignLoading<T> value)? addRequestDesignLoading,
+    TResult Function(AddRequestDesignSuccess<T> value)? addRequestDesignSuccess,
+    TResult Function(AddRequestDesignFailure<T> value)? addRequestDesignFailure,
+    TResult Function(RequestDesignFilterLoading<T> value)?
+        requestDesignFilterLoading,
+    TResult Function(RequestDesignFilterSuccess<T> value)?
+        requestDesignFilterSuccess,
+    TResult Function(RequestDesignFilterFailure<T> value)?
+        requestDesignFilterFailure,
+    TResult Function(RequestDesignPaginationLoading<T> value)?
+        paginationLoading,
+    TResult Function(RequestDesignPaginationFailure<T> value)?
+        paginationFailure,
+    required TResult orElse(),
+  }) {
+    if (paginationFailure != null) {
+      return paginationFailure(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class RequestDesignPaginationFailure<T>
+    implements RequestDesignState<T> {
+  factory RequestDesignPaginationFailure({required final String error}) =
+      _$RequestDesignPaginationFailureImpl<T>;
+
+  String get error;
+
+  /// Create a copy of RequestDesignState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$RequestDesignPaginationFailureImplCopyWith<T,
+          _$RequestDesignPaginationFailureImpl<T>>
       get copyWith => throw _privateConstructorUsedError;
 }
