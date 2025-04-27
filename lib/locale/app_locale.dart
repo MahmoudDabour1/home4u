@@ -338,6 +338,12 @@ class AppLocale {
   static const String pleaseSelectWorkerType = 'Please Select Worker Type';
   static const String materialNeeded = 'Material needed';
   static const String pleaseSelectMaterialNeeded = 'Please Select Material needed';
+  static const String about = 'About';
+  static const String contactInfo = 'Contact Info';
+  static const String location  = 'Location: ';
+  static const String phone  = 'Phone: ';
+  static const String profileStats  = 'Profile Stats';
+  static const String editPhone  = 'Edit Phone';
 
   static const Map<String, dynamic> en = {
     onBoardingTitle1: 'Civil works and finishing services',
@@ -620,6 +626,11 @@ class AppLocale {
     pleaseSelectWorkerType: 'Please Select Worker Type',
     materialNeeded: 'Material needed',
     pleaseSelectMaterialNeeded: 'Please Select Material needed',
+    about: 'About',
+    contactInfo: 'Contact Info',
+    location: 'Location: ',
+    phone: 'Phone: ',
+    profileStats: 'Profile Stats',
   };
 
   static const Map<String, dynamic> ar = {
@@ -901,5 +912,10 @@ class AppLocale {
     pleaseSelectWorkerType: 'الرجاء اختيار نوع العامل',
     materialNeeded: 'المواد المطلوبة',
     pleaseSelectMaterialNeeded: 'الرجاء اختيار المواد المطلوبة',
+    about: 'حول',
+    contactInfo: 'معلومات الاتصال',
+    location: 'الموقع: ',
+    phone: 'الهاتف: ',
+    profileStats: 'إحصائيات الملف الشخصي',
   };
 }
