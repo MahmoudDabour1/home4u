@@ -87,4 +87,11 @@ abstract class AppAssets {
   static const String askEngineerSvg = 'assets/svgs/ask_engineer_svg.svg';
   static const String askTechnicalSvg = 'assets/svgs/ask_technical_worker.svg';
   static const String homeGirlImage = 'assets/images/girl.png';
+  static const String messageSvg = 'assets/svgs/message_icon_svg.svg';
+  static const String locationSvg = 'assets/svgs/location_icon_svg.svg';
+  static const String behanceSvg = 'assets/svgs/behance_icon.svg';
+  static const String whatsappSvg = 'assets/svgs/whatsapp_svg.svg';
+  static const String heartOutlineSvg = 'assets/svgs/heart_outline_svg.svg';
+  static const String followersSvg = 'assets/svgs/followers_svg.svg';
+  static const String completeSvg = 'assets/svgs/complete_svg.svg';
 }

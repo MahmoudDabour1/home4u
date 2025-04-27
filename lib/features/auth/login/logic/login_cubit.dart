@@ -34,6 +34,7 @@ class LoginCubit extends Cubit<LoginState> {
       success: (loginResponse) async {
         final token = loginResponse.data?.token;
         final userType = loginResponse.data?.user?.userType?.code;
+        await SharedPrefHelper.setData(SharedPrefKeys.userType, userType);
         final userTypeId = loginResponse.data?.user?.userType?.id;
         final userBusinessTypeId =
             loginResponse.data?.user?.business?.businessId ?? 0;
