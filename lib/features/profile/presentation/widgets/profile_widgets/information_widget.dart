@@ -35,8 +35,6 @@ class InformationWidget extends StatelessWidget {
     final profileData = engineerProfileResponseModel?.data ??
         technicalWorkerProfileData?.data ??
         engineeringOfficeProfileData?.data;
-
-    logger.d("${engineeringOfficeProfileData?.data?.description}");
     return Padding(
       padding: EdgeInsets.symmetric(horizontal: 24.w),
       child: BlocBuilder<ProfileCubit, ProfileState>(

@@ -30,18 +30,18 @@ class ProfileCubit extends Cubit<ProfileState> {
 
   static ProfileCubit get(context) => BlocProvider.of(context);
 
-  EngineerProfileResponseModel? engineerProfileCachedData;
-  TechnicalWorkerResponseModel? technicalWorkerProfileCachedData;
-  EngineeringOfficeProfileResponseModel? engineeringOfficeProfileCachedData;
+  EngineerProfileResponseModel? engineerProfileData;
+  TechnicalWorkerResponseModel? technicalWorkerProfileData;
+  EngineeringOfficeProfileResponseModel? engineeringOfficeProfileData;
 
-  Future<void> initializeProfileData() async {
-    engineerProfileCachedData =
-        await _profileLocalDataSource.getEngineerProfileData();
-    technicalWorkerProfileCachedData =
-        await _profileLocalDataSource.getTechnicalWorkerProfileData();
-    engineeringOfficeProfileCachedData =
-        await _profileLocalDataSource.getEngineeringOfficeProfileData();
-  }
+  // Future<void> initializeProfileData() async {
+  //   engineerProfileCachedData =
+  //       await _profileLocalDataSource.getEngineerProfileData();
+  //   technicalWorkerProfileCachedData =
+  //       await _profileLocalDataSource.getTechnicalWorkerProfileData();
+  //   engineeringOfficeProfileCachedData =
+  //       await _profileLocalDataSource.getEngineeringOfficeProfileData();
+  // }
 
   List<GovernorateDataModel> governorates = [];
   List<CityDataModel> cities = [];
@@ -53,6 +53,7 @@ class ProfileCubit extends Cubit<ProfileState> {
   final bioController = TextEditingController();
   final linkedinController = TextEditingController();
   final behanceController = TextEditingController();
+  final phoneController = TextEditingController();
 
   final tradeNameController = TextEditingController();
   final descriptionController = TextEditingController();
@@ -73,12 +74,26 @@ class ProfileCubit extends Cubit<ProfileState> {
     });
   }
 
+  Object? get currentUser {
+    switch (SharedPrefHelper.getString(SharedPrefKeys.userType)) {
+      case "engineering_office":
+        return engineeringOfficeProfileData?.data?.user;
+      case "technical_worker":
+        return technicalWorkerProfileData?.data?.user;
+      case "engineer":
+        return engineerProfileData?.data?.user;
+      default:
+        return null;
+    }
+  }
+
   Future<void> getEngineerProfileData() async {
     emit(const ProfileState.loadingProfileData());
     final result = await _profileRepo.getEngineerByToken();
     result.when(
       success: (profileData) async {
         await _profileLocalDataSource.cacheEngineerProfileData(profileData);
+        engineerProfileData = profileData;
         emit(ProfileState.successEngineerProfileData(profileData));
       },
       failure: (error) {
@@ -95,6 +110,7 @@ class ProfileCubit extends Cubit<ProfileState> {
       success: (profileData) async {
         await _profileLocalDataSource
             .cacheTechnicalWorkerProfileData(profileData);
+        technicalWorkerProfileData = profileData;
         logger.e("Technical Worker Profile Data Cached $profileData");
         emit(ProfileState.successTechnicalWorkerProfileData(profileData));
       },
@@ -111,6 +127,7 @@ class ProfileCubit extends Cubit<ProfileState> {
       success: (profileData) async {
         await _profileLocalDataSource
             .cacheEngineeringOfficeProfileData(profileData);
+        engineeringOfficeProfileData = profileData;
         logger.e("Engineering Office Profile Data Cached $profileData");
         emit(ProfileState.successEngineeringOfficeProfileData(profileData));
       },
@@ -266,9 +283,9 @@ class ProfileCubit extends Cubit<ProfileState> {
             ? lastNameController.text
             : engineerProfileData?.data?.user?.lastName ?? "",
         "email": engineerProfileData?.data?.user?.email ?? "",
-        // "phone": engineerProfileData?.data?.user?.phone ??
-        //     technicalWorkerProfileData?.data?.user?.phone ??
-        //     "",
+        "phone": phoneController.text.isNotEmpty
+            ? phoneController.text
+            : engineerProfileData?.data?.user?.phone,
         "personalPhoto": engineerProfileData?.data?.user?.personalPhoto ?? "",
         "password": engineerProfileData?.data?.user?.password ?? "",
         "userType": {
@@ -332,9 +349,9 @@ class ProfileCubit extends Cubit<ProfileState> {
             ? lastNameController.text
             : technicalProfileData?.data?.user?.lastName ?? "",
         "email": technicalProfileData?.data?.user?.email ?? "",
-        // "phone": engineerProfileData?.data?.user?.phone ??
-        //     technicalWorkerProfileData?.data?.user?.phone ??
-        //     "",
+        "phone": phoneController.text.isNotEmpty
+            ? phoneController.text
+            : technicalWorkerProfileData?.data?.user?.phone,
         "personalPhoto": technicalProfileData?.data?.user?.personalPhoto ?? "",
         "password": technicalProfileData?.data?.user?.password ?? "",
         "userType": {
@@ -392,7 +409,9 @@ class ProfileCubit extends Cubit<ProfileState> {
             ? lastNameController.text
             : engineeringOfficeData?.data?.user?.lastName ?? "",
         "email": engineeringOfficeData?.data?.user?.email ?? '',
-        "phone": engineeringOfficeData?.data?.user?.phone ?? '',
+        "phone": phoneController.text.isNotEmpty
+            ? phoneController.text
+            : engineeringOfficeData?.data?.user?.phone ?? '',
         "personalPhoto": engineeringOfficeData?.data?.user?.personalPhoto ?? "",
         "userType": {
           "id": engineeringOfficeData?.data?.user?.userType?.id ?? 0,

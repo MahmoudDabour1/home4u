@@ -2,20 +2,20 @@ import 'package:flutter/material.dart';
 import 'package:flutter_localization/flutter_localization.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import '../../../../../core/theming/app_assets.dart';
-import '../../../../../core/widgets/app_custom_drop_down_search_menu.dart';
-import '../../../../../locale/app_locale.dart';
+import '../../locale/app_locale.dart';
+import '../theming/app_assets.dart';
+import 'app_custom_drop_down_search_menu.dart';
 
-class CertificationCustomMenuAndDialog extends StatelessWidget {
+class AppCustomMenuAndDialog extends StatelessWidget {
   final Widget deleteWidget;
   final VoidCallback? onEdit;
   final String? icon;
 
-
-  const CertificationCustomMenuAndDialog({
+  const AppCustomMenuAndDialog({
     super.key,
     required this.deleteWidget,
-    this.onEdit, this.icon = AppAssets.menuSvgImage,
+    this.onEdit,
+    this.icon,
   });
 
   @override
@@ -23,7 +23,7 @@ class CertificationCustomMenuAndDialog extends StatelessWidget {
     return Padding(
       padding: EdgeInsetsDirectional.only(top: 10.h, start: 10.w),
       child: AppCustomDropDownSearchMenu(
-        icon:icon?? AppAssets.menuSvgImage,
+        icon: icon ?? AppAssets.menuSvgImage,
         onItemSelected: (value) {
           if (value == AppLocale.delete.getString(context)) {
             showDialog(
