@@ -7,9 +7,9 @@ class RequestDesignBody {
   @JsonKey(name: "phoneNumber")
   final String? phoneNumber;
   @JsonKey(name: "unitType")
-  final Governorate? unitType;
+  final GovernorateRequest? unitType;
   @JsonKey(name: "governorate")
-  final Governorate? governorate;
+  final GovernorateRequest? governorate;
   @JsonKey(name: "unitArea")
   final int? unitArea;
   @JsonKey(name: "budget")
@@ -36,15 +36,15 @@ class RequestDesignBody {
 }
 
 @JsonSerializable()
-class Governorate {
+class GovernorateRequest {
   @JsonKey(name: "id")
   final int? id;
 
-  Governorate({
+  GovernorateRequest({
     this.id,
   });
 
-  factory Governorate.fromJson(Map<String, dynamic> json) =>
+  factory GovernorateRequest.fromJson(Map<String, dynamic> json) =>
       _$GovernorateFromJson(json);
 
   Map<String, dynamic> toJson() => _$GovernorateToJson(this);

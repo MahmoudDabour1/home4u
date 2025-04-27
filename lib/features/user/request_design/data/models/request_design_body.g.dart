@@ -11,10 +11,10 @@ RequestDesignBody _$RequestDesignBodyFromJson(Map<String, dynamic> json) =>
       phoneNumber: json['phoneNumber'] as String?,
       unitType: json['unitType'] == null
           ? null
-          : Governorate.fromJson(json['unitType'] as Map<String, dynamic>),
+          : GovernorateRequest.fromJson(json['unitType'] as Map<String, dynamic>),
       governorate: json['governorate'] == null
           ? null
-          : Governorate.fromJson(json['governorate'] as Map<String, dynamic>),
+          : GovernorateRequest.fromJson(json['governorate'] as Map<String, dynamic>),
       unitArea: (json['unitArea'] as num?)?.toInt(),
       budget: (json['budget'] as num?)?.toInt(),
       requiredDuration: (json['requiredDuration'] as num?)?.toInt(),
@@ -32,11 +32,11 @@ Map<String, dynamic> _$RequestDesignBodyToJson(RequestDesignBody instance) =>
       'notes': instance.notes,
     };
 
-Governorate _$GovernorateFromJson(Map<String, dynamic> json) => Governorate(
+GovernorateRequest _$GovernorateFromJson(Map<String, dynamic> json) => GovernorateRequest(
       id: (json['id'] as num?)?.toInt(),
     );
 
-Map<String, dynamic> _$GovernorateToJson(Governorate instance) =>
+Map<String, dynamic> _$GovernorateToJson(GovernorateRequest instance) =>
     <String, dynamic>{
       'id': instance.id,
     };
