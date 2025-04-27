@@ -41,6 +41,7 @@ class Assets {
   static const String svgsAskTechnical = 'assets/svgs/ask_technical.svg';
   static const String svgsBehanceIcon = 'assets/svgs/behance_icon.svg';
   static const String svgsChangeLanguage = 'assets/svgs/change_language.svg';
+  static const String svgsCompleteSvg = 'assets/svgs/complete_svg.svg';
   static const String svgsCustomFurnitureSvg = 'assets/svgs/custom_furniture_svg.svg';
   static const String svgsDecorSvg = 'assets/svgs/decor_svg.svg';
   static const String svgsDeleteIconSvg = 'assets/svgs/delete_icon_svg.svg';
@@ -51,7 +52,9 @@ class Assets {
   static const String svgsFacebookLogo = 'assets/svgs/facebook_logo.svg';
   static const String svgsFaqs = 'assets/svgs/faqs.svg';
   static const String svgsFilterSvg = 'assets/svgs/filter_svg.svg';
+  static const String svgsFollowersSvg = 'assets/svgs/followers_svg.svg';
   static const String svgsFurnitureSvg = 'assets/svgs/furniture_svg.svg';
+  static const String svgsHeartOutlineSvg = 'assets/svgs/heart_outline_svg.svg';
   static const String svgsHomeGirlSvg = 'assets/svgs/home_girl_svg.svg';
   static const String svgsHomeSvg = 'assets/svgs/home_svg.svg';
   static const String svgsHouseBuilding = 'assets/svgs/house_building.svg';
@@ -82,6 +85,7 @@ class Assets {
   static const String svgsRenovateSvg = 'assets/svgs/renovate_svg.svg';
   static const String svgsRequestDesignSvg = 'assets/svgs/request_design_svg.svg';
   static const String svgsReviewSvg = 'assets/svgs/review_svg.svg';
+  static const String svgsSaveBlackSvg = 'assets/svgs/save_black_svg.svg';
   static const String svgsSaveIconSvg = 'assets/svgs/save_icon_svg.svg';
   static const String svgsSearchSvg = 'assets/svgs/search_svg.svg';
   static const String svgsSettingSvg = 'assets/svgs/setting_svg.svg';
@@ -94,6 +98,7 @@ class Assets {
   static const String svgsStockSvg = 'assets/svgs/stock_svg.svg';
   static const String svgsSubmitSvgIcon = 'assets/svgs/submit_svg_icon.svg';
   static const String svgsSuccessMission = 'assets/svgs/success_mission.svg';
+  static const String svgsTotal = 'assets/svgs/total.svg';
   static const String svgsUploadImageIcon = 'assets/svgs/upload_image_icon.svg';
   static const String svgsWaringSvg = 'assets/svgs/waring_svg.svg';
   static const String svgsWebsite = 'assets/svgs/website.svg';

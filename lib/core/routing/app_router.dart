@@ -44,6 +44,7 @@ import '../../features/profile/presentation/add_project_screen.dart';
 import '../../features/profile/presentation/edit_profile_screen.dart';
 import '../../features/profile/presentation/profile_screen.dart';
 import '../../features/profile/presentation/project_details_screen.dart';
+import '../../features/projects_filter/presentation/projects_filter_screen.dart';
 import '../../features/settings/presentation/setting_screen.dart';
 import '../../features/user/home/presentation/user_home_screen.dart';
 import '../../features/user/renovate_your_house/presentation/renovate_your_house_first_screen.dart';
@@ -238,6 +239,9 @@ class AppRouter {
       case Routes.askTechnicalFinishAndImage:
         return MaterialPageRoute(
           builder: (_) => AskTechnicalFinishAndImage(),
+        ); case Routes.projectsFilterScreen:
+        return MaterialPageRoute(
+          builder: (_) => ProjectsFilterScreen(),
         );
       default:
         return null;

@@ -94,4 +94,6 @@ abstract class AppAssets {
   static const String heartOutlineSvg = 'assets/svgs/heart_outline_svg.svg';
   static const String followersSvg = 'assets/svgs/followers_svg.svg';
   static const String completeSvg = 'assets/svgs/complete_svg.svg';
+  static const String saveBlackSvg = 'assets/svgs/save_black_svg.svg';
+  static const String totalIconSvg = 'assets/svgs/total.svg';
 }
