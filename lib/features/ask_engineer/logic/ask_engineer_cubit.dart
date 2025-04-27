@@ -4,6 +4,7 @@ import 'dart:io';
 import 'package:dio/dio.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:home4u/core/extensions/navigation_extension.dart';
 import 'package:home4u/features/ask_engineer/data/models/ask_engineer_ikp_response_model.dart';
 import 'package:home4u/features/ask_engineer/data/models/ask_engineer_image_body.dart';
 import 'package:home4u/features/ask_engineer/data/models/ask_engineer_images_response_model.dart';
@@ -12,6 +13,7 @@ import 'package:http_parser/http_parser.dart';
 
 import '../../../core/helpers/helper_methods.dart';
 import '../../../core/networking/dio_factory.dart';
+import '../../../core/routing/routes.dart';
 import 'ask_engineer_state.dart';
 
 class AskEngineerCubit extends Cubit<AskEngineerState> {
@@ -64,15 +66,16 @@ class AskEngineerCubit extends Cubit<AskEngineerState> {
     );
   }
 
-  void askEngineer() async {
+  void askEngineer(BuildContext context) async {
     emit(const AskEngineerState.loading());
     final jsonAskEngineerString = await _prepareAskEngineerData();
     final response = await _askEngineerRepo.askEngineer(jsonAskEngineerString);
     response.when(
       success: (askEngineerResponse) async {
         emit(AskEngineerState.success(askEngineerResponse));
-       await addAskEngineerImages(askEngineerResponse.data?.id??0);
+        await addAskEngineerImages(askEngineerResponse.data?.id ?? 0);
         await showToast(message: "Ask Engineer Successfully", isError: false);
+        context.pushNamed(Routes.homeScreen);
       },
       failure: (error) async {
         await showToast(message: error.message.toString(), isError: true);
@@ -92,10 +95,10 @@ class AskEngineerCubit extends Cubit<AskEngineerState> {
         .toList();
     final result = await _askEngineerRepo.addAskEngineerImage(imageBodies);
     result.when(
-      success: (imageResponse) async{
+      success: (imageResponse) async {
         emit(AskEngineerState.addAskEngineerImageSuccess(imageResponse));
-      await _uploadAskEngineerImages(imageResponse);
-        },
+        await _uploadAskEngineerImages(imageResponse);
+      },
       failure: (error) async {
         await showToast(message: error.message.toString(), isError: true);
         emit(AskEngineerState.error(error: error.message.toString()));
@@ -111,7 +114,7 @@ class AskEngineerCubit extends Cubit<AskEngineerState> {
 
     final imageFiles = await Future.wait(
       images.map(
-            (image) => MultipartFile.fromFile(
+        (image) => MultipartFile.fromFile(
           image.path,
           filename: image.path.split('/').last,
           contentType: MediaType('image', 'jpeg'),
@@ -122,12 +125,14 @@ class AskEngineerCubit extends Cubit<AskEngineerState> {
     int successCount = 0;
 
     for (var i = 0; i < imageFiles.length; i++) {
-      final result = await _askEngineerRepo.uploadAskEngineerImage("ASK_ENGINEER",
-          imageResponse.data![i].id??0, FormData.fromMap({'file': imageFiles[i]}));
+      final result = await _askEngineerRepo.uploadAskEngineerImage(
+          "ASK_ENGINEER",
+          imageResponse.data![i].id ?? 0,
+          FormData.fromMap({'file': imageFiles[i]}));
 
       result.when(
         success: (uploadResponse) {
-          if (uploadResponse.success??false) {
+          if (uploadResponse.success ?? false) {
             successCount++;
             if (successCount == imageFiles.length) {
               DioFactory.setContentType('application/json');
@@ -143,13 +148,12 @@ class AskEngineerCubit extends Cubit<AskEngineerState> {
         },
         failure: (error) => emit(
           AskEngineerState.uploadAskEngineerImageError(
-           error: error.message.toString(),
+            error: error.message.toString(),
           ),
         ),
       );
     }
   }
-
 
   Future<String> _prepareAskEngineerData() async {
     final jsonAskEngineerData = {

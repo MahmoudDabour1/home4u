@@ -9,11 +9,13 @@ import '../../../../../locale/app_locale.dart';
 class CertificationCustomMenuAndDialog extends StatelessWidget {
   final Widget deleteWidget;
   final VoidCallback? onEdit;
+  final String? icon;
+
 
   const CertificationCustomMenuAndDialog({
     super.key,
     required this.deleteWidget,
-    this.onEdit,
+    this.onEdit, this.icon = AppAssets.menuSvgImage,
   });
 
   @override
@@ -21,7 +23,7 @@ class CertificationCustomMenuAndDialog extends StatelessWidget {
     return Padding(
       padding: EdgeInsetsDirectional.only(top: 10.h, start: 10.w),
       child: AppCustomDropDownSearchMenu(
-        icon: AppAssets.menuSvgImage,
+        icon:icon?? AppAssets.menuSvgImage,
         onItemSelected: (value) {
           if (value == AppLocale.delete.getString(context)) {
             showDialog(

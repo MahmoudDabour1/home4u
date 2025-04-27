@@ -72,9 +72,11 @@ class ApiConstants {
       "/api/v1/select-custom-package";
   static const String renovateYourHouseLookUpsEp = "/api/v1/home-renovate/lkps";
   static const String renovateYourHouseFixedPackagesEp =
-      "/api/v1/custom-package";
+      "/api/v1/custom-package";///RequestDesign
+  static const String requestDesignEp = "/api/v1/request-design";
+  static const String requestDesignFilterEp = "/api/v1/request-design/filter";
 
-  // {{prod_url}}/api/v1/products/57
+  ///Product
   static const String getProductDetailsEP = "/api/v1/products/{productId}";
   static const String updateProductEP = "/api/v1/products";
 
@@ -93,7 +95,7 @@ class ApiConstants {
   static const String askWorkerIkpEp = "/api/v1/ask-worker/lkps";
   static const String askWorkerEp = "/api/v1/ask-worker";
   static const String addAllAskWorkerImagesEp = "/api/v1/ask-worker-photos/all";
-  static const String uploadImageEP = "/api/v1/file";
+
 }
 
 class ApiErrors {

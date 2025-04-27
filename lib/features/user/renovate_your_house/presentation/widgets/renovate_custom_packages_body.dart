@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:home4u/core/utils/spacing.dart';
 
-import '../../logic/renovate_your_house_cubit.dart';
 import 'custom_packages/renovate_custom_package_confirm_button.dart';
 import 'custom_packages/renovate_custom_package_inputs.dart';
 import 'custom_packages/renovate_custom_packages_drop_down_buttons.dart';
