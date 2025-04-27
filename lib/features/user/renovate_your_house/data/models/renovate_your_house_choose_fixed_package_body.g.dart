@@ -12,9 +12,9 @@ RenovateYourHouseChooseFixedPackageBody
         RenovateYourHouseChooseFixedPackageBody(
           phoneNumber: json['phoneNumber'] as String,
           isInsideCompound: json['isInsideCompound'] as bool,
-          unitType:
-              CustomPackage.fromJson(json['unitType'] as Map<String, dynamic>),
-          customPackage: CustomPackage.fromJson(
+          unitType: RenovateCustomPackageBody.fromJson(
+              json['unitType'] as Map<String, dynamic>),
+          customPackage: RenovateCustomPackageBody.fromJson(
               json['customPackage'] as Map<String, dynamic>),
         );
 
@@ -27,12 +27,14 @@ Map<String, dynamic> _$RenovateYourHouseChooseFixedPackageBodyToJson(
       'customPackage': instance.customPackage,
     };
 
-CustomPackage _$CustomPackageFromJson(Map<String, dynamic> json) =>
-    CustomPackage(
+RenovateCustomPackageBody _$RenovateCustomPackageBodyFromJson(
+        Map<String, dynamic> json) =>
+    RenovateCustomPackageBody(
       id: (json['id'] as num).toInt(),
     );
 
-Map<String, dynamic> _$CustomPackageToJson(CustomPackage instance) =>
+Map<String, dynamic> _$RenovateCustomPackageBodyToJson(
+        RenovateCustomPackageBody instance) =>
     <String, dynamic>{
       'id': instance.id,
     };

@@ -64,14 +64,17 @@ class ApiConstants {
 
   ///RenovateYourHouse
   static const String renovateYourHouseEp = "/api/v1/home-renovate";
+  static const String renovateYourHouseCustomFilterEp =
+      "/api/v1/select-custom-package/filter";
+  static const String renovateYourHouseFixedPackagesFilterEp =
+      "/api/v1/home-renovate/filter";
   static const String renovateYourHouseChooseFixedPackageEp =
       "/api/v1/select-custom-package";
   static const String renovateYourHouseLookUpsEp = "/api/v1/home-renovate/lkps";
   static const String renovateYourHouseFixedPackagesEp =
-      "/api/v1/custom-package";
-
-  ///RequestDesign
+      "/api/v1/custom-package";///RequestDesign
   static const String requestDesignEp = "/api/v1/request-design";
+  static const String requestDesignFilterEp = "/api/v1/request-design/filter";
 
   ///Product
   static const String getProductDetailsEP = "/api/v1/products/{productId}";
@@ -91,8 +94,8 @@ class ApiConstants {
   ///ask worker
   static const String askWorkerIkpEp = "/api/v1/ask-worker/lkps";
   static const String askWorkerEp = "/api/v1/ask-worker";
-  static const String addAllAskWorkerImagesEp =
-      "/api/v1/ask-worker-photos/all";
+  static const String addAllAskWorkerImagesEp = "/api/v1/ask-worker-photos/all";
+
 }
 
 class ApiErrors {

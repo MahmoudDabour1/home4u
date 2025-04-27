@@ -7,6 +7,8 @@ import 'package:retrofit/http.dart';
 import '../../../../../core/networking/api_constants.dart';
 import '../models/add_renovate_house_custom_package_body.dart';
 import '../models/renovate_your_house_choose_fixed_package_body.dart';
+import '../models/renovate_your_house_custom_packages_filter_response.dart';
+import '../models/renovate_your_house_fixed_packages_filter_response.dart';
 import '../models/renovate_your_house_response_model.dart';
 
 part 'renovate_your_house_remote_data_source.g.dart';
@@ -33,5 +35,17 @@ abstract class RenovateYourHouseRemoteDataSource {
     @Body()
     RenovateYourHouseChooseFixedPackageBody
         renovateYourHouseChooseFixedPackageBody,
+  );
+
+  @GET(ApiConstants.renovateYourHouseFixedPackagesFilterEp)
+  Future<RenovateYourHouseFixedPackagesFilterResponse>
+      getRenovateYourHouseFixedPackagesFilter(
+    @Body() Map<String, dynamic> renovateYourHouseFixedProductsFilter,
+  );
+
+  @GET(ApiConstants.renovateYourHouseCustomFilterEp)
+  Future<RenovateYourHouseCustomPackagesFilterResponse>
+      getRenovateYourHouseCustomFilter(
+    @Body() Map<String, dynamic> renovateYourHouseCustomFilter,
   );
 }

@@ -34,6 +34,19 @@ mixin _$RenovateYourHouseState<T> {
     required TResult Function(T data) chooseFixedPackageRenovateYourHouseLoaded,
     required TResult Function(String error)
         chooseFixedPackageRenovateYourHouseError,
+    required TResult Function() renovateYourHouseFixedPackagesFilterLoading,
+    required TResult Function(RenovateYourHouseFixedPackagesFilterResponse data)
+        renovateYourHouseFixedPackagesFilterLoaded,
+    required TResult Function(String error)
+        renovateYourHouseFixedPackagesFilterError,
+    required TResult Function() renovateYourHouseCustomPackagesFilterLoading,
+    required TResult Function(
+            RenovateYourHouseCustomPackagesFilterResponse data)
+        renovateYourHouseCustomPackagesFilterLoaded,
+    required TResult Function(String error)
+        renovateYourHouseCustomPackagesFilterError,
+    required TResult Function() paginationLoading,
+    required TResult Function(String errorMessage) paginationFailure,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -52,6 +65,16 @@ mixin _$RenovateYourHouseState<T> {
     TResult? Function()? chooseFixedPackageRenovateYourHouseLoading,
     TResult? Function(T data)? chooseFixedPackageRenovateYourHouseLoaded,
     TResult? Function(String error)? chooseFixedPackageRenovateYourHouseError,
+    TResult? Function()? renovateYourHouseFixedPackagesFilterLoading,
+    TResult? Function(RenovateYourHouseFixedPackagesFilterResponse data)?
+        renovateYourHouseFixedPackagesFilterLoaded,
+    TResult? Function(String error)? renovateYourHouseFixedPackagesFilterError,
+    TResult? Function()? renovateYourHouseCustomPackagesFilterLoading,
+    TResult? Function(RenovateYourHouseCustomPackagesFilterResponse data)?
+        renovateYourHouseCustomPackagesFilterLoaded,
+    TResult? Function(String error)? renovateYourHouseCustomPackagesFilterError,
+    TResult? Function()? paginationLoading,
+    TResult? Function(String errorMessage)? paginationFailure,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -70,6 +93,16 @@ mixin _$RenovateYourHouseState<T> {
     TResult Function()? chooseFixedPackageRenovateYourHouseLoading,
     TResult Function(T data)? chooseFixedPackageRenovateYourHouseLoaded,
     TResult Function(String error)? chooseFixedPackageRenovateYourHouseError,
+    TResult Function()? renovateYourHouseFixedPackagesFilterLoading,
+    TResult Function(RenovateYourHouseFixedPackagesFilterResponse data)?
+        renovateYourHouseFixedPackagesFilterLoaded,
+    TResult Function(String error)? renovateYourHouseFixedPackagesFilterError,
+    TResult Function()? renovateYourHouseCustomPackagesFilterLoading,
+    TResult Function(RenovateYourHouseCustomPackagesFilterResponse data)?
+        renovateYourHouseCustomPackagesFilterLoaded,
+    TResult Function(String error)? renovateYourHouseCustomPackagesFilterError,
+    TResult Function()? paginationLoading,
+    TResult Function(String errorMessage)? paginationFailure,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -102,6 +135,26 @@ mixin _$RenovateYourHouseState<T> {
         chooseFixedPackageRenovateYourHouseLoaded,
     required TResult Function(ChooseFixedPackageRenovateYourHouseError<T> value)
         chooseFixedPackageRenovateYourHouseError,
+    required TResult Function(
+            RenovateYourHouseFixedPackagesFilterLoading<T> value)
+        renovateYourHouseFixedPackagesFilterLoading,
+    required TResult Function(
+            RenovateYourHouseFixedPackagesFilterLoaded<T> value)
+        renovateYourHouseFixedPackagesFilterLoaded,
+    required TResult Function(
+            RenovateYourHouseFixedPackagesFilterError<T> value)
+        renovateYourHouseFixedPackagesFilterError,
+    required TResult Function(
+            RenovateYourHouseCustomPackagesFilterLoading<T> value)
+        renovateYourHouseCustomPackagesFilterLoading,
+    required TResult Function(
+            RenovateYourHouseCustomPackagesFilterLoaded<T> value)
+        renovateYourHouseCustomPackagesFilterLoaded,
+    required TResult Function(
+            RenovateYourHouseCustomPackagesFilterError<T> value)
+        renovateYourHouseCustomPackagesFilterError,
+    required TResult Function(PaginationLoading<T> value) paginationLoading,
+    required TResult Function(PaginationFailure<T> value) paginationFailure,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -131,6 +184,20 @@ mixin _$RenovateYourHouseState<T> {
         chooseFixedPackageRenovateYourHouseLoaded,
     TResult? Function(ChooseFixedPackageRenovateYourHouseError<T> value)?
         chooseFixedPackageRenovateYourHouseError,
+    TResult? Function(RenovateYourHouseFixedPackagesFilterLoading<T> value)?
+        renovateYourHouseFixedPackagesFilterLoading,
+    TResult? Function(RenovateYourHouseFixedPackagesFilterLoaded<T> value)?
+        renovateYourHouseFixedPackagesFilterLoaded,
+    TResult? Function(RenovateYourHouseFixedPackagesFilterError<T> value)?
+        renovateYourHouseFixedPackagesFilterError,
+    TResult? Function(RenovateYourHouseCustomPackagesFilterLoading<T> value)?
+        renovateYourHouseCustomPackagesFilterLoading,
+    TResult? Function(RenovateYourHouseCustomPackagesFilterLoaded<T> value)?
+        renovateYourHouseCustomPackagesFilterLoaded,
+    TResult? Function(RenovateYourHouseCustomPackagesFilterError<T> value)?
+        renovateYourHouseCustomPackagesFilterError,
+    TResult? Function(PaginationLoading<T> value)? paginationLoading,
+    TResult? Function(PaginationFailure<T> value)? paginationFailure,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -160,6 +227,20 @@ mixin _$RenovateYourHouseState<T> {
         chooseFixedPackageRenovateYourHouseLoaded,
     TResult Function(ChooseFixedPackageRenovateYourHouseError<T> value)?
         chooseFixedPackageRenovateYourHouseError,
+    TResult Function(RenovateYourHouseFixedPackagesFilterLoading<T> value)?
+        renovateYourHouseFixedPackagesFilterLoading,
+    TResult Function(RenovateYourHouseFixedPackagesFilterLoaded<T> value)?
+        renovateYourHouseFixedPackagesFilterLoaded,
+    TResult Function(RenovateYourHouseFixedPackagesFilterError<T> value)?
+        renovateYourHouseFixedPackagesFilterError,
+    TResult Function(RenovateYourHouseCustomPackagesFilterLoading<T> value)?
+        renovateYourHouseCustomPackagesFilterLoading,
+    TResult Function(RenovateYourHouseCustomPackagesFilterLoaded<T> value)?
+        renovateYourHouseCustomPackagesFilterLoaded,
+    TResult Function(RenovateYourHouseCustomPackagesFilterError<T> value)?
+        renovateYourHouseCustomPackagesFilterError,
+    TResult Function(PaginationLoading<T> value)? paginationLoading,
+    TResult Function(PaginationFailure<T> value)? paginationFailure,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -244,6 +325,19 @@ class _$InitialImpl<T> implements _Initial<T> {
     required TResult Function(T data) chooseFixedPackageRenovateYourHouseLoaded,
     required TResult Function(String error)
         chooseFixedPackageRenovateYourHouseError,
+    required TResult Function() renovateYourHouseFixedPackagesFilterLoading,
+    required TResult Function(RenovateYourHouseFixedPackagesFilterResponse data)
+        renovateYourHouseFixedPackagesFilterLoaded,
+    required TResult Function(String error)
+        renovateYourHouseFixedPackagesFilterError,
+    required TResult Function() renovateYourHouseCustomPackagesFilterLoading,
+    required TResult Function(
+            RenovateYourHouseCustomPackagesFilterResponse data)
+        renovateYourHouseCustomPackagesFilterLoaded,
+    required TResult Function(String error)
+        renovateYourHouseCustomPackagesFilterError,
+    required TResult Function() paginationLoading,
+    required TResult Function(String errorMessage) paginationFailure,
   }) {
     return initial();
   }
@@ -265,6 +359,16 @@ class _$InitialImpl<T> implements _Initial<T> {
     TResult? Function()? chooseFixedPackageRenovateYourHouseLoading,
     TResult? Function(T data)? chooseFixedPackageRenovateYourHouseLoaded,
     TResult? Function(String error)? chooseFixedPackageRenovateYourHouseError,
+    TResult? Function()? renovateYourHouseFixedPackagesFilterLoading,
+    TResult? Function(RenovateYourHouseFixedPackagesFilterResponse data)?
+        renovateYourHouseFixedPackagesFilterLoaded,
+    TResult? Function(String error)? renovateYourHouseFixedPackagesFilterError,
+    TResult? Function()? renovateYourHouseCustomPackagesFilterLoading,
+    TResult? Function(RenovateYourHouseCustomPackagesFilterResponse data)?
+        renovateYourHouseCustomPackagesFilterLoaded,
+    TResult? Function(String error)? renovateYourHouseCustomPackagesFilterError,
+    TResult? Function()? paginationLoading,
+    TResult? Function(String errorMessage)? paginationFailure,
   }) {
     return initial?.call();
   }
@@ -286,6 +390,16 @@ class _$InitialImpl<T> implements _Initial<T> {
     TResult Function()? chooseFixedPackageRenovateYourHouseLoading,
     TResult Function(T data)? chooseFixedPackageRenovateYourHouseLoaded,
     TResult Function(String error)? chooseFixedPackageRenovateYourHouseError,
+    TResult Function()? renovateYourHouseFixedPackagesFilterLoading,
+    TResult Function(RenovateYourHouseFixedPackagesFilterResponse data)?
+        renovateYourHouseFixedPackagesFilterLoaded,
+    TResult Function(String error)? renovateYourHouseFixedPackagesFilterError,
+    TResult Function()? renovateYourHouseCustomPackagesFilterLoading,
+    TResult Function(RenovateYourHouseCustomPackagesFilterResponse data)?
+        renovateYourHouseCustomPackagesFilterLoaded,
+    TResult Function(String error)? renovateYourHouseCustomPackagesFilterError,
+    TResult Function()? paginationLoading,
+    TResult Function(String errorMessage)? paginationFailure,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -324,6 +438,26 @@ class _$InitialImpl<T> implements _Initial<T> {
         chooseFixedPackageRenovateYourHouseLoaded,
     required TResult Function(ChooseFixedPackageRenovateYourHouseError<T> value)
         chooseFixedPackageRenovateYourHouseError,
+    required TResult Function(
+            RenovateYourHouseFixedPackagesFilterLoading<T> value)
+        renovateYourHouseFixedPackagesFilterLoading,
+    required TResult Function(
+            RenovateYourHouseFixedPackagesFilterLoaded<T> value)
+        renovateYourHouseFixedPackagesFilterLoaded,
+    required TResult Function(
+            RenovateYourHouseFixedPackagesFilterError<T> value)
+        renovateYourHouseFixedPackagesFilterError,
+    required TResult Function(
+            RenovateYourHouseCustomPackagesFilterLoading<T> value)
+        renovateYourHouseCustomPackagesFilterLoading,
+    required TResult Function(
+            RenovateYourHouseCustomPackagesFilterLoaded<T> value)
+        renovateYourHouseCustomPackagesFilterLoaded,
+    required TResult Function(
+            RenovateYourHouseCustomPackagesFilterError<T> value)
+        renovateYourHouseCustomPackagesFilterError,
+    required TResult Function(PaginationLoading<T> value) paginationLoading,
+    required TResult Function(PaginationFailure<T> value) paginationFailure,
   }) {
     return initial(this);
   }
@@ -356,6 +490,20 @@ class _$InitialImpl<T> implements _Initial<T> {
         chooseFixedPackageRenovateYourHouseLoaded,
     TResult? Function(ChooseFixedPackageRenovateYourHouseError<T> value)?
         chooseFixedPackageRenovateYourHouseError,
+    TResult? Function(RenovateYourHouseFixedPackagesFilterLoading<T> value)?
+        renovateYourHouseFixedPackagesFilterLoading,
+    TResult? Function(RenovateYourHouseFixedPackagesFilterLoaded<T> value)?
+        renovateYourHouseFixedPackagesFilterLoaded,
+    TResult? Function(RenovateYourHouseFixedPackagesFilterError<T> value)?
+        renovateYourHouseFixedPackagesFilterError,
+    TResult? Function(RenovateYourHouseCustomPackagesFilterLoading<T> value)?
+        renovateYourHouseCustomPackagesFilterLoading,
+    TResult? Function(RenovateYourHouseCustomPackagesFilterLoaded<T> value)?
+        renovateYourHouseCustomPackagesFilterLoaded,
+    TResult? Function(RenovateYourHouseCustomPackagesFilterError<T> value)?
+        renovateYourHouseCustomPackagesFilterError,
+    TResult? Function(PaginationLoading<T> value)? paginationLoading,
+    TResult? Function(PaginationFailure<T> value)? paginationFailure,
   }) {
     return initial?.call(this);
   }
@@ -388,6 +536,20 @@ class _$InitialImpl<T> implements _Initial<T> {
         chooseFixedPackageRenovateYourHouseLoaded,
     TResult Function(ChooseFixedPackageRenovateYourHouseError<T> value)?
         chooseFixedPackageRenovateYourHouseError,
+    TResult Function(RenovateYourHouseFixedPackagesFilterLoading<T> value)?
+        renovateYourHouseFixedPackagesFilterLoading,
+    TResult Function(RenovateYourHouseFixedPackagesFilterLoaded<T> value)?
+        renovateYourHouseFixedPackagesFilterLoaded,
+    TResult Function(RenovateYourHouseFixedPackagesFilterError<T> value)?
+        renovateYourHouseFixedPackagesFilterError,
+    TResult Function(RenovateYourHouseCustomPackagesFilterLoading<T> value)?
+        renovateYourHouseCustomPackagesFilterLoading,
+    TResult Function(RenovateYourHouseCustomPackagesFilterLoaded<T> value)?
+        renovateYourHouseCustomPackagesFilterLoaded,
+    TResult Function(RenovateYourHouseCustomPackagesFilterError<T> value)?
+        renovateYourHouseCustomPackagesFilterError,
+    TResult Function(PaginationLoading<T> value)? paginationLoading,
+    TResult Function(PaginationFailure<T> value)? paginationFailure,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -463,6 +625,19 @@ class _$RenovateYourHouseFixedPackagesLoadingImpl<T>
     required TResult Function(T data) chooseFixedPackageRenovateYourHouseLoaded,
     required TResult Function(String error)
         chooseFixedPackageRenovateYourHouseError,
+    required TResult Function() renovateYourHouseFixedPackagesFilterLoading,
+    required TResult Function(RenovateYourHouseFixedPackagesFilterResponse data)
+        renovateYourHouseFixedPackagesFilterLoaded,
+    required TResult Function(String error)
+        renovateYourHouseFixedPackagesFilterError,
+    required TResult Function() renovateYourHouseCustomPackagesFilterLoading,
+    required TResult Function(
+            RenovateYourHouseCustomPackagesFilterResponse data)
+        renovateYourHouseCustomPackagesFilterLoaded,
+    required TResult Function(String error)
+        renovateYourHouseCustomPackagesFilterError,
+    required TResult Function() paginationLoading,
+    required TResult Function(String errorMessage) paginationFailure,
   }) {
     return renovateYourHouseFixedPackagesLoading();
   }
@@ -484,6 +659,16 @@ class _$RenovateYourHouseFixedPackagesLoadingImpl<T>
     TResult? Function()? chooseFixedPackageRenovateYourHouseLoading,
     TResult? Function(T data)? chooseFixedPackageRenovateYourHouseLoaded,
     TResult? Function(String error)? chooseFixedPackageRenovateYourHouseError,
+    TResult? Function()? renovateYourHouseFixedPackagesFilterLoading,
+    TResult? Function(RenovateYourHouseFixedPackagesFilterResponse data)?
+        renovateYourHouseFixedPackagesFilterLoaded,
+    TResult? Function(String error)? renovateYourHouseFixedPackagesFilterError,
+    TResult? Function()? renovateYourHouseCustomPackagesFilterLoading,
+    TResult? Function(RenovateYourHouseCustomPackagesFilterResponse data)?
+        renovateYourHouseCustomPackagesFilterLoaded,
+    TResult? Function(String error)? renovateYourHouseCustomPackagesFilterError,
+    TResult? Function()? paginationLoading,
+    TResult? Function(String errorMessage)? paginationFailure,
   }) {
     return renovateYourHouseFixedPackagesLoading?.call();
   }
@@ -505,6 +690,16 @@ class _$RenovateYourHouseFixedPackagesLoadingImpl<T>
     TResult Function()? chooseFixedPackageRenovateYourHouseLoading,
     TResult Function(T data)? chooseFixedPackageRenovateYourHouseLoaded,
     TResult Function(String error)? chooseFixedPackageRenovateYourHouseError,
+    TResult Function()? renovateYourHouseFixedPackagesFilterLoading,
+    TResult Function(RenovateYourHouseFixedPackagesFilterResponse data)?
+        renovateYourHouseFixedPackagesFilterLoaded,
+    TResult Function(String error)? renovateYourHouseFixedPackagesFilterError,
+    TResult Function()? renovateYourHouseCustomPackagesFilterLoading,
+    TResult Function(RenovateYourHouseCustomPackagesFilterResponse data)?
+        renovateYourHouseCustomPackagesFilterLoaded,
+    TResult Function(String error)? renovateYourHouseCustomPackagesFilterError,
+    TResult Function()? paginationLoading,
+    TResult Function(String errorMessage)? paginationFailure,
     required TResult orElse(),
   }) {
     if (renovateYourHouseFixedPackagesLoading != null) {
@@ -543,6 +738,26 @@ class _$RenovateYourHouseFixedPackagesLoadingImpl<T>
         chooseFixedPackageRenovateYourHouseLoaded,
     required TResult Function(ChooseFixedPackageRenovateYourHouseError<T> value)
         chooseFixedPackageRenovateYourHouseError,
+    required TResult Function(
+            RenovateYourHouseFixedPackagesFilterLoading<T> value)
+        renovateYourHouseFixedPackagesFilterLoading,
+    required TResult Function(
+            RenovateYourHouseFixedPackagesFilterLoaded<T> value)
+        renovateYourHouseFixedPackagesFilterLoaded,
+    required TResult Function(
+            RenovateYourHouseFixedPackagesFilterError<T> value)
+        renovateYourHouseFixedPackagesFilterError,
+    required TResult Function(
+            RenovateYourHouseCustomPackagesFilterLoading<T> value)
+        renovateYourHouseCustomPackagesFilterLoading,
+    required TResult Function(
+            RenovateYourHouseCustomPackagesFilterLoaded<T> value)
+        renovateYourHouseCustomPackagesFilterLoaded,
+    required TResult Function(
+            RenovateYourHouseCustomPackagesFilterError<T> value)
+        renovateYourHouseCustomPackagesFilterError,
+    required TResult Function(PaginationLoading<T> value) paginationLoading,
+    required TResult Function(PaginationFailure<T> value) paginationFailure,
   }) {
     return renovateYourHouseFixedPackagesLoading(this);
   }
@@ -575,6 +790,20 @@ class _$RenovateYourHouseFixedPackagesLoadingImpl<T>
         chooseFixedPackageRenovateYourHouseLoaded,
     TResult? Function(ChooseFixedPackageRenovateYourHouseError<T> value)?
         chooseFixedPackageRenovateYourHouseError,
+    TResult? Function(RenovateYourHouseFixedPackagesFilterLoading<T> value)?
+        renovateYourHouseFixedPackagesFilterLoading,
+    TResult? Function(RenovateYourHouseFixedPackagesFilterLoaded<T> value)?
+        renovateYourHouseFixedPackagesFilterLoaded,
+    TResult? Function(RenovateYourHouseFixedPackagesFilterError<T> value)?
+        renovateYourHouseFixedPackagesFilterError,
+    TResult? Function(RenovateYourHouseCustomPackagesFilterLoading<T> value)?
+        renovateYourHouseCustomPackagesFilterLoading,
+    TResult? Function(RenovateYourHouseCustomPackagesFilterLoaded<T> value)?
+        renovateYourHouseCustomPackagesFilterLoaded,
+    TResult? Function(RenovateYourHouseCustomPackagesFilterError<T> value)?
+        renovateYourHouseCustomPackagesFilterError,
+    TResult? Function(PaginationLoading<T> value)? paginationLoading,
+    TResult? Function(PaginationFailure<T> value)? paginationFailure,
   }) {
     return renovateYourHouseFixedPackagesLoading?.call(this);
   }
@@ -607,6 +836,20 @@ class _$RenovateYourHouseFixedPackagesLoadingImpl<T>
         chooseFixedPackageRenovateYourHouseLoaded,
     TResult Function(ChooseFixedPackageRenovateYourHouseError<T> value)?
         chooseFixedPackageRenovateYourHouseError,
+    TResult Function(RenovateYourHouseFixedPackagesFilterLoading<T> value)?
+        renovateYourHouseFixedPackagesFilterLoading,
+    TResult Function(RenovateYourHouseFixedPackagesFilterLoaded<T> value)?
+        renovateYourHouseFixedPackagesFilterLoaded,
+    TResult Function(RenovateYourHouseFixedPackagesFilterError<T> value)?
+        renovateYourHouseFixedPackagesFilterError,
+    TResult Function(RenovateYourHouseCustomPackagesFilterLoading<T> value)?
+        renovateYourHouseCustomPackagesFilterLoading,
+    TResult Function(RenovateYourHouseCustomPackagesFilterLoaded<T> value)?
+        renovateYourHouseCustomPackagesFilterLoaded,
+    TResult Function(RenovateYourHouseCustomPackagesFilterError<T> value)?
+        renovateYourHouseCustomPackagesFilterError,
+    TResult Function(PaginationLoading<T> value)? paginationLoading,
+    TResult Function(PaginationFailure<T> value)? paginationFailure,
     required TResult orElse(),
   }) {
     if (renovateYourHouseFixedPackagesLoading != null) {
@@ -712,6 +955,19 @@ class _$RenovateYourHouseFixedPackagesLoadedImpl<T>
     required TResult Function(T data) chooseFixedPackageRenovateYourHouseLoaded,
     required TResult Function(String error)
         chooseFixedPackageRenovateYourHouseError,
+    required TResult Function() renovateYourHouseFixedPackagesFilterLoading,
+    required TResult Function(RenovateYourHouseFixedPackagesFilterResponse data)
+        renovateYourHouseFixedPackagesFilterLoaded,
+    required TResult Function(String error)
+        renovateYourHouseFixedPackagesFilterError,
+    required TResult Function() renovateYourHouseCustomPackagesFilterLoading,
+    required TResult Function(
+            RenovateYourHouseCustomPackagesFilterResponse data)
+        renovateYourHouseCustomPackagesFilterLoaded,
+    required TResult Function(String error)
+        renovateYourHouseCustomPackagesFilterError,
+    required TResult Function() paginationLoading,
+    required TResult Function(String errorMessage) paginationFailure,
   }) {
     return renovateYourHouseFixedPackagesLoaded(data);
   }
@@ -733,6 +989,16 @@ class _$RenovateYourHouseFixedPackagesLoadedImpl<T>
     TResult? Function()? chooseFixedPackageRenovateYourHouseLoading,
     TResult? Function(T data)? chooseFixedPackageRenovateYourHouseLoaded,
     TResult? Function(String error)? chooseFixedPackageRenovateYourHouseError,
+    TResult? Function()? renovateYourHouseFixedPackagesFilterLoading,
+    TResult? Function(RenovateYourHouseFixedPackagesFilterResponse data)?
+        renovateYourHouseFixedPackagesFilterLoaded,
+    TResult? Function(String error)? renovateYourHouseFixedPackagesFilterError,
+    TResult? Function()? renovateYourHouseCustomPackagesFilterLoading,
+    TResult? Function(RenovateYourHouseCustomPackagesFilterResponse data)?
+        renovateYourHouseCustomPackagesFilterLoaded,
+    TResult? Function(String error)? renovateYourHouseCustomPackagesFilterError,
+    TResult? Function()? paginationLoading,
+    TResult? Function(String errorMessage)? paginationFailure,
   }) {
     return renovateYourHouseFixedPackagesLoaded?.call(data);
   }
@@ -754,6 +1020,16 @@ class _$RenovateYourHouseFixedPackagesLoadedImpl<T>
     TResult Function()? chooseFixedPackageRenovateYourHouseLoading,
     TResult Function(T data)? chooseFixedPackageRenovateYourHouseLoaded,
     TResult Function(String error)? chooseFixedPackageRenovateYourHouseError,
+    TResult Function()? renovateYourHouseFixedPackagesFilterLoading,
+    TResult Function(RenovateYourHouseFixedPackagesFilterResponse data)?
+        renovateYourHouseFixedPackagesFilterLoaded,
+    TResult Function(String error)? renovateYourHouseFixedPackagesFilterError,
+    TResult Function()? renovateYourHouseCustomPackagesFilterLoading,
+    TResult Function(RenovateYourHouseCustomPackagesFilterResponse data)?
+        renovateYourHouseCustomPackagesFilterLoaded,
+    TResult Function(String error)? renovateYourHouseCustomPackagesFilterError,
+    TResult Function()? paginationLoading,
+    TResult Function(String errorMessage)? paginationFailure,
     required TResult orElse(),
   }) {
     if (renovateYourHouseFixedPackagesLoaded != null) {
@@ -792,6 +1068,26 @@ class _$RenovateYourHouseFixedPackagesLoadedImpl<T>
         chooseFixedPackageRenovateYourHouseLoaded,
     required TResult Function(ChooseFixedPackageRenovateYourHouseError<T> value)
         chooseFixedPackageRenovateYourHouseError,
+    required TResult Function(
+            RenovateYourHouseFixedPackagesFilterLoading<T> value)
+        renovateYourHouseFixedPackagesFilterLoading,
+    required TResult Function(
+            RenovateYourHouseFixedPackagesFilterLoaded<T> value)
+        renovateYourHouseFixedPackagesFilterLoaded,
+    required TResult Function(
+            RenovateYourHouseFixedPackagesFilterError<T> value)
+        renovateYourHouseFixedPackagesFilterError,
+    required TResult Function(
+            RenovateYourHouseCustomPackagesFilterLoading<T> value)
+        renovateYourHouseCustomPackagesFilterLoading,
+    required TResult Function(
+            RenovateYourHouseCustomPackagesFilterLoaded<T> value)
+        renovateYourHouseCustomPackagesFilterLoaded,
+    required TResult Function(
+            RenovateYourHouseCustomPackagesFilterError<T> value)
+        renovateYourHouseCustomPackagesFilterError,
+    required TResult Function(PaginationLoading<T> value) paginationLoading,
+    required TResult Function(PaginationFailure<T> value) paginationFailure,
   }) {
     return renovateYourHouseFixedPackagesLoaded(this);
   }
@@ -824,6 +1120,20 @@ class _$RenovateYourHouseFixedPackagesLoadedImpl<T>
         chooseFixedPackageRenovateYourHouseLoaded,
     TResult? Function(ChooseFixedPackageRenovateYourHouseError<T> value)?
         chooseFixedPackageRenovateYourHouseError,
+    TResult? Function(RenovateYourHouseFixedPackagesFilterLoading<T> value)?
+        renovateYourHouseFixedPackagesFilterLoading,
+    TResult? Function(RenovateYourHouseFixedPackagesFilterLoaded<T> value)?
+        renovateYourHouseFixedPackagesFilterLoaded,
+    TResult? Function(RenovateYourHouseFixedPackagesFilterError<T> value)?
+        renovateYourHouseFixedPackagesFilterError,
+    TResult? Function(RenovateYourHouseCustomPackagesFilterLoading<T> value)?
+        renovateYourHouseCustomPackagesFilterLoading,
+    TResult? Function(RenovateYourHouseCustomPackagesFilterLoaded<T> value)?
+        renovateYourHouseCustomPackagesFilterLoaded,
+    TResult? Function(RenovateYourHouseCustomPackagesFilterError<T> value)?
+        renovateYourHouseCustomPackagesFilterError,
+    TResult? Function(PaginationLoading<T> value)? paginationLoading,
+    TResult? Function(PaginationFailure<T> value)? paginationFailure,
   }) {
     return renovateYourHouseFixedPackagesLoaded?.call(this);
   }
@@ -856,6 +1166,20 @@ class _$RenovateYourHouseFixedPackagesLoadedImpl<T>
         chooseFixedPackageRenovateYourHouseLoaded,
     TResult Function(ChooseFixedPackageRenovateYourHouseError<T> value)?
         chooseFixedPackageRenovateYourHouseError,
+    TResult Function(RenovateYourHouseFixedPackagesFilterLoading<T> value)?
+        renovateYourHouseFixedPackagesFilterLoading,
+    TResult Function(RenovateYourHouseFixedPackagesFilterLoaded<T> value)?
+        renovateYourHouseFixedPackagesFilterLoaded,
+    TResult Function(RenovateYourHouseFixedPackagesFilterError<T> value)?
+        renovateYourHouseFixedPackagesFilterError,
+    TResult Function(RenovateYourHouseCustomPackagesFilterLoading<T> value)?
+        renovateYourHouseCustomPackagesFilterLoading,
+    TResult Function(RenovateYourHouseCustomPackagesFilterLoaded<T> value)?
+        renovateYourHouseCustomPackagesFilterLoaded,
+    TResult Function(RenovateYourHouseCustomPackagesFilterError<T> value)?
+        renovateYourHouseCustomPackagesFilterError,
+    TResult Function(PaginationLoading<T> value)? paginationLoading,
+    TResult Function(PaginationFailure<T> value)? paginationFailure,
     required TResult orElse(),
   }) {
     if (renovateYourHouseFixedPackagesLoaded != null) {
@@ -971,6 +1295,19 @@ class _$RenovateYourHouseFixedPackagesErrorImpl<T>
     required TResult Function(T data) chooseFixedPackageRenovateYourHouseLoaded,
     required TResult Function(String error)
         chooseFixedPackageRenovateYourHouseError,
+    required TResult Function() renovateYourHouseFixedPackagesFilterLoading,
+    required TResult Function(RenovateYourHouseFixedPackagesFilterResponse data)
+        renovateYourHouseFixedPackagesFilterLoaded,
+    required TResult Function(String error)
+        renovateYourHouseFixedPackagesFilterError,
+    required TResult Function() renovateYourHouseCustomPackagesFilterLoading,
+    required TResult Function(
+            RenovateYourHouseCustomPackagesFilterResponse data)
+        renovateYourHouseCustomPackagesFilterLoaded,
+    required TResult Function(String error)
+        renovateYourHouseCustomPackagesFilterError,
+    required TResult Function() paginationLoading,
+    required TResult Function(String errorMessage) paginationFailure,
   }) {
     return renovateYourHouseFixedPackagesError(error);
   }
@@ -992,6 +1329,16 @@ class _$RenovateYourHouseFixedPackagesErrorImpl<T>
     TResult? Function()? chooseFixedPackageRenovateYourHouseLoading,
     TResult? Function(T data)? chooseFixedPackageRenovateYourHouseLoaded,
     TResult? Function(String error)? chooseFixedPackageRenovateYourHouseError,
+    TResult? Function()? renovateYourHouseFixedPackagesFilterLoading,
+    TResult? Function(RenovateYourHouseFixedPackagesFilterResponse data)?
+        renovateYourHouseFixedPackagesFilterLoaded,
+    TResult? Function(String error)? renovateYourHouseFixedPackagesFilterError,
+    TResult? Function()? renovateYourHouseCustomPackagesFilterLoading,
+    TResult? Function(RenovateYourHouseCustomPackagesFilterResponse data)?
+        renovateYourHouseCustomPackagesFilterLoaded,
+    TResult? Function(String error)? renovateYourHouseCustomPackagesFilterError,
+    TResult? Function()? paginationLoading,
+    TResult? Function(String errorMessage)? paginationFailure,
   }) {
     return renovateYourHouseFixedPackagesError?.call(error);
   }
@@ -1013,6 +1360,16 @@ class _$RenovateYourHouseFixedPackagesErrorImpl<T>
     TResult Function()? chooseFixedPackageRenovateYourHouseLoading,
     TResult Function(T data)? chooseFixedPackageRenovateYourHouseLoaded,
     TResult Function(String error)? chooseFixedPackageRenovateYourHouseError,
+    TResult Function()? renovateYourHouseFixedPackagesFilterLoading,
+    TResult Function(RenovateYourHouseFixedPackagesFilterResponse data)?
+        renovateYourHouseFixedPackagesFilterLoaded,
+    TResult Function(String error)? renovateYourHouseFixedPackagesFilterError,
+    TResult Function()? renovateYourHouseCustomPackagesFilterLoading,
+    TResult Function(RenovateYourHouseCustomPackagesFilterResponse data)?
+        renovateYourHouseCustomPackagesFilterLoaded,
+    TResult Function(String error)? renovateYourHouseCustomPackagesFilterError,
+    TResult Function()? paginationLoading,
+    TResult Function(String errorMessage)? paginationFailure,
     required TResult orElse(),
   }) {
     if (renovateYourHouseFixedPackagesError != null) {
@@ -1051,6 +1408,26 @@ class _$RenovateYourHouseFixedPackagesErrorImpl<T>
         chooseFixedPackageRenovateYourHouseLoaded,
     required TResult Function(ChooseFixedPackageRenovateYourHouseError<T> value)
         chooseFixedPackageRenovateYourHouseError,
+    required TResult Function(
+            RenovateYourHouseFixedPackagesFilterLoading<T> value)
+        renovateYourHouseFixedPackagesFilterLoading,
+    required TResult Function(
+            RenovateYourHouseFixedPackagesFilterLoaded<T> value)
+        renovateYourHouseFixedPackagesFilterLoaded,
+    required TResult Function(
+            RenovateYourHouseFixedPackagesFilterError<T> value)
+        renovateYourHouseFixedPackagesFilterError,
+    required TResult Function(
+            RenovateYourHouseCustomPackagesFilterLoading<T> value)
+        renovateYourHouseCustomPackagesFilterLoading,
+    required TResult Function(
+            RenovateYourHouseCustomPackagesFilterLoaded<T> value)
+        renovateYourHouseCustomPackagesFilterLoaded,
+    required TResult Function(
+            RenovateYourHouseCustomPackagesFilterError<T> value)
+        renovateYourHouseCustomPackagesFilterError,
+    required TResult Function(PaginationLoading<T> value) paginationLoading,
+    required TResult Function(PaginationFailure<T> value) paginationFailure,
   }) {
     return renovateYourHouseFixedPackagesError(this);
   }
@@ -1083,6 +1460,20 @@ class _$RenovateYourHouseFixedPackagesErrorImpl<T>
         chooseFixedPackageRenovateYourHouseLoaded,
     TResult? Function(ChooseFixedPackageRenovateYourHouseError<T> value)?
         chooseFixedPackageRenovateYourHouseError,
+    TResult? Function(RenovateYourHouseFixedPackagesFilterLoading<T> value)?
+        renovateYourHouseFixedPackagesFilterLoading,
+    TResult? Function(RenovateYourHouseFixedPackagesFilterLoaded<T> value)?
+        renovateYourHouseFixedPackagesFilterLoaded,
+    TResult? Function(RenovateYourHouseFixedPackagesFilterError<T> value)?
+        renovateYourHouseFixedPackagesFilterError,
+    TResult? Function(RenovateYourHouseCustomPackagesFilterLoading<T> value)?
+        renovateYourHouseCustomPackagesFilterLoading,
+    TResult? Function(RenovateYourHouseCustomPackagesFilterLoaded<T> value)?
+        renovateYourHouseCustomPackagesFilterLoaded,
+    TResult? Function(RenovateYourHouseCustomPackagesFilterError<T> value)?
+        renovateYourHouseCustomPackagesFilterError,
+    TResult? Function(PaginationLoading<T> value)? paginationLoading,
+    TResult? Function(PaginationFailure<T> value)? paginationFailure,
   }) {
     return renovateYourHouseFixedPackagesError?.call(this);
   }
@@ -1115,6 +1506,20 @@ class _$RenovateYourHouseFixedPackagesErrorImpl<T>
         chooseFixedPackageRenovateYourHouseLoaded,
     TResult Function(ChooseFixedPackageRenovateYourHouseError<T> value)?
         chooseFixedPackageRenovateYourHouseError,
+    TResult Function(RenovateYourHouseFixedPackagesFilterLoading<T> value)?
+        renovateYourHouseFixedPackagesFilterLoading,
+    TResult Function(RenovateYourHouseFixedPackagesFilterLoaded<T> value)?
+        renovateYourHouseFixedPackagesFilterLoaded,
+    TResult Function(RenovateYourHouseFixedPackagesFilterError<T> value)?
+        renovateYourHouseFixedPackagesFilterError,
+    TResult Function(RenovateYourHouseCustomPackagesFilterLoading<T> value)?
+        renovateYourHouseCustomPackagesFilterLoading,
+    TResult Function(RenovateYourHouseCustomPackagesFilterLoaded<T> value)?
+        renovateYourHouseCustomPackagesFilterLoaded,
+    TResult Function(RenovateYourHouseCustomPackagesFilterError<T> value)?
+        renovateYourHouseCustomPackagesFilterError,
+    TResult Function(PaginationLoading<T> value)? paginationLoading,
+    TResult Function(PaginationFailure<T> value)? paginationFailure,
     required TResult orElse(),
   }) {
     if (renovateYourHouseFixedPackagesError != null) {
@@ -1201,6 +1606,19 @@ class _$RenovateYourHouseLookUpsLoadingImpl<T>
     required TResult Function(T data) chooseFixedPackageRenovateYourHouseLoaded,
     required TResult Function(String error)
         chooseFixedPackageRenovateYourHouseError,
+    required TResult Function() renovateYourHouseFixedPackagesFilterLoading,
+    required TResult Function(RenovateYourHouseFixedPackagesFilterResponse data)
+        renovateYourHouseFixedPackagesFilterLoaded,
+    required TResult Function(String error)
+        renovateYourHouseFixedPackagesFilterError,
+    required TResult Function() renovateYourHouseCustomPackagesFilterLoading,
+    required TResult Function(
+            RenovateYourHouseCustomPackagesFilterResponse data)
+        renovateYourHouseCustomPackagesFilterLoaded,
+    required TResult Function(String error)
+        renovateYourHouseCustomPackagesFilterError,
+    required TResult Function() paginationLoading,
+    required TResult Function(String errorMessage) paginationFailure,
   }) {
     return renovateYourHouseLookUpsLoading();
   }
@@ -1222,6 +1640,16 @@ class _$RenovateYourHouseLookUpsLoadingImpl<T>
     TResult? Function()? chooseFixedPackageRenovateYourHouseLoading,
     TResult? Function(T data)? chooseFixedPackageRenovateYourHouseLoaded,
     TResult? Function(String error)? chooseFixedPackageRenovateYourHouseError,
+    TResult? Function()? renovateYourHouseFixedPackagesFilterLoading,
+    TResult? Function(RenovateYourHouseFixedPackagesFilterResponse data)?
+        renovateYourHouseFixedPackagesFilterLoaded,
+    TResult? Function(String error)? renovateYourHouseFixedPackagesFilterError,
+    TResult? Function()? renovateYourHouseCustomPackagesFilterLoading,
+    TResult? Function(RenovateYourHouseCustomPackagesFilterResponse data)?
+        renovateYourHouseCustomPackagesFilterLoaded,
+    TResult? Function(String error)? renovateYourHouseCustomPackagesFilterError,
+    TResult? Function()? paginationLoading,
+    TResult? Function(String errorMessage)? paginationFailure,
   }) {
     return renovateYourHouseLookUpsLoading?.call();
   }
@@ -1243,6 +1671,16 @@ class _$RenovateYourHouseLookUpsLoadingImpl<T>
     TResult Function()? chooseFixedPackageRenovateYourHouseLoading,
     TResult Function(T data)? chooseFixedPackageRenovateYourHouseLoaded,
     TResult Function(String error)? chooseFixedPackageRenovateYourHouseError,
+    TResult Function()? renovateYourHouseFixedPackagesFilterLoading,
+    TResult Function(RenovateYourHouseFixedPackagesFilterResponse data)?
+        renovateYourHouseFixedPackagesFilterLoaded,
+    TResult Function(String error)? renovateYourHouseFixedPackagesFilterError,
+    TResult Function()? renovateYourHouseCustomPackagesFilterLoading,
+    TResult Function(RenovateYourHouseCustomPackagesFilterResponse data)?
+        renovateYourHouseCustomPackagesFilterLoaded,
+    TResult Function(String error)? renovateYourHouseCustomPackagesFilterError,
+    TResult Function()? paginationLoading,
+    TResult Function(String errorMessage)? paginationFailure,
     required TResult orElse(),
   }) {
     if (renovateYourHouseLookUpsLoading != null) {
@@ -1281,6 +1719,26 @@ class _$RenovateYourHouseLookUpsLoadingImpl<T>
         chooseFixedPackageRenovateYourHouseLoaded,
     required TResult Function(ChooseFixedPackageRenovateYourHouseError<T> value)
         chooseFixedPackageRenovateYourHouseError,
+    required TResult Function(
+            RenovateYourHouseFixedPackagesFilterLoading<T> value)
+        renovateYourHouseFixedPackagesFilterLoading,
+    required TResult Function(
+            RenovateYourHouseFixedPackagesFilterLoaded<T> value)
+        renovateYourHouseFixedPackagesFilterLoaded,
+    required TResult Function(
+            RenovateYourHouseFixedPackagesFilterError<T> value)
+        renovateYourHouseFixedPackagesFilterError,
+    required TResult Function(
+            RenovateYourHouseCustomPackagesFilterLoading<T> value)
+        renovateYourHouseCustomPackagesFilterLoading,
+    required TResult Function(
+            RenovateYourHouseCustomPackagesFilterLoaded<T> value)
+        renovateYourHouseCustomPackagesFilterLoaded,
+    required TResult Function(
+            RenovateYourHouseCustomPackagesFilterError<T> value)
+        renovateYourHouseCustomPackagesFilterError,
+    required TResult Function(PaginationLoading<T> value) paginationLoading,
+    required TResult Function(PaginationFailure<T> value) paginationFailure,
   }) {
     return renovateYourHouseLookUpsLoading(this);
   }
@@ -1313,6 +1771,20 @@ class _$RenovateYourHouseLookUpsLoadingImpl<T>
         chooseFixedPackageRenovateYourHouseLoaded,
     TResult? Function(ChooseFixedPackageRenovateYourHouseError<T> value)?
         chooseFixedPackageRenovateYourHouseError,
+    TResult? Function(RenovateYourHouseFixedPackagesFilterLoading<T> value)?
+        renovateYourHouseFixedPackagesFilterLoading,
+    TResult? Function(RenovateYourHouseFixedPackagesFilterLoaded<T> value)?
+        renovateYourHouseFixedPackagesFilterLoaded,
+    TResult? Function(RenovateYourHouseFixedPackagesFilterError<T> value)?
+        renovateYourHouseFixedPackagesFilterError,
+    TResult? Function(RenovateYourHouseCustomPackagesFilterLoading<T> value)?
+        renovateYourHouseCustomPackagesFilterLoading,
+    TResult? Function(RenovateYourHouseCustomPackagesFilterLoaded<T> value)?
+        renovateYourHouseCustomPackagesFilterLoaded,
+    TResult? Function(RenovateYourHouseCustomPackagesFilterError<T> value)?
+        renovateYourHouseCustomPackagesFilterError,
+    TResult? Function(PaginationLoading<T> value)? paginationLoading,
+    TResult? Function(PaginationFailure<T> value)? paginationFailure,
   }) {
     return renovateYourHouseLookUpsLoading?.call(this);
   }
@@ -1345,6 +1817,20 @@ class _$RenovateYourHouseLookUpsLoadingImpl<T>
         chooseFixedPackageRenovateYourHouseLoaded,
     TResult Function(ChooseFixedPackageRenovateYourHouseError<T> value)?
         chooseFixedPackageRenovateYourHouseError,
+    TResult Function(RenovateYourHouseFixedPackagesFilterLoading<T> value)?
+        renovateYourHouseFixedPackagesFilterLoading,
+    TResult Function(RenovateYourHouseFixedPackagesFilterLoaded<T> value)?
+        renovateYourHouseFixedPackagesFilterLoaded,
+    TResult Function(RenovateYourHouseFixedPackagesFilterError<T> value)?
+        renovateYourHouseFixedPackagesFilterError,
+    TResult Function(RenovateYourHouseCustomPackagesFilterLoading<T> value)?
+        renovateYourHouseCustomPackagesFilterLoading,
+    TResult Function(RenovateYourHouseCustomPackagesFilterLoaded<T> value)?
+        renovateYourHouseCustomPackagesFilterLoaded,
+    TResult Function(RenovateYourHouseCustomPackagesFilterError<T> value)?
+        renovateYourHouseCustomPackagesFilterError,
+    TResult Function(PaginationLoading<T> value)? paginationLoading,
+    TResult Function(PaginationFailure<T> value)? paginationFailure,
     required TResult orElse(),
   }) {
     if (renovateYourHouseLookUpsLoading != null) {
@@ -1451,6 +1937,19 @@ class _$RenovateYourHouseLookUpsLoadedImpl<T>
     required TResult Function(T data) chooseFixedPackageRenovateYourHouseLoaded,
     required TResult Function(String error)
         chooseFixedPackageRenovateYourHouseError,
+    required TResult Function() renovateYourHouseFixedPackagesFilterLoading,
+    required TResult Function(RenovateYourHouseFixedPackagesFilterResponse data)
+        renovateYourHouseFixedPackagesFilterLoaded,
+    required TResult Function(String error)
+        renovateYourHouseFixedPackagesFilterError,
+    required TResult Function() renovateYourHouseCustomPackagesFilterLoading,
+    required TResult Function(
+            RenovateYourHouseCustomPackagesFilterResponse data)
+        renovateYourHouseCustomPackagesFilterLoaded,
+    required TResult Function(String error)
+        renovateYourHouseCustomPackagesFilterError,
+    required TResult Function() paginationLoading,
+    required TResult Function(String errorMessage) paginationFailure,
   }) {
     return renovateYourHouseLookUpsLoaded(data);
   }
@@ -1472,6 +1971,16 @@ class _$RenovateYourHouseLookUpsLoadedImpl<T>
     TResult? Function()? chooseFixedPackageRenovateYourHouseLoading,
     TResult? Function(T data)? chooseFixedPackageRenovateYourHouseLoaded,
     TResult? Function(String error)? chooseFixedPackageRenovateYourHouseError,
+    TResult? Function()? renovateYourHouseFixedPackagesFilterLoading,
+    TResult? Function(RenovateYourHouseFixedPackagesFilterResponse data)?
+        renovateYourHouseFixedPackagesFilterLoaded,
+    TResult? Function(String error)? renovateYourHouseFixedPackagesFilterError,
+    TResult? Function()? renovateYourHouseCustomPackagesFilterLoading,
+    TResult? Function(RenovateYourHouseCustomPackagesFilterResponse data)?
+        renovateYourHouseCustomPackagesFilterLoaded,
+    TResult? Function(String error)? renovateYourHouseCustomPackagesFilterError,
+    TResult? Function()? paginationLoading,
+    TResult? Function(String errorMessage)? paginationFailure,
   }) {
     return renovateYourHouseLookUpsLoaded?.call(data);
   }
@@ -1493,6 +2002,16 @@ class _$RenovateYourHouseLookUpsLoadedImpl<T>
     TResult Function()? chooseFixedPackageRenovateYourHouseLoading,
     TResult Function(T data)? chooseFixedPackageRenovateYourHouseLoaded,
     TResult Function(String error)? chooseFixedPackageRenovateYourHouseError,
+    TResult Function()? renovateYourHouseFixedPackagesFilterLoading,
+    TResult Function(RenovateYourHouseFixedPackagesFilterResponse data)?
+        renovateYourHouseFixedPackagesFilterLoaded,
+    TResult Function(String error)? renovateYourHouseFixedPackagesFilterError,
+    TResult Function()? renovateYourHouseCustomPackagesFilterLoading,
+    TResult Function(RenovateYourHouseCustomPackagesFilterResponse data)?
+        renovateYourHouseCustomPackagesFilterLoaded,
+    TResult Function(String error)? renovateYourHouseCustomPackagesFilterError,
+    TResult Function()? paginationLoading,
+    TResult Function(String errorMessage)? paginationFailure,
     required TResult orElse(),
   }) {
     if (renovateYourHouseLookUpsLoaded != null) {
@@ -1531,6 +2050,26 @@ class _$RenovateYourHouseLookUpsLoadedImpl<T>
         chooseFixedPackageRenovateYourHouseLoaded,
     required TResult Function(ChooseFixedPackageRenovateYourHouseError<T> value)
         chooseFixedPackageRenovateYourHouseError,
+    required TResult Function(
+            RenovateYourHouseFixedPackagesFilterLoading<T> value)
+        renovateYourHouseFixedPackagesFilterLoading,
+    required TResult Function(
+            RenovateYourHouseFixedPackagesFilterLoaded<T> value)
+        renovateYourHouseFixedPackagesFilterLoaded,
+    required TResult Function(
+            RenovateYourHouseFixedPackagesFilterError<T> value)
+        renovateYourHouseFixedPackagesFilterError,
+    required TResult Function(
+            RenovateYourHouseCustomPackagesFilterLoading<T> value)
+        renovateYourHouseCustomPackagesFilterLoading,
+    required TResult Function(
+            RenovateYourHouseCustomPackagesFilterLoaded<T> value)
+        renovateYourHouseCustomPackagesFilterLoaded,
+    required TResult Function(
+            RenovateYourHouseCustomPackagesFilterError<T> value)
+        renovateYourHouseCustomPackagesFilterError,
+    required TResult Function(PaginationLoading<T> value) paginationLoading,
+    required TResult Function(PaginationFailure<T> value) paginationFailure,
   }) {
     return renovateYourHouseLookUpsLoaded(this);
   }
@@ -1563,6 +2102,20 @@ class _$RenovateYourHouseLookUpsLoadedImpl<T>
         chooseFixedPackageRenovateYourHouseLoaded,
     TResult? Function(ChooseFixedPackageRenovateYourHouseError<T> value)?
         chooseFixedPackageRenovateYourHouseError,
+    TResult? Function(RenovateYourHouseFixedPackagesFilterLoading<T> value)?
+        renovateYourHouseFixedPackagesFilterLoading,
+    TResult? Function(RenovateYourHouseFixedPackagesFilterLoaded<T> value)?
+        renovateYourHouseFixedPackagesFilterLoaded,
+    TResult? Function(RenovateYourHouseFixedPackagesFilterError<T> value)?
+        renovateYourHouseFixedPackagesFilterError,
+    TResult? Function(RenovateYourHouseCustomPackagesFilterLoading<T> value)?
+        renovateYourHouseCustomPackagesFilterLoading,
+    TResult? Function(RenovateYourHouseCustomPackagesFilterLoaded<T> value)?
+        renovateYourHouseCustomPackagesFilterLoaded,
+    TResult? Function(RenovateYourHouseCustomPackagesFilterError<T> value)?
+        renovateYourHouseCustomPackagesFilterError,
+    TResult? Function(PaginationLoading<T> value)? paginationLoading,
+    TResult? Function(PaginationFailure<T> value)? paginationFailure,
   }) {
     return renovateYourHouseLookUpsLoaded?.call(this);
   }
@@ -1595,6 +2148,20 @@ class _$RenovateYourHouseLookUpsLoadedImpl<T>
         chooseFixedPackageRenovateYourHouseLoaded,
     TResult Function(ChooseFixedPackageRenovateYourHouseError<T> value)?
         chooseFixedPackageRenovateYourHouseError,
+    TResult Function(RenovateYourHouseFixedPackagesFilterLoading<T> value)?
+        renovateYourHouseFixedPackagesFilterLoading,
+    TResult Function(RenovateYourHouseFixedPackagesFilterLoaded<T> value)?
+        renovateYourHouseFixedPackagesFilterLoaded,
+    TResult Function(RenovateYourHouseFixedPackagesFilterError<T> value)?
+        renovateYourHouseFixedPackagesFilterError,
+    TResult Function(RenovateYourHouseCustomPackagesFilterLoading<T> value)?
+        renovateYourHouseCustomPackagesFilterLoading,
+    TResult Function(RenovateYourHouseCustomPackagesFilterLoaded<T> value)?
+        renovateYourHouseCustomPackagesFilterLoaded,
+    TResult Function(RenovateYourHouseCustomPackagesFilterError<T> value)?
+        renovateYourHouseCustomPackagesFilterError,
+    TResult Function(PaginationLoading<T> value)? paginationLoading,
+    TResult Function(PaginationFailure<T> value)? paginationFailure,
     required TResult orElse(),
   }) {
     if (renovateYourHouseLookUpsLoaded != null) {
@@ -1709,6 +2276,19 @@ class _$RenovateYourHouseLookUpsErrorImpl<T>
     required TResult Function(T data) chooseFixedPackageRenovateYourHouseLoaded,
     required TResult Function(String error)
         chooseFixedPackageRenovateYourHouseError,
+    required TResult Function() renovateYourHouseFixedPackagesFilterLoading,
+    required TResult Function(RenovateYourHouseFixedPackagesFilterResponse data)
+        renovateYourHouseFixedPackagesFilterLoaded,
+    required TResult Function(String error)
+        renovateYourHouseFixedPackagesFilterError,
+    required TResult Function() renovateYourHouseCustomPackagesFilterLoading,
+    required TResult Function(
+            RenovateYourHouseCustomPackagesFilterResponse data)
+        renovateYourHouseCustomPackagesFilterLoaded,
+    required TResult Function(String error)
+        renovateYourHouseCustomPackagesFilterError,
+    required TResult Function() paginationLoading,
+    required TResult Function(String errorMessage) paginationFailure,
   }) {
     return renovateYourHouseLookUpsError(error);
   }
@@ -1730,6 +2310,16 @@ class _$RenovateYourHouseLookUpsErrorImpl<T>
     TResult? Function()? chooseFixedPackageRenovateYourHouseLoading,
     TResult? Function(T data)? chooseFixedPackageRenovateYourHouseLoaded,
     TResult? Function(String error)? chooseFixedPackageRenovateYourHouseError,
+    TResult? Function()? renovateYourHouseFixedPackagesFilterLoading,
+    TResult? Function(RenovateYourHouseFixedPackagesFilterResponse data)?
+        renovateYourHouseFixedPackagesFilterLoaded,
+    TResult? Function(String error)? renovateYourHouseFixedPackagesFilterError,
+    TResult? Function()? renovateYourHouseCustomPackagesFilterLoading,
+    TResult? Function(RenovateYourHouseCustomPackagesFilterResponse data)?
+        renovateYourHouseCustomPackagesFilterLoaded,
+    TResult? Function(String error)? renovateYourHouseCustomPackagesFilterError,
+    TResult? Function()? paginationLoading,
+    TResult? Function(String errorMessage)? paginationFailure,
   }) {
     return renovateYourHouseLookUpsError?.call(error);
   }
@@ -1751,6 +2341,16 @@ class _$RenovateYourHouseLookUpsErrorImpl<T>
     TResult Function()? chooseFixedPackageRenovateYourHouseLoading,
     TResult Function(T data)? chooseFixedPackageRenovateYourHouseLoaded,
     TResult Function(String error)? chooseFixedPackageRenovateYourHouseError,
+    TResult Function()? renovateYourHouseFixedPackagesFilterLoading,
+    TResult Function(RenovateYourHouseFixedPackagesFilterResponse data)?
+        renovateYourHouseFixedPackagesFilterLoaded,
+    TResult Function(String error)? renovateYourHouseFixedPackagesFilterError,
+    TResult Function()? renovateYourHouseCustomPackagesFilterLoading,
+    TResult Function(RenovateYourHouseCustomPackagesFilterResponse data)?
+        renovateYourHouseCustomPackagesFilterLoaded,
+    TResult Function(String error)? renovateYourHouseCustomPackagesFilterError,
+    TResult Function()? paginationLoading,
+    TResult Function(String errorMessage)? paginationFailure,
     required TResult orElse(),
   }) {
     if (renovateYourHouseLookUpsError != null) {
@@ -1789,6 +2389,26 @@ class _$RenovateYourHouseLookUpsErrorImpl<T>
         chooseFixedPackageRenovateYourHouseLoaded,
     required TResult Function(ChooseFixedPackageRenovateYourHouseError<T> value)
         chooseFixedPackageRenovateYourHouseError,
+    required TResult Function(
+            RenovateYourHouseFixedPackagesFilterLoading<T> value)
+        renovateYourHouseFixedPackagesFilterLoading,
+    required TResult Function(
+            RenovateYourHouseFixedPackagesFilterLoaded<T> value)
+        renovateYourHouseFixedPackagesFilterLoaded,
+    required TResult Function(
+            RenovateYourHouseFixedPackagesFilterError<T> value)
+        renovateYourHouseFixedPackagesFilterError,
+    required TResult Function(
+            RenovateYourHouseCustomPackagesFilterLoading<T> value)
+        renovateYourHouseCustomPackagesFilterLoading,
+    required TResult Function(
+            RenovateYourHouseCustomPackagesFilterLoaded<T> value)
+        renovateYourHouseCustomPackagesFilterLoaded,
+    required TResult Function(
+            RenovateYourHouseCustomPackagesFilterError<T> value)
+        renovateYourHouseCustomPackagesFilterError,
+    required TResult Function(PaginationLoading<T> value) paginationLoading,
+    required TResult Function(PaginationFailure<T> value) paginationFailure,
   }) {
     return renovateYourHouseLookUpsError(this);
   }
@@ -1821,6 +2441,20 @@ class _$RenovateYourHouseLookUpsErrorImpl<T>
         chooseFixedPackageRenovateYourHouseLoaded,
     TResult? Function(ChooseFixedPackageRenovateYourHouseError<T> value)?
         chooseFixedPackageRenovateYourHouseError,
+    TResult? Function(RenovateYourHouseFixedPackagesFilterLoading<T> value)?
+        renovateYourHouseFixedPackagesFilterLoading,
+    TResult? Function(RenovateYourHouseFixedPackagesFilterLoaded<T> value)?
+        renovateYourHouseFixedPackagesFilterLoaded,
+    TResult? Function(RenovateYourHouseFixedPackagesFilterError<T> value)?
+        renovateYourHouseFixedPackagesFilterError,
+    TResult? Function(RenovateYourHouseCustomPackagesFilterLoading<T> value)?
+        renovateYourHouseCustomPackagesFilterLoading,
+    TResult? Function(RenovateYourHouseCustomPackagesFilterLoaded<T> value)?
+        renovateYourHouseCustomPackagesFilterLoaded,
+    TResult? Function(RenovateYourHouseCustomPackagesFilterError<T> value)?
+        renovateYourHouseCustomPackagesFilterError,
+    TResult? Function(PaginationLoading<T> value)? paginationLoading,
+    TResult? Function(PaginationFailure<T> value)? paginationFailure,
   }) {
     return renovateYourHouseLookUpsError?.call(this);
   }
@@ -1853,6 +2487,20 @@ class _$RenovateYourHouseLookUpsErrorImpl<T>
         chooseFixedPackageRenovateYourHouseLoaded,
     TResult Function(ChooseFixedPackageRenovateYourHouseError<T> value)?
         chooseFixedPackageRenovateYourHouseError,
+    TResult Function(RenovateYourHouseFixedPackagesFilterLoading<T> value)?
+        renovateYourHouseFixedPackagesFilterLoading,
+    TResult Function(RenovateYourHouseFixedPackagesFilterLoaded<T> value)?
+        renovateYourHouseFixedPackagesFilterLoaded,
+    TResult Function(RenovateYourHouseFixedPackagesFilterError<T> value)?
+        renovateYourHouseFixedPackagesFilterError,
+    TResult Function(RenovateYourHouseCustomPackagesFilterLoading<T> value)?
+        renovateYourHouseCustomPackagesFilterLoading,
+    TResult Function(RenovateYourHouseCustomPackagesFilterLoaded<T> value)?
+        renovateYourHouseCustomPackagesFilterLoaded,
+    TResult Function(RenovateYourHouseCustomPackagesFilterError<T> value)?
+        renovateYourHouseCustomPackagesFilterError,
+    TResult Function(PaginationLoading<T> value)? paginationLoading,
+    TResult Function(PaginationFailure<T> value)? paginationFailure,
     required TResult orElse(),
   }) {
     if (renovateYourHouseLookUpsError != null) {
@@ -1942,6 +2590,19 @@ class _$AddCustomPackageRenovateYourHouseLoadingImpl<T>
     required TResult Function(T data) chooseFixedPackageRenovateYourHouseLoaded,
     required TResult Function(String error)
         chooseFixedPackageRenovateYourHouseError,
+    required TResult Function() renovateYourHouseFixedPackagesFilterLoading,
+    required TResult Function(RenovateYourHouseFixedPackagesFilterResponse data)
+        renovateYourHouseFixedPackagesFilterLoaded,
+    required TResult Function(String error)
+        renovateYourHouseFixedPackagesFilterError,
+    required TResult Function() renovateYourHouseCustomPackagesFilterLoading,
+    required TResult Function(
+            RenovateYourHouseCustomPackagesFilterResponse data)
+        renovateYourHouseCustomPackagesFilterLoaded,
+    required TResult Function(String error)
+        renovateYourHouseCustomPackagesFilterError,
+    required TResult Function() paginationLoading,
+    required TResult Function(String errorMessage) paginationFailure,
   }) {
     return addCustomPackageRenovateYourHouseLoading();
   }
@@ -1963,6 +2624,16 @@ class _$AddCustomPackageRenovateYourHouseLoadingImpl<T>
     TResult? Function()? chooseFixedPackageRenovateYourHouseLoading,
     TResult? Function(T data)? chooseFixedPackageRenovateYourHouseLoaded,
     TResult? Function(String error)? chooseFixedPackageRenovateYourHouseError,
+    TResult? Function()? renovateYourHouseFixedPackagesFilterLoading,
+    TResult? Function(RenovateYourHouseFixedPackagesFilterResponse data)?
+        renovateYourHouseFixedPackagesFilterLoaded,
+    TResult? Function(String error)? renovateYourHouseFixedPackagesFilterError,
+    TResult? Function()? renovateYourHouseCustomPackagesFilterLoading,
+    TResult? Function(RenovateYourHouseCustomPackagesFilterResponse data)?
+        renovateYourHouseCustomPackagesFilterLoaded,
+    TResult? Function(String error)? renovateYourHouseCustomPackagesFilterError,
+    TResult? Function()? paginationLoading,
+    TResult? Function(String errorMessage)? paginationFailure,
   }) {
     return addCustomPackageRenovateYourHouseLoading?.call();
   }
@@ -1984,6 +2655,16 @@ class _$AddCustomPackageRenovateYourHouseLoadingImpl<T>
     TResult Function()? chooseFixedPackageRenovateYourHouseLoading,
     TResult Function(T data)? chooseFixedPackageRenovateYourHouseLoaded,
     TResult Function(String error)? chooseFixedPackageRenovateYourHouseError,
+    TResult Function()? renovateYourHouseFixedPackagesFilterLoading,
+    TResult Function(RenovateYourHouseFixedPackagesFilterResponse data)?
+        renovateYourHouseFixedPackagesFilterLoaded,
+    TResult Function(String error)? renovateYourHouseFixedPackagesFilterError,
+    TResult Function()? renovateYourHouseCustomPackagesFilterLoading,
+    TResult Function(RenovateYourHouseCustomPackagesFilterResponse data)?
+        renovateYourHouseCustomPackagesFilterLoaded,
+    TResult Function(String error)? renovateYourHouseCustomPackagesFilterError,
+    TResult Function()? paginationLoading,
+    TResult Function(String errorMessage)? paginationFailure,
     required TResult orElse(),
   }) {
     if (addCustomPackageRenovateYourHouseLoading != null) {
@@ -2022,6 +2703,26 @@ class _$AddCustomPackageRenovateYourHouseLoadingImpl<T>
         chooseFixedPackageRenovateYourHouseLoaded,
     required TResult Function(ChooseFixedPackageRenovateYourHouseError<T> value)
         chooseFixedPackageRenovateYourHouseError,
+    required TResult Function(
+            RenovateYourHouseFixedPackagesFilterLoading<T> value)
+        renovateYourHouseFixedPackagesFilterLoading,
+    required TResult Function(
+            RenovateYourHouseFixedPackagesFilterLoaded<T> value)
+        renovateYourHouseFixedPackagesFilterLoaded,
+    required TResult Function(
+            RenovateYourHouseFixedPackagesFilterError<T> value)
+        renovateYourHouseFixedPackagesFilterError,
+    required TResult Function(
+            RenovateYourHouseCustomPackagesFilterLoading<T> value)
+        renovateYourHouseCustomPackagesFilterLoading,
+    required TResult Function(
+            RenovateYourHouseCustomPackagesFilterLoaded<T> value)
+        renovateYourHouseCustomPackagesFilterLoaded,
+    required TResult Function(
+            RenovateYourHouseCustomPackagesFilterError<T> value)
+        renovateYourHouseCustomPackagesFilterError,
+    required TResult Function(PaginationLoading<T> value) paginationLoading,
+    required TResult Function(PaginationFailure<T> value) paginationFailure,
   }) {
     return addCustomPackageRenovateYourHouseLoading(this);
   }
@@ -2054,6 +2755,20 @@ class _$AddCustomPackageRenovateYourHouseLoadingImpl<T>
         chooseFixedPackageRenovateYourHouseLoaded,
     TResult? Function(ChooseFixedPackageRenovateYourHouseError<T> value)?
         chooseFixedPackageRenovateYourHouseError,
+    TResult? Function(RenovateYourHouseFixedPackagesFilterLoading<T> value)?
+        renovateYourHouseFixedPackagesFilterLoading,
+    TResult? Function(RenovateYourHouseFixedPackagesFilterLoaded<T> value)?
+        renovateYourHouseFixedPackagesFilterLoaded,
+    TResult? Function(RenovateYourHouseFixedPackagesFilterError<T> value)?
+        renovateYourHouseFixedPackagesFilterError,
+    TResult? Function(RenovateYourHouseCustomPackagesFilterLoading<T> value)?
+        renovateYourHouseCustomPackagesFilterLoading,
+    TResult? Function(RenovateYourHouseCustomPackagesFilterLoaded<T> value)?
+        renovateYourHouseCustomPackagesFilterLoaded,
+    TResult? Function(RenovateYourHouseCustomPackagesFilterError<T> value)?
+        renovateYourHouseCustomPackagesFilterError,
+    TResult? Function(PaginationLoading<T> value)? paginationLoading,
+    TResult? Function(PaginationFailure<T> value)? paginationFailure,
   }) {
     return addCustomPackageRenovateYourHouseLoading?.call(this);
   }
@@ -2086,6 +2801,20 @@ class _$AddCustomPackageRenovateYourHouseLoadingImpl<T>
         chooseFixedPackageRenovateYourHouseLoaded,
     TResult Function(ChooseFixedPackageRenovateYourHouseError<T> value)?
         chooseFixedPackageRenovateYourHouseError,
+    TResult Function(RenovateYourHouseFixedPackagesFilterLoading<T> value)?
+        renovateYourHouseFixedPackagesFilterLoading,
+    TResult Function(RenovateYourHouseFixedPackagesFilterLoaded<T> value)?
+        renovateYourHouseFixedPackagesFilterLoaded,
+    TResult Function(RenovateYourHouseFixedPackagesFilterError<T> value)?
+        renovateYourHouseFixedPackagesFilterError,
+    TResult Function(RenovateYourHouseCustomPackagesFilterLoading<T> value)?
+        renovateYourHouseCustomPackagesFilterLoading,
+    TResult Function(RenovateYourHouseCustomPackagesFilterLoaded<T> value)?
+        renovateYourHouseCustomPackagesFilterLoaded,
+    TResult Function(RenovateYourHouseCustomPackagesFilterError<T> value)?
+        renovateYourHouseCustomPackagesFilterError,
+    TResult Function(PaginationLoading<T> value)? paginationLoading,
+    TResult Function(PaginationFailure<T> value)? paginationFailure,
     required TResult orElse(),
   }) {
     if (addCustomPackageRenovateYourHouseLoading != null) {
@@ -2195,6 +2924,19 @@ class _$AddCustomPackageRenovateYourHouseLoadedImpl<T>
     required TResult Function(T data) chooseFixedPackageRenovateYourHouseLoaded,
     required TResult Function(String error)
         chooseFixedPackageRenovateYourHouseError,
+    required TResult Function() renovateYourHouseFixedPackagesFilterLoading,
+    required TResult Function(RenovateYourHouseFixedPackagesFilterResponse data)
+        renovateYourHouseFixedPackagesFilterLoaded,
+    required TResult Function(String error)
+        renovateYourHouseFixedPackagesFilterError,
+    required TResult Function() renovateYourHouseCustomPackagesFilterLoading,
+    required TResult Function(
+            RenovateYourHouseCustomPackagesFilterResponse data)
+        renovateYourHouseCustomPackagesFilterLoaded,
+    required TResult Function(String error)
+        renovateYourHouseCustomPackagesFilterError,
+    required TResult Function() paginationLoading,
+    required TResult Function(String errorMessage) paginationFailure,
   }) {
     return addCustomPackageRenovateYourHouseLoaded(data);
   }
@@ -2216,6 +2958,16 @@ class _$AddCustomPackageRenovateYourHouseLoadedImpl<T>
     TResult? Function()? chooseFixedPackageRenovateYourHouseLoading,
     TResult? Function(T data)? chooseFixedPackageRenovateYourHouseLoaded,
     TResult? Function(String error)? chooseFixedPackageRenovateYourHouseError,
+    TResult? Function()? renovateYourHouseFixedPackagesFilterLoading,
+    TResult? Function(RenovateYourHouseFixedPackagesFilterResponse data)?
+        renovateYourHouseFixedPackagesFilterLoaded,
+    TResult? Function(String error)? renovateYourHouseFixedPackagesFilterError,
+    TResult? Function()? renovateYourHouseCustomPackagesFilterLoading,
+    TResult? Function(RenovateYourHouseCustomPackagesFilterResponse data)?
+        renovateYourHouseCustomPackagesFilterLoaded,
+    TResult? Function(String error)? renovateYourHouseCustomPackagesFilterError,
+    TResult? Function()? paginationLoading,
+    TResult? Function(String errorMessage)? paginationFailure,
   }) {
     return addCustomPackageRenovateYourHouseLoaded?.call(data);
   }
@@ -2237,6 +2989,16 @@ class _$AddCustomPackageRenovateYourHouseLoadedImpl<T>
     TResult Function()? chooseFixedPackageRenovateYourHouseLoading,
     TResult Function(T data)? chooseFixedPackageRenovateYourHouseLoaded,
     TResult Function(String error)? chooseFixedPackageRenovateYourHouseError,
+    TResult Function()? renovateYourHouseFixedPackagesFilterLoading,
+    TResult Function(RenovateYourHouseFixedPackagesFilterResponse data)?
+        renovateYourHouseFixedPackagesFilterLoaded,
+    TResult Function(String error)? renovateYourHouseFixedPackagesFilterError,
+    TResult Function()? renovateYourHouseCustomPackagesFilterLoading,
+    TResult Function(RenovateYourHouseCustomPackagesFilterResponse data)?
+        renovateYourHouseCustomPackagesFilterLoaded,
+    TResult Function(String error)? renovateYourHouseCustomPackagesFilterError,
+    TResult Function()? paginationLoading,
+    TResult Function(String errorMessage)? paginationFailure,
     required TResult orElse(),
   }) {
     if (addCustomPackageRenovateYourHouseLoaded != null) {
@@ -2275,6 +3037,26 @@ class _$AddCustomPackageRenovateYourHouseLoadedImpl<T>
         chooseFixedPackageRenovateYourHouseLoaded,
     required TResult Function(ChooseFixedPackageRenovateYourHouseError<T> value)
         chooseFixedPackageRenovateYourHouseError,
+    required TResult Function(
+            RenovateYourHouseFixedPackagesFilterLoading<T> value)
+        renovateYourHouseFixedPackagesFilterLoading,
+    required TResult Function(
+            RenovateYourHouseFixedPackagesFilterLoaded<T> value)
+        renovateYourHouseFixedPackagesFilterLoaded,
+    required TResult Function(
+            RenovateYourHouseFixedPackagesFilterError<T> value)
+        renovateYourHouseFixedPackagesFilterError,
+    required TResult Function(
+            RenovateYourHouseCustomPackagesFilterLoading<T> value)
+        renovateYourHouseCustomPackagesFilterLoading,
+    required TResult Function(
+            RenovateYourHouseCustomPackagesFilterLoaded<T> value)
+        renovateYourHouseCustomPackagesFilterLoaded,
+    required TResult Function(
+            RenovateYourHouseCustomPackagesFilterError<T> value)
+        renovateYourHouseCustomPackagesFilterError,
+    required TResult Function(PaginationLoading<T> value) paginationLoading,
+    required TResult Function(PaginationFailure<T> value) paginationFailure,
   }) {
     return addCustomPackageRenovateYourHouseLoaded(this);
   }
@@ -2307,6 +3089,20 @@ class _$AddCustomPackageRenovateYourHouseLoadedImpl<T>
         chooseFixedPackageRenovateYourHouseLoaded,
     TResult? Function(ChooseFixedPackageRenovateYourHouseError<T> value)?
         chooseFixedPackageRenovateYourHouseError,
+    TResult? Function(RenovateYourHouseFixedPackagesFilterLoading<T> value)?
+        renovateYourHouseFixedPackagesFilterLoading,
+    TResult? Function(RenovateYourHouseFixedPackagesFilterLoaded<T> value)?
+        renovateYourHouseFixedPackagesFilterLoaded,
+    TResult? Function(RenovateYourHouseFixedPackagesFilterError<T> value)?
+        renovateYourHouseFixedPackagesFilterError,
+    TResult? Function(RenovateYourHouseCustomPackagesFilterLoading<T> value)?
+        renovateYourHouseCustomPackagesFilterLoading,
+    TResult? Function(RenovateYourHouseCustomPackagesFilterLoaded<T> value)?
+        renovateYourHouseCustomPackagesFilterLoaded,
+    TResult? Function(RenovateYourHouseCustomPackagesFilterError<T> value)?
+        renovateYourHouseCustomPackagesFilterError,
+    TResult? Function(PaginationLoading<T> value)? paginationLoading,
+    TResult? Function(PaginationFailure<T> value)? paginationFailure,
   }) {
     return addCustomPackageRenovateYourHouseLoaded?.call(this);
   }
@@ -2339,6 +3135,20 @@ class _$AddCustomPackageRenovateYourHouseLoadedImpl<T>
         chooseFixedPackageRenovateYourHouseLoaded,
     TResult Function(ChooseFixedPackageRenovateYourHouseError<T> value)?
         chooseFixedPackageRenovateYourHouseError,
+    TResult Function(RenovateYourHouseFixedPackagesFilterLoading<T> value)?
+        renovateYourHouseFixedPackagesFilterLoading,
+    TResult Function(RenovateYourHouseFixedPackagesFilterLoaded<T> value)?
+        renovateYourHouseFixedPackagesFilterLoaded,
+    TResult Function(RenovateYourHouseFixedPackagesFilterError<T> value)?
+        renovateYourHouseFixedPackagesFilterError,
+    TResult Function(RenovateYourHouseCustomPackagesFilterLoading<T> value)?
+        renovateYourHouseCustomPackagesFilterLoading,
+    TResult Function(RenovateYourHouseCustomPackagesFilterLoaded<T> value)?
+        renovateYourHouseCustomPackagesFilterLoaded,
+    TResult Function(RenovateYourHouseCustomPackagesFilterError<T> value)?
+        renovateYourHouseCustomPackagesFilterError,
+    TResult Function(PaginationLoading<T> value)? paginationLoading,
+    TResult Function(PaginationFailure<T> value)? paginationFailure,
     required TResult orElse(),
   }) {
     if (addCustomPackageRenovateYourHouseLoaded != null) {
@@ -2455,6 +3265,19 @@ class _$AddCustomPackageRenovateYourHouseErrorImpl<T>
     required TResult Function(T data) chooseFixedPackageRenovateYourHouseLoaded,
     required TResult Function(String error)
         chooseFixedPackageRenovateYourHouseError,
+    required TResult Function() renovateYourHouseFixedPackagesFilterLoading,
+    required TResult Function(RenovateYourHouseFixedPackagesFilterResponse data)
+        renovateYourHouseFixedPackagesFilterLoaded,
+    required TResult Function(String error)
+        renovateYourHouseFixedPackagesFilterError,
+    required TResult Function() renovateYourHouseCustomPackagesFilterLoading,
+    required TResult Function(
+            RenovateYourHouseCustomPackagesFilterResponse data)
+        renovateYourHouseCustomPackagesFilterLoaded,
+    required TResult Function(String error)
+        renovateYourHouseCustomPackagesFilterError,
+    required TResult Function() paginationLoading,
+    required TResult Function(String errorMessage) paginationFailure,
   }) {
     return addCustomPackageRenovateYourHouseError(error);
   }
@@ -2476,6 +3299,16 @@ class _$AddCustomPackageRenovateYourHouseErrorImpl<T>
     TResult? Function()? chooseFixedPackageRenovateYourHouseLoading,
     TResult? Function(T data)? chooseFixedPackageRenovateYourHouseLoaded,
     TResult? Function(String error)? chooseFixedPackageRenovateYourHouseError,
+    TResult? Function()? renovateYourHouseFixedPackagesFilterLoading,
+    TResult? Function(RenovateYourHouseFixedPackagesFilterResponse data)?
+        renovateYourHouseFixedPackagesFilterLoaded,
+    TResult? Function(String error)? renovateYourHouseFixedPackagesFilterError,
+    TResult? Function()? renovateYourHouseCustomPackagesFilterLoading,
+    TResult? Function(RenovateYourHouseCustomPackagesFilterResponse data)?
+        renovateYourHouseCustomPackagesFilterLoaded,
+    TResult? Function(String error)? renovateYourHouseCustomPackagesFilterError,
+    TResult? Function()? paginationLoading,
+    TResult? Function(String errorMessage)? paginationFailure,
   }) {
     return addCustomPackageRenovateYourHouseError?.call(error);
   }
@@ -2497,6 +3330,16 @@ class _$AddCustomPackageRenovateYourHouseErrorImpl<T>
     TResult Function()? chooseFixedPackageRenovateYourHouseLoading,
     TResult Function(T data)? chooseFixedPackageRenovateYourHouseLoaded,
     TResult Function(String error)? chooseFixedPackageRenovateYourHouseError,
+    TResult Function()? renovateYourHouseFixedPackagesFilterLoading,
+    TResult Function(RenovateYourHouseFixedPackagesFilterResponse data)?
+        renovateYourHouseFixedPackagesFilterLoaded,
+    TResult Function(String error)? renovateYourHouseFixedPackagesFilterError,
+    TResult Function()? renovateYourHouseCustomPackagesFilterLoading,
+    TResult Function(RenovateYourHouseCustomPackagesFilterResponse data)?
+        renovateYourHouseCustomPackagesFilterLoaded,
+    TResult Function(String error)? renovateYourHouseCustomPackagesFilterError,
+    TResult Function()? paginationLoading,
+    TResult Function(String errorMessage)? paginationFailure,
     required TResult orElse(),
   }) {
     if (addCustomPackageRenovateYourHouseError != null) {
@@ -2535,6 +3378,26 @@ class _$AddCustomPackageRenovateYourHouseErrorImpl<T>
         chooseFixedPackageRenovateYourHouseLoaded,
     required TResult Function(ChooseFixedPackageRenovateYourHouseError<T> value)
         chooseFixedPackageRenovateYourHouseError,
+    required TResult Function(
+            RenovateYourHouseFixedPackagesFilterLoading<T> value)
+        renovateYourHouseFixedPackagesFilterLoading,
+    required TResult Function(
+            RenovateYourHouseFixedPackagesFilterLoaded<T> value)
+        renovateYourHouseFixedPackagesFilterLoaded,
+    required TResult Function(
+            RenovateYourHouseFixedPackagesFilterError<T> value)
+        renovateYourHouseFixedPackagesFilterError,
+    required TResult Function(
+            RenovateYourHouseCustomPackagesFilterLoading<T> value)
+        renovateYourHouseCustomPackagesFilterLoading,
+    required TResult Function(
+            RenovateYourHouseCustomPackagesFilterLoaded<T> value)
+        renovateYourHouseCustomPackagesFilterLoaded,
+    required TResult Function(
+            RenovateYourHouseCustomPackagesFilterError<T> value)
+        renovateYourHouseCustomPackagesFilterError,
+    required TResult Function(PaginationLoading<T> value) paginationLoading,
+    required TResult Function(PaginationFailure<T> value) paginationFailure,
   }) {
     return addCustomPackageRenovateYourHouseError(this);
   }
@@ -2567,6 +3430,20 @@ class _$AddCustomPackageRenovateYourHouseErrorImpl<T>
         chooseFixedPackageRenovateYourHouseLoaded,
     TResult? Function(ChooseFixedPackageRenovateYourHouseError<T> value)?
         chooseFixedPackageRenovateYourHouseError,
+    TResult? Function(RenovateYourHouseFixedPackagesFilterLoading<T> value)?
+        renovateYourHouseFixedPackagesFilterLoading,
+    TResult? Function(RenovateYourHouseFixedPackagesFilterLoaded<T> value)?
+        renovateYourHouseFixedPackagesFilterLoaded,
+    TResult? Function(RenovateYourHouseFixedPackagesFilterError<T> value)?
+        renovateYourHouseFixedPackagesFilterError,
+    TResult? Function(RenovateYourHouseCustomPackagesFilterLoading<T> value)?
+        renovateYourHouseCustomPackagesFilterLoading,
+    TResult? Function(RenovateYourHouseCustomPackagesFilterLoaded<T> value)?
+        renovateYourHouseCustomPackagesFilterLoaded,
+    TResult? Function(RenovateYourHouseCustomPackagesFilterError<T> value)?
+        renovateYourHouseCustomPackagesFilterError,
+    TResult? Function(PaginationLoading<T> value)? paginationLoading,
+    TResult? Function(PaginationFailure<T> value)? paginationFailure,
   }) {
     return addCustomPackageRenovateYourHouseError?.call(this);
   }
@@ -2599,6 +3476,20 @@ class _$AddCustomPackageRenovateYourHouseErrorImpl<T>
         chooseFixedPackageRenovateYourHouseLoaded,
     TResult Function(ChooseFixedPackageRenovateYourHouseError<T> value)?
         chooseFixedPackageRenovateYourHouseError,
+    TResult Function(RenovateYourHouseFixedPackagesFilterLoading<T> value)?
+        renovateYourHouseFixedPackagesFilterLoading,
+    TResult Function(RenovateYourHouseFixedPackagesFilterLoaded<T> value)?
+        renovateYourHouseFixedPackagesFilterLoaded,
+    TResult Function(RenovateYourHouseFixedPackagesFilterError<T> value)?
+        renovateYourHouseFixedPackagesFilterError,
+    TResult Function(RenovateYourHouseCustomPackagesFilterLoading<T> value)?
+        renovateYourHouseCustomPackagesFilterLoading,
+    TResult Function(RenovateYourHouseCustomPackagesFilterLoaded<T> value)?
+        renovateYourHouseCustomPackagesFilterLoaded,
+    TResult Function(RenovateYourHouseCustomPackagesFilterError<T> value)?
+        renovateYourHouseCustomPackagesFilterError,
+    TResult Function(PaginationLoading<T> value)? paginationLoading,
+    TResult Function(PaginationFailure<T> value)? paginationFailure,
     required TResult orElse(),
   }) {
     if (addCustomPackageRenovateYourHouseError != null) {
@@ -2689,6 +3580,19 @@ class _$ChooseFixedPackageRenovateYourHouseLoadingImpl<T>
     required TResult Function(T data) chooseFixedPackageRenovateYourHouseLoaded,
     required TResult Function(String error)
         chooseFixedPackageRenovateYourHouseError,
+    required TResult Function() renovateYourHouseFixedPackagesFilterLoading,
+    required TResult Function(RenovateYourHouseFixedPackagesFilterResponse data)
+        renovateYourHouseFixedPackagesFilterLoaded,
+    required TResult Function(String error)
+        renovateYourHouseFixedPackagesFilterError,
+    required TResult Function() renovateYourHouseCustomPackagesFilterLoading,
+    required TResult Function(
+            RenovateYourHouseCustomPackagesFilterResponse data)
+        renovateYourHouseCustomPackagesFilterLoaded,
+    required TResult Function(String error)
+        renovateYourHouseCustomPackagesFilterError,
+    required TResult Function() paginationLoading,
+    required TResult Function(String errorMessage) paginationFailure,
   }) {
     return chooseFixedPackageRenovateYourHouseLoading();
   }
@@ -2710,6 +3614,16 @@ class _$ChooseFixedPackageRenovateYourHouseLoadingImpl<T>
     TResult? Function()? chooseFixedPackageRenovateYourHouseLoading,
     TResult? Function(T data)? chooseFixedPackageRenovateYourHouseLoaded,
     TResult? Function(String error)? chooseFixedPackageRenovateYourHouseError,
+    TResult? Function()? renovateYourHouseFixedPackagesFilterLoading,
+    TResult? Function(RenovateYourHouseFixedPackagesFilterResponse data)?
+        renovateYourHouseFixedPackagesFilterLoaded,
+    TResult? Function(String error)? renovateYourHouseFixedPackagesFilterError,
+    TResult? Function()? renovateYourHouseCustomPackagesFilterLoading,
+    TResult? Function(RenovateYourHouseCustomPackagesFilterResponse data)?
+        renovateYourHouseCustomPackagesFilterLoaded,
+    TResult? Function(String error)? renovateYourHouseCustomPackagesFilterError,
+    TResult? Function()? paginationLoading,
+    TResult? Function(String errorMessage)? paginationFailure,
   }) {
     return chooseFixedPackageRenovateYourHouseLoading?.call();
   }
@@ -2731,6 +3645,16 @@ class _$ChooseFixedPackageRenovateYourHouseLoadingImpl<T>
     TResult Function()? chooseFixedPackageRenovateYourHouseLoading,
     TResult Function(T data)? chooseFixedPackageRenovateYourHouseLoaded,
     TResult Function(String error)? chooseFixedPackageRenovateYourHouseError,
+    TResult Function()? renovateYourHouseFixedPackagesFilterLoading,
+    TResult Function(RenovateYourHouseFixedPackagesFilterResponse data)?
+        renovateYourHouseFixedPackagesFilterLoaded,
+    TResult Function(String error)? renovateYourHouseFixedPackagesFilterError,
+    TResult Function()? renovateYourHouseCustomPackagesFilterLoading,
+    TResult Function(RenovateYourHouseCustomPackagesFilterResponse data)?
+        renovateYourHouseCustomPackagesFilterLoaded,
+    TResult Function(String error)? renovateYourHouseCustomPackagesFilterError,
+    TResult Function()? paginationLoading,
+    TResult Function(String errorMessage)? paginationFailure,
     required TResult orElse(),
   }) {
     if (chooseFixedPackageRenovateYourHouseLoading != null) {
@@ -2769,6 +3693,26 @@ class _$ChooseFixedPackageRenovateYourHouseLoadingImpl<T>
         chooseFixedPackageRenovateYourHouseLoaded,
     required TResult Function(ChooseFixedPackageRenovateYourHouseError<T> value)
         chooseFixedPackageRenovateYourHouseError,
+    required TResult Function(
+            RenovateYourHouseFixedPackagesFilterLoading<T> value)
+        renovateYourHouseFixedPackagesFilterLoading,
+    required TResult Function(
+            RenovateYourHouseFixedPackagesFilterLoaded<T> value)
+        renovateYourHouseFixedPackagesFilterLoaded,
+    required TResult Function(
+            RenovateYourHouseFixedPackagesFilterError<T> value)
+        renovateYourHouseFixedPackagesFilterError,
+    required TResult Function(
+            RenovateYourHouseCustomPackagesFilterLoading<T> value)
+        renovateYourHouseCustomPackagesFilterLoading,
+    required TResult Function(
+            RenovateYourHouseCustomPackagesFilterLoaded<T> value)
+        renovateYourHouseCustomPackagesFilterLoaded,
+    required TResult Function(
+            RenovateYourHouseCustomPackagesFilterError<T> value)
+        renovateYourHouseCustomPackagesFilterError,
+    required TResult Function(PaginationLoading<T> value) paginationLoading,
+    required TResult Function(PaginationFailure<T> value) paginationFailure,
   }) {
     return chooseFixedPackageRenovateYourHouseLoading(this);
   }
@@ -2801,6 +3745,20 @@ class _$ChooseFixedPackageRenovateYourHouseLoadingImpl<T>
         chooseFixedPackageRenovateYourHouseLoaded,
     TResult? Function(ChooseFixedPackageRenovateYourHouseError<T> value)?
         chooseFixedPackageRenovateYourHouseError,
+    TResult? Function(RenovateYourHouseFixedPackagesFilterLoading<T> value)?
+        renovateYourHouseFixedPackagesFilterLoading,
+    TResult? Function(RenovateYourHouseFixedPackagesFilterLoaded<T> value)?
+        renovateYourHouseFixedPackagesFilterLoaded,
+    TResult? Function(RenovateYourHouseFixedPackagesFilterError<T> value)?
+        renovateYourHouseFixedPackagesFilterError,
+    TResult? Function(RenovateYourHouseCustomPackagesFilterLoading<T> value)?
+        renovateYourHouseCustomPackagesFilterLoading,
+    TResult? Function(RenovateYourHouseCustomPackagesFilterLoaded<T> value)?
+        renovateYourHouseCustomPackagesFilterLoaded,
+    TResult? Function(RenovateYourHouseCustomPackagesFilterError<T> value)?
+        renovateYourHouseCustomPackagesFilterError,
+    TResult? Function(PaginationLoading<T> value)? paginationLoading,
+    TResult? Function(PaginationFailure<T> value)? paginationFailure,
   }) {
     return chooseFixedPackageRenovateYourHouseLoading?.call(this);
   }
@@ -2833,6 +3791,20 @@ class _$ChooseFixedPackageRenovateYourHouseLoadingImpl<T>
         chooseFixedPackageRenovateYourHouseLoaded,
     TResult Function(ChooseFixedPackageRenovateYourHouseError<T> value)?
         chooseFixedPackageRenovateYourHouseError,
+    TResult Function(RenovateYourHouseFixedPackagesFilterLoading<T> value)?
+        renovateYourHouseFixedPackagesFilterLoading,
+    TResult Function(RenovateYourHouseFixedPackagesFilterLoaded<T> value)?
+        renovateYourHouseFixedPackagesFilterLoaded,
+    TResult Function(RenovateYourHouseFixedPackagesFilterError<T> value)?
+        renovateYourHouseFixedPackagesFilterError,
+    TResult Function(RenovateYourHouseCustomPackagesFilterLoading<T> value)?
+        renovateYourHouseCustomPackagesFilterLoading,
+    TResult Function(RenovateYourHouseCustomPackagesFilterLoaded<T> value)?
+        renovateYourHouseCustomPackagesFilterLoaded,
+    TResult Function(RenovateYourHouseCustomPackagesFilterError<T> value)?
+        renovateYourHouseCustomPackagesFilterError,
+    TResult Function(PaginationLoading<T> value)? paginationLoading,
+    TResult Function(PaginationFailure<T> value)? paginationFailure,
     required TResult orElse(),
   }) {
     if (chooseFixedPackageRenovateYourHouseLoading != null) {
@@ -2944,6 +3916,19 @@ class _$ChooseFixedPackageRenovateYourHouseLoadedImpl<T>
     required TResult Function(T data) chooseFixedPackageRenovateYourHouseLoaded,
     required TResult Function(String error)
         chooseFixedPackageRenovateYourHouseError,
+    required TResult Function() renovateYourHouseFixedPackagesFilterLoading,
+    required TResult Function(RenovateYourHouseFixedPackagesFilterResponse data)
+        renovateYourHouseFixedPackagesFilterLoaded,
+    required TResult Function(String error)
+        renovateYourHouseFixedPackagesFilterError,
+    required TResult Function() renovateYourHouseCustomPackagesFilterLoading,
+    required TResult Function(
+            RenovateYourHouseCustomPackagesFilterResponse data)
+        renovateYourHouseCustomPackagesFilterLoaded,
+    required TResult Function(String error)
+        renovateYourHouseCustomPackagesFilterError,
+    required TResult Function() paginationLoading,
+    required TResult Function(String errorMessage) paginationFailure,
   }) {
     return chooseFixedPackageRenovateYourHouseLoaded(data);
   }
@@ -2965,6 +3950,16 @@ class _$ChooseFixedPackageRenovateYourHouseLoadedImpl<T>
     TResult? Function()? chooseFixedPackageRenovateYourHouseLoading,
     TResult? Function(T data)? chooseFixedPackageRenovateYourHouseLoaded,
     TResult? Function(String error)? chooseFixedPackageRenovateYourHouseError,
+    TResult? Function()? renovateYourHouseFixedPackagesFilterLoading,
+    TResult? Function(RenovateYourHouseFixedPackagesFilterResponse data)?
+        renovateYourHouseFixedPackagesFilterLoaded,
+    TResult? Function(String error)? renovateYourHouseFixedPackagesFilterError,
+    TResult? Function()? renovateYourHouseCustomPackagesFilterLoading,
+    TResult? Function(RenovateYourHouseCustomPackagesFilterResponse data)?
+        renovateYourHouseCustomPackagesFilterLoaded,
+    TResult? Function(String error)? renovateYourHouseCustomPackagesFilterError,
+    TResult? Function()? paginationLoading,
+    TResult? Function(String errorMessage)? paginationFailure,
   }) {
     return chooseFixedPackageRenovateYourHouseLoaded?.call(data);
   }
@@ -2986,6 +3981,16 @@ class _$ChooseFixedPackageRenovateYourHouseLoadedImpl<T>
     TResult Function()? chooseFixedPackageRenovateYourHouseLoading,
     TResult Function(T data)? chooseFixedPackageRenovateYourHouseLoaded,
     TResult Function(String error)? chooseFixedPackageRenovateYourHouseError,
+    TResult Function()? renovateYourHouseFixedPackagesFilterLoading,
+    TResult Function(RenovateYourHouseFixedPackagesFilterResponse data)?
+        renovateYourHouseFixedPackagesFilterLoaded,
+    TResult Function(String error)? renovateYourHouseFixedPackagesFilterError,
+    TResult Function()? renovateYourHouseCustomPackagesFilterLoading,
+    TResult Function(RenovateYourHouseCustomPackagesFilterResponse data)?
+        renovateYourHouseCustomPackagesFilterLoaded,
+    TResult Function(String error)? renovateYourHouseCustomPackagesFilterError,
+    TResult Function()? paginationLoading,
+    TResult Function(String errorMessage)? paginationFailure,
     required TResult orElse(),
   }) {
     if (chooseFixedPackageRenovateYourHouseLoaded != null) {
@@ -3024,6 +4029,26 @@ class _$ChooseFixedPackageRenovateYourHouseLoadedImpl<T>
         chooseFixedPackageRenovateYourHouseLoaded,
     required TResult Function(ChooseFixedPackageRenovateYourHouseError<T> value)
         chooseFixedPackageRenovateYourHouseError,
+    required TResult Function(
+            RenovateYourHouseFixedPackagesFilterLoading<T> value)
+        renovateYourHouseFixedPackagesFilterLoading,
+    required TResult Function(
+            RenovateYourHouseFixedPackagesFilterLoaded<T> value)
+        renovateYourHouseFixedPackagesFilterLoaded,
+    required TResult Function(
+            RenovateYourHouseFixedPackagesFilterError<T> value)
+        renovateYourHouseFixedPackagesFilterError,
+    required TResult Function(
+            RenovateYourHouseCustomPackagesFilterLoading<T> value)
+        renovateYourHouseCustomPackagesFilterLoading,
+    required TResult Function(
+            RenovateYourHouseCustomPackagesFilterLoaded<T> value)
+        renovateYourHouseCustomPackagesFilterLoaded,
+    required TResult Function(
+            RenovateYourHouseCustomPackagesFilterError<T> value)
+        renovateYourHouseCustomPackagesFilterError,
+    required TResult Function(PaginationLoading<T> value) paginationLoading,
+    required TResult Function(PaginationFailure<T> value) paginationFailure,
   }) {
     return chooseFixedPackageRenovateYourHouseLoaded(this);
   }
@@ -3056,6 +4081,20 @@ class _$ChooseFixedPackageRenovateYourHouseLoadedImpl<T>
         chooseFixedPackageRenovateYourHouseLoaded,
     TResult? Function(ChooseFixedPackageRenovateYourHouseError<T> value)?
         chooseFixedPackageRenovateYourHouseError,
+    TResult? Function(RenovateYourHouseFixedPackagesFilterLoading<T> value)?
+        renovateYourHouseFixedPackagesFilterLoading,
+    TResult? Function(RenovateYourHouseFixedPackagesFilterLoaded<T> value)?
+        renovateYourHouseFixedPackagesFilterLoaded,
+    TResult? Function(RenovateYourHouseFixedPackagesFilterError<T> value)?
+        renovateYourHouseFixedPackagesFilterError,
+    TResult? Function(RenovateYourHouseCustomPackagesFilterLoading<T> value)?
+        renovateYourHouseCustomPackagesFilterLoading,
+    TResult? Function(RenovateYourHouseCustomPackagesFilterLoaded<T> value)?
+        renovateYourHouseCustomPackagesFilterLoaded,
+    TResult? Function(RenovateYourHouseCustomPackagesFilterError<T> value)?
+        renovateYourHouseCustomPackagesFilterError,
+    TResult? Function(PaginationLoading<T> value)? paginationLoading,
+    TResult? Function(PaginationFailure<T> value)? paginationFailure,
   }) {
     return chooseFixedPackageRenovateYourHouseLoaded?.call(this);
   }
@@ -3088,6 +4127,20 @@ class _$ChooseFixedPackageRenovateYourHouseLoadedImpl<T>
         chooseFixedPackageRenovateYourHouseLoaded,
     TResult Function(ChooseFixedPackageRenovateYourHouseError<T> value)?
         chooseFixedPackageRenovateYourHouseError,
+    TResult Function(RenovateYourHouseFixedPackagesFilterLoading<T> value)?
+        renovateYourHouseFixedPackagesFilterLoading,
+    TResult Function(RenovateYourHouseFixedPackagesFilterLoaded<T> value)?
+        renovateYourHouseFixedPackagesFilterLoaded,
+    TResult Function(RenovateYourHouseFixedPackagesFilterError<T> value)?
+        renovateYourHouseFixedPackagesFilterError,
+    TResult Function(RenovateYourHouseCustomPackagesFilterLoading<T> value)?
+        renovateYourHouseCustomPackagesFilterLoading,
+    TResult Function(RenovateYourHouseCustomPackagesFilterLoaded<T> value)?
+        renovateYourHouseCustomPackagesFilterLoaded,
+    TResult Function(RenovateYourHouseCustomPackagesFilterError<T> value)?
+        renovateYourHouseCustomPackagesFilterError,
+    TResult Function(PaginationLoading<T> value)? paginationLoading,
+    TResult Function(PaginationFailure<T> value)? paginationFailure,
     required TResult orElse(),
   }) {
     if (chooseFixedPackageRenovateYourHouseLoaded != null) {
@@ -3207,6 +4260,19 @@ class _$ChooseFixedPackageRenovateYourHouseErrorImpl<T>
     required TResult Function(T data) chooseFixedPackageRenovateYourHouseLoaded,
     required TResult Function(String error)
         chooseFixedPackageRenovateYourHouseError,
+    required TResult Function() renovateYourHouseFixedPackagesFilterLoading,
+    required TResult Function(RenovateYourHouseFixedPackagesFilterResponse data)
+        renovateYourHouseFixedPackagesFilterLoaded,
+    required TResult Function(String error)
+        renovateYourHouseFixedPackagesFilterError,
+    required TResult Function() renovateYourHouseCustomPackagesFilterLoading,
+    required TResult Function(
+            RenovateYourHouseCustomPackagesFilterResponse data)
+        renovateYourHouseCustomPackagesFilterLoaded,
+    required TResult Function(String error)
+        renovateYourHouseCustomPackagesFilterError,
+    required TResult Function() paginationLoading,
+    required TResult Function(String errorMessage) paginationFailure,
   }) {
     return chooseFixedPackageRenovateYourHouseError(error);
   }
@@ -3228,6 +4294,16 @@ class _$ChooseFixedPackageRenovateYourHouseErrorImpl<T>
     TResult? Function()? chooseFixedPackageRenovateYourHouseLoading,
     TResult? Function(T data)? chooseFixedPackageRenovateYourHouseLoaded,
     TResult? Function(String error)? chooseFixedPackageRenovateYourHouseError,
+    TResult? Function()? renovateYourHouseFixedPackagesFilterLoading,
+    TResult? Function(RenovateYourHouseFixedPackagesFilterResponse data)?
+        renovateYourHouseFixedPackagesFilterLoaded,
+    TResult? Function(String error)? renovateYourHouseFixedPackagesFilterError,
+    TResult? Function()? renovateYourHouseCustomPackagesFilterLoading,
+    TResult? Function(RenovateYourHouseCustomPackagesFilterResponse data)?
+        renovateYourHouseCustomPackagesFilterLoaded,
+    TResult? Function(String error)? renovateYourHouseCustomPackagesFilterError,
+    TResult? Function()? paginationLoading,
+    TResult? Function(String errorMessage)? paginationFailure,
   }) {
     return chooseFixedPackageRenovateYourHouseError?.call(error);
   }
@@ -3249,6 +4325,16 @@ class _$ChooseFixedPackageRenovateYourHouseErrorImpl<T>
     TResult Function()? chooseFixedPackageRenovateYourHouseLoading,
     TResult Function(T data)? chooseFixedPackageRenovateYourHouseLoaded,
     TResult Function(String error)? chooseFixedPackageRenovateYourHouseError,
+    TResult Function()? renovateYourHouseFixedPackagesFilterLoading,
+    TResult Function(RenovateYourHouseFixedPackagesFilterResponse data)?
+        renovateYourHouseFixedPackagesFilterLoaded,
+    TResult Function(String error)? renovateYourHouseFixedPackagesFilterError,
+    TResult Function()? renovateYourHouseCustomPackagesFilterLoading,
+    TResult Function(RenovateYourHouseCustomPackagesFilterResponse data)?
+        renovateYourHouseCustomPackagesFilterLoaded,
+    TResult Function(String error)? renovateYourHouseCustomPackagesFilterError,
+    TResult Function()? paginationLoading,
+    TResult Function(String errorMessage)? paginationFailure,
     required TResult orElse(),
   }) {
     if (chooseFixedPackageRenovateYourHouseError != null) {
@@ -3287,6 +4373,26 @@ class _$ChooseFixedPackageRenovateYourHouseErrorImpl<T>
         chooseFixedPackageRenovateYourHouseLoaded,
     required TResult Function(ChooseFixedPackageRenovateYourHouseError<T> value)
         chooseFixedPackageRenovateYourHouseError,
+    required TResult Function(
+            RenovateYourHouseFixedPackagesFilterLoading<T> value)
+        renovateYourHouseFixedPackagesFilterLoading,
+    required TResult Function(
+            RenovateYourHouseFixedPackagesFilterLoaded<T> value)
+        renovateYourHouseFixedPackagesFilterLoaded,
+    required TResult Function(
+            RenovateYourHouseFixedPackagesFilterError<T> value)
+        renovateYourHouseFixedPackagesFilterError,
+    required TResult Function(
+            RenovateYourHouseCustomPackagesFilterLoading<T> value)
+        renovateYourHouseCustomPackagesFilterLoading,
+    required TResult Function(
+            RenovateYourHouseCustomPackagesFilterLoaded<T> value)
+        renovateYourHouseCustomPackagesFilterLoaded,
+    required TResult Function(
+            RenovateYourHouseCustomPackagesFilterError<T> value)
+        renovateYourHouseCustomPackagesFilterError,
+    required TResult Function(PaginationLoading<T> value) paginationLoading,
+    required TResult Function(PaginationFailure<T> value) paginationFailure,
   }) {
     return chooseFixedPackageRenovateYourHouseError(this);
   }
@@ -3319,6 +4425,20 @@ class _$ChooseFixedPackageRenovateYourHouseErrorImpl<T>
         chooseFixedPackageRenovateYourHouseLoaded,
     TResult? Function(ChooseFixedPackageRenovateYourHouseError<T> value)?
         chooseFixedPackageRenovateYourHouseError,
+    TResult? Function(RenovateYourHouseFixedPackagesFilterLoading<T> value)?
+        renovateYourHouseFixedPackagesFilterLoading,
+    TResult? Function(RenovateYourHouseFixedPackagesFilterLoaded<T> value)?
+        renovateYourHouseFixedPackagesFilterLoaded,
+    TResult? Function(RenovateYourHouseFixedPackagesFilterError<T> value)?
+        renovateYourHouseFixedPackagesFilterError,
+    TResult? Function(RenovateYourHouseCustomPackagesFilterLoading<T> value)?
+        renovateYourHouseCustomPackagesFilterLoading,
+    TResult? Function(RenovateYourHouseCustomPackagesFilterLoaded<T> value)?
+        renovateYourHouseCustomPackagesFilterLoaded,
+    TResult? Function(RenovateYourHouseCustomPackagesFilterError<T> value)?
+        renovateYourHouseCustomPackagesFilterError,
+    TResult? Function(PaginationLoading<T> value)? paginationLoading,
+    TResult? Function(PaginationFailure<T> value)? paginationFailure,
   }) {
     return chooseFixedPackageRenovateYourHouseError?.call(this);
   }
@@ -3351,6 +4471,20 @@ class _$ChooseFixedPackageRenovateYourHouseErrorImpl<T>
         chooseFixedPackageRenovateYourHouseLoaded,
     TResult Function(ChooseFixedPackageRenovateYourHouseError<T> value)?
         chooseFixedPackageRenovateYourHouseError,
+    TResult Function(RenovateYourHouseFixedPackagesFilterLoading<T> value)?
+        renovateYourHouseFixedPackagesFilterLoading,
+    TResult Function(RenovateYourHouseFixedPackagesFilterLoaded<T> value)?
+        renovateYourHouseFixedPackagesFilterLoaded,
+    TResult Function(RenovateYourHouseFixedPackagesFilterError<T> value)?
+        renovateYourHouseFixedPackagesFilterError,
+    TResult Function(RenovateYourHouseCustomPackagesFilterLoading<T> value)?
+        renovateYourHouseCustomPackagesFilterLoading,
+    TResult Function(RenovateYourHouseCustomPackagesFilterLoaded<T> value)?
+        renovateYourHouseCustomPackagesFilterLoaded,
+    TResult Function(RenovateYourHouseCustomPackagesFilterError<T> value)?
+        renovateYourHouseCustomPackagesFilterError,
+    TResult Function(PaginationLoading<T> value)? paginationLoading,
+    TResult Function(PaginationFailure<T> value)? paginationFailure,
     required TResult orElse(),
   }) {
     if (chooseFixedPackageRenovateYourHouseError != null) {
@@ -3373,5 +4507,2628 @@ abstract class ChooseFixedPackageRenovateYourHouseError<T>
   @JsonKey(includeFromJson: false, includeToJson: false)
   _$$ChooseFixedPackageRenovateYourHouseErrorImplCopyWith<T,
           _$ChooseFixedPackageRenovateYourHouseErrorImpl<T>>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$RenovateYourHouseFixedPackagesFilterLoadingImplCopyWith<T,
+    $Res> {
+  factory _$$RenovateYourHouseFixedPackagesFilterLoadingImplCopyWith(
+          _$RenovateYourHouseFixedPackagesFilterLoadingImpl<T> value,
+          $Res Function(_$RenovateYourHouseFixedPackagesFilterLoadingImpl<T>)
+              then) =
+      __$$RenovateYourHouseFixedPackagesFilterLoadingImplCopyWithImpl<T, $Res>;
+}
+
+/// @nodoc
+class __$$RenovateYourHouseFixedPackagesFilterLoadingImplCopyWithImpl<T, $Res>
+    extends _$RenovateYourHouseStateCopyWithImpl<T, $Res,
+        _$RenovateYourHouseFixedPackagesFilterLoadingImpl<T>>
+    implements
+        _$$RenovateYourHouseFixedPackagesFilterLoadingImplCopyWith<T, $Res> {
+  __$$RenovateYourHouseFixedPackagesFilterLoadingImplCopyWithImpl(
+      _$RenovateYourHouseFixedPackagesFilterLoadingImpl<T> _value,
+      $Res Function(_$RenovateYourHouseFixedPackagesFilterLoadingImpl<T>) _then)
+      : super(_value, _then);
+
+  /// Create a copy of RenovateYourHouseState
+  /// with the given fields replaced by the non-null parameter values.
+}
+
+/// @nodoc
+
+class _$RenovateYourHouseFixedPackagesFilterLoadingImpl<T>
+    implements RenovateYourHouseFixedPackagesFilterLoading<T> {
+  _$RenovateYourHouseFixedPackagesFilterLoadingImpl();
+
+  @override
+  String toString() {
+    return 'RenovateYourHouseState<$T>.renovateYourHouseFixedPackagesFilterLoading()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$RenovateYourHouseFixedPackagesFilterLoadingImpl<T>);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() renovateYourHouseFixedPackagesLoading,
+    required TResult Function(RenovateYourHouseFixedPackagesModel data)
+        renovateYourHouseFixedPackagesLoaded,
+    required TResult Function(String error) renovateYourHouseFixedPackagesError,
+    required TResult Function() renovateYourHouseLookUpsLoading,
+    required TResult Function(T data) renovateYourHouseLookUpsLoaded,
+    required TResult Function(String error) renovateYourHouseLookUpsError,
+    required TResult Function() addCustomPackageRenovateYourHouseLoading,
+    required TResult Function(T data) addCustomPackageRenovateYourHouseLoaded,
+    required TResult Function(String error)
+        addCustomPackageRenovateYourHouseError,
+    required TResult Function() chooseFixedPackageRenovateYourHouseLoading,
+    required TResult Function(T data) chooseFixedPackageRenovateYourHouseLoaded,
+    required TResult Function(String error)
+        chooseFixedPackageRenovateYourHouseError,
+    required TResult Function() renovateYourHouseFixedPackagesFilterLoading,
+    required TResult Function(RenovateYourHouseFixedPackagesFilterResponse data)
+        renovateYourHouseFixedPackagesFilterLoaded,
+    required TResult Function(String error)
+        renovateYourHouseFixedPackagesFilterError,
+    required TResult Function() renovateYourHouseCustomPackagesFilterLoading,
+    required TResult Function(
+            RenovateYourHouseCustomPackagesFilterResponse data)
+        renovateYourHouseCustomPackagesFilterLoaded,
+    required TResult Function(String error)
+        renovateYourHouseCustomPackagesFilterError,
+    required TResult Function() paginationLoading,
+    required TResult Function(String errorMessage) paginationFailure,
+  }) {
+    return renovateYourHouseFixedPackagesFilterLoading();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? renovateYourHouseFixedPackagesLoading,
+    TResult? Function(RenovateYourHouseFixedPackagesModel data)?
+        renovateYourHouseFixedPackagesLoaded,
+    TResult? Function(String error)? renovateYourHouseFixedPackagesError,
+    TResult? Function()? renovateYourHouseLookUpsLoading,
+    TResult? Function(T data)? renovateYourHouseLookUpsLoaded,
+    TResult? Function(String error)? renovateYourHouseLookUpsError,
+    TResult? Function()? addCustomPackageRenovateYourHouseLoading,
+    TResult? Function(T data)? addCustomPackageRenovateYourHouseLoaded,
+    TResult? Function(String error)? addCustomPackageRenovateYourHouseError,
+    TResult? Function()? chooseFixedPackageRenovateYourHouseLoading,
+    TResult? Function(T data)? chooseFixedPackageRenovateYourHouseLoaded,
+    TResult? Function(String error)? chooseFixedPackageRenovateYourHouseError,
+    TResult? Function()? renovateYourHouseFixedPackagesFilterLoading,
+    TResult? Function(RenovateYourHouseFixedPackagesFilterResponse data)?
+        renovateYourHouseFixedPackagesFilterLoaded,
+    TResult? Function(String error)? renovateYourHouseFixedPackagesFilterError,
+    TResult? Function()? renovateYourHouseCustomPackagesFilterLoading,
+    TResult? Function(RenovateYourHouseCustomPackagesFilterResponse data)?
+        renovateYourHouseCustomPackagesFilterLoaded,
+    TResult? Function(String error)? renovateYourHouseCustomPackagesFilterError,
+    TResult? Function()? paginationLoading,
+    TResult? Function(String errorMessage)? paginationFailure,
+  }) {
+    return renovateYourHouseFixedPackagesFilterLoading?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? renovateYourHouseFixedPackagesLoading,
+    TResult Function(RenovateYourHouseFixedPackagesModel data)?
+        renovateYourHouseFixedPackagesLoaded,
+    TResult Function(String error)? renovateYourHouseFixedPackagesError,
+    TResult Function()? renovateYourHouseLookUpsLoading,
+    TResult Function(T data)? renovateYourHouseLookUpsLoaded,
+    TResult Function(String error)? renovateYourHouseLookUpsError,
+    TResult Function()? addCustomPackageRenovateYourHouseLoading,
+    TResult Function(T data)? addCustomPackageRenovateYourHouseLoaded,
+    TResult Function(String error)? addCustomPackageRenovateYourHouseError,
+    TResult Function()? chooseFixedPackageRenovateYourHouseLoading,
+    TResult Function(T data)? chooseFixedPackageRenovateYourHouseLoaded,
+    TResult Function(String error)? chooseFixedPackageRenovateYourHouseError,
+    TResult Function()? renovateYourHouseFixedPackagesFilterLoading,
+    TResult Function(RenovateYourHouseFixedPackagesFilterResponse data)?
+        renovateYourHouseFixedPackagesFilterLoaded,
+    TResult Function(String error)? renovateYourHouseFixedPackagesFilterError,
+    TResult Function()? renovateYourHouseCustomPackagesFilterLoading,
+    TResult Function(RenovateYourHouseCustomPackagesFilterResponse data)?
+        renovateYourHouseCustomPackagesFilterLoaded,
+    TResult Function(String error)? renovateYourHouseCustomPackagesFilterError,
+    TResult Function()? paginationLoading,
+    TResult Function(String errorMessage)? paginationFailure,
+    required TResult orElse(),
+  }) {
+    if (renovateYourHouseFixedPackagesFilterLoading != null) {
+      return renovateYourHouseFixedPackagesFilterLoading();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial<T> value) initial,
+    required TResult Function(RenovateYourHouseFixedPackagesLoading<T> value)
+        renovateYourHouseFixedPackagesLoading,
+    required TResult Function(RenovateYourHouseFixedPackagesLoaded<T> value)
+        renovateYourHouseFixedPackagesLoaded,
+    required TResult Function(RenovateYourHouseFixedPackagesError<T> value)
+        renovateYourHouseFixedPackagesError,
+    required TResult Function(RenovateYourHouseLookUpsLoading<T> value)
+        renovateYourHouseLookUpsLoading,
+    required TResult Function(RenovateYourHouseLookUpsLoaded<T> value)
+        renovateYourHouseLookUpsLoaded,
+    required TResult Function(RenovateYourHouseLookUpsError<T> value)
+        renovateYourHouseLookUpsError,
+    required TResult Function(AddCustomPackageRenovateYourHouseLoading<T> value)
+        addCustomPackageRenovateYourHouseLoading,
+    required TResult Function(AddCustomPackageRenovateYourHouseLoaded<T> value)
+        addCustomPackageRenovateYourHouseLoaded,
+    required TResult Function(AddCustomPackageRenovateYourHouseError<T> value)
+        addCustomPackageRenovateYourHouseError,
+    required TResult Function(
+            ChooseFixedPackageRenovateYourHouseLoading<T> value)
+        chooseFixedPackageRenovateYourHouseLoading,
+    required TResult Function(
+            ChooseFixedPackageRenovateYourHouseLoaded<T> value)
+        chooseFixedPackageRenovateYourHouseLoaded,
+    required TResult Function(ChooseFixedPackageRenovateYourHouseError<T> value)
+        chooseFixedPackageRenovateYourHouseError,
+    required TResult Function(
+            RenovateYourHouseFixedPackagesFilterLoading<T> value)
+        renovateYourHouseFixedPackagesFilterLoading,
+    required TResult Function(
+            RenovateYourHouseFixedPackagesFilterLoaded<T> value)
+        renovateYourHouseFixedPackagesFilterLoaded,
+    required TResult Function(
+            RenovateYourHouseFixedPackagesFilterError<T> value)
+        renovateYourHouseFixedPackagesFilterError,
+    required TResult Function(
+            RenovateYourHouseCustomPackagesFilterLoading<T> value)
+        renovateYourHouseCustomPackagesFilterLoading,
+    required TResult Function(
+            RenovateYourHouseCustomPackagesFilterLoaded<T> value)
+        renovateYourHouseCustomPackagesFilterLoaded,
+    required TResult Function(
+            RenovateYourHouseCustomPackagesFilterError<T> value)
+        renovateYourHouseCustomPackagesFilterError,
+    required TResult Function(PaginationLoading<T> value) paginationLoading,
+    required TResult Function(PaginationFailure<T> value) paginationFailure,
+  }) {
+    return renovateYourHouseFixedPackagesFilterLoading(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial<T> value)? initial,
+    TResult? Function(RenovateYourHouseFixedPackagesLoading<T> value)?
+        renovateYourHouseFixedPackagesLoading,
+    TResult? Function(RenovateYourHouseFixedPackagesLoaded<T> value)?
+        renovateYourHouseFixedPackagesLoaded,
+    TResult? Function(RenovateYourHouseFixedPackagesError<T> value)?
+        renovateYourHouseFixedPackagesError,
+    TResult? Function(RenovateYourHouseLookUpsLoading<T> value)?
+        renovateYourHouseLookUpsLoading,
+    TResult? Function(RenovateYourHouseLookUpsLoaded<T> value)?
+        renovateYourHouseLookUpsLoaded,
+    TResult? Function(RenovateYourHouseLookUpsError<T> value)?
+        renovateYourHouseLookUpsError,
+    TResult? Function(AddCustomPackageRenovateYourHouseLoading<T> value)?
+        addCustomPackageRenovateYourHouseLoading,
+    TResult? Function(AddCustomPackageRenovateYourHouseLoaded<T> value)?
+        addCustomPackageRenovateYourHouseLoaded,
+    TResult? Function(AddCustomPackageRenovateYourHouseError<T> value)?
+        addCustomPackageRenovateYourHouseError,
+    TResult? Function(ChooseFixedPackageRenovateYourHouseLoading<T> value)?
+        chooseFixedPackageRenovateYourHouseLoading,
+    TResult? Function(ChooseFixedPackageRenovateYourHouseLoaded<T> value)?
+        chooseFixedPackageRenovateYourHouseLoaded,
+    TResult? Function(ChooseFixedPackageRenovateYourHouseError<T> value)?
+        chooseFixedPackageRenovateYourHouseError,
+    TResult? Function(RenovateYourHouseFixedPackagesFilterLoading<T> value)?
+        renovateYourHouseFixedPackagesFilterLoading,
+    TResult? Function(RenovateYourHouseFixedPackagesFilterLoaded<T> value)?
+        renovateYourHouseFixedPackagesFilterLoaded,
+    TResult? Function(RenovateYourHouseFixedPackagesFilterError<T> value)?
+        renovateYourHouseFixedPackagesFilterError,
+    TResult? Function(RenovateYourHouseCustomPackagesFilterLoading<T> value)?
+        renovateYourHouseCustomPackagesFilterLoading,
+    TResult? Function(RenovateYourHouseCustomPackagesFilterLoaded<T> value)?
+        renovateYourHouseCustomPackagesFilterLoaded,
+    TResult? Function(RenovateYourHouseCustomPackagesFilterError<T> value)?
+        renovateYourHouseCustomPackagesFilterError,
+    TResult? Function(PaginationLoading<T> value)? paginationLoading,
+    TResult? Function(PaginationFailure<T> value)? paginationFailure,
+  }) {
+    return renovateYourHouseFixedPackagesFilterLoading?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial<T> value)? initial,
+    TResult Function(RenovateYourHouseFixedPackagesLoading<T> value)?
+        renovateYourHouseFixedPackagesLoading,
+    TResult Function(RenovateYourHouseFixedPackagesLoaded<T> value)?
+        renovateYourHouseFixedPackagesLoaded,
+    TResult Function(RenovateYourHouseFixedPackagesError<T> value)?
+        renovateYourHouseFixedPackagesError,
+    TResult Function(RenovateYourHouseLookUpsLoading<T> value)?
+        renovateYourHouseLookUpsLoading,
+    TResult Function(RenovateYourHouseLookUpsLoaded<T> value)?
+        renovateYourHouseLookUpsLoaded,
+    TResult Function(RenovateYourHouseLookUpsError<T> value)?
+        renovateYourHouseLookUpsError,
+    TResult Function(AddCustomPackageRenovateYourHouseLoading<T> value)?
+        addCustomPackageRenovateYourHouseLoading,
+    TResult Function(AddCustomPackageRenovateYourHouseLoaded<T> value)?
+        addCustomPackageRenovateYourHouseLoaded,
+    TResult Function(AddCustomPackageRenovateYourHouseError<T> value)?
+        addCustomPackageRenovateYourHouseError,
+    TResult Function(ChooseFixedPackageRenovateYourHouseLoading<T> value)?
+        chooseFixedPackageRenovateYourHouseLoading,
+    TResult Function(ChooseFixedPackageRenovateYourHouseLoaded<T> value)?
+        chooseFixedPackageRenovateYourHouseLoaded,
+    TResult Function(ChooseFixedPackageRenovateYourHouseError<T> value)?
+        chooseFixedPackageRenovateYourHouseError,
+    TResult Function(RenovateYourHouseFixedPackagesFilterLoading<T> value)?
+        renovateYourHouseFixedPackagesFilterLoading,
+    TResult Function(RenovateYourHouseFixedPackagesFilterLoaded<T> value)?
+        renovateYourHouseFixedPackagesFilterLoaded,
+    TResult Function(RenovateYourHouseFixedPackagesFilterError<T> value)?
+        renovateYourHouseFixedPackagesFilterError,
+    TResult Function(RenovateYourHouseCustomPackagesFilterLoading<T> value)?
+        renovateYourHouseCustomPackagesFilterLoading,
+    TResult Function(RenovateYourHouseCustomPackagesFilterLoaded<T> value)?
+        renovateYourHouseCustomPackagesFilterLoaded,
+    TResult Function(RenovateYourHouseCustomPackagesFilterError<T> value)?
+        renovateYourHouseCustomPackagesFilterError,
+    TResult Function(PaginationLoading<T> value)? paginationLoading,
+    TResult Function(PaginationFailure<T> value)? paginationFailure,
+    required TResult orElse(),
+  }) {
+    if (renovateYourHouseFixedPackagesFilterLoading != null) {
+      return renovateYourHouseFixedPackagesFilterLoading(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class RenovateYourHouseFixedPackagesFilterLoading<T>
+    implements RenovateYourHouseState<T> {
+  factory RenovateYourHouseFixedPackagesFilterLoading() =
+      _$RenovateYourHouseFixedPackagesFilterLoadingImpl<T>;
+}
+
+/// @nodoc
+abstract class _$$RenovateYourHouseFixedPackagesFilterLoadedImplCopyWith<T,
+    $Res> {
+  factory _$$RenovateYourHouseFixedPackagesFilterLoadedImplCopyWith(
+          _$RenovateYourHouseFixedPackagesFilterLoadedImpl<T> value,
+          $Res Function(_$RenovateYourHouseFixedPackagesFilterLoadedImpl<T>)
+              then) =
+      __$$RenovateYourHouseFixedPackagesFilterLoadedImplCopyWithImpl<T, $Res>;
+  @useResult
+  $Res call({RenovateYourHouseFixedPackagesFilterResponse data});
+}
+
+/// @nodoc
+class __$$RenovateYourHouseFixedPackagesFilterLoadedImplCopyWithImpl<T, $Res>
+    extends _$RenovateYourHouseStateCopyWithImpl<T, $Res,
+        _$RenovateYourHouseFixedPackagesFilterLoadedImpl<T>>
+    implements
+        _$$RenovateYourHouseFixedPackagesFilterLoadedImplCopyWith<T, $Res> {
+  __$$RenovateYourHouseFixedPackagesFilterLoadedImplCopyWithImpl(
+      _$RenovateYourHouseFixedPackagesFilterLoadedImpl<T> _value,
+      $Res Function(_$RenovateYourHouseFixedPackagesFilterLoadedImpl<T>) _then)
+      : super(_value, _then);
+
+  /// Create a copy of RenovateYourHouseState
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? data = null,
+  }) {
+    return _then(_$RenovateYourHouseFixedPackagesFilterLoadedImpl<T>(
+      null == data
+          ? _value.data
+          : data // ignore: cast_nullable_to_non_nullable
+              as RenovateYourHouseFixedPackagesFilterResponse,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$RenovateYourHouseFixedPackagesFilterLoadedImpl<T>
+    implements RenovateYourHouseFixedPackagesFilterLoaded<T> {
+  _$RenovateYourHouseFixedPackagesFilterLoadedImpl(this.data);
+
+  @override
+  final RenovateYourHouseFixedPackagesFilterResponse data;
+
+  @override
+  String toString() {
+    return 'RenovateYourHouseState<$T>.renovateYourHouseFixedPackagesFilterLoaded(data: $data)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$RenovateYourHouseFixedPackagesFilterLoadedImpl<T> &&
+            (identical(other.data, data) || other.data == data));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, data);
+
+  /// Create a copy of RenovateYourHouseState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$RenovateYourHouseFixedPackagesFilterLoadedImplCopyWith<T,
+          _$RenovateYourHouseFixedPackagesFilterLoadedImpl<T>>
+      get copyWith =>
+          __$$RenovateYourHouseFixedPackagesFilterLoadedImplCopyWithImpl<T,
+                  _$RenovateYourHouseFixedPackagesFilterLoadedImpl<T>>(
+              this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() renovateYourHouseFixedPackagesLoading,
+    required TResult Function(RenovateYourHouseFixedPackagesModel data)
+        renovateYourHouseFixedPackagesLoaded,
+    required TResult Function(String error) renovateYourHouseFixedPackagesError,
+    required TResult Function() renovateYourHouseLookUpsLoading,
+    required TResult Function(T data) renovateYourHouseLookUpsLoaded,
+    required TResult Function(String error) renovateYourHouseLookUpsError,
+    required TResult Function() addCustomPackageRenovateYourHouseLoading,
+    required TResult Function(T data) addCustomPackageRenovateYourHouseLoaded,
+    required TResult Function(String error)
+        addCustomPackageRenovateYourHouseError,
+    required TResult Function() chooseFixedPackageRenovateYourHouseLoading,
+    required TResult Function(T data) chooseFixedPackageRenovateYourHouseLoaded,
+    required TResult Function(String error)
+        chooseFixedPackageRenovateYourHouseError,
+    required TResult Function() renovateYourHouseFixedPackagesFilterLoading,
+    required TResult Function(RenovateYourHouseFixedPackagesFilterResponse data)
+        renovateYourHouseFixedPackagesFilterLoaded,
+    required TResult Function(String error)
+        renovateYourHouseFixedPackagesFilterError,
+    required TResult Function() renovateYourHouseCustomPackagesFilterLoading,
+    required TResult Function(
+            RenovateYourHouseCustomPackagesFilterResponse data)
+        renovateYourHouseCustomPackagesFilterLoaded,
+    required TResult Function(String error)
+        renovateYourHouseCustomPackagesFilterError,
+    required TResult Function() paginationLoading,
+    required TResult Function(String errorMessage) paginationFailure,
+  }) {
+    return renovateYourHouseFixedPackagesFilterLoaded(data);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? renovateYourHouseFixedPackagesLoading,
+    TResult? Function(RenovateYourHouseFixedPackagesModel data)?
+        renovateYourHouseFixedPackagesLoaded,
+    TResult? Function(String error)? renovateYourHouseFixedPackagesError,
+    TResult? Function()? renovateYourHouseLookUpsLoading,
+    TResult? Function(T data)? renovateYourHouseLookUpsLoaded,
+    TResult? Function(String error)? renovateYourHouseLookUpsError,
+    TResult? Function()? addCustomPackageRenovateYourHouseLoading,
+    TResult? Function(T data)? addCustomPackageRenovateYourHouseLoaded,
+    TResult? Function(String error)? addCustomPackageRenovateYourHouseError,
+    TResult? Function()? chooseFixedPackageRenovateYourHouseLoading,
+    TResult? Function(T data)? chooseFixedPackageRenovateYourHouseLoaded,
+    TResult? Function(String error)? chooseFixedPackageRenovateYourHouseError,
+    TResult? Function()? renovateYourHouseFixedPackagesFilterLoading,
+    TResult? Function(RenovateYourHouseFixedPackagesFilterResponse data)?
+        renovateYourHouseFixedPackagesFilterLoaded,
+    TResult? Function(String error)? renovateYourHouseFixedPackagesFilterError,
+    TResult? Function()? renovateYourHouseCustomPackagesFilterLoading,
+    TResult? Function(RenovateYourHouseCustomPackagesFilterResponse data)?
+        renovateYourHouseCustomPackagesFilterLoaded,
+    TResult? Function(String error)? renovateYourHouseCustomPackagesFilterError,
+    TResult? Function()? paginationLoading,
+    TResult? Function(String errorMessage)? paginationFailure,
+  }) {
+    return renovateYourHouseFixedPackagesFilterLoaded?.call(data);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? renovateYourHouseFixedPackagesLoading,
+    TResult Function(RenovateYourHouseFixedPackagesModel data)?
+        renovateYourHouseFixedPackagesLoaded,
+    TResult Function(String error)? renovateYourHouseFixedPackagesError,
+    TResult Function()? renovateYourHouseLookUpsLoading,
+    TResult Function(T data)? renovateYourHouseLookUpsLoaded,
+    TResult Function(String error)? renovateYourHouseLookUpsError,
+    TResult Function()? addCustomPackageRenovateYourHouseLoading,
+    TResult Function(T data)? addCustomPackageRenovateYourHouseLoaded,
+    TResult Function(String error)? addCustomPackageRenovateYourHouseError,
+    TResult Function()? chooseFixedPackageRenovateYourHouseLoading,
+    TResult Function(T data)? chooseFixedPackageRenovateYourHouseLoaded,
+    TResult Function(String error)? chooseFixedPackageRenovateYourHouseError,
+    TResult Function()? renovateYourHouseFixedPackagesFilterLoading,
+    TResult Function(RenovateYourHouseFixedPackagesFilterResponse data)?
+        renovateYourHouseFixedPackagesFilterLoaded,
+    TResult Function(String error)? renovateYourHouseFixedPackagesFilterError,
+    TResult Function()? renovateYourHouseCustomPackagesFilterLoading,
+    TResult Function(RenovateYourHouseCustomPackagesFilterResponse data)?
+        renovateYourHouseCustomPackagesFilterLoaded,
+    TResult Function(String error)? renovateYourHouseCustomPackagesFilterError,
+    TResult Function()? paginationLoading,
+    TResult Function(String errorMessage)? paginationFailure,
+    required TResult orElse(),
+  }) {
+    if (renovateYourHouseFixedPackagesFilterLoaded != null) {
+      return renovateYourHouseFixedPackagesFilterLoaded(data);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial<T> value) initial,
+    required TResult Function(RenovateYourHouseFixedPackagesLoading<T> value)
+        renovateYourHouseFixedPackagesLoading,
+    required TResult Function(RenovateYourHouseFixedPackagesLoaded<T> value)
+        renovateYourHouseFixedPackagesLoaded,
+    required TResult Function(RenovateYourHouseFixedPackagesError<T> value)
+        renovateYourHouseFixedPackagesError,
+    required TResult Function(RenovateYourHouseLookUpsLoading<T> value)
+        renovateYourHouseLookUpsLoading,
+    required TResult Function(RenovateYourHouseLookUpsLoaded<T> value)
+        renovateYourHouseLookUpsLoaded,
+    required TResult Function(RenovateYourHouseLookUpsError<T> value)
+        renovateYourHouseLookUpsError,
+    required TResult Function(AddCustomPackageRenovateYourHouseLoading<T> value)
+        addCustomPackageRenovateYourHouseLoading,
+    required TResult Function(AddCustomPackageRenovateYourHouseLoaded<T> value)
+        addCustomPackageRenovateYourHouseLoaded,
+    required TResult Function(AddCustomPackageRenovateYourHouseError<T> value)
+        addCustomPackageRenovateYourHouseError,
+    required TResult Function(
+            ChooseFixedPackageRenovateYourHouseLoading<T> value)
+        chooseFixedPackageRenovateYourHouseLoading,
+    required TResult Function(
+            ChooseFixedPackageRenovateYourHouseLoaded<T> value)
+        chooseFixedPackageRenovateYourHouseLoaded,
+    required TResult Function(ChooseFixedPackageRenovateYourHouseError<T> value)
+        chooseFixedPackageRenovateYourHouseError,
+    required TResult Function(
+            RenovateYourHouseFixedPackagesFilterLoading<T> value)
+        renovateYourHouseFixedPackagesFilterLoading,
+    required TResult Function(
+            RenovateYourHouseFixedPackagesFilterLoaded<T> value)
+        renovateYourHouseFixedPackagesFilterLoaded,
+    required TResult Function(
+            RenovateYourHouseFixedPackagesFilterError<T> value)
+        renovateYourHouseFixedPackagesFilterError,
+    required TResult Function(
+            RenovateYourHouseCustomPackagesFilterLoading<T> value)
+        renovateYourHouseCustomPackagesFilterLoading,
+    required TResult Function(
+            RenovateYourHouseCustomPackagesFilterLoaded<T> value)
+        renovateYourHouseCustomPackagesFilterLoaded,
+    required TResult Function(
+            RenovateYourHouseCustomPackagesFilterError<T> value)
+        renovateYourHouseCustomPackagesFilterError,
+    required TResult Function(PaginationLoading<T> value) paginationLoading,
+    required TResult Function(PaginationFailure<T> value) paginationFailure,
+  }) {
+    return renovateYourHouseFixedPackagesFilterLoaded(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial<T> value)? initial,
+    TResult? Function(RenovateYourHouseFixedPackagesLoading<T> value)?
+        renovateYourHouseFixedPackagesLoading,
+    TResult? Function(RenovateYourHouseFixedPackagesLoaded<T> value)?
+        renovateYourHouseFixedPackagesLoaded,
+    TResult? Function(RenovateYourHouseFixedPackagesError<T> value)?
+        renovateYourHouseFixedPackagesError,
+    TResult? Function(RenovateYourHouseLookUpsLoading<T> value)?
+        renovateYourHouseLookUpsLoading,
+    TResult? Function(RenovateYourHouseLookUpsLoaded<T> value)?
+        renovateYourHouseLookUpsLoaded,
+    TResult? Function(RenovateYourHouseLookUpsError<T> value)?
+        renovateYourHouseLookUpsError,
+    TResult? Function(AddCustomPackageRenovateYourHouseLoading<T> value)?
+        addCustomPackageRenovateYourHouseLoading,
+    TResult? Function(AddCustomPackageRenovateYourHouseLoaded<T> value)?
+        addCustomPackageRenovateYourHouseLoaded,
+    TResult? Function(AddCustomPackageRenovateYourHouseError<T> value)?
+        addCustomPackageRenovateYourHouseError,
+    TResult? Function(ChooseFixedPackageRenovateYourHouseLoading<T> value)?
+        chooseFixedPackageRenovateYourHouseLoading,
+    TResult? Function(ChooseFixedPackageRenovateYourHouseLoaded<T> value)?
+        chooseFixedPackageRenovateYourHouseLoaded,
+    TResult? Function(ChooseFixedPackageRenovateYourHouseError<T> value)?
+        chooseFixedPackageRenovateYourHouseError,
+    TResult? Function(RenovateYourHouseFixedPackagesFilterLoading<T> value)?
+        renovateYourHouseFixedPackagesFilterLoading,
+    TResult? Function(RenovateYourHouseFixedPackagesFilterLoaded<T> value)?
+        renovateYourHouseFixedPackagesFilterLoaded,
+    TResult? Function(RenovateYourHouseFixedPackagesFilterError<T> value)?
+        renovateYourHouseFixedPackagesFilterError,
+    TResult? Function(RenovateYourHouseCustomPackagesFilterLoading<T> value)?
+        renovateYourHouseCustomPackagesFilterLoading,
+    TResult? Function(RenovateYourHouseCustomPackagesFilterLoaded<T> value)?
+        renovateYourHouseCustomPackagesFilterLoaded,
+    TResult? Function(RenovateYourHouseCustomPackagesFilterError<T> value)?
+        renovateYourHouseCustomPackagesFilterError,
+    TResult? Function(PaginationLoading<T> value)? paginationLoading,
+    TResult? Function(PaginationFailure<T> value)? paginationFailure,
+  }) {
+    return renovateYourHouseFixedPackagesFilterLoaded?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial<T> value)? initial,
+    TResult Function(RenovateYourHouseFixedPackagesLoading<T> value)?
+        renovateYourHouseFixedPackagesLoading,
+    TResult Function(RenovateYourHouseFixedPackagesLoaded<T> value)?
+        renovateYourHouseFixedPackagesLoaded,
+    TResult Function(RenovateYourHouseFixedPackagesError<T> value)?
+        renovateYourHouseFixedPackagesError,
+    TResult Function(RenovateYourHouseLookUpsLoading<T> value)?
+        renovateYourHouseLookUpsLoading,
+    TResult Function(RenovateYourHouseLookUpsLoaded<T> value)?
+        renovateYourHouseLookUpsLoaded,
+    TResult Function(RenovateYourHouseLookUpsError<T> value)?
+        renovateYourHouseLookUpsError,
+    TResult Function(AddCustomPackageRenovateYourHouseLoading<T> value)?
+        addCustomPackageRenovateYourHouseLoading,
+    TResult Function(AddCustomPackageRenovateYourHouseLoaded<T> value)?
+        addCustomPackageRenovateYourHouseLoaded,
+    TResult Function(AddCustomPackageRenovateYourHouseError<T> value)?
+        addCustomPackageRenovateYourHouseError,
+    TResult Function(ChooseFixedPackageRenovateYourHouseLoading<T> value)?
+        chooseFixedPackageRenovateYourHouseLoading,
+    TResult Function(ChooseFixedPackageRenovateYourHouseLoaded<T> value)?
+        chooseFixedPackageRenovateYourHouseLoaded,
+    TResult Function(ChooseFixedPackageRenovateYourHouseError<T> value)?
+        chooseFixedPackageRenovateYourHouseError,
+    TResult Function(RenovateYourHouseFixedPackagesFilterLoading<T> value)?
+        renovateYourHouseFixedPackagesFilterLoading,
+    TResult Function(RenovateYourHouseFixedPackagesFilterLoaded<T> value)?
+        renovateYourHouseFixedPackagesFilterLoaded,
+    TResult Function(RenovateYourHouseFixedPackagesFilterError<T> value)?
+        renovateYourHouseFixedPackagesFilterError,
+    TResult Function(RenovateYourHouseCustomPackagesFilterLoading<T> value)?
+        renovateYourHouseCustomPackagesFilterLoading,
+    TResult Function(RenovateYourHouseCustomPackagesFilterLoaded<T> value)?
+        renovateYourHouseCustomPackagesFilterLoaded,
+    TResult Function(RenovateYourHouseCustomPackagesFilterError<T> value)?
+        renovateYourHouseCustomPackagesFilterError,
+    TResult Function(PaginationLoading<T> value)? paginationLoading,
+    TResult Function(PaginationFailure<T> value)? paginationFailure,
+    required TResult orElse(),
+  }) {
+    if (renovateYourHouseFixedPackagesFilterLoaded != null) {
+      return renovateYourHouseFixedPackagesFilterLoaded(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class RenovateYourHouseFixedPackagesFilterLoaded<T>
+    implements RenovateYourHouseState<T> {
+  factory RenovateYourHouseFixedPackagesFilterLoaded(
+          final RenovateYourHouseFixedPackagesFilterResponse data) =
+      _$RenovateYourHouseFixedPackagesFilterLoadedImpl<T>;
+
+  RenovateYourHouseFixedPackagesFilterResponse get data;
+
+  /// Create a copy of RenovateYourHouseState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$RenovateYourHouseFixedPackagesFilterLoadedImplCopyWith<T,
+          _$RenovateYourHouseFixedPackagesFilterLoadedImpl<T>>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$RenovateYourHouseFixedPackagesFilterErrorImplCopyWith<T,
+    $Res> {
+  factory _$$RenovateYourHouseFixedPackagesFilterErrorImplCopyWith(
+          _$RenovateYourHouseFixedPackagesFilterErrorImpl<T> value,
+          $Res Function(_$RenovateYourHouseFixedPackagesFilterErrorImpl<T>)
+              then) =
+      __$$RenovateYourHouseFixedPackagesFilterErrorImplCopyWithImpl<T, $Res>;
+  @useResult
+  $Res call({String error});
+}
+
+/// @nodoc
+class __$$RenovateYourHouseFixedPackagesFilterErrorImplCopyWithImpl<T, $Res>
+    extends _$RenovateYourHouseStateCopyWithImpl<T, $Res,
+        _$RenovateYourHouseFixedPackagesFilterErrorImpl<T>>
+    implements
+        _$$RenovateYourHouseFixedPackagesFilterErrorImplCopyWith<T, $Res> {
+  __$$RenovateYourHouseFixedPackagesFilterErrorImplCopyWithImpl(
+      _$RenovateYourHouseFixedPackagesFilterErrorImpl<T> _value,
+      $Res Function(_$RenovateYourHouseFixedPackagesFilterErrorImpl<T>) _then)
+      : super(_value, _then);
+
+  /// Create a copy of RenovateYourHouseState
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? error = null,
+  }) {
+    return _then(_$RenovateYourHouseFixedPackagesFilterErrorImpl<T>(
+      error: null == error
+          ? _value.error
+          : error // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$RenovateYourHouseFixedPackagesFilterErrorImpl<T>
+    implements RenovateYourHouseFixedPackagesFilterError<T> {
+  _$RenovateYourHouseFixedPackagesFilterErrorImpl({required this.error});
+
+  @override
+  final String error;
+
+  @override
+  String toString() {
+    return 'RenovateYourHouseState<$T>.renovateYourHouseFixedPackagesFilterError(error: $error)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$RenovateYourHouseFixedPackagesFilterErrorImpl<T> &&
+            (identical(other.error, error) || other.error == error));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, error);
+
+  /// Create a copy of RenovateYourHouseState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$RenovateYourHouseFixedPackagesFilterErrorImplCopyWith<T,
+          _$RenovateYourHouseFixedPackagesFilterErrorImpl<T>>
+      get copyWith =>
+          __$$RenovateYourHouseFixedPackagesFilterErrorImplCopyWithImpl<T,
+                  _$RenovateYourHouseFixedPackagesFilterErrorImpl<T>>(
+              this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() renovateYourHouseFixedPackagesLoading,
+    required TResult Function(RenovateYourHouseFixedPackagesModel data)
+        renovateYourHouseFixedPackagesLoaded,
+    required TResult Function(String error) renovateYourHouseFixedPackagesError,
+    required TResult Function() renovateYourHouseLookUpsLoading,
+    required TResult Function(T data) renovateYourHouseLookUpsLoaded,
+    required TResult Function(String error) renovateYourHouseLookUpsError,
+    required TResult Function() addCustomPackageRenovateYourHouseLoading,
+    required TResult Function(T data) addCustomPackageRenovateYourHouseLoaded,
+    required TResult Function(String error)
+        addCustomPackageRenovateYourHouseError,
+    required TResult Function() chooseFixedPackageRenovateYourHouseLoading,
+    required TResult Function(T data) chooseFixedPackageRenovateYourHouseLoaded,
+    required TResult Function(String error)
+        chooseFixedPackageRenovateYourHouseError,
+    required TResult Function() renovateYourHouseFixedPackagesFilterLoading,
+    required TResult Function(RenovateYourHouseFixedPackagesFilterResponse data)
+        renovateYourHouseFixedPackagesFilterLoaded,
+    required TResult Function(String error)
+        renovateYourHouseFixedPackagesFilterError,
+    required TResult Function() renovateYourHouseCustomPackagesFilterLoading,
+    required TResult Function(
+            RenovateYourHouseCustomPackagesFilterResponse data)
+        renovateYourHouseCustomPackagesFilterLoaded,
+    required TResult Function(String error)
+        renovateYourHouseCustomPackagesFilterError,
+    required TResult Function() paginationLoading,
+    required TResult Function(String errorMessage) paginationFailure,
+  }) {
+    return renovateYourHouseFixedPackagesFilterError(error);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? renovateYourHouseFixedPackagesLoading,
+    TResult? Function(RenovateYourHouseFixedPackagesModel data)?
+        renovateYourHouseFixedPackagesLoaded,
+    TResult? Function(String error)? renovateYourHouseFixedPackagesError,
+    TResult? Function()? renovateYourHouseLookUpsLoading,
+    TResult? Function(T data)? renovateYourHouseLookUpsLoaded,
+    TResult? Function(String error)? renovateYourHouseLookUpsError,
+    TResult? Function()? addCustomPackageRenovateYourHouseLoading,
+    TResult? Function(T data)? addCustomPackageRenovateYourHouseLoaded,
+    TResult? Function(String error)? addCustomPackageRenovateYourHouseError,
+    TResult? Function()? chooseFixedPackageRenovateYourHouseLoading,
+    TResult? Function(T data)? chooseFixedPackageRenovateYourHouseLoaded,
+    TResult? Function(String error)? chooseFixedPackageRenovateYourHouseError,
+    TResult? Function()? renovateYourHouseFixedPackagesFilterLoading,
+    TResult? Function(RenovateYourHouseFixedPackagesFilterResponse data)?
+        renovateYourHouseFixedPackagesFilterLoaded,
+    TResult? Function(String error)? renovateYourHouseFixedPackagesFilterError,
+    TResult? Function()? renovateYourHouseCustomPackagesFilterLoading,
+    TResult? Function(RenovateYourHouseCustomPackagesFilterResponse data)?
+        renovateYourHouseCustomPackagesFilterLoaded,
+    TResult? Function(String error)? renovateYourHouseCustomPackagesFilterError,
+    TResult? Function()? paginationLoading,
+    TResult? Function(String errorMessage)? paginationFailure,
+  }) {
+    return renovateYourHouseFixedPackagesFilterError?.call(error);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? renovateYourHouseFixedPackagesLoading,
+    TResult Function(RenovateYourHouseFixedPackagesModel data)?
+        renovateYourHouseFixedPackagesLoaded,
+    TResult Function(String error)? renovateYourHouseFixedPackagesError,
+    TResult Function()? renovateYourHouseLookUpsLoading,
+    TResult Function(T data)? renovateYourHouseLookUpsLoaded,
+    TResult Function(String error)? renovateYourHouseLookUpsError,
+    TResult Function()? addCustomPackageRenovateYourHouseLoading,
+    TResult Function(T data)? addCustomPackageRenovateYourHouseLoaded,
+    TResult Function(String error)? addCustomPackageRenovateYourHouseError,
+    TResult Function()? chooseFixedPackageRenovateYourHouseLoading,
+    TResult Function(T data)? chooseFixedPackageRenovateYourHouseLoaded,
+    TResult Function(String error)? chooseFixedPackageRenovateYourHouseError,
+    TResult Function()? renovateYourHouseFixedPackagesFilterLoading,
+    TResult Function(RenovateYourHouseFixedPackagesFilterResponse data)?
+        renovateYourHouseFixedPackagesFilterLoaded,
+    TResult Function(String error)? renovateYourHouseFixedPackagesFilterError,
+    TResult Function()? renovateYourHouseCustomPackagesFilterLoading,
+    TResult Function(RenovateYourHouseCustomPackagesFilterResponse data)?
+        renovateYourHouseCustomPackagesFilterLoaded,
+    TResult Function(String error)? renovateYourHouseCustomPackagesFilterError,
+    TResult Function()? paginationLoading,
+    TResult Function(String errorMessage)? paginationFailure,
+    required TResult orElse(),
+  }) {
+    if (renovateYourHouseFixedPackagesFilterError != null) {
+      return renovateYourHouseFixedPackagesFilterError(error);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial<T> value) initial,
+    required TResult Function(RenovateYourHouseFixedPackagesLoading<T> value)
+        renovateYourHouseFixedPackagesLoading,
+    required TResult Function(RenovateYourHouseFixedPackagesLoaded<T> value)
+        renovateYourHouseFixedPackagesLoaded,
+    required TResult Function(RenovateYourHouseFixedPackagesError<T> value)
+        renovateYourHouseFixedPackagesError,
+    required TResult Function(RenovateYourHouseLookUpsLoading<T> value)
+        renovateYourHouseLookUpsLoading,
+    required TResult Function(RenovateYourHouseLookUpsLoaded<T> value)
+        renovateYourHouseLookUpsLoaded,
+    required TResult Function(RenovateYourHouseLookUpsError<T> value)
+        renovateYourHouseLookUpsError,
+    required TResult Function(AddCustomPackageRenovateYourHouseLoading<T> value)
+        addCustomPackageRenovateYourHouseLoading,
+    required TResult Function(AddCustomPackageRenovateYourHouseLoaded<T> value)
+        addCustomPackageRenovateYourHouseLoaded,
+    required TResult Function(AddCustomPackageRenovateYourHouseError<T> value)
+        addCustomPackageRenovateYourHouseError,
+    required TResult Function(
+            ChooseFixedPackageRenovateYourHouseLoading<T> value)
+        chooseFixedPackageRenovateYourHouseLoading,
+    required TResult Function(
+            ChooseFixedPackageRenovateYourHouseLoaded<T> value)
+        chooseFixedPackageRenovateYourHouseLoaded,
+    required TResult Function(ChooseFixedPackageRenovateYourHouseError<T> value)
+        chooseFixedPackageRenovateYourHouseError,
+    required TResult Function(
+            RenovateYourHouseFixedPackagesFilterLoading<T> value)
+        renovateYourHouseFixedPackagesFilterLoading,
+    required TResult Function(
+            RenovateYourHouseFixedPackagesFilterLoaded<T> value)
+        renovateYourHouseFixedPackagesFilterLoaded,
+    required TResult Function(
+            RenovateYourHouseFixedPackagesFilterError<T> value)
+        renovateYourHouseFixedPackagesFilterError,
+    required TResult Function(
+            RenovateYourHouseCustomPackagesFilterLoading<T> value)
+        renovateYourHouseCustomPackagesFilterLoading,
+    required TResult Function(
+            RenovateYourHouseCustomPackagesFilterLoaded<T> value)
+        renovateYourHouseCustomPackagesFilterLoaded,
+    required TResult Function(
+            RenovateYourHouseCustomPackagesFilterError<T> value)
+        renovateYourHouseCustomPackagesFilterError,
+    required TResult Function(PaginationLoading<T> value) paginationLoading,
+    required TResult Function(PaginationFailure<T> value) paginationFailure,
+  }) {
+    return renovateYourHouseFixedPackagesFilterError(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial<T> value)? initial,
+    TResult? Function(RenovateYourHouseFixedPackagesLoading<T> value)?
+        renovateYourHouseFixedPackagesLoading,
+    TResult? Function(RenovateYourHouseFixedPackagesLoaded<T> value)?
+        renovateYourHouseFixedPackagesLoaded,
+    TResult? Function(RenovateYourHouseFixedPackagesError<T> value)?
+        renovateYourHouseFixedPackagesError,
+    TResult? Function(RenovateYourHouseLookUpsLoading<T> value)?
+        renovateYourHouseLookUpsLoading,
+    TResult? Function(RenovateYourHouseLookUpsLoaded<T> value)?
+        renovateYourHouseLookUpsLoaded,
+    TResult? Function(RenovateYourHouseLookUpsError<T> value)?
+        renovateYourHouseLookUpsError,
+    TResult? Function(AddCustomPackageRenovateYourHouseLoading<T> value)?
+        addCustomPackageRenovateYourHouseLoading,
+    TResult? Function(AddCustomPackageRenovateYourHouseLoaded<T> value)?
+        addCustomPackageRenovateYourHouseLoaded,
+    TResult? Function(AddCustomPackageRenovateYourHouseError<T> value)?
+        addCustomPackageRenovateYourHouseError,
+    TResult? Function(ChooseFixedPackageRenovateYourHouseLoading<T> value)?
+        chooseFixedPackageRenovateYourHouseLoading,
+    TResult? Function(ChooseFixedPackageRenovateYourHouseLoaded<T> value)?
+        chooseFixedPackageRenovateYourHouseLoaded,
+    TResult? Function(ChooseFixedPackageRenovateYourHouseError<T> value)?
+        chooseFixedPackageRenovateYourHouseError,
+    TResult? Function(RenovateYourHouseFixedPackagesFilterLoading<T> value)?
+        renovateYourHouseFixedPackagesFilterLoading,
+    TResult? Function(RenovateYourHouseFixedPackagesFilterLoaded<T> value)?
+        renovateYourHouseFixedPackagesFilterLoaded,
+    TResult? Function(RenovateYourHouseFixedPackagesFilterError<T> value)?
+        renovateYourHouseFixedPackagesFilterError,
+    TResult? Function(RenovateYourHouseCustomPackagesFilterLoading<T> value)?
+        renovateYourHouseCustomPackagesFilterLoading,
+    TResult? Function(RenovateYourHouseCustomPackagesFilterLoaded<T> value)?
+        renovateYourHouseCustomPackagesFilterLoaded,
+    TResult? Function(RenovateYourHouseCustomPackagesFilterError<T> value)?
+        renovateYourHouseCustomPackagesFilterError,
+    TResult? Function(PaginationLoading<T> value)? paginationLoading,
+    TResult? Function(PaginationFailure<T> value)? paginationFailure,
+  }) {
+    return renovateYourHouseFixedPackagesFilterError?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial<T> value)? initial,
+    TResult Function(RenovateYourHouseFixedPackagesLoading<T> value)?
+        renovateYourHouseFixedPackagesLoading,
+    TResult Function(RenovateYourHouseFixedPackagesLoaded<T> value)?
+        renovateYourHouseFixedPackagesLoaded,
+    TResult Function(RenovateYourHouseFixedPackagesError<T> value)?
+        renovateYourHouseFixedPackagesError,
+    TResult Function(RenovateYourHouseLookUpsLoading<T> value)?
+        renovateYourHouseLookUpsLoading,
+    TResult Function(RenovateYourHouseLookUpsLoaded<T> value)?
+        renovateYourHouseLookUpsLoaded,
+    TResult Function(RenovateYourHouseLookUpsError<T> value)?
+        renovateYourHouseLookUpsError,
+    TResult Function(AddCustomPackageRenovateYourHouseLoading<T> value)?
+        addCustomPackageRenovateYourHouseLoading,
+    TResult Function(AddCustomPackageRenovateYourHouseLoaded<T> value)?
+        addCustomPackageRenovateYourHouseLoaded,
+    TResult Function(AddCustomPackageRenovateYourHouseError<T> value)?
+        addCustomPackageRenovateYourHouseError,
+    TResult Function(ChooseFixedPackageRenovateYourHouseLoading<T> value)?
+        chooseFixedPackageRenovateYourHouseLoading,
+    TResult Function(ChooseFixedPackageRenovateYourHouseLoaded<T> value)?
+        chooseFixedPackageRenovateYourHouseLoaded,
+    TResult Function(ChooseFixedPackageRenovateYourHouseError<T> value)?
+        chooseFixedPackageRenovateYourHouseError,
+    TResult Function(RenovateYourHouseFixedPackagesFilterLoading<T> value)?
+        renovateYourHouseFixedPackagesFilterLoading,
+    TResult Function(RenovateYourHouseFixedPackagesFilterLoaded<T> value)?
+        renovateYourHouseFixedPackagesFilterLoaded,
+    TResult Function(RenovateYourHouseFixedPackagesFilterError<T> value)?
+        renovateYourHouseFixedPackagesFilterError,
+    TResult Function(RenovateYourHouseCustomPackagesFilterLoading<T> value)?
+        renovateYourHouseCustomPackagesFilterLoading,
+    TResult Function(RenovateYourHouseCustomPackagesFilterLoaded<T> value)?
+        renovateYourHouseCustomPackagesFilterLoaded,
+    TResult Function(RenovateYourHouseCustomPackagesFilterError<T> value)?
+        renovateYourHouseCustomPackagesFilterError,
+    TResult Function(PaginationLoading<T> value)? paginationLoading,
+    TResult Function(PaginationFailure<T> value)? paginationFailure,
+    required TResult orElse(),
+  }) {
+    if (renovateYourHouseFixedPackagesFilterError != null) {
+      return renovateYourHouseFixedPackagesFilterError(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class RenovateYourHouseFixedPackagesFilterError<T>
+    implements RenovateYourHouseState<T> {
+  factory RenovateYourHouseFixedPackagesFilterError(
+          {required final String error}) =
+      _$RenovateYourHouseFixedPackagesFilterErrorImpl<T>;
+
+  String get error;
+
+  /// Create a copy of RenovateYourHouseState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$RenovateYourHouseFixedPackagesFilterErrorImplCopyWith<T,
+          _$RenovateYourHouseFixedPackagesFilterErrorImpl<T>>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$RenovateYourHouseCustomPackagesFilterLoadingImplCopyWith<T,
+    $Res> {
+  factory _$$RenovateYourHouseCustomPackagesFilterLoadingImplCopyWith(
+          _$RenovateYourHouseCustomPackagesFilterLoadingImpl<T> value,
+          $Res Function(_$RenovateYourHouseCustomPackagesFilterLoadingImpl<T>)
+              then) =
+      __$$RenovateYourHouseCustomPackagesFilterLoadingImplCopyWithImpl<T, $Res>;
+}
+
+/// @nodoc
+class __$$RenovateYourHouseCustomPackagesFilterLoadingImplCopyWithImpl<T, $Res>
+    extends _$RenovateYourHouseStateCopyWithImpl<T, $Res,
+        _$RenovateYourHouseCustomPackagesFilterLoadingImpl<T>>
+    implements
+        _$$RenovateYourHouseCustomPackagesFilterLoadingImplCopyWith<T, $Res> {
+  __$$RenovateYourHouseCustomPackagesFilterLoadingImplCopyWithImpl(
+      _$RenovateYourHouseCustomPackagesFilterLoadingImpl<T> _value,
+      $Res Function(_$RenovateYourHouseCustomPackagesFilterLoadingImpl<T>)
+          _then)
+      : super(_value, _then);
+
+  /// Create a copy of RenovateYourHouseState
+  /// with the given fields replaced by the non-null parameter values.
+}
+
+/// @nodoc
+
+class _$RenovateYourHouseCustomPackagesFilterLoadingImpl<T>
+    implements RenovateYourHouseCustomPackagesFilterLoading<T> {
+  _$RenovateYourHouseCustomPackagesFilterLoadingImpl();
+
+  @override
+  String toString() {
+    return 'RenovateYourHouseState<$T>.renovateYourHouseCustomPackagesFilterLoading()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$RenovateYourHouseCustomPackagesFilterLoadingImpl<T>);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() renovateYourHouseFixedPackagesLoading,
+    required TResult Function(RenovateYourHouseFixedPackagesModel data)
+        renovateYourHouseFixedPackagesLoaded,
+    required TResult Function(String error) renovateYourHouseFixedPackagesError,
+    required TResult Function() renovateYourHouseLookUpsLoading,
+    required TResult Function(T data) renovateYourHouseLookUpsLoaded,
+    required TResult Function(String error) renovateYourHouseLookUpsError,
+    required TResult Function() addCustomPackageRenovateYourHouseLoading,
+    required TResult Function(T data) addCustomPackageRenovateYourHouseLoaded,
+    required TResult Function(String error)
+        addCustomPackageRenovateYourHouseError,
+    required TResult Function() chooseFixedPackageRenovateYourHouseLoading,
+    required TResult Function(T data) chooseFixedPackageRenovateYourHouseLoaded,
+    required TResult Function(String error)
+        chooseFixedPackageRenovateYourHouseError,
+    required TResult Function() renovateYourHouseFixedPackagesFilterLoading,
+    required TResult Function(RenovateYourHouseFixedPackagesFilterResponse data)
+        renovateYourHouseFixedPackagesFilterLoaded,
+    required TResult Function(String error)
+        renovateYourHouseFixedPackagesFilterError,
+    required TResult Function() renovateYourHouseCustomPackagesFilterLoading,
+    required TResult Function(
+            RenovateYourHouseCustomPackagesFilterResponse data)
+        renovateYourHouseCustomPackagesFilterLoaded,
+    required TResult Function(String error)
+        renovateYourHouseCustomPackagesFilterError,
+    required TResult Function() paginationLoading,
+    required TResult Function(String errorMessage) paginationFailure,
+  }) {
+    return renovateYourHouseCustomPackagesFilterLoading();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? renovateYourHouseFixedPackagesLoading,
+    TResult? Function(RenovateYourHouseFixedPackagesModel data)?
+        renovateYourHouseFixedPackagesLoaded,
+    TResult? Function(String error)? renovateYourHouseFixedPackagesError,
+    TResult? Function()? renovateYourHouseLookUpsLoading,
+    TResult? Function(T data)? renovateYourHouseLookUpsLoaded,
+    TResult? Function(String error)? renovateYourHouseLookUpsError,
+    TResult? Function()? addCustomPackageRenovateYourHouseLoading,
+    TResult? Function(T data)? addCustomPackageRenovateYourHouseLoaded,
+    TResult? Function(String error)? addCustomPackageRenovateYourHouseError,
+    TResult? Function()? chooseFixedPackageRenovateYourHouseLoading,
+    TResult? Function(T data)? chooseFixedPackageRenovateYourHouseLoaded,
+    TResult? Function(String error)? chooseFixedPackageRenovateYourHouseError,
+    TResult? Function()? renovateYourHouseFixedPackagesFilterLoading,
+    TResult? Function(RenovateYourHouseFixedPackagesFilterResponse data)?
+        renovateYourHouseFixedPackagesFilterLoaded,
+    TResult? Function(String error)? renovateYourHouseFixedPackagesFilterError,
+    TResult? Function()? renovateYourHouseCustomPackagesFilterLoading,
+    TResult? Function(RenovateYourHouseCustomPackagesFilterResponse data)?
+        renovateYourHouseCustomPackagesFilterLoaded,
+    TResult? Function(String error)? renovateYourHouseCustomPackagesFilterError,
+    TResult? Function()? paginationLoading,
+    TResult? Function(String errorMessage)? paginationFailure,
+  }) {
+    return renovateYourHouseCustomPackagesFilterLoading?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? renovateYourHouseFixedPackagesLoading,
+    TResult Function(RenovateYourHouseFixedPackagesModel data)?
+        renovateYourHouseFixedPackagesLoaded,
+    TResult Function(String error)? renovateYourHouseFixedPackagesError,
+    TResult Function()? renovateYourHouseLookUpsLoading,
+    TResult Function(T data)? renovateYourHouseLookUpsLoaded,
+    TResult Function(String error)? renovateYourHouseLookUpsError,
+    TResult Function()? addCustomPackageRenovateYourHouseLoading,
+    TResult Function(T data)? addCustomPackageRenovateYourHouseLoaded,
+    TResult Function(String error)? addCustomPackageRenovateYourHouseError,
+    TResult Function()? chooseFixedPackageRenovateYourHouseLoading,
+    TResult Function(T data)? chooseFixedPackageRenovateYourHouseLoaded,
+    TResult Function(String error)? chooseFixedPackageRenovateYourHouseError,
+    TResult Function()? renovateYourHouseFixedPackagesFilterLoading,
+    TResult Function(RenovateYourHouseFixedPackagesFilterResponse data)?
+        renovateYourHouseFixedPackagesFilterLoaded,
+    TResult Function(String error)? renovateYourHouseFixedPackagesFilterError,
+    TResult Function()? renovateYourHouseCustomPackagesFilterLoading,
+    TResult Function(RenovateYourHouseCustomPackagesFilterResponse data)?
+        renovateYourHouseCustomPackagesFilterLoaded,
+    TResult Function(String error)? renovateYourHouseCustomPackagesFilterError,
+    TResult Function()? paginationLoading,
+    TResult Function(String errorMessage)? paginationFailure,
+    required TResult orElse(),
+  }) {
+    if (renovateYourHouseCustomPackagesFilterLoading != null) {
+      return renovateYourHouseCustomPackagesFilterLoading();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial<T> value) initial,
+    required TResult Function(RenovateYourHouseFixedPackagesLoading<T> value)
+        renovateYourHouseFixedPackagesLoading,
+    required TResult Function(RenovateYourHouseFixedPackagesLoaded<T> value)
+        renovateYourHouseFixedPackagesLoaded,
+    required TResult Function(RenovateYourHouseFixedPackagesError<T> value)
+        renovateYourHouseFixedPackagesError,
+    required TResult Function(RenovateYourHouseLookUpsLoading<T> value)
+        renovateYourHouseLookUpsLoading,
+    required TResult Function(RenovateYourHouseLookUpsLoaded<T> value)
+        renovateYourHouseLookUpsLoaded,
+    required TResult Function(RenovateYourHouseLookUpsError<T> value)
+        renovateYourHouseLookUpsError,
+    required TResult Function(AddCustomPackageRenovateYourHouseLoading<T> value)
+        addCustomPackageRenovateYourHouseLoading,
+    required TResult Function(AddCustomPackageRenovateYourHouseLoaded<T> value)
+        addCustomPackageRenovateYourHouseLoaded,
+    required TResult Function(AddCustomPackageRenovateYourHouseError<T> value)
+        addCustomPackageRenovateYourHouseError,
+    required TResult Function(
+            ChooseFixedPackageRenovateYourHouseLoading<T> value)
+        chooseFixedPackageRenovateYourHouseLoading,
+    required TResult Function(
+            ChooseFixedPackageRenovateYourHouseLoaded<T> value)
+        chooseFixedPackageRenovateYourHouseLoaded,
+    required TResult Function(ChooseFixedPackageRenovateYourHouseError<T> value)
+        chooseFixedPackageRenovateYourHouseError,
+    required TResult Function(
+            RenovateYourHouseFixedPackagesFilterLoading<T> value)
+        renovateYourHouseFixedPackagesFilterLoading,
+    required TResult Function(
+            RenovateYourHouseFixedPackagesFilterLoaded<T> value)
+        renovateYourHouseFixedPackagesFilterLoaded,
+    required TResult Function(
+            RenovateYourHouseFixedPackagesFilterError<T> value)
+        renovateYourHouseFixedPackagesFilterError,
+    required TResult Function(
+            RenovateYourHouseCustomPackagesFilterLoading<T> value)
+        renovateYourHouseCustomPackagesFilterLoading,
+    required TResult Function(
+            RenovateYourHouseCustomPackagesFilterLoaded<T> value)
+        renovateYourHouseCustomPackagesFilterLoaded,
+    required TResult Function(
+            RenovateYourHouseCustomPackagesFilterError<T> value)
+        renovateYourHouseCustomPackagesFilterError,
+    required TResult Function(PaginationLoading<T> value) paginationLoading,
+    required TResult Function(PaginationFailure<T> value) paginationFailure,
+  }) {
+    return renovateYourHouseCustomPackagesFilterLoading(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial<T> value)? initial,
+    TResult? Function(RenovateYourHouseFixedPackagesLoading<T> value)?
+        renovateYourHouseFixedPackagesLoading,
+    TResult? Function(RenovateYourHouseFixedPackagesLoaded<T> value)?
+        renovateYourHouseFixedPackagesLoaded,
+    TResult? Function(RenovateYourHouseFixedPackagesError<T> value)?
+        renovateYourHouseFixedPackagesError,
+    TResult? Function(RenovateYourHouseLookUpsLoading<T> value)?
+        renovateYourHouseLookUpsLoading,
+    TResult? Function(RenovateYourHouseLookUpsLoaded<T> value)?
+        renovateYourHouseLookUpsLoaded,
+    TResult? Function(RenovateYourHouseLookUpsError<T> value)?
+        renovateYourHouseLookUpsError,
+    TResult? Function(AddCustomPackageRenovateYourHouseLoading<T> value)?
+        addCustomPackageRenovateYourHouseLoading,
+    TResult? Function(AddCustomPackageRenovateYourHouseLoaded<T> value)?
+        addCustomPackageRenovateYourHouseLoaded,
+    TResult? Function(AddCustomPackageRenovateYourHouseError<T> value)?
+        addCustomPackageRenovateYourHouseError,
+    TResult? Function(ChooseFixedPackageRenovateYourHouseLoading<T> value)?
+        chooseFixedPackageRenovateYourHouseLoading,
+    TResult? Function(ChooseFixedPackageRenovateYourHouseLoaded<T> value)?
+        chooseFixedPackageRenovateYourHouseLoaded,
+    TResult? Function(ChooseFixedPackageRenovateYourHouseError<T> value)?
+        chooseFixedPackageRenovateYourHouseError,
+    TResult? Function(RenovateYourHouseFixedPackagesFilterLoading<T> value)?
+        renovateYourHouseFixedPackagesFilterLoading,
+    TResult? Function(RenovateYourHouseFixedPackagesFilterLoaded<T> value)?
+        renovateYourHouseFixedPackagesFilterLoaded,
+    TResult? Function(RenovateYourHouseFixedPackagesFilterError<T> value)?
+        renovateYourHouseFixedPackagesFilterError,
+    TResult? Function(RenovateYourHouseCustomPackagesFilterLoading<T> value)?
+        renovateYourHouseCustomPackagesFilterLoading,
+    TResult? Function(RenovateYourHouseCustomPackagesFilterLoaded<T> value)?
+        renovateYourHouseCustomPackagesFilterLoaded,
+    TResult? Function(RenovateYourHouseCustomPackagesFilterError<T> value)?
+        renovateYourHouseCustomPackagesFilterError,
+    TResult? Function(PaginationLoading<T> value)? paginationLoading,
+    TResult? Function(PaginationFailure<T> value)? paginationFailure,
+  }) {
+    return renovateYourHouseCustomPackagesFilterLoading?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial<T> value)? initial,
+    TResult Function(RenovateYourHouseFixedPackagesLoading<T> value)?
+        renovateYourHouseFixedPackagesLoading,
+    TResult Function(RenovateYourHouseFixedPackagesLoaded<T> value)?
+        renovateYourHouseFixedPackagesLoaded,
+    TResult Function(RenovateYourHouseFixedPackagesError<T> value)?
+        renovateYourHouseFixedPackagesError,
+    TResult Function(RenovateYourHouseLookUpsLoading<T> value)?
+        renovateYourHouseLookUpsLoading,
+    TResult Function(RenovateYourHouseLookUpsLoaded<T> value)?
+        renovateYourHouseLookUpsLoaded,
+    TResult Function(RenovateYourHouseLookUpsError<T> value)?
+        renovateYourHouseLookUpsError,
+    TResult Function(AddCustomPackageRenovateYourHouseLoading<T> value)?
+        addCustomPackageRenovateYourHouseLoading,
+    TResult Function(AddCustomPackageRenovateYourHouseLoaded<T> value)?
+        addCustomPackageRenovateYourHouseLoaded,
+    TResult Function(AddCustomPackageRenovateYourHouseError<T> value)?
+        addCustomPackageRenovateYourHouseError,
+    TResult Function(ChooseFixedPackageRenovateYourHouseLoading<T> value)?
+        chooseFixedPackageRenovateYourHouseLoading,
+    TResult Function(ChooseFixedPackageRenovateYourHouseLoaded<T> value)?
+        chooseFixedPackageRenovateYourHouseLoaded,
+    TResult Function(ChooseFixedPackageRenovateYourHouseError<T> value)?
+        chooseFixedPackageRenovateYourHouseError,
+    TResult Function(RenovateYourHouseFixedPackagesFilterLoading<T> value)?
+        renovateYourHouseFixedPackagesFilterLoading,
+    TResult Function(RenovateYourHouseFixedPackagesFilterLoaded<T> value)?
+        renovateYourHouseFixedPackagesFilterLoaded,
+    TResult Function(RenovateYourHouseFixedPackagesFilterError<T> value)?
+        renovateYourHouseFixedPackagesFilterError,
+    TResult Function(RenovateYourHouseCustomPackagesFilterLoading<T> value)?
+        renovateYourHouseCustomPackagesFilterLoading,
+    TResult Function(RenovateYourHouseCustomPackagesFilterLoaded<T> value)?
+        renovateYourHouseCustomPackagesFilterLoaded,
+    TResult Function(RenovateYourHouseCustomPackagesFilterError<T> value)?
+        renovateYourHouseCustomPackagesFilterError,
+    TResult Function(PaginationLoading<T> value)? paginationLoading,
+    TResult Function(PaginationFailure<T> value)? paginationFailure,
+    required TResult orElse(),
+  }) {
+    if (renovateYourHouseCustomPackagesFilterLoading != null) {
+      return renovateYourHouseCustomPackagesFilterLoading(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class RenovateYourHouseCustomPackagesFilterLoading<T>
+    implements RenovateYourHouseState<T> {
+  factory RenovateYourHouseCustomPackagesFilterLoading() =
+      _$RenovateYourHouseCustomPackagesFilterLoadingImpl<T>;
+}
+
+/// @nodoc
+abstract class _$$RenovateYourHouseCustomPackagesFilterLoadedImplCopyWith<T,
+    $Res> {
+  factory _$$RenovateYourHouseCustomPackagesFilterLoadedImplCopyWith(
+          _$RenovateYourHouseCustomPackagesFilterLoadedImpl<T> value,
+          $Res Function(_$RenovateYourHouseCustomPackagesFilterLoadedImpl<T>)
+              then) =
+      __$$RenovateYourHouseCustomPackagesFilterLoadedImplCopyWithImpl<T, $Res>;
+  @useResult
+  $Res call({RenovateYourHouseCustomPackagesFilterResponse data});
+}
+
+/// @nodoc
+class __$$RenovateYourHouseCustomPackagesFilterLoadedImplCopyWithImpl<T, $Res>
+    extends _$RenovateYourHouseStateCopyWithImpl<T, $Res,
+        _$RenovateYourHouseCustomPackagesFilterLoadedImpl<T>>
+    implements
+        _$$RenovateYourHouseCustomPackagesFilterLoadedImplCopyWith<T, $Res> {
+  __$$RenovateYourHouseCustomPackagesFilterLoadedImplCopyWithImpl(
+      _$RenovateYourHouseCustomPackagesFilterLoadedImpl<T> _value,
+      $Res Function(_$RenovateYourHouseCustomPackagesFilterLoadedImpl<T>) _then)
+      : super(_value, _then);
+
+  /// Create a copy of RenovateYourHouseState
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? data = null,
+  }) {
+    return _then(_$RenovateYourHouseCustomPackagesFilterLoadedImpl<T>(
+      null == data
+          ? _value.data
+          : data // ignore: cast_nullable_to_non_nullable
+              as RenovateYourHouseCustomPackagesFilterResponse,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$RenovateYourHouseCustomPackagesFilterLoadedImpl<T>
+    implements RenovateYourHouseCustomPackagesFilterLoaded<T> {
+  _$RenovateYourHouseCustomPackagesFilterLoadedImpl(this.data);
+
+  @override
+  final RenovateYourHouseCustomPackagesFilterResponse data;
+
+  @override
+  String toString() {
+    return 'RenovateYourHouseState<$T>.renovateYourHouseCustomPackagesFilterLoaded(data: $data)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$RenovateYourHouseCustomPackagesFilterLoadedImpl<T> &&
+            (identical(other.data, data) || other.data == data));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, data);
+
+  /// Create a copy of RenovateYourHouseState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$RenovateYourHouseCustomPackagesFilterLoadedImplCopyWith<T,
+          _$RenovateYourHouseCustomPackagesFilterLoadedImpl<T>>
+      get copyWith =>
+          __$$RenovateYourHouseCustomPackagesFilterLoadedImplCopyWithImpl<T,
+                  _$RenovateYourHouseCustomPackagesFilterLoadedImpl<T>>(
+              this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() renovateYourHouseFixedPackagesLoading,
+    required TResult Function(RenovateYourHouseFixedPackagesModel data)
+        renovateYourHouseFixedPackagesLoaded,
+    required TResult Function(String error) renovateYourHouseFixedPackagesError,
+    required TResult Function() renovateYourHouseLookUpsLoading,
+    required TResult Function(T data) renovateYourHouseLookUpsLoaded,
+    required TResult Function(String error) renovateYourHouseLookUpsError,
+    required TResult Function() addCustomPackageRenovateYourHouseLoading,
+    required TResult Function(T data) addCustomPackageRenovateYourHouseLoaded,
+    required TResult Function(String error)
+        addCustomPackageRenovateYourHouseError,
+    required TResult Function() chooseFixedPackageRenovateYourHouseLoading,
+    required TResult Function(T data) chooseFixedPackageRenovateYourHouseLoaded,
+    required TResult Function(String error)
+        chooseFixedPackageRenovateYourHouseError,
+    required TResult Function() renovateYourHouseFixedPackagesFilterLoading,
+    required TResult Function(RenovateYourHouseFixedPackagesFilterResponse data)
+        renovateYourHouseFixedPackagesFilterLoaded,
+    required TResult Function(String error)
+        renovateYourHouseFixedPackagesFilterError,
+    required TResult Function() renovateYourHouseCustomPackagesFilterLoading,
+    required TResult Function(
+            RenovateYourHouseCustomPackagesFilterResponse data)
+        renovateYourHouseCustomPackagesFilterLoaded,
+    required TResult Function(String error)
+        renovateYourHouseCustomPackagesFilterError,
+    required TResult Function() paginationLoading,
+    required TResult Function(String errorMessage) paginationFailure,
+  }) {
+    return renovateYourHouseCustomPackagesFilterLoaded(data);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? renovateYourHouseFixedPackagesLoading,
+    TResult? Function(RenovateYourHouseFixedPackagesModel data)?
+        renovateYourHouseFixedPackagesLoaded,
+    TResult? Function(String error)? renovateYourHouseFixedPackagesError,
+    TResult? Function()? renovateYourHouseLookUpsLoading,
+    TResult? Function(T data)? renovateYourHouseLookUpsLoaded,
+    TResult? Function(String error)? renovateYourHouseLookUpsError,
+    TResult? Function()? addCustomPackageRenovateYourHouseLoading,
+    TResult? Function(T data)? addCustomPackageRenovateYourHouseLoaded,
+    TResult? Function(String error)? addCustomPackageRenovateYourHouseError,
+    TResult? Function()? chooseFixedPackageRenovateYourHouseLoading,
+    TResult? Function(T data)? chooseFixedPackageRenovateYourHouseLoaded,
+    TResult? Function(String error)? chooseFixedPackageRenovateYourHouseError,
+    TResult? Function()? renovateYourHouseFixedPackagesFilterLoading,
+    TResult? Function(RenovateYourHouseFixedPackagesFilterResponse data)?
+        renovateYourHouseFixedPackagesFilterLoaded,
+    TResult? Function(String error)? renovateYourHouseFixedPackagesFilterError,
+    TResult? Function()? renovateYourHouseCustomPackagesFilterLoading,
+    TResult? Function(RenovateYourHouseCustomPackagesFilterResponse data)?
+        renovateYourHouseCustomPackagesFilterLoaded,
+    TResult? Function(String error)? renovateYourHouseCustomPackagesFilterError,
+    TResult? Function()? paginationLoading,
+    TResult? Function(String errorMessage)? paginationFailure,
+  }) {
+    return renovateYourHouseCustomPackagesFilterLoaded?.call(data);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? renovateYourHouseFixedPackagesLoading,
+    TResult Function(RenovateYourHouseFixedPackagesModel data)?
+        renovateYourHouseFixedPackagesLoaded,
+    TResult Function(String error)? renovateYourHouseFixedPackagesError,
+    TResult Function()? renovateYourHouseLookUpsLoading,
+    TResult Function(T data)? renovateYourHouseLookUpsLoaded,
+    TResult Function(String error)? renovateYourHouseLookUpsError,
+    TResult Function()? addCustomPackageRenovateYourHouseLoading,
+    TResult Function(T data)? addCustomPackageRenovateYourHouseLoaded,
+    TResult Function(String error)? addCustomPackageRenovateYourHouseError,
+    TResult Function()? chooseFixedPackageRenovateYourHouseLoading,
+    TResult Function(T data)? chooseFixedPackageRenovateYourHouseLoaded,
+    TResult Function(String error)? chooseFixedPackageRenovateYourHouseError,
+    TResult Function()? renovateYourHouseFixedPackagesFilterLoading,
+    TResult Function(RenovateYourHouseFixedPackagesFilterResponse data)?
+        renovateYourHouseFixedPackagesFilterLoaded,
+    TResult Function(String error)? renovateYourHouseFixedPackagesFilterError,
+    TResult Function()? renovateYourHouseCustomPackagesFilterLoading,
+    TResult Function(RenovateYourHouseCustomPackagesFilterResponse data)?
+        renovateYourHouseCustomPackagesFilterLoaded,
+    TResult Function(String error)? renovateYourHouseCustomPackagesFilterError,
+    TResult Function()? paginationLoading,
+    TResult Function(String errorMessage)? paginationFailure,
+    required TResult orElse(),
+  }) {
+    if (renovateYourHouseCustomPackagesFilterLoaded != null) {
+      return renovateYourHouseCustomPackagesFilterLoaded(data);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial<T> value) initial,
+    required TResult Function(RenovateYourHouseFixedPackagesLoading<T> value)
+        renovateYourHouseFixedPackagesLoading,
+    required TResult Function(RenovateYourHouseFixedPackagesLoaded<T> value)
+        renovateYourHouseFixedPackagesLoaded,
+    required TResult Function(RenovateYourHouseFixedPackagesError<T> value)
+        renovateYourHouseFixedPackagesError,
+    required TResult Function(RenovateYourHouseLookUpsLoading<T> value)
+        renovateYourHouseLookUpsLoading,
+    required TResult Function(RenovateYourHouseLookUpsLoaded<T> value)
+        renovateYourHouseLookUpsLoaded,
+    required TResult Function(RenovateYourHouseLookUpsError<T> value)
+        renovateYourHouseLookUpsError,
+    required TResult Function(AddCustomPackageRenovateYourHouseLoading<T> value)
+        addCustomPackageRenovateYourHouseLoading,
+    required TResult Function(AddCustomPackageRenovateYourHouseLoaded<T> value)
+        addCustomPackageRenovateYourHouseLoaded,
+    required TResult Function(AddCustomPackageRenovateYourHouseError<T> value)
+        addCustomPackageRenovateYourHouseError,
+    required TResult Function(
+            ChooseFixedPackageRenovateYourHouseLoading<T> value)
+        chooseFixedPackageRenovateYourHouseLoading,
+    required TResult Function(
+            ChooseFixedPackageRenovateYourHouseLoaded<T> value)
+        chooseFixedPackageRenovateYourHouseLoaded,
+    required TResult Function(ChooseFixedPackageRenovateYourHouseError<T> value)
+        chooseFixedPackageRenovateYourHouseError,
+    required TResult Function(
+            RenovateYourHouseFixedPackagesFilterLoading<T> value)
+        renovateYourHouseFixedPackagesFilterLoading,
+    required TResult Function(
+            RenovateYourHouseFixedPackagesFilterLoaded<T> value)
+        renovateYourHouseFixedPackagesFilterLoaded,
+    required TResult Function(
+            RenovateYourHouseFixedPackagesFilterError<T> value)
+        renovateYourHouseFixedPackagesFilterError,
+    required TResult Function(
+            RenovateYourHouseCustomPackagesFilterLoading<T> value)
+        renovateYourHouseCustomPackagesFilterLoading,
+    required TResult Function(
+            RenovateYourHouseCustomPackagesFilterLoaded<T> value)
+        renovateYourHouseCustomPackagesFilterLoaded,
+    required TResult Function(
+            RenovateYourHouseCustomPackagesFilterError<T> value)
+        renovateYourHouseCustomPackagesFilterError,
+    required TResult Function(PaginationLoading<T> value) paginationLoading,
+    required TResult Function(PaginationFailure<T> value) paginationFailure,
+  }) {
+    return renovateYourHouseCustomPackagesFilterLoaded(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial<T> value)? initial,
+    TResult? Function(RenovateYourHouseFixedPackagesLoading<T> value)?
+        renovateYourHouseFixedPackagesLoading,
+    TResult? Function(RenovateYourHouseFixedPackagesLoaded<T> value)?
+        renovateYourHouseFixedPackagesLoaded,
+    TResult? Function(RenovateYourHouseFixedPackagesError<T> value)?
+        renovateYourHouseFixedPackagesError,
+    TResult? Function(RenovateYourHouseLookUpsLoading<T> value)?
+        renovateYourHouseLookUpsLoading,
+    TResult? Function(RenovateYourHouseLookUpsLoaded<T> value)?
+        renovateYourHouseLookUpsLoaded,
+    TResult? Function(RenovateYourHouseLookUpsError<T> value)?
+        renovateYourHouseLookUpsError,
+    TResult? Function(AddCustomPackageRenovateYourHouseLoading<T> value)?
+        addCustomPackageRenovateYourHouseLoading,
+    TResult? Function(AddCustomPackageRenovateYourHouseLoaded<T> value)?
+        addCustomPackageRenovateYourHouseLoaded,
+    TResult? Function(AddCustomPackageRenovateYourHouseError<T> value)?
+        addCustomPackageRenovateYourHouseError,
+    TResult? Function(ChooseFixedPackageRenovateYourHouseLoading<T> value)?
+        chooseFixedPackageRenovateYourHouseLoading,
+    TResult? Function(ChooseFixedPackageRenovateYourHouseLoaded<T> value)?
+        chooseFixedPackageRenovateYourHouseLoaded,
+    TResult? Function(ChooseFixedPackageRenovateYourHouseError<T> value)?
+        chooseFixedPackageRenovateYourHouseError,
+    TResult? Function(RenovateYourHouseFixedPackagesFilterLoading<T> value)?
+        renovateYourHouseFixedPackagesFilterLoading,
+    TResult? Function(RenovateYourHouseFixedPackagesFilterLoaded<T> value)?
+        renovateYourHouseFixedPackagesFilterLoaded,
+    TResult? Function(RenovateYourHouseFixedPackagesFilterError<T> value)?
+        renovateYourHouseFixedPackagesFilterError,
+    TResult? Function(RenovateYourHouseCustomPackagesFilterLoading<T> value)?
+        renovateYourHouseCustomPackagesFilterLoading,
+    TResult? Function(RenovateYourHouseCustomPackagesFilterLoaded<T> value)?
+        renovateYourHouseCustomPackagesFilterLoaded,
+    TResult? Function(RenovateYourHouseCustomPackagesFilterError<T> value)?
+        renovateYourHouseCustomPackagesFilterError,
+    TResult? Function(PaginationLoading<T> value)? paginationLoading,
+    TResult? Function(PaginationFailure<T> value)? paginationFailure,
+  }) {
+    return renovateYourHouseCustomPackagesFilterLoaded?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial<T> value)? initial,
+    TResult Function(RenovateYourHouseFixedPackagesLoading<T> value)?
+        renovateYourHouseFixedPackagesLoading,
+    TResult Function(RenovateYourHouseFixedPackagesLoaded<T> value)?
+        renovateYourHouseFixedPackagesLoaded,
+    TResult Function(RenovateYourHouseFixedPackagesError<T> value)?
+        renovateYourHouseFixedPackagesError,
+    TResult Function(RenovateYourHouseLookUpsLoading<T> value)?
+        renovateYourHouseLookUpsLoading,
+    TResult Function(RenovateYourHouseLookUpsLoaded<T> value)?
+        renovateYourHouseLookUpsLoaded,
+    TResult Function(RenovateYourHouseLookUpsError<T> value)?
+        renovateYourHouseLookUpsError,
+    TResult Function(AddCustomPackageRenovateYourHouseLoading<T> value)?
+        addCustomPackageRenovateYourHouseLoading,
+    TResult Function(AddCustomPackageRenovateYourHouseLoaded<T> value)?
+        addCustomPackageRenovateYourHouseLoaded,
+    TResult Function(AddCustomPackageRenovateYourHouseError<T> value)?
+        addCustomPackageRenovateYourHouseError,
+    TResult Function(ChooseFixedPackageRenovateYourHouseLoading<T> value)?
+        chooseFixedPackageRenovateYourHouseLoading,
+    TResult Function(ChooseFixedPackageRenovateYourHouseLoaded<T> value)?
+        chooseFixedPackageRenovateYourHouseLoaded,
+    TResult Function(ChooseFixedPackageRenovateYourHouseError<T> value)?
+        chooseFixedPackageRenovateYourHouseError,
+    TResult Function(RenovateYourHouseFixedPackagesFilterLoading<T> value)?
+        renovateYourHouseFixedPackagesFilterLoading,
+    TResult Function(RenovateYourHouseFixedPackagesFilterLoaded<T> value)?
+        renovateYourHouseFixedPackagesFilterLoaded,
+    TResult Function(RenovateYourHouseFixedPackagesFilterError<T> value)?
+        renovateYourHouseFixedPackagesFilterError,
+    TResult Function(RenovateYourHouseCustomPackagesFilterLoading<T> value)?
+        renovateYourHouseCustomPackagesFilterLoading,
+    TResult Function(RenovateYourHouseCustomPackagesFilterLoaded<T> value)?
+        renovateYourHouseCustomPackagesFilterLoaded,
+    TResult Function(RenovateYourHouseCustomPackagesFilterError<T> value)?
+        renovateYourHouseCustomPackagesFilterError,
+    TResult Function(PaginationLoading<T> value)? paginationLoading,
+    TResult Function(PaginationFailure<T> value)? paginationFailure,
+    required TResult orElse(),
+  }) {
+    if (renovateYourHouseCustomPackagesFilterLoaded != null) {
+      return renovateYourHouseCustomPackagesFilterLoaded(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class RenovateYourHouseCustomPackagesFilterLoaded<T>
+    implements RenovateYourHouseState<T> {
+  factory RenovateYourHouseCustomPackagesFilterLoaded(
+          final RenovateYourHouseCustomPackagesFilterResponse data) =
+      _$RenovateYourHouseCustomPackagesFilterLoadedImpl<T>;
+
+  RenovateYourHouseCustomPackagesFilterResponse get data;
+
+  /// Create a copy of RenovateYourHouseState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$RenovateYourHouseCustomPackagesFilterLoadedImplCopyWith<T,
+          _$RenovateYourHouseCustomPackagesFilterLoadedImpl<T>>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$RenovateYourHouseCustomPackagesFilterErrorImplCopyWith<T,
+    $Res> {
+  factory _$$RenovateYourHouseCustomPackagesFilterErrorImplCopyWith(
+          _$RenovateYourHouseCustomPackagesFilterErrorImpl<T> value,
+          $Res Function(_$RenovateYourHouseCustomPackagesFilterErrorImpl<T>)
+              then) =
+      __$$RenovateYourHouseCustomPackagesFilterErrorImplCopyWithImpl<T, $Res>;
+  @useResult
+  $Res call({String error});
+}
+
+/// @nodoc
+class __$$RenovateYourHouseCustomPackagesFilterErrorImplCopyWithImpl<T, $Res>
+    extends _$RenovateYourHouseStateCopyWithImpl<T, $Res,
+        _$RenovateYourHouseCustomPackagesFilterErrorImpl<T>>
+    implements
+        _$$RenovateYourHouseCustomPackagesFilterErrorImplCopyWith<T, $Res> {
+  __$$RenovateYourHouseCustomPackagesFilterErrorImplCopyWithImpl(
+      _$RenovateYourHouseCustomPackagesFilterErrorImpl<T> _value,
+      $Res Function(_$RenovateYourHouseCustomPackagesFilterErrorImpl<T>) _then)
+      : super(_value, _then);
+
+  /// Create a copy of RenovateYourHouseState
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? error = null,
+  }) {
+    return _then(_$RenovateYourHouseCustomPackagesFilterErrorImpl<T>(
+      error: null == error
+          ? _value.error
+          : error // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$RenovateYourHouseCustomPackagesFilterErrorImpl<T>
+    implements RenovateYourHouseCustomPackagesFilterError<T> {
+  _$RenovateYourHouseCustomPackagesFilterErrorImpl({required this.error});
+
+  @override
+  final String error;
+
+  @override
+  String toString() {
+    return 'RenovateYourHouseState<$T>.renovateYourHouseCustomPackagesFilterError(error: $error)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$RenovateYourHouseCustomPackagesFilterErrorImpl<T> &&
+            (identical(other.error, error) || other.error == error));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, error);
+
+  /// Create a copy of RenovateYourHouseState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$RenovateYourHouseCustomPackagesFilterErrorImplCopyWith<T,
+          _$RenovateYourHouseCustomPackagesFilterErrorImpl<T>>
+      get copyWith =>
+          __$$RenovateYourHouseCustomPackagesFilterErrorImplCopyWithImpl<T,
+                  _$RenovateYourHouseCustomPackagesFilterErrorImpl<T>>(
+              this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() renovateYourHouseFixedPackagesLoading,
+    required TResult Function(RenovateYourHouseFixedPackagesModel data)
+        renovateYourHouseFixedPackagesLoaded,
+    required TResult Function(String error) renovateYourHouseFixedPackagesError,
+    required TResult Function() renovateYourHouseLookUpsLoading,
+    required TResult Function(T data) renovateYourHouseLookUpsLoaded,
+    required TResult Function(String error) renovateYourHouseLookUpsError,
+    required TResult Function() addCustomPackageRenovateYourHouseLoading,
+    required TResult Function(T data) addCustomPackageRenovateYourHouseLoaded,
+    required TResult Function(String error)
+        addCustomPackageRenovateYourHouseError,
+    required TResult Function() chooseFixedPackageRenovateYourHouseLoading,
+    required TResult Function(T data) chooseFixedPackageRenovateYourHouseLoaded,
+    required TResult Function(String error)
+        chooseFixedPackageRenovateYourHouseError,
+    required TResult Function() renovateYourHouseFixedPackagesFilterLoading,
+    required TResult Function(RenovateYourHouseFixedPackagesFilterResponse data)
+        renovateYourHouseFixedPackagesFilterLoaded,
+    required TResult Function(String error)
+        renovateYourHouseFixedPackagesFilterError,
+    required TResult Function() renovateYourHouseCustomPackagesFilterLoading,
+    required TResult Function(
+            RenovateYourHouseCustomPackagesFilterResponse data)
+        renovateYourHouseCustomPackagesFilterLoaded,
+    required TResult Function(String error)
+        renovateYourHouseCustomPackagesFilterError,
+    required TResult Function() paginationLoading,
+    required TResult Function(String errorMessage) paginationFailure,
+  }) {
+    return renovateYourHouseCustomPackagesFilterError(error);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? renovateYourHouseFixedPackagesLoading,
+    TResult? Function(RenovateYourHouseFixedPackagesModel data)?
+        renovateYourHouseFixedPackagesLoaded,
+    TResult? Function(String error)? renovateYourHouseFixedPackagesError,
+    TResult? Function()? renovateYourHouseLookUpsLoading,
+    TResult? Function(T data)? renovateYourHouseLookUpsLoaded,
+    TResult? Function(String error)? renovateYourHouseLookUpsError,
+    TResult? Function()? addCustomPackageRenovateYourHouseLoading,
+    TResult? Function(T data)? addCustomPackageRenovateYourHouseLoaded,
+    TResult? Function(String error)? addCustomPackageRenovateYourHouseError,
+    TResult? Function()? chooseFixedPackageRenovateYourHouseLoading,
+    TResult? Function(T data)? chooseFixedPackageRenovateYourHouseLoaded,
+    TResult? Function(String error)? chooseFixedPackageRenovateYourHouseError,
+    TResult? Function()? renovateYourHouseFixedPackagesFilterLoading,
+    TResult? Function(RenovateYourHouseFixedPackagesFilterResponse data)?
+        renovateYourHouseFixedPackagesFilterLoaded,
+    TResult? Function(String error)? renovateYourHouseFixedPackagesFilterError,
+    TResult? Function()? renovateYourHouseCustomPackagesFilterLoading,
+    TResult? Function(RenovateYourHouseCustomPackagesFilterResponse data)?
+        renovateYourHouseCustomPackagesFilterLoaded,
+    TResult? Function(String error)? renovateYourHouseCustomPackagesFilterError,
+    TResult? Function()? paginationLoading,
+    TResult? Function(String errorMessage)? paginationFailure,
+  }) {
+    return renovateYourHouseCustomPackagesFilterError?.call(error);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? renovateYourHouseFixedPackagesLoading,
+    TResult Function(RenovateYourHouseFixedPackagesModel data)?
+        renovateYourHouseFixedPackagesLoaded,
+    TResult Function(String error)? renovateYourHouseFixedPackagesError,
+    TResult Function()? renovateYourHouseLookUpsLoading,
+    TResult Function(T data)? renovateYourHouseLookUpsLoaded,
+    TResult Function(String error)? renovateYourHouseLookUpsError,
+    TResult Function()? addCustomPackageRenovateYourHouseLoading,
+    TResult Function(T data)? addCustomPackageRenovateYourHouseLoaded,
+    TResult Function(String error)? addCustomPackageRenovateYourHouseError,
+    TResult Function()? chooseFixedPackageRenovateYourHouseLoading,
+    TResult Function(T data)? chooseFixedPackageRenovateYourHouseLoaded,
+    TResult Function(String error)? chooseFixedPackageRenovateYourHouseError,
+    TResult Function()? renovateYourHouseFixedPackagesFilterLoading,
+    TResult Function(RenovateYourHouseFixedPackagesFilterResponse data)?
+        renovateYourHouseFixedPackagesFilterLoaded,
+    TResult Function(String error)? renovateYourHouseFixedPackagesFilterError,
+    TResult Function()? renovateYourHouseCustomPackagesFilterLoading,
+    TResult Function(RenovateYourHouseCustomPackagesFilterResponse data)?
+        renovateYourHouseCustomPackagesFilterLoaded,
+    TResult Function(String error)? renovateYourHouseCustomPackagesFilterError,
+    TResult Function()? paginationLoading,
+    TResult Function(String errorMessage)? paginationFailure,
+    required TResult orElse(),
+  }) {
+    if (renovateYourHouseCustomPackagesFilterError != null) {
+      return renovateYourHouseCustomPackagesFilterError(error);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial<T> value) initial,
+    required TResult Function(RenovateYourHouseFixedPackagesLoading<T> value)
+        renovateYourHouseFixedPackagesLoading,
+    required TResult Function(RenovateYourHouseFixedPackagesLoaded<T> value)
+        renovateYourHouseFixedPackagesLoaded,
+    required TResult Function(RenovateYourHouseFixedPackagesError<T> value)
+        renovateYourHouseFixedPackagesError,
+    required TResult Function(RenovateYourHouseLookUpsLoading<T> value)
+        renovateYourHouseLookUpsLoading,
+    required TResult Function(RenovateYourHouseLookUpsLoaded<T> value)
+        renovateYourHouseLookUpsLoaded,
+    required TResult Function(RenovateYourHouseLookUpsError<T> value)
+        renovateYourHouseLookUpsError,
+    required TResult Function(AddCustomPackageRenovateYourHouseLoading<T> value)
+        addCustomPackageRenovateYourHouseLoading,
+    required TResult Function(AddCustomPackageRenovateYourHouseLoaded<T> value)
+        addCustomPackageRenovateYourHouseLoaded,
+    required TResult Function(AddCustomPackageRenovateYourHouseError<T> value)
+        addCustomPackageRenovateYourHouseError,
+    required TResult Function(
+            ChooseFixedPackageRenovateYourHouseLoading<T> value)
+        chooseFixedPackageRenovateYourHouseLoading,
+    required TResult Function(
+            ChooseFixedPackageRenovateYourHouseLoaded<T> value)
+        chooseFixedPackageRenovateYourHouseLoaded,
+    required TResult Function(ChooseFixedPackageRenovateYourHouseError<T> value)
+        chooseFixedPackageRenovateYourHouseError,
+    required TResult Function(
+            RenovateYourHouseFixedPackagesFilterLoading<T> value)
+        renovateYourHouseFixedPackagesFilterLoading,
+    required TResult Function(
+            RenovateYourHouseFixedPackagesFilterLoaded<T> value)
+        renovateYourHouseFixedPackagesFilterLoaded,
+    required TResult Function(
+            RenovateYourHouseFixedPackagesFilterError<T> value)
+        renovateYourHouseFixedPackagesFilterError,
+    required TResult Function(
+            RenovateYourHouseCustomPackagesFilterLoading<T> value)
+        renovateYourHouseCustomPackagesFilterLoading,
+    required TResult Function(
+            RenovateYourHouseCustomPackagesFilterLoaded<T> value)
+        renovateYourHouseCustomPackagesFilterLoaded,
+    required TResult Function(
+            RenovateYourHouseCustomPackagesFilterError<T> value)
+        renovateYourHouseCustomPackagesFilterError,
+    required TResult Function(PaginationLoading<T> value) paginationLoading,
+    required TResult Function(PaginationFailure<T> value) paginationFailure,
+  }) {
+    return renovateYourHouseCustomPackagesFilterError(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial<T> value)? initial,
+    TResult? Function(RenovateYourHouseFixedPackagesLoading<T> value)?
+        renovateYourHouseFixedPackagesLoading,
+    TResult? Function(RenovateYourHouseFixedPackagesLoaded<T> value)?
+        renovateYourHouseFixedPackagesLoaded,
+    TResult? Function(RenovateYourHouseFixedPackagesError<T> value)?
+        renovateYourHouseFixedPackagesError,
+    TResult? Function(RenovateYourHouseLookUpsLoading<T> value)?
+        renovateYourHouseLookUpsLoading,
+    TResult? Function(RenovateYourHouseLookUpsLoaded<T> value)?
+        renovateYourHouseLookUpsLoaded,
+    TResult? Function(RenovateYourHouseLookUpsError<T> value)?
+        renovateYourHouseLookUpsError,
+    TResult? Function(AddCustomPackageRenovateYourHouseLoading<T> value)?
+        addCustomPackageRenovateYourHouseLoading,
+    TResult? Function(AddCustomPackageRenovateYourHouseLoaded<T> value)?
+        addCustomPackageRenovateYourHouseLoaded,
+    TResult? Function(AddCustomPackageRenovateYourHouseError<T> value)?
+        addCustomPackageRenovateYourHouseError,
+    TResult? Function(ChooseFixedPackageRenovateYourHouseLoading<T> value)?
+        chooseFixedPackageRenovateYourHouseLoading,
+    TResult? Function(ChooseFixedPackageRenovateYourHouseLoaded<T> value)?
+        chooseFixedPackageRenovateYourHouseLoaded,
+    TResult? Function(ChooseFixedPackageRenovateYourHouseError<T> value)?
+        chooseFixedPackageRenovateYourHouseError,
+    TResult? Function(RenovateYourHouseFixedPackagesFilterLoading<T> value)?
+        renovateYourHouseFixedPackagesFilterLoading,
+    TResult? Function(RenovateYourHouseFixedPackagesFilterLoaded<T> value)?
+        renovateYourHouseFixedPackagesFilterLoaded,
+    TResult? Function(RenovateYourHouseFixedPackagesFilterError<T> value)?
+        renovateYourHouseFixedPackagesFilterError,
+    TResult? Function(RenovateYourHouseCustomPackagesFilterLoading<T> value)?
+        renovateYourHouseCustomPackagesFilterLoading,
+    TResult? Function(RenovateYourHouseCustomPackagesFilterLoaded<T> value)?
+        renovateYourHouseCustomPackagesFilterLoaded,
+    TResult? Function(RenovateYourHouseCustomPackagesFilterError<T> value)?
+        renovateYourHouseCustomPackagesFilterError,
+    TResult? Function(PaginationLoading<T> value)? paginationLoading,
+    TResult? Function(PaginationFailure<T> value)? paginationFailure,
+  }) {
+    return renovateYourHouseCustomPackagesFilterError?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial<T> value)? initial,
+    TResult Function(RenovateYourHouseFixedPackagesLoading<T> value)?
+        renovateYourHouseFixedPackagesLoading,
+    TResult Function(RenovateYourHouseFixedPackagesLoaded<T> value)?
+        renovateYourHouseFixedPackagesLoaded,
+    TResult Function(RenovateYourHouseFixedPackagesError<T> value)?
+        renovateYourHouseFixedPackagesError,
+    TResult Function(RenovateYourHouseLookUpsLoading<T> value)?
+        renovateYourHouseLookUpsLoading,
+    TResult Function(RenovateYourHouseLookUpsLoaded<T> value)?
+        renovateYourHouseLookUpsLoaded,
+    TResult Function(RenovateYourHouseLookUpsError<T> value)?
+        renovateYourHouseLookUpsError,
+    TResult Function(AddCustomPackageRenovateYourHouseLoading<T> value)?
+        addCustomPackageRenovateYourHouseLoading,
+    TResult Function(AddCustomPackageRenovateYourHouseLoaded<T> value)?
+        addCustomPackageRenovateYourHouseLoaded,
+    TResult Function(AddCustomPackageRenovateYourHouseError<T> value)?
+        addCustomPackageRenovateYourHouseError,
+    TResult Function(ChooseFixedPackageRenovateYourHouseLoading<T> value)?
+        chooseFixedPackageRenovateYourHouseLoading,
+    TResult Function(ChooseFixedPackageRenovateYourHouseLoaded<T> value)?
+        chooseFixedPackageRenovateYourHouseLoaded,
+    TResult Function(ChooseFixedPackageRenovateYourHouseError<T> value)?
+        chooseFixedPackageRenovateYourHouseError,
+    TResult Function(RenovateYourHouseFixedPackagesFilterLoading<T> value)?
+        renovateYourHouseFixedPackagesFilterLoading,
+    TResult Function(RenovateYourHouseFixedPackagesFilterLoaded<T> value)?
+        renovateYourHouseFixedPackagesFilterLoaded,
+    TResult Function(RenovateYourHouseFixedPackagesFilterError<T> value)?
+        renovateYourHouseFixedPackagesFilterError,
+    TResult Function(RenovateYourHouseCustomPackagesFilterLoading<T> value)?
+        renovateYourHouseCustomPackagesFilterLoading,
+    TResult Function(RenovateYourHouseCustomPackagesFilterLoaded<T> value)?
+        renovateYourHouseCustomPackagesFilterLoaded,
+    TResult Function(RenovateYourHouseCustomPackagesFilterError<T> value)?
+        renovateYourHouseCustomPackagesFilterError,
+    TResult Function(PaginationLoading<T> value)? paginationLoading,
+    TResult Function(PaginationFailure<T> value)? paginationFailure,
+    required TResult orElse(),
+  }) {
+    if (renovateYourHouseCustomPackagesFilterError != null) {
+      return renovateYourHouseCustomPackagesFilterError(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class RenovateYourHouseCustomPackagesFilterError<T>
+    implements RenovateYourHouseState<T> {
+  factory RenovateYourHouseCustomPackagesFilterError(
+          {required final String error}) =
+      _$RenovateYourHouseCustomPackagesFilterErrorImpl<T>;
+
+  String get error;
+
+  /// Create a copy of RenovateYourHouseState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$RenovateYourHouseCustomPackagesFilterErrorImplCopyWith<T,
+          _$RenovateYourHouseCustomPackagesFilterErrorImpl<T>>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$PaginationLoadingImplCopyWith<T, $Res> {
+  factory _$$PaginationLoadingImplCopyWith(_$PaginationLoadingImpl<T> value,
+          $Res Function(_$PaginationLoadingImpl<T>) then) =
+      __$$PaginationLoadingImplCopyWithImpl<T, $Res>;
+}
+
+/// @nodoc
+class __$$PaginationLoadingImplCopyWithImpl<T, $Res>
+    extends _$RenovateYourHouseStateCopyWithImpl<T, $Res,
+        _$PaginationLoadingImpl<T>>
+    implements _$$PaginationLoadingImplCopyWith<T, $Res> {
+  __$$PaginationLoadingImplCopyWithImpl(_$PaginationLoadingImpl<T> _value,
+      $Res Function(_$PaginationLoadingImpl<T>) _then)
+      : super(_value, _then);
+
+  /// Create a copy of RenovateYourHouseState
+  /// with the given fields replaced by the non-null parameter values.
+}
+
+/// @nodoc
+
+class _$PaginationLoadingImpl<T> implements PaginationLoading<T> {
+  const _$PaginationLoadingImpl();
+
+  @override
+  String toString() {
+    return 'RenovateYourHouseState<$T>.paginationLoading()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$PaginationLoadingImpl<T>);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() renovateYourHouseFixedPackagesLoading,
+    required TResult Function(RenovateYourHouseFixedPackagesModel data)
+        renovateYourHouseFixedPackagesLoaded,
+    required TResult Function(String error) renovateYourHouseFixedPackagesError,
+    required TResult Function() renovateYourHouseLookUpsLoading,
+    required TResult Function(T data) renovateYourHouseLookUpsLoaded,
+    required TResult Function(String error) renovateYourHouseLookUpsError,
+    required TResult Function() addCustomPackageRenovateYourHouseLoading,
+    required TResult Function(T data) addCustomPackageRenovateYourHouseLoaded,
+    required TResult Function(String error)
+        addCustomPackageRenovateYourHouseError,
+    required TResult Function() chooseFixedPackageRenovateYourHouseLoading,
+    required TResult Function(T data) chooseFixedPackageRenovateYourHouseLoaded,
+    required TResult Function(String error)
+        chooseFixedPackageRenovateYourHouseError,
+    required TResult Function() renovateYourHouseFixedPackagesFilterLoading,
+    required TResult Function(RenovateYourHouseFixedPackagesFilterResponse data)
+        renovateYourHouseFixedPackagesFilterLoaded,
+    required TResult Function(String error)
+        renovateYourHouseFixedPackagesFilterError,
+    required TResult Function() renovateYourHouseCustomPackagesFilterLoading,
+    required TResult Function(
+            RenovateYourHouseCustomPackagesFilterResponse data)
+        renovateYourHouseCustomPackagesFilterLoaded,
+    required TResult Function(String error)
+        renovateYourHouseCustomPackagesFilterError,
+    required TResult Function() paginationLoading,
+    required TResult Function(String errorMessage) paginationFailure,
+  }) {
+    return paginationLoading();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? renovateYourHouseFixedPackagesLoading,
+    TResult? Function(RenovateYourHouseFixedPackagesModel data)?
+        renovateYourHouseFixedPackagesLoaded,
+    TResult? Function(String error)? renovateYourHouseFixedPackagesError,
+    TResult? Function()? renovateYourHouseLookUpsLoading,
+    TResult? Function(T data)? renovateYourHouseLookUpsLoaded,
+    TResult? Function(String error)? renovateYourHouseLookUpsError,
+    TResult? Function()? addCustomPackageRenovateYourHouseLoading,
+    TResult? Function(T data)? addCustomPackageRenovateYourHouseLoaded,
+    TResult? Function(String error)? addCustomPackageRenovateYourHouseError,
+    TResult? Function()? chooseFixedPackageRenovateYourHouseLoading,
+    TResult? Function(T data)? chooseFixedPackageRenovateYourHouseLoaded,
+    TResult? Function(String error)? chooseFixedPackageRenovateYourHouseError,
+    TResult? Function()? renovateYourHouseFixedPackagesFilterLoading,
+    TResult? Function(RenovateYourHouseFixedPackagesFilterResponse data)?
+        renovateYourHouseFixedPackagesFilterLoaded,
+    TResult? Function(String error)? renovateYourHouseFixedPackagesFilterError,
+    TResult? Function()? renovateYourHouseCustomPackagesFilterLoading,
+    TResult? Function(RenovateYourHouseCustomPackagesFilterResponse data)?
+        renovateYourHouseCustomPackagesFilterLoaded,
+    TResult? Function(String error)? renovateYourHouseCustomPackagesFilterError,
+    TResult? Function()? paginationLoading,
+    TResult? Function(String errorMessage)? paginationFailure,
+  }) {
+    return paginationLoading?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? renovateYourHouseFixedPackagesLoading,
+    TResult Function(RenovateYourHouseFixedPackagesModel data)?
+        renovateYourHouseFixedPackagesLoaded,
+    TResult Function(String error)? renovateYourHouseFixedPackagesError,
+    TResult Function()? renovateYourHouseLookUpsLoading,
+    TResult Function(T data)? renovateYourHouseLookUpsLoaded,
+    TResult Function(String error)? renovateYourHouseLookUpsError,
+    TResult Function()? addCustomPackageRenovateYourHouseLoading,
+    TResult Function(T data)? addCustomPackageRenovateYourHouseLoaded,
+    TResult Function(String error)? addCustomPackageRenovateYourHouseError,
+    TResult Function()? chooseFixedPackageRenovateYourHouseLoading,
+    TResult Function(T data)? chooseFixedPackageRenovateYourHouseLoaded,
+    TResult Function(String error)? chooseFixedPackageRenovateYourHouseError,
+    TResult Function()? renovateYourHouseFixedPackagesFilterLoading,
+    TResult Function(RenovateYourHouseFixedPackagesFilterResponse data)?
+        renovateYourHouseFixedPackagesFilterLoaded,
+    TResult Function(String error)? renovateYourHouseFixedPackagesFilterError,
+    TResult Function()? renovateYourHouseCustomPackagesFilterLoading,
+    TResult Function(RenovateYourHouseCustomPackagesFilterResponse data)?
+        renovateYourHouseCustomPackagesFilterLoaded,
+    TResult Function(String error)? renovateYourHouseCustomPackagesFilterError,
+    TResult Function()? paginationLoading,
+    TResult Function(String errorMessage)? paginationFailure,
+    required TResult orElse(),
+  }) {
+    if (paginationLoading != null) {
+      return paginationLoading();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial<T> value) initial,
+    required TResult Function(RenovateYourHouseFixedPackagesLoading<T> value)
+        renovateYourHouseFixedPackagesLoading,
+    required TResult Function(RenovateYourHouseFixedPackagesLoaded<T> value)
+        renovateYourHouseFixedPackagesLoaded,
+    required TResult Function(RenovateYourHouseFixedPackagesError<T> value)
+        renovateYourHouseFixedPackagesError,
+    required TResult Function(RenovateYourHouseLookUpsLoading<T> value)
+        renovateYourHouseLookUpsLoading,
+    required TResult Function(RenovateYourHouseLookUpsLoaded<T> value)
+        renovateYourHouseLookUpsLoaded,
+    required TResult Function(RenovateYourHouseLookUpsError<T> value)
+        renovateYourHouseLookUpsError,
+    required TResult Function(AddCustomPackageRenovateYourHouseLoading<T> value)
+        addCustomPackageRenovateYourHouseLoading,
+    required TResult Function(AddCustomPackageRenovateYourHouseLoaded<T> value)
+        addCustomPackageRenovateYourHouseLoaded,
+    required TResult Function(AddCustomPackageRenovateYourHouseError<T> value)
+        addCustomPackageRenovateYourHouseError,
+    required TResult Function(
+            ChooseFixedPackageRenovateYourHouseLoading<T> value)
+        chooseFixedPackageRenovateYourHouseLoading,
+    required TResult Function(
+            ChooseFixedPackageRenovateYourHouseLoaded<T> value)
+        chooseFixedPackageRenovateYourHouseLoaded,
+    required TResult Function(ChooseFixedPackageRenovateYourHouseError<T> value)
+        chooseFixedPackageRenovateYourHouseError,
+    required TResult Function(
+            RenovateYourHouseFixedPackagesFilterLoading<T> value)
+        renovateYourHouseFixedPackagesFilterLoading,
+    required TResult Function(
+            RenovateYourHouseFixedPackagesFilterLoaded<T> value)
+        renovateYourHouseFixedPackagesFilterLoaded,
+    required TResult Function(
+            RenovateYourHouseFixedPackagesFilterError<T> value)
+        renovateYourHouseFixedPackagesFilterError,
+    required TResult Function(
+            RenovateYourHouseCustomPackagesFilterLoading<T> value)
+        renovateYourHouseCustomPackagesFilterLoading,
+    required TResult Function(
+            RenovateYourHouseCustomPackagesFilterLoaded<T> value)
+        renovateYourHouseCustomPackagesFilterLoaded,
+    required TResult Function(
+            RenovateYourHouseCustomPackagesFilterError<T> value)
+        renovateYourHouseCustomPackagesFilterError,
+    required TResult Function(PaginationLoading<T> value) paginationLoading,
+    required TResult Function(PaginationFailure<T> value) paginationFailure,
+  }) {
+    return paginationLoading(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial<T> value)? initial,
+    TResult? Function(RenovateYourHouseFixedPackagesLoading<T> value)?
+        renovateYourHouseFixedPackagesLoading,
+    TResult? Function(RenovateYourHouseFixedPackagesLoaded<T> value)?
+        renovateYourHouseFixedPackagesLoaded,
+    TResult? Function(RenovateYourHouseFixedPackagesError<T> value)?
+        renovateYourHouseFixedPackagesError,
+    TResult? Function(RenovateYourHouseLookUpsLoading<T> value)?
+        renovateYourHouseLookUpsLoading,
+    TResult? Function(RenovateYourHouseLookUpsLoaded<T> value)?
+        renovateYourHouseLookUpsLoaded,
+    TResult? Function(RenovateYourHouseLookUpsError<T> value)?
+        renovateYourHouseLookUpsError,
+    TResult? Function(AddCustomPackageRenovateYourHouseLoading<T> value)?
+        addCustomPackageRenovateYourHouseLoading,
+    TResult? Function(AddCustomPackageRenovateYourHouseLoaded<T> value)?
+        addCustomPackageRenovateYourHouseLoaded,
+    TResult? Function(AddCustomPackageRenovateYourHouseError<T> value)?
+        addCustomPackageRenovateYourHouseError,
+    TResult? Function(ChooseFixedPackageRenovateYourHouseLoading<T> value)?
+        chooseFixedPackageRenovateYourHouseLoading,
+    TResult? Function(ChooseFixedPackageRenovateYourHouseLoaded<T> value)?
+        chooseFixedPackageRenovateYourHouseLoaded,
+    TResult? Function(ChooseFixedPackageRenovateYourHouseError<T> value)?
+        chooseFixedPackageRenovateYourHouseError,
+    TResult? Function(RenovateYourHouseFixedPackagesFilterLoading<T> value)?
+        renovateYourHouseFixedPackagesFilterLoading,
+    TResult? Function(RenovateYourHouseFixedPackagesFilterLoaded<T> value)?
+        renovateYourHouseFixedPackagesFilterLoaded,
+    TResult? Function(RenovateYourHouseFixedPackagesFilterError<T> value)?
+        renovateYourHouseFixedPackagesFilterError,
+    TResult? Function(RenovateYourHouseCustomPackagesFilterLoading<T> value)?
+        renovateYourHouseCustomPackagesFilterLoading,
+    TResult? Function(RenovateYourHouseCustomPackagesFilterLoaded<T> value)?
+        renovateYourHouseCustomPackagesFilterLoaded,
+    TResult? Function(RenovateYourHouseCustomPackagesFilterError<T> value)?
+        renovateYourHouseCustomPackagesFilterError,
+    TResult? Function(PaginationLoading<T> value)? paginationLoading,
+    TResult? Function(PaginationFailure<T> value)? paginationFailure,
+  }) {
+    return paginationLoading?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial<T> value)? initial,
+    TResult Function(RenovateYourHouseFixedPackagesLoading<T> value)?
+        renovateYourHouseFixedPackagesLoading,
+    TResult Function(RenovateYourHouseFixedPackagesLoaded<T> value)?
+        renovateYourHouseFixedPackagesLoaded,
+    TResult Function(RenovateYourHouseFixedPackagesError<T> value)?
+        renovateYourHouseFixedPackagesError,
+    TResult Function(RenovateYourHouseLookUpsLoading<T> value)?
+        renovateYourHouseLookUpsLoading,
+    TResult Function(RenovateYourHouseLookUpsLoaded<T> value)?
+        renovateYourHouseLookUpsLoaded,
+    TResult Function(RenovateYourHouseLookUpsError<T> value)?
+        renovateYourHouseLookUpsError,
+    TResult Function(AddCustomPackageRenovateYourHouseLoading<T> value)?
+        addCustomPackageRenovateYourHouseLoading,
+    TResult Function(AddCustomPackageRenovateYourHouseLoaded<T> value)?
+        addCustomPackageRenovateYourHouseLoaded,
+    TResult Function(AddCustomPackageRenovateYourHouseError<T> value)?
+        addCustomPackageRenovateYourHouseError,
+    TResult Function(ChooseFixedPackageRenovateYourHouseLoading<T> value)?
+        chooseFixedPackageRenovateYourHouseLoading,
+    TResult Function(ChooseFixedPackageRenovateYourHouseLoaded<T> value)?
+        chooseFixedPackageRenovateYourHouseLoaded,
+    TResult Function(ChooseFixedPackageRenovateYourHouseError<T> value)?
+        chooseFixedPackageRenovateYourHouseError,
+    TResult Function(RenovateYourHouseFixedPackagesFilterLoading<T> value)?
+        renovateYourHouseFixedPackagesFilterLoading,
+    TResult Function(RenovateYourHouseFixedPackagesFilterLoaded<T> value)?
+        renovateYourHouseFixedPackagesFilterLoaded,
+    TResult Function(RenovateYourHouseFixedPackagesFilterError<T> value)?
+        renovateYourHouseFixedPackagesFilterError,
+    TResult Function(RenovateYourHouseCustomPackagesFilterLoading<T> value)?
+        renovateYourHouseCustomPackagesFilterLoading,
+    TResult Function(RenovateYourHouseCustomPackagesFilterLoaded<T> value)?
+        renovateYourHouseCustomPackagesFilterLoaded,
+    TResult Function(RenovateYourHouseCustomPackagesFilterError<T> value)?
+        renovateYourHouseCustomPackagesFilterError,
+    TResult Function(PaginationLoading<T> value)? paginationLoading,
+    TResult Function(PaginationFailure<T> value)? paginationFailure,
+    required TResult orElse(),
+  }) {
+    if (paginationLoading != null) {
+      return paginationLoading(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class PaginationLoading<T> implements RenovateYourHouseState<T> {
+  const factory PaginationLoading() = _$PaginationLoadingImpl<T>;
+}
+
+/// @nodoc
+abstract class _$$PaginationFailureImplCopyWith<T, $Res> {
+  factory _$$PaginationFailureImplCopyWith(_$PaginationFailureImpl<T> value,
+          $Res Function(_$PaginationFailureImpl<T>) then) =
+      __$$PaginationFailureImplCopyWithImpl<T, $Res>;
+  @useResult
+  $Res call({String errorMessage});
+}
+
+/// @nodoc
+class __$$PaginationFailureImplCopyWithImpl<T, $Res>
+    extends _$RenovateYourHouseStateCopyWithImpl<T, $Res,
+        _$PaginationFailureImpl<T>>
+    implements _$$PaginationFailureImplCopyWith<T, $Res> {
+  __$$PaginationFailureImplCopyWithImpl(_$PaginationFailureImpl<T> _value,
+      $Res Function(_$PaginationFailureImpl<T>) _then)
+      : super(_value, _then);
+
+  /// Create a copy of RenovateYourHouseState
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? errorMessage = null,
+  }) {
+    return _then(_$PaginationFailureImpl<T>(
+      errorMessage: null == errorMessage
+          ? _value.errorMessage
+          : errorMessage // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$PaginationFailureImpl<T> implements PaginationFailure<T> {
+  const _$PaginationFailureImpl({required this.errorMessage});
+
+  @override
+  final String errorMessage;
+
+  @override
+  String toString() {
+    return 'RenovateYourHouseState<$T>.paginationFailure(errorMessage: $errorMessage)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$PaginationFailureImpl<T> &&
+            (identical(other.errorMessage, errorMessage) ||
+                other.errorMessage == errorMessage));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, errorMessage);
+
+  /// Create a copy of RenovateYourHouseState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$PaginationFailureImplCopyWith<T, _$PaginationFailureImpl<T>>
+      get copyWith =>
+          __$$PaginationFailureImplCopyWithImpl<T, _$PaginationFailureImpl<T>>(
+              this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() renovateYourHouseFixedPackagesLoading,
+    required TResult Function(RenovateYourHouseFixedPackagesModel data)
+        renovateYourHouseFixedPackagesLoaded,
+    required TResult Function(String error) renovateYourHouseFixedPackagesError,
+    required TResult Function() renovateYourHouseLookUpsLoading,
+    required TResult Function(T data) renovateYourHouseLookUpsLoaded,
+    required TResult Function(String error) renovateYourHouseLookUpsError,
+    required TResult Function() addCustomPackageRenovateYourHouseLoading,
+    required TResult Function(T data) addCustomPackageRenovateYourHouseLoaded,
+    required TResult Function(String error)
+        addCustomPackageRenovateYourHouseError,
+    required TResult Function() chooseFixedPackageRenovateYourHouseLoading,
+    required TResult Function(T data) chooseFixedPackageRenovateYourHouseLoaded,
+    required TResult Function(String error)
+        chooseFixedPackageRenovateYourHouseError,
+    required TResult Function() renovateYourHouseFixedPackagesFilterLoading,
+    required TResult Function(RenovateYourHouseFixedPackagesFilterResponse data)
+        renovateYourHouseFixedPackagesFilterLoaded,
+    required TResult Function(String error)
+        renovateYourHouseFixedPackagesFilterError,
+    required TResult Function() renovateYourHouseCustomPackagesFilterLoading,
+    required TResult Function(
+            RenovateYourHouseCustomPackagesFilterResponse data)
+        renovateYourHouseCustomPackagesFilterLoaded,
+    required TResult Function(String error)
+        renovateYourHouseCustomPackagesFilterError,
+    required TResult Function() paginationLoading,
+    required TResult Function(String errorMessage) paginationFailure,
+  }) {
+    return paginationFailure(errorMessage);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? renovateYourHouseFixedPackagesLoading,
+    TResult? Function(RenovateYourHouseFixedPackagesModel data)?
+        renovateYourHouseFixedPackagesLoaded,
+    TResult? Function(String error)? renovateYourHouseFixedPackagesError,
+    TResult? Function()? renovateYourHouseLookUpsLoading,
+    TResult? Function(T data)? renovateYourHouseLookUpsLoaded,
+    TResult? Function(String error)? renovateYourHouseLookUpsError,
+    TResult? Function()? addCustomPackageRenovateYourHouseLoading,
+    TResult? Function(T data)? addCustomPackageRenovateYourHouseLoaded,
+    TResult? Function(String error)? addCustomPackageRenovateYourHouseError,
+    TResult? Function()? chooseFixedPackageRenovateYourHouseLoading,
+    TResult? Function(T data)? chooseFixedPackageRenovateYourHouseLoaded,
+    TResult? Function(String error)? chooseFixedPackageRenovateYourHouseError,
+    TResult? Function()? renovateYourHouseFixedPackagesFilterLoading,
+    TResult? Function(RenovateYourHouseFixedPackagesFilterResponse data)?
+        renovateYourHouseFixedPackagesFilterLoaded,
+    TResult? Function(String error)? renovateYourHouseFixedPackagesFilterError,
+    TResult? Function()? renovateYourHouseCustomPackagesFilterLoading,
+    TResult? Function(RenovateYourHouseCustomPackagesFilterResponse data)?
+        renovateYourHouseCustomPackagesFilterLoaded,
+    TResult? Function(String error)? renovateYourHouseCustomPackagesFilterError,
+    TResult? Function()? paginationLoading,
+    TResult? Function(String errorMessage)? paginationFailure,
+  }) {
+    return paginationFailure?.call(errorMessage);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? renovateYourHouseFixedPackagesLoading,
+    TResult Function(RenovateYourHouseFixedPackagesModel data)?
+        renovateYourHouseFixedPackagesLoaded,
+    TResult Function(String error)? renovateYourHouseFixedPackagesError,
+    TResult Function()? renovateYourHouseLookUpsLoading,
+    TResult Function(T data)? renovateYourHouseLookUpsLoaded,
+    TResult Function(String error)? renovateYourHouseLookUpsError,
+    TResult Function()? addCustomPackageRenovateYourHouseLoading,
+    TResult Function(T data)? addCustomPackageRenovateYourHouseLoaded,
+    TResult Function(String error)? addCustomPackageRenovateYourHouseError,
+    TResult Function()? chooseFixedPackageRenovateYourHouseLoading,
+    TResult Function(T data)? chooseFixedPackageRenovateYourHouseLoaded,
+    TResult Function(String error)? chooseFixedPackageRenovateYourHouseError,
+    TResult Function()? renovateYourHouseFixedPackagesFilterLoading,
+    TResult Function(RenovateYourHouseFixedPackagesFilterResponse data)?
+        renovateYourHouseFixedPackagesFilterLoaded,
+    TResult Function(String error)? renovateYourHouseFixedPackagesFilterError,
+    TResult Function()? renovateYourHouseCustomPackagesFilterLoading,
+    TResult Function(RenovateYourHouseCustomPackagesFilterResponse data)?
+        renovateYourHouseCustomPackagesFilterLoaded,
+    TResult Function(String error)? renovateYourHouseCustomPackagesFilterError,
+    TResult Function()? paginationLoading,
+    TResult Function(String errorMessage)? paginationFailure,
+    required TResult orElse(),
+  }) {
+    if (paginationFailure != null) {
+      return paginationFailure(errorMessage);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial<T> value) initial,
+    required TResult Function(RenovateYourHouseFixedPackagesLoading<T> value)
+        renovateYourHouseFixedPackagesLoading,
+    required TResult Function(RenovateYourHouseFixedPackagesLoaded<T> value)
+        renovateYourHouseFixedPackagesLoaded,
+    required TResult Function(RenovateYourHouseFixedPackagesError<T> value)
+        renovateYourHouseFixedPackagesError,
+    required TResult Function(RenovateYourHouseLookUpsLoading<T> value)
+        renovateYourHouseLookUpsLoading,
+    required TResult Function(RenovateYourHouseLookUpsLoaded<T> value)
+        renovateYourHouseLookUpsLoaded,
+    required TResult Function(RenovateYourHouseLookUpsError<T> value)
+        renovateYourHouseLookUpsError,
+    required TResult Function(AddCustomPackageRenovateYourHouseLoading<T> value)
+        addCustomPackageRenovateYourHouseLoading,
+    required TResult Function(AddCustomPackageRenovateYourHouseLoaded<T> value)
+        addCustomPackageRenovateYourHouseLoaded,
+    required TResult Function(AddCustomPackageRenovateYourHouseError<T> value)
+        addCustomPackageRenovateYourHouseError,
+    required TResult Function(
+            ChooseFixedPackageRenovateYourHouseLoading<T> value)
+        chooseFixedPackageRenovateYourHouseLoading,
+    required TResult Function(
+            ChooseFixedPackageRenovateYourHouseLoaded<T> value)
+        chooseFixedPackageRenovateYourHouseLoaded,
+    required TResult Function(ChooseFixedPackageRenovateYourHouseError<T> value)
+        chooseFixedPackageRenovateYourHouseError,
+    required TResult Function(
+            RenovateYourHouseFixedPackagesFilterLoading<T> value)
+        renovateYourHouseFixedPackagesFilterLoading,
+    required TResult Function(
+            RenovateYourHouseFixedPackagesFilterLoaded<T> value)
+        renovateYourHouseFixedPackagesFilterLoaded,
+    required TResult Function(
+            RenovateYourHouseFixedPackagesFilterError<T> value)
+        renovateYourHouseFixedPackagesFilterError,
+    required TResult Function(
+            RenovateYourHouseCustomPackagesFilterLoading<T> value)
+        renovateYourHouseCustomPackagesFilterLoading,
+    required TResult Function(
+            RenovateYourHouseCustomPackagesFilterLoaded<T> value)
+        renovateYourHouseCustomPackagesFilterLoaded,
+    required TResult Function(
+            RenovateYourHouseCustomPackagesFilterError<T> value)
+        renovateYourHouseCustomPackagesFilterError,
+    required TResult Function(PaginationLoading<T> value) paginationLoading,
+    required TResult Function(PaginationFailure<T> value) paginationFailure,
+  }) {
+    return paginationFailure(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial<T> value)? initial,
+    TResult? Function(RenovateYourHouseFixedPackagesLoading<T> value)?
+        renovateYourHouseFixedPackagesLoading,
+    TResult? Function(RenovateYourHouseFixedPackagesLoaded<T> value)?
+        renovateYourHouseFixedPackagesLoaded,
+    TResult? Function(RenovateYourHouseFixedPackagesError<T> value)?
+        renovateYourHouseFixedPackagesError,
+    TResult? Function(RenovateYourHouseLookUpsLoading<T> value)?
+        renovateYourHouseLookUpsLoading,
+    TResult? Function(RenovateYourHouseLookUpsLoaded<T> value)?
+        renovateYourHouseLookUpsLoaded,
+    TResult? Function(RenovateYourHouseLookUpsError<T> value)?
+        renovateYourHouseLookUpsError,
+    TResult? Function(AddCustomPackageRenovateYourHouseLoading<T> value)?
+        addCustomPackageRenovateYourHouseLoading,
+    TResult? Function(AddCustomPackageRenovateYourHouseLoaded<T> value)?
+        addCustomPackageRenovateYourHouseLoaded,
+    TResult? Function(AddCustomPackageRenovateYourHouseError<T> value)?
+        addCustomPackageRenovateYourHouseError,
+    TResult? Function(ChooseFixedPackageRenovateYourHouseLoading<T> value)?
+        chooseFixedPackageRenovateYourHouseLoading,
+    TResult? Function(ChooseFixedPackageRenovateYourHouseLoaded<T> value)?
+        chooseFixedPackageRenovateYourHouseLoaded,
+    TResult? Function(ChooseFixedPackageRenovateYourHouseError<T> value)?
+        chooseFixedPackageRenovateYourHouseError,
+    TResult? Function(RenovateYourHouseFixedPackagesFilterLoading<T> value)?
+        renovateYourHouseFixedPackagesFilterLoading,
+    TResult? Function(RenovateYourHouseFixedPackagesFilterLoaded<T> value)?
+        renovateYourHouseFixedPackagesFilterLoaded,
+    TResult? Function(RenovateYourHouseFixedPackagesFilterError<T> value)?
+        renovateYourHouseFixedPackagesFilterError,
+    TResult? Function(RenovateYourHouseCustomPackagesFilterLoading<T> value)?
+        renovateYourHouseCustomPackagesFilterLoading,
+    TResult? Function(RenovateYourHouseCustomPackagesFilterLoaded<T> value)?
+        renovateYourHouseCustomPackagesFilterLoaded,
+    TResult? Function(RenovateYourHouseCustomPackagesFilterError<T> value)?
+        renovateYourHouseCustomPackagesFilterError,
+    TResult? Function(PaginationLoading<T> value)? paginationLoading,
+    TResult? Function(PaginationFailure<T> value)? paginationFailure,
+  }) {
+    return paginationFailure?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial<T> value)? initial,
+    TResult Function(RenovateYourHouseFixedPackagesLoading<T> value)?
+        renovateYourHouseFixedPackagesLoading,
+    TResult Function(RenovateYourHouseFixedPackagesLoaded<T> value)?
+        renovateYourHouseFixedPackagesLoaded,
+    TResult Function(RenovateYourHouseFixedPackagesError<T> value)?
+        renovateYourHouseFixedPackagesError,
+    TResult Function(RenovateYourHouseLookUpsLoading<T> value)?
+        renovateYourHouseLookUpsLoading,
+    TResult Function(RenovateYourHouseLookUpsLoaded<T> value)?
+        renovateYourHouseLookUpsLoaded,
+    TResult Function(RenovateYourHouseLookUpsError<T> value)?
+        renovateYourHouseLookUpsError,
+    TResult Function(AddCustomPackageRenovateYourHouseLoading<T> value)?
+        addCustomPackageRenovateYourHouseLoading,
+    TResult Function(AddCustomPackageRenovateYourHouseLoaded<T> value)?
+        addCustomPackageRenovateYourHouseLoaded,
+    TResult Function(AddCustomPackageRenovateYourHouseError<T> value)?
+        addCustomPackageRenovateYourHouseError,
+    TResult Function(ChooseFixedPackageRenovateYourHouseLoading<T> value)?
+        chooseFixedPackageRenovateYourHouseLoading,
+    TResult Function(ChooseFixedPackageRenovateYourHouseLoaded<T> value)?
+        chooseFixedPackageRenovateYourHouseLoaded,
+    TResult Function(ChooseFixedPackageRenovateYourHouseError<T> value)?
+        chooseFixedPackageRenovateYourHouseError,
+    TResult Function(RenovateYourHouseFixedPackagesFilterLoading<T> value)?
+        renovateYourHouseFixedPackagesFilterLoading,
+    TResult Function(RenovateYourHouseFixedPackagesFilterLoaded<T> value)?
+        renovateYourHouseFixedPackagesFilterLoaded,
+    TResult Function(RenovateYourHouseFixedPackagesFilterError<T> value)?
+        renovateYourHouseFixedPackagesFilterError,
+    TResult Function(RenovateYourHouseCustomPackagesFilterLoading<T> value)?
+        renovateYourHouseCustomPackagesFilterLoading,
+    TResult Function(RenovateYourHouseCustomPackagesFilterLoaded<T> value)?
+        renovateYourHouseCustomPackagesFilterLoaded,
+    TResult Function(RenovateYourHouseCustomPackagesFilterError<T> value)?
+        renovateYourHouseCustomPackagesFilterError,
+    TResult Function(PaginationLoading<T> value)? paginationLoading,
+    TResult Function(PaginationFailure<T> value)? paginationFailure,
+    required TResult orElse(),
+  }) {
+    if (paginationFailure != null) {
+      return paginationFailure(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class PaginationFailure<T> implements RenovateYourHouseState<T> {
+  const factory PaginationFailure({required final String errorMessage}) =
+      _$PaginationFailureImpl<T>;
+
+  String get errorMessage;
+
+  /// Create a copy of RenovateYourHouseState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$PaginationFailureImplCopyWith<T, _$PaginationFailureImpl<T>>
       get copyWith => throw _privateConstructorUsedError;
 }
