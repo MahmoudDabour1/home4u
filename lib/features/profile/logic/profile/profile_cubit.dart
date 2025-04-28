@@ -53,6 +53,7 @@ class ProfileCubit extends Cubit<ProfileState> {
   final bioController = TextEditingController();
   final linkedinController = TextEditingController();
   final behanceController = TextEditingController();
+  final facebookController = TextEditingController();
   final phoneController = TextEditingController();
 
   final tradeNameController = TextEditingController();
@@ -322,12 +323,15 @@ class ProfileCubit extends Cubit<ProfileState> {
               ?.map((e) => {"id": e.id})
               .toList() ??
           [],
-      "linkedin": linkedinController.text.isNotEmpty
+      "linkedinLink": linkedinController.text.isNotEmpty
           ? linkedinController.text
           : engineerProfileData?.data?.linkedin ?? "",
-      "behance": behanceController.text.isNotEmpty
+      "behanceLink": behanceController.text.isNotEmpty
           ? behanceController.text
           : engineerProfileData?.data?.behance ?? "",
+      "facebookLink": facebookController.text.isNotEmpty
+          ? facebookController.text
+          : engineerProfileData?.data?.facebookLink ?? "",
     };
 
     final jsonEngineerString = json.encode(jsonEngineerData);
@@ -388,6 +392,15 @@ class ProfileCubit extends Cubit<ProfileState> {
       "bio": bioController.text.isNotEmpty
           ? bioController.text
           : technicalProfileData?.data?.bio ?? "",
+      "linkedinLink": linkedinController.text.isNotEmpty
+          ? linkedinController.text
+          : technicalProfileData?.data?.linkedin ?? "",
+      "behanceLink": behanceController.text.isNotEmpty
+          ? behanceController.text
+          : technicalProfileData?.data?.behance ?? "",
+      "facebookLink": facebookController.text.isNotEmpty
+          ? facebookController.text
+          : technicalProfileData?.data?.facebookLink ?? "",
     };
 
     final jsonTechnicalWorkerString = json.encode(jsonTechnicalWorkerData);
@@ -447,6 +460,15 @@ class ProfileCubit extends Cubit<ProfileState> {
               ?.map((e) => {"id": e.id})
               .toList() ??
           [],
+      "linkedinLink": linkedinController.text.isNotEmpty
+          ? linkedinController.text
+          : engineeringOfficeData?.data?.linkedin ?? "",
+      "behanceLink": behanceController.text.isNotEmpty
+          ? behanceController.text
+          : engineeringOfficeData?.data?.behance ?? "",
+      "facebookLink": facebookController.text.isNotEmpty
+          ? facebookController.text
+          : engineeringOfficeData?.data?.facebookLink ?? "",
     };
 
     final jsonEngineeringOfficeString = json.encode(jsonEngineeringOfficeData);

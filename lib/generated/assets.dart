@@ -61,6 +61,7 @@ class Assets {
   static const String svgsInstagramLogo = 'assets/svgs/instagram_logo.svg';
   static const String svgsKitchensSvg = 'assets/svgs/kitchens_svg.svg';
   static const String svgsLikeSvgIcon = 'assets/svgs/like_svg_icon.svg';
+  static const String svgsLinkedinSvg = 'assets/svgs/linkedin_svg.svg';
   static const String svgsLoadImages = 'assets/svgs/load_images.svg';
   static const String svgsLocation = 'assets/svgs/location.svg';
   static const String svgsLocationIconSvg = 'assets/svgs/location_icon_svg.svg';

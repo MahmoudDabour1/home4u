@@ -101,9 +101,8 @@ class RequestDesignFilterContent {
   });
 
   factory RequestDesignFilterContent.fromJson(Map<String, dynamic> json) =>
-      _$ContentFromJson(json);
-
-  Map<String, dynamic> toJson() => _$ContentToJson(this);
+      _$RequestDesignFilterContentFromJson(json);
+  Map<String, dynamic> toJson() => _$RequestDesignFilterContentToJson(this);
 }
 
 @JsonSerializable()
