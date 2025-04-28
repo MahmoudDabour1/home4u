@@ -27,7 +27,8 @@ Map<String, dynamic> _$RequestDesignFilterResponseToJson(
 RequestFilterData _$RequestFilterDataFromJson(Map<String, dynamic> json) =>
     RequestFilterData(
       content: (json['content'] as List<dynamic>?)
-          ?.map((e) => RequestDesignFilterContent.fromJson(e as Map<String, dynamic>))
+          ?.map((e) =>
+              RequestDesignFilterContent.fromJson(e as Map<String, dynamic>))
           .toList(),
       pageable: json['pageable'] == null
           ? null
@@ -60,7 +61,9 @@ Map<String, dynamic> _$RequestFilterDataToJson(RequestFilterData instance) =>
       'empty': instance.empty,
     };
 
-RequestDesignFilterContent _$ContentFromJson(Map<String, dynamic> json) => RequestDesignFilterContent(
+RequestDesignFilterContent _$RequestDesignFilterContentFromJson(
+        Map<String, dynamic> json) =>
+    RequestDesignFilterContent(
       id: (json['id'] as num?)?.toInt(),
       statusCode: (json['statusCode'] as num?)?.toInt(),
       phoneNumber: json['phoneNumber'] as String?,
@@ -76,7 +79,9 @@ RequestDesignFilterContent _$ContentFromJson(Map<String, dynamic> json) => Reque
       notes: json['notes'] as String?,
     );
 
-Map<String, dynamic> _$ContentToJson(RequestDesignFilterContent instance) => <String, dynamic>{
+Map<String, dynamic> _$RequestDesignFilterContentToJson(
+        RequestDesignFilterContent instance) =>
+    <String, dynamic>{
       'id': instance.id,
       'statusCode': instance.statusCode,
       'phoneNumber': instance.phoneNumber,

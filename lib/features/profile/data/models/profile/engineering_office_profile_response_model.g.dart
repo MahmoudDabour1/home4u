@@ -69,13 +69,16 @@ class EngineeringOfficeDataAdapter extends TypeAdapter<EngineeringOfficeData> {
       engineeringOfficeField: fields[8] as EngineeringOffice?,
       engineeringOfficeDepartments:
           (fields[9] as List?)?.cast<EngineeringOffice>(),
+      linkedin: fields[10] as String?,
+      behance: fields[11] as String?,
+      facebookLink: fields[12] as String?,
     );
   }
 
   @override
   void write(BinaryWriter writer, EngineeringOfficeData obj) {
     writer
-      ..writeByte(10)
+      ..writeByte(13)
       ..writeByte(0)
       ..write(obj.id)
       ..writeByte(1)
@@ -95,7 +98,13 @@ class EngineeringOfficeDataAdapter extends TypeAdapter<EngineeringOfficeData> {
       ..writeByte(8)
       ..write(obj.engineeringOfficeField)
       ..writeByte(9)
-      ..write(obj.engineeringOfficeDepartments);
+      ..write(obj.engineeringOfficeDepartments)
+      ..writeByte(10)
+      ..write(obj.linkedin)
+      ..writeByte(11)
+      ..write(obj.behance)
+      ..writeByte(12)
+      ..write(obj.facebookLink);
   }
 
   @override
@@ -317,6 +326,9 @@ EngineeringOfficeData _$EngineeringOfficeDataFromJson(
               as List<dynamic>?)
           ?.map((e) => EngineeringOffice.fromJson(e as Map<String, dynamic>))
           .toList(),
+      linkedin: json['linkedinLink'] as String?,
+      behance: json['behanceLink'] as String?,
+      facebookLink: json['facebookLink'] as String?,
     );
 
 Map<String, dynamic> _$EngineeringOfficeDataToJson(
@@ -332,6 +344,9 @@ Map<String, dynamic> _$EngineeringOfficeDataToJson(
       'personalCardPath': instance.personalCardPath,
       'engineeringOfficeField': instance.engineeringOfficeField,
       'engineeringOfficeDepartments': instance.engineeringOfficeDepartments,
+      'linkedinLink': instance.linkedin,
+      'behanceLink': instance.behance,
+      'facebookLink': instance.facebookLink,
     };
 
 EngineeringOffice _$EngineeringOfficeFromJson(Map<String, dynamic> json) =>

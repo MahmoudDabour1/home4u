@@ -8,9 +8,9 @@ import 'package:home4u/core/theming/app_colors.dart';
 import 'package:home4u/core/theming/app_styles.dart';
 import 'package:home4u/core/theming/font_weight_helper.dart';
 import 'package:home4u/core/utils/spacing.dart';
+import 'package:home4u/core/widgets/app_custom_add_button.dart';
 import 'package:home4u/core/widgets/app_text_form_field.dart';
 import 'package:home4u/features/profile/presentation/widgets/about_widgets/about_alert_dialog.dart';
-import 'package:home4u/features/profile/presentation/widgets/about_widgets/about_title_and_edit_row.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 import '../../../../../core/theming/app_assets.dart';
@@ -41,17 +41,9 @@ class AboutContactInfoWidget extends StatefulWidget {
   State<AboutContactInfoWidget> createState() => _AboutContactInfoWidgetState();
 }
 
-String? selectedAccountType;
-String? selectedGovernorate;
-String? selectedCity;
-
 class _AboutContactInfoWidgetState extends State<AboutContactInfoWidget> {
-  Future<void> _launchPhoneDialer(String phoneNumber) async {
-    final Uri url = Uri.parse('tel:$phoneNumber');
-    if (!await launchUrl(url)) {
-      throw 'Could not launch $phoneNumber';
-    }
-  }
+  String? selectedGovernorate;
+  String? selectedCity;
 
   @override
   void initState() {
@@ -64,49 +56,79 @@ class _AboutContactInfoWidgetState extends State<AboutContactInfoWidget> {
     final profileData = widget.engineerProfileResponseModel?.data ??
         widget.technicalWorkerProfileData?.data ??
         widget.engineeringOfficeProfileData?.data;
+
     return BlocBuilder<ProfileCubit, ProfileState>(
       builder: (context, state) {
         final cubit = context.read<ProfileCubit>();
+        final isLoading = state is LoadingUpdateProfile;
         return Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
+            verticalSpace(32),
+            _buildSectionTitle(context),
             verticalSpace(16),
-            AboutTitleAndEditRow(
-              title: AppLocale.contactInfo.getString(context),
-              onPressed: () {},
-            ),
-            (profileData as dynamic)?.user.governorate.name == null? SizedBox.shrink():AboutListTileItemWidget(
-              imagePath: AppAssets.locationSvg,
-              title:
-                  "${AppLocale.location.getString(context)}${(profileData as dynamic)?.user.city.name} - ${(profileData as dynamic)?.user.governorate.name}",
-              onEdit: () => _showLocationDialog(context,cubit,state is LoadingUpdateProfile),
-            ),
-            (profileData as dynamic)?.user.phone == null? SizedBox.shrink():AboutListTileItemWidget(
-              imagePath: AppAssets.phoneCallIcon,
-              title: (profileData as dynamic)?.user.phone,
-              onPressed: () {
-                final phone = (profileData as dynamic)?.user.phone ?? '';
-                if (phone.isNotEmpty) {
-                  _launchPhoneDialer(phone);
-                }
-              },
-              onEdit: () => _showEditPhoneDialog(
-                context,
-                cubit,
-                state is LoadingUpdateProfile,
-              ),
-              titleStyle: AppStyles.font16BlackLight.copyWith(
-                color: AppColors.blueColor,
-                textBaseline: TextBaseline.alphabetic,
-                decoration: TextDecoration.underline,
-                fontSize: 18.sp,
-                fontWeight: FontWeightHelper.semiBold,
-              ),
-            ),
+            _buildLocationTile(context, cubit, profileData, isLoading),
+            _buildPhoneTile(context, cubit, profileData, isLoading),
             verticalSpace(16),
           ],
         );
       },
     );
+  }
+
+  Widget _buildSectionTitle(BuildContext context) {
+    return Text(
+      AppLocale.contactInfo.getString(context),
+      style: AppStyles.font16BlackMedium,
+    );
+  }
+
+  Widget _buildLocationTile(BuildContext context, ProfileCubit cubit,
+      dynamic profileData, bool isLoading) {
+    final governorateName = (profileData as dynamic)?.user.governorate.name;
+    final cityName = (profileData as dynamic)?.user.city.name;
+
+    if (governorateName == null) return SizedBox.shrink();
+
+    return AboutListTileItemWidget(
+      imagePath: AppAssets.locationSvg,
+      title:
+          "${AppLocale.location.getString(context)}$cityName - $governorateName",
+      onEdit: () => _showLocationDialog(context, cubit, isLoading),
+    );
+  }
+
+  Widget _buildPhoneTile(BuildContext context, ProfileCubit cubit,
+      dynamic profileData, bool isLoading) {
+    final phone = (profileData as dynamic)?.user.phone;
+
+    if (phone == null) {
+      return AppCustomAddButton(
+        text: AppLocale.addPhone.getString(context),
+        onPressed: () => _showEditPhoneDialog(context, cubit, isLoading),
+      );
+    }
+
+    return AboutListTileItemWidget(
+      imagePath: AppAssets.phoneCallIcon,
+      title: phone,
+      onPressed: () => _launchPhoneDialer(phone),
+      onEdit: () => _showEditPhoneDialog(context, cubit, isLoading),
+      titleStyle: AppStyles.font16BlackLight.copyWith(
+        color: AppColors.blueColor,
+        textBaseline: TextBaseline.alphabetic,
+        decoration: TextDecoration.underline,
+        fontSize: 18.sp,
+        fontWeight: FontWeightHelper.semiBold,
+      ),
+    );
+  }
+
+  Future<void> _launchPhoneDialer(String phoneNumber) async {
+    final Uri url = Uri.parse('tel:$phoneNumber');
+    if (!await launchUrl(url)) {
+      throw 'Could not launch $phoneNumber';
+    }
   }
 
   void _showLocationDialog(

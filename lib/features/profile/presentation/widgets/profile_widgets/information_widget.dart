@@ -11,7 +11,6 @@ import 'package:home4u/features/profile/data/models/profile/technical_worker_pro
 import 'package:home4u/features/profile/presentation/widgets/profile_widgets/profile_rating_widget.dart';
 import 'package:skeletonizer/skeletonizer.dart';
 
-import '../../../../../core/routing/router_observer.dart';
 import '../../../../../core/theming/app_styles.dart';
 import '../../../../../core/widgets/app_custom_button.dart';
 import '../../../../../locale/app_locale.dart';

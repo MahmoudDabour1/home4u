@@ -62,12 +62,15 @@ class FreeLancerData {
   String? bio;
 
   @HiveField(7)
-  @JsonKey(name: "linkedin")
+  @JsonKey(name: "linkedinLink")
   String? linkedin;
 
   @HiveField(8)
-  @JsonKey(name: "behance")
+  @JsonKey(name: "behanceLink")
   String? behance;
+  @HiveField(9)
+  @JsonKey(name: "facebookLink")
+  String? facebookLink;
 
   FreeLancerData({
     this.id,
@@ -79,6 +82,7 @@ class FreeLancerData {
     this.bio,
     this.linkedin,
     this.behance,
+    this.facebookLink,
   });
 
   factory FreeLancerData.fromJson(Map<String, dynamic> json) =>

@@ -24,10 +24,12 @@ class EngineeringOfficeProfileResponseModel {
     this.data,
   });
 
-  factory EngineeringOfficeProfileResponseModel.fromJson(Map<String, dynamic> json) =>
+  factory EngineeringOfficeProfileResponseModel.fromJson(
+          Map<String, dynamic> json) =>
       _$EngineeringOfficeProfileResponseModelFromJson(json);
 
-  Map<String, dynamic> toJson() => _$EngineeringOfficeProfileResponseModelToJson(this);
+  Map<String, dynamic> toJson() =>
+      _$EngineeringOfficeProfileResponseModelToJson(this);
 }
 
 @HiveType(typeId: 91)
@@ -73,6 +75,17 @@ class EngineeringOfficeData {
   @JsonKey(name: "engineeringOfficeDepartments")
   List<EngineeringOffice>? engineeringOfficeDepartments;
 
+  @HiveField(10)
+  @JsonKey(name: "linkedinLink")
+  String? linkedin;
+
+  @HiveField(11)
+  @JsonKey(name: "behanceLink")
+  String? behance;
+  @HiveField(12)
+  @JsonKey(name: "facebookLink")
+  String? facebookLink;
+
   EngineeringOfficeData({
     this.id,
     this.statusCode,
@@ -84,6 +97,9 @@ class EngineeringOfficeData {
     this.personalCardPath,
     this.engineeringOfficeField,
     this.engineeringOfficeDepartments,
+    this.linkedin,
+    this.behance,
+    this.facebookLink,
   });
 
   factory EngineeringOfficeData.fromJson(Map<String, dynamic> json) =>
@@ -142,7 +158,7 @@ class EngineeringOfficeUser {
 
   @HiveField(2)
   @JsonKey(name: "lastName")
-  final String?lastName;
+  final String? lastName;
 
   @HiveField(3)
   @JsonKey(name: "email")
@@ -182,7 +198,7 @@ class EngineeringOfficeUser {
 
   @HiveField(12)
   @JsonKey(name: "enabled")
-  final bool?enabled;
+  final bool? enabled;
 
   @HiveField(13)
   @JsonKey(name: "business")
@@ -191,7 +207,7 @@ class EngineeringOfficeUser {
   @JsonKey(name: "coverPhoto")
   final dynamic coverPhoto;
 
-  EngineeringOfficeUser( {
+  EngineeringOfficeUser({
     this.id,
     this.firstName,
     this.lastName,
@@ -211,6 +227,7 @@ class EngineeringOfficeUser {
 
   factory EngineeringOfficeUser.fromJson(Map<String, dynamic> json) =>
       _$EngineeringOfficeUserFromJson(json);
+
   Map<String, dynamic> toJson() => _$EngineeringOfficeUserToJson(this);
 }
 
@@ -240,5 +257,3 @@ class EngineeringOfficeCity {
 
   Map<String, dynamic> toJson() => _$EngineeringOfficeCityToJson(this);
 }
-
-
