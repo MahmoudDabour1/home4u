@@ -23,7 +23,8 @@ mixin _$RequestDesignState<T> {
     required TResult Function(T data) addRequestDesignSuccess,
     required TResult Function(String error) addRequestDesignFailure,
     required TResult Function() requestDesignFilterLoading,
-    required TResult Function(T data) requestDesignFilterSuccess,
+    required TResult Function(RequestDesignFilterResponse data)
+        requestDesignFilterSuccess,
     required TResult Function(String error) requestDesignFilterFailure,
     required TResult Function() paginationLoading,
     required TResult Function(String error) paginationFailure,
@@ -36,7 +37,8 @@ mixin _$RequestDesignState<T> {
     TResult? Function(T data)? addRequestDesignSuccess,
     TResult? Function(String error)? addRequestDesignFailure,
     TResult? Function()? requestDesignFilterLoading,
-    TResult? Function(T data)? requestDesignFilterSuccess,
+    TResult? Function(RequestDesignFilterResponse data)?
+        requestDesignFilterSuccess,
     TResult? Function(String error)? requestDesignFilterFailure,
     TResult? Function()? paginationLoading,
     TResult? Function(String error)? paginationFailure,
@@ -49,7 +51,8 @@ mixin _$RequestDesignState<T> {
     TResult Function(T data)? addRequestDesignSuccess,
     TResult Function(String error)? addRequestDesignFailure,
     TResult Function()? requestDesignFilterLoading,
-    TResult Function(T data)? requestDesignFilterSuccess,
+    TResult Function(RequestDesignFilterResponse data)?
+        requestDesignFilterSuccess,
     TResult Function(String error)? requestDesignFilterFailure,
     TResult Function()? paginationLoading,
     TResult Function(String error)? paginationFailure,
@@ -187,7 +190,8 @@ class _$InitialImpl<T> implements _Initial<T> {
     required TResult Function(T data) addRequestDesignSuccess,
     required TResult Function(String error) addRequestDesignFailure,
     required TResult Function() requestDesignFilterLoading,
-    required TResult Function(T data) requestDesignFilterSuccess,
+    required TResult Function(RequestDesignFilterResponse data)
+        requestDesignFilterSuccess,
     required TResult Function(String error) requestDesignFilterFailure,
     required TResult Function() paginationLoading,
     required TResult Function(String error) paginationFailure,
@@ -203,7 +207,8 @@ class _$InitialImpl<T> implements _Initial<T> {
     TResult? Function(T data)? addRequestDesignSuccess,
     TResult? Function(String error)? addRequestDesignFailure,
     TResult? Function()? requestDesignFilterLoading,
-    TResult? Function(T data)? requestDesignFilterSuccess,
+    TResult? Function(RequestDesignFilterResponse data)?
+        requestDesignFilterSuccess,
     TResult? Function(String error)? requestDesignFilterFailure,
     TResult? Function()? paginationLoading,
     TResult? Function(String error)? paginationFailure,
@@ -219,7 +224,8 @@ class _$InitialImpl<T> implements _Initial<T> {
     TResult Function(T data)? addRequestDesignSuccess,
     TResult Function(String error)? addRequestDesignFailure,
     TResult Function()? requestDesignFilterLoading,
-    TResult Function(T data)? requestDesignFilterSuccess,
+    TResult Function(RequestDesignFilterResponse data)?
+        requestDesignFilterSuccess,
     TResult Function(String error)? requestDesignFilterFailure,
     TResult Function()? paginationLoading,
     TResult Function(String error)? paginationFailure,
@@ -359,7 +365,8 @@ class _$AddRequestDesignLoadingImpl<T> implements AddRequestDesignLoading<T> {
     required TResult Function(T data) addRequestDesignSuccess,
     required TResult Function(String error) addRequestDesignFailure,
     required TResult Function() requestDesignFilterLoading,
-    required TResult Function(T data) requestDesignFilterSuccess,
+    required TResult Function(RequestDesignFilterResponse data)
+        requestDesignFilterSuccess,
     required TResult Function(String error) requestDesignFilterFailure,
     required TResult Function() paginationLoading,
     required TResult Function(String error) paginationFailure,
@@ -375,7 +382,8 @@ class _$AddRequestDesignLoadingImpl<T> implements AddRequestDesignLoading<T> {
     TResult? Function(T data)? addRequestDesignSuccess,
     TResult? Function(String error)? addRequestDesignFailure,
     TResult? Function()? requestDesignFilterLoading,
-    TResult? Function(T data)? requestDesignFilterSuccess,
+    TResult? Function(RequestDesignFilterResponse data)?
+        requestDesignFilterSuccess,
     TResult? Function(String error)? requestDesignFilterFailure,
     TResult? Function()? paginationLoading,
     TResult? Function(String error)? paginationFailure,
@@ -391,7 +399,8 @@ class _$AddRequestDesignLoadingImpl<T> implements AddRequestDesignLoading<T> {
     TResult Function(T data)? addRequestDesignSuccess,
     TResult Function(String error)? addRequestDesignFailure,
     TResult Function()? requestDesignFilterLoading,
-    TResult Function(T data)? requestDesignFilterSuccess,
+    TResult Function(RequestDesignFilterResponse data)?
+        requestDesignFilterSuccess,
     TResult Function(String error)? requestDesignFilterFailure,
     TResult Function()? paginationLoading,
     TResult Function(String error)? paginationFailure,
@@ -559,7 +568,8 @@ class _$AddRequestDesignSuccessImpl<T> implements AddRequestDesignSuccess<T> {
     required TResult Function(T data) addRequestDesignSuccess,
     required TResult Function(String error) addRequestDesignFailure,
     required TResult Function() requestDesignFilterLoading,
-    required TResult Function(T data) requestDesignFilterSuccess,
+    required TResult Function(RequestDesignFilterResponse data)
+        requestDesignFilterSuccess,
     required TResult Function(String error) requestDesignFilterFailure,
     required TResult Function() paginationLoading,
     required TResult Function(String error) paginationFailure,
@@ -575,7 +585,8 @@ class _$AddRequestDesignSuccessImpl<T> implements AddRequestDesignSuccess<T> {
     TResult? Function(T data)? addRequestDesignSuccess,
     TResult? Function(String error)? addRequestDesignFailure,
     TResult? Function()? requestDesignFilterLoading,
-    TResult? Function(T data)? requestDesignFilterSuccess,
+    TResult? Function(RequestDesignFilterResponse data)?
+        requestDesignFilterSuccess,
     TResult? Function(String error)? requestDesignFilterFailure,
     TResult? Function()? paginationLoading,
     TResult? Function(String error)? paginationFailure,
@@ -591,7 +602,8 @@ class _$AddRequestDesignSuccessImpl<T> implements AddRequestDesignSuccess<T> {
     TResult Function(T data)? addRequestDesignSuccess,
     TResult Function(String error)? addRequestDesignFailure,
     TResult Function()? requestDesignFilterLoading,
-    TResult Function(T data)? requestDesignFilterSuccess,
+    TResult Function(RequestDesignFilterResponse data)?
+        requestDesignFilterSuccess,
     TResult Function(String error)? requestDesignFilterFailure,
     TResult Function()? paginationLoading,
     TResult Function(String error)? paginationFailure,
@@ -767,7 +779,8 @@ class _$AddRequestDesignFailureImpl<T> implements AddRequestDesignFailure<T> {
     required TResult Function(T data) addRequestDesignSuccess,
     required TResult Function(String error) addRequestDesignFailure,
     required TResult Function() requestDesignFilterLoading,
-    required TResult Function(T data) requestDesignFilterSuccess,
+    required TResult Function(RequestDesignFilterResponse data)
+        requestDesignFilterSuccess,
     required TResult Function(String error) requestDesignFilterFailure,
     required TResult Function() paginationLoading,
     required TResult Function(String error) paginationFailure,
@@ -783,7 +796,8 @@ class _$AddRequestDesignFailureImpl<T> implements AddRequestDesignFailure<T> {
     TResult? Function(T data)? addRequestDesignSuccess,
     TResult? Function(String error)? addRequestDesignFailure,
     TResult? Function()? requestDesignFilterLoading,
-    TResult? Function(T data)? requestDesignFilterSuccess,
+    TResult? Function(RequestDesignFilterResponse data)?
+        requestDesignFilterSuccess,
     TResult? Function(String error)? requestDesignFilterFailure,
     TResult? Function()? paginationLoading,
     TResult? Function(String error)? paginationFailure,
@@ -799,7 +813,8 @@ class _$AddRequestDesignFailureImpl<T> implements AddRequestDesignFailure<T> {
     TResult Function(T data)? addRequestDesignSuccess,
     TResult Function(String error)? addRequestDesignFailure,
     TResult Function()? requestDesignFilterLoading,
-    TResult Function(T data)? requestDesignFilterSuccess,
+    TResult Function(RequestDesignFilterResponse data)?
+        requestDesignFilterSuccess,
     TResult Function(String error)? requestDesignFilterFailure,
     TResult Function()? paginationLoading,
     TResult Function(String error)? paginationFailure,
@@ -949,7 +964,8 @@ class _$RequestDesignFilterLoadingImpl<T>
     required TResult Function(T data) addRequestDesignSuccess,
     required TResult Function(String error) addRequestDesignFailure,
     required TResult Function() requestDesignFilterLoading,
-    required TResult Function(T data) requestDesignFilterSuccess,
+    required TResult Function(RequestDesignFilterResponse data)
+        requestDesignFilterSuccess,
     required TResult Function(String error) requestDesignFilterFailure,
     required TResult Function() paginationLoading,
     required TResult Function(String error) paginationFailure,
@@ -965,7 +981,8 @@ class _$RequestDesignFilterLoadingImpl<T>
     TResult? Function(T data)? addRequestDesignSuccess,
     TResult? Function(String error)? addRequestDesignFailure,
     TResult? Function()? requestDesignFilterLoading,
-    TResult? Function(T data)? requestDesignFilterSuccess,
+    TResult? Function(RequestDesignFilterResponse data)?
+        requestDesignFilterSuccess,
     TResult? Function(String error)? requestDesignFilterFailure,
     TResult? Function()? paginationLoading,
     TResult? Function(String error)? paginationFailure,
@@ -981,7 +998,8 @@ class _$RequestDesignFilterLoadingImpl<T>
     TResult Function(T data)? addRequestDesignSuccess,
     TResult Function(String error)? addRequestDesignFailure,
     TResult Function()? requestDesignFilterLoading,
-    TResult Function(T data)? requestDesignFilterSuccess,
+    TResult Function(RequestDesignFilterResponse data)?
+        requestDesignFilterSuccess,
     TResult Function(String error)? requestDesignFilterFailure,
     TResult Function()? paginationLoading,
     TResult Function(String error)? paginationFailure,
@@ -1078,7 +1096,7 @@ abstract class _$$RequestDesignFilterSuccessImplCopyWith<T, $Res> {
           $Res Function(_$RequestDesignFilterSuccessImpl<T>) then) =
       __$$RequestDesignFilterSuccessImplCopyWithImpl<T, $Res>;
   @useResult
-  $Res call({T data});
+  $Res call({RequestDesignFilterResponse data});
 }
 
 /// @nodoc
@@ -1096,13 +1114,13 @@ class __$$RequestDesignFilterSuccessImplCopyWithImpl<T, $Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? data = freezed,
+    Object? data = null,
   }) {
     return _then(_$RequestDesignFilterSuccessImpl<T>(
-      freezed == data
+      null == data
           ? _value.data
           : data // ignore: cast_nullable_to_non_nullable
-              as T,
+              as RequestDesignFilterResponse,
     ));
   }
 }
@@ -1114,7 +1132,7 @@ class _$RequestDesignFilterSuccessImpl<T>
   _$RequestDesignFilterSuccessImpl(this.data);
 
   @override
-  final T data;
+  final RequestDesignFilterResponse data;
 
   @override
   String toString() {
@@ -1126,12 +1144,11 @@ class _$RequestDesignFilterSuccessImpl<T>
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$RequestDesignFilterSuccessImpl<T> &&
-            const DeepCollectionEquality().equals(other.data, data));
+            (identical(other.data, data) || other.data == data));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(data));
+  int get hashCode => Object.hash(runtimeType, data);
 
   /// Create a copy of RequestDesignState
   /// with the given fields replaced by the non-null parameter values.
@@ -1151,7 +1168,8 @@ class _$RequestDesignFilterSuccessImpl<T>
     required TResult Function(T data) addRequestDesignSuccess,
     required TResult Function(String error) addRequestDesignFailure,
     required TResult Function() requestDesignFilterLoading,
-    required TResult Function(T data) requestDesignFilterSuccess,
+    required TResult Function(RequestDesignFilterResponse data)
+        requestDesignFilterSuccess,
     required TResult Function(String error) requestDesignFilterFailure,
     required TResult Function() paginationLoading,
     required TResult Function(String error) paginationFailure,
@@ -1167,7 +1185,8 @@ class _$RequestDesignFilterSuccessImpl<T>
     TResult? Function(T data)? addRequestDesignSuccess,
     TResult? Function(String error)? addRequestDesignFailure,
     TResult? Function()? requestDesignFilterLoading,
-    TResult? Function(T data)? requestDesignFilterSuccess,
+    TResult? Function(RequestDesignFilterResponse data)?
+        requestDesignFilterSuccess,
     TResult? Function(String error)? requestDesignFilterFailure,
     TResult? Function()? paginationLoading,
     TResult? Function(String error)? paginationFailure,
@@ -1183,7 +1202,8 @@ class _$RequestDesignFilterSuccessImpl<T>
     TResult Function(T data)? addRequestDesignSuccess,
     TResult Function(String error)? addRequestDesignFailure,
     TResult Function()? requestDesignFilterLoading,
-    TResult Function(T data)? requestDesignFilterSuccess,
+    TResult Function(RequestDesignFilterResponse data)?
+        requestDesignFilterSuccess,
     TResult Function(String error)? requestDesignFilterFailure,
     TResult Function()? paginationLoading,
     TResult Function(String error)? paginationFailure,
@@ -1270,10 +1290,10 @@ class _$RequestDesignFilterSuccessImpl<T>
 }
 
 abstract class RequestDesignFilterSuccess<T> implements RequestDesignState<T> {
-  factory RequestDesignFilterSuccess(final T data) =
+  factory RequestDesignFilterSuccess(final RequestDesignFilterResponse data) =
       _$RequestDesignFilterSuccessImpl<T>;
 
-  T get data;
+  RequestDesignFilterResponse get data;
 
   /// Create a copy of RequestDesignState
   /// with the given fields replaced by the non-null parameter values.
@@ -1362,7 +1382,8 @@ class _$RequestDesignFilterFailureImpl<T>
     required TResult Function(T data) addRequestDesignSuccess,
     required TResult Function(String error) addRequestDesignFailure,
     required TResult Function() requestDesignFilterLoading,
-    required TResult Function(T data) requestDesignFilterSuccess,
+    required TResult Function(RequestDesignFilterResponse data)
+        requestDesignFilterSuccess,
     required TResult Function(String error) requestDesignFilterFailure,
     required TResult Function() paginationLoading,
     required TResult Function(String error) paginationFailure,
@@ -1378,7 +1399,8 @@ class _$RequestDesignFilterFailureImpl<T>
     TResult? Function(T data)? addRequestDesignSuccess,
     TResult? Function(String error)? addRequestDesignFailure,
     TResult? Function()? requestDesignFilterLoading,
-    TResult? Function(T data)? requestDesignFilterSuccess,
+    TResult? Function(RequestDesignFilterResponse data)?
+        requestDesignFilterSuccess,
     TResult? Function(String error)? requestDesignFilterFailure,
     TResult? Function()? paginationLoading,
     TResult? Function(String error)? paginationFailure,
@@ -1394,7 +1416,8 @@ class _$RequestDesignFilterFailureImpl<T>
     TResult Function(T data)? addRequestDesignSuccess,
     TResult Function(String error)? addRequestDesignFailure,
     TResult Function()? requestDesignFilterLoading,
-    TResult Function(T data)? requestDesignFilterSuccess,
+    TResult Function(RequestDesignFilterResponse data)?
+        requestDesignFilterSuccess,
     TResult Function(String error)? requestDesignFilterFailure,
     TResult Function()? paginationLoading,
     TResult Function(String error)? paginationFailure,
@@ -1545,7 +1568,8 @@ class _$RequestDesignPaginationLoadingImpl<T>
     required TResult Function(T data) addRequestDesignSuccess,
     required TResult Function(String error) addRequestDesignFailure,
     required TResult Function() requestDesignFilterLoading,
-    required TResult Function(T data) requestDesignFilterSuccess,
+    required TResult Function(RequestDesignFilterResponse data)
+        requestDesignFilterSuccess,
     required TResult Function(String error) requestDesignFilterFailure,
     required TResult Function() paginationLoading,
     required TResult Function(String error) paginationFailure,
@@ -1561,7 +1585,8 @@ class _$RequestDesignPaginationLoadingImpl<T>
     TResult? Function(T data)? addRequestDesignSuccess,
     TResult? Function(String error)? addRequestDesignFailure,
     TResult? Function()? requestDesignFilterLoading,
-    TResult? Function(T data)? requestDesignFilterSuccess,
+    TResult? Function(RequestDesignFilterResponse data)?
+        requestDesignFilterSuccess,
     TResult? Function(String error)? requestDesignFilterFailure,
     TResult? Function()? paginationLoading,
     TResult? Function(String error)? paginationFailure,
@@ -1577,7 +1602,8 @@ class _$RequestDesignPaginationLoadingImpl<T>
     TResult Function(T data)? addRequestDesignSuccess,
     TResult Function(String error)? addRequestDesignFailure,
     TResult Function()? requestDesignFilterLoading,
-    TResult Function(T data)? requestDesignFilterSuccess,
+    TResult Function(RequestDesignFilterResponse data)?
+        requestDesignFilterSuccess,
     TResult Function(String error)? requestDesignFilterFailure,
     TResult Function()? paginationLoading,
     TResult Function(String error)? paginationFailure,
@@ -1748,7 +1774,8 @@ class _$RequestDesignPaginationFailureImpl<T>
     required TResult Function(T data) addRequestDesignSuccess,
     required TResult Function(String error) addRequestDesignFailure,
     required TResult Function() requestDesignFilterLoading,
-    required TResult Function(T data) requestDesignFilterSuccess,
+    required TResult Function(RequestDesignFilterResponse data)
+        requestDesignFilterSuccess,
     required TResult Function(String error) requestDesignFilterFailure,
     required TResult Function() paginationLoading,
     required TResult Function(String error) paginationFailure,
@@ -1764,7 +1791,8 @@ class _$RequestDesignPaginationFailureImpl<T>
     TResult? Function(T data)? addRequestDesignSuccess,
     TResult? Function(String error)? addRequestDesignFailure,
     TResult? Function()? requestDesignFilterLoading,
-    TResult? Function(T data)? requestDesignFilterSuccess,
+    TResult? Function(RequestDesignFilterResponse data)?
+        requestDesignFilterSuccess,
     TResult? Function(String error)? requestDesignFilterFailure,
     TResult? Function()? paginationLoading,
     TResult? Function(String error)? paginationFailure,
@@ -1780,7 +1808,8 @@ class _$RequestDesignPaginationFailureImpl<T>
     TResult Function(T data)? addRequestDesignSuccess,
     TResult Function(String error)? addRequestDesignFailure,
     TResult Function()? requestDesignFilterLoading,
-    TResult Function(T data)? requestDesignFilterSuccess,
+    TResult Function(RequestDesignFilterResponse data)?
+        requestDesignFilterSuccess,
     TResult Function(String error)? requestDesignFilterFailure,
     TResult Function()? paginationLoading,
     TResult Function(String error)? paginationFailure,

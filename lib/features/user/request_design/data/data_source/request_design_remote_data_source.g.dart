@@ -67,7 +67,7 @@ class _RequestDesignRemoteDataSource implements RequestDesignRemoteDataSource {
     final _data = <String, dynamic>{};
     _data.addAll(requestDesignFilterBody.toJson());
     final _options = _setStreamType<RequestDesignFilterResponse>(Options(
-      method: 'GET',
+      method: 'POST',
       headers: _headers,
       extra: _extra,
     )

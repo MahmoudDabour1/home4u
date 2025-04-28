@@ -28,13 +28,15 @@ class RequestDesignCubit extends Cubit<RequestDesignState> {
   int? selectedGovernorate;
 
   ///Filter
+  final searchController = TextEditingController();
   int _page = 0;
   bool hasReachedMax = false;
   List<RequestDesignFilterContent> requestDesignItems = [];
   bool isFetching = false;
 
   Future<void> getRequestDesignFilter({bool isRefresh = false}) async {
-    ///get any data help you here ....
+
+    // final int userId = await SharedPrefHelper.getInt(SharedPrefsKey);
 
     if (isFetching) return;
     isFetching = true;
@@ -95,6 +97,14 @@ class RequestDesignCubit extends Cubit<RequestDesignState> {
     );
     isFetching = false;
   }
+
+  void resetPagination() {
+    _page = 0;
+    // _getProductsCallCount = 0;
+    hasReachedMax = false;
+    requestDesignItems.clear();
+  }
+
 
   Future<void> addRequestDesign(
       {required RequestDesignBody requestDesignBody}) async {

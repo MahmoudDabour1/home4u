@@ -1,5 +1,7 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 
+import '../data/models/request_design_filter_response.dart';
+
 part 'request_design_state.freezed.dart';
 
 @freezed
@@ -20,7 +22,7 @@ class RequestDesignState<T> with _$RequestDesignState<T> {
   factory RequestDesignState.requestDesignFilterLoading() =
       RequestDesignFilterLoading;
 
-  factory RequestDesignState.requestDesignFilterSuccess(T data) =
+  factory RequestDesignState.requestDesignFilterSuccess(RequestDesignFilterResponse data) =
       RequestDesignFilterSuccess;
 
   factory RequestDesignState.requestDesignFilterFailure(

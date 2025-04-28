@@ -17,6 +17,6 @@ class FilterListView extends StatelessWidget {
         shrinkWrap: true,
         itemBuilder: (context, index) {
           return FilterListViewItem();
-        });
+        },);
   }
 }

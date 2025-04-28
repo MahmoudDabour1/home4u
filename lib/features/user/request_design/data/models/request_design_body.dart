@@ -45,7 +45,7 @@ class GovernorateRequest {
   });
 
   factory GovernorateRequest.fromJson(Map<String, dynamic> json) =>
-      _$GovernorateFromJson(json);
+      _$GovernorateRequestFromJson(json);
 
-  Map<String, dynamic> toJson() => _$GovernorateToJson(this);
+  Map<String, dynamic> toJson() => _$GovernorateRequestToJson(this);
 }

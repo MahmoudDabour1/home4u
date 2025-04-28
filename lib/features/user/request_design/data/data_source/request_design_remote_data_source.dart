@@ -20,7 +20,7 @@ abstract class RequestDesignRemoteDataSource {
     @Body() RequestDesignBody requestDesignBody,
   );
 
-  @GET(ApiConstants.requestDesignFilterEp)
+  @POST(ApiConstants.requestDesignFilterEp)
   Future<RequestDesignFilterResponse> getRequestDesignFilter(
     @Body() RequestDesignFilterBody requestDesignFilterBody,
   );
