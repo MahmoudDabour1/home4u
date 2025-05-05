@@ -15,6 +15,10 @@ const String kEngineeringOfficeProfileData = 'kEngineeringOfficeProfileData';
 const String kProductsBox = 'kProductsBox';
 const String kProductsData = 'kProductsData';
 
+///BusinessConfig
+const String kBusinessConfigBox = 'kBusinessConfigBox';
+const String kBusinessConfigData = 'kBusinessConfigData';
+
 //kProjectsBox
 const String kProjectsBox = 'kProjectsBox';
 const String kProjectsKey = 'kProjectsKey';

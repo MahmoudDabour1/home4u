@@ -96,6 +96,9 @@ class ApiConstants {
   static const String askWorkerEp = "/api/v1/ask-worker";
   static const String addAllAskWorkerImagesEp = "/api/v1/ask-worker-photos/all";
 
+
+  ///cart process
+ static const String shopNowEp = "/api/v1/products/shop-now";
 }
 
 class ApiErrors {
