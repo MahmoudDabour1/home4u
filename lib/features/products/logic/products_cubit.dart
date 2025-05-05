@@ -50,9 +50,10 @@ class ProductsCubit extends Cubit<ProductsState> {
   List<ProductBaseUnit>? baseUnits = [];
   List<FilterColor>? colors = [];
   List<ProductMaterial>? materials = [];
-  ProductPreviewResponse? productPreviewResponse;// Add this
+  List<BusinessType>? businessTypeCategories = [];
+  ProductPreviewResponse? productPreviewResponse;
 
-  //resolve filter
+  ///resolve filter
   List<String>? selectedBusinessTypeNames = [];
   List<String> ?selectedMaterialNames = [];
   List<String>? selectedColorNames = [];
@@ -184,6 +185,7 @@ class ProductsCubit extends Cubit<ProductsState> {
           colors = data.data?.colors ?? [];
           baseUnits = data.data?.productBaseUnits ?? [];
           materials = data.data?.productMaterial ?? [];
+          businessTypeCategories = data.data?.businessTypeCategories ?? [];
         }
       },
       failure: (error) {
@@ -211,6 +213,7 @@ class ProductsCubit extends Cubit<ProductsState> {
     colors = null;
     baseUnits = null;
     materials = null;
+    businessTypeCategories = null;
     minPrice = null;
     colorsIds= [];
     materialIds =  [];

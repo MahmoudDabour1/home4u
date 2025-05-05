@@ -4,6 +4,7 @@ import 'package:home4u/features/profile/data/models/profile/engineering_office_p
 import 'package:home4u/features/user/renovate_your_house/data/models/renovate_your_house_fixed_packages_model.dart';
 import 'package:home4u/features/user/renovate_your_house/data/models/renovate_your_house_look_ups_model.dart';
 
+import '../../features/products/data/models/business_config_model.dart';
 import '../../features/profile/data/models/profile/engineer_profile_response_model.dart' ;
 import '../../features/profile/data/models/profile/technical_worker_profile_response_model.dart' ;
 import '../../features/profile/data/models/projects/get_projects_response_model.dart';
@@ -17,6 +18,7 @@ Future<void> initHive() async {
   await Hive.openBox<EngineeringOfficeProfileResponseModel>(kEngineeringOfficeProfileBox);
   await Hive.openBox<GetProjectsResponseModel>(kProjectsBox);
   await Hive.openBox<ProductsResponseModel>(kProductsBox);
+  await Hive.openBox<BusinessConfigModel>(kBusinessConfigBox);
   await Hive.openBox<RenovateYourHouseLookUpsModel>(kRenovateYourHouseLookUpsBox);
   await Hive.openBox<RenovateYourHouseFixedPackagesModel>(kRenovateYourHouseFixedPackagesBox);
 }
@@ -100,5 +102,29 @@ void _registerHiveAdapters() {
   }
   if (!Hive.isAdapterRegistered(100)) {
     Hive.registerAdapter(FixedPackageDataModelAdapter());
+  }
+
+  if (!Hive.isAdapterRegistered(50)) {
+    Hive.registerAdapter(BusinessConfigModelAdapter());
+  }
+
+  if (!Hive.isAdapterRegistered(51)) {
+    Hive.registerAdapter(BusinessConfigDataAdapter());
+  }
+
+  if (!Hive.isAdapterRegistered(52)) {
+    Hive.registerAdapter(FilterColorAdapter());
+  }
+
+  if (!Hive.isAdapterRegistered(53)) {
+    Hive.registerAdapter(ProductBaseUnitAdapter());
+  }
+
+  if (!Hive.isAdapterRegistered(54)) {
+    Hive.registerAdapter(ProductMaterialAdapter());
+  }
+
+  if (!Hive.isAdapterRegistered(55)) {
+    Hive.registerAdapter(BusinessTypeAdapter());
   }
 }

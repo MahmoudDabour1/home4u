@@ -40,7 +40,7 @@ class ProductDetailsDataContent extends StatelessWidget {
           ),
           _buildProductKeyValue(
             key: AppLocale.baseUnit.getString(context),
-            value: previewData.data.baseUnit.name,
+            value: previewData.data.baseUnit.name ?? '',
           ),
           Text("Colors && Stock", style: AppStyles.font16BlackBold),
           Wrap(

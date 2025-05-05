@@ -182,6 +182,7 @@ class AppLocale {
   static const String dimensionWidth = 'العرض - Width';
   static const String dimensionHeight = 'الارتفاع - Height';
   static const String businessType = 'Business Type';
+  static const String businessTypeCategory = 'Business Type Category';
   static const String products = 'Products';
   static const String offers = 'Offers';
   static const String outOfStock = 'Out of Stock';
@@ -363,11 +364,11 @@ class AppLocale {
     onBoardingTitle3: 'Civil works and finishing services 3',
     onBoardingTitle4: 'Civil works and finishing services 4',
     onBoardingDescription1:
-        'Comprehensive services including civil works and finishing, with engineering consultations and 2D and 3D designs, in addition to free and paid services through our platform.',
+    'Comprehensive services including civil works and finishing, with engineering consultations and 2D and 3D designs, in addition to free and paid services through our platform.',
     onBoardingDescription2:
-        'Comprehensive services including civil works and finishing, with engineering consultations and 2D and 3D designs, in addition to free and paid services through our platform. 2',
+    'Comprehensive services including civil works and finishing, with engineering consultations and 2D and 3D designs, in addition to free and paid services through our platform. 2',
     onBoardingDescription3:
-        'Comprehensive services including civil works and finishing, with engineering consultations and 2D and 3D designs, in addition to free and paid services through our platform. 3',
+    'Comprehensive services including civil works and finishing, with engineering consultations and 2D and 3D designs, in addition to free and paid services through our platform. 3',
     onBoardingDescription4: '',
     toggleLanguage: 'en',
     startButton: 'Start',
@@ -443,7 +444,7 @@ class AppLocale {
     cancel: 'Cancel',
     deletedSuccessfully: 'Deleted Successfully',
     areYouSureYouWantToDeleteThisItem:
-        'Are you sure you want to delete this item?',
+    'Are you sure you want to delete this item?',
     addProject: 'Add Project',
     choose: 'Choose',
     setStartDate: 'Set Start Date',
@@ -516,7 +517,7 @@ class AppLocale {
     helpful: 'helpful',
     productPreview: 'Product Preview',
     productPreviewSubTitle:
-        'A brief overview highlighting key product\n details.',
+    'A brief overview highlighting key product\n details.',
     color: 'Color',
     price: 'Price',
     material: 'Material',
@@ -533,6 +534,7 @@ class AppLocale {
     dimensionWidth: 'العرض - Width',
     dimensionHeight: 'الارتفاع - Height',
     businessType: 'Business Type',
+    businessTypeCategory: 'Business Type Category',
     tradeName: 'Trade Name',
     bioAr: 'Bio AR',
     bioEn: 'Bio EN',
@@ -611,7 +613,7 @@ class AppLocale {
     projectDeadline: 'Project Deadline',
     renovateYourHouse: 'Renovate Your House',
     renovateYourHouseDescription:
-        "\"Finish Your House\" - Complete your home's\n setup effortlessly.",
+    "\"Finish Your House\" - Complete your home's\n setup effortlessly.",
     unitInsideCompound: 'Unit Inside Compound',
     outDoor: 'Out Door',
     skills: 'Skills',
@@ -663,11 +665,11 @@ class AppLocale {
     onBoardingTitle3: 'خدمات الأعمال المدنية والتشطيب 3',
     onBoardingTitle4: 'خدمات الأعمال المدنية والتشطيب 4',
     onBoardingDescription1:
-        'خدمات شاملة تشمل الأعمال المدنية والتشطيب، مع استشارات هندسية وتصاميم ثنائية وثلاثية الأبعاد، بالإضافة إلى خدمات مجانية ومدفوعة عبر منصتنا.',
+    'خدمات شاملة تشمل الأعمال المدنية والتشطيب، مع استشارات هندسية وتصاميم ثنائية وثلاثية الأبعاد، بالإضافة إلى خدمات مجانية ومدفوعة عبر منصتنا.',
     onBoardingDescription2:
-        'خدمات شاملة تشمل الأعمال المدنية والتشطيب، مع استشارات هندسية وتصاميم ثنائية وثلاثية الأبعاد، بالإضافة إلى خدمات مجانية ومدفوعة عبر منصتنا. 2',
+    'خدمات شاملة تشمل الأعمال المدنية والتشطيب، مع استشارات هندسية وتصاميم ثنائية وثلاثية الأبعاد، بالإضافة إلى خدمات مجانية ومدفوعة عبر منصتنا. 2',
     onBoardingDescription3:
-        'خدمات شاملة تشمل الأعمال المدنية والتشطيب، مع استشارات هندسية وتصاميم ثنائية وثلاثية الأبعاد، بالإضافة إلى خدمات مجانية ومدفوعة عبر منصتنا. 3',
+    'خدمات شاملة تشمل الأعمال المدنية والتشطيب، مع استشارات هندسية وتصاميم ثنائية وثلاثية الأبعاد، بالإضافة إلى خدمات مجانية ومدفوعة عبر منصتنا. 3',
     onBoardingDescription4: '',
     toggleLanguage: 'العربية',
     startButton: 'ابدأ',
@@ -814,7 +816,7 @@ class AppLocale {
     helpful: 'مفيد',
     productPreview: 'معاينة المنتج',
     productPreviewSubTitle:
-        'نظرة عامة موجزة تسلط الضوء على تفاصيل المنتج الرئيسية.',
+    'نظرة عامة موجزة تسلط الضوء على تفاصيل المنتج الرئيسية.',
     color: 'اللون',
     price: 'السعر',
     material: 'المادة',
@@ -831,6 +833,7 @@ class AppLocale {
     dimensionWidth: 'العرض - Width',
     dimensionHeight: 'الارتفاع - Height',
     businessType: 'نوع العمل',
+    businessTypeCategory: 'فئة نوع العمل',
     tradeName: 'الاسم التجاري',
     bioAr: 'السيرة الذاتية بالعربية',
     bioEn: 'السيرة الذاتية بالإنجليزية',

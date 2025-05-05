@@ -47,6 +47,8 @@ class Data {
   final int height;
   @JsonKey(name: "businessType")
   final ResponseBaseUnit businessType;
+  @JsonKey(name: "businessTypeCategory")
+  final ResponseBaseUnit businessTypeCategory;
   @JsonKey(name: "baseUnit")
   final ResponseBaseUnit baseUnit;
   @JsonKey(name: "materials")
@@ -72,6 +74,7 @@ class Data {
     required this.materials,
     required this.stocks,
     required this.imagePaths,
+    required this.businessTypeCategory,
   });
 
   factory Data.fromJson(Map<String, dynamic> json) => _$DataFromJson(json);
@@ -86,15 +89,18 @@ class ResponseBaseUnit {
   @JsonKey(name: "code")
   final String code;
   @JsonKey(name: "name")
-  final String name;
+  final String? name;
   @JsonKey(name: "hexColor")
   final String? hexColor;
+  @JsonKey(name: "businessType")
+  final ResponseBaseUnit? businessType;
 
   ResponseBaseUnit({
     required this.id,
     required this.code,
-    required this.name,
+    this.name,
     this.hexColor,
+    this.businessType,
   });
 
   factory ResponseBaseUnit.fromJson(Map<String, dynamic> json) =>
@@ -129,7 +135,7 @@ class ResponseStock {
   @JsonKey(name: "id")
   final int? id;
   @JsonKey(name: "statusCode")
-  final dynamic statusCode;
+  final int? statusCode;
   @JsonKey(name: "color")
   final ResponseBaseUnit color;
   @JsonKey(name: "amount")
@@ -142,7 +148,8 @@ class ResponseStock {
     required this.amount,
   });
 
-  factory ResponseStock.fromJson(Map<String, dynamic> json) => _$ResponseStockFromJson(json);
+  factory ResponseStock.fromJson(Map<String, dynamic> json) =>
+      _$ResponseStockFromJson(json);
 
   Map<String, dynamic> toJson() => _$ResponseStockToJson(this);
 }

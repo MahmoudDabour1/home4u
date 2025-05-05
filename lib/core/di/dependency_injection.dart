@@ -14,6 +14,7 @@ import 'package:home4u/features/auth/sign_up/logic/engineering_office/engineerin
 import 'package:home4u/features/auth/sign_up/logic/sign_up_cubit.dart';
 import 'package:home4u/features/auth/sign_up/logic/technical_worker/technical_worker_cubit.dart';
 import 'package:home4u/features/auth/verification/data/data_source/verification_remote_data_source.dart';
+import 'package:home4u/features/cart/data/data_source/cart_remote_data_source.dart';
 import 'package:home4u/features/exhibition/data/data_sources/business_add_product_remote_data_source.dart';
 import 'package:home4u/features/exhibition/logic/business_add_product_cubit.dart';
 import 'package:home4u/features/products/data/data_source/products_remote_data_source.dart';
@@ -50,6 +51,8 @@ import '../../features/auth/sign_up/data/data_source/freelancer_sign_up/freelanc
 import '../../features/auth/sign_up/logic/engineer/engineer_cubit.dart';
 import '../../features/auth/verification/data/repos/verification_repo.dart';
 import '../../features/auth/verification/logic/verification_cubit.dart';
+import '../../features/cart/data/repository/cart_repository.dart';
+import '../../features/cart/logic/cart_cubit.dart';
 import '../../features/exhibition/data/repository/business_add_product_repository.dart';
 import '../../features/products/data/data_source/products_local_data_source.dart';
 import '../../features/products/data/repos/business_config_repo.dart';
@@ -176,7 +179,8 @@ Future<void> setupGetIt() async {
   sl.registerLazySingleton<ProductsRemoteDataSource>(
       () => ProductsRemoteDataSource(dio));
   sl.registerLazySingleton<BusinessConfigRepo>(
-      () => BusinessConfigRepoImpl(remoteDataSource: sl()));
+    () => BusinessConfigRepoImpl(remoteDataSource: sl(), localDatasource: sl()),
+  );
   sl.registerLazySingleton<ProductsLocalDatasource>(
       () => ProductsLocalDatasourceImpl());
   sl.registerLazySingleton<ProductsRepo>(() => ProductsRepoImpl(
@@ -224,10 +228,18 @@ Future<void> setupGetIt() async {
 
   sl.registerFactory<RequestDesignCubit>(() => RequestDesignCubit(sl()));
 
-  // Ask Technical
+  ///Ask Technical
   sl.registerLazySingleton<AskTechnicalRemoteDataSource>(
       () => AskTechnicalRemoteDataSource(dio));
-  sl.registerLazySingleton<AskTechnicalRepo>(
-      () => AskTechnicalRepoImpl(sl()));
+  sl.registerLazySingleton<AskTechnicalRepo>(() => AskTechnicalRepoImpl(sl()));
   sl.registerFactory<AskTechnicalCubit>(() => AskTechnicalCubit(sl()));
+
+  ///Shop Now
+  sl.registerLazySingleton<CartRemoteDataSource>(
+      () => CartRemoteDataSource(dio));
+
+  sl.registerLazySingleton<CartRepository>(
+      () => CartRepositoryImpl(cartRemoteDataSource: sl()));
+
+  sl.registerFactory<CartCubit>(() => CartCubit(sl()));
 }

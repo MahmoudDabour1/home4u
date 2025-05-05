@@ -46,6 +46,8 @@ Data _$DataFromJson(Map<String, dynamic> json) => Data(
       imagePaths: (json['imagePaths'] as List<dynamic>)
           .map((e) => ImagePath.fromJson(e as Map<String, dynamic>))
           .toList(),
+      businessTypeCategory: ResponseBaseUnit.fromJson(
+          json['businessTypeCategory'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$DataToJson(Data instance) => <String, dynamic>{
@@ -60,6 +62,7 @@ Map<String, dynamic> _$DataToJson(Data instance) => <String, dynamic>{
       'width': instance.width,
       'height': instance.height,
       'businessType': instance.businessType,
+      'businessTypeCategory': instance.businessTypeCategory,
       'baseUnit': instance.baseUnit,
       'materials': instance.materials,
       'stocks': instance.stocks,
@@ -70,8 +73,12 @@ ResponseBaseUnit _$ResponseBaseUnitFromJson(Map<String, dynamic> json) =>
     ResponseBaseUnit(
       id: (json['id'] as num).toInt(),
       code: json['code'] as String,
-      name: json['name'] as String,
+      name: json['name'] as String?,
       hexColor: json['hexColor'] as String?,
+      businessType: json['businessType'] == null
+          ? null
+          : ResponseBaseUnit.fromJson(
+              json['businessType'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$ResponseBaseUnitToJson(ResponseBaseUnit instance) =>
@@ -80,6 +87,7 @@ Map<String, dynamic> _$ResponseBaseUnitToJson(ResponseBaseUnit instance) =>
       'code': instance.code,
       'name': instance.name,
       'hexColor': instance.hexColor,
+      'businessType': instance.businessType,
     };
 
 ImagePath _$ImagePathFromJson(Map<String, dynamic> json) => ImagePath(
@@ -97,7 +105,7 @@ Map<String, dynamic> _$ImagePathToJson(ImagePath instance) => <String, dynamic>{
 ResponseStock _$ResponseStockFromJson(Map<String, dynamic> json) =>
     ResponseStock(
       id: (json['id'] as num?)?.toInt(),
-      statusCode: json['statusCode'],
+      statusCode: (json['statusCode'] as num?)?.toInt(),
       color: ResponseBaseUnit.fromJson(json['color'] as Map<String, dynamic>),
       amount: (json['amount'] as num).toInt(),
     );

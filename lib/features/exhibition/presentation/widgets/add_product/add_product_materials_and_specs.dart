@@ -35,12 +35,12 @@ class _AddProductMaterialsAndSpecsState
     heightFocusNode = FocusNode();
     final productCubit = context.read<ProductsCubit>();
 
-
     if (widget.productData != null) {
-      selectedMaterials = widget.productData!.data.materials
-          .where((m) => m.name != null)
-          .map((m) => m.name)
-          .toList();
+      selectedMaterials = (widget.productData!.data.materials
+              .where((m) => m.name != null)
+              .map((m) => m.name)
+              .toList())
+          .cast<String>();
     } else {
       selectedMaterials = [];
     }
@@ -88,27 +88,36 @@ class _AddProductMaterialsAndSpecsState
           labelText: AppLocale.selectMaterials.getString(context),
           onChanged: (List<String> values) {
             setState(() {
-              selectedMaterials = values.isNotEmpty ? values : selectedMaterials;
+              selectedMaterials =
+                  values.isNotEmpty ? values : selectedMaterials;
             });
             businessCubit.selectedMaterials = values.isNotEmpty
-                ? values.map((name) {
-              return productCubit.materials!.firstWhere(
-                    (material) => material.name == name,
-              ).id;
-            }).whereType<int>().toList()
+                ? values
+                    .map((name) {
+                      return productCubit.materials!
+                          .firstWhere(
+                            (material) => material.name == name,
+                          )
+                          .id;
+                    })
+                    .whereType<int>()
+                    .toList()
                 : businessCubit.selectedMaterials;
-
           },
           onSaved: (value) {
             businessCubit.selectedMaterials = value != null && value.isNotEmpty
-                ? value.map((name) {
-              return productCubit.materials!.firstWhere(
-                    (material) => material.name == name,
-              ).id;
-            }).whereType<int>().toList()
+                ? value
+                    .map((name) {
+                      return productCubit.materials!
+                          .firstWhere(
+                            (material) => material.name == name,
+                          )
+                          .id;
+                    })
+                    .whereType<int>()
+                    .toList()
                 : businessCubit.selectedMaterials;
           },
-
         ),
         UpDownFormField(
           label: AppLocale.dimensionLength.getString(context),
