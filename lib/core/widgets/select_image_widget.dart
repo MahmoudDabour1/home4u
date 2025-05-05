@@ -1,4 +1,3 @@
-import 'dart:developer';
 import 'dart:io';
 
 import 'package:dotted_border/dotted_border.dart';
@@ -6,7 +5,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_localization/flutter_localization.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:home4u/core/networking/api_constants.dart';
 import 'package:home4u/core/services/image_picker_services.dart';
 import 'package:home4u/core/theming/app_assets.dart';
 import 'package:home4u/core/theming/app_colors.dart';
@@ -15,24 +13,55 @@ import 'package:image_picker/image_picker.dart';
 
 import '../../locale/app_locale.dart';
 
-class SelectImageWidget extends StatelessWidget {
+class SelectImageWidget extends StatefulWidget {
   final cubit;
   final List<File> images;
-  final bool isCoverImage;
-  final bool isEdit;
+  final Function(List<File>) updateImageCallback;
 
   const SelectImageWidget({
     super.key,
     required this.cubit,
     required this.images,
-    this.isCoverImage = false,
-    this.isEdit = false,
+    required this.updateImageCallback,
   });
 
   @override
-  Widget build(BuildContext context) {
-    log("height : ${MediaQuery.sizeOf(context).height * 0.245}");
+  State<SelectImageWidget> createState() => _SelectImageWidgetState();
+}
 
+class _SelectImageWidgetState extends State<SelectImageWidget> {
+  late List<File> _images;
+
+  @override
+  void initState() {
+    super.initState();
+    _images = List<File>.from(widget.images); // Copy on init
+  }
+
+  void _addImage(File image) {
+    setState(() {
+      _images.add(image);
+    });
+    widget.updateImageCallback(_images);
+  }
+
+  void _addImages(List<File> images) {
+    setState(() {
+      _images.addAll(images);
+    });
+    widget.updateImageCallback(_images);
+  }
+
+  void _removeImage(int index) {
+    setState(() {
+      _images.removeAt(index);
+    });
+    widget.updateImageCallback(_images);
+  }
+
+
+  @override
+  Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
         showModalBottomSheet(
@@ -60,7 +89,7 @@ class SelectImageWidget extends StatelessWidget {
                       final pickedImage = await imagePickerService.pickImage(
                           source: ImageSource.camera);
                       if (pickedImage != null) {
-                        cubit.updateSelectedImages([pickedImage]);
+                        _addImage(pickedImage);
                       }
                     },
                   ),
@@ -73,7 +102,7 @@ class SelectImageWidget extends StatelessWidget {
                       final pickedImages =
                           await imagePickerService.pickMultipleImages();
                       if (pickedImages.isNotEmpty) {
-                        cubit.updateSelectedImages(pickedImages);
+                        _addImages(pickedImages);
                       }
                     },
                   ),
@@ -97,32 +126,34 @@ class SelectImageWidget extends StatelessWidget {
           child: Stack(
             alignment: Alignment.center,
             children: [
-              if (isCoverImage && images.isNotEmpty)
-                isEdit
-                    ? Image.network(
-                        ApiConstants.getImageBaseUrl(images.first.path),
-                        width: 100,
-                        height: 100,
-                        fit: BoxFit.cover,
-                      )
-                    : Image.file(
-                        images.first,
-                        width: 100,
-                        height: 100,
-                        fit: BoxFit.cover,
-                      )
-              else if (!isCoverImage && images.isNotEmpty)
+              if (widget.images.isNotEmpty)
                 ListView.builder(
                   scrollDirection: Axis.horizontal,
-                  itemCount: images.length,
+                  itemCount: widget.images.length,
                   itemBuilder: (context, index) {
                     return Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: Image.file(
-                        images[index],
-                        width: 100,
-                        height: 100,
-                        fit: BoxFit.cover,
+                      padding: EdgeInsets.all(4.0.r),
+                      child: ClipRRect(
+                        borderRadius: BorderRadius.circular(16.r),
+                        child: Stack(
+                          children: [
+                            Image.file(
+                              widget.images[index],
+                              width: MediaQuery.sizeOf(context).width /
+                                  _images.length,
+                              height: MediaQuery.sizeOf(context).height,
+                              fit: BoxFit.cover,
+                            ),
+                            IconButton(
+                              onPressed: () => _removeImage(index),
+                              icon: Icon(
+                                Icons.delete_forever,
+                                color: Colors.red,
+                                size: 24.w,
+                              ),
+                            ),
+                          ],
+                        ),
                       ),
                     );
                   },

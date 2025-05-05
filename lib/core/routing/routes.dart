@@ -36,4 +36,13 @@ abstract class Routes{
   static const String userHomeScreen = '/userHomeScreen';
   static const String bestOfficesScreen = '/bestOfficesScreen';
   static const String bestShowRoomsScreen = '/bestShowRoomsScreen';
+  static const String askEngineerScreen = '/askEngineerScreen';
+  static const String askTechnicalScreen = '/askTechnicalScreen';
+  static const String askEngineerFinishDataAndImage = '/askEngineerFinishDataAndImage';
+  static const String askTechnicalFinishAndImage = '/askTechnicalFinishAndImage';
+  static const String renovateYourHouseScreen = '/renovateYourHouseScreen';
+  static const String renovateYourHouseSecondScreen = '/renovateYourHouseSecondScreen';
+  static const String requestDesignScreen = '/requestDesignScreen';
+  static const String projectsFilterScreen = '/projectsFilterScreen';
+
 }

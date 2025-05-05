@@ -65,13 +65,16 @@ class TechnicalDataAdapter extends TypeAdapter<TechnicalData> {
       yearsOfExperience: fields[4] as int?,
       workerServs: (fields[5] as List?)?.cast<FreeLancerType>(),
       bio: fields[6] as String?,
+      linkedin: fields[7] as String?,
+      behance: fields[8] as String?,
+      facebookLink: fields[9] as String?,
     );
   }
 
   @override
   void write(BinaryWriter writer, TechnicalData obj) {
     writer
-      ..writeByte(7)
+      ..writeByte(10)
       ..writeByte(0)
       ..write(obj.id)
       ..writeByte(1)
@@ -85,7 +88,13 @@ class TechnicalDataAdapter extends TypeAdapter<TechnicalData> {
       ..writeByte(5)
       ..write(obj.workerServs)
       ..writeByte(6)
-      ..write(obj.bio);
+      ..write(obj.bio)
+      ..writeByte(7)
+      ..write(obj.linkedin)
+      ..writeByte(8)
+      ..write(obj.behance)
+      ..writeByte(9)
+      ..write(obj.facebookLink);
   }
 
   @override
@@ -136,6 +145,9 @@ TechnicalData _$TechnicalDataFromJson(Map<String, dynamic> json) =>
           ?.map((e) => FreeLancerType.fromJson(e as Map<String, dynamic>))
           .toList(),
       bio: json['bio'] as String?,
+      linkedin: json['linkedinLink'] as String?,
+      behance: json['behanceLink'] as String?,
+      facebookLink: json['facebookLink'] as String?,
     );
 
 Map<String, dynamic> _$TechnicalDataToJson(TechnicalData instance) =>
@@ -147,4 +159,7 @@ Map<String, dynamic> _$TechnicalDataToJson(TechnicalData instance) =>
       'yearsOfExperience': instance.yearsOfExperience,
       'workerServs': instance.workerServs,
       'bio': instance.bio,
+      'linkedinLink': instance.linkedin,
+      'behanceLink': instance.behance,
+      'facebookLink': instance.facebookLink,
     };

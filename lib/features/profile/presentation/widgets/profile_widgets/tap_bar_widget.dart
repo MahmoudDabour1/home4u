@@ -21,7 +21,7 @@ class TapBarWidget extends StatelessWidget {
         tabs:  [
           Tab(text: AppLocale.projects.getString(context)),
           Tab(text: AppLocale.services.getString(context)),
-          Tab(text: AppLocale.pricing.getString(context)),
+          Tab(text: AppLocale.about.getString(context)),
           Tab(text: AppLocale.certifications.getString(context)),
         ],
         padding: EdgeInsets.symmetric(horizontal: 24.w),

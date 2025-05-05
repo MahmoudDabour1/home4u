@@ -17,6 +17,7 @@ class Assets {
   static const String imagesArrow = 'assets/images/arrow.png';
   static const String imagesEmptyState = 'assets/images/empty_state.jpg';
   static const String imagesFacebook = 'assets/images/facebook.png';
+  static const String imagesGirl = 'assets/images/girl.png';
   static const String imagesGoogle = 'assets/images/google.png';
   static const String imagesKhabyLamePNGImage = 'assets/images/Khaby-Lame-PNG-Image.png';
   static const String imagesLock = 'assets/images/lock.png';
@@ -24,7 +25,9 @@ class Assets {
   static const String imagesOnboardingThree = 'assets/images/onboarding_three.png';
   static const String imagesOnboardingTwo = 'assets/images/onboarding_two.png';
   static const String imagesProfileBackImage = 'assets/images/profile_back_image.png';
+  static const String imagesRenovateYourHouse = 'assets/images/renovate_your_house.png';
   static const String imagesSplash = 'assets/images/splash.png';
+  static const String imagesUser = 'assets/images/user.jpg';
   static const String jsonsEmptyList = 'assets/jsons/empty_list.json';
   static const String svgsAddProductSvg = 'assets/svgs/add_product_svg.svg';
   static const String svgsAppLogoSvg = 'assets/svgs/app_logo_svg.svg';
@@ -34,7 +37,11 @@ class Assets {
   static const String svgsArrowRight = 'assets/svgs/arrow_right.svg';
   static const String svgsArrowRightBlackSvg = 'assets/svgs/arrow_right_black_svg.svg';
   static const String svgsArrowUp = 'assets/svgs/arrow_up.svg';
+  static const String svgsAskEngineerSvg = 'assets/svgs/ask_engineer_svg.svg';
+  static const String svgsAskTechnical = 'assets/svgs/ask_technical.svg';
+  static const String svgsBehanceIcon = 'assets/svgs/behance_icon.svg';
   static const String svgsChangeLanguage = 'assets/svgs/change_language.svg';
+  static const String svgsCompleteSvg = 'assets/svgs/complete_svg.svg';
   static const String svgsCustomFurnitureSvg = 'assets/svgs/custom_furniture_svg.svg';
   static const String svgsDecorSvg = 'assets/svgs/decor_svg.svg';
   static const String svgsDeleteIconSvg = 'assets/svgs/delete_icon_svg.svg';
@@ -45,18 +52,26 @@ class Assets {
   static const String svgsFacebookLogo = 'assets/svgs/facebook_logo.svg';
   static const String svgsFaqs = 'assets/svgs/faqs.svg';
   static const String svgsFilterSvg = 'assets/svgs/filter_svg.svg';
+  static const String svgsFollowersSvg = 'assets/svgs/followers_svg.svg';
   static const String svgsFurnitureSvg = 'assets/svgs/furniture_svg.svg';
+  static const String svgsHeartOutlineSvg = 'assets/svgs/heart_outline_svg.svg';
+  static const String svgsHomeGirlSvg = 'assets/svgs/home_girl_svg.svg';
+  static const String svgsHomeSvg = 'assets/svgs/home_svg.svg';
   static const String svgsHouseBuilding = 'assets/svgs/house_building.svg';
   static const String svgsInstagramLogo = 'assets/svgs/instagram_logo.svg';
+  static const String svgsKitchensSvg = 'assets/svgs/kitchens_svg.svg';
   static const String svgsLikeSvgIcon = 'assets/svgs/like_svg_icon.svg';
+  static const String svgsLinkedinSvg = 'assets/svgs/linkedin_svg.svg';
   static const String svgsLoadImages = 'assets/svgs/load_images.svg';
   static const String svgsLocation = 'assets/svgs/location.svg';
+  static const String svgsLocationIconSvg = 'assets/svgs/location_icon_svg.svg';
   static const String svgsLockBlack = 'assets/svgs/lock_black.svg';
   static const String svgsLockSvg = 'assets/svgs/lock_svg.svg';
   static const String svgsLogOut = 'assets/svgs/log_out.svg';
   static const String svgsManagePermissions = 'assets/svgs/manage_permissions.svg';
   static const String svgsMenuDotsBlackSvg = 'assets/svgs/menu-dots-black_svg.svg';
   static const String svgsMenuSvg = 'assets/svgs/menu_svg.svg';
+  static const String svgsMessageIconSvg = 'assets/svgs/message_icon_svg.svg';
   static const String svgsNotificationSvg = 'assets/svgs/notification_svg.svg';
   static const String svgsNotificationsvg = 'assets/svgs/notificationsvg.svg';
   static const String svgsOverViewSvg = 'assets/svgs/over_view_svg.svg';
@@ -68,11 +83,15 @@ class Assets {
   static const String svgsProductPreviewIcon = 'assets/svgs/product_preview_icon.svg';
   static const String svgsProductSvg = 'assets/svgs/product_svg.svg';
   static const String svgsProductWhiteSvg = 'assets/svgs/product_white_svg.svg';
+  static const String svgsRenovateSvg = 'assets/svgs/renovate_svg.svg';
+  static const String svgsRequestDesignSvg = 'assets/svgs/request_design_svg.svg';
   static const String svgsReviewSvg = 'assets/svgs/review_svg.svg';
+  static const String svgsSaveBlackSvg = 'assets/svgs/save_black_svg.svg';
   static const String svgsSaveIconSvg = 'assets/svgs/save_icon_svg.svg';
   static const String svgsSearchSvg = 'assets/svgs/search_svg.svg';
   static const String svgsSettingSvg = 'assets/svgs/setting_svg.svg';
   static const String svgsSettingsDrawerSvg = 'assets/svgs/settings_drawer_svg.svg';
+  static const String svgsShopSvg = 'assets/svgs/shop_svg.svg';
   static const String svgsStarSvg = 'assets/svgs/star_svg.svg';
   static const String svgsStepperBasicDetails = 'assets/svgs/stepper_basic_details.svg';
   static const String svgsStepperColorsAndStock = 'assets/svgs/stepper_colors_and_stock.svg';
@@ -80,8 +99,10 @@ class Assets {
   static const String svgsStockSvg = 'assets/svgs/stock_svg.svg';
   static const String svgsSubmitSvgIcon = 'assets/svgs/submit_svg_icon.svg';
   static const String svgsSuccessMission = 'assets/svgs/success_mission.svg';
+  static const String svgsTotal = 'assets/svgs/total.svg';
   static const String svgsUploadImageIcon = 'assets/svgs/upload_image_icon.svg';
   static const String svgsWaringSvg = 'assets/svgs/waring_svg.svg';
   static const String svgsWebsite = 'assets/svgs/website.svg';
+  static const String svgsWhatsappSvg = 'assets/svgs/whatsapp_svg.svg';
 
 }

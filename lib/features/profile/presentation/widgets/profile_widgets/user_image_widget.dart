@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:home4u/core/networking/api_constants.dart';
-import 'package:home4u/core/theming/app_assets.dart';
 import 'package:home4u/core/theming/app_colors.dart';
 
 import '../../../../../core/widgets/bottom_model.dart';
@@ -76,7 +75,7 @@ class UserImageWidget extends StatelessWidget {
                           ),
                         )
                             : AssetImage(
-                          AppAssets.facebook,
+                          "assets/images/user.jpg",
                         ) as ImageProvider,
                       ),
                     ),

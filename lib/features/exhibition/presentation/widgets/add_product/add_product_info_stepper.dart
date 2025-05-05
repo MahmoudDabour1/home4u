@@ -153,7 +153,7 @@ class _AddProductInfoStepperState extends State<AddProductInfoStepper> {
     );
   }
 
-  /// Build EasyStepper widget
+  /// Build EasyStepper widgets
   Widget _buildStepper() {
     return EasyStepper(
       activeStep: activeStep,

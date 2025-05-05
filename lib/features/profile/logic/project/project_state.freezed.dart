@@ -37,8 +37,8 @@ mixin _$ProjectState<T> {
     required TResult Function() addProjectLoading,
     required TResult Function() addProjectSuccess,
     required TResult Function(String error) addProjectError,
-    required TResult Function() addImage,
-    required TResult Function() addCover,
+    required TResult Function(List<File> images) addImage,
+    required TResult Function(List<File> images) addCover,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -60,8 +60,8 @@ mixin _$ProjectState<T> {
     TResult? Function()? addProjectLoading,
     TResult? Function()? addProjectSuccess,
     TResult? Function(String error)? addProjectError,
-    TResult? Function()? addImage,
-    TResult? Function()? addCover,
+    TResult? Function(List<File> images)? addImage,
+    TResult? Function(List<File> images)? addCover,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -83,8 +83,8 @@ mixin _$ProjectState<T> {
     TResult Function()? addProjectLoading,
     TResult Function()? addProjectSuccess,
     TResult Function(String error)? addProjectError,
-    TResult Function()? addImage,
-    TResult Function()? addCover,
+    TResult Function(List<File> images)? addImage,
+    TResult Function(List<File> images)? addCover,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -245,8 +245,8 @@ class _$InitialImpl<T> implements _Initial<T> {
     required TResult Function() addProjectLoading,
     required TResult Function() addProjectSuccess,
     required TResult Function(String error) addProjectError,
-    required TResult Function() addImage,
-    required TResult Function() addCover,
+    required TResult Function(List<File> images) addImage,
+    required TResult Function(List<File> images) addCover,
   }) {
     return initial();
   }
@@ -271,8 +271,8 @@ class _$InitialImpl<T> implements _Initial<T> {
     TResult? Function()? addProjectLoading,
     TResult? Function()? addProjectSuccess,
     TResult? Function(String error)? addProjectError,
-    TResult? Function()? addImage,
-    TResult? Function()? addCover,
+    TResult? Function(List<File> images)? addImage,
+    TResult? Function(List<File> images)? addCover,
   }) {
     return initial?.call();
   }
@@ -297,8 +297,8 @@ class _$InitialImpl<T> implements _Initial<T> {
     TResult Function()? addProjectLoading,
     TResult Function()? addProjectSuccess,
     TResult Function(String error)? addProjectError,
-    TResult Function()? addImage,
-    TResult Function()? addCover,
+    TResult Function(List<File> images)? addImage,
+    TResult Function(List<File> images)? addCover,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -459,8 +459,8 @@ class _$GetProjectLoadingImpl<T> implements GetProjectLoading<T> {
     required TResult Function() addProjectLoading,
     required TResult Function() addProjectSuccess,
     required TResult Function(String error) addProjectError,
-    required TResult Function() addImage,
-    required TResult Function() addCover,
+    required TResult Function(List<File> images) addImage,
+    required TResult Function(List<File> images) addCover,
   }) {
     return getProjectLoading();
   }
@@ -485,8 +485,8 @@ class _$GetProjectLoadingImpl<T> implements GetProjectLoading<T> {
     TResult? Function()? addProjectLoading,
     TResult? Function()? addProjectSuccess,
     TResult? Function(String error)? addProjectError,
-    TResult? Function()? addImage,
-    TResult? Function()? addCover,
+    TResult? Function(List<File> images)? addImage,
+    TResult? Function(List<File> images)? addCover,
   }) {
     return getProjectLoading?.call();
   }
@@ -511,8 +511,8 @@ class _$GetProjectLoadingImpl<T> implements GetProjectLoading<T> {
     TResult Function()? addProjectLoading,
     TResult Function()? addProjectSuccess,
     TResult Function(String error)? addProjectError,
-    TResult Function()? addImage,
-    TResult Function()? addCover,
+    TResult Function(List<File> images)? addImage,
+    TResult Function(List<File> images)? addCover,
     required TResult orElse(),
   }) {
     if (getProjectLoading != null) {
@@ -702,8 +702,8 @@ class _$GetProjectSuccessImpl<T> implements GetProjectSuccess<T> {
     required TResult Function() addProjectLoading,
     required TResult Function() addProjectSuccess,
     required TResult Function(String error) addProjectError,
-    required TResult Function() addImage,
-    required TResult Function() addCover,
+    required TResult Function(List<File> images) addImage,
+    required TResult Function(List<File> images) addCover,
   }) {
     return getProjectSuccess(projectResponse);
   }
@@ -728,8 +728,8 @@ class _$GetProjectSuccessImpl<T> implements GetProjectSuccess<T> {
     TResult? Function()? addProjectLoading,
     TResult? Function()? addProjectSuccess,
     TResult? Function(String error)? addProjectError,
-    TResult? Function()? addImage,
-    TResult? Function()? addCover,
+    TResult? Function(List<File> images)? addImage,
+    TResult? Function(List<File> images)? addCover,
   }) {
     return getProjectSuccess?.call(projectResponse);
   }
@@ -754,8 +754,8 @@ class _$GetProjectSuccessImpl<T> implements GetProjectSuccess<T> {
     TResult Function()? addProjectLoading,
     TResult Function()? addProjectSuccess,
     TResult Function(String error)? addProjectError,
-    TResult Function()? addImage,
-    TResult Function()? addCover,
+    TResult Function(List<File> images)? addImage,
+    TResult Function(List<File> images)? addCover,
     required TResult orElse(),
   }) {
     if (getProjectSuccess != null) {
@@ -952,8 +952,8 @@ class _$GetProjectErrorImpl<T> implements GetProjectError<T> {
     required TResult Function() addProjectLoading,
     required TResult Function() addProjectSuccess,
     required TResult Function(String error) addProjectError,
-    required TResult Function() addImage,
-    required TResult Function() addCover,
+    required TResult Function(List<File> images) addImage,
+    required TResult Function(List<File> images) addCover,
   }) {
     return getProjectError(error);
   }
@@ -978,8 +978,8 @@ class _$GetProjectErrorImpl<T> implements GetProjectError<T> {
     TResult? Function()? addProjectLoading,
     TResult? Function()? addProjectSuccess,
     TResult? Function(String error)? addProjectError,
-    TResult? Function()? addImage,
-    TResult? Function()? addCover,
+    TResult? Function(List<File> images)? addImage,
+    TResult? Function(List<File> images)? addCover,
   }) {
     return getProjectError?.call(error);
   }
@@ -1004,8 +1004,8 @@ class _$GetProjectErrorImpl<T> implements GetProjectError<T> {
     TResult Function()? addProjectLoading,
     TResult Function()? addProjectSuccess,
     TResult Function(String error)? addProjectError,
-    TResult Function()? addImage,
-    TResult Function()? addCover,
+    TResult Function(List<File> images)? addImage,
+    TResult Function(List<File> images)? addCover,
     required TResult orElse(),
   }) {
     if (getProjectError != null) {
@@ -1176,8 +1176,8 @@ class _$UpdateProjectLoadingImpl<T> implements UpdateProjectLoading<T> {
     required TResult Function() addProjectLoading,
     required TResult Function() addProjectSuccess,
     required TResult Function(String error) addProjectError,
-    required TResult Function() addImage,
-    required TResult Function() addCover,
+    required TResult Function(List<File> images) addImage,
+    required TResult Function(List<File> images) addCover,
   }) {
     return updateProjectLoading();
   }
@@ -1202,8 +1202,8 @@ class _$UpdateProjectLoadingImpl<T> implements UpdateProjectLoading<T> {
     TResult? Function()? addProjectLoading,
     TResult? Function()? addProjectSuccess,
     TResult? Function(String error)? addProjectError,
-    TResult? Function()? addImage,
-    TResult? Function()? addCover,
+    TResult? Function(List<File> images)? addImage,
+    TResult? Function(List<File> images)? addCover,
   }) {
     return updateProjectLoading?.call();
   }
@@ -1228,8 +1228,8 @@ class _$UpdateProjectLoadingImpl<T> implements UpdateProjectLoading<T> {
     TResult Function()? addProjectLoading,
     TResult Function()? addProjectSuccess,
     TResult Function(String error)? addProjectError,
-    TResult Function()? addImage,
-    TResult Function()? addCover,
+    TResult Function(List<File> images)? addImage,
+    TResult Function(List<File> images)? addCover,
     required TResult orElse(),
   }) {
     if (updateProjectLoading != null) {
@@ -1391,8 +1391,8 @@ class _$UpdateProjectSuccessImpl<T> implements UpdateProjectSuccess<T> {
     required TResult Function() addProjectLoading,
     required TResult Function() addProjectSuccess,
     required TResult Function(String error) addProjectError,
-    required TResult Function() addImage,
-    required TResult Function() addCover,
+    required TResult Function(List<File> images) addImage,
+    required TResult Function(List<File> images) addCover,
   }) {
     return updateProjectSuccess();
   }
@@ -1417,8 +1417,8 @@ class _$UpdateProjectSuccessImpl<T> implements UpdateProjectSuccess<T> {
     TResult? Function()? addProjectLoading,
     TResult? Function()? addProjectSuccess,
     TResult? Function(String error)? addProjectError,
-    TResult? Function()? addImage,
-    TResult? Function()? addCover,
+    TResult? Function(List<File> images)? addImage,
+    TResult? Function(List<File> images)? addCover,
   }) {
     return updateProjectSuccess?.call();
   }
@@ -1443,8 +1443,8 @@ class _$UpdateProjectSuccessImpl<T> implements UpdateProjectSuccess<T> {
     TResult Function()? addProjectLoading,
     TResult Function()? addProjectSuccess,
     TResult Function(String error)? addProjectError,
-    TResult Function()? addImage,
-    TResult Function()? addCover,
+    TResult Function(List<File> images)? addImage,
+    TResult Function(List<File> images)? addCover,
     required TResult orElse(),
   }) {
     if (updateProjectSuccess != null) {
@@ -1632,8 +1632,8 @@ class _$UpdateProjectErrorImpl<T> implements UpdateProjectError<T> {
     required TResult Function() addProjectLoading,
     required TResult Function() addProjectSuccess,
     required TResult Function(String error) addProjectError,
-    required TResult Function() addImage,
-    required TResult Function() addCover,
+    required TResult Function(List<File> images) addImage,
+    required TResult Function(List<File> images) addCover,
   }) {
     return updateProjectError(error);
   }
@@ -1658,8 +1658,8 @@ class _$UpdateProjectErrorImpl<T> implements UpdateProjectError<T> {
     TResult? Function()? addProjectLoading,
     TResult? Function()? addProjectSuccess,
     TResult? Function(String error)? addProjectError,
-    TResult? Function()? addImage,
-    TResult? Function()? addCover,
+    TResult? Function(List<File> images)? addImage,
+    TResult? Function(List<File> images)? addCover,
   }) {
     return updateProjectError?.call(error);
   }
@@ -1684,8 +1684,8 @@ class _$UpdateProjectErrorImpl<T> implements UpdateProjectError<T> {
     TResult Function()? addProjectLoading,
     TResult Function()? addProjectSuccess,
     TResult Function(String error)? addProjectError,
-    TResult Function()? addImage,
-    TResult Function()? addCover,
+    TResult Function(List<File> images)? addImage,
+    TResult Function(List<File> images)? addCover,
     required TResult orElse(),
   }) {
     if (updateProjectError != null) {
@@ -1883,8 +1883,8 @@ class _$ProjectFailureStateImpl<T> implements ProjectFailureState<T> {
     required TResult Function() addProjectLoading,
     required TResult Function() addProjectSuccess,
     required TResult Function(String error) addProjectError,
-    required TResult Function() addImage,
-    required TResult Function() addCover,
+    required TResult Function(List<File> images) addImage,
+    required TResult Function(List<File> images) addCover,
   }) {
     return failure(errorMessage);
   }
@@ -1909,8 +1909,8 @@ class _$ProjectFailureStateImpl<T> implements ProjectFailureState<T> {
     TResult? Function()? addProjectLoading,
     TResult? Function()? addProjectSuccess,
     TResult? Function(String error)? addProjectError,
-    TResult? Function()? addImage,
-    TResult? Function()? addCover,
+    TResult? Function(List<File> images)? addImage,
+    TResult? Function(List<File> images)? addCover,
   }) {
     return failure?.call(errorMessage);
   }
@@ -1935,8 +1935,8 @@ class _$ProjectFailureStateImpl<T> implements ProjectFailureState<T> {
     TResult Function()? addProjectLoading,
     TResult Function()? addProjectSuccess,
     TResult Function(String error)? addProjectError,
-    TResult Function()? addImage,
-    TResult Function()? addCover,
+    TResult Function(List<File> images)? addImage,
+    TResult Function(List<File> images)? addCover,
     required TResult orElse(),
   }) {
     if (failure != null) {
@@ -2106,8 +2106,8 @@ class _$GetProjectsLoadingImpl<T> implements GetProjectsLoading<T> {
     required TResult Function() addProjectLoading,
     required TResult Function() addProjectSuccess,
     required TResult Function(String error) addProjectError,
-    required TResult Function() addImage,
-    required TResult Function() addCover,
+    required TResult Function(List<File> images) addImage,
+    required TResult Function(List<File> images) addCover,
   }) {
     return getProjectsLoading();
   }
@@ -2132,8 +2132,8 @@ class _$GetProjectsLoadingImpl<T> implements GetProjectsLoading<T> {
     TResult? Function()? addProjectLoading,
     TResult? Function()? addProjectSuccess,
     TResult? Function(String error)? addProjectError,
-    TResult? Function()? addImage,
-    TResult? Function()? addCover,
+    TResult? Function(List<File> images)? addImage,
+    TResult? Function(List<File> images)? addCover,
   }) {
     return getProjectsLoading?.call();
   }
@@ -2158,8 +2158,8 @@ class _$GetProjectsLoadingImpl<T> implements GetProjectsLoading<T> {
     TResult Function()? addProjectLoading,
     TResult Function()? addProjectSuccess,
     TResult Function(String error)? addProjectError,
-    TResult Function()? addImage,
-    TResult Function()? addCover,
+    TResult Function(List<File> images)? addImage,
+    TResult Function(List<File> images)? addCover,
     required TResult orElse(),
   }) {
     if (getProjectsLoading != null) {
@@ -2357,8 +2357,8 @@ class _$GetProjectsSuccessImpl<T> implements GetProjectsSuccess<T> {
     required TResult Function() addProjectLoading,
     required TResult Function() addProjectSuccess,
     required TResult Function(String error) addProjectError,
-    required TResult Function() addImage,
-    required TResult Function() addCover,
+    required TResult Function(List<File> images) addImage,
+    required TResult Function(List<File> images) addCover,
   }) {
     return getProjectsSuccess(projectData);
   }
@@ -2383,8 +2383,8 @@ class _$GetProjectsSuccessImpl<T> implements GetProjectsSuccess<T> {
     TResult? Function()? addProjectLoading,
     TResult? Function()? addProjectSuccess,
     TResult? Function(String error)? addProjectError,
-    TResult? Function()? addImage,
-    TResult? Function()? addCover,
+    TResult? Function(List<File> images)? addImage,
+    TResult? Function(List<File> images)? addCover,
   }) {
     return getProjectsSuccess?.call(projectData);
   }
@@ -2409,8 +2409,8 @@ class _$GetProjectsSuccessImpl<T> implements GetProjectsSuccess<T> {
     TResult Function()? addProjectLoading,
     TResult Function()? addProjectSuccess,
     TResult Function(String error)? addProjectError,
-    TResult Function()? addImage,
-    TResult Function()? addCover,
+    TResult Function(List<File> images)? addImage,
+    TResult Function(List<File> images)? addCover,
     required TResult orElse(),
   }) {
     if (getProjectsSuccess != null) {
@@ -2607,8 +2607,8 @@ class _$GetProjectsErrorImpl<T> implements GetProjectsError<T> {
     required TResult Function() addProjectLoading,
     required TResult Function() addProjectSuccess,
     required TResult Function(String error) addProjectError,
-    required TResult Function() addImage,
-    required TResult Function() addCover,
+    required TResult Function(List<File> images) addImage,
+    required TResult Function(List<File> images) addCover,
   }) {
     return getProjectsError(error);
   }
@@ -2633,8 +2633,8 @@ class _$GetProjectsErrorImpl<T> implements GetProjectsError<T> {
     TResult? Function()? addProjectLoading,
     TResult? Function()? addProjectSuccess,
     TResult? Function(String error)? addProjectError,
-    TResult? Function()? addImage,
-    TResult? Function()? addCover,
+    TResult? Function(List<File> images)? addImage,
+    TResult? Function(List<File> images)? addCover,
   }) {
     return getProjectsError?.call(error);
   }
@@ -2659,8 +2659,8 @@ class _$GetProjectsErrorImpl<T> implements GetProjectsError<T> {
     TResult Function()? addProjectLoading,
     TResult Function()? addProjectSuccess,
     TResult Function(String error)? addProjectError,
-    TResult Function()? addImage,
-    TResult Function()? addCover,
+    TResult Function(List<File> images)? addImage,
+    TResult Function(List<File> images)? addCover,
     required TResult orElse(),
   }) {
     if (getProjectsError != null) {
@@ -2831,8 +2831,8 @@ class _$DeleteProjectLoadingImpl<T> implements DeleteProjectLoading<T> {
     required TResult Function() addProjectLoading,
     required TResult Function() addProjectSuccess,
     required TResult Function(String error) addProjectError,
-    required TResult Function() addImage,
-    required TResult Function() addCover,
+    required TResult Function(List<File> images) addImage,
+    required TResult Function(List<File> images) addCover,
   }) {
     return deleteProjectLoading();
   }
@@ -2857,8 +2857,8 @@ class _$DeleteProjectLoadingImpl<T> implements DeleteProjectLoading<T> {
     TResult? Function()? addProjectLoading,
     TResult? Function()? addProjectSuccess,
     TResult? Function(String error)? addProjectError,
-    TResult? Function()? addImage,
-    TResult? Function()? addCover,
+    TResult? Function(List<File> images)? addImage,
+    TResult? Function(List<File> images)? addCover,
   }) {
     return deleteProjectLoading?.call();
   }
@@ -2883,8 +2883,8 @@ class _$DeleteProjectLoadingImpl<T> implements DeleteProjectLoading<T> {
     TResult Function()? addProjectLoading,
     TResult Function()? addProjectSuccess,
     TResult Function(String error)? addProjectError,
-    TResult Function()? addImage,
-    TResult Function()? addCover,
+    TResult Function(List<File> images)? addImage,
+    TResult Function(List<File> images)? addCover,
     required TResult orElse(),
   }) {
     if (deleteProjectLoading != null) {
@@ -3046,8 +3046,8 @@ class _$DeleteProjectSuccessImpl<T> implements DeleteProjectSuccess<T> {
     required TResult Function() addProjectLoading,
     required TResult Function() addProjectSuccess,
     required TResult Function(String error) addProjectError,
-    required TResult Function() addImage,
-    required TResult Function() addCover,
+    required TResult Function(List<File> images) addImage,
+    required TResult Function(List<File> images) addCover,
   }) {
     return deleteProjectSuccess();
   }
@@ -3072,8 +3072,8 @@ class _$DeleteProjectSuccessImpl<T> implements DeleteProjectSuccess<T> {
     TResult? Function()? addProjectLoading,
     TResult? Function()? addProjectSuccess,
     TResult? Function(String error)? addProjectError,
-    TResult? Function()? addImage,
-    TResult? Function()? addCover,
+    TResult? Function(List<File> images)? addImage,
+    TResult? Function(List<File> images)? addCover,
   }) {
     return deleteProjectSuccess?.call();
   }
@@ -3098,8 +3098,8 @@ class _$DeleteProjectSuccessImpl<T> implements DeleteProjectSuccess<T> {
     TResult Function()? addProjectLoading,
     TResult Function()? addProjectSuccess,
     TResult Function(String error)? addProjectError,
-    TResult Function()? addImage,
-    TResult Function()? addCover,
+    TResult Function(List<File> images)? addImage,
+    TResult Function(List<File> images)? addCover,
     required TResult orElse(),
   }) {
     if (deleteProjectSuccess != null) {
@@ -3287,8 +3287,8 @@ class _$DeleteProjectErrorImpl<T> implements DeleteProjectError<T> {
     required TResult Function() addProjectLoading,
     required TResult Function() addProjectSuccess,
     required TResult Function(String error) addProjectError,
-    required TResult Function() addImage,
-    required TResult Function() addCover,
+    required TResult Function(List<File> images) addImage,
+    required TResult Function(List<File> images) addCover,
   }) {
     return deleteProjectError(error);
   }
@@ -3313,8 +3313,8 @@ class _$DeleteProjectErrorImpl<T> implements DeleteProjectError<T> {
     TResult? Function()? addProjectLoading,
     TResult? Function()? addProjectSuccess,
     TResult? Function(String error)? addProjectError,
-    TResult? Function()? addImage,
-    TResult? Function()? addCover,
+    TResult? Function(List<File> images)? addImage,
+    TResult? Function(List<File> images)? addCover,
   }) {
     return deleteProjectError?.call(error);
   }
@@ -3339,8 +3339,8 @@ class _$DeleteProjectErrorImpl<T> implements DeleteProjectError<T> {
     TResult Function()? addProjectLoading,
     TResult Function()? addProjectSuccess,
     TResult Function(String error)? addProjectError,
-    TResult Function()? addImage,
-    TResult Function()? addCover,
+    TResult Function(List<File> images)? addImage,
+    TResult Function(List<File> images)? addCover,
     required TResult orElse(),
   }) {
     if (deleteProjectError != null) {
@@ -3510,8 +3510,8 @@ class _$AddProjectLoadingImpl<T> implements AddProjectLoading<T> {
     required TResult Function() addProjectLoading,
     required TResult Function() addProjectSuccess,
     required TResult Function(String error) addProjectError,
-    required TResult Function() addImage,
-    required TResult Function() addCover,
+    required TResult Function(List<File> images) addImage,
+    required TResult Function(List<File> images) addCover,
   }) {
     return addProjectLoading();
   }
@@ -3536,8 +3536,8 @@ class _$AddProjectLoadingImpl<T> implements AddProjectLoading<T> {
     TResult? Function()? addProjectLoading,
     TResult? Function()? addProjectSuccess,
     TResult? Function(String error)? addProjectError,
-    TResult? Function()? addImage,
-    TResult? Function()? addCover,
+    TResult? Function(List<File> images)? addImage,
+    TResult? Function(List<File> images)? addCover,
   }) {
     return addProjectLoading?.call();
   }
@@ -3562,8 +3562,8 @@ class _$AddProjectLoadingImpl<T> implements AddProjectLoading<T> {
     TResult Function()? addProjectLoading,
     TResult Function()? addProjectSuccess,
     TResult Function(String error)? addProjectError,
-    TResult Function()? addImage,
-    TResult Function()? addCover,
+    TResult Function(List<File> images)? addImage,
+    TResult Function(List<File> images)? addCover,
     required TResult orElse(),
   }) {
     if (addProjectLoading != null) {
@@ -3724,8 +3724,8 @@ class _$AddProjectSuccessImpl<T> implements AddProjectSuccess<T> {
     required TResult Function() addProjectLoading,
     required TResult Function() addProjectSuccess,
     required TResult Function(String error) addProjectError,
-    required TResult Function() addImage,
-    required TResult Function() addCover,
+    required TResult Function(List<File> images) addImage,
+    required TResult Function(List<File> images) addCover,
   }) {
     return addProjectSuccess();
   }
@@ -3750,8 +3750,8 @@ class _$AddProjectSuccessImpl<T> implements AddProjectSuccess<T> {
     TResult? Function()? addProjectLoading,
     TResult? Function()? addProjectSuccess,
     TResult? Function(String error)? addProjectError,
-    TResult? Function()? addImage,
-    TResult? Function()? addCover,
+    TResult? Function(List<File> images)? addImage,
+    TResult? Function(List<File> images)? addCover,
   }) {
     return addProjectSuccess?.call();
   }
@@ -3776,8 +3776,8 @@ class _$AddProjectSuccessImpl<T> implements AddProjectSuccess<T> {
     TResult Function()? addProjectLoading,
     TResult Function()? addProjectSuccess,
     TResult Function(String error)? addProjectError,
-    TResult Function()? addImage,
-    TResult Function()? addCover,
+    TResult Function(List<File> images)? addImage,
+    TResult Function(List<File> images)? addCover,
     required TResult orElse(),
   }) {
     if (addProjectSuccess != null) {
@@ -3965,8 +3965,8 @@ class _$AddProjectErrorImpl<T> implements AddProjectError<T> {
     required TResult Function() addProjectLoading,
     required TResult Function() addProjectSuccess,
     required TResult Function(String error) addProjectError,
-    required TResult Function() addImage,
-    required TResult Function() addCover,
+    required TResult Function(List<File> images) addImage,
+    required TResult Function(List<File> images) addCover,
   }) {
     return addProjectError(error);
   }
@@ -3991,8 +3991,8 @@ class _$AddProjectErrorImpl<T> implements AddProjectError<T> {
     TResult? Function()? addProjectLoading,
     TResult? Function()? addProjectSuccess,
     TResult? Function(String error)? addProjectError,
-    TResult? Function()? addImage,
-    TResult? Function()? addCover,
+    TResult? Function(List<File> images)? addImage,
+    TResult? Function(List<File> images)? addCover,
   }) {
     return addProjectError?.call(error);
   }
@@ -4017,8 +4017,8 @@ class _$AddProjectErrorImpl<T> implements AddProjectError<T> {
     TResult Function()? addProjectLoading,
     TResult Function()? addProjectSuccess,
     TResult Function(String error)? addProjectError,
-    TResult Function()? addImage,
-    TResult Function()? addCover,
+    TResult Function(List<File> images)? addImage,
+    TResult Function(List<File> images)? addCover,
     required TResult orElse(),
   }) {
     if (addProjectError != null) {
@@ -4132,6 +4132,8 @@ abstract class _$$AddImageImplCopyWith<T, $Res> {
   factory _$$AddImageImplCopyWith(
           _$AddImageImpl<T> value, $Res Function(_$AddImageImpl<T>) then) =
       __$$AddImageImplCopyWithImpl<T, $Res>;
+  @useResult
+  $Res call({List<File> images});
 }
 
 /// @nodoc
@@ -4144,26 +4146,57 @@ class __$$AddImageImplCopyWithImpl<T, $Res>
 
   /// Create a copy of ProjectState
   /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? images = null,
+  }) {
+    return _then(_$AddImageImpl<T>(
+      null == images
+          ? _value._images
+          : images // ignore: cast_nullable_to_non_nullable
+              as List<File>,
+    ));
+  }
 }
 
 /// @nodoc
 
 class _$AddImageImpl<T> implements AddImage<T> {
-  const _$AddImageImpl();
+  const _$AddImageImpl(final List<File> images) : _images = images;
+
+  final List<File> _images;
+  @override
+  List<File> get images {
+    if (_images is EqualUnmodifiableListView) return _images;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_images);
+  }
 
   @override
   String toString() {
-    return 'ProjectState<$T>.addImage()';
+    return 'ProjectState<$T>.addImage(images: $images)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$AddImageImpl<T>);
+        (other.runtimeType == runtimeType &&
+            other is _$AddImageImpl<T> &&
+            const DeepCollectionEquality().equals(other._images, _images));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode;
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(_images));
+
+  /// Create a copy of ProjectState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$AddImageImplCopyWith<T, _$AddImageImpl<T>> get copyWith =>
+      __$$AddImageImplCopyWithImpl<T, _$AddImageImpl<T>>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -4187,10 +4220,10 @@ class _$AddImageImpl<T> implements AddImage<T> {
     required TResult Function() addProjectLoading,
     required TResult Function() addProjectSuccess,
     required TResult Function(String error) addProjectError,
-    required TResult Function() addImage,
-    required TResult Function() addCover,
+    required TResult Function(List<File> images) addImage,
+    required TResult Function(List<File> images) addCover,
   }) {
-    return addImage();
+    return addImage(images);
   }
 
   @override
@@ -4213,10 +4246,10 @@ class _$AddImageImpl<T> implements AddImage<T> {
     TResult? Function()? addProjectLoading,
     TResult? Function()? addProjectSuccess,
     TResult? Function(String error)? addProjectError,
-    TResult? Function()? addImage,
-    TResult? Function()? addCover,
+    TResult? Function(List<File> images)? addImage,
+    TResult? Function(List<File> images)? addCover,
   }) {
-    return addImage?.call();
+    return addImage?.call(images);
   }
 
   @override
@@ -4239,12 +4272,12 @@ class _$AddImageImpl<T> implements AddImage<T> {
     TResult Function()? addProjectLoading,
     TResult Function()? addProjectSuccess,
     TResult Function(String error)? addProjectError,
-    TResult Function()? addImage,
-    TResult Function()? addCover,
+    TResult Function(List<File> images)? addImage,
+    TResult Function(List<File> images)? addCover,
     required TResult orElse(),
   }) {
     if (addImage != null) {
-      return addImage();
+      return addImage(images);
     }
     return orElse();
   }
@@ -4337,7 +4370,15 @@ class _$AddImageImpl<T> implements AddImage<T> {
 }
 
 abstract class AddImage<T> implements ProjectState<T> {
-  const factory AddImage() = _$AddImageImpl<T>;
+  const factory AddImage(final List<File> images) = _$AddImageImpl<T>;
+
+  List<File> get images;
+
+  /// Create a copy of ProjectState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$AddImageImplCopyWith<T, _$AddImageImpl<T>> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -4345,6 +4386,8 @@ abstract class _$$AddCoverImplCopyWith<T, $Res> {
   factory _$$AddCoverImplCopyWith(
           _$AddCoverImpl<T> value, $Res Function(_$AddCoverImpl<T>) then) =
       __$$AddCoverImplCopyWithImpl<T, $Res>;
+  @useResult
+  $Res call({List<File> images});
 }
 
 /// @nodoc
@@ -4357,26 +4400,57 @@ class __$$AddCoverImplCopyWithImpl<T, $Res>
 
   /// Create a copy of ProjectState
   /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? images = null,
+  }) {
+    return _then(_$AddCoverImpl<T>(
+      null == images
+          ? _value._images
+          : images // ignore: cast_nullable_to_non_nullable
+              as List<File>,
+    ));
+  }
 }
 
 /// @nodoc
 
 class _$AddCoverImpl<T> implements AddCover<T> {
-  const _$AddCoverImpl();
+  const _$AddCoverImpl(final List<File> images) : _images = images;
+
+  final List<File> _images;
+  @override
+  List<File> get images {
+    if (_images is EqualUnmodifiableListView) return _images;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_images);
+  }
 
   @override
   String toString() {
-    return 'ProjectState<$T>.addCover()';
+    return 'ProjectState<$T>.addCover(images: $images)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$AddCoverImpl<T>);
+        (other.runtimeType == runtimeType &&
+            other is _$AddCoverImpl<T> &&
+            const DeepCollectionEquality().equals(other._images, _images));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode;
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(_images));
+
+  /// Create a copy of ProjectState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$AddCoverImplCopyWith<T, _$AddCoverImpl<T>> get copyWith =>
+      __$$AddCoverImplCopyWithImpl<T, _$AddCoverImpl<T>>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -4400,10 +4474,10 @@ class _$AddCoverImpl<T> implements AddCover<T> {
     required TResult Function() addProjectLoading,
     required TResult Function() addProjectSuccess,
     required TResult Function(String error) addProjectError,
-    required TResult Function() addImage,
-    required TResult Function() addCover,
+    required TResult Function(List<File> images) addImage,
+    required TResult Function(List<File> images) addCover,
   }) {
-    return addCover();
+    return addCover(images);
   }
 
   @override
@@ -4426,10 +4500,10 @@ class _$AddCoverImpl<T> implements AddCover<T> {
     TResult? Function()? addProjectLoading,
     TResult? Function()? addProjectSuccess,
     TResult? Function(String error)? addProjectError,
-    TResult? Function()? addImage,
-    TResult? Function()? addCover,
+    TResult? Function(List<File> images)? addImage,
+    TResult? Function(List<File> images)? addCover,
   }) {
-    return addCover?.call();
+    return addCover?.call(images);
   }
 
   @override
@@ -4452,12 +4526,12 @@ class _$AddCoverImpl<T> implements AddCover<T> {
     TResult Function()? addProjectLoading,
     TResult Function()? addProjectSuccess,
     TResult Function(String error)? addProjectError,
-    TResult Function()? addImage,
-    TResult Function()? addCover,
+    TResult Function(List<File> images)? addImage,
+    TResult Function(List<File> images)? addCover,
     required TResult orElse(),
   }) {
     if (addCover != null) {
-      return addCover();
+      return addCover(images);
     }
     return orElse();
   }
@@ -4550,5 +4624,13 @@ class _$AddCoverImpl<T> implements AddCover<T> {
 }
 
 abstract class AddCover<T> implements ProjectState<T> {
-  const factory AddCover() = _$AddCoverImpl<T>;
+  const factory AddCover(final List<File> images) = _$AddCoverImpl<T>;
+
+  List<File> get images;
+
+  /// Create a copy of ProjectState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$AddCoverImplCopyWith<T, _$AddCoverImpl<T>> get copyWith =>
+      throw _privateConstructorUsedError;
 }

@@ -11,7 +11,6 @@ import 'package:home4u/features/profile/data/models/projects/project_data.dart';
 import 'package:home4u/features/profile/data/repos/projects_repo.dart';
 import 'package:home4u/features/profile/logic/project/project_state.dart';
 import 'package:http_parser/http_parser.dart';
-import 'package:image_picker/image_picker.dart';
 import 'package:logger/logger.dart';
 
 import '../../../../core/networking/dio_factory.dart';
@@ -29,32 +28,20 @@ class ProjectCubit extends Cubit<ProjectState> {
   final projectEndDateController = TextEditingController();
   final projectToolsController = TextEditingController();
   List<File> images = [];
-  File? coverImage;
+  List<File> coverImage =[];
   Logger printer = Logger();
   final formKey = GlobalKey<FormState>();
 
-  void selectImage({required BuildContext context, ImageSource? source}) {
-    final navigator = Navigator.of(context);
-    ImagePicker().pickImage(source: source!).then((value) {
-      if (value != null) {
-        images.add(File(value.path));
-        navigator.pop();
-        emit(ProjectState.addImage());
-      }
-    });
+
+  void updateSelectedImages(List<File> newImages) {
+    images = [ ...newImages];
+    emit(ProjectState.addImage(images));
+  }
+  void updateSelectedCoversImages(List<File> newImages) {
+    coverImage = [ ...newImages];
+    emit(ProjectState.addCover(coverImage));
   }
 
-  void selectCover({required BuildContext context, ImageSource? source}) {
-    final picker = ImagePicker();
-    final navigator = Navigator.of(context);
-    picker.pickImage(source: source!).then((value) {
-      if (value != null) {
-        coverImage = File(value.path);
-        navigator.pop();
-        emit(ProjectState.addCover());
-      }
-    });
-  }
 
   getProjects() async {
     emit(const ProjectState.getProjectsLoading());
@@ -116,7 +103,7 @@ class ProjectCubit extends Cubit<ProjectState> {
           projectDescriptionController.clear();
           projectToolsController.clear();
           projectNameController.clear();
-          coverImage = null;
+          coverImage = [];
           images = [];
           if (!isClosed) {
             emit(ProjectState.addProjectSuccess());
@@ -172,7 +159,7 @@ class ProjectCubit extends Cubit<ProjectState> {
           projectDescriptionController.clear();
           projectToolsController.clear();
           projectNameController.clear();
-          coverImage = null;
+          coverImage = [];
           images = [];
           if (!isClosed) {
             emit(ProjectState.updateProjectSuccess());
@@ -211,14 +198,13 @@ class ProjectCubit extends Cubit<ProjectState> {
               filename: image.path.split("/").last,
               contentType: MediaType('image', 'jpeg'),
             ))
+        .toList();    final coverImageFiles = images
+        .map((image) => MultipartFile.fromFileSync(
+              image.path,
+              filename: image.path.split("/").last,
+              contentType: MediaType('image', 'jpeg'),
+            ))
         .toList();
-
-    final coverImageFile = MultipartFile.fromFileSync(
-      coverImage!.path,
-      filename: coverImage!.path.split("/").last,
-      contentType: MediaType('image', 'jpeg'),
-    );
-
     return FormData.fromMap(
       {
         'projectData': MultipartFile.fromString(
@@ -226,7 +212,7 @@ class ProjectCubit extends Cubit<ProjectState> {
           contentType: MediaType('application', 'json'),
         ),
         'images': imageFiles,
-        'coverImage': coverImageFile,
+        'coverImage': coverImageFiles,
       },
     );
   }
@@ -251,11 +237,13 @@ class ProjectCubit extends Cubit<ProjectState> {
             ))
         .toList();
 
-    final coverImageFile = MultipartFile.fromFileSync(
-      coverImage!.path,
-      filename: coverImage!.path.split("/").last,
+    final coverImageFiles = images
+        .map((image) => MultipartFile.fromFileSync(
+      image.path,
+      filename: image.path.split("/").last,
       contentType: MediaType('image', 'jpeg'),
-    );
+    ))
+        .toList();
 
     return FormData.fromMap(
       {
@@ -264,7 +252,7 @@ class ProjectCubit extends Cubit<ProjectState> {
           contentType: MediaType('application', 'json'),
         ),
         'images': imageFiles,
-        'coverImage': coverImageFile,
+        'coverImage': coverImageFiles,
       },
     );
   }

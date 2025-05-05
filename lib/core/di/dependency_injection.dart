@@ -32,7 +32,14 @@ import 'package:home4u/features/profile/data/repos/projects_repo.dart';
 import 'package:home4u/features/profile/data/repos/services_repository.dart';
 import 'package:home4u/features/profile/logic/certifications/certifications_cubit.dart';
 import 'package:home4u/features/profile/logic/project/project_cubit.dart';
+import 'package:home4u/features/user/renovate_your_house/logic/renovate_your_house_cubit.dart';
 
+import '../../features/ask_engineer/data/data_source/ask_engineer_remote_data_source.dart';
+import '../../features/ask_engineer/data/repos/ask_engineer_repo.dart';
+import '../../features/ask_engineer/logic/ask_engineer_cubit.dart';
+import '../../features/ask_technical_worker/data/data_source/ask_technical_remote_data_source.dart';
+import '../../features/ask_technical_worker/data/repos/ask_technical_repo.dart';
+import '../../features/ask_technical_worker/logic/ask_technical_cubit.dart';
 import '../../features/auth/forget_password/data/data_source/forget_password_data_source.dart';
 import '../../features/auth/forget_password/data/repos/forget_password_repo.dart';
 import '../../features/auth/forget_password/logic/forget_password_cubit.dart';
@@ -50,6 +57,12 @@ import '../../features/profile/data/data_sources/projects_local_data_source.dart
 import '../../features/profile/data/repos/profile_repo.dart';
 import '../../features/profile/logic/profile/profile_cubit.dart';
 import '../../features/profile/logic/services/services_cubit.dart';
+import '../../features/user/renovate_your_house/data/data_source/renovate_your_house_local_data_source.dart';
+import '../../features/user/renovate_your_house/data/data_source/renovate_your_house_remote_data_source.dart';
+import '../../features/user/renovate_your_house/data/repository/renovate_your_house_repository.dart';
+import '../../features/user/request_design/data/data_source/request_design_remote_data_source.dart';
+import '../../features/user/request_design/data/repository/request_design_repository.dart';
+import '../../features/user/request_design/logic/request_design_cubit.dart';
 import '../localization/app_localization_cubit.dart';
 import '../networking/dio_factory.dart';
 
@@ -100,7 +113,8 @@ Future<void> setupGetIt() async {
       () => FreelancerSignUpRepositoryImpl(remoteDataSource: sl()));
   sl.registerFactory<EngineerCubit>(() => EngineerCubit(sl()));
   sl.registerFactory<TechnicalWorkerCubit>(() => TechnicalWorkerCubit(sl()));
-  sl.registerFactory<EngineeringOfficeCubit>(() => EngineeringOfficeCubit(sl()));
+  sl.registerFactory<EngineeringOfficeCubit>(
+      () => EngineeringOfficeCubit(sl()));
 
   ///projects
   sl.registerLazySingleton<Box<GetProjectsResponseModel>>(
@@ -176,4 +190,44 @@ Future<void> setupGetIt() async {
       () => BusinessAddProductRepositoryImpl(sl()));
   sl.registerFactory<BusinessAddProductCubit>(
       () => BusinessAddProductCubit(sl()));
+
+  //ask Engineer
+  sl.registerLazySingleton<AskEngineerRemoteDataSource>(
+      () => AskEngineerRemoteDataSource(dio));
+  sl.registerLazySingleton<AskEngineerRepo>(() => AskEngineerRepoImpl(sl()));
+  sl.registerFactory<AskEngineerCubit>(() => AskEngineerCubit(sl()));
+
+  ///Renovate Your House
+  sl.registerLazySingleton<RenovateYourHouseRemoteDataSource>(
+      () => RenovateYourHouseRemoteDataSource(dio));
+  sl.registerLazySingleton<RenovateYourHouseLocalDataSource>(
+      () => RenovateYourHouseLocalDataSourceImpl());
+  sl.registerLazySingleton<RenovateYourHouseRepository>(
+    () => RenovateYourHouseRepositoryImpl(
+      remoteDataSource: sl(),
+      localDataSource: sl(),
+    ),
+  );
+  sl.registerFactory<RenovateYourHouseCubit>(
+    () => RenovateYourHouseCubit(sl()),
+  );
+
+  ///Request Design
+  sl.registerLazySingleton<RequestDesignRemoteDataSource>(
+      () => RequestDesignRemoteDataSource(dio));
+
+  sl.registerLazySingleton<RequestDesignRepository>(
+    () => RequestDesignRepositoryImpl(
+      remoteDataSource: sl(),
+    ),
+  );
+
+  sl.registerFactory<RequestDesignCubit>(() => RequestDesignCubit(sl()));
+
+  // Ask Technical
+  sl.registerLazySingleton<AskTechnicalRemoteDataSource>(
+      () => AskTechnicalRemoteDataSource(dio));
+  sl.registerLazySingleton<AskTechnicalRepo>(
+      () => AskTechnicalRepoImpl(sl()));
+  sl.registerFactory<AskTechnicalCubit>(() => AskTechnicalCubit(sl()));
 }
