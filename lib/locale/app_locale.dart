@@ -182,6 +182,7 @@ class AppLocale {
   static const String dimensionWidth = 'العرض - Width';
   static const String dimensionHeight = 'الارتفاع - Height';
   static const String businessType = 'Business Type';
+  static const String businessTypeCategory = 'Business Type Category';
   static const String products = 'Products';
   static const String offers = 'Offers';
   static const String outOfStock = 'Out of Stock';
@@ -533,6 +534,7 @@ class AppLocale {
     dimensionWidth: 'العرض - Width',
     dimensionHeight: 'الارتفاع - Height',
     businessType: 'Business Type',
+    businessTypeCategory: 'Business Type Category',
     tradeName: 'Trade Name',
     bioAr: 'Bio AR',
     bioEn: 'Bio EN',
@@ -831,6 +833,7 @@ class AppLocale {
     dimensionWidth: 'العرض - Width',
     dimensionHeight: 'الارتفاع - Height',
     businessType: 'نوع العمل',
+    businessTypeCategory: 'فئة نوع العمل',
     tradeName: 'الاسم التجاري',
     bioAr: 'السيرة الذاتية بالعربية',
     bioEn: 'السيرة الذاتية بالإنجليزية',

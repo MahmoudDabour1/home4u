@@ -48,7 +48,7 @@ class Data {
   @JsonKey(name: "businessType")
   final ResponseBaseUnit businessType;
   @JsonKey(name: "businessTypeCategory")
-  final ResponseBaseUnit? businessTypeCategory;
+  final ResponseBaseUnit businessTypeCategory;
   @JsonKey(name: "baseUnit")
   final ResponseBaseUnit baseUnit;
   @JsonKey(name: "materials")

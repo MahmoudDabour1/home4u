@@ -16,6 +16,8 @@ class BusinessAddProductBody {
   final String descriptionEn;
   @JsonKey(name: "businessType")
   final BaseUnit businessType;
+  @JsonKey(name: "businessTypeCategory")
+  final BaseUnit businessTypeCategory;
   @JsonKey(name: "price")
   final double price;
   @JsonKey(name: "length")
@@ -39,6 +41,7 @@ class BusinessAddProductBody {
     required this.descriptionAr,
     required this.descriptionEn,
     required this.businessType,
+    required this.businessTypeCategory,
     required this.price,
     required this.length,
     required this.width,

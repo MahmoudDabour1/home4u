@@ -37,7 +37,7 @@ class ProductShimmerItem extends StatelessWidget {
       child: Column(
         children: [
           Container(
-            height: MediaQuery.sizeOf(context).height * 0.50,
+            height: MediaQuery.sizeOf(context).height * 0.5,
             width: MediaQuery.sizeOf(context).width,
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(16.r),
@@ -126,7 +126,7 @@ class ProductShimmerItem extends StatelessWidget {
                               children: [
                                 //TODO: Refactor this code to add colors shimmer
                                 Row(
-                                  children: List.generate(2, (index) {
+                                  children: List.generate(4, (index) {
                                     return Skeletonizer(
                                       enabled: true,
                                       child: Padding(
@@ -163,7 +163,7 @@ class ProductShimmerItem extends StatelessWidget {
                             ),
                           ],
                         ),
-                        verticalSpace(8),
+                        // verticalSpace(4),
                       ],
                     ),
                   ),
