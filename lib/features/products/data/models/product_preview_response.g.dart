@@ -46,6 +46,10 @@ Data _$DataFromJson(Map<String, dynamic> json) => Data(
       imagePaths: (json['imagePaths'] as List<dynamic>)
           .map((e) => ImagePath.fromJson(e as Map<String, dynamic>))
           .toList(),
+      businessTypeCategory: json['businessTypeCategory'] == null
+          ? null
+          : ResponseBaseUnit.fromJson(
+              json['businessTypeCategory'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$DataToJson(Data instance) => <String, dynamic>{
@@ -60,6 +64,7 @@ Map<String, dynamic> _$DataToJson(Data instance) => <String, dynamic>{
       'width': instance.width,
       'height': instance.height,
       'businessType': instance.businessType,
+      'businessTypeCategory': instance.businessTypeCategory,
       'baseUnit': instance.baseUnit,
       'materials': instance.materials,
       'stocks': instance.stocks,
@@ -72,6 +77,10 @@ ResponseBaseUnit _$ResponseBaseUnitFromJson(Map<String, dynamic> json) =>
       code: json['code'] as String,
       name: json['name'] as String,
       hexColor: json['hexColor'] as String?,
+      businessType: json['businessType'] == null
+          ? null
+          : ResponseBaseUnit.fromJson(
+              json['businessType'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$ResponseBaseUnitToJson(ResponseBaseUnit instance) =>
@@ -80,6 +89,7 @@ Map<String, dynamic> _$ResponseBaseUnitToJson(ResponseBaseUnit instance) =>
       'code': instance.code,
       'name': instance.name,
       'hexColor': instance.hexColor,
+      'businessType': instance.businessType,
     };
 
 ImagePath _$ImagePathFromJson(Map<String, dynamic> json) => ImagePath(

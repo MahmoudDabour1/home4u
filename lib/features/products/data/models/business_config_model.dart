@@ -1,10 +1,6 @@
-
-
 import 'package:json_annotation/json_annotation.dart';
 
 part 'business_config_model.g.dart';
-
-
 
 @JsonSerializable()
 class BusinessConfigModel {
@@ -21,7 +17,8 @@ class BusinessConfigModel {
     this.data,
   });
 
-  factory BusinessConfigModel.fromJson(Map<String, dynamic> json) => _$BusinessConfigModelFromJson(json);
+  factory BusinessConfigModel.fromJson(Map<String, dynamic> json) =>
+      _$BusinessConfigModelFromJson(json);
 
   Map<String, dynamic> toJson() => _$BusinessConfigModelToJson(this);
 }
@@ -36,18 +33,22 @@ class Data {
   final List<ProductMaterial>? productMaterial;
   @JsonKey(name: "businessTypes")
   final List<BusinessType>? businessTypes;
+  @JsonKey(name: "businessTypeCategories")
+  final List<BusinessType>? businessTypeCategories;
 
   Data({
     this.colors,
     this.productBaseUnits,
     this.productMaterial,
     this.businessTypes,
+    this.businessTypeCategories,
   });
 
   factory Data.fromJson(Map<String, dynamic> json) => _$DataFromJson(json);
 
   Map<String, dynamic> toJson() => _$DataToJson(this);
 }
+
 @JsonSerializable()
 class FilterColor {
   @JsonKey(name: "id")
@@ -66,11 +67,11 @@ class FilterColor {
     this.hexColor,
   });
 
-  factory FilterColor.fromJson(Map<String, dynamic> json) => _$FilterColorFromJson(json);
+  factory FilterColor.fromJson(Map<String, dynamic> json) =>
+      _$FilterColorFromJson(json);
 
   Map<String, dynamic> toJson() => _$FilterColorToJson(this);
 }
-
 
 @JsonSerializable()
 class ProductBaseUnit {
@@ -87,11 +88,11 @@ class ProductBaseUnit {
     this.name,
   });
 
-  factory ProductBaseUnit.fromJson(Map<String, dynamic> json) => _$ProductBaseUnitFromJson(json);
+  factory ProductBaseUnit.fromJson(Map<String, dynamic> json) =>
+      _$ProductBaseUnitFromJson(json);
 
   Map<String, dynamic> toJson() => _$ProductBaseUnitToJson(this);
 }
-
 
 @JsonSerializable()
 class ProductMaterial {
@@ -102,12 +103,14 @@ class ProductMaterial {
   @JsonKey(name: "name")
   final String? name;
 
-  ProductMaterial( {
+  ProductMaterial({
     this.id,
-    this.code,this.name,
+    this.code,
+    this.name,
   });
 
-  factory ProductMaterial.fromJson(Map<String, dynamic> json) => _$ProductMaterialFromJson(json);
+  factory ProductMaterial.fromJson(Map<String, dynamic> json) =>
+      _$ProductMaterialFromJson(json);
 
   Map<String, dynamic> toJson() => _$ProductMaterialToJson(this);
 }
@@ -120,15 +123,18 @@ class BusinessType {
   final String? code;
   @JsonKey(name: "name")
   final String? name;
-
+  @JsonKey(name: "businessType")
+  final BusinessType? businessType;
 
   BusinessType({
     this.id,
     this.code,
     this.name,
+    this.businessType,
   });
 
-  factory BusinessType.fromJson(Map<String, dynamic> json) => _$BusinessTypeFromJson(json);
+  factory BusinessType.fromJson(Map<String, dynamic> json) =>
+      _$BusinessTypeFromJson(json);
 
   Map<String, dynamic> toJson() => _$BusinessTypeToJson(this);
 }

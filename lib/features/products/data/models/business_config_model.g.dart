@@ -36,6 +36,9 @@ Data _$DataFromJson(Map<String, dynamic> json) => Data(
       businessTypes: (json['businessTypes'] as List<dynamic>?)
           ?.map((e) => BusinessType.fromJson(e as Map<String, dynamic>))
           .toList(),
+      businessTypeCategories: (json['businessTypeCategories'] as List<dynamic>?)
+          ?.map((e) => BusinessType.fromJson(e as Map<String, dynamic>))
+          .toList(),
     );
 
 Map<String, dynamic> _$DataToJson(Data instance) => <String, dynamic>{
@@ -43,6 +46,7 @@ Map<String, dynamic> _$DataToJson(Data instance) => <String, dynamic>{
       'productBaseUnits': instance.productBaseUnits,
       'productMaterial': instance.productMaterial,
       'businessTypes': instance.businessTypes,
+      'businessTypeCategories': instance.businessTypeCategories,
     };
 
 FilterColor _$FilterColorFromJson(Map<String, dynamic> json) => FilterColor(
@@ -92,6 +96,9 @@ BusinessType _$BusinessTypeFromJson(Map<String, dynamic> json) => BusinessType(
       id: (json['id'] as num?)?.toInt(),
       code: json['code'] as String?,
       name: json['name'] as String?,
+      businessType: json['businessType'] == null
+          ? null
+          : BusinessType.fromJson(json['businessType'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$BusinessTypeToJson(BusinessType instance) =>
@@ -99,4 +106,5 @@ Map<String, dynamic> _$BusinessTypeToJson(BusinessType instance) =>
       'id': instance.id,
       'code': instance.code,
       'name': instance.name,
+      'businessType': instance.businessType,
     };
