@@ -89,7 +89,7 @@ class ResponseBaseUnit {
   @JsonKey(name: "code")
   final String code;
   @JsonKey(name: "name")
-  final String name;
+  final String? name;
   @JsonKey(name: "hexColor")
   final String? hexColor;
   @JsonKey(name: "businessType")
@@ -98,7 +98,7 @@ class ResponseBaseUnit {
   ResponseBaseUnit({
     required this.id,
     required this.code,
-    required this.name,
+    this.name,
     this.hexColor,
     this.businessType,
   });
@@ -135,7 +135,7 @@ class ResponseStock {
   @JsonKey(name: "id")
   final int? id;
   @JsonKey(name: "statusCode")
-  final dynamic statusCode;
+  final int? statusCode;
   @JsonKey(name: "color")
   final ResponseBaseUnit color;
   @JsonKey(name: "amount")

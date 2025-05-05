@@ -73,7 +73,7 @@ ResponseBaseUnit _$ResponseBaseUnitFromJson(Map<String, dynamic> json) =>
     ResponseBaseUnit(
       id: (json['id'] as num).toInt(),
       code: json['code'] as String,
-      name: json['name'] as String,
+      name: json['name'] as String?,
       hexColor: json['hexColor'] as String?,
       businessType: json['businessType'] == null
           ? null
@@ -105,7 +105,7 @@ Map<String, dynamic> _$ImagePathToJson(ImagePath instance) => <String, dynamic>{
 ResponseStock _$ResponseStockFromJson(Map<String, dynamic> json) =>
     ResponseStock(
       id: (json['id'] as num?)?.toInt(),
-      statusCode: json['statusCode'],
+      statusCode: (json['statusCode'] as num?)?.toInt(),
       color: ResponseBaseUnit.fromJson(json['color'] as Map<String, dynamic>),
       amount: (json['amount'] as num).toInt(),
     );
