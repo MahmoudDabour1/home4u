@@ -1,5 +1,5 @@
-import 'package:hive/hive.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:hive/hive.dart';
 
 import 'engineer_profile_response_model.dart';
 
@@ -21,9 +21,9 @@ class TechnicalWorkerResponseModel {
   final TechnicalData? data;
 
   TechnicalWorkerResponseModel({
-     this.success,
-     this.status,
-     this.data,
+    this.success,
+    this.status,
+    this.data,
   });
 
   factory TechnicalWorkerResponseModel.fromJson(Map<String, dynamic> json) =>
@@ -63,14 +63,28 @@ class TechnicalData {
   @JsonKey(name: "bio")
   final String? bio;
 
+  @HiveField(7)
+  @JsonKey(name: "linkedinLink")
+  String? linkedin;
+
+  @HiveField(8)
+  @JsonKey(name: "behanceLink")
+  String? behance;
+  @HiveField(9)
+  @JsonKey(name: "facebookLink")
+  String? facebookLink;
+
   TechnicalData({
-     this.id,
-     this.statusCode,
-     this.user,
-     this.type,
-     this.yearsOfExperience,
-     this.workerServs,
-     this.bio,
+    this.id,
+    this.statusCode,
+    this.user,
+    this.type,
+    this.yearsOfExperience,
+    this.workerServs,
+    this.bio,
+    this.linkedin,
+    this.behance,
+    this.facebookLink,
   });
 
   factory TechnicalData.fromJson(Map<String, dynamic> json) =>
@@ -78,4 +92,3 @@ class TechnicalData {
 
   Map<String, dynamic> toJson() => _$TechnicalDataToJson(this);
 }
-

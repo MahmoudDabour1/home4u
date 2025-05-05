@@ -48,22 +48,22 @@ class AboutProfileStateGridView extends StatelessWidget {
   final List<ProfileStatItem> profileStats = [
     ProfileStatItem(
       title: '150K',
-      subTitle: 'Followers',
+      subTitle: AppLocale.followers,
       imagePath: AppAssets.followersSvg,
     ),
     ProfileStatItem(
       title: '4.9/5.0',
-      subTitle: 'Total Rating',
+      subTitle:  AppLocale.totalRating,
       imagePath: AppAssets.starSvgImage,
     ),
     ProfileStatItem(
       title: '150K',
-      subTitle: 'Likes',
+      subTitle:  AppLocale.likes,
       imagePath: AppAssets.heartOutlineSvg,
     ),
     ProfileStatItem(
       title: '32',
-      subTitle: 'Completed Projects',
+      subTitle:  AppLocale.completedProjects,
       imagePath: AppAssets.completeSvg,
     ),
   ];

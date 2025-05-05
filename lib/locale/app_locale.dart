@@ -344,6 +344,18 @@ class AppLocale {
   static const String phone  = 'Phone: ';
   static const String profileStats  = 'Profile Stats';
   static const String editPhone  = 'Edit Phone';
+  static const String editLocation  = 'Edit Location';
+  static const String addPhone  = 'Add Phone';
+  static const String followers  = 'Followers';
+  static const String totalRating  = 'Total Rating';
+  static const String likes  = 'Likes';
+  static const String completedProjects  = 'Completed Projects';
+  static const String onTheWeb  = 'On the web';
+  static const String facebookLink  = 'Facebook Link';
+  static const String linkedInLink  = 'LinkedIn Link';
+  static const String behanceLink  = 'Behance Link';
+  static const String editLink  = 'Edit Link';
+
 
   static const Map<String, dynamic> en = {
     onBoardingTitle1: 'Civil works and finishing services',
@@ -631,6 +643,18 @@ class AppLocale {
     location: 'Location: ',
     phone: 'Phone: ',
     profileStats: 'Profile Stats',
+    editPhone: 'Edit Phone',
+    editLocation: 'Edit Location',
+    addPhone: 'Add Phone',
+    followers: 'Followers',
+    totalRating: 'Total Rating',
+    likes: 'Likes',
+    completedProjects: 'Completed Projects',
+    onTheWeb: 'On the web',
+    facebookLink: 'Facebook Link',
+    linkedInLink: 'LinkedIn Link',
+    behanceLink: 'Behance Link',
+    editLink: 'Edit Link',
   };
 
   static const Map<String, dynamic> ar = {
@@ -917,5 +941,17 @@ class AppLocale {
     location: 'الموقع: ',
     phone: 'الهاتف: ',
     profileStats: 'إحصائيات الملف الشخصي',
+    editPhone: 'تعديل الهاتف',
+    editLocation: 'تعديل الموقع',
+    addPhone: 'إضافة هاتف',
+    followers: 'المتابعين',
+    totalRating: 'التقييم الكلي',
+    likes: 'الإعجابات',
+    completedProjects: 'المشاريع المكتملة',
+    onTheWeb: 'على الويب',
+    facebookLink: 'رابط فيسبوك',
+    linkedInLink: 'رابط لينكد إن',
+    behanceLink: 'رابط بيهانس',
+    editLink: 'تعديل الرابط',
   };
 }
