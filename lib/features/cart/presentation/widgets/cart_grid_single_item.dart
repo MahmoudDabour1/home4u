@@ -5,13 +5,19 @@ import 'package:flutter_svg/svg.dart';
 import 'package:home4u/core/theming/app_colors.dart';
 import 'package:home4u/core/theming/app_styles.dart';
 import 'package:home4u/features/cart/presentation/widgets/quantity_controller_button.dart';
+import 'package:home4u/core/widgets/fancy_image.dart';
+import 'package:home4u/core/networking/api_constants.dart';
 
 import '../../../../core/theming/app_assets.dart';
 import '../../../../core/utils/spacing.dart';
+import '../../data/models/shop_now_response_model.dart';
 
 class CartGridSingleItem extends StatelessWidget {
+  final ShopNowContent? content;
+
   const CartGridSingleItem({
     super.key,
+    required this.content,
   });
 
   @override
@@ -23,18 +29,21 @@ class CartGridSingleItem extends StatelessWidget {
       ),
       child: Column(
         children: [
-          ClipRRect(
-            borderRadius: BorderRadius.only(
+          FancyImage(
+            imagePath: ApiConstants.getImageBaseUrl(content!.imagePath ?? ''),
+            width: 180.w,
+            height: 170.h,
+            borderRadiusGeometry: BorderRadius.only(
               topLeft: Radius.circular(16.r),
               topRight: Radius.circular(16.r),
             ),
-            child: Image.asset(
-              'assets/images/Main_Product_ Image.png',
-              // width: 180.w,
-              height: 170.h,
-              fit: BoxFit.cover,
-            ),
           ),
+          // Image.asset(
+          //   'assets/images/Main_Product_ Image.png',
+          //   // width: 180.w,
+          //   height: 170.h,
+          //   fit: BoxFit.cover,
+          // ),
           verticalSpace(8.h),
           Padding(
             padding: EdgeInsets.symmetric(horizontal: 8.w),
@@ -45,7 +54,7 @@ class CartGridSingleItem extends StatelessWidget {
               children: [
                 Expanded(
                   child: AutoSizeText(
-                    'Product Name',
+                    content?.name ?? '',
                     style: AppStyles.font16BlackLight,
                     maxLines: 1,
                     overflow: TextOverflow.ellipsis,
@@ -61,7 +70,7 @@ class CartGridSingleItem extends StatelessWidget {
                     ),
                     verticalSpace(4.h),
                     Text(
-                      "4.5",
+                      content?.rate.toString() ?? '',
                       style: TextStyle(
                         fontSize: 10.sp,
                         color: AppColors.ratingColor,
@@ -83,7 +92,7 @@ class CartGridSingleItem extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 Text(
-                  '\$1000',
+                  '\$${content!.price ?? 0}',
                   style: AppStyles.font16BlackMedium,
                 ),
                 QuantityControllerButton(),

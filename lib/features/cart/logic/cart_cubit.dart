@@ -60,7 +60,7 @@ class CartCubit extends Cubit<CartState> {
       pageNum: _page,
       pageSize: 10,
       searchCriteria: ShopNowSearchCriteria(
-        name: null,
+        name: searchController.text,
         businessTypeId: selectedBusinessType,
         businessTypeCategoryId: selectedBusinessTypeCategory,
         minPrice: minPrice,
