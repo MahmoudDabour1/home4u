@@ -4,11 +4,9 @@ import 'package:flutter_localization/flutter_localization.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:home4u/core/theming/app_colors.dart';
 import 'package:home4u/core/theming/app_styles.dart';
-import 'package:home4u/features/auth/sign_up/logic/sign_up_cubit.dart';
 import 'package:home4u/features/cart/presentation/widgets/cart_categories_list_view.dart';
 import 'package:home4u/features/cart/presentation/widgets/cart_filter_button.dart';
 import 'package:home4u/features/cart/presentation/widgets/cart_grid_view.dart';
-import 'package:home4u/features/cart/presentation/widgets/custom_choose_decor_or_furniture_items.dart';
 import 'package:home4u/features/products/logic/products_cubit.dart';
 import 'package:home4u/locale/app_locale.dart';
 
@@ -24,16 +22,31 @@ class CartScreen extends StatefulWidget {
 }
 
 class _CartScreenState extends State<CartScreen> {
+  late ScrollController _scrollController;
+
   @override
   void initState() {
     super.initState();
     context.read<ProductsCubit>().getBusinessConfig();
     context.read<CartCubit>().getCartProducts();
+    _scrollController = ScrollController()..addListener(_scrollListener);
+  }
+  void _scrollListener() {
+    final cubit = context.read<CartCubit>();
+
+    if (_scrollController.offset >=
+            _scrollController.position.maxScrollExtent * 0.7 &&
+        !cubit.hasReachedMax) {
+      cubit.getCartProducts();
+    }
   }
 
   @override
   void dispose() {
-    context.read<CartCubit>().resetPagination();
+    final cubit = context.read<CartCubit>();
+    cubit.resetPagination();
+    _scrollController.removeListener(_scrollListener);
+    _scrollController.dispose();
     super.dispose();
   }
 
@@ -42,6 +55,7 @@ class _CartScreenState extends State<CartScreen> {
     return Scaffold(
       backgroundColor: AppColors.scaffoldBusinessBackgroundColor,
       body: CustomScrollView(
+        controller: _scrollController,
         slivers: [
           SliverPadding(
             padding: EdgeInsetsDirectional.only(
@@ -60,11 +74,12 @@ class _CartScreenState extends State<CartScreen> {
                     children: [
                       Expanded(
                         child: AppCustomSearchTextField(
-                          controller: TextEditingController(),
-                          onChanged: (value) {},
+                          controller: context.read<CartCubit>().searchController,
+                          onChanged: (value) {
+                            context.read<CartCubit>().getCartProducts(isRefresh: true);
+                          },
                         ),
                       ),
-                      // ProductsFilterButton(),
                       CartFilterButton(),
                     ],
                   ),
@@ -75,9 +90,6 @@ class _CartScreenState extends State<CartScreen> {
                   ),
                   verticalSpace(16.h),
                   CartCategoriesListView(),
-                  verticalSpace(32.h),
-                  CustomChooseDecorOrFurnitureItems(),
-                  verticalSpace(32.h),
                 ],
               ),
             ),
@@ -88,7 +100,7 @@ class _CartScreenState extends State<CartScreen> {
               right: 24.w,
               bottom: 32.h,
             ),
-            sliver: SliverToBoxAdapter(child: CartGridView()),
+            sliver:  CartGridView(),
           ),
         ],
       ),

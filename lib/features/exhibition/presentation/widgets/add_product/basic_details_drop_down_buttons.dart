@@ -43,7 +43,7 @@ class _BasicDetailsDropDownButtonsState
       selectedBusinessType =
           widget.productData!.data.businessType.id.toString();
       selectedBusinessTypeCategory =
-          widget.productData!.data.businessTypeCategory.id.toString();
+          widget.productData!.data.businessTypeCategory?.id.toString();
       selectedBaseUnit = widget.productData!.data.baseUnit.id.toString();
       final businessCubit = context.read<BusinessAddProductCubit>();
 

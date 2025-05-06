@@ -6,9 +6,7 @@ import 'package:home4u/features/cart/presentation/widgets/cart_filter/cart_price
 import '../../../../core/theming/app_colors.dart';
 import '../../../../core/utils/spacing.dart';
 import '../../../../core/widgets/app_custom_filter_button.dart';
-import '../../../products/presentation/widgets/filter/filter_drob_down_menu_buttons.dart';
 import '../../../products/presentation/widgets/filter/filter_header_widget.dart';
-import '../../../products/presentation/widgets/filter/filter_price_section.dart';
 import 'cart_filter/cart_drop_down_menu_buttons.dart';
 import 'cart_filter/cart_filter_buttons.dart';
 
@@ -49,8 +47,6 @@ class CartFilterButton extends StatelessWidget {
                             CartDropDownMenuButtons(),
                             verticalSpace(8),
                             CartPriceSection(),
-                            // FilterRatingSection(),
-                            // FilterAvailabilitySection(),
                             CartFilterButtons(),
                           ],
                         ),

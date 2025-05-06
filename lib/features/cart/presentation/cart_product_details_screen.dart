@@ -1,131 +1,155 @@
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_localization/flutter_localization.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:home4u/core/theming/app_styles.dart';
-import 'package:home4u/core/utils/spacing.dart';
 import 'package:home4u/features/cart/presentation/widgets/cart_details_widgets/cart_product_details_colors_list_view.dart';
 import 'package:home4u/features/cart/presentation/widgets/cart_details_widgets/cart_product_details_favorite_button.dart';
-import 'package:home4u/features/cart/presentation/widgets/cart_details_widgets/cart_product_details_screen_carousel_slider.dart'
-    show CartProductDetailsScreenCarouselSlider;
+import 'package:home4u/features/cart/presentation/widgets/cart_details_widgets/cart_product_details_screen_carousel_slider.dart';
 import 'package:home4u/features/cart/presentation/widgets/cart_details_widgets/expandable_text.dart';
 import 'package:home4u/features/cart/presentation/widgets/cart_details_widgets/plus_and_minus_controll_buttons.dart';
-import 'package:home4u/locale/app_locale.dart';
+import 'package:home4u/features/products/logic/products_cubit.dart';
+import 'package:home4u/features/products/logic/products_state.dart';
 
 import '../../../core/theming/app_assets.dart';
 import '../../../core/theming/app_colors.dart';
+import '../../../core/theming/app_styles.dart';
+import '../../../core/utils/spacing.dart';
 import '../../../core/widgets/app_custom_button.dart';
+import '../../../core/widgets/app_custom_loading_indicator.dart';
+import '../../../locale/app_locale.dart';
 
 class CartProductDetailsScreen extends StatelessWidget {
   const CartProductDetailsScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
-    final images = [
-      "assets/images/Main_Product_ Image.png",
-      "assets/images/Main_Product_ Image.png",
-      "assets/images/Main_Product_ Image.png",
-      "assets/images/Main_Product_ Image.png",
-      "assets/images/Main_Product_ Image.png",
-      "assets/images/Main_Product_ Image.png",
-      "assets/images/Main_Product_ Image.png",
-    ];
     return Scaffold(
       body: SafeArea(
         child: SingleChildScrollView(
-          child: Column(
-            children: [
-              CartProductDetailsScreenCarouselSlider(images: images),
-              verticalSpace(32),
-              Padding(
-                padding: EdgeInsets.symmetric(horizontal: 24.w),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Text(
-                          "Product Name",
-                          style: AppStyles.font24BlackMedium,
-                        ),
-                        PlusAndMinusControllerButtons(),
-                      ],
+          child: BlocBuilder<ProductsCubit, ProductsState>(
+            builder: (context, state) {
+              return state.maybeWhen(
+                getProductPreviewLoading: () {
+                  return SizedBox(
+                    height: 400.h,
+                    child: Center(
+                      child: AppCustomLoadingIndicator(),
                     ),
-                    verticalSpace(8),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Text(
-                          "\$100.00",
-                          style: AppStyles.font24BlackBold,
-                        ),
-                        Row(
-                          spacing: 8.w,
+                  );
+                },
+                getProductPreviewSuccess: (product) {
+                  return Column(
+                    children: [
+                      CartProductDetailsScreenCarouselSlider(
+                        useFancyImage: true,
+                        images: product.data.imagePaths
+                            .map((e) => e.imagePath)
+                            .toList(),
+                      ),
+                      verticalSpace(32),
+                      Padding(
+                        padding: EdgeInsets.symmetric(horizontal: 24.w),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            SvgPicture.asset(
-                              AppAssets.starSvgImage,
-                              width: 16.w,
-                              height: 16.h,
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                Expanded(
+                                  child: AutoSizeText(
+                                    product.data.nameEn,
+                                    style: AppStyles.font24BlackMedium,
+                                    maxLines: 5,
+                                    overflow: TextOverflow.ellipsis,
+                                  ),
+                                ),
+                                PlusAndMinusControllerButtons(),
+                              ],
                             ),
+                            verticalSpace(8),
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                Text(
+                                  "\$${product.data.price.toString()}",
+                                  style: AppStyles.font24BlackBold,
+                                ),
+                                Row(
+                                  spacing: 8.w,
+                                  children: [
+                                    SvgPicture.asset(
+                                      AppAssets.starSvgImage,
+                                      width: 16.w,
+                                      height: 16.h,
+                                    ),
+                                    Text(
+                                      "4.5",
+                                      style: TextStyle(
+                                        fontSize: 16.sp,
+                                        color: AppColors.blackColor,
+                                        fontWeight: FontWeight.w400,
+                                      ),
+                                    ),
+                                  ],
+                                )
+                              ],
+                            ),
+                            verticalSpace(16),
+                            ExpandableText(
+                              text: product.data.descriptionEn,
+                            ),
+                            verticalSpace(16),
+                            Row(
+                              spacing: 8.w,
+                              children: [
+                                SvgPicture.asset(
+                                  AppAssets.stockSvg,
+                                  width: 16.w,
+                                  height: 16.h,
+                                ),
+                                Text(
+                                  "Stock: ${product.data.stocks.length}",
+                                  style: AppStyles.font16BlackLight,
+                                ),
+                              ],
+                            ),
+                            verticalSpace(16),
                             Text(
-                              "4.5",
-                              style: TextStyle(
-                                fontSize: 16.sp,
-                                color: AppColors.blackColor,
-                                fontWeight: FontWeight.w400,
-                              ),
+                              "${AppLocale.dimensions.getString(context)} : ${product.data.length}*${product.data.width}*${product.data.height} cm",
+                              style: AppStyles.font16BlackLight,
                             ),
+                            verticalSpace(16),
+                            CartProductDetailsColorsListView(
+                              previewData: product,
+                            ),
+                            verticalSpace(64),
+                            Row(
+                              children: [
+                                CartProductDetailsFavoriteButton(),
+                                horizontalSpace(16),
+                                Expanded(
+                                  child: AppCustomButton(
+                                    btnHeight: 50.h,
+                                    btnWidth: 278.w,
+                                    textButton:
+                                        AppLocale.addToCart.getString(context),
+                                    onPressed: () {},
+                                  ),
+                                ),
+                              ],
+                            ),
+                            verticalSpace(32),
                           ],
-                        )
-                      ],
-                    ),
-                    verticalSpace(16),
-                    ExpandableText(
-                      text: " doloredent, sunt in culpa qui offiborum.",
-                    ),
-                    verticalSpace(16),
-                    Row(
-                      spacing: 8.w,
-                      children: [
-                        SvgPicture.asset(
-                          AppAssets.stockSvg,
-                          width: 16.w,
-                          height: 16.h,
                         ),
-                        Text(
-                          "Stock: 10",
-                          style: AppStyles.font16BlackLight,
-                        ),
-                      ],
-                    ),
-                    verticalSpace(16),
-                    Text(
-                      "${AppLocale.dimensions.getString(context)} : 280*280*280 cm",
-                      style: AppStyles.font16BlackLight,
-                    ),
-                    verticalSpace(16),
-                    CartProductDetailsColorsListView(),
-                    verticalSpace(64),
-                    Row(
-                      children: [
-                        CartProductDetailsFavoriteButton(),
-                        horizontalSpace(16),
-                        Expanded(
-                          child: AppCustomButton(
-                            btnHeight: 50.h,
-                            btnWidth: 278.w,
-                            textButton: AppLocale.addToCart.getString(context),
-                            onPressed: () {},
-                          ),
-                        ),
-                      ],
-                    ),
-                    verticalSpace(32),
-                  ],
-                ),
-              ),
-            ],
+                      ),
+                    ],
+                  );
+                },
+                orElse: () => SizedBox(),
+              );
+            },
           ),
         ),
       ),

@@ -6,10 +6,14 @@ import 'package:home4u/core/utils/spacing.dart';
 import 'package:home4u/locale/app_locale.dart';
 
 import '../../../../../core/theming/app_colors.dart';
+import '../../../../products/data/models/product_preview_response.dart';
 
 class CartProductDetailsColorsListView extends StatelessWidget {
+  final ProductPreviewResponse previewData;
+
   const CartProductDetailsColorsListView({
     super.key,
+    required this.previewData,
   });
 
   @override
@@ -22,7 +26,7 @@ class CartProductDetailsColorsListView extends StatelessWidget {
         ),
         horizontalSpace(16),
         ...List.generate(
-          7,
+          previewData.data.stocks.length,
           (index) {
             return Container(
               width: 30.w,
@@ -40,7 +44,9 @@ class CartProductDetailsColorsListView extends StatelessWidget {
                   width: 20.w,
                   height: 20.h,
                   decoration: BoxDecoration(
-                    color: AppColors.primaryColor,
+                    color: _hexToColor(
+                      previewData.data.stocks[index].color.hexColor ?? '',
+                    ),
                     shape: BoxShape.circle,
                   ),
                 ),
@@ -50,5 +56,11 @@ class CartProductDetailsColorsListView extends StatelessWidget {
         ),
       ],
     );
+  }
+
+  /// Convert hex color string to Color
+  Color _hexToColor(String hex) {
+    hex = hex.replaceFirst('#', '');
+    return Color(int.parse('0xFF$hex'));
   }
 }

@@ -46,8 +46,10 @@ Data _$DataFromJson(Map<String, dynamic> json) => Data(
       imagePaths: (json['imagePaths'] as List<dynamic>)
           .map((e) => ImagePath.fromJson(e as Map<String, dynamic>))
           .toList(),
-      businessTypeCategory: ResponseBaseUnit.fromJson(
-          json['businessTypeCategory'] as Map<String, dynamic>),
+      businessTypeCategory: json['businessTypeCategory'] == null
+          ? null
+          : ResponseBaseUnit.fromJson(
+              json['businessTypeCategory'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$DataToJson(Data instance) => <String, dynamic>{
