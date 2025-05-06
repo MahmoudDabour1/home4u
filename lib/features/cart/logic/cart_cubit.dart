@@ -20,8 +20,8 @@ class CartCubit extends Cubit<CartState> {
   List<String>? selectedColorNames = [];
   double? minPrice;
   double? maxPrice;
-  List<int?>? materialIds=[];
-  List<int?>? colorsIds=[];
+  List<int?>? materialIds = [];
+  List<int?>? colorsIds = [];
   List<int?> businessTypeIds = [];
   bool? isAvailable;
   final searchController = TextEditingController();
@@ -66,8 +66,13 @@ class CartCubit extends Cubit<CartState> {
         minPrice: minPrice,
         maxPrice: maxPrice,
         colorIds: (colorsIds == null || colorsIds!.isEmpty) ? null : colorsIds,
-        materialIds: (materialIds == null || materialIds!.isEmpty) ? null : materialIds,
+        materialIds:
+            (materialIds == null || materialIds!.isEmpty) ? null : materialIds,
       ),
+    );
+
+    logger.w(
+      "getProducts: ${shopNowSearchBody.toJson().toString()} \n selected BusinessType: $selectedBusinessType \n selectedBusinessTypeCategory: $selectedBusinessTypeCategory \n minPrice: $minPrice \n maxPrice: $maxPrice \n colorsIds: $colorsIds \n materialIds: $materialIds",
     );
 
     final response = await cartRepository.shopNow(
