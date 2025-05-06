@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:home4u/features/cart/presentation/widgets/cart_filter/cart_filter_drop_down_buttons.dart';
+import 'package:home4u/features/cart/presentation/widgets/cart_filter/cart_price_section.dart';
 
 import '../../../../core/theming/app_colors.dart';
 import '../../../../core/utils/spacing.dart';
@@ -8,6 +9,8 @@ import '../../../../core/widgets/app_custom_filter_button.dart';
 import '../../../products/presentation/widgets/filter/filter_drob_down_menu_buttons.dart';
 import '../../../products/presentation/widgets/filter/filter_header_widget.dart';
 import '../../../products/presentation/widgets/filter/filter_price_section.dart';
+import 'cart_filter/cart_drop_down_menu_buttons.dart';
+import 'cart_filter/cart_filter_buttons.dart';
 
 class CartFilterButton extends StatelessWidget {
   const CartFilterButton({super.key});
@@ -43,11 +46,12 @@ class CartFilterButton extends StatelessWidget {
                             verticalSpace(8),
                             const FilterHeaderWidget(), // Use const here
                             CartFilterDropDownButtons(),
-                            // FilterDropDownMenuButtons(),
-                            // FilterPriceSection(),
+                            CartDropDownMenuButtons(),
+                            verticalSpace(8),
+                            CartPriceSection(),
                             // FilterRatingSection(),
                             // FilterAvailabilitySection(),
-                            // FilterButtons(),
+                            CartFilterButtons(),
                           ],
                         ),
                       ),
@@ -59,6 +63,6 @@ class CartFilterButton extends StatelessWidget {
           },
         );
       },
-    );;
+    );
   }
 }

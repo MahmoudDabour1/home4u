@@ -23,17 +23,17 @@ class ShopNowSearchBody {
 @JsonSerializable()
 class ShopNowSearchCriteria {
   final String? name;
-  final List<int>? materialIds;
-  final List<int>? colorIds;
-  final int? minPrice;
-  final int? maxPrice;
+  final List<int?>? materialIds;
+  final List<int?>? colorIds;
+  final double? minPrice;
+  final double? maxPrice;
   final int? businessTypeId;
   final int? businessTypeCategoryId;
 
   ShopNowSearchCriteria({
     this.name,
-    this.materialIds,
-    this.colorIds,
+    required this.materialIds,
+    required this.colorIds,
     this.minPrice,
     this.maxPrice,
     this.businessTypeId,
