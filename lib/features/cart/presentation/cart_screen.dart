@@ -28,6 +28,7 @@ class _CartScreenState extends State<CartScreen> {
   void initState() {
     super.initState();
     context.read<ProductsCubit>().getBusinessConfig();
+    context.read<CartCubit>().getCartProducts();
   }
 
   @override
@@ -87,7 +88,7 @@ class _CartScreenState extends State<CartScreen> {
               right: 24.w,
               bottom: 32.h,
             ),
-            sliver: CartGridView(),
+            sliver: SliverToBoxAdapter(child: CartGridView()),
           ),
         ],
       ),

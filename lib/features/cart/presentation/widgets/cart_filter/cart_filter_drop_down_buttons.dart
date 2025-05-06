@@ -10,8 +10,6 @@ import '../../../../../core/theming/app_styles.dart';
 import '../../../../../core/utils/spacing.dart';
 import '../../../../../core/widgets/app_custom_drop_down_button_form_field.dart';
 import '../../../../../locale/app_locale.dart';
-import '../../../../auth/sign_up/logic/sign_up_cubit.dart';
-import '../../../../auth/sign_up/logic/sign_up_state.dart';
 import '../../../../products/logic/products_cubit.dart';
 import '../../../../products/logic/products_state.dart';
 
@@ -31,44 +29,40 @@ class _CartFilterDropDownButtonsState extends State<CartFilterDropDownButtons> {
 
   @override
   Widget build(BuildContext context) {
+    final productCubit = context.read<ProductsCubit>();
+    final cubit = context.read<CartCubit>();
     return Column(
       spacing: 8.h,
       children: [
         verticalSpace(16),
-        BlocBuilder<SignUpCubit, SignUpState>(
-          builder: (context, state) {
-            final signUpCubit = context.read<SignUpCubit>();
-            final cubit = context.read<CartCubit>();
-            return AppCustomDropDownButtonFormField(
-              value: selectedBusinessType,
-              items: signUpCubit.businessTypes.map((businessType) {
-                return DropdownMenuItem<String>(
-                  value: businessType.id.toString(),
-                  child: Text(
-                    businessType.name,
-                    style: AppStyles.font16BlackLight,
-                  ),
-                );
-              }).toList(),
-              onChanged: (value) {
-                if (value != null) {
-                  setState(() {
-                    selectedBusinessType = value;
-                    selectedBusinessTypeCategory = null;
-                    cubit.selectedBusinessType = int.parse(value);
-                    cubit.selectedBusinessTypeCategory = null;
-                  });
-                }
-              },
-              onSaved: (value) {
-                if (value != null) {
-                  cubit.selectedBusinessType = int.parse(value);
-                  log("selected Business Type: $value");
-                }
-              },
-              labelText: AppLocale.businessType.getString(context),
+        AppCustomDropDownButtonFormField(
+          value: selectedBusinessType,
+          items: productCubit.businessTypes!.map((businessType) {
+            return DropdownMenuItem<String>(
+              value: businessType.id.toString(),
+              child: Text(
+                businessType.name ?? '',
+                style: AppStyles.font16BlackLight,
+              ),
             );
+          }).toList(),
+          onChanged: (value) {
+            if (value != null) {
+              setState(() {
+                selectedBusinessType = value;
+                selectedBusinessTypeCategory = null;
+                cubit.selectedBusinessType = int.parse(value);
+                cubit.selectedBusinessTypeCategory = null;
+              });
+            }
           },
+          onSaved: (value) {
+            if (value != null) {
+              cubit.selectedBusinessType = int.parse(value);
+              log("selected Business Type: $value");
+            }
+          },
+          labelText: AppLocale.businessType.getString(context),
         ),
         BlocBuilder<ProductsCubit, ProductsState>(
           builder: (context, state) {

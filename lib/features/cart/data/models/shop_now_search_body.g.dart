@@ -26,13 +26,13 @@ ShopNowSearchCriteria _$ShopNowSearchCriteriaFromJson(
     ShopNowSearchCriteria(
       name: json['name'] as String?,
       materialIds: (json['materialIds'] as List<dynamic>?)
-          ?.map((e) => (e as num).toInt())
+          ?.map((e) => (e as num?)?.toInt())
           .toList(),
       colorIds: (json['colorIds'] as List<dynamic>?)
-          ?.map((e) => (e as num).toInt())
+          ?.map((e) => (e as num?)?.toInt())
           .toList(),
-      minPrice: (json['minPrice'] as num?)?.toInt(),
-      maxPrice: (json['maxPrice'] as num?)?.toInt(),
+      minPrice: (json['minPrice'] as num?)?.toDouble(),
+      maxPrice: (json['maxPrice'] as num?)?.toDouble(),
       businessTypeId: (json['businessTypeId'] as num?)?.toInt(),
       businessTypeCategoryId: (json['businessTypeCategoryId'] as num?)?.toInt(),
     );

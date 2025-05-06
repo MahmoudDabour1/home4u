@@ -51,6 +51,7 @@ class ProductsCubit extends Cubit<ProductsState> {
   List<FilterColor>? colors = [];
   List<ProductMaterial>? materials = [];
   List<BusinessType>? businessTypeCategories = [];
+  List<BusinessType>? businessTypes = [];
   ProductPreviewResponse? productPreviewResponse;
 
   ///resolve filter
@@ -186,6 +187,7 @@ class ProductsCubit extends Cubit<ProductsState> {
           baseUnits = data.data?.productBaseUnits ?? [];
           materials = data.data?.productMaterial ?? [];
           businessTypeCategories = data.data?.businessTypeCategories ?? [];
+          businessTypes = data.data?.businessTypes ?? [];
         }
       },
       failure: (error) {

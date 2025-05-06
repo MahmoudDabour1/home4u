@@ -1,7 +1,6 @@
 import 'package:bloc/bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:home4u/features/cart/data/models/shop_now_search_body.dart';
-import 'package:logger/logger.dart';
 
 import '../../../core/routing/router_observer.dart';
 import '../../products/data/models/business_config_model.dart';
@@ -15,16 +14,15 @@ class CartCubit extends Cubit<CartState> {
 
   CartCubit(this.cartRepository) : super(const CartState.initial());
 
-
   ///resolve filter
   List<String>? selectedBusinessTypeNames = [];
   List<String>? selectedMaterialNames = [];
   List<String>? selectedColorNames = [];
   double? minPrice;
   double? maxPrice;
-  List<int?> colorsIds = [];
+  List<int?>? materialIds=[];
+  List<int?>? colorsIds=[];
   List<int?> businessTypeIds = [];
-  List<int?> materialIds = [];
   bool? isAvailable;
   final searchController = TextEditingController();
   int? selectedBusinessType;
@@ -60,14 +58,15 @@ class CartCubit extends Cubit<CartState> {
 
     ShopNowSearchBody shopNowSearchBody = ShopNowSearchBody(
       pageNum: _page,
+      pageSize: 10,
       searchCriteria: ShopNowSearchCriteria(
         name: null,
-        businessTypeId: null,
-        businessTypeCategoryId: null,
-        minPrice: null,
-        maxPrice: null,
-        colorIds: null,
-        materialIds: null,
+        businessTypeId: selectedBusinessType,
+        businessTypeCategoryId: selectedBusinessTypeCategory,
+        minPrice: minPrice,
+        maxPrice: maxPrice,
+        colorIds: (colorsIds == null || colorsIds!.isEmpty) ? null : colorsIds,
+        materialIds: (materialIds == null || materialIds!.isEmpty) ? null : materialIds,
       ),
     );
 

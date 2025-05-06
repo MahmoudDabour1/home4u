@@ -1,31 +1,30 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_localization/flutter_localization.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:home4u/core/widgets/app_text_form_field.dart';
 import 'package:home4u/features/products/logic/products_cubit.dart';
-import 'package:home4u/features/products/presentation/widgets/filter/price_filter_range_widget.dart';
-import 'package:home4u/locale/app_locale.dart';
-
+import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../../../../core/theming/app_styles.dart';
 import '../../../../../core/utils/spacing.dart';
+import '../../../../../core/widgets/app_text_form_field.dart';
+import '../../../../../locale/app_locale.dart';
+import '../../../../products/presentation/widgets/filter/price_filter_range_widget.dart';
+import '../../../logic/cart_cubit.dart';
 
-class FilterPriceSection extends StatefulWidget {
-  const FilterPriceSection({super.key});
+class CartPriceSection extends StatefulWidget {
+  const CartPriceSection({super.key});
 
   @override
-  State<FilterPriceSection> createState() => _FilterPriceSectionState();
+  State<CartPriceSection> createState() => _CartPriceSectionState();
 }
 
-class _FilterPriceSectionState extends State<FilterPriceSection> {
-
+class _CartPriceSectionState extends State<CartPriceSection> {
   late TextEditingController _minPriceController;
   late TextEditingController _maxPriceController;
 
   @override
   void initState() {
     super.initState();
-    final cubit = context.read<ProductsCubit>();
+    final cubit = context.read<CartCubit>();
 
     double minPrice = cubit.minPrice ?? 100;
     double maxPrice = cubit.maxPrice ?? 500;
@@ -46,7 +45,7 @@ class _FilterPriceSectionState extends State<FilterPriceSection> {
     double? maxPrice = double.tryParse(_maxPriceController.text);
 
     if (minPrice != null && maxPrice != null && minPrice <= maxPrice) {
-      final cubit = context.read<ProductsCubit>();
+      final cubit = context.read<CartCubit>();
 
       cubit.minPrice = minPrice;
       cubit.maxPrice = maxPrice;
@@ -58,7 +57,7 @@ class _FilterPriceSectionState extends State<FilterPriceSection> {
 
   @override
   Widget build(BuildContext context) {
-    final cubit = context.watch<ProductsCubit>();
+    final cubit = context.watch<CartCubit>();
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
