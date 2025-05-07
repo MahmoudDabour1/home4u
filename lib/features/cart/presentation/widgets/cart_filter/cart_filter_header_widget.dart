@@ -3,29 +3,27 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_localization/flutter_localization.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:home4u/core/extensions/navigation_extension.dart';
-import 'package:home4u/core/theming/app_styles.dart';
-import 'package:home4u/core/widgets/app_custom_button.dart';
+import 'package:home4u/features/cart/logic/cart_cubit.dart';
 
 import '../../../../../core/theming/app_assets.dart';
 import '../../../../../core/theming/app_colors.dart';
+import '../../../../../core/theming/app_styles.dart';
 import '../../../../../core/utils/spacing.dart';
+import '../../../../../core/widgets/app_custom_button.dart';
 import '../../../../../locale/app_locale.dart';
-import '../../../logic/products_cubit.dart';
+import 'package:home4u/core/extensions/navigation_extension.dart';
 
-class FilterHeaderWidget extends StatefulWidget {
-  final VoidCallback? onClearPressed;
-
-  const FilterHeaderWidget({super.key, this.onClearPressed});
+class CartFilterHeaderWidget extends StatefulWidget {
+  const CartFilterHeaderWidget({super.key});
 
   @override
-  State<FilterHeaderWidget> createState() => _FilterHeaderWidgetState();
+  State<CartFilterHeaderWidget> createState() => _CartFilterHeaderWidgetState();
 }
 
-class _FilterHeaderWidgetState extends State<FilterHeaderWidget> {
+class _CartFilterHeaderWidgetState extends State<CartFilterHeaderWidget> {
   @override
   Widget build(BuildContext context) {
-    final cubit = context.read<ProductsCubit>();
+    final cubit = context.read<CartCubit>();
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
@@ -51,9 +49,9 @@ class _FilterHeaderWidgetState extends State<FilterHeaderWidget> {
             AppCustomButton(textButton: AppLocale.clear.getString(context),
                 btnWidth: 80.w,
                 btnHeight: 30.h,
-                onPressed:widget.onClearPressed ?? (){
-                  cubit.resetFilters();
-                  cubit.getProducts(isRefresh: true);
+                onPressed: (){
+                  cubit.resetFilter();
+                  cubit.getCartProducts(isRefresh: true);
                   Navigator.pop(context);
 
                 }),

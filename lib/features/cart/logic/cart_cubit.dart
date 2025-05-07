@@ -119,6 +119,9 @@ class CartCubit extends Cubit<CartState> {
     materialIds = [];
     isAvailable = null;
     searchController.clear();
+    selectedBusinessType = null;
+    selectedBusinessTypeCategory = null;
+    emit(const CartState.resetFilter());
   }
 
   Future<void> resetPagination() async {

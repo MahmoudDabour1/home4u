@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:home4u/features/cart/logic/cart_cubit.dart';
 import 'package:home4u/features/cart/presentation/widgets/cart_filter/cart_filter_drop_down_buttons.dart';
 import 'package:home4u/features/cart/presentation/widgets/cart_filter/cart_price_section.dart';
 
@@ -9,12 +11,14 @@ import '../../../../core/widgets/app_custom_filter_button.dart';
 import '../../../products/presentation/widgets/filter/filter_header_widget.dart';
 import 'cart_filter/cart_drop_down_menu_buttons.dart';
 import 'cart_filter/cart_filter_buttons.dart';
+import 'cart_filter/cart_filter_header_widget.dart';
 
 class CartFilterButton extends StatelessWidget {
   const CartFilterButton({super.key});
 
   @override
   Widget build(BuildContext context) {
+    final cubit = context.read<CartCubit>();
     return AppCustomFilterButton(
       onPressed: () {
         showModalBottomSheet(
@@ -42,7 +46,7 @@ class CartFilterButton extends StatelessWidget {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: <Widget>[
                             verticalSpace(8),
-                            const FilterHeaderWidget(), // Use const here
+                            CartFilterHeaderWidget(),// Use const here
                             CartFilterDropDownButtons(),
                             CartDropDownMenuButtons(),
                             verticalSpace(8),

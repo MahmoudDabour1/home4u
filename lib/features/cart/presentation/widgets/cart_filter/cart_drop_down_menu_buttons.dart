@@ -28,13 +28,13 @@ class _CartDropDownMenuButtonsState extends State<CartDropDownMenuButtons> {
     return BlocBuilder<ProductsCubit, ProductsState>(
       builder: (context, state) {
         final cubit = context.watch<ProductsCubit?>();
-        final cartCubit = context.read<CartCubit>();
-        selectedCategories = cubit?.selectedBusinessTypeNames ?? [];
-        selectedMaterials = cubit?.selectedMaterialNames ?? [];
-        selectedColor = cubit?.selectedColorNames ?? [];
+        final cartCubit = context.read<CartCubit?>();
+        selectedCategories = cartCubit?.selectedBusinessTypeNames ?? [];
+        selectedMaterials = cartCubit?.selectedMaterialNames ?? [];
+        selectedColor = cartCubit?.selectedColorNames ?? [];
         return Column(
           children:<Widget> [
-            verticalSpace(32),
+            verticalSpace(16),
             AppCustomDropDownMultiSelectButton(
               selectedValues: selectedMaterials ?? [],
               items: cubit?.businessConfigModel?.data?.productMaterial
@@ -45,22 +45,22 @@ class _CartDropDownMenuButtonsState extends State<CartDropDownMenuButtons> {
               onChanged: (List<String> values) {
                 setState(() {
                   selectedMaterials = values;
-                  cartCubit.materialIds = values.map((name) {
+                  cartCubit?.materialIds = values.map((name) {
                     return cubit?.businessConfigModel!.data!.productMaterial!
                         .firstWhere((material) => material.name == name)
                         .id;
                   }).toList();
-                  cartCubit.selectedMaterialNames = values;
+                  cartCubit?.selectedMaterialNames = values;
                 });
               },
               onSaved: (List<String>? values) {
                 if (values != null) {
-                  cartCubit.materialIds = values.map((name) {
+                  cartCubit?.materialIds = values.map((name) {
                     return cubit?.businessConfigModel!.data!.productMaterial!
                         .firstWhere((color) => color.name == name)
                         .id;
                   }).toList();
-                  cartCubit.selectedMaterialNames = values;
+                  cartCubit?.selectedMaterialNames = values;
                 }
               },
             ),
@@ -76,22 +76,22 @@ class _CartDropDownMenuButtonsState extends State<CartDropDownMenuButtons> {
               onChanged: (List<String> values) {
                 setState(() {
                   selectedColor = values;
-                  cartCubit.colorsIds = values.map((name) {
+                  cartCubit?.colorsIds = values.map((name) {
                     return cubit?.businessConfigModel!.data!.colors!
                         .firstWhere((color) => color.name == name)
                         .id;
                   }).toList();
-                  cartCubit.selectedColorNames = values;
+                  cartCubit?.selectedColorNames = values;
                 });
               },
               onSaved: (List<String>? values) {
                 if (values != null) {
-                  cartCubit.colorsIds = values.map((name) {
+                  cartCubit?.colorsIds = values.map((name) {
                     return cubit?.businessConfigModel!.data!.colors!
                         .firstWhere((color) => color.name == name)
                         .id;
                   }).toList();
-                  cartCubit.selectedColorNames = values;
+                  cartCubit?.selectedColorNames = values;
                 }
               },
             ),

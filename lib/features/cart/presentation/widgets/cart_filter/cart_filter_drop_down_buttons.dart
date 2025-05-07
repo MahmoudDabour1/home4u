@@ -30,7 +30,12 @@ class _CartFilterDropDownButtonsState extends State<CartFilterDropDownButtons> {
   @override
   Widget build(BuildContext context) {
     final productCubit = context.read<ProductsCubit>();
-    final cubit = context.read<CartCubit>();
+    final cubit = context.watch<CartCubit>();
+    selectedMaterials = cubit.selectedMaterialNames ?? [];
+    selectedColor = cubit.selectedColorNames ?? [];
+     selectedBusinessType = cubit.selectedBusinessType?.toString();
+     selectedBusinessTypeCategory =
+    cubit.selectedBusinessTypeCategory?.toString();
     return Column(
       spacing: 8.h,
       children: [
@@ -66,16 +71,16 @@ class _CartFilterDropDownButtonsState extends State<CartFilterDropDownButtons> {
         ),
         BlocBuilder<ProductsCubit, ProductsState>(
           builder: (context, state) {
-            final productsCubit = context.read<ProductsCubit>();
-            final cubit = context.read<CartCubit>();
+            final productsCubit = context.read<ProductsCubit?>();
+            final cubit = context.read<CartCubit?>();
             return Column(
               spacing: 16.h,
               children: [
                 AppCustomDropDownButtonFormField(
                   isEnabled: selectedBusinessType != null &&
-                      productsCubit.businessTypeCategories != null,
+                      productsCubit?.businessTypeCategories != null,
                   value: selectedBusinessTypeCategory,
-                  items: productsCubit.businessTypeCategories!
+                  items: productsCubit!.businessTypeCategories!
                       .where((category) =>
                           category.businessType?.id.toString() ==
                           selectedBusinessType)
@@ -91,11 +96,11 @@ class _CartFilterDropDownButtonsState extends State<CartFilterDropDownButtons> {
                   onChanged: (value) {
                     setState(() {
                       selectedBusinessTypeCategory = value;
-                      cubit.selectedBusinessTypeCategory = int.parse(value!);
+                      cubit?.selectedBusinessTypeCategory = int.parse(value!);
                     });
                   },
                   onSaved: (value) {
-                    cubit.selectedBusinessTypeCategory = int.parse(value!);
+                    cubit?.selectedBusinessTypeCategory = int.parse(value!);
                   },
                   labelText: AppLocale.businessTypeCategory.getString(context),
                 ),

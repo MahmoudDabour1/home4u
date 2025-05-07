@@ -26,8 +26,8 @@ class _CartPriceSectionState extends State<CartPriceSection> {
     super.initState();
     final cubit = context.read<CartCubit>();
 
-    double minPrice = cubit.minPrice ?? 100;
-    double maxPrice = cubit.maxPrice ?? 500;
+    double minPrice = cubit.minPrice ?? 3000;
+    double maxPrice = cubit.maxPrice ?? 5000;
 
     _minPriceController = TextEditingController(text: minPrice.toString());
     _maxPriceController = TextEditingController(text: maxPrice.toString());
@@ -93,8 +93,8 @@ class _CartPriceSectionState extends State<CartPriceSection> {
           ],
         ),
         PriceFilterRangeWidget(
-          minPrice: cubit.minPrice ?? 100,
-          maxPrice: cubit.maxPrice ?? 500,
+          minPrice: cubit.minPrice ?? 3000,
+          maxPrice: cubit.maxPrice ?? 50000,
           onChanged: (values) {
             setState(() {
               _minPriceController.text = values.start.toStringAsFixed(0);
