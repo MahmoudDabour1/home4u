@@ -74,9 +74,7 @@ class OrderDetailsScreen extends StatelessWidget {
                         onQuantityChanged: (p0) =>
                             context.read<CartCubit>().updateQuantity(
                                 cartItems[index], p0),
-                        onRemove: () =>
-                            context.read<CartCubit>().removeFromCart(
-                                cartItems[index]),
+                        onRemove: () => context.read<CartCubit>().removeFromCart(cartItems[index].product),
                       ),
                   separatorBuilder: (context, index) => SizedBox(height: 16.h),
                   itemCount: itemCount,

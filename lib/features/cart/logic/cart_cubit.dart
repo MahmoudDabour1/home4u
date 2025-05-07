@@ -128,25 +128,31 @@ class CartCubit extends Cubit<CartState> {
   }
 
   ///cart functionality
-  ///cart functionality
+  /// Cart functionality - manages all cart operations
   final List<CartItemModel> _cartItems = [];
 
   void addToCart(ShopNowContent product) {
     final index =
         _cartItems.indexWhere((item) => item.product.id == product.id);
+
     if (index != -1) {
-      _cartItems[index].quantity++;
+      _cartItems[index] =
+          _cartItems[index].copyWith(quantity: _cartItems[index].quantity + 1);
     } else {
-      _cartItems.add(CartItemModel(product: product));
+      _cartItems.add(CartItemModel(
+        product: product,
+        quantity: 1,
+      ));
     }
     emit(CartState.cartSuccess(List.from(_cartItems)));
   }
 
-  void removeFromCart(ShopNowContent product) {
-    final index =
-        _cartItems.indexWhere((item) => item.product.id == product.id);
-    if (index != -1) {
-      _cartItems.removeAt(index);
+  void removeFromCart(ShopNowContent cartItem) {
+    final initialCount = _cartItems.length;
+    _cartItems.removeWhere((item) => item.product.id == cartItem.id);
+    logger
+        .e("Removed item. Before: $initialCount, After: ${_cartItems.length}");
+    if (initialCount != _cartItems.length) {
       emit(CartState.cartSuccess(List.from(_cartItems)));
     }
   }
@@ -154,12 +160,21 @@ class CartCubit extends Cubit<CartState> {
   void updateQuantity(ShopNowContent product, int quantity) {
     final index =
         _cartItems.indexWhere((item) => item.product.id == product.id);
+
     if (index != -1) {
       if (quantity > 0) {
-        _cartItems[index].quantity = quantity;
+        _cartItems[index] = _cartItems[index].copyWith(quantity: quantity);
       } else {
         _cartItems.removeAt(index);
       }
+    } else if (quantity > 0) {
+      _cartItems.add(CartItemModel(
+        product: product,
+        quantity: quantity,
+      ));
+    }
+
+    if (index != -1 || quantity > 0) {
       emit(CartState.cartSuccess(List.from(_cartItems)));
     }
   }

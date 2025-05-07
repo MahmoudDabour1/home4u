@@ -1,4 +1,6 @@
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:home4u/core/networking/api_constants.dart';
 import 'package:home4u/core/theming/app_styles.dart';
@@ -6,6 +8,7 @@ import 'package:home4u/core/utils/spacing.dart';
 import 'package:home4u/features/cart/presentation/widgets/cart_details_widgets/plus_and_minus_controll_buttons.dart';
 
 import '../../../data/models/cart_item_model.dart';
+import '../../../logic/cart_cubit.dart';
 
 class OrderDetailsItem extends StatelessWidget {
   final CartItemModel cartItem;
@@ -27,9 +30,7 @@ class OrderDetailsItem extends StatelessWidget {
         ClipRRect(
           borderRadius: BorderRadius.circular(8.r),
           child: Image.network(
-            // Replace with asset if needed
-            ApiConstants.getImageBaseUrl(cartItem.product!.imagePath! ?? '') ??
-                '', // Ensure it’s not null
+            ApiConstants.getImageBaseUrl(cartItem.product.imagePath! ?? ''),
             width: 100.w,
             height: 100.h,
             fit: BoxFit.cover,
@@ -41,21 +42,29 @@ class OrderDetailsItem extends StatelessWidget {
         Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text(
+            AutoSizeText(
               cartItem.product.name ?? 'No name',
               style: AppStyles.font16BlackMedium,
+              maxLines: 3,
+              overflow: TextOverflow.ellipsis,
             ),
             verticalSpace(4.h),
             Text(
               '${cartItem.product.price ?? 0} EGP',
               style: AppStyles.font16BlackBold,
             ),
-            PlusAndMinusControllerButtons(),
+            PlusAndMinusControllerButtons(
+              initialQuantity: cartItem.quantity,
+              onQuantityChanged: (newQuantity) {
+                context.read<CartCubit>().updateQuantity(cartItem.product, newQuantity);
+              },
+            ),
           ],
         ),
         const Spacer(),
         InkWell(
           onTap: onRemove,
+          splashColor: Colors.transparent,
           child: Container(
             width: 24.w,
             height: 24.h,

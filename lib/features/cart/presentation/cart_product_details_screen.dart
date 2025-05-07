@@ -65,7 +65,8 @@ class CartProductDetailsScreen extends StatelessWidget {
                                     overflow: TextOverflow.ellipsis,
                                   ),
                                 ),
-                                PlusAndMinusControllerButtons(),
+                                ///ToDo
+                                // PlusAndMinusControllerButtons(),
                               ],
                             ),
                             verticalSpace(8),
