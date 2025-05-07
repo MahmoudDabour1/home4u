@@ -112,7 +112,9 @@ class CartGridSingleItem extends StatelessWidget {
                     '\$${content!.price ?? 0}',
                     style: AppStyles.font16BlackMedium,
                   ),
-                  QuantityControllerButton(),
+                  QuantityControllerButton(
+                    content: content!,
+                  ),
                 ],
               ),
             ),

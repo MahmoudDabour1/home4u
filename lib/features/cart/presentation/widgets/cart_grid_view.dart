@@ -17,6 +17,7 @@ class CartGridView extends StatelessWidget {
         final isLoadingMore = cubit.isFetching && !cubit.hasReachedMax;
 
         return SliverGrid(
+
           delegate: SliverChildBuilderDelegate(
                 (context, index) {
               if (index < items.length) {

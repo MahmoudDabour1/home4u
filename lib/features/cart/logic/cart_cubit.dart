@@ -1,5 +1,6 @@
 import 'package:bloc/bloc.dart';
 import 'package:flutter/material.dart';
+import 'package:home4u/features/cart/data/models/cart_item_model.dart';
 import 'package:home4u/features/cart/data/models/shop_now_search_body.dart';
 
 import '../../../core/routing/router_observer.dart';
@@ -125,4 +126,45 @@ class CartCubit extends Cubit<CartState> {
     hasReachedMax = false;
     products = [];
   }
+
+  ///cart functionality
+  ///cart functionality
+  final List<CartItemModel> _cartItems = [];
+
+  void addToCart(ShopNowContent product) {
+    final index =
+        _cartItems.indexWhere((item) => item.product.id == product.id);
+    if (index != -1) {
+      _cartItems[index].quantity++;
+    } else {
+      _cartItems.add(CartItemModel(product: product));
+    }
+    emit(CartState.cartSuccess(List.from(_cartItems)));
+  }
+
+  void removeFromCart(ShopNowContent product) {
+    final index =
+        _cartItems.indexWhere((item) => item.product.id == product.id);
+    if (index != -1) {
+      _cartItems.removeAt(index);
+      emit(CartState.cartSuccess(List.from(_cartItems)));
+    }
+  }
+
+  void updateQuantity(ShopNowContent product, int quantity) {
+    final index =
+        _cartItems.indexWhere((item) => item.product.id == product.id);
+    if (index != -1) {
+      if (quantity > 0) {
+        _cartItems[index].quantity = quantity;
+      } else {
+        _cartItems.removeAt(index);
+      }
+      emit(CartState.cartSuccess(List.from(_cartItems)));
+    }
+  }
+
+  int getCartCount() => _cartItems.fold(0, (sum, item) => sum + item.quantity);
+
+  List<CartItemModel> getCartItems() => List.unmodifiable(_cartItems);
 }

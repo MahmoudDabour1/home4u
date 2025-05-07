@@ -26,6 +26,9 @@ mixin _$CartState {
     required TResult Function() paginationLoading,
     required TResult Function(String error) paginationFailure,
     required TResult Function() resetFilter,
+    required TResult Function() cartLoading,
+    required TResult Function(List<CartItemModel> cartItems) cartSuccess,
+    required TResult Function(String error) cartFailure,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -37,6 +40,9 @@ mixin _$CartState {
     TResult? Function()? paginationLoading,
     TResult? Function(String error)? paginationFailure,
     TResult? Function()? resetFilter,
+    TResult? Function()? cartLoading,
+    TResult? Function(List<CartItemModel> cartItems)? cartSuccess,
+    TResult? Function(String error)? cartFailure,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -48,6 +54,9 @@ mixin _$CartState {
     TResult Function()? paginationLoading,
     TResult Function(String error)? paginationFailure,
     TResult Function()? resetFilter,
+    TResult Function()? cartLoading,
+    TResult Function(List<CartItemModel> cartItems)? cartSuccess,
+    TResult Function(String error)? cartFailure,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -60,6 +69,9 @@ mixin _$CartState {
     required TResult Function(PaginationLoading value) paginationLoading,
     required TResult Function(PaginationFailure value) paginationFailure,
     required TResult Function(ResetFilter value) resetFilter,
+    required TResult Function(CartLoading value) cartLoading,
+    required TResult Function(CartSuccess value) cartSuccess,
+    required TResult Function(CartFailure value) cartFailure,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -71,6 +83,9 @@ mixin _$CartState {
     TResult? Function(PaginationLoading value)? paginationLoading,
     TResult? Function(PaginationFailure value)? paginationFailure,
     TResult? Function(ResetFilter value)? resetFilter,
+    TResult? Function(CartLoading value)? cartLoading,
+    TResult? Function(CartSuccess value)? cartSuccess,
+    TResult? Function(CartFailure value)? cartFailure,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -82,6 +97,9 @@ mixin _$CartState {
     TResult Function(PaginationLoading value)? paginationLoading,
     TResult Function(PaginationFailure value)? paginationFailure,
     TResult Function(ResetFilter value)? resetFilter,
+    TResult Function(CartLoading value)? cartLoading,
+    TResult Function(CartSuccess value)? cartSuccess,
+    TResult Function(CartFailure value)? cartFailure,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -156,6 +174,9 @@ class _$InitialImpl implements _Initial {
     required TResult Function() paginationLoading,
     required TResult Function(String error) paginationFailure,
     required TResult Function() resetFilter,
+    required TResult Function() cartLoading,
+    required TResult Function(List<CartItemModel> cartItems) cartSuccess,
+    required TResult Function(String error) cartFailure,
   }) {
     return initial();
   }
@@ -170,6 +191,9 @@ class _$InitialImpl implements _Initial {
     TResult? Function()? paginationLoading,
     TResult? Function(String error)? paginationFailure,
     TResult? Function()? resetFilter,
+    TResult? Function()? cartLoading,
+    TResult? Function(List<CartItemModel> cartItems)? cartSuccess,
+    TResult? Function(String error)? cartFailure,
   }) {
     return initial?.call();
   }
@@ -184,6 +208,9 @@ class _$InitialImpl implements _Initial {
     TResult Function()? paginationLoading,
     TResult Function(String error)? paginationFailure,
     TResult Function()? resetFilter,
+    TResult Function()? cartLoading,
+    TResult Function(List<CartItemModel> cartItems)? cartSuccess,
+    TResult Function(String error)? cartFailure,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -202,6 +229,9 @@ class _$InitialImpl implements _Initial {
     required TResult Function(PaginationLoading value) paginationLoading,
     required TResult Function(PaginationFailure value) paginationFailure,
     required TResult Function(ResetFilter value) resetFilter,
+    required TResult Function(CartLoading value) cartLoading,
+    required TResult Function(CartSuccess value) cartSuccess,
+    required TResult Function(CartFailure value) cartFailure,
   }) {
     return initial(this);
   }
@@ -216,6 +246,9 @@ class _$InitialImpl implements _Initial {
     TResult? Function(PaginationLoading value)? paginationLoading,
     TResult? Function(PaginationFailure value)? paginationFailure,
     TResult? Function(ResetFilter value)? resetFilter,
+    TResult? Function(CartLoading value)? cartLoading,
+    TResult? Function(CartSuccess value)? cartSuccess,
+    TResult? Function(CartFailure value)? cartFailure,
   }) {
     return initial?.call(this);
   }
@@ -230,6 +263,9 @@ class _$InitialImpl implements _Initial {
     TResult Function(PaginationLoading value)? paginationLoading,
     TResult Function(PaginationFailure value)? paginationFailure,
     TResult Function(ResetFilter value)? resetFilter,
+    TResult Function(CartLoading value)? cartLoading,
+    TResult Function(CartSuccess value)? cartSuccess,
+    TResult Function(CartFailure value)? cartFailure,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -292,6 +328,9 @@ class _$ShopNowLoadingImpl implements ShopNowLoading {
     required TResult Function() paginationLoading,
     required TResult Function(String error) paginationFailure,
     required TResult Function() resetFilter,
+    required TResult Function() cartLoading,
+    required TResult Function(List<CartItemModel> cartItems) cartSuccess,
+    required TResult Function(String error) cartFailure,
   }) {
     return shopNowLoading();
   }
@@ -306,6 +345,9 @@ class _$ShopNowLoadingImpl implements ShopNowLoading {
     TResult? Function()? paginationLoading,
     TResult? Function(String error)? paginationFailure,
     TResult? Function()? resetFilter,
+    TResult? Function()? cartLoading,
+    TResult? Function(List<CartItemModel> cartItems)? cartSuccess,
+    TResult? Function(String error)? cartFailure,
   }) {
     return shopNowLoading?.call();
   }
@@ -320,6 +362,9 @@ class _$ShopNowLoadingImpl implements ShopNowLoading {
     TResult Function()? paginationLoading,
     TResult Function(String error)? paginationFailure,
     TResult Function()? resetFilter,
+    TResult Function()? cartLoading,
+    TResult Function(List<CartItemModel> cartItems)? cartSuccess,
+    TResult Function(String error)? cartFailure,
     required TResult orElse(),
   }) {
     if (shopNowLoading != null) {
@@ -338,6 +383,9 @@ class _$ShopNowLoadingImpl implements ShopNowLoading {
     required TResult Function(PaginationLoading value) paginationLoading,
     required TResult Function(PaginationFailure value) paginationFailure,
     required TResult Function(ResetFilter value) resetFilter,
+    required TResult Function(CartLoading value) cartLoading,
+    required TResult Function(CartSuccess value) cartSuccess,
+    required TResult Function(CartFailure value) cartFailure,
   }) {
     return shopNowLoading(this);
   }
@@ -352,6 +400,9 @@ class _$ShopNowLoadingImpl implements ShopNowLoading {
     TResult? Function(PaginationLoading value)? paginationLoading,
     TResult? Function(PaginationFailure value)? paginationFailure,
     TResult? Function(ResetFilter value)? resetFilter,
+    TResult? Function(CartLoading value)? cartLoading,
+    TResult? Function(CartSuccess value)? cartSuccess,
+    TResult? Function(CartFailure value)? cartFailure,
   }) {
     return shopNowLoading?.call(this);
   }
@@ -366,6 +417,9 @@ class _$ShopNowLoadingImpl implements ShopNowLoading {
     TResult Function(PaginationLoading value)? paginationLoading,
     TResult Function(PaginationFailure value)? paginationFailure,
     TResult Function(ResetFilter value)? resetFilter,
+    TResult Function(CartLoading value)? cartLoading,
+    TResult Function(CartSuccess value)? cartSuccess,
+    TResult Function(CartFailure value)? cartFailure,
     required TResult orElse(),
   }) {
     if (shopNowLoading != null) {
@@ -457,6 +511,9 @@ class _$ShopNowSuccessImpl implements ShopNowSuccess {
     required TResult Function() paginationLoading,
     required TResult Function(String error) paginationFailure,
     required TResult Function() resetFilter,
+    required TResult Function() cartLoading,
+    required TResult Function(List<CartItemModel> cartItems) cartSuccess,
+    required TResult Function(String error) cartFailure,
   }) {
     return shopNowSuccess(responseModel);
   }
@@ -471,6 +528,9 @@ class _$ShopNowSuccessImpl implements ShopNowSuccess {
     TResult? Function()? paginationLoading,
     TResult? Function(String error)? paginationFailure,
     TResult? Function()? resetFilter,
+    TResult? Function()? cartLoading,
+    TResult? Function(List<CartItemModel> cartItems)? cartSuccess,
+    TResult? Function(String error)? cartFailure,
   }) {
     return shopNowSuccess?.call(responseModel);
   }
@@ -485,6 +545,9 @@ class _$ShopNowSuccessImpl implements ShopNowSuccess {
     TResult Function()? paginationLoading,
     TResult Function(String error)? paginationFailure,
     TResult Function()? resetFilter,
+    TResult Function()? cartLoading,
+    TResult Function(List<CartItemModel> cartItems)? cartSuccess,
+    TResult Function(String error)? cartFailure,
     required TResult orElse(),
   }) {
     if (shopNowSuccess != null) {
@@ -503,6 +566,9 @@ class _$ShopNowSuccessImpl implements ShopNowSuccess {
     required TResult Function(PaginationLoading value) paginationLoading,
     required TResult Function(PaginationFailure value) paginationFailure,
     required TResult Function(ResetFilter value) resetFilter,
+    required TResult Function(CartLoading value) cartLoading,
+    required TResult Function(CartSuccess value) cartSuccess,
+    required TResult Function(CartFailure value) cartFailure,
   }) {
     return shopNowSuccess(this);
   }
@@ -517,6 +583,9 @@ class _$ShopNowSuccessImpl implements ShopNowSuccess {
     TResult? Function(PaginationLoading value)? paginationLoading,
     TResult? Function(PaginationFailure value)? paginationFailure,
     TResult? Function(ResetFilter value)? resetFilter,
+    TResult? Function(CartLoading value)? cartLoading,
+    TResult? Function(CartSuccess value)? cartSuccess,
+    TResult? Function(CartFailure value)? cartFailure,
   }) {
     return shopNowSuccess?.call(this);
   }
@@ -531,6 +600,9 @@ class _$ShopNowSuccessImpl implements ShopNowSuccess {
     TResult Function(PaginationLoading value)? paginationLoading,
     TResult Function(PaginationFailure value)? paginationFailure,
     TResult Function(ResetFilter value)? resetFilter,
+    TResult Function(CartLoading value)? cartLoading,
+    TResult Function(CartSuccess value)? cartSuccess,
+    TResult Function(CartFailure value)? cartFailure,
     required TResult orElse(),
   }) {
     if (shopNowSuccess != null) {
@@ -630,6 +702,9 @@ class _$ShopNowFailureImpl implements ShopNowFailure {
     required TResult Function() paginationLoading,
     required TResult Function(String error) paginationFailure,
     required TResult Function() resetFilter,
+    required TResult Function() cartLoading,
+    required TResult Function(List<CartItemModel> cartItems) cartSuccess,
+    required TResult Function(String error) cartFailure,
   }) {
     return shopNowFailure(error);
   }
@@ -644,6 +719,9 @@ class _$ShopNowFailureImpl implements ShopNowFailure {
     TResult? Function()? paginationLoading,
     TResult? Function(String error)? paginationFailure,
     TResult? Function()? resetFilter,
+    TResult? Function()? cartLoading,
+    TResult? Function(List<CartItemModel> cartItems)? cartSuccess,
+    TResult? Function(String error)? cartFailure,
   }) {
     return shopNowFailure?.call(error);
   }
@@ -658,6 +736,9 @@ class _$ShopNowFailureImpl implements ShopNowFailure {
     TResult Function()? paginationLoading,
     TResult Function(String error)? paginationFailure,
     TResult Function()? resetFilter,
+    TResult Function()? cartLoading,
+    TResult Function(List<CartItemModel> cartItems)? cartSuccess,
+    TResult Function(String error)? cartFailure,
     required TResult orElse(),
   }) {
     if (shopNowFailure != null) {
@@ -676,6 +757,9 @@ class _$ShopNowFailureImpl implements ShopNowFailure {
     required TResult Function(PaginationLoading value) paginationLoading,
     required TResult Function(PaginationFailure value) paginationFailure,
     required TResult Function(ResetFilter value) resetFilter,
+    required TResult Function(CartLoading value) cartLoading,
+    required TResult Function(CartSuccess value) cartSuccess,
+    required TResult Function(CartFailure value) cartFailure,
   }) {
     return shopNowFailure(this);
   }
@@ -690,6 +774,9 @@ class _$ShopNowFailureImpl implements ShopNowFailure {
     TResult? Function(PaginationLoading value)? paginationLoading,
     TResult? Function(PaginationFailure value)? paginationFailure,
     TResult? Function(ResetFilter value)? resetFilter,
+    TResult? Function(CartLoading value)? cartLoading,
+    TResult? Function(CartSuccess value)? cartSuccess,
+    TResult? Function(CartFailure value)? cartFailure,
   }) {
     return shopNowFailure?.call(this);
   }
@@ -704,6 +791,9 @@ class _$ShopNowFailureImpl implements ShopNowFailure {
     TResult Function(PaginationLoading value)? paginationLoading,
     TResult Function(PaginationFailure value)? paginationFailure,
     TResult Function(ResetFilter value)? resetFilter,
+    TResult Function(CartLoading value)? cartLoading,
+    TResult Function(CartSuccess value)? cartSuccess,
+    TResult Function(CartFailure value)? cartFailure,
     required TResult orElse(),
   }) {
     if (shopNowFailure != null) {
@@ -775,6 +865,9 @@ class _$PaginationLoadingImpl implements PaginationLoading {
     required TResult Function() paginationLoading,
     required TResult Function(String error) paginationFailure,
     required TResult Function() resetFilter,
+    required TResult Function() cartLoading,
+    required TResult Function(List<CartItemModel> cartItems) cartSuccess,
+    required TResult Function(String error) cartFailure,
   }) {
     return paginationLoading();
   }
@@ -789,6 +882,9 @@ class _$PaginationLoadingImpl implements PaginationLoading {
     TResult? Function()? paginationLoading,
     TResult? Function(String error)? paginationFailure,
     TResult? Function()? resetFilter,
+    TResult? Function()? cartLoading,
+    TResult? Function(List<CartItemModel> cartItems)? cartSuccess,
+    TResult? Function(String error)? cartFailure,
   }) {
     return paginationLoading?.call();
   }
@@ -803,6 +899,9 @@ class _$PaginationLoadingImpl implements PaginationLoading {
     TResult Function()? paginationLoading,
     TResult Function(String error)? paginationFailure,
     TResult Function()? resetFilter,
+    TResult Function()? cartLoading,
+    TResult Function(List<CartItemModel> cartItems)? cartSuccess,
+    TResult Function(String error)? cartFailure,
     required TResult orElse(),
   }) {
     if (paginationLoading != null) {
@@ -821,6 +920,9 @@ class _$PaginationLoadingImpl implements PaginationLoading {
     required TResult Function(PaginationLoading value) paginationLoading,
     required TResult Function(PaginationFailure value) paginationFailure,
     required TResult Function(ResetFilter value) resetFilter,
+    required TResult Function(CartLoading value) cartLoading,
+    required TResult Function(CartSuccess value) cartSuccess,
+    required TResult Function(CartFailure value) cartFailure,
   }) {
     return paginationLoading(this);
   }
@@ -835,6 +937,9 @@ class _$PaginationLoadingImpl implements PaginationLoading {
     TResult? Function(PaginationLoading value)? paginationLoading,
     TResult? Function(PaginationFailure value)? paginationFailure,
     TResult? Function(ResetFilter value)? resetFilter,
+    TResult? Function(CartLoading value)? cartLoading,
+    TResult? Function(CartSuccess value)? cartSuccess,
+    TResult? Function(CartFailure value)? cartFailure,
   }) {
     return paginationLoading?.call(this);
   }
@@ -849,6 +954,9 @@ class _$PaginationLoadingImpl implements PaginationLoading {
     TResult Function(PaginationLoading value)? paginationLoading,
     TResult Function(PaginationFailure value)? paginationFailure,
     TResult Function(ResetFilter value)? resetFilter,
+    TResult Function(CartLoading value)? cartLoading,
+    TResult Function(CartSuccess value)? cartSuccess,
+    TResult Function(CartFailure value)? cartFailure,
     required TResult orElse(),
   }) {
     if (paginationLoading != null) {
@@ -939,6 +1047,9 @@ class _$PaginationFailureImpl implements PaginationFailure {
     required TResult Function() paginationLoading,
     required TResult Function(String error) paginationFailure,
     required TResult Function() resetFilter,
+    required TResult Function() cartLoading,
+    required TResult Function(List<CartItemModel> cartItems) cartSuccess,
+    required TResult Function(String error) cartFailure,
   }) {
     return paginationFailure(error);
   }
@@ -953,6 +1064,9 @@ class _$PaginationFailureImpl implements PaginationFailure {
     TResult? Function()? paginationLoading,
     TResult? Function(String error)? paginationFailure,
     TResult? Function()? resetFilter,
+    TResult? Function()? cartLoading,
+    TResult? Function(List<CartItemModel> cartItems)? cartSuccess,
+    TResult? Function(String error)? cartFailure,
   }) {
     return paginationFailure?.call(error);
   }
@@ -967,6 +1081,9 @@ class _$PaginationFailureImpl implements PaginationFailure {
     TResult Function()? paginationLoading,
     TResult Function(String error)? paginationFailure,
     TResult Function()? resetFilter,
+    TResult Function()? cartLoading,
+    TResult Function(List<CartItemModel> cartItems)? cartSuccess,
+    TResult Function(String error)? cartFailure,
     required TResult orElse(),
   }) {
     if (paginationFailure != null) {
@@ -985,6 +1102,9 @@ class _$PaginationFailureImpl implements PaginationFailure {
     required TResult Function(PaginationLoading value) paginationLoading,
     required TResult Function(PaginationFailure value) paginationFailure,
     required TResult Function(ResetFilter value) resetFilter,
+    required TResult Function(CartLoading value) cartLoading,
+    required TResult Function(CartSuccess value) cartSuccess,
+    required TResult Function(CartFailure value) cartFailure,
   }) {
     return paginationFailure(this);
   }
@@ -999,6 +1119,9 @@ class _$PaginationFailureImpl implements PaginationFailure {
     TResult? Function(PaginationLoading value)? paginationLoading,
     TResult? Function(PaginationFailure value)? paginationFailure,
     TResult? Function(ResetFilter value)? resetFilter,
+    TResult? Function(CartLoading value)? cartLoading,
+    TResult? Function(CartSuccess value)? cartSuccess,
+    TResult? Function(CartFailure value)? cartFailure,
   }) {
     return paginationFailure?.call(this);
   }
@@ -1013,6 +1136,9 @@ class _$PaginationFailureImpl implements PaginationFailure {
     TResult Function(PaginationLoading value)? paginationLoading,
     TResult Function(PaginationFailure value)? paginationFailure,
     TResult Function(ResetFilter value)? resetFilter,
+    TResult Function(CartLoading value)? cartLoading,
+    TResult Function(CartSuccess value)? cartSuccess,
+    TResult Function(CartFailure value)? cartFailure,
     required TResult orElse(),
   }) {
     if (paginationFailure != null) {
@@ -1084,6 +1210,9 @@ class _$ResetFilterImpl implements ResetFilter {
     required TResult Function() paginationLoading,
     required TResult Function(String error) paginationFailure,
     required TResult Function() resetFilter,
+    required TResult Function() cartLoading,
+    required TResult Function(List<CartItemModel> cartItems) cartSuccess,
+    required TResult Function(String error) cartFailure,
   }) {
     return resetFilter();
   }
@@ -1098,6 +1227,9 @@ class _$ResetFilterImpl implements ResetFilter {
     TResult? Function()? paginationLoading,
     TResult? Function(String error)? paginationFailure,
     TResult? Function()? resetFilter,
+    TResult? Function()? cartLoading,
+    TResult? Function(List<CartItemModel> cartItems)? cartSuccess,
+    TResult? Function(String error)? cartFailure,
   }) {
     return resetFilter?.call();
   }
@@ -1112,6 +1244,9 @@ class _$ResetFilterImpl implements ResetFilter {
     TResult Function()? paginationLoading,
     TResult Function(String error)? paginationFailure,
     TResult Function()? resetFilter,
+    TResult Function()? cartLoading,
+    TResult Function(List<CartItemModel> cartItems)? cartSuccess,
+    TResult Function(String error)? cartFailure,
     required TResult orElse(),
   }) {
     if (resetFilter != null) {
@@ -1130,6 +1265,9 @@ class _$ResetFilterImpl implements ResetFilter {
     required TResult Function(PaginationLoading value) paginationLoading,
     required TResult Function(PaginationFailure value) paginationFailure,
     required TResult Function(ResetFilter value) resetFilter,
+    required TResult Function(CartLoading value) cartLoading,
+    required TResult Function(CartSuccess value) cartSuccess,
+    required TResult Function(CartFailure value) cartFailure,
   }) {
     return resetFilter(this);
   }
@@ -1144,6 +1282,9 @@ class _$ResetFilterImpl implements ResetFilter {
     TResult? Function(PaginationLoading value)? paginationLoading,
     TResult? Function(PaginationFailure value)? paginationFailure,
     TResult? Function(ResetFilter value)? resetFilter,
+    TResult? Function(CartLoading value)? cartLoading,
+    TResult? Function(CartSuccess value)? cartSuccess,
+    TResult? Function(CartFailure value)? cartFailure,
   }) {
     return resetFilter?.call(this);
   }
@@ -1158,6 +1299,9 @@ class _$ResetFilterImpl implements ResetFilter {
     TResult Function(PaginationLoading value)? paginationLoading,
     TResult Function(PaginationFailure value)? paginationFailure,
     TResult Function(ResetFilter value)? resetFilter,
+    TResult Function(CartLoading value)? cartLoading,
+    TResult Function(CartSuccess value)? cartSuccess,
+    TResult Function(CartFailure value)? cartFailure,
     required TResult orElse(),
   }) {
     if (resetFilter != null) {
@@ -1169,4 +1313,545 @@ class _$ResetFilterImpl implements ResetFilter {
 
 abstract class ResetFilter implements CartState {
   const factory ResetFilter() = _$ResetFilterImpl;
+}
+
+/// @nodoc
+abstract class _$$CartLoadingImplCopyWith<$Res> {
+  factory _$$CartLoadingImplCopyWith(
+          _$CartLoadingImpl value, $Res Function(_$CartLoadingImpl) then) =
+      __$$CartLoadingImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$CartLoadingImplCopyWithImpl<$Res>
+    extends _$CartStateCopyWithImpl<$Res, _$CartLoadingImpl>
+    implements _$$CartLoadingImplCopyWith<$Res> {
+  __$$CartLoadingImplCopyWithImpl(
+      _$CartLoadingImpl _value, $Res Function(_$CartLoadingImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of CartState
+  /// with the given fields replaced by the non-null parameter values.
+}
+
+/// @nodoc
+
+class _$CartLoadingImpl implements CartLoading {
+  const _$CartLoadingImpl();
+
+  @override
+  String toString() {
+    return 'CartState.cartLoading()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$CartLoadingImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() shopNowLoading,
+    required TResult Function(ShopNowResponseModel responseModel)
+        shopNowSuccess,
+    required TResult Function(String error) shopNowFailure,
+    required TResult Function() paginationLoading,
+    required TResult Function(String error) paginationFailure,
+    required TResult Function() resetFilter,
+    required TResult Function() cartLoading,
+    required TResult Function(List<CartItemModel> cartItems) cartSuccess,
+    required TResult Function(String error) cartFailure,
+  }) {
+    return cartLoading();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? shopNowLoading,
+    TResult? Function(ShopNowResponseModel responseModel)? shopNowSuccess,
+    TResult? Function(String error)? shopNowFailure,
+    TResult? Function()? paginationLoading,
+    TResult? Function(String error)? paginationFailure,
+    TResult? Function()? resetFilter,
+    TResult? Function()? cartLoading,
+    TResult? Function(List<CartItemModel> cartItems)? cartSuccess,
+    TResult? Function(String error)? cartFailure,
+  }) {
+    return cartLoading?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? shopNowLoading,
+    TResult Function(ShopNowResponseModel responseModel)? shopNowSuccess,
+    TResult Function(String error)? shopNowFailure,
+    TResult Function()? paginationLoading,
+    TResult Function(String error)? paginationFailure,
+    TResult Function()? resetFilter,
+    TResult Function()? cartLoading,
+    TResult Function(List<CartItemModel> cartItems)? cartSuccess,
+    TResult Function(String error)? cartFailure,
+    required TResult orElse(),
+  }) {
+    if (cartLoading != null) {
+      return cartLoading();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(ShopNowLoading value) shopNowLoading,
+    required TResult Function(ShopNowSuccess value) shopNowSuccess,
+    required TResult Function(ShopNowFailure value) shopNowFailure,
+    required TResult Function(PaginationLoading value) paginationLoading,
+    required TResult Function(PaginationFailure value) paginationFailure,
+    required TResult Function(ResetFilter value) resetFilter,
+    required TResult Function(CartLoading value) cartLoading,
+    required TResult Function(CartSuccess value) cartSuccess,
+    required TResult Function(CartFailure value) cartFailure,
+  }) {
+    return cartLoading(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(ShopNowLoading value)? shopNowLoading,
+    TResult? Function(ShopNowSuccess value)? shopNowSuccess,
+    TResult? Function(ShopNowFailure value)? shopNowFailure,
+    TResult? Function(PaginationLoading value)? paginationLoading,
+    TResult? Function(PaginationFailure value)? paginationFailure,
+    TResult? Function(ResetFilter value)? resetFilter,
+    TResult? Function(CartLoading value)? cartLoading,
+    TResult? Function(CartSuccess value)? cartSuccess,
+    TResult? Function(CartFailure value)? cartFailure,
+  }) {
+    return cartLoading?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(ShopNowLoading value)? shopNowLoading,
+    TResult Function(ShopNowSuccess value)? shopNowSuccess,
+    TResult Function(ShopNowFailure value)? shopNowFailure,
+    TResult Function(PaginationLoading value)? paginationLoading,
+    TResult Function(PaginationFailure value)? paginationFailure,
+    TResult Function(ResetFilter value)? resetFilter,
+    TResult Function(CartLoading value)? cartLoading,
+    TResult Function(CartSuccess value)? cartSuccess,
+    TResult Function(CartFailure value)? cartFailure,
+    required TResult orElse(),
+  }) {
+    if (cartLoading != null) {
+      return cartLoading(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class CartLoading implements CartState {
+  const factory CartLoading() = _$CartLoadingImpl;
+}
+
+/// @nodoc
+abstract class _$$CartSuccessImplCopyWith<$Res> {
+  factory _$$CartSuccessImplCopyWith(
+          _$CartSuccessImpl value, $Res Function(_$CartSuccessImpl) then) =
+      __$$CartSuccessImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({List<CartItemModel> cartItems});
+}
+
+/// @nodoc
+class __$$CartSuccessImplCopyWithImpl<$Res>
+    extends _$CartStateCopyWithImpl<$Res, _$CartSuccessImpl>
+    implements _$$CartSuccessImplCopyWith<$Res> {
+  __$$CartSuccessImplCopyWithImpl(
+      _$CartSuccessImpl _value, $Res Function(_$CartSuccessImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of CartState
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? cartItems = null,
+  }) {
+    return _then(_$CartSuccessImpl(
+      null == cartItems
+          ? _value._cartItems
+          : cartItems // ignore: cast_nullable_to_non_nullable
+              as List<CartItemModel>,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$CartSuccessImpl implements CartSuccess {
+  const _$CartSuccessImpl(final List<CartItemModel> cartItems)
+      : _cartItems = cartItems;
+
+  final List<CartItemModel> _cartItems;
+  @override
+  List<CartItemModel> get cartItems {
+    if (_cartItems is EqualUnmodifiableListView) return _cartItems;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_cartItems);
+  }
+
+  @override
+  String toString() {
+    return 'CartState.cartSuccess(cartItems: $cartItems)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$CartSuccessImpl &&
+            const DeepCollectionEquality()
+                .equals(other._cartItems, _cartItems));
+  }
+
+  @override
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(_cartItems));
+
+  /// Create a copy of CartState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$CartSuccessImplCopyWith<_$CartSuccessImpl> get copyWith =>
+      __$$CartSuccessImplCopyWithImpl<_$CartSuccessImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() shopNowLoading,
+    required TResult Function(ShopNowResponseModel responseModel)
+        shopNowSuccess,
+    required TResult Function(String error) shopNowFailure,
+    required TResult Function() paginationLoading,
+    required TResult Function(String error) paginationFailure,
+    required TResult Function() resetFilter,
+    required TResult Function() cartLoading,
+    required TResult Function(List<CartItemModel> cartItems) cartSuccess,
+    required TResult Function(String error) cartFailure,
+  }) {
+    return cartSuccess(cartItems);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? shopNowLoading,
+    TResult? Function(ShopNowResponseModel responseModel)? shopNowSuccess,
+    TResult? Function(String error)? shopNowFailure,
+    TResult? Function()? paginationLoading,
+    TResult? Function(String error)? paginationFailure,
+    TResult? Function()? resetFilter,
+    TResult? Function()? cartLoading,
+    TResult? Function(List<CartItemModel> cartItems)? cartSuccess,
+    TResult? Function(String error)? cartFailure,
+  }) {
+    return cartSuccess?.call(cartItems);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? shopNowLoading,
+    TResult Function(ShopNowResponseModel responseModel)? shopNowSuccess,
+    TResult Function(String error)? shopNowFailure,
+    TResult Function()? paginationLoading,
+    TResult Function(String error)? paginationFailure,
+    TResult Function()? resetFilter,
+    TResult Function()? cartLoading,
+    TResult Function(List<CartItemModel> cartItems)? cartSuccess,
+    TResult Function(String error)? cartFailure,
+    required TResult orElse(),
+  }) {
+    if (cartSuccess != null) {
+      return cartSuccess(cartItems);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(ShopNowLoading value) shopNowLoading,
+    required TResult Function(ShopNowSuccess value) shopNowSuccess,
+    required TResult Function(ShopNowFailure value) shopNowFailure,
+    required TResult Function(PaginationLoading value) paginationLoading,
+    required TResult Function(PaginationFailure value) paginationFailure,
+    required TResult Function(ResetFilter value) resetFilter,
+    required TResult Function(CartLoading value) cartLoading,
+    required TResult Function(CartSuccess value) cartSuccess,
+    required TResult Function(CartFailure value) cartFailure,
+  }) {
+    return cartSuccess(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(ShopNowLoading value)? shopNowLoading,
+    TResult? Function(ShopNowSuccess value)? shopNowSuccess,
+    TResult? Function(ShopNowFailure value)? shopNowFailure,
+    TResult? Function(PaginationLoading value)? paginationLoading,
+    TResult? Function(PaginationFailure value)? paginationFailure,
+    TResult? Function(ResetFilter value)? resetFilter,
+    TResult? Function(CartLoading value)? cartLoading,
+    TResult? Function(CartSuccess value)? cartSuccess,
+    TResult? Function(CartFailure value)? cartFailure,
+  }) {
+    return cartSuccess?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(ShopNowLoading value)? shopNowLoading,
+    TResult Function(ShopNowSuccess value)? shopNowSuccess,
+    TResult Function(ShopNowFailure value)? shopNowFailure,
+    TResult Function(PaginationLoading value)? paginationLoading,
+    TResult Function(PaginationFailure value)? paginationFailure,
+    TResult Function(ResetFilter value)? resetFilter,
+    TResult Function(CartLoading value)? cartLoading,
+    TResult Function(CartSuccess value)? cartSuccess,
+    TResult Function(CartFailure value)? cartFailure,
+    required TResult orElse(),
+  }) {
+    if (cartSuccess != null) {
+      return cartSuccess(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class CartSuccess implements CartState {
+  const factory CartSuccess(final List<CartItemModel> cartItems) =
+      _$CartSuccessImpl;
+
+  List<CartItemModel> get cartItems;
+
+  /// Create a copy of CartState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$CartSuccessImplCopyWith<_$CartSuccessImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$CartFailureImplCopyWith<$Res> {
+  factory _$$CartFailureImplCopyWith(
+          _$CartFailureImpl value, $Res Function(_$CartFailureImpl) then) =
+      __$$CartFailureImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({String error});
+}
+
+/// @nodoc
+class __$$CartFailureImplCopyWithImpl<$Res>
+    extends _$CartStateCopyWithImpl<$Res, _$CartFailureImpl>
+    implements _$$CartFailureImplCopyWith<$Res> {
+  __$$CartFailureImplCopyWithImpl(
+      _$CartFailureImpl _value, $Res Function(_$CartFailureImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of CartState
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? error = null,
+  }) {
+    return _then(_$CartFailureImpl(
+      error: null == error
+          ? _value.error
+          : error // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$CartFailureImpl implements CartFailure {
+  const _$CartFailureImpl({required this.error});
+
+  @override
+  final String error;
+
+  @override
+  String toString() {
+    return 'CartState.cartFailure(error: $error)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$CartFailureImpl &&
+            (identical(other.error, error) || other.error == error));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, error);
+
+  /// Create a copy of CartState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$CartFailureImplCopyWith<_$CartFailureImpl> get copyWith =>
+      __$$CartFailureImplCopyWithImpl<_$CartFailureImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() shopNowLoading,
+    required TResult Function(ShopNowResponseModel responseModel)
+        shopNowSuccess,
+    required TResult Function(String error) shopNowFailure,
+    required TResult Function() paginationLoading,
+    required TResult Function(String error) paginationFailure,
+    required TResult Function() resetFilter,
+    required TResult Function() cartLoading,
+    required TResult Function(List<CartItemModel> cartItems) cartSuccess,
+    required TResult Function(String error) cartFailure,
+  }) {
+    return cartFailure(error);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? shopNowLoading,
+    TResult? Function(ShopNowResponseModel responseModel)? shopNowSuccess,
+    TResult? Function(String error)? shopNowFailure,
+    TResult? Function()? paginationLoading,
+    TResult? Function(String error)? paginationFailure,
+    TResult? Function()? resetFilter,
+    TResult? Function()? cartLoading,
+    TResult? Function(List<CartItemModel> cartItems)? cartSuccess,
+    TResult? Function(String error)? cartFailure,
+  }) {
+    return cartFailure?.call(error);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? shopNowLoading,
+    TResult Function(ShopNowResponseModel responseModel)? shopNowSuccess,
+    TResult Function(String error)? shopNowFailure,
+    TResult Function()? paginationLoading,
+    TResult Function(String error)? paginationFailure,
+    TResult Function()? resetFilter,
+    TResult Function()? cartLoading,
+    TResult Function(List<CartItemModel> cartItems)? cartSuccess,
+    TResult Function(String error)? cartFailure,
+    required TResult orElse(),
+  }) {
+    if (cartFailure != null) {
+      return cartFailure(error);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(ShopNowLoading value) shopNowLoading,
+    required TResult Function(ShopNowSuccess value) shopNowSuccess,
+    required TResult Function(ShopNowFailure value) shopNowFailure,
+    required TResult Function(PaginationLoading value) paginationLoading,
+    required TResult Function(PaginationFailure value) paginationFailure,
+    required TResult Function(ResetFilter value) resetFilter,
+    required TResult Function(CartLoading value) cartLoading,
+    required TResult Function(CartSuccess value) cartSuccess,
+    required TResult Function(CartFailure value) cartFailure,
+  }) {
+    return cartFailure(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(ShopNowLoading value)? shopNowLoading,
+    TResult? Function(ShopNowSuccess value)? shopNowSuccess,
+    TResult? Function(ShopNowFailure value)? shopNowFailure,
+    TResult? Function(PaginationLoading value)? paginationLoading,
+    TResult? Function(PaginationFailure value)? paginationFailure,
+    TResult? Function(ResetFilter value)? resetFilter,
+    TResult? Function(CartLoading value)? cartLoading,
+    TResult? Function(CartSuccess value)? cartSuccess,
+    TResult? Function(CartFailure value)? cartFailure,
+  }) {
+    return cartFailure?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(ShopNowLoading value)? shopNowLoading,
+    TResult Function(ShopNowSuccess value)? shopNowSuccess,
+    TResult Function(ShopNowFailure value)? shopNowFailure,
+    TResult Function(PaginationLoading value)? paginationLoading,
+    TResult Function(PaginationFailure value)? paginationFailure,
+    TResult Function(ResetFilter value)? resetFilter,
+    TResult Function(CartLoading value)? cartLoading,
+    TResult Function(CartSuccess value)? cartSuccess,
+    TResult Function(CartFailure value)? cartFailure,
+    required TResult orElse(),
+  }) {
+    if (cartFailure != null) {
+      return cartFailure(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class CartFailure implements CartState {
+  const factory CartFailure({required final String error}) = _$CartFailureImpl;
+
+  String get error;
+
+  /// Create a copy of CartState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$CartFailureImplCopyWith<_$CartFailureImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }

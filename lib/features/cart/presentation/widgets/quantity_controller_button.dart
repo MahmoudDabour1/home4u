@@ -1,11 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../../core/theming/app_colors.dart';
 import '../../../../core/theming/app_styles.dart';
-
+import '../../data/models/shop_now_response_model.dart';
+import '../../logic/cart_cubit.dart';
 class QuantityControllerButton extends StatefulWidget {
-  const QuantityControllerButton({super.key});
+  final ShopNowContent content;
+
+  const QuantityControllerButton({super.key, required this.content});
 
   @override
   State<QuantityControllerButton> createState() =>
@@ -20,77 +24,44 @@ class _QuantityControllerButtonState extends State<QuantityControllerButton> {
     if (itemCount == 0) {
       return IconButton(
         onPressed: () {
-          setState(() {
-            itemCount = 1;
-          });
+          setState(() => itemCount = 1);
+          context.read<CartCubit>().addToCart(widget.content);
         },
+        icon: Icon(Icons.add, color: Colors.white),
         style: ButtonStyle(
-          backgroundColor: WidgetStateProperty.all(
-            AppColors.primaryColor,
-          ),
-          shape: WidgetStateProperty.all(
-            RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(32.r),
-            ),
-          ),
-        ),
-        icon: Icon(
-          Icons.add,
-          color: AppColors.whiteColor,
-          size: 24.w,
+          backgroundColor: WidgetStateProperty.all(AppColors.primaryColor),
         ),
       );
     } else {
-      return SizedBox(
-        height: 50.h,
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            InkWell(
-              onTap: () {
-                setState(() {
-                  if (itemCount > 1) {
-                    itemCount--;
-                  } else {
-                    itemCount = 0;
-                  }
-                });
-              },
-              borderRadius: BorderRadius.circular(4.r),
-              child: Padding(
-                padding: EdgeInsets.all(4.w),
-                child: Icon(
-                  Icons.remove,
-                  size: 18.w,
-                  color: AppColors.primaryColor,
-                ),
-              ),
-            ),
-            SizedBox(width: 4.w),
-            Text(
-              '$itemCount',
-              style: AppStyles.font16BlackMedium,
-            ),
-            SizedBox(width: 4.w),
-            InkWell(
-              onTap: () {
-                setState(() {
-                  itemCount++;
-                });
-              },
-              borderRadius: BorderRadius.circular(4.r),
-              child: Padding(
-                padding: EdgeInsets.all(4.w),
-                child: Icon(
-                  Icons.add,
-                  size: 18.w,
-                  color: AppColors.primaryColor,
-                ),
-              ),
-            ),
-          ],
-        ),
+      return Row(
+        children: [
+          IconButton(
+            icon: Icon(Icons.remove),
+            onPressed: () {
+              setState(() {
+                if (itemCount > 1) {
+                  itemCount--;
+                  context
+                      .read<CartCubit>()
+                      .updateQuantity(widget.content, itemCount);
+                } else {
+                  itemCount = 0;
+                  context.read<CartCubit>().removeFromCart(widget.content);
+                }
+              });
+            },
+          ),
+          Text('$itemCount'),
+          IconButton(
+            icon: Icon(Icons.add),
+            onPressed: () {
+              setState(() => itemCount++);
+              context
+                  .read<CartCubit>()
+                  .updateQuantity(widget.content, itemCount);
+            },
+          ),
+        ],
       );
     }
   }

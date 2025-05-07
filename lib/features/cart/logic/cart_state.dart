@@ -1,4 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:home4u/features/cart/data/models/cart_item_model.dart';
 
 import '../data/models/shop_now_response_model.dart';
 
@@ -25,4 +26,15 @@ class CartState with _$CartState {
 
   ///reset Filter
   const factory CartState.resetFilter() = ResetFilter;
+
+  ///cart
+  const factory CartState.cartLoading() = CartLoading;
+
+  const factory CartState.cartSuccess(List<CartItemModel> cartItems) =
+      CartSuccess;
+
+  const factory CartState.cartFailure({required String error}) = CartFailure;
+
+
+
 }
