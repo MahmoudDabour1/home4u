@@ -108,7 +108,8 @@ class CartCubit extends Cubit<CartState> {
     isFetching = false;
   }
 
-  Future<void> resetFilter() async {
+  /// Reset all filters
+  Future<void> resetAllFilters() async {
     selectedBusinessTypeNames = [];
     selectedMaterialNames = [];
     selectedColorNames = [];
@@ -121,7 +122,16 @@ class CartCubit extends Cubit<CartState> {
     searchController.clear();
     selectedBusinessType = null;
     selectedBusinessTypeCategory = null;
+
+    /// Reset pagination
+    _page = 0;
+    hasReachedMax = false;
+    products = [];
+
     emit(const CartState.resetFilter());
+    if (_cartItems.isNotEmpty) {
+      emit(CartState.cartSuccess(List.from(_cartItems)));
+    }
   }
 
   Future<void> resetPagination() async {

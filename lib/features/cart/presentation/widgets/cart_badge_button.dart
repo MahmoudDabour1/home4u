@@ -8,19 +8,32 @@ import '../../../../core/routing/routes.dart';
 import '../../logic/cart_cubit.dart';
 import '../../logic/cart_state.dart';
 
-class CartBadgeButton extends StatelessWidget {
+class CartBadgeButton extends StatefulWidget {
   const CartBadgeButton({super.key});
 
   @override
+  State<CartBadgeButton> createState() => _CartBadgeButtonState();
+}
+
+class _CartBadgeButtonState extends State<CartBadgeButton> {
+  int _lastKnownCount = 0;
+
+  @override
   Widget build(BuildContext context) {
-    return BlocBuilder<CartCubit, CartState>(
+    return BlocConsumer<CartCubit, CartState>(
+      listener: (context, state) {
+        state.maybeWhen(
+          cartSuccess: (items) => _lastKnownCount = items.length,
+          orElse: () {},
+        );
+      },
       builder: (context, state) {
-        return state.maybeWhen(
-          cartLoading: () => _buildButton(count: 0, context: context),
-          cartFailure: (error) => _buildButton(count: 0, context: context),
-          cartSuccess: (items) =>
-              _buildButton(count: items.length, context: context),
-          orElse: () => SizedBox(),
+        return _buildButton(
+          count: state.maybeWhen(
+            cartSuccess: (items) => items.length,
+            orElse: () => _lastKnownCount,
+          ),
+          context: context,
         );
       },
     );
@@ -28,7 +41,12 @@ class CartBadgeButton extends StatelessWidget {
 
   Widget _buildButton({required int count, required BuildContext context}) {
     return IconButton(
-      onPressed: () => context.pushNamed(Routes.orderDetailsScreen),
+      onPressed: () async{
+        await context.read<CartCubit>().resetAllFilters();
+        if (mounted) {
+          context.pushNamed(Routes.orderDetailsScreen);
+        }
+      },
       padding: EdgeInsets.zero,
       style: ButtonStyle(
         backgroundColor: WidgetStateProperty.all(AppColors.whiteColor),
@@ -41,6 +59,7 @@ class CartBadgeButton extends StatelessWidget {
       ),
       icon: Badge.count(
         count: count,
+        isLabelVisible: count > 0,
         child: Icon(
           Icons.shopping_cart,
           color: AppColors.primaryColor,

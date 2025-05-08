@@ -25,7 +25,7 @@ class CartState with _$CartState {
       PaginationFailure;
 
   ///reset Filter
-  const factory CartState.resetFilter() = ResetFilter;
+  const factory CartState.resetFilter() = ResetAllFilters;
 
   ///cart
   const factory CartState.cartLoading() = CartLoading;

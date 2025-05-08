@@ -68,7 +68,7 @@ mixin _$CartState {
     required TResult Function(ShopNowFailure value) shopNowFailure,
     required TResult Function(PaginationLoading value) paginationLoading,
     required TResult Function(PaginationFailure value) paginationFailure,
-    required TResult Function(ResetFilter value) resetFilter,
+    required TResult Function(ResetAllFilters value) resetFilter,
     required TResult Function(CartLoading value) cartLoading,
     required TResult Function(CartSuccess value) cartSuccess,
     required TResult Function(CartFailure value) cartFailure,
@@ -82,7 +82,7 @@ mixin _$CartState {
     TResult? Function(ShopNowFailure value)? shopNowFailure,
     TResult? Function(PaginationLoading value)? paginationLoading,
     TResult? Function(PaginationFailure value)? paginationFailure,
-    TResult? Function(ResetFilter value)? resetFilter,
+    TResult? Function(ResetAllFilters value)? resetFilter,
     TResult? Function(CartLoading value)? cartLoading,
     TResult? Function(CartSuccess value)? cartSuccess,
     TResult? Function(CartFailure value)? cartFailure,
@@ -96,7 +96,7 @@ mixin _$CartState {
     TResult Function(ShopNowFailure value)? shopNowFailure,
     TResult Function(PaginationLoading value)? paginationLoading,
     TResult Function(PaginationFailure value)? paginationFailure,
-    TResult Function(ResetFilter value)? resetFilter,
+    TResult Function(ResetAllFilters value)? resetFilter,
     TResult Function(CartLoading value)? cartLoading,
     TResult Function(CartSuccess value)? cartSuccess,
     TResult Function(CartFailure value)? cartFailure,
@@ -228,7 +228,7 @@ class _$InitialImpl implements _Initial {
     required TResult Function(ShopNowFailure value) shopNowFailure,
     required TResult Function(PaginationLoading value) paginationLoading,
     required TResult Function(PaginationFailure value) paginationFailure,
-    required TResult Function(ResetFilter value) resetFilter,
+    required TResult Function(ResetAllFilters value) resetFilter,
     required TResult Function(CartLoading value) cartLoading,
     required TResult Function(CartSuccess value) cartSuccess,
     required TResult Function(CartFailure value) cartFailure,
@@ -245,7 +245,7 @@ class _$InitialImpl implements _Initial {
     TResult? Function(ShopNowFailure value)? shopNowFailure,
     TResult? Function(PaginationLoading value)? paginationLoading,
     TResult? Function(PaginationFailure value)? paginationFailure,
-    TResult? Function(ResetFilter value)? resetFilter,
+    TResult? Function(ResetAllFilters value)? resetFilter,
     TResult? Function(CartLoading value)? cartLoading,
     TResult? Function(CartSuccess value)? cartSuccess,
     TResult? Function(CartFailure value)? cartFailure,
@@ -262,7 +262,7 @@ class _$InitialImpl implements _Initial {
     TResult Function(ShopNowFailure value)? shopNowFailure,
     TResult Function(PaginationLoading value)? paginationLoading,
     TResult Function(PaginationFailure value)? paginationFailure,
-    TResult Function(ResetFilter value)? resetFilter,
+    TResult Function(ResetAllFilters value)? resetFilter,
     TResult Function(CartLoading value)? cartLoading,
     TResult Function(CartSuccess value)? cartSuccess,
     TResult Function(CartFailure value)? cartFailure,
@@ -382,7 +382,7 @@ class _$ShopNowLoadingImpl implements ShopNowLoading {
     required TResult Function(ShopNowFailure value) shopNowFailure,
     required TResult Function(PaginationLoading value) paginationLoading,
     required TResult Function(PaginationFailure value) paginationFailure,
-    required TResult Function(ResetFilter value) resetFilter,
+    required TResult Function(ResetAllFilters value) resetFilter,
     required TResult Function(CartLoading value) cartLoading,
     required TResult Function(CartSuccess value) cartSuccess,
     required TResult Function(CartFailure value) cartFailure,
@@ -399,7 +399,7 @@ class _$ShopNowLoadingImpl implements ShopNowLoading {
     TResult? Function(ShopNowFailure value)? shopNowFailure,
     TResult? Function(PaginationLoading value)? paginationLoading,
     TResult? Function(PaginationFailure value)? paginationFailure,
-    TResult? Function(ResetFilter value)? resetFilter,
+    TResult? Function(ResetAllFilters value)? resetFilter,
     TResult? Function(CartLoading value)? cartLoading,
     TResult? Function(CartSuccess value)? cartSuccess,
     TResult? Function(CartFailure value)? cartFailure,
@@ -416,7 +416,7 @@ class _$ShopNowLoadingImpl implements ShopNowLoading {
     TResult Function(ShopNowFailure value)? shopNowFailure,
     TResult Function(PaginationLoading value)? paginationLoading,
     TResult Function(PaginationFailure value)? paginationFailure,
-    TResult Function(ResetFilter value)? resetFilter,
+    TResult Function(ResetAllFilters value)? resetFilter,
     TResult Function(CartLoading value)? cartLoading,
     TResult Function(CartSuccess value)? cartSuccess,
     TResult Function(CartFailure value)? cartFailure,
@@ -565,7 +565,7 @@ class _$ShopNowSuccessImpl implements ShopNowSuccess {
     required TResult Function(ShopNowFailure value) shopNowFailure,
     required TResult Function(PaginationLoading value) paginationLoading,
     required TResult Function(PaginationFailure value) paginationFailure,
-    required TResult Function(ResetFilter value) resetFilter,
+    required TResult Function(ResetAllFilters value) resetFilter,
     required TResult Function(CartLoading value) cartLoading,
     required TResult Function(CartSuccess value) cartSuccess,
     required TResult Function(CartFailure value) cartFailure,
@@ -582,7 +582,7 @@ class _$ShopNowSuccessImpl implements ShopNowSuccess {
     TResult? Function(ShopNowFailure value)? shopNowFailure,
     TResult? Function(PaginationLoading value)? paginationLoading,
     TResult? Function(PaginationFailure value)? paginationFailure,
-    TResult? Function(ResetFilter value)? resetFilter,
+    TResult? Function(ResetAllFilters value)? resetFilter,
     TResult? Function(CartLoading value)? cartLoading,
     TResult? Function(CartSuccess value)? cartSuccess,
     TResult? Function(CartFailure value)? cartFailure,
@@ -599,7 +599,7 @@ class _$ShopNowSuccessImpl implements ShopNowSuccess {
     TResult Function(ShopNowFailure value)? shopNowFailure,
     TResult Function(PaginationLoading value)? paginationLoading,
     TResult Function(PaginationFailure value)? paginationFailure,
-    TResult Function(ResetFilter value)? resetFilter,
+    TResult Function(ResetAllFilters value)? resetFilter,
     TResult Function(CartLoading value)? cartLoading,
     TResult Function(CartSuccess value)? cartSuccess,
     TResult Function(CartFailure value)? cartFailure,
@@ -756,7 +756,7 @@ class _$ShopNowFailureImpl implements ShopNowFailure {
     required TResult Function(ShopNowFailure value) shopNowFailure,
     required TResult Function(PaginationLoading value) paginationLoading,
     required TResult Function(PaginationFailure value) paginationFailure,
-    required TResult Function(ResetFilter value) resetFilter,
+    required TResult Function(ResetAllFilters value) resetFilter,
     required TResult Function(CartLoading value) cartLoading,
     required TResult Function(CartSuccess value) cartSuccess,
     required TResult Function(CartFailure value) cartFailure,
@@ -773,7 +773,7 @@ class _$ShopNowFailureImpl implements ShopNowFailure {
     TResult? Function(ShopNowFailure value)? shopNowFailure,
     TResult? Function(PaginationLoading value)? paginationLoading,
     TResult? Function(PaginationFailure value)? paginationFailure,
-    TResult? Function(ResetFilter value)? resetFilter,
+    TResult? Function(ResetAllFilters value)? resetFilter,
     TResult? Function(CartLoading value)? cartLoading,
     TResult? Function(CartSuccess value)? cartSuccess,
     TResult? Function(CartFailure value)? cartFailure,
@@ -790,7 +790,7 @@ class _$ShopNowFailureImpl implements ShopNowFailure {
     TResult Function(ShopNowFailure value)? shopNowFailure,
     TResult Function(PaginationLoading value)? paginationLoading,
     TResult Function(PaginationFailure value)? paginationFailure,
-    TResult Function(ResetFilter value)? resetFilter,
+    TResult Function(ResetAllFilters value)? resetFilter,
     TResult Function(CartLoading value)? cartLoading,
     TResult Function(CartSuccess value)? cartSuccess,
     TResult Function(CartFailure value)? cartFailure,
@@ -919,7 +919,7 @@ class _$PaginationLoadingImpl implements PaginationLoading {
     required TResult Function(ShopNowFailure value) shopNowFailure,
     required TResult Function(PaginationLoading value) paginationLoading,
     required TResult Function(PaginationFailure value) paginationFailure,
-    required TResult Function(ResetFilter value) resetFilter,
+    required TResult Function(ResetAllFilters value) resetFilter,
     required TResult Function(CartLoading value) cartLoading,
     required TResult Function(CartSuccess value) cartSuccess,
     required TResult Function(CartFailure value) cartFailure,
@@ -936,7 +936,7 @@ class _$PaginationLoadingImpl implements PaginationLoading {
     TResult? Function(ShopNowFailure value)? shopNowFailure,
     TResult? Function(PaginationLoading value)? paginationLoading,
     TResult? Function(PaginationFailure value)? paginationFailure,
-    TResult? Function(ResetFilter value)? resetFilter,
+    TResult? Function(ResetAllFilters value)? resetFilter,
     TResult? Function(CartLoading value)? cartLoading,
     TResult? Function(CartSuccess value)? cartSuccess,
     TResult? Function(CartFailure value)? cartFailure,
@@ -953,7 +953,7 @@ class _$PaginationLoadingImpl implements PaginationLoading {
     TResult Function(ShopNowFailure value)? shopNowFailure,
     TResult Function(PaginationLoading value)? paginationLoading,
     TResult Function(PaginationFailure value)? paginationFailure,
-    TResult Function(ResetFilter value)? resetFilter,
+    TResult Function(ResetAllFilters value)? resetFilter,
     TResult Function(CartLoading value)? cartLoading,
     TResult Function(CartSuccess value)? cartSuccess,
     TResult Function(CartFailure value)? cartFailure,
@@ -1101,7 +1101,7 @@ class _$PaginationFailureImpl implements PaginationFailure {
     required TResult Function(ShopNowFailure value) shopNowFailure,
     required TResult Function(PaginationLoading value) paginationLoading,
     required TResult Function(PaginationFailure value) paginationFailure,
-    required TResult Function(ResetFilter value) resetFilter,
+    required TResult Function(ResetAllFilters value) resetFilter,
     required TResult Function(CartLoading value) cartLoading,
     required TResult Function(CartSuccess value) cartSuccess,
     required TResult Function(CartFailure value) cartFailure,
@@ -1118,7 +1118,7 @@ class _$PaginationFailureImpl implements PaginationFailure {
     TResult? Function(ShopNowFailure value)? shopNowFailure,
     TResult? Function(PaginationLoading value)? paginationLoading,
     TResult? Function(PaginationFailure value)? paginationFailure,
-    TResult? Function(ResetFilter value)? resetFilter,
+    TResult? Function(ResetAllFilters value)? resetFilter,
     TResult? Function(CartLoading value)? cartLoading,
     TResult? Function(CartSuccess value)? cartSuccess,
     TResult? Function(CartFailure value)? cartFailure,
@@ -1135,7 +1135,7 @@ class _$PaginationFailureImpl implements PaginationFailure {
     TResult Function(ShopNowFailure value)? shopNowFailure,
     TResult Function(PaginationLoading value)? paginationLoading,
     TResult Function(PaginationFailure value)? paginationFailure,
-    TResult Function(ResetFilter value)? resetFilter,
+    TResult Function(ResetAllFilters value)? resetFilter,
     TResult Function(CartLoading value)? cartLoading,
     TResult Function(CartSuccess value)? cartSuccess,
     TResult Function(CartFailure value)? cartFailure,
@@ -1162,18 +1162,18 @@ abstract class PaginationFailure implements CartState {
 }
 
 /// @nodoc
-abstract class _$$ResetFilterImplCopyWith<$Res> {
-  factory _$$ResetFilterImplCopyWith(
-          _$ResetFilterImpl value, $Res Function(_$ResetFilterImpl) then) =
-      __$$ResetFilterImplCopyWithImpl<$Res>;
+abstract class _$$ResetAllFiltersImplCopyWith<$Res> {
+  factory _$$ResetAllFiltersImplCopyWith(_$ResetAllFiltersImpl value,
+          $Res Function(_$ResetAllFiltersImpl) then) =
+      __$$ResetAllFiltersImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$ResetFilterImplCopyWithImpl<$Res>
-    extends _$CartStateCopyWithImpl<$Res, _$ResetFilterImpl>
-    implements _$$ResetFilterImplCopyWith<$Res> {
-  __$$ResetFilterImplCopyWithImpl(
-      _$ResetFilterImpl _value, $Res Function(_$ResetFilterImpl) _then)
+class __$$ResetAllFiltersImplCopyWithImpl<$Res>
+    extends _$CartStateCopyWithImpl<$Res, _$ResetAllFiltersImpl>
+    implements _$$ResetAllFiltersImplCopyWith<$Res> {
+  __$$ResetAllFiltersImplCopyWithImpl(
+      _$ResetAllFiltersImpl _value, $Res Function(_$ResetAllFiltersImpl) _then)
       : super(_value, _then);
 
   /// Create a copy of CartState
@@ -1182,8 +1182,8 @@ class __$$ResetFilterImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$ResetFilterImpl implements ResetFilter {
-  const _$ResetFilterImpl();
+class _$ResetAllFiltersImpl implements ResetAllFilters {
+  const _$ResetAllFiltersImpl();
 
   @override
   String toString() {
@@ -1193,7 +1193,7 @@ class _$ResetFilterImpl implements ResetFilter {
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$ResetFilterImpl);
+        (other.runtimeType == runtimeType && other is _$ResetAllFiltersImpl);
   }
 
   @override
@@ -1264,7 +1264,7 @@ class _$ResetFilterImpl implements ResetFilter {
     required TResult Function(ShopNowFailure value) shopNowFailure,
     required TResult Function(PaginationLoading value) paginationLoading,
     required TResult Function(PaginationFailure value) paginationFailure,
-    required TResult Function(ResetFilter value) resetFilter,
+    required TResult Function(ResetAllFilters value) resetFilter,
     required TResult Function(CartLoading value) cartLoading,
     required TResult Function(CartSuccess value) cartSuccess,
     required TResult Function(CartFailure value) cartFailure,
@@ -1281,7 +1281,7 @@ class _$ResetFilterImpl implements ResetFilter {
     TResult? Function(ShopNowFailure value)? shopNowFailure,
     TResult? Function(PaginationLoading value)? paginationLoading,
     TResult? Function(PaginationFailure value)? paginationFailure,
-    TResult? Function(ResetFilter value)? resetFilter,
+    TResult? Function(ResetAllFilters value)? resetFilter,
     TResult? Function(CartLoading value)? cartLoading,
     TResult? Function(CartSuccess value)? cartSuccess,
     TResult? Function(CartFailure value)? cartFailure,
@@ -1298,7 +1298,7 @@ class _$ResetFilterImpl implements ResetFilter {
     TResult Function(ShopNowFailure value)? shopNowFailure,
     TResult Function(PaginationLoading value)? paginationLoading,
     TResult Function(PaginationFailure value)? paginationFailure,
-    TResult Function(ResetFilter value)? resetFilter,
+    TResult Function(ResetAllFilters value)? resetFilter,
     TResult Function(CartLoading value)? cartLoading,
     TResult Function(CartSuccess value)? cartSuccess,
     TResult Function(CartFailure value)? cartFailure,
@@ -1311,8 +1311,8 @@ class _$ResetFilterImpl implements ResetFilter {
   }
 }
 
-abstract class ResetFilter implements CartState {
-  const factory ResetFilter() = _$ResetFilterImpl;
+abstract class ResetAllFilters implements CartState {
+  const factory ResetAllFilters() = _$ResetAllFiltersImpl;
 }
 
 /// @nodoc
@@ -1418,7 +1418,7 @@ class _$CartLoadingImpl implements CartLoading {
     required TResult Function(ShopNowFailure value) shopNowFailure,
     required TResult Function(PaginationLoading value) paginationLoading,
     required TResult Function(PaginationFailure value) paginationFailure,
-    required TResult Function(ResetFilter value) resetFilter,
+    required TResult Function(ResetAllFilters value) resetFilter,
     required TResult Function(CartLoading value) cartLoading,
     required TResult Function(CartSuccess value) cartSuccess,
     required TResult Function(CartFailure value) cartFailure,
@@ -1435,7 +1435,7 @@ class _$CartLoadingImpl implements CartLoading {
     TResult? Function(ShopNowFailure value)? shopNowFailure,
     TResult? Function(PaginationLoading value)? paginationLoading,
     TResult? Function(PaginationFailure value)? paginationFailure,
-    TResult? Function(ResetFilter value)? resetFilter,
+    TResult? Function(ResetAllFilters value)? resetFilter,
     TResult? Function(CartLoading value)? cartLoading,
     TResult? Function(CartSuccess value)? cartSuccess,
     TResult? Function(CartFailure value)? cartFailure,
@@ -1452,7 +1452,7 @@ class _$CartLoadingImpl implements CartLoading {
     TResult Function(ShopNowFailure value)? shopNowFailure,
     TResult Function(PaginationLoading value)? paginationLoading,
     TResult Function(PaginationFailure value)? paginationFailure,
-    TResult Function(ResetFilter value)? resetFilter,
+    TResult Function(ResetAllFilters value)? resetFilter,
     TResult Function(CartLoading value)? cartLoading,
     TResult Function(CartSuccess value)? cartSuccess,
     TResult Function(CartFailure value)? cartFailure,
@@ -1607,7 +1607,7 @@ class _$CartSuccessImpl implements CartSuccess {
     required TResult Function(ShopNowFailure value) shopNowFailure,
     required TResult Function(PaginationLoading value) paginationLoading,
     required TResult Function(PaginationFailure value) paginationFailure,
-    required TResult Function(ResetFilter value) resetFilter,
+    required TResult Function(ResetAllFilters value) resetFilter,
     required TResult Function(CartLoading value) cartLoading,
     required TResult Function(CartSuccess value) cartSuccess,
     required TResult Function(CartFailure value) cartFailure,
@@ -1624,7 +1624,7 @@ class _$CartSuccessImpl implements CartSuccess {
     TResult? Function(ShopNowFailure value)? shopNowFailure,
     TResult? Function(PaginationLoading value)? paginationLoading,
     TResult? Function(PaginationFailure value)? paginationFailure,
-    TResult? Function(ResetFilter value)? resetFilter,
+    TResult? Function(ResetAllFilters value)? resetFilter,
     TResult? Function(CartLoading value)? cartLoading,
     TResult? Function(CartSuccess value)? cartSuccess,
     TResult? Function(CartFailure value)? cartFailure,
@@ -1641,7 +1641,7 @@ class _$CartSuccessImpl implements CartSuccess {
     TResult Function(ShopNowFailure value)? shopNowFailure,
     TResult Function(PaginationLoading value)? paginationLoading,
     TResult Function(PaginationFailure value)? paginationFailure,
-    TResult Function(ResetFilter value)? resetFilter,
+    TResult Function(ResetAllFilters value)? resetFilter,
     TResult Function(CartLoading value)? cartLoading,
     TResult Function(CartSuccess value)? cartSuccess,
     TResult Function(CartFailure value)? cartFailure,
@@ -1797,7 +1797,7 @@ class _$CartFailureImpl implements CartFailure {
     required TResult Function(ShopNowFailure value) shopNowFailure,
     required TResult Function(PaginationLoading value) paginationLoading,
     required TResult Function(PaginationFailure value) paginationFailure,
-    required TResult Function(ResetFilter value) resetFilter,
+    required TResult Function(ResetAllFilters value) resetFilter,
     required TResult Function(CartLoading value) cartLoading,
     required TResult Function(CartSuccess value) cartSuccess,
     required TResult Function(CartFailure value) cartFailure,
@@ -1814,7 +1814,7 @@ class _$CartFailureImpl implements CartFailure {
     TResult? Function(ShopNowFailure value)? shopNowFailure,
     TResult? Function(PaginationLoading value)? paginationLoading,
     TResult? Function(PaginationFailure value)? paginationFailure,
-    TResult? Function(ResetFilter value)? resetFilter,
+    TResult? Function(ResetAllFilters value)? resetFilter,
     TResult? Function(CartLoading value)? cartLoading,
     TResult? Function(CartSuccess value)? cartSuccess,
     TResult? Function(CartFailure value)? cartFailure,
@@ -1831,7 +1831,7 @@ class _$CartFailureImpl implements CartFailure {
     TResult Function(ShopNowFailure value)? shopNowFailure,
     TResult Function(PaginationLoading value)? paginationLoading,
     TResult Function(PaginationFailure value)? paginationFailure,
-    TResult Function(ResetFilter value)? resetFilter,
+    TResult Function(ResetAllFilters value)? resetFilter,
     TResult Function(CartLoading value)? cartLoading,
     TResult Function(CartSuccess value)? cartSuccess,
     TResult Function(CartFailure value)? cartFailure,
