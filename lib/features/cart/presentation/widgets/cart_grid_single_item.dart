@@ -55,12 +55,6 @@ class CartGridSingleItem extends StatelessWidget {
                 topRight: Radius.circular(16.r),
               ),
             ),
-            // Image.asset(
-            //   'assets/images/Main_Product_ Image.png',
-            //   // width: 180.w,
-            //   height: 170.h,
-            //   fit: BoxFit.cover,
-            // ),
             verticalSpace(8.h),
             Padding(
               padding: EdgeInsets.symmetric(horizontal: 8.w),
@@ -108,11 +102,17 @@ class CartGridSingleItem extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-                  Text(
-                    '\$${content!.price ?? 0}',
-                    style: AppStyles.font16BlackMedium,
+                  Expanded(
+                    child: AutoSizeText(
+                      '\$${content!.price ?? 0}',
+                      style: AppStyles.font16BlackMedium,
+                      maxLines: 1,
+                      overflow: TextOverflow.ellipsis,
+                    ),
                   ),
-                  QuantityControllerButton(),
+                  QuantityControllerButton(
+                    content: content!,
+                  ),
                 ],
               ),
             ),

@@ -50,7 +50,7 @@ class _CartFilterHeaderWidgetState extends State<CartFilterHeaderWidget> {
                 btnWidth: 80.w,
                 btnHeight: 30.h,
                 onPressed: (){
-                  cubit.resetFilter();
+                  cubit.resetAllFilters();
                   cubit.getCartProducts(isRefresh: true);
                   Navigator.pop(context);
 
