@@ -28,9 +28,13 @@ class _CartScreenState extends State<CartScreen> {
   @override
   void initState() {
     super.initState();
-    context.read<ProductsCubit>().getBusinessConfig();
-    context.read<CartCubit>().getCartProducts();
+    _loadInitialData();
     _scrollController = ScrollController()..addListener(_scrollListener);
+  }
+
+  void _loadInitialData() {
+    context.read<ProductsCubit>().getBusinessConfig();
+    context.read<CartCubit>().refreshCart();
   }
 
   void _scrollListener() {

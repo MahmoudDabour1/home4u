@@ -108,6 +108,14 @@ class CartCubit extends Cubit<CartState> {
     isFetching = false;
   }
 
+  Future<void> refreshCart() async {
+    emit(const CartState.cartLoading());
+    await getCartProducts(isRefresh: true);
+    if (_cartItems.isNotEmpty) {
+      emit(CartState.cartSuccess(List.from(_cartItems)));
+    }
+  }
+
   /// Reset all filters
   Future<void> resetAllFilters() async {
     selectedBusinessTypeNames = [];

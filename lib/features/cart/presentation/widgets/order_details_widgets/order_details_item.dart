@@ -5,6 +5,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:home4u/core/networking/api_constants.dart';
 import 'package:home4u/core/theming/app_styles.dart';
 import 'package:home4u/core/utils/spacing.dart';
+import 'package:home4u/core/widgets/fancy_image.dart';
 import 'package:home4u/features/cart/presentation/widgets/cart_details_widgets/plus_and_minus_controll_buttons.dart';
 
 import '../../../data/models/cart_item_model.dart';
@@ -24,65 +25,75 @@ class OrderDetailsItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        ClipRRect(
-          borderRadius: BorderRadius.circular(8.r),
-          child: Image.network(
-            ApiConstants.getImageBaseUrl(cartItem.product.imagePath! ?? ''),
-            width: 100.w,
+    return Container(
+      padding: EdgeInsets.symmetric(vertical: 8.h),
+      child: Row(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          FancyImage(
+            imagePath: ApiConstants.getImageBaseUrl(cartItem.product.imagePath! ?? ''),
             height: 100.h,
-            fit: BoxFit.cover,
-            errorBuilder: (context, error, stackTrace) =>
-                const Icon(Icons.image),
+            width: 100.w,
+            borderRadiusGeometry: BorderRadius.circular(8.r),
           ),
-        ),
-        horizontalSpace(8),
-        Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            AutoSizeText(
-              cartItem.product.name ?? 'No name',
-              style: AppStyles.font16BlackMedium,
-              maxLines: 3,
-              overflow: TextOverflow.ellipsis,
+          horizontalSpace(8),
+
+          Expanded(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                ConstrainedBox(
+                  constraints: BoxConstraints(maxWidth: 200.w),
+                  child: AutoSizeText(
+                    cartItem.product.name ?? 'No name',
+                    style: AppStyles.font16BlackMedium,
+                    maxLines: 3,
+                    overflow: TextOverflow.ellipsis,
+                  ),
+                ),
+                verticalSpace(4.h),
+                Text(
+                  '${cartItem.product.price ?? 0} EGP',
+                  style: AppStyles.font16BlackBold,
+                ),
+                IntrinsicWidth(
+                  child: PlusAndMinusControllerButtons(
+                    initialQuantity: cartItem.quantity,
+                    onQuantityChanged: (newQuantity) {
+                      context.read<CartCubit>()
+                          .updateQuantity(cartItem.product, newQuantity);
+                    },
+                  ),
+                ),
+              ],
             ),
-            verticalSpace(4.h),
-            Text(
-              '${cartItem.product.price ?? 0} EGP',
-              style: AppStyles.font16BlackBold,
-            ),
-            PlusAndMinusControllerButtons(
-              initialQuantity: cartItem.quantity,
-              onQuantityChanged: (newQuantity) {
-                context.read<CartCubit>().updateQuantity(cartItem.product, newQuantity);
-              },
-            ),
-          ],
-        ),
-        const Spacer(),
-        InkWell(
-          onTap: onRemove,
-          splashColor: Colors.transparent,
-          child: Container(
-            width: 24.w,
-            height: 24.h,
-            decoration: BoxDecoration(
-              shape: BoxShape.circle,
-              border: Border.all(
-                color: Colors.black,
-                width: 1.w,
+          ),
+
+          Padding(
+            padding: EdgeInsets.only(top: 4.h),
+            child: InkWell(
+              onTap: onRemove,
+              splashColor: Colors.transparent,
+              child: Container(
+                width: 24.w,
+                height: 24.h,
+                decoration: BoxDecoration(
+                  shape: BoxShape.circle,
+                  border: Border.all(
+                    color: Colors.black,
+                    width: 1.w,
+                  ),
+                ),
+                child: Icon(
+                  Icons.close,
+                  size: 16.w,
+                  color: Colors.black,
+                ),
               ),
             ),
-            child: Icon(
-              Icons.close,
-              size: 16.w,
-              color: Colors.black,
-            ),
           ),
-        ),
-      ],
+        ],
+      ),
     );
   }
 }

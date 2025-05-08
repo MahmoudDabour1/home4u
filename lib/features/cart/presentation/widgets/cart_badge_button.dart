@@ -41,10 +41,14 @@ class _CartBadgeButtonState extends State<CartBadgeButton> {
 
   Widget _buildButton({required int count, required BuildContext context}) {
     return IconButton(
-      onPressed: () async{
+      onPressed: () async {
         await context.read<CartCubit>().resetAllFilters();
         if (mounted) {
-          context.pushNamed(Routes.orderDetailsScreen);
+          context.pushNamed(Routes.orderDetailsScreen).then(
+            (_) {
+              context.read<CartCubit>().refreshCart();
+            },
+          );
         }
       },
       padding: EdgeInsets.zero,
