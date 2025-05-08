@@ -21,137 +21,173 @@ class OrderDetailsScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: BlocBuilder<CartCubit, CartState>(
-        builder: (context, state) {
-          return state.maybeWhen(
-            cartLoading: () => const Center(child: CircularProgressIndicator()),
-            cartFailure: (error) => Center(child: Text(error)),
-            cartSuccess: (items) {
-              final total = items.fold<double>(
-                  0.0, (sum, item) => sum + (item.product.price ?? 0) * (item.quantity ?? 0));
-              return _buildCartUI(context, items.length, total, items);
-            },
-            orElse: () => SizedBox(),
-          );
-        },
+      body: SingleChildScrollView(
+        child: SafeArea(
+          child: Padding(
+            padding: EdgeInsets.only(top: 32.h, left: 24.w, right: 24.w),
+            child: Column(
+              children: [
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  children: [
+                    AppBackButton(),
+                    const Spacer(),
+                    Text(
+                      AppLocale.myCart.getString(context),
+                      style: AppStyles.font20BlackMedium,
+                    ),
+                    const Spacer(),
+                  ],
+                ),
+                verticalSpace(32),
+                BlocBuilder<CartCubit, CartState>(
+                  builder: (context, state) {
+                    return state.maybeWhen(
+                      cartLoading: () =>
+                          const Center(child: CircularProgressIndicator()),
+                      cartFailure: (error) => Center(child: Text(error)),
+                      cartSuccess: (items) {
+                        final total = items.fold<double>(
+                            0.0,
+                            (sum, item) =>
+                                sum +
+                                (item.product.price ?? 0) *
+                                    (item.quantity ?? 0));
+                        if (items.isEmpty) {
+                          return _buildEmptyCartUI(context, total);
+                        }
+                        return _buildCartUI(
+                            context, items.length, total, items);
+                      },
+                      orElse: () => _buildEmptyCartUI(context, 0.0),
+                    );
+                  },
+                ),
+              ],
+            ),
+          ),
+        ),
       ),
     );
   }
 
-  Widget _buildCartUI(BuildContext context, int itemCount, double total,
-      List cartItems) {
-    return SingleChildScrollView(
-      child: SafeArea(
-        child: Padding(
-          padding: EdgeInsets.only(top: 32.h, left: 24.w, right: 24.w),
-          child: Column(
-            children: [
-              Row(
-                mainAxisAlignment: MainAxisAlignment.start,
-                children: [
-                  AppBackButton(),
-                  const Spacer(),
-                  Text(
-                    AppLocale.myCart.getString(context),
-                    style: AppStyles.font20BlackMedium,
-                  ),
-                  const Spacer(),
-                ],
-              ),
-              verticalSpace(32),
-              SizedBox(
-                height: MediaQuery
-                    .sizeOf(context)
-                    .height * 0.65,
-                child: ListView.separated(
-                  scrollDirection: Axis.vertical,
-                  shrinkWrap: true,
-                  physics: const AlwaysScrollableScrollPhysics(),
-                  padding: EdgeInsets.zero,
-                  itemBuilder: (context, index) =>
-                      OrderDetailsItem(
-                        cartItem: cartItems[index],
-                        onQuantityChanged: (p0) =>
-                            context.read<CartCubit>().updateQuantity(
-                                cartItems[index], p0),
-                        onRemove: () => context.read<CartCubit>().removeFromCart(cartItems[index].product),
-                      ),
-                  separatorBuilder: (context, index) => SizedBox(height: 16.h),
-                  itemCount: itemCount,
-                ),
-              ),
-              verticalSpace(32.h),
-              Row(
-                children: [
-                  Expanded(
-                    flex: 5,
-                    child: AppTextFormField(
-                      labelText: "Enter your promo code",
-                      validator: (p0) {},
-                    ),
-                  ),
-                  horizontalSpace(16.w),
-                  Expanded(
-                    child: Container(
-                      height: 60.h,
-                      width: 60.w,
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius
-                            .circular(16)
-                            .r,
-                        gradient: LinearGradient(
-                          colors: [
-                            AppColors.secondaryGradientColor,
-                            AppColors.secondaryColor,
-                          ],
-                        ),
-                      ),
-                      child: IconButton(
-                        onPressed: () {},
-                        style: ButtonStyle(
-                          fixedSize: WidgetStateProperty.all<Size>(Size(
-                              50.w, 50.h)),
-                          backgroundColor: WidgetStateProperty.all(Colors
-                              .transparent),
-                          shape: WidgetStateProperty.all(
-                            RoundedRectangleBorder(
-                                borderRadius: BorderRadius
-                                    .circular(16)
-                                    .r),
-                          ),
-                        ),
-                        icon: SvgPicture.asset(
-                          AppAssets.arrowRightBlackSvg,
-                          width: 28.w,
-                          height: 28.h,
-                          colorFilter: const ColorFilter.mode(
-                              AppColors.whiteColor, BlendMode.srcIn),
-                        ),
-                      ),
-                    ),
-                  ),
-                ],
-              ),
-              verticalSpace(16.h),
-              Row(
-                children: [
-                  Expanded(
-                    child: Text(
-                      AppLocale.total.getString(context),
-                      style: AppStyles.font16BlackLight,
-                    ),
-                  ),
-                  Text(
-                    "\$ ${total.toStringAsFixed(2)}",
-                    style: AppStyles.font20BlackMedium,
-                  ),
-                ],
-              ),
-              verticalSpace(32.h),
-            ],
+  Widget _buildEmptyCartUI(BuildContext context, double total) {
+    return SizedBox(
+      height: MediaQuery.sizeOf(context).height * 0.65,
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.center,
+        mainAxisSize: MainAxisSize.max,
+        children: [
+          Icon(Icons.shopping_cart_outlined,
+              size: 100.w, color: Colors.grey),
+          verticalSpace(16.h),
+          Text(
+            "Cart Empty",
+            style: AppStyles.font20BlackMedium,
+          ),
+          verticalSpace(32.h),
+        ],
+      ),
+    );
+  }
+
+  Widget _buildCartUI(
+      BuildContext context, int itemCount, double total, List cartItems) {
+    return Column(
+      children: [
+        SizedBox(
+          height: MediaQuery.sizeOf(context).height * 0.65,
+          child: ListView.separated(
+            scrollDirection: Axis.vertical,
+            shrinkWrap: true,
+            physics: const AlwaysScrollableScrollPhysics(),
+            padding: EdgeInsets.zero,
+            itemBuilder: (context, index) => OrderDetailsItem(
+              cartItem: cartItems[index],
+              onQuantityChanged: (p0) => context
+                  .read<CartCubit>()
+                  .updateQuantity(cartItems[index], p0),
+              onRemove: () => context
+                  .read<CartCubit>()
+                  .removeFromCart(cartItems[index].product),
+            ),
+            separatorBuilder: (context, index) => SizedBox(height: 16.h),
+            itemCount: itemCount,
           ),
         ),
-      ),
+        _buildCheckoutSection(context, total),
+      ],
+    );
+  }
+
+  Widget _buildCheckoutSection(BuildContext context, double total) {
+    return Column(
+      children: [
+        verticalSpace(32.h),
+        Row(
+          children: [
+            Expanded(
+              flex: 5,
+              child: AppTextFormField(
+                labelText: "Enter your promo code",
+                validator: (p0) {},
+              ),
+            ),
+            horizontalSpace(16.w),
+            Expanded(
+              child: Container(
+                height: 60.h,
+                width: 60.w,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(16).r,
+                  gradient: LinearGradient(
+                    colors: [
+                      AppColors.secondaryGradientColor,
+                      AppColors.secondaryColor,
+                    ],
+                  ),
+                ),
+                child: IconButton(
+                  onPressed: () {},
+                  style: ButtonStyle(
+                    fixedSize: WidgetStateProperty.all<Size>(Size(50.w, 50.h)),
+                    backgroundColor:
+                        WidgetStateProperty.all(Colors.transparent),
+                    shape: WidgetStateProperty.all(
+                      RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(16).r),
+                    ),
+                  ),
+                  icon: SvgPicture.asset(
+                    AppAssets.arrowRightBlackSvg,
+                    width: 28.w,
+                    height: 28.h,
+                    colorFilter: const ColorFilter.mode(
+                        AppColors.whiteColor, BlendMode.srcIn),
+                  ),
+                ),
+              ),
+            ),
+          ],
+        ),
+        verticalSpace(16.h),
+        Row(
+          children: [
+            Expanded(
+              child: Text(
+                AppLocale.total.getString(context),
+                style: AppStyles.font16BlackLight,
+              ),
+            ),
+            Text(
+              "\$ ${total.toStringAsFixed(2)}",
+              style: AppStyles.font20BlackMedium,
+            ),
+          ],
+        ),
+        verticalSpace(32.h),
+      ],
     );
   }
 }
