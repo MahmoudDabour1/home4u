@@ -58,7 +58,7 @@ class CartCubit extends Cubit<CartState> {
     }
 
     ShopNowSearchBody shopNowSearchBody = ShopNowSearchBody(
-      pageNum: _page,
+      pageNumber: _page,
       pageSize: 10,
       searchCriteria: ShopNowSearchCriteria(
         name: searchController.text,

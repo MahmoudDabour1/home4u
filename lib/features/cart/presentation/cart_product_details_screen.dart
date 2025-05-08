@@ -8,7 +8,6 @@ import 'package:home4u/features/cart/presentation/widgets/cart_details_widgets/c
 import 'package:home4u/features/cart/presentation/widgets/cart_details_widgets/cart_product_details_favorite_button.dart';
 import 'package:home4u/features/cart/presentation/widgets/cart_details_widgets/cart_product_details_screen_carousel_slider.dart';
 import 'package:home4u/features/cart/presentation/widgets/cart_details_widgets/expandable_text.dart';
-import 'package:home4u/features/cart/presentation/widgets/cart_details_widgets/plus_and_minus_controll_buttons.dart';
 import 'package:home4u/features/products/logic/products_cubit.dart';
 import 'package:home4u/features/products/logic/products_state.dart';
 

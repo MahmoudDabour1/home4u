@@ -34,6 +34,7 @@ class QuantityControllerButton extends StatelessWidget {
 
         return Row(
           children: [
+            ///Minus button
             IconButton(
               icon: const Icon(Icons.remove),
               onPressed: () {
@@ -45,6 +46,7 @@ class QuantityControllerButton extends StatelessWidget {
               },
             ),
             Text('${cartItem.quantity}'),
+            ///Plus button
             IconButton(
               icon: const Icon(Icons.add),
               onPressed: () =>
