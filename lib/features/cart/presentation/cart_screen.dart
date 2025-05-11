@@ -4,6 +4,7 @@ import 'package:flutter_localization/flutter_localization.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:home4u/core/theming/app_colors.dart';
 import 'package:home4u/core/theming/app_styles.dart';
+import 'package:home4u/features/cart/presentation/widgets/cart_badge_button.dart';
 import 'package:home4u/features/cart/presentation/widgets/cart_categories_list_view.dart';
 import 'package:home4u/features/cart/presentation/widgets/cart_filter_button.dart';
 import 'package:home4u/features/cart/presentation/widgets/cart_grid_view.dart';
@@ -27,10 +28,15 @@ class _CartScreenState extends State<CartScreen> {
   @override
   void initState() {
     super.initState();
-    context.read<ProductsCubit>().getBusinessConfig();
-    context.read<CartCubit>().getCartProducts();
+    _loadInitialData();
     _scrollController = ScrollController()..addListener(_scrollListener);
   }
+
+  void _loadInitialData() {
+    context.read<ProductsCubit>().getBusinessConfig();
+    context.read<CartCubit>().refreshCart();
+  }
+
   void _scrollListener() {
     final cubit = context.read<CartCubit>();
 
@@ -62,7 +68,7 @@ class _CartScreenState extends State<CartScreen> {
               start: 24.w,
               end: 24.w,
               top: 48.h,
-              bottom: 32.h,
+              bottom: 16.h,
             ),
             sliver: SliverToBoxAdapter(
               child: Column(
@@ -70,17 +76,22 @@ class _CartScreenState extends State<CartScreen> {
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [
                   Row(
-                    spacing: 16.w,
                     children: [
                       Expanded(
                         child: AppCustomSearchTextField(
-                          controller: context.read<CartCubit>().searchController,
+                          controller:
+                              context.read<CartCubit>().searchController,
                           onChanged: (value) {
-                            context.read<CartCubit>().getCartProducts(isRefresh: true);
+                            context
+                                .read<CartCubit>()
+                                .getCartProducts(isRefresh: true);
                           },
                         ),
                       ),
+                      horizontalSpace(16),
                       CartFilterButton(),
+                      horizontalSpace(8),
+                      CartBadgeButton(),
                     ],
                   ),
                   verticalSpace(32),
@@ -99,8 +110,9 @@ class _CartScreenState extends State<CartScreen> {
               left: 24.w,
               right: 24.w,
               bottom: 32.h,
+              top: 0.h,
             ),
-            sliver:  CartGridView(),
+            sliver: CartGridView(),
           ),
         ],
       ),

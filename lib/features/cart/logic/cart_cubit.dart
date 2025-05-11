@@ -1,5 +1,6 @@
 import 'package:bloc/bloc.dart';
 import 'package:flutter/material.dart';
+import 'package:home4u/features/cart/data/models/cart_item_model.dart';
 import 'package:home4u/features/cart/data/models/shop_now_search_body.dart';
 
 import '../../../core/routing/router_observer.dart';
@@ -107,7 +108,16 @@ class CartCubit extends Cubit<CartState> {
     isFetching = false;
   }
 
-  Future<void> resetFilter() async {
+  Future<void> refreshCart() async {
+    emit(const CartState.cartLoading());
+    await getCartProducts(isRefresh: true);
+    if (_cartItems.isNotEmpty) {
+      emit(CartState.cartSuccess(List.from(_cartItems)));
+    }
+  }
+
+  /// Reset all filters
+  Future<void> resetAllFilters() async {
     selectedBusinessTypeNames = [];
     selectedMaterialNames = [];
     selectedColorNames = [];
@@ -120,7 +130,16 @@ class CartCubit extends Cubit<CartState> {
     searchController.clear();
     selectedBusinessType = null;
     selectedBusinessTypeCategory = null;
+
+    /// Reset pagination
+    _page = 0;
+    hasReachedMax = false;
+    products = [];
+
     emit(const CartState.resetFilter());
+    if (_cartItems.isNotEmpty) {
+      emit(CartState.cartSuccess(List.from(_cartItems)));
+    }
   }
 
   Future<void> resetPagination() async {
@@ -128,4 +147,60 @@ class CartCubit extends Cubit<CartState> {
     hasReachedMax = false;
     products = [];
   }
+
+  ///cart functionality
+  /// Cart functionality - manages all cart operations
+  final List<CartItemModel> _cartItems = [];
+
+  void addToCart(ShopNowContent product) {
+    final index =
+        _cartItems.indexWhere((item) => item.product.id == product.id);
+
+    if (index != -1) {
+      _cartItems[index] =
+          _cartItems[index].copyWith(quantity: _cartItems[index].quantity + 1);
+    } else {
+      _cartItems.add(CartItemModel(
+        product: product,
+        quantity: 1,
+      ));
+    }
+    emit(CartState.cartSuccess(List.from(_cartItems)));
+  }
+
+  void removeFromCart(ShopNowContent cartItem) {
+    final initialCount = _cartItems.length;
+    _cartItems.removeWhere((item) => item.product.id == cartItem.id);
+    logger
+        .e("Removed item. Before: $initialCount, After: ${_cartItems.length}");
+    if (initialCount != _cartItems.length) {
+      emit(CartState.cartSuccess(List.from(_cartItems)));
+    }
+  }
+
+  void updateQuantity(ShopNowContent product, int quantity) {
+    final index =
+        _cartItems.indexWhere((item) => item.product.id == product.id);
+
+    if (index != -1) {
+      if (quantity > 0) {
+        _cartItems[index] = _cartItems[index].copyWith(quantity: quantity);
+      } else {
+        _cartItems.removeAt(index);
+      }
+    } else if (quantity > 0) {
+      _cartItems.add(CartItemModel(
+        product: product,
+        quantity: quantity,
+      ));
+    }
+
+    if (index != -1 || quantity > 0) {
+      emit(CartState.cartSuccess(List.from(_cartItems)));
+    }
+  }
+
+  int getCartCount() => _cartItems.fold(0, (sum, item) => sum + item.quantity);
+
+  List<CartItemModel> getCartItems() => List.unmodifiable(_cartItems);
 }

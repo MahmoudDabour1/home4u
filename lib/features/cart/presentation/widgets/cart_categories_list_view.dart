@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_localization/flutter_localization.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:home4u/features/cart/logic/cart_state.dart';
 import 'package:home4u/features/cart/presentation/widgets/cart_category_list_view_item.dart';
 import 'package:home4u/features/products/data/models/business_config_model.dart';
 
@@ -22,16 +23,42 @@ class _CartCategoriesListViewState extends State<CartCategoriesListView> {
   int selectedSubCategoryIndex = -1;
   List<BusinessType> filteredSubCategories = [];
 
+
+  @override
+  void initState() {
+    super.initState();
+    final cartCubit = context.read<CartCubit>();
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      if (cartCubit.selectedBusinessType == null) {
+        setState(() {
+          selectedIndex = 0;
+          selectedSubCategoryIndex = -1;
+          filteredSubCategories = [];
+        });
+      }
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
-    return BlocBuilder<ProductsCubit, ProductsState>(
-      builder: (context, state) {
-        final productsCubit = context.read<ProductsCubit>();
-        final cartCubit = context.read<CartCubit>();
+    return BlocListener<CartCubit,CartState>(
+      listener: (context, state) {
+        if (state is ResetAllFilters) {
+          setState(() {
+            selectedIndex = 0;
+            selectedSubCategoryIndex = -1;
+            filteredSubCategories = [];
+          });
+        }
+      },
+      child: BlocBuilder<ProductsCubit, ProductsState>(
+        builder: (context, state) {
+          final productsCubit = context.read<ProductsCubit>();
+          final cartCubit = context.read<CartCubit>();
 
-        final originalBusinessTypes = productsCubit.businessTypes ?? [];
-        final businessTypeCategories =
-            productsCubit.businessTypeCategories ?? [];
+          final originalBusinessTypes = productsCubit.businessTypes ?? [];
+          final businessTypeCategories =
+              productsCubit.businessTypeCategories ?? [];
 
         ///Total as the first item
         final businessTypes = [
@@ -39,14 +66,14 @@ class _CartCategoriesListViewState extends State<CartCategoriesListView> {
           ...originalBusinessTypes,
         ];
 
-        if (selectedIndex != 0) {
-          final selectedId = businessTypes[selectedIndex].id;
-          filteredSubCategories = businessTypeCategories
-              .where((cat) => cat.businessType?.id == selectedId)
-              .toList();
-        } else {
-          filteredSubCategories = [];
-        }
+          if (selectedIndex != 0) {
+            final selectedId = businessTypes[selectedIndex].id;
+            filteredSubCategories = businessTypeCategories
+                .where((cat) => cat.businessType?.id == selectedId)
+                .toList();
+          } else {
+            filteredSubCategories = [];
+          }
 
         return Column(
           children: [
