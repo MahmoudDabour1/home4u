@@ -4,6 +4,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_localization/flutter_localization.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:home4u/core/localization/app_localization_cubit.dart';
+import 'package:home4u/features/cart/presentation/widgets/cart_details_widgets/cart_details_shimmer_widget.dart';
 import 'package:home4u/features/cart/presentation/widgets/cart_details_widgets/cart_product_details_colors_list_view.dart';
 import 'package:home4u/features/cart/presentation/widgets/cart_details_widgets/cart_product_details_favorite_button.dart';
 import 'package:home4u/features/cart/presentation/widgets/cart_details_widgets/cart_product_details_screen_carousel_slider.dart';
@@ -29,14 +31,10 @@ class CartProductDetailsScreen extends StatelessWidget {
         child: SingleChildScrollView(
           child: BlocBuilder<ProductsCubit, ProductsState>(
             builder: (context, state) {
+              final appLocaleCubit = context.read<AppLocalizationCubit>();
               return state.maybeWhen(
                 getProductPreviewLoading: () {
-                  return SizedBox(
-                    height: 400.h,
-                    child: Center(
-                      child: AppCustomLoadingIndicator(),
-                    ),
-                  );
+                  return CartDetailsShimmerWidget();
                 },
                 getProductPreviewSuccess: (product) {
                   return Column(
@@ -58,7 +56,10 @@ class CartProductDetailsScreen extends StatelessWidget {
                               children: [
                                 Expanded(
                                   child: AutoSizeText(
-                                    product.data.nameEn,
+                                    appLocaleCubit.textDirection ==
+                                            TextDirection.ltr
+                                        ? product.data.nameEn
+                                        : product.data.nameAr,
                                     style: AppStyles.font24BlackMedium,
                                     maxLines: 5,
                                     overflow: TextOverflow.ellipsis,
@@ -97,7 +98,30 @@ class CartProductDetailsScreen extends StatelessWidget {
                             ),
                             verticalSpace(16),
                             ExpandableText(
-                              text: product.data.descriptionEn,
+                              text: appLocaleCubit.textDirection ==
+                                      TextDirection.ltr
+                                  ? product.data.descriptionEn
+                                  : product.data.descriptionAr,
+                            ),
+                            verticalSpace(16),
+                            Text(
+                              "${AppLocale.businessType.getString(context)} : ${product.data.businessType.name}",
+                              style: AppStyles.font16BlackLight,
+                            ),
+                            verticalSpace(16),
+                            Text(
+                              "${AppLocale.categories.getString(context)} : ${product.data.businessTypeCategory?.name ?? 'N/A'}",
+                              style: AppStyles.font16BlackLight,
+                            ),
+                            verticalSpace(16),
+                            Text(
+                              "${AppLocale.dimensions.getString(context)} : ${product.data.length}*${product.data.width}*${product.data.height}",
+                              style: AppStyles.font16BlackLight,
+                            ),
+                            verticalSpace(16),
+                            Text(
+                              "${AppLocale.unitType.getString(context)} : ${product.data.baseUnit.name}",
+                              style: AppStyles.font16BlackLight,
                             ),
                             verticalSpace(16),
                             Row(
@@ -109,21 +133,16 @@ class CartProductDetailsScreen extends StatelessWidget {
                                   height: 16.h,
                                 ),
                                 Text(
-                                  "Stock: ${product.data.stocks.length}",
+                                  "${AppLocale.stock.getString(context)} : ${product.data.stocks.length}",
                                   style: AppStyles.font16BlackLight,
                                 ),
                               ],
                             ),
                             verticalSpace(16),
-                            Text(
-                              "${AppLocale.dimensions.getString(context)} : ${product.data.length}*${product.data.width}*${product.data.height} cm",
-                              style: AppStyles.font16BlackLight,
-                            ),
-                            verticalSpace(16),
                             CartProductDetailsColorsListView(
                               previewData: product,
                             ),
-                            verticalSpace(64),
+                            verticalSpace(32),
                             Row(
                               children: [
                                 CartProductDetailsFavoriteButton(),

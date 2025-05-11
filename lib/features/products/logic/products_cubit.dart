@@ -173,11 +173,11 @@ class ProductsCubit extends Cubit<ProductsState> {
     );
   }
 
-  Future<void> getBusinessConfig() async {
+  Future<void> getBusinessConfig({bool forceRefresh = false}) async {
     emit(const ProductsState.businessConfigLoading());
 
     DioFactory.setContentType("application/json");
-    final response = await _businessConfigRepo.getBusinessConfig();
+    final response = await _businessConfigRepo.getBusinessConfig(forceRefresh: forceRefresh);
     response.when(
       success: (data) {
         businessConfigModel = data;
