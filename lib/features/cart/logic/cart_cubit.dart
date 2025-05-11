@@ -5,6 +5,7 @@ import 'package:home4u/features/cart/data/models/shop_now_search_body.dart';
 
 import '../../../core/routing/router_observer.dart';
 import '../../products/data/models/business_config_model.dart';
+import '../data/models/order_details_body.dart';
 import '../data/models/shop_now_response_model.dart';
 import '../data/repository/cart_repository.dart';
 import 'cart_state.dart';
@@ -148,6 +149,20 @@ class CartCubit extends Cubit<CartState> {
     products = [];
   }
 
+  ///filter badge count
+  int getActiveFilterCount() {
+    int count = 0;
+
+    if ((selectedBusinessType ?? -1) != -1) count++;
+    if ((selectedBusinessTypeCategory ?? -1) != -1) count++;
+    if (minPrice != null || maxPrice != null) count++;
+    if (colorsIds != null && colorsIds!.isNotEmpty) count++;
+    if (materialIds != null && materialIds!.isNotEmpty) count++;
+    if (isAvailable != null) count++;
+
+    return count;
+  }
+
   ///cart functionality
   /// Cart functionality - manages all cart operations
   final List<CartItemModel> _cartItems = [];
@@ -203,4 +218,28 @@ class CartCubit extends Cubit<CartState> {
   int getCartCount() => _cartItems.fold(0, (sum, item) => sum + item.quantity);
 
   List<CartItemModel> getCartItems() => List.unmodifiable(_cartItems);
+
+  ///insert order details
+  Future<void> insertOrderDetails() async {
+    emit(const CartState.insertOrderLoading());
+    final orderDetailsBody = OrderDetailsBody(
+      orderDetails: _cartItems
+          .map((item) => OrderDetails(
+                productId: item.product.id,
+                amount: item.quantity,
+              ))
+          .toList(),
+    );
+
+    final response = await cartRepository.insertOrder(orderDetailsBody);
+
+    response.when(success: (data) {
+      emit(CartState.insertOrderSuccess(data));
+      logger.w("Insert Order Success: ${data.toJson()}");
+      _cartItems.clear();
+      emit(CartState.cartSuccess(List.from(_cartItems)));
+    }, failure: (error) {
+      emit(CartState.insertOrderFailure(error: error.message.toString()));
+    });
+  }
 }

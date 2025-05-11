@@ -6,7 +6,7 @@ import '../data/models/shop_now_response_model.dart';
 part 'cart_state.freezed.dart';
 
 @freezed
-class CartState with _$CartState {
+class CartState<T> with _$CartState<T> {
   const factory CartState.initial() = _Initial;
 
   ///shop now
@@ -27,6 +27,10 @@ class CartState with _$CartState {
   ///reset Filter
   const factory CartState.resetFilter() = ResetAllFilters;
 
+  ///filter update
+  const factory CartState.filterUpdated() = FilterUpdated;
+
+
   ///cart
   const factory CartState.cartLoading() = CartLoading;
 
@@ -35,6 +39,12 @@ class CartState with _$CartState {
 
   const factory CartState.cartFailure({required String error}) = CartFailure;
 
+  ///Insert Order Details
+  const factory CartState.insertOrderLoading() = InsertOrderLoading;
 
+  const factory CartState.insertOrderSuccess(T data) = InsertOrderSuccess<T>;
+
+  const factory CartState.insertOrderFailure({required String error}) =
+      InsertOrderFailure;
 
 }

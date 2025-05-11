@@ -99,6 +99,7 @@ class ApiConstants {
 
   ///cart process
  static const String shopNowEp = "/api/v1/products/shop-now";
+  static const String ordersEp = "/api/v1/orders";
 }
 
 class ApiErrors {
