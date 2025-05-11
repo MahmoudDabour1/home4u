@@ -6,12 +6,13 @@ import '../../../../core/networking/api_result.dart';
 import '../models/business_config_model.dart';
 
 abstract class BusinessConfigRepo {
-  Future<ApiResult<BusinessConfigModel>> getBusinessConfig();
+  Future<ApiResult<BusinessConfigModel>> getBusinessConfig( {bool forceRefresh = false});
 }
 
 class BusinessConfigRepoImpl implements BusinessConfigRepo {
   final ProductsRemoteDataSource remoteDataSource;
   final ProductsLocalDatasource localDatasource;
+  String? _currentLanguage;
 
   BusinessConfigRepoImpl({
     required this.remoteDataSource,
@@ -19,8 +20,12 @@ class BusinessConfigRepoImpl implements BusinessConfigRepo {
   });
 
   @override
-  Future<ApiResult<BusinessConfigModel>> getBusinessConfig() async {
+  Future<ApiResult<BusinessConfigModel>> getBusinessConfig(
+      {bool forceRefresh = false}) async {
     try {
+      if (forceRefresh) {
+        throw Exception('Force refresh requested');
+      }
       final cachedData = await localDatasource.getBusinessConfig();
       return ApiResult.success(cachedData);
     } catch (_) {

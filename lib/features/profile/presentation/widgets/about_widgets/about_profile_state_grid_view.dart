@@ -9,10 +9,33 @@ import '../../../../../core/utils/spacing.dart';
 import 'about_profile_state_grid_view_item.dart';
 
 class AboutProfileStateGridView extends StatelessWidget {
-  AboutProfileStateGridView({super.key});
+  const AboutProfileStateGridView({super.key});
 
   @override
   Widget build(BuildContext context) {
+    final List<ProfileStatItem> profileStats = [
+      ProfileStatItem(
+        title: '150K',
+        subTitle: AppLocale.followers.getString(context),
+        imagePath: AppAssets.followersSvg,
+      ),
+      ProfileStatItem(
+        title: '4.9/5.0',
+        subTitle:  AppLocale.totalRating.getString(context),
+        imagePath: AppAssets.starSvgImage,
+      ),
+      ProfileStatItem(
+        title: '150K',
+        subTitle:  AppLocale.likes.getString(context),
+        imagePath: AppAssets.heartOutlineSvg,
+      ),
+      ProfileStatItem(
+        title: '32',
+        subTitle:  AppLocale.completedProjects.getString(context),
+        imagePath: AppAssets.completeSvg,
+      ),
+    ];
+
     return Column(
       mainAxisSize: MainAxisSize.min,
       children: [
@@ -44,29 +67,6 @@ class AboutProfileStateGridView extends StatelessWidget {
       ],
     );
   }
-
-  final List<ProfileStatItem> profileStats = [
-    ProfileStatItem(
-      title: '150K',
-      subTitle: AppLocale.followers,
-      imagePath: AppAssets.followersSvg,
-    ),
-    ProfileStatItem(
-      title: '4.9/5.0',
-      subTitle:  AppLocale.totalRating,
-      imagePath: AppAssets.starSvgImage,
-    ),
-    ProfileStatItem(
-      title: '150K',
-      subTitle:  AppLocale.likes,
-      imagePath: AppAssets.heartOutlineSvg,
-    ),
-    ProfileStatItem(
-      title: '32',
-      subTitle:  AppLocale.completedProjects,
-      imagePath: AppAssets.completeSvg,
-    ),
-  ];
 }
 
 class ProfileStatItem {
