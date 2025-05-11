@@ -52,7 +52,6 @@ class AppLocalizationCubit extends Cubit<AppLocalizationState> {
     return AppLocale.en;
   }
 
-
   TextDirection get textDirection {
     final state = this.state;
     if (state is LoadedLocale) {

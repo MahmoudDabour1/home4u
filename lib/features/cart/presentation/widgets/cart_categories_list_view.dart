@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_localization/flutter_localization.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:home4u/features/cart/presentation/widgets/cart_category_list_view_item.dart';
 import 'package:home4u/features/products/data/models/business_config_model.dart';
 
+import '../../../../locale/app_locale.dart';
 import '../../../products/logic/products_cubit.dart';
 import '../../../products/logic/products_state.dart';
 import '../../logic/cart_cubit.dart';
@@ -33,7 +35,7 @@ class _CartCategoriesListViewState extends State<CartCategoriesListView> {
 
         ///Total as the first item
         final businessTypes = [
-          BusinessType(id: null, name: "Total"),
+          BusinessType(id: null, name: AppLocale.total.getString(context)),
           ...originalBusinessTypes,
         ];
 

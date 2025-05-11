@@ -5,6 +5,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:home4u/core/extensions/navigation_extension.dart';
 import 'package:home4u/core/theming/app_colors.dart';
 import 'package:home4u/core/widgets/app_custom_button.dart';
+import 'package:home4u/features/products/logic/products_cubit.dart';
 import 'package:home4u/locale/app_locale.dart';
 
 import '../../../../core/localization/app_localization_cubit.dart';
@@ -84,6 +85,11 @@ void showLanguageDropdownSheet(BuildContext context) {
                         onPressed: () {
                           context.read<AppLocalizationCubit>().changeLocale(
                               selectedLanguage == 'Arabic' ? 'ar' : 'en');
+                          Future.delayed(Duration(milliseconds: 300)).then((value) =>
+                          context
+                              .read<ProductsCubit>()
+                              .getBusinessConfig(forceRefresh: true),
+                          );
                           context.pop();
                         });
                   },
