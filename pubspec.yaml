@@ -191,3 +191,4 @@ flutter:
     - assets/svgs/
     - assets/jsons/
     - shorebird.yaml
+    - lib/features/cart/presentation/widgets/order_status_widgets/

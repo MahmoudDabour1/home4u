@@ -44,5 +44,7 @@ abstract class Routes{
   static const String renovateYourHouseSecondScreen = '/renovateYourHouseSecondScreen';
   static const String requestDesignScreen = '/requestDesignScreen';
   static const String projectsFilterScreen = '/projectsFilterScreen';
+  static const String checkOutDoneScreen = '/checkOutDoneScreen';
+  static const String orderStatusScreen = '/OrderStatusScreen';
 
 }
