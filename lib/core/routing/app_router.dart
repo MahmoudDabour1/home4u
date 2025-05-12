@@ -31,6 +31,8 @@ import '../../features/auth/login/presentation/login_screen.dart';
 import '../../features/auth/sign_up/presentation/business_sign_up_screen.dart';
 import '../../features/cart/presentation/cart_product_details_screen.dart';
 import '../../features/cart/presentation/cart_screen.dart';
+import '../../features/cart/presentation/check_out_done_screen.dart';
+import '../../features/cart/presentation/order_status_screen.dart';
 import '../../features/cart/presentation/user_favorite_screen.dart';
 import '../../features/exhibition/presentation/business_add_product_screen.dart';
 import '../../features/exhibition/presentation/business_overview_screen.dart';
@@ -239,9 +241,18 @@ class AppRouter {
       case Routes.askTechnicalFinishAndImage:
         return MaterialPageRoute(
           builder: (_) => AskTechnicalFinishAndImage(),
-        ); case Routes.projectsFilterScreen:
+        );
+      case Routes.projectsFilterScreen:
         return MaterialPageRoute(
           builder: (_) => ProjectsFilterScreen(),
+        );
+      case Routes.checkOutDoneScreen:
+        return MaterialPageRoute(
+          builder: (_) => CheckOutDoneScreen(),
+        );
+      case Routes.orderStatusScreen:
+        return MaterialPageRoute(
+          builder: (_) => OrderStatusScreen(),
         );
       default:
         return null;

@@ -237,7 +237,6 @@ class AppLocale {
   static const String design = 'Design';
   static const String ai = 'Ai';
 
-
   ///Stepper Titles
   static const String basicDetails = 'Basic Details';
   static const String materialsSpecs = 'Materials & Specs';
@@ -338,25 +337,29 @@ class AppLocale {
   static const String workerTypeSelection = 'Worker type';
   static const String pleaseSelectWorkerType = 'Please Select Worker Type';
   static const String materialNeeded = 'Material needed';
-  static const String pleaseSelectMaterialNeeded = 'Please Select Material needed';
+  static const String pleaseSelectMaterialNeeded =
+      'Please Select Material needed';
   static const String about = 'About';
   static const String contactInfo = 'Contact Info';
-  static const String location  = 'Location: ';
-  static const String phone  = 'Phone: ';
-  static const String profileStats  = 'Profile Stats';
-  static const String editPhone  = 'Edit Phone';
-  static const String editLocation  = 'Edit Location';
-  static const String addPhone  = 'Add Phone';
-  static const String followers  = 'Followers';
-  static const String totalRating  = 'Total Rating';
-  static const String likes  = 'Likes';
-  static const String completedProjects  = 'Completed Projects';
-  static const String onTheWeb  = 'On the web';
-  static const String facebookLink  = 'Facebook Link';
-  static const String linkedInLink  = 'LinkedIn Link';
-  static const String behanceLink  = 'Behance Link';
-  static const String editLink  = 'Edit Link';
-
+  static const String location = 'Location: ';
+  static const String phone = 'Phone: ';
+  static const String profileStats = 'Profile Stats';
+  static const String editPhone = 'Edit Phone';
+  static const String editLocation = 'Edit Location';
+  static const String addPhone = 'Add Phone';
+  static const String followers = 'Followers';
+  static const String totalRating = 'Total Rating';
+  static const String likes = 'Likes';
+  static const String completedProjects = 'Completed Projects';
+  static const String onTheWeb = 'On the web';
+  static const String facebookLink = 'Facebook Link';
+  static const String linkedInLink = 'LinkedIn Link';
+  static const String behanceLink = 'Behance Link';
+  static const String editLink = 'Edit Link';
+  static const String thankYouForYourPurchase =
+      'Thank you for your purchase.\nYou can view your order in ‘My Orders’\n section.';
+  static const String continueShopping = 'Continue shopping';
+  static const String orderCompleted = 'Order Completed';
 
   static const Map<String, dynamic> en = {
     onBoardingTitle1: 'Civil works and finishing services',
@@ -364,11 +367,11 @@ class AppLocale {
     onBoardingTitle3: 'Civil works and finishing services 3',
     onBoardingTitle4: 'Civil works and finishing services 4',
     onBoardingDescription1:
-    'Comprehensive services including civil works and finishing, with engineering consultations and 2D and 3D designs, in addition to free and paid services through our platform.',
+        'Comprehensive services including civil works and finishing, with engineering consultations and 2D and 3D designs, in addition to free and paid services through our platform.',
     onBoardingDescription2:
-    'Comprehensive services including civil works and finishing, with engineering consultations and 2D and 3D designs, in addition to free and paid services through our platform. 2',
+        'Comprehensive services including civil works and finishing, with engineering consultations and 2D and 3D designs, in addition to free and paid services through our platform. 2',
     onBoardingDescription3:
-    'Comprehensive services including civil works and finishing, with engineering consultations and 2D and 3D designs, in addition to free and paid services through our platform. 3',
+        'Comprehensive services including civil works and finishing, with engineering consultations and 2D and 3D designs, in addition to free and paid services through our platform. 3',
     onBoardingDescription4: '',
     toggleLanguage: 'en',
     startButton: 'Start',
@@ -444,7 +447,7 @@ class AppLocale {
     cancel: 'Cancel',
     deletedSuccessfully: 'Deleted Successfully',
     areYouSureYouWantToDeleteThisItem:
-    'Are you sure you want to delete this item?',
+        'Are you sure you want to delete this item?',
     addProject: 'Add Project',
     choose: 'Choose',
     setStartDate: 'Set Start Date',
@@ -517,7 +520,7 @@ class AppLocale {
     helpful: 'helpful',
     productPreview: 'Product Preview',
     productPreviewSubTitle:
-    'A brief overview highlighting key product\n details.',
+        'A brief overview highlighting key product\n details.',
     color: 'Color',
     price: 'Price',
     material: 'Material',
@@ -613,7 +616,7 @@ class AppLocale {
     projectDeadline: 'Project Deadline',
     renovateYourHouse: 'Renovate Your House',
     renovateYourHouseDescription:
-    "\"Finish Your House\" - Complete your home's\n setup effortlessly.",
+        "\"Finish Your House\" - Complete your home's\n setup effortlessly.",
     unitInsideCompound: 'Unit Inside Compound',
     outDoor: 'Out Door',
     skills: 'Skills',
@@ -632,10 +635,10 @@ class AppLocale {
     outsideCompound: 'Outside Compound',
     notes: 'Notes',
     bookPackage: 'Book Package',
-    attachedImages : 'Attached Images',
-    requestDesign : 'Request Design',
-    design : 'Design',
-    ai : 'Ai',
+    attachedImages: 'Attached Images',
+    requestDesign: 'Request Design',
+    design: 'Design',
+    ai: 'Ai',
     workerTypeSelection: 'Worker type',
     pleaseSelectWorkerType: 'Please Select Worker Type',
     materialNeeded: 'Material needed',
@@ -657,6 +660,10 @@ class AppLocale {
     linkedInLink: 'LinkedIn Link',
     behanceLink: 'Behance Link',
     editLink: 'Edit Link',
+    thankYouForYourPurchase:
+        'Thank you for your purchase.\nYou can view your order in ‘My Orders’\n section.',
+    continueShopping: 'Continue Shopping',
+    orderCompleted: 'Order Completed'
   };
 
   static const Map<String, dynamic> ar = {
@@ -665,11 +672,11 @@ class AppLocale {
     onBoardingTitle3: 'خدمات الأعمال المدنية والتشطيب 3',
     onBoardingTitle4: 'خدمات الأعمال المدنية والتشطيب 4',
     onBoardingDescription1:
-    'خدمات شاملة تشمل الأعمال المدنية والتشطيب، مع استشارات هندسية وتصاميم ثنائية وثلاثية الأبعاد، بالإضافة إلى خدمات مجانية ومدفوعة عبر منصتنا.',
+        'خدمات شاملة تشمل الأعمال المدنية والتشطيب، مع استشارات هندسية وتصاميم ثنائية وثلاثية الأبعاد، بالإضافة إلى خدمات مجانية ومدفوعة عبر منصتنا.',
     onBoardingDescription2:
-    'خدمات شاملة تشمل الأعمال المدنية والتشطيب، مع استشارات هندسية وتصاميم ثنائية وثلاثية الأبعاد، بالإضافة إلى خدمات مجانية ومدفوعة عبر منصتنا. 2',
+        'خدمات شاملة تشمل الأعمال المدنية والتشطيب، مع استشارات هندسية وتصاميم ثنائية وثلاثية الأبعاد، بالإضافة إلى خدمات مجانية ومدفوعة عبر منصتنا. 2',
     onBoardingDescription3:
-    'خدمات شاملة تشمل الأعمال المدنية والتشطيب، مع استشارات هندسية وتصاميم ثنائية وثلاثية الأبعاد، بالإضافة إلى خدمات مجانية ومدفوعة عبر منصتنا. 3',
+        'خدمات شاملة تشمل الأعمال المدنية والتشطيب، مع استشارات هندسية وتصاميم ثنائية وثلاثية الأبعاد، بالإضافة إلى خدمات مجانية ومدفوعة عبر منصتنا. 3',
     onBoardingDescription4: '',
     toggleLanguage: 'العربية',
     startButton: 'ابدأ',
@@ -816,7 +823,7 @@ class AppLocale {
     helpful: 'مفيد',
     productPreview: 'معاينة المنتج',
     productPreviewSubTitle:
-    'نظرة عامة موجزة تسلط الضوء على تفاصيل المنتج الرئيسية.',
+        'نظرة عامة موجزة تسلط الضوء على تفاصيل المنتج الرئيسية.',
     color: 'اللون',
     price: 'السعر',
     material: 'المادة',
@@ -931,10 +938,10 @@ class AppLocale {
     outsideCompound: 'خارج المجمع',
     notes: 'ملاحظات',
     bookPackage: 'احجز باقة',
-    attachedImages : 'الصور المرفقة',
-    requestDesign : 'اطلب تصميم',
-    design : 'تصميم مخصص',
-    ai : 'ذكاء اصطناعي',
+    attachedImages: 'الصور المرفقة',
+    requestDesign: 'اطلب تصميم',
+    design: 'تصميم مخصص',
+    ai: 'ذكاء اصطناعي',
     workerTypeSelection: 'اختيار نوع العامل',
     pleaseSelectWorkerType: 'الرجاء اختيار نوع العامل',
     materialNeeded: 'المواد المطلوبة',
@@ -956,5 +963,8 @@ class AppLocale {
     linkedInLink: 'رابط لينكد إن',
     behanceLink: 'رابط بيهانس',
     editLink: 'تعديل الرابط',
+    thankYouForYourPurchase: 'شكرا لشرائك منا',
+    continueShopping: "أكمل التسوق",
+    orderCompleted: 'تمت إتمام طلبك بنجاح',
   };
 }
