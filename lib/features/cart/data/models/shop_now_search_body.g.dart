@@ -8,7 +8,7 @@ part of 'shop_now_search_body.dart';
 
 ShopNowSearchBody _$ShopNowSearchBodyFromJson(Map<String, dynamic> json) =>
     ShopNowSearchBody(
-      pageNum: (json['pageNum'] as num).toInt(),
+      pageNumber: (json['pageNumber'] as num).toInt(),
       pageSize: (json['pageSize'] as num?)?.toInt(),
       searchCriteria: ShopNowSearchCriteria.fromJson(
           json['searchCriteria'] as Map<String, dynamic>),
@@ -16,7 +16,7 @@ ShopNowSearchBody _$ShopNowSearchBodyFromJson(Map<String, dynamic> json) =>
 
 Map<String, dynamic> _$ShopNowSearchBodyToJson(ShopNowSearchBody instance) =>
     <String, dynamic>{
-      'pageNum': instance.pageNum,
+      'pageNumber': instance.pageNumber,
       'pageSize': instance.pageSize,
       'searchCriteria': instance.searchCriteria,
     };

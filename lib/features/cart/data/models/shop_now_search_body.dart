@@ -4,12 +4,12 @@ part 'shop_now_search_body.g.dart';
 
 @JsonSerializable()
 class ShopNowSearchBody {
-  final int pageNum;
+  final int pageNumber;
   final int? pageSize;
   final ShopNowSearchCriteria searchCriteria;
 
   ShopNowSearchBody({
-    required this.pageNum,
+    required this.pageNumber,
     this.pageSize,
     required this.searchCriteria,
   });
