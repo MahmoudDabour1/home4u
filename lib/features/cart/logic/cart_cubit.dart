@@ -149,6 +149,7 @@ class CartCubit extends Cubit<CartState> {
     products = [];
   }
 
+  ///ToDo :
   ///filter badge count
   int getActiveFilterCount() {
     int count = 0;
