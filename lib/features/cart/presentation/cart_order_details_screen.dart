@@ -4,8 +4,8 @@ import 'package:home4u/core/utils/spacing.dart';
 import 'package:home4u/features/cart/presentation/widgets/cart_order_details_widgets/cart_order_details_content.dart';
 import 'package:home4u/features/cart/presentation/widgets/cart_order_details_widgets/cart_order_details_header.dart';
 
-class OrderDetailsScreen extends StatelessWidget {
-  const OrderDetailsScreen({super.key});
+class CartOrderDetailsScreen extends StatelessWidget {
+  const CartOrderDetailsScreen({super.key});
 
   @override
   Widget build(BuildContext context) {

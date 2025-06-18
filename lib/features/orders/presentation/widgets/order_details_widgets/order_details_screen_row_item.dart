@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:home4u/core/theming/app_styles.dart';
 
-class OrderStatusScreenRowItem extends StatelessWidget {
+class OrderDetailsScreenRowItem extends StatelessWidget {
   final String title;
   final String value;
   final bool isHaveAmount;
   final String? amount;
 
-  const OrderStatusScreenRowItem({
+  const OrderDetailsScreenRowItem({
     super.key,
     required this.title,
     required this.value,

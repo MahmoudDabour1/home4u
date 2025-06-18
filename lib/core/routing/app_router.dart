@@ -35,11 +35,12 @@ import '../../features/cart/presentation/cart_product_details_screen.dart';
 import '../../features/cart/presentation/cart_screen.dart';
 import '../../features/cart/presentation/user_favorite_screen.dart';
 import '../../features/check_out/presentation/check_out_done_screen.dart';
+import '../../features/check_out/presentation/check_out_screen.dart';
 import '../../features/exhibition/presentation/business_add_product_screen.dart';
 import '../../features/exhibition/presentation/business_overview_screen.dart';
 import '../../features/exhibition/presentation/business_review_screen.dart';
 import '../../features/onboarding/presentation/onboarding_screen.dart';
-import '../../features/orders/presentation/order_status_screen.dart';
+import '../../features/orders/presentation/order_details_screen.dart';
 import '../../features/orders/presentation/orders_screen.dart';
 import '../../features/products/presentation/products_screen.dart';
 import '../../features/profile/data/models/certifications/get_certifications_response_model.dart';
@@ -189,9 +190,9 @@ class AppRouter {
         return MaterialPageRoute(
           builder: (_) => CartProductDetailsScreen(),
         );
-      case Routes.orderDetailsScreen:
+      case Routes.cartOrderDetailsScreen:
         return MaterialPageRoute(
-          builder: (_) => OrderDetailsScreen(),
+          builder: (_) => CartOrderDetailsScreen(),
         );
       case Routes.userFavoriteScreen:
         return MaterialPageRoute(
@@ -245,9 +246,9 @@ class AppRouter {
         return MaterialPageRoute(
           builder: (_) => CheckOutDoneScreen(),
         );
-      case Routes.orderStatusScreen:
+      case Routes.orderDetailsScreen:
         return MaterialPageRoute(
-          builder: (_) => OrderStatusScreen(),
+          builder: (_) => OrderDetailsScreen(),
         );
       case Routes.ordersScreen:
         return MaterialPageRoute(
@@ -264,6 +265,9 @@ class AppRouter {
       case Routes.userBottomNavLayout:
         return MaterialPageRoute(
           builder: (_) => UserBottomNavLayout(),
+        );    case Routes.checkOutScreen:
+        return MaterialPageRoute(
+          builder: (_) => CheckOutScreen(),
         );
       default:
         return null;

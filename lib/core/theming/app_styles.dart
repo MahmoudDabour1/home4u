@@ -18,6 +18,10 @@ class AppStyles {
     fontSize: 16.sp,
     color: AppColors.iconsColor,
     fontWeight: FontWeightHelper.light,
+  ); static TextStyle font16GrayMedium = TextStyle(
+    fontSize: 16.sp,
+    color: AppColors.iconsColor,
+    fontWeight: FontWeightHelper.medium,
   );
   static TextStyle font16BlueMedium = TextStyle(
     fontSize: 16.sp,

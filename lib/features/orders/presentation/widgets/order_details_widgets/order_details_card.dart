@@ -6,8 +6,8 @@ import 'package:home4u/core/theming/app_assets.dart';
 import 'package:home4u/core/theming/app_colors.dart';
 import 'package:home4u/core/theming/app_styles.dart';
 
-class OrderStatusCard extends StatelessWidget {
-  const OrderStatusCard({
+class OrderDetailsCard extends StatelessWidget {
+  const OrderDetailsCard({
     super.key,
   });
 
@@ -36,10 +36,6 @@ class OrderStatusCard extends StatelessWidget {
                   AutoSizeText(
                     "Rate product to get 5 points for collect.",
                     style: TextStyle(color: Colors.white),
-                    // style: AppStyles.font14BlackLight.copyWith(
-                    //   color: AppColors.whiteColor,
-                    //   overflow: TextOverflow.ellipsis,
-                    // ),
                     overflow: TextOverflow.ellipsis,
                     maxLines: 1,
                   ),

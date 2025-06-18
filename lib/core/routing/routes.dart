@@ -29,7 +29,7 @@ abstract class Routes{
   ///User Flow
   static const String cartScreen = '/cartScreen';
   static const String cartProductDetailsScreen = '/cartProductDetailsScreen';
-  static const String orderDetailsScreen = '/orderDetailsScreen';
+  static const String cartOrderDetailsScreen = '/cartOrderDetailsScreen';
   static const String userFavoriteScreen = '/userFavoriteScreen';
 
   ///User
@@ -45,8 +45,9 @@ abstract class Routes{
   static const String requestDesignScreen = '/requestDesignScreen';
   static const String projectsFilterScreen = '/projectsFilterScreen';
   static const String checkOutDoneScreen = '/checkOutDoneScreen';
-  static const String orderStatusScreen = '/OrderStatusScreen';
+  static const String orderDetailsScreen = '/orderDetailsScreen';
   static const String ordersScreen = '/OrdersScreen';
+  static const String checkOutScreen = '/CheckOutScreen';
 
   ///layout
   static const String freelancerBottomNavLayout = '/freelancerBottomNavLayout';
