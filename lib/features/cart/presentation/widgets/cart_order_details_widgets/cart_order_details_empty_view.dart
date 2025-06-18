@@ -4,8 +4,8 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../../../core/theming/app_styles.dart';
 import '../../../../../core/utils/spacing.dart';
 
-class OrderDetailsEmptyCartView extends StatelessWidget {
-  const OrderDetailsEmptyCartView({super.key});
+class CartOrderDetailsEmptyView extends StatelessWidget {
+  const CartOrderDetailsEmptyView({super.key});
 
   @override
   Widget build(BuildContext context) {

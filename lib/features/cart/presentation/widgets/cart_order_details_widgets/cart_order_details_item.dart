@@ -12,12 +12,12 @@ import '../../../../cart/data/models/cart_item_model.dart';
 import '../../../../cart/logic/cart_cubit.dart';
 
 
-class OrderDetailsItem extends StatelessWidget {
+class CartOrderDetailsItem extends StatelessWidget {
   final CartItemModel cartItem;
   final VoidCallback onRemove;
   final Function(int) onQuantityChanged;
 
-  const OrderDetailsItem({
+  const CartOrderDetailsItem({
     super.key,
     required this.cartItem,
     required this.onRemove,

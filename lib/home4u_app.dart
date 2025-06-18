@@ -82,13 +82,13 @@ class _Home4uAppState extends State<Home4uApp> {
       switch (userTypeCode) {
         case "EXHIBITION":
         case "STORE":
-          return Routes.productsScreen;
+          return Routes.exhibitionsAndStoresBottomNavLayout;
         case "TECHNICAL_WORKER":
         case "ENGINEERING_OFFICE":
         case "ENGINEER":
-          return Routes.bottomNavLayout;
+          return Routes.freelancerBottomNavLayout;
         default:
-          return Routes.homeScreen;
+          return Routes.userBottomNavLayout;
       }
     }
     return Routes.loginScreen;
@@ -173,7 +173,7 @@ class _Home4uAppState extends State<Home4uApp> {
                     debugShowCheckedModeBanner: false,
                     navigatorObservers: [NavigatorObserver(), _routeObserver],
                     initialRoute:
-                        Routes.ordersScreen,
+                        Routes.loginScreen,
                         // snapshot.data!,
                   ),
                 );

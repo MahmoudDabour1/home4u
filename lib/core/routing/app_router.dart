@@ -16,9 +16,11 @@ import 'package:home4u/features/auth/sign_up/presentation/sign_up_screen.dart';
 import 'package:home4u/features/auth/sign_up/presentation/technical_worker_sign_up.dart';
 import 'package:home4u/features/auth/verification/logic/verification_cubit.dart';
 import 'package:home4u/features/auth/verification/presentation/verification_screen.dart';
-import 'package:home4u/features/orders/presentation/order_details_screen.dart';
+import 'package:home4u/features/cart/presentation/cart_order_details_screen.dart';
 import 'package:home4u/features/exhibition/logic/business_add_product_cubit.dart';
-import 'package:home4u/features/layout/logic/bottom_nav_cubit.dart';
+import 'package:home4u/features/layout/presentation/exhibitions_and_stores_bottom_nav_layout.dart';
+import 'package:home4u/features/layout/presentation/freelancer_bottom_nav_layout.dart';
+import 'package:home4u/features/layout/presentation/user_bottom_nav_layout.dart';
 import 'package:home4u/features/products/data/models/product_preview_response.dart';
 import 'package:home4u/features/products/presentation/product_details_screen.dart';
 import 'package:home4u/features/profile/presentation/add_certification_screen.dart';
@@ -31,12 +33,11 @@ import '../../features/auth/login/presentation/login_screen.dart';
 import '../../features/auth/sign_up/presentation/business_sign_up_screen.dart';
 import '../../features/cart/presentation/cart_product_details_screen.dart';
 import '../../features/cart/presentation/cart_screen.dart';
-import '../../features/check_out/presentation/check_out_done_screen.dart';
 import '../../features/cart/presentation/user_favorite_screen.dart';
+import '../../features/check_out/presentation/check_out_done_screen.dart';
 import '../../features/exhibition/presentation/business_add_product_screen.dart';
 import '../../features/exhibition/presentation/business_overview_screen.dart';
 import '../../features/exhibition/presentation/business_review_screen.dart';
-import '../../features/layout/presentation/bottom_nav_bar_layout.dart';
 import '../../features/onboarding/presentation/onboarding_screen.dart';
 import '../../features/orders/presentation/order_status_screen.dart';
 import '../../features/orders/presentation/orders_screen.dart';
@@ -122,13 +123,6 @@ class AppRouter {
       case Routes.homeScreen:
         return MaterialPageRoute(
           builder: (_) => UserHomeScreen(),
-        );
-      case Routes.bottomNavLayout:
-        return MaterialPageRoute(
-          builder: (_) => BlocProvider<BottomNavCubit>(
-            create: (_) => BottomNavCubit(),
-            child: BottomNavBarLayout(),
-          ),
         );
       case Routes.settingScreen:
         return MaterialPageRoute(
@@ -254,9 +248,22 @@ class AppRouter {
       case Routes.orderStatusScreen:
         return MaterialPageRoute(
           builder: (_) => OrderStatusScreen(),
-        );case Routes.ordersScreen:
+        );
+      case Routes.ordersScreen:
         return MaterialPageRoute(
           builder: (_) => OrdersScreen(),
+        );
+      case Routes.freelancerBottomNavLayout:
+        return MaterialPageRoute(
+          builder: (_) => FreelancerBottomNavLayout(),
+        );
+      case Routes.exhibitionsAndStoresBottomNavLayout:
+        return MaterialPageRoute(
+          builder: (_) => ExhibitionsAndStoresBottomNavLayout(),
+        );
+      case Routes.userBottomNavLayout:
+        return MaterialPageRoute(
+          builder: (_) => UserBottomNavLayout(),
         );
       default:
         return null;
