@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:home4u/core/utils/spacing.dart';
 
-import '../../../data/models/order_model.dart';
+import '../../../../cart/data/models/order_model.dart';
 import 'order_header.dart';
 
 

@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:home4u/core/theming/app_colors.dart';
-import 'package:home4u/features/cart/presentation/widgets/order_status_widgets/order_status_screen_row_item.dart';
 
-class OrderStatusOrderDetails extends StatelessWidget {
-  const OrderStatusOrderDetails({
+import '../../../../../core/theming/app_colors.dart';
+import '../../../../../core/utils/spacing.dart';
+import 'order_status_screen_row_item.dart';
+
+class OrderStatusOrderPrices extends StatelessWidget {
+  const OrderStatusOrderPrices({
     super.key,
   });
 
@@ -30,17 +32,32 @@ class OrderStatusOrderDetails extends StatelessWidget {
           spacing: 13.h,
           children: [
             OrderStatusScreenRowItem(
-              title: "Order number",
-              value: "#1514",
+              title: "Maxi Dress",
+              value: "\$68.00",
+              isHaveAmount: true,
+              amount: "x1",
             ),
             OrderStatusScreenRowItem(
-              title: "Order number",
-              value: "#1514",
+              title: "Linen Dress",
+              value: "\$52.00",
+              isHaveAmount: true,
+              amount: "x1",
+            ),
+            verticalSpace(16),
+            OrderStatusScreenRowItem(
+              title: "Sub Total",
+              value: "120.00",
             ),
             OrderStatusScreenRowItem(
-              title: "Order number",
-              value: "#1514",
+              title: "Shipping",
+              value: "0.00",
             ),
+            Divider(),
+            OrderStatusScreenRowItem(
+              title: "Total",
+              value: "\$120.00",
+            ),
+            verticalSpace(16),
           ],
         ),
       ),

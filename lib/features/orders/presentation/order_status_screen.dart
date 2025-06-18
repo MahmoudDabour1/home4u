@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:home4u/features/cart/presentation/widgets/order_status_widgets/order_status_buttons.dart';
-import 'package:home4u/features/cart/presentation/widgets/order_status_widgets/order_status_card.dart';
-import 'package:home4u/features/cart/presentation/widgets/order_status_widgets/order_status_header.dart';
-import 'package:home4u/features/cart/presentation/widgets/order_status_widgets/order_status_order_details.dart';
-import 'package:home4u/features/cart/presentation/widgets/order_status_widgets/order_status_order_prices.dart';
+import 'package:home4u/features/orders/presentation/widgets/order_status_widgets/order_status_buttons.dart';
+import 'package:home4u/features/orders/presentation/widgets/order_status_widgets/order_status_card.dart';
+import 'package:home4u/features/orders/presentation/widgets/order_status_widgets/order_status_header.dart';
+import 'package:home4u/features/orders/presentation/widgets/order_status_widgets/order_status_order_details.dart';
+import 'package:home4u/features/orders/presentation/widgets/order_status_widgets/order_status_order_prices.dart';
 
 import '../../../core/utils/spacing.dart';
 

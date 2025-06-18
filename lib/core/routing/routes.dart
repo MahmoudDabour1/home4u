@@ -46,5 +46,5 @@ abstract class Routes{
   static const String projectsFilterScreen = '/projectsFilterScreen';
   static const String checkOutDoneScreen = '/checkOutDoneScreen';
   static const String orderStatusScreen = '/OrderStatusScreen';
-
+  static const String ordersScreen = '/OrdersScreen';
 }

@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import '../../../data/models/cart_item_model.dart';
-import '../../../logic/cart_cubit.dart';
+import '../../../../cart/data/models/cart_item_model.dart';
+import '../../../../cart/logic/cart_cubit.dart';
 import 'checkout_section.dart';
 import 'order_details_item.dart';
 
