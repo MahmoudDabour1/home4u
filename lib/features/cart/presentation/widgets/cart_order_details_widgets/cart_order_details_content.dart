@@ -3,11 +3,11 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../../../cart/logic/cart_cubit.dart';
 import '../../../../cart/logic/cart_state.dart';
-import 'order_details_cart_items_list.dart';
-import 'order_details_empty_cart_view.dart';
+import 'cart_items_order_details_list.dart';
+import 'cart_order_details_empty_view.dart';
 
-class OrderDetailsContent extends StatelessWidget {
-  const OrderDetailsContent({super.key});
+class CartOrderDetailsContent extends StatelessWidget {
+  const CartOrderDetailsContent({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -23,10 +23,10 @@ class OrderDetailsContent extends StatelessWidget {
                   sum + (item.product.price ?? 0) * (item.quantity ?? 0),
             );
             return items.isEmpty
-                ? const OrderDetailsEmptyCartView()
-                : OrderDetailsCartItemsList(items: items, total: total);
+                ? const CartOrderDetailsEmptyView()
+                : CartItemsOrderDetailsList(items: items, total: total);
           },
-          orElse: () => const OrderDetailsEmptyCartView(),
+          orElse: () => const CartOrderDetailsEmptyView(),
         );
       },
     );

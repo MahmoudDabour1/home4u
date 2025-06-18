@@ -5,8 +5,8 @@ import '../../../../../core/theming/app_styles.dart';
 import '../../../../../core/widgets/app_back_button.dart';
 import '../../../../../locale/app_locale.dart';
 
-class OrderDetailsHeader extends StatelessWidget {
-  const OrderDetailsHeader({super.key});
+class CartOrderDetailsHeader extends StatelessWidget {
+  const CartOrderDetailsHeader({super.key});
 
   @override
   Widget build(BuildContext context) {
