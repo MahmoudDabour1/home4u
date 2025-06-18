@@ -6,30 +6,21 @@ import 'package:home4u/features/settings/presentation/setting_screen.dart';
 import 'bottom_nav_state.dart';
 
 class BottomNavCubit extends Cubit<BottomNavState> {
-  BottomNavCubit() : super(const BottomNavState.initial());
+  BottomNavCubit({
+    required this.bottomNavIcons,
+    required this.bottomNavScreens,
+  }) : super(const BottomNavState.initial());
 
-  static BottomNavCubit get(context) => BlocProvider.of(context);
+  static BottomNavCubit of(BuildContext context) =>
+      BlocProvider.of<BottomNavCubit>(context);
 
   int currentIndex = 0;
+
+  final List<IconData> bottomNavIcons;
+  final List<Widget> bottomNavScreens;
 
   void changeBottomNavIndex(int index) {
     currentIndex = index;
     emit(BottomNavState.changeBottomNavIndex(index));
   }
-
-  List<IconData> bottomNavIcons = [
-    CupertinoIcons.home,
-    CupertinoIcons.square_stack_3d_up,
-    CupertinoIcons.chat_bubble_2,
-    CupertinoIcons.person_2,
-    CupertinoIcons.profile_circled,
-  ];
-
-  List<Widget> bottomNavScreens = [
-    ProfileScreen(),
-    Container(color: Colors.green),
-    Container(color: Colors.blue),
-    Container(color: Colors.yellow),
-    SettingScreen(),
-  ];
 }
