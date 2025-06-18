@@ -16,7 +16,7 @@ import 'package:home4u/features/auth/sign_up/presentation/sign_up_screen.dart';
 import 'package:home4u/features/auth/sign_up/presentation/technical_worker_sign_up.dart';
 import 'package:home4u/features/auth/verification/logic/verification_cubit.dart';
 import 'package:home4u/features/auth/verification/presentation/verification_screen.dart';
-import 'package:home4u/features/orders/presentation/order_details_screen.dart';
+import 'package:home4u/features/cart/presentation/cart_order_details_screen.dart';
 import 'package:home4u/features/exhibition/logic/business_add_product_cubit.dart';
 import 'package:home4u/features/layout/logic/bottom_nav_cubit.dart';
 import 'package:home4u/features/products/data/models/product_preview_response.dart';

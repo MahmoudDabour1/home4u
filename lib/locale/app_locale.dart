@@ -279,6 +279,7 @@ class AppLocale {
   static const String cartEmptySubTitle =
       'Add items to your cart and they will appear here.';
   static const String favorites = 'Favorites';
+  static const String proceedToCheckOut = "Proceed to Checkout";
 
   ///User
   static const String home = 'Home';
@@ -663,7 +664,8 @@ class AppLocale {
     thankYouForYourPurchase:
         'Thank you for your purchase.\nYou can view your order in ‘My Orders’\n section.',
     continueShopping: 'Continue Shopping',
-    orderCompleted: 'Order Completed'
+    orderCompleted: 'Order Completed',
+    proceedToCheckOut :  'Proceed to Checkout',
   };
 
   static const Map<String, dynamic> ar = {
@@ -966,5 +968,6 @@ class AppLocale {
     thankYouForYourPurchase: 'شكرا لشرائك منا',
     continueShopping: "أكمل التسوق",
     orderCompleted: 'تمت إتمام طلبك بنجاح',
+    proceedToCheckOut : 'المتابعة إلى الدفع',
   };
 }
