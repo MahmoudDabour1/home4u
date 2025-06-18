@@ -11,7 +11,7 @@ abstract class Routes{
   static const String homeScreen = '/homeScreen';
   static const String profileScreen = '/profileScreen';
   static const String addProjectScreen = '/addProjectScreen';
-  static const String bottomNavLayout = '/bottomNavLayout';
+  // static const String bottomNavLayout = '/bottomNavLayout';
   static const String settingScreen = '/settingScreen';
   static const String addCertificationScreen = '/addCertificationScreen';
   static const String projectDetailsScreen = '/projectDetailsScreen';

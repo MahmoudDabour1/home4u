@@ -18,7 +18,6 @@ import 'package:home4u/features/auth/verification/logic/verification_cubit.dart'
 import 'package:home4u/features/auth/verification/presentation/verification_screen.dart';
 import 'package:home4u/features/cart/presentation/cart_order_details_screen.dart';
 import 'package:home4u/features/exhibition/logic/business_add_product_cubit.dart';
-import 'package:home4u/features/layout/logic/bottom_nav_cubit.dart';
 import 'package:home4u/features/layout/presentation/exhibitions_and_stores_bottom_nav_layout.dart';
 import 'package:home4u/features/layout/presentation/freelancer_bottom_nav_layout.dart';
 import 'package:home4u/features/layout/presentation/user_bottom_nav_layout.dart';
@@ -39,8 +38,6 @@ import '../../features/check_out/presentation/check_out_done_screen.dart';
 import '../../features/exhibition/presentation/business_add_product_screen.dart';
 import '../../features/exhibition/presentation/business_overview_screen.dart';
 import '../../features/exhibition/presentation/business_review_screen.dart';
-import '../../features/layout/data/models/bottom_nav_args.dart';
-import '../../features/layout/presentation/bottom_nav_bar_layout.dart';
 import '../../features/onboarding/presentation/onboarding_screen.dart';
 import '../../features/orders/presentation/order_status_screen.dart';
 import '../../features/orders/presentation/orders_screen.dart';
@@ -126,20 +123,6 @@ class AppRouter {
       case Routes.homeScreen:
         return MaterialPageRoute(
           builder: (_) => UserHomeScreen(),
-        );
-      case Routes.bottomNavLayout:
-        final args = settings.arguments as BottomNavArgs;
-        return MaterialPageRoute(
-          builder: (_) => BlocProvider<BottomNavCubit>(
-            create: (_) => BottomNavCubit(
-              bottomNavIcons: args.icons,
-              bottomNavScreens: args.screens,
-            ),
-            child: BottomNavBarLayout(
-              icons: args.icons,
-              screens: args.screens,
-            ),
-          ),
         );
       case Routes.settingScreen:
         return MaterialPageRoute(
