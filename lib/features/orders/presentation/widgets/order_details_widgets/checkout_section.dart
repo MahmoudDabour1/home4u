@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:home4u/features/cart/presentation/widgets/order_details_widgets/promo_code_input.dart';
-import 'package:home4u/features/cart/presentation/widgets/order_details_widgets/total_price_row.dart';
+import 'package:home4u/features/orders/presentation/widgets/order_details_widgets/promo_code_input.dart';
+import 'package:home4u/features/orders/presentation/widgets/order_details_widgets/total_price_row.dart';
 
 import '../../../../../core/utils/spacing.dart';
 

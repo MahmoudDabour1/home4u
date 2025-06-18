@@ -16,7 +16,7 @@ import 'package:home4u/features/auth/sign_up/presentation/sign_up_screen.dart';
 import 'package:home4u/features/auth/sign_up/presentation/technical_worker_sign_up.dart';
 import 'package:home4u/features/auth/verification/logic/verification_cubit.dart';
 import 'package:home4u/features/auth/verification/presentation/verification_screen.dart';
-import 'package:home4u/features/cart/presentation/order_details_screen.dart';
+import 'package:home4u/features/orders/presentation/order_details_screen.dart';
 import 'package:home4u/features/exhibition/logic/business_add_product_cubit.dart';
 import 'package:home4u/features/layout/logic/bottom_nav_cubit.dart';
 import 'package:home4u/features/products/data/models/product_preview_response.dart';
@@ -31,14 +31,15 @@ import '../../features/auth/login/presentation/login_screen.dart';
 import '../../features/auth/sign_up/presentation/business_sign_up_screen.dart';
 import '../../features/cart/presentation/cart_product_details_screen.dart';
 import '../../features/cart/presentation/cart_screen.dart';
-import '../../features/cart/presentation/check_out_done_screen.dart';
-import '../../features/cart/presentation/order_status_screen.dart';
+import '../../features/check_out/presentation/check_out_done_screen.dart';
 import '../../features/cart/presentation/user_favorite_screen.dart';
 import '../../features/exhibition/presentation/business_add_product_screen.dart';
 import '../../features/exhibition/presentation/business_overview_screen.dart';
 import '../../features/exhibition/presentation/business_review_screen.dart';
 import '../../features/layout/presentation/bottom_nav_bar_layout.dart';
 import '../../features/onboarding/presentation/onboarding_screen.dart';
+import '../../features/orders/presentation/order_status_screen.dart';
+import '../../features/orders/presentation/orders_screen.dart';
 import '../../features/products/presentation/products_screen.dart';
 import '../../features/profile/data/models/certifications/get_certifications_response_model.dart';
 import '../../features/profile/data/models/projects/get_projects_response_model.dart';
@@ -253,6 +254,9 @@ class AppRouter {
       case Routes.orderStatusScreen:
         return MaterialPageRoute(
           builder: (_) => OrderStatusScreen(),
+        );case Routes.ordersScreen:
+        return MaterialPageRoute(
+          builder: (_) => OrdersScreen(),
         );
       default:
         return null;

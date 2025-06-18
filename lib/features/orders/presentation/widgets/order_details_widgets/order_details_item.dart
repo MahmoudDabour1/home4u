@@ -8,8 +8,9 @@ import 'package:home4u/core/utils/spacing.dart';
 import 'package:home4u/core/widgets/fancy_image.dart';
 import 'package:home4u/features/cart/presentation/widgets/cart_details_widgets/plus_and_minus_controll_buttons.dart';
 
-import '../../../data/models/cart_item_model.dart';
-import '../../../logic/cart_cubit.dart';
+import '../../../../cart/data/models/cart_item_model.dart';
+import '../../../../cart/logic/cart_cubit.dart';
+
 
 class OrderDetailsItem extends StatelessWidget {
   final CartItemModel cartItem;
