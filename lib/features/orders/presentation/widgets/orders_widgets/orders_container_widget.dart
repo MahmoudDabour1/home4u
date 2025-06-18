@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:home4u/core/extensions/navigation_extension.dart';
+import 'package:home4u/core/routing/routes.dart';
 
 import '../../../../../core/theming/app_colors.dart';
 import '../../../../../core/theming/app_styles.dart';
@@ -104,7 +106,9 @@ class OrdersContainerWidget extends StatelessWidget {
                   textButton: "Details",
                   btnWidth: 100.w,
                   btnHeight: 35.h,
-                  onPressed: () {},
+                  onPressed: () {
+                    context.pushNamed(Routes.orderDetailsScreen);
+                  },
                   isBorder: true,
                   radius: 25.r,
                 ),

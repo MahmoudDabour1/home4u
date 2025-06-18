@@ -2,10 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:home4u/core/theming/app_colors.dart';
 
-import 'order_status_screen_row_item.dart';
+import 'order_details_screen_row_item.dart';
 
-class OrderStatusOrderDetails extends StatelessWidget {
-  const OrderStatusOrderDetails({
+
+class OrderDetailsOrderDetails extends StatelessWidget {
+  const OrderDetailsOrderDetails({
     super.key,
   });
 
@@ -30,16 +31,16 @@ class OrderStatusOrderDetails extends StatelessWidget {
         child: Column(
           spacing: 13.h,
           children: [
-            OrderStatusScreenRowItem(
+            OrderDetailsScreenRowItem(
               title: "Order number",
               value: "#1514",
             ),
-            OrderStatusScreenRowItem(
-              title: "Order number",
+            OrderDetailsScreenRowItem(
+              title: "Tracking Number",
               value: "#1514",
             ),
-            OrderStatusScreenRowItem(
-              title: "Order number",
+            OrderDetailsScreenRowItem(
+              title: "Delivery address",
               value: "#1514",
             ),
           ],

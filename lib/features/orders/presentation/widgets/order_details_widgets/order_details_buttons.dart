@@ -4,8 +4,8 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../../../core/utils/spacing.dart';
 import '../../../../../core/widgets/app_custom_button.dart';
 
-class OrderStatusButtons extends StatelessWidget {
-  const OrderStatusButtons({
+class OrderDetailsButtons extends StatelessWidget {
+  const OrderDetailsButtons({
     super.key,
   });
 
