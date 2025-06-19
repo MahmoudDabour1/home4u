@@ -61,6 +61,7 @@ class AppRouter {
     switch (settings.name) {
       case Routes.loginScreen:
         return MaterialPageRoute(
+          settings: settings,
           builder: (_) => BlocProvider(
             create: (context) => sl<LoginCubit>(),
             child: LoginScreen(),
@@ -68,18 +69,22 @@ class AppRouter {
         );
       case Routes.onBoardingScreen:
         return MaterialPageRoute(
+          settings: settings,
           builder: (_) => OnBoardingScreen(),
         );
       case Routes.signUpScreen:
         return MaterialPageRoute(
+          settings: settings,
           builder: (_) => SignUpScreen(),
         );
       case Routes.forgetPasswordScreen:
         return MaterialPageRoute(
+          settings: settings,
           builder: (_) => ForgetPasswordScreen(),
         );
       case Routes.verificationScreen:
         return MaterialPageRoute(
+          settings: settings,
           builder: (_) => BlocProvider(
             create: (context) => sl<VerificationCubit>(),
             child: VerificationScreen(),
@@ -87,6 +92,7 @@ class AppRouter {
         );
       case Routes.newPasswordScreen:
         return MaterialPageRoute(
+          settings: settings,
           builder: (_) => BlocProvider(
             create: (context) => sl<NewPasswordCubit>(),
             child: NewPasswordScreen(),
@@ -94,6 +100,7 @@ class AppRouter {
         );
       case Routes.engineerSignUpScreen:
         return MaterialPageRoute(
+          settings: settings,
           builder: (_) => BlocProvider<EngineerCubit>(
             create: (_) => sl<EngineerCubit>(),
             child: EngineerSignUp(),
@@ -101,6 +108,7 @@ class AppRouter {
         );
       case Routes.technicalWorkerSignUpScreen:
         return MaterialPageRoute(
+          settings: settings,
           builder: (_) => BlocProvider<TechnicalWorkerCubit>(
             create: (_) => sl<TechnicalWorkerCubit>(),
             child: TechnicalWorkerSignUp(),
@@ -109,164 +117,189 @@ class AppRouter {
       case Routes.addProjectScreen:
         final projectData = settings.arguments as ProjectsData?;
         return MaterialPageRoute(
-          builder: (_) => AddProjectScreen(
-            projectData: projectData,
-          ),
+          settings: settings,
+          builder: (_) => AddProjectScreen(projectData: projectData),
         );
       case Routes.engineeringOfficeScreen:
         return MaterialPageRoute(
+          settings: settings,
           builder: (_) => EngineeringOfficeScreen(),
         );
       case Routes.profileScreen:
         return MaterialPageRoute(
+          settings: settings,
           builder: (_) => ProfileScreen(),
         );
       case Routes.homeScreen:
         return MaterialPageRoute(
+          settings: settings,
           builder: (_) => UserHomeScreen(),
         );
       case Routes.settingScreen:
         return MaterialPageRoute(
+          settings: settings,
           builder: (_) => SettingScreen(),
         );
       case Routes.addCertificationScreen:
         final certificationData = settings.arguments as CertificationsData?;
         return MaterialPageRoute(
-          builder: (_) => AddCertificationScreen(
-            certificationsData: certificationData,
-          ),
+          settings: settings,
+          builder: (_) => AddCertificationScreen(certificationsData: certificationData),
         );
       case Routes.projectDetailsScreen:
-        int projectId = settings.arguments as int;
+        final projectId = settings.arguments as int;
         return MaterialPageRoute(
+          settings: settings,
           builder: (_) => ProjectDetailsScreen(projectId: projectId),
         );
-
       case Routes.editProfileScreen:
         return MaterialPageRoute(
+          settings: settings,
           builder: (_) => EditProfileScreen(),
         );
       case Routes.productsScreen:
         return MaterialPageRoute(
+          settings: settings,
           builder: (_) => ProductsScreen(),
         );
       case Routes.businessOverviewScreen:
         return MaterialPageRoute(
+          settings: settings,
           builder: (_) => BusinessOverviewScreen(),
         );
       case Routes.businessReviewScreen:
         return MaterialPageRoute(
+          settings: settings,
           builder: (_) => BusinessReviewScreen(),
         );
-      // case Routes.productPreviewScreen:
-      //   return MaterialPageRoute(
-      //     builder: (_) => ProductPreviewScreen(),
-      //   );
       case Routes.businessAddProductScreen:
         final productData = settings.arguments as ProductPreviewResponse?;
         return MaterialPageRoute(
+          settings: settings,
           builder: (_) => BlocProvider<BusinessAddProductCubit>(
             create: (_) => sl<BusinessAddProductCubit>(),
-            child: BusinessAddProductScreen(
-              productData: productData,
-            ),
+            child: BusinessAddProductScreen(productData: productData),
           ),
         );
       case Routes.businessSignUpScreen:
         return MaterialPageRoute(
+          settings: settings,
           builder: (_) => BusinessSignUpScreen(),
         );
       case Routes.productsDetailsScreen:
-        int productId = settings.arguments as int;
+        final productId = settings.arguments as int;
         return MaterialPageRoute(
+          settings: settings,
           builder: (_) => ProductDetailsScreen(),
         );
       case Routes.cartScreen:
         return MaterialPageRoute(
+          settings: settings,
           builder: (_) => CartScreen(),
         );
       case Routes.cartProductDetailsScreen:
-        // int productId = settings.arguments as int;
         return MaterialPageRoute(
+          settings: settings,
           builder: (_) => CartProductDetailsScreen(),
         );
       case Routes.cartOrderDetailsScreen:
         return MaterialPageRoute(
+          settings: settings,
           builder: (_) => CartOrderDetailsScreen(),
         );
       case Routes.userFavoriteScreen:
         return MaterialPageRoute(
+          settings: settings,
           builder: (_) => UserFavoriteScreen(),
         );
       case Routes.userHomeScreen:
         return MaterialPageRoute(
+          settings: settings,
           builder: (_) => UserHomeScreen(),
         );
       case Routes.bestOfficesScreen:
         return MaterialPageRoute(
+          settings: settings,
           builder: (_) => BestOfficesScreen(),
         );
       case Routes.bestShowRoomsScreen:
         return MaterialPageRoute(
+          settings: settings,
           builder: (_) => BestShowRoomsScreen(),
         );
       case Routes.renovateYourHouseScreen:
         return MaterialPageRoute(
+          settings: settings,
           builder: (_) => RenovateYourHouseFirstScreen(),
         );
       case Routes.renovateYourHouseSecondScreen:
         return MaterialPageRoute(
+          settings: settings,
           builder: (_) => RenovateYourHouseSecondScreen(),
         );
       case Routes.askEngineerScreen:
         return MaterialPageRoute(
+          settings: settings,
           builder: (_) => AskEngineerScreen(),
         );
       case Routes.askTechnicalScreen:
         return MaterialPageRoute(
+          settings: settings,
           builder: (_) => AskTechnicalWorkerScreen(),
         );
       case Routes.askEngineerFinishDataAndImage:
         return MaterialPageRoute(
+          settings: settings,
           builder: (_) => AskEngineerFinishDataAndImage(),
         );
       case Routes.requestDesignScreen:
         return MaterialPageRoute(
+          settings: settings,
           builder: (_) => RequestDesignScreen(),
         );
       case Routes.askTechnicalFinishAndImage:
         return MaterialPageRoute(
+          settings: settings,
           builder: (_) => AskTechnicalFinishAndImage(),
         );
       case Routes.projectsFilterScreen:
         return MaterialPageRoute(
+          settings: settings,
           builder: (_) => ProjectsFilterScreen(),
         );
       case Routes.checkOutDoneScreen:
         return MaterialPageRoute(
+          settings: settings,
           builder: (_) => CheckOutDoneScreen(),
         );
       case Routes.orderDetailsScreen:
         return MaterialPageRoute(
+          settings: settings,
           builder: (_) => OrderDetailsScreen(),
         );
       case Routes.ordersScreen:
         return MaterialPageRoute(
+          settings: settings,
           builder: (_) => OrdersScreen(),
         );
       case Routes.freelancerBottomNavLayout:
         return MaterialPageRoute(
+          settings: settings,
           builder: (_) => FreelancerBottomNavLayout(),
         );
       case Routes.exhibitionsAndStoresBottomNavLayout:
         return MaterialPageRoute(
+          settings: settings,
           builder: (_) => ExhibitionsAndStoresBottomNavLayout(),
         );
       case Routes.userBottomNavLayout:
         return MaterialPageRoute(
+          settings: settings,
           builder: (_) => UserBottomNavLayout(),
-        );    case Routes.checkOutScreen:
+        );
+      case Routes.checkOutScreen:
         return MaterialPageRoute(
+          settings: settings,
           builder: (_) => CheckOutScreen(),
         );
       default:

@@ -21,6 +21,7 @@ import 'core/helpers/helper_methods.dart';
 import 'core/helpers/shared_pref_helper.dart';
 import 'core/helpers/shared_pref_keys.dart';
 import 'core/localization/app_localization_cubit.dart';
+import 'core/routing/router_observer.dart';
 import 'core/theming/app_theme.dart';
 import 'features/auth/forget_password/logic/forget_password_cubit.dart';
 import 'features/auth/sign_up/logic/engineer/engineer_cubit.dart';
@@ -171,10 +172,10 @@ class _Home4uAppState extends State<Home4uApp> {
                         : Locale(widget.initialLocale),
                     onGenerateRoute: widget.appRouter.generateRoute,
                     debugShowCheckedModeBanner: false,
-                    navigatorObservers: [NavigatorObserver(), _routeObserver],
+                    navigatorObservers: [RouterObserver(), _routeObserver],
                     initialRoute:
-                        Routes.checkOutScreen,
-                        // snapshot.data!,
+                        // Routes.checkOutDoneScreen,
+                        snapshot.data!,
                   ),
                 );
               },

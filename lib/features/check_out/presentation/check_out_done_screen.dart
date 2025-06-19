@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_localization/flutter_localization.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:home4u/core/extensions/navigation_extension.dart';
 import 'package:home4u/core/theming/app_styles.dart';
 import 'package:home4u/core/utils/spacing.dart';
 import 'package:home4u/features/check_out/presentation/widgets/location_and_done_shape.dart';
 import 'package:home4u/features/check_out/presentation/widgets/order_completed_text_and_image_widget.dart';
 import 'package:home4u/locale/app_locale.dart';
 
+import '../../../core/routing/routes.dart';
 import '../../../core/theming/app_colors.dart';
 import '../../../core/widgets/app_back_button.dart';
 import '../../../core/widgets/app_custom_button.dart';
@@ -20,11 +22,11 @@ class CheckOutDoneScreen extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: AppColors.whiteColor,
         elevation: 0,
-        leading: AppBackButton(),
+        // leading: AppBackButton(),
         leadingWidth: 100.w,
         title: Text(
           "Check out",
-          style: AppStyles.font20BlackMedium,
+          style: AppStyles.font24BlackMedium,
         ),
         centerTitle: true,
       ),
@@ -38,7 +40,7 @@ class CheckOutDoneScreen extends StatelessWidget {
                 LocationAndDoneShape(),
                 OrderCompletedTextAndImageWidget(),
                 AppCustomButton(
-                  onPressed: () {},
+                  onPressed: () => context.pushNamed(Routes.cartScreen),
                   textButton: AppLocale.continueShopping.getString(context),
                   btnWidth: MediaQuery.sizeOf(context).width,
                   btnHeight: 50.h,

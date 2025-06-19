@@ -361,6 +361,8 @@ class AppLocale {
       'Thank you for your purchase.\nYou can view your order in ‘My Orders’\n section.';
   static const String continueShopping = 'Continue shopping';
   static const String orderCompleted = 'Order Completed';
+  static const String someThingWentWrong = 'Something went wrong';
+  static const String tryAgain = 'Try again';
 
   static const Map<String, dynamic> en = {
     onBoardingTitle1: 'Civil works and finishing services',
@@ -666,6 +668,8 @@ class AppLocale {
     continueShopping: 'Continue Shopping',
     orderCompleted: 'Order Completed',
     proceedToCheckOut :  'Proceed to Checkout',
+    someThingWentWrong: 'Something went wrong',
+    tryAgain: 'Try again',
   };
 
   static const Map<String, dynamic> ar = {
@@ -969,5 +973,7 @@ class AppLocale {
     continueShopping: "أكمل التسوق",
     orderCompleted: 'تمت إتمام طلبك بنجاح',
     proceedToCheckOut : 'المتابعة إلى الدفع',
+    someThingWentWrong : 'حدث خطأ ما',
+    tryAgain: 'حاول مرة أخرى',
   };
 }

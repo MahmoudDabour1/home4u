@@ -44,7 +44,7 @@ class _CartBadgeButtonState extends State<CartBadgeButton> {
       onPressed: () async {
         await context.read<CartCubit>().resetAllFilters();
         if (mounted) {
-          context.pushNamed(Routes.orderDetailsScreen).then(
+          context.pushNamed(Routes.cartOrderDetailsScreen).then(
             (_) {
               context.read<CartCubit>().refreshCart();
             },

@@ -34,6 +34,8 @@ class CartState<T> with _$CartState<T> {
   ///cart
   const factory CartState.cartLoading() = CartLoading;
 
+  const factory CartState.cartEmpty() = cartEmpty;
+
   const factory CartState.cartSuccess(List<CartItemModel> cartItems) =
       CartSuccess;
 
