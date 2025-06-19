@@ -6,5 +6,6 @@ class SharedPrefKeys {
   static const String isFirstTime = 'is_first_time';
   static const String userType = 'userType';
   static const String userTypeId = 'userTypeId';
+  static const String userId = 'userId';
   static const String userBusinessTypeId = 'userBusinessTypeId';
 }

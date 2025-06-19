@@ -364,6 +364,9 @@ class AppLocale {
   static const String someThingWentWrong = 'Something went wrong';
   static const String tryAgain = 'Try again';
 
+  ///orders
+  static const String myOrders = 'My Orders';
+
   static const Map<String, dynamic> en = {
     onBoardingTitle1: 'Civil works and finishing services',
     onBoardingTitle2: 'Civil works and finishing services 2',
@@ -670,6 +673,7 @@ class AppLocale {
     proceedToCheckOut :  'Proceed to Checkout',
     someThingWentWrong: 'Something went wrong',
     tryAgain: 'Try again',
+    myOrders: 'My Orders',
   };
 
   static const Map<String, dynamic> ar = {
@@ -975,5 +979,6 @@ class AppLocale {
     proceedToCheckOut : 'المتابعة إلى الدفع',
     someThingWentWrong : 'حدث خطأ ما',
     tryAgain: 'حاول مرة أخرى',
+    myOrders: 'طلباتي',
   };
 }

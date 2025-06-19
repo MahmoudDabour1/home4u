@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_localization/flutter_localization.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:home4u/core/extensions/navigation_extension.dart';
 import 'package:home4u/core/theming/app_colors.dart';
 import 'package:home4u/core/theming/app_styles.dart';
 import 'package:home4u/features/user/home/presentation/widgets/best_office_widget/best_office_widget.dart';
@@ -8,6 +9,8 @@ import 'package:home4u/features/user/home/presentation/widgets/best_show_rooms_w
 import 'package:home4u/features/user/home/presentation/widgets/services_widget/services_widget.dart';
 import 'package:home4u/features/user/home/presentation/widgets/today_offer-widget/today_offers_widget.dart';
 import 'package:home4u/locale/app_locale.dart';
+
+import '../../../../core/routing/routes.dart';
 
 class UserHomeScreen extends StatelessWidget {
   const UserHomeScreen({super.key});
@@ -26,6 +29,14 @@ class UserHomeScreen extends StatelessWidget {
         backgroundColor: AppColors.whiteColor,
         elevation: 0,
         automaticallyImplyLeading: false,
+        actions : [
+          IconButton(
+            icon: const Icon(Icons.notifications_none_outlined),
+            onPressed: () {
+              context.pushNamed(Routes.ordersScreen);
+            },
+          ),
+        ],
         // leading: Padding(
         //   padding: const EdgeInsets.all(8.0),
         //   child: AppBackButton(),

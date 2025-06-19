@@ -100,6 +100,10 @@ class ApiConstants {
   ///cart process
  static const String shopNowEp = "/api/v1/products/shop-now";
   static const String ordersEp = "/api/v1/orders";
+
+  ///orders
+  static const String getOrdersEp = "/api/v1/orders/user/{userId}";
+  static const String getOrderDetailsEp = "/api/v1/orders/{orderId}";
 }
 
 class ApiErrors {

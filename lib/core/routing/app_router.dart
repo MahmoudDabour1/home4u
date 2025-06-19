@@ -21,6 +21,7 @@ import 'package:home4u/features/exhibition/logic/business_add_product_cubit.dart
 import 'package:home4u/features/layout/presentation/exhibitions_and_stores_bottom_nav_layout.dart';
 import 'package:home4u/features/layout/presentation/freelancer_bottom_nav_layout.dart';
 import 'package:home4u/features/layout/presentation/user_bottom_nav_layout.dart';
+import 'package:home4u/features/orders/logic/orders_cubit.dart';
 import 'package:home4u/features/products/data/models/product_preview_response.dart';
 import 'package:home4u/features/products/presentation/product_details_screen.dart';
 import 'package:home4u/features/profile/presentation/add_certification_screen.dart';
@@ -144,7 +145,8 @@ class AppRouter {
         final certificationData = settings.arguments as CertificationsData?;
         return MaterialPageRoute(
           settings: settings,
-          builder: (_) => AddCertificationScreen(certificationsData: certificationData),
+          builder: (_) =>
+              AddCertificationScreen(certificationsData: certificationData),
         );
       case Routes.projectDetailsScreen:
         final projectId = settings.arguments as int;
@@ -280,7 +282,10 @@ class AppRouter {
       case Routes.ordersScreen:
         return MaterialPageRoute(
           settings: settings,
-          builder: (_) => OrdersScreen(),
+          builder: (_) => BlocProvider<OrdersCubit>(
+            create: (_) => sl<OrdersCubit>(),
+            child: OrdersScreen(),
+          ),
         );
       case Routes.freelancerBottomNavLayout:
         return MaterialPageRoute(
