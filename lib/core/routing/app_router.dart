@@ -18,6 +18,7 @@ import 'package:home4u/features/auth/verification/logic/verification_cubit.dart'
 import 'package:home4u/features/auth/verification/presentation/verification_screen.dart';
 import 'package:home4u/features/cart/presentation/cart_order_details_screen.dart';
 import 'package:home4u/features/exhibition/logic/business_add_product_cubit.dart';
+import 'package:home4u/features/furnish_your_home/logic/furnish_your_home_cubit.dart';
 import 'package:home4u/features/layout/presentation/exhibitions_and_stores_bottom_nav_layout.dart';
 import 'package:home4u/features/layout/presentation/freelancer_bottom_nav_layout.dart';
 import 'package:home4u/features/layout/presentation/user_bottom_nav_layout.dart';
@@ -40,6 +41,7 @@ import '../../features/check_out/presentation/check_out_screen.dart';
 import '../../features/exhibition/presentation/business_add_product_screen.dart';
 import '../../features/exhibition/presentation/business_overview_screen.dart';
 import '../../features/exhibition/presentation/business_review_screen.dart';
+import '../../features/furnish_your_home/presentation/furnish_your_home_screen.dart';
 import '../../features/onboarding/presentation/onboarding_screen.dart';
 import '../../features/orders/presentation/order_details_screen.dart';
 import '../../features/orders/presentation/orders_screen.dart';
@@ -306,6 +308,14 @@ class AppRouter {
         return MaterialPageRoute(
           settings: settings,
           builder: (_) => CheckOutScreen(),
+        );
+      case Routes.furnishYourHomeScreen:
+        return MaterialPageRoute(
+          settings: settings,
+          builder: (_) => BlocProvider(
+            create: (context) => FurnishYourHomeCubit(sl()),
+            child: FurnishYourHomeScreen(),
+          ),
         );
       default:
         return null;

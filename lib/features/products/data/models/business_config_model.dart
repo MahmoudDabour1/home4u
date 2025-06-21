@@ -53,12 +53,29 @@ class BusinessConfigData {
   @JsonKey(name: "businessTypeCategories")
   final List<BusinessType>? businessTypeCategories;
 
+  @HiveField(5)
+  @JsonKey(name: "homeFurnishingRequestTypes")
+  final List<DevicesAttached>? homeFurnishingRequestTypes;
+  @HiveField(6)
+  @JsonKey(name: "furnitureTypes")
+  final List<DevicesAttached>? furnitureTypes;
+  @HiveField(7)
+  @JsonKey(name: "devicesAttacheds")
+  final List<DevicesAttached>? devicesAttacheds;
+  @HiveField(8)
+  @JsonKey(name: "kitchenTypes")
+  final List<DevicesAttached>? kitchenTypes;
+
   BusinessConfigData({
     this.colors,
     this.productBaseUnits,
     this.productMaterial,
     this.businessTypes,
     this.businessTypeCategories,
+    this.homeFurnishingRequestTypes,
+    this.furnitureTypes,
+    this.devicesAttacheds,
+    this.kitchenTypes,
   });
 
   factory BusinessConfigData.fromJson(Map<String, dynamic> json) =>
@@ -183,4 +200,29 @@ class BusinessType {
       _$BusinessTypeFromJson(json);
 
   Map<String, dynamic> toJson() => _$BusinessTypeToJson(this);
+}
+
+@HiveType(typeId: 56)
+@JsonSerializable()
+class DevicesAttached {
+  @HiveField(0)
+  @JsonKey(name: "id")
+  final int? id;
+  @HiveField(1)
+  @JsonKey(name: "code")
+  final String? code;
+  @HiveField(2)
+  @JsonKey(name: "name")
+  final String? name;
+
+  DevicesAttached({
+    this.id,
+    this.code,
+    this.name,
+  });
+
+  factory DevicesAttached.fromJson(Map<String, dynamic> json) =>
+      _$DevicesAttachedFromJson(json);
+
+  Map<String, dynamic> toJson() => _$DevicesAttachedToJson(this);
 }

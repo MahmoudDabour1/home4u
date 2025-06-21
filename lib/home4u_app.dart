@@ -127,7 +127,8 @@ class _Home4uAppState extends State<Home4uApp> {
             BlocProvider<EngineerCubit>(create: (_) => sl<EngineerCubit>()),
             BlocProvider<TechnicalWorkerCubit>(
                 create: (_) => sl<TechnicalWorkerCubit>()),
-            BlocProvider<ProductsCubit>(create: (_) => sl<ProductsCubit>()),
+            BlocProvider<ProductsCubit>(
+                create: (_) => sl<ProductsCubit>()..getBusinessConfig()),
             BlocProvider<BusinessAddProductCubit>(
                 create: (_) => sl<BusinessAddProductCubit>()),
             BlocProvider<EngineeringOfficeCubit>(
@@ -173,9 +174,8 @@ class _Home4uAppState extends State<Home4uApp> {
                     onGenerateRoute: widget.appRouter.generateRoute,
                     debugShowCheckedModeBanner: false,
                     navigatorObservers: [RouterObserver(), _routeObserver],
-                    initialRoute:
-                        // Routes.checkOutDoneScreen,
-                        snapshot.data!,
+                    initialRoute: Routes.loginScreen,
+                    // snapshot.data!,
                   ),
                 );
               },
