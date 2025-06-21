@@ -25,16 +25,19 @@ class DressingSection extends StatelessWidget {
               DressingInputs(),
               BlocBuilder<KitchenAndDressingCubit, KitchenAndDressingState>(
                 builder: (context, state) {
-                  return AppCustomButton(
-                    textButton: AppLocale.confirm.getString(context),
-                    btnWidth: MediaQuery.sizeOf(context).width,
-                    isLoading: state is KitchenAndDressingLoading,
-                    btnHeight: 60.h,
-                    onPressed: () {
-                      if (dressingFormKey.currentState!.validate()) {
-                        cubit.sendDressingData(context);
-                      }
-                    },
+                  return Padding(
+                    padding: EdgeInsets.symmetric(horizontal: 16.w),
+                    child: AppCustomButton(
+                      textButton: AppLocale.confirm.getString(context),
+                      btnWidth: MediaQuery.sizeOf(context).width,
+                      isLoading: state is KitchenAndDressingLoading,
+                      btnHeight: 60.h,
+                      onPressed: () {
+                        if (dressingFormKey.currentState!.validate()) {
+                          cubit.sendDressingData(context);
+                        }
+                      },
+                    ),
                   );
                 },
               ),
