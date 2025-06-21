@@ -60,7 +60,7 @@ class _DressingDropDownMenuState extends State<DressingDropDownMenu> {
             return productMaterials.name ?? 'N/A';
           }).toList(),
           labelText:
-          AppLocale.engineeringOfficeDepartments.getString(context),
+          AppLocale.productMaterials.getString(context),
           onChanged: (List<String> values) {
             setState(() {
               selectedProductMaterials = values;
