@@ -30,10 +30,10 @@ class _FurnishYourHomeDropDownMenuState
   initState() {
     super.initState();
     context.read<SignUpCubit>().getGovernorates();
-    _loadGovernmentAndFurnishTypes();
+    _loadFurnishTypes();
   }
 
-  Future<void> _loadGovernmentAndFurnishTypes() async {
+  Future<void> _loadFurnishTypes() async {
     final appInitBox =
         await Hive.openBox<BusinessConfigModel>(kBusinessConfigBox);
     final appInitData = appInitBox.get(kBusinessConfigData);

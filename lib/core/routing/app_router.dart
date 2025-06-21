@@ -19,6 +19,7 @@ import 'package:home4u/features/auth/verification/presentation/verification_scre
 import 'package:home4u/features/cart/presentation/cart_order_details_screen.dart';
 import 'package:home4u/features/exhibition/logic/business_add_product_cubit.dart';
 import 'package:home4u/features/furnish_your_home/logic/furnish_your_home_cubit.dart';
+import 'package:home4u/features/kitchen_and_dressing/logic/kitchen_and_dressing_cubit.dart';
 import 'package:home4u/features/layout/presentation/exhibitions_and_stores_bottom_nav_layout.dart';
 import 'package:home4u/features/layout/presentation/freelancer_bottom_nav_layout.dart';
 import 'package:home4u/features/layout/presentation/user_bottom_nav_layout.dart';
@@ -42,6 +43,7 @@ import '../../features/exhibition/presentation/business_add_product_screen.dart'
 import '../../features/exhibition/presentation/business_overview_screen.dart';
 import '../../features/exhibition/presentation/business_review_screen.dart';
 import '../../features/furnish_your_home/presentation/furnish_your_home_screen.dart';
+import '../../features/kitchen_and_dressing/presentation/kitchen_and_dressing_screen.dart';
 import '../../features/onboarding/presentation/onboarding_screen.dart';
 import '../../features/orders/presentation/order_details_screen.dart';
 import '../../features/orders/presentation/orders_screen.dart';
@@ -315,6 +317,14 @@ class AppRouter {
           builder: (_) => BlocProvider(
             create: (context) => FurnishYourHomeCubit(sl()),
             child: FurnishYourHomeScreen(),
+          ),
+        );
+      case Routes.kitchenAndDressingScreen:
+        return MaterialPageRoute(
+          settings: settings,
+          builder: (_) => BlocProvider(
+            create: (context) => KitchenAndDressingCubit(sl()),
+            child: KitchenAndDressingScreen(),
           ),
         );
       default:
