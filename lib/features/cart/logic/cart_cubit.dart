@@ -114,6 +114,8 @@ class CartCubit extends Cubit<CartState> {
     await getCartProducts(isRefresh: true);
     if (_cartItems.isNotEmpty) {
       emit(CartState.cartSuccess(List.from(_cartItems)));
+    }else{
+      emit(const CartState.cartEmpty());
     }
   }
 
@@ -238,7 +240,7 @@ class CartCubit extends Cubit<CartState> {
       emit(CartState.insertOrderSuccess(data));
       logger.w("Insert Order Success: ${data.toJson()}");
       _cartItems.clear();
-      emit(CartState.cartSuccess(List.from(_cartItems)));
+      // emit(CartState.cartSuccess([]));
     }, failure: (error) {
       emit(CartState.insertOrderFailure(error: error.message.toString()));
     });

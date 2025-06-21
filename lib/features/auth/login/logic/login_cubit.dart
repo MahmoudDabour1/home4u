@@ -17,7 +17,8 @@ class LoginCubit extends Cubit<LoginState> {
 
   LoginCubit(this._loginRepo) : super(const LoginState.initial());
   TextEditingController emailOrPhoneController =
-      TextEditingController(text: "mohamedmagdydev20@gmail.com");
+  //mohamedmagdydev20@gmail.com
+      TextEditingController(text: "pokaj57663@agiuse.com");
   TextEditingController passwordController =
       TextEditingController(text: "12345678");
   final formKey = GlobalKey<FormState>();
@@ -34,7 +35,9 @@ class LoginCubit extends Cubit<LoginState> {
       success: (loginResponse) async {
         final token = loginResponse.data?.token;
         final userType = loginResponse.data?.user?.userType?.code;
+        final  userId = loginResponse.data?.user?.id;
         await SharedPrefHelper.setData(SharedPrefKeys.userType, userType);
+        await SharedPrefHelper.setData(SharedPrefKeys.userId, userId);
         final userTypeId = loginResponse.data?.user?.userType?.id;
         final userBusinessTypeId =
             loginResponse.data?.user?.business?.businessId ?? 0;

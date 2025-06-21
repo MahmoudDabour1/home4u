@@ -1,9 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:home4u/core/utils/spacing.dart';
 
+import '../../../data/models/orders_response_model.dart';
+import '../../../logic/orders_cubit.dart';
+import '../../../logic/orders_state.dart';
 import 'orders_container_widget.dart';
 
 class OrderPendingSection extends StatelessWidget {
+
   const OrderPendingSection({super.key});
 
   @override
@@ -11,13 +16,36 @@ class OrderPendingSection extends StatelessWidget {
     return SingleChildScrollView(
       child: Column(
         children: [
-          ListView.separated(
-            separatorBuilder: (context, index) => verticalSpace(20),
-            shrinkWrap: true,
-            physics: BouncingScrollPhysics(),
-            itemCount: 5,
-            itemBuilder: (context, index) {
-              return OrdersContainerWidget(orderStatus: OrderStatus.pending);
+          BlocBuilder<OrdersCubit, OrdersState>(
+            builder: (context, state) {
+              return state.maybeWhen(
+                ordersSuccess: (OrdersResponseModel orders) {
+                  return  ListView.separated(
+                    separatorBuilder: (context, index) => verticalSpace(20),
+                    shrinkWrap: true,
+                    physics: BouncingScrollPhysics(),
+                    itemCount: orders.data.length,
+                    itemBuilder: (context, index) {
+                      return OrdersContainerWidget(
+                        orderStatus: orders.data[index].status.code,
+                        order: orders.data[index],
+                      );
+                    },
+                  );
+                },
+                ordersLoading: () {
+                  return SizedBox(
+                    child : Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: [
+                        CircularProgressIndicator(),
+                      ],
+                    ),
+                  );
+                },
+                orElse: () => SizedBox.shrink(),
+              );
             },
           )
         ],

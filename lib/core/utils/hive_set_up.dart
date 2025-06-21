@@ -126,5 +126,7 @@ void _registerHiveAdapters() {
 
   if (!Hive.isAdapterRegistered(55)) {
     Hive.registerAdapter(BusinessTypeAdapter());
+  } if (!Hive.isAdapterRegistered(56)) {
+    Hive.registerAdapter(DevicesAttachedAdapter());
   }
 }

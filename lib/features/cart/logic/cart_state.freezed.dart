@@ -28,6 +28,7 @@ mixin _$CartState<T> {
     required TResult Function() resetFilter,
     required TResult Function() filterUpdated,
     required TResult Function() cartLoading,
+    required TResult Function() cartEmpty,
     required TResult Function(List<CartItemModel> cartItems) cartSuccess,
     required TResult Function(String error) cartFailure,
     required TResult Function() insertOrderLoading,
@@ -46,6 +47,7 @@ mixin _$CartState<T> {
     TResult? Function()? resetFilter,
     TResult? Function()? filterUpdated,
     TResult? Function()? cartLoading,
+    TResult? Function()? cartEmpty,
     TResult? Function(List<CartItemModel> cartItems)? cartSuccess,
     TResult? Function(String error)? cartFailure,
     TResult? Function()? insertOrderLoading,
@@ -64,6 +66,7 @@ mixin _$CartState<T> {
     TResult Function()? resetFilter,
     TResult Function()? filterUpdated,
     TResult Function()? cartLoading,
+    TResult Function()? cartEmpty,
     TResult Function(List<CartItemModel> cartItems)? cartSuccess,
     TResult Function(String error)? cartFailure,
     TResult Function()? insertOrderLoading,
@@ -83,6 +86,7 @@ mixin _$CartState<T> {
     required TResult Function(ResetAllFilters<T> value) resetFilter,
     required TResult Function(FilterUpdated<T> value) filterUpdated,
     required TResult Function(CartLoading<T> value) cartLoading,
+    required TResult Function(cartEmpty<T> value) cartEmpty,
     required TResult Function(CartSuccess<T> value) cartSuccess,
     required TResult Function(CartFailure<T> value) cartFailure,
     required TResult Function(InsertOrderLoading<T> value) insertOrderLoading,
@@ -101,6 +105,7 @@ mixin _$CartState<T> {
     TResult? Function(ResetAllFilters<T> value)? resetFilter,
     TResult? Function(FilterUpdated<T> value)? filterUpdated,
     TResult? Function(CartLoading<T> value)? cartLoading,
+    TResult? Function(cartEmpty<T> value)? cartEmpty,
     TResult? Function(CartSuccess<T> value)? cartSuccess,
     TResult? Function(CartFailure<T> value)? cartFailure,
     TResult? Function(InsertOrderLoading<T> value)? insertOrderLoading,
@@ -119,6 +124,7 @@ mixin _$CartState<T> {
     TResult Function(ResetAllFilters<T> value)? resetFilter,
     TResult Function(FilterUpdated<T> value)? filterUpdated,
     TResult Function(CartLoading<T> value)? cartLoading,
+    TResult Function(cartEmpty<T> value)? cartEmpty,
     TResult Function(CartSuccess<T> value)? cartSuccess,
     TResult Function(CartFailure<T> value)? cartFailure,
     TResult Function(InsertOrderLoading<T> value)? insertOrderLoading,
@@ -201,6 +207,7 @@ class _$InitialImpl<T> implements _Initial<T> {
     required TResult Function() resetFilter,
     required TResult Function() filterUpdated,
     required TResult Function() cartLoading,
+    required TResult Function() cartEmpty,
     required TResult Function(List<CartItemModel> cartItems) cartSuccess,
     required TResult Function(String error) cartFailure,
     required TResult Function() insertOrderLoading,
@@ -222,6 +229,7 @@ class _$InitialImpl<T> implements _Initial<T> {
     TResult? Function()? resetFilter,
     TResult? Function()? filterUpdated,
     TResult? Function()? cartLoading,
+    TResult? Function()? cartEmpty,
     TResult? Function(List<CartItemModel> cartItems)? cartSuccess,
     TResult? Function(String error)? cartFailure,
     TResult? Function()? insertOrderLoading,
@@ -243,6 +251,7 @@ class _$InitialImpl<T> implements _Initial<T> {
     TResult Function()? resetFilter,
     TResult Function()? filterUpdated,
     TResult Function()? cartLoading,
+    TResult Function()? cartEmpty,
     TResult Function(List<CartItemModel> cartItems)? cartSuccess,
     TResult Function(String error)? cartFailure,
     TResult Function()? insertOrderLoading,
@@ -268,6 +277,7 @@ class _$InitialImpl<T> implements _Initial<T> {
     required TResult Function(ResetAllFilters<T> value) resetFilter,
     required TResult Function(FilterUpdated<T> value) filterUpdated,
     required TResult Function(CartLoading<T> value) cartLoading,
+    required TResult Function(cartEmpty<T> value) cartEmpty,
     required TResult Function(CartSuccess<T> value) cartSuccess,
     required TResult Function(CartFailure<T> value) cartFailure,
     required TResult Function(InsertOrderLoading<T> value) insertOrderLoading,
@@ -289,6 +299,7 @@ class _$InitialImpl<T> implements _Initial<T> {
     TResult? Function(ResetAllFilters<T> value)? resetFilter,
     TResult? Function(FilterUpdated<T> value)? filterUpdated,
     TResult? Function(CartLoading<T> value)? cartLoading,
+    TResult? Function(cartEmpty<T> value)? cartEmpty,
     TResult? Function(CartSuccess<T> value)? cartSuccess,
     TResult? Function(CartFailure<T> value)? cartFailure,
     TResult? Function(InsertOrderLoading<T> value)? insertOrderLoading,
@@ -310,6 +321,7 @@ class _$InitialImpl<T> implements _Initial<T> {
     TResult Function(ResetAllFilters<T> value)? resetFilter,
     TResult Function(FilterUpdated<T> value)? filterUpdated,
     TResult Function(CartLoading<T> value)? cartLoading,
+    TResult Function(cartEmpty<T> value)? cartEmpty,
     TResult Function(CartSuccess<T> value)? cartSuccess,
     TResult Function(CartFailure<T> value)? cartFailure,
     TResult Function(InsertOrderLoading<T> value)? insertOrderLoading,
@@ -379,6 +391,7 @@ class _$ShopNowLoadingImpl<T> implements ShopNowLoading<T> {
     required TResult Function() resetFilter,
     required TResult Function() filterUpdated,
     required TResult Function() cartLoading,
+    required TResult Function() cartEmpty,
     required TResult Function(List<CartItemModel> cartItems) cartSuccess,
     required TResult Function(String error) cartFailure,
     required TResult Function() insertOrderLoading,
@@ -400,6 +413,7 @@ class _$ShopNowLoadingImpl<T> implements ShopNowLoading<T> {
     TResult? Function()? resetFilter,
     TResult? Function()? filterUpdated,
     TResult? Function()? cartLoading,
+    TResult? Function()? cartEmpty,
     TResult? Function(List<CartItemModel> cartItems)? cartSuccess,
     TResult? Function(String error)? cartFailure,
     TResult? Function()? insertOrderLoading,
@@ -421,6 +435,7 @@ class _$ShopNowLoadingImpl<T> implements ShopNowLoading<T> {
     TResult Function()? resetFilter,
     TResult Function()? filterUpdated,
     TResult Function()? cartLoading,
+    TResult Function()? cartEmpty,
     TResult Function(List<CartItemModel> cartItems)? cartSuccess,
     TResult Function(String error)? cartFailure,
     TResult Function()? insertOrderLoading,
@@ -446,6 +461,7 @@ class _$ShopNowLoadingImpl<T> implements ShopNowLoading<T> {
     required TResult Function(ResetAllFilters<T> value) resetFilter,
     required TResult Function(FilterUpdated<T> value) filterUpdated,
     required TResult Function(CartLoading<T> value) cartLoading,
+    required TResult Function(cartEmpty<T> value) cartEmpty,
     required TResult Function(CartSuccess<T> value) cartSuccess,
     required TResult Function(CartFailure<T> value) cartFailure,
     required TResult Function(InsertOrderLoading<T> value) insertOrderLoading,
@@ -467,6 +483,7 @@ class _$ShopNowLoadingImpl<T> implements ShopNowLoading<T> {
     TResult? Function(ResetAllFilters<T> value)? resetFilter,
     TResult? Function(FilterUpdated<T> value)? filterUpdated,
     TResult? Function(CartLoading<T> value)? cartLoading,
+    TResult? Function(cartEmpty<T> value)? cartEmpty,
     TResult? Function(CartSuccess<T> value)? cartSuccess,
     TResult? Function(CartFailure<T> value)? cartFailure,
     TResult? Function(InsertOrderLoading<T> value)? insertOrderLoading,
@@ -488,6 +505,7 @@ class _$ShopNowLoadingImpl<T> implements ShopNowLoading<T> {
     TResult Function(ResetAllFilters<T> value)? resetFilter,
     TResult Function(FilterUpdated<T> value)? filterUpdated,
     TResult Function(CartLoading<T> value)? cartLoading,
+    TResult Function(cartEmpty<T> value)? cartEmpty,
     TResult Function(CartSuccess<T> value)? cartSuccess,
     TResult Function(CartFailure<T> value)? cartFailure,
     TResult Function(InsertOrderLoading<T> value)? insertOrderLoading,
@@ -586,6 +604,7 @@ class _$ShopNowSuccessImpl<T> implements ShopNowSuccess<T> {
     required TResult Function() resetFilter,
     required TResult Function() filterUpdated,
     required TResult Function() cartLoading,
+    required TResult Function() cartEmpty,
     required TResult Function(List<CartItemModel> cartItems) cartSuccess,
     required TResult Function(String error) cartFailure,
     required TResult Function() insertOrderLoading,
@@ -607,6 +626,7 @@ class _$ShopNowSuccessImpl<T> implements ShopNowSuccess<T> {
     TResult? Function()? resetFilter,
     TResult? Function()? filterUpdated,
     TResult? Function()? cartLoading,
+    TResult? Function()? cartEmpty,
     TResult? Function(List<CartItemModel> cartItems)? cartSuccess,
     TResult? Function(String error)? cartFailure,
     TResult? Function()? insertOrderLoading,
@@ -628,6 +648,7 @@ class _$ShopNowSuccessImpl<T> implements ShopNowSuccess<T> {
     TResult Function()? resetFilter,
     TResult Function()? filterUpdated,
     TResult Function()? cartLoading,
+    TResult Function()? cartEmpty,
     TResult Function(List<CartItemModel> cartItems)? cartSuccess,
     TResult Function(String error)? cartFailure,
     TResult Function()? insertOrderLoading,
@@ -653,6 +674,7 @@ class _$ShopNowSuccessImpl<T> implements ShopNowSuccess<T> {
     required TResult Function(ResetAllFilters<T> value) resetFilter,
     required TResult Function(FilterUpdated<T> value) filterUpdated,
     required TResult Function(CartLoading<T> value) cartLoading,
+    required TResult Function(cartEmpty<T> value) cartEmpty,
     required TResult Function(CartSuccess<T> value) cartSuccess,
     required TResult Function(CartFailure<T> value) cartFailure,
     required TResult Function(InsertOrderLoading<T> value) insertOrderLoading,
@@ -674,6 +696,7 @@ class _$ShopNowSuccessImpl<T> implements ShopNowSuccess<T> {
     TResult? Function(ResetAllFilters<T> value)? resetFilter,
     TResult? Function(FilterUpdated<T> value)? filterUpdated,
     TResult? Function(CartLoading<T> value)? cartLoading,
+    TResult? Function(cartEmpty<T> value)? cartEmpty,
     TResult? Function(CartSuccess<T> value)? cartSuccess,
     TResult? Function(CartFailure<T> value)? cartFailure,
     TResult? Function(InsertOrderLoading<T> value)? insertOrderLoading,
@@ -695,6 +718,7 @@ class _$ShopNowSuccessImpl<T> implements ShopNowSuccess<T> {
     TResult Function(ResetAllFilters<T> value)? resetFilter,
     TResult Function(FilterUpdated<T> value)? filterUpdated,
     TResult Function(CartLoading<T> value)? cartLoading,
+    TResult Function(cartEmpty<T> value)? cartEmpty,
     TResult Function(CartSuccess<T> value)? cartSuccess,
     TResult Function(CartFailure<T> value)? cartFailure,
     TResult Function(InsertOrderLoading<T> value)? insertOrderLoading,
@@ -801,6 +825,7 @@ class _$ShopNowFailureImpl<T> implements ShopNowFailure<T> {
     required TResult Function() resetFilter,
     required TResult Function() filterUpdated,
     required TResult Function() cartLoading,
+    required TResult Function() cartEmpty,
     required TResult Function(List<CartItemModel> cartItems) cartSuccess,
     required TResult Function(String error) cartFailure,
     required TResult Function() insertOrderLoading,
@@ -822,6 +847,7 @@ class _$ShopNowFailureImpl<T> implements ShopNowFailure<T> {
     TResult? Function()? resetFilter,
     TResult? Function()? filterUpdated,
     TResult? Function()? cartLoading,
+    TResult? Function()? cartEmpty,
     TResult? Function(List<CartItemModel> cartItems)? cartSuccess,
     TResult? Function(String error)? cartFailure,
     TResult? Function()? insertOrderLoading,
@@ -843,6 +869,7 @@ class _$ShopNowFailureImpl<T> implements ShopNowFailure<T> {
     TResult Function()? resetFilter,
     TResult Function()? filterUpdated,
     TResult Function()? cartLoading,
+    TResult Function()? cartEmpty,
     TResult Function(List<CartItemModel> cartItems)? cartSuccess,
     TResult Function(String error)? cartFailure,
     TResult Function()? insertOrderLoading,
@@ -868,6 +895,7 @@ class _$ShopNowFailureImpl<T> implements ShopNowFailure<T> {
     required TResult Function(ResetAllFilters<T> value) resetFilter,
     required TResult Function(FilterUpdated<T> value) filterUpdated,
     required TResult Function(CartLoading<T> value) cartLoading,
+    required TResult Function(cartEmpty<T> value) cartEmpty,
     required TResult Function(CartSuccess<T> value) cartSuccess,
     required TResult Function(CartFailure<T> value) cartFailure,
     required TResult Function(InsertOrderLoading<T> value) insertOrderLoading,
@@ -889,6 +917,7 @@ class _$ShopNowFailureImpl<T> implements ShopNowFailure<T> {
     TResult? Function(ResetAllFilters<T> value)? resetFilter,
     TResult? Function(FilterUpdated<T> value)? filterUpdated,
     TResult? Function(CartLoading<T> value)? cartLoading,
+    TResult? Function(cartEmpty<T> value)? cartEmpty,
     TResult? Function(CartSuccess<T> value)? cartSuccess,
     TResult? Function(CartFailure<T> value)? cartFailure,
     TResult? Function(InsertOrderLoading<T> value)? insertOrderLoading,
@@ -910,6 +939,7 @@ class _$ShopNowFailureImpl<T> implements ShopNowFailure<T> {
     TResult Function(ResetAllFilters<T> value)? resetFilter,
     TResult Function(FilterUpdated<T> value)? filterUpdated,
     TResult Function(CartLoading<T> value)? cartLoading,
+    TResult Function(cartEmpty<T> value)? cartEmpty,
     TResult Function(CartSuccess<T> value)? cartSuccess,
     TResult Function(CartFailure<T> value)? cartFailure,
     TResult Function(InsertOrderLoading<T> value)? insertOrderLoading,
@@ -989,6 +1019,7 @@ class _$PaginationLoadingImpl<T> implements PaginationLoading<T> {
     required TResult Function() resetFilter,
     required TResult Function() filterUpdated,
     required TResult Function() cartLoading,
+    required TResult Function() cartEmpty,
     required TResult Function(List<CartItemModel> cartItems) cartSuccess,
     required TResult Function(String error) cartFailure,
     required TResult Function() insertOrderLoading,
@@ -1010,6 +1041,7 @@ class _$PaginationLoadingImpl<T> implements PaginationLoading<T> {
     TResult? Function()? resetFilter,
     TResult? Function()? filterUpdated,
     TResult? Function()? cartLoading,
+    TResult? Function()? cartEmpty,
     TResult? Function(List<CartItemModel> cartItems)? cartSuccess,
     TResult? Function(String error)? cartFailure,
     TResult? Function()? insertOrderLoading,
@@ -1031,6 +1063,7 @@ class _$PaginationLoadingImpl<T> implements PaginationLoading<T> {
     TResult Function()? resetFilter,
     TResult Function()? filterUpdated,
     TResult Function()? cartLoading,
+    TResult Function()? cartEmpty,
     TResult Function(List<CartItemModel> cartItems)? cartSuccess,
     TResult Function(String error)? cartFailure,
     TResult Function()? insertOrderLoading,
@@ -1056,6 +1089,7 @@ class _$PaginationLoadingImpl<T> implements PaginationLoading<T> {
     required TResult Function(ResetAllFilters<T> value) resetFilter,
     required TResult Function(FilterUpdated<T> value) filterUpdated,
     required TResult Function(CartLoading<T> value) cartLoading,
+    required TResult Function(cartEmpty<T> value) cartEmpty,
     required TResult Function(CartSuccess<T> value) cartSuccess,
     required TResult Function(CartFailure<T> value) cartFailure,
     required TResult Function(InsertOrderLoading<T> value) insertOrderLoading,
@@ -1077,6 +1111,7 @@ class _$PaginationLoadingImpl<T> implements PaginationLoading<T> {
     TResult? Function(ResetAllFilters<T> value)? resetFilter,
     TResult? Function(FilterUpdated<T> value)? filterUpdated,
     TResult? Function(CartLoading<T> value)? cartLoading,
+    TResult? Function(cartEmpty<T> value)? cartEmpty,
     TResult? Function(CartSuccess<T> value)? cartSuccess,
     TResult? Function(CartFailure<T> value)? cartFailure,
     TResult? Function(InsertOrderLoading<T> value)? insertOrderLoading,
@@ -1098,6 +1133,7 @@ class _$PaginationLoadingImpl<T> implements PaginationLoading<T> {
     TResult Function(ResetAllFilters<T> value)? resetFilter,
     TResult Function(FilterUpdated<T> value)? filterUpdated,
     TResult Function(CartLoading<T> value)? cartLoading,
+    TResult Function(cartEmpty<T> value)? cartEmpty,
     TResult Function(CartSuccess<T> value)? cartSuccess,
     TResult Function(CartFailure<T> value)? cartFailure,
     TResult Function(InsertOrderLoading<T> value)? insertOrderLoading,
@@ -1196,6 +1232,7 @@ class _$PaginationFailureImpl<T> implements PaginationFailure<T> {
     required TResult Function() resetFilter,
     required TResult Function() filterUpdated,
     required TResult Function() cartLoading,
+    required TResult Function() cartEmpty,
     required TResult Function(List<CartItemModel> cartItems) cartSuccess,
     required TResult Function(String error) cartFailure,
     required TResult Function() insertOrderLoading,
@@ -1217,6 +1254,7 @@ class _$PaginationFailureImpl<T> implements PaginationFailure<T> {
     TResult? Function()? resetFilter,
     TResult? Function()? filterUpdated,
     TResult? Function()? cartLoading,
+    TResult? Function()? cartEmpty,
     TResult? Function(List<CartItemModel> cartItems)? cartSuccess,
     TResult? Function(String error)? cartFailure,
     TResult? Function()? insertOrderLoading,
@@ -1238,6 +1276,7 @@ class _$PaginationFailureImpl<T> implements PaginationFailure<T> {
     TResult Function()? resetFilter,
     TResult Function()? filterUpdated,
     TResult Function()? cartLoading,
+    TResult Function()? cartEmpty,
     TResult Function(List<CartItemModel> cartItems)? cartSuccess,
     TResult Function(String error)? cartFailure,
     TResult Function()? insertOrderLoading,
@@ -1263,6 +1302,7 @@ class _$PaginationFailureImpl<T> implements PaginationFailure<T> {
     required TResult Function(ResetAllFilters<T> value) resetFilter,
     required TResult Function(FilterUpdated<T> value) filterUpdated,
     required TResult Function(CartLoading<T> value) cartLoading,
+    required TResult Function(cartEmpty<T> value) cartEmpty,
     required TResult Function(CartSuccess<T> value) cartSuccess,
     required TResult Function(CartFailure<T> value) cartFailure,
     required TResult Function(InsertOrderLoading<T> value) insertOrderLoading,
@@ -1284,6 +1324,7 @@ class _$PaginationFailureImpl<T> implements PaginationFailure<T> {
     TResult? Function(ResetAllFilters<T> value)? resetFilter,
     TResult? Function(FilterUpdated<T> value)? filterUpdated,
     TResult? Function(CartLoading<T> value)? cartLoading,
+    TResult? Function(cartEmpty<T> value)? cartEmpty,
     TResult? Function(CartSuccess<T> value)? cartSuccess,
     TResult? Function(CartFailure<T> value)? cartFailure,
     TResult? Function(InsertOrderLoading<T> value)? insertOrderLoading,
@@ -1305,6 +1346,7 @@ class _$PaginationFailureImpl<T> implements PaginationFailure<T> {
     TResult Function(ResetAllFilters<T> value)? resetFilter,
     TResult Function(FilterUpdated<T> value)? filterUpdated,
     TResult Function(CartLoading<T> value)? cartLoading,
+    TResult Function(cartEmpty<T> value)? cartEmpty,
     TResult Function(CartSuccess<T> value)? cartSuccess,
     TResult Function(CartFailure<T> value)? cartFailure,
     TResult Function(InsertOrderLoading<T> value)? insertOrderLoading,
@@ -1383,6 +1425,7 @@ class _$ResetAllFiltersImpl<T> implements ResetAllFilters<T> {
     required TResult Function() resetFilter,
     required TResult Function() filterUpdated,
     required TResult Function() cartLoading,
+    required TResult Function() cartEmpty,
     required TResult Function(List<CartItemModel> cartItems) cartSuccess,
     required TResult Function(String error) cartFailure,
     required TResult Function() insertOrderLoading,
@@ -1404,6 +1447,7 @@ class _$ResetAllFiltersImpl<T> implements ResetAllFilters<T> {
     TResult? Function()? resetFilter,
     TResult? Function()? filterUpdated,
     TResult? Function()? cartLoading,
+    TResult? Function()? cartEmpty,
     TResult? Function(List<CartItemModel> cartItems)? cartSuccess,
     TResult? Function(String error)? cartFailure,
     TResult? Function()? insertOrderLoading,
@@ -1425,6 +1469,7 @@ class _$ResetAllFiltersImpl<T> implements ResetAllFilters<T> {
     TResult Function()? resetFilter,
     TResult Function()? filterUpdated,
     TResult Function()? cartLoading,
+    TResult Function()? cartEmpty,
     TResult Function(List<CartItemModel> cartItems)? cartSuccess,
     TResult Function(String error)? cartFailure,
     TResult Function()? insertOrderLoading,
@@ -1450,6 +1495,7 @@ class _$ResetAllFiltersImpl<T> implements ResetAllFilters<T> {
     required TResult Function(ResetAllFilters<T> value) resetFilter,
     required TResult Function(FilterUpdated<T> value) filterUpdated,
     required TResult Function(CartLoading<T> value) cartLoading,
+    required TResult Function(cartEmpty<T> value) cartEmpty,
     required TResult Function(CartSuccess<T> value) cartSuccess,
     required TResult Function(CartFailure<T> value) cartFailure,
     required TResult Function(InsertOrderLoading<T> value) insertOrderLoading,
@@ -1471,6 +1517,7 @@ class _$ResetAllFiltersImpl<T> implements ResetAllFilters<T> {
     TResult? Function(ResetAllFilters<T> value)? resetFilter,
     TResult? Function(FilterUpdated<T> value)? filterUpdated,
     TResult? Function(CartLoading<T> value)? cartLoading,
+    TResult? Function(cartEmpty<T> value)? cartEmpty,
     TResult? Function(CartSuccess<T> value)? cartSuccess,
     TResult? Function(CartFailure<T> value)? cartFailure,
     TResult? Function(InsertOrderLoading<T> value)? insertOrderLoading,
@@ -1492,6 +1539,7 @@ class _$ResetAllFiltersImpl<T> implements ResetAllFilters<T> {
     TResult Function(ResetAllFilters<T> value)? resetFilter,
     TResult Function(FilterUpdated<T> value)? filterUpdated,
     TResult Function(CartLoading<T> value)? cartLoading,
+    TResult Function(cartEmpty<T> value)? cartEmpty,
     TResult Function(CartSuccess<T> value)? cartSuccess,
     TResult Function(CartFailure<T> value)? cartFailure,
     TResult Function(InsertOrderLoading<T> value)? insertOrderLoading,
@@ -1561,6 +1609,7 @@ class _$FilterUpdatedImpl<T> implements FilterUpdated<T> {
     required TResult Function() resetFilter,
     required TResult Function() filterUpdated,
     required TResult Function() cartLoading,
+    required TResult Function() cartEmpty,
     required TResult Function(List<CartItemModel> cartItems) cartSuccess,
     required TResult Function(String error) cartFailure,
     required TResult Function() insertOrderLoading,
@@ -1582,6 +1631,7 @@ class _$FilterUpdatedImpl<T> implements FilterUpdated<T> {
     TResult? Function()? resetFilter,
     TResult? Function()? filterUpdated,
     TResult? Function()? cartLoading,
+    TResult? Function()? cartEmpty,
     TResult? Function(List<CartItemModel> cartItems)? cartSuccess,
     TResult? Function(String error)? cartFailure,
     TResult? Function()? insertOrderLoading,
@@ -1603,6 +1653,7 @@ class _$FilterUpdatedImpl<T> implements FilterUpdated<T> {
     TResult Function()? resetFilter,
     TResult Function()? filterUpdated,
     TResult Function()? cartLoading,
+    TResult Function()? cartEmpty,
     TResult Function(List<CartItemModel> cartItems)? cartSuccess,
     TResult Function(String error)? cartFailure,
     TResult Function()? insertOrderLoading,
@@ -1628,6 +1679,7 @@ class _$FilterUpdatedImpl<T> implements FilterUpdated<T> {
     required TResult Function(ResetAllFilters<T> value) resetFilter,
     required TResult Function(FilterUpdated<T> value) filterUpdated,
     required TResult Function(CartLoading<T> value) cartLoading,
+    required TResult Function(cartEmpty<T> value) cartEmpty,
     required TResult Function(CartSuccess<T> value) cartSuccess,
     required TResult Function(CartFailure<T> value) cartFailure,
     required TResult Function(InsertOrderLoading<T> value) insertOrderLoading,
@@ -1649,6 +1701,7 @@ class _$FilterUpdatedImpl<T> implements FilterUpdated<T> {
     TResult? Function(ResetAllFilters<T> value)? resetFilter,
     TResult? Function(FilterUpdated<T> value)? filterUpdated,
     TResult? Function(CartLoading<T> value)? cartLoading,
+    TResult? Function(cartEmpty<T> value)? cartEmpty,
     TResult? Function(CartSuccess<T> value)? cartSuccess,
     TResult? Function(CartFailure<T> value)? cartFailure,
     TResult? Function(InsertOrderLoading<T> value)? insertOrderLoading,
@@ -1670,6 +1723,7 @@ class _$FilterUpdatedImpl<T> implements FilterUpdated<T> {
     TResult Function(ResetAllFilters<T> value)? resetFilter,
     TResult Function(FilterUpdated<T> value)? filterUpdated,
     TResult Function(CartLoading<T> value)? cartLoading,
+    TResult Function(cartEmpty<T> value)? cartEmpty,
     TResult Function(CartSuccess<T> value)? cartSuccess,
     TResult Function(CartFailure<T> value)? cartFailure,
     TResult Function(InsertOrderLoading<T> value)? insertOrderLoading,
@@ -1739,6 +1793,7 @@ class _$CartLoadingImpl<T> implements CartLoading<T> {
     required TResult Function() resetFilter,
     required TResult Function() filterUpdated,
     required TResult Function() cartLoading,
+    required TResult Function() cartEmpty,
     required TResult Function(List<CartItemModel> cartItems) cartSuccess,
     required TResult Function(String error) cartFailure,
     required TResult Function() insertOrderLoading,
@@ -1760,6 +1815,7 @@ class _$CartLoadingImpl<T> implements CartLoading<T> {
     TResult? Function()? resetFilter,
     TResult? Function()? filterUpdated,
     TResult? Function()? cartLoading,
+    TResult? Function()? cartEmpty,
     TResult? Function(List<CartItemModel> cartItems)? cartSuccess,
     TResult? Function(String error)? cartFailure,
     TResult? Function()? insertOrderLoading,
@@ -1781,6 +1837,7 @@ class _$CartLoadingImpl<T> implements CartLoading<T> {
     TResult Function()? resetFilter,
     TResult Function()? filterUpdated,
     TResult Function()? cartLoading,
+    TResult Function()? cartEmpty,
     TResult Function(List<CartItemModel> cartItems)? cartSuccess,
     TResult Function(String error)? cartFailure,
     TResult Function()? insertOrderLoading,
@@ -1806,6 +1863,7 @@ class _$CartLoadingImpl<T> implements CartLoading<T> {
     required TResult Function(ResetAllFilters<T> value) resetFilter,
     required TResult Function(FilterUpdated<T> value) filterUpdated,
     required TResult Function(CartLoading<T> value) cartLoading,
+    required TResult Function(cartEmpty<T> value) cartEmpty,
     required TResult Function(CartSuccess<T> value) cartSuccess,
     required TResult Function(CartFailure<T> value) cartFailure,
     required TResult Function(InsertOrderLoading<T> value) insertOrderLoading,
@@ -1827,6 +1885,7 @@ class _$CartLoadingImpl<T> implements CartLoading<T> {
     TResult? Function(ResetAllFilters<T> value)? resetFilter,
     TResult? Function(FilterUpdated<T> value)? filterUpdated,
     TResult? Function(CartLoading<T> value)? cartLoading,
+    TResult? Function(cartEmpty<T> value)? cartEmpty,
     TResult? Function(CartSuccess<T> value)? cartSuccess,
     TResult? Function(CartFailure<T> value)? cartFailure,
     TResult? Function(InsertOrderLoading<T> value)? insertOrderLoading,
@@ -1848,6 +1907,7 @@ class _$CartLoadingImpl<T> implements CartLoading<T> {
     TResult Function(ResetAllFilters<T> value)? resetFilter,
     TResult Function(FilterUpdated<T> value)? filterUpdated,
     TResult Function(CartLoading<T> value)? cartLoading,
+    TResult Function(cartEmpty<T> value)? cartEmpty,
     TResult Function(CartSuccess<T> value)? cartSuccess,
     TResult Function(CartFailure<T> value)? cartFailure,
     TResult Function(InsertOrderLoading<T> value)? insertOrderLoading,
@@ -1864,6 +1924,190 @@ class _$CartLoadingImpl<T> implements CartLoading<T> {
 
 abstract class CartLoading<T> implements CartState<T> {
   const factory CartLoading() = _$CartLoadingImpl<T>;
+}
+
+/// @nodoc
+abstract class _$$cartEmptyImplCopyWith<T, $Res> {
+  factory _$$cartEmptyImplCopyWith(
+          _$cartEmptyImpl<T> value, $Res Function(_$cartEmptyImpl<T>) then) =
+      __$$cartEmptyImplCopyWithImpl<T, $Res>;
+}
+
+/// @nodoc
+class __$$cartEmptyImplCopyWithImpl<T, $Res>
+    extends _$CartStateCopyWithImpl<T, $Res, _$cartEmptyImpl<T>>
+    implements _$$cartEmptyImplCopyWith<T, $Res> {
+  __$$cartEmptyImplCopyWithImpl(
+      _$cartEmptyImpl<T> _value, $Res Function(_$cartEmptyImpl<T>) _then)
+      : super(_value, _then);
+
+  /// Create a copy of CartState
+  /// with the given fields replaced by the non-null parameter values.
+}
+
+/// @nodoc
+
+class _$cartEmptyImpl<T> implements cartEmpty<T> {
+  const _$cartEmptyImpl();
+
+  @override
+  String toString() {
+    return 'CartState<$T>.cartEmpty()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$cartEmptyImpl<T>);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() shopNowLoading,
+    required TResult Function(ShopNowResponseModel responseModel)
+        shopNowSuccess,
+    required TResult Function(String error) shopNowFailure,
+    required TResult Function() paginationLoading,
+    required TResult Function(String error) paginationFailure,
+    required TResult Function() resetFilter,
+    required TResult Function() filterUpdated,
+    required TResult Function() cartLoading,
+    required TResult Function() cartEmpty,
+    required TResult Function(List<CartItemModel> cartItems) cartSuccess,
+    required TResult Function(String error) cartFailure,
+    required TResult Function() insertOrderLoading,
+    required TResult Function(T data) insertOrderSuccess,
+    required TResult Function(String error) insertOrderFailure,
+  }) {
+    return cartEmpty();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? shopNowLoading,
+    TResult? Function(ShopNowResponseModel responseModel)? shopNowSuccess,
+    TResult? Function(String error)? shopNowFailure,
+    TResult? Function()? paginationLoading,
+    TResult? Function(String error)? paginationFailure,
+    TResult? Function()? resetFilter,
+    TResult? Function()? filterUpdated,
+    TResult? Function()? cartLoading,
+    TResult? Function()? cartEmpty,
+    TResult? Function(List<CartItemModel> cartItems)? cartSuccess,
+    TResult? Function(String error)? cartFailure,
+    TResult? Function()? insertOrderLoading,
+    TResult? Function(T data)? insertOrderSuccess,
+    TResult? Function(String error)? insertOrderFailure,
+  }) {
+    return cartEmpty?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? shopNowLoading,
+    TResult Function(ShopNowResponseModel responseModel)? shopNowSuccess,
+    TResult Function(String error)? shopNowFailure,
+    TResult Function()? paginationLoading,
+    TResult Function(String error)? paginationFailure,
+    TResult Function()? resetFilter,
+    TResult Function()? filterUpdated,
+    TResult Function()? cartLoading,
+    TResult Function()? cartEmpty,
+    TResult Function(List<CartItemModel> cartItems)? cartSuccess,
+    TResult Function(String error)? cartFailure,
+    TResult Function()? insertOrderLoading,
+    TResult Function(T data)? insertOrderSuccess,
+    TResult Function(String error)? insertOrderFailure,
+    required TResult orElse(),
+  }) {
+    if (cartEmpty != null) {
+      return cartEmpty();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial<T> value) initial,
+    required TResult Function(ShopNowLoading<T> value) shopNowLoading,
+    required TResult Function(ShopNowSuccess<T> value) shopNowSuccess,
+    required TResult Function(ShopNowFailure<T> value) shopNowFailure,
+    required TResult Function(PaginationLoading<T> value) paginationLoading,
+    required TResult Function(PaginationFailure<T> value) paginationFailure,
+    required TResult Function(ResetAllFilters<T> value) resetFilter,
+    required TResult Function(FilterUpdated<T> value) filterUpdated,
+    required TResult Function(CartLoading<T> value) cartLoading,
+    required TResult Function(cartEmpty<T> value) cartEmpty,
+    required TResult Function(CartSuccess<T> value) cartSuccess,
+    required TResult Function(CartFailure<T> value) cartFailure,
+    required TResult Function(InsertOrderLoading<T> value) insertOrderLoading,
+    required TResult Function(InsertOrderSuccess<T> value) insertOrderSuccess,
+    required TResult Function(InsertOrderFailure<T> value) insertOrderFailure,
+  }) {
+    return cartEmpty(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial<T> value)? initial,
+    TResult? Function(ShopNowLoading<T> value)? shopNowLoading,
+    TResult? Function(ShopNowSuccess<T> value)? shopNowSuccess,
+    TResult? Function(ShopNowFailure<T> value)? shopNowFailure,
+    TResult? Function(PaginationLoading<T> value)? paginationLoading,
+    TResult? Function(PaginationFailure<T> value)? paginationFailure,
+    TResult? Function(ResetAllFilters<T> value)? resetFilter,
+    TResult? Function(FilterUpdated<T> value)? filterUpdated,
+    TResult? Function(CartLoading<T> value)? cartLoading,
+    TResult? Function(cartEmpty<T> value)? cartEmpty,
+    TResult? Function(CartSuccess<T> value)? cartSuccess,
+    TResult? Function(CartFailure<T> value)? cartFailure,
+    TResult? Function(InsertOrderLoading<T> value)? insertOrderLoading,
+    TResult? Function(InsertOrderSuccess<T> value)? insertOrderSuccess,
+    TResult? Function(InsertOrderFailure<T> value)? insertOrderFailure,
+  }) {
+    return cartEmpty?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial<T> value)? initial,
+    TResult Function(ShopNowLoading<T> value)? shopNowLoading,
+    TResult Function(ShopNowSuccess<T> value)? shopNowSuccess,
+    TResult Function(ShopNowFailure<T> value)? shopNowFailure,
+    TResult Function(PaginationLoading<T> value)? paginationLoading,
+    TResult Function(PaginationFailure<T> value)? paginationFailure,
+    TResult Function(ResetAllFilters<T> value)? resetFilter,
+    TResult Function(FilterUpdated<T> value)? filterUpdated,
+    TResult Function(CartLoading<T> value)? cartLoading,
+    TResult Function(cartEmpty<T> value)? cartEmpty,
+    TResult Function(CartSuccess<T> value)? cartSuccess,
+    TResult Function(CartFailure<T> value)? cartFailure,
+    TResult Function(InsertOrderLoading<T> value)? insertOrderLoading,
+    TResult Function(InsertOrderSuccess<T> value)? insertOrderSuccess,
+    TResult Function(InsertOrderFailure<T> value)? insertOrderFailure,
+    required TResult orElse(),
+  }) {
+    if (cartEmpty != null) {
+      return cartEmpty(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class cartEmpty<T> implements CartState<T> {
+  const factory cartEmpty() = _$cartEmptyImpl<T>;
 }
 
 /// @nodoc
@@ -1953,6 +2197,7 @@ class _$CartSuccessImpl<T> implements CartSuccess<T> {
     required TResult Function() resetFilter,
     required TResult Function() filterUpdated,
     required TResult Function() cartLoading,
+    required TResult Function() cartEmpty,
     required TResult Function(List<CartItemModel> cartItems) cartSuccess,
     required TResult Function(String error) cartFailure,
     required TResult Function() insertOrderLoading,
@@ -1974,6 +2219,7 @@ class _$CartSuccessImpl<T> implements CartSuccess<T> {
     TResult? Function()? resetFilter,
     TResult? Function()? filterUpdated,
     TResult? Function()? cartLoading,
+    TResult? Function()? cartEmpty,
     TResult? Function(List<CartItemModel> cartItems)? cartSuccess,
     TResult? Function(String error)? cartFailure,
     TResult? Function()? insertOrderLoading,
@@ -1995,6 +2241,7 @@ class _$CartSuccessImpl<T> implements CartSuccess<T> {
     TResult Function()? resetFilter,
     TResult Function()? filterUpdated,
     TResult Function()? cartLoading,
+    TResult Function()? cartEmpty,
     TResult Function(List<CartItemModel> cartItems)? cartSuccess,
     TResult Function(String error)? cartFailure,
     TResult Function()? insertOrderLoading,
@@ -2020,6 +2267,7 @@ class _$CartSuccessImpl<T> implements CartSuccess<T> {
     required TResult Function(ResetAllFilters<T> value) resetFilter,
     required TResult Function(FilterUpdated<T> value) filterUpdated,
     required TResult Function(CartLoading<T> value) cartLoading,
+    required TResult Function(cartEmpty<T> value) cartEmpty,
     required TResult Function(CartSuccess<T> value) cartSuccess,
     required TResult Function(CartFailure<T> value) cartFailure,
     required TResult Function(InsertOrderLoading<T> value) insertOrderLoading,
@@ -2041,6 +2289,7 @@ class _$CartSuccessImpl<T> implements CartSuccess<T> {
     TResult? Function(ResetAllFilters<T> value)? resetFilter,
     TResult? Function(FilterUpdated<T> value)? filterUpdated,
     TResult? Function(CartLoading<T> value)? cartLoading,
+    TResult? Function(cartEmpty<T> value)? cartEmpty,
     TResult? Function(CartSuccess<T> value)? cartSuccess,
     TResult? Function(CartFailure<T> value)? cartFailure,
     TResult? Function(InsertOrderLoading<T> value)? insertOrderLoading,
@@ -2062,6 +2311,7 @@ class _$CartSuccessImpl<T> implements CartSuccess<T> {
     TResult Function(ResetAllFilters<T> value)? resetFilter,
     TResult Function(FilterUpdated<T> value)? filterUpdated,
     TResult Function(CartLoading<T> value)? cartLoading,
+    TResult Function(cartEmpty<T> value)? cartEmpty,
     TResult Function(CartSuccess<T> value)? cartSuccess,
     TResult Function(CartFailure<T> value)? cartFailure,
     TResult Function(InsertOrderLoading<T> value)? insertOrderLoading,
@@ -2168,6 +2418,7 @@ class _$CartFailureImpl<T> implements CartFailure<T> {
     required TResult Function() resetFilter,
     required TResult Function() filterUpdated,
     required TResult Function() cartLoading,
+    required TResult Function() cartEmpty,
     required TResult Function(List<CartItemModel> cartItems) cartSuccess,
     required TResult Function(String error) cartFailure,
     required TResult Function() insertOrderLoading,
@@ -2189,6 +2440,7 @@ class _$CartFailureImpl<T> implements CartFailure<T> {
     TResult? Function()? resetFilter,
     TResult? Function()? filterUpdated,
     TResult? Function()? cartLoading,
+    TResult? Function()? cartEmpty,
     TResult? Function(List<CartItemModel> cartItems)? cartSuccess,
     TResult? Function(String error)? cartFailure,
     TResult? Function()? insertOrderLoading,
@@ -2210,6 +2462,7 @@ class _$CartFailureImpl<T> implements CartFailure<T> {
     TResult Function()? resetFilter,
     TResult Function()? filterUpdated,
     TResult Function()? cartLoading,
+    TResult Function()? cartEmpty,
     TResult Function(List<CartItemModel> cartItems)? cartSuccess,
     TResult Function(String error)? cartFailure,
     TResult Function()? insertOrderLoading,
@@ -2235,6 +2488,7 @@ class _$CartFailureImpl<T> implements CartFailure<T> {
     required TResult Function(ResetAllFilters<T> value) resetFilter,
     required TResult Function(FilterUpdated<T> value) filterUpdated,
     required TResult Function(CartLoading<T> value) cartLoading,
+    required TResult Function(cartEmpty<T> value) cartEmpty,
     required TResult Function(CartSuccess<T> value) cartSuccess,
     required TResult Function(CartFailure<T> value) cartFailure,
     required TResult Function(InsertOrderLoading<T> value) insertOrderLoading,
@@ -2256,6 +2510,7 @@ class _$CartFailureImpl<T> implements CartFailure<T> {
     TResult? Function(ResetAllFilters<T> value)? resetFilter,
     TResult? Function(FilterUpdated<T> value)? filterUpdated,
     TResult? Function(CartLoading<T> value)? cartLoading,
+    TResult? Function(cartEmpty<T> value)? cartEmpty,
     TResult? Function(CartSuccess<T> value)? cartSuccess,
     TResult? Function(CartFailure<T> value)? cartFailure,
     TResult? Function(InsertOrderLoading<T> value)? insertOrderLoading,
@@ -2277,6 +2532,7 @@ class _$CartFailureImpl<T> implements CartFailure<T> {
     TResult Function(ResetAllFilters<T> value)? resetFilter,
     TResult Function(FilterUpdated<T> value)? filterUpdated,
     TResult Function(CartLoading<T> value)? cartLoading,
+    TResult Function(cartEmpty<T> value)? cartEmpty,
     TResult Function(CartSuccess<T> value)? cartSuccess,
     TResult Function(CartFailure<T> value)? cartFailure,
     TResult Function(InsertOrderLoading<T> value)? insertOrderLoading,
@@ -2356,6 +2612,7 @@ class _$InsertOrderLoadingImpl<T> implements InsertOrderLoading<T> {
     required TResult Function() resetFilter,
     required TResult Function() filterUpdated,
     required TResult Function() cartLoading,
+    required TResult Function() cartEmpty,
     required TResult Function(List<CartItemModel> cartItems) cartSuccess,
     required TResult Function(String error) cartFailure,
     required TResult Function() insertOrderLoading,
@@ -2377,6 +2634,7 @@ class _$InsertOrderLoadingImpl<T> implements InsertOrderLoading<T> {
     TResult? Function()? resetFilter,
     TResult? Function()? filterUpdated,
     TResult? Function()? cartLoading,
+    TResult? Function()? cartEmpty,
     TResult? Function(List<CartItemModel> cartItems)? cartSuccess,
     TResult? Function(String error)? cartFailure,
     TResult? Function()? insertOrderLoading,
@@ -2398,6 +2656,7 @@ class _$InsertOrderLoadingImpl<T> implements InsertOrderLoading<T> {
     TResult Function()? resetFilter,
     TResult Function()? filterUpdated,
     TResult Function()? cartLoading,
+    TResult Function()? cartEmpty,
     TResult Function(List<CartItemModel> cartItems)? cartSuccess,
     TResult Function(String error)? cartFailure,
     TResult Function()? insertOrderLoading,
@@ -2423,6 +2682,7 @@ class _$InsertOrderLoadingImpl<T> implements InsertOrderLoading<T> {
     required TResult Function(ResetAllFilters<T> value) resetFilter,
     required TResult Function(FilterUpdated<T> value) filterUpdated,
     required TResult Function(CartLoading<T> value) cartLoading,
+    required TResult Function(cartEmpty<T> value) cartEmpty,
     required TResult Function(CartSuccess<T> value) cartSuccess,
     required TResult Function(CartFailure<T> value) cartFailure,
     required TResult Function(InsertOrderLoading<T> value) insertOrderLoading,
@@ -2444,6 +2704,7 @@ class _$InsertOrderLoadingImpl<T> implements InsertOrderLoading<T> {
     TResult? Function(ResetAllFilters<T> value)? resetFilter,
     TResult? Function(FilterUpdated<T> value)? filterUpdated,
     TResult? Function(CartLoading<T> value)? cartLoading,
+    TResult? Function(cartEmpty<T> value)? cartEmpty,
     TResult? Function(CartSuccess<T> value)? cartSuccess,
     TResult? Function(CartFailure<T> value)? cartFailure,
     TResult? Function(InsertOrderLoading<T> value)? insertOrderLoading,
@@ -2465,6 +2726,7 @@ class _$InsertOrderLoadingImpl<T> implements InsertOrderLoading<T> {
     TResult Function(ResetAllFilters<T> value)? resetFilter,
     TResult Function(FilterUpdated<T> value)? filterUpdated,
     TResult Function(CartLoading<T> value)? cartLoading,
+    TResult Function(cartEmpty<T> value)? cartEmpty,
     TResult Function(CartSuccess<T> value)? cartSuccess,
     TResult Function(CartFailure<T> value)? cartFailure,
     TResult Function(InsertOrderLoading<T> value)? insertOrderLoading,
@@ -2563,6 +2825,7 @@ class _$InsertOrderSuccessImpl<T> implements InsertOrderSuccess<T> {
     required TResult Function() resetFilter,
     required TResult Function() filterUpdated,
     required TResult Function() cartLoading,
+    required TResult Function() cartEmpty,
     required TResult Function(List<CartItemModel> cartItems) cartSuccess,
     required TResult Function(String error) cartFailure,
     required TResult Function() insertOrderLoading,
@@ -2584,6 +2847,7 @@ class _$InsertOrderSuccessImpl<T> implements InsertOrderSuccess<T> {
     TResult? Function()? resetFilter,
     TResult? Function()? filterUpdated,
     TResult? Function()? cartLoading,
+    TResult? Function()? cartEmpty,
     TResult? Function(List<CartItemModel> cartItems)? cartSuccess,
     TResult? Function(String error)? cartFailure,
     TResult? Function()? insertOrderLoading,
@@ -2605,6 +2869,7 @@ class _$InsertOrderSuccessImpl<T> implements InsertOrderSuccess<T> {
     TResult Function()? resetFilter,
     TResult Function()? filterUpdated,
     TResult Function()? cartLoading,
+    TResult Function()? cartEmpty,
     TResult Function(List<CartItemModel> cartItems)? cartSuccess,
     TResult Function(String error)? cartFailure,
     TResult Function()? insertOrderLoading,
@@ -2630,6 +2895,7 @@ class _$InsertOrderSuccessImpl<T> implements InsertOrderSuccess<T> {
     required TResult Function(ResetAllFilters<T> value) resetFilter,
     required TResult Function(FilterUpdated<T> value) filterUpdated,
     required TResult Function(CartLoading<T> value) cartLoading,
+    required TResult Function(cartEmpty<T> value) cartEmpty,
     required TResult Function(CartSuccess<T> value) cartSuccess,
     required TResult Function(CartFailure<T> value) cartFailure,
     required TResult Function(InsertOrderLoading<T> value) insertOrderLoading,
@@ -2651,6 +2917,7 @@ class _$InsertOrderSuccessImpl<T> implements InsertOrderSuccess<T> {
     TResult? Function(ResetAllFilters<T> value)? resetFilter,
     TResult? Function(FilterUpdated<T> value)? filterUpdated,
     TResult? Function(CartLoading<T> value)? cartLoading,
+    TResult? Function(cartEmpty<T> value)? cartEmpty,
     TResult? Function(CartSuccess<T> value)? cartSuccess,
     TResult? Function(CartFailure<T> value)? cartFailure,
     TResult? Function(InsertOrderLoading<T> value)? insertOrderLoading,
@@ -2672,6 +2939,7 @@ class _$InsertOrderSuccessImpl<T> implements InsertOrderSuccess<T> {
     TResult Function(ResetAllFilters<T> value)? resetFilter,
     TResult Function(FilterUpdated<T> value)? filterUpdated,
     TResult Function(CartLoading<T> value)? cartLoading,
+    TResult Function(cartEmpty<T> value)? cartEmpty,
     TResult Function(CartSuccess<T> value)? cartSuccess,
     TResult Function(CartFailure<T> value)? cartFailure,
     TResult Function(InsertOrderLoading<T> value)? insertOrderLoading,
@@ -2777,6 +3045,7 @@ class _$InsertOrderFailureImpl<T> implements InsertOrderFailure<T> {
     required TResult Function() resetFilter,
     required TResult Function() filterUpdated,
     required TResult Function() cartLoading,
+    required TResult Function() cartEmpty,
     required TResult Function(List<CartItemModel> cartItems) cartSuccess,
     required TResult Function(String error) cartFailure,
     required TResult Function() insertOrderLoading,
@@ -2798,6 +3067,7 @@ class _$InsertOrderFailureImpl<T> implements InsertOrderFailure<T> {
     TResult? Function()? resetFilter,
     TResult? Function()? filterUpdated,
     TResult? Function()? cartLoading,
+    TResult? Function()? cartEmpty,
     TResult? Function(List<CartItemModel> cartItems)? cartSuccess,
     TResult? Function(String error)? cartFailure,
     TResult? Function()? insertOrderLoading,
@@ -2819,6 +3089,7 @@ class _$InsertOrderFailureImpl<T> implements InsertOrderFailure<T> {
     TResult Function()? resetFilter,
     TResult Function()? filterUpdated,
     TResult Function()? cartLoading,
+    TResult Function()? cartEmpty,
     TResult Function(List<CartItemModel> cartItems)? cartSuccess,
     TResult Function(String error)? cartFailure,
     TResult Function()? insertOrderLoading,
@@ -2844,6 +3115,7 @@ class _$InsertOrderFailureImpl<T> implements InsertOrderFailure<T> {
     required TResult Function(ResetAllFilters<T> value) resetFilter,
     required TResult Function(FilterUpdated<T> value) filterUpdated,
     required TResult Function(CartLoading<T> value) cartLoading,
+    required TResult Function(cartEmpty<T> value) cartEmpty,
     required TResult Function(CartSuccess<T> value) cartSuccess,
     required TResult Function(CartFailure<T> value) cartFailure,
     required TResult Function(InsertOrderLoading<T> value) insertOrderLoading,
@@ -2865,6 +3137,7 @@ class _$InsertOrderFailureImpl<T> implements InsertOrderFailure<T> {
     TResult? Function(ResetAllFilters<T> value)? resetFilter,
     TResult? Function(FilterUpdated<T> value)? filterUpdated,
     TResult? Function(CartLoading<T> value)? cartLoading,
+    TResult? Function(cartEmpty<T> value)? cartEmpty,
     TResult? Function(CartSuccess<T> value)? cartSuccess,
     TResult? Function(CartFailure<T> value)? cartFailure,
     TResult? Function(InsertOrderLoading<T> value)? insertOrderLoading,
@@ -2886,6 +3159,7 @@ class _$InsertOrderFailureImpl<T> implements InsertOrderFailure<T> {
     TResult Function(ResetAllFilters<T> value)? resetFilter,
     TResult Function(FilterUpdated<T> value)? filterUpdated,
     TResult Function(CartLoading<T> value)? cartLoading,
+    TResult Function(cartEmpty<T> value)? cartEmpty,
     TResult Function(CartSuccess<T> value)? cartSuccess,
     TResult Function(CartFailure<T> value)? cartFailure,
     TResult Function(InsertOrderLoading<T> value)? insertOrderLoading,

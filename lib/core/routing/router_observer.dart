@@ -1,52 +1,56 @@
 import 'package:flutter/material.dart';
 import 'package:logger/logger.dart';
-var logger = Logger();
+
+final logger = Logger();
+
 class RouterObserver extends NavigatorObserver {
   @override
   void didPush(Route<dynamic> route, Route<dynamic>? previousRoute) {
-    // Extract route information from the Route object
-    String? routeName = _extractRouteName(route);
-    logger.i('Pushed route: $routeName');
+    _logRouteChange('Pushed', route);
     super.didPush(route, previousRoute);
   }
 
   @override
   void didPop(Route<dynamic> route, Route<dynamic>? previousRoute) {
-    String? routeName = _extractRouteName(route);
-    logger.i('Popped route: $routeName');
+    _logRouteChange('Popped', route);
     super.didPop(route, previousRoute);
   }
 
   @override
   void didReplace({Route<dynamic>? newRoute, Route<dynamic>? oldRoute}) {
-    String? routeName = _extractRouteName(newRoute!);
-    logger.i('Replaced route: $routeName');
+    if (newRoute != null) {
+      _logRouteChange('Replaced', newRoute);
+    }
     super.didReplace(newRoute: newRoute, oldRoute: oldRoute);
   }
 
   @override
   void didRemove(Route<dynamic> route, Route<dynamic>? previousRoute) {
-    String? routeName = _extractRouteName(route);
-    logger.i('Removed route: $routeName');
+    _logRouteChange('Removed', route);
     super.didRemove(route, previousRoute);
   }
+
   @override
   void didStartUserGesture(Route<dynamic> route, Route<dynamic>? previousRoute) {
-    String? routeName = _extractRouteName(route);
-    logger.i('Started user gesture: $routeName');
+    _logRouteChange('Started user gesture on', route);
     super.didStartUserGesture(route, previousRoute);
   }
+
   @override
   void didStopUserGesture() {
     logger.i('Stopped user gesture');
     super.didStopUserGesture();
   }
 
-  // Helper method to extract route name (if available)
+  /// Helper method to log route changes
+  void _logRouteChange(String action, Route<dynamic> route) {
+    final routeName = _extractRouteName(route);
+    final logName = routeName ?? route.runtimeType.toString();
+    logger.i('$action route: $logName');
+  }
+
+  /// Try to extract route name from Route.settings.name
   String? _extractRouteName(Route<dynamic> route) {
-    if (route is PageRoute && route.settings.name != null) {
-      return route.settings.name;
-    }
-    return null; // Unable to extract route name
+    return route.settings.name;
   }
 }

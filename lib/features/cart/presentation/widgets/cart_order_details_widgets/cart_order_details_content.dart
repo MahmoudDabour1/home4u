@@ -16,17 +16,18 @@ class CartOrderDetailsContent extends StatelessWidget {
         return state.maybeWhen(
           cartLoading: () => const Center(child: CircularProgressIndicator()),
           cartFailure: (error) => Center(child: Text(error)),
+          cartEmpty: () => const CartOrderDetailsEmptyView(),
           cartSuccess: (items) {
             final total = items.fold<double>(
               0.0,
               (sum, item) =>
                   sum + (item.product.price ?? 0) * (item.quantity ?? 0),
             );
-            return items.isEmpty
-                ? const CartOrderDetailsEmptyView()
-                : CartItemsOrderDetailsList(items: items, total: total);
+            return CartItemsOrderDetailsList(items: items, total: total);
           },
-          orElse: () => const CartOrderDetailsEmptyView(),
+          ///Todo: UI here appears empty for about 300ms until it moves to insertOrderSuccess
+          ///Solve this by showing a loading indicator or a placeholder
+          orElse: () => SizedBox.shrink(),
         );
       },
     );

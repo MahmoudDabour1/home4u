@@ -5,33 +5,40 @@ import 'package:home4u/core/routing/routes.dart';
 
 import '../../../../../core/theming/app_colors.dart';
 import '../../../../../core/theming/app_styles.dart';
+import '../../../../../core/utils/app_constants.dart';
 import '../../../../../core/widgets/app_custom_button.dart';
+import '../../../data/models/orders_response_model.dart';
 import 'order_row_item.dart';
 
 class OrdersContainerWidget extends StatelessWidget {
-  final OrderStatus orderStatus;
+  final OrderStatusCode orderStatus;
 
+  final OrderDetails order;
 
-  const OrdersContainerWidget({super.key, required this.orderStatus});
+  const OrdersContainerWidget({
+    super.key,
+    required this.orderStatus,
+    required this.order,
+  });
 
-  String _getStatusText(OrderStatus status) {
+  String _getStatusText(OrderStatusCode status) {
     switch (status) {
-      case OrderStatus.pending:
+      case OrderStatusCode.PENDING:
         return "PENDING";
-      case OrderStatus.delivered:
+      case OrderStatusCode.DELIVERED:
         return "DELIVERED";
-      case OrderStatus.canceled:
+      case OrderStatusCode.CANCELED:
         return "CANCELED";
     }
   }
 
-  Color _getStatusColor(OrderStatus status) {
+  Color _getStatusColor(OrderStatusCode status) {
     switch (status) {
-      case OrderStatus.pending:
+      case OrderStatusCode.PENDING:
         return Colors.orange;
-      case OrderStatus.delivered:
+      case OrderStatusCode.DELIVERED:
         return Colors.green;
-      case OrderStatus.canceled:
+      case OrderStatusCode.CANCELED:
         return Colors.red;
     }
   }
@@ -66,30 +73,30 @@ class OrdersContainerWidget extends StatelessWidget {
             Row(
               children: [
                 Text(
-                  "Order #1514",
+                  "Order #${order.id}",
                   style: AppStyles.font20BlackMedium,
                 ),
                 Spacer(),
                 Text(
-                  "13/05/2021",
+                  formatDate(order.createdDate) ?? 'N/A',
                   style: AppStyles.font16BlueMedium,
                 ),
               ],
             ),
             OrderRowItem(
               title: "Tracking number: ",
-              value: " IK987362341",
+              value: order.orderNumber ?? "N/A",
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 OrderRowItem(
-                  title: "Quanlity: ",
-                  value: "3",
+                  title: "Quantity: ",
+                  value: order.quantity.toString(),
                 ),
                 OrderRowItem(
                   title: "Subtotal: ",
-                  value: "\$110",
+                  value: "\$${order.price}",
                 ),
               ],
             ),
@@ -121,8 +128,8 @@ class OrdersContainerWidget extends StatelessWidget {
   }
 }
 
-enum OrderStatus {
-  pending,
-  delivered,
-  canceled,
-}
+// enum OrderStatus {
+//   pending,
+//   delivered,
+//   canceled,
+// }
