@@ -104,5 +104,6 @@ abstract class AppAssets {
   static const String onTheWaySvg = 'assets/svgs/on_the_way_svg.svg';
   static const String ordersEmptyStateSvg = 'assets/svgs/order_empty_state_svg.svg';
   static const String designYourRoomWithAi = 'assets/images/design_your_room_with_ai.jpeg';
+  static const String furnishYourHouse = 'assets/images/furnish_your_house.jpeg';
 }
 
