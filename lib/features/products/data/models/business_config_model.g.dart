@@ -62,13 +62,17 @@ class BusinessConfigDataAdapter extends TypeAdapter<BusinessConfigData> {
       productMaterial: (fields[2] as List?)?.cast<ProductMaterial>(),
       businessTypes: (fields[3] as List?)?.cast<BusinessType>(),
       businessTypeCategories: (fields[4] as List?)?.cast<BusinessType>(),
+      homeFurnishingRequestTypes: (fields[5] as List?)?.cast<DevicesAttached>(),
+      furnitureTypes: (fields[6] as List?)?.cast<DevicesAttached>(),
+      devicesAttacheds: (fields[7] as List?)?.cast<DevicesAttached>(),
+      kitchenTypes: (fields[8] as List?)?.cast<DevicesAttached>(),
     );
   }
 
   @override
   void write(BinaryWriter writer, BusinessConfigData obj) {
     writer
-      ..writeByte(5)
+      ..writeByte(9)
       ..writeByte(0)
       ..write(obj.colors)
       ..writeByte(1)
@@ -78,7 +82,15 @@ class BusinessConfigDataAdapter extends TypeAdapter<BusinessConfigData> {
       ..writeByte(3)
       ..write(obj.businessTypes)
       ..writeByte(4)
-      ..write(obj.businessTypeCategories);
+      ..write(obj.businessTypeCategories)
+      ..writeByte(5)
+      ..write(obj.homeFurnishingRequestTypes)
+      ..writeByte(6)
+      ..write(obj.furnitureTypes)
+      ..writeByte(7)
+      ..write(obj.devicesAttacheds)
+      ..writeByte(8)
+      ..write(obj.kitchenTypes);
   }
 
   @override
@@ -258,6 +270,46 @@ class BusinessTypeAdapter extends TypeAdapter<BusinessType> {
           typeId == other.typeId;
 }
 
+class DevicesAttachedAdapter extends TypeAdapter<DevicesAttached> {
+  @override
+  final int typeId = 56;
+
+  @override
+  DevicesAttached read(BinaryReader reader) {
+    final numOfFields = reader.readByte();
+    final fields = <int, dynamic>{
+      for (int i = 0; i < numOfFields; i++) reader.readByte(): reader.read(),
+    };
+    return DevicesAttached(
+      id: fields[0] as int?,
+      code: fields[1] as String?,
+      name: fields[2] as String?,
+    );
+  }
+
+  @override
+  void write(BinaryWriter writer, DevicesAttached obj) {
+    writer
+      ..writeByte(3)
+      ..writeByte(0)
+      ..write(obj.id)
+      ..writeByte(1)
+      ..write(obj.code)
+      ..writeByte(2)
+      ..write(obj.name);
+  }
+
+  @override
+  int get hashCode => typeId.hashCode;
+
+  @override
+  bool operator ==(Object other) =>
+      identical(this, other) ||
+      other is DevicesAttachedAdapter &&
+          runtimeType == other.runtimeType &&
+          typeId == other.typeId;
+}
+
 // **************************************************************************
 // JsonSerializableGenerator
 // **************************************************************************
@@ -296,6 +348,19 @@ BusinessConfigData _$BusinessConfigDataFromJson(Map<String, dynamic> json) =>
       businessTypeCategories: (json['businessTypeCategories'] as List<dynamic>?)
           ?.map((e) => BusinessType.fromJson(e as Map<String, dynamic>))
           .toList(),
+      homeFurnishingRequestTypes:
+          (json['homeFurnishingRequestTypes'] as List<dynamic>?)
+              ?.map((e) => DevicesAttached.fromJson(e as Map<String, dynamic>))
+              .toList(),
+      furnitureTypes: (json['furnitureTypes'] as List<dynamic>?)
+          ?.map((e) => DevicesAttached.fromJson(e as Map<String, dynamic>))
+          .toList(),
+      devicesAttacheds: (json['devicesAttacheds'] as List<dynamic>?)
+          ?.map((e) => DevicesAttached.fromJson(e as Map<String, dynamic>))
+          .toList(),
+      kitchenTypes: (json['kitchenTypes'] as List<dynamic>?)
+          ?.map((e) => DevicesAttached.fromJson(e as Map<String, dynamic>))
+          .toList(),
     );
 
 Map<String, dynamic> _$BusinessConfigDataToJson(BusinessConfigData instance) =>
@@ -305,6 +370,10 @@ Map<String, dynamic> _$BusinessConfigDataToJson(BusinessConfigData instance) =>
       'productMaterial': instance.productMaterial,
       'businessTypes': instance.businessTypes,
       'businessTypeCategories': instance.businessTypeCategories,
+      'homeFurnishingRequestTypes': instance.homeFurnishingRequestTypes,
+      'furnitureTypes': instance.furnitureTypes,
+      'devicesAttacheds': instance.devicesAttacheds,
+      'kitchenTypes': instance.kitchenTypes,
     };
 
 FilterColor _$FilterColorFromJson(Map<String, dynamic> json) => FilterColor(
@@ -365,4 +434,18 @@ Map<String, dynamic> _$BusinessTypeToJson(BusinessType instance) =>
       'code': instance.code,
       'name': instance.name,
       'businessType': instance.businessType,
+    };
+
+DevicesAttached _$DevicesAttachedFromJson(Map<String, dynamic> json) =>
+    DevicesAttached(
+      id: (json['id'] as num?)?.toInt(),
+      code: json['code'] as String?,
+      name: json['name'] as String?,
+    );
+
+Map<String, dynamic> _$DevicesAttachedToJson(DevicesAttached instance) =>
+    <String, dynamic>{
+      'id': instance.id,
+      'code': instance.code,
+      'name': instance.name,
     };

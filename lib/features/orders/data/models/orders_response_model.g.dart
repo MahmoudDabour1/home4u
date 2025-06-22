@@ -44,17 +44,17 @@ Map<String, dynamic> _$OrderDetailsToJson(OrderDetails instance) =>
 
 Status _$StatusFromJson(Map<String, dynamic> json) => Status(
       id: (json['id'] as num).toInt(),
-      code: $enumDecode(_$CodeEnumMap, json['code']),
+      code: $enumDecode(_$OrderStatusCodeEnumMap, json['code']),
       name: $enumDecode(_$NameEnumMap, json['name']),
     );
 
 Map<String, dynamic> _$StatusToJson(Status instance) => <String, dynamic>{
       'id': instance.id,
-      'code': _$CodeEnumMap[instance.code]!,
+      'code': _$OrderStatusCodeEnumMap[instance.code]!,
       'name': _$NameEnumMap[instance.name]!,
     };
 
-const _$CodeEnumMap = {
+const _$OrderStatusCodeEnumMap = {
   OrderStatusCode.PENDING: 'PENDING',
   OrderStatusCode.CANCELED: 'CANCELED',
   OrderStatusCode.DELIVERED: 'DELIVERED',

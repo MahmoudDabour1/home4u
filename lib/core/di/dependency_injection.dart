@@ -17,6 +17,9 @@ import 'package:home4u/features/auth/verification/data/data_source/verification_
 import 'package:home4u/features/cart/data/data_source/cart_remote_data_source.dart';
 import 'package:home4u/features/exhibition/data/data_sources/business_add_product_remote_data_source.dart';
 import 'package:home4u/features/exhibition/logic/business_add_product_cubit.dart';
+import 'package:home4u/features/furnish_your_home/data/data_source/furnish_your_home_remote_data_source.dart';
+import 'package:home4u/features/furnish_your_home/data/repos/furnish_your_home_repo.dart';
+import 'package:home4u/features/furnish_your_home/logic/furnish_your_home_cubit.dart';
 import 'package:home4u/features/orders/data/data_source/orders_remote_data_source.dart';
 import 'package:home4u/features/products/data/data_source/products_remote_data_source.dart';
 import 'package:home4u/features/products/data/repos/products_repo.dart';
@@ -254,4 +257,13 @@ Future<void> setupGetIt() async {
       () => OrdersRepositoryImpl(ordersRemoteDataSource: sl()));
 
   sl.registerFactory<OrdersCubit>(() => OrdersCubit(sl()));
+
+  ///furnish your home
+  sl.registerLazySingleton<FurnishYourHomeRemoteDataSource>(
+      () => FurnishYourHomeRemoteDataSource(dio));
+
+  sl.registerLazySingleton<FurnishYourHomeRepo>(
+      () => FurnishYourHomeRepoImpl(sl()));
+
+  sl.registerFactory<FurnishYourHomeCubit>(() => FurnishYourHomeCubit(sl()));
 }

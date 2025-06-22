@@ -367,6 +367,13 @@ class AppLocale {
   ///orders
   static const String myOrders = 'My Orders';
 
+  //furnish your home
+  static const String furnishYourHome = 'Furnish your home';
+  static const String timeFrameDays = 'Time Frame Days';
+  static const String furnishType = 'Furnish Type';
+  static const String pleaseEnterTimeFrameDays = 'Please Enter Time Frame Days';
+  static const String pleaseSelectFurnishType = 'Please Select Furnish Type';
+
   static const Map<String, dynamic> en = {
     onBoardingTitle1: 'Civil works and finishing services',
     onBoardingTitle2: 'Civil works and finishing services 2',
