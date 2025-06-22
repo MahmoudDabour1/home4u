@@ -4,6 +4,7 @@ import 'package:flutter_localization/flutter_localization.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:home4u/core/theming/app_styles.dart';
 import 'package:home4u/features/orders/logic/orders_cubit.dart';
+import 'package:home4u/features/orders/presentation/widgets/keep_alive_wrapper.dart';
 import 'package:home4u/features/orders/presentation/widgets/orders_widgets/order_delivered_section.dart';
 import 'package:home4u/features/orders/presentation/widgets/orders_widgets/order_pending_section.dart';
 import 'package:home4u/features/orders/presentation/widgets/orders_widgets/order_tab_bar_widget.dart';
@@ -21,7 +22,7 @@ class OrdersScreen extends StatefulWidget {
 }
 
 class _OrdersScreenState extends State<OrdersScreen>
-    with SingleTickerProviderStateMixin, AutomaticKeepAliveClientMixin {
+    with SingleTickerProviderStateMixin {
   late TabController tapController;
   String? userId;
 
@@ -65,40 +66,39 @@ class _OrdersScreenState extends State<OrdersScreen>
   }
 
   @override
-  bool get wantKeepAlive => true;
-
-  @override
   Widget build(BuildContext context) {
-    super.build(context);
-    return Scaffold(
-      appBar: AppBar(
-        title: Text(
-          AppLocale.myOrders.getString(context),
-          style: AppStyles.font20BlackMedium,
+    return DefaultTabController(
+      length: 3,
+      child: Scaffold(
+        appBar: AppBar(
+          title: Text(
+            AppLocale.myOrders.getString(context),
+            style: AppStyles.font20BlackMedium,
+          ),
+          centerTitle: true,
+          backgroundColor: Colors.white,
+          bottom: PreferredSize(
+            preferredSize: Size.fromHeight(40.h),
+            child: OrderTabBarWidget(tapController: tapController),
+          ),
         ),
-        centerTitle: true,
-        backgroundColor: Colors.white,
-        bottom: PreferredSize(
-          preferredSize: Size.fromHeight(40.h),
-          child: OrderTabBarWidget(tapController: tapController),
-        ),
-      ),
-      body: SafeArea(
-        child: Padding(
-          padding: EdgeInsets.all(16.w),
-          child: Column(
-            children: [
-              Expanded(
-                child: TabBarView(
-                  controller: tapController,
-                  children: [
-                    OrderPendingSection(),
-                    OrderDeliveredSection(),
-                    OrdersCanceledSection(),
-                  ],
+        body: SafeArea(
+          child: Padding(
+            padding: EdgeInsets.all(16.w),
+            child: Column(
+              children: [
+                Expanded(
+                  child: TabBarView(
+                    controller: tapController,
+                    children: [
+                      KeepAliveWrapper(child: OrderPendingSection()),
+                      KeepAliveWrapper(child: OrderDeliveredSection()),
+                      KeepAliveWrapper(child: OrdersCanceledSection()),
+                    ],
+                  ),
                 ),
-              ),
-            ],
+              ],
+            ),
           ),
         ),
       ),

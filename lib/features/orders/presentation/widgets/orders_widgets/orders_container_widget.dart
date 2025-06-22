@@ -46,7 +46,9 @@ class OrdersContainerWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: MediaQuery.sizeOf(context).width,
+      width: MediaQuery
+          .sizeOf(context)
+          .width,
       decoration: BoxDecoration(
         boxShadow: [
           BoxShadow(
@@ -114,7 +116,8 @@ class OrdersContainerWidget extends StatelessWidget {
                   btnWidth: 100.w,
                   btnHeight: 35.h,
                   onPressed: () {
-                    context.pushNamed(Routes.orderDetailsScreen);
+                    context.pushNamed(Routes.orderDetailsScreen,
+                      arguments: order.id,);
                   },
                   isBorder: true,
                   radius: 25.r,
@@ -127,9 +130,3 @@ class OrdersContainerWidget extends StatelessWidget {
     );
   }
 }
-
-// enum OrderStatus {
-//   pending,
-//   delivered,
-//   canceled,
-// }

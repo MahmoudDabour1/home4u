@@ -10,7 +10,9 @@ import 'package:home4u/features/orders/presentation/widgets/order_details_widget
 import '../../../core/utils/spacing.dart';
 
 class OrderDetailsScreen extends StatelessWidget {
-  const OrderDetailsScreen({super.key});
+  final int orderId;
+
+  const OrderDetailsScreen({super.key, required this.orderId});
 
   @override
   Widget build(BuildContext context) {

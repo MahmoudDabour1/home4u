@@ -275,9 +275,12 @@ class AppRouter {
           builder: (_) => CheckOutDoneScreen(),
         );
       case Routes.orderDetailsScreen:
+        final orderId = settings.arguments as int;
         return MaterialPageRoute(
           settings: settings,
-          builder: (_) => OrderDetailsScreen(),
+          builder: (_) => OrderDetailsScreen(
+            orderId: orderId,
+          ),
         );
       case Routes.ordersScreen:
         return MaterialPageRoute(

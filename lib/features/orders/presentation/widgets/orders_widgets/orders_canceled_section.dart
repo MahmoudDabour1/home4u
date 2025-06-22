@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:home4u/features/orders/presentation/widgets/orders_widgets/order_loading_state_widget.dart';
 
 import '../../../../../core/utils/spacing.dart';
 import '../../../data/models/orders_response_model.dart';
@@ -20,7 +21,7 @@ class OrdersCanceledSection extends StatelessWidget {
             builder: (context, state) {
               return state.maybeWhen(
                 ordersSuccess: (OrdersResponseModel orders) {
-                  return  ListView.separated(
+                  return ListView.separated(
                     separatorBuilder: (context, index) => verticalSpace(20),
                     shrinkWrap: true,
                     physics: BouncingScrollPhysics(),
@@ -33,17 +34,7 @@ class OrdersCanceledSection extends StatelessWidget {
                     },
                   );
                 },
-                ordersLoading: () {
-                  return SizedBox(
-                    child : Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      children: [
-                        CircularProgressIndicator(),
-                      ],
-                    ),
-                  );
-                },
+                ordersLoading: () => OrderLoadingStateWidget(),
                 orElse: () => SizedBox.shrink(),
               );
             },
