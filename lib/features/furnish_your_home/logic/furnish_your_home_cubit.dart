@@ -20,7 +20,6 @@ class FurnishYourHomeCubit extends Cubit<FurnishYourHomeState> {
   int? furnitureTypeId;
   int? governmentId;
 
-  final furnishYourHomeFormKey = GlobalKey<FormState>();
 
   Future<void> sendFurnishYourHome(BuildContext context) async {
     emit(FurnishYourHomeState.furnishYourHomeRequestLoading());

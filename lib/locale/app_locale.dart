@@ -323,7 +323,8 @@ class AppLocale {
   static const String pleaseEnterAPhoneNumber = 'Please enter a Phone Number';
   static const String pleaseEnterAProjectDescription =
       'Please enter a Project Description';
-  static const String pleaseEnterABudget = 'Please enter a Budget';
+  static const String pleaseEnterABudget = 'Please Enter a Budget';
+  static const String pleaseEnterAKitchenSize = 'Please Enter a Kitchen Size';
   static const String pleaseSelectEngineeringType =
       'Please Select Engineering Type';
   static const String pleaseSelectUnitType = 'Please Select Unit Type';
@@ -368,11 +369,20 @@ class AppLocale {
   static const String myOrders = 'My Orders';
 
   //furnish your home
-  static const String furnishYourHome = 'Furnish your home';
+  static const String furnishYourHome = 'Furnish your home ';
   static const String timeFrameDays = 'Time Frame Days';
   static const String furnishType = 'Furnish Type';
   static const String pleaseEnterTimeFrameDays = 'Please Enter Time Frame Days';
   static const String pleaseSelectFurnishType = 'Please Select Furnish Type';
+
+  //Kitchens and dressing
+  static const String kitchensAndDressing = 'Kitchens and dressing ';
+  static const String kitchens = 'Kitchens';
+  static const String dressing = 'Dressing';
+  static const String kitchenSize = 'kitchen Size';
+  static const String productMaterials = 'Product Materials';
+  static const String devicesAttached = 'Devices Attached';
+  static const String kitchenType = 'Kitchen Type';
 
   static const Map<String, dynamic> en = {
     onBoardingTitle1: 'Civil works and finishing services',
@@ -677,10 +687,23 @@ class AppLocale {
         'Thank you for your purchase.\nYou can view your order in ‘My Orders’\n section.',
     continueShopping: 'Continue Shopping',
     orderCompleted: 'Order Completed',
-    proceedToCheckOut :  'Proceed to Checkout',
+    proceedToCheckOut: 'Proceed to Checkout',
     someThingWentWrong: 'Something went wrong',
     tryAgain: 'Try again',
     myOrders: 'My Orders',
+    furnishYourHome: 'Furnish your home ',
+    timeFrameDays: 'Time Frame Days',
+    furnishType: 'Furnish Type',
+    pleaseEnterTimeFrameDays: 'Please Enter Time Frame Days',
+    pleaseSelectFurnishType: 'Please Select Furnish Type',
+    kitchensAndDressing: 'Kitchens and dressing',
+    kitchens: 'Kitchens',
+    dressing: 'Dressing',
+    kitchenSize: 'kitchen Size',
+    productMaterials: 'Product Materials',
+    devicesAttached: 'Devices Attached',
+    kitchenType: 'Kitchen Type',
+    pleaseEnterAKitchenSize: 'Please Enter a Kitchen Size',
   };
 
   static const Map<String, dynamic> ar = {
@@ -983,9 +1006,22 @@ class AppLocale {
     thankYouForYourPurchase: 'شكرا لشرائك منا',
     continueShopping: "أكمل التسوق",
     orderCompleted: 'تمت إتمام طلبك بنجاح',
-    proceedToCheckOut : 'المتابعة إلى الدفع',
-    someThingWentWrong : 'حدث خطأ ما',
+    proceedToCheckOut: 'المتابعة إلى الدفع',
+    someThingWentWrong: 'حدث خطأ ما',
     tryAgain: 'حاول مرة أخرى',
     myOrders: 'طلباتي',
+    furnishYourHome: 'أثاث منزلك',
+    timeFrameDays: 'مدة التنفيذ بالأيام',
+    furnishType: 'نوع الأثاث',
+    pleaseEnterTimeFrameDays: 'الرجاء إدخال مدة التنفيذ بالأيام',
+    pleaseSelectFurnishType: 'الرجاء اختيار نوع الأثاث',
+    kitchensAndDressing: 'المطابخ والتجهيزات',
+    kitchens: 'المطابخ',
+    dressing: 'التجهيزات',
+    kitchenSize: 'حجم المطبخ',
+    productMaterials: 'مواد المنتج',
+    devicesAttached: 'الأجهزة المرفقة',
+    kitchenType: 'نوع المطبخ',
+    pleaseEnterAKitchenSize: 'الرجاء إدخال حجم المطبخ',
   };
 }
