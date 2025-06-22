@@ -1,14 +1,16 @@
-import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_svg/flutter_svg.dart';
-import 'package:home4u/core/theming/app_assets.dart';
 import 'package:home4u/core/theming/app_colors.dart';
-import 'package:home4u/core/theming/app_styles.dart';
+import 'package:home4u/features/orders/presentation/widgets/order_details_widgets/order_details_status_card.dart';
+
+import '../../../data/models/orders_response_model.dart';
 
 class OrderDetailsCard extends StatelessWidget {
+  final OrderStatusCode orderDetailsStatusCode;
+
   const OrderDetailsCard({
     super.key,
+    required this.orderDetailsStatusCode,
   });
 
   @override
@@ -21,33 +23,8 @@ class OrderDetailsCard extends StatelessWidget {
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(16.r),
         ),
-        child: Row(
-          children: [
-            Padding(
-              padding:  EdgeInsets.only(left: 20.w,right: 10.w),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Text(
-                    "Your order is delivered",
-                    style: AppStyles.font16WhiteBold,
-                  ),
-                  AutoSizeText(
-                    "Rate product to get 5 points for collect.",
-                    style: TextStyle(color: Colors.white),
-                    overflow: TextOverflow.ellipsis,
-                    maxLines: 1,
-                  ),
-                ],
-              ),
-            ),
-            SvgPicture.asset(
-              AppAssets.giftSvg,
-              width: 50.w,
-              height: 50.h,
-            ),
-          ],
+        child: OrderDetailsStatusCard(
+          orderStatusCode: orderDetailsStatusCode,
         ),
       ),
     );

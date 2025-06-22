@@ -46,9 +46,7 @@ class OrdersContainerWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: MediaQuery
-          .sizeOf(context)
-          .width,
+      width: MediaQuery.sizeOf(context).width,
       decoration: BoxDecoration(
         boxShadow: [
           BoxShadow(
@@ -116,8 +114,13 @@ class OrdersContainerWidget extends StatelessWidget {
                   btnWidth: 100.w,
                   btnHeight: 35.h,
                   onPressed: () {
-                    context.pushNamed(Routes.orderDetailsScreen,
-                      arguments: order.id,);
+                    context.pushNamed(
+                      Routes.orderDetailsScreen,
+                      arguments: {
+                        'orderId': order.id,
+                        'orderStatus': order.status.code,
+                      },
+                    );
                   },
                   isBorder: true,
                   radius: 25.r,

@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_localization/flutter_localization.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:home4u/core/theming/app_styles.dart';
+import 'package:home4u/core/widgets/app_back_button.dart';
 import 'package:home4u/features/orders/logic/orders_cubit.dart';
 import 'package:home4u/features/orders/presentation/widgets/keep_alive_wrapper.dart';
 import 'package:home4u/features/orders/presentation/widgets/orders_widgets/order_delivered_section.dart';
@@ -74,6 +75,10 @@ class _OrdersScreenState extends State<OrdersScreen>
           title: Text(
             AppLocale.myOrders.getString(context),
             style: AppStyles.font20BlackMedium,
+          ),
+          leading: Padding(
+            padding:  EdgeInsetsDirectional.only(start: 16.0.w),
+            child: AppBackButton(),
           ),
           centerTitle: true,
           backgroundColor: Colors.white,

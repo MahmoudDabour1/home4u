@@ -32,7 +32,7 @@ class Data {
   @JsonKey(name: "deliveryAddress")
   String deliveryAddress;
   @JsonKey(name: "orderDetails")
-  List<OrderDetailsOfOrdersSingleItem> orderDetails;
+  List<Details> orderDetails;
   @JsonKey(name: "totalPrice")
   int totalPrice;
 
@@ -50,7 +50,7 @@ class Data {
 }
 
 @JsonSerializable()
-class OrderDetailsOfOrdersSingleItem {
+class Details {
   @JsonKey(name: "id")
   int id;
   @JsonKey(name: "statusCode")
@@ -62,7 +62,7 @@ class OrderDetailsOfOrdersSingleItem {
   @JsonKey(name: "amount")
   int amount;
 
-  OrderDetailsOfOrdersSingleItem({
+  Details({
     required this.id,
     required this.statusCode,
     required this.product,
@@ -70,10 +70,10 @@ class OrderDetailsOfOrdersSingleItem {
     required this.amount,
   });
 
-  factory OrderDetailsOfOrdersSingleItem.fromJson(Map<String, dynamic> json) =>
-      _$OrderDetailsOfOrdersSingleItemFromJson(json);
+  factory  Details.fromJson(Map<String, dynamic> json) =>
+      _$DetailsFromJson(json);
 
-  Map<String, dynamic> toJson() => _$OrderDetailsOfOrdersSingleItemToJson(this);
+  Map<String, dynamic> toJson() => _$DetailsToJson(this);
 }
 
 @JsonSerializable()

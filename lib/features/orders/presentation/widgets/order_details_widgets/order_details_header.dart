@@ -3,8 +3,10 @@ import 'package:home4u/core/theming/app_styles.dart';
 import 'package:home4u/core/widgets/app_back_button.dart';
 
 class OrderDetailsHeader extends StatelessWidget {
+  final int orderId;
   const OrderDetailsHeader({
     super.key,
+    required this.orderId,
   });
 
   @override
@@ -14,7 +16,7 @@ class OrderDetailsHeader extends StatelessWidget {
         AppBackButton(),
         Spacer(),
         Text(
-          "Order #1514",
+          "Order #$orderId",
           style: AppStyles.font20BlackMedium,
         ),
         Spacer(),

@@ -1,13 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:home4u/core/theming/app_colors.dart';
+import 'package:home4u/features/orders/data/models/order_details_response_model.dart';
 
 import 'order_details_screen_row_item.dart';
 
-
 class OrderDetailsOrderDetails extends StatelessWidget {
+  final OrderDetailsResponseModel orderDetails;
+  final int orderId;
+
   const OrderDetailsOrderDetails({
     super.key,
+    required this.orderDetails,
+    required this.orderId,
   });
 
   @override
@@ -33,15 +38,15 @@ class OrderDetailsOrderDetails extends StatelessWidget {
           children: [
             OrderDetailsScreenRowItem(
               title: "Order number",
-              value: "#1514",
+              value: "#$orderId",
             ),
             OrderDetailsScreenRowItem(
               title: "Tracking Number",
-              value: "#1514",
+              value: orderDetails.data.orderNumber,
             ),
             OrderDetailsScreenRowItem(
               title: "Delivery address",
-              value: "#1514",
+              value: orderDetails.data.deliveryAddress,
             ),
           ],
         ),

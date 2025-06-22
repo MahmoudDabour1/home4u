@@ -27,8 +27,7 @@ Data _$DataFromJson(Map<String, dynamic> json) => Data(
       orderNumber: json['orderNumber'] as String,
       deliveryAddress: json['deliveryAddress'] as String,
       orderDetails: (json['orderDetails'] as List<dynamic>)
-          .map((e) => OrderDetailsOfOrdersSingleItem.fromJson(
-              e as Map<String, dynamic>))
+          .map((e) => Details.fromJson(e as Map<String, dynamic>))
           .toList(),
       totalPrice: (json['totalPrice'] as num).toInt(),
     );
@@ -41,9 +40,7 @@ Map<String, dynamic> _$DataToJson(Data instance) => <String, dynamic>{
       'totalPrice': instance.totalPrice,
     };
 
-OrderDetailsOfOrdersSingleItem _$OrderDetailsOfOrdersSingleItemFromJson(
-        Map<String, dynamic> json) =>
-    OrderDetailsOfOrdersSingleItem(
+Details _$DetailsFromJson(Map<String, dynamic> json) => Details(
       id: (json['id'] as num).toInt(),
       statusCode: json['statusCode'],
       product: Product.fromJson(json['product'] as Map<String, dynamic>),
@@ -51,9 +48,7 @@ OrderDetailsOfOrdersSingleItem _$OrderDetailsOfOrdersSingleItemFromJson(
       amount: (json['amount'] as num).toInt(),
     );
 
-Map<String, dynamic> _$OrderDetailsOfOrdersSingleItemToJson(
-        OrderDetailsOfOrdersSingleItem instance) =>
-    <String, dynamic>{
+Map<String, dynamic> _$DetailsToJson(Details instance) => <String, dynamic>{
       'id': instance.id,
       'statusCode': instance.statusCode,
       'product': instance.product,
