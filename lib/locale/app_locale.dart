@@ -367,6 +367,7 @@ class AppLocale {
 
   ///orders
   static const String myOrders = 'My Orders';
+  static const String noCurrentOrders = 'There are no current orders';
 
   //furnish your home
   static const String furnishYourHome = 'Furnish your home ';
@@ -704,6 +705,7 @@ class AppLocale {
     devicesAttached: 'Devices Attached',
     kitchenType: 'Kitchen Type',
     pleaseEnterAKitchenSize: 'Please Enter a Kitchen Size',
+    noCurrentOrders : 'There are no current orders',
   };
 
   static const Map<String, dynamic> ar = {
@@ -1023,5 +1025,6 @@ class AppLocale {
     devicesAttached: 'الأجهزة المرفقة',
     kitchenType: 'نوع المطبخ',
     pleaseEnterAKitchenSize: 'الرجاء إدخال حجم المطبخ',
+    noCurrentOrders : 'لا توجد طلبات حالية',
   };
 }

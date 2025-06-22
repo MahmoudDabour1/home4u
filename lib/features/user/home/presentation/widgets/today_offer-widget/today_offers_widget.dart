@@ -5,9 +5,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:home4u/core/theming/app_assets.dart';
 
 import '../../../../../../core/theming/app_colors.dart';
-import '../../../../../../core/theming/app_styles.dart';
 import '../../../../../../core/utils/spacing.dart';
-import '../../../../../../core/widgets/app_custom_button.dart';
 import '../../../../../../locale/app_locale.dart';
 import '../custom_see_all_row_widget.dart';
 
@@ -20,118 +18,56 @@ class TodayOffersWidget extends StatefulWidget {
 
 class _TodayOffersWidgetState extends State<TodayOffersWidget> {
   int currentCarouselIndex = 0;
+  final  List<String> carouselImages = [
+    AppAssets.designYourRoomWithAi,
+    AppAssets.designYourRoomWithAi,
+    AppAssets.designYourRoomWithAi,
+    AppAssets.designYourRoomWithAi,
+    AppAssets.designYourRoomWithAi,
+  ];
+
+  void _handleImageTap(int index) {
+    // Handle the tap event for the image at the given index
+    // For example, you can navigate to a detailed view or show a dialog
+    print('Image tapped at index: $index');
+  }
 
   @override
   Widget build(BuildContext context) {
     return Column(
       children: [
-        verticalSpace(32),
-        CustomSeeAllRowWidget(
-          text: AppLocale.todayOffers.getString(context),
-          onPressed: () {},
-        ),
-        verticalSpace(16),
         CarouselSlider(
           items: [
-            ...List.generate(
-              5,
-              (index) {
-                return Container(
-                  width: double.infinity.w,
-                  height: MediaQuery.sizeOf(context).height * 0.282,
+            ...carouselImages.map((image) {
+              return GestureDetector(
+                onTap: ()=> _handleImageTap(carouselImages.indexOf(image)),
+                child : Container(
                   decoration: BoxDecoration(
-                    color: AppColors.scaffoldBusinessBackgroundColor,
-                    borderRadius: BorderRadius.circular(16.r),
-                  ),
-                  child: Padding(
-                    padding: EdgeInsetsDirectional.only(start: 16.w),
-                    child: Row(
-                      children: [
-                        Column(
-                          mainAxisAlignment: MainAxisAlignment.start,
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            verticalSpace(21),
-                            Text(
-                              AppLocale.specialOffers.getString(context),
-                              style: AppStyles.font16BlackLight,
-                            ),
-                            verticalSpace(8),
-                            Text(
-                              '${AppLocale.getSpecialOffer.getString(context)} 20',
-                              style: AppStyles.font16BlackBold,
-                            ),
-                            verticalSpace(30),
-                            Expanded(
-                              child: AppCustomButton(
-                                  textButton:
-                                      AppLocale.claim.getString(context),
-                                  btnWidth: 76.w,
-                                  btnHeight: 25.h,
-                                  onPressed: () {}),
-                            ),
-                            verticalSpace(20),
-                          ],
-                        ),
-                        horizontalSpace(8),
-                        // Spacer(),
-                        Expanded(
-                          child: Image.asset(
-                            AppAssets.homeGirlImage,
-                            height: MediaQuery.sizeOf(context).height,
-                            fit: BoxFit.fill,
-                          ),
-                        ),
-                      ],
+                    borderRadius: BorderRadius.circular(8.0).r,
+                    image: DecorationImage(
+                      image: AssetImage(image),
+                      fit: BoxFit.fill,
                     ),
                   ),
-                );
-              },
-            ),
+                ),
+              );
+            }).toList()
           ],
           options: CarouselOptions(
             height: 180.h,
-            scrollDirection: Axis.horizontal,
             enlargeCenterPage: true,
             autoPlay: true,
             aspectRatio: 16 / 9,
             autoPlayCurve: Curves.fastOutSlowIn,
             enableInfiniteScroll: true,
             autoPlayAnimationDuration: Duration(milliseconds: 800),
-            viewportFraction: 1,
+            viewportFraction: 0.85,
             onPageChanged: (index, reason) {
               setState(() {
                 currentCarouselIndex = index;
               });
             },
           ),
-        ),
-        verticalSpace(16),
-        Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            ...List.generate(
-              5,
-              (index) {
-                return Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 3.w),
-                  child: GestureDetector(
-                    onTap: () {
-                      setState(() {
-                        currentCarouselIndex = index;
-                      });
-                    },
-                    child: CircleAvatar(
-                      radius: 8.r,
-                      backgroundColor: currentCarouselIndex == index
-                          ? AppColors.secondaryColor
-                          : AppColors.grayColor,
-                    ),
-                  ),
-                );
-              },
-            )
-          ],
         ),
         verticalSpace(32),
       ],

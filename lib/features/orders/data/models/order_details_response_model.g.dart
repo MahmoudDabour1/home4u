@@ -23,34 +23,52 @@ Map<String, dynamic> _$OrderDetailsResponseModelToJson(
     };
 
 Data _$DataFromJson(Map<String, dynamic> json) => Data(
-      id: (json['id'] as num).toInt(),
-      statusCode: (json['statusCode'] as num).toInt(),
       userId: (json['userId'] as num).toInt(),
       orderNumber: json['orderNumber'] as String,
+      deliveryAddress: json['deliveryAddress'] as String,
       orderDetails: (json['orderDetails'] as List<dynamic>)
-          .map((e) => OrderDetail.fromJson(e as Map<String, dynamic>))
+          .map((e) => OrderDetailsOfOrdersSingleItem.fromJson(
+              e as Map<String, dynamic>))
           .toList(),
+      totalPrice: (json['totalPrice'] as num).toInt(),
     );
 
 Map<String, dynamic> _$DataToJson(Data instance) => <String, dynamic>{
-      'id': instance.id,
-      'statusCode': instance.statusCode,
       'userId': instance.userId,
       'orderNumber': instance.orderNumber,
+      'deliveryAddress': instance.deliveryAddress,
       'orderDetails': instance.orderDetails,
+      'totalPrice': instance.totalPrice,
     };
 
-OrderDetail _$OrderDetailFromJson(Map<String, dynamic> json) => OrderDetail(
+OrderDetailsOfOrdersSingleItem _$OrderDetailsOfOrdersSingleItemFromJson(
+        Map<String, dynamic> json) =>
+    OrderDetailsOfOrdersSingleItem(
       id: (json['id'] as num).toInt(),
       statusCode: json['statusCode'],
-      productId: (json['productId'] as num).toInt(),
+      product: Product.fromJson(json['product'] as Map<String, dynamic>),
+      price: (json['price'] as num).toInt(),
       amount: (json['amount'] as num).toInt(),
     );
 
-Map<String, dynamic> _$OrderDetailToJson(OrderDetail instance) =>
+Map<String, dynamic> _$OrderDetailsOfOrdersSingleItemToJson(
+        OrderDetailsOfOrdersSingleItem instance) =>
     <String, dynamic>{
       'id': instance.id,
       'statusCode': instance.statusCode,
-      'productId': instance.productId,
+      'product': instance.product,
+      'price': instance.price,
       'amount': instance.amount,
+    };
+
+Product _$ProductFromJson(Map<String, dynamic> json) => Product(
+      id: (json['id'] as num).toInt(),
+      name: json['name'] as String,
+      imagePath: json['mainImagePath'] as String,
+    );
+
+Map<String, dynamic> _$ProductToJson(Product instance) => <String, dynamic>{
+      'id': instance.id,
+      'name': instance.name,
+      'mainImagePath': instance.imagePath,
     };

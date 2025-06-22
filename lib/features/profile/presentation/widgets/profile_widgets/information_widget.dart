@@ -65,7 +65,11 @@ class InformationWidget extends StatelessWidget {
                 ),
               ),
               verticalSpace(8),
-              ProfileRatingWidget(),
+              ProfileRatingWidget(
+                initialRating: engineeringOfficeProfileData?.data == null ?
+                    (profileData as dynamic)?.averageRate?.toDouble() ?? 0.0 :
+                    (profileData as dynamic)?.averageRate?.toDouble() ?? 0.0,
+              ),
               verticalSpace(8),
               Skeletonizer(
                 enabled: state is LoadingProfileData,

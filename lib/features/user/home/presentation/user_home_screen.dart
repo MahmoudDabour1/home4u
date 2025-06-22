@@ -37,16 +37,11 @@ class UserHomeScreen extends StatelessWidget {
             },
           ),
         ],
-        // leading: Padding(
-        //   padding: const EdgeInsets.all(8.0),
-        //   child: AppBackButton(),
-        // ),
       ),
       body: SingleChildScrollView(
         child: SafeArea(
-          child: Padding(
-            padding: EdgeInsets.symmetric(horizontal: 24.w),
-            child: Column(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.start,
               children: [
                 TodayOffersWidget(),
                 ServicesWidget(),
@@ -54,7 +49,6 @@ class UserHomeScreen extends StatelessWidget {
                 BestShowRoomsWidget(),
               ],
             ),
-          ),
         ),
       ),
     );

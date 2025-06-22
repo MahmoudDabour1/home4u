@@ -71,6 +71,9 @@ class FreeLancerData {
   @HiveField(9)
   @JsonKey(name: "facebookLink")
   String? facebookLink;
+  @HiveField(10)
+  @JsonKey(name: "averageRate")
+  double? averageRate;
 
   FreeLancerData({
     this.id,
@@ -83,6 +86,7 @@ class FreeLancerData {
     this.linkedin,
     this.behance,
     this.facebookLink,
+    this.averageRate,
   });
 
   factory FreeLancerData.fromJson(Map<String, dynamic> json) =>

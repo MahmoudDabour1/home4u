@@ -68,13 +68,14 @@ class FreeLancerDataAdapter extends TypeAdapter<FreeLancerData> {
       linkedin: fields[7] as String?,
       behance: fields[8] as String?,
       facebookLink: fields[9] as String?,
+      averageRate: fields[10] as double?,
     );
   }
 
   @override
   void write(BinaryWriter writer, FreeLancerData obj) {
     writer
-      ..writeByte(10)
+      ..writeByte(11)
       ..writeByte(0)
       ..write(obj.id)
       ..writeByte(1)
@@ -94,7 +95,9 @@ class FreeLancerDataAdapter extends TypeAdapter<FreeLancerData> {
       ..writeByte(8)
       ..write(obj.behance)
       ..writeByte(9)
-      ..write(obj.facebookLink);
+      ..write(obj.facebookLink)
+      ..writeByte(10)
+      ..write(obj.averageRate);
   }
 
   @override
@@ -298,6 +301,7 @@ FreeLancerData _$FreeLancerDataFromJson(Map<String, dynamic> json) =>
       linkedin: json['linkedinLink'] as String?,
       behance: json['behanceLink'] as String?,
       facebookLink: json['facebookLink'] as String?,
+      averageRate: (json['averageRate'] as num?)?.toDouble(),
     );
 
 Map<String, dynamic> _$FreeLancerDataToJson(FreeLancerData instance) =>
@@ -312,6 +316,7 @@ Map<String, dynamic> _$FreeLancerDataToJson(FreeLancerData instance) =>
       'linkedinLink': instance.linkedin,
       'behanceLink': instance.behance,
       'facebookLink': instance.facebookLink,
+      'averageRate': instance.averageRate,
     };
 
 FreeLancerType _$FreeLancerTypeFromJson(Map<String, dynamic> json) =>

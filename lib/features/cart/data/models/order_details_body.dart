@@ -4,9 +4,11 @@ part 'order_details_body.g.dart';
 
 @JsonSerializable()
 class OrderDetailsBody {
+  final double? totalPrice;
   final List<OrderDetails>? orderDetails;
 
   const OrderDetailsBody({
+    required this.totalPrice,
     required this.orderDetails,
   });
 
@@ -19,10 +21,12 @@ class OrderDetailsBody {
 @JsonSerializable()
 class OrderDetails {
   final int? productId;
+  final double? price;
   final int? amount;
 
   const OrderDetails({
     required this.productId,
+    required this.price,
     required this.amount,
   });
 
