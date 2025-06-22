@@ -114,7 +114,7 @@ class CartCubit extends Cubit<CartState> {
     await getCartProducts(isRefresh: true);
     if (_cartItems.isNotEmpty) {
       emit(CartState.cartSuccess(List.from(_cartItems)));
-    }else{
+    } else {
       emit(const CartState.cartEmpty());
     }
   }
@@ -226,9 +226,12 @@ class CartCubit extends Cubit<CartState> {
   Future<void> insertOrderDetails() async {
     emit(const CartState.insertOrderLoading());
     final orderDetailsBody = OrderDetailsBody(
+      totalPrice: _cartItems.fold(0.0,
+          (sum, item) => sum! + ((item.product.price ?? 0.0) * item.quantity)),
       orderDetails: _cartItems
           .map((item) => OrderDetails(
                 productId: item.product.id,
+                price: (item.product.price ?? 0.0).toDouble(),
                 amount: item.quantity,
               ))
           .toList(),

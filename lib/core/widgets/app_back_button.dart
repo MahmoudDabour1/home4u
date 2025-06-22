@@ -14,7 +14,7 @@ class AppBackButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return InkWell(
+    return GestureDetector(
       onTap: onPressed ??
           () {
             Navigator.of(context).pop();

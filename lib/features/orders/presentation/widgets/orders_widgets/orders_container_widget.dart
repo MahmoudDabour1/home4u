@@ -114,7 +114,13 @@ class OrdersContainerWidget extends StatelessWidget {
                   btnWidth: 100.w,
                   btnHeight: 35.h,
                   onPressed: () {
-                    context.pushNamed(Routes.orderDetailsScreen);
+                    context.pushNamed(
+                      Routes.orderDetailsScreen,
+                      arguments: {
+                        'orderId': order.id,
+                        'orderStatus': order.status.code,
+                      },
+                    );
                   },
                   isBorder: true,
                   radius: 25.r,
@@ -127,9 +133,3 @@ class OrdersContainerWidget extends StatelessWidget {
     );
   }
 }
-
-// enum OrderStatus {
-//   pending,
-//   delivered,
-//   canceled,
-// }

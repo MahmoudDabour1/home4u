@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_localization/flutter_localization.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:home4u/core/extensions/navigation_extension.dart';
 import 'package:home4u/core/routing/routes.dart';
 
@@ -13,7 +14,9 @@ class BestOfficeWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
+    return Padding(
+      padding: EdgeInsets.symmetric(horizontal: 24.w),
+      child : Column(
       children: [
         verticalSpace(32),
         CustomSeeAllRowWidget(
@@ -25,6 +28,6 @@ class BestOfficeWidget extends StatelessWidget {
         verticalSpace(16),
         BestOfficeListView(),
       ],
-    );
+    ),);
   }
 }

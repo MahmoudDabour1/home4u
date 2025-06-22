@@ -45,6 +45,7 @@ import '../../features/exhibition/presentation/business_review_screen.dart';
 import '../../features/furnish_your_home/presentation/furnish_your_home_screen.dart';
 import '../../features/kitchen_and_dressing/presentation/kitchen_and_dressing_screen.dart';
 import '../../features/onboarding/presentation/onboarding_screen.dart';
+import '../../features/orders/data/models/orders_response_model.dart';
 import '../../features/orders/presentation/order_details_screen.dart';
 import '../../features/orders/presentation/orders_screen.dart';
 import '../../features/products/presentation/products_screen.dart';
@@ -279,9 +280,18 @@ class AppRouter {
           builder: (_) => CheckOutDoneScreen(),
         );
       case Routes.orderDetailsScreen:
+        final arguments = settings.arguments as Map<String, dynamic>;
+        final orderId = arguments['orderId'] as int;
+        final orderStatus = arguments['orderStatus'] as OrderStatusCode;
         return MaterialPageRoute(
           settings: settings,
-          builder: (_) => OrderDetailsScreen(),
+          builder: (context) => BlocProvider<OrdersCubit>(
+            create: (_) => sl<OrdersCubit>(),
+            child: OrderDetailsScreen(
+              orderStatus: orderStatus,
+              orderId: orderId,
+            ),
+          ),
         );
       case Routes.ordersScreen:
         return MaterialPageRoute(

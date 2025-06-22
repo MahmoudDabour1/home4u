@@ -85,6 +85,9 @@ class EngineeringOfficeData {
   @HiveField(12)
   @JsonKey(name: "facebookLink")
   String? facebookLink;
+  @HiveField(13)
+  @JsonKey(name: "averageRate")
+  double? averageRate;
 
   EngineeringOfficeData({
     this.id,
@@ -100,6 +103,7 @@ class EngineeringOfficeData {
     this.linkedin,
     this.behance,
     this.facebookLink,
+    this.averageRate,
   });
 
   factory EngineeringOfficeData.fromJson(Map<String, dynamic> json) =>

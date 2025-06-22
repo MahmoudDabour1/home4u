@@ -72,13 +72,14 @@ class EngineeringOfficeDataAdapter extends TypeAdapter<EngineeringOfficeData> {
       linkedin: fields[10] as String?,
       behance: fields[11] as String?,
       facebookLink: fields[12] as String?,
+      averageRate: fields[13] as double?,
     );
   }
 
   @override
   void write(BinaryWriter writer, EngineeringOfficeData obj) {
     writer
-      ..writeByte(13)
+      ..writeByte(14)
       ..writeByte(0)
       ..write(obj.id)
       ..writeByte(1)
@@ -104,7 +105,9 @@ class EngineeringOfficeDataAdapter extends TypeAdapter<EngineeringOfficeData> {
       ..writeByte(11)
       ..write(obj.behance)
       ..writeByte(12)
-      ..write(obj.facebookLink);
+      ..write(obj.facebookLink)
+      ..writeByte(13)
+      ..write(obj.averageRate);
   }
 
   @override
@@ -329,6 +332,7 @@ EngineeringOfficeData _$EngineeringOfficeDataFromJson(
       linkedin: json['linkedinLink'] as String?,
       behance: json['behanceLink'] as String?,
       facebookLink: json['facebookLink'] as String?,
+      averageRate: (json['averageRate'] as num?)?.toDouble(),
     );
 
 Map<String, dynamic> _$EngineeringOfficeDataToJson(
@@ -347,6 +351,7 @@ Map<String, dynamic> _$EngineeringOfficeDataToJson(
       'linkedinLink': instance.linkedin,
       'behanceLink': instance.behance,
       'facebookLink': instance.facebookLink,
+      'averageRate': instance.averageRate,
     };
 
 EngineeringOffice _$EngineeringOfficeFromJson(Map<String, dynamic> json) =>

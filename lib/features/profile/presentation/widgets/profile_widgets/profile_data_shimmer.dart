@@ -37,7 +37,9 @@ class ProfileDataShimmer extends StatelessWidget {
               ),
             ),
             verticalSpace(8),
-            ProfileRatingWidget(),
+            ProfileRatingWidget(
+              initialRating: 4.0,
+            ),
             verticalSpace(8),
             Skeletonizer(
               enabled: true,
