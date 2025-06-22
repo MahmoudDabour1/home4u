@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:home4u/core/extensions/navigation_extension.dart';
+import 'package:home4u/core/routing/routes.dart';
 import 'package:home4u/features/orders/presentation/widgets/order_details_widgets/cancel_order_bloc_builder_button.dart';
 
 import '../../../../../core/utils/spacing.dart';
@@ -19,13 +21,13 @@ class OrderDetailsButtons extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return switch (orderStatusCode) {
-      OrderStatusCode.PENDING => _buildOrderPendingButtons(),
-      OrderStatusCode.DELIVERED => _buildOrderDeliveredButtons(),
+      OrderStatusCode.PENDING => _buildOrderPendingButtons(context),
+      OrderStatusCode.DELIVERED => _buildOrderDeliveredButtons(context),
       OrderStatusCode.CANCELED => _buildOrderCanceledButtons(context),
     };
   }
 
-  Widget _buildOrderDeliveredButtons() {
+  Widget _buildOrderDeliveredButtons(BuildContext context) {
     return Row(
       children: [
         Expanded(
@@ -34,7 +36,7 @@ class OrderDetailsButtons extends StatelessWidget {
             btnWidth: 143.w,
             btnHeight: 50.h,
             isBorder: true,
-            onPressed: () {},
+            onPressed: () => context.pushNamed(Routes.userHomeScreen),
           ),
         ),
         horizontalSpace(16),
@@ -50,7 +52,7 @@ class OrderDetailsButtons extends StatelessWidget {
     );
   }
 
-  Widget _buildOrderPendingButtons() {
+  Widget _buildOrderPendingButtons(BuildContext context) {
     return Row(
       children: [
         Expanded(
@@ -59,7 +61,7 @@ class OrderDetailsButtons extends StatelessWidget {
             btnWidth: 150.w,
             btnHeight: 60.h,
             isBorder: true,
-            onPressed: () {},
+            onPressed: () => context.pushNamed(Routes.cartScreen),
           ),
         ),
         horizontalSpace(16),
@@ -77,7 +79,7 @@ class OrderDetailsButtons extends StatelessWidget {
             btnWidth: MediaQuery.of(context).size.width,
             btnHeight: 60.h,
             isBorder: true,
-            onPressed: () {},
+            onPressed: () => context.pushNamed(Routes.userHomeScreen),
           ),
         ),
       ],

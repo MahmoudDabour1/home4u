@@ -4,6 +4,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:home4u/core/theming/app_assets.dart';
 import 'package:home4u/core/theming/app_styles.dart';
+import 'package:home4u/core/utils/spacing.dart';
 
 import '../../../data/models/orders_response_model.dart';
 
@@ -19,30 +20,32 @@ class OrderDetailsStatusCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Row(
       children: [
-        Padding(
-          padding: EdgeInsetsDirectional.only(
-            start: 20.0,
-            top: 10.0,
-            bottom: 10.0,
-          ),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Text(
-                getStatusTitle(),
-                style: AppStyles.font16WhiteBold,
-              ),
-              AutoSizeText(
-                getStatusSubtitle(),
-                style: TextStyle(color: Colors.white),
-                overflow: TextOverflow.ellipsis,
-                maxLines: 1,
-              ),
-            ],
+        Expanded(
+          child: Padding(
+            padding: EdgeInsetsDirectional.only(
+              start: 20.0,
+              top: 10.0,
+              bottom: 10.0,
+            ),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Text(
+                  getStatusTitle(),
+                  style: AppStyles.font16WhiteBold,
+                ),
+                AutoSizeText(
+                  getStatusSubtitle(),
+                  style: TextStyle(color: Colors.white),
+                  overflow: TextOverflow.ellipsis,
+                  maxLines: 2,
+                ),
+              ],
+            ),
           ),
         ),
-        Spacer(),
+        horizontalSpace(20),
         Padding(
           padding: const EdgeInsetsDirectional.only(
             end: 20.0,
