@@ -17,9 +17,10 @@ class _TodayOffersWidgetState extends State<TodayOffersWidget> {
   final List<String> carouselImages = [
     AppAssets.designYourRoomWithAi,
     AppAssets.furnishYourHouse,
-    AppAssets.designYourRoomWithAi,
-    AppAssets.furnishYourHouse,
-    AppAssets.designYourRoomWithAi,
+    AppAssets.kitchensAndDressing,
+    AppAssets.renovateYourHome,
+    AppAssets.requestDesign,
+    AppAssets.technical,
   ];
 
   void _handleImageTap(int index) {
