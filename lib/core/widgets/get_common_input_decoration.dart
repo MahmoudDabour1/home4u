@@ -6,6 +6,7 @@ import '../theming/app_styles.dart';
 
 InputDecoration getCommonInputDecoration({
   required String labelText,
+  String? hintText,
   Widget? prefixIcon,
   Widget? suffixIcon,
   TextStyle? labelStyle,
@@ -44,12 +45,13 @@ InputDecoration getCommonInputDecoration({
       borderSide: const BorderSide(color: AppColors.secondaryColor, width: 1.3),
       borderRadius: BorderRadius.circular(16.r),
     ),
-    // hintText: hintText,
+    hintText: hintText,
     label: Text(
       labelText,
       style: labelStyle ?? AppStyles.font16BlackLight,
     ),
     prefixIcon: prefixIcon,
     suffixIcon: suffixIcon,
+
   );
 }
