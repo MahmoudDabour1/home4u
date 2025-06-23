@@ -29,6 +29,7 @@ class DeliveredOrderRatingButton extends StatelessWidget {
       context: context,
       builder: (_) {
         return AlertDialog(
+          backgroundColor: Colors.white,
           title: const Text("Select Product to Rate"),
           content: SizedBox(
             width: double.maxFinite,

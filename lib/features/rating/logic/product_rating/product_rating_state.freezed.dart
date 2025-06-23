@@ -23,6 +23,9 @@ mixin _$ProductRatingState {
     required TResult Function(InsertProductRateResponseModel response)
         insertProductRatingSuccess,
     required TResult Function(String error) insertProductRatingFailure,
+    required TResult Function() checkIfProductRatedLoading,
+    required TResult Function(bool isRated) checkIfProductRatedSuccess,
+    required TResult Function(String error) checkIfProductRatedFailure,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -32,6 +35,9 @@ mixin _$ProductRatingState {
     TResult? Function(InsertProductRateResponseModel response)?
         insertProductRatingSuccess,
     TResult? Function(String error)? insertProductRatingFailure,
+    TResult? Function()? checkIfProductRatedLoading,
+    TResult? Function(bool isRated)? checkIfProductRatedSuccess,
+    TResult? Function(String error)? checkIfProductRatedFailure,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -41,6 +47,9 @@ mixin _$ProductRatingState {
     TResult Function(InsertProductRateResponseModel response)?
         insertProductRatingSuccess,
     TResult Function(String error)? insertProductRatingFailure,
+    TResult Function()? checkIfProductRatedLoading,
+    TResult Function(bool isRated)? checkIfProductRatedSuccess,
+    TResult Function(String error)? checkIfProductRatedFailure,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -53,6 +62,12 @@ mixin _$ProductRatingState {
         insertProductRatingSuccess,
     required TResult Function(InsertProductRatingFailure value)
         insertProductRatingFailure,
+    required TResult Function(CheckIfProductRatedLoading value)
+        checkIfProductRatedLoading,
+    required TResult Function(CheckIfProductRatedSuccess value)
+        checkIfProductRatedSuccess,
+    required TResult Function(CheckIfProductRatedFailure value)
+        checkIfProductRatedFailure,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -64,6 +79,12 @@ mixin _$ProductRatingState {
         insertProductRatingSuccess,
     TResult? Function(InsertProductRatingFailure value)?
         insertProductRatingFailure,
+    TResult? Function(CheckIfProductRatedLoading value)?
+        checkIfProductRatedLoading,
+    TResult? Function(CheckIfProductRatedSuccess value)?
+        checkIfProductRatedSuccess,
+    TResult? Function(CheckIfProductRatedFailure value)?
+        checkIfProductRatedFailure,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -75,6 +96,12 @@ mixin _$ProductRatingState {
         insertProductRatingSuccess,
     TResult Function(InsertProductRatingFailure value)?
         insertProductRatingFailure,
+    TResult Function(CheckIfProductRatedLoading value)?
+        checkIfProductRatedLoading,
+    TResult Function(CheckIfProductRatedSuccess value)?
+        checkIfProductRatedSuccess,
+    TResult Function(CheckIfProductRatedFailure value)?
+        checkIfProductRatedFailure,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -147,6 +174,9 @@ class _$InitialImpl implements _Initial {
     required TResult Function(InsertProductRateResponseModel response)
         insertProductRatingSuccess,
     required TResult Function(String error) insertProductRatingFailure,
+    required TResult Function() checkIfProductRatedLoading,
+    required TResult Function(bool isRated) checkIfProductRatedSuccess,
+    required TResult Function(String error) checkIfProductRatedFailure,
   }) {
     return initial();
   }
@@ -159,6 +189,9 @@ class _$InitialImpl implements _Initial {
     TResult? Function(InsertProductRateResponseModel response)?
         insertProductRatingSuccess,
     TResult? Function(String error)? insertProductRatingFailure,
+    TResult? Function()? checkIfProductRatedLoading,
+    TResult? Function(bool isRated)? checkIfProductRatedSuccess,
+    TResult? Function(String error)? checkIfProductRatedFailure,
   }) {
     return initial?.call();
   }
@@ -171,6 +204,9 @@ class _$InitialImpl implements _Initial {
     TResult Function(InsertProductRateResponseModel response)?
         insertProductRatingSuccess,
     TResult Function(String error)? insertProductRatingFailure,
+    TResult Function()? checkIfProductRatedLoading,
+    TResult Function(bool isRated)? checkIfProductRatedSuccess,
+    TResult Function(String error)? checkIfProductRatedFailure,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -189,6 +225,12 @@ class _$InitialImpl implements _Initial {
         insertProductRatingSuccess,
     required TResult Function(InsertProductRatingFailure value)
         insertProductRatingFailure,
+    required TResult Function(CheckIfProductRatedLoading value)
+        checkIfProductRatedLoading,
+    required TResult Function(CheckIfProductRatedSuccess value)
+        checkIfProductRatedSuccess,
+    required TResult Function(CheckIfProductRatedFailure value)
+        checkIfProductRatedFailure,
   }) {
     return initial(this);
   }
@@ -203,6 +245,12 @@ class _$InitialImpl implements _Initial {
         insertProductRatingSuccess,
     TResult? Function(InsertProductRatingFailure value)?
         insertProductRatingFailure,
+    TResult? Function(CheckIfProductRatedLoading value)?
+        checkIfProductRatedLoading,
+    TResult? Function(CheckIfProductRatedSuccess value)?
+        checkIfProductRatedSuccess,
+    TResult? Function(CheckIfProductRatedFailure value)?
+        checkIfProductRatedFailure,
   }) {
     return initial?.call(this);
   }
@@ -217,6 +265,12 @@ class _$InitialImpl implements _Initial {
         insertProductRatingSuccess,
     TResult Function(InsertProductRatingFailure value)?
         insertProductRatingFailure,
+    TResult Function(CheckIfProductRatedLoading value)?
+        checkIfProductRatedLoading,
+    TResult Function(CheckIfProductRatedSuccess value)?
+        checkIfProductRatedSuccess,
+    TResult Function(CheckIfProductRatedFailure value)?
+        checkIfProductRatedFailure,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -280,6 +334,9 @@ class _$InsertProductRatingLoadingImpl implements InsertProductRatingLoading {
     required TResult Function(InsertProductRateResponseModel response)
         insertProductRatingSuccess,
     required TResult Function(String error) insertProductRatingFailure,
+    required TResult Function() checkIfProductRatedLoading,
+    required TResult Function(bool isRated) checkIfProductRatedSuccess,
+    required TResult Function(String error) checkIfProductRatedFailure,
   }) {
     return insertProductRatingLoading();
   }
@@ -292,6 +349,9 @@ class _$InsertProductRatingLoadingImpl implements InsertProductRatingLoading {
     TResult? Function(InsertProductRateResponseModel response)?
         insertProductRatingSuccess,
     TResult? Function(String error)? insertProductRatingFailure,
+    TResult? Function()? checkIfProductRatedLoading,
+    TResult? Function(bool isRated)? checkIfProductRatedSuccess,
+    TResult? Function(String error)? checkIfProductRatedFailure,
   }) {
     return insertProductRatingLoading?.call();
   }
@@ -304,6 +364,9 @@ class _$InsertProductRatingLoadingImpl implements InsertProductRatingLoading {
     TResult Function(InsertProductRateResponseModel response)?
         insertProductRatingSuccess,
     TResult Function(String error)? insertProductRatingFailure,
+    TResult Function()? checkIfProductRatedLoading,
+    TResult Function(bool isRated)? checkIfProductRatedSuccess,
+    TResult Function(String error)? checkIfProductRatedFailure,
     required TResult orElse(),
   }) {
     if (insertProductRatingLoading != null) {
@@ -322,6 +385,12 @@ class _$InsertProductRatingLoadingImpl implements InsertProductRatingLoading {
         insertProductRatingSuccess,
     required TResult Function(InsertProductRatingFailure value)
         insertProductRatingFailure,
+    required TResult Function(CheckIfProductRatedLoading value)
+        checkIfProductRatedLoading,
+    required TResult Function(CheckIfProductRatedSuccess value)
+        checkIfProductRatedSuccess,
+    required TResult Function(CheckIfProductRatedFailure value)
+        checkIfProductRatedFailure,
   }) {
     return insertProductRatingLoading(this);
   }
@@ -336,6 +405,12 @@ class _$InsertProductRatingLoadingImpl implements InsertProductRatingLoading {
         insertProductRatingSuccess,
     TResult? Function(InsertProductRatingFailure value)?
         insertProductRatingFailure,
+    TResult? Function(CheckIfProductRatedLoading value)?
+        checkIfProductRatedLoading,
+    TResult? Function(CheckIfProductRatedSuccess value)?
+        checkIfProductRatedSuccess,
+    TResult? Function(CheckIfProductRatedFailure value)?
+        checkIfProductRatedFailure,
   }) {
     return insertProductRatingLoading?.call(this);
   }
@@ -350,6 +425,12 @@ class _$InsertProductRatingLoadingImpl implements InsertProductRatingLoading {
         insertProductRatingSuccess,
     TResult Function(InsertProductRatingFailure value)?
         insertProductRatingFailure,
+    TResult Function(CheckIfProductRatedLoading value)?
+        checkIfProductRatedLoading,
+    TResult Function(CheckIfProductRatedSuccess value)?
+        checkIfProductRatedSuccess,
+    TResult Function(CheckIfProductRatedFailure value)?
+        checkIfProductRatedFailure,
     required TResult orElse(),
   }) {
     if (insertProductRatingLoading != null) {
@@ -388,10 +469,10 @@ class __$$InsertProductRatingSuccessImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? response = freezed,
+    Object? response = null,
   }) {
     return _then(_$InsertProductRatingSuccessImpl(
-      freezed == response
+      null == response
           ? _value.response
           : response // ignore: cast_nullable_to_non_nullable
               as InsertProductRateResponseModel,
@@ -417,12 +498,12 @@ class _$InsertProductRatingSuccessImpl implements InsertProductRatingSuccess {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$InsertProductRatingSuccessImpl &&
-            const DeepCollectionEquality().equals(other.response, response));
+            (identical(other.response, response) ||
+                other.response == response));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(response));
+  int get hashCode => Object.hash(runtimeType, response);
 
   /// Create a copy of ProductRatingState
   /// with the given fields replaced by the non-null parameter values.
@@ -441,6 +522,9 @@ class _$InsertProductRatingSuccessImpl implements InsertProductRatingSuccess {
     required TResult Function(InsertProductRateResponseModel response)
         insertProductRatingSuccess,
     required TResult Function(String error) insertProductRatingFailure,
+    required TResult Function() checkIfProductRatedLoading,
+    required TResult Function(bool isRated) checkIfProductRatedSuccess,
+    required TResult Function(String error) checkIfProductRatedFailure,
   }) {
     return insertProductRatingSuccess(response);
   }
@@ -453,6 +537,9 @@ class _$InsertProductRatingSuccessImpl implements InsertProductRatingSuccess {
     TResult? Function(InsertProductRateResponseModel response)?
         insertProductRatingSuccess,
     TResult? Function(String error)? insertProductRatingFailure,
+    TResult? Function()? checkIfProductRatedLoading,
+    TResult? Function(bool isRated)? checkIfProductRatedSuccess,
+    TResult? Function(String error)? checkIfProductRatedFailure,
   }) {
     return insertProductRatingSuccess?.call(response);
   }
@@ -465,6 +552,9 @@ class _$InsertProductRatingSuccessImpl implements InsertProductRatingSuccess {
     TResult Function(InsertProductRateResponseModel response)?
         insertProductRatingSuccess,
     TResult Function(String error)? insertProductRatingFailure,
+    TResult Function()? checkIfProductRatedLoading,
+    TResult Function(bool isRated)? checkIfProductRatedSuccess,
+    TResult Function(String error)? checkIfProductRatedFailure,
     required TResult orElse(),
   }) {
     if (insertProductRatingSuccess != null) {
@@ -483,6 +573,12 @@ class _$InsertProductRatingSuccessImpl implements InsertProductRatingSuccess {
         insertProductRatingSuccess,
     required TResult Function(InsertProductRatingFailure value)
         insertProductRatingFailure,
+    required TResult Function(CheckIfProductRatedLoading value)
+        checkIfProductRatedLoading,
+    required TResult Function(CheckIfProductRatedSuccess value)
+        checkIfProductRatedSuccess,
+    required TResult Function(CheckIfProductRatedFailure value)
+        checkIfProductRatedFailure,
   }) {
     return insertProductRatingSuccess(this);
   }
@@ -497,6 +593,12 @@ class _$InsertProductRatingSuccessImpl implements InsertProductRatingSuccess {
         insertProductRatingSuccess,
     TResult? Function(InsertProductRatingFailure value)?
         insertProductRatingFailure,
+    TResult? Function(CheckIfProductRatedLoading value)?
+        checkIfProductRatedLoading,
+    TResult? Function(CheckIfProductRatedSuccess value)?
+        checkIfProductRatedSuccess,
+    TResult? Function(CheckIfProductRatedFailure value)?
+        checkIfProductRatedFailure,
   }) {
     return insertProductRatingSuccess?.call(this);
   }
@@ -511,6 +613,12 @@ class _$InsertProductRatingSuccessImpl implements InsertProductRatingSuccess {
         insertProductRatingSuccess,
     TResult Function(InsertProductRatingFailure value)?
         insertProductRatingFailure,
+    TResult Function(CheckIfProductRatedLoading value)?
+        checkIfProductRatedLoading,
+    TResult Function(CheckIfProductRatedSuccess value)?
+        checkIfProductRatedSuccess,
+    TResult Function(CheckIfProductRatedFailure value)?
+        checkIfProductRatedFailure,
     required TResult orElse(),
   }) {
     if (insertProductRatingSuccess != null) {
@@ -611,6 +719,9 @@ class _$InsertProductRatingFailureImpl implements InsertProductRatingFailure {
     required TResult Function(InsertProductRateResponseModel response)
         insertProductRatingSuccess,
     required TResult Function(String error) insertProductRatingFailure,
+    required TResult Function() checkIfProductRatedLoading,
+    required TResult Function(bool isRated) checkIfProductRatedSuccess,
+    required TResult Function(String error) checkIfProductRatedFailure,
   }) {
     return insertProductRatingFailure(error);
   }
@@ -623,6 +734,9 @@ class _$InsertProductRatingFailureImpl implements InsertProductRatingFailure {
     TResult? Function(InsertProductRateResponseModel response)?
         insertProductRatingSuccess,
     TResult? Function(String error)? insertProductRatingFailure,
+    TResult? Function()? checkIfProductRatedLoading,
+    TResult? Function(bool isRated)? checkIfProductRatedSuccess,
+    TResult? Function(String error)? checkIfProductRatedFailure,
   }) {
     return insertProductRatingFailure?.call(error);
   }
@@ -635,6 +749,9 @@ class _$InsertProductRatingFailureImpl implements InsertProductRatingFailure {
     TResult Function(InsertProductRateResponseModel response)?
         insertProductRatingSuccess,
     TResult Function(String error)? insertProductRatingFailure,
+    TResult Function()? checkIfProductRatedLoading,
+    TResult Function(bool isRated)? checkIfProductRatedSuccess,
+    TResult Function(String error)? checkIfProductRatedFailure,
     required TResult orElse(),
   }) {
     if (insertProductRatingFailure != null) {
@@ -653,6 +770,12 @@ class _$InsertProductRatingFailureImpl implements InsertProductRatingFailure {
         insertProductRatingSuccess,
     required TResult Function(InsertProductRatingFailure value)
         insertProductRatingFailure,
+    required TResult Function(CheckIfProductRatedLoading value)
+        checkIfProductRatedLoading,
+    required TResult Function(CheckIfProductRatedSuccess value)
+        checkIfProductRatedSuccess,
+    required TResult Function(CheckIfProductRatedFailure value)
+        checkIfProductRatedFailure,
   }) {
     return insertProductRatingFailure(this);
   }
@@ -667,6 +790,12 @@ class _$InsertProductRatingFailureImpl implements InsertProductRatingFailure {
         insertProductRatingSuccess,
     TResult? Function(InsertProductRatingFailure value)?
         insertProductRatingFailure,
+    TResult? Function(CheckIfProductRatedLoading value)?
+        checkIfProductRatedLoading,
+    TResult? Function(CheckIfProductRatedSuccess value)?
+        checkIfProductRatedSuccess,
+    TResult? Function(CheckIfProductRatedFailure value)?
+        checkIfProductRatedFailure,
   }) {
     return insertProductRatingFailure?.call(this);
   }
@@ -681,6 +810,12 @@ class _$InsertProductRatingFailureImpl implements InsertProductRatingFailure {
         insertProductRatingSuccess,
     TResult Function(InsertProductRatingFailure value)?
         insertProductRatingFailure,
+    TResult Function(CheckIfProductRatedLoading value)?
+        checkIfProductRatedLoading,
+    TResult Function(CheckIfProductRatedSuccess value)?
+        checkIfProductRatedSuccess,
+    TResult Function(CheckIfProductRatedFailure value)?
+        checkIfProductRatedFailure,
     required TResult orElse(),
   }) {
     if (insertProductRatingFailure != null) {
@@ -700,5 +835,557 @@ abstract class InsertProductRatingFailure implements ProductRatingState {
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
   _$$InsertProductRatingFailureImplCopyWith<_$InsertProductRatingFailureImpl>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$CheckIfProductRatedLoadingImplCopyWith<$Res> {
+  factory _$$CheckIfProductRatedLoadingImplCopyWith(
+          _$CheckIfProductRatedLoadingImpl value,
+          $Res Function(_$CheckIfProductRatedLoadingImpl) then) =
+      __$$CheckIfProductRatedLoadingImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$CheckIfProductRatedLoadingImplCopyWithImpl<$Res>
+    extends _$ProductRatingStateCopyWithImpl<$Res,
+        _$CheckIfProductRatedLoadingImpl>
+    implements _$$CheckIfProductRatedLoadingImplCopyWith<$Res> {
+  __$$CheckIfProductRatedLoadingImplCopyWithImpl(
+      _$CheckIfProductRatedLoadingImpl _value,
+      $Res Function(_$CheckIfProductRatedLoadingImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of ProductRatingState
+  /// with the given fields replaced by the non-null parameter values.
+}
+
+/// @nodoc
+
+class _$CheckIfProductRatedLoadingImpl implements CheckIfProductRatedLoading {
+  _$CheckIfProductRatedLoadingImpl();
+
+  @override
+  String toString() {
+    return 'ProductRatingState.checkIfProductRatedLoading()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$CheckIfProductRatedLoadingImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() insertProductRatingLoading,
+    required TResult Function(InsertProductRateResponseModel response)
+        insertProductRatingSuccess,
+    required TResult Function(String error) insertProductRatingFailure,
+    required TResult Function() checkIfProductRatedLoading,
+    required TResult Function(bool isRated) checkIfProductRatedSuccess,
+    required TResult Function(String error) checkIfProductRatedFailure,
+  }) {
+    return checkIfProductRatedLoading();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? insertProductRatingLoading,
+    TResult? Function(InsertProductRateResponseModel response)?
+        insertProductRatingSuccess,
+    TResult? Function(String error)? insertProductRatingFailure,
+    TResult? Function()? checkIfProductRatedLoading,
+    TResult? Function(bool isRated)? checkIfProductRatedSuccess,
+    TResult? Function(String error)? checkIfProductRatedFailure,
+  }) {
+    return checkIfProductRatedLoading?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? insertProductRatingLoading,
+    TResult Function(InsertProductRateResponseModel response)?
+        insertProductRatingSuccess,
+    TResult Function(String error)? insertProductRatingFailure,
+    TResult Function()? checkIfProductRatedLoading,
+    TResult Function(bool isRated)? checkIfProductRatedSuccess,
+    TResult Function(String error)? checkIfProductRatedFailure,
+    required TResult orElse(),
+  }) {
+    if (checkIfProductRatedLoading != null) {
+      return checkIfProductRatedLoading();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(InsertProductRatingLoading value)
+        insertProductRatingLoading,
+    required TResult Function(InsertProductRatingSuccess value)
+        insertProductRatingSuccess,
+    required TResult Function(InsertProductRatingFailure value)
+        insertProductRatingFailure,
+    required TResult Function(CheckIfProductRatedLoading value)
+        checkIfProductRatedLoading,
+    required TResult Function(CheckIfProductRatedSuccess value)
+        checkIfProductRatedSuccess,
+    required TResult Function(CheckIfProductRatedFailure value)
+        checkIfProductRatedFailure,
+  }) {
+    return checkIfProductRatedLoading(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(InsertProductRatingLoading value)?
+        insertProductRatingLoading,
+    TResult? Function(InsertProductRatingSuccess value)?
+        insertProductRatingSuccess,
+    TResult? Function(InsertProductRatingFailure value)?
+        insertProductRatingFailure,
+    TResult? Function(CheckIfProductRatedLoading value)?
+        checkIfProductRatedLoading,
+    TResult? Function(CheckIfProductRatedSuccess value)?
+        checkIfProductRatedSuccess,
+    TResult? Function(CheckIfProductRatedFailure value)?
+        checkIfProductRatedFailure,
+  }) {
+    return checkIfProductRatedLoading?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(InsertProductRatingLoading value)?
+        insertProductRatingLoading,
+    TResult Function(InsertProductRatingSuccess value)?
+        insertProductRatingSuccess,
+    TResult Function(InsertProductRatingFailure value)?
+        insertProductRatingFailure,
+    TResult Function(CheckIfProductRatedLoading value)?
+        checkIfProductRatedLoading,
+    TResult Function(CheckIfProductRatedSuccess value)?
+        checkIfProductRatedSuccess,
+    TResult Function(CheckIfProductRatedFailure value)?
+        checkIfProductRatedFailure,
+    required TResult orElse(),
+  }) {
+    if (checkIfProductRatedLoading != null) {
+      return checkIfProductRatedLoading(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class CheckIfProductRatedLoading implements ProductRatingState {
+  factory CheckIfProductRatedLoading() = _$CheckIfProductRatedLoadingImpl;
+}
+
+/// @nodoc
+abstract class _$$CheckIfProductRatedSuccessImplCopyWith<$Res> {
+  factory _$$CheckIfProductRatedSuccessImplCopyWith(
+          _$CheckIfProductRatedSuccessImpl value,
+          $Res Function(_$CheckIfProductRatedSuccessImpl) then) =
+      __$$CheckIfProductRatedSuccessImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({bool isRated});
+}
+
+/// @nodoc
+class __$$CheckIfProductRatedSuccessImplCopyWithImpl<$Res>
+    extends _$ProductRatingStateCopyWithImpl<$Res,
+        _$CheckIfProductRatedSuccessImpl>
+    implements _$$CheckIfProductRatedSuccessImplCopyWith<$Res> {
+  __$$CheckIfProductRatedSuccessImplCopyWithImpl(
+      _$CheckIfProductRatedSuccessImpl _value,
+      $Res Function(_$CheckIfProductRatedSuccessImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of ProductRatingState
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? isRated = null,
+  }) {
+    return _then(_$CheckIfProductRatedSuccessImpl(
+      null == isRated
+          ? _value.isRated
+          : isRated // ignore: cast_nullable_to_non_nullable
+              as bool,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$CheckIfProductRatedSuccessImpl implements CheckIfProductRatedSuccess {
+  _$CheckIfProductRatedSuccessImpl(this.isRated);
+
+  @override
+  final bool isRated;
+
+  @override
+  String toString() {
+    return 'ProductRatingState.checkIfProductRatedSuccess(isRated: $isRated)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$CheckIfProductRatedSuccessImpl &&
+            (identical(other.isRated, isRated) || other.isRated == isRated));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, isRated);
+
+  /// Create a copy of ProductRatingState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$CheckIfProductRatedSuccessImplCopyWith<_$CheckIfProductRatedSuccessImpl>
+      get copyWith => __$$CheckIfProductRatedSuccessImplCopyWithImpl<
+          _$CheckIfProductRatedSuccessImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() insertProductRatingLoading,
+    required TResult Function(InsertProductRateResponseModel response)
+        insertProductRatingSuccess,
+    required TResult Function(String error) insertProductRatingFailure,
+    required TResult Function() checkIfProductRatedLoading,
+    required TResult Function(bool isRated) checkIfProductRatedSuccess,
+    required TResult Function(String error) checkIfProductRatedFailure,
+  }) {
+    return checkIfProductRatedSuccess(isRated);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? insertProductRatingLoading,
+    TResult? Function(InsertProductRateResponseModel response)?
+        insertProductRatingSuccess,
+    TResult? Function(String error)? insertProductRatingFailure,
+    TResult? Function()? checkIfProductRatedLoading,
+    TResult? Function(bool isRated)? checkIfProductRatedSuccess,
+    TResult? Function(String error)? checkIfProductRatedFailure,
+  }) {
+    return checkIfProductRatedSuccess?.call(isRated);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? insertProductRatingLoading,
+    TResult Function(InsertProductRateResponseModel response)?
+        insertProductRatingSuccess,
+    TResult Function(String error)? insertProductRatingFailure,
+    TResult Function()? checkIfProductRatedLoading,
+    TResult Function(bool isRated)? checkIfProductRatedSuccess,
+    TResult Function(String error)? checkIfProductRatedFailure,
+    required TResult orElse(),
+  }) {
+    if (checkIfProductRatedSuccess != null) {
+      return checkIfProductRatedSuccess(isRated);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(InsertProductRatingLoading value)
+        insertProductRatingLoading,
+    required TResult Function(InsertProductRatingSuccess value)
+        insertProductRatingSuccess,
+    required TResult Function(InsertProductRatingFailure value)
+        insertProductRatingFailure,
+    required TResult Function(CheckIfProductRatedLoading value)
+        checkIfProductRatedLoading,
+    required TResult Function(CheckIfProductRatedSuccess value)
+        checkIfProductRatedSuccess,
+    required TResult Function(CheckIfProductRatedFailure value)
+        checkIfProductRatedFailure,
+  }) {
+    return checkIfProductRatedSuccess(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(InsertProductRatingLoading value)?
+        insertProductRatingLoading,
+    TResult? Function(InsertProductRatingSuccess value)?
+        insertProductRatingSuccess,
+    TResult? Function(InsertProductRatingFailure value)?
+        insertProductRatingFailure,
+    TResult? Function(CheckIfProductRatedLoading value)?
+        checkIfProductRatedLoading,
+    TResult? Function(CheckIfProductRatedSuccess value)?
+        checkIfProductRatedSuccess,
+    TResult? Function(CheckIfProductRatedFailure value)?
+        checkIfProductRatedFailure,
+  }) {
+    return checkIfProductRatedSuccess?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(InsertProductRatingLoading value)?
+        insertProductRatingLoading,
+    TResult Function(InsertProductRatingSuccess value)?
+        insertProductRatingSuccess,
+    TResult Function(InsertProductRatingFailure value)?
+        insertProductRatingFailure,
+    TResult Function(CheckIfProductRatedLoading value)?
+        checkIfProductRatedLoading,
+    TResult Function(CheckIfProductRatedSuccess value)?
+        checkIfProductRatedSuccess,
+    TResult Function(CheckIfProductRatedFailure value)?
+        checkIfProductRatedFailure,
+    required TResult orElse(),
+  }) {
+    if (checkIfProductRatedSuccess != null) {
+      return checkIfProductRatedSuccess(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class CheckIfProductRatedSuccess implements ProductRatingState {
+  factory CheckIfProductRatedSuccess(final bool isRated) =
+      _$CheckIfProductRatedSuccessImpl;
+
+  bool get isRated;
+
+  /// Create a copy of ProductRatingState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$CheckIfProductRatedSuccessImplCopyWith<_$CheckIfProductRatedSuccessImpl>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$CheckIfProductRatedFailureImplCopyWith<$Res> {
+  factory _$$CheckIfProductRatedFailureImplCopyWith(
+          _$CheckIfProductRatedFailureImpl value,
+          $Res Function(_$CheckIfProductRatedFailureImpl) then) =
+      __$$CheckIfProductRatedFailureImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({String error});
+}
+
+/// @nodoc
+class __$$CheckIfProductRatedFailureImplCopyWithImpl<$Res>
+    extends _$ProductRatingStateCopyWithImpl<$Res,
+        _$CheckIfProductRatedFailureImpl>
+    implements _$$CheckIfProductRatedFailureImplCopyWith<$Res> {
+  __$$CheckIfProductRatedFailureImplCopyWithImpl(
+      _$CheckIfProductRatedFailureImpl _value,
+      $Res Function(_$CheckIfProductRatedFailureImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of ProductRatingState
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? error = null,
+  }) {
+    return _then(_$CheckIfProductRatedFailureImpl(
+      null == error
+          ? _value.error
+          : error // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$CheckIfProductRatedFailureImpl implements CheckIfProductRatedFailure {
+  _$CheckIfProductRatedFailureImpl(this.error);
+
+  @override
+  final String error;
+
+  @override
+  String toString() {
+    return 'ProductRatingState.checkIfProductRatedFailure(error: $error)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$CheckIfProductRatedFailureImpl &&
+            (identical(other.error, error) || other.error == error));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, error);
+
+  /// Create a copy of ProductRatingState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$CheckIfProductRatedFailureImplCopyWith<_$CheckIfProductRatedFailureImpl>
+      get copyWith => __$$CheckIfProductRatedFailureImplCopyWithImpl<
+          _$CheckIfProductRatedFailureImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() insertProductRatingLoading,
+    required TResult Function(InsertProductRateResponseModel response)
+        insertProductRatingSuccess,
+    required TResult Function(String error) insertProductRatingFailure,
+    required TResult Function() checkIfProductRatedLoading,
+    required TResult Function(bool isRated) checkIfProductRatedSuccess,
+    required TResult Function(String error) checkIfProductRatedFailure,
+  }) {
+    return checkIfProductRatedFailure(error);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? insertProductRatingLoading,
+    TResult? Function(InsertProductRateResponseModel response)?
+        insertProductRatingSuccess,
+    TResult? Function(String error)? insertProductRatingFailure,
+    TResult? Function()? checkIfProductRatedLoading,
+    TResult? Function(bool isRated)? checkIfProductRatedSuccess,
+    TResult? Function(String error)? checkIfProductRatedFailure,
+  }) {
+    return checkIfProductRatedFailure?.call(error);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? insertProductRatingLoading,
+    TResult Function(InsertProductRateResponseModel response)?
+        insertProductRatingSuccess,
+    TResult Function(String error)? insertProductRatingFailure,
+    TResult Function()? checkIfProductRatedLoading,
+    TResult Function(bool isRated)? checkIfProductRatedSuccess,
+    TResult Function(String error)? checkIfProductRatedFailure,
+    required TResult orElse(),
+  }) {
+    if (checkIfProductRatedFailure != null) {
+      return checkIfProductRatedFailure(error);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(InsertProductRatingLoading value)
+        insertProductRatingLoading,
+    required TResult Function(InsertProductRatingSuccess value)
+        insertProductRatingSuccess,
+    required TResult Function(InsertProductRatingFailure value)
+        insertProductRatingFailure,
+    required TResult Function(CheckIfProductRatedLoading value)
+        checkIfProductRatedLoading,
+    required TResult Function(CheckIfProductRatedSuccess value)
+        checkIfProductRatedSuccess,
+    required TResult Function(CheckIfProductRatedFailure value)
+        checkIfProductRatedFailure,
+  }) {
+    return checkIfProductRatedFailure(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(InsertProductRatingLoading value)?
+        insertProductRatingLoading,
+    TResult? Function(InsertProductRatingSuccess value)?
+        insertProductRatingSuccess,
+    TResult? Function(InsertProductRatingFailure value)?
+        insertProductRatingFailure,
+    TResult? Function(CheckIfProductRatedLoading value)?
+        checkIfProductRatedLoading,
+    TResult? Function(CheckIfProductRatedSuccess value)?
+        checkIfProductRatedSuccess,
+    TResult? Function(CheckIfProductRatedFailure value)?
+        checkIfProductRatedFailure,
+  }) {
+    return checkIfProductRatedFailure?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(InsertProductRatingLoading value)?
+        insertProductRatingLoading,
+    TResult Function(InsertProductRatingSuccess value)?
+        insertProductRatingSuccess,
+    TResult Function(InsertProductRatingFailure value)?
+        insertProductRatingFailure,
+    TResult Function(CheckIfProductRatedLoading value)?
+        checkIfProductRatedLoading,
+    TResult Function(CheckIfProductRatedSuccess value)?
+        checkIfProductRatedSuccess,
+    TResult Function(CheckIfProductRatedFailure value)?
+        checkIfProductRatedFailure,
+    required TResult orElse(),
+  }) {
+    if (checkIfProductRatedFailure != null) {
+      return checkIfProductRatedFailure(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class CheckIfProductRatedFailure implements ProductRatingState {
+  factory CheckIfProductRatedFailure(final String error) =
+      _$CheckIfProductRatedFailureImpl;
+
+  String get error;
+
+  /// Create a copy of ProductRatingState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$CheckIfProductRatedFailureImplCopyWith<_$CheckIfProductRatedFailureImpl>
       get copyWith => throw _privateConstructorUsedError;
 }

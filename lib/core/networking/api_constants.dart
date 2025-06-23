@@ -109,6 +109,7 @@ class ApiConstants {
 
   /// rating
   static const String insertProductRateEp = "/api/v1/product-ratings";
+  static const String checkIfProductRatedEp = "/api/v1/product-ratings/check";
 }
 
 class ApiErrors {

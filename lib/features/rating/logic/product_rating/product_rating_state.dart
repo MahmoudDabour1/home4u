@@ -9,9 +9,22 @@ class ProductRatingState with _$ProductRatingState {
   const factory ProductRatingState.initial() = _Initial;
 
   ///Insert product rating
-  factory ProductRatingState.insertProductRatingLoading() = InsertProductRatingLoading;
+  factory ProductRatingState.insertProductRatingLoading() =
+      InsertProductRatingLoading;
 
-  factory ProductRatingState.insertProductRatingSuccess(InsertProductRateResponseModel response) = InsertProductRatingSuccess;
+  factory ProductRatingState.insertProductRatingSuccess(
+      InsertProductRateResponseModel response) = InsertProductRatingSuccess;
 
-  factory ProductRatingState.insertProductRatingFailure(String error) = InsertProductRatingFailure;
+  factory ProductRatingState.insertProductRatingFailure(String error) =
+      InsertProductRatingFailure;
+
+  ///Check if product is rated
+  factory ProductRatingState.checkIfProductRatedLoading() =
+      CheckIfProductRatedLoading;
+
+  factory ProductRatingState.checkIfProductRatedSuccess(bool isRated) =
+      CheckIfProductRatedSuccess;
+
+  factory ProductRatingState.checkIfProductRatedFailure(String error) =
+      CheckIfProductRatedFailure;
 }

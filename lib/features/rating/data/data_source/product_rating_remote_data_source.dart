@@ -4,6 +4,7 @@ import 'package:retrofit/error_logger.dart';
 import 'package:retrofit/http.dart';
 
 import '../../../../core/networking/api_constants.dart';
+import '../models/check_id_product_rated_response_model.dart';
 import '../models/insert_product_rate_body.dart';
 import '../models/insert_product_rate_response_model.dart';
 
@@ -19,4 +20,11 @@ abstract class ProductRatingRemoteDataSource {
   Future<InsertProductRateResponseModel> insertProductRate(
     @Body() InsertProductRateBody body,
   );
+
+  @GET(ApiConstants.checkIfProductRatedEp)
+  Future<CheckIdProductRatedResponseModel> checkIfProductRated(
+    @Query("productId") int productId,
+    @Query("userId") int userId,
+  );
+
 }
