@@ -55,4 +55,7 @@ abstract class Routes{
   static const String freelancerBottomNavLayout = '/freelancerBottomNavLayout';
   static const String exhibitionsAndStoresBottomNavLayout =  '/exhibitionsAndStoresBottomNavLayout';
   static const String userBottomNavLayout = '/userBottomNavLayout';
+
+  ///Rating
+  static const String productRatingScreen = '/productRatingScreen';
 }

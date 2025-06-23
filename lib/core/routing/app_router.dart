@@ -23,7 +23,7 @@ import 'package:home4u/features/kitchen_and_dressing/logic/kitchen_and_dressing_
 import 'package:home4u/features/layout/presentation/exhibitions_and_stores_bottom_nav_layout.dart';
 import 'package:home4u/features/layout/presentation/freelancer_bottom_nav_layout.dart';
 import 'package:home4u/features/layout/presentation/user_bottom_nav_layout.dart';
-import 'package:home4u/features/orders/logic/orders_cubit.dart';
+import 'package:home4u/features/orders/data/models/order_details_response_model.dart';
 import 'package:home4u/features/products/data/models/product_preview_response.dart';
 import 'package:home4u/features/products/presentation/product_details_screen.dart';
 import 'package:home4u/features/profile/presentation/add_certification_screen.dart';
@@ -56,6 +56,7 @@ import '../../features/profile/presentation/edit_profile_screen.dart';
 import '../../features/profile/presentation/profile_screen.dart';
 import '../../features/profile/presentation/project_details_screen.dart';
 import '../../features/projects_filter/presentation/projects_filter_screen.dart';
+import '../../features/rating/presentation/product_rating_screen.dart';
 import '../../features/settings/presentation/setting_screen.dart';
 import '../../features/user/home/presentation/user_home_screen.dart';
 import '../../features/user/renovate_your_house/presentation/renovate_your_house_first_screen.dart';
@@ -329,6 +330,16 @@ class AppRouter {
           builder: (_) => BlocProvider(
             create: (context) => KitchenAndDressingCubit(sl()),
             child: KitchenAndDressingScreen(),
+          ),
+        );
+      case Routes.productRatingScreen:
+        final args = settings.arguments as Map<String, dynamic>;
+
+        return MaterialPageRoute(
+          settings: settings,
+          builder: (_) => ProductRatingScreen(
+            deliveryAddress: args['deliveryAddress'] as String,
+            product: args['product'] as Product,
           ),
         );
       default:

@@ -66,6 +66,7 @@ class _OrderDetailsScreenState extends State<OrderDetailsScreen> {
                           OrderDetailsButtons(
                             orderStatusCode: widget.orderStatus,
                             orderId: widget.orderId,
+                            orderDetails: orderDetails,
                           ),
                           verticalSpace(40),
                         ],
