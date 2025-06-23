@@ -104,7 +104,11 @@ class ApiConstants {
   ///orders
   static const String getOrdersEp = "/api/v1/orders/user/{userId}";
   static const String getOrderDetailsEp = "/api/v1/orders/{orderId}";
+  static const String cancelOrderEp = "/api/v1/orders/cancel/{orderId}";
   static const String sendFurnishYourHomeEp = "/api/v1/home-furnishing-requests";
+
+  /// rating
+  static const String insertProductRateEp = "/api/v1/product-ratings";
 }
 
 class ApiErrors {
