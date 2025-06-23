@@ -1,4 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:home4u/features/rating/data/models/update_product_rate_response_model.dart';
 
 import '../../data/models/insert_product_rate_response_model.dart';
 
@@ -17,6 +18,16 @@ class ProductRatingState with _$ProductRatingState {
 
   factory ProductRatingState.insertProductRatingFailure(String error) =
       InsertProductRatingFailure;
+
+  ///Update product rating
+  factory ProductRatingState.updateProductRatingLoading() =
+      UpdateProductRatingLoading;
+
+  factory ProductRatingState.updateProductRatingSuccess(
+      UpdateProductRateResponseModel response) = UpdateProductRatingSuccess;
+
+  factory ProductRatingState.updateProductRatingFailure(String error) =
+      UpdateProductRatingFailure;
 
   ///Check if product is rated
   factory ProductRatingState.checkIfProductRatedLoading() =

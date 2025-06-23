@@ -5,13 +5,20 @@ import 'package:home4u/features/rating/data/models/insert_product_rate_response_
 
 import '../data_source/product_rating_remote_data_source.dart';
 import '../models/check_id_product_rated_response_model.dart';
+import '../models/update_product_rate_body.dart';
+import '../models/update_product_rate_response_model.dart';
 
 abstract class ProductRatingRepository {
   Future<ApiResult<InsertProductRateResponseModel>> insertProductRate(
     InsertProductRateBody productRateBody,
   );
 
-  Future<ApiResult<CheckIdProductRatedResponseModel>> checkIfProductRated(int productId, int userId);
+  Future<ApiResult<UpdateProductRateResponseModel>> updateProductRate(
+    UpdateProductRateBody productRateBody,
+  );
+
+  Future<ApiResult<CheckIdProductRatedResponseModel>> checkIfProductRated(
+      int productId, int userId);
 }
 
 class ProductRatingRepositoryImpl implements ProductRatingRepository {
@@ -33,10 +40,23 @@ class ProductRatingRepositoryImpl implements ProductRatingRepository {
   }
 
   @override
-  Future<ApiResult<CheckIdProductRatedResponseModel>> checkIfProductRated(int productId, int userId) async {
+  Future<ApiResult<CheckIdProductRatedResponseModel>> checkIfProductRated(
+      int productId, int userId) async {
     try {
       final response =
           await _remoteDataSource.checkIfProductRated(productId, userId);
+      return ApiResult.success(response);
+    } catch (error) {
+      return ApiResult.failure(ApiErrorHandler.handle(error));
+    }
+  }
+
+  @override
+  Future<ApiResult<UpdateProductRateResponseModel>> updateProductRate(
+      UpdateProductRateBody productRateBody) async {
+    try {
+      final response =
+          await _remoteDataSource.updateProductRate(productRateBody);
       return ApiResult.success(response);
     } catch (error) {
       return ApiResult.failure(ApiErrorHandler.handle(error));
