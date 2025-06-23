@@ -27,6 +27,7 @@ import 'features/auth/forget_password/logic/forget_password_cubit.dart';
 import 'features/auth/sign_up/logic/engineer/engineer_cubit.dart';
 import 'features/auth/sign_up/logic/technical_worker/technical_worker_cubit.dart';
 import 'features/exhibition/logic/business_add_product_cubit.dart';
+import 'features/orders/logic/orders_cubit.dart';
 import 'features/profile/logic/certifications/certifications_cubit.dart';
 import 'features/profile/logic/project/project_cubit.dart';
 import 'features/user/renovate_your_house/logic/renovate_your_house_cubit.dart';
@@ -149,6 +150,11 @@ class _Home4uAppState extends State<Home4uApp> {
             ),
             BlocProvider<CartCubit>(
               create: (_) => sl<CartCubit>(),
+            ),
+            ///Todo : move it later to the best place
+            BlocProvider<OrdersCubit>(
+              create: (_) => sl<OrdersCubit>(),
+
             ),
           ],
           child: ScreenUtilInit(

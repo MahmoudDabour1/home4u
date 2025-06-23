@@ -5,6 +5,7 @@ import 'package:retrofit/error_logger.dart';
 import 'package:retrofit/http.dart';
 
 import '../../../../core/networking/api_constants.dart';
+import '../models/cancel_order_response_model.dart';
 
 part 'orders_remote_data_source.g.dart';
 
@@ -21,6 +22,11 @@ abstract class OrdersRemoteDataSource {
 
   @GET(ApiConstants.getOrderDetailsEp)
   Future<OrderDetailsResponseModel> getOrderDetailsById(
+    @Path('orderId') String orderId,
+  );
+
+  @PUT(ApiConstants.cancelOrderEp)
+  Future<CancelOrderResponseModel> cancelOrder(
     @Path('orderId') String orderId,
   );
 }

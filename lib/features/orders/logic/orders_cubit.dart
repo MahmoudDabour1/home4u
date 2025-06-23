@@ -27,4 +27,13 @@ class OrdersCubit extends Cubit<OrdersState> {
       emit(OrdersState.orderDetailsFailure(error.toString()));
     });
   }
+
+  Future<void> cancelOrder(String orderId) async {
+    emit(const OrdersState.cancelOrderLoading());
+    final cancelOrder = await ordersRepository.cancelOrder(orderId);
+    cancelOrder.when(
+      success: (data) => emit(OrdersState.cancelOrderSuccess(data)),
+      failure: (error) => emit(OrdersState.cancelOrderFailure(error.toString())),
+    );
+  }
 }

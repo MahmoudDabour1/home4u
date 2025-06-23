@@ -16,9 +16,9 @@ class _TodayOffersWidgetState extends State<TodayOffersWidget> {
   int currentCarouselIndex = 0;
   final List<String> carouselImages = [
     AppAssets.designYourRoomWithAi,
+    AppAssets.furnishYourHouse,
     AppAssets.designYourRoomWithAi,
-    AppAssets.designYourRoomWithAi,
-    AppAssets.designYourRoomWithAi,
+    AppAssets.furnishYourHouse,
     AppAssets.designYourRoomWithAi,
   ];
 

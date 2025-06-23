@@ -285,21 +285,15 @@ class AppRouter {
         final orderStatus = arguments['orderStatus'] as OrderStatusCode;
         return MaterialPageRoute(
           settings: settings,
-          builder: (context) => BlocProvider<OrdersCubit>(
-            create: (_) => sl<OrdersCubit>(),
-            child: OrderDetailsScreen(
-              orderStatus: orderStatus,
-              orderId: orderId,
-            ),
+          builder: (context) => OrderDetailsScreen(
+            orderStatus: orderStatus,
+            orderId: orderId,
           ),
         );
       case Routes.ordersScreen:
         return MaterialPageRoute(
           settings: settings,
-          builder: (_) => BlocProvider<OrdersCubit>(
-            create: (_) => sl<OrdersCubit>(),
-            child: OrdersScreen(),
-          ),
+          builder: (_) => OrdersScreen(),
         );
       case Routes.freelancerBottomNavLayout:
         return MaterialPageRoute(
