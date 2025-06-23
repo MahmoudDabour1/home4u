@@ -27,6 +27,7 @@ import 'package:home4u/features/orders/data/models/order_details_response_model.
 import 'package:home4u/features/products/data/models/product_preview_response.dart';
 import 'package:home4u/features/products/presentation/product_details_screen.dart';
 import 'package:home4u/features/profile/presentation/add_certification_screen.dart';
+import 'package:home4u/features/rating/logic/product_rating/product_rating_cubit.dart';
 import 'package:home4u/features/user/home/presentation/best_offices_screen.dart';
 import 'package:home4u/features/user/home/presentation/best_show_rooms_screen.dart';
 import 'package:home4u/features/user/request_design/presentation/request_design_screen.dart';
@@ -337,9 +338,12 @@ class AppRouter {
 
         return MaterialPageRoute(
           settings: settings,
-          builder: (_) => ProductRatingScreen(
-            deliveryAddress: args['deliveryAddress'] as String,
-            product: args['product'] as Product,
+          builder: (_) => BlocProvider<ProductRatingCubit>(
+            create: (context) => sl<ProductRatingCubit>(),
+            child: ProductRatingScreen(
+              deliveryAddress: args['deliveryAddress'] as String,
+              product: args['product'] as Product,
+            ),
           ),
         );
       default:
