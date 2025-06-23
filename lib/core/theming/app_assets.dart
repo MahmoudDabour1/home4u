@@ -103,8 +103,20 @@ abstract class AppAssets {
   static const String giftSvg = 'assets/svgs/gift.svg';
   static const String onTheWaySvg = 'assets/svgs/on_the_way_svg.svg';
   static const String ordersEmptyStateSvg = 'assets/svgs/order_empty_state_svg.svg';
-  static const String designYourRoomWithAi = 'assets/images/design_your_room_with_ai.jpeg';
-  static const String furnishYourHouse = 'assets/images/furnish_your_house.jpeg';
+  static const String designYourRoomWithAi = 'assets/images/design_your_home_with_ai.png';
+  static const String furnishYourHouse = 'assets/images/furnish_your_home.png';
+  static const String kitchensAndDressing = 'assets/images/kitchens_and_dressing.png';
+  static const String renovateYourHome = 'assets/images/renovate_your_home.png';
+  static const String requestDesign = 'assets/images/request_desgin.png';
+  static const String technical = 'assets/images/technical.png';
   static const String successFeedbackSvg = 'assets/svgs/success_feedback.svg';
+  static const String askEngineerIcon = 'assets/images/ask_engineer_icon_png.png';
+  static const String askTechnicalWorkerIcon = 'assets/images/ask_technical_worker_icon.png';
+  static const String furnishYourHomeIcon = 'assets/images/furnish_your_home.png';
+  static const String furnishYourHomeImage = 'assets/images/furnish_home_image.png';
+  static const String kitchensAndDressingIcon = 'assets/images/kitchens_and_dressing_icon.png';
+  static const String renovateYourHomeIcon = 'assets/images/renovate_your_home_icon.png';
+  static const String requestDesignIcon= 'assets/images/request_desgin_icon.png';
+  static const String shopNowIcon = 'assets/images/shop_now_icon.png';
 }
 

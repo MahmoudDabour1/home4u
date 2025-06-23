@@ -22,4 +22,5 @@ abstract class AppColors {
   static const  outStockBackGroundColor = Color(0xFFFBE1E0);
   static const  darkRedColor = Color(0xFF783235);
   static const  lightGrayColor = Color(0xFFFDFDFD);
+  static const  filledGrayColor = Color(0xFFF7F9F8);
 }
