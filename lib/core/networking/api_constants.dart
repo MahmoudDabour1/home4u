@@ -107,6 +107,8 @@ class ApiConstants {
   static const String cancelOrderEp = "/api/v1/orders/cancel/{orderId}";
   static const String sendFurnishYourHomeEp = "/api/v1/home-furnishing-requests";
 
+  /// rating
+  static const String insertProductRateEp = "/api/v1/product-ratings";
 }
 
 class ApiErrors {
