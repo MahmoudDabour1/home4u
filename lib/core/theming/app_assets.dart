@@ -110,5 +110,13 @@ abstract class AppAssets {
   static const String requestDesign = 'assets/images/request_desgin.png';
   static const String technical = 'assets/images/technical.png';
   static const String successFeedbackSvg = 'assets/svgs/success_feedback.svg';
+  static const String askEngineerIcon = 'assets/images/ask_engineer_icon_png.png';
+  static const String askTechnicalWorkerIcon = 'assets/images/ask_technical_worker_icon.png';
+  static const String furnishYourHomeIcon = 'assets/images/furnish_your_home.png';
+  static const String furnishYourHomeImage = 'assets/images/furnish_home_image.png';
+  static const String kitchensAndDressingIcon = 'assets/images/kitchens_and_dressing_icon.png';
+  static const String renovateYourHomeIcon = 'assets/images/renovate_your_home_icon.png';
+  static const String requestDesignIcon= 'assets/images/request_desgin_icon.png';
+  static const String shopNowIcon = 'assets/images/shop_now_icon.png';
 }
 

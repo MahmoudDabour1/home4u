@@ -1,6 +1,8 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:home4u/core/extensions/navigation_extension.dart';
+import 'package:home4u/core/routing/routes.dart';
 import 'package:home4u/core/theming/app_assets.dart';
 
 import '../../../../../../core/utils/spacing.dart';
@@ -16,17 +18,24 @@ class _TodayOffersWidgetState extends State<TodayOffersWidget> {
   int currentCarouselIndex = 0;
   final List<String> carouselImages = [
     AppAssets.designYourRoomWithAi,
-    AppAssets.furnishYourHouse,
+    AppAssets.furnishYourHomeImage,
     AppAssets.kitchensAndDressing,
     AppAssets.renovateYourHome,
     AppAssets.requestDesign,
     AppAssets.technical,
   ];
 
+  final List<String> carouselNavigation = [
+    Routes.requestDesignScreen,
+    Routes.furnishYourHomeScreen,
+    Routes.kitchenAndDressingScreen,
+    Routes.renovateYourHouseScreen,
+    Routes.requestDesignScreen,
+    Routes.askTechnicalScreen,
+  ];
+
   void _handleImageTap(int index) {
-    // Handle the tap event for the image at the given index
-    // For example, you can navigate to a detailed view or show a dialog
-    print('Image tapped at index: $index');
+    context.pushNamed(carouselNavigation[index]);
   }
 
   @override

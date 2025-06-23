@@ -42,7 +42,7 @@ class _FilterByCategoryListViewState extends State<FilterByCategoryListView> {
         },
       },
       {
-        "title": AppLocale.requestDesignTitle.getString(context),
+        "title": AppLocale.requestDesign.getString(context),
         "icon": AppAssets.requestDesignSvg,
         "onPressed": () {
           setState(() {

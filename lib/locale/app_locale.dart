@@ -284,27 +284,27 @@ class AppLocale {
   ///User
   static const String home = 'Home';
   static const String seeAll = 'See all';
-  static const String furnishTitle = 'Furnish your home';
+  static const String furnishTitle = 'Furnish home';
   static const String furnishSubtitle =
       'Find comfortable and elegant furniture.';
 
-  static const String requestDesignTitle = 'Request custom_design';
+  // static const String requestDesignTitle = 'Request Design';
   static const String requestDesignSubtitle =
       'Get a custom custom_design for interiors or decor.';
 
-  static const String kitchensTitle = 'Kitchens and dressing';
+  static const String kitchensTitle = 'Kitchens & dressing';
   static const String kitchensSubtitle =
       'Modern solutions kitchens and wardrobes.';
 
-  static const String renovateTitle = 'Renovate Your Home';
+  static const String renovateTitle = 'Renovate Home';
   static const String renovateSubtitle =
       'Upgrade with finishing and renovation services.';
 
-  static const String engineerTitle = 'Ask to Engineer';
+  static const String engineerTitle = 'Ask Engineer';
   static const String engineerSubtitle =
       'Expert finish and remodel for a better home.';
 
-  static const String technicalTitle = 'Ask to Technical';
+  static const String technicalTitle = 'Ask Technical';
   static const String technicalSubtitle =
       'Transform your home with stylish finishing touches.';
   static const String shopNowTitle = 'Shop now';
@@ -602,17 +602,17 @@ class AppLocale {
     favorites: 'Favorites',
     home: 'Home',
     seeAll: 'See all',
-    furnishTitle: 'Furnish your home',
+    furnishTitle: 'Furnish home',
     furnishSubtitle: 'Find comfortable and elegant furniture.',
-    requestDesignTitle: 'Request custom_design',
+    // requestDesignTitle: 'Request Design',
     requestDesignSubtitle: 'Get a custom custom_design for interiors or decor.',
-    kitchensTitle: 'Kitchens and dressing',
+    kitchensTitle: 'Kitchens & dressing',
     kitchensSubtitle: 'Modern solutions kitchens and wardrobes.',
-    renovateTitle: 'Renovate Your Home',
+    renovateTitle: 'Renovate Home',
     renovateSubtitle: 'Upgrade with finishing and renovation services.',
-    engineerTitle: 'Ask to Engineer',
+    engineerTitle: 'Ask Engineer',
     engineerSubtitle: 'Expert finish and remodel for a better home.',
-    technicalTitle: 'Ask to Technical',
+    technicalTitle: 'Ask Technical',
     technicalSubtitle: 'Transform your home with stylish finishing touches.',
     shopNowTitle: 'Shop now',
     shopSubtitle: 'Browse and buy home essentials.',
@@ -926,7 +926,7 @@ class AppLocale {
     seeAll: 'عرض الكل',
     furnishTitle: 'أثاث منزلك',
     furnishSubtitle: 'ابحث عن أثاث مريح وأنيق.',
-    requestDesignTitle: 'طلب تصميم',
+    // requestDesignTitle: 'طلب تصميم',
     requestDesignSubtitle: 'احصل على تصميم مخصص للديكورات الداخلية أو الزخارف.',
     kitchensTitle: 'المطابخ والتجهيزات',
     kitchensSubtitle: 'حلول حديثة للمطابخ والخزائن.',
@@ -981,7 +981,7 @@ class AppLocale {
     notes: 'ملاحظات',
     bookPackage: 'احجز باقة',
     attachedImages: 'الصور المرفقة',
-    requestDesign: 'اطلب تصميم',
+    requestDesign: ' اطلب تصميم',
     design: 'تصميم مخصص',
     ai: 'ذكاء اصطناعي',
     workerTypeSelection: 'اختيار نوع العامل',

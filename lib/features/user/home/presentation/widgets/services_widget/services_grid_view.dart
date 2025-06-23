@@ -7,70 +7,88 @@ import 'package:home4u/core/theming/app_assets.dart';
 import 'package:home4u/features/user/home/presentation/widgets/services_widget/services_grid_view_item.dart';
 import 'package:home4u/locale/app_locale.dart';
 
+import '../../../data/models/services_model.dart';
+
 class ServicesGridView extends StatelessWidget {
   const ServicesGridView({super.key});
 
   @override
   Widget build(BuildContext context) {
-    final List<Map<String, dynamic>> serviceOptions = [
-      {
-        "title": AppLocale.furnishTitle.getString(context),
-        "subtitle": AppLocale.furnishSubtitle.getString(context),
-        "icon": AppAssets.homeSvg,
-        "onPressed": () {
+    final List<ServicesModel> serviceOptions = [
+      ServicesModel(
+        title: AppLocale.furnishTitle.getString(context),
+        subtitle: AppLocale.furnishSubtitle.getString(context),
+        icon: AppAssets.furnishYourHomeIcon,
+        onPressed: () {
           context.pushNamed(Routes.furnishYourHomeScreen);
         },
-      },
-      {
-        "title": AppLocale.requestDesignTitle.getString(context),
-        "subtitle": AppLocale.requestDesignSubtitle.getString(context),
-        "icon": AppAssets.requestDesignSvg,
-        "onPressed": () => context.pushNamed(Routes.requestDesignScreen),
-      },
-      {
-        "title": AppLocale.kitchensTitle.getString(context),
-        "subtitle": AppLocale.kitchensSubtitle.getString(context),
-        "icon": AppAssets.kitchensSvg,
-        "onPressed": () {
-          context.pushNamed(Routes.kitchenAndDressingScreen);
-
+      ),
+      ServicesModel(
+        title: AppLocale.requestDesign.getString(context),
+        subtitle: AppLocale.requestDesignSubtitle.getString(context),
+        icon: AppAssets.requestDesignIcon,
+        onPressed: () {
+          context.pushNamed(Routes.requestDesignScreen);
         },
-      },
-      {
-        "title": AppLocale.renovateTitle.getString(context),
-        "subtitle": AppLocale.renovateSubtitle.getString(context),
-        "icon": AppAssets.renovateSvg,
-        "onPressed": () => context.pushNamed(Routes.renovateYourHouseScreen),
-      },
-      {
-        "title": AppLocale.engineerTitle.getString(context),
-        "subtitle": AppLocale.engineerSubtitle.getString(context),
-        "icon": AppAssets.askEngineerSvg,
-        "onPressed": () => context.pushNamed(Routes.askEngineerScreen),
-      },
-      {
-        "title": AppLocale.technicalTitle.getString(context),
-        "subtitle": AppLocale.technicalSubtitle.getString(context),
-        "icon": AppAssets.askTechnicalSvg,
-        "onPressed": () => context.pushNamed(Routes.askTechnicalScreen),
-      },
+      ),
+      ServicesModel(
+        title: AppLocale.kitchensTitle.getString(context),
+        subtitle: AppLocale.kitchensSubtitle.getString(context),
+        icon: AppAssets.kitchensAndDressingIcon,
+        onPressed: () {
+          context.pushNamed(Routes.kitchenAndDressingScreen);
+        },
+      ),
+      ServicesModel(
+        title: AppLocale.renovateTitle.getString(context),
+        subtitle: AppLocale.renovateSubtitle.getString(context),
+        icon: AppAssets.renovateYourHomeIcon,
+        onPressed: () {
+          context.pushNamed(Routes.renovateYourHouseScreen);
+        },
+      ),
+      ServicesModel(
+        title: AppLocale.engineerTitle.getString(context),
+        subtitle: AppLocale.engineerSubtitle.getString(context),
+        icon: AppAssets.askEngineerIcon,
+        onPressed: () {
+          context.pushNamed(Routes.askEngineerScreen);
+        },
+      ),
+      ServicesModel(
+        title: AppLocale.technicalTitle.getString(context),
+        subtitle: AppLocale.technicalSubtitle.getString(context),
+        icon: AppAssets.askTechnicalWorkerIcon,
+        onPressed: () {
+          context.pushNamed(Routes.askTechnicalScreen);
+        },
+      ),
+      ServicesModel(
+        title: AppLocale.shopNowTitle.getString(context),
+        subtitle: AppLocale.shopSubtitle.getString(context),
+        icon: AppAssets.shopNowIcon,
+        onPressed: () {
+          context.pushNamed(Routes.cartScreen);
+        },
+      ),
     ];
+
     return GridView.builder(
       shrinkWrap: true,
       physics: BouncingScrollPhysics(),
       gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-        crossAxisCount: 2,
-        crossAxisSpacing: 16.w,
+        crossAxisCount: 4,
+        crossAxisSpacing: 6.w,
         mainAxisSpacing: 16.h,
-        childAspectRatio: 1 / 1,
+        childAspectRatio: 1.4 / 2.1,
       ),
       itemCount: serviceOptions.length,
       itemBuilder: (context, index) {
         return ServicesGridViewItem(
-          imageUrl: serviceOptions[index]["icon"]!,
-          subTitle: serviceOptions[index]["subtitle"]!,
-          title: serviceOptions[index]["title"]!,
-          onPressed: serviceOptions[index]["onPressed"]!,
+          imageUrl: serviceOptions[index].icon,
+          subTitle: serviceOptions[index].subtitle,
+          title: serviceOptions[index].title,
+          onPressed: serviceOptions[index].onPressed,
         );
       },
     );
