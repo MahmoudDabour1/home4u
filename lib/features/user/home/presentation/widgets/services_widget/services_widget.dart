@@ -23,23 +23,8 @@ class ServicesWidget extends StatelessWidget {
             AppLocale.services.getString(context),
             style: AppStyles.font16BlackBold,
           ),
-          // CustomSeeAllRowWidget(
-          //   text: AppLocale.services.getString(context),
-          //   onPressed: () {},
-          // ),
-          // Text(
-          //     AppLocale.services.getString(context),
-          //   style : AppStyles.font20BlackMedium,
-          // ),
           verticalSpace(16),
           ServicesGridView(),
-          verticalSpace(16),
-          // ServicesGridViewItem(
-          //   title:    AppLocale.shopNowTitle.getString(context),
-          //   subTitle: AppLocale.shopSubtitle.getString(context),
-          //   imageUrl: AppAssets.shopSvg,
-          //   onPressed: () => context.pushNamed(Routes.cartScreen),
-          // ),
         ],
       ),
     );

@@ -15,7 +15,7 @@ class CustomSeeAllRowWidget extends StatelessWidget {
       children: [
         Text(
           text,
-          style: AppStyles.font16BlackMedium,
+          style: AppStyles.font16BlackBold,
         ),
         Spacer(),
         TextButton(

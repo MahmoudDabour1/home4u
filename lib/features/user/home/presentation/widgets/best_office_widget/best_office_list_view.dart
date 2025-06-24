@@ -10,15 +10,15 @@ class BestOfficeListView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 178.h,
+      height: 310.h,
       child: ListView.separated(
-        separatorBuilder: (context, index) => horizontalSpace(16.w),
+        separatorBuilder: (context, index) => horizontalSpace(8.w),
         itemCount: 5,
         scrollDirection: Axis.horizontal,
         itemBuilder: (context, index) {
           return ScrollContainerWidget(
             image: "assets/images/profile_back_image.png",
-            title: "Vision Office",
+            title: "Vision OfficeVision OfficeVision OfficeVision Office",
             starCount: "4.5",
           );
         },

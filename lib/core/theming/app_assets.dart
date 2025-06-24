@@ -118,5 +118,6 @@ abstract class AppAssets {
   static const String renovateYourHomeIcon = 'assets/images/renovate_your_home_icon.png';
   static const String requestDesignIcon= 'assets/images/request_desgin_icon.png';
   static const String shopNowIcon = 'assets/images/shop_now_icon.png';
+  static const String appIcon = 'assets/images/app_icon.png';
 }
 

@@ -11,14 +11,25 @@ class AppCustomSearchTextField extends StatelessWidget {
   final void Function(String)? onChanged;
   final void Function(String?)? onSaved;
   final Color? fillColor;
-  const AppCustomSearchTextField({super.key, this.controller, this.onChanged, this.onSaved, this.fillColor});
+  final bool? isHasBorder;
+  final String? hintText;
+  final TextStyle? hintStyle;
+  final double? borderRadius;
+
+  const AppCustomSearchTextField(
+      {super.key,
+      this.controller,
+      this.onChanged,
+      this.onSaved,
+      this.fillColor,
+      this.isHasBorder=false,this.hintText, this.hintStyle, this.borderRadius,});
 
   @override
   Widget build(BuildContext context) {
     return TextFormField(
-      controller:controller ,
+      controller: controller,
       onChanged: onChanged,
-      onSaved:  onSaved,
+      onSaved: onSaved,
       onTapOutside: (event) {
         FocusManager.instance.primaryFocus?.unfocus();
       },
@@ -27,18 +38,18 @@ class AppCustomSearchTextField extends StatelessWidget {
         // constraints: BoxConstraints(
         //   maxHeight: 40.h,
         // ),
-        hintText: AppLocale.search.getString(context),
+        hintText:hintText?? AppLocale.search.getString(context),
         prefixIcon: Icon(
           Icons.search_outlined,
           color: AppColors.grayColor,
           size: 25.r,
         ),
         border: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(16.r),
-          borderSide: BorderSide.none,
+          borderRadius: BorderRadius.circular(borderRadius??16.r),
+          borderSide:isHasBorder==true?BorderSide(): BorderSide.none,
         ),
-        hintStyle: AppStyles.font16GrayLight,
-        fillColor:fillColor?? AppColors.whiteColor,
+        hintStyle: hintStyle??AppStyles.font16GrayLight,
+        fillColor: fillColor ?? AppColors.whiteColor,
         filled: true,
         // hoverColor: AppColors.blueColor,
       ),
