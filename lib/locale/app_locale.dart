@@ -384,6 +384,8 @@ class AppLocale {
   static const String productMaterials = 'Product Materials';
   static const String devicesAttached = 'Devices Attached';
   static const String kitchenType = 'Kitchen Type';
+  static const String deliverTo = 'Deliver to';
+  static const String whatAreYouLookingFor = 'What are you looking for?';
 
   static const Map<String, dynamic> en = {
     onBoardingTitle1: 'Civil works and finishing services',
@@ -706,6 +708,8 @@ class AppLocale {
     kitchenType: 'Kitchen Type',
     pleaseEnterAKitchenSize: 'Please Enter a Kitchen Size',
     noCurrentOrders : 'There are no current orders',
+    deliverTo: 'Deliver to',
+    whatAreYouLookingFor: 'What are you looking for?',
   };
 
   static const Map<String, dynamic> ar = {
@@ -1026,5 +1030,7 @@ class AppLocale {
     kitchenType: 'نوع المطبخ',
     pleaseEnterAKitchenSize: 'الرجاء إدخال حجم المطبخ',
     noCurrentOrders : 'لا توجد طلبات حالية',
+    deliverTo: 'التوصيل إلى',
+    whatAreYouLookingFor: 'ماذا تبحث عنه؟',
   };
 }

@@ -18,14 +18,14 @@ class BestOfficeWidget extends StatelessWidget {
       padding: EdgeInsets.symmetric(horizontal: 24.w),
       child : Column(
       children: [
-        verticalSpace(32),
+        verticalSpace(16),
         CustomSeeAllRowWidget(
           text: AppLocale.theBestOffices.getString(context),
           onPressed: () {
             context.pushNamed(Routes.bestOfficesScreen);
           },
         ),
-        verticalSpace(16),
+        verticalSpace(8),
         BestOfficeListView(),
       ],
     ),);
