@@ -10,7 +10,7 @@ class BestShowRoomsListView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 178.h,
+      height: 310.h,
       child: ListView.separated(
         separatorBuilder: (context, index) => horizontalSpace(16.w),
         itemCount: 5,
