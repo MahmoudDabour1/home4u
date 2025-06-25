@@ -1,24 +1,25 @@
 import 'package:home4u/core/networking/api_error_handler.dart';
 import 'package:home4u/core/networking/api_result.dart';
 import 'package:home4u/features/rating/data/models/insert_product_rate_body.dart';
-import 'package:home4u/features/rating/data/models/insert_product_rate_response_model.dart';
+import 'package:home4u/features/rating/data/models/product_rate_response_model.dart';
 
 import '../data_source/product_rating_remote_data_source.dart';
-import '../models/check_id_product_rated_response_model.dart';
 import '../models/update_product_rate_body.dart';
-import '../models/update_product_rate_response_model.dart';
 
 abstract class ProductRatingRepository {
-  Future<ApiResult<InsertProductRateResponseModel>> insertProductRate(
+  Future<ApiResult<ProductRateResponseModel>> insertProductRate(
     InsertProductRateBody productRateBody,
   );
 
-  Future<ApiResult<UpdateProductRateResponseModel>> updateProductRate(
+  Future<ApiResult<ProductRateResponseModel>> updateProductRate(
     UpdateProductRateBody productRateBody,
   );
 
-  Future<ApiResult<CheckIdProductRatedResponseModel>> checkIfProductRated(
-      int productId, int userId);
+  Future<ApiResult<ProductRateResponseModel>>
+      findProductRateByProductIdAndUserId(
+    int productId,
+    int userId,
+  );
 }
 
 class ProductRatingRepositoryImpl implements ProductRatingRepository {
@@ -27,7 +28,7 @@ class ProductRatingRepositoryImpl implements ProductRatingRepository {
   ProductRatingRepositoryImpl(this._remoteDataSource);
 
   @override
-  Future<ApiResult<InsertProductRateResponseModel>> insertProductRate(
+  Future<ApiResult<ProductRateResponseModel>> insertProductRate(
     InsertProductRateBody productRateBody,
   ) async {
     try {
@@ -40,11 +41,11 @@ class ProductRatingRepositoryImpl implements ProductRatingRepository {
   }
 
   @override
-  Future<ApiResult<CheckIdProductRatedResponseModel>> checkIfProductRated(
-      int productId, int userId) async {
+  Future<ApiResult<ProductRateResponseModel>> updateProductRate(
+      UpdateProductRateBody productRateBody) async {
     try {
       final response =
-          await _remoteDataSource.checkIfProductRated(productId, userId);
+          await _remoteDataSource.updateProductRate(productRateBody);
       return ApiResult.success(response);
     } catch (error) {
       return ApiResult.failure(ApiErrorHandler.handle(error));
@@ -52,11 +53,11 @@ class ProductRatingRepositoryImpl implements ProductRatingRepository {
   }
 
   @override
-  Future<ApiResult<UpdateProductRateResponseModel>> updateProductRate(
-      UpdateProductRateBody productRateBody) async {
+  Future<ApiResult<ProductRateResponseModel>>
+      findProductRateByProductIdAndUserId(int productId, int userId) async {
     try {
-      final response =
-          await _remoteDataSource.updateProductRate(productRateBody);
+      final response = await _remoteDataSource
+          .findProductRateByProductIdAndUserId(productId, userId);
       return ApiResult.success(response);
     } catch (error) {
       return ApiResult.failure(ApiErrorHandler.handle(error));

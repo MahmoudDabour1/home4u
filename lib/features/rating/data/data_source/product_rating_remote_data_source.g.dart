@@ -24,14 +24,14 @@ class _ProductRatingRemoteDataSource implements ProductRatingRemoteDataSource {
   final ParseErrorLogger? errorLogger;
 
   @override
-  Future<InsertProductRateResponseModel> insertProductRate(
+  Future<ProductRateResponseModel> insertProductRate(
       InsertProductRateBody body) async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
     final _data = <String, dynamic>{};
     _data.addAll(body.toJson());
-    final _options = _setStreamType<InsertProductRateResponseModel>(Options(
+    final _options = _setStreamType<ProductRateResponseModel>(Options(
       method: 'POST',
       headers: _headers,
       extra: _extra,
@@ -48,9 +48,9 @@ class _ProductRatingRemoteDataSource implements ProductRatingRemoteDataSource {
           baseUrl,
         )));
     final _result = await _dio.fetch<Map<String, dynamic>>(_options);
-    late InsertProductRateResponseModel _value;
+    late ProductRateResponseModel _value;
     try {
-      _value = InsertProductRateResponseModel.fromJson(_result.data!);
+      _value = ProductRateResponseModel.fromJson(_result.data!);
     } on Object catch (e, s) {
       errorLogger?.logError(e, s, _options);
       rethrow;
@@ -59,14 +59,14 @@ class _ProductRatingRemoteDataSource implements ProductRatingRemoteDataSource {
   }
 
   @override
-  Future<UpdateProductRateResponseModel> updateProductRate(
+  Future<ProductRateResponseModel> updateProductRate(
       UpdateProductRateBody body) async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
     final _data = <String, dynamic>{};
     _data.addAll(body.toJson());
-    final _options = _setStreamType<UpdateProductRateResponseModel>(Options(
+    final _options = _setStreamType<ProductRateResponseModel>(Options(
       method: 'PUT',
       headers: _headers,
       extra: _extra,
@@ -83,9 +83,9 @@ class _ProductRatingRemoteDataSource implements ProductRatingRemoteDataSource {
           baseUrl,
         )));
     final _result = await _dio.fetch<Map<String, dynamic>>(_options);
-    late UpdateProductRateResponseModel _value;
+    late ProductRateResponseModel _value;
     try {
-      _value = UpdateProductRateResponseModel.fromJson(_result.data!);
+      _value = ProductRateResponseModel.fromJson(_result.data!);
     } on Object catch (e, s) {
       errorLogger?.logError(e, s, _options);
       rethrow;
@@ -94,25 +94,22 @@ class _ProductRatingRemoteDataSource implements ProductRatingRemoteDataSource {
   }
 
   @override
-  Future<CheckIdProductRatedResponseModel> checkIfProductRated(
+  Future<ProductRateResponseModel> findProductRateByProductIdAndUserId(
     int productId,
     int userId,
   ) async {
     final _extra = <String, dynamic>{};
-    final queryParameters = <String, dynamic>{
-      r'productId': productId,
-      r'userId': userId,
-    };
+    final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
     const Map<String, dynamic>? _data = null;
-    final _options = _setStreamType<CheckIdProductRatedResponseModel>(Options(
+    final _options = _setStreamType<ProductRateResponseModel>(Options(
       method: 'GET',
       headers: _headers,
       extra: _extra,
     )
         .compose(
           _dio.options,
-          '/api/v1/product-ratings/check',
+          '/api/v1/product-ratings/product/${productId}/user/${userId}',
           queryParameters: queryParameters,
           data: _data,
         )
@@ -122,9 +119,9 @@ class _ProductRatingRemoteDataSource implements ProductRatingRemoteDataSource {
           baseUrl,
         )));
     final _result = await _dio.fetch<Map<String, dynamic>>(_options);
-    late CheckIdProductRatedResponseModel _value;
+    late ProductRateResponseModel _value;
     try {
-      _value = CheckIdProductRatedResponseModel.fromJson(_result.data!);
+      _value = ProductRateResponseModel.fromJson(_result.data!);
     } on Object catch (e, s) {
       errorLogger?.logError(e, s, _options);
       rethrow;

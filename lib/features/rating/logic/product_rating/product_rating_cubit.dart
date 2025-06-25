@@ -68,16 +68,17 @@ class ProductRatingCubit extends Cubit<ProductRatingState> {
     );
   }
 
-  Future<void> checkIfProductRated(int productId, int userId) async {
-    emit(ProductRatingState.checkIfProductRatedLoading());
-    final result = await _productRatingRepository.checkIfProductRated(
-      productId,
-      userId,
-    );
+  Future<void> findProductRating(
+    int productId,
+    int userId,
+  ) async {
+    emit(ProductRatingState.findProductRatingLoading());
+    final result = await _productRatingRepository
+        .findProductRateByProductIdAndUserId(productId, userId);
     result.when(
       success: (response) =>
-          emit(ProductRatingState.checkIfProductRatedSuccess(response.data)),
-      failure: (error) => emit(ProductRatingState.checkIfProductRatedFailure(
+          emit(ProductRatingState.findProductRatingSuccess(response)),
+      failure: (error) => emit(ProductRatingState.findProductRatingFailure(
         error.message.toString(),
       )),
     );

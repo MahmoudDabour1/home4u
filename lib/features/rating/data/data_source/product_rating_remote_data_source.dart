@@ -5,10 +5,8 @@ import 'package:retrofit/error_logger.dart';
 import 'package:retrofit/http.dart';
 
 import '../../../../core/networking/api_constants.dart';
-import '../models/check_id_product_rated_response_model.dart';
 import '../models/insert_product_rate_body.dart';
-import '../models/insert_product_rate_response_model.dart';
-import '../models/update_product_rate_response_model.dart';
+import '../models/product_rate_response_model.dart';
 
 part 'product_rating_remote_data_source.g.dart';
 
@@ -19,19 +17,18 @@ abstract class ProductRatingRemoteDataSource {
   
   
   @POST(ApiConstants.insertProductRateEp)
-  Future<InsertProductRateResponseModel> insertProductRate(
+  Future<ProductRateResponseModel> insertProductRate(
     @Body() InsertProductRateBody body,
   );
   
   @PUT(ApiConstants.insertProductRateEp)
-  Future<UpdateProductRateResponseModel> updateProductRate(
+  Future<ProductRateResponseModel> updateProductRate(
     @Body() UpdateProductRateBody body,
   );
 
-  @GET(ApiConstants.checkIfProductRatedEp)
-  Future<CheckIdProductRatedResponseModel> checkIfProductRated(
-    @Query("productId") int productId,
-    @Query("userId") int userId,
+  @GET(ApiConstants.findProductRateByProductIdAndUserIdEp)
+  Future<ProductRateResponseModel> findProductRateByProductIdAndUserId(
+    @Path("productId") int productId,
+    @Path("userId") int userId,
   );
-
 }

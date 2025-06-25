@@ -1,7 +1,6 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:home4u/features/rating/data/models/update_product_rate_response_model.dart';
 
-import '../../data/models/insert_product_rate_response_model.dart';
+import '../../data/models/product_rate_response_model.dart';
 
 part 'product_rating_state.freezed.dart';
 
@@ -14,7 +13,7 @@ class ProductRatingState with _$ProductRatingState {
       InsertProductRatingLoading;
 
   factory ProductRatingState.insertProductRatingSuccess(
-      InsertProductRateResponseModel response) = InsertProductRatingSuccess;
+      ProductRateResponseModel response) = InsertProductRatingSuccess;
 
   factory ProductRatingState.insertProductRatingFailure(String error) =
       InsertProductRatingFailure;
@@ -24,18 +23,18 @@ class ProductRatingState with _$ProductRatingState {
       UpdateProductRatingLoading;
 
   factory ProductRatingState.updateProductRatingSuccess(
-      UpdateProductRateResponseModel response) = UpdateProductRatingSuccess;
+      ProductRateResponseModel response) = UpdateProductRatingSuccess;
 
   factory ProductRatingState.updateProductRatingFailure(String error) =
       UpdateProductRatingFailure;
 
-  ///Check if product is rated
-  factory ProductRatingState.checkIfProductRatedLoading() =
-      CheckIfProductRatedLoading;
+  /// Find product rating by productId and userId
+  factory ProductRatingState.findProductRatingLoading() =
+      FindProductRatingLoading;
 
-  factory ProductRatingState.checkIfProductRatedSuccess(bool isRated) =
-      CheckIfProductRatedSuccess;
+  factory ProductRatingState.findProductRatingSuccess(
+      ProductRateResponseModel response) = FindProductRatingSuccess;
 
-  factory ProductRatingState.checkIfProductRatedFailure(String error) =
-      CheckIfProductRatedFailure;
+  factory ProductRatingState.findProductRatingFailure(String error) =
+      FindProductRatingFailure;
 }

@@ -40,7 +40,10 @@ class OrderDetailsButtons extends StatelessWidget {
             btnWidth: 143.w,
             btnHeight: 50.h,
             isBorder: true,
-            onPressed: () => context.pushNamed(Routes.userHomeScreen),
+            onPressed: () => context.pushNameAndRemoveUntil(
+              Routes.userBottomNavLayout,
+              predicate: (Route<dynamic> route) => false,
+            ),
           ),
         ),
         horizontalSpace(16),
@@ -76,7 +79,10 @@ class OrderDetailsButtons extends StatelessWidget {
             btnWidth: MediaQuery.of(context).size.width,
             btnHeight: 60.h,
             isBorder: true,
-            onPressed: () => context.pushNamed(Routes.userHomeScreen),
+            onPressed: () => context.pushNameAndRemoveUntil(
+              Routes.userBottomNavLayout,
+              predicate: (Route<dynamic> route) => false,
+            ),
           ),
         ),
       ],

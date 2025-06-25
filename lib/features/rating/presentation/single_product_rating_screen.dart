@@ -7,7 +7,6 @@ import 'package:home4u/features/auth/widgets/auth_welcome_data.dart';
 import 'package:home4u/features/rating/logic/product_rating/product_rating_state.dart';
 import 'package:home4u/features/rating/presentation/widgets/feedback_success_dialog.dart';
 import 'package:home4u/features/rating/presentation/widgets/product_info_section.dart';
-import 'package:home4u/features/rating/presentation/widgets/product_is_rated_before_widget.dart';
 import 'package:home4u/features/rating/presentation/widgets/product_rating_info_section.dart';
 import 'package:home4u/features/rating/presentation/widgets/product_rating_submit_button.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -16,34 +15,15 @@ import '../../../core/utils/spacing.dart';
 import '../../orders/data/models/order_details_response_model.dart';
 import '../logic/product_rating/product_rating_cubit.dart';
 
-class ProductRatingScreen extends StatefulWidget {
+class SingleProductRatingScreen extends StatelessWidget {
   final String deliveryAddress;
   final Product product;
 
-  const ProductRatingScreen({
+  const SingleProductRatingScreen({
     super.key,
     required this.deliveryAddress,
     required this.product,
   });
-
-  @override
-  State<ProductRatingScreen> createState() => _ProductRatingScreenState();
-}
-
-class _ProductRatingScreenState extends State<ProductRatingScreen> {
-  @override
-  void initState() {
-    super.initState();
-    checkIfProductAlreadyRated();
-  }
-
-  void checkIfProductAlreadyRated() async {
-    final prefs = await SharedPreferences.getInstance();
-    final userId = prefs.getInt(SharedPrefKeys.userId) ?? 0;
-    context
-        .read<ProductRatingCubit>()
-        .checkIfProductRated(widget.product.id, userId);
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -60,8 +40,6 @@ class _ProductRatingScreenState extends State<ProductRatingScreen> {
         }
       },
       builder: (context, state) {
-        final isRated = state is CheckIfProductRatedSuccess && state.isRated;
-
         return Scaffold(
           body: SingleChildScrollView(
             child: Form(
@@ -79,25 +57,15 @@ class _ProductRatingScreenState extends State<ProductRatingScreen> {
                     Padding(
                       padding: EdgeInsets.symmetric(horizontal: 24.0.w),
                       child: ProductInfoSection(
-                        deliveryAddress: widget.deliveryAddress,
-                        product: widget.product,
+                        deliveryAddress: deliveryAddress,
+                        product: product,
                       ),
                     ),
                     verticalSpace(24),
-                    if (state is CheckIfProductRatedLoading)
-
-                      ///ToDo : Shimmer
-                      const Center(child: CircularProgressIndicator())
-                    else if (isRated)
-                      const ProductIsRatedBeforeWidget()
-                    else
-                      Column(
-                        children: [
-                          const ProductRatingInfoSection(),
-                          ProductRatingSubmitButton(
-                              productId: widget.product.id),
-                        ],
-                      ),
+                    const ProductRatingInfoSection(),
+                    ProductRatingSubmitButton(
+                      productId: product.id,
+                    ),
                   ],
                 ),
               ),
