@@ -57,5 +57,6 @@ abstract class Routes{
   static const String userBottomNavLayout = '/userBottomNavLayout';
 
   ///Rating
-  static const String productRatingScreen = '/productRatingScreen';
+  static const String singleProductRatingScreen = '/singleProductRatingScreen';
+  static const String productsRatingScreen = '/productRatingScreen';
 }

@@ -72,7 +72,9 @@ class ApiConstants {
       "/api/v1/select-custom-package";
   static const String renovateYourHouseLookUpsEp = "/api/v1/home-renovate/lkps";
   static const String renovateYourHouseFixedPackagesEp =
-      "/api/v1/custom-package";///RequestDesign
+      "/api/v1/custom-package";
+
+  ///RequestDesign
   static const String requestDesignEp = "/api/v1/request-design";
   static const String requestDesignFilterEp = "/api/v1/request-design/filter";
 
@@ -96,19 +98,22 @@ class ApiConstants {
   static const String askWorkerEp = "/api/v1/ask-worker";
   static const String addAllAskWorkerImagesEp = "/api/v1/ask-worker-photos/all";
 
-
   ///cart process
- static const String shopNowEp = "/api/v1/products/shop-now";
+  static const String shopNowEp = "/api/v1/products/shop-now";
   static const String ordersEp = "/api/v1/orders";
 
   ///orders
   static const String getOrdersEp = "/api/v1/orders/user/{userId}";
   static const String getOrderDetailsEp = "/api/v1/orders/{orderId}";
   static const String cancelOrderEp = "/api/v1/orders/cancel/{orderId}";
-  static const String sendFurnishYourHomeEp = "/api/v1/home-furnishing-requests";
+  static const String sendFurnishYourHomeEp =
+      "/api/v1/home-furnishing-requests";
 
   /// rating
   static const String insertProductRateEp = "/api/v1/product-ratings";
+  static const String findRateByIdEp = "/api/v1/product-ratings/{rateId}";
+  static const String findProductRateByProductIdAndUserIdEp =
+      "/api/v1/product-ratings/product/{productId}/user/{userId}";
 }
 
 class ApiErrors {

@@ -57,7 +57,8 @@ import '../../features/profile/presentation/edit_profile_screen.dart';
 import '../../features/profile/presentation/profile_screen.dart';
 import '../../features/profile/presentation/project_details_screen.dart';
 import '../../features/projects_filter/presentation/projects_filter_screen.dart';
-import '../../features/rating/presentation/product_rating_screen.dart';
+import '../../features/rating/presentation/products_rating_screen.dart';
+import '../../features/rating/presentation/single_product_rating_screen.dart';
 import '../../features/settings/presentation/setting_screen.dart';
 import '../../features/user/home/presentation/user_home_screen.dart';
 import '../../features/user/renovate_your_house/presentation/renovate_your_house_first_screen.dart';
@@ -196,7 +197,6 @@ class AppRouter {
           builder: (_) => BusinessSignUpScreen(),
         );
       case Routes.productsDetailsScreen:
-        final productId = settings.arguments as int;
         return MaterialPageRoute(
           settings: settings,
           builder: (_) => ProductDetailsScreen(),
@@ -333,14 +333,33 @@ class AppRouter {
             child: KitchenAndDressingScreen(),
           ),
         );
-      case Routes.productRatingScreen:
+      case Routes.productsRatingScreen:
+        final args = settings.arguments as Map<String, dynamic>;
+        final List<dynamic> productJsonList = args['products'] ?? [];
+
+        final List<Product> products = productJsonList
+            .map((e) => Product.fromJson(e as Map<String, dynamic>))
+            .toList();
+
+        return MaterialPageRoute(
+          settings: settings,
+          builder: (_) => BlocProvider<ProductRatingCubit>(
+            create: (context) => sl<ProductRatingCubit>(),
+            child: ProductsRatingScreen(
+              deliveryAddress: args['deliveryAddress'] as String,
+              products: products,
+            ),
+          ),
+        );
+
+      case Routes.singleProductRatingScreen:
         final args = settings.arguments as Map<String, dynamic>;
 
         return MaterialPageRoute(
           settings: settings,
           builder: (_) => BlocProvider<ProductRatingCubit>(
             create: (context) => sl<ProductRatingCubit>(),
-            child: ProductRatingScreen(
+            child: SingleProductRatingScreen(
               deliveryAddress: args['deliveryAddress'] as String,
               product: args['product'] as Product,
             ),

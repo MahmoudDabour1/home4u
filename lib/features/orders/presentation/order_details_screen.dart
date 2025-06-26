@@ -52,7 +52,8 @@ class _OrderDetailsScreenState extends State<OrderDetailsScreen> {
                           OrderDetailsHeader(orderId: widget.orderId),
                           verticalSpace(32),
                           OrderDetailsCard(
-                              orderDetailsStatusCode: widget.orderStatus),
+                            orderDetailsStatusCode: widget.orderStatus,
+                          ),
                           verticalSpace(26),
                           OrderDetailsOrderDetails(
                             orderId: widget.orderId,
