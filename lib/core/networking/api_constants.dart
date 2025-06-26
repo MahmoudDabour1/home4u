@@ -112,8 +112,10 @@ class ApiConstants {
 
   ///Projects Filter
   static const String renovateHouseFilterEp = "/api/v1/home-renovate/filter";
+  static const String renovateHouseFixedPackageFilterEp = "/api/v1/select-custom-package/filter";
   static const String requestDesignFilterEp = "/api/v1/request-design/filter";
   static const String askTechnicalWorkerFilterEp = "/api/v1/ask-worker/filter";
+  static const String askEngineerFilterEp = "/api/v1/ask-engineer/filter";
 }
 
 class ApiErrors {

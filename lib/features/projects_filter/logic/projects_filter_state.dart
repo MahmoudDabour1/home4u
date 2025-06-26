@@ -44,11 +44,21 @@ class ProjectsFilterState<T> with _$ProjectsFilterState<T> {
   factory ProjectsFilterState.askTechnicalWorkerFilterLoading() =
       AskTechnicalWorkerFilterLoading;
 
-  factory ProjectsFilterState.askTechnicalWorkerFilterSuccess(
-      T data) = AskTechnicalWorkerFilterSuccess;
+  factory ProjectsFilterState.askTechnicalWorkerFilterSuccess(T data) =
+      AskTechnicalWorkerFilterSuccess;
 
   factory ProjectsFilterState.askTechnicalWorkerFilterFailure(
       {required String error}) = AskTechnicalWorkerFilterFailure;
+
+  ///Ask Engineer Filter
+  factory ProjectsFilterState.askEngineerFilterLoading() =
+      AskEngineerFilterLoading;
+
+  factory ProjectsFilterState.askEngineerFilterSuccess(T data) =
+      AskEngineerFilterSuccess;
+
+  factory ProjectsFilterState.askEngineerFilterFailure(
+      {required String error}) = AskEngineerFilterFailure;
 
   ///Pagination
   factory ProjectsFilterState.paginationLoading() =

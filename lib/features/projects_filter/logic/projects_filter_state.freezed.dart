@@ -36,6 +36,9 @@ mixin _$ProjectsFilterState<T> {
     required TResult Function() askTechnicalWorkerFilterLoading,
     required TResult Function(T data) askTechnicalWorkerFilterSuccess,
     required TResult Function(String error) askTechnicalWorkerFilterFailure,
+    required TResult Function() askEngineerFilterLoading,
+    required TResult Function(T data) askEngineerFilterSuccess,
+    required TResult Function(String error) askEngineerFilterFailure,
     required TResult Function() paginationLoading,
     required TResult Function(String error) paginationFailure,
   }) =>
@@ -57,6 +60,9 @@ mixin _$ProjectsFilterState<T> {
     TResult? Function()? askTechnicalWorkerFilterLoading,
     TResult? Function(T data)? askTechnicalWorkerFilterSuccess,
     TResult? Function(String error)? askTechnicalWorkerFilterFailure,
+    TResult? Function()? askEngineerFilterLoading,
+    TResult? Function(T data)? askEngineerFilterSuccess,
+    TResult? Function(String error)? askEngineerFilterFailure,
     TResult? Function()? paginationLoading,
     TResult? Function(String error)? paginationFailure,
   }) =>
@@ -78,6 +84,9 @@ mixin _$ProjectsFilterState<T> {
     TResult Function()? askTechnicalWorkerFilterLoading,
     TResult Function(T data)? askTechnicalWorkerFilterSuccess,
     TResult Function(String error)? askTechnicalWorkerFilterFailure,
+    TResult Function()? askEngineerFilterLoading,
+    TResult Function(T data)? askEngineerFilterSuccess,
+    TResult Function(String error)? askEngineerFilterFailure,
     TResult Function()? paginationLoading,
     TResult Function(String error)? paginationFailure,
     required TResult orElse(),
@@ -116,6 +125,12 @@ mixin _$ProjectsFilterState<T> {
         askTechnicalWorkerFilterSuccess,
     required TResult Function(AskTechnicalWorkerFilterFailure<T> value)
         askTechnicalWorkerFilterFailure,
+    required TResult Function(AskEngineerFilterLoading<T> value)
+        askEngineerFilterLoading,
+    required TResult Function(AskEngineerFilterSuccess<T> value)
+        askEngineerFilterSuccess,
+    required TResult Function(AskEngineerFilterFailure<T> value)
+        askEngineerFilterFailure,
     required TResult Function(RequestDesignPaginationLoading<T> value)
         paginationLoading,
     required TResult Function(RequestDesignPaginationFailure<T> value)
@@ -149,6 +164,12 @@ mixin _$ProjectsFilterState<T> {
         askTechnicalWorkerFilterSuccess,
     TResult? Function(AskTechnicalWorkerFilterFailure<T> value)?
         askTechnicalWorkerFilterFailure,
+    TResult? Function(AskEngineerFilterLoading<T> value)?
+        askEngineerFilterLoading,
+    TResult? Function(AskEngineerFilterSuccess<T> value)?
+        askEngineerFilterSuccess,
+    TResult? Function(AskEngineerFilterFailure<T> value)?
+        askEngineerFilterFailure,
     TResult? Function(RequestDesignPaginationLoading<T> value)?
         paginationLoading,
     TResult? Function(RequestDesignPaginationFailure<T> value)?
@@ -182,6 +203,12 @@ mixin _$ProjectsFilterState<T> {
         askTechnicalWorkerFilterSuccess,
     TResult Function(AskTechnicalWorkerFilterFailure<T> value)?
         askTechnicalWorkerFilterFailure,
+    TResult Function(AskEngineerFilterLoading<T> value)?
+        askEngineerFilterLoading,
+    TResult Function(AskEngineerFilterSuccess<T> value)?
+        askEngineerFilterSuccess,
+    TResult Function(AskEngineerFilterFailure<T> value)?
+        askEngineerFilterFailure,
     TResult Function(RequestDesignPaginationLoading<T> value)?
         paginationLoading,
     TResult Function(RequestDesignPaginationFailure<T> value)?
@@ -272,6 +299,9 @@ class _$InitialImpl<T> implements _Initial<T> {
     required TResult Function() askTechnicalWorkerFilterLoading,
     required TResult Function(T data) askTechnicalWorkerFilterSuccess,
     required TResult Function(String error) askTechnicalWorkerFilterFailure,
+    required TResult Function() askEngineerFilterLoading,
+    required TResult Function(T data) askEngineerFilterSuccess,
+    required TResult Function(String error) askEngineerFilterFailure,
     required TResult Function() paginationLoading,
     required TResult Function(String error) paginationFailure,
   }) {
@@ -296,6 +326,9 @@ class _$InitialImpl<T> implements _Initial<T> {
     TResult? Function()? askTechnicalWorkerFilterLoading,
     TResult? Function(T data)? askTechnicalWorkerFilterSuccess,
     TResult? Function(String error)? askTechnicalWorkerFilterFailure,
+    TResult? Function()? askEngineerFilterLoading,
+    TResult? Function(T data)? askEngineerFilterSuccess,
+    TResult? Function(String error)? askEngineerFilterFailure,
     TResult? Function()? paginationLoading,
     TResult? Function(String error)? paginationFailure,
   }) {
@@ -320,6 +353,9 @@ class _$InitialImpl<T> implements _Initial<T> {
     TResult Function()? askTechnicalWorkerFilterLoading,
     TResult Function(T data)? askTechnicalWorkerFilterSuccess,
     TResult Function(String error)? askTechnicalWorkerFilterFailure,
+    TResult Function()? askEngineerFilterLoading,
+    TResult Function(T data)? askEngineerFilterSuccess,
+    TResult Function(String error)? askEngineerFilterFailure,
     TResult Function()? paginationLoading,
     TResult Function(String error)? paginationFailure,
     required TResult orElse(),
@@ -364,6 +400,12 @@ class _$InitialImpl<T> implements _Initial<T> {
         askTechnicalWorkerFilterSuccess,
     required TResult Function(AskTechnicalWorkerFilterFailure<T> value)
         askTechnicalWorkerFilterFailure,
+    required TResult Function(AskEngineerFilterLoading<T> value)
+        askEngineerFilterLoading,
+    required TResult Function(AskEngineerFilterSuccess<T> value)
+        askEngineerFilterSuccess,
+    required TResult Function(AskEngineerFilterFailure<T> value)
+        askEngineerFilterFailure,
     required TResult Function(RequestDesignPaginationLoading<T> value)
         paginationLoading,
     required TResult Function(RequestDesignPaginationFailure<T> value)
@@ -400,6 +442,12 @@ class _$InitialImpl<T> implements _Initial<T> {
         askTechnicalWorkerFilterSuccess,
     TResult? Function(AskTechnicalWorkerFilterFailure<T> value)?
         askTechnicalWorkerFilterFailure,
+    TResult? Function(AskEngineerFilterLoading<T> value)?
+        askEngineerFilterLoading,
+    TResult? Function(AskEngineerFilterSuccess<T> value)?
+        askEngineerFilterSuccess,
+    TResult? Function(AskEngineerFilterFailure<T> value)?
+        askEngineerFilterFailure,
     TResult? Function(RequestDesignPaginationLoading<T> value)?
         paginationLoading,
     TResult? Function(RequestDesignPaginationFailure<T> value)?
@@ -436,6 +484,12 @@ class _$InitialImpl<T> implements _Initial<T> {
         askTechnicalWorkerFilterSuccess,
     TResult Function(AskTechnicalWorkerFilterFailure<T> value)?
         askTechnicalWorkerFilterFailure,
+    TResult Function(AskEngineerFilterLoading<T> value)?
+        askEngineerFilterLoading,
+    TResult Function(AskEngineerFilterSuccess<T> value)?
+        askEngineerFilterSuccess,
+    TResult Function(AskEngineerFilterFailure<T> value)?
+        askEngineerFilterFailure,
     TResult Function(RequestDesignPaginationLoading<T> value)?
         paginationLoading,
     TResult Function(RequestDesignPaginationFailure<T> value)?
@@ -517,6 +571,9 @@ class _$RequestDesignFilterLoadingImpl<T>
     required TResult Function() askTechnicalWorkerFilterLoading,
     required TResult Function(T data) askTechnicalWorkerFilterSuccess,
     required TResult Function(String error) askTechnicalWorkerFilterFailure,
+    required TResult Function() askEngineerFilterLoading,
+    required TResult Function(T data) askEngineerFilterSuccess,
+    required TResult Function(String error) askEngineerFilterFailure,
     required TResult Function() paginationLoading,
     required TResult Function(String error) paginationFailure,
   }) {
@@ -541,6 +598,9 @@ class _$RequestDesignFilterLoadingImpl<T>
     TResult? Function()? askTechnicalWorkerFilterLoading,
     TResult? Function(T data)? askTechnicalWorkerFilterSuccess,
     TResult? Function(String error)? askTechnicalWorkerFilterFailure,
+    TResult? Function()? askEngineerFilterLoading,
+    TResult? Function(T data)? askEngineerFilterSuccess,
+    TResult? Function(String error)? askEngineerFilterFailure,
     TResult? Function()? paginationLoading,
     TResult? Function(String error)? paginationFailure,
   }) {
@@ -565,6 +625,9 @@ class _$RequestDesignFilterLoadingImpl<T>
     TResult Function()? askTechnicalWorkerFilterLoading,
     TResult Function(T data)? askTechnicalWorkerFilterSuccess,
     TResult Function(String error)? askTechnicalWorkerFilterFailure,
+    TResult Function()? askEngineerFilterLoading,
+    TResult Function(T data)? askEngineerFilterSuccess,
+    TResult Function(String error)? askEngineerFilterFailure,
     TResult Function()? paginationLoading,
     TResult Function(String error)? paginationFailure,
     required TResult orElse(),
@@ -609,6 +672,12 @@ class _$RequestDesignFilterLoadingImpl<T>
         askTechnicalWorkerFilterSuccess,
     required TResult Function(AskTechnicalWorkerFilterFailure<T> value)
         askTechnicalWorkerFilterFailure,
+    required TResult Function(AskEngineerFilterLoading<T> value)
+        askEngineerFilterLoading,
+    required TResult Function(AskEngineerFilterSuccess<T> value)
+        askEngineerFilterSuccess,
+    required TResult Function(AskEngineerFilterFailure<T> value)
+        askEngineerFilterFailure,
     required TResult Function(RequestDesignPaginationLoading<T> value)
         paginationLoading,
     required TResult Function(RequestDesignPaginationFailure<T> value)
@@ -645,6 +714,12 @@ class _$RequestDesignFilterLoadingImpl<T>
         askTechnicalWorkerFilterSuccess,
     TResult? Function(AskTechnicalWorkerFilterFailure<T> value)?
         askTechnicalWorkerFilterFailure,
+    TResult? Function(AskEngineerFilterLoading<T> value)?
+        askEngineerFilterLoading,
+    TResult? Function(AskEngineerFilterSuccess<T> value)?
+        askEngineerFilterSuccess,
+    TResult? Function(AskEngineerFilterFailure<T> value)?
+        askEngineerFilterFailure,
     TResult? Function(RequestDesignPaginationLoading<T> value)?
         paginationLoading,
     TResult? Function(RequestDesignPaginationFailure<T> value)?
@@ -681,6 +756,12 @@ class _$RequestDesignFilterLoadingImpl<T>
         askTechnicalWorkerFilterSuccess,
     TResult Function(AskTechnicalWorkerFilterFailure<T> value)?
         askTechnicalWorkerFilterFailure,
+    TResult Function(AskEngineerFilterLoading<T> value)?
+        askEngineerFilterLoading,
+    TResult Function(AskEngineerFilterSuccess<T> value)?
+        askEngineerFilterSuccess,
+    TResult Function(AskEngineerFilterFailure<T> value)?
+        askEngineerFilterFailure,
     TResult Function(RequestDesignPaginationLoading<T> value)?
         paginationLoading,
     TResult Function(RequestDesignPaginationFailure<T> value)?
@@ -790,6 +871,9 @@ class _$RequestDesignFilterSuccessImpl<T>
     required TResult Function() askTechnicalWorkerFilterLoading,
     required TResult Function(T data) askTechnicalWorkerFilterSuccess,
     required TResult Function(String error) askTechnicalWorkerFilterFailure,
+    required TResult Function() askEngineerFilterLoading,
+    required TResult Function(T data) askEngineerFilterSuccess,
+    required TResult Function(String error) askEngineerFilterFailure,
     required TResult Function() paginationLoading,
     required TResult Function(String error) paginationFailure,
   }) {
@@ -814,6 +898,9 @@ class _$RequestDesignFilterSuccessImpl<T>
     TResult? Function()? askTechnicalWorkerFilterLoading,
     TResult? Function(T data)? askTechnicalWorkerFilterSuccess,
     TResult? Function(String error)? askTechnicalWorkerFilterFailure,
+    TResult? Function()? askEngineerFilterLoading,
+    TResult? Function(T data)? askEngineerFilterSuccess,
+    TResult? Function(String error)? askEngineerFilterFailure,
     TResult? Function()? paginationLoading,
     TResult? Function(String error)? paginationFailure,
   }) {
@@ -838,6 +925,9 @@ class _$RequestDesignFilterSuccessImpl<T>
     TResult Function()? askTechnicalWorkerFilterLoading,
     TResult Function(T data)? askTechnicalWorkerFilterSuccess,
     TResult Function(String error)? askTechnicalWorkerFilterFailure,
+    TResult Function()? askEngineerFilterLoading,
+    TResult Function(T data)? askEngineerFilterSuccess,
+    TResult Function(String error)? askEngineerFilterFailure,
     TResult Function()? paginationLoading,
     TResult Function(String error)? paginationFailure,
     required TResult orElse(),
@@ -882,6 +972,12 @@ class _$RequestDesignFilterSuccessImpl<T>
         askTechnicalWorkerFilterSuccess,
     required TResult Function(AskTechnicalWorkerFilterFailure<T> value)
         askTechnicalWorkerFilterFailure,
+    required TResult Function(AskEngineerFilterLoading<T> value)
+        askEngineerFilterLoading,
+    required TResult Function(AskEngineerFilterSuccess<T> value)
+        askEngineerFilterSuccess,
+    required TResult Function(AskEngineerFilterFailure<T> value)
+        askEngineerFilterFailure,
     required TResult Function(RequestDesignPaginationLoading<T> value)
         paginationLoading,
     required TResult Function(RequestDesignPaginationFailure<T> value)
@@ -918,6 +1014,12 @@ class _$RequestDesignFilterSuccessImpl<T>
         askTechnicalWorkerFilterSuccess,
     TResult? Function(AskTechnicalWorkerFilterFailure<T> value)?
         askTechnicalWorkerFilterFailure,
+    TResult? Function(AskEngineerFilterLoading<T> value)?
+        askEngineerFilterLoading,
+    TResult? Function(AskEngineerFilterSuccess<T> value)?
+        askEngineerFilterSuccess,
+    TResult? Function(AskEngineerFilterFailure<T> value)?
+        askEngineerFilterFailure,
     TResult? Function(RequestDesignPaginationLoading<T> value)?
         paginationLoading,
     TResult? Function(RequestDesignPaginationFailure<T> value)?
@@ -954,6 +1056,12 @@ class _$RequestDesignFilterSuccessImpl<T>
         askTechnicalWorkerFilterSuccess,
     TResult Function(AskTechnicalWorkerFilterFailure<T> value)?
         askTechnicalWorkerFilterFailure,
+    TResult Function(AskEngineerFilterLoading<T> value)?
+        askEngineerFilterLoading,
+    TResult Function(AskEngineerFilterSuccess<T> value)?
+        askEngineerFilterSuccess,
+    TResult Function(AskEngineerFilterFailure<T> value)?
+        askEngineerFilterFailure,
     TResult Function(RequestDesignPaginationLoading<T> value)?
         paginationLoading,
     TResult Function(RequestDesignPaginationFailure<T> value)?
@@ -1074,6 +1182,9 @@ class _$RequestDesignFilterFailureImpl<T>
     required TResult Function() askTechnicalWorkerFilterLoading,
     required TResult Function(T data) askTechnicalWorkerFilterSuccess,
     required TResult Function(String error) askTechnicalWorkerFilterFailure,
+    required TResult Function() askEngineerFilterLoading,
+    required TResult Function(T data) askEngineerFilterSuccess,
+    required TResult Function(String error) askEngineerFilterFailure,
     required TResult Function() paginationLoading,
     required TResult Function(String error) paginationFailure,
   }) {
@@ -1098,6 +1209,9 @@ class _$RequestDesignFilterFailureImpl<T>
     TResult? Function()? askTechnicalWorkerFilterLoading,
     TResult? Function(T data)? askTechnicalWorkerFilterSuccess,
     TResult? Function(String error)? askTechnicalWorkerFilterFailure,
+    TResult? Function()? askEngineerFilterLoading,
+    TResult? Function(T data)? askEngineerFilterSuccess,
+    TResult? Function(String error)? askEngineerFilterFailure,
     TResult? Function()? paginationLoading,
     TResult? Function(String error)? paginationFailure,
   }) {
@@ -1122,6 +1236,9 @@ class _$RequestDesignFilterFailureImpl<T>
     TResult Function()? askTechnicalWorkerFilterLoading,
     TResult Function(T data)? askTechnicalWorkerFilterSuccess,
     TResult Function(String error)? askTechnicalWorkerFilterFailure,
+    TResult Function()? askEngineerFilterLoading,
+    TResult Function(T data)? askEngineerFilterSuccess,
+    TResult Function(String error)? askEngineerFilterFailure,
     TResult Function()? paginationLoading,
     TResult Function(String error)? paginationFailure,
     required TResult orElse(),
@@ -1166,6 +1283,12 @@ class _$RequestDesignFilterFailureImpl<T>
         askTechnicalWorkerFilterSuccess,
     required TResult Function(AskTechnicalWorkerFilterFailure<T> value)
         askTechnicalWorkerFilterFailure,
+    required TResult Function(AskEngineerFilterLoading<T> value)
+        askEngineerFilterLoading,
+    required TResult Function(AskEngineerFilterSuccess<T> value)
+        askEngineerFilterSuccess,
+    required TResult Function(AskEngineerFilterFailure<T> value)
+        askEngineerFilterFailure,
     required TResult Function(RequestDesignPaginationLoading<T> value)
         paginationLoading,
     required TResult Function(RequestDesignPaginationFailure<T> value)
@@ -1202,6 +1325,12 @@ class _$RequestDesignFilterFailureImpl<T>
         askTechnicalWorkerFilterSuccess,
     TResult? Function(AskTechnicalWorkerFilterFailure<T> value)?
         askTechnicalWorkerFilterFailure,
+    TResult? Function(AskEngineerFilterLoading<T> value)?
+        askEngineerFilterLoading,
+    TResult? Function(AskEngineerFilterSuccess<T> value)?
+        askEngineerFilterSuccess,
+    TResult? Function(AskEngineerFilterFailure<T> value)?
+        askEngineerFilterFailure,
     TResult? Function(RequestDesignPaginationLoading<T> value)?
         paginationLoading,
     TResult? Function(RequestDesignPaginationFailure<T> value)?
@@ -1238,6 +1367,12 @@ class _$RequestDesignFilterFailureImpl<T>
         askTechnicalWorkerFilterSuccess,
     TResult Function(AskTechnicalWorkerFilterFailure<T> value)?
         askTechnicalWorkerFilterFailure,
+    TResult Function(AskEngineerFilterLoading<T> value)?
+        askEngineerFilterLoading,
+    TResult Function(AskEngineerFilterSuccess<T> value)?
+        askEngineerFilterSuccess,
+    TResult Function(AskEngineerFilterFailure<T> value)?
+        askEngineerFilterFailure,
     TResult Function(RequestDesignPaginationLoading<T> value)?
         paginationLoading,
     TResult Function(RequestDesignPaginationFailure<T> value)?
@@ -1332,6 +1467,9 @@ class _$RenovateYourHouseFixedPackagesFilterLoadingImpl<T>
     required TResult Function() askTechnicalWorkerFilterLoading,
     required TResult Function(T data) askTechnicalWorkerFilterSuccess,
     required TResult Function(String error) askTechnicalWorkerFilterFailure,
+    required TResult Function() askEngineerFilterLoading,
+    required TResult Function(T data) askEngineerFilterSuccess,
+    required TResult Function(String error) askEngineerFilterFailure,
     required TResult Function() paginationLoading,
     required TResult Function(String error) paginationFailure,
   }) {
@@ -1356,6 +1494,9 @@ class _$RenovateYourHouseFixedPackagesFilterLoadingImpl<T>
     TResult? Function()? askTechnicalWorkerFilterLoading,
     TResult? Function(T data)? askTechnicalWorkerFilterSuccess,
     TResult? Function(String error)? askTechnicalWorkerFilterFailure,
+    TResult? Function()? askEngineerFilterLoading,
+    TResult? Function(T data)? askEngineerFilterSuccess,
+    TResult? Function(String error)? askEngineerFilterFailure,
     TResult? Function()? paginationLoading,
     TResult? Function(String error)? paginationFailure,
   }) {
@@ -1380,6 +1521,9 @@ class _$RenovateYourHouseFixedPackagesFilterLoadingImpl<T>
     TResult Function()? askTechnicalWorkerFilterLoading,
     TResult Function(T data)? askTechnicalWorkerFilterSuccess,
     TResult Function(String error)? askTechnicalWorkerFilterFailure,
+    TResult Function()? askEngineerFilterLoading,
+    TResult Function(T data)? askEngineerFilterSuccess,
+    TResult Function(String error)? askEngineerFilterFailure,
     TResult Function()? paginationLoading,
     TResult Function(String error)? paginationFailure,
     required TResult orElse(),
@@ -1424,6 +1568,12 @@ class _$RenovateYourHouseFixedPackagesFilterLoadingImpl<T>
         askTechnicalWorkerFilterSuccess,
     required TResult Function(AskTechnicalWorkerFilterFailure<T> value)
         askTechnicalWorkerFilterFailure,
+    required TResult Function(AskEngineerFilterLoading<T> value)
+        askEngineerFilterLoading,
+    required TResult Function(AskEngineerFilterSuccess<T> value)
+        askEngineerFilterSuccess,
+    required TResult Function(AskEngineerFilterFailure<T> value)
+        askEngineerFilterFailure,
     required TResult Function(RequestDesignPaginationLoading<T> value)
         paginationLoading,
     required TResult Function(RequestDesignPaginationFailure<T> value)
@@ -1460,6 +1610,12 @@ class _$RenovateYourHouseFixedPackagesFilterLoadingImpl<T>
         askTechnicalWorkerFilterSuccess,
     TResult? Function(AskTechnicalWorkerFilterFailure<T> value)?
         askTechnicalWorkerFilterFailure,
+    TResult? Function(AskEngineerFilterLoading<T> value)?
+        askEngineerFilterLoading,
+    TResult? Function(AskEngineerFilterSuccess<T> value)?
+        askEngineerFilterSuccess,
+    TResult? Function(AskEngineerFilterFailure<T> value)?
+        askEngineerFilterFailure,
     TResult? Function(RequestDesignPaginationLoading<T> value)?
         paginationLoading,
     TResult? Function(RequestDesignPaginationFailure<T> value)?
@@ -1496,6 +1652,12 @@ class _$RenovateYourHouseFixedPackagesFilterLoadingImpl<T>
         askTechnicalWorkerFilterSuccess,
     TResult Function(AskTechnicalWorkerFilterFailure<T> value)?
         askTechnicalWorkerFilterFailure,
+    TResult Function(AskEngineerFilterLoading<T> value)?
+        askEngineerFilterLoading,
+    TResult Function(AskEngineerFilterSuccess<T> value)?
+        askEngineerFilterSuccess,
+    TResult Function(AskEngineerFilterFailure<T> value)?
+        askEngineerFilterFailure,
     TResult Function(RequestDesignPaginationLoading<T> value)?
         paginationLoading,
     TResult Function(RequestDesignPaginationFailure<T> value)?
@@ -1613,6 +1775,9 @@ class _$RenovateYourHouseFixedPackagesFilterLoadedImpl<T>
     required TResult Function() askTechnicalWorkerFilterLoading,
     required TResult Function(T data) askTechnicalWorkerFilterSuccess,
     required TResult Function(String error) askTechnicalWorkerFilterFailure,
+    required TResult Function() askEngineerFilterLoading,
+    required TResult Function(T data) askEngineerFilterSuccess,
+    required TResult Function(String error) askEngineerFilterFailure,
     required TResult Function() paginationLoading,
     required TResult Function(String error) paginationFailure,
   }) {
@@ -1637,6 +1802,9 @@ class _$RenovateYourHouseFixedPackagesFilterLoadedImpl<T>
     TResult? Function()? askTechnicalWorkerFilterLoading,
     TResult? Function(T data)? askTechnicalWorkerFilterSuccess,
     TResult? Function(String error)? askTechnicalWorkerFilterFailure,
+    TResult? Function()? askEngineerFilterLoading,
+    TResult? Function(T data)? askEngineerFilterSuccess,
+    TResult? Function(String error)? askEngineerFilterFailure,
     TResult? Function()? paginationLoading,
     TResult? Function(String error)? paginationFailure,
   }) {
@@ -1661,6 +1829,9 @@ class _$RenovateYourHouseFixedPackagesFilterLoadedImpl<T>
     TResult Function()? askTechnicalWorkerFilterLoading,
     TResult Function(T data)? askTechnicalWorkerFilterSuccess,
     TResult Function(String error)? askTechnicalWorkerFilterFailure,
+    TResult Function()? askEngineerFilterLoading,
+    TResult Function(T data)? askEngineerFilterSuccess,
+    TResult Function(String error)? askEngineerFilterFailure,
     TResult Function()? paginationLoading,
     TResult Function(String error)? paginationFailure,
     required TResult orElse(),
@@ -1705,6 +1876,12 @@ class _$RenovateYourHouseFixedPackagesFilterLoadedImpl<T>
         askTechnicalWorkerFilterSuccess,
     required TResult Function(AskTechnicalWorkerFilterFailure<T> value)
         askTechnicalWorkerFilterFailure,
+    required TResult Function(AskEngineerFilterLoading<T> value)
+        askEngineerFilterLoading,
+    required TResult Function(AskEngineerFilterSuccess<T> value)
+        askEngineerFilterSuccess,
+    required TResult Function(AskEngineerFilterFailure<T> value)
+        askEngineerFilterFailure,
     required TResult Function(RequestDesignPaginationLoading<T> value)
         paginationLoading,
     required TResult Function(RequestDesignPaginationFailure<T> value)
@@ -1741,6 +1918,12 @@ class _$RenovateYourHouseFixedPackagesFilterLoadedImpl<T>
         askTechnicalWorkerFilterSuccess,
     TResult? Function(AskTechnicalWorkerFilterFailure<T> value)?
         askTechnicalWorkerFilterFailure,
+    TResult? Function(AskEngineerFilterLoading<T> value)?
+        askEngineerFilterLoading,
+    TResult? Function(AskEngineerFilterSuccess<T> value)?
+        askEngineerFilterSuccess,
+    TResult? Function(AskEngineerFilterFailure<T> value)?
+        askEngineerFilterFailure,
     TResult? Function(RequestDesignPaginationLoading<T> value)?
         paginationLoading,
     TResult? Function(RequestDesignPaginationFailure<T> value)?
@@ -1777,6 +1960,12 @@ class _$RenovateYourHouseFixedPackagesFilterLoadedImpl<T>
         askTechnicalWorkerFilterSuccess,
     TResult Function(AskTechnicalWorkerFilterFailure<T> value)?
         askTechnicalWorkerFilterFailure,
+    TResult Function(AskEngineerFilterLoading<T> value)?
+        askEngineerFilterLoading,
+    TResult Function(AskEngineerFilterSuccess<T> value)?
+        askEngineerFilterSuccess,
+    TResult Function(AskEngineerFilterFailure<T> value)?
+        askEngineerFilterFailure,
     TResult Function(RequestDesignPaginationLoading<T> value)?
         paginationLoading,
     TResult Function(RequestDesignPaginationFailure<T> value)?
@@ -1902,6 +2091,9 @@ class _$RenovateYourHouseFixedPackagesFilterErrorImpl<T>
     required TResult Function() askTechnicalWorkerFilterLoading,
     required TResult Function(T data) askTechnicalWorkerFilterSuccess,
     required TResult Function(String error) askTechnicalWorkerFilterFailure,
+    required TResult Function() askEngineerFilterLoading,
+    required TResult Function(T data) askEngineerFilterSuccess,
+    required TResult Function(String error) askEngineerFilterFailure,
     required TResult Function() paginationLoading,
     required TResult Function(String error) paginationFailure,
   }) {
@@ -1926,6 +2118,9 @@ class _$RenovateYourHouseFixedPackagesFilterErrorImpl<T>
     TResult? Function()? askTechnicalWorkerFilterLoading,
     TResult? Function(T data)? askTechnicalWorkerFilterSuccess,
     TResult? Function(String error)? askTechnicalWorkerFilterFailure,
+    TResult? Function()? askEngineerFilterLoading,
+    TResult? Function(T data)? askEngineerFilterSuccess,
+    TResult? Function(String error)? askEngineerFilterFailure,
     TResult? Function()? paginationLoading,
     TResult? Function(String error)? paginationFailure,
   }) {
@@ -1950,6 +2145,9 @@ class _$RenovateYourHouseFixedPackagesFilterErrorImpl<T>
     TResult Function()? askTechnicalWorkerFilterLoading,
     TResult Function(T data)? askTechnicalWorkerFilterSuccess,
     TResult Function(String error)? askTechnicalWorkerFilterFailure,
+    TResult Function()? askEngineerFilterLoading,
+    TResult Function(T data)? askEngineerFilterSuccess,
+    TResult Function(String error)? askEngineerFilterFailure,
     TResult Function()? paginationLoading,
     TResult Function(String error)? paginationFailure,
     required TResult orElse(),
@@ -1994,6 +2192,12 @@ class _$RenovateYourHouseFixedPackagesFilterErrorImpl<T>
         askTechnicalWorkerFilterSuccess,
     required TResult Function(AskTechnicalWorkerFilterFailure<T> value)
         askTechnicalWorkerFilterFailure,
+    required TResult Function(AskEngineerFilterLoading<T> value)
+        askEngineerFilterLoading,
+    required TResult Function(AskEngineerFilterSuccess<T> value)
+        askEngineerFilterSuccess,
+    required TResult Function(AskEngineerFilterFailure<T> value)
+        askEngineerFilterFailure,
     required TResult Function(RequestDesignPaginationLoading<T> value)
         paginationLoading,
     required TResult Function(RequestDesignPaginationFailure<T> value)
@@ -2030,6 +2234,12 @@ class _$RenovateYourHouseFixedPackagesFilterErrorImpl<T>
         askTechnicalWorkerFilterSuccess,
     TResult? Function(AskTechnicalWorkerFilterFailure<T> value)?
         askTechnicalWorkerFilterFailure,
+    TResult? Function(AskEngineerFilterLoading<T> value)?
+        askEngineerFilterLoading,
+    TResult? Function(AskEngineerFilterSuccess<T> value)?
+        askEngineerFilterSuccess,
+    TResult? Function(AskEngineerFilterFailure<T> value)?
+        askEngineerFilterFailure,
     TResult? Function(RequestDesignPaginationLoading<T> value)?
         paginationLoading,
     TResult? Function(RequestDesignPaginationFailure<T> value)?
@@ -2066,6 +2276,12 @@ class _$RenovateYourHouseFixedPackagesFilterErrorImpl<T>
         askTechnicalWorkerFilterSuccess,
     TResult Function(AskTechnicalWorkerFilterFailure<T> value)?
         askTechnicalWorkerFilterFailure,
+    TResult Function(AskEngineerFilterLoading<T> value)?
+        askEngineerFilterLoading,
+    TResult Function(AskEngineerFilterSuccess<T> value)?
+        askEngineerFilterSuccess,
+    TResult Function(AskEngineerFilterFailure<T> value)?
+        askEngineerFilterFailure,
     TResult Function(RequestDesignPaginationLoading<T> value)?
         paginationLoading,
     TResult Function(RequestDesignPaginationFailure<T> value)?
@@ -2163,6 +2379,9 @@ class _$RenovateYourHouseCustomPackagesFilterLoadingImpl<T>
     required TResult Function() askTechnicalWorkerFilterLoading,
     required TResult Function(T data) askTechnicalWorkerFilterSuccess,
     required TResult Function(String error) askTechnicalWorkerFilterFailure,
+    required TResult Function() askEngineerFilterLoading,
+    required TResult Function(T data) askEngineerFilterSuccess,
+    required TResult Function(String error) askEngineerFilterFailure,
     required TResult Function() paginationLoading,
     required TResult Function(String error) paginationFailure,
   }) {
@@ -2187,6 +2406,9 @@ class _$RenovateYourHouseCustomPackagesFilterLoadingImpl<T>
     TResult? Function()? askTechnicalWorkerFilterLoading,
     TResult? Function(T data)? askTechnicalWorkerFilterSuccess,
     TResult? Function(String error)? askTechnicalWorkerFilterFailure,
+    TResult? Function()? askEngineerFilterLoading,
+    TResult? Function(T data)? askEngineerFilterSuccess,
+    TResult? Function(String error)? askEngineerFilterFailure,
     TResult? Function()? paginationLoading,
     TResult? Function(String error)? paginationFailure,
   }) {
@@ -2211,6 +2433,9 @@ class _$RenovateYourHouseCustomPackagesFilterLoadingImpl<T>
     TResult Function()? askTechnicalWorkerFilterLoading,
     TResult Function(T data)? askTechnicalWorkerFilterSuccess,
     TResult Function(String error)? askTechnicalWorkerFilterFailure,
+    TResult Function()? askEngineerFilterLoading,
+    TResult Function(T data)? askEngineerFilterSuccess,
+    TResult Function(String error)? askEngineerFilterFailure,
     TResult Function()? paginationLoading,
     TResult Function(String error)? paginationFailure,
     required TResult orElse(),
@@ -2255,6 +2480,12 @@ class _$RenovateYourHouseCustomPackagesFilterLoadingImpl<T>
         askTechnicalWorkerFilterSuccess,
     required TResult Function(AskTechnicalWorkerFilterFailure<T> value)
         askTechnicalWorkerFilterFailure,
+    required TResult Function(AskEngineerFilterLoading<T> value)
+        askEngineerFilterLoading,
+    required TResult Function(AskEngineerFilterSuccess<T> value)
+        askEngineerFilterSuccess,
+    required TResult Function(AskEngineerFilterFailure<T> value)
+        askEngineerFilterFailure,
     required TResult Function(RequestDesignPaginationLoading<T> value)
         paginationLoading,
     required TResult Function(RequestDesignPaginationFailure<T> value)
@@ -2291,6 +2522,12 @@ class _$RenovateYourHouseCustomPackagesFilterLoadingImpl<T>
         askTechnicalWorkerFilterSuccess,
     TResult? Function(AskTechnicalWorkerFilterFailure<T> value)?
         askTechnicalWorkerFilterFailure,
+    TResult? Function(AskEngineerFilterLoading<T> value)?
+        askEngineerFilterLoading,
+    TResult? Function(AskEngineerFilterSuccess<T> value)?
+        askEngineerFilterSuccess,
+    TResult? Function(AskEngineerFilterFailure<T> value)?
+        askEngineerFilterFailure,
     TResult? Function(RequestDesignPaginationLoading<T> value)?
         paginationLoading,
     TResult? Function(RequestDesignPaginationFailure<T> value)?
@@ -2327,6 +2564,12 @@ class _$RenovateYourHouseCustomPackagesFilterLoadingImpl<T>
         askTechnicalWorkerFilterSuccess,
     TResult Function(AskTechnicalWorkerFilterFailure<T> value)?
         askTechnicalWorkerFilterFailure,
+    TResult Function(AskEngineerFilterLoading<T> value)?
+        askEngineerFilterLoading,
+    TResult Function(AskEngineerFilterSuccess<T> value)?
+        askEngineerFilterSuccess,
+    TResult Function(AskEngineerFilterFailure<T> value)?
+        askEngineerFilterFailure,
     TResult Function(RequestDesignPaginationLoading<T> value)?
         paginationLoading,
     TResult Function(RequestDesignPaginationFailure<T> value)?
@@ -2443,6 +2686,9 @@ class _$RenovateYourHouseCustomPackagesFilterLoadedImpl<T>
     required TResult Function() askTechnicalWorkerFilterLoading,
     required TResult Function(T data) askTechnicalWorkerFilterSuccess,
     required TResult Function(String error) askTechnicalWorkerFilterFailure,
+    required TResult Function() askEngineerFilterLoading,
+    required TResult Function(T data) askEngineerFilterSuccess,
+    required TResult Function(String error) askEngineerFilterFailure,
     required TResult Function() paginationLoading,
     required TResult Function(String error) paginationFailure,
   }) {
@@ -2467,6 +2713,9 @@ class _$RenovateYourHouseCustomPackagesFilterLoadedImpl<T>
     TResult? Function()? askTechnicalWorkerFilterLoading,
     TResult? Function(T data)? askTechnicalWorkerFilterSuccess,
     TResult? Function(String error)? askTechnicalWorkerFilterFailure,
+    TResult? Function()? askEngineerFilterLoading,
+    TResult? Function(T data)? askEngineerFilterSuccess,
+    TResult? Function(String error)? askEngineerFilterFailure,
     TResult? Function()? paginationLoading,
     TResult? Function(String error)? paginationFailure,
   }) {
@@ -2491,6 +2740,9 @@ class _$RenovateYourHouseCustomPackagesFilterLoadedImpl<T>
     TResult Function()? askTechnicalWorkerFilterLoading,
     TResult Function(T data)? askTechnicalWorkerFilterSuccess,
     TResult Function(String error)? askTechnicalWorkerFilterFailure,
+    TResult Function()? askEngineerFilterLoading,
+    TResult Function(T data)? askEngineerFilterSuccess,
+    TResult Function(String error)? askEngineerFilterFailure,
     TResult Function()? paginationLoading,
     TResult Function(String error)? paginationFailure,
     required TResult orElse(),
@@ -2535,6 +2787,12 @@ class _$RenovateYourHouseCustomPackagesFilterLoadedImpl<T>
         askTechnicalWorkerFilterSuccess,
     required TResult Function(AskTechnicalWorkerFilterFailure<T> value)
         askTechnicalWorkerFilterFailure,
+    required TResult Function(AskEngineerFilterLoading<T> value)
+        askEngineerFilterLoading,
+    required TResult Function(AskEngineerFilterSuccess<T> value)
+        askEngineerFilterSuccess,
+    required TResult Function(AskEngineerFilterFailure<T> value)
+        askEngineerFilterFailure,
     required TResult Function(RequestDesignPaginationLoading<T> value)
         paginationLoading,
     required TResult Function(RequestDesignPaginationFailure<T> value)
@@ -2571,6 +2829,12 @@ class _$RenovateYourHouseCustomPackagesFilterLoadedImpl<T>
         askTechnicalWorkerFilterSuccess,
     TResult? Function(AskTechnicalWorkerFilterFailure<T> value)?
         askTechnicalWorkerFilterFailure,
+    TResult? Function(AskEngineerFilterLoading<T> value)?
+        askEngineerFilterLoading,
+    TResult? Function(AskEngineerFilterSuccess<T> value)?
+        askEngineerFilterSuccess,
+    TResult? Function(AskEngineerFilterFailure<T> value)?
+        askEngineerFilterFailure,
     TResult? Function(RequestDesignPaginationLoading<T> value)?
         paginationLoading,
     TResult? Function(RequestDesignPaginationFailure<T> value)?
@@ -2607,6 +2871,12 @@ class _$RenovateYourHouseCustomPackagesFilterLoadedImpl<T>
         askTechnicalWorkerFilterSuccess,
     TResult Function(AskTechnicalWorkerFilterFailure<T> value)?
         askTechnicalWorkerFilterFailure,
+    TResult Function(AskEngineerFilterLoading<T> value)?
+        askEngineerFilterLoading,
+    TResult Function(AskEngineerFilterSuccess<T> value)?
+        askEngineerFilterSuccess,
+    TResult Function(AskEngineerFilterFailure<T> value)?
+        askEngineerFilterFailure,
     TResult Function(RequestDesignPaginationLoading<T> value)?
         paginationLoading,
     TResult Function(RequestDesignPaginationFailure<T> value)?
@@ -2733,6 +3003,9 @@ class _$RenovateYourHouseCustomPackagesFilterErrorImpl<T>
     required TResult Function() askTechnicalWorkerFilterLoading,
     required TResult Function(T data) askTechnicalWorkerFilterSuccess,
     required TResult Function(String error) askTechnicalWorkerFilterFailure,
+    required TResult Function() askEngineerFilterLoading,
+    required TResult Function(T data) askEngineerFilterSuccess,
+    required TResult Function(String error) askEngineerFilterFailure,
     required TResult Function() paginationLoading,
     required TResult Function(String error) paginationFailure,
   }) {
@@ -2757,6 +3030,9 @@ class _$RenovateYourHouseCustomPackagesFilterErrorImpl<T>
     TResult? Function()? askTechnicalWorkerFilterLoading,
     TResult? Function(T data)? askTechnicalWorkerFilterSuccess,
     TResult? Function(String error)? askTechnicalWorkerFilterFailure,
+    TResult? Function()? askEngineerFilterLoading,
+    TResult? Function(T data)? askEngineerFilterSuccess,
+    TResult? Function(String error)? askEngineerFilterFailure,
     TResult? Function()? paginationLoading,
     TResult? Function(String error)? paginationFailure,
   }) {
@@ -2781,6 +3057,9 @@ class _$RenovateYourHouseCustomPackagesFilterErrorImpl<T>
     TResult Function()? askTechnicalWorkerFilterLoading,
     TResult Function(T data)? askTechnicalWorkerFilterSuccess,
     TResult Function(String error)? askTechnicalWorkerFilterFailure,
+    TResult Function()? askEngineerFilterLoading,
+    TResult Function(T data)? askEngineerFilterSuccess,
+    TResult Function(String error)? askEngineerFilterFailure,
     TResult Function()? paginationLoading,
     TResult Function(String error)? paginationFailure,
     required TResult orElse(),
@@ -2825,6 +3104,12 @@ class _$RenovateYourHouseCustomPackagesFilterErrorImpl<T>
         askTechnicalWorkerFilterSuccess,
     required TResult Function(AskTechnicalWorkerFilterFailure<T> value)
         askTechnicalWorkerFilterFailure,
+    required TResult Function(AskEngineerFilterLoading<T> value)
+        askEngineerFilterLoading,
+    required TResult Function(AskEngineerFilterSuccess<T> value)
+        askEngineerFilterSuccess,
+    required TResult Function(AskEngineerFilterFailure<T> value)
+        askEngineerFilterFailure,
     required TResult Function(RequestDesignPaginationLoading<T> value)
         paginationLoading,
     required TResult Function(RequestDesignPaginationFailure<T> value)
@@ -2861,6 +3146,12 @@ class _$RenovateYourHouseCustomPackagesFilterErrorImpl<T>
         askTechnicalWorkerFilterSuccess,
     TResult? Function(AskTechnicalWorkerFilterFailure<T> value)?
         askTechnicalWorkerFilterFailure,
+    TResult? Function(AskEngineerFilterLoading<T> value)?
+        askEngineerFilterLoading,
+    TResult? Function(AskEngineerFilterSuccess<T> value)?
+        askEngineerFilterSuccess,
+    TResult? Function(AskEngineerFilterFailure<T> value)?
+        askEngineerFilterFailure,
     TResult? Function(RequestDesignPaginationLoading<T> value)?
         paginationLoading,
     TResult? Function(RequestDesignPaginationFailure<T> value)?
@@ -2897,6 +3188,12 @@ class _$RenovateYourHouseCustomPackagesFilterErrorImpl<T>
         askTechnicalWorkerFilterSuccess,
     TResult Function(AskTechnicalWorkerFilterFailure<T> value)?
         askTechnicalWorkerFilterFailure,
+    TResult Function(AskEngineerFilterLoading<T> value)?
+        askEngineerFilterLoading,
+    TResult Function(AskEngineerFilterSuccess<T> value)?
+        askEngineerFilterSuccess,
+    TResult Function(AskEngineerFilterFailure<T> value)?
+        askEngineerFilterFailure,
     TResult Function(RequestDesignPaginationLoading<T> value)?
         paginationLoading,
     TResult Function(RequestDesignPaginationFailure<T> value)?
@@ -2990,6 +3287,9 @@ class _$AskTechnicalWorkerFilterLoadingImpl<T>
     required TResult Function() askTechnicalWorkerFilterLoading,
     required TResult Function(T data) askTechnicalWorkerFilterSuccess,
     required TResult Function(String error) askTechnicalWorkerFilterFailure,
+    required TResult Function() askEngineerFilterLoading,
+    required TResult Function(T data) askEngineerFilterSuccess,
+    required TResult Function(String error) askEngineerFilterFailure,
     required TResult Function() paginationLoading,
     required TResult Function(String error) paginationFailure,
   }) {
@@ -3014,6 +3314,9 @@ class _$AskTechnicalWorkerFilterLoadingImpl<T>
     TResult? Function()? askTechnicalWorkerFilterLoading,
     TResult? Function(T data)? askTechnicalWorkerFilterSuccess,
     TResult? Function(String error)? askTechnicalWorkerFilterFailure,
+    TResult? Function()? askEngineerFilterLoading,
+    TResult? Function(T data)? askEngineerFilterSuccess,
+    TResult? Function(String error)? askEngineerFilterFailure,
     TResult? Function()? paginationLoading,
     TResult? Function(String error)? paginationFailure,
   }) {
@@ -3038,6 +3341,9 @@ class _$AskTechnicalWorkerFilterLoadingImpl<T>
     TResult Function()? askTechnicalWorkerFilterLoading,
     TResult Function(T data)? askTechnicalWorkerFilterSuccess,
     TResult Function(String error)? askTechnicalWorkerFilterFailure,
+    TResult Function()? askEngineerFilterLoading,
+    TResult Function(T data)? askEngineerFilterSuccess,
+    TResult Function(String error)? askEngineerFilterFailure,
     TResult Function()? paginationLoading,
     TResult Function(String error)? paginationFailure,
     required TResult orElse(),
@@ -3082,6 +3388,12 @@ class _$AskTechnicalWorkerFilterLoadingImpl<T>
         askTechnicalWorkerFilterSuccess,
     required TResult Function(AskTechnicalWorkerFilterFailure<T> value)
         askTechnicalWorkerFilterFailure,
+    required TResult Function(AskEngineerFilterLoading<T> value)
+        askEngineerFilterLoading,
+    required TResult Function(AskEngineerFilterSuccess<T> value)
+        askEngineerFilterSuccess,
+    required TResult Function(AskEngineerFilterFailure<T> value)
+        askEngineerFilterFailure,
     required TResult Function(RequestDesignPaginationLoading<T> value)
         paginationLoading,
     required TResult Function(RequestDesignPaginationFailure<T> value)
@@ -3118,6 +3430,12 @@ class _$AskTechnicalWorkerFilterLoadingImpl<T>
         askTechnicalWorkerFilterSuccess,
     TResult? Function(AskTechnicalWorkerFilterFailure<T> value)?
         askTechnicalWorkerFilterFailure,
+    TResult? Function(AskEngineerFilterLoading<T> value)?
+        askEngineerFilterLoading,
+    TResult? Function(AskEngineerFilterSuccess<T> value)?
+        askEngineerFilterSuccess,
+    TResult? Function(AskEngineerFilterFailure<T> value)?
+        askEngineerFilterFailure,
     TResult? Function(RequestDesignPaginationLoading<T> value)?
         paginationLoading,
     TResult? Function(RequestDesignPaginationFailure<T> value)?
@@ -3154,6 +3472,12 @@ class _$AskTechnicalWorkerFilterLoadingImpl<T>
         askTechnicalWorkerFilterSuccess,
     TResult Function(AskTechnicalWorkerFilterFailure<T> value)?
         askTechnicalWorkerFilterFailure,
+    TResult Function(AskEngineerFilterLoading<T> value)?
+        askEngineerFilterLoading,
+    TResult Function(AskEngineerFilterSuccess<T> value)?
+        askEngineerFilterSuccess,
+    TResult Function(AskEngineerFilterFailure<T> value)?
+        askEngineerFilterFailure,
     TResult Function(RequestDesignPaginationLoading<T> value)?
         paginationLoading,
     TResult Function(RequestDesignPaginationFailure<T> value)?
@@ -3266,6 +3590,9 @@ class _$AskTechnicalWorkerFilterSuccessImpl<T>
     required TResult Function() askTechnicalWorkerFilterLoading,
     required TResult Function(T data) askTechnicalWorkerFilterSuccess,
     required TResult Function(String error) askTechnicalWorkerFilterFailure,
+    required TResult Function() askEngineerFilterLoading,
+    required TResult Function(T data) askEngineerFilterSuccess,
+    required TResult Function(String error) askEngineerFilterFailure,
     required TResult Function() paginationLoading,
     required TResult Function(String error) paginationFailure,
   }) {
@@ -3290,6 +3617,9 @@ class _$AskTechnicalWorkerFilterSuccessImpl<T>
     TResult? Function()? askTechnicalWorkerFilterLoading,
     TResult? Function(T data)? askTechnicalWorkerFilterSuccess,
     TResult? Function(String error)? askTechnicalWorkerFilterFailure,
+    TResult? Function()? askEngineerFilterLoading,
+    TResult? Function(T data)? askEngineerFilterSuccess,
+    TResult? Function(String error)? askEngineerFilterFailure,
     TResult? Function()? paginationLoading,
     TResult? Function(String error)? paginationFailure,
   }) {
@@ -3314,6 +3644,9 @@ class _$AskTechnicalWorkerFilterSuccessImpl<T>
     TResult Function()? askTechnicalWorkerFilterLoading,
     TResult Function(T data)? askTechnicalWorkerFilterSuccess,
     TResult Function(String error)? askTechnicalWorkerFilterFailure,
+    TResult Function()? askEngineerFilterLoading,
+    TResult Function(T data)? askEngineerFilterSuccess,
+    TResult Function(String error)? askEngineerFilterFailure,
     TResult Function()? paginationLoading,
     TResult Function(String error)? paginationFailure,
     required TResult orElse(),
@@ -3358,6 +3691,12 @@ class _$AskTechnicalWorkerFilterSuccessImpl<T>
         askTechnicalWorkerFilterSuccess,
     required TResult Function(AskTechnicalWorkerFilterFailure<T> value)
         askTechnicalWorkerFilterFailure,
+    required TResult Function(AskEngineerFilterLoading<T> value)
+        askEngineerFilterLoading,
+    required TResult Function(AskEngineerFilterSuccess<T> value)
+        askEngineerFilterSuccess,
+    required TResult Function(AskEngineerFilterFailure<T> value)
+        askEngineerFilterFailure,
     required TResult Function(RequestDesignPaginationLoading<T> value)
         paginationLoading,
     required TResult Function(RequestDesignPaginationFailure<T> value)
@@ -3394,6 +3733,12 @@ class _$AskTechnicalWorkerFilterSuccessImpl<T>
         askTechnicalWorkerFilterSuccess,
     TResult? Function(AskTechnicalWorkerFilterFailure<T> value)?
         askTechnicalWorkerFilterFailure,
+    TResult? Function(AskEngineerFilterLoading<T> value)?
+        askEngineerFilterLoading,
+    TResult? Function(AskEngineerFilterSuccess<T> value)?
+        askEngineerFilterSuccess,
+    TResult? Function(AskEngineerFilterFailure<T> value)?
+        askEngineerFilterFailure,
     TResult? Function(RequestDesignPaginationLoading<T> value)?
         paginationLoading,
     TResult? Function(RequestDesignPaginationFailure<T> value)?
@@ -3430,6 +3775,12 @@ class _$AskTechnicalWorkerFilterSuccessImpl<T>
         askTechnicalWorkerFilterSuccess,
     TResult Function(AskTechnicalWorkerFilterFailure<T> value)?
         askTechnicalWorkerFilterFailure,
+    TResult Function(AskEngineerFilterLoading<T> value)?
+        askEngineerFilterLoading,
+    TResult Function(AskEngineerFilterSuccess<T> value)?
+        askEngineerFilterSuccess,
+    TResult Function(AskEngineerFilterFailure<T> value)?
+        askEngineerFilterFailure,
     TResult Function(RequestDesignPaginationLoading<T> value)?
         paginationLoading,
     TResult Function(RequestDesignPaginationFailure<T> value)?
@@ -3550,6 +3901,9 @@ class _$AskTechnicalWorkerFilterFailureImpl<T>
     required TResult Function() askTechnicalWorkerFilterLoading,
     required TResult Function(T data) askTechnicalWorkerFilterSuccess,
     required TResult Function(String error) askTechnicalWorkerFilterFailure,
+    required TResult Function() askEngineerFilterLoading,
+    required TResult Function(T data) askEngineerFilterSuccess,
+    required TResult Function(String error) askEngineerFilterFailure,
     required TResult Function() paginationLoading,
     required TResult Function(String error) paginationFailure,
   }) {
@@ -3574,6 +3928,9 @@ class _$AskTechnicalWorkerFilterFailureImpl<T>
     TResult? Function()? askTechnicalWorkerFilterLoading,
     TResult? Function(T data)? askTechnicalWorkerFilterSuccess,
     TResult? Function(String error)? askTechnicalWorkerFilterFailure,
+    TResult? Function()? askEngineerFilterLoading,
+    TResult? Function(T data)? askEngineerFilterSuccess,
+    TResult? Function(String error)? askEngineerFilterFailure,
     TResult? Function()? paginationLoading,
     TResult? Function(String error)? paginationFailure,
   }) {
@@ -3598,6 +3955,9 @@ class _$AskTechnicalWorkerFilterFailureImpl<T>
     TResult Function()? askTechnicalWorkerFilterLoading,
     TResult Function(T data)? askTechnicalWorkerFilterSuccess,
     TResult Function(String error)? askTechnicalWorkerFilterFailure,
+    TResult Function()? askEngineerFilterLoading,
+    TResult Function(T data)? askEngineerFilterSuccess,
+    TResult Function(String error)? askEngineerFilterFailure,
     TResult Function()? paginationLoading,
     TResult Function(String error)? paginationFailure,
     required TResult orElse(),
@@ -3642,6 +4002,12 @@ class _$AskTechnicalWorkerFilterFailureImpl<T>
         askTechnicalWorkerFilterSuccess,
     required TResult Function(AskTechnicalWorkerFilterFailure<T> value)
         askTechnicalWorkerFilterFailure,
+    required TResult Function(AskEngineerFilterLoading<T> value)
+        askEngineerFilterLoading,
+    required TResult Function(AskEngineerFilterSuccess<T> value)
+        askEngineerFilterSuccess,
+    required TResult Function(AskEngineerFilterFailure<T> value)
+        askEngineerFilterFailure,
     required TResult Function(RequestDesignPaginationLoading<T> value)
         paginationLoading,
     required TResult Function(RequestDesignPaginationFailure<T> value)
@@ -3678,6 +4044,12 @@ class _$AskTechnicalWorkerFilterFailureImpl<T>
         askTechnicalWorkerFilterSuccess,
     TResult? Function(AskTechnicalWorkerFilterFailure<T> value)?
         askTechnicalWorkerFilterFailure,
+    TResult? Function(AskEngineerFilterLoading<T> value)?
+        askEngineerFilterLoading,
+    TResult? Function(AskEngineerFilterSuccess<T> value)?
+        askEngineerFilterSuccess,
+    TResult? Function(AskEngineerFilterFailure<T> value)?
+        askEngineerFilterFailure,
     TResult? Function(RequestDesignPaginationLoading<T> value)?
         paginationLoading,
     TResult? Function(RequestDesignPaginationFailure<T> value)?
@@ -3714,6 +4086,12 @@ class _$AskTechnicalWorkerFilterFailureImpl<T>
         askTechnicalWorkerFilterSuccess,
     TResult Function(AskTechnicalWorkerFilterFailure<T> value)?
         askTechnicalWorkerFilterFailure,
+    TResult Function(AskEngineerFilterLoading<T> value)?
+        askEngineerFilterLoading,
+    TResult Function(AskEngineerFilterSuccess<T> value)?
+        askEngineerFilterSuccess,
+    TResult Function(AskEngineerFilterFailure<T> value)?
+        askEngineerFilterFailure,
     TResult Function(RequestDesignPaginationLoading<T> value)?
         paginationLoading,
     TResult Function(RequestDesignPaginationFailure<T> value)?
@@ -3739,6 +4117,892 @@ abstract class AskTechnicalWorkerFilterFailure<T>
   @JsonKey(includeFromJson: false, includeToJson: false)
   _$$AskTechnicalWorkerFilterFailureImplCopyWith<T,
           _$AskTechnicalWorkerFilterFailureImpl<T>>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$AskEngineerFilterLoadingImplCopyWith<T, $Res> {
+  factory _$$AskEngineerFilterLoadingImplCopyWith(
+          _$AskEngineerFilterLoadingImpl<T> value,
+          $Res Function(_$AskEngineerFilterLoadingImpl<T>) then) =
+      __$$AskEngineerFilterLoadingImplCopyWithImpl<T, $Res>;
+}
+
+/// @nodoc
+class __$$AskEngineerFilterLoadingImplCopyWithImpl<T, $Res>
+    extends _$ProjectsFilterStateCopyWithImpl<T, $Res,
+        _$AskEngineerFilterLoadingImpl<T>>
+    implements _$$AskEngineerFilterLoadingImplCopyWith<T, $Res> {
+  __$$AskEngineerFilterLoadingImplCopyWithImpl(
+      _$AskEngineerFilterLoadingImpl<T> _value,
+      $Res Function(_$AskEngineerFilterLoadingImpl<T>) _then)
+      : super(_value, _then);
+
+  /// Create a copy of ProjectsFilterState
+  /// with the given fields replaced by the non-null parameter values.
+}
+
+/// @nodoc
+
+class _$AskEngineerFilterLoadingImpl<T> implements AskEngineerFilterLoading<T> {
+  _$AskEngineerFilterLoadingImpl();
+
+  @override
+  String toString() {
+    return 'ProjectsFilterState<$T>.askEngineerFilterLoading()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$AskEngineerFilterLoadingImpl<T>);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() requestDesignFilterLoading,
+    required TResult Function(RequestDesignFilterResponseModel data)
+        requestDesignFilterSuccess,
+    required TResult Function(String error) requestDesignFilterFailure,
+    required TResult Function() renovateYourHouseFixedPackagesFilterLoading,
+    required TResult Function(T data)
+        renovateYourHouseFixedPackagesFilterLoaded,
+    required TResult Function(String error)
+        renovateYourHouseFixedPackagesFilterError,
+    required TResult Function() renovateYourHouseCustomPackagesFilterLoading,
+    required TResult Function(RenovateHouseFilterResponseModel data)
+        renovateYourHouseCustomPackagesFilterLoaded,
+    required TResult Function(String error)
+        renovateYourHouseCustomPackagesFilterError,
+    required TResult Function() askTechnicalWorkerFilterLoading,
+    required TResult Function(T data) askTechnicalWorkerFilterSuccess,
+    required TResult Function(String error) askTechnicalWorkerFilterFailure,
+    required TResult Function() askEngineerFilterLoading,
+    required TResult Function(T data) askEngineerFilterSuccess,
+    required TResult Function(String error) askEngineerFilterFailure,
+    required TResult Function() paginationLoading,
+    required TResult Function(String error) paginationFailure,
+  }) {
+    return askEngineerFilterLoading();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? requestDesignFilterLoading,
+    TResult? Function(RequestDesignFilterResponseModel data)?
+        requestDesignFilterSuccess,
+    TResult? Function(String error)? requestDesignFilterFailure,
+    TResult? Function()? renovateYourHouseFixedPackagesFilterLoading,
+    TResult? Function(T data)? renovateYourHouseFixedPackagesFilterLoaded,
+    TResult? Function(String error)? renovateYourHouseFixedPackagesFilterError,
+    TResult? Function()? renovateYourHouseCustomPackagesFilterLoading,
+    TResult? Function(RenovateHouseFilterResponseModel data)?
+        renovateYourHouseCustomPackagesFilterLoaded,
+    TResult? Function(String error)? renovateYourHouseCustomPackagesFilterError,
+    TResult? Function()? askTechnicalWorkerFilterLoading,
+    TResult? Function(T data)? askTechnicalWorkerFilterSuccess,
+    TResult? Function(String error)? askTechnicalWorkerFilterFailure,
+    TResult? Function()? askEngineerFilterLoading,
+    TResult? Function(T data)? askEngineerFilterSuccess,
+    TResult? Function(String error)? askEngineerFilterFailure,
+    TResult? Function()? paginationLoading,
+    TResult? Function(String error)? paginationFailure,
+  }) {
+    return askEngineerFilterLoading?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? requestDesignFilterLoading,
+    TResult Function(RequestDesignFilterResponseModel data)?
+        requestDesignFilterSuccess,
+    TResult Function(String error)? requestDesignFilterFailure,
+    TResult Function()? renovateYourHouseFixedPackagesFilterLoading,
+    TResult Function(T data)? renovateYourHouseFixedPackagesFilterLoaded,
+    TResult Function(String error)? renovateYourHouseFixedPackagesFilterError,
+    TResult Function()? renovateYourHouseCustomPackagesFilterLoading,
+    TResult Function(RenovateHouseFilterResponseModel data)?
+        renovateYourHouseCustomPackagesFilterLoaded,
+    TResult Function(String error)? renovateYourHouseCustomPackagesFilterError,
+    TResult Function()? askTechnicalWorkerFilterLoading,
+    TResult Function(T data)? askTechnicalWorkerFilterSuccess,
+    TResult Function(String error)? askTechnicalWorkerFilterFailure,
+    TResult Function()? askEngineerFilterLoading,
+    TResult Function(T data)? askEngineerFilterSuccess,
+    TResult Function(String error)? askEngineerFilterFailure,
+    TResult Function()? paginationLoading,
+    TResult Function(String error)? paginationFailure,
+    required TResult orElse(),
+  }) {
+    if (askEngineerFilterLoading != null) {
+      return askEngineerFilterLoading();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial<T> value) initial,
+    required TResult Function(RequestDesignFilterLoading<T> value)
+        requestDesignFilterLoading,
+    required TResult Function(RequestDesignFilterSuccess<T> value)
+        requestDesignFilterSuccess,
+    required TResult Function(RequestDesignFilterFailure<T> value)
+        requestDesignFilterFailure,
+    required TResult Function(
+            RenovateYourHouseFixedPackagesFilterLoading<T> value)
+        renovateYourHouseFixedPackagesFilterLoading,
+    required TResult Function(
+            RenovateYourHouseFixedPackagesFilterLoaded<T> value)
+        renovateYourHouseFixedPackagesFilterLoaded,
+    required TResult Function(
+            RenovateYourHouseFixedPackagesFilterError<T> value)
+        renovateYourHouseFixedPackagesFilterError,
+    required TResult Function(
+            RenovateYourHouseCustomPackagesFilterLoading<T> value)
+        renovateYourHouseCustomPackagesFilterLoading,
+    required TResult Function(
+            RenovateYourHouseCustomPackagesFilterLoaded<T> value)
+        renovateYourHouseCustomPackagesFilterLoaded,
+    required TResult Function(
+            RenovateYourHouseCustomPackagesFilterError<T> value)
+        renovateYourHouseCustomPackagesFilterError,
+    required TResult Function(AskTechnicalWorkerFilterLoading<T> value)
+        askTechnicalWorkerFilterLoading,
+    required TResult Function(AskTechnicalWorkerFilterSuccess<T> value)
+        askTechnicalWorkerFilterSuccess,
+    required TResult Function(AskTechnicalWorkerFilterFailure<T> value)
+        askTechnicalWorkerFilterFailure,
+    required TResult Function(AskEngineerFilterLoading<T> value)
+        askEngineerFilterLoading,
+    required TResult Function(AskEngineerFilterSuccess<T> value)
+        askEngineerFilterSuccess,
+    required TResult Function(AskEngineerFilterFailure<T> value)
+        askEngineerFilterFailure,
+    required TResult Function(RequestDesignPaginationLoading<T> value)
+        paginationLoading,
+    required TResult Function(RequestDesignPaginationFailure<T> value)
+        paginationFailure,
+  }) {
+    return askEngineerFilterLoading(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial<T> value)? initial,
+    TResult? Function(RequestDesignFilterLoading<T> value)?
+        requestDesignFilterLoading,
+    TResult? Function(RequestDesignFilterSuccess<T> value)?
+        requestDesignFilterSuccess,
+    TResult? Function(RequestDesignFilterFailure<T> value)?
+        requestDesignFilterFailure,
+    TResult? Function(RenovateYourHouseFixedPackagesFilterLoading<T> value)?
+        renovateYourHouseFixedPackagesFilterLoading,
+    TResult? Function(RenovateYourHouseFixedPackagesFilterLoaded<T> value)?
+        renovateYourHouseFixedPackagesFilterLoaded,
+    TResult? Function(RenovateYourHouseFixedPackagesFilterError<T> value)?
+        renovateYourHouseFixedPackagesFilterError,
+    TResult? Function(RenovateYourHouseCustomPackagesFilterLoading<T> value)?
+        renovateYourHouseCustomPackagesFilterLoading,
+    TResult? Function(RenovateYourHouseCustomPackagesFilterLoaded<T> value)?
+        renovateYourHouseCustomPackagesFilterLoaded,
+    TResult? Function(RenovateYourHouseCustomPackagesFilterError<T> value)?
+        renovateYourHouseCustomPackagesFilterError,
+    TResult? Function(AskTechnicalWorkerFilterLoading<T> value)?
+        askTechnicalWorkerFilterLoading,
+    TResult? Function(AskTechnicalWorkerFilterSuccess<T> value)?
+        askTechnicalWorkerFilterSuccess,
+    TResult? Function(AskTechnicalWorkerFilterFailure<T> value)?
+        askTechnicalWorkerFilterFailure,
+    TResult? Function(AskEngineerFilterLoading<T> value)?
+        askEngineerFilterLoading,
+    TResult? Function(AskEngineerFilterSuccess<T> value)?
+        askEngineerFilterSuccess,
+    TResult? Function(AskEngineerFilterFailure<T> value)?
+        askEngineerFilterFailure,
+    TResult? Function(RequestDesignPaginationLoading<T> value)?
+        paginationLoading,
+    TResult? Function(RequestDesignPaginationFailure<T> value)?
+        paginationFailure,
+  }) {
+    return askEngineerFilterLoading?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial<T> value)? initial,
+    TResult Function(RequestDesignFilterLoading<T> value)?
+        requestDesignFilterLoading,
+    TResult Function(RequestDesignFilterSuccess<T> value)?
+        requestDesignFilterSuccess,
+    TResult Function(RequestDesignFilterFailure<T> value)?
+        requestDesignFilterFailure,
+    TResult Function(RenovateYourHouseFixedPackagesFilterLoading<T> value)?
+        renovateYourHouseFixedPackagesFilterLoading,
+    TResult Function(RenovateYourHouseFixedPackagesFilterLoaded<T> value)?
+        renovateYourHouseFixedPackagesFilterLoaded,
+    TResult Function(RenovateYourHouseFixedPackagesFilterError<T> value)?
+        renovateYourHouseFixedPackagesFilterError,
+    TResult Function(RenovateYourHouseCustomPackagesFilterLoading<T> value)?
+        renovateYourHouseCustomPackagesFilterLoading,
+    TResult Function(RenovateYourHouseCustomPackagesFilterLoaded<T> value)?
+        renovateYourHouseCustomPackagesFilterLoaded,
+    TResult Function(RenovateYourHouseCustomPackagesFilterError<T> value)?
+        renovateYourHouseCustomPackagesFilterError,
+    TResult Function(AskTechnicalWorkerFilterLoading<T> value)?
+        askTechnicalWorkerFilterLoading,
+    TResult Function(AskTechnicalWorkerFilterSuccess<T> value)?
+        askTechnicalWorkerFilterSuccess,
+    TResult Function(AskTechnicalWorkerFilterFailure<T> value)?
+        askTechnicalWorkerFilterFailure,
+    TResult Function(AskEngineerFilterLoading<T> value)?
+        askEngineerFilterLoading,
+    TResult Function(AskEngineerFilterSuccess<T> value)?
+        askEngineerFilterSuccess,
+    TResult Function(AskEngineerFilterFailure<T> value)?
+        askEngineerFilterFailure,
+    TResult Function(RequestDesignPaginationLoading<T> value)?
+        paginationLoading,
+    TResult Function(RequestDesignPaginationFailure<T> value)?
+        paginationFailure,
+    required TResult orElse(),
+  }) {
+    if (askEngineerFilterLoading != null) {
+      return askEngineerFilterLoading(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class AskEngineerFilterLoading<T> implements ProjectsFilterState<T> {
+  factory AskEngineerFilterLoading() = _$AskEngineerFilterLoadingImpl<T>;
+}
+
+/// @nodoc
+abstract class _$$AskEngineerFilterSuccessImplCopyWith<T, $Res> {
+  factory _$$AskEngineerFilterSuccessImplCopyWith(
+          _$AskEngineerFilterSuccessImpl<T> value,
+          $Res Function(_$AskEngineerFilterSuccessImpl<T>) then) =
+      __$$AskEngineerFilterSuccessImplCopyWithImpl<T, $Res>;
+  @useResult
+  $Res call({T data});
+}
+
+/// @nodoc
+class __$$AskEngineerFilterSuccessImplCopyWithImpl<T, $Res>
+    extends _$ProjectsFilterStateCopyWithImpl<T, $Res,
+        _$AskEngineerFilterSuccessImpl<T>>
+    implements _$$AskEngineerFilterSuccessImplCopyWith<T, $Res> {
+  __$$AskEngineerFilterSuccessImplCopyWithImpl(
+      _$AskEngineerFilterSuccessImpl<T> _value,
+      $Res Function(_$AskEngineerFilterSuccessImpl<T>) _then)
+      : super(_value, _then);
+
+  /// Create a copy of ProjectsFilterState
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? data = freezed,
+  }) {
+    return _then(_$AskEngineerFilterSuccessImpl<T>(
+      freezed == data
+          ? _value.data
+          : data // ignore: cast_nullable_to_non_nullable
+              as T,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$AskEngineerFilterSuccessImpl<T> implements AskEngineerFilterSuccess<T> {
+  _$AskEngineerFilterSuccessImpl(this.data);
+
+  @override
+  final T data;
+
+  @override
+  String toString() {
+    return 'ProjectsFilterState<$T>.askEngineerFilterSuccess(data: $data)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$AskEngineerFilterSuccessImpl<T> &&
+            const DeepCollectionEquality().equals(other.data, data));
+  }
+
+  @override
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(data));
+
+  /// Create a copy of ProjectsFilterState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$AskEngineerFilterSuccessImplCopyWith<T, _$AskEngineerFilterSuccessImpl<T>>
+      get copyWith => __$$AskEngineerFilterSuccessImplCopyWithImpl<T,
+          _$AskEngineerFilterSuccessImpl<T>>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() requestDesignFilterLoading,
+    required TResult Function(RequestDesignFilterResponseModel data)
+        requestDesignFilterSuccess,
+    required TResult Function(String error) requestDesignFilterFailure,
+    required TResult Function() renovateYourHouseFixedPackagesFilterLoading,
+    required TResult Function(T data)
+        renovateYourHouseFixedPackagesFilterLoaded,
+    required TResult Function(String error)
+        renovateYourHouseFixedPackagesFilterError,
+    required TResult Function() renovateYourHouseCustomPackagesFilterLoading,
+    required TResult Function(RenovateHouseFilterResponseModel data)
+        renovateYourHouseCustomPackagesFilterLoaded,
+    required TResult Function(String error)
+        renovateYourHouseCustomPackagesFilterError,
+    required TResult Function() askTechnicalWorkerFilterLoading,
+    required TResult Function(T data) askTechnicalWorkerFilterSuccess,
+    required TResult Function(String error) askTechnicalWorkerFilterFailure,
+    required TResult Function() askEngineerFilterLoading,
+    required TResult Function(T data) askEngineerFilterSuccess,
+    required TResult Function(String error) askEngineerFilterFailure,
+    required TResult Function() paginationLoading,
+    required TResult Function(String error) paginationFailure,
+  }) {
+    return askEngineerFilterSuccess(data);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? requestDesignFilterLoading,
+    TResult? Function(RequestDesignFilterResponseModel data)?
+        requestDesignFilterSuccess,
+    TResult? Function(String error)? requestDesignFilterFailure,
+    TResult? Function()? renovateYourHouseFixedPackagesFilterLoading,
+    TResult? Function(T data)? renovateYourHouseFixedPackagesFilterLoaded,
+    TResult? Function(String error)? renovateYourHouseFixedPackagesFilterError,
+    TResult? Function()? renovateYourHouseCustomPackagesFilterLoading,
+    TResult? Function(RenovateHouseFilterResponseModel data)?
+        renovateYourHouseCustomPackagesFilterLoaded,
+    TResult? Function(String error)? renovateYourHouseCustomPackagesFilterError,
+    TResult? Function()? askTechnicalWorkerFilterLoading,
+    TResult? Function(T data)? askTechnicalWorkerFilterSuccess,
+    TResult? Function(String error)? askTechnicalWorkerFilterFailure,
+    TResult? Function()? askEngineerFilterLoading,
+    TResult? Function(T data)? askEngineerFilterSuccess,
+    TResult? Function(String error)? askEngineerFilterFailure,
+    TResult? Function()? paginationLoading,
+    TResult? Function(String error)? paginationFailure,
+  }) {
+    return askEngineerFilterSuccess?.call(data);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? requestDesignFilterLoading,
+    TResult Function(RequestDesignFilterResponseModel data)?
+        requestDesignFilterSuccess,
+    TResult Function(String error)? requestDesignFilterFailure,
+    TResult Function()? renovateYourHouseFixedPackagesFilterLoading,
+    TResult Function(T data)? renovateYourHouseFixedPackagesFilterLoaded,
+    TResult Function(String error)? renovateYourHouseFixedPackagesFilterError,
+    TResult Function()? renovateYourHouseCustomPackagesFilterLoading,
+    TResult Function(RenovateHouseFilterResponseModel data)?
+        renovateYourHouseCustomPackagesFilterLoaded,
+    TResult Function(String error)? renovateYourHouseCustomPackagesFilterError,
+    TResult Function()? askTechnicalWorkerFilterLoading,
+    TResult Function(T data)? askTechnicalWorkerFilterSuccess,
+    TResult Function(String error)? askTechnicalWorkerFilterFailure,
+    TResult Function()? askEngineerFilterLoading,
+    TResult Function(T data)? askEngineerFilterSuccess,
+    TResult Function(String error)? askEngineerFilterFailure,
+    TResult Function()? paginationLoading,
+    TResult Function(String error)? paginationFailure,
+    required TResult orElse(),
+  }) {
+    if (askEngineerFilterSuccess != null) {
+      return askEngineerFilterSuccess(data);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial<T> value) initial,
+    required TResult Function(RequestDesignFilterLoading<T> value)
+        requestDesignFilterLoading,
+    required TResult Function(RequestDesignFilterSuccess<T> value)
+        requestDesignFilterSuccess,
+    required TResult Function(RequestDesignFilterFailure<T> value)
+        requestDesignFilterFailure,
+    required TResult Function(
+            RenovateYourHouseFixedPackagesFilterLoading<T> value)
+        renovateYourHouseFixedPackagesFilterLoading,
+    required TResult Function(
+            RenovateYourHouseFixedPackagesFilterLoaded<T> value)
+        renovateYourHouseFixedPackagesFilterLoaded,
+    required TResult Function(
+            RenovateYourHouseFixedPackagesFilterError<T> value)
+        renovateYourHouseFixedPackagesFilterError,
+    required TResult Function(
+            RenovateYourHouseCustomPackagesFilterLoading<T> value)
+        renovateYourHouseCustomPackagesFilterLoading,
+    required TResult Function(
+            RenovateYourHouseCustomPackagesFilterLoaded<T> value)
+        renovateYourHouseCustomPackagesFilterLoaded,
+    required TResult Function(
+            RenovateYourHouseCustomPackagesFilterError<T> value)
+        renovateYourHouseCustomPackagesFilterError,
+    required TResult Function(AskTechnicalWorkerFilterLoading<T> value)
+        askTechnicalWorkerFilterLoading,
+    required TResult Function(AskTechnicalWorkerFilterSuccess<T> value)
+        askTechnicalWorkerFilterSuccess,
+    required TResult Function(AskTechnicalWorkerFilterFailure<T> value)
+        askTechnicalWorkerFilterFailure,
+    required TResult Function(AskEngineerFilterLoading<T> value)
+        askEngineerFilterLoading,
+    required TResult Function(AskEngineerFilterSuccess<T> value)
+        askEngineerFilterSuccess,
+    required TResult Function(AskEngineerFilterFailure<T> value)
+        askEngineerFilterFailure,
+    required TResult Function(RequestDesignPaginationLoading<T> value)
+        paginationLoading,
+    required TResult Function(RequestDesignPaginationFailure<T> value)
+        paginationFailure,
+  }) {
+    return askEngineerFilterSuccess(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial<T> value)? initial,
+    TResult? Function(RequestDesignFilterLoading<T> value)?
+        requestDesignFilterLoading,
+    TResult? Function(RequestDesignFilterSuccess<T> value)?
+        requestDesignFilterSuccess,
+    TResult? Function(RequestDesignFilterFailure<T> value)?
+        requestDesignFilterFailure,
+    TResult? Function(RenovateYourHouseFixedPackagesFilterLoading<T> value)?
+        renovateYourHouseFixedPackagesFilterLoading,
+    TResult? Function(RenovateYourHouseFixedPackagesFilterLoaded<T> value)?
+        renovateYourHouseFixedPackagesFilterLoaded,
+    TResult? Function(RenovateYourHouseFixedPackagesFilterError<T> value)?
+        renovateYourHouseFixedPackagesFilterError,
+    TResult? Function(RenovateYourHouseCustomPackagesFilterLoading<T> value)?
+        renovateYourHouseCustomPackagesFilterLoading,
+    TResult? Function(RenovateYourHouseCustomPackagesFilterLoaded<T> value)?
+        renovateYourHouseCustomPackagesFilterLoaded,
+    TResult? Function(RenovateYourHouseCustomPackagesFilterError<T> value)?
+        renovateYourHouseCustomPackagesFilterError,
+    TResult? Function(AskTechnicalWorkerFilterLoading<T> value)?
+        askTechnicalWorkerFilterLoading,
+    TResult? Function(AskTechnicalWorkerFilterSuccess<T> value)?
+        askTechnicalWorkerFilterSuccess,
+    TResult? Function(AskTechnicalWorkerFilterFailure<T> value)?
+        askTechnicalWorkerFilterFailure,
+    TResult? Function(AskEngineerFilterLoading<T> value)?
+        askEngineerFilterLoading,
+    TResult? Function(AskEngineerFilterSuccess<T> value)?
+        askEngineerFilterSuccess,
+    TResult? Function(AskEngineerFilterFailure<T> value)?
+        askEngineerFilterFailure,
+    TResult? Function(RequestDesignPaginationLoading<T> value)?
+        paginationLoading,
+    TResult? Function(RequestDesignPaginationFailure<T> value)?
+        paginationFailure,
+  }) {
+    return askEngineerFilterSuccess?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial<T> value)? initial,
+    TResult Function(RequestDesignFilterLoading<T> value)?
+        requestDesignFilterLoading,
+    TResult Function(RequestDesignFilterSuccess<T> value)?
+        requestDesignFilterSuccess,
+    TResult Function(RequestDesignFilterFailure<T> value)?
+        requestDesignFilterFailure,
+    TResult Function(RenovateYourHouseFixedPackagesFilterLoading<T> value)?
+        renovateYourHouseFixedPackagesFilterLoading,
+    TResult Function(RenovateYourHouseFixedPackagesFilterLoaded<T> value)?
+        renovateYourHouseFixedPackagesFilterLoaded,
+    TResult Function(RenovateYourHouseFixedPackagesFilterError<T> value)?
+        renovateYourHouseFixedPackagesFilterError,
+    TResult Function(RenovateYourHouseCustomPackagesFilterLoading<T> value)?
+        renovateYourHouseCustomPackagesFilterLoading,
+    TResult Function(RenovateYourHouseCustomPackagesFilterLoaded<T> value)?
+        renovateYourHouseCustomPackagesFilterLoaded,
+    TResult Function(RenovateYourHouseCustomPackagesFilterError<T> value)?
+        renovateYourHouseCustomPackagesFilterError,
+    TResult Function(AskTechnicalWorkerFilterLoading<T> value)?
+        askTechnicalWorkerFilterLoading,
+    TResult Function(AskTechnicalWorkerFilterSuccess<T> value)?
+        askTechnicalWorkerFilterSuccess,
+    TResult Function(AskTechnicalWorkerFilterFailure<T> value)?
+        askTechnicalWorkerFilterFailure,
+    TResult Function(AskEngineerFilterLoading<T> value)?
+        askEngineerFilterLoading,
+    TResult Function(AskEngineerFilterSuccess<T> value)?
+        askEngineerFilterSuccess,
+    TResult Function(AskEngineerFilterFailure<T> value)?
+        askEngineerFilterFailure,
+    TResult Function(RequestDesignPaginationLoading<T> value)?
+        paginationLoading,
+    TResult Function(RequestDesignPaginationFailure<T> value)?
+        paginationFailure,
+    required TResult orElse(),
+  }) {
+    if (askEngineerFilterSuccess != null) {
+      return askEngineerFilterSuccess(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class AskEngineerFilterSuccess<T> implements ProjectsFilterState<T> {
+  factory AskEngineerFilterSuccess(final T data) =
+      _$AskEngineerFilterSuccessImpl<T>;
+
+  T get data;
+
+  /// Create a copy of ProjectsFilterState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$AskEngineerFilterSuccessImplCopyWith<T, _$AskEngineerFilterSuccessImpl<T>>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$AskEngineerFilterFailureImplCopyWith<T, $Res> {
+  factory _$$AskEngineerFilterFailureImplCopyWith(
+          _$AskEngineerFilterFailureImpl<T> value,
+          $Res Function(_$AskEngineerFilterFailureImpl<T>) then) =
+      __$$AskEngineerFilterFailureImplCopyWithImpl<T, $Res>;
+  @useResult
+  $Res call({String error});
+}
+
+/// @nodoc
+class __$$AskEngineerFilterFailureImplCopyWithImpl<T, $Res>
+    extends _$ProjectsFilterStateCopyWithImpl<T, $Res,
+        _$AskEngineerFilterFailureImpl<T>>
+    implements _$$AskEngineerFilterFailureImplCopyWith<T, $Res> {
+  __$$AskEngineerFilterFailureImplCopyWithImpl(
+      _$AskEngineerFilterFailureImpl<T> _value,
+      $Res Function(_$AskEngineerFilterFailureImpl<T>) _then)
+      : super(_value, _then);
+
+  /// Create a copy of ProjectsFilterState
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? error = null,
+  }) {
+    return _then(_$AskEngineerFilterFailureImpl<T>(
+      error: null == error
+          ? _value.error
+          : error // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$AskEngineerFilterFailureImpl<T> implements AskEngineerFilterFailure<T> {
+  _$AskEngineerFilterFailureImpl({required this.error});
+
+  @override
+  final String error;
+
+  @override
+  String toString() {
+    return 'ProjectsFilterState<$T>.askEngineerFilterFailure(error: $error)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$AskEngineerFilterFailureImpl<T> &&
+            (identical(other.error, error) || other.error == error));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, error);
+
+  /// Create a copy of ProjectsFilterState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$AskEngineerFilterFailureImplCopyWith<T, _$AskEngineerFilterFailureImpl<T>>
+      get copyWith => __$$AskEngineerFilterFailureImplCopyWithImpl<T,
+          _$AskEngineerFilterFailureImpl<T>>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() requestDesignFilterLoading,
+    required TResult Function(RequestDesignFilterResponseModel data)
+        requestDesignFilterSuccess,
+    required TResult Function(String error) requestDesignFilterFailure,
+    required TResult Function() renovateYourHouseFixedPackagesFilterLoading,
+    required TResult Function(T data)
+        renovateYourHouseFixedPackagesFilterLoaded,
+    required TResult Function(String error)
+        renovateYourHouseFixedPackagesFilterError,
+    required TResult Function() renovateYourHouseCustomPackagesFilterLoading,
+    required TResult Function(RenovateHouseFilterResponseModel data)
+        renovateYourHouseCustomPackagesFilterLoaded,
+    required TResult Function(String error)
+        renovateYourHouseCustomPackagesFilterError,
+    required TResult Function() askTechnicalWorkerFilterLoading,
+    required TResult Function(T data) askTechnicalWorkerFilterSuccess,
+    required TResult Function(String error) askTechnicalWorkerFilterFailure,
+    required TResult Function() askEngineerFilterLoading,
+    required TResult Function(T data) askEngineerFilterSuccess,
+    required TResult Function(String error) askEngineerFilterFailure,
+    required TResult Function() paginationLoading,
+    required TResult Function(String error) paginationFailure,
+  }) {
+    return askEngineerFilterFailure(error);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? requestDesignFilterLoading,
+    TResult? Function(RequestDesignFilterResponseModel data)?
+        requestDesignFilterSuccess,
+    TResult? Function(String error)? requestDesignFilterFailure,
+    TResult? Function()? renovateYourHouseFixedPackagesFilterLoading,
+    TResult? Function(T data)? renovateYourHouseFixedPackagesFilterLoaded,
+    TResult? Function(String error)? renovateYourHouseFixedPackagesFilterError,
+    TResult? Function()? renovateYourHouseCustomPackagesFilterLoading,
+    TResult? Function(RenovateHouseFilterResponseModel data)?
+        renovateYourHouseCustomPackagesFilterLoaded,
+    TResult? Function(String error)? renovateYourHouseCustomPackagesFilterError,
+    TResult? Function()? askTechnicalWorkerFilterLoading,
+    TResult? Function(T data)? askTechnicalWorkerFilterSuccess,
+    TResult? Function(String error)? askTechnicalWorkerFilterFailure,
+    TResult? Function()? askEngineerFilterLoading,
+    TResult? Function(T data)? askEngineerFilterSuccess,
+    TResult? Function(String error)? askEngineerFilterFailure,
+    TResult? Function()? paginationLoading,
+    TResult? Function(String error)? paginationFailure,
+  }) {
+    return askEngineerFilterFailure?.call(error);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? requestDesignFilterLoading,
+    TResult Function(RequestDesignFilterResponseModel data)?
+        requestDesignFilterSuccess,
+    TResult Function(String error)? requestDesignFilterFailure,
+    TResult Function()? renovateYourHouseFixedPackagesFilterLoading,
+    TResult Function(T data)? renovateYourHouseFixedPackagesFilterLoaded,
+    TResult Function(String error)? renovateYourHouseFixedPackagesFilterError,
+    TResult Function()? renovateYourHouseCustomPackagesFilterLoading,
+    TResult Function(RenovateHouseFilterResponseModel data)?
+        renovateYourHouseCustomPackagesFilterLoaded,
+    TResult Function(String error)? renovateYourHouseCustomPackagesFilterError,
+    TResult Function()? askTechnicalWorkerFilterLoading,
+    TResult Function(T data)? askTechnicalWorkerFilterSuccess,
+    TResult Function(String error)? askTechnicalWorkerFilterFailure,
+    TResult Function()? askEngineerFilterLoading,
+    TResult Function(T data)? askEngineerFilterSuccess,
+    TResult Function(String error)? askEngineerFilterFailure,
+    TResult Function()? paginationLoading,
+    TResult Function(String error)? paginationFailure,
+    required TResult orElse(),
+  }) {
+    if (askEngineerFilterFailure != null) {
+      return askEngineerFilterFailure(error);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial<T> value) initial,
+    required TResult Function(RequestDesignFilterLoading<T> value)
+        requestDesignFilterLoading,
+    required TResult Function(RequestDesignFilterSuccess<T> value)
+        requestDesignFilterSuccess,
+    required TResult Function(RequestDesignFilterFailure<T> value)
+        requestDesignFilterFailure,
+    required TResult Function(
+            RenovateYourHouseFixedPackagesFilterLoading<T> value)
+        renovateYourHouseFixedPackagesFilterLoading,
+    required TResult Function(
+            RenovateYourHouseFixedPackagesFilterLoaded<T> value)
+        renovateYourHouseFixedPackagesFilterLoaded,
+    required TResult Function(
+            RenovateYourHouseFixedPackagesFilterError<T> value)
+        renovateYourHouseFixedPackagesFilterError,
+    required TResult Function(
+            RenovateYourHouseCustomPackagesFilterLoading<T> value)
+        renovateYourHouseCustomPackagesFilterLoading,
+    required TResult Function(
+            RenovateYourHouseCustomPackagesFilterLoaded<T> value)
+        renovateYourHouseCustomPackagesFilterLoaded,
+    required TResult Function(
+            RenovateYourHouseCustomPackagesFilterError<T> value)
+        renovateYourHouseCustomPackagesFilterError,
+    required TResult Function(AskTechnicalWorkerFilterLoading<T> value)
+        askTechnicalWorkerFilterLoading,
+    required TResult Function(AskTechnicalWorkerFilterSuccess<T> value)
+        askTechnicalWorkerFilterSuccess,
+    required TResult Function(AskTechnicalWorkerFilterFailure<T> value)
+        askTechnicalWorkerFilterFailure,
+    required TResult Function(AskEngineerFilterLoading<T> value)
+        askEngineerFilterLoading,
+    required TResult Function(AskEngineerFilterSuccess<T> value)
+        askEngineerFilterSuccess,
+    required TResult Function(AskEngineerFilterFailure<T> value)
+        askEngineerFilterFailure,
+    required TResult Function(RequestDesignPaginationLoading<T> value)
+        paginationLoading,
+    required TResult Function(RequestDesignPaginationFailure<T> value)
+        paginationFailure,
+  }) {
+    return askEngineerFilterFailure(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial<T> value)? initial,
+    TResult? Function(RequestDesignFilterLoading<T> value)?
+        requestDesignFilterLoading,
+    TResult? Function(RequestDesignFilterSuccess<T> value)?
+        requestDesignFilterSuccess,
+    TResult? Function(RequestDesignFilterFailure<T> value)?
+        requestDesignFilterFailure,
+    TResult? Function(RenovateYourHouseFixedPackagesFilterLoading<T> value)?
+        renovateYourHouseFixedPackagesFilterLoading,
+    TResult? Function(RenovateYourHouseFixedPackagesFilterLoaded<T> value)?
+        renovateYourHouseFixedPackagesFilterLoaded,
+    TResult? Function(RenovateYourHouseFixedPackagesFilterError<T> value)?
+        renovateYourHouseFixedPackagesFilterError,
+    TResult? Function(RenovateYourHouseCustomPackagesFilterLoading<T> value)?
+        renovateYourHouseCustomPackagesFilterLoading,
+    TResult? Function(RenovateYourHouseCustomPackagesFilterLoaded<T> value)?
+        renovateYourHouseCustomPackagesFilterLoaded,
+    TResult? Function(RenovateYourHouseCustomPackagesFilterError<T> value)?
+        renovateYourHouseCustomPackagesFilterError,
+    TResult? Function(AskTechnicalWorkerFilterLoading<T> value)?
+        askTechnicalWorkerFilterLoading,
+    TResult? Function(AskTechnicalWorkerFilterSuccess<T> value)?
+        askTechnicalWorkerFilterSuccess,
+    TResult? Function(AskTechnicalWorkerFilterFailure<T> value)?
+        askTechnicalWorkerFilterFailure,
+    TResult? Function(AskEngineerFilterLoading<T> value)?
+        askEngineerFilterLoading,
+    TResult? Function(AskEngineerFilterSuccess<T> value)?
+        askEngineerFilterSuccess,
+    TResult? Function(AskEngineerFilterFailure<T> value)?
+        askEngineerFilterFailure,
+    TResult? Function(RequestDesignPaginationLoading<T> value)?
+        paginationLoading,
+    TResult? Function(RequestDesignPaginationFailure<T> value)?
+        paginationFailure,
+  }) {
+    return askEngineerFilterFailure?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial<T> value)? initial,
+    TResult Function(RequestDesignFilterLoading<T> value)?
+        requestDesignFilterLoading,
+    TResult Function(RequestDesignFilterSuccess<T> value)?
+        requestDesignFilterSuccess,
+    TResult Function(RequestDesignFilterFailure<T> value)?
+        requestDesignFilterFailure,
+    TResult Function(RenovateYourHouseFixedPackagesFilterLoading<T> value)?
+        renovateYourHouseFixedPackagesFilterLoading,
+    TResult Function(RenovateYourHouseFixedPackagesFilterLoaded<T> value)?
+        renovateYourHouseFixedPackagesFilterLoaded,
+    TResult Function(RenovateYourHouseFixedPackagesFilterError<T> value)?
+        renovateYourHouseFixedPackagesFilterError,
+    TResult Function(RenovateYourHouseCustomPackagesFilterLoading<T> value)?
+        renovateYourHouseCustomPackagesFilterLoading,
+    TResult Function(RenovateYourHouseCustomPackagesFilterLoaded<T> value)?
+        renovateYourHouseCustomPackagesFilterLoaded,
+    TResult Function(RenovateYourHouseCustomPackagesFilterError<T> value)?
+        renovateYourHouseCustomPackagesFilterError,
+    TResult Function(AskTechnicalWorkerFilterLoading<T> value)?
+        askTechnicalWorkerFilterLoading,
+    TResult Function(AskTechnicalWorkerFilterSuccess<T> value)?
+        askTechnicalWorkerFilterSuccess,
+    TResult Function(AskTechnicalWorkerFilterFailure<T> value)?
+        askTechnicalWorkerFilterFailure,
+    TResult Function(AskEngineerFilterLoading<T> value)?
+        askEngineerFilterLoading,
+    TResult Function(AskEngineerFilterSuccess<T> value)?
+        askEngineerFilterSuccess,
+    TResult Function(AskEngineerFilterFailure<T> value)?
+        askEngineerFilterFailure,
+    TResult Function(RequestDesignPaginationLoading<T> value)?
+        paginationLoading,
+    TResult Function(RequestDesignPaginationFailure<T> value)?
+        paginationFailure,
+    required TResult orElse(),
+  }) {
+    if (askEngineerFilterFailure != null) {
+      return askEngineerFilterFailure(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class AskEngineerFilterFailure<T> implements ProjectsFilterState<T> {
+  factory AskEngineerFilterFailure({required final String error}) =
+      _$AskEngineerFilterFailureImpl<T>;
+
+  String get error;
+
+  /// Create a copy of ProjectsFilterState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$AskEngineerFilterFailureImplCopyWith<T, _$AskEngineerFilterFailureImpl<T>>
       get copyWith => throw _privateConstructorUsedError;
 }
 
@@ -3806,6 +5070,9 @@ class _$RequestDesignPaginationLoadingImpl<T>
     required TResult Function() askTechnicalWorkerFilterLoading,
     required TResult Function(T data) askTechnicalWorkerFilterSuccess,
     required TResult Function(String error) askTechnicalWorkerFilterFailure,
+    required TResult Function() askEngineerFilterLoading,
+    required TResult Function(T data) askEngineerFilterSuccess,
+    required TResult Function(String error) askEngineerFilterFailure,
     required TResult Function() paginationLoading,
     required TResult Function(String error) paginationFailure,
   }) {
@@ -3830,6 +5097,9 @@ class _$RequestDesignPaginationLoadingImpl<T>
     TResult? Function()? askTechnicalWorkerFilterLoading,
     TResult? Function(T data)? askTechnicalWorkerFilterSuccess,
     TResult? Function(String error)? askTechnicalWorkerFilterFailure,
+    TResult? Function()? askEngineerFilterLoading,
+    TResult? Function(T data)? askEngineerFilterSuccess,
+    TResult? Function(String error)? askEngineerFilterFailure,
     TResult? Function()? paginationLoading,
     TResult? Function(String error)? paginationFailure,
   }) {
@@ -3854,6 +5124,9 @@ class _$RequestDesignPaginationLoadingImpl<T>
     TResult Function()? askTechnicalWorkerFilterLoading,
     TResult Function(T data)? askTechnicalWorkerFilterSuccess,
     TResult Function(String error)? askTechnicalWorkerFilterFailure,
+    TResult Function()? askEngineerFilterLoading,
+    TResult Function(T data)? askEngineerFilterSuccess,
+    TResult Function(String error)? askEngineerFilterFailure,
     TResult Function()? paginationLoading,
     TResult Function(String error)? paginationFailure,
     required TResult orElse(),
@@ -3898,6 +5171,12 @@ class _$RequestDesignPaginationLoadingImpl<T>
         askTechnicalWorkerFilterSuccess,
     required TResult Function(AskTechnicalWorkerFilterFailure<T> value)
         askTechnicalWorkerFilterFailure,
+    required TResult Function(AskEngineerFilterLoading<T> value)
+        askEngineerFilterLoading,
+    required TResult Function(AskEngineerFilterSuccess<T> value)
+        askEngineerFilterSuccess,
+    required TResult Function(AskEngineerFilterFailure<T> value)
+        askEngineerFilterFailure,
     required TResult Function(RequestDesignPaginationLoading<T> value)
         paginationLoading,
     required TResult Function(RequestDesignPaginationFailure<T> value)
@@ -3934,6 +5213,12 @@ class _$RequestDesignPaginationLoadingImpl<T>
         askTechnicalWorkerFilterSuccess,
     TResult? Function(AskTechnicalWorkerFilterFailure<T> value)?
         askTechnicalWorkerFilterFailure,
+    TResult? Function(AskEngineerFilterLoading<T> value)?
+        askEngineerFilterLoading,
+    TResult? Function(AskEngineerFilterSuccess<T> value)?
+        askEngineerFilterSuccess,
+    TResult? Function(AskEngineerFilterFailure<T> value)?
+        askEngineerFilterFailure,
     TResult? Function(RequestDesignPaginationLoading<T> value)?
         paginationLoading,
     TResult? Function(RequestDesignPaginationFailure<T> value)?
@@ -3970,6 +5255,12 @@ class _$RequestDesignPaginationLoadingImpl<T>
         askTechnicalWorkerFilterSuccess,
     TResult Function(AskTechnicalWorkerFilterFailure<T> value)?
         askTechnicalWorkerFilterFailure,
+    TResult Function(AskEngineerFilterLoading<T> value)?
+        askEngineerFilterLoading,
+    TResult Function(AskEngineerFilterSuccess<T> value)?
+        askEngineerFilterSuccess,
+    TResult Function(AskEngineerFilterFailure<T> value)?
+        askEngineerFilterFailure,
     TResult Function(RequestDesignPaginationLoading<T> value)?
         paginationLoading,
     TResult Function(RequestDesignPaginationFailure<T> value)?
@@ -4081,6 +5372,9 @@ class _$RequestDesignPaginationFailureImpl<T>
     required TResult Function() askTechnicalWorkerFilterLoading,
     required TResult Function(T data) askTechnicalWorkerFilterSuccess,
     required TResult Function(String error) askTechnicalWorkerFilterFailure,
+    required TResult Function() askEngineerFilterLoading,
+    required TResult Function(T data) askEngineerFilterSuccess,
+    required TResult Function(String error) askEngineerFilterFailure,
     required TResult Function() paginationLoading,
     required TResult Function(String error) paginationFailure,
   }) {
@@ -4105,6 +5399,9 @@ class _$RequestDesignPaginationFailureImpl<T>
     TResult? Function()? askTechnicalWorkerFilterLoading,
     TResult? Function(T data)? askTechnicalWorkerFilterSuccess,
     TResult? Function(String error)? askTechnicalWorkerFilterFailure,
+    TResult? Function()? askEngineerFilterLoading,
+    TResult? Function(T data)? askEngineerFilterSuccess,
+    TResult? Function(String error)? askEngineerFilterFailure,
     TResult? Function()? paginationLoading,
     TResult? Function(String error)? paginationFailure,
   }) {
@@ -4129,6 +5426,9 @@ class _$RequestDesignPaginationFailureImpl<T>
     TResult Function()? askTechnicalWorkerFilterLoading,
     TResult Function(T data)? askTechnicalWorkerFilterSuccess,
     TResult Function(String error)? askTechnicalWorkerFilterFailure,
+    TResult Function()? askEngineerFilterLoading,
+    TResult Function(T data)? askEngineerFilterSuccess,
+    TResult Function(String error)? askEngineerFilterFailure,
     TResult Function()? paginationLoading,
     TResult Function(String error)? paginationFailure,
     required TResult orElse(),
@@ -4173,6 +5473,12 @@ class _$RequestDesignPaginationFailureImpl<T>
         askTechnicalWorkerFilterSuccess,
     required TResult Function(AskTechnicalWorkerFilterFailure<T> value)
         askTechnicalWorkerFilterFailure,
+    required TResult Function(AskEngineerFilterLoading<T> value)
+        askEngineerFilterLoading,
+    required TResult Function(AskEngineerFilterSuccess<T> value)
+        askEngineerFilterSuccess,
+    required TResult Function(AskEngineerFilterFailure<T> value)
+        askEngineerFilterFailure,
     required TResult Function(RequestDesignPaginationLoading<T> value)
         paginationLoading,
     required TResult Function(RequestDesignPaginationFailure<T> value)
@@ -4209,6 +5515,12 @@ class _$RequestDesignPaginationFailureImpl<T>
         askTechnicalWorkerFilterSuccess,
     TResult? Function(AskTechnicalWorkerFilterFailure<T> value)?
         askTechnicalWorkerFilterFailure,
+    TResult? Function(AskEngineerFilterLoading<T> value)?
+        askEngineerFilterLoading,
+    TResult? Function(AskEngineerFilterSuccess<T> value)?
+        askEngineerFilterSuccess,
+    TResult? Function(AskEngineerFilterFailure<T> value)?
+        askEngineerFilterFailure,
     TResult? Function(RequestDesignPaginationLoading<T> value)?
         paginationLoading,
     TResult? Function(RequestDesignPaginationFailure<T> value)?
@@ -4245,6 +5557,12 @@ class _$RequestDesignPaginationFailureImpl<T>
         askTechnicalWorkerFilterSuccess,
     TResult Function(AskTechnicalWorkerFilterFailure<T> value)?
         askTechnicalWorkerFilterFailure,
+    TResult Function(AskEngineerFilterLoading<T> value)?
+        askEngineerFilterLoading,
+    TResult Function(AskEngineerFilterSuccess<T> value)?
+        askEngineerFilterSuccess,
+    TResult Function(AskEngineerFilterFailure<T> value)?
+        askEngineerFilterFailure,
     TResult Function(RequestDesignPaginationLoading<T> value)?
         paginationLoading,
     TResult Function(RequestDesignPaginationFailure<T> value)?

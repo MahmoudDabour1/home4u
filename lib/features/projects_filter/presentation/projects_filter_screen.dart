@@ -55,9 +55,7 @@ class _ProjectsFilterScreenState extends State<ProjectsFilterScreen> {
                                   (BuildContext context, StateSetter setState) {
                                 return SizedBox(
                                   height:
-                                  MediaQuery
-                                      .sizeOf(context)
-                                      .height * 0.6,
+                                      MediaQuery.sizeOf(context).height * 0.6,
                                   child: SingleChildScrollView(
                                     child: Container(
                                       padding: const EdgeInsets.all(16.0),
@@ -72,11 +70,12 @@ class _ProjectsFilterScreenState extends State<ProjectsFilterScreen> {
                                       ),
                                       child: Padding(
                                         padding: EdgeInsets.symmetric(
-                                            horizontal: 16.w),
+                                          horizontal: 16.w,
+                                        ),
                                         child: Column(
                                           mainAxisSize: MainAxisSize.min,
                                           crossAxisAlignment:
-                                          CrossAxisAlignment.start,
+                                              CrossAxisAlignment.start,
                                           children: <Widget>[
                                             verticalSpace(8),
                                             const FilterHeaderWidget(),
@@ -118,11 +117,13 @@ class _ProjectsFilterScreenState extends State<ProjectsFilterScreen> {
     );
   }
 
-  @override
-  void initState() {
-    super.initState();
-    context.read<ProjectsFilterCubit>().getRequestDesignFilter();
-    context.read<ProjectsFilterCubit>().renovateHouseCustomPackages();
-    context.read<ProjectsFilterCubit>().askTechnicalWorkerFilter();
-  }
+  // @override
+  // void initState() {
+  //   super.initState();
+  //   context.read<ProjectsFilterCubit>().getRequestDesignFilter();
+  //   context.read<ProjectsFilterCubit>().renovateHouseCustomPackages();
+  //   context.read<ProjectsFilterCubit>().askTechnicalWorkerFilter();
+  //   context.read<ProjectsFilterCubit>().askEngineerFilter();
+  //   context.read<ProjectsFilterCubit>().getFixedPackagesFilter();
+  // }
 }

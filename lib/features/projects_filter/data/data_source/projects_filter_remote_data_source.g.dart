@@ -96,6 +96,44 @@ class _ProjectsFilterRemoteDataSource
   }
 
   @override
+  Future<RenovateHouseFixedPackageFilterResponseModel>
+      renovateHouseFixedPackageFilter(
+          Map<String, dynamic> fixedPackageBody) async {
+    final _extra = <String, dynamic>{};
+    final queryParameters = <String, dynamic>{};
+    final _headers = <String, dynamic>{};
+    final _data = <String, dynamic>{};
+    _data.addAll(fixedPackageBody);
+    final _options =
+        _setStreamType<RenovateHouseFixedPackageFilterResponseModel>(Options(
+      method: 'POST',
+      headers: _headers,
+      extra: _extra,
+    )
+            .compose(
+              _dio.options,
+              '/api/v1/select-custom-package/filter',
+              queryParameters: queryParameters,
+              data: _data,
+            )
+            .copyWith(
+                baseUrl: _combineBaseUrls(
+              _dio.options.baseUrl,
+              baseUrl,
+            )));
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
+    late RenovateHouseFixedPackageFilterResponseModel _value;
+    try {
+      _value =
+          RenovateHouseFixedPackageFilterResponseModel.fromJson(_result.data!);
+    } on Object catch (e, s) {
+      errorLogger?.logError(e, s, _options);
+      rethrow;
+    }
+    return _value;
+  }
+
+  @override
   Future<RequestDesignFilterResponseModel> requestDesignFilter(
       RequestDesignFilterBody body) async {
     final _extra = <String, dynamic>{};
@@ -123,6 +161,41 @@ class _ProjectsFilterRemoteDataSource
     late RequestDesignFilterResponseModel _value;
     try {
       _value = RequestDesignFilterResponseModel.fromJson(_result.data!);
+    } on Object catch (e, s) {
+      errorLogger?.logError(e, s, _options);
+      rethrow;
+    }
+    return _value;
+  }
+
+  @override
+  Future<AskEngineerFilterResponseModel> askEngineerFilter(
+      AskEngineerFilterBody body) async {
+    final _extra = <String, dynamic>{};
+    final queryParameters = <String, dynamic>{};
+    final _headers = <String, dynamic>{};
+    final _data = <String, dynamic>{};
+    _data.addAll(body.toJson());
+    final _options = _setStreamType<AskEngineerFilterResponseModel>(Options(
+      method: 'POST',
+      headers: _headers,
+      extra: _extra,
+    )
+        .compose(
+          _dio.options,
+          '/api/v1/ask-engineer/filter',
+          queryParameters: queryParameters,
+          data: _data,
+        )
+        .copyWith(
+            baseUrl: _combineBaseUrls(
+          _dio.options.baseUrl,
+          baseUrl,
+        )));
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
+    late AskEngineerFilterResponseModel _value;
+    try {
+      _value = AskEngineerFilterResponseModel.fromJson(_result.data!);
     } on Object catch (e, s) {
       errorLogger?.logError(e, s, _options);
       rethrow;
