@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'renovate_your_house_remote_data_source.dart';
+part of 'projects_filter_remote_data_source.dart';
 
 // **************************************************************************
 // RetrofitGenerator
@@ -8,9 +8,9 @@ part of 'renovate_your_house_remote_data_source.dart';
 
 // ignore_for_file: unnecessary_brace_in_string_interps,no_leading_underscores_for_local_identifiers,unused_element,unnecessary_string_interpolations
 
-class _RenovateYourHouseRemoteDataSource
-    implements RenovateYourHouseRemoteDataSource {
-  _RenovateYourHouseRemoteDataSource(
+class _ProjectsFilterRemoteDataSource
+    implements ProjectsFilterRemoteDataSource {
+  _ProjectsFilterRemoteDataSource(
     this._dio, {
     this.baseUrl,
     this.errorLogger,
@@ -25,54 +25,22 @@ class _RenovateYourHouseRemoteDataSource
   final ParseErrorLogger? errorLogger;
 
   @override
-  Future<RenovateYourHouseLookUpsModel> getRenovateYourHouseLookUps() async {
+  Future<AskTechnicalWorkerFilterResponseModel> askTechnicalWorkerFilter(
+      AskTechnicalWorkerFilterBody body) async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
-    const Map<String, dynamic>? _data = null;
-    final _options = _setStreamType<RenovateYourHouseLookUpsModel>(Options(
-      method: 'GET',
-      headers: _headers,
-      extra: _extra,
-    )
-        .compose(
-          _dio.options,
-          '/api/v1/home-renovate/lkps',
-          queryParameters: queryParameters,
-          data: _data,
-        )
-        .copyWith(
-            baseUrl: _combineBaseUrls(
-          _dio.options.baseUrl,
-          baseUrl,
-        )));
-    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
-    late RenovateYourHouseLookUpsModel _value;
-    try {
-      _value = RenovateYourHouseLookUpsModel.fromJson(_result.data!);
-    } on Object catch (e, s) {
-      errorLogger?.logError(e, s, _options);
-      rethrow;
-    }
-    return _value;
-  }
-
-  @override
-  Future<RenovateYourHouseFixedPackagesModel>
-      getRenovateYourHouseFixedPackages() async {
-    final _extra = <String, dynamic>{};
-    final queryParameters = <String, dynamic>{};
-    final _headers = <String, dynamic>{};
-    const Map<String, dynamic>? _data = null;
+    final _data = <String, dynamic>{};
+    _data.addAll(body.toJson());
     final _options =
-        _setStreamType<RenovateYourHouseFixedPackagesModel>(Options(
-      method: 'GET',
+        _setStreamType<AskTechnicalWorkerFilterResponseModel>(Options(
+      method: 'POST',
       headers: _headers,
       extra: _extra,
     )
             .compose(
               _dio.options,
-              '/api/v1/custom-package',
+              '/api/v1/ask-worker/filter',
               queryParameters: queryParameters,
               data: _data,
             )
@@ -82,9 +50,9 @@ class _RenovateYourHouseRemoteDataSource
               baseUrl,
             )));
     final _result = await _dio.fetch<Map<String, dynamic>>(_options);
-    late RenovateYourHouseFixedPackagesModel _value;
+    late AskTechnicalWorkerFilterResponseModel _value;
     try {
-      _value = RenovateYourHouseFixedPackagesModel.fromJson(_result.data!);
+      _value = AskTechnicalWorkerFilterResponseModel.fromJson(_result.data!);
     } on Object catch (e, s) {
       errorLogger?.logError(e, s, _options);
       rethrow;
@@ -93,22 +61,21 @@ class _RenovateYourHouseRemoteDataSource
   }
 
   @override
-  Future<RenovateYourHouseResponseModel> addCustomPackageRenovateYourHouse(
-      AddRenovateHouseCustomPackageBody
-          addRenovateHouseCustomPackageBody) async {
+  Future<RenovateHouseFilterResponseModel> renovateHouseFilter(
+      RenovateHouseFilterBody body) async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
     final _data = <String, dynamic>{};
-    _data.addAll(addRenovateHouseCustomPackageBody.toJson());
-    final _options = _setStreamType<RenovateYourHouseResponseModel>(Options(
+    _data.addAll(body.toJson());
+    final _options = _setStreamType<RenovateHouseFilterResponseModel>(Options(
       method: 'POST',
       headers: _headers,
       extra: _extra,
     )
         .compose(
           _dio.options,
-          '/api/v1/home-renovate',
+          '/api/v1/home-renovate/filter',
           queryParameters: queryParameters,
           data: _data,
         )
@@ -118,9 +85,9 @@ class _RenovateYourHouseRemoteDataSource
           baseUrl,
         )));
     final _result = await _dio.fetch<Map<String, dynamic>>(_options);
-    late RenovateYourHouseResponseModel _value;
+    late RenovateHouseFilterResponseModel _value;
     try {
-      _value = RenovateYourHouseResponseModel.fromJson(_result.data!);
+      _value = RenovateHouseFilterResponseModel.fromJson(_result.data!);
     } on Object catch (e, s) {
       errorLogger?.logError(e, s, _options);
       rethrow;
@@ -129,22 +96,21 @@ class _RenovateYourHouseRemoteDataSource
   }
 
   @override
-  Future<RenovateYourHouseResponseModel> chooseFixedPackageRenovateYourHouse(
-      RenovateYourHouseChooseFixedPackageBody
-          renovateYourHouseChooseFixedPackageBody) async {
+  Future<RequestDesignFilterResponseModel> requestDesignFilter(
+      RequestDesignFilterBody body) async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
     final _data = <String, dynamic>{};
-    _data.addAll(renovateYourHouseChooseFixedPackageBody.toJson());
-    final _options = _setStreamType<RenovateYourHouseResponseModel>(Options(
+    _data.addAll(body.toJson());
+    final _options = _setStreamType<RequestDesignFilterResponseModel>(Options(
       method: 'POST',
       headers: _headers,
       extra: _extra,
     )
         .compose(
           _dio.options,
-          '/api/v1/select-custom-package',
+          '/api/v1/request-design/filter',
           queryParameters: queryParameters,
           data: _data,
         )
@@ -154,9 +120,9 @@ class _RenovateYourHouseRemoteDataSource
           baseUrl,
         )));
     final _result = await _dio.fetch<Map<String, dynamic>>(_options);
-    late RenovateYourHouseResponseModel _value;
+    late RequestDesignFilterResponseModel _value;
     try {
-      _value = RenovateYourHouseResponseModel.fromJson(_result.data!);
+      _value = RequestDesignFilterResponseModel.fromJson(_result.data!);
     } on Object catch (e, s) {
       errorLogger?.logError(e, s, _options);
       rethrow;

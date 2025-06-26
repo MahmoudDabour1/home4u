@@ -1,6 +1,5 @@
 import 'package:home4u/core/networking/api_result.dart';
 import 'package:home4u/core/routing/router_observer.dart';
-import 'package:home4u/features/user/renovate_your_house/data/models/renovate_your_house_fixed_packages_filter_response.dart';
 import 'package:home4u/features/user/renovate_your_house/data/models/renovate_your_house_fixed_packages_model.dart';
 import 'package:home4u/features/user/renovate_your_house/data/models/renovate_your_house_look_ups_model.dart';
 
@@ -9,7 +8,6 @@ import '../data_source/renovate_your_house_local_data_source.dart';
 import '../data_source/renovate_your_house_remote_data_source.dart';
 import '../models/add_renovate_house_custom_package_body.dart';
 import '../models/renovate_your_house_choose_fixed_package_body.dart';
-import '../models/renovate_your_house_custom_packages_filter_response.dart';
 import '../models/renovate_your_house_response_model.dart';
 
 abstract class RenovateYourHouseRepository {
@@ -28,16 +26,6 @@ abstract class RenovateYourHouseRepository {
       chooseFixedPackageRenovateYourHouse(
     RenovateYourHouseChooseFixedPackageBody
         renovateYourHouseChooseFixedPackageBody,
-  );
-
-  Future<ApiResult<RenovateYourHouseFixedPackagesFilterResponse>>
-      getRenovateYourHouseFixedPackagesFilter(
-    Map<String, dynamic> renovateYourHouseFixedProductsFilter,
-  );
-
-  Future<ApiResult<RenovateYourHouseCustomPackagesFilterResponse>>
-      getRenovateYourHouseCustomFilter(
-    Map<String, dynamic> renovateYourHouseCustomFilter,
   );
 }
 
@@ -113,33 +101,6 @@ class RenovateYourHouseRepositoryImpl implements RenovateYourHouseRepository {
       final remoteData =
           await remoteDataSource.chooseFixedPackageRenovateYourHouse(
               renovateYourHouseChooseFixedPackageBody);
-      return ApiResult.success(remoteData);
-    } catch (e) {
-      return ApiResult.failure(ApiErrorHandler.handle(e));
-    }
-  }
-
-  @override
-  Future<ApiResult<RenovateYourHouseCustomPackagesFilterResponse>>
-      getRenovateYourHouseCustomFilter(
-          Map<String, dynamic> renovateYourHouseCustomFilter) async {
-    try {
-      final remoteData = await remoteDataSource
-          .getRenovateYourHouseCustomFilter(renovateYourHouseCustomFilter);
-      return ApiResult.success(remoteData);
-    } catch (e) {
-      return ApiResult.failure(ApiErrorHandler.handle(e));
-    }
-  }
-
-  @override
-  Future<ApiResult<RenovateYourHouseFixedPackagesFilterResponse>>
-      getRenovateYourHouseFixedPackagesFilter(
-          Map<String, dynamic> renovateYourHouseFixedProductsFilter) async {
-    try {
-      final remoteData =
-          await remoteDataSource.getRenovateYourHouseFixedPackagesFilter(
-              renovateYourHouseFixedProductsFilter);
       return ApiResult.success(remoteData);
     } catch (e) {
       return ApiResult.failure(ApiErrorHandler.handle(e));

@@ -1,8 +1,9 @@
-import 'package:freezed_annotation/freezed_annotation.dart';
-part 'request_design_filter_response.g.dart';
+import 'package:json_annotation/json_annotation.dart';
+
+part 'request_design_filter_response_model.g.dart';
 
 @JsonSerializable()
-class RequestDesignFilterResponse {
+class RequestDesignFilterResponseModel {
   @JsonKey(name: "success")
   final bool? success;
   @JsonKey(name: "status")
@@ -10,16 +11,16 @@ class RequestDesignFilterResponse {
   @JsonKey(name: "data")
   final RequestFilterData? data;
 
-  RequestDesignFilterResponse({
+  RequestDesignFilterResponseModel({
     this.success,
     this.status,
     this.data,
   });
 
-  factory RequestDesignFilterResponse.fromJson(Map<String, dynamic> json) =>
-      _$RequestDesignFilterResponseFromJson(json);
+  factory RequestDesignFilterResponseModel.fromJson(Map<String, dynamic> json) =>
+      _$RequestDesignFilterResponseModelFromJson(json);
 
-  Map<String, dynamic> toJson() => _$RequestDesignFilterResponseToJson(this);
+  Map<String, dynamic> toJson() => _$RequestDesignFilterResponseModelToJson(this);
 }
 
 @JsonSerializable()

@@ -1,9 +1,10 @@
-import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:json_annotation/json_annotation.dart';
 
-part 'renovate_your_house_fixed_packages_filter_response.g.dart';
+
+part 'renovate_house_filter_response_model.g.dart';
 
 @JsonSerializable()
-class RenovateYourHouseFixedPackagesFilterResponse {
+class RenovateHouseFilterResponseModel {
   @JsonKey(name: "success")
   final bool? success;
   @JsonKey(name: "status")
@@ -11,24 +12,21 @@ class RenovateYourHouseFixedPackagesFilterResponse {
   @JsonKey(name: "data")
   final Data? data;
 
-  RenovateYourHouseFixedPackagesFilterResponse({
+  RenovateHouseFilterResponseModel({
     this.success,
     this.status,
     this.data,
   });
 
-  factory RenovateYourHouseFixedPackagesFilterResponse.fromJson(
-          Map<String, dynamic> json) =>
-      _$RenovateYourHouseFixedPackagesFilterResponseFromJson(json);
+  factory RenovateHouseFilterResponseModel.fromJson(Map<String, dynamic> json) => _$RenovateHouseFilterResponseModelFromJson(json);
 
-  Map<String, dynamic> toJson() =>
-      _$RenovateYourHouseFixedPackagesFilterResponseToJson(this);
+  Map<String, dynamic> toJson() => _$RenovateHouseFilterResponseModelToJson(this);
 }
 
 @JsonSerializable()
 class Data {
   @JsonKey(name: "content")
-  final List<RenovateFixedFilterContent>? content;
+  final List<Content>? content;
   @JsonKey(name: "pageable")
   final Pageable? pageable;
   @JsonKey(name: "totalPages")
@@ -70,7 +68,7 @@ class Data {
 }
 
 @JsonSerializable()
-class RenovateFixedFilterContent {
+class Content {
   @JsonKey(name: "id")
   final int? id;
   @JsonKey(name: "statusCode")
@@ -106,7 +104,7 @@ class RenovateFixedFilterContent {
   @JsonKey(name: "notes")
   final String? notes;
 
-  RenovateFixedFilterContent({
+  Content({
     this.id,
     this.statusCode,
     this.phoneNumber,
@@ -126,10 +124,9 @@ class RenovateFixedFilterContent {
     this.notes,
   });
 
-  factory RenovateFixedFilterContent.fromJson(Map<String, dynamic> json) =>
-      _$RenovateFixedFilterContentFromJson(json);
+  factory Content.fromJson(Map<String, dynamic> json) => _$ContentFromJson(json);
 
-  Map<String, dynamic> toJson() => _$RenovateFixedFilterContentToJson(this);
+  Map<String, dynamic> toJson() => _$ContentToJson(this);
 }
 
 @JsonSerializable()
@@ -173,8 +170,7 @@ class UnitStatuses {
     this.nameEn,
   });
 
-  factory UnitStatuses.fromJson(Map<String, dynamic> json) =>
-      _$UnitStatusesFromJson(json);
+  factory UnitStatuses.fromJson(Map<String, dynamic> json) => _$UnitStatusesFromJson(json);
 
   Map<String, dynamic> toJson() => _$UnitStatusesToJson(this);
 }
@@ -189,22 +185,21 @@ class Pageable {
   final Sort? sort;
   @JsonKey(name: "offset")
   final int? offset;
-  @JsonKey(name: "unpaged")
-  final bool? unpaged;
   @JsonKey(name: "paged")
   final bool? paged;
+  @JsonKey(name: "unpaged")
+  final bool? unpaged;
 
   Pageable({
     this.pageNumber,
     this.pageSize,
     this.sort,
     this.offset,
-    this.unpaged,
     this.paged,
+    this.unpaged,
   });
 
-  factory Pageable.fromJson(Map<String, dynamic> json) =>
-      _$PageableFromJson(json);
+  factory Pageable.fromJson(Map<String, dynamic> json) => _$PageableFromJson(json);
 
   Map<String, dynamic> toJson() => _$PageableToJson(this);
 }
@@ -213,15 +208,15 @@ class Pageable {
 class Sort {
   @JsonKey(name: "empty")
   final bool? empty;
-  @JsonKey(name: "unsorted")
-  final bool? unsorted;
   @JsonKey(name: "sorted")
   final bool? sorted;
+  @JsonKey(name: "unsorted")
+  final bool? unsorted;
 
   Sort({
     this.empty,
-    this.unsorted,
     this.sorted,
+    this.unsorted,
   });
 
   factory Sort.fromJson(Map<String, dynamic> json) => _$SortFromJson(json);

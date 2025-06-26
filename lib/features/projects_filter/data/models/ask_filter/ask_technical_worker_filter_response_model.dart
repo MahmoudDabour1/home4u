@@ -1,9 +1,9 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 
-part 'renovate_your_house_custom_packages_filter_response.g.dart';
+part 'ask_technical_worker_filter_response_model.g.dart';
 
 @JsonSerializable()
-class RenovateYourHouseCustomPackagesFilterResponse {
+class AskTechnicalWorkerFilterResponseModel {
   @JsonKey(name: "success")
   final bool? success;
   @JsonKey(name: "status")
@@ -11,24 +11,21 @@ class RenovateYourHouseCustomPackagesFilterResponse {
   @JsonKey(name: "data")
   final Data? data;
 
-  RenovateYourHouseCustomPackagesFilterResponse({
+  AskTechnicalWorkerFilterResponseModel({
     this.success,
     this.status,
     this.data,
   });
 
-  factory RenovateYourHouseCustomPackagesFilterResponse.fromJson(
-          Map<String, dynamic> json) =>
-      _$RenovateYourHouseCustomPackagesFilterResponseFromJson(json);
+  factory AskTechnicalWorkerFilterResponseModel.fromJson(Map<String, dynamic> json) => _$AskTechnicalWorkerFilterResponseModelFromJson(json);
 
-  Map<String, dynamic> toJson() =>
-      _$RenovateYourHouseCustomPackagesFilterResponseToJson(this);
+  Map<String, dynamic> toJson() => _$AskTechnicalWorkerFilterResponseModelToJson(this);
 }
 
 @JsonSerializable()
 class Data {
   @JsonKey(name: "content")
-  final List<CustomPackagesContent>? content;
+  final List<AskTechnicalContent>? content;
   @JsonKey(name: "pageable")
   final Pageable? pageable;
   @JsonKey(name: "totalPages")
@@ -70,76 +67,94 @@ class Data {
 }
 
 @JsonSerializable()
-class CustomPackagesContent {
+class AskTechnicalContent {
   @JsonKey(name: "id")
   final int? id;
   @JsonKey(name: "statusCode")
   final int? statusCode;
+  @JsonKey(name: "projectName")
+  final String? projectName;
   @JsonKey(name: "phoneNumber")
   final String? phoneNumber;
-  @JsonKey(name: "isInsideCompound")
-  final bool? isInsideCompound;
+  @JsonKey(name: "projectDescription")
+  final String? projectDescription;
+  @JsonKey(name: "workerType")
+  final Type? workerType;
   @JsonKey(name: "unitType")
-  final UnitType? unitType;
-  @JsonKey(name: "customPackage")
-  final CustomPackage? customPackage;
+  final Type? unitType;
+  @JsonKey(name: "city")
+  final City? city;
+  @JsonKey(name: "governorate")
+  final City? governorate;
+  @JsonKey(name: "material")
+  final City? material;
+  @JsonKey(name: "budget")
+  final int? budget;
+  @JsonKey(name: "photos")
+  final List<Photo>? photos;
 
-  CustomPackagesContent({
+  AskTechnicalContent({
     this.id,
     this.statusCode,
+    this.projectName,
     this.phoneNumber,
-    this.isInsideCompound,
+    this.projectDescription,
+    this.workerType,
     this.unitType,
-    this.customPackage,
+    this.city,
+    this.governorate,
+    this.material,
+    this.budget,
+    this.photos,
   });
 
-   factory CustomPackagesContent.fromJson(Map<String, dynamic> json) =>
-      _$CustomPackagesContentFromJson(json);
+  factory AskTechnicalContent.fromJson(Map<String, dynamic> json) => _$AskTechnicalContentFromJson(json);
 
-  Map<String, dynamic> toJson() => _$CustomPackagesContentToJson(this);
+  Map<String, dynamic> toJson() => _$AskTechnicalContentToJson(this);
 }
 
 @JsonSerializable()
-class CustomPackage {
+class City {
   @JsonKey(name: "id")
   final int? id;
-  @JsonKey(name: "statusCode")
-  final int? statusCode;
+  @JsonKey(name: "code")
+  final String? code;
   @JsonKey(name: "name")
   final String? name;
-  @JsonKey(name: "nameAr")
-  final String? nameAr;
-  @JsonKey(name: "nameEn")
-  final String? nameEn;
-  @JsonKey(name: "price")
-  final int? price;
-  @JsonKey(name: "details")
-  final String? details;
-  @JsonKey(name: "detailsAr")
-  final String? detailsAr;
-  @JsonKey(name: "detailsEn")
-  final String? detailsEn;
 
-  CustomPackage({
+  City({
     this.id,
-    this.statusCode,
+    this.code,
     this.name,
-    this.nameAr,
-    this.nameEn,
-    this.price,
-    this.details,
-    this.detailsAr,
-    this.detailsEn,
   });
 
-  factory CustomPackage.fromJson(Map<String, dynamic> json) =>
-      _$CustomPackageFromJson(json);
+  factory City.fromJson(Map<String, dynamic> json) => _$CityFromJson(json);
 
-  Map<String, dynamic> toJson() => _$CustomPackageToJson(this);
+  Map<String, dynamic> toJson() => _$CityToJson(this);
 }
 
 @JsonSerializable()
-class UnitType {
+class Photo {
+  @JsonKey(name: "id")
+  final int? id;
+  @JsonKey(name: "askWorkerId")
+  final int? askWorkerId;
+  @JsonKey(name: "photoPath")
+  final String? photoPath;
+
+  Photo({
+    this.id,
+    this.askWorkerId,
+    this.photoPath,
+  });
+
+  factory Photo.fromJson(Map<String, dynamic> json) => _$PhotoFromJson(json);
+
+  Map<String, dynamic> toJson() => _$PhotoToJson(this);
+}
+
+@JsonSerializable()
+class Type {
   @JsonKey(name: "id")
   final int? id;
   @JsonKey(name: "code")
@@ -151,7 +166,7 @@ class UnitType {
   @JsonKey(name: "nameEn")
   final String? nameEn;
 
-  UnitType({
+  Type({
     this.id,
     this.code,
     this.name,
@@ -159,10 +174,9 @@ class UnitType {
     this.nameEn,
   });
 
-  factory UnitType.fromJson(Map<String, dynamic> json) =>
-      _$UnitTypeFromJson(json);
+  factory Type.fromJson(Map<String, dynamic> json) => _$TypeFromJson(json);
 
-  Map<String, dynamic> toJson() => _$UnitTypeToJson(this);
+  Map<String, dynamic> toJson() => _$TypeToJson(this);
 }
 
 @JsonSerializable()
@@ -175,22 +189,21 @@ class Pageable {
   final Sort? sort;
   @JsonKey(name: "offset")
   final int? offset;
-  @JsonKey(name: "unpaged")
-  final bool? unpaged;
   @JsonKey(name: "paged")
   final bool? paged;
+  @JsonKey(name: "unpaged")
+  final bool? unpaged;
 
   Pageable({
     this.pageNumber,
     this.pageSize,
     this.sort,
     this.offset,
-    this.unpaged,
     this.paged,
+    this.unpaged,
   });
 
-  factory Pageable.fromJson(Map<String, dynamic> json) =>
-      _$PageableFromJson(json);
+  factory Pageable.fromJson(Map<String, dynamic> json) => _$PageableFromJson(json);
 
   Map<String, dynamic> toJson() => _$PageableToJson(this);
 }
@@ -199,18 +212,19 @@ class Pageable {
 class Sort {
   @JsonKey(name: "empty")
   final bool? empty;
-  @JsonKey(name: "unsorted")
-  final bool? unsorted;
   @JsonKey(name: "sorted")
   final bool? sorted;
+  @JsonKey(name: "unsorted")
+  final bool? unsorted;
 
   Sort({
     this.empty,
-    this.unsorted,
     this.sorted,
+    this.unsorted,
   });
 
   factory Sort.fromJson(Map<String, dynamic> json) => _$SortFromJson(json);
 
   Map<String, dynamic> toJson() => _$SortToJson(this);
 }
+

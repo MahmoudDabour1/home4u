@@ -1,24 +1,23 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'renovate_your_house_fixed_packages_filter_response.dart';
+part of 'renovate_house_filter_response_model.dart';
 
 // **************************************************************************
 // JsonSerializableGenerator
 // **************************************************************************
 
-RenovateYourHouseFixedPackagesFilterResponse
-    _$RenovateYourHouseFixedPackagesFilterResponseFromJson(
-            Map<String, dynamic> json) =>
-        RenovateYourHouseFixedPackagesFilterResponse(
-          success: json['success'] as bool?,
-          status: (json['status'] as num?)?.toInt(),
-          data: json['data'] == null
-              ? null
-              : Data.fromJson(json['data'] as Map<String, dynamic>),
-        );
+RenovateHouseFilterResponseModel _$RenovateHouseFilterResponseModelFromJson(
+        Map<String, dynamic> json) =>
+    RenovateHouseFilterResponseModel(
+      success: json['success'] as bool?,
+      status: (json['status'] as num?)?.toInt(),
+      data: json['data'] == null
+          ? null
+          : Data.fromJson(json['data'] as Map<String, dynamic>),
+    );
 
-Map<String, dynamic> _$RenovateYourHouseFixedPackagesFilterResponseToJson(
-        RenovateYourHouseFixedPackagesFilterResponse instance) =>
+Map<String, dynamic> _$RenovateHouseFilterResponseModelToJson(
+        RenovateHouseFilterResponseModel instance) =>
     <String, dynamic>{
       'success': instance.success,
       'status': instance.status,
@@ -27,8 +26,7 @@ Map<String, dynamic> _$RenovateYourHouseFixedPackagesFilterResponseToJson(
 
 Data _$DataFromJson(Map<String, dynamic> json) => Data(
       content: (json['content'] as List<dynamic>?)
-          ?.map((e) =>
-              RenovateFixedFilterContent.fromJson(e as Map<String, dynamic>))
+          ?.map((e) => Content.fromJson(e as Map<String, dynamic>))
           .toList(),
       pageable: json['pageable'] == null
           ? null
@@ -60,9 +58,7 @@ Map<String, dynamic> _$DataToJson(Data instance) => <String, dynamic>{
       'empty': instance.empty,
     };
 
-RenovateFixedFilterContent _$RenovateFixedFilterContentFromJson(
-        Map<String, dynamic> json) =>
-    RenovateFixedFilterContent(
+Content _$ContentFromJson(Map<String, dynamic> json) => Content(
       id: (json['id'] as num?)?.toInt(),
       statusCode: (json['statusCode'] as num?)?.toInt(),
       phoneNumber: json['phoneNumber'] as String?,
@@ -95,9 +91,7 @@ RenovateFixedFilterContent _$RenovateFixedFilterContentFromJson(
       notes: json['notes'] as String?,
     );
 
-Map<String, dynamic> _$RenovateFixedFilterContentToJson(
-        RenovateFixedFilterContent instance) =>
-    <String, dynamic>{
+Map<String, dynamic> _$ContentToJson(Content instance) => <String, dynamic>{
       'id': instance.id,
       'statusCode': instance.statusCode,
       'phoneNumber': instance.phoneNumber,
@@ -153,8 +147,8 @@ Pageable _$PageableFromJson(Map<String, dynamic> json) => Pageable(
           ? null
           : Sort.fromJson(json['sort'] as Map<String, dynamic>),
       offset: (json['offset'] as num?)?.toInt(),
-      unpaged: json['unpaged'] as bool?,
       paged: json['paged'] as bool?,
+      unpaged: json['unpaged'] as bool?,
     );
 
 Map<String, dynamic> _$PageableToJson(Pageable instance) => <String, dynamic>{
@@ -162,18 +156,18 @@ Map<String, dynamic> _$PageableToJson(Pageable instance) => <String, dynamic>{
       'pageSize': instance.pageSize,
       'sort': instance.sort,
       'offset': instance.offset,
-      'unpaged': instance.unpaged,
       'paged': instance.paged,
+      'unpaged': instance.unpaged,
     };
 
 Sort _$SortFromJson(Map<String, dynamic> json) => Sort(
       empty: json['empty'] as bool?,
-      unsorted: json['unsorted'] as bool?,
       sorted: json['sorted'] as bool?,
+      unsorted: json['unsorted'] as bool?,
     );
 
 Map<String, dynamic> _$SortToJson(Sort instance) => <String, dynamic>{
       'empty': instance.empty,
-      'unsorted': instance.unsorted,
       'sorted': instance.sorted,
+      'unsorted': instance.unsorted,
     };

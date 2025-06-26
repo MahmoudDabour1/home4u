@@ -14,6 +14,7 @@ import 'package:home4u/features/cart/logic/cart_cubit.dart';
 import 'package:home4u/features/products/logic/products_cubit.dart';
 import 'package:home4u/features/profile/logic/profile/profile_cubit.dart';
 import 'package:home4u/features/profile/logic/services/services_cubit.dart';
+import 'package:home4u/features/projects_filter/logic/projects_filter_cubit.dart';
 import 'package:home4u/features/user/request_design/logic/request_design_cubit.dart';
 
 import 'core/di/dependency_injection.dart';
@@ -151,10 +152,13 @@ class _Home4uAppState extends State<Home4uApp> {
             BlocProvider<CartCubit>(
               create: (_) => sl<CartCubit>(),
             ),
+
             ///Todo : move it later to the best place
             BlocProvider<OrdersCubit>(
               create: (_) => sl<OrdersCubit>(),
-
+            ),
+            BlocProvider<ProjectsFilterCubit>(
+              create: (context) => sl<ProjectsFilterCubit>(),
             ),
           ],
           child: ScreenUtilInit(
@@ -181,8 +185,8 @@ class _Home4uAppState extends State<Home4uApp> {
                     debugShowCheckedModeBanner: false,
                     navigatorObservers: [RouterObserver(), _routeObserver],
                     initialRoute:
-                    // Routes.loginScreen,
-                    snapshot.data!,
+                        // Routes.loginScreen,
+                        snapshot.data!,
                   ),
                 );
               },
