@@ -8,7 +8,7 @@ import 'package:home4u/locale/app_locale.dart';
 import '../../../../../core/theming/app_colors.dart';
 import '../../../../products/data/models/product_preview_response.dart';
 
-class CartProductDetailsColorsListView extends StatelessWidget {
+class CartProductDetailsColorsListView extends StatefulWidget {
   final ProductPreviewResponse previewData;
 
   const CartProductDetailsColorsListView({
@@ -17,42 +17,67 @@ class CartProductDetailsColorsListView extends StatelessWidget {
   });
 
   @override
+  State<CartProductDetailsColorsListView> createState() =>
+      _CartProductDetailsColorsListViewState();
+}
+
+class _CartProductDetailsColorsListViewState
+    extends State<CartProductDetailsColorsListView> {
+  int _selectedColorIndex = 0;
+
+  @override
   Widget build(BuildContext context) {
-    return Wrap(
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text(
-          AppLocale.color.getString(context),
+          "${AppLocale.color.getString(context)}: ${widget.previewData.data.stocks[_selectedColorIndex].color.name}",
           style: AppStyles.font16BlackBold,
         ),
-        horizontalSpace(16),
-        ...List.generate(
-          previewData.data.stocks.length,
-          (index) {
-            return Container(
-              width: 30.w,
-              height: 30.h,
-              margin: EdgeInsetsDirectional.only(end: 8.w),
-              decoration: BoxDecoration(
-                shape: BoxShape.circle,
-                border: Border.all(
-                  color: AppColors.grayColor,
-                  width: 2.w,
-                ),
-              ),
-              child: Center(
-                child: Container(
-                  width: 20.w,
-                  height: 20.h,
-                  decoration: BoxDecoration(
-                    color: _hexToColor(
-                      previewData.data.stocks[index].color.hexColor ?? '',
+        verticalSpace(8),
+        Wrap(
+          children: [
+            ...List.generate(
+              widget.previewData.data.stocks.length,
+              (index) {
+                return GestureDetector(
+                  onTap: () {
+                    setState(() {
+                      _selectedColorIndex = index;
+                    });
+                  },
+                  child: Container(
+                    width: 40.w,
+                    height: 40.h,
+                    margin: EdgeInsetsDirectional.only(end: 8.w),
+                    decoration: BoxDecoration(
+                      border: Border.all(
+                        color: _selectedColorIndex == index
+                            ? AppColors.blueColor
+                            : AppColors.grayColor,
+                        width: 2.w,
+                      ),
+                      borderRadius: BorderRadius.circular(8.r),
                     ),
-                    shape: BoxShape.circle,
+                    child: Center(
+                      child: Container(
+                        width: 30.w,
+                        height: 30.h,
+                        decoration: BoxDecoration(
+                          color: _hexToColor(
+                            widget.previewData.data.stocks[index].color
+                                    .hexColor ??
+                                '',
+                          ),
+                          borderRadius: BorderRadius.circular(8.r),
+                        ),
+                      ),
+                    ),
                   ),
-                ),
-              ),
-            );
-          },
+                );
+              },
+            ),
+          ],
         ),
       ],
     );

@@ -207,9 +207,12 @@ class AppRouter {
           builder: (_) => CartScreen(),
         );
       case Routes.cartProductDetailsScreen:
+        final productId = settings.arguments as int;
         return MaterialPageRoute(
           settings: settings,
-          builder: (_) => CartProductDetailsScreen(),
+          builder: (_) => CartProductDetailsScreen(
+            productId: productId,
+          ),
         );
       case Routes.cartOrderDetailsScreen:
         return MaterialPageRoute(
