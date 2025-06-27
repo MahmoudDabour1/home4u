@@ -1,13 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+import '../../../data/models/renovate_house_filter/renovate_house_filter_response_model.dart';
 import '../filter_image_and_name_widget.dart';
 import '../project_skills_needed_widget.dart';
 import '../services_const_data.dart';
 import 'furnish_house_tab_view_item_title.dart';
 
 class FurnishHouseTabViewContent extends StatelessWidget {
-  const FurnishHouseTabViewContent({super.key});
+  final RenovateHouseContent renovateItem;
+
+  const FurnishHouseTabViewContent({super.key, required this.renovateItem});
 
   @override
   Widget build(BuildContext context) {
@@ -18,7 +21,7 @@ class FurnishHouseTabViewContent extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           FurnishHouseTabViewItemTitle(
-            unitType: "Villa",
+            unitType: renovateItem.unitType?.name ?? 'N/A',
           ),
           FilterImageAndNameWidget(),
           // ServiceRowItem(
@@ -26,7 +29,7 @@ class FurnishHouseTabViewContent extends StatelessWidget {
           //   serviceValue: "Electromechanical Works",
           // ),
           ServicesConstData(
-            government: 'Cairo',
+            government: renovateItem.governorate?.name ?? 'N/A',
             projectStatus: 'available',
           ),
           ProjectSkillsNeededWidget(),

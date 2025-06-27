@@ -97,7 +97,7 @@ class ProjectsFilterCubit extends Cubit<ProjectsFilterState> {
   ///Renovate Your House
   ///Custom Packages
   int _customPackagePage = 0;
-  List<Content> customPackages = [];
+  List<RenovateHouseContent> customPackages = [];
   bool hasReachedMaxOfCustomPackage = false;
   bool isFetchingCustomPackage = false;
 
@@ -172,6 +172,12 @@ class ProjectsFilterCubit extends Cubit<ProjectsFilterState> {
       },
     );
     isFetchingCustomPackage = false;
+  }
+
+  Future<void> resetPaginationOfCustomPackage() async {
+    _customPackagePage = 0;
+    hasReachedMaxOfCustomPackage = false;
+    customPackages.clear();
   }
 
   ///Fixed Packages

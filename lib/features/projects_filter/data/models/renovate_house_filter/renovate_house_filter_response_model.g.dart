@@ -26,7 +26,7 @@ Map<String, dynamic> _$RenovateHouseFilterResponseModelToJson(
 
 Data _$DataFromJson(Map<String, dynamic> json) => Data(
       content: (json['content'] as List<dynamic>?)
-          ?.map((e) => Content.fromJson(e as Map<String, dynamic>))
+          ?.map((e) => RenovateHouseContent.fromJson(e as Map<String, dynamic>))
           .toList(),
       pageable: json['pageable'] == null
           ? null
@@ -58,7 +58,9 @@ Map<String, dynamic> _$DataToJson(Data instance) => <String, dynamic>{
       'empty': instance.empty,
     };
 
-Content _$ContentFromJson(Map<String, dynamic> json) => Content(
+RenovateHouseContent _$RenovateHouseContentFromJson(
+        Map<String, dynamic> json) =>
+    RenovateHouseContent(
       id: (json['id'] as num?)?.toInt(),
       statusCode: (json['statusCode'] as num?)?.toInt(),
       phoneNumber: json['phoneNumber'] as String?,
@@ -91,7 +93,9 @@ Content _$ContentFromJson(Map<String, dynamic> json) => Content(
       notes: json['notes'] as String?,
     );
 
-Map<String, dynamic> _$ContentToJson(Content instance) => <String, dynamic>{
+Map<String, dynamic> _$RenovateHouseContentToJson(
+        RenovateHouseContent instance) =>
+    <String, dynamic>{
       'id': instance.id,
       'statusCode': instance.statusCode,
       'phoneNumber': instance.phoneNumber,

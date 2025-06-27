@@ -1,6 +1,4 @@
 import 'package:json_annotation/json_annotation.dart';
-
-
 part 'renovate_house_filter_response_model.g.dart';
 
 @JsonSerializable()
@@ -18,15 +16,18 @@ class RenovateHouseFilterResponseModel {
     this.data,
   });
 
-  factory RenovateHouseFilterResponseModel.fromJson(Map<String, dynamic> json) => _$RenovateHouseFilterResponseModelFromJson(json);
+  factory RenovateHouseFilterResponseModel.fromJson(
+          Map<String, dynamic> json) =>
+      _$RenovateHouseFilterResponseModelFromJson(json);
 
-  Map<String, dynamic> toJson() => _$RenovateHouseFilterResponseModelToJson(this);
+  Map<String, dynamic> toJson() =>
+      _$RenovateHouseFilterResponseModelToJson(this);
 }
 
 @JsonSerializable()
 class Data {
   @JsonKey(name: "content")
-  final List<Content>? content;
+  final List<RenovateHouseContent>? content;
   @JsonKey(name: "pageable")
   final Pageable? pageable;
   @JsonKey(name: "totalPages")
@@ -68,7 +69,7 @@ class Data {
 }
 
 @JsonSerializable()
-class Content {
+class RenovateHouseContent {
   @JsonKey(name: "id")
   final int? id;
   @JsonKey(name: "statusCode")
@@ -104,7 +105,7 @@ class Content {
   @JsonKey(name: "notes")
   final String? notes;
 
-  Content({
+  RenovateHouseContent({
     this.id,
     this.statusCode,
     this.phoneNumber,
@@ -124,9 +125,10 @@ class Content {
     this.notes,
   });
 
-  factory Content.fromJson(Map<String, dynamic> json) => _$ContentFromJson(json);
+  factory RenovateHouseContent.fromJson(Map<String, dynamic> json) =>
+      _$RenovateHouseContentFromJson(json);
 
-  Map<String, dynamic> toJson() => _$ContentToJson(this);
+  Map<String, dynamic> toJson() => _$RenovateHouseContentToJson(this);
 }
 
 @JsonSerializable()
@@ -170,7 +172,8 @@ class UnitStatuses {
     this.nameEn,
   });
 
-  factory UnitStatuses.fromJson(Map<String, dynamic> json) => _$UnitStatusesFromJson(json);
+  factory UnitStatuses.fromJson(Map<String, dynamic> json) =>
+      _$UnitStatusesFromJson(json);
 
   Map<String, dynamic> toJson() => _$UnitStatusesToJson(this);
 }
@@ -199,7 +202,8 @@ class Pageable {
     this.unpaged,
   });
 
-  factory Pageable.fromJson(Map<String, dynamic> json) => _$PageableFromJson(json);
+  factory Pageable.fromJson(Map<String, dynamic> json) =>
+      _$PageableFromJson(json);
 
   Map<String, dynamic> toJson() => _$PageableToJson(this);
 }
