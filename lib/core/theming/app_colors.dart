@@ -23,4 +23,6 @@ abstract class AppColors {
   static const  darkRedColor = Color(0xFF783235);
   static const  lightGrayColor = Color(0xFFFDFDFD);
   static const  filledGrayColor = Color(0xFFF7F9F8);
+  static const  lighterBlueColor = Color(0xFFF1F4FD);
+  static const  mediumGrayColor = Color(0xFFE9ECF3);
 }

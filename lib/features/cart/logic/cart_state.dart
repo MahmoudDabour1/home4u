@@ -13,16 +13,16 @@ class CartState<T> with _$CartState<T> {
   const factory CartState.shopNowLoading() = ShopNowLoading;
 
   const factory CartState.shopNowSuccess(ShopNowResponseModel responseModel) =
-      ShopNowSuccess;
+  ShopNowSuccess;
 
   const factory CartState.shopNowFailure({required String error}) =
-      ShopNowFailure;
+  ShopNowFailure;
 
   ///pagination
   const factory CartState.paginationLoading() = PaginationLoading;
 
   const factory CartState.paginationFailure({required String error}) =
-      PaginationFailure;
+  PaginationFailure;
 
   ///reset Filter
   const factory CartState.resetFilter() = ResetAllFilters;
@@ -37,7 +37,7 @@ class CartState<T> with _$CartState<T> {
   const factory CartState.cartEmpty() = cartEmpty;
 
   const factory CartState.cartSuccess(List<CartItemModel> cartItems) =
-      CartSuccess;
+  CartSuccess;
 
   const factory CartState.cartFailure({required String error}) = CartFailure;
 
@@ -47,6 +47,27 @@ class CartState<T> with _$CartState<T> {
   const factory CartState.insertOrderSuccess(T data) = InsertOrderSuccess<T>;
 
   const factory CartState.insertOrderFailure({required String error}) =
-      InsertOrderFailure;
+  InsertOrderFailure;
+
+  ///Product Rate
+  const factory CartState.productRateLoading() = ProductRateLoading;
+
+  const factory CartState.productRateSuccess(T data) = ProductRateSuccess<T>;
+
+  const factory CartState.productRateFailure({required String error}) =
+  ProductRateFailure;
+
+
+  ///Product Rate
+  const factory CartState.rateReviewsLoading() = RateReviewsLoading;
+
+
+
+  const factory CartState.rateReviewsSuccess(T data) = RateReviewsSuccess<T>;
+
+
+
+  const factory CartState.rateReviewsFailure({required String error}) =
+  RateReviewsFailure;
 
 }

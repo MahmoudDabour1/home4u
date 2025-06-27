@@ -388,10 +388,10 @@ class __$$InsertProductRatingSuccessImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? response = freezed,
+    Object? response = null,
   }) {
     return _then(_$InsertProductRatingSuccessImpl(
-      freezed == response
+      null == response
           ? _value.response
           : response // ignore: cast_nullable_to_non_nullable
               as InsertProductRateResponseModel,
@@ -417,12 +417,12 @@ class _$InsertProductRatingSuccessImpl implements InsertProductRatingSuccess {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$InsertProductRatingSuccessImpl &&
-            const DeepCollectionEquality().equals(other.response, response));
+            (identical(other.response, response) ||
+                other.response == response));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(response));
+  int get hashCode => Object.hash(runtimeType, response);
 
   /// Create a copy of ProductRatingState
   /// with the given fields replaced by the non-null parameter values.

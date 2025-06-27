@@ -386,6 +386,12 @@ class AppLocale {
   static const String kitchenType = 'Kitchen Type';
   static const String deliverTo = 'Deliver to';
   static const String whatAreYouLookingFor = 'What are you looking for?';
+  static const String verifiedPurchase = 'Verified Purchase';
+  static const String productRating = 'Product Rating';
+  static const String freeDelivery = 'Free Delivery';
+  static const String egp = 'EGP ';
+  static const String specifications = 'Specifications';
+  static const String express = 'express';
 
   static const Map<String, dynamic> en = {
     onBoardingTitle1: 'Civil works and finishing services',
@@ -707,9 +713,15 @@ class AppLocale {
     devicesAttached: 'Devices Attached',
     kitchenType: 'Kitchen Type',
     pleaseEnterAKitchenSize: 'Please Enter a Kitchen Size',
-    noCurrentOrders : 'There are no current orders',
+    noCurrentOrders: 'There are no current orders',
     deliverTo: 'Deliver to',
     whatAreYouLookingFor: 'What are you looking for?',
+    verifiedPurchase: 'Verified Purchase',
+    productRating: 'Product Rating',
+    freeDelivery: 'Free Delivery',
+    egp: 'EGP ',
+    specifications: 'Specifications',
+    express: 'express',
   };
 
   static const Map<String, dynamic> ar = {
@@ -1029,8 +1041,14 @@ class AppLocale {
     devicesAttached: 'الأجهزة المرفقة',
     kitchenType: 'نوع المطبخ',
     pleaseEnterAKitchenSize: 'الرجاء إدخال حجم المطبخ',
-    noCurrentOrders : 'لا توجد طلبات حالية',
+    noCurrentOrders: 'لا توجد طلبات حالية',
     deliverTo: 'التوصيل إلى',
     whatAreYouLookingFor: 'ماذا تبحث عنه؟',
+    verifiedPurchase: 'شراء موثق',
+    productRating: 'تقييم المنتج',
+    freeDelivery: 'توصيل مجاني',
+    egp: 'جنيه مصري ',
+    specifications: 'المواصفات',
+    express: 'سريع',
   };
 }

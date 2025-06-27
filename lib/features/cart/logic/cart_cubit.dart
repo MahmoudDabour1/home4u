@@ -6,6 +6,7 @@ import 'package:home4u/features/cart/data/models/shop_now_search_body.dart';
 import '../../../core/routing/router_observer.dart';
 import '../../products/data/models/business_config_model.dart';
 import '../data/models/order_details_body.dart';
+import '../data/models/rating_reviews_request_model.dart';
 import '../data/models/shop_now_response_model.dart';
 import '../data/repository/cart_repository.dart';
 import 'cart_state.dart';
@@ -246,6 +247,40 @@ class CartCubit extends Cubit<CartState> {
       // emit(CartState.cartSuccess([]));
     }, failure: (error) {
       emit(CartState.insertOrderFailure(error: error.message.toString()));
+    });
+  }
+
+  Future<void> getProductRate(int productId) async {
+    emit(const CartState.productRateLoading());
+    final response = await cartRepository.getProductRate(productId);
+
+    response.when(success: (data) {
+      emit(CartState.productRateSuccess(data));
+      logger.w("Get Product Rate Success: ${data.toJson()}");
+    }, failure: (error) {
+      emit(CartState.productRateFailure(error: error.message.toString()));
+    });
+  }
+
+  Future<void> getRateReviews({required int productId}) async {
+    emit(const CartState.rateReviewsLoading());
+    final response = await cartRepository.getRateReviews(
+      RatingReviewRequestModel(
+        pageNumber: 0,
+        pageSize: 10,
+        searchCriteria: SearchCriteria(
+          productId: productId,
+          isTopRated: false,
+          stars: null,
+        ),
+      ),
+    );
+
+    response.when(success: (data) {
+      emit(CartState.rateReviewsSuccess(data));
+      logger.w("Get Rate Reviews Success: ${data.toJson()}");
+    }, failure: (error) {
+      emit(CartState.rateReviewsFailure(error: error.message.toString()));
     });
   }
 }

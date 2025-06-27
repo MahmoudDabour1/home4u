@@ -48,9 +48,9 @@ class ServicesGridViewItem extends StatelessWidget {
               //   height:50.h,
               //   // MediaQuery.sizeOf(context).height * 0.088,
               // ),
-              Padding(
-                padding: EdgeInsets.symmetric(vertical: 8.h),
-                child: Flexible(
+              Flexible(
+                child: Padding(
+                  padding: EdgeInsets.symmetric(vertical: 8.h),
                   child: AutoSizeText(
                     title,
                     textAlign: TextAlign.center,

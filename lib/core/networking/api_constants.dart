@@ -109,6 +109,9 @@ class ApiConstants {
 
   /// rating
   static const String insertProductRateEp = "/api/v1/product-ratings";
+  static const String getProductRateEp = "/api/v1/product-ratings/{productId}";
+  static const String getRateReviewEp = "/api/v1/product-ratings/filter";
+
 }
 
 class ApiErrors {
