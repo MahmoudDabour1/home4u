@@ -49,6 +49,7 @@ class CancelOrderBlocBuilderButton extends StatelessWidget {
                 context: context,
                 builder: (context) {
                   return AlertDialog(
+                    backgroundColor: Colors.white,
                     title: const Text("Cancel Order"),
                     content: const Text(
                         "Are you sure you want to cancel this order?"),

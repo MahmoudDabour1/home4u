@@ -6,6 +6,7 @@ import 'package:home4u/core/utils/spacing.dart';
 import 'package:home4u/locale/app_locale.dart';
 
 import '../../../../../core/theming/app_assets.dart';
+
 class OrderCompletedTextAndImageWidget extends StatelessWidget {
   const OrderCompletedTextAndImageWidget({super.key});
 
