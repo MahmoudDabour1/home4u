@@ -1,20 +1,20 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:home4u/features/projects_filter/presentation/widgets/renovate_house_widgets/renovate_house_tab_view_item.dart';
 
 import '../../../../../core/utils/spacing.dart';
 import '../../../logic/projects_filter_cubit.dart';
 import '../../../logic/projects_filter_state.dart';
+import '../request_design_widgets/request_design_tab_view_item.dart';
 
-class RenovateHouseTabViewBody extends StatefulWidget {
-  const RenovateHouseTabViewBody({super.key});
+class RequestDesignTabViewBody extends StatefulWidget {
+  const RequestDesignTabViewBody({super.key});
 
   @override
-  State<RenovateHouseTabViewBody> createState() =>
-      _RenovateHouseTabViewBodyState();
+  State<RequestDesignTabViewBody> createState() =>
+      _RequestDesignTabViewBodyState();
 }
 
-class _RenovateHouseTabViewBodyState extends State<RenovateHouseTabViewBody> {
+class _RequestDesignTabViewBodyState extends State<RequestDesignTabViewBody> {
   late ScrollController _scrollController;
 
   @override
@@ -26,7 +26,7 @@ class _RenovateHouseTabViewBodyState extends State<RenovateHouseTabViewBody> {
 
   void _loadInitialData() {
     final cubit = context.read<ProjectsFilterCubit>();
-    cubit.renovateHouseCustomPackages();
+    cubit.getRequestDesignFilter();
   }
 
   void _scrollListener() {
@@ -34,15 +34,15 @@ class _RenovateHouseTabViewBodyState extends State<RenovateHouseTabViewBody> {
 
     if (_scrollController.offset >=
             _scrollController.position.maxScrollExtent * 0.7 &&
-        !cubit.hasReachedMaxOfCustomPackage) {
-      cubit.renovateHouseCustomPackages();
+        !cubit.hasReachedMaxOfRequestDesign) {
+      cubit.getRequestDesignFilter();
     }
   }
 
   @override
   void dispose() {
     final cubit = context.read<ProjectsFilterCubit>();
-    cubit.resetPaginationOfCustomPackage();
+    cubit.resetPaginationOfRequestDesign();
     _scrollController.removeListener(_scrollListener);
     _scrollController.dispose();
     super.dispose();
@@ -53,33 +53,31 @@ class _RenovateHouseTabViewBodyState extends State<RenovateHouseTabViewBody> {
     return BlocBuilder<ProjectsFilterCubit, ProjectsFilterState>(
       builder: (context, state) {
         final cubit = context.read<ProjectsFilterCubit>();
-        final isLoadingMore = cubit.isFetchingCustomPackage &&
-            !cubit.hasReachedMaxOfCustomPackage;
+        final isLoadingMore = cubit.isFetchingRequestDesign &&
+            !cubit.hasReachedMaxOfRequestDesign;
 
-        if (state is RenovateYourHouseCustomPackagesFilterLoading &&
-            cubit.customPackages.isEmpty) {
-          return Center(
+        if (state is RequestDesignFilterLoading &&
+            cubit.requestDesignItems.isEmpty) {
+          return const Center(
             child: CircularProgressIndicator(
               color: Colors.amber,
             ),
           );
         }
+
         return ListView.separated(
+          controller: _scrollController,
           itemBuilder: (context, index) {
-            if (index < cubit.customPackages.length) {
-              return RenovateHouseTabViewItem(
-                renovateItem: cubit.customPackages[index],
-              );
-            } else if (isLoadingMore) {
-              return const Center(
-                child: CircularProgressIndicator(),
+            if (index < cubit.requestDesignItems.length) {
+              return RequestDesignTabViewItem(
+                requestDesignItem: cubit.requestDesignItems[index],
               );
             } else {
-              return const SizedBox.shrink();
+              return const Center(child: CircularProgressIndicator());
             }
           },
           separatorBuilder: (_, __) => verticalSpace(12),
-          itemCount: cubit.customPackages.length + (isLoadingMore ? 1 : 0),
+          itemCount: cubit.requestDesignItems.length + (isLoadingMore ? 1 : 0),
         );
       },
     );

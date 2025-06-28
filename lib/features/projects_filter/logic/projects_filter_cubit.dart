@@ -93,6 +93,12 @@ class ProjectsFilterCubit extends Cubit<ProjectsFilterState> {
     isFetchingRequestDesign = false;
   }
 
+  Future<void> resetPaginationOfRequestDesign() async {
+    _requestDesignPage = 0;
+    hasReachedMaxOfRequestDesign = false;
+    requestDesignItems.clear();
+  }
+
   ///Filter
   ///Renovate Your House
   ///Custom Packages
@@ -251,6 +257,12 @@ class ProjectsFilterCubit extends Cubit<ProjectsFilterState> {
     isFetchingFixedPackage = false;
   }
 
+  Future<void> resetPaginationOfFixedPackage() async {
+    _fixedPackagePage = 0;
+    hasReachedMaxOfFixedPackage = false;
+    fixedPackages.clear();
+  }
+
   ///Filter
   ///Ask Technical Worker
   int _askTechnicalWorkerPage = 0;
@@ -319,6 +331,12 @@ class ProjectsFilterCubit extends Cubit<ProjectsFilterState> {
     isFetchingAskTechnical = false;
   }
 
+  Future<void> resetPaginationOfAskTechnical() async {
+    _askTechnicalWorkerPage = 0;
+    hasReachedMaxOfAskTechnicalWorker = false;
+    askTechnicalItems.clear();
+  }
+
   ///Ask Engineer
   int _askEngineerPage = 0;
   List<AskEngineerContent> askEngineerItems = [];
@@ -383,5 +401,11 @@ class ProjectsFilterCubit extends Cubit<ProjectsFilterState> {
       },
     );
     isFetchingAskEngineer = false;
+  }
+
+  Future<void> resetPaginationOfAskEngineer() async {
+    _askEngineerPage = 0;
+    hasReachedMaxOfAskEngineer = false;
+    askEngineerItems.clear();
   }
 }

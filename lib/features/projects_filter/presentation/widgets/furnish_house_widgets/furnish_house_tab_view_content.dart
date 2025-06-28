@@ -8,9 +8,8 @@ import '../services_const_data.dart';
 import 'furnish_house_tab_view_item_title.dart';
 
 class FurnishHouseTabViewContent extends StatelessWidget {
-  final RenovateHouseContent renovateItem;
 
-  const FurnishHouseTabViewContent({super.key, required this.renovateItem});
+  const FurnishHouseTabViewContent({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -21,7 +20,7 @@ class FurnishHouseTabViewContent extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           FurnishHouseTabViewItemTitle(
-            unitType: renovateItem.unitType?.name ?? 'N/A',
+            unitType: 'N/A',
           ),
           FilterImageAndNameWidget(),
           // ServiceRowItem(
@@ -29,7 +28,7 @@ class FurnishHouseTabViewContent extends StatelessWidget {
           //   serviceValue: "Electromechanical Works",
           // ),
           ServicesConstData(
-            government: renovateItem.governorate?.name ?? 'N/A',
+            government: 'N/A',
             projectStatus: 'available',
           ),
           ProjectSkillsNeededWidget(),

@@ -33,15 +33,15 @@ class ProjectsFilterTabBarWidget extends StatelessWidget {
         borderRadius: BorderRadius.circular(16.r),
         color: AppColors.secondaryColor,
       ),
-      tabs: [ ProjectsFilterCustomTab(
-        label: AppLocale.furnishTitle.getString(context),
-        iconPath: AppAssets.furnishYourHomeIcon,
-      ),
+      tabs: [
+        ProjectsFilterCustomTab(
+          label: AppLocale.furnishTitle.getString(context),
+          iconPath: AppAssets.furnishYourHomeIcon,
+        ),
         ProjectsFilterCustomTab(
           label: AppLocale.requestDesign.getString(context),
           iconPath: AppAssets.requestDesignIcon,
         ),
-
         ProjectsFilterCustomTab(
           label: AppLocale.kitchensAndDressing.getString(context),
           iconPath: AppAssets.kitchensAndDressingIcon,
@@ -49,6 +49,10 @@ class ProjectsFilterTabBarWidget extends StatelessWidget {
         ProjectsFilterCustomTab(
           label: AppLocale.renovateYourHouse.getString(context),
           iconPath: AppAssets.renovateYourHomeIcon,
+        ),
+        ProjectsFilterCustomTab(
+          label: AppLocale.engineerTitle.getString(context),
+          iconPath: AppAssets.askEngineerIcon,
         ),
         ProjectsFilterCustomTab(
           label: AppLocale.askTechnical.getString(context),

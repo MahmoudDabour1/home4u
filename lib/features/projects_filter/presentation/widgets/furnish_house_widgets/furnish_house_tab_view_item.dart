@@ -7,9 +7,8 @@ import '../filter_offer_badge_widget.dart';
 import 'furnish_house_tab_view_content.dart';
 
 class FurnishHouseTabViewItem extends StatelessWidget {
-  final RenovateHouseContent renovateItem;
 
-  const FurnishHouseTabViewItem({super.key, required this.renovateItem});
+  const FurnishHouseTabViewItem({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -22,7 +21,7 @@ class FurnishHouseTabViewItem extends StatelessWidget {
             color: AppColors.containersColor,
             borderRadius: BorderRadius.circular(24.r),
           ),
-          child: FurnishHouseTabViewContent(renovateItem: renovateItem),
+          child: FurnishHouseTabViewContent(),
         ),
         FilterOfferBadgeWidget(),
       ],
