@@ -1,31 +1,32 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-part 'request_design_filter_response.g.dart';
+
+part 'ask_engineer_filter_response_model.g.dart';
 
 @JsonSerializable()
-class RequestDesignFilterResponse {
+class AskEngineerFilterResponseModel {
   @JsonKey(name: "success")
   final bool? success;
   @JsonKey(name: "status")
   final int? status;
   @JsonKey(name: "data")
-  final RequestFilterData? data;
+  final Data? data;
 
-  RequestDesignFilterResponse({
+  AskEngineerFilterResponseModel({
     this.success,
     this.status,
     this.data,
   });
 
-  factory RequestDesignFilterResponse.fromJson(Map<String, dynamic> json) =>
-      _$RequestDesignFilterResponseFromJson(json);
+  factory AskEngineerFilterResponseModel.fromJson(Map<String, dynamic> json) =>
+      _$AskEngineerFilterResponseModelFromJson(json);
 
-  Map<String, dynamic> toJson() => _$RequestDesignFilterResponseToJson(this);
+  Map<String, dynamic> toJson() => _$AskEngineerFilterResponseModelToJson(this);
 }
 
 @JsonSerializable()
-class RequestFilterData {
+class Data {
   @JsonKey(name: "content")
-  final List<RequestDesignFilterContent>? content;
+  final List<AskEngineerContent>? content;
   @JsonKey(name: "pageable")
   final Pageable? pageable;
   @JsonKey(name: "totalPages")
@@ -47,7 +48,7 @@ class RequestFilterData {
   @JsonKey(name: "empty")
   final bool? empty;
 
-  RequestFilterData({
+  Data({
     this.content,
     this.pageable,
     this.totalPages,
@@ -61,52 +62,64 @@ class RequestFilterData {
     this.empty,
   });
 
-  factory RequestFilterData.fromJson(Map<String, dynamic> json) =>
-      _$RequestFilterDataFromJson(json);
+  factory Data.fromJson(Map<String, dynamic> json) => _$DataFromJson(json);
 
-  Map<String, dynamic> toJson() => _$RequestFilterDataToJson(this);
+  Map<String, dynamic> toJson() => _$DataToJson(this);
 }
 
 @JsonSerializable()
-class RequestDesignFilterContent {
+class AskEngineerContent {
   @JsonKey(name: "id")
   final int? id;
   @JsonKey(name: "statusCode")
   final int? statusCode;
   @JsonKey(name: "phoneNumber")
   final String? phoneNumber;
+  @JsonKey(name: "projectName")
+  final String? projectName;
+  @JsonKey(name: "projectDescription")
+  final String? projectDescription;
+  @JsonKey(name: "engineerType")
+  final EngineerType? engineerType;
   @JsonKey(name: "unitType")
-  final UnitType? unitType;
-  @JsonKey(name: "governorate")
-  final Governorate? governorate;
-  @JsonKey(name: "unitArea")
-  final int? unitArea;
+  final EngineerType? unitType;
   @JsonKey(name: "budget")
   final int? budget;
-  @JsonKey(name: "requiredDuration")
-  final int? requiredDuration;
-  @JsonKey(name: "notes")
-  final String? notes;
+  @JsonKey(name: "city")
+  final City? city;
+  @JsonKey(name: "governorate")
+  final City? governorate;
+  @JsonKey(name: "urgencyLevel")
+  final EngineerType? urgencyLevel;
+  @JsonKey(name: "deadline")
+  final DateTime? deadline;
+  @JsonKey(name: "photos")
+  final List<Photo>? photos;
 
-  RequestDesignFilterContent({
+  AskEngineerContent({
     this.id,
     this.statusCode,
     this.phoneNumber,
+    this.projectName,
+    this.projectDescription,
+    this.engineerType,
     this.unitType,
-    this.governorate,
-    this.unitArea,
     this.budget,
-    this.requiredDuration,
-    this.notes,
+    this.city,
+    this.governorate,
+    this.urgencyLevel,
+    this.deadline,
+    this.photos,
   });
 
-  factory RequestDesignFilterContent.fromJson(Map<String, dynamic> json) =>
-      _$RequestDesignFilterContentFromJson(json);
-  Map<String, dynamic> toJson() => _$RequestDesignFilterContentToJson(this);
+  factory AskEngineerContent.fromJson(Map<String, dynamic> json) =>
+      _$AskEngineerContentFromJson(json);
+
+  Map<String, dynamic> toJson() => _$AskEngineerContentToJson(this);
 }
 
 @JsonSerializable()
-class Governorate {
+class City {
   @JsonKey(name: "id")
   final int? id;
   @JsonKey(name: "code")
@@ -114,20 +127,19 @@ class Governorate {
   @JsonKey(name: "name")
   final String? name;
 
-  Governorate({
+  City({
     this.id,
     this.code,
     this.name,
   });
 
-  factory Governorate.fromJson(Map<String, dynamic> json) =>
-      _$GovernorateFromJson(json);
+  factory City.fromJson(Map<String, dynamic> json) => _$CityFromJson(json);
 
-  Map<String, dynamic> toJson() => _$GovernorateToJson(this);
+  Map<String, dynamic> toJson() => _$CityToJson(this);
 }
 
 @JsonSerializable()
-class UnitType {
+class EngineerType {
   @JsonKey(name: "id")
   final int? id;
   @JsonKey(name: "code")
@@ -139,7 +151,7 @@ class UnitType {
   @JsonKey(name: "nameEn")
   final String? nameEn;
 
-  UnitType({
+  EngineerType({
     this.id,
     this.code,
     this.name,
@@ -147,10 +159,30 @@ class UnitType {
     this.nameEn,
   });
 
-  factory UnitType.fromJson(Map<String, dynamic> json) =>
-      _$UnitTypeFromJson(json);
+  factory EngineerType.fromJson(Map<String, dynamic> json) =>
+      _$EngineerTypeFromJson(json);
 
-  Map<String, dynamic> toJson() => _$UnitTypeToJson(this);
+  Map<String, dynamic> toJson() => _$EngineerTypeToJson(this);
+}
+
+@JsonSerializable()
+class Photo {
+  @JsonKey(name: "id")
+  final int? id;
+  @JsonKey(name: "askEngineerId")
+  final int? askEngineerId;
+  @JsonKey(name: "photoPath")
+  final String? photoPath;
+
+  Photo({
+    this.id,
+    this.askEngineerId,
+    this.photoPath,
+  });
+
+  factory Photo.fromJson(Map<String, dynamic> json) => _$PhotoFromJson(json);
+
+  Map<String, dynamic> toJson() => _$PhotoToJson(this);
 }
 
 @JsonSerializable()
@@ -163,18 +195,18 @@ class Pageable {
   final Sort? sort;
   @JsonKey(name: "offset")
   final int? offset;
-  @JsonKey(name: "unpaged")
-  final bool? unpaged;
   @JsonKey(name: "paged")
   final bool? paged;
+  @JsonKey(name: "unpaged")
+  final bool? unpaged;
 
   Pageable({
     this.pageNumber,
     this.pageSize,
     this.sort,
     this.offset,
-    this.unpaged,
     this.paged,
+    this.unpaged,
   });
 
   factory Pageable.fromJson(Map<String, dynamic> json) =>
@@ -187,15 +219,15 @@ class Pageable {
 class Sort {
   @JsonKey(name: "empty")
   final bool? empty;
-  @JsonKey(name: "unsorted")
-  final bool? unsorted;
   @JsonKey(name: "sorted")
   final bool? sorted;
+  @JsonKey(name: "unsorted")
+  final bool? unsorted;
 
   Sort({
     this.empty,
-    this.unsorted,
     this.sorted,
+    this.unsorted,
   });
 
   factory Sort.fromJson(Map<String, dynamic> json) => _$SortFromJson(json);

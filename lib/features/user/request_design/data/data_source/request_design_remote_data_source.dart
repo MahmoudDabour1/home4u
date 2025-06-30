@@ -5,8 +5,6 @@ import 'package:retrofit/http.dart';
 
 import '../../../../../core/networking/api_constants.dart';
 import '../models/request_design_body.dart';
-import '../models/request_design_filter_body.dart';
-import '../models/request_design_filter_response.dart';
 
 part 'request_design_remote_data_source.g.dart';
 
@@ -18,10 +16,5 @@ abstract class RequestDesignRemoteDataSource {
   @POST(ApiConstants.requestDesignEp)
   Future<RequestDesignResponseModel> requestDesign(
     @Body() RequestDesignBody requestDesignBody,
-  );
-
-  @GET(ApiConstants.requestDesignFilterEp)
-  Future<RequestDesignFilterResponse> getRequestDesignFilter(
-    @Body() RequestDesignFilterBody requestDesignFilterBody,
   );
 }

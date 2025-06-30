@@ -35,7 +35,6 @@ class CartGridView extends StatelessWidget {
           );
         }
         return SliverGrid(
-
           delegate: SliverChildBuilderDelegate(
                 (context, index) {
               if (index < items.length) {

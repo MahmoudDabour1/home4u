@@ -4,7 +4,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../../core/theming/app_styles.dart';
 import '../../../../core/widgets/app_custom_button.dart';
 import 'filter_image_and_name_widget.dart';
-import 'filter_types_widget.dart';
+import 'services_const_data.dart';
 
 class FilterContainerContent extends StatelessWidget {
   const FilterContainerContent({super.key});
@@ -22,13 +22,16 @@ class FilterContainerContent extends StatelessWidget {
             style: AppStyles.font16BlackLight,
           ),
           FilterImageAndNameWidget(),
-          FilterTypesWidget(),
-          AppCustomButton(
-            textButton: "Fast delivery",
-            btnWidth: 210.w,
-            btnHeight: 35.h,
-            onPressed: () {},
+          ServicesConstData(
+            government: 'Cairo',
+            projectStatus: 'available',
           ),
+          // AppCustomButton(
+          //   textButton: "Fast delivery",
+          //   btnWidth: 210.w,
+          //   btnHeight: 35.h,
+          //   onPressed: () {},
+          // ),
         ],
       ),
     );

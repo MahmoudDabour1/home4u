@@ -1,24 +1,23 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'renovate_your_house_fixed_packages_filter_response.dart';
+part of 'ask_engineer_filter_response_model.dart';
 
 // **************************************************************************
 // JsonSerializableGenerator
 // **************************************************************************
 
-RenovateYourHouseFixedPackagesFilterResponse
-    _$RenovateYourHouseFixedPackagesFilterResponseFromJson(
-            Map<String, dynamic> json) =>
-        RenovateYourHouseFixedPackagesFilterResponse(
-          success: json['success'] as bool?,
-          status: (json['status'] as num?)?.toInt(),
-          data: json['data'] == null
-              ? null
-              : Data.fromJson(json['data'] as Map<String, dynamic>),
-        );
+AskEngineerFilterResponseModel _$AskEngineerFilterResponseModelFromJson(
+        Map<String, dynamic> json) =>
+    AskEngineerFilterResponseModel(
+      success: json['success'] as bool?,
+      status: (json['status'] as num?)?.toInt(),
+      data: json['data'] == null
+          ? null
+          : Data.fromJson(json['data'] as Map<String, dynamic>),
+    );
 
-Map<String, dynamic> _$RenovateYourHouseFixedPackagesFilterResponseToJson(
-        RenovateYourHouseFixedPackagesFilterResponse instance) =>
+Map<String, dynamic> _$AskEngineerFilterResponseModelToJson(
+        AskEngineerFilterResponseModel instance) =>
     <String, dynamic>{
       'success': instance.success,
       'status': instance.status,
@@ -27,8 +26,7 @@ Map<String, dynamic> _$RenovateYourHouseFixedPackagesFilterResponseToJson(
 
 Data _$DataFromJson(Map<String, dynamic> json) => Data(
       content: (json['content'] as List<dynamic>?)
-          ?.map((e) =>
-              RenovateFixedFilterContent.fromJson(e as Map<String, dynamic>))
+          ?.map((e) => AskEngineerContent.fromJson(e as Map<String, dynamic>))
           .toList(),
       pageable: json['pageable'] == null
           ? null
@@ -60,61 +58,52 @@ Map<String, dynamic> _$DataToJson(Data instance) => <String, dynamic>{
       'empty': instance.empty,
     };
 
-RenovateFixedFilterContent _$RenovateFixedFilterContentFromJson(
-        Map<String, dynamic> json) =>
-    RenovateFixedFilterContent(
+AskEngineerContent _$AskEngineerContentFromJson(Map<String, dynamic> json) =>
+    AskEngineerContent(
       id: (json['id'] as num?)?.toInt(),
       statusCode: (json['statusCode'] as num?)?.toInt(),
       phoneNumber: json['phoneNumber'] as String?,
-      isInsideCompound: json['isInsideCompound'] as bool?,
+      projectName: json['projectName'] as String?,
+      projectDescription: json['projectDescription'] as String?,
+      engineerType: json['engineerType'] == null
+          ? null
+          : EngineerType.fromJson(json['engineerType'] as Map<String, dynamic>),
       unitType: json['unitType'] == null
           ? null
-          : UnitStatuses.fromJson(json['unitType'] as Map<String, dynamic>),
-      unitStatuses: json['unitStatuses'] == null
-          ? null
-          : UnitStatuses.fromJson(json['unitStatuses'] as Map<String, dynamic>),
-      unitWorkTypes: json['unitWorkTypes'] == null
-          ? null
-          : UnitStatuses.fromJson(
-              json['unitWorkTypes'] as Map<String, dynamic>),
-      workSkills: json['workSkills'] == null
-          ? null
-          : UnitStatuses.fromJson(json['workSkills'] as Map<String, dynamic>),
+          : EngineerType.fromJson(json['unitType'] as Map<String, dynamic>),
+      budget: (json['budget'] as num?)?.toInt(),
       city: json['city'] == null
           ? null
           : City.fromJson(json['city'] as Map<String, dynamic>),
       governorate: json['governorate'] == null
           ? null
           : City.fromJson(json['governorate'] as Map<String, dynamic>),
-      unitArea: (json['unitArea'] as num?)?.toInt(),
-      budget: (json['budget'] as num?)?.toInt(),
-      region: (json['region'] as num?)?.toInt(),
-      numberOfRooms: (json['numberOfRooms'] as num?)?.toInt(),
-      numberOfBathrooms: (json['numberOfBathrooms'] as num?)?.toInt(),
-      requiredDuration: (json['requiredDuration'] as num?)?.toInt(),
-      notes: json['notes'] as String?,
+      urgencyLevel: json['urgencyLevel'] == null
+          ? null
+          : EngineerType.fromJson(json['urgencyLevel'] as Map<String, dynamic>),
+      deadline: json['deadline'] == null
+          ? null
+          : DateTime.parse(json['deadline'] as String),
+      photos: (json['photos'] as List<dynamic>?)
+          ?.map((e) => Photo.fromJson(e as Map<String, dynamic>))
+          .toList(),
     );
 
-Map<String, dynamic> _$RenovateFixedFilterContentToJson(
-        RenovateFixedFilterContent instance) =>
+Map<String, dynamic> _$AskEngineerContentToJson(AskEngineerContent instance) =>
     <String, dynamic>{
       'id': instance.id,
       'statusCode': instance.statusCode,
       'phoneNumber': instance.phoneNumber,
-      'isInsideCompound': instance.isInsideCompound,
+      'projectName': instance.projectName,
+      'projectDescription': instance.projectDescription,
+      'engineerType': instance.engineerType,
       'unitType': instance.unitType,
-      'unitStatuses': instance.unitStatuses,
-      'unitWorkTypes': instance.unitWorkTypes,
-      'workSkills': instance.workSkills,
+      'budget': instance.budget,
       'city': instance.city,
       'governorate': instance.governorate,
-      'unitArea': instance.unitArea,
-      'budget': instance.budget,
-      'region': instance.region,
-      'numberOfRooms': instance.numberOfRooms,
-      'numberOfBathrooms': instance.numberOfBathrooms,
-      'requiredDuration': instance.requiredDuration,
-      'notes': instance.notes,
+      'urgencyLevel': instance.urgencyLevel,
+      'deadline': instance.deadline?.toIso8601String(),
+      'photos': instance.photos,
     };
 
 City _$CityFromJson(Map<String, dynamic> json) => City(
@@ -129,7 +118,7 @@ Map<String, dynamic> _$CityToJson(City instance) => <String, dynamic>{
       'name': instance.name,
     };
 
-UnitStatuses _$UnitStatusesFromJson(Map<String, dynamic> json) => UnitStatuses(
+EngineerType _$EngineerTypeFromJson(Map<String, dynamic> json) => EngineerType(
       id: (json['id'] as num?)?.toInt(),
       code: json['code'] as String?,
       name: json['name'] as String?,
@@ -137,13 +126,25 @@ UnitStatuses _$UnitStatusesFromJson(Map<String, dynamic> json) => UnitStatuses(
       nameEn: json['nameEn'] as String?,
     );
 
-Map<String, dynamic> _$UnitStatusesToJson(UnitStatuses instance) =>
+Map<String, dynamic> _$EngineerTypeToJson(EngineerType instance) =>
     <String, dynamic>{
       'id': instance.id,
       'code': instance.code,
       'name': instance.name,
       'nameAr': instance.nameAr,
       'nameEn': instance.nameEn,
+    };
+
+Photo _$PhotoFromJson(Map<String, dynamic> json) => Photo(
+      id: (json['id'] as num?)?.toInt(),
+      askEngineerId: (json['askEngineerId'] as num?)?.toInt(),
+      photoPath: json['photoPath'] as String?,
+    );
+
+Map<String, dynamic> _$PhotoToJson(Photo instance) => <String, dynamic>{
+      'id': instance.id,
+      'askEngineerId': instance.askEngineerId,
+      'photoPath': instance.photoPath,
     };
 
 Pageable _$PageableFromJson(Map<String, dynamic> json) => Pageable(
@@ -153,8 +154,8 @@ Pageable _$PageableFromJson(Map<String, dynamic> json) => Pageable(
           ? null
           : Sort.fromJson(json['sort'] as Map<String, dynamic>),
       offset: (json['offset'] as num?)?.toInt(),
-      unpaged: json['unpaged'] as bool?,
       paged: json['paged'] as bool?,
+      unpaged: json['unpaged'] as bool?,
     );
 
 Map<String, dynamic> _$PageableToJson(Pageable instance) => <String, dynamic>{
@@ -162,18 +163,18 @@ Map<String, dynamic> _$PageableToJson(Pageable instance) => <String, dynamic>{
       'pageSize': instance.pageSize,
       'sort': instance.sort,
       'offset': instance.offset,
-      'unpaged': instance.unpaged,
       'paged': instance.paged,
+      'unpaged': instance.unpaged,
     };
 
 Sort _$SortFromJson(Map<String, dynamic> json) => Sort(
       empty: json['empty'] as bool?,
-      unsorted: json['unsorted'] as bool?,
       sorted: json['sorted'] as bool?,
+      unsorted: json['unsorted'] as bool?,
     );
 
 Map<String, dynamic> _$SortToJson(Sort instance) => <String, dynamic>{
       'empty': instance.empty,
-      'unsorted': instance.unsorted,
       'sorted': instance.sorted,
+      'unsorted': instance.unsorted,
     };

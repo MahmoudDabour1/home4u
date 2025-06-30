@@ -1,34 +1,34 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'renovate_your_house_custom_packages_filter_response.dart';
+part of 'request_design_filter_response_model.dart';
 
 // **************************************************************************
 // JsonSerializableGenerator
 // **************************************************************************
 
-RenovateYourHouseCustomPackagesFilterResponse
-    _$RenovateYourHouseCustomPackagesFilterResponseFromJson(
-            Map<String, dynamic> json) =>
-        RenovateYourHouseCustomPackagesFilterResponse(
-          success: json['success'] as bool?,
-          status: (json['status'] as num?)?.toInt(),
-          data: json['data'] == null
-              ? null
-              : Data.fromJson(json['data'] as Map<String, dynamic>),
-        );
+RequestDesignFilterResponseModel _$RequestDesignFilterResponseModelFromJson(
+        Map<String, dynamic> json) =>
+    RequestDesignFilterResponseModel(
+      success: json['success'] as bool?,
+      status: (json['status'] as num?)?.toInt(),
+      data: json['data'] == null
+          ? null
+          : RequestFilterData.fromJson(json['data'] as Map<String, dynamic>),
+    );
 
-Map<String, dynamic> _$RenovateYourHouseCustomPackagesFilterResponseToJson(
-        RenovateYourHouseCustomPackagesFilterResponse instance) =>
+Map<String, dynamic> _$RequestDesignFilterResponseModelToJson(
+        RequestDesignFilterResponseModel instance) =>
     <String, dynamic>{
       'success': instance.success,
       'status': instance.status,
       'data': instance.data,
     };
 
-Data _$DataFromJson(Map<String, dynamic> json) => Data(
+RequestFilterData _$RequestFilterDataFromJson(Map<String, dynamic> json) =>
+    RequestFilterData(
       content: (json['content'] as List<dynamic>?)
-          ?.map(
-              (e) => CustomPackagesContent.fromJson(e as Map<String, dynamic>))
+          ?.map((e) =>
+              RequestDesignFilterContent.fromJson(e as Map<String, dynamic>))
           .toList(),
       pageable: json['pageable'] == null
           ? null
@@ -46,7 +46,8 @@ Data _$DataFromJson(Map<String, dynamic> json) => Data(
       empty: json['empty'] as bool?,
     );
 
-Map<String, dynamic> _$DataToJson(Data instance) => <String, dynamic>{
+Map<String, dynamic> _$RequestFilterDataToJson(RequestFilterData instance) =>
+    <String, dynamic>{
       'content': instance.content,
       'pageable': instance.pageable,
       'totalPages': instance.totalPages,
@@ -60,57 +61,49 @@ Map<String, dynamic> _$DataToJson(Data instance) => <String, dynamic>{
       'empty': instance.empty,
     };
 
-CustomPackagesContent _$CustomPackagesContentFromJson(
+RequestDesignFilterContent _$RequestDesignFilterContentFromJson(
         Map<String, dynamic> json) =>
-    CustomPackagesContent(
+    RequestDesignFilterContent(
       id: (json['id'] as num?)?.toInt(),
       statusCode: (json['statusCode'] as num?)?.toInt(),
       phoneNumber: json['phoneNumber'] as String?,
-      isInsideCompound: json['isInsideCompound'] as bool?,
       unitType: json['unitType'] == null
           ? null
           : UnitType.fromJson(json['unitType'] as Map<String, dynamic>),
-      customPackage: json['customPackage'] == null
+      governorate: json['governorate'] == null
           ? null
-          : CustomPackage.fromJson(
-              json['customPackage'] as Map<String, dynamic>),
+          : Governorate.fromJson(json['governorate'] as Map<String, dynamic>),
+      unitArea: (json['unitArea'] as num?)?.toInt(),
+      budget: (json['budget'] as num?)?.toInt(),
+      requiredDuration: (json['requiredDuration'] as num?)?.toInt(),
+      notes: json['notes'] as String?,
     );
 
-Map<String, dynamic> _$CustomPackagesContentToJson(
-        CustomPackagesContent instance) =>
+Map<String, dynamic> _$RequestDesignFilterContentToJson(
+        RequestDesignFilterContent instance) =>
     <String, dynamic>{
       'id': instance.id,
       'statusCode': instance.statusCode,
       'phoneNumber': instance.phoneNumber,
-      'isInsideCompound': instance.isInsideCompound,
       'unitType': instance.unitType,
-      'customPackage': instance.customPackage,
+      'governorate': instance.governorate,
+      'unitArea': instance.unitArea,
+      'budget': instance.budget,
+      'requiredDuration': instance.requiredDuration,
+      'notes': instance.notes,
     };
 
-CustomPackage _$CustomPackageFromJson(Map<String, dynamic> json) =>
-    CustomPackage(
+Governorate _$GovernorateFromJson(Map<String, dynamic> json) => Governorate(
       id: (json['id'] as num?)?.toInt(),
-      statusCode: (json['statusCode'] as num?)?.toInt(),
+      code: json['code'] as String?,
       name: json['name'] as String?,
-      nameAr: json['nameAr'] as String?,
-      nameEn: json['nameEn'] as String?,
-      price: (json['price'] as num?)?.toInt(),
-      details: json['details'] as String?,
-      detailsAr: json['detailsAr'] as String?,
-      detailsEn: json['detailsEn'] as String?,
     );
 
-Map<String, dynamic> _$CustomPackageToJson(CustomPackage instance) =>
+Map<String, dynamic> _$GovernorateToJson(Governorate instance) =>
     <String, dynamic>{
       'id': instance.id,
-      'statusCode': instance.statusCode,
+      'code': instance.code,
       'name': instance.name,
-      'nameAr': instance.nameAr,
-      'nameEn': instance.nameEn,
-      'price': instance.price,
-      'details': instance.details,
-      'detailsAr': instance.detailsAr,
-      'detailsEn': instance.detailsEn,
     };
 
 UnitType _$UnitTypeFromJson(Map<String, dynamic> json) => UnitType(

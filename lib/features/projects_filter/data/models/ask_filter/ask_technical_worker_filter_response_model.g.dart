@@ -1,34 +1,33 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'request_design_filter_response.dart';
+part of 'ask_technical_worker_filter_response_model.dart';
 
 // **************************************************************************
 // JsonSerializableGenerator
 // **************************************************************************
 
-RequestDesignFilterResponse _$RequestDesignFilterResponseFromJson(
-        Map<String, dynamic> json) =>
-    RequestDesignFilterResponse(
-      success: json['success'] as bool?,
-      status: (json['status'] as num?)?.toInt(),
-      data: json['data'] == null
-          ? null
-          : RequestFilterData.fromJson(json['data'] as Map<String, dynamic>),
-    );
+AskTechnicalWorkerFilterResponseModel
+    _$AskTechnicalWorkerFilterResponseModelFromJson(
+            Map<String, dynamic> json) =>
+        AskTechnicalWorkerFilterResponseModel(
+          success: json['success'] as bool?,
+          status: (json['status'] as num?)?.toInt(),
+          data: json['data'] == null
+              ? null
+              : Data.fromJson(json['data'] as Map<String, dynamic>),
+        );
 
-Map<String, dynamic> _$RequestDesignFilterResponseToJson(
-        RequestDesignFilterResponse instance) =>
+Map<String, dynamic> _$AskTechnicalWorkerFilterResponseModelToJson(
+        AskTechnicalWorkerFilterResponseModel instance) =>
     <String, dynamic>{
       'success': instance.success,
       'status': instance.status,
       'data': instance.data,
     };
 
-RequestFilterData _$RequestFilterDataFromJson(Map<String, dynamic> json) =>
-    RequestFilterData(
+Data _$DataFromJson(Map<String, dynamic> json) => Data(
       content: (json['content'] as List<dynamic>?)
-          ?.map((e) =>
-              RequestDesignFilterContent.fromJson(e as Map<String, dynamic>))
+          ?.map((e) => AskTechnicalContent.fromJson(e as Map<String, dynamic>))
           .toList(),
       pageable: json['pageable'] == null
           ? null
@@ -46,8 +45,7 @@ RequestFilterData _$RequestFilterDataFromJson(Map<String, dynamic> json) =>
       empty: json['empty'] as bool?,
     );
 
-Map<String, dynamic> _$RequestFilterDataToJson(RequestFilterData instance) =>
-    <String, dynamic>{
+Map<String, dynamic> _$DataToJson(Data instance) => <String, dynamic>{
       'content': instance.content,
       'pageable': instance.pageable,
       'totalPages': instance.totalPages,
@@ -61,52 +59,76 @@ Map<String, dynamic> _$RequestFilterDataToJson(RequestFilterData instance) =>
       'empty': instance.empty,
     };
 
-RequestDesignFilterContent _$RequestDesignFilterContentFromJson(
-        Map<String, dynamic> json) =>
-    RequestDesignFilterContent(
+AskTechnicalContent _$AskTechnicalContentFromJson(Map<String, dynamic> json) =>
+    AskTechnicalContent(
       id: (json['id'] as num?)?.toInt(),
       statusCode: (json['statusCode'] as num?)?.toInt(),
+      projectName: json['projectName'] as String?,
       phoneNumber: json['phoneNumber'] as String?,
+      projectDescription: json['projectDescription'] as String?,
+      workerType: json['workerType'] == null
+          ? null
+          : Type.fromJson(json['workerType'] as Map<String, dynamic>),
       unitType: json['unitType'] == null
           ? null
-          : UnitType.fromJson(json['unitType'] as Map<String, dynamic>),
+          : Type.fromJson(json['unitType'] as Map<String, dynamic>),
+      city: json['city'] == null
+          ? null
+          : City.fromJson(json['city'] as Map<String, dynamic>),
       governorate: json['governorate'] == null
           ? null
-          : Governorate.fromJson(json['governorate'] as Map<String, dynamic>),
-      unitArea: (json['unitArea'] as num?)?.toInt(),
+          : City.fromJson(json['governorate'] as Map<String, dynamic>),
+      material: json['material'] == null
+          ? null
+          : City.fromJson(json['material'] as Map<String, dynamic>),
       budget: (json['budget'] as num?)?.toInt(),
-      requiredDuration: (json['requiredDuration'] as num?)?.toInt(),
-      notes: json['notes'] as String?,
+      photos: (json['photos'] as List<dynamic>?)
+          ?.map((e) => Photo.fromJson(e as Map<String, dynamic>))
+          .toList(),
     );
 
-Map<String, dynamic> _$RequestDesignFilterContentToJson(
-        RequestDesignFilterContent instance) =>
+Map<String, dynamic> _$AskTechnicalContentToJson(
+        AskTechnicalContent instance) =>
     <String, dynamic>{
       'id': instance.id,
       'statusCode': instance.statusCode,
+      'projectName': instance.projectName,
       'phoneNumber': instance.phoneNumber,
+      'projectDescription': instance.projectDescription,
+      'workerType': instance.workerType,
       'unitType': instance.unitType,
+      'city': instance.city,
       'governorate': instance.governorate,
-      'unitArea': instance.unitArea,
+      'material': instance.material,
       'budget': instance.budget,
-      'requiredDuration': instance.requiredDuration,
-      'notes': instance.notes,
+      'photos': instance.photos,
     };
 
-Governorate _$GovernorateFromJson(Map<String, dynamic> json) => Governorate(
+City _$CityFromJson(Map<String, dynamic> json) => City(
       id: (json['id'] as num?)?.toInt(),
       code: json['code'] as String?,
       name: json['name'] as String?,
     );
 
-Map<String, dynamic> _$GovernorateToJson(Governorate instance) =>
-    <String, dynamic>{
+Map<String, dynamic> _$CityToJson(City instance) => <String, dynamic>{
       'id': instance.id,
       'code': instance.code,
       'name': instance.name,
     };
 
-UnitType _$UnitTypeFromJson(Map<String, dynamic> json) => UnitType(
+Photo _$PhotoFromJson(Map<String, dynamic> json) => Photo(
+      id: (json['id'] as num?)?.toInt(),
+      askWorkerId: (json['askWorkerId'] as num?)?.toInt(),
+      photoPath: json['photoPath'] as String?,
+    );
+
+Map<String, dynamic> _$PhotoToJson(Photo instance) => <String, dynamic>{
+      'id': instance.id,
+      'askWorkerId': instance.askWorkerId,
+      'photoPath': instance.photoPath,
+    };
+
+Type _$TypeFromJson(Map<String, dynamic> json) => Type(
       id: (json['id'] as num?)?.toInt(),
       code: json['code'] as String?,
       name: json['name'] as String?,
@@ -114,7 +136,7 @@ UnitType _$UnitTypeFromJson(Map<String, dynamic> json) => UnitType(
       nameEn: json['nameEn'] as String?,
     );
 
-Map<String, dynamic> _$UnitTypeToJson(UnitType instance) => <String, dynamic>{
+Map<String, dynamic> _$TypeToJson(Type instance) => <String, dynamic>{
       'id': instance.id,
       'code': instance.code,
       'name': instance.name,
@@ -129,8 +151,8 @@ Pageable _$PageableFromJson(Map<String, dynamic> json) => Pageable(
           ? null
           : Sort.fromJson(json['sort'] as Map<String, dynamic>),
       offset: (json['offset'] as num?)?.toInt(),
-      unpaged: json['unpaged'] as bool?,
       paged: json['paged'] as bool?,
+      unpaged: json['unpaged'] as bool?,
     );
 
 Map<String, dynamic> _$PageableToJson(Pageable instance) => <String, dynamic>{
@@ -138,18 +160,18 @@ Map<String, dynamic> _$PageableToJson(Pageable instance) => <String, dynamic>{
       'pageSize': instance.pageSize,
       'sort': instance.sort,
       'offset': instance.offset,
-      'unpaged': instance.unpaged,
       'paged': instance.paged,
+      'unpaged': instance.unpaged,
     };
 
 Sort _$SortFromJson(Map<String, dynamic> json) => Sort(
       empty: json['empty'] as bool?,
-      unsorted: json['unsorted'] as bool?,
       sorted: json['sorted'] as bool?,
+      unsorted: json['unsorted'] as bool?,
     );
 
 Map<String, dynamic> _$SortToJson(Sort instance) => <String, dynamic>{
       'empty': instance.empty,
-      'unsorted': instance.unsorted,
       'sorted': instance.sorted,
+      'unsorted': instance.unsorted,
     };

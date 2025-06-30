@@ -1,7 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:home4u/features/user/renovate_your_house/data/models/renovate_your_house_fixed_packages_filter_response.dart';
 
-import '../data/models/renovate_your_house_custom_packages_filter_response.dart';
 import '../data/models/renovate_your_house_fixed_packages_model.dart';
 
 part 'renovate_your_house_state.freezed.dart';
@@ -50,32 +48,4 @@ class RenovateYourHouseState<T> with _$RenovateYourHouseState<T> {
 
   factory RenovateYourHouseState.chooseFixedPackageRenovateYourHouseError(
       {required String error}) = ChooseFixedPackageRenovateYourHouseError;
-
-  ///RenovateYourHouseFixedPackagesFilter
-  factory RenovateYourHouseState.renovateYourHouseFixedPackagesFilterLoading() =
-      RenovateYourHouseFixedPackagesFilterLoading;
-
-  factory RenovateYourHouseState.renovateYourHouseFixedPackagesFilterLoaded(
-          RenovateYourHouseFixedPackagesFilterResponse data) =
-      RenovateYourHouseFixedPackagesFilterLoaded;
-
-  factory RenovateYourHouseState.renovateYourHouseFixedPackagesFilterError(
-      {required String error}) = RenovateYourHouseFixedPackagesFilterError;
-
-  ///RenovateYourHouseCustomPackagesFilter
-  factory RenovateYourHouseState.renovateYourHouseCustomPackagesFilterLoading() =
-      RenovateYourHouseCustomPackagesFilterLoading;
-
-  factory RenovateYourHouseState.renovateYourHouseCustomPackagesFilterLoaded(
-          RenovateYourHouseCustomPackagesFilterResponse data) =
-      RenovateYourHouseCustomPackagesFilterLoaded;
-
-  factory RenovateYourHouseState.renovateYourHouseCustomPackagesFilterError(
-      {required String error}) = RenovateYourHouseCustomPackagesFilterError;
-
-  ///pagination
-  const factory RenovateYourHouseState.paginationLoading() = PaginationLoading;
-
-  const factory RenovateYourHouseState.paginationFailure(
-      {required String errorMessage}) = PaginationFailure;
 }

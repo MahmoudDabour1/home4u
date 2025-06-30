@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:home4u/features/layout/presentation/bottom_nav_bar_layout.dart';
 import 'package:home4u/features/user/home/presentation/user_home_screen.dart';
+import 'package:home4u/features/projects_filter/presentation/projects_filter_screen.dart';
 
 import '../../account/presentation/account_screen.dart';
 import '../../settings/presentation/setting_screen.dart';
@@ -28,7 +29,7 @@ List<IconData> _bottomNavIcons = [
 
 List<Widget> _bottomNavScreens = [
   UserHomeScreen(),
-  Container(color: Colors.green),
+  ProjectsFilterScreen(),
   Container(color: Colors.blue),
   AccountScreen(),
   SettingScreen(),
