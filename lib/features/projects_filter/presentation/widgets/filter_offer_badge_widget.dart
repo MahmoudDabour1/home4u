@@ -9,11 +9,13 @@ import '../../../../core/theming/app_colors.dart';
 import '../../../../core/theming/app_styles.dart';
 
 class FilterOfferBadgeWidget extends StatelessWidget {
-  const FilterOfferBadgeWidget({super.key});
+  final String? badgeCount;
+
+  const FilterOfferBadgeWidget({super.key, this.badgeCount});
 
   @override
   Widget build(BuildContext context) {
-    return  Positioned(
+    return Positioned(
       right: 18.w,
       child: Stack(
         children: [
@@ -21,14 +23,16 @@ class FilterOfferBadgeWidget extends StatelessWidget {
           Column(
             children: [
               Text(
-                "0",
+                badgeCount ?? '0',
                 style: AppStyles.font16BlackLight
                     .copyWith(color: AppColors.whiteColor),
               ),
               Text(
                 AppLocale.offers.getString(context),
-                style: AppStyles.font16BlackLight
-                    .copyWith(color: AppColors.whiteColor,fontSize: 14.sp,),
+                style: AppStyles.font16BlackLight.copyWith(
+                  color: AppColors.whiteColor,
+                  fontSize: 14.sp,
+                ),
               ),
             ],
           )

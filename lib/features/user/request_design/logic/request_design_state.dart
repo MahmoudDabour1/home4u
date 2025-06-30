@@ -15,21 +15,4 @@ class RequestDesignState<T> with _$RequestDesignState<T> {
 
   factory RequestDesignState.addRequestDesignFailure({required String error}) =
       AddRequestDesignFailure;
-
-  ///Request Design Filter
-  factory RequestDesignState.requestDesignFilterLoading() =
-      RequestDesignFilterLoading;
-
-  factory RequestDesignState.requestDesignFilterSuccess(T data) =
-      RequestDesignFilterSuccess;
-
-  factory RequestDesignState.requestDesignFilterFailure(
-      {required String error}) = RequestDesignFilterFailure;
-
-  ///Pagination
-  factory RequestDesignState.paginationLoading() =
-      RequestDesignPaginationLoading;
-
-  factory RequestDesignState.paginationFailure({required String error}) =
-      RequestDesignPaginationFailure;
 }

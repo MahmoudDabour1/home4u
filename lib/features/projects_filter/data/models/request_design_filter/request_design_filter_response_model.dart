@@ -1,34 +1,32 @@
-import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:json_annotation/json_annotation.dart';
 
-part 'renovate_your_house_fixed_packages_filter_response.g.dart';
+part 'request_design_filter_response_model.g.dart';
 
 @JsonSerializable()
-class RenovateYourHouseFixedPackagesFilterResponse {
+class RequestDesignFilterResponseModel {
   @JsonKey(name: "success")
   final bool? success;
   @JsonKey(name: "status")
   final int? status;
   @JsonKey(name: "data")
-  final Data? data;
+  final RequestFilterData? data;
 
-  RenovateYourHouseFixedPackagesFilterResponse({
+  RequestDesignFilterResponseModel({
     this.success,
     this.status,
     this.data,
   });
 
-  factory RenovateYourHouseFixedPackagesFilterResponse.fromJson(
-          Map<String, dynamic> json) =>
-      _$RenovateYourHouseFixedPackagesFilterResponseFromJson(json);
+  factory RequestDesignFilterResponseModel.fromJson(Map<String, dynamic> json) =>
+      _$RequestDesignFilterResponseModelFromJson(json);
 
-  Map<String, dynamic> toJson() =>
-      _$RenovateYourHouseFixedPackagesFilterResponseToJson(this);
+  Map<String, dynamic> toJson() => _$RequestDesignFilterResponseModelToJson(this);
 }
 
 @JsonSerializable()
-class Data {
+class RequestFilterData {
   @JsonKey(name: "content")
-  final List<RenovateFixedFilterContent>? content;
+  final List<RequestDesignFilterContent>? content;
   @JsonKey(name: "pageable")
   final Pageable? pageable;
   @JsonKey(name: "totalPages")
@@ -50,7 +48,7 @@ class Data {
   @JsonKey(name: "empty")
   final bool? empty;
 
-  Data({
+  RequestFilterData({
     this.content,
     this.pageable,
     this.totalPages,
@@ -64,76 +62,52 @@ class Data {
     this.empty,
   });
 
-  factory Data.fromJson(Map<String, dynamic> json) => _$DataFromJson(json);
+  factory RequestFilterData.fromJson(Map<String, dynamic> json) =>
+      _$RequestFilterDataFromJson(json);
 
-  Map<String, dynamic> toJson() => _$DataToJson(this);
+  Map<String, dynamic> toJson() => _$RequestFilterDataToJson(this);
 }
 
 @JsonSerializable()
-class RenovateFixedFilterContent {
+class RequestDesignFilterContent {
   @JsonKey(name: "id")
   final int? id;
   @JsonKey(name: "statusCode")
   final int? statusCode;
   @JsonKey(name: "phoneNumber")
   final String? phoneNumber;
-  @JsonKey(name: "isInsideCompound")
-  final bool? isInsideCompound;
   @JsonKey(name: "unitType")
-  final UnitStatuses? unitType;
-  @JsonKey(name: "unitStatuses")
-  final UnitStatuses? unitStatuses;
-  @JsonKey(name: "unitWorkTypes")
-  final UnitStatuses? unitWorkTypes;
-  @JsonKey(name: "workSkills")
-  final UnitStatuses? workSkills;
-  @JsonKey(name: "city")
-  final City? city;
+  final UnitType? unitType;
   @JsonKey(name: "governorate")
-  final City? governorate;
+  final Governorate? governorate;
   @JsonKey(name: "unitArea")
   final int? unitArea;
   @JsonKey(name: "budget")
   final int? budget;
-  @JsonKey(name: "region")
-  final int? region;
-  @JsonKey(name: "numberOfRooms")
-  final int? numberOfRooms;
-  @JsonKey(name: "numberOfBathrooms")
-  final int? numberOfBathrooms;
   @JsonKey(name: "requiredDuration")
   final int? requiredDuration;
   @JsonKey(name: "notes")
   final String? notes;
 
-  RenovateFixedFilterContent({
+  RequestDesignFilterContent({
     this.id,
     this.statusCode,
     this.phoneNumber,
-    this.isInsideCompound,
     this.unitType,
-    this.unitStatuses,
-    this.unitWorkTypes,
-    this.workSkills,
-    this.city,
     this.governorate,
     this.unitArea,
     this.budget,
-    this.region,
-    this.numberOfRooms,
-    this.numberOfBathrooms,
     this.requiredDuration,
     this.notes,
   });
 
-  factory RenovateFixedFilterContent.fromJson(Map<String, dynamic> json) =>
-      _$RenovateFixedFilterContentFromJson(json);
-
-  Map<String, dynamic> toJson() => _$RenovateFixedFilterContentToJson(this);
+  factory RequestDesignFilterContent.fromJson(Map<String, dynamic> json) =>
+      _$RequestDesignFilterContentFromJson(json);
+  Map<String, dynamic> toJson() => _$RequestDesignFilterContentToJson(this);
 }
 
 @JsonSerializable()
-class City {
+class Governorate {
   @JsonKey(name: "id")
   final int? id;
   @JsonKey(name: "code")
@@ -141,19 +115,20 @@ class City {
   @JsonKey(name: "name")
   final String? name;
 
-  City({
+  Governorate({
     this.id,
     this.code,
     this.name,
   });
 
-  factory City.fromJson(Map<String, dynamic> json) => _$CityFromJson(json);
+  factory Governorate.fromJson(Map<String, dynamic> json) =>
+      _$GovernorateFromJson(json);
 
-  Map<String, dynamic> toJson() => _$CityToJson(this);
+  Map<String, dynamic> toJson() => _$GovernorateToJson(this);
 }
 
 @JsonSerializable()
-class UnitStatuses {
+class UnitType {
   @JsonKey(name: "id")
   final int? id;
   @JsonKey(name: "code")
@@ -165,7 +140,7 @@ class UnitStatuses {
   @JsonKey(name: "nameEn")
   final String? nameEn;
 
-  UnitStatuses({
+  UnitType({
     this.id,
     this.code,
     this.name,
@@ -173,10 +148,10 @@ class UnitStatuses {
     this.nameEn,
   });
 
-  factory UnitStatuses.fromJson(Map<String, dynamic> json) =>
-      _$UnitStatusesFromJson(json);
+  factory UnitType.fromJson(Map<String, dynamic> json) =>
+      _$UnitTypeFromJson(json);
 
-  Map<String, dynamic> toJson() => _$UnitStatusesToJson(this);
+  Map<String, dynamic> toJson() => _$UnitTypeToJson(this);
 }
 
 @JsonSerializable()
