@@ -210,6 +210,8 @@
 
 //option2
 
+import 'dart:async';
+
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_localization/flutter_localization.dart';
@@ -236,20 +238,46 @@ class AnimatedToggleRow extends StatefulWidget {
 
 class _AnimatedToggleRowState extends State<AnimatedToggleRow> {
   bool showFirst = true;
+  Timer? _timer;
+
+  // @override
+  // void initState() {
+  //   super.initState();
+  //   _toggleRows();
+  // }
+  //
+  // void _toggleRows() async {
+  //   while (mounted) {
+  //     await Future.delayed(const Duration(seconds: 3));
+  //     setState(() {
+  //       showFirst = !showFirst;
+  //     });
+  //   }
+  // }
+
 
   @override
   void initState() {
     super.initState();
-    _toggleRows();
+    _startToggleTimer(); // Initialize the timer
   }
 
-  void _toggleRows() async {
-    while (mounted) {
-      await Future.delayed(const Duration(seconds: 3));
-      setState(() {
-        showFirst = !showFirst;
-      });
-    }
+  void _startToggleTimer() {
+    _timer = Timer.periodic(const Duration(seconds: 3), (timer) {
+      if (mounted) { // Check if widget is still mounted
+        setState(() {
+          showFirst = !showFirst;
+        });
+      } else {
+        timer.cancel();
+      }
+    });
+  }
+
+  @override
+  void dispose() {
+    _timer?.cancel(); // Cancel the timer when widget is disposed
+    super.dispose();
   }
 
   @override
