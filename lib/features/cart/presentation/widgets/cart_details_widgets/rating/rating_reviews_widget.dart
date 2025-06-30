@@ -42,18 +42,16 @@ class RatingReviewsWidget extends StatelessWidget {
   Widget setupSuccess(RatingReviewResponseModel data) {
     return Container(
       color: AppColors.whiteColor,
-      child: Expanded(
-        child: ListView.builder(
-          shrinkWrap: true,
-          physics: NeverScrollableScrollPhysics(),
-          itemCount: data.data?.content?.length ?? 0,
-          itemBuilder: (context, index) {
-            return RatingReviewsSingleItem(
-              data: data,
-              index: index,
-            );
-          },
-        ),
+      child: ListView.builder(
+        shrinkWrap: true,
+        physics: NeverScrollableScrollPhysics(),
+        itemCount: data.data?.content?.length ?? 0,
+        itemBuilder: (context, index) {
+          return RatingReviewsSingleItem(
+            data: data,
+            index: index,
+          );
+        },
       ),
     );
   }
