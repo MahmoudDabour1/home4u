@@ -17,9 +17,12 @@ class AskTechnicalWorkerFilterResponseModel {
     this.data,
   });
 
-  factory AskTechnicalWorkerFilterResponseModel.fromJson(Map<String, dynamic> json) => _$AskTechnicalWorkerFilterResponseModelFromJson(json);
+  factory AskTechnicalWorkerFilterResponseModel.fromJson(
+          Map<String, dynamic> json) =>
+      _$AskTechnicalWorkerFilterResponseModelFromJson(json);
 
-  Map<String, dynamic> toJson() => _$AskTechnicalWorkerFilterResponseModelToJson(this);
+  Map<String, dynamic> toJson() =>
+      _$AskTechnicalWorkerFilterResponseModelToJson(this);
 }
 
 @JsonSerializable()
@@ -72,6 +75,10 @@ class AskTechnicalContent {
   final int? id;
   @JsonKey(name: "statusCode")
   final int? statusCode;
+  @JsonKey(name: "createdDate")
+  final DateTime? createdDate;
+  @JsonKey(name: "modifiedDate")
+  final DateTime? modifiedDate;
   @JsonKey(name: "projectName")
   final String? projectName;
   @JsonKey(name: "phoneNumber")
@@ -92,6 +99,12 @@ class AskTechnicalContent {
   final int? budget;
   @JsonKey(name: "photos")
   final List<Photo>? photos;
+  @JsonKey(name: "user")
+  final User? user;
+  @JsonKey(name: "requestCount")
+  final int? requestCount;
+  @JsonKey(name: "askStatus")
+  final String? askStatus;
 
   AskTechnicalContent({
     this.id,
@@ -106,9 +119,15 @@ class AskTechnicalContent {
     this.material,
     this.budget,
     this.photos,
+    this.createdDate,
+    this.modifiedDate,
+    this.user,
+    this.requestCount,
+    this.askStatus,
   });
 
-  factory AskTechnicalContent.fromJson(Map<String, dynamic> json) => _$AskTechnicalContentFromJson(json);
+  factory AskTechnicalContent.fromJson(Map<String, dynamic> json) =>
+      _$AskTechnicalContentFromJson(json);
 
   Map<String, dynamic> toJson() => _$AskTechnicalContentToJson(this);
 }
@@ -151,6 +170,53 @@ class Photo {
   factory Photo.fromJson(Map<String, dynamic> json) => _$PhotoFromJson(json);
 
   Map<String, dynamic> toJson() => _$PhotoToJson(this);
+}
+
+@JsonSerializable()
+class User {
+  @JsonKey(name: "id")
+  final int? id;
+  @JsonKey(name: "statusCode")
+  final int? statusCode;
+  @JsonKey(name: "createdDate")
+  final DateTime? createdDate;
+  @JsonKey(name: "modifiedDate")
+  final DateTime? modifiedDate;
+  @JsonKey(name: "username")
+  final String? username;
+  @JsonKey(name: "email")
+  final String? email;
+  @JsonKey(name: "phone")
+  final String? phone;
+  @JsonKey(name: "userType")
+  final Type? userType;
+  @JsonKey(name: "governorate")
+  final City? governorate;
+  @JsonKey(name: "city")
+  final City? city;
+  @JsonKey(name: "business")
+  final String? business;
+  @JsonKey(name: "personalPhoto")
+  final String? personalPhoto;
+
+  User({
+    this.id,
+    this.statusCode,
+    this.createdDate,
+    this.modifiedDate,
+    this.username,
+    this.email,
+    this.phone,
+    this.userType,
+    this.governorate,
+    this.city,
+    this.business,
+    this.personalPhoto,
+  });
+
+  factory User.fromJson(Map<String, dynamic> json) => _$UserFromJson(json);
+
+  Map<String, dynamic> toJson() => _$UserToJson(this);
 }
 
 @JsonSerializable()
@@ -203,7 +269,8 @@ class Pageable {
     this.unpaged,
   });
 
-  factory Pageable.fromJson(Map<String, dynamic> json) => _$PageableFromJson(json);
+  factory Pageable.fromJson(Map<String, dynamic> json) =>
+      _$PageableFromJson(json);
 
   Map<String, dynamic> toJson() => _$PageableToJson(this);
 }
@@ -227,4 +294,3 @@ class Sort {
 
   Map<String, dynamic> toJson() => _$SortToJson(this);
 }
-
