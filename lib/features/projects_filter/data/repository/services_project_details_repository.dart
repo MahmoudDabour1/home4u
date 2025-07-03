@@ -1,7 +1,7 @@
 import 'package:home4u/core/networking/api_result.dart';
 
 import '../../../../core/networking/api_error_handler.dart';
-import '../data_source/service_details/project_details_remote_data_source.dart';
+import '../data_source/project_details/project_details_remote_data_source.dart';
 import '../models/details/ask_engineer_project_details_response_model.dart';
 import '../models/details/ask_technical_project_details_response_model.dart';
 import '../models/details/renovate_house_details_response_model.dart';
