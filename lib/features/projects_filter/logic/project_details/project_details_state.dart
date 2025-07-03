@@ -1,4 +1,10 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:home4u/features/projects_filter/data/models/details/ask_engineer_project_details_response_model.dart';
+import 'package:home4u/features/projects_filter/data/models/details/ask_technical_project_details_response_model.dart';
+import 'package:home4u/features/projects_filter/data/models/details/renovate_house_fixed_package_details_response_model.dart';
+import 'package:home4u/features/projects_filter/data/models/details/request_design_project_details_response_model.dart';
+
+import '../../data/models/details/renovate_house_details_response_model.dart';
 
 part 'project_details_state.freezed.dart';
 
@@ -10,7 +16,8 @@ class ProjectDetailsState<T> with _$ProjectDetailsState<T> {
   const factory ProjectDetailsState.askTechnicalDetailsLoading() =
       AskTechnicalDetailsLoading;
 
-  const factory ProjectDetailsState.askTechnicalDetailsSuccess(T data) =
+  const factory ProjectDetailsState.askTechnicalDetailsSuccess(
+          AskTechnicalProjectDetailsResponseModel data) =
       AskTechnicalDetailsSuccess;
 
   const factory ProjectDetailsState.askTechnicalDetailsFailure(
@@ -20,8 +27,8 @@ class ProjectDetailsState<T> with _$ProjectDetailsState<T> {
   const factory ProjectDetailsState.askEngineerDetailsLoading() =
       AskEngineerDetailsLoading;
 
-  const factory ProjectDetailsState.askEngineerDetailsSuccess(T data) =
-      AskEngineerDetailsSuccess;
+  const factory ProjectDetailsState.askEngineerDetailsSuccess(
+      AskEngineerProjectDetailsResponseModel data) = AskEngineerDetailsSuccess;
 
   const factory ProjectDetailsState.askEngineerDetailsFailure(
       {required String error}) = AskEngineerDetailsFailure;
@@ -30,7 +37,8 @@ class ProjectDetailsState<T> with _$ProjectDetailsState<T> {
   const factory ProjectDetailsState.renovateHouseDetailsLoading() =
       RenovateHouseDetailsLoading;
 
-  const factory ProjectDetailsState.renovateHouseDetailsSuccess(T data) =
+  const factory ProjectDetailsState.renovateHouseDetailsSuccess(
+      RenovateHouseDetailsResponseModel data) =
       RenovateHouseDetailsSuccess;
 
   const factory ProjectDetailsState.renovateHouseDetailsFailure(
@@ -41,7 +49,8 @@ class ProjectDetailsState<T> with _$ProjectDetailsState<T> {
       RenovateHouseFixedPackageDetailsLoading;
 
   const factory ProjectDetailsState.renovateHouseFixedPackageDetailsSuccess(
-      T data) = RenovateHouseFixedPackageDetailsSuccess;
+          RenovateHouseFixedPackageDetailsResponseModel data) =
+      RenovateHouseFixedPackageDetailsSuccess;
 
   const factory ProjectDetailsState.renovateHouseFixedPackageDetailsFailure(
       {required String error}) = RenovateHouseFixedPackageDetailsFailure;
@@ -50,7 +59,8 @@ class ProjectDetailsState<T> with _$ProjectDetailsState<T> {
   const factory ProjectDetailsState.requestDesignDetailsLoading() =
       RequestDesignDetailsLoading;
 
-  const factory ProjectDetailsState.requestDesignDetailsSuccess(T data) =
+  const factory ProjectDetailsState.requestDesignDetailsSuccess(
+          RequestDesignProjectDetailsResponseModel data) =
       RequestDesignDetailsSuccess;
 
   const factory ProjectDetailsState.requestDesignDetailsFailure(

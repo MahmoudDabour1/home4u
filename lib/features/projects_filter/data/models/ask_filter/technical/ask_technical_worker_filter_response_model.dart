@@ -1,6 +1,8 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:home4u/features/projects_filter/data/models/base/user_base_model.dart';
 
+import '../../base/photo_base_model.dart';
+
 part 'ask_technical_worker_filter_response_model.g.dart';
 
 @JsonSerializable()
@@ -99,7 +101,7 @@ class AskTechnicalContent {
   @JsonKey(name: "budget")
   final int? budget;
   @JsonKey(name: "photos")
-  final List<Photo>? photos;
+  final List<PhotoBaseModel>? photos;
   @JsonKey(name: "user")
   final UserBaseModel? user;
   @JsonKey(name: "requestCount")
@@ -153,25 +155,6 @@ class City {
   Map<String, dynamic> toJson() => _$CityToJson(this);
 }
 
-@JsonSerializable()
-class Photo {
-  @JsonKey(name: "id")
-  final int? id;
-  @JsonKey(name: "askWorkerId")
-  final int? askWorkerId;
-  @JsonKey(name: "photoPath")
-  final String? photoPath;
-
-  Photo({
-    this.id,
-    this.askWorkerId,
-    this.photoPath,
-  });
-
-  factory Photo.fromJson(Map<String, dynamic> json) => _$PhotoFromJson(json);
-
-  Map<String, dynamic> toJson() => _$PhotoToJson(this);
-}
 
 @JsonSerializable()
 class Type {

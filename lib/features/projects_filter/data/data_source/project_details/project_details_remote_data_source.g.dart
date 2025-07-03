@@ -28,7 +28,7 @@ class _ProjectDetailsRemoteDataSource
   Future<AskTechnicalProjectDetailsResponseModel> askTechnicalServiceDetails(
       String askId) async {
     final _extra = <String, dynamic>{};
-    final queryParameters = <String, dynamic>{r'askId': askId};
+    final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
     const Map<String, dynamic>? _data = null;
     final _options =
@@ -39,7 +39,7 @@ class _ProjectDetailsRemoteDataSource
     )
             .compose(
               _dio.options,
-              '/api/v1/ask-worker/{askId}',
+              '/api/v1/ask-worker/${askId}',
               queryParameters: queryParameters,
               data: _data,
             )
@@ -63,7 +63,7 @@ class _ProjectDetailsRemoteDataSource
   Future<AskEngineerProjectDetailsResponseModel> askEngineerServiceDetails(
       String askId) async {
     final _extra = <String, dynamic>{};
-    final queryParameters = <String, dynamic>{r'askId': askId};
+    final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
     const Map<String, dynamic>? _data = null;
     final _options =
@@ -74,7 +74,7 @@ class _ProjectDetailsRemoteDataSource
     )
             .compose(
               _dio.options,
-              '/api/v1/ask-engineer/{askId}',
+              '/api/v1/ask-engineer/${askId}',
               queryParameters: queryParameters,
               data: _data,
             )
@@ -98,7 +98,7 @@ class _ProjectDetailsRemoteDataSource
   Future<RenovateHouseDetailsResponseModel> renovateHouseDetails(
       String renovateId) async {
     final _extra = <String, dynamic>{};
-    final queryParameters = <String, dynamic>{r'renovateId': renovateId};
+    final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
     const Map<String, dynamic>? _data = null;
     final _options = _setStreamType<RenovateHouseDetailsResponseModel>(Options(
@@ -108,7 +108,7 @@ class _ProjectDetailsRemoteDataSource
     )
         .compose(
           _dio.options,
-          '/api/v1/home-renovate/{renovateId}',
+          '/api/v1/home-renovate/${renovateId}',
           queryParameters: queryParameters,
           data: _data,
         )
@@ -132,7 +132,7 @@ class _ProjectDetailsRemoteDataSource
   Future<RenovateHouseFixedPackageDetailsResponseModel>
       renovateHouseFixedPackageDetails(String packageId) async {
     final _extra = <String, dynamic>{};
-    final queryParameters = <String, dynamic>{r'packageId': packageId};
+    final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
     const Map<String, dynamic>? _data = null;
     final _options =
@@ -143,7 +143,7 @@ class _ProjectDetailsRemoteDataSource
     )
             .compose(
               _dio.options,
-              '/api/v1/custom-package/{packageId}',
+              '/api/v1/custom-package/${packageId}',
               queryParameters: queryParameters,
               data: _data,
             )
@@ -168,7 +168,7 @@ class _ProjectDetailsRemoteDataSource
   Future<RequestDesignProjectDetailsResponseModel> requestDesignDetails(
       String requestId) async {
     final _extra = <String, dynamic>{};
-    final queryParameters = <String, dynamic>{r'requestId': requestId};
+    final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
     const Map<String, dynamic>? _data = null;
     final _options =
@@ -179,7 +179,7 @@ class _ProjectDetailsRemoteDataSource
     )
             .compose(
               _dio.options,
-              '/api/v1/request-design/{requestId}',
+              '/api/v1/request-design/${requestId}',
               queryParameters: queryParameters,
               data: _data,
             )

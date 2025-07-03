@@ -83,7 +83,7 @@ AskTechnicalContent _$AskTechnicalContentFromJson(Map<String, dynamic> json) =>
           : City.fromJson(json['material'] as Map<String, dynamic>),
       budget: (json['budget'] as num?)?.toInt(),
       photos: (json['photos'] as List<dynamic>?)
-          ?.map((e) => Photo.fromJson(e as Map<String, dynamic>))
+          ?.map((e) => PhotoBaseModel.fromJson(e as Map<String, dynamic>))
           .toList(),
       createdDate: json['createdDate'] == null
           ? null
@@ -130,18 +130,6 @@ Map<String, dynamic> _$CityToJson(City instance) => <String, dynamic>{
       'id': instance.id,
       'code': instance.code,
       'name': instance.name,
-    };
-
-Photo _$PhotoFromJson(Map<String, dynamic> json) => Photo(
-      id: (json['id'] as num?)?.toInt(),
-      askWorkerId: (json['askWorkerId'] as num?)?.toInt(),
-      photoPath: json['photoPath'] as String?,
-    );
-
-Map<String, dynamic> _$PhotoToJson(Photo instance) => <String, dynamic>{
-      'id': instance.id,
-      'askWorkerId': instance.askWorkerId,
-      'photoPath': instance.photoPath,
     };
 
 Type _$TypeFromJson(Map<String, dynamic> json) => Type(

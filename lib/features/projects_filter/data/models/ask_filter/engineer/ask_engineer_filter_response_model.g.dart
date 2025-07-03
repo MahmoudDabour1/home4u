@@ -85,7 +85,7 @@ AskEngineerContent _$AskEngineerContentFromJson(Map<String, dynamic> json) =>
           ? null
           : DateTime.parse(json['deadline'] as String),
       photos: (json['photos'] as List<dynamic>?)
-          ?.map((e) => Photo.fromJson(e as Map<String, dynamic>))
+          ?.map((e) => PhotoBaseModel.fromJson(e as Map<String, dynamic>))
           .toList(),
       createdDate: json['createdDate'] == null
           ? null
@@ -149,18 +149,6 @@ Map<String, dynamic> _$EngineerTypeToJson(EngineerType instance) =>
       'name': instance.name,
       'nameAr': instance.nameAr,
       'nameEn': instance.nameEn,
-    };
-
-Photo _$PhotoFromJson(Map<String, dynamic> json) => Photo(
-      id: (json['id'] as num?)?.toInt(),
-      askEngineerId: (json['askEngineerId'] as num?)?.toInt(),
-      photoPath: json['photoPath'] as String?,
-    );
-
-Map<String, dynamic> _$PhotoToJson(Photo instance) => <String, dynamic>{
-      'id': instance.id,
-      'askEngineerId': instance.askEngineerId,
-      'photoPath': instance.photoPath,
     };
 
 Pageable _$PageableFromJson(Map<String, dynamic> json) => Pageable(

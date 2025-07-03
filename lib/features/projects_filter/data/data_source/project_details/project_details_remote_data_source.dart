@@ -18,26 +18,26 @@ abstract class ProjectDetailsRemoteDataSource {
 
   @GET(ApiConstants.askTechnicalServiceDetailsEp)
   Future<AskTechnicalProjectDetailsResponseModel> askTechnicalServiceDetails(
-    @Query('askId') String askId,
+    @Path('askId') String askId,
   );
 
   @GET(ApiConstants.askEngineerServiceDetailsEp)
   Future<AskEngineerProjectDetailsResponseModel> askEngineerServiceDetails(
-    @Query('askId') String askId,
+    @Path('askId') String askId,
   );
 
   @GET(ApiConstants.renovateHouseDetailsEp)
   Future<RenovateHouseDetailsResponseModel> renovateHouseDetails(
-    @Query('renovateId') String renovateId,
+    @Path('renovateId') String renovateId,
   );
 
   @GET(ApiConstants.renovateHouseFixedPackageDetailsEp)
   Future<RenovateHouseFixedPackageDetailsResponseModel> renovateHouseFixedPackageDetails(
-    @Query('packageId') String packageId,
+    @Path('packageId') String packageId,
   );
 
   @GET(ApiConstants.requestDesignDetailsEp)
   Future<RequestDesignProjectDetailsResponseModel> requestDesignDetails(
-    @Query('requestId') String requestId,
+    @Path('requestId') String requestId,
   );
 }

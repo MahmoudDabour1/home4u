@@ -31,6 +31,7 @@ import 'features/exhibition/logic/business_add_product_cubit.dart';
 import 'features/orders/logic/orders_cubit.dart';
 import 'features/profile/logic/certifications/certifications_cubit.dart';
 import 'features/profile/logic/project/project_cubit.dart';
+import 'features/projects_filter/logic/project_details/project_details_cubit.dart';
 import 'features/user/renovate_your_house/logic/renovate_your_house_cubit.dart';
 import 'locale/app_locale.dart';
 
@@ -158,7 +159,10 @@ class _Home4uAppState extends State<Home4uApp> {
               create: (_) => sl<OrdersCubit>(),
             ),
             BlocProvider<ProjectsFilterCubit>(
-              create: (context) => sl<ProjectsFilterCubit>(),
+              create: (_) => sl<ProjectsFilterCubit>(),
+            ),
+            BlocProvider<ProjectDetailsCubit>(
+              create: (_) => sl<ProjectDetailsCubit>(),
             ),
           ],
           child: ScreenUtilInit(

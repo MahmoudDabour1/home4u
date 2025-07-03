@@ -20,20 +20,26 @@ mixin _$ProjectDetailsState<T> {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() askTechnicalDetailsLoading,
-    required TResult Function(T data) askTechnicalDetailsSuccess,
+    required TResult Function(AskTechnicalProjectDetailsResponseModel data)
+        askTechnicalDetailsSuccess,
     required TResult Function(String error) askTechnicalDetailsFailure,
     required TResult Function() askEngineerDetailsLoading,
-    required TResult Function(T data) askEngineerDetailsSuccess,
+    required TResult Function(AskEngineerProjectDetailsResponseModel data)
+        askEngineerDetailsSuccess,
     required TResult Function(String error) askEngineerDetailsFailure,
     required TResult Function() renovateHouseDetailsLoading,
-    required TResult Function(T data) renovateHouseDetailsSuccess,
+    required TResult Function(RenovateHouseDetailsResponseModel data)
+        renovateHouseDetailsSuccess,
     required TResult Function(String error) renovateHouseDetailsFailure,
     required TResult Function() renovateHouseFixedPackageDetailsLoading,
-    required TResult Function(T data) renovateHouseFixedPackageDetailsSuccess,
+    required TResult Function(
+            RenovateHouseFixedPackageDetailsResponseModel data)
+        renovateHouseFixedPackageDetailsSuccess,
     required TResult Function(String error)
         renovateHouseFixedPackageDetailsFailure,
     required TResult Function() requestDesignDetailsLoading,
-    required TResult Function(T data) requestDesignDetailsSuccess,
+    required TResult Function(RequestDesignProjectDetailsResponseModel data)
+        requestDesignDetailsSuccess,
     required TResult Function(String error) requestDesignDetailsFailure,
   }) =>
       throw _privateConstructorUsedError;
@@ -41,19 +47,24 @@ mixin _$ProjectDetailsState<T> {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? askTechnicalDetailsLoading,
-    TResult? Function(T data)? askTechnicalDetailsSuccess,
+    TResult? Function(AskTechnicalProjectDetailsResponseModel data)?
+        askTechnicalDetailsSuccess,
     TResult? Function(String error)? askTechnicalDetailsFailure,
     TResult? Function()? askEngineerDetailsLoading,
-    TResult? Function(T data)? askEngineerDetailsSuccess,
+    TResult? Function(AskEngineerProjectDetailsResponseModel data)?
+        askEngineerDetailsSuccess,
     TResult? Function(String error)? askEngineerDetailsFailure,
     TResult? Function()? renovateHouseDetailsLoading,
-    TResult? Function(T data)? renovateHouseDetailsSuccess,
+    TResult? Function(RenovateHouseDetailsResponseModel data)?
+        renovateHouseDetailsSuccess,
     TResult? Function(String error)? renovateHouseDetailsFailure,
     TResult? Function()? renovateHouseFixedPackageDetailsLoading,
-    TResult? Function(T data)? renovateHouseFixedPackageDetailsSuccess,
+    TResult? Function(RenovateHouseFixedPackageDetailsResponseModel data)?
+        renovateHouseFixedPackageDetailsSuccess,
     TResult? Function(String error)? renovateHouseFixedPackageDetailsFailure,
     TResult? Function()? requestDesignDetailsLoading,
-    TResult? Function(T data)? requestDesignDetailsSuccess,
+    TResult? Function(RequestDesignProjectDetailsResponseModel data)?
+        requestDesignDetailsSuccess,
     TResult? Function(String error)? requestDesignDetailsFailure,
   }) =>
       throw _privateConstructorUsedError;
@@ -61,19 +72,24 @@ mixin _$ProjectDetailsState<T> {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? askTechnicalDetailsLoading,
-    TResult Function(T data)? askTechnicalDetailsSuccess,
+    TResult Function(AskTechnicalProjectDetailsResponseModel data)?
+        askTechnicalDetailsSuccess,
     TResult Function(String error)? askTechnicalDetailsFailure,
     TResult Function()? askEngineerDetailsLoading,
-    TResult Function(T data)? askEngineerDetailsSuccess,
+    TResult Function(AskEngineerProjectDetailsResponseModel data)?
+        askEngineerDetailsSuccess,
     TResult Function(String error)? askEngineerDetailsFailure,
     TResult Function()? renovateHouseDetailsLoading,
-    TResult Function(T data)? renovateHouseDetailsSuccess,
+    TResult Function(RenovateHouseDetailsResponseModel data)?
+        renovateHouseDetailsSuccess,
     TResult Function(String error)? renovateHouseDetailsFailure,
     TResult Function()? renovateHouseFixedPackageDetailsLoading,
-    TResult Function(T data)? renovateHouseFixedPackageDetailsSuccess,
+    TResult Function(RenovateHouseFixedPackageDetailsResponseModel data)?
+        renovateHouseFixedPackageDetailsSuccess,
     TResult Function(String error)? renovateHouseFixedPackageDetailsFailure,
     TResult Function()? requestDesignDetailsLoading,
-    TResult Function(T data)? requestDesignDetailsSuccess,
+    TResult Function(RequestDesignProjectDetailsResponseModel data)?
+        requestDesignDetailsSuccess,
     TResult Function(String error)? requestDesignDetailsFailure,
     required TResult orElse(),
   }) =>
@@ -251,20 +267,26 @@ class _$InitialImpl<T> implements _Initial<T> {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() askTechnicalDetailsLoading,
-    required TResult Function(T data) askTechnicalDetailsSuccess,
+    required TResult Function(AskTechnicalProjectDetailsResponseModel data)
+        askTechnicalDetailsSuccess,
     required TResult Function(String error) askTechnicalDetailsFailure,
     required TResult Function() askEngineerDetailsLoading,
-    required TResult Function(T data) askEngineerDetailsSuccess,
+    required TResult Function(AskEngineerProjectDetailsResponseModel data)
+        askEngineerDetailsSuccess,
     required TResult Function(String error) askEngineerDetailsFailure,
     required TResult Function() renovateHouseDetailsLoading,
-    required TResult Function(T data) renovateHouseDetailsSuccess,
+    required TResult Function(RenovateHouseDetailsResponseModel data)
+        renovateHouseDetailsSuccess,
     required TResult Function(String error) renovateHouseDetailsFailure,
     required TResult Function() renovateHouseFixedPackageDetailsLoading,
-    required TResult Function(T data) renovateHouseFixedPackageDetailsSuccess,
+    required TResult Function(
+            RenovateHouseFixedPackageDetailsResponseModel data)
+        renovateHouseFixedPackageDetailsSuccess,
     required TResult Function(String error)
         renovateHouseFixedPackageDetailsFailure,
     required TResult Function() requestDesignDetailsLoading,
-    required TResult Function(T data) requestDesignDetailsSuccess,
+    required TResult Function(RequestDesignProjectDetailsResponseModel data)
+        requestDesignDetailsSuccess,
     required TResult Function(String error) requestDesignDetailsFailure,
   }) {
     return initial();
@@ -275,19 +297,24 @@ class _$InitialImpl<T> implements _Initial<T> {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? askTechnicalDetailsLoading,
-    TResult? Function(T data)? askTechnicalDetailsSuccess,
+    TResult? Function(AskTechnicalProjectDetailsResponseModel data)?
+        askTechnicalDetailsSuccess,
     TResult? Function(String error)? askTechnicalDetailsFailure,
     TResult? Function()? askEngineerDetailsLoading,
-    TResult? Function(T data)? askEngineerDetailsSuccess,
+    TResult? Function(AskEngineerProjectDetailsResponseModel data)?
+        askEngineerDetailsSuccess,
     TResult? Function(String error)? askEngineerDetailsFailure,
     TResult? Function()? renovateHouseDetailsLoading,
-    TResult? Function(T data)? renovateHouseDetailsSuccess,
+    TResult? Function(RenovateHouseDetailsResponseModel data)?
+        renovateHouseDetailsSuccess,
     TResult? Function(String error)? renovateHouseDetailsFailure,
     TResult? Function()? renovateHouseFixedPackageDetailsLoading,
-    TResult? Function(T data)? renovateHouseFixedPackageDetailsSuccess,
+    TResult? Function(RenovateHouseFixedPackageDetailsResponseModel data)?
+        renovateHouseFixedPackageDetailsSuccess,
     TResult? Function(String error)? renovateHouseFixedPackageDetailsFailure,
     TResult? Function()? requestDesignDetailsLoading,
-    TResult? Function(T data)? requestDesignDetailsSuccess,
+    TResult? Function(RequestDesignProjectDetailsResponseModel data)?
+        requestDesignDetailsSuccess,
     TResult? Function(String error)? requestDesignDetailsFailure,
   }) {
     return initial?.call();
@@ -298,19 +325,24 @@ class _$InitialImpl<T> implements _Initial<T> {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? askTechnicalDetailsLoading,
-    TResult Function(T data)? askTechnicalDetailsSuccess,
+    TResult Function(AskTechnicalProjectDetailsResponseModel data)?
+        askTechnicalDetailsSuccess,
     TResult Function(String error)? askTechnicalDetailsFailure,
     TResult Function()? askEngineerDetailsLoading,
-    TResult Function(T data)? askEngineerDetailsSuccess,
+    TResult Function(AskEngineerProjectDetailsResponseModel data)?
+        askEngineerDetailsSuccess,
     TResult Function(String error)? askEngineerDetailsFailure,
     TResult Function()? renovateHouseDetailsLoading,
-    TResult Function(T data)? renovateHouseDetailsSuccess,
+    TResult Function(RenovateHouseDetailsResponseModel data)?
+        renovateHouseDetailsSuccess,
     TResult Function(String error)? renovateHouseDetailsFailure,
     TResult Function()? renovateHouseFixedPackageDetailsLoading,
-    TResult Function(T data)? renovateHouseFixedPackageDetailsSuccess,
+    TResult Function(RenovateHouseFixedPackageDetailsResponseModel data)?
+        renovateHouseFixedPackageDetailsSuccess,
     TResult Function(String error)? renovateHouseFixedPackageDetailsFailure,
     TResult Function()? requestDesignDetailsLoading,
-    TResult Function(T data)? requestDesignDetailsSuccess,
+    TResult Function(RequestDesignProjectDetailsResponseModel data)?
+        requestDesignDetailsSuccess,
     TResult Function(String error)? requestDesignDetailsFailure,
     required TResult orElse(),
   }) {
@@ -491,20 +523,26 @@ class _$AskTechnicalDetailsLoadingImpl<T>
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() askTechnicalDetailsLoading,
-    required TResult Function(T data) askTechnicalDetailsSuccess,
+    required TResult Function(AskTechnicalProjectDetailsResponseModel data)
+        askTechnicalDetailsSuccess,
     required TResult Function(String error) askTechnicalDetailsFailure,
     required TResult Function() askEngineerDetailsLoading,
-    required TResult Function(T data) askEngineerDetailsSuccess,
+    required TResult Function(AskEngineerProjectDetailsResponseModel data)
+        askEngineerDetailsSuccess,
     required TResult Function(String error) askEngineerDetailsFailure,
     required TResult Function() renovateHouseDetailsLoading,
-    required TResult Function(T data) renovateHouseDetailsSuccess,
+    required TResult Function(RenovateHouseDetailsResponseModel data)
+        renovateHouseDetailsSuccess,
     required TResult Function(String error) renovateHouseDetailsFailure,
     required TResult Function() renovateHouseFixedPackageDetailsLoading,
-    required TResult Function(T data) renovateHouseFixedPackageDetailsSuccess,
+    required TResult Function(
+            RenovateHouseFixedPackageDetailsResponseModel data)
+        renovateHouseFixedPackageDetailsSuccess,
     required TResult Function(String error)
         renovateHouseFixedPackageDetailsFailure,
     required TResult Function() requestDesignDetailsLoading,
-    required TResult Function(T data) requestDesignDetailsSuccess,
+    required TResult Function(RequestDesignProjectDetailsResponseModel data)
+        requestDesignDetailsSuccess,
     required TResult Function(String error) requestDesignDetailsFailure,
   }) {
     return askTechnicalDetailsLoading();
@@ -515,19 +553,24 @@ class _$AskTechnicalDetailsLoadingImpl<T>
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? askTechnicalDetailsLoading,
-    TResult? Function(T data)? askTechnicalDetailsSuccess,
+    TResult? Function(AskTechnicalProjectDetailsResponseModel data)?
+        askTechnicalDetailsSuccess,
     TResult? Function(String error)? askTechnicalDetailsFailure,
     TResult? Function()? askEngineerDetailsLoading,
-    TResult? Function(T data)? askEngineerDetailsSuccess,
+    TResult? Function(AskEngineerProjectDetailsResponseModel data)?
+        askEngineerDetailsSuccess,
     TResult? Function(String error)? askEngineerDetailsFailure,
     TResult? Function()? renovateHouseDetailsLoading,
-    TResult? Function(T data)? renovateHouseDetailsSuccess,
+    TResult? Function(RenovateHouseDetailsResponseModel data)?
+        renovateHouseDetailsSuccess,
     TResult? Function(String error)? renovateHouseDetailsFailure,
     TResult? Function()? renovateHouseFixedPackageDetailsLoading,
-    TResult? Function(T data)? renovateHouseFixedPackageDetailsSuccess,
+    TResult? Function(RenovateHouseFixedPackageDetailsResponseModel data)?
+        renovateHouseFixedPackageDetailsSuccess,
     TResult? Function(String error)? renovateHouseFixedPackageDetailsFailure,
     TResult? Function()? requestDesignDetailsLoading,
-    TResult? Function(T data)? requestDesignDetailsSuccess,
+    TResult? Function(RequestDesignProjectDetailsResponseModel data)?
+        requestDesignDetailsSuccess,
     TResult? Function(String error)? requestDesignDetailsFailure,
   }) {
     return askTechnicalDetailsLoading?.call();
@@ -538,19 +581,24 @@ class _$AskTechnicalDetailsLoadingImpl<T>
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? askTechnicalDetailsLoading,
-    TResult Function(T data)? askTechnicalDetailsSuccess,
+    TResult Function(AskTechnicalProjectDetailsResponseModel data)?
+        askTechnicalDetailsSuccess,
     TResult Function(String error)? askTechnicalDetailsFailure,
     TResult Function()? askEngineerDetailsLoading,
-    TResult Function(T data)? askEngineerDetailsSuccess,
+    TResult Function(AskEngineerProjectDetailsResponseModel data)?
+        askEngineerDetailsSuccess,
     TResult Function(String error)? askEngineerDetailsFailure,
     TResult Function()? renovateHouseDetailsLoading,
-    TResult Function(T data)? renovateHouseDetailsSuccess,
+    TResult Function(RenovateHouseDetailsResponseModel data)?
+        renovateHouseDetailsSuccess,
     TResult Function(String error)? renovateHouseDetailsFailure,
     TResult Function()? renovateHouseFixedPackageDetailsLoading,
-    TResult Function(T data)? renovateHouseFixedPackageDetailsSuccess,
+    TResult Function(RenovateHouseFixedPackageDetailsResponseModel data)?
+        renovateHouseFixedPackageDetailsSuccess,
     TResult Function(String error)? renovateHouseFixedPackageDetailsFailure,
     TResult Function()? requestDesignDetailsLoading,
-    TResult Function(T data)? requestDesignDetailsSuccess,
+    TResult Function(RequestDesignProjectDetailsResponseModel data)?
+        requestDesignDetailsSuccess,
     TResult Function(String error)? requestDesignDetailsFailure,
     required TResult orElse(),
   }) {
@@ -691,7 +739,7 @@ abstract class _$$AskTechnicalDetailsSuccessImplCopyWith<T, $Res> {
           $Res Function(_$AskTechnicalDetailsSuccessImpl<T>) then) =
       __$$AskTechnicalDetailsSuccessImplCopyWithImpl<T, $Res>;
   @useResult
-  $Res call({T data});
+  $Res call({AskTechnicalProjectDetailsResponseModel data});
 }
 
 /// @nodoc
@@ -709,13 +757,13 @@ class __$$AskTechnicalDetailsSuccessImplCopyWithImpl<T, $Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? data = freezed,
+    Object? data = null,
   }) {
     return _then(_$AskTechnicalDetailsSuccessImpl<T>(
-      freezed == data
+      null == data
           ? _value.data
           : data // ignore: cast_nullable_to_non_nullable
-              as T,
+              as AskTechnicalProjectDetailsResponseModel,
     ));
   }
 }
@@ -727,7 +775,7 @@ class _$AskTechnicalDetailsSuccessImpl<T>
   const _$AskTechnicalDetailsSuccessImpl(this.data);
 
   @override
-  final T data;
+  final AskTechnicalProjectDetailsResponseModel data;
 
   @override
   String toString() {
@@ -739,12 +787,11 @@ class _$AskTechnicalDetailsSuccessImpl<T>
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$AskTechnicalDetailsSuccessImpl<T> &&
-            const DeepCollectionEquality().equals(other.data, data));
+            (identical(other.data, data) || other.data == data));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(data));
+  int get hashCode => Object.hash(runtimeType, data);
 
   /// Create a copy of ProjectDetailsState
   /// with the given fields replaced by the non-null parameter values.
@@ -761,20 +808,26 @@ class _$AskTechnicalDetailsSuccessImpl<T>
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() askTechnicalDetailsLoading,
-    required TResult Function(T data) askTechnicalDetailsSuccess,
+    required TResult Function(AskTechnicalProjectDetailsResponseModel data)
+        askTechnicalDetailsSuccess,
     required TResult Function(String error) askTechnicalDetailsFailure,
     required TResult Function() askEngineerDetailsLoading,
-    required TResult Function(T data) askEngineerDetailsSuccess,
+    required TResult Function(AskEngineerProjectDetailsResponseModel data)
+        askEngineerDetailsSuccess,
     required TResult Function(String error) askEngineerDetailsFailure,
     required TResult Function() renovateHouseDetailsLoading,
-    required TResult Function(T data) renovateHouseDetailsSuccess,
+    required TResult Function(RenovateHouseDetailsResponseModel data)
+        renovateHouseDetailsSuccess,
     required TResult Function(String error) renovateHouseDetailsFailure,
     required TResult Function() renovateHouseFixedPackageDetailsLoading,
-    required TResult Function(T data) renovateHouseFixedPackageDetailsSuccess,
+    required TResult Function(
+            RenovateHouseFixedPackageDetailsResponseModel data)
+        renovateHouseFixedPackageDetailsSuccess,
     required TResult Function(String error)
         renovateHouseFixedPackageDetailsFailure,
     required TResult Function() requestDesignDetailsLoading,
-    required TResult Function(T data) requestDesignDetailsSuccess,
+    required TResult Function(RequestDesignProjectDetailsResponseModel data)
+        requestDesignDetailsSuccess,
     required TResult Function(String error) requestDesignDetailsFailure,
   }) {
     return askTechnicalDetailsSuccess(data);
@@ -785,19 +838,24 @@ class _$AskTechnicalDetailsSuccessImpl<T>
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? askTechnicalDetailsLoading,
-    TResult? Function(T data)? askTechnicalDetailsSuccess,
+    TResult? Function(AskTechnicalProjectDetailsResponseModel data)?
+        askTechnicalDetailsSuccess,
     TResult? Function(String error)? askTechnicalDetailsFailure,
     TResult? Function()? askEngineerDetailsLoading,
-    TResult? Function(T data)? askEngineerDetailsSuccess,
+    TResult? Function(AskEngineerProjectDetailsResponseModel data)?
+        askEngineerDetailsSuccess,
     TResult? Function(String error)? askEngineerDetailsFailure,
     TResult? Function()? renovateHouseDetailsLoading,
-    TResult? Function(T data)? renovateHouseDetailsSuccess,
+    TResult? Function(RenovateHouseDetailsResponseModel data)?
+        renovateHouseDetailsSuccess,
     TResult? Function(String error)? renovateHouseDetailsFailure,
     TResult? Function()? renovateHouseFixedPackageDetailsLoading,
-    TResult? Function(T data)? renovateHouseFixedPackageDetailsSuccess,
+    TResult? Function(RenovateHouseFixedPackageDetailsResponseModel data)?
+        renovateHouseFixedPackageDetailsSuccess,
     TResult? Function(String error)? renovateHouseFixedPackageDetailsFailure,
     TResult? Function()? requestDesignDetailsLoading,
-    TResult? Function(T data)? requestDesignDetailsSuccess,
+    TResult? Function(RequestDesignProjectDetailsResponseModel data)?
+        requestDesignDetailsSuccess,
     TResult? Function(String error)? requestDesignDetailsFailure,
   }) {
     return askTechnicalDetailsSuccess?.call(data);
@@ -808,19 +866,24 @@ class _$AskTechnicalDetailsSuccessImpl<T>
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? askTechnicalDetailsLoading,
-    TResult Function(T data)? askTechnicalDetailsSuccess,
+    TResult Function(AskTechnicalProjectDetailsResponseModel data)?
+        askTechnicalDetailsSuccess,
     TResult Function(String error)? askTechnicalDetailsFailure,
     TResult Function()? askEngineerDetailsLoading,
-    TResult Function(T data)? askEngineerDetailsSuccess,
+    TResult Function(AskEngineerProjectDetailsResponseModel data)?
+        askEngineerDetailsSuccess,
     TResult Function(String error)? askEngineerDetailsFailure,
     TResult Function()? renovateHouseDetailsLoading,
-    TResult Function(T data)? renovateHouseDetailsSuccess,
+    TResult Function(RenovateHouseDetailsResponseModel data)?
+        renovateHouseDetailsSuccess,
     TResult Function(String error)? renovateHouseDetailsFailure,
     TResult Function()? renovateHouseFixedPackageDetailsLoading,
-    TResult Function(T data)? renovateHouseFixedPackageDetailsSuccess,
+    TResult Function(RenovateHouseFixedPackageDetailsResponseModel data)?
+        renovateHouseFixedPackageDetailsSuccess,
     TResult Function(String error)? renovateHouseFixedPackageDetailsFailure,
     TResult Function()? requestDesignDetailsLoading,
-    TResult Function(T data)? requestDesignDetailsSuccess,
+    TResult Function(RequestDesignProjectDetailsResponseModel data)?
+        requestDesignDetailsSuccess,
     TResult Function(String error)? requestDesignDetailsFailure,
     required TResult orElse(),
   }) {
@@ -950,10 +1013,11 @@ class _$AskTechnicalDetailsSuccessImpl<T>
 }
 
 abstract class AskTechnicalDetailsSuccess<T> implements ProjectDetailsState<T> {
-  const factory AskTechnicalDetailsSuccess(final T data) =
+  const factory AskTechnicalDetailsSuccess(
+          final AskTechnicalProjectDetailsResponseModel data) =
       _$AskTechnicalDetailsSuccessImpl<T>;
 
-  T get data;
+  AskTechnicalProjectDetailsResponseModel get data;
 
   /// Create a copy of ProjectDetailsState
   /// with the given fields replaced by the non-null parameter values.
@@ -1039,20 +1103,26 @@ class _$AskTechnicalDetailsFailureImpl<T>
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() askTechnicalDetailsLoading,
-    required TResult Function(T data) askTechnicalDetailsSuccess,
+    required TResult Function(AskTechnicalProjectDetailsResponseModel data)
+        askTechnicalDetailsSuccess,
     required TResult Function(String error) askTechnicalDetailsFailure,
     required TResult Function() askEngineerDetailsLoading,
-    required TResult Function(T data) askEngineerDetailsSuccess,
+    required TResult Function(AskEngineerProjectDetailsResponseModel data)
+        askEngineerDetailsSuccess,
     required TResult Function(String error) askEngineerDetailsFailure,
     required TResult Function() renovateHouseDetailsLoading,
-    required TResult Function(T data) renovateHouseDetailsSuccess,
+    required TResult Function(RenovateHouseDetailsResponseModel data)
+        renovateHouseDetailsSuccess,
     required TResult Function(String error) renovateHouseDetailsFailure,
     required TResult Function() renovateHouseFixedPackageDetailsLoading,
-    required TResult Function(T data) renovateHouseFixedPackageDetailsSuccess,
+    required TResult Function(
+            RenovateHouseFixedPackageDetailsResponseModel data)
+        renovateHouseFixedPackageDetailsSuccess,
     required TResult Function(String error)
         renovateHouseFixedPackageDetailsFailure,
     required TResult Function() requestDesignDetailsLoading,
-    required TResult Function(T data) requestDesignDetailsSuccess,
+    required TResult Function(RequestDesignProjectDetailsResponseModel data)
+        requestDesignDetailsSuccess,
     required TResult Function(String error) requestDesignDetailsFailure,
   }) {
     return askTechnicalDetailsFailure(error);
@@ -1063,19 +1133,24 @@ class _$AskTechnicalDetailsFailureImpl<T>
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? askTechnicalDetailsLoading,
-    TResult? Function(T data)? askTechnicalDetailsSuccess,
+    TResult? Function(AskTechnicalProjectDetailsResponseModel data)?
+        askTechnicalDetailsSuccess,
     TResult? Function(String error)? askTechnicalDetailsFailure,
     TResult? Function()? askEngineerDetailsLoading,
-    TResult? Function(T data)? askEngineerDetailsSuccess,
+    TResult? Function(AskEngineerProjectDetailsResponseModel data)?
+        askEngineerDetailsSuccess,
     TResult? Function(String error)? askEngineerDetailsFailure,
     TResult? Function()? renovateHouseDetailsLoading,
-    TResult? Function(T data)? renovateHouseDetailsSuccess,
+    TResult? Function(RenovateHouseDetailsResponseModel data)?
+        renovateHouseDetailsSuccess,
     TResult? Function(String error)? renovateHouseDetailsFailure,
     TResult? Function()? renovateHouseFixedPackageDetailsLoading,
-    TResult? Function(T data)? renovateHouseFixedPackageDetailsSuccess,
+    TResult? Function(RenovateHouseFixedPackageDetailsResponseModel data)?
+        renovateHouseFixedPackageDetailsSuccess,
     TResult? Function(String error)? renovateHouseFixedPackageDetailsFailure,
     TResult? Function()? requestDesignDetailsLoading,
-    TResult? Function(T data)? requestDesignDetailsSuccess,
+    TResult? Function(RequestDesignProjectDetailsResponseModel data)?
+        requestDesignDetailsSuccess,
     TResult? Function(String error)? requestDesignDetailsFailure,
   }) {
     return askTechnicalDetailsFailure?.call(error);
@@ -1086,19 +1161,24 @@ class _$AskTechnicalDetailsFailureImpl<T>
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? askTechnicalDetailsLoading,
-    TResult Function(T data)? askTechnicalDetailsSuccess,
+    TResult Function(AskTechnicalProjectDetailsResponseModel data)?
+        askTechnicalDetailsSuccess,
     TResult Function(String error)? askTechnicalDetailsFailure,
     TResult Function()? askEngineerDetailsLoading,
-    TResult Function(T data)? askEngineerDetailsSuccess,
+    TResult Function(AskEngineerProjectDetailsResponseModel data)?
+        askEngineerDetailsSuccess,
     TResult Function(String error)? askEngineerDetailsFailure,
     TResult Function()? renovateHouseDetailsLoading,
-    TResult Function(T data)? renovateHouseDetailsSuccess,
+    TResult Function(RenovateHouseDetailsResponseModel data)?
+        renovateHouseDetailsSuccess,
     TResult Function(String error)? renovateHouseDetailsFailure,
     TResult Function()? renovateHouseFixedPackageDetailsLoading,
-    TResult Function(T data)? renovateHouseFixedPackageDetailsSuccess,
+    TResult Function(RenovateHouseFixedPackageDetailsResponseModel data)?
+        renovateHouseFixedPackageDetailsSuccess,
     TResult Function(String error)? renovateHouseFixedPackageDetailsFailure,
     TResult Function()? requestDesignDetailsLoading,
-    TResult Function(T data)? requestDesignDetailsSuccess,
+    TResult Function(RequestDesignProjectDetailsResponseModel data)?
+        requestDesignDetailsSuccess,
     TResult Function(String error)? requestDesignDetailsFailure,
     required TResult orElse(),
   }) {
@@ -1289,20 +1369,26 @@ class _$AskEngineerDetailsLoadingImpl<T>
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() askTechnicalDetailsLoading,
-    required TResult Function(T data) askTechnicalDetailsSuccess,
+    required TResult Function(AskTechnicalProjectDetailsResponseModel data)
+        askTechnicalDetailsSuccess,
     required TResult Function(String error) askTechnicalDetailsFailure,
     required TResult Function() askEngineerDetailsLoading,
-    required TResult Function(T data) askEngineerDetailsSuccess,
+    required TResult Function(AskEngineerProjectDetailsResponseModel data)
+        askEngineerDetailsSuccess,
     required TResult Function(String error) askEngineerDetailsFailure,
     required TResult Function() renovateHouseDetailsLoading,
-    required TResult Function(T data) renovateHouseDetailsSuccess,
+    required TResult Function(RenovateHouseDetailsResponseModel data)
+        renovateHouseDetailsSuccess,
     required TResult Function(String error) renovateHouseDetailsFailure,
     required TResult Function() renovateHouseFixedPackageDetailsLoading,
-    required TResult Function(T data) renovateHouseFixedPackageDetailsSuccess,
+    required TResult Function(
+            RenovateHouseFixedPackageDetailsResponseModel data)
+        renovateHouseFixedPackageDetailsSuccess,
     required TResult Function(String error)
         renovateHouseFixedPackageDetailsFailure,
     required TResult Function() requestDesignDetailsLoading,
-    required TResult Function(T data) requestDesignDetailsSuccess,
+    required TResult Function(RequestDesignProjectDetailsResponseModel data)
+        requestDesignDetailsSuccess,
     required TResult Function(String error) requestDesignDetailsFailure,
   }) {
     return askEngineerDetailsLoading();
@@ -1313,19 +1399,24 @@ class _$AskEngineerDetailsLoadingImpl<T>
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? askTechnicalDetailsLoading,
-    TResult? Function(T data)? askTechnicalDetailsSuccess,
+    TResult? Function(AskTechnicalProjectDetailsResponseModel data)?
+        askTechnicalDetailsSuccess,
     TResult? Function(String error)? askTechnicalDetailsFailure,
     TResult? Function()? askEngineerDetailsLoading,
-    TResult? Function(T data)? askEngineerDetailsSuccess,
+    TResult? Function(AskEngineerProjectDetailsResponseModel data)?
+        askEngineerDetailsSuccess,
     TResult? Function(String error)? askEngineerDetailsFailure,
     TResult? Function()? renovateHouseDetailsLoading,
-    TResult? Function(T data)? renovateHouseDetailsSuccess,
+    TResult? Function(RenovateHouseDetailsResponseModel data)?
+        renovateHouseDetailsSuccess,
     TResult? Function(String error)? renovateHouseDetailsFailure,
     TResult? Function()? renovateHouseFixedPackageDetailsLoading,
-    TResult? Function(T data)? renovateHouseFixedPackageDetailsSuccess,
+    TResult? Function(RenovateHouseFixedPackageDetailsResponseModel data)?
+        renovateHouseFixedPackageDetailsSuccess,
     TResult? Function(String error)? renovateHouseFixedPackageDetailsFailure,
     TResult? Function()? requestDesignDetailsLoading,
-    TResult? Function(T data)? requestDesignDetailsSuccess,
+    TResult? Function(RequestDesignProjectDetailsResponseModel data)?
+        requestDesignDetailsSuccess,
     TResult? Function(String error)? requestDesignDetailsFailure,
   }) {
     return askEngineerDetailsLoading?.call();
@@ -1336,19 +1427,24 @@ class _$AskEngineerDetailsLoadingImpl<T>
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? askTechnicalDetailsLoading,
-    TResult Function(T data)? askTechnicalDetailsSuccess,
+    TResult Function(AskTechnicalProjectDetailsResponseModel data)?
+        askTechnicalDetailsSuccess,
     TResult Function(String error)? askTechnicalDetailsFailure,
     TResult Function()? askEngineerDetailsLoading,
-    TResult Function(T data)? askEngineerDetailsSuccess,
+    TResult Function(AskEngineerProjectDetailsResponseModel data)?
+        askEngineerDetailsSuccess,
     TResult Function(String error)? askEngineerDetailsFailure,
     TResult Function()? renovateHouseDetailsLoading,
-    TResult Function(T data)? renovateHouseDetailsSuccess,
+    TResult Function(RenovateHouseDetailsResponseModel data)?
+        renovateHouseDetailsSuccess,
     TResult Function(String error)? renovateHouseDetailsFailure,
     TResult Function()? renovateHouseFixedPackageDetailsLoading,
-    TResult Function(T data)? renovateHouseFixedPackageDetailsSuccess,
+    TResult Function(RenovateHouseFixedPackageDetailsResponseModel data)?
+        renovateHouseFixedPackageDetailsSuccess,
     TResult Function(String error)? renovateHouseFixedPackageDetailsFailure,
     TResult Function()? requestDesignDetailsLoading,
-    TResult Function(T data)? requestDesignDetailsSuccess,
+    TResult Function(RequestDesignProjectDetailsResponseModel data)?
+        requestDesignDetailsSuccess,
     TResult Function(String error)? requestDesignDetailsFailure,
     required TResult orElse(),
   }) {
@@ -1489,7 +1585,7 @@ abstract class _$$AskEngineerDetailsSuccessImplCopyWith<T, $Res> {
           $Res Function(_$AskEngineerDetailsSuccessImpl<T>) then) =
       __$$AskEngineerDetailsSuccessImplCopyWithImpl<T, $Res>;
   @useResult
-  $Res call({T data});
+  $Res call({AskEngineerProjectDetailsResponseModel data});
 }
 
 /// @nodoc
@@ -1507,13 +1603,13 @@ class __$$AskEngineerDetailsSuccessImplCopyWithImpl<T, $Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? data = freezed,
+    Object? data = null,
   }) {
     return _then(_$AskEngineerDetailsSuccessImpl<T>(
-      freezed == data
+      null == data
           ? _value.data
           : data // ignore: cast_nullable_to_non_nullable
-              as T,
+              as AskEngineerProjectDetailsResponseModel,
     ));
   }
 }
@@ -1525,7 +1621,7 @@ class _$AskEngineerDetailsSuccessImpl<T>
   const _$AskEngineerDetailsSuccessImpl(this.data);
 
   @override
-  final T data;
+  final AskEngineerProjectDetailsResponseModel data;
 
   @override
   String toString() {
@@ -1537,12 +1633,11 @@ class _$AskEngineerDetailsSuccessImpl<T>
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$AskEngineerDetailsSuccessImpl<T> &&
-            const DeepCollectionEquality().equals(other.data, data));
+            (identical(other.data, data) || other.data == data));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(data));
+  int get hashCode => Object.hash(runtimeType, data);
 
   /// Create a copy of ProjectDetailsState
   /// with the given fields replaced by the non-null parameter values.
@@ -1559,20 +1654,26 @@ class _$AskEngineerDetailsSuccessImpl<T>
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() askTechnicalDetailsLoading,
-    required TResult Function(T data) askTechnicalDetailsSuccess,
+    required TResult Function(AskTechnicalProjectDetailsResponseModel data)
+        askTechnicalDetailsSuccess,
     required TResult Function(String error) askTechnicalDetailsFailure,
     required TResult Function() askEngineerDetailsLoading,
-    required TResult Function(T data) askEngineerDetailsSuccess,
+    required TResult Function(AskEngineerProjectDetailsResponseModel data)
+        askEngineerDetailsSuccess,
     required TResult Function(String error) askEngineerDetailsFailure,
     required TResult Function() renovateHouseDetailsLoading,
-    required TResult Function(T data) renovateHouseDetailsSuccess,
+    required TResult Function(RenovateHouseDetailsResponseModel data)
+        renovateHouseDetailsSuccess,
     required TResult Function(String error) renovateHouseDetailsFailure,
     required TResult Function() renovateHouseFixedPackageDetailsLoading,
-    required TResult Function(T data) renovateHouseFixedPackageDetailsSuccess,
+    required TResult Function(
+            RenovateHouseFixedPackageDetailsResponseModel data)
+        renovateHouseFixedPackageDetailsSuccess,
     required TResult Function(String error)
         renovateHouseFixedPackageDetailsFailure,
     required TResult Function() requestDesignDetailsLoading,
-    required TResult Function(T data) requestDesignDetailsSuccess,
+    required TResult Function(RequestDesignProjectDetailsResponseModel data)
+        requestDesignDetailsSuccess,
     required TResult Function(String error) requestDesignDetailsFailure,
   }) {
     return askEngineerDetailsSuccess(data);
@@ -1583,19 +1684,24 @@ class _$AskEngineerDetailsSuccessImpl<T>
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? askTechnicalDetailsLoading,
-    TResult? Function(T data)? askTechnicalDetailsSuccess,
+    TResult? Function(AskTechnicalProjectDetailsResponseModel data)?
+        askTechnicalDetailsSuccess,
     TResult? Function(String error)? askTechnicalDetailsFailure,
     TResult? Function()? askEngineerDetailsLoading,
-    TResult? Function(T data)? askEngineerDetailsSuccess,
+    TResult? Function(AskEngineerProjectDetailsResponseModel data)?
+        askEngineerDetailsSuccess,
     TResult? Function(String error)? askEngineerDetailsFailure,
     TResult? Function()? renovateHouseDetailsLoading,
-    TResult? Function(T data)? renovateHouseDetailsSuccess,
+    TResult? Function(RenovateHouseDetailsResponseModel data)?
+        renovateHouseDetailsSuccess,
     TResult? Function(String error)? renovateHouseDetailsFailure,
     TResult? Function()? renovateHouseFixedPackageDetailsLoading,
-    TResult? Function(T data)? renovateHouseFixedPackageDetailsSuccess,
+    TResult? Function(RenovateHouseFixedPackageDetailsResponseModel data)?
+        renovateHouseFixedPackageDetailsSuccess,
     TResult? Function(String error)? renovateHouseFixedPackageDetailsFailure,
     TResult? Function()? requestDesignDetailsLoading,
-    TResult? Function(T data)? requestDesignDetailsSuccess,
+    TResult? Function(RequestDesignProjectDetailsResponseModel data)?
+        requestDesignDetailsSuccess,
     TResult? Function(String error)? requestDesignDetailsFailure,
   }) {
     return askEngineerDetailsSuccess?.call(data);
@@ -1606,19 +1712,24 @@ class _$AskEngineerDetailsSuccessImpl<T>
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? askTechnicalDetailsLoading,
-    TResult Function(T data)? askTechnicalDetailsSuccess,
+    TResult Function(AskTechnicalProjectDetailsResponseModel data)?
+        askTechnicalDetailsSuccess,
     TResult Function(String error)? askTechnicalDetailsFailure,
     TResult Function()? askEngineerDetailsLoading,
-    TResult Function(T data)? askEngineerDetailsSuccess,
+    TResult Function(AskEngineerProjectDetailsResponseModel data)?
+        askEngineerDetailsSuccess,
     TResult Function(String error)? askEngineerDetailsFailure,
     TResult Function()? renovateHouseDetailsLoading,
-    TResult Function(T data)? renovateHouseDetailsSuccess,
+    TResult Function(RenovateHouseDetailsResponseModel data)?
+        renovateHouseDetailsSuccess,
     TResult Function(String error)? renovateHouseDetailsFailure,
     TResult Function()? renovateHouseFixedPackageDetailsLoading,
-    TResult Function(T data)? renovateHouseFixedPackageDetailsSuccess,
+    TResult Function(RenovateHouseFixedPackageDetailsResponseModel data)?
+        renovateHouseFixedPackageDetailsSuccess,
     TResult Function(String error)? renovateHouseFixedPackageDetailsFailure,
     TResult Function()? requestDesignDetailsLoading,
-    TResult Function(T data)? requestDesignDetailsSuccess,
+    TResult Function(RequestDesignProjectDetailsResponseModel data)?
+        requestDesignDetailsSuccess,
     TResult Function(String error)? requestDesignDetailsFailure,
     required TResult orElse(),
   }) {
@@ -1748,10 +1859,11 @@ class _$AskEngineerDetailsSuccessImpl<T>
 }
 
 abstract class AskEngineerDetailsSuccess<T> implements ProjectDetailsState<T> {
-  const factory AskEngineerDetailsSuccess(final T data) =
+  const factory AskEngineerDetailsSuccess(
+          final AskEngineerProjectDetailsResponseModel data) =
       _$AskEngineerDetailsSuccessImpl<T>;
 
-  T get data;
+  AskEngineerProjectDetailsResponseModel get data;
 
   /// Create a copy of ProjectDetailsState
   /// with the given fields replaced by the non-null parameter values.
@@ -1837,20 +1949,26 @@ class _$AskEngineerDetailsFailureImpl<T>
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() askTechnicalDetailsLoading,
-    required TResult Function(T data) askTechnicalDetailsSuccess,
+    required TResult Function(AskTechnicalProjectDetailsResponseModel data)
+        askTechnicalDetailsSuccess,
     required TResult Function(String error) askTechnicalDetailsFailure,
     required TResult Function() askEngineerDetailsLoading,
-    required TResult Function(T data) askEngineerDetailsSuccess,
+    required TResult Function(AskEngineerProjectDetailsResponseModel data)
+        askEngineerDetailsSuccess,
     required TResult Function(String error) askEngineerDetailsFailure,
     required TResult Function() renovateHouseDetailsLoading,
-    required TResult Function(T data) renovateHouseDetailsSuccess,
+    required TResult Function(RenovateHouseDetailsResponseModel data)
+        renovateHouseDetailsSuccess,
     required TResult Function(String error) renovateHouseDetailsFailure,
     required TResult Function() renovateHouseFixedPackageDetailsLoading,
-    required TResult Function(T data) renovateHouseFixedPackageDetailsSuccess,
+    required TResult Function(
+            RenovateHouseFixedPackageDetailsResponseModel data)
+        renovateHouseFixedPackageDetailsSuccess,
     required TResult Function(String error)
         renovateHouseFixedPackageDetailsFailure,
     required TResult Function() requestDesignDetailsLoading,
-    required TResult Function(T data) requestDesignDetailsSuccess,
+    required TResult Function(RequestDesignProjectDetailsResponseModel data)
+        requestDesignDetailsSuccess,
     required TResult Function(String error) requestDesignDetailsFailure,
   }) {
     return askEngineerDetailsFailure(error);
@@ -1861,19 +1979,24 @@ class _$AskEngineerDetailsFailureImpl<T>
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? askTechnicalDetailsLoading,
-    TResult? Function(T data)? askTechnicalDetailsSuccess,
+    TResult? Function(AskTechnicalProjectDetailsResponseModel data)?
+        askTechnicalDetailsSuccess,
     TResult? Function(String error)? askTechnicalDetailsFailure,
     TResult? Function()? askEngineerDetailsLoading,
-    TResult? Function(T data)? askEngineerDetailsSuccess,
+    TResult? Function(AskEngineerProjectDetailsResponseModel data)?
+        askEngineerDetailsSuccess,
     TResult? Function(String error)? askEngineerDetailsFailure,
     TResult? Function()? renovateHouseDetailsLoading,
-    TResult? Function(T data)? renovateHouseDetailsSuccess,
+    TResult? Function(RenovateHouseDetailsResponseModel data)?
+        renovateHouseDetailsSuccess,
     TResult? Function(String error)? renovateHouseDetailsFailure,
     TResult? Function()? renovateHouseFixedPackageDetailsLoading,
-    TResult? Function(T data)? renovateHouseFixedPackageDetailsSuccess,
+    TResult? Function(RenovateHouseFixedPackageDetailsResponseModel data)?
+        renovateHouseFixedPackageDetailsSuccess,
     TResult? Function(String error)? renovateHouseFixedPackageDetailsFailure,
     TResult? Function()? requestDesignDetailsLoading,
-    TResult? Function(T data)? requestDesignDetailsSuccess,
+    TResult? Function(RequestDesignProjectDetailsResponseModel data)?
+        requestDesignDetailsSuccess,
     TResult? Function(String error)? requestDesignDetailsFailure,
   }) {
     return askEngineerDetailsFailure?.call(error);
@@ -1884,19 +2007,24 @@ class _$AskEngineerDetailsFailureImpl<T>
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? askTechnicalDetailsLoading,
-    TResult Function(T data)? askTechnicalDetailsSuccess,
+    TResult Function(AskTechnicalProjectDetailsResponseModel data)?
+        askTechnicalDetailsSuccess,
     TResult Function(String error)? askTechnicalDetailsFailure,
     TResult Function()? askEngineerDetailsLoading,
-    TResult Function(T data)? askEngineerDetailsSuccess,
+    TResult Function(AskEngineerProjectDetailsResponseModel data)?
+        askEngineerDetailsSuccess,
     TResult Function(String error)? askEngineerDetailsFailure,
     TResult Function()? renovateHouseDetailsLoading,
-    TResult Function(T data)? renovateHouseDetailsSuccess,
+    TResult Function(RenovateHouseDetailsResponseModel data)?
+        renovateHouseDetailsSuccess,
     TResult Function(String error)? renovateHouseDetailsFailure,
     TResult Function()? renovateHouseFixedPackageDetailsLoading,
-    TResult Function(T data)? renovateHouseFixedPackageDetailsSuccess,
+    TResult Function(RenovateHouseFixedPackageDetailsResponseModel data)?
+        renovateHouseFixedPackageDetailsSuccess,
     TResult Function(String error)? renovateHouseFixedPackageDetailsFailure,
     TResult Function()? requestDesignDetailsLoading,
-    TResult Function(T data)? requestDesignDetailsSuccess,
+    TResult Function(RequestDesignProjectDetailsResponseModel data)?
+        requestDesignDetailsSuccess,
     TResult Function(String error)? requestDesignDetailsFailure,
     required TResult orElse(),
   }) {
@@ -2087,20 +2215,26 @@ class _$RenovateHouseDetailsLoadingImpl<T>
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() askTechnicalDetailsLoading,
-    required TResult Function(T data) askTechnicalDetailsSuccess,
+    required TResult Function(AskTechnicalProjectDetailsResponseModel data)
+        askTechnicalDetailsSuccess,
     required TResult Function(String error) askTechnicalDetailsFailure,
     required TResult Function() askEngineerDetailsLoading,
-    required TResult Function(T data) askEngineerDetailsSuccess,
+    required TResult Function(AskEngineerProjectDetailsResponseModel data)
+        askEngineerDetailsSuccess,
     required TResult Function(String error) askEngineerDetailsFailure,
     required TResult Function() renovateHouseDetailsLoading,
-    required TResult Function(T data) renovateHouseDetailsSuccess,
+    required TResult Function(RenovateHouseDetailsResponseModel data)
+        renovateHouseDetailsSuccess,
     required TResult Function(String error) renovateHouseDetailsFailure,
     required TResult Function() renovateHouseFixedPackageDetailsLoading,
-    required TResult Function(T data) renovateHouseFixedPackageDetailsSuccess,
+    required TResult Function(
+            RenovateHouseFixedPackageDetailsResponseModel data)
+        renovateHouseFixedPackageDetailsSuccess,
     required TResult Function(String error)
         renovateHouseFixedPackageDetailsFailure,
     required TResult Function() requestDesignDetailsLoading,
-    required TResult Function(T data) requestDesignDetailsSuccess,
+    required TResult Function(RequestDesignProjectDetailsResponseModel data)
+        requestDesignDetailsSuccess,
     required TResult Function(String error) requestDesignDetailsFailure,
   }) {
     return renovateHouseDetailsLoading();
@@ -2111,19 +2245,24 @@ class _$RenovateHouseDetailsLoadingImpl<T>
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? askTechnicalDetailsLoading,
-    TResult? Function(T data)? askTechnicalDetailsSuccess,
+    TResult? Function(AskTechnicalProjectDetailsResponseModel data)?
+        askTechnicalDetailsSuccess,
     TResult? Function(String error)? askTechnicalDetailsFailure,
     TResult? Function()? askEngineerDetailsLoading,
-    TResult? Function(T data)? askEngineerDetailsSuccess,
+    TResult? Function(AskEngineerProjectDetailsResponseModel data)?
+        askEngineerDetailsSuccess,
     TResult? Function(String error)? askEngineerDetailsFailure,
     TResult? Function()? renovateHouseDetailsLoading,
-    TResult? Function(T data)? renovateHouseDetailsSuccess,
+    TResult? Function(RenovateHouseDetailsResponseModel data)?
+        renovateHouseDetailsSuccess,
     TResult? Function(String error)? renovateHouseDetailsFailure,
     TResult? Function()? renovateHouseFixedPackageDetailsLoading,
-    TResult? Function(T data)? renovateHouseFixedPackageDetailsSuccess,
+    TResult? Function(RenovateHouseFixedPackageDetailsResponseModel data)?
+        renovateHouseFixedPackageDetailsSuccess,
     TResult? Function(String error)? renovateHouseFixedPackageDetailsFailure,
     TResult? Function()? requestDesignDetailsLoading,
-    TResult? Function(T data)? requestDesignDetailsSuccess,
+    TResult? Function(RequestDesignProjectDetailsResponseModel data)?
+        requestDesignDetailsSuccess,
     TResult? Function(String error)? requestDesignDetailsFailure,
   }) {
     return renovateHouseDetailsLoading?.call();
@@ -2134,19 +2273,24 @@ class _$RenovateHouseDetailsLoadingImpl<T>
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? askTechnicalDetailsLoading,
-    TResult Function(T data)? askTechnicalDetailsSuccess,
+    TResult Function(AskTechnicalProjectDetailsResponseModel data)?
+        askTechnicalDetailsSuccess,
     TResult Function(String error)? askTechnicalDetailsFailure,
     TResult Function()? askEngineerDetailsLoading,
-    TResult Function(T data)? askEngineerDetailsSuccess,
+    TResult Function(AskEngineerProjectDetailsResponseModel data)?
+        askEngineerDetailsSuccess,
     TResult Function(String error)? askEngineerDetailsFailure,
     TResult Function()? renovateHouseDetailsLoading,
-    TResult Function(T data)? renovateHouseDetailsSuccess,
+    TResult Function(RenovateHouseDetailsResponseModel data)?
+        renovateHouseDetailsSuccess,
     TResult Function(String error)? renovateHouseDetailsFailure,
     TResult Function()? renovateHouseFixedPackageDetailsLoading,
-    TResult Function(T data)? renovateHouseFixedPackageDetailsSuccess,
+    TResult Function(RenovateHouseFixedPackageDetailsResponseModel data)?
+        renovateHouseFixedPackageDetailsSuccess,
     TResult Function(String error)? renovateHouseFixedPackageDetailsFailure,
     TResult Function()? requestDesignDetailsLoading,
-    TResult Function(T data)? requestDesignDetailsSuccess,
+    TResult Function(RequestDesignProjectDetailsResponseModel data)?
+        requestDesignDetailsSuccess,
     TResult Function(String error)? requestDesignDetailsFailure,
     required TResult orElse(),
   }) {
@@ -2288,7 +2432,7 @@ abstract class _$$RenovateHouseDetailsSuccessImplCopyWith<T, $Res> {
           $Res Function(_$RenovateHouseDetailsSuccessImpl<T>) then) =
       __$$RenovateHouseDetailsSuccessImplCopyWithImpl<T, $Res>;
   @useResult
-  $Res call({T data});
+  $Res call({RenovateHouseDetailsResponseModel data});
 }
 
 /// @nodoc
@@ -2306,13 +2450,13 @@ class __$$RenovateHouseDetailsSuccessImplCopyWithImpl<T, $Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? data = freezed,
+    Object? data = null,
   }) {
     return _then(_$RenovateHouseDetailsSuccessImpl<T>(
-      freezed == data
+      null == data
           ? _value.data
           : data // ignore: cast_nullable_to_non_nullable
-              as T,
+              as RenovateHouseDetailsResponseModel,
     ));
   }
 }
@@ -2324,7 +2468,7 @@ class _$RenovateHouseDetailsSuccessImpl<T>
   const _$RenovateHouseDetailsSuccessImpl(this.data);
 
   @override
-  final T data;
+  final RenovateHouseDetailsResponseModel data;
 
   @override
   String toString() {
@@ -2336,12 +2480,11 @@ class _$RenovateHouseDetailsSuccessImpl<T>
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$RenovateHouseDetailsSuccessImpl<T> &&
-            const DeepCollectionEquality().equals(other.data, data));
+            (identical(other.data, data) || other.data == data));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(data));
+  int get hashCode => Object.hash(runtimeType, data);
 
   /// Create a copy of ProjectDetailsState
   /// with the given fields replaced by the non-null parameter values.
@@ -2358,20 +2501,26 @@ class _$RenovateHouseDetailsSuccessImpl<T>
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() askTechnicalDetailsLoading,
-    required TResult Function(T data) askTechnicalDetailsSuccess,
+    required TResult Function(AskTechnicalProjectDetailsResponseModel data)
+        askTechnicalDetailsSuccess,
     required TResult Function(String error) askTechnicalDetailsFailure,
     required TResult Function() askEngineerDetailsLoading,
-    required TResult Function(T data) askEngineerDetailsSuccess,
+    required TResult Function(AskEngineerProjectDetailsResponseModel data)
+        askEngineerDetailsSuccess,
     required TResult Function(String error) askEngineerDetailsFailure,
     required TResult Function() renovateHouseDetailsLoading,
-    required TResult Function(T data) renovateHouseDetailsSuccess,
+    required TResult Function(RenovateHouseDetailsResponseModel data)
+        renovateHouseDetailsSuccess,
     required TResult Function(String error) renovateHouseDetailsFailure,
     required TResult Function() renovateHouseFixedPackageDetailsLoading,
-    required TResult Function(T data) renovateHouseFixedPackageDetailsSuccess,
+    required TResult Function(
+            RenovateHouseFixedPackageDetailsResponseModel data)
+        renovateHouseFixedPackageDetailsSuccess,
     required TResult Function(String error)
         renovateHouseFixedPackageDetailsFailure,
     required TResult Function() requestDesignDetailsLoading,
-    required TResult Function(T data) requestDesignDetailsSuccess,
+    required TResult Function(RequestDesignProjectDetailsResponseModel data)
+        requestDesignDetailsSuccess,
     required TResult Function(String error) requestDesignDetailsFailure,
   }) {
     return renovateHouseDetailsSuccess(data);
@@ -2382,19 +2531,24 @@ class _$RenovateHouseDetailsSuccessImpl<T>
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? askTechnicalDetailsLoading,
-    TResult? Function(T data)? askTechnicalDetailsSuccess,
+    TResult? Function(AskTechnicalProjectDetailsResponseModel data)?
+        askTechnicalDetailsSuccess,
     TResult? Function(String error)? askTechnicalDetailsFailure,
     TResult? Function()? askEngineerDetailsLoading,
-    TResult? Function(T data)? askEngineerDetailsSuccess,
+    TResult? Function(AskEngineerProjectDetailsResponseModel data)?
+        askEngineerDetailsSuccess,
     TResult? Function(String error)? askEngineerDetailsFailure,
     TResult? Function()? renovateHouseDetailsLoading,
-    TResult? Function(T data)? renovateHouseDetailsSuccess,
+    TResult? Function(RenovateHouseDetailsResponseModel data)?
+        renovateHouseDetailsSuccess,
     TResult? Function(String error)? renovateHouseDetailsFailure,
     TResult? Function()? renovateHouseFixedPackageDetailsLoading,
-    TResult? Function(T data)? renovateHouseFixedPackageDetailsSuccess,
+    TResult? Function(RenovateHouseFixedPackageDetailsResponseModel data)?
+        renovateHouseFixedPackageDetailsSuccess,
     TResult? Function(String error)? renovateHouseFixedPackageDetailsFailure,
     TResult? Function()? requestDesignDetailsLoading,
-    TResult? Function(T data)? requestDesignDetailsSuccess,
+    TResult? Function(RequestDesignProjectDetailsResponseModel data)?
+        requestDesignDetailsSuccess,
     TResult? Function(String error)? requestDesignDetailsFailure,
   }) {
     return renovateHouseDetailsSuccess?.call(data);
@@ -2405,19 +2559,24 @@ class _$RenovateHouseDetailsSuccessImpl<T>
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? askTechnicalDetailsLoading,
-    TResult Function(T data)? askTechnicalDetailsSuccess,
+    TResult Function(AskTechnicalProjectDetailsResponseModel data)?
+        askTechnicalDetailsSuccess,
     TResult Function(String error)? askTechnicalDetailsFailure,
     TResult Function()? askEngineerDetailsLoading,
-    TResult Function(T data)? askEngineerDetailsSuccess,
+    TResult Function(AskEngineerProjectDetailsResponseModel data)?
+        askEngineerDetailsSuccess,
     TResult Function(String error)? askEngineerDetailsFailure,
     TResult Function()? renovateHouseDetailsLoading,
-    TResult Function(T data)? renovateHouseDetailsSuccess,
+    TResult Function(RenovateHouseDetailsResponseModel data)?
+        renovateHouseDetailsSuccess,
     TResult Function(String error)? renovateHouseDetailsFailure,
     TResult Function()? renovateHouseFixedPackageDetailsLoading,
-    TResult Function(T data)? renovateHouseFixedPackageDetailsSuccess,
+    TResult Function(RenovateHouseFixedPackageDetailsResponseModel data)?
+        renovateHouseFixedPackageDetailsSuccess,
     TResult Function(String error)? renovateHouseFixedPackageDetailsFailure,
     TResult Function()? requestDesignDetailsLoading,
-    TResult Function(T data)? requestDesignDetailsSuccess,
+    TResult Function(RequestDesignProjectDetailsResponseModel data)?
+        requestDesignDetailsSuccess,
     TResult Function(String error)? requestDesignDetailsFailure,
     required TResult orElse(),
   }) {
@@ -2548,10 +2707,11 @@ class _$RenovateHouseDetailsSuccessImpl<T>
 
 abstract class RenovateHouseDetailsSuccess<T>
     implements ProjectDetailsState<T> {
-  const factory RenovateHouseDetailsSuccess(final T data) =
+  const factory RenovateHouseDetailsSuccess(
+          final RenovateHouseDetailsResponseModel data) =
       _$RenovateHouseDetailsSuccessImpl<T>;
 
-  T get data;
+  RenovateHouseDetailsResponseModel get data;
 
   /// Create a copy of ProjectDetailsState
   /// with the given fields replaced by the non-null parameter values.
@@ -2637,20 +2797,26 @@ class _$RenovateHouseDetailsFailureImpl<T>
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() askTechnicalDetailsLoading,
-    required TResult Function(T data) askTechnicalDetailsSuccess,
+    required TResult Function(AskTechnicalProjectDetailsResponseModel data)
+        askTechnicalDetailsSuccess,
     required TResult Function(String error) askTechnicalDetailsFailure,
     required TResult Function() askEngineerDetailsLoading,
-    required TResult Function(T data) askEngineerDetailsSuccess,
+    required TResult Function(AskEngineerProjectDetailsResponseModel data)
+        askEngineerDetailsSuccess,
     required TResult Function(String error) askEngineerDetailsFailure,
     required TResult Function() renovateHouseDetailsLoading,
-    required TResult Function(T data) renovateHouseDetailsSuccess,
+    required TResult Function(RenovateHouseDetailsResponseModel data)
+        renovateHouseDetailsSuccess,
     required TResult Function(String error) renovateHouseDetailsFailure,
     required TResult Function() renovateHouseFixedPackageDetailsLoading,
-    required TResult Function(T data) renovateHouseFixedPackageDetailsSuccess,
+    required TResult Function(
+            RenovateHouseFixedPackageDetailsResponseModel data)
+        renovateHouseFixedPackageDetailsSuccess,
     required TResult Function(String error)
         renovateHouseFixedPackageDetailsFailure,
     required TResult Function() requestDesignDetailsLoading,
-    required TResult Function(T data) requestDesignDetailsSuccess,
+    required TResult Function(RequestDesignProjectDetailsResponseModel data)
+        requestDesignDetailsSuccess,
     required TResult Function(String error) requestDesignDetailsFailure,
   }) {
     return renovateHouseDetailsFailure(error);
@@ -2661,19 +2827,24 @@ class _$RenovateHouseDetailsFailureImpl<T>
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? askTechnicalDetailsLoading,
-    TResult? Function(T data)? askTechnicalDetailsSuccess,
+    TResult? Function(AskTechnicalProjectDetailsResponseModel data)?
+        askTechnicalDetailsSuccess,
     TResult? Function(String error)? askTechnicalDetailsFailure,
     TResult? Function()? askEngineerDetailsLoading,
-    TResult? Function(T data)? askEngineerDetailsSuccess,
+    TResult? Function(AskEngineerProjectDetailsResponseModel data)?
+        askEngineerDetailsSuccess,
     TResult? Function(String error)? askEngineerDetailsFailure,
     TResult? Function()? renovateHouseDetailsLoading,
-    TResult? Function(T data)? renovateHouseDetailsSuccess,
+    TResult? Function(RenovateHouseDetailsResponseModel data)?
+        renovateHouseDetailsSuccess,
     TResult? Function(String error)? renovateHouseDetailsFailure,
     TResult? Function()? renovateHouseFixedPackageDetailsLoading,
-    TResult? Function(T data)? renovateHouseFixedPackageDetailsSuccess,
+    TResult? Function(RenovateHouseFixedPackageDetailsResponseModel data)?
+        renovateHouseFixedPackageDetailsSuccess,
     TResult? Function(String error)? renovateHouseFixedPackageDetailsFailure,
     TResult? Function()? requestDesignDetailsLoading,
-    TResult? Function(T data)? requestDesignDetailsSuccess,
+    TResult? Function(RequestDesignProjectDetailsResponseModel data)?
+        requestDesignDetailsSuccess,
     TResult? Function(String error)? requestDesignDetailsFailure,
   }) {
     return renovateHouseDetailsFailure?.call(error);
@@ -2684,19 +2855,24 @@ class _$RenovateHouseDetailsFailureImpl<T>
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? askTechnicalDetailsLoading,
-    TResult Function(T data)? askTechnicalDetailsSuccess,
+    TResult Function(AskTechnicalProjectDetailsResponseModel data)?
+        askTechnicalDetailsSuccess,
     TResult Function(String error)? askTechnicalDetailsFailure,
     TResult Function()? askEngineerDetailsLoading,
-    TResult Function(T data)? askEngineerDetailsSuccess,
+    TResult Function(AskEngineerProjectDetailsResponseModel data)?
+        askEngineerDetailsSuccess,
     TResult Function(String error)? askEngineerDetailsFailure,
     TResult Function()? renovateHouseDetailsLoading,
-    TResult Function(T data)? renovateHouseDetailsSuccess,
+    TResult Function(RenovateHouseDetailsResponseModel data)?
+        renovateHouseDetailsSuccess,
     TResult Function(String error)? renovateHouseDetailsFailure,
     TResult Function()? renovateHouseFixedPackageDetailsLoading,
-    TResult Function(T data)? renovateHouseFixedPackageDetailsSuccess,
+    TResult Function(RenovateHouseFixedPackageDetailsResponseModel data)?
+        renovateHouseFixedPackageDetailsSuccess,
     TResult Function(String error)? renovateHouseFixedPackageDetailsFailure,
     TResult Function()? requestDesignDetailsLoading,
-    TResult Function(T data)? requestDesignDetailsSuccess,
+    TResult Function(RequestDesignProjectDetailsResponseModel data)?
+        requestDesignDetailsSuccess,
     TResult Function(String error)? requestDesignDetailsFailure,
     required TResult orElse(),
   }) {
@@ -2889,20 +3065,26 @@ class _$RenovateHouseFixedPackageDetailsLoadingImpl<T>
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() askTechnicalDetailsLoading,
-    required TResult Function(T data) askTechnicalDetailsSuccess,
+    required TResult Function(AskTechnicalProjectDetailsResponseModel data)
+        askTechnicalDetailsSuccess,
     required TResult Function(String error) askTechnicalDetailsFailure,
     required TResult Function() askEngineerDetailsLoading,
-    required TResult Function(T data) askEngineerDetailsSuccess,
+    required TResult Function(AskEngineerProjectDetailsResponseModel data)
+        askEngineerDetailsSuccess,
     required TResult Function(String error) askEngineerDetailsFailure,
     required TResult Function() renovateHouseDetailsLoading,
-    required TResult Function(T data) renovateHouseDetailsSuccess,
+    required TResult Function(RenovateHouseDetailsResponseModel data)
+        renovateHouseDetailsSuccess,
     required TResult Function(String error) renovateHouseDetailsFailure,
     required TResult Function() renovateHouseFixedPackageDetailsLoading,
-    required TResult Function(T data) renovateHouseFixedPackageDetailsSuccess,
+    required TResult Function(
+            RenovateHouseFixedPackageDetailsResponseModel data)
+        renovateHouseFixedPackageDetailsSuccess,
     required TResult Function(String error)
         renovateHouseFixedPackageDetailsFailure,
     required TResult Function() requestDesignDetailsLoading,
-    required TResult Function(T data) requestDesignDetailsSuccess,
+    required TResult Function(RequestDesignProjectDetailsResponseModel data)
+        requestDesignDetailsSuccess,
     required TResult Function(String error) requestDesignDetailsFailure,
   }) {
     return renovateHouseFixedPackageDetailsLoading();
@@ -2913,19 +3095,24 @@ class _$RenovateHouseFixedPackageDetailsLoadingImpl<T>
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? askTechnicalDetailsLoading,
-    TResult? Function(T data)? askTechnicalDetailsSuccess,
+    TResult? Function(AskTechnicalProjectDetailsResponseModel data)?
+        askTechnicalDetailsSuccess,
     TResult? Function(String error)? askTechnicalDetailsFailure,
     TResult? Function()? askEngineerDetailsLoading,
-    TResult? Function(T data)? askEngineerDetailsSuccess,
+    TResult? Function(AskEngineerProjectDetailsResponseModel data)?
+        askEngineerDetailsSuccess,
     TResult? Function(String error)? askEngineerDetailsFailure,
     TResult? Function()? renovateHouseDetailsLoading,
-    TResult? Function(T data)? renovateHouseDetailsSuccess,
+    TResult? Function(RenovateHouseDetailsResponseModel data)?
+        renovateHouseDetailsSuccess,
     TResult? Function(String error)? renovateHouseDetailsFailure,
     TResult? Function()? renovateHouseFixedPackageDetailsLoading,
-    TResult? Function(T data)? renovateHouseFixedPackageDetailsSuccess,
+    TResult? Function(RenovateHouseFixedPackageDetailsResponseModel data)?
+        renovateHouseFixedPackageDetailsSuccess,
     TResult? Function(String error)? renovateHouseFixedPackageDetailsFailure,
     TResult? Function()? requestDesignDetailsLoading,
-    TResult? Function(T data)? requestDesignDetailsSuccess,
+    TResult? Function(RequestDesignProjectDetailsResponseModel data)?
+        requestDesignDetailsSuccess,
     TResult? Function(String error)? requestDesignDetailsFailure,
   }) {
     return renovateHouseFixedPackageDetailsLoading?.call();
@@ -2936,19 +3123,24 @@ class _$RenovateHouseFixedPackageDetailsLoadingImpl<T>
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? askTechnicalDetailsLoading,
-    TResult Function(T data)? askTechnicalDetailsSuccess,
+    TResult Function(AskTechnicalProjectDetailsResponseModel data)?
+        askTechnicalDetailsSuccess,
     TResult Function(String error)? askTechnicalDetailsFailure,
     TResult Function()? askEngineerDetailsLoading,
-    TResult Function(T data)? askEngineerDetailsSuccess,
+    TResult Function(AskEngineerProjectDetailsResponseModel data)?
+        askEngineerDetailsSuccess,
     TResult Function(String error)? askEngineerDetailsFailure,
     TResult Function()? renovateHouseDetailsLoading,
-    TResult Function(T data)? renovateHouseDetailsSuccess,
+    TResult Function(RenovateHouseDetailsResponseModel data)?
+        renovateHouseDetailsSuccess,
     TResult Function(String error)? renovateHouseDetailsFailure,
     TResult Function()? renovateHouseFixedPackageDetailsLoading,
-    TResult Function(T data)? renovateHouseFixedPackageDetailsSuccess,
+    TResult Function(RenovateHouseFixedPackageDetailsResponseModel data)?
+        renovateHouseFixedPackageDetailsSuccess,
     TResult Function(String error)? renovateHouseFixedPackageDetailsFailure,
     TResult Function()? requestDesignDetailsLoading,
-    TResult Function(T data)? requestDesignDetailsSuccess,
+    TResult Function(RequestDesignProjectDetailsResponseModel data)?
+        requestDesignDetailsSuccess,
     TResult Function(String error)? requestDesignDetailsFailure,
     required TResult orElse(),
   }) {
@@ -3091,7 +3283,7 @@ abstract class _$$RenovateHouseFixedPackageDetailsSuccessImplCopyWith<T, $Res> {
               then) =
       __$$RenovateHouseFixedPackageDetailsSuccessImplCopyWithImpl<T, $Res>;
   @useResult
-  $Res call({T data});
+  $Res call({RenovateHouseFixedPackageDetailsResponseModel data});
 }
 
 /// @nodoc
@@ -3109,13 +3301,13 @@ class __$$RenovateHouseFixedPackageDetailsSuccessImplCopyWithImpl<T, $Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? data = freezed,
+    Object? data = null,
   }) {
     return _then(_$RenovateHouseFixedPackageDetailsSuccessImpl<T>(
-      freezed == data
+      null == data
           ? _value.data
           : data // ignore: cast_nullable_to_non_nullable
-              as T,
+              as RenovateHouseFixedPackageDetailsResponseModel,
     ));
   }
 }
@@ -3127,7 +3319,7 @@ class _$RenovateHouseFixedPackageDetailsSuccessImpl<T>
   const _$RenovateHouseFixedPackageDetailsSuccessImpl(this.data);
 
   @override
-  final T data;
+  final RenovateHouseFixedPackageDetailsResponseModel data;
 
   @override
   String toString() {
@@ -3139,12 +3331,11 @@ class _$RenovateHouseFixedPackageDetailsSuccessImpl<T>
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$RenovateHouseFixedPackageDetailsSuccessImpl<T> &&
-            const DeepCollectionEquality().equals(other.data, data));
+            (identical(other.data, data) || other.data == data));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(data));
+  int get hashCode => Object.hash(runtimeType, data);
 
   /// Create a copy of ProjectDetailsState
   /// with the given fields replaced by the non-null parameter values.
@@ -3163,20 +3354,26 @@ class _$RenovateHouseFixedPackageDetailsSuccessImpl<T>
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() askTechnicalDetailsLoading,
-    required TResult Function(T data) askTechnicalDetailsSuccess,
+    required TResult Function(AskTechnicalProjectDetailsResponseModel data)
+        askTechnicalDetailsSuccess,
     required TResult Function(String error) askTechnicalDetailsFailure,
     required TResult Function() askEngineerDetailsLoading,
-    required TResult Function(T data) askEngineerDetailsSuccess,
+    required TResult Function(AskEngineerProjectDetailsResponseModel data)
+        askEngineerDetailsSuccess,
     required TResult Function(String error) askEngineerDetailsFailure,
     required TResult Function() renovateHouseDetailsLoading,
-    required TResult Function(T data) renovateHouseDetailsSuccess,
+    required TResult Function(RenovateHouseDetailsResponseModel data)
+        renovateHouseDetailsSuccess,
     required TResult Function(String error) renovateHouseDetailsFailure,
     required TResult Function() renovateHouseFixedPackageDetailsLoading,
-    required TResult Function(T data) renovateHouseFixedPackageDetailsSuccess,
+    required TResult Function(
+            RenovateHouseFixedPackageDetailsResponseModel data)
+        renovateHouseFixedPackageDetailsSuccess,
     required TResult Function(String error)
         renovateHouseFixedPackageDetailsFailure,
     required TResult Function() requestDesignDetailsLoading,
-    required TResult Function(T data) requestDesignDetailsSuccess,
+    required TResult Function(RequestDesignProjectDetailsResponseModel data)
+        requestDesignDetailsSuccess,
     required TResult Function(String error) requestDesignDetailsFailure,
   }) {
     return renovateHouseFixedPackageDetailsSuccess(data);
@@ -3187,19 +3384,24 @@ class _$RenovateHouseFixedPackageDetailsSuccessImpl<T>
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? askTechnicalDetailsLoading,
-    TResult? Function(T data)? askTechnicalDetailsSuccess,
+    TResult? Function(AskTechnicalProjectDetailsResponseModel data)?
+        askTechnicalDetailsSuccess,
     TResult? Function(String error)? askTechnicalDetailsFailure,
     TResult? Function()? askEngineerDetailsLoading,
-    TResult? Function(T data)? askEngineerDetailsSuccess,
+    TResult? Function(AskEngineerProjectDetailsResponseModel data)?
+        askEngineerDetailsSuccess,
     TResult? Function(String error)? askEngineerDetailsFailure,
     TResult? Function()? renovateHouseDetailsLoading,
-    TResult? Function(T data)? renovateHouseDetailsSuccess,
+    TResult? Function(RenovateHouseDetailsResponseModel data)?
+        renovateHouseDetailsSuccess,
     TResult? Function(String error)? renovateHouseDetailsFailure,
     TResult? Function()? renovateHouseFixedPackageDetailsLoading,
-    TResult? Function(T data)? renovateHouseFixedPackageDetailsSuccess,
+    TResult? Function(RenovateHouseFixedPackageDetailsResponseModel data)?
+        renovateHouseFixedPackageDetailsSuccess,
     TResult? Function(String error)? renovateHouseFixedPackageDetailsFailure,
     TResult? Function()? requestDesignDetailsLoading,
-    TResult? Function(T data)? requestDesignDetailsSuccess,
+    TResult? Function(RequestDesignProjectDetailsResponseModel data)?
+        requestDesignDetailsSuccess,
     TResult? Function(String error)? requestDesignDetailsFailure,
   }) {
     return renovateHouseFixedPackageDetailsSuccess?.call(data);
@@ -3210,19 +3412,24 @@ class _$RenovateHouseFixedPackageDetailsSuccessImpl<T>
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? askTechnicalDetailsLoading,
-    TResult Function(T data)? askTechnicalDetailsSuccess,
+    TResult Function(AskTechnicalProjectDetailsResponseModel data)?
+        askTechnicalDetailsSuccess,
     TResult Function(String error)? askTechnicalDetailsFailure,
     TResult Function()? askEngineerDetailsLoading,
-    TResult Function(T data)? askEngineerDetailsSuccess,
+    TResult Function(AskEngineerProjectDetailsResponseModel data)?
+        askEngineerDetailsSuccess,
     TResult Function(String error)? askEngineerDetailsFailure,
     TResult Function()? renovateHouseDetailsLoading,
-    TResult Function(T data)? renovateHouseDetailsSuccess,
+    TResult Function(RenovateHouseDetailsResponseModel data)?
+        renovateHouseDetailsSuccess,
     TResult Function(String error)? renovateHouseDetailsFailure,
     TResult Function()? renovateHouseFixedPackageDetailsLoading,
-    TResult Function(T data)? renovateHouseFixedPackageDetailsSuccess,
+    TResult Function(RenovateHouseFixedPackageDetailsResponseModel data)?
+        renovateHouseFixedPackageDetailsSuccess,
     TResult Function(String error)? renovateHouseFixedPackageDetailsFailure,
     TResult Function()? requestDesignDetailsLoading,
-    TResult Function(T data)? requestDesignDetailsSuccess,
+    TResult Function(RequestDesignProjectDetailsResponseModel data)?
+        requestDesignDetailsSuccess,
     TResult Function(String error)? requestDesignDetailsFailure,
     required TResult orElse(),
   }) {
@@ -3353,10 +3560,11 @@ class _$RenovateHouseFixedPackageDetailsSuccessImpl<T>
 
 abstract class RenovateHouseFixedPackageDetailsSuccess<T>
     implements ProjectDetailsState<T> {
-  const factory RenovateHouseFixedPackageDetailsSuccess(final T data) =
+  const factory RenovateHouseFixedPackageDetailsSuccess(
+          final RenovateHouseFixedPackageDetailsResponseModel data) =
       _$RenovateHouseFixedPackageDetailsSuccessImpl<T>;
 
-  T get data;
+  RenovateHouseFixedPackageDetailsResponseModel get data;
 
   /// Create a copy of ProjectDetailsState
   /// with the given fields replaced by the non-null parameter values.
@@ -3445,20 +3653,26 @@ class _$RenovateHouseFixedPackageDetailsFailureImpl<T>
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() askTechnicalDetailsLoading,
-    required TResult Function(T data) askTechnicalDetailsSuccess,
+    required TResult Function(AskTechnicalProjectDetailsResponseModel data)
+        askTechnicalDetailsSuccess,
     required TResult Function(String error) askTechnicalDetailsFailure,
     required TResult Function() askEngineerDetailsLoading,
-    required TResult Function(T data) askEngineerDetailsSuccess,
+    required TResult Function(AskEngineerProjectDetailsResponseModel data)
+        askEngineerDetailsSuccess,
     required TResult Function(String error) askEngineerDetailsFailure,
     required TResult Function() renovateHouseDetailsLoading,
-    required TResult Function(T data) renovateHouseDetailsSuccess,
+    required TResult Function(RenovateHouseDetailsResponseModel data)
+        renovateHouseDetailsSuccess,
     required TResult Function(String error) renovateHouseDetailsFailure,
     required TResult Function() renovateHouseFixedPackageDetailsLoading,
-    required TResult Function(T data) renovateHouseFixedPackageDetailsSuccess,
+    required TResult Function(
+            RenovateHouseFixedPackageDetailsResponseModel data)
+        renovateHouseFixedPackageDetailsSuccess,
     required TResult Function(String error)
         renovateHouseFixedPackageDetailsFailure,
     required TResult Function() requestDesignDetailsLoading,
-    required TResult Function(T data) requestDesignDetailsSuccess,
+    required TResult Function(RequestDesignProjectDetailsResponseModel data)
+        requestDesignDetailsSuccess,
     required TResult Function(String error) requestDesignDetailsFailure,
   }) {
     return renovateHouseFixedPackageDetailsFailure(error);
@@ -3469,19 +3683,24 @@ class _$RenovateHouseFixedPackageDetailsFailureImpl<T>
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? askTechnicalDetailsLoading,
-    TResult? Function(T data)? askTechnicalDetailsSuccess,
+    TResult? Function(AskTechnicalProjectDetailsResponseModel data)?
+        askTechnicalDetailsSuccess,
     TResult? Function(String error)? askTechnicalDetailsFailure,
     TResult? Function()? askEngineerDetailsLoading,
-    TResult? Function(T data)? askEngineerDetailsSuccess,
+    TResult? Function(AskEngineerProjectDetailsResponseModel data)?
+        askEngineerDetailsSuccess,
     TResult? Function(String error)? askEngineerDetailsFailure,
     TResult? Function()? renovateHouseDetailsLoading,
-    TResult? Function(T data)? renovateHouseDetailsSuccess,
+    TResult? Function(RenovateHouseDetailsResponseModel data)?
+        renovateHouseDetailsSuccess,
     TResult? Function(String error)? renovateHouseDetailsFailure,
     TResult? Function()? renovateHouseFixedPackageDetailsLoading,
-    TResult? Function(T data)? renovateHouseFixedPackageDetailsSuccess,
+    TResult? Function(RenovateHouseFixedPackageDetailsResponseModel data)?
+        renovateHouseFixedPackageDetailsSuccess,
     TResult? Function(String error)? renovateHouseFixedPackageDetailsFailure,
     TResult? Function()? requestDesignDetailsLoading,
-    TResult? Function(T data)? requestDesignDetailsSuccess,
+    TResult? Function(RequestDesignProjectDetailsResponseModel data)?
+        requestDesignDetailsSuccess,
     TResult? Function(String error)? requestDesignDetailsFailure,
   }) {
     return renovateHouseFixedPackageDetailsFailure?.call(error);
@@ -3492,19 +3711,24 @@ class _$RenovateHouseFixedPackageDetailsFailureImpl<T>
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? askTechnicalDetailsLoading,
-    TResult Function(T data)? askTechnicalDetailsSuccess,
+    TResult Function(AskTechnicalProjectDetailsResponseModel data)?
+        askTechnicalDetailsSuccess,
     TResult Function(String error)? askTechnicalDetailsFailure,
     TResult Function()? askEngineerDetailsLoading,
-    TResult Function(T data)? askEngineerDetailsSuccess,
+    TResult Function(AskEngineerProjectDetailsResponseModel data)?
+        askEngineerDetailsSuccess,
     TResult Function(String error)? askEngineerDetailsFailure,
     TResult Function()? renovateHouseDetailsLoading,
-    TResult Function(T data)? renovateHouseDetailsSuccess,
+    TResult Function(RenovateHouseDetailsResponseModel data)?
+        renovateHouseDetailsSuccess,
     TResult Function(String error)? renovateHouseDetailsFailure,
     TResult Function()? renovateHouseFixedPackageDetailsLoading,
-    TResult Function(T data)? renovateHouseFixedPackageDetailsSuccess,
+    TResult Function(RenovateHouseFixedPackageDetailsResponseModel data)?
+        renovateHouseFixedPackageDetailsSuccess,
     TResult Function(String error)? renovateHouseFixedPackageDetailsFailure,
     TResult Function()? requestDesignDetailsLoading,
-    TResult Function(T data)? requestDesignDetailsSuccess,
+    TResult Function(RequestDesignProjectDetailsResponseModel data)?
+        requestDesignDetailsSuccess,
     TResult Function(String error)? requestDesignDetailsFailure,
     required TResult orElse(),
   }) {
@@ -3697,20 +3921,26 @@ class _$RequestDesignDetailsLoadingImpl<T>
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() askTechnicalDetailsLoading,
-    required TResult Function(T data) askTechnicalDetailsSuccess,
+    required TResult Function(AskTechnicalProjectDetailsResponseModel data)
+        askTechnicalDetailsSuccess,
     required TResult Function(String error) askTechnicalDetailsFailure,
     required TResult Function() askEngineerDetailsLoading,
-    required TResult Function(T data) askEngineerDetailsSuccess,
+    required TResult Function(AskEngineerProjectDetailsResponseModel data)
+        askEngineerDetailsSuccess,
     required TResult Function(String error) askEngineerDetailsFailure,
     required TResult Function() renovateHouseDetailsLoading,
-    required TResult Function(T data) renovateHouseDetailsSuccess,
+    required TResult Function(RenovateHouseDetailsResponseModel data)
+        renovateHouseDetailsSuccess,
     required TResult Function(String error) renovateHouseDetailsFailure,
     required TResult Function() renovateHouseFixedPackageDetailsLoading,
-    required TResult Function(T data) renovateHouseFixedPackageDetailsSuccess,
+    required TResult Function(
+            RenovateHouseFixedPackageDetailsResponseModel data)
+        renovateHouseFixedPackageDetailsSuccess,
     required TResult Function(String error)
         renovateHouseFixedPackageDetailsFailure,
     required TResult Function() requestDesignDetailsLoading,
-    required TResult Function(T data) requestDesignDetailsSuccess,
+    required TResult Function(RequestDesignProjectDetailsResponseModel data)
+        requestDesignDetailsSuccess,
     required TResult Function(String error) requestDesignDetailsFailure,
   }) {
     return requestDesignDetailsLoading();
@@ -3721,19 +3951,24 @@ class _$RequestDesignDetailsLoadingImpl<T>
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? askTechnicalDetailsLoading,
-    TResult? Function(T data)? askTechnicalDetailsSuccess,
+    TResult? Function(AskTechnicalProjectDetailsResponseModel data)?
+        askTechnicalDetailsSuccess,
     TResult? Function(String error)? askTechnicalDetailsFailure,
     TResult? Function()? askEngineerDetailsLoading,
-    TResult? Function(T data)? askEngineerDetailsSuccess,
+    TResult? Function(AskEngineerProjectDetailsResponseModel data)?
+        askEngineerDetailsSuccess,
     TResult? Function(String error)? askEngineerDetailsFailure,
     TResult? Function()? renovateHouseDetailsLoading,
-    TResult? Function(T data)? renovateHouseDetailsSuccess,
+    TResult? Function(RenovateHouseDetailsResponseModel data)?
+        renovateHouseDetailsSuccess,
     TResult? Function(String error)? renovateHouseDetailsFailure,
     TResult? Function()? renovateHouseFixedPackageDetailsLoading,
-    TResult? Function(T data)? renovateHouseFixedPackageDetailsSuccess,
+    TResult? Function(RenovateHouseFixedPackageDetailsResponseModel data)?
+        renovateHouseFixedPackageDetailsSuccess,
     TResult? Function(String error)? renovateHouseFixedPackageDetailsFailure,
     TResult? Function()? requestDesignDetailsLoading,
-    TResult? Function(T data)? requestDesignDetailsSuccess,
+    TResult? Function(RequestDesignProjectDetailsResponseModel data)?
+        requestDesignDetailsSuccess,
     TResult? Function(String error)? requestDesignDetailsFailure,
   }) {
     return requestDesignDetailsLoading?.call();
@@ -3744,19 +3979,24 @@ class _$RequestDesignDetailsLoadingImpl<T>
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? askTechnicalDetailsLoading,
-    TResult Function(T data)? askTechnicalDetailsSuccess,
+    TResult Function(AskTechnicalProjectDetailsResponseModel data)?
+        askTechnicalDetailsSuccess,
     TResult Function(String error)? askTechnicalDetailsFailure,
     TResult Function()? askEngineerDetailsLoading,
-    TResult Function(T data)? askEngineerDetailsSuccess,
+    TResult Function(AskEngineerProjectDetailsResponseModel data)?
+        askEngineerDetailsSuccess,
     TResult Function(String error)? askEngineerDetailsFailure,
     TResult Function()? renovateHouseDetailsLoading,
-    TResult Function(T data)? renovateHouseDetailsSuccess,
+    TResult Function(RenovateHouseDetailsResponseModel data)?
+        renovateHouseDetailsSuccess,
     TResult Function(String error)? renovateHouseDetailsFailure,
     TResult Function()? renovateHouseFixedPackageDetailsLoading,
-    TResult Function(T data)? renovateHouseFixedPackageDetailsSuccess,
+    TResult Function(RenovateHouseFixedPackageDetailsResponseModel data)?
+        renovateHouseFixedPackageDetailsSuccess,
     TResult Function(String error)? renovateHouseFixedPackageDetailsFailure,
     TResult Function()? requestDesignDetailsLoading,
-    TResult Function(T data)? requestDesignDetailsSuccess,
+    TResult Function(RequestDesignProjectDetailsResponseModel data)?
+        requestDesignDetailsSuccess,
     TResult Function(String error)? requestDesignDetailsFailure,
     required TResult orElse(),
   }) {
@@ -3898,7 +4138,7 @@ abstract class _$$RequestDesignDetailsSuccessImplCopyWith<T, $Res> {
           $Res Function(_$RequestDesignDetailsSuccessImpl<T>) then) =
       __$$RequestDesignDetailsSuccessImplCopyWithImpl<T, $Res>;
   @useResult
-  $Res call({T data});
+  $Res call({RequestDesignProjectDetailsResponseModel data});
 }
 
 /// @nodoc
@@ -3916,13 +4156,13 @@ class __$$RequestDesignDetailsSuccessImplCopyWithImpl<T, $Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? data = freezed,
+    Object? data = null,
   }) {
     return _then(_$RequestDesignDetailsSuccessImpl<T>(
-      freezed == data
+      null == data
           ? _value.data
           : data // ignore: cast_nullable_to_non_nullable
-              as T,
+              as RequestDesignProjectDetailsResponseModel,
     ));
   }
 }
@@ -3934,7 +4174,7 @@ class _$RequestDesignDetailsSuccessImpl<T>
   const _$RequestDesignDetailsSuccessImpl(this.data);
 
   @override
-  final T data;
+  final RequestDesignProjectDetailsResponseModel data;
 
   @override
   String toString() {
@@ -3946,12 +4186,11 @@ class _$RequestDesignDetailsSuccessImpl<T>
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$RequestDesignDetailsSuccessImpl<T> &&
-            const DeepCollectionEquality().equals(other.data, data));
+            (identical(other.data, data) || other.data == data));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(data));
+  int get hashCode => Object.hash(runtimeType, data);
 
   /// Create a copy of ProjectDetailsState
   /// with the given fields replaced by the non-null parameter values.
@@ -3968,20 +4207,26 @@ class _$RequestDesignDetailsSuccessImpl<T>
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() askTechnicalDetailsLoading,
-    required TResult Function(T data) askTechnicalDetailsSuccess,
+    required TResult Function(AskTechnicalProjectDetailsResponseModel data)
+        askTechnicalDetailsSuccess,
     required TResult Function(String error) askTechnicalDetailsFailure,
     required TResult Function() askEngineerDetailsLoading,
-    required TResult Function(T data) askEngineerDetailsSuccess,
+    required TResult Function(AskEngineerProjectDetailsResponseModel data)
+        askEngineerDetailsSuccess,
     required TResult Function(String error) askEngineerDetailsFailure,
     required TResult Function() renovateHouseDetailsLoading,
-    required TResult Function(T data) renovateHouseDetailsSuccess,
+    required TResult Function(RenovateHouseDetailsResponseModel data)
+        renovateHouseDetailsSuccess,
     required TResult Function(String error) renovateHouseDetailsFailure,
     required TResult Function() renovateHouseFixedPackageDetailsLoading,
-    required TResult Function(T data) renovateHouseFixedPackageDetailsSuccess,
+    required TResult Function(
+            RenovateHouseFixedPackageDetailsResponseModel data)
+        renovateHouseFixedPackageDetailsSuccess,
     required TResult Function(String error)
         renovateHouseFixedPackageDetailsFailure,
     required TResult Function() requestDesignDetailsLoading,
-    required TResult Function(T data) requestDesignDetailsSuccess,
+    required TResult Function(RequestDesignProjectDetailsResponseModel data)
+        requestDesignDetailsSuccess,
     required TResult Function(String error) requestDesignDetailsFailure,
   }) {
     return requestDesignDetailsSuccess(data);
@@ -3992,19 +4237,24 @@ class _$RequestDesignDetailsSuccessImpl<T>
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? askTechnicalDetailsLoading,
-    TResult? Function(T data)? askTechnicalDetailsSuccess,
+    TResult? Function(AskTechnicalProjectDetailsResponseModel data)?
+        askTechnicalDetailsSuccess,
     TResult? Function(String error)? askTechnicalDetailsFailure,
     TResult? Function()? askEngineerDetailsLoading,
-    TResult? Function(T data)? askEngineerDetailsSuccess,
+    TResult? Function(AskEngineerProjectDetailsResponseModel data)?
+        askEngineerDetailsSuccess,
     TResult? Function(String error)? askEngineerDetailsFailure,
     TResult? Function()? renovateHouseDetailsLoading,
-    TResult? Function(T data)? renovateHouseDetailsSuccess,
+    TResult? Function(RenovateHouseDetailsResponseModel data)?
+        renovateHouseDetailsSuccess,
     TResult? Function(String error)? renovateHouseDetailsFailure,
     TResult? Function()? renovateHouseFixedPackageDetailsLoading,
-    TResult? Function(T data)? renovateHouseFixedPackageDetailsSuccess,
+    TResult? Function(RenovateHouseFixedPackageDetailsResponseModel data)?
+        renovateHouseFixedPackageDetailsSuccess,
     TResult? Function(String error)? renovateHouseFixedPackageDetailsFailure,
     TResult? Function()? requestDesignDetailsLoading,
-    TResult? Function(T data)? requestDesignDetailsSuccess,
+    TResult? Function(RequestDesignProjectDetailsResponseModel data)?
+        requestDesignDetailsSuccess,
     TResult? Function(String error)? requestDesignDetailsFailure,
   }) {
     return requestDesignDetailsSuccess?.call(data);
@@ -4015,19 +4265,24 @@ class _$RequestDesignDetailsSuccessImpl<T>
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? askTechnicalDetailsLoading,
-    TResult Function(T data)? askTechnicalDetailsSuccess,
+    TResult Function(AskTechnicalProjectDetailsResponseModel data)?
+        askTechnicalDetailsSuccess,
     TResult Function(String error)? askTechnicalDetailsFailure,
     TResult Function()? askEngineerDetailsLoading,
-    TResult Function(T data)? askEngineerDetailsSuccess,
+    TResult Function(AskEngineerProjectDetailsResponseModel data)?
+        askEngineerDetailsSuccess,
     TResult Function(String error)? askEngineerDetailsFailure,
     TResult Function()? renovateHouseDetailsLoading,
-    TResult Function(T data)? renovateHouseDetailsSuccess,
+    TResult Function(RenovateHouseDetailsResponseModel data)?
+        renovateHouseDetailsSuccess,
     TResult Function(String error)? renovateHouseDetailsFailure,
     TResult Function()? renovateHouseFixedPackageDetailsLoading,
-    TResult Function(T data)? renovateHouseFixedPackageDetailsSuccess,
+    TResult Function(RenovateHouseFixedPackageDetailsResponseModel data)?
+        renovateHouseFixedPackageDetailsSuccess,
     TResult Function(String error)? renovateHouseFixedPackageDetailsFailure,
     TResult Function()? requestDesignDetailsLoading,
-    TResult Function(T data)? requestDesignDetailsSuccess,
+    TResult Function(RequestDesignProjectDetailsResponseModel data)?
+        requestDesignDetailsSuccess,
     TResult Function(String error)? requestDesignDetailsFailure,
     required TResult orElse(),
   }) {
@@ -4158,10 +4413,11 @@ class _$RequestDesignDetailsSuccessImpl<T>
 
 abstract class RequestDesignDetailsSuccess<T>
     implements ProjectDetailsState<T> {
-  const factory RequestDesignDetailsSuccess(final T data) =
+  const factory RequestDesignDetailsSuccess(
+          final RequestDesignProjectDetailsResponseModel data) =
       _$RequestDesignDetailsSuccessImpl<T>;
 
-  T get data;
+  RequestDesignProjectDetailsResponseModel get data;
 
   /// Create a copy of ProjectDetailsState
   /// with the given fields replaced by the non-null parameter values.
@@ -4247,20 +4503,26 @@ class _$RequestDesignDetailsFailureImpl<T>
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() askTechnicalDetailsLoading,
-    required TResult Function(T data) askTechnicalDetailsSuccess,
+    required TResult Function(AskTechnicalProjectDetailsResponseModel data)
+        askTechnicalDetailsSuccess,
     required TResult Function(String error) askTechnicalDetailsFailure,
     required TResult Function() askEngineerDetailsLoading,
-    required TResult Function(T data) askEngineerDetailsSuccess,
+    required TResult Function(AskEngineerProjectDetailsResponseModel data)
+        askEngineerDetailsSuccess,
     required TResult Function(String error) askEngineerDetailsFailure,
     required TResult Function() renovateHouseDetailsLoading,
-    required TResult Function(T data) renovateHouseDetailsSuccess,
+    required TResult Function(RenovateHouseDetailsResponseModel data)
+        renovateHouseDetailsSuccess,
     required TResult Function(String error) renovateHouseDetailsFailure,
     required TResult Function() renovateHouseFixedPackageDetailsLoading,
-    required TResult Function(T data) renovateHouseFixedPackageDetailsSuccess,
+    required TResult Function(
+            RenovateHouseFixedPackageDetailsResponseModel data)
+        renovateHouseFixedPackageDetailsSuccess,
     required TResult Function(String error)
         renovateHouseFixedPackageDetailsFailure,
     required TResult Function() requestDesignDetailsLoading,
-    required TResult Function(T data) requestDesignDetailsSuccess,
+    required TResult Function(RequestDesignProjectDetailsResponseModel data)
+        requestDesignDetailsSuccess,
     required TResult Function(String error) requestDesignDetailsFailure,
   }) {
     return requestDesignDetailsFailure(error);
@@ -4271,19 +4533,24 @@ class _$RequestDesignDetailsFailureImpl<T>
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? askTechnicalDetailsLoading,
-    TResult? Function(T data)? askTechnicalDetailsSuccess,
+    TResult? Function(AskTechnicalProjectDetailsResponseModel data)?
+        askTechnicalDetailsSuccess,
     TResult? Function(String error)? askTechnicalDetailsFailure,
     TResult? Function()? askEngineerDetailsLoading,
-    TResult? Function(T data)? askEngineerDetailsSuccess,
+    TResult? Function(AskEngineerProjectDetailsResponseModel data)?
+        askEngineerDetailsSuccess,
     TResult? Function(String error)? askEngineerDetailsFailure,
     TResult? Function()? renovateHouseDetailsLoading,
-    TResult? Function(T data)? renovateHouseDetailsSuccess,
+    TResult? Function(RenovateHouseDetailsResponseModel data)?
+        renovateHouseDetailsSuccess,
     TResult? Function(String error)? renovateHouseDetailsFailure,
     TResult? Function()? renovateHouseFixedPackageDetailsLoading,
-    TResult? Function(T data)? renovateHouseFixedPackageDetailsSuccess,
+    TResult? Function(RenovateHouseFixedPackageDetailsResponseModel data)?
+        renovateHouseFixedPackageDetailsSuccess,
     TResult? Function(String error)? renovateHouseFixedPackageDetailsFailure,
     TResult? Function()? requestDesignDetailsLoading,
-    TResult? Function(T data)? requestDesignDetailsSuccess,
+    TResult? Function(RequestDesignProjectDetailsResponseModel data)?
+        requestDesignDetailsSuccess,
     TResult? Function(String error)? requestDesignDetailsFailure,
   }) {
     return requestDesignDetailsFailure?.call(error);
@@ -4294,19 +4561,24 @@ class _$RequestDesignDetailsFailureImpl<T>
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? askTechnicalDetailsLoading,
-    TResult Function(T data)? askTechnicalDetailsSuccess,
+    TResult Function(AskTechnicalProjectDetailsResponseModel data)?
+        askTechnicalDetailsSuccess,
     TResult Function(String error)? askTechnicalDetailsFailure,
     TResult Function()? askEngineerDetailsLoading,
-    TResult Function(T data)? askEngineerDetailsSuccess,
+    TResult Function(AskEngineerProjectDetailsResponseModel data)?
+        askEngineerDetailsSuccess,
     TResult Function(String error)? askEngineerDetailsFailure,
     TResult Function()? renovateHouseDetailsLoading,
-    TResult Function(T data)? renovateHouseDetailsSuccess,
+    TResult Function(RenovateHouseDetailsResponseModel data)?
+        renovateHouseDetailsSuccess,
     TResult Function(String error)? renovateHouseDetailsFailure,
     TResult Function()? renovateHouseFixedPackageDetailsLoading,
-    TResult Function(T data)? renovateHouseFixedPackageDetailsSuccess,
+    TResult Function(RenovateHouseFixedPackageDetailsResponseModel data)?
+        renovateHouseFixedPackageDetailsSuccess,
     TResult Function(String error)? renovateHouseFixedPackageDetailsFailure,
     TResult Function()? requestDesignDetailsLoading,
-    TResult Function(T data)? requestDesignDetailsSuccess,
+    TResult Function(RequestDesignProjectDetailsResponseModel data)?
+        requestDesignDetailsSuccess,
     TResult Function(String error)? requestDesignDetailsFailure,
     required TResult orElse(),
   }) {
