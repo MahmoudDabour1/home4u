@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:home4u/features/projects_filter/logic/asks/asks_cubit.dart';
 import 'package:home4u/features/projects_filter/logic/project_details/project_details_cubit.dart';
+import 'package:home4u/features/projects_filter/presentation/widgets/ask_technical_worker_widgets/ask_technical_project_details_asks_bloc_builder.dart';
 import 'package:home4u/features/projects_filter/presentation/project_details_app_bar.dart';
 import 'package:home4u/features/projects_filter/presentation/widgets/ask_technical_worker_widgets/ask_technical_project_details_bloc_builder.dart';
 
@@ -23,6 +25,10 @@ class _AskTechnicalProjectDetailsScreenState
     context
         .read<ProjectDetailsCubit>()
         .getAskTechnicalServiceDetails(widget.askId.toString());
+
+    context.read<AsksCubit>().getTechnicalAsks(
+          widget.askId.toString(),
+        );
   }
 
   @override
@@ -36,7 +42,13 @@ class _AskTechnicalProjectDetailsScreenState
               horizontal: 24.w,
               vertical: 16.h,
             ),
-            child: AskTechnicalProjectDetailsBlocBuilder(),
+            child: Column(
+              spacing: 32.h,
+              children: [
+                AskTechnicalProjectDetailsBlocBuilder(),
+                AskTechnicalProjectDetailsAsksBlocBuilder(),
+              ],
+            ),
           ),
         ),
       ),

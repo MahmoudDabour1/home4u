@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_localization/flutter_localization.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:home4u/core/theming/app_styles.dart';
 import 'package:home4u/core/widgets/app_custom_loading_indicator.dart';
 import 'package:home4u/features/projects_filter/logic/project_details/project_details_cubit.dart';
 import 'package:home4u/features/projects_filter/logic/project_details/project_details_state.dart';
@@ -34,6 +35,8 @@ class AskTechnicalProjectDetailsBlocBuilder extends StatelessWidget {
           askTechnicalDetailsSuccess: (data) {
             final askTechnical = data.data;
             return Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              spacing: 32.h,
               children: [
                 Container(
                   width: MediaQuery.sizeOf(context).width,
@@ -85,7 +88,13 @@ class AskTechnicalProjectDetailsBlocBuilder extends StatelessWidget {
                       ],
                     ),
                   ),
-                )
+                ),
+                askTechnical.requestCount == 0
+                    ? SizedBox.shrink()
+                    : Text(
+                        "${AppLocale.offersCount.getString(context)} (${(askTechnical.requestCount ?? 0).toString()})",
+                        style: AppStyles.font16BlackMedium,
+                      ),
               ],
             );
           },

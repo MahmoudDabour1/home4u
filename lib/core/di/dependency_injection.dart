@@ -40,9 +40,12 @@ import 'package:home4u/features/profile/data/repos/projects_repo.dart';
 import 'package:home4u/features/profile/data/repos/services_repository.dart';
 import 'package:home4u/features/profile/logic/certifications/certifications_cubit.dart';
 import 'package:home4u/features/profile/logic/project/project_cubit.dart';
+import 'package:home4u/features/projects_filter/data/data_source/asks/asks_remote_data_source.dart';
 import 'package:home4u/features/projects_filter/data/data_source/project_details/project_details_remote_data_source.dart';
 import 'package:home4u/features/projects_filter/data/data_source/projects_filter/projects_filter_remote_data_source.dart';
+import 'package:home4u/features/projects_filter/data/repository/asks_repository.dart';
 import 'package:home4u/features/projects_filter/data/repository/projects_filter_repository.dart';
+import 'package:home4u/features/projects_filter/logic/asks/asks_cubit.dart';
 import 'package:home4u/features/projects_filter/logic/project_details/project_details_cubit.dart';
 import 'package:home4u/features/rating/data/data_source/product_rating_remote_data_source.dart';
 import 'package:home4u/features/rating/data/repository/product_rating_repository.dart';
@@ -316,4 +319,11 @@ Future<void> setupGetIt() async {
       () => ServicesProjectDetailsRepositoryImpl(sl()));
 
   sl.registerFactory<ProjectDetailsCubit>(() => ProjectDetailsCubit(sl()));
+
+  ///Project-Details-Asks
+  sl.registerLazySingleton<AsksRemoteDataSource>(
+      () => AsksRemoteDataSource(dio));
+
+  sl.registerLazySingleton<AsksRepository>(() => AsksRepositoryImpl(sl()));
+  sl.registerFactory<AsksCubit>(() => AsksCubit(sl()));
 }

@@ -127,6 +127,9 @@ class ApiConstants {
   static const String requestDesignDetailsEp = "/api/v1/request-design/{requestId}";
   static const String renovateHouseFixedPackageDetailsEp = "/api/v1/custom-package/{packageId}";
   static const String furnishYourHomeDetailsEp = "/api/v1/home-furnishing-requests/{furnishId}";
+
+  ///Asks
+  static const String technicalAsksEp = "/api/v1/request-ask-worker/my-asks";
 }
 
 class ApiErrors {
