@@ -1,5 +1,7 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 
+import '../base/user_base_model.dart';
+
 part  'renovate_house_fixed_package_filter_response_model.g.dart';
 
 @JsonSerializable()
@@ -9,7 +11,7 @@ class RenovateHouseFixedPackageFilterResponseModel {
   @JsonKey(name: "status")
   final int? status;
   @JsonKey(name: "data")
-  final Data? data;
+  final RenovateHouseFixedPackageData? data;
 
   RenovateHouseFixedPackageFilterResponseModel({
     this.success,
@@ -26,7 +28,7 @@ class RenovateHouseFixedPackageFilterResponseModel {
 }
 
 @JsonSerializable()
-class Data {
+class RenovateHouseFixedPackageData {
   @JsonKey(name: "content")
   final List<RenovateHouseCustomPackageContent>? content;
   @JsonKey(name: "pageable")
@@ -50,7 +52,7 @@ class Data {
   @JsonKey(name: "empty")
   final bool? empty;
 
-  Data({
+  RenovateHouseFixedPackageData({
     this.content,
     this.pageable,
     this.totalPages,
@@ -64,9 +66,10 @@ class Data {
     this.empty,
   });
 
-  factory Data.fromJson(Map<String, dynamic> json) => _$DataFromJson(json);
+  factory RenovateHouseFixedPackageData. fromJson(Map<String, dynamic> json) =>
+      _$RenovateHouseFixedPackageDataFromJson(json);
 
-  Map<String, dynamic> toJson() => _$DataToJson(this);
+  Map<String, dynamic> toJson() => _$RenovateHouseFixedPackageDataToJson(this);
 }
 
 @JsonSerializable()
@@ -75,6 +78,16 @@ class RenovateHouseCustomPackageContent {
   final int? id;
   @JsonKey(name: "statusCode")
   final int? statusCode;
+  @JsonKey(name: "user")
+  final UserBaseModel? user;
+  @JsonKey(name: "requestCount")
+  final int? requestCount;
+  @JsonKey(name: "askStatus")
+  final String? askStatus;
+  @JsonKey(name: "createdDate")
+  final DateTime? createdDate;
+  @JsonKey(name: "modifiedDate")
+  final DateTime? modifiedDate;
   @JsonKey(name: "phoneNumber")
   final String? phoneNumber;
   @JsonKey(name: "isInsideCompound")
@@ -91,6 +104,11 @@ class RenovateHouseCustomPackageContent {
     this.isInsideCompound,
     this.unitType,
     this.customPackage,
+    this.user,
+    this.requestCount,
+    this.askStatus,
+    this.createdDate,
+    this.modifiedDate,
   });
 
   factory RenovateHouseCustomPackageContent.fromJson(

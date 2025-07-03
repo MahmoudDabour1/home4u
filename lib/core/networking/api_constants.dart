@@ -119,6 +119,14 @@ class ApiConstants {
   static const String requestDesignFilterEp = "/api/v1/request-design/filter";
   static const String askTechnicalWorkerFilterEp = "/api/v1/ask-worker/filter";
   static const String askEngineerFilterEp = "/api/v1/ask-engineer/filter";
+
+  ///Projects Details
+  static const String askTechnicalServiceDetailsEp = "/api/v1/ask-worker/{askId}";
+  static const String askEngineerServiceDetailsEp = "/api/v1/ask-engineer/{askId}";
+  static const String renovateHouseDetailsEp = "/api/v1/home-renovate/{renovateId}";
+  static const String requestDesignDetailsEp = "/api/v1/request-design/{requestId}";
+  static const String renovateHouseFixedPackageDetailsEp = "/api/v1/custom-package/{packageId}";
+  static const String furnishYourHomeDetailsEp = "/api/v1/home-furnishing-requests/{furnishId}";
 }
 
 class ApiErrors {

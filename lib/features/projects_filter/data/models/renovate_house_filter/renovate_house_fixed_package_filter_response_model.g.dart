@@ -14,7 +14,8 @@ RenovateHouseFixedPackageFilterResponseModel
           status: (json['status'] as num?)?.toInt(),
           data: json['data'] == null
               ? null
-              : Data.fromJson(json['data'] as Map<String, dynamic>),
+              : RenovateHouseFixedPackageData.fromJson(
+                  json['data'] as Map<String, dynamic>),
         );
 
 Map<String, dynamic> _$RenovateHouseFixedPackageFilterResponseModelToJson(
@@ -25,7 +26,9 @@ Map<String, dynamic> _$RenovateHouseFixedPackageFilterResponseModelToJson(
       'data': instance.data,
     };
 
-Data _$DataFromJson(Map<String, dynamic> json) => Data(
+RenovateHouseFixedPackageData _$RenovateHouseFixedPackageDataFromJson(
+        Map<String, dynamic> json) =>
+    RenovateHouseFixedPackageData(
       content: (json['content'] as List<dynamic>?)
           ?.map((e) => RenovateHouseCustomPackageContent.fromJson(
               e as Map<String, dynamic>))
@@ -46,7 +49,9 @@ Data _$DataFromJson(Map<String, dynamic> json) => Data(
       empty: json['empty'] as bool?,
     );
 
-Map<String, dynamic> _$DataToJson(Data instance) => <String, dynamic>{
+Map<String, dynamic> _$RenovateHouseFixedPackageDataToJson(
+        RenovateHouseFixedPackageData instance) =>
+    <String, dynamic>{
       'content': instance.content,
       'pageable': instance.pageable,
       'totalPages': instance.totalPages,
@@ -74,6 +79,17 @@ RenovateHouseCustomPackageContent _$RenovateHouseCustomPackageContentFromJson(
           ? null
           : CustomPackage.fromJson(
               json['customPackage'] as Map<String, dynamic>),
+      user: json['user'] == null
+          ? null
+          : UserBaseModel.fromJson(json['user'] as Map<String, dynamic>),
+      requestCount: (json['requestCount'] as num?)?.toInt(),
+      askStatus: json['askStatus'] as String?,
+      createdDate: json['createdDate'] == null
+          ? null
+          : DateTime.parse(json['createdDate'] as String),
+      modifiedDate: json['modifiedDate'] == null
+          ? null
+          : DateTime.parse(json['modifiedDate'] as String),
     );
 
 Map<String, dynamic> _$RenovateHouseCustomPackageContentToJson(
@@ -81,6 +97,11 @@ Map<String, dynamic> _$RenovateHouseCustomPackageContentToJson(
     <String, dynamic>{
       'id': instance.id,
       'statusCode': instance.statusCode,
+      'user': instance.user,
+      'requestCount': instance.requestCount,
+      'askStatus': instance.askStatus,
+      'createdDate': instance.createdDate?.toIso8601String(),
+      'modifiedDate': instance.modifiedDate?.toIso8601String(),
       'phoneNumber': instance.phoneNumber,
       'isInsideCompound': instance.isInsideCompound,
       'unitType': instance.unitType,

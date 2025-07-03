@@ -1,5 +1,7 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 
+import '../../base/user_base_model.dart';
+
 part 'ask_engineer_filter_response_model.g.dart';
 
 @JsonSerializable()
@@ -73,6 +75,10 @@ class AskEngineerContent {
   final int? id;
   @JsonKey(name: "statusCode")
   final int? statusCode;
+  @JsonKey(name: "createdDate")
+  final DateTime? createdDate;
+  @JsonKey(name: "modifiedDate")
+  final DateTime? modifiedDate;
   @JsonKey(name: "phoneNumber")
   final String? phoneNumber;
   @JsonKey(name: "projectName")
@@ -95,6 +101,12 @@ class AskEngineerContent {
   final DateTime? deadline;
   @JsonKey(name: "photos")
   final List<Photo>? photos;
+  @JsonKey(name: "user")
+  final UserBaseModel? user;
+  @JsonKey(name: "requestCount")
+  final int? requestCount;
+  @JsonKey(name: "askStatus")
+  final String? askStatus;
 
   AskEngineerContent({
     this.id,
@@ -110,6 +122,11 @@ class AskEngineerContent {
     this.urgencyLevel,
     this.deadline,
     this.photos,
+    this.createdDate,
+    this.modifiedDate,
+    this.user,
+    this.requestCount,
+    this.askStatus,
   });
 
   factory AskEngineerContent.fromJson(Map<String, dynamic> json) =>

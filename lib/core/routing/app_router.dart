@@ -56,7 +56,7 @@ import '../../features/profile/presentation/add_project_screen.dart';
 import '../../features/profile/presentation/edit_profile_screen.dart';
 import '../../features/profile/presentation/profile_screen.dart';
 import '../../features/profile/presentation/project_details_screen.dart';
-import '../../features/projects_filter/logic/projects_filter_cubit.dart';
+import '../../features/projects_filter/logic/projects_filter/projects_filter_cubit.dart';
 import '../../features/projects_filter/presentation/projects_filter_screen.dart';
 import '../../features/rating/presentation/products_rating_screen.dart';
 import '../../features/rating/presentation/single_product_rating_screen.dart';

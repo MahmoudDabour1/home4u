@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:home4u/features/projects_filter/data/models/ask_filter/ask_technical_worker_filter_response_model.dart';
+import 'package:home4u/features/projects_filter/data/models/ask_filter/technical/ask_technical_worker_filter_response_model.dart';
 
 import '../../../../../core/utils/app_constants.dart';
 import '../filter_image_and_name_widget.dart';

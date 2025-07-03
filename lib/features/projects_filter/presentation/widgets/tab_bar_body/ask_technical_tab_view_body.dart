@@ -3,8 +3,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:home4u/features/projects_filter/presentation/widgets/ask_technical_worker_widgets/ask_technical_tab_view_item.dart';
 
 import '../../../../../core/utils/spacing.dart';
-import '../../../logic/projects_filter_cubit.dart';
-import '../../../logic/projects_filter_state.dart';
+import '../../../logic/projects_filter/projects_filter_cubit.dart';
+import '../../../logic/projects_filter/projects_filter_state.dart';
 
 class AskTechnicalTabViewBody extends StatefulWidget {
   const AskTechnicalTabViewBody({super.key});

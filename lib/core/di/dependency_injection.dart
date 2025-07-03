@@ -40,7 +40,7 @@ import 'package:home4u/features/profile/data/repos/projects_repo.dart';
 import 'package:home4u/features/profile/data/repos/services_repository.dart';
 import 'package:home4u/features/profile/logic/certifications/certifications_cubit.dart';
 import 'package:home4u/features/profile/logic/project/project_cubit.dart';
-import 'package:home4u/features/projects_filter/data/data_source/projects_filter_remote_data_source.dart';
+import 'package:home4u/features/projects_filter/data/data_source/projects_filter/projects_filter_remote_data_source.dart';
 import 'package:home4u/features/projects_filter/data/repository/projects_filter_repository.dart';
 import 'package:home4u/features/rating/data/data_source/product_rating_remote_data_source.dart';
 import 'package:home4u/features/rating/data/repository/product_rating_repository.dart';
@@ -73,7 +73,7 @@ import '../../features/profile/data/data_sources/projects_local_data_source.dart
 import '../../features/profile/data/repos/profile_repo.dart';
 import '../../features/profile/logic/profile/profile_cubit.dart';
 import '../../features/profile/logic/services/services_cubit.dart';
-import '../../features/projects_filter/logic/projects_filter_cubit.dart';
+import '../../features/projects_filter/logic/projects_filter/projects_filter_cubit.dart';
 import '../../features/rating/logic/product_rating/product_rating_cubit.dart';
 import '../../features/user/renovate_your_house/data/data_source/renovate_your_house_local_data_source.dart';
 import '../../features/user/renovate_your_house/data/data_source/renovate_your_house_remote_data_source.dart';

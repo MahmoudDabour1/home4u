@@ -87,12 +87,25 @@ AskEngineerContent _$AskEngineerContentFromJson(Map<String, dynamic> json) =>
       photos: (json['photos'] as List<dynamic>?)
           ?.map((e) => Photo.fromJson(e as Map<String, dynamic>))
           .toList(),
+      createdDate: json['createdDate'] == null
+          ? null
+          : DateTime.parse(json['createdDate'] as String),
+      modifiedDate: json['modifiedDate'] == null
+          ? null
+          : DateTime.parse(json['modifiedDate'] as String),
+      user: json['user'] == null
+          ? null
+          : UserBaseModel.fromJson(json['user'] as Map<String, dynamic>),
+      requestCount: (json['requestCount'] as num?)?.toInt(),
+      askStatus: json['askStatus'] as String?,
     );
 
 Map<String, dynamic> _$AskEngineerContentToJson(AskEngineerContent instance) =>
     <String, dynamic>{
       'id': instance.id,
       'statusCode': instance.statusCode,
+      'createdDate': instance.createdDate?.toIso8601String(),
+      'modifiedDate': instance.modifiedDate?.toIso8601String(),
       'phoneNumber': instance.phoneNumber,
       'projectName': instance.projectName,
       'projectDescription': instance.projectDescription,
@@ -104,6 +117,9 @@ Map<String, dynamic> _$AskEngineerContentToJson(AskEngineerContent instance) =>
       'urgencyLevel': instance.urgencyLevel,
       'deadline': instance.deadline?.toIso8601String(),
       'photos': instance.photos,
+      'user': instance.user,
+      'requestCount': instance.requestCount,
+      'askStatus': instance.askStatus,
     };
 
 City _$CityFromJson(Map<String, dynamic> json) => City(

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../../../core/theming/app_colors.dart';
-import '../../../data/models/ask_filter/ask_technical_worker_filter_response_model.dart';
+import '../../../data/models/ask_filter/technical/ask_technical_worker_filter_response_model.dart';
 import '../filter_offer_badge_widget.dart';
 import 'ask_technical_tab_view_content.dart';
 

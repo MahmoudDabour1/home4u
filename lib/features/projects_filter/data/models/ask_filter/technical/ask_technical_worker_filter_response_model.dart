@@ -1,4 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:home4u/features/projects_filter/data/models/base/user_base_model.dart';
 
 part 'ask_technical_worker_filter_response_model.g.dart';
 
@@ -100,7 +101,7 @@ class AskTechnicalContent {
   @JsonKey(name: "photos")
   final List<Photo>? photos;
   @JsonKey(name: "user")
-  final User? user;
+  final UserBaseModel? user;
   @JsonKey(name: "requestCount")
   final int? requestCount;
   @JsonKey(name: "askStatus")
@@ -170,53 +171,6 @@ class Photo {
   factory Photo.fromJson(Map<String, dynamic> json) => _$PhotoFromJson(json);
 
   Map<String, dynamic> toJson() => _$PhotoToJson(this);
-}
-
-@JsonSerializable()
-class User {
-  @JsonKey(name: "id")
-  final int? id;
-  @JsonKey(name: "statusCode")
-  final int? statusCode;
-  @JsonKey(name: "createdDate")
-  final DateTime? createdDate;
-  @JsonKey(name: "modifiedDate")
-  final DateTime? modifiedDate;
-  @JsonKey(name: "username")
-  final String? username;
-  @JsonKey(name: "email")
-  final String? email;
-  @JsonKey(name: "phone")
-  final String? phone;
-  @JsonKey(name: "userType")
-  final Type? userType;
-  @JsonKey(name: "governorate")
-  final City? governorate;
-  @JsonKey(name: "city")
-  final City? city;
-  @JsonKey(name: "business")
-  final String? business;
-  @JsonKey(name: "personalPhoto")
-  final String? personalPhoto;
-
-  User({
-    this.id,
-    this.statusCode,
-    this.createdDate,
-    this.modifiedDate,
-    this.username,
-    this.email,
-    this.phone,
-    this.userType,
-    this.governorate,
-    this.city,
-    this.business,
-    this.personalPhoto,
-  });
-
-  factory User.fromJson(Map<String, dynamic> json) => _$UserFromJson(json);
-
-  Map<String, dynamic> toJson() => _$UserToJson(this);
 }
 
 @JsonSerializable()
