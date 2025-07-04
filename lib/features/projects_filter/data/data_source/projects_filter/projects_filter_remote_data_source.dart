@@ -8,10 +8,10 @@ import 'package:home4u/features/projects_filter/data/models/request_design_filte
 import 'package:retrofit/error_logger.dart';
 import 'package:retrofit/http.dart';
 
-import '../../../../core/networking/api_constants.dart';
-import '../models/ask_filter/ask_technical_worker_filter_body.dart';
-import '../models/ask_filter/ask_technical_worker_filter_response_model.dart';
-import '../models/renovate_house_filter/renovate_house_fixed_package_filter_response_model.dart';
+import '../../../../../core/networking/api_constants.dart';
+import '../../models/ask_filter/technical/ask_technical_worker_filter_body.dart';
+import '../../models/ask_filter/technical/ask_technical_worker_filter_response_model.dart';
+import '../../models/renovate_house_filter/renovate_house_fixed_package_filter_response_model.dart';
 
 part 'projects_filter_remote_data_source.g.dart';
 
@@ -31,10 +31,10 @@ abstract class ProjectsFilterRemoteDataSource {
   );
 
   @POST(ApiConstants.renovateHouseFixedPackageFilterEp)
-  Future<RenovateHouseFixedPackageFilterResponseModel> renovateHouseFixedPackageFilter(
-    @Body() Map<String,dynamic> fixedPackageBody,
+  Future<RenovateHouseFixedPackageFilterResponseModel>
+      renovateHouseFixedPackageFilter(
+    @Body() Map<String, dynamic> fixedPackageBody,
   );
-
 
   @POST(ApiConstants.requestDesignFilterEp)
   Future<RequestDesignFilterResponseModel> requestDesignFilter(

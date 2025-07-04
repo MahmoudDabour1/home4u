@@ -24,7 +24,7 @@ class RequestDesignTabViewItemContent extends StatelessWidget {
         children: [
           RequestDesignTabViewItemTitle(
             unitType: requestDesignItem.unitType?.name ?? 'N/A',
-            unitArea: requestDesignItem?.unitArea ?? 0,
+            unitArea: requestDesignItem.unitArea ?? 0,
           ),
           FilterImageAndNameWidget(),
           ServicesConstData(

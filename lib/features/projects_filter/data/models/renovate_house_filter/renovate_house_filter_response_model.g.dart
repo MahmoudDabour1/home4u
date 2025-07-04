@@ -91,6 +91,17 @@ RenovateHouseContent _$RenovateHouseContentFromJson(
       numberOfBathrooms: (json['numberOfBathrooms'] as num?)?.toInt(),
       requiredDuration: (json['requiredDuration'] as num?)?.toInt(),
       notes: json['notes'] as String?,
+      createdDate: json['createdDate'] == null
+          ? null
+          : DateTime.parse(json['createdDate'] as String),
+      modifiedDate: json['modifiedDate'] == null
+          ? null
+          : DateTime.parse(json['modifiedDate'] as String),
+      user: json['user'] == null
+          ? null
+          : UserBaseModel.fromJson(json['user'] as Map<String, dynamic>),
+      requestCount: (json['requestCount'] as num?)?.toInt(),
+      askStatus: json['askStatus'] as String?,
     );
 
 Map<String, dynamic> _$RenovateHouseContentToJson(
@@ -98,6 +109,8 @@ Map<String, dynamic> _$RenovateHouseContentToJson(
     <String, dynamic>{
       'id': instance.id,
       'statusCode': instance.statusCode,
+      'createdDate': instance.createdDate?.toIso8601String(),
+      'modifiedDate': instance.modifiedDate?.toIso8601String(),
       'phoneNumber': instance.phoneNumber,
       'isInsideCompound': instance.isInsideCompound,
       'unitType': instance.unitType,
@@ -113,6 +126,9 @@ Map<String, dynamic> _$RenovateHouseContentToJson(
       'numberOfBathrooms': instance.numberOfBathrooms,
       'requiredDuration': instance.requiredDuration,
       'notes': instance.notes,
+      'user': instance.user,
+      'requestCount': instance.requestCount,
+      'askStatus': instance.askStatus,
     };
 
 City _$CityFromJson(Map<String, dynamic> json) => City(

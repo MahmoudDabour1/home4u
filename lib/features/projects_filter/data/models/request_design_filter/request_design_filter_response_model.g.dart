@@ -77,6 +77,17 @@ RequestDesignFilterContent _$RequestDesignFilterContentFromJson(
       budget: (json['budget'] as num?)?.toInt(),
       requiredDuration: (json['requiredDuration'] as num?)?.toInt(),
       notes: json['notes'] as String?,
+      user: json['user'] == null
+          ? null
+          : UserBaseModel.fromJson(json['user'] as Map<String, dynamic>),
+      createdDate: json['createdDate'] == null
+          ? null
+          : DateTime.parse(json['createdDate'] as String),
+      modifiedDate: json['modifiedDate'] == null
+          ? null
+          : DateTime.parse(json['modifiedDate'] as String),
+      requestCount: (json['requestCount'] as num?)?.toInt(),
+      askStatus: json['askStatus'] as String?,
     );
 
 Map<String, dynamic> _$RequestDesignFilterContentToJson(
@@ -84,6 +95,8 @@ Map<String, dynamic> _$RequestDesignFilterContentToJson(
     <String, dynamic>{
       'id': instance.id,
       'statusCode': instance.statusCode,
+      'createdDate': instance.createdDate?.toIso8601String(),
+      'modifiedDate': instance.modifiedDate?.toIso8601String(),
       'phoneNumber': instance.phoneNumber,
       'unitType': instance.unitType,
       'governorate': instance.governorate,
@@ -91,6 +104,9 @@ Map<String, dynamic> _$RequestDesignFilterContentToJson(
       'budget': instance.budget,
       'requiredDuration': instance.requiredDuration,
       'notes': instance.notes,
+      'user': instance.user,
+      'requestCount': instance.requestCount,
+      'askStatus': instance.askStatus,
     };
 
 Governorate _$GovernorateFromJson(Map<String, dynamic> json) => Governorate(

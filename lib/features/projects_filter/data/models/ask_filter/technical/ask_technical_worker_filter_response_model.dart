@@ -1,4 +1,7 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:home4u/features/projects_filter/data/models/base/user_base_model.dart';
+
+import '../../base/photo_base_model.dart';
 
 part 'ask_technical_worker_filter_response_model.g.dart';
 
@@ -17,9 +20,12 @@ class AskTechnicalWorkerFilterResponseModel {
     this.data,
   });
 
-  factory AskTechnicalWorkerFilterResponseModel.fromJson(Map<String, dynamic> json) => _$AskTechnicalWorkerFilterResponseModelFromJson(json);
+  factory AskTechnicalWorkerFilterResponseModel.fromJson(
+          Map<String, dynamic> json) =>
+      _$AskTechnicalWorkerFilterResponseModelFromJson(json);
 
-  Map<String, dynamic> toJson() => _$AskTechnicalWorkerFilterResponseModelToJson(this);
+  Map<String, dynamic> toJson() =>
+      _$AskTechnicalWorkerFilterResponseModelToJson(this);
 }
 
 @JsonSerializable()
@@ -72,6 +78,10 @@ class AskTechnicalContent {
   final int? id;
   @JsonKey(name: "statusCode")
   final int? statusCode;
+  @JsonKey(name: "createdDate")
+  final DateTime? createdDate;
+  @JsonKey(name: "modifiedDate")
+  final DateTime? modifiedDate;
   @JsonKey(name: "projectName")
   final String? projectName;
   @JsonKey(name: "phoneNumber")
@@ -91,7 +101,13 @@ class AskTechnicalContent {
   @JsonKey(name: "budget")
   final int? budget;
   @JsonKey(name: "photos")
-  final List<Photo>? photos;
+  final List<PhotoBaseModel>? photos;
+  @JsonKey(name: "user")
+  final UserBaseModel? user;
+  @JsonKey(name: "requestCount")
+  final int? requestCount;
+  @JsonKey(name: "askStatus")
+  final String? askStatus;
 
   AskTechnicalContent({
     this.id,
@@ -106,9 +122,15 @@ class AskTechnicalContent {
     this.material,
     this.budget,
     this.photos,
+    this.createdDate,
+    this.modifiedDate,
+    this.user,
+    this.requestCount,
+    this.askStatus,
   });
 
-  factory AskTechnicalContent.fromJson(Map<String, dynamic> json) => _$AskTechnicalContentFromJson(json);
+  factory AskTechnicalContent.fromJson(Map<String, dynamic> json) =>
+      _$AskTechnicalContentFromJson(json);
 
   Map<String, dynamic> toJson() => _$AskTechnicalContentToJson(this);
 }
@@ -133,25 +155,6 @@ class City {
   Map<String, dynamic> toJson() => _$CityToJson(this);
 }
 
-@JsonSerializable()
-class Photo {
-  @JsonKey(name: "id")
-  final int? id;
-  @JsonKey(name: "askWorkerId")
-  final int? askWorkerId;
-  @JsonKey(name: "photoPath")
-  final String? photoPath;
-
-  Photo({
-    this.id,
-    this.askWorkerId,
-    this.photoPath,
-  });
-
-  factory Photo.fromJson(Map<String, dynamic> json) => _$PhotoFromJson(json);
-
-  Map<String, dynamic> toJson() => _$PhotoToJson(this);
-}
 
 @JsonSerializable()
 class Type {
@@ -203,7 +206,8 @@ class Pageable {
     this.unpaged,
   });
 
-  factory Pageable.fromJson(Map<String, dynamic> json) => _$PageableFromJson(json);
+  factory Pageable.fromJson(Map<String, dynamic> json) =>
+      _$PageableFromJson(json);
 
   Map<String, dynamic> toJson() => _$PageableToJson(this);
 }
@@ -227,4 +231,3 @@ class Sort {
 
   Map<String, dynamic> toJson() => _$SortToJson(this);
 }
-

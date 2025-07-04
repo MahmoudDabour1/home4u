@@ -1,4 +1,7 @@
 import 'package:json_annotation/json_annotation.dart';
+
+import '../base/user_base_model.dart';
+
 part 'renovate_house_filter_response_model.g.dart';
 
 @JsonSerializable()
@@ -74,6 +77,10 @@ class RenovateHouseContent {
   final int? id;
   @JsonKey(name: "statusCode")
   final int? statusCode;
+  @JsonKey(name: "createdDate")
+  final DateTime? createdDate;
+  @JsonKey(name: "modifiedDate")
+  final DateTime? modifiedDate;
   @JsonKey(name: "phoneNumber")
   final String? phoneNumber;
   @JsonKey(name: "isInsideCompound")
@@ -104,6 +111,12 @@ class RenovateHouseContent {
   final int? requiredDuration;
   @JsonKey(name: "notes")
   final String? notes;
+  @JsonKey(name: "user")
+  final UserBaseModel? user;
+  @JsonKey(name: "requestCount")
+  final int? requestCount;
+  @JsonKey(name: "askStatus")
+  final String? askStatus;
 
   RenovateHouseContent({
     this.id,
@@ -123,6 +136,11 @@ class RenovateHouseContent {
     this.numberOfBathrooms,
     this.requiredDuration,
     this.notes,
+    this.createdDate,
+    this.modifiedDate,
+    this.user,
+    this.requestCount,
+    this.askStatus,
   });
 
   factory RenovateHouseContent.fromJson(Map<String, dynamic> json) =>

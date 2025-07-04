@@ -9,6 +9,11 @@ class AppStyles {
     color: AppColors.blackColor,
     fontWeight: FontWeightHelper.medium,
   );
+  static TextStyle font18BlackMedium = TextStyle(
+    fontSize: 18.sp,
+    color: AppColors.blackColor,
+    fontWeight: FontWeightHelper.medium,
+  );
   static TextStyle font16BlackLight = TextStyle(
     fontSize: 16.sp,
     color: AppColors.blackColor,
@@ -18,7 +23,8 @@ class AppStyles {
     fontSize: 16.sp,
     color: AppColors.iconsColor,
     fontWeight: FontWeightHelper.light,
-  ); static TextStyle font16GrayMedium = TextStyle(
+  );
+  static TextStyle font16GrayMedium = TextStyle(
     fontSize: 16.sp,
     color: AppColors.iconsColor,
     fontWeight: FontWeightHelper.medium,
@@ -84,7 +90,8 @@ class AppStyles {
     fontSize: 24.sp,
     color: AppColors.blackColor,
     fontWeight: FontWeightHelper.medium,
-  ); static TextStyle font24BlackBold = TextStyle(
+  );
+  static TextStyle font24BlackBold = TextStyle(
     fontSize: 24.sp,
     color: AppColors.blackColor,
     fontWeight: FontWeightHelper.bold,

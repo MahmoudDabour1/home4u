@@ -21,7 +21,7 @@ class RequestDesignTabViewItem extends StatelessWidget {
               .width,
           height: MediaQuery
               .sizeOf(context)
-              .height * 0.31,
+              .height * 0.315,
           decoration: BoxDecoration(
             color: AppColors.containersColor,
             borderRadius: BorderRadius.circular(24.r),

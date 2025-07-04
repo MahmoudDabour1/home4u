@@ -59,4 +59,8 @@ abstract class Routes{
   ///Rating
   static const String singleProductRatingScreen = '/singleProductRatingScreen';
   static const String productsRatingScreen = '/productRatingScreen';
+
+
+  ///Project Services Details
+  static const String askTechnicalProjectDetailsScreen = '/askTechnicalProjectDetailsScreen';
 }

@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../../../../core/utils/spacing.dart';
-import '../../../logic/projects_filter_cubit.dart';
-import '../../../logic/projects_filter_state.dart';
+import '../../../logic/projects_filter/projects_filter_cubit.dart';
+import '../../../logic/projects_filter/projects_filter_state.dart';
 import '../request_design_widgets/request_design_tab_view_item.dart';
 
 class RequestDesignTabViewBody extends StatefulWidget {

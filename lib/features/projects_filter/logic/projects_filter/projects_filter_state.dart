@@ -1,7 +1,8 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 
-import '../data/models/renovate_house_filter/renovate_house_filter_response_model.dart';
-import '../data/models/request_design_filter/request_design_filter_response_model.dart';
+import '../../data/models/renovate_house_filter/renovate_house_filter_response_model.dart';
+import '../../data/models/request_design_filter/request_design_filter_response_model.dart';
+
 
 part 'projects_filter_state.freezed.dart';
 
