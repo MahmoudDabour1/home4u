@@ -26,7 +26,7 @@ class _AskTechnicalTabViewBodyState extends State<AskTechnicalTabViewBody> {
 
   void _loadInitialData() {
     final cubit = context.read<ProjectsFilterCubit>();
-    cubit.askTechnicalWorkerFilter();
+    cubit.askTechnicalWorkerFilter(isRefresh: true);
   }
 
   void _scrollListener() {
