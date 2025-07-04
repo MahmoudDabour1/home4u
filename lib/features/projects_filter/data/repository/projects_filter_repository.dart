@@ -3,9 +3,9 @@ import 'package:home4u/core/networking/api_result.dart';
 import 'package:home4u/features/projects_filter/data/models/ask_filter/engineer/ask_engineer_filter_body.dart';
 import 'package:home4u/features/projects_filter/data/models/ask_filter/engineer/ask_engineer_filter_response_model.dart';
 
-import '../data_source/projects_filter_remote_data_source.dart';
-import '../models/ask_filter/ask_technical_worker_filter_body.dart';
-import '../models/ask_filter/ask_technical_worker_filter_response_model.dart';
+import '../data_source/projects_filter/projects_filter_remote_data_source.dart';
+import '../models/ask_filter/technical/ask_technical_worker_filter_body.dart';
+import '../models/ask_filter/technical/ask_technical_worker_filter_response_model.dart';
 import '../models/renovate_house_filter/renovate_house_filter_body.dart';
 import '../models/renovate_house_filter/renovate_house_filter_response_model.dart';
 import '../models/renovate_house_filter/renovate_house_fixed_package_filter_response_model.dart';

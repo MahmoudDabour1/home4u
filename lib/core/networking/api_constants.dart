@@ -124,6 +124,17 @@ class ApiConstants {
   static const String topBestSellerEp = "/api/v1/products/top-best-seller";
   static const String highestRatedEp = "/api/v1/products/highest-rated";
   static const String recommendedForYouEp = "/api/v1/products/recommended-for-you?userId={userId}";
+
+  ///Projects Details
+  static const String askTechnicalServiceDetailsEp = "/api/v1/ask-worker/{askId}";
+  static const String askEngineerServiceDetailsEp = "/api/v1/ask-engineer/{askId}";
+  static const String renovateHouseDetailsEp = "/api/v1/home-renovate/{renovateId}";
+  static const String requestDesignDetailsEp = "/api/v1/request-design/{requestId}";
+  static const String renovateHouseFixedPackageDetailsEp = "/api/v1/custom-package/{packageId}";
+  static const String furnishYourHomeDetailsEp = "/api/v1/home-furnishing-requests/{furnishId}";
+
+  ///Asks
+  static const String technicalAsksEp = "/api/v1/request-ask-worker/my-asks";
 }
 
 class ApiErrors {

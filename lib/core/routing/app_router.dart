@@ -57,6 +57,7 @@ import '../../features/profile/presentation/add_project_screen.dart';
 import '../../features/profile/presentation/edit_profile_screen.dart';
 import '../../features/profile/presentation/profile_screen.dart';
 import '../../features/profile/presentation/project_details_screen.dart';
+import '../../features/projects_filter/presentation/ask_technical_project_details_screen.dart';
 import '../../features/projects_filter/presentation/projects_filter_screen.dart';
 import '../../features/rating/presentation/products_rating_screen.dart';
 import '../../features/rating/presentation/single_product_rating_screen.dart';
@@ -368,6 +369,13 @@ class AppRouter {
               product: args['product'] as Product,
             ),
           ),
+        );
+
+      case Routes.askTechnicalProjectDetailsScreen:
+        final askId = settings.arguments as int;
+        return MaterialPageRoute(
+          settings: settings,
+          builder: (_) => AskTechnicalProjectDetailsScreen(askId: askId),
         );
 
       case Routes.recommendedForYouScreen:

@@ -3,8 +3,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:home4u/features/projects_filter/presentation/widgets/renovate_house_widgets/renovate_house_tab_view_item.dart';
 
 import '../../../../../core/utils/spacing.dart';
-import '../../../logic/projects_filter_cubit.dart';
-import '../../../logic/projects_filter_state.dart';
+import '../../../logic/projects_filter/projects_filter_cubit.dart';
+import '../../../logic/projects_filter/projects_filter_state.dart';
 
 class RenovateHouseTabViewBody extends StatefulWidget {
   const RenovateHouseTabViewBody({super.key});

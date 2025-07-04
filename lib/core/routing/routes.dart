@@ -60,4 +60,8 @@ abstract class Routes{
   static const String singleProductRatingScreen = '/singleProductRatingScreen';
   static const String productsRatingScreen = '/productRatingScreen';
   static const String recommendedForYouScreen = '/RecommendedForYouScreen';
+
+
+  ///Project Services Details
+  static const String askTechnicalProjectDetailsScreen = '/askTechnicalProjectDetailsScreen';
 }

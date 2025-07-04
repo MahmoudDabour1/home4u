@@ -1,17 +1,17 @@
 import 'package:bloc/bloc.dart';
-import 'package:home4u/features/projects_filter/data/models/ask_filter/ask_technical_worker_filter_body.dart';
-import 'package:home4u/features/projects_filter/data/models/ask_filter/ask_technical_worker_filter_response_model.dart';
+import 'package:home4u/features/projects_filter/data/models/ask_filter/technical/ask_technical_worker_filter_response_model.dart';
 import 'package:home4u/features/projects_filter/data/models/ask_filter/engineer/ask_engineer_filter_body.dart';
 import 'package:home4u/features/projects_filter/data/models/ask_filter/engineer/ask_engineer_filter_response_model.dart';
 import 'package:home4u/features/projects_filter/data/repository/projects_filter_repository.dart';
-import 'package:home4u/features/projects_filter/logic/projects_filter_state.dart';
+import 'package:home4u/features/projects_filter/logic/projects_filter/projects_filter_state.dart';
 
-import '../../../core/routing/router_observer.dart';
-import '../data/models/renovate_house_filter/renovate_house_filter_body.dart';
-import '../data/models/renovate_house_filter/renovate_house_filter_response_model.dart';
-import '../data/models/renovate_house_filter/renovate_house_fixed_package_filter_response_model.dart';
-import '../data/models/request_design_filter/request_design_filter_body.dart';
-import '../data/models/request_design_filter/request_design_filter_response_model.dart';
+import '../../../../core/routing/router_observer.dart';
+import '../../data/models/ask_filter/technical/ask_technical_worker_filter_body.dart';
+import '../../data/models/renovate_house_filter/renovate_house_filter_body.dart';
+import '../../data/models/renovate_house_filter/renovate_house_filter_response_model.dart';
+import '../../data/models/renovate_house_filter/renovate_house_fixed_package_filter_response_model.dart';
+import '../../data/models/request_design_filter/request_design_filter_body.dart';
+import '../../data/models/request_design_filter/request_design_filter_response_model.dart';
 
 class ProjectsFilterCubit extends Cubit<ProjectsFilterState> {
   ProjectsFilterRepository projectsFilterRepository;

@@ -54,7 +54,9 @@ class AppLocale {
   static const String confirm = 'Confirm';
   static const String orContinueWith = 'Or Continue with';
   static const String theGovernorate = 'The Governorate';
+  static const String governorate  = 'Governorate';
   static const String theCity = 'The City';
+  static const String city = 'City';
   static const String chooseYourAccountType = 'Choose your account type';
   static const String welcomeToArchiSpace = 'Welcome to ArchiSpace';
   static const String engineeringOffice = 'Engineering Office';
@@ -396,6 +398,14 @@ class AppLocale {
   static const String recommendedForYou = 'Recommended For You';
   static const String on = 'on';
 
+  ///Project Services
+  static const String projectDetails = 'Project Details';
+  static const String workNeeded = 'Work Needed';
+  static const String finishType = 'Finish Type';
+  static const String neededSkills = 'Needed Skills';
+  static const String offersCount = 'Offers Count';
+  static const String projectImages = 'Project Images';
+
   static const Map<String, dynamic> en = {
     onBoardingTitle1: 'Civil Works & Finishing Services',
     onBoardingTitle2: 'Engineering & Design Support',
@@ -726,6 +736,14 @@ class AppLocale {
     egp: 'EGP ',
     specifications: 'Specifications',
     express: 'express',
+    projectDetails: 'Project Details',
+    workNeeded: 'Work Needed',
+    finishType: 'Finish Type',
+    neededSkills: 'Needed Skills',
+    offersCount: 'Offers Count',
+    governorate : 'Governorate',
+    city : 'City',
+    projectImages: 'Project Images',
     recommendedForYou: 'Recommended For You',
     on: 'on',
   };
@@ -1056,6 +1074,14 @@ class AppLocale {
     egp: 'جنيه مصري ',
     specifications: 'المواصفات',
     express: 'سريع',
+    projectDetails: 'تفاصيل المشروع',
+    workNeeded: 'الأعمال المطلوبة',
+    finishType: 'نوع التشطيب',
+    neededSkills: 'المهارات المطلوبة',
+    offersCount: 'عدد العروض',
+    governorate: 'المحافظة',
+    city: 'المدينة',
+    projectImages: 'صور المشروع',
     recommendedForYou: 'موصى به لك',
     on: 'فى',
   };

@@ -1,5 +1,7 @@
 import 'package:json_annotation/json_annotation.dart';
 
+import '../base/user_base_model.dart';
+
 part 'request_design_filter_response_model.g.dart';
 
 @JsonSerializable()
@@ -17,10 +19,12 @@ class RequestDesignFilterResponseModel {
     this.data,
   });
 
-  factory RequestDesignFilterResponseModel.fromJson(Map<String, dynamic> json) =>
+  factory RequestDesignFilterResponseModel.fromJson(
+          Map<String, dynamic> json) =>
       _$RequestDesignFilterResponseModelFromJson(json);
 
-  Map<String, dynamic> toJson() => _$RequestDesignFilterResponseModelToJson(this);
+  Map<String, dynamic> toJson() =>
+      _$RequestDesignFilterResponseModelToJson(this);
 }
 
 @JsonSerializable()
@@ -74,6 +78,10 @@ class RequestDesignFilterContent {
   final int? id;
   @JsonKey(name: "statusCode")
   final int? statusCode;
+  @JsonKey(name: "createdDate")
+  final DateTime? createdDate;
+  @JsonKey(name: "modifiedDate")
+  final DateTime? modifiedDate;
   @JsonKey(name: "phoneNumber")
   final String? phoneNumber;
   @JsonKey(name: "unitType")
@@ -88,6 +96,12 @@ class RequestDesignFilterContent {
   final int? requiredDuration;
   @JsonKey(name: "notes")
   final String? notes;
+  @JsonKey(name: "user")
+  final UserBaseModel? user;
+  @JsonKey(name: "requestCount")
+  final int? requestCount;
+  @JsonKey(name: "askStatus")
+  final String? askStatus;
 
   RequestDesignFilterContent({
     this.id,
@@ -99,10 +113,16 @@ class RequestDesignFilterContent {
     this.budget,
     this.requiredDuration,
     this.notes,
+    this.user,
+    this.createdDate,
+    this.modifiedDate,
+    this.requestCount,
+    this.askStatus,
   });
 
   factory RequestDesignFilterContent.fromJson(Map<String, dynamic> json) =>
       _$RequestDesignFilterContentFromJson(json);
+
   Map<String, dynamic> toJson() => _$RequestDesignFilterContentToJson(this);
 }
 

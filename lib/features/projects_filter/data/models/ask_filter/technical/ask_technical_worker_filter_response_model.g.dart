@@ -83,8 +83,19 @@ AskTechnicalContent _$AskTechnicalContentFromJson(Map<String, dynamic> json) =>
           : City.fromJson(json['material'] as Map<String, dynamic>),
       budget: (json['budget'] as num?)?.toInt(),
       photos: (json['photos'] as List<dynamic>?)
-          ?.map((e) => Photo.fromJson(e as Map<String, dynamic>))
+          ?.map((e) => PhotoBaseModel.fromJson(e as Map<String, dynamic>))
           .toList(),
+      createdDate: json['createdDate'] == null
+          ? null
+          : DateTime.parse(json['createdDate'] as String),
+      modifiedDate: json['modifiedDate'] == null
+          ? null
+          : DateTime.parse(json['modifiedDate'] as String),
+      user: json['user'] == null
+          ? null
+          : UserBaseModel.fromJson(json['user'] as Map<String, dynamic>),
+      requestCount: (json['requestCount'] as num?)?.toInt(),
+      askStatus: json['askStatus'] as String?,
     );
 
 Map<String, dynamic> _$AskTechnicalContentToJson(
@@ -92,6 +103,8 @@ Map<String, dynamic> _$AskTechnicalContentToJson(
     <String, dynamic>{
       'id': instance.id,
       'statusCode': instance.statusCode,
+      'createdDate': instance.createdDate?.toIso8601String(),
+      'modifiedDate': instance.modifiedDate?.toIso8601String(),
       'projectName': instance.projectName,
       'phoneNumber': instance.phoneNumber,
       'projectDescription': instance.projectDescription,
@@ -102,6 +115,9 @@ Map<String, dynamic> _$AskTechnicalContentToJson(
       'material': instance.material,
       'budget': instance.budget,
       'photos': instance.photos,
+      'user': instance.user,
+      'requestCount': instance.requestCount,
+      'askStatus': instance.askStatus,
     };
 
 City _$CityFromJson(Map<String, dynamic> json) => City(
@@ -114,18 +130,6 @@ Map<String, dynamic> _$CityToJson(City instance) => <String, dynamic>{
       'id': instance.id,
       'code': instance.code,
       'name': instance.name,
-    };
-
-Photo _$PhotoFromJson(Map<String, dynamic> json) => Photo(
-      id: (json['id'] as num?)?.toInt(),
-      askWorkerId: (json['askWorkerId'] as num?)?.toInt(),
-      photoPath: json['photoPath'] as String?,
-    );
-
-Map<String, dynamic> _$PhotoToJson(Photo instance) => <String, dynamic>{
-      'id': instance.id,
-      'askWorkerId': instance.askWorkerId,
-      'photoPath': instance.photoPath,
     };
 
 Type _$TypeFromJson(Map<String, dynamic> json) => Type(
