@@ -1,16 +1,17 @@
 class AppLocale {
-  static const String onBoardingTitle1 = 'Civil works and finishing services';
-  static const String onBoardingTitle2 = 'Civil works and finishing services 2';
-  static const String onBoardingTitle3 = 'Civil works and finishing services 3';
-  static const String onBoardingTitle4 = 'Civil works and finishing services 4';
+  static const String onBoardingTitle1 = 'Civil Works & Finishing Services';
+  static const String onBoardingTitle2 = 'Engineering & Design Support';
+  static const String onBoardingTitle3 = 'Flexible Service Plans';
+  static const String onBoardingTitle4 = 'Get Started Today';
 
   static const String onBoardingDescription1 =
-      'Comprehensive services including civil works and finishing, with engineering consultations and 2D and 3D designs, in addition to free and paid services through our platform.';
+      'Comprehensive solutions with engineering consultations, 2D/3D designs, and free/paid platform services';
   static const String onBoardingDescription2 =
-      'Comprehensive services including civil works and finishing, with engineering consultations and 2D and 3D designs, in addition to free and paid services through our platform. 2';
+      'Expert consultations and precision 2D/3D designs for seamless project execution';
   static const String onBoardingDescription3 =
-      'Comprehensive services including civil works and finishing, with engineering consultations and 2D and 3D designs, in addition to free and paid services through our platform. 3';
-  static const String onBoardingDescription4 = '';
+      'Access free and premium services through our dedicated platform';
+  static const String onBoardingDescription4 =
+      ' Create an account or log in to access all features';
   static const String startButton = 'Start';
   static const String nextButton = 'Next';
   static const String skipButton = 'Skip';
@@ -392,19 +393,22 @@ class AppLocale {
   static const String egp = 'EGP ';
   static const String specifications = 'Specifications';
   static const String express = 'express';
+  static const String recommendedForYou = 'Recommended For You';
+  static const String on = 'on';
 
   static const Map<String, dynamic> en = {
-    onBoardingTitle1: 'Civil works and finishing services',
-    onBoardingTitle2: 'Civil works and finishing services 2',
-    onBoardingTitle3: 'Civil works and finishing services 3',
-    onBoardingTitle4: 'Civil works and finishing services 4',
+    onBoardingTitle1: 'Civil Works & Finishing Services',
+    onBoardingTitle2: 'Engineering & Design Support',
+    onBoardingTitle3: 'Flexible Service Plans',
+    onBoardingTitle4: 'Get Started Today',
     onBoardingDescription1:
-        'Comprehensive services including civil works and finishing, with engineering consultations and 2D and 3D designs, in addition to free and paid services through our platform.',
+        'Comprehensive solutions with engineering consultations, 2D/3D designs, and free/paid platform services',
     onBoardingDescription2:
-        'Comprehensive services including civil works and finishing, with engineering consultations and 2D and 3D designs, in addition to free and paid services through our platform. 2',
+        'Expert consultations and precision 2D/3D designs for seamless project execution',
     onBoardingDescription3:
-        'Comprehensive services including civil works and finishing, with engineering consultations and 2D and 3D designs, in addition to free and paid services through our platform. 3',
-    onBoardingDescription4: '',
+        'Access free and premium services through our dedicated platform',
+    onBoardingDescription4:
+        ' Create an account or log in to access all features',
     toggleLanguage: 'en',
     startButton: 'Start',
     nextButton: 'Next',
@@ -722,20 +726,22 @@ class AppLocale {
     egp: 'EGP ',
     specifications: 'Specifications',
     express: 'express',
+    recommendedForYou: 'Recommended For You',
+    on: 'on',
   };
 
   static const Map<String, dynamic> ar = {
-    onBoardingTitle1: 'خدمات الأعمال المدنية والتشطيب',
-    onBoardingTitle2: 'خدمات الأعمال المدنية والتشطيب 2',
-    onBoardingTitle3: 'خدمات الأعمال المدنية والتشطيب 3',
-    onBoardingTitle4: 'خدمات الأعمال المدنية والتشطيب 4',
+    onBoardingTitle1: 'أعمال مدنية وخدمات تشطيب',
+    onBoardingTitle2: 'دعم هندسي وتصميم',
+    onBoardingTitle3: 'خطط خدمات مرنة',
+    onBoardingTitle4: 'ابدأ اليوم',
     onBoardingDescription1:
-        'خدمات شاملة تشمل الأعمال المدنية والتشطيب، مع استشارات هندسية وتصاميم ثنائية وثلاثية الأبعاد، بالإضافة إلى خدمات مجانية ومدفوعة عبر منصتنا.',
+        'حلول شاملة مع استشارات هندسية وتصاميم ثنائية وثلاثية الأبعاد وخدمات مجانية ومدفوعة على المنصة',
     onBoardingDescription2:
-        'خدمات شاملة تشمل الأعمال المدنية والتشطيب، مع استشارات هندسية وتصاميم ثنائية وثلاثية الأبعاد، بالإضافة إلى خدمات مجانية ومدفوعة عبر منصتنا. 2',
+        'استشارات خبراء وتصاميم دقيقة ثنائية وثلاثية الأبعاد لتنفيذ المشاريع بسلاسة',
     onBoardingDescription3:
-        'خدمات شاملة تشمل الأعمال المدنية والتشطيب، مع استشارات هندسية وتصاميم ثنائية وثلاثية الأبعاد، بالإضافة إلى خدمات مجانية ومدفوعة عبر منصتنا. 3',
-    onBoardingDescription4: '',
+        'الوصول إلى خدمات مجانية ومدفوعة عبر منصتنا المخصصة',
+    onBoardingDescription4: 'أنشئ حسابًا أو سجل الدخول للوصول إلى جميع الميزات',
     toggleLanguage: 'العربية',
     startButton: 'ابدأ',
     nextButton: 'التالي',
@@ -1050,5 +1056,7 @@ class AppLocale {
     egp: 'جنيه مصري ',
     specifications: 'المواصفات',
     express: 'سريع',
+    recommendedForYou: 'موصى به لك',
+    on: 'فى',
   };
 }

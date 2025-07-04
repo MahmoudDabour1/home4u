@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_localization/flutter_localization.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:home4u/features/user/home/data/models/highest_rated_response_model.dart';
+import 'package:home4u/features/user/home/data/models/recommended_for_you_response_model.dart';
 
 import '../../../../../../core/utils/spacing.dart';
 import '../../../../../../locale/app_locale.dart';
@@ -10,8 +10,8 @@ import '../../../logic/home_cubit.dart';
 import '../../../logic/home_state.dart';
 import '../scroll_container_widget.dart';
 
-class BestShowRoomsListView extends StatelessWidget {
-  const BestShowRoomsListView({super.key});
+class RecommendedForYouListView extends StatelessWidget {
+  const RecommendedForYouListView({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -19,18 +19,18 @@ class BestShowRoomsListView extends StatelessWidget {
       height: 310.h,
       child: BlocBuilder<HomeCubit, HomeState>(
         buildWhen: (previous, current) =>
-            current is GetHighestRatedLoading ||
-            current is GetHighestRatedHomeSuccess ||
-            current is GetHighestRatedHomeError,
+            current is GetRecommendedForYouLoading ||
+            current is GetRecommendedForYouHomeSuccess ||
+            current is GetRecommendedForYouHomeError,
         builder: (context, state) {
           return state.maybeWhen(
-              getHighestRatedLoading: () => const Center(
+              getRecommendedForYouLoading: () => const Center(
                     child: CircularProgressIndicator(),
                   ),
-              getHighestRatedSuccess: (data) {
+              getRecommendedForYouSuccess: (data) {
                 return setupSuccess(data);
               },
-              getHighestRatedError: (e) => Center(
+              getRecommendedForYouError: (e) => Center(
                     child: Text(
                       e.toString(),
                       style: TextStyle(fontSize: 16.sp, color: Colors.red),
@@ -42,7 +42,7 @@ class BestShowRoomsListView extends StatelessWidget {
     );
   }
 
-  Widget setupSuccess(HighestRatedResponseModel data) {
+  Widget setupSuccess(RecommendedForYouResponseModel data) {
     return ListView.separated(
       separatorBuilder: (context, index) => horizontalSpace(8.w),
       itemCount: data.data?.length ?? 0,

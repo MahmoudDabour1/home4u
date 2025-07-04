@@ -30,6 +30,7 @@ import 'package:home4u/features/profile/presentation/add_certification_screen.da
 import 'package:home4u/features/rating/logic/product_rating/product_rating_cubit.dart';
 import 'package:home4u/features/user/home/presentation/best_offices_screen.dart';
 import 'package:home4u/features/user/home/presentation/best_show_rooms_screen.dart';
+import 'package:home4u/features/user/home/presentation/recommended_for_you_screen.dart';
 import 'package:home4u/features/user/request_design/presentation/request_design_screen.dart';
 
 import '../../features/ask_technical_worker/presentation/ask_technical_screen.dart';
@@ -56,7 +57,6 @@ import '../../features/profile/presentation/add_project_screen.dart';
 import '../../features/profile/presentation/edit_profile_screen.dart';
 import '../../features/profile/presentation/profile_screen.dart';
 import '../../features/profile/presentation/project_details_screen.dart';
-import '../../features/projects_filter/logic/projects_filter_cubit.dart';
 import '../../features/projects_filter/presentation/projects_filter_screen.dart';
 import '../../features/rating/presentation/products_rating_screen.dart';
 import '../../features/rating/presentation/single_product_rating_screen.dart';
@@ -369,6 +369,13 @@ class AppRouter {
             ),
           ),
         );
+
+      case Routes.recommendedForYouScreen:
+        return MaterialPageRoute(
+          settings: settings,
+          builder: (_) => RecommendedForYouScreen(),
+        );
+
       default:
         return null;
     }

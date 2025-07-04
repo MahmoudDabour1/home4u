@@ -278,7 +278,6 @@ class CartCubit extends Cubit<CartState> {
 
     response.when(success: (data) {
       emit(CartState.rateReviewsSuccess(data));
-      logger.w("Get Rate Reviews Success: ${data.toJson()}");
     }, failure: (error) {
       emit(CartState.rateReviewsFailure(error: error.message.toString()));
     });

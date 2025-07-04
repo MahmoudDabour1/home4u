@@ -32,6 +32,7 @@ class _CartProductDetailsScreenState extends State<CartProductDetailsScreen> {
   @override
   void initState() {
     super.initState();
+    context.read<ProductsCubit>().getProductById(widget.productId);
     context.read<CartCubit>().getProductRate(10);
     context.read<CartCubit>().getRateReviews(productId:183);
   }

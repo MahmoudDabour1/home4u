@@ -119,6 +119,11 @@ class ApiConstants {
   static const String requestDesignFilterEp = "/api/v1/request-design/filter";
   static const String askTechnicalWorkerFilterEp = "/api/v1/ask-worker/filter";
   static const String askEngineerFilterEp = "/api/v1/ask-engineer/filter";
+
+  ///Home
+  static const String topBestSellerEp = "/api/v1/products/top-best-seller";
+  static const String highestRatedEp = "/api/v1/products/highest-rated";
+  static const String recommendedForYouEp = "/api/v1/products/recommended-for-you?userId={userId}";
 }
 
 class ApiErrors {
