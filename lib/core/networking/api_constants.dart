@@ -144,6 +144,21 @@ class ApiConstants {
       "/api/v1/home-renovate/my-home-renovate";
   static const String renovateHouseFixedPackageAsksEp =
       "/api/v1/select-custom-package/my-select-package";
+
+  ///Request Asks
+  ///api/v1/request-ask-engineer/my-asks
+  static const String requestAskEngineerByIdEp =
+      "/api/v1/request-ask-engineer/my-asks";
+  static const String requestAskWorkerByIdEp =
+      '/api/v1/request-ask-worker/my-asks';
+  static const String requestRequestDesignByIdEp =
+      '/api/v1/request-request-design/my-asks';
+
+  static const String requestRenovateHouseCustomPackageByIdEp =
+      '/api/v1/request-select-custom-package/my-asks';
+
+  static const String requestRenovateHouseByIdEp =
+      '/api/v1/request-home-renovate/my-asks';
 }
 
 class ApiErrors {
