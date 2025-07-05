@@ -72,12 +72,10 @@ AskWorker _$AskWorkerFromJson(Map<String, dynamic> json) => AskWorker(
       projectDescription: json['projectDescription'] as String?,
       workerType: json['workerType'] == null
           ? null
-          : UserBaseTypeModel.fromJson(
-              json['workerType'] as Map<String, dynamic>),
+          : BaseTypeModel.fromJson(json['workerType'] as Map<String, dynamic>),
       unitType: json['unitType'] == null
           ? null
-          : UserBaseTypeModel.fromJson(
-              json['unitType'] as Map<String, dynamic>),
+          : BaseTypeModel.fromJson(json['unitType'] as Map<String, dynamic>),
       city: json['city'] == null
           ? null
           : CityBaseModel.fromJson(json['city'] as Map<String, dynamic>),

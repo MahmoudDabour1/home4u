@@ -115,21 +115,35 @@ class ApiConstants {
 
   ///Projects Filter
   static const String renovateHouseFilterEp = "/api/v1/home-renovate/filter";
-  static const String renovateHouseFixedPackageFilterEp = "/api/v1/select-custom-package/filter";
+  static const String renovateHouseFixedPackageFilterEp =
+      "/api/v1/select-custom-package/filter";
   static const String requestDesignFilterEp = "/api/v1/request-design/filter";
   static const String askTechnicalWorkerFilterEp = "/api/v1/ask-worker/filter";
   static const String askEngineerFilterEp = "/api/v1/ask-engineer/filter";
 
   ///Projects Details
-  static const String askTechnicalServiceDetailsEp = "/api/v1/ask-worker/{askId}";
-  static const String askEngineerServiceDetailsEp = "/api/v1/ask-engineer/{askId}";
-  static const String renovateHouseDetailsEp = "/api/v1/home-renovate/{renovateId}";
-  static const String requestDesignDetailsEp = "/api/v1/request-design/{requestId}";
-  static const String renovateHouseFixedPackageDetailsEp = "/api/v1/custom-package/{packageId}";
-  static const String furnishYourHomeDetailsEp = "/api/v1/home-furnishing-requests/{furnishId}";
+  static const String askTechnicalServiceDetailsEp =
+      "/api/v1/ask-worker/{askId}";
+  static const String askEngineerServiceDetailsEp =
+      "/api/v1/ask-engineer/{askId}";
+  static const String renovateHouseDetailsEp =
+      "/api/v1/home-renovate/{renovateId}";
+  static const String requestDesignDetailsEp =
+      "/api/v1/request-design/{requestId}";
+  static const String renovateHouseFixedPackageDetailsEp =
+      "/api/v1/custom-package/{packageId}";
+  static const String furnishYourHomeDetailsEp =
+      "/api/v1/home-furnishing-requests/{furnishId}";
 
   ///Asks
   static const String technicalAsksEp = "/api/v1/request-ask-worker/my-asks";
+  static const String engineerAsksEp = "/api/v1/ask-engineer/my-asks";
+  static const String requestDesignAsksEp =
+      "/api/v1/request-design/my-request-design";
+  static const String renovateHouseAsksEp =
+      "/api/v1/home-renovate/my-home-renovate";
+  static const String renovateHouseFixedPackageAsksEp =
+      "/api/v1/select-custom-package/my-select-package";
 }
 
 class ApiErrors {

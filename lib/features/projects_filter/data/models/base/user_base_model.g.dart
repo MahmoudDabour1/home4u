@@ -21,8 +21,7 @@ UserBaseModel _$UserBaseModelFromJson(Map<String, dynamic> json) =>
       phone: json['phone'] as String?,
       userType: json['userType'] == null
           ? null
-          : UserBaseTypeModel.fromJson(
-              json['userType'] as Map<String, dynamic>),
+          : BaseTypeModel.fromJson(json['userType'] as Map<String, dynamic>),
       governorate: json['governorate'] == null
           ? null
           : City.fromJson(json['governorate'] as Map<String, dynamic>),

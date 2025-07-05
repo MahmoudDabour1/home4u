@@ -1,5 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:home4u/features/projects_filter/data/models/base/user_base_type_model.dart';
+import 'package:home4u/features/projects_filter/data/models/base/base_type_model.dart';
 
 import '../../../../ask_engineer/data/models/ask_engineer_response_model.dart';
 
@@ -22,7 +22,7 @@ class UserBaseModel {
   @JsonKey(name: "phone")
   final String? phone;
   @JsonKey(name: "userType")
-  final UserBaseTypeModel? userType;
+  final BaseTypeModel? userType;
   @JsonKey(name: "governorate")
   final City? governorate;
   @JsonKey(name: "city")

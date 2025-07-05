@@ -1,21 +1,21 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'user_base_type_model.dart';
+part of 'base_type_model.dart';
 
 // **************************************************************************
 // JsonSerializableGenerator
 // **************************************************************************
 
-UserBaseTypeModel _$UserBaseTypeModelFromJson(Map<String, dynamic> json) =>
-    UserBaseTypeModel(
+BaseTypeModel _$BaseTypeModelFromJson(Map<String, dynamic> json) =>
+    BaseTypeModel(
       id: (json['id'] as num?)?.toInt(),
-      code: json['code'],
-      name: json['name'],
-      nameAr: json['nameAr'],
-      nameEn: json['nameEn'],
+      code: json['code'] as String?,
+      name: json['name'] as String?,
+      nameAr: json['nameAr'] as String?,
+      nameEn: json['nameEn'] as String?,
     );
 
-Map<String, dynamic> _$UserBaseTypeModelToJson(UserBaseTypeModel instance) =>
+Map<String, dynamic> _$BaseTypeModelToJson(BaseTypeModel instance) =>
     <String, dynamic>{
       'id': instance.id,
       'code': instance.code,
