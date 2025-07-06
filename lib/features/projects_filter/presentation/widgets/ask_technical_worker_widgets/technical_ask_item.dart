@@ -1,11 +1,7 @@
 import 'package:custom_rating_bar/custom_rating_bar.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:home4u/core/utils/spacing.dart';
 import 'package:home4u/features/projects_filter/data/models/asks/technical_asks_response_model.dart';
-import 'package:home4u/features/projects_filter/logic/asks/asks_cubit.dart';
-import 'package:home4u/features/projects_filter/logic/asks/asks_state.dart';
 import 'package:home4u/features/projects_filter/presentation/widgets/filter_image_and_name_widget.dart';
 
 import '../../../../../core/theming/app_colors.dart';

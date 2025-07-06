@@ -21,7 +21,6 @@ class RenovateHouseTabViewItem extends StatelessWidget {
       children: [
         Container(
           width: MediaQuery.sizeOf(context).width,
-          height: MediaQuery.sizeOf(context).height * 0.4,
           decoration: BoxDecoration(
             color: AppColors.containersColor,
             borderRadius: BorderRadius.circular(24.r),

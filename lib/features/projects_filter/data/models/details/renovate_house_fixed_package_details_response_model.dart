@@ -3,7 +3,7 @@ import '../renovate_house_filter/renovate_house_fixed_package_filter_response_mo
 class RenovateHouseFixedPackageDetailsResponseModel {
   final bool success;
   final int status;
-  final RenovateHouseFixedPackageData data;
+  final CustomPackage data;
 
   RenovateHouseFixedPackageDetailsResponseModel({
     required this.success,
@@ -16,7 +16,7 @@ class RenovateHouseFixedPackageDetailsResponseModel {
     return RenovateHouseFixedPackageDetailsResponseModel(
       success: json['success'] as bool,
       status: json['status'] as int,
-      data: RenovateHouseFixedPackageData.fromJson(
+      data: CustomPackage.fromJson(
         json['data'] as Map<String, dynamic>,
       ),
     );

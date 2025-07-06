@@ -146,7 +146,15 @@ class ApiConstants {
       "/api/v1/select-custom-package/my-select-package";
 
   ///Request Asks
-  ///api/v1/request-ask-engineer/my-asks
+  ///Request
+  static const String requestAskEngineerEp = "/api/v1/request-ask-engineer";
+  static const String requestAskWorkerEp = "/api/v1/request-ask-worker";
+  static const String requestRenovateHouseEp = "/api/v1/request-home-renovate";
+  static const String requestRenovateHouseCustomPackageEp =
+      "/api/v1/request-select-custom-package";
+  static const String requestRequestDesignEp = "/api/v1/request-request-design";
+
+  ///Get Request Asks By Id
   static const String requestAskEngineerByIdEp =
       "/api/v1/request-ask-engineer/my-asks";
   static const String requestAskWorkerByIdEp =

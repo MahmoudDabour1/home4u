@@ -4,8 +4,6 @@ import 'package:flutter_localization/flutter_localization.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:home4u/core/theming/app_styles.dart';
 import 'package:home4u/core/widgets/app_custom_loading_indicator.dart';
-import 'package:home4u/features/projects_filter/logic/project_details/project_details_cubit.dart';
-import 'package:home4u/features/projects_filter/logic/project_details/project_details_state.dart';
 import 'package:home4u/features/projects_filter/presentation/widgets/ask_technical_worker_widgets/ask_technical_tab_view_item_title.dart';
 import 'package:home4u/features/projects_filter/presentation/widgets/details/project_details_governorate_city_row.dart';
 import 'package:home4u/features/projects_filter/presentation/widgets/details/project_details_item_value.dart';
@@ -15,6 +13,8 @@ import 'package:home4u/locale/app_locale.dart';
 
 import '../../../../../core/theming/app_colors.dart';
 import '../../../../../core/utils/app_constants.dart';
+import '../../../logic/ask_technical/ask_technical_services_cubit.dart';
+import '../../../logic/ask_technical/ask_technical_services_state.dart';
 
 class AskTechnicalProjectDetailsBlocBuilder extends StatelessWidget {
   const AskTechnicalProjectDetailsBlocBuilder({
@@ -23,16 +23,29 @@ class AskTechnicalProjectDetailsBlocBuilder extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocBuilder<ProjectDetailsCubit, ProjectDetailsState>(
+    return BlocBuilder<AskTechnicalServicesCubit, AskTechnicalServicesState>(
+      buildWhen: (previous, current) =>
+          current.maybeWhen(
+            askTechnicalServiceDetailsLoading: () => true,
+            askTechnicalServiceDetailsSuccess: (_) => true,
+            askTechnicalServiceDetailsFailure: (_) => true,
+            orElse: () => false,
+          ),
       builder: (context, state) {
         return state.maybeWhen(
-          askTechnicalDetailsLoading: () => SizedBox(
-            height: MediaQuery.sizeOf(context).height * 0.4,
-            child: AppCustomLoadingIndicator(
-              loadingColor: AppColors.primaryColor,
+          askTechnicalServiceDetailsLoading: () => SizedBox(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              mainAxisSize: MainAxisSize.max,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                AppCustomLoadingIndicator(
+                  loadingColor: AppColors.primaryColor,
+                ),
+              ],
             ),
           ),
-          askTechnicalDetailsSuccess: (data) {
+          askTechnicalServiceDetailsSuccess: (data) {
             final askTechnical = data.data;
             return Column(
               crossAxisAlignment: CrossAxisAlignment.start,

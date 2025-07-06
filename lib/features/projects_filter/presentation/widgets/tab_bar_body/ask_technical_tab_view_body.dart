@@ -71,12 +71,10 @@ class _AskTechnicalTabViewBodyState extends State<AskTechnicalTabViewBody> {
               return AskTechnicalTabViewItem(
                 askTechnical: cubit.askTechnicalItems[index],
               );
-            } else if (isLoadingMore) {
+            } else {
               return const Center(
                 child: CircularProgressIndicator(),
               );
-            } else {
-              return const SizedBox.shrink();
             }
           },
           separatorBuilder: (_, __) => verticalSpace(12),

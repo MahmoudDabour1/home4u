@@ -55,7 +55,11 @@ class _ProjectsFilterScreenState extends State<ProjectsFilterScreen> {
               ];
             },
             body: Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 16.0).h,
+              padding: EdgeInsets.only(
+                left: 24.w,
+                right: 24.w,
+                bottom: 16.h,
+              ),
               child: TabBarView(
                 physics: NeverScrollableScrollPhysics(),
                 children: [

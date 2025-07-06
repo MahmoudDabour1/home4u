@@ -14,7 +14,6 @@ class FurnishHouseTabViewItem extends StatelessWidget {
       children: [
         Container(
           width: MediaQuery.sizeOf(context).width,
-          height: MediaQuery.sizeOf(context).height * 0.35,
           decoration: BoxDecoration(
             color: AppColors.containersColor,
             borderRadius: BorderRadius.circular(24.r),
