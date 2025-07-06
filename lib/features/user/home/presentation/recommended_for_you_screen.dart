@@ -113,6 +113,7 @@ class _RecommendedForYouScreenState extends State<RecommendedForYouScreen> {
             ratingCount: data.data?[index].countRates?.toString() ?? '0',
             rankBySales:
                 "${data.data?[index].productRankBySales ?? 0} ${AppLocale.on.getString(context)} ${data.data?[index].categoryName ?? ""} category",
+            numberOfSales: "${data.data?[index].numberOfSales} ${AppLocale.soldRecently.getString(context)}",
           );
         },
       ),

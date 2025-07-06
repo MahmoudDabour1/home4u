@@ -405,6 +405,15 @@ class AppLocale {
   static const String neededSkills = 'Needed Skills';
   static const String offersCount = 'Offers Count';
   static const String projectImages = 'Project Images';
+  static const String productRatingsReviews= 'Product Ratings & Reviews';
+  static const String basedOn= 'Based on';
+  static const String ratings= 'ratings';
+  static const String reviews= 'Reviews';
+  static const String thisProductDoesHaveAnyReviewsYet = 'This product doesn\'t have any reviews yet.';
+  static const String thisProductDoesHaveAnyRatingYet = 'This product doesn\'t have any rating yet.';
+  static const String soldRecently = 'Sold Recently';
+  static const String shopByCategory  = 'Shop By Category';
+
 
   static const Map<String, dynamic> en = {
     onBoardingTitle1: 'Civil Works & Finishing Services',
@@ -746,6 +755,14 @@ class AppLocale {
     projectImages: 'Project Images',
     recommendedForYou: 'Recommended For You',
     on: 'on',
+    productRatingsReviews: 'Product Ratings & Reviews',
+    basedOn: 'Based on',
+    ratings: 'ratings',
+    reviews: 'Reviews',
+    thisProductDoesHaveAnyReviewsYet: 'This product doesn\'t have any reviews yet.',
+    thisProductDoesHaveAnyRatingYet: 'This product doesn\'t have any rating yet.',
+    soldRecently: 'Sold Recently',
+    shopByCategory: 'Shop By Category',
   };
 
   static const Map<String, dynamic> ar = {
@@ -1084,5 +1101,13 @@ class AppLocale {
     projectImages: 'صور المشروع',
     recommendedForYou: 'موصى به لك',
     on: 'فى',
+    productRatingsReviews: 'تقييمات ومراجعات المنتج',
+    basedOn: 'استنادًا إلى',
+    ratings: 'التقييمات',
+    reviews: 'المراجعات',
+    thisProductDoesHaveAnyReviewsYet: 'هذا المنتج لا يحتوي على أي مراجعات حتى الآن.',
+    thisProductDoesHaveAnyRatingYet: 'هذا المنتج لا يحتوي على أي تقييم حتى الآن.',
+    soldRecently: 'تم بيعه مؤخرًا',
+    shopByCategory: 'تسوق حسب الفئة',
   };
 }

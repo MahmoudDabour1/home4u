@@ -1,3 +1,4 @@
+import 'package:home4u/features/cart/data/models/rating_chart_response_model.dart';
 import 'package:home4u/features/cart/data/models/rating_response_model.dart';
 import 'package:home4u/features/cart/data/models/rating_reviews_request_model.dart';
 import 'package:home4u/features/cart/data/models/rating_reviews_response_model.dart';
@@ -25,6 +26,10 @@ abstract class CartRepository {
 
   Future<ApiResult<RatingReviewResponseModel>> getRateReviews(
     RatingReviewRequestModel ratingReviewRequestModel,
+  );
+
+  Future<ApiResult<RatingChartResponseModel>> getProductRateChart(
+    int productId,
   );
 }
 
@@ -74,6 +79,18 @@ class CartRepositoryImpl implements CartRepository {
     try {
       final response =
           await cartRemoteDataSource.getRatesReviews(ratingReviewRequestModel);
+      return ApiResult.success(response);
+    } catch (e) {
+      return ApiResult.failure(ApiErrorHandler.handle(e));
+    }
+  }
+
+  @override
+  Future<ApiResult<RatingChartResponseModel>> getProductRateChart(
+      int productId) async {
+    try {
+      final response =
+          await cartRemoteDataSource.getProductRatesChart(productId);
       return ApiResult.success(response);
     } catch (e) {
       return ApiResult.failure(ApiErrorHandler.handle(e));

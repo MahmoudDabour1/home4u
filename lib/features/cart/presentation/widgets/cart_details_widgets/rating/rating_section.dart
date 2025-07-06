@@ -14,9 +14,19 @@ import '../../../../../../core/theming/font_weight_helper.dart';
 import '../../../../../../core/utils/spacing.dart';
 import '../../../../logic/cart_state.dart';
 
-class RatingSection extends StatelessWidget {
+class RatingSection extends StatefulWidget {
   const RatingSection({super.key});
 
+  @override
+  State<RatingSection> createState() => _RatingSectionState();
+}
+
+class _RatingSectionState extends State<RatingSection> {
+  @override
+  void initState() {
+    super.initState();
+    context.read<CartCubit>().getProductRate(10);
+  }
   @override
   Widget build(BuildContext context) {
     return Container(

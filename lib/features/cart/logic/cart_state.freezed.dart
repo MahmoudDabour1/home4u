@@ -40,6 +40,9 @@ mixin _$CartState<T> {
     required TResult Function() rateReviewsLoading,
     required TResult Function(T data) rateReviewsSuccess,
     required TResult Function(String error) rateReviewsFailure,
+    required TResult Function() rateChartLoading,
+    required TResult Function(T data) rateChartSuccess,
+    required TResult Function(String error) rateChartFailure,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -65,6 +68,9 @@ mixin _$CartState<T> {
     TResult? Function()? rateReviewsLoading,
     TResult? Function(T data)? rateReviewsSuccess,
     TResult? Function(String error)? rateReviewsFailure,
+    TResult? Function()? rateChartLoading,
+    TResult? Function(T data)? rateChartSuccess,
+    TResult? Function(String error)? rateChartFailure,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -90,6 +96,9 @@ mixin _$CartState<T> {
     TResult Function()? rateReviewsLoading,
     TResult Function(T data)? rateReviewsSuccess,
     TResult Function(String error)? rateReviewsFailure,
+    TResult Function()? rateChartLoading,
+    TResult Function(T data)? rateChartSuccess,
+    TResult Function(String error)? rateChartFailure,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -116,6 +125,9 @@ mixin _$CartState<T> {
     required TResult Function(RateReviewsLoading<T> value) rateReviewsLoading,
     required TResult Function(RateReviewsSuccess<T> value) rateReviewsSuccess,
     required TResult Function(RateReviewsFailure<T> value) rateReviewsFailure,
+    required TResult Function(RateChartLoading<T> value) rateChartLoading,
+    required TResult Function(RateChartSuccess<T> value) rateChartSuccess,
+    required TResult Function(RateChartFailure<T> value) rateChartFailure,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -141,6 +153,9 @@ mixin _$CartState<T> {
     TResult? Function(RateReviewsLoading<T> value)? rateReviewsLoading,
     TResult? Function(RateReviewsSuccess<T> value)? rateReviewsSuccess,
     TResult? Function(RateReviewsFailure<T> value)? rateReviewsFailure,
+    TResult? Function(RateChartLoading<T> value)? rateChartLoading,
+    TResult? Function(RateChartSuccess<T> value)? rateChartSuccess,
+    TResult? Function(RateChartFailure<T> value)? rateChartFailure,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -166,6 +181,9 @@ mixin _$CartState<T> {
     TResult Function(RateReviewsLoading<T> value)? rateReviewsLoading,
     TResult Function(RateReviewsSuccess<T> value)? rateReviewsSuccess,
     TResult Function(RateReviewsFailure<T> value)? rateReviewsFailure,
+    TResult Function(RateChartLoading<T> value)? rateChartLoading,
+    TResult Function(RateChartSuccess<T> value)? rateChartSuccess,
+    TResult Function(RateChartFailure<T> value)? rateChartFailure,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -255,6 +273,9 @@ class _$InitialImpl<T> implements _Initial<T> {
     required TResult Function() rateReviewsLoading,
     required TResult Function(T data) rateReviewsSuccess,
     required TResult Function(String error) rateReviewsFailure,
+    required TResult Function() rateChartLoading,
+    required TResult Function(T data) rateChartSuccess,
+    required TResult Function(String error) rateChartFailure,
   }) {
     return initial();
   }
@@ -283,6 +304,9 @@ class _$InitialImpl<T> implements _Initial<T> {
     TResult? Function()? rateReviewsLoading,
     TResult? Function(T data)? rateReviewsSuccess,
     TResult? Function(String error)? rateReviewsFailure,
+    TResult? Function()? rateChartLoading,
+    TResult? Function(T data)? rateChartSuccess,
+    TResult? Function(String error)? rateChartFailure,
   }) {
     return initial?.call();
   }
@@ -311,6 +335,9 @@ class _$InitialImpl<T> implements _Initial<T> {
     TResult Function()? rateReviewsLoading,
     TResult Function(T data)? rateReviewsSuccess,
     TResult Function(String error)? rateReviewsFailure,
+    TResult Function()? rateChartLoading,
+    TResult Function(T data)? rateChartSuccess,
+    TResult Function(String error)? rateChartFailure,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -343,6 +370,9 @@ class _$InitialImpl<T> implements _Initial<T> {
     required TResult Function(RateReviewsLoading<T> value) rateReviewsLoading,
     required TResult Function(RateReviewsSuccess<T> value) rateReviewsSuccess,
     required TResult Function(RateReviewsFailure<T> value) rateReviewsFailure,
+    required TResult Function(RateChartLoading<T> value) rateChartLoading,
+    required TResult Function(RateChartSuccess<T> value) rateChartSuccess,
+    required TResult Function(RateChartFailure<T> value) rateChartFailure,
   }) {
     return initial(this);
   }
@@ -371,6 +401,9 @@ class _$InitialImpl<T> implements _Initial<T> {
     TResult? Function(RateReviewsLoading<T> value)? rateReviewsLoading,
     TResult? Function(RateReviewsSuccess<T> value)? rateReviewsSuccess,
     TResult? Function(RateReviewsFailure<T> value)? rateReviewsFailure,
+    TResult? Function(RateChartLoading<T> value)? rateChartLoading,
+    TResult? Function(RateChartSuccess<T> value)? rateChartSuccess,
+    TResult? Function(RateChartFailure<T> value)? rateChartFailure,
   }) {
     return initial?.call(this);
   }
@@ -399,6 +432,9 @@ class _$InitialImpl<T> implements _Initial<T> {
     TResult Function(RateReviewsLoading<T> value)? rateReviewsLoading,
     TResult Function(RateReviewsSuccess<T> value)? rateReviewsSuccess,
     TResult Function(RateReviewsFailure<T> value)? rateReviewsFailure,
+    TResult Function(RateChartLoading<T> value)? rateChartLoading,
+    TResult Function(RateChartSuccess<T> value)? rateChartSuccess,
+    TResult Function(RateChartFailure<T> value)? rateChartFailure,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -475,6 +511,9 @@ class _$ShopNowLoadingImpl<T> implements ShopNowLoading<T> {
     required TResult Function() rateReviewsLoading,
     required TResult Function(T data) rateReviewsSuccess,
     required TResult Function(String error) rateReviewsFailure,
+    required TResult Function() rateChartLoading,
+    required TResult Function(T data) rateChartSuccess,
+    required TResult Function(String error) rateChartFailure,
   }) {
     return shopNowLoading();
   }
@@ -503,6 +542,9 @@ class _$ShopNowLoadingImpl<T> implements ShopNowLoading<T> {
     TResult? Function()? rateReviewsLoading,
     TResult? Function(T data)? rateReviewsSuccess,
     TResult? Function(String error)? rateReviewsFailure,
+    TResult? Function()? rateChartLoading,
+    TResult? Function(T data)? rateChartSuccess,
+    TResult? Function(String error)? rateChartFailure,
   }) {
     return shopNowLoading?.call();
   }
@@ -531,6 +573,9 @@ class _$ShopNowLoadingImpl<T> implements ShopNowLoading<T> {
     TResult Function()? rateReviewsLoading,
     TResult Function(T data)? rateReviewsSuccess,
     TResult Function(String error)? rateReviewsFailure,
+    TResult Function()? rateChartLoading,
+    TResult Function(T data)? rateChartSuccess,
+    TResult Function(String error)? rateChartFailure,
     required TResult orElse(),
   }) {
     if (shopNowLoading != null) {
@@ -563,6 +608,9 @@ class _$ShopNowLoadingImpl<T> implements ShopNowLoading<T> {
     required TResult Function(RateReviewsLoading<T> value) rateReviewsLoading,
     required TResult Function(RateReviewsSuccess<T> value) rateReviewsSuccess,
     required TResult Function(RateReviewsFailure<T> value) rateReviewsFailure,
+    required TResult Function(RateChartLoading<T> value) rateChartLoading,
+    required TResult Function(RateChartSuccess<T> value) rateChartSuccess,
+    required TResult Function(RateChartFailure<T> value) rateChartFailure,
   }) {
     return shopNowLoading(this);
   }
@@ -591,6 +639,9 @@ class _$ShopNowLoadingImpl<T> implements ShopNowLoading<T> {
     TResult? Function(RateReviewsLoading<T> value)? rateReviewsLoading,
     TResult? Function(RateReviewsSuccess<T> value)? rateReviewsSuccess,
     TResult? Function(RateReviewsFailure<T> value)? rateReviewsFailure,
+    TResult? Function(RateChartLoading<T> value)? rateChartLoading,
+    TResult? Function(RateChartSuccess<T> value)? rateChartSuccess,
+    TResult? Function(RateChartFailure<T> value)? rateChartFailure,
   }) {
     return shopNowLoading?.call(this);
   }
@@ -619,6 +670,9 @@ class _$ShopNowLoadingImpl<T> implements ShopNowLoading<T> {
     TResult Function(RateReviewsLoading<T> value)? rateReviewsLoading,
     TResult Function(RateReviewsSuccess<T> value)? rateReviewsSuccess,
     TResult Function(RateReviewsFailure<T> value)? rateReviewsFailure,
+    TResult Function(RateChartLoading<T> value)? rateChartLoading,
+    TResult Function(RateChartSuccess<T> value)? rateChartSuccess,
+    TResult Function(RateChartFailure<T> value)? rateChartFailure,
     required TResult orElse(),
   }) {
     if (shopNowLoading != null) {
@@ -724,6 +778,9 @@ class _$ShopNowSuccessImpl<T> implements ShopNowSuccess<T> {
     required TResult Function() rateReviewsLoading,
     required TResult Function(T data) rateReviewsSuccess,
     required TResult Function(String error) rateReviewsFailure,
+    required TResult Function() rateChartLoading,
+    required TResult Function(T data) rateChartSuccess,
+    required TResult Function(String error) rateChartFailure,
   }) {
     return shopNowSuccess(responseModel);
   }
@@ -752,6 +809,9 @@ class _$ShopNowSuccessImpl<T> implements ShopNowSuccess<T> {
     TResult? Function()? rateReviewsLoading,
     TResult? Function(T data)? rateReviewsSuccess,
     TResult? Function(String error)? rateReviewsFailure,
+    TResult? Function()? rateChartLoading,
+    TResult? Function(T data)? rateChartSuccess,
+    TResult? Function(String error)? rateChartFailure,
   }) {
     return shopNowSuccess?.call(responseModel);
   }
@@ -780,6 +840,9 @@ class _$ShopNowSuccessImpl<T> implements ShopNowSuccess<T> {
     TResult Function()? rateReviewsLoading,
     TResult Function(T data)? rateReviewsSuccess,
     TResult Function(String error)? rateReviewsFailure,
+    TResult Function()? rateChartLoading,
+    TResult Function(T data)? rateChartSuccess,
+    TResult Function(String error)? rateChartFailure,
     required TResult orElse(),
   }) {
     if (shopNowSuccess != null) {
@@ -812,6 +875,9 @@ class _$ShopNowSuccessImpl<T> implements ShopNowSuccess<T> {
     required TResult Function(RateReviewsLoading<T> value) rateReviewsLoading,
     required TResult Function(RateReviewsSuccess<T> value) rateReviewsSuccess,
     required TResult Function(RateReviewsFailure<T> value) rateReviewsFailure,
+    required TResult Function(RateChartLoading<T> value) rateChartLoading,
+    required TResult Function(RateChartSuccess<T> value) rateChartSuccess,
+    required TResult Function(RateChartFailure<T> value) rateChartFailure,
   }) {
     return shopNowSuccess(this);
   }
@@ -840,6 +906,9 @@ class _$ShopNowSuccessImpl<T> implements ShopNowSuccess<T> {
     TResult? Function(RateReviewsLoading<T> value)? rateReviewsLoading,
     TResult? Function(RateReviewsSuccess<T> value)? rateReviewsSuccess,
     TResult? Function(RateReviewsFailure<T> value)? rateReviewsFailure,
+    TResult? Function(RateChartLoading<T> value)? rateChartLoading,
+    TResult? Function(RateChartSuccess<T> value)? rateChartSuccess,
+    TResult? Function(RateChartFailure<T> value)? rateChartFailure,
   }) {
     return shopNowSuccess?.call(this);
   }
@@ -868,6 +937,9 @@ class _$ShopNowSuccessImpl<T> implements ShopNowSuccess<T> {
     TResult Function(RateReviewsLoading<T> value)? rateReviewsLoading,
     TResult Function(RateReviewsSuccess<T> value)? rateReviewsSuccess,
     TResult Function(RateReviewsFailure<T> value)? rateReviewsFailure,
+    TResult Function(RateChartLoading<T> value)? rateChartLoading,
+    TResult Function(RateChartSuccess<T> value)? rateChartSuccess,
+    TResult Function(RateChartFailure<T> value)? rateChartFailure,
     required TResult orElse(),
   }) {
     if (shopNowSuccess != null) {
@@ -981,6 +1053,9 @@ class _$ShopNowFailureImpl<T> implements ShopNowFailure<T> {
     required TResult Function() rateReviewsLoading,
     required TResult Function(T data) rateReviewsSuccess,
     required TResult Function(String error) rateReviewsFailure,
+    required TResult Function() rateChartLoading,
+    required TResult Function(T data) rateChartSuccess,
+    required TResult Function(String error) rateChartFailure,
   }) {
     return shopNowFailure(error);
   }
@@ -1009,6 +1084,9 @@ class _$ShopNowFailureImpl<T> implements ShopNowFailure<T> {
     TResult? Function()? rateReviewsLoading,
     TResult? Function(T data)? rateReviewsSuccess,
     TResult? Function(String error)? rateReviewsFailure,
+    TResult? Function()? rateChartLoading,
+    TResult? Function(T data)? rateChartSuccess,
+    TResult? Function(String error)? rateChartFailure,
   }) {
     return shopNowFailure?.call(error);
   }
@@ -1037,6 +1115,9 @@ class _$ShopNowFailureImpl<T> implements ShopNowFailure<T> {
     TResult Function()? rateReviewsLoading,
     TResult Function(T data)? rateReviewsSuccess,
     TResult Function(String error)? rateReviewsFailure,
+    TResult Function()? rateChartLoading,
+    TResult Function(T data)? rateChartSuccess,
+    TResult Function(String error)? rateChartFailure,
     required TResult orElse(),
   }) {
     if (shopNowFailure != null) {
@@ -1069,6 +1150,9 @@ class _$ShopNowFailureImpl<T> implements ShopNowFailure<T> {
     required TResult Function(RateReviewsLoading<T> value) rateReviewsLoading,
     required TResult Function(RateReviewsSuccess<T> value) rateReviewsSuccess,
     required TResult Function(RateReviewsFailure<T> value) rateReviewsFailure,
+    required TResult Function(RateChartLoading<T> value) rateChartLoading,
+    required TResult Function(RateChartSuccess<T> value) rateChartSuccess,
+    required TResult Function(RateChartFailure<T> value) rateChartFailure,
   }) {
     return shopNowFailure(this);
   }
@@ -1097,6 +1181,9 @@ class _$ShopNowFailureImpl<T> implements ShopNowFailure<T> {
     TResult? Function(RateReviewsLoading<T> value)? rateReviewsLoading,
     TResult? Function(RateReviewsSuccess<T> value)? rateReviewsSuccess,
     TResult? Function(RateReviewsFailure<T> value)? rateReviewsFailure,
+    TResult? Function(RateChartLoading<T> value)? rateChartLoading,
+    TResult? Function(RateChartSuccess<T> value)? rateChartSuccess,
+    TResult? Function(RateChartFailure<T> value)? rateChartFailure,
   }) {
     return shopNowFailure?.call(this);
   }
@@ -1125,6 +1212,9 @@ class _$ShopNowFailureImpl<T> implements ShopNowFailure<T> {
     TResult Function(RateReviewsLoading<T> value)? rateReviewsLoading,
     TResult Function(RateReviewsSuccess<T> value)? rateReviewsSuccess,
     TResult Function(RateReviewsFailure<T> value)? rateReviewsFailure,
+    TResult Function(RateChartLoading<T> value)? rateChartLoading,
+    TResult Function(RateChartSuccess<T> value)? rateChartSuccess,
+    TResult Function(RateChartFailure<T> value)? rateChartFailure,
     required TResult orElse(),
   }) {
     if (shopNowFailure != null) {
@@ -1211,6 +1301,9 @@ class _$PaginationLoadingImpl<T> implements PaginationLoading<T> {
     required TResult Function() rateReviewsLoading,
     required TResult Function(T data) rateReviewsSuccess,
     required TResult Function(String error) rateReviewsFailure,
+    required TResult Function() rateChartLoading,
+    required TResult Function(T data) rateChartSuccess,
+    required TResult Function(String error) rateChartFailure,
   }) {
     return paginationLoading();
   }
@@ -1239,6 +1332,9 @@ class _$PaginationLoadingImpl<T> implements PaginationLoading<T> {
     TResult? Function()? rateReviewsLoading,
     TResult? Function(T data)? rateReviewsSuccess,
     TResult? Function(String error)? rateReviewsFailure,
+    TResult? Function()? rateChartLoading,
+    TResult? Function(T data)? rateChartSuccess,
+    TResult? Function(String error)? rateChartFailure,
   }) {
     return paginationLoading?.call();
   }
@@ -1267,6 +1363,9 @@ class _$PaginationLoadingImpl<T> implements PaginationLoading<T> {
     TResult Function()? rateReviewsLoading,
     TResult Function(T data)? rateReviewsSuccess,
     TResult Function(String error)? rateReviewsFailure,
+    TResult Function()? rateChartLoading,
+    TResult Function(T data)? rateChartSuccess,
+    TResult Function(String error)? rateChartFailure,
     required TResult orElse(),
   }) {
     if (paginationLoading != null) {
@@ -1299,6 +1398,9 @@ class _$PaginationLoadingImpl<T> implements PaginationLoading<T> {
     required TResult Function(RateReviewsLoading<T> value) rateReviewsLoading,
     required TResult Function(RateReviewsSuccess<T> value) rateReviewsSuccess,
     required TResult Function(RateReviewsFailure<T> value) rateReviewsFailure,
+    required TResult Function(RateChartLoading<T> value) rateChartLoading,
+    required TResult Function(RateChartSuccess<T> value) rateChartSuccess,
+    required TResult Function(RateChartFailure<T> value) rateChartFailure,
   }) {
     return paginationLoading(this);
   }
@@ -1327,6 +1429,9 @@ class _$PaginationLoadingImpl<T> implements PaginationLoading<T> {
     TResult? Function(RateReviewsLoading<T> value)? rateReviewsLoading,
     TResult? Function(RateReviewsSuccess<T> value)? rateReviewsSuccess,
     TResult? Function(RateReviewsFailure<T> value)? rateReviewsFailure,
+    TResult? Function(RateChartLoading<T> value)? rateChartLoading,
+    TResult? Function(RateChartSuccess<T> value)? rateChartSuccess,
+    TResult? Function(RateChartFailure<T> value)? rateChartFailure,
   }) {
     return paginationLoading?.call(this);
   }
@@ -1355,6 +1460,9 @@ class _$PaginationLoadingImpl<T> implements PaginationLoading<T> {
     TResult Function(RateReviewsLoading<T> value)? rateReviewsLoading,
     TResult Function(RateReviewsSuccess<T> value)? rateReviewsSuccess,
     TResult Function(RateReviewsFailure<T> value)? rateReviewsFailure,
+    TResult Function(RateChartLoading<T> value)? rateChartLoading,
+    TResult Function(RateChartSuccess<T> value)? rateChartSuccess,
+    TResult Function(RateChartFailure<T> value)? rateChartFailure,
     required TResult orElse(),
   }) {
     if (paginationLoading != null) {
@@ -1460,6 +1568,9 @@ class _$PaginationFailureImpl<T> implements PaginationFailure<T> {
     required TResult Function() rateReviewsLoading,
     required TResult Function(T data) rateReviewsSuccess,
     required TResult Function(String error) rateReviewsFailure,
+    required TResult Function() rateChartLoading,
+    required TResult Function(T data) rateChartSuccess,
+    required TResult Function(String error) rateChartFailure,
   }) {
     return paginationFailure(error);
   }
@@ -1488,6 +1599,9 @@ class _$PaginationFailureImpl<T> implements PaginationFailure<T> {
     TResult? Function()? rateReviewsLoading,
     TResult? Function(T data)? rateReviewsSuccess,
     TResult? Function(String error)? rateReviewsFailure,
+    TResult? Function()? rateChartLoading,
+    TResult? Function(T data)? rateChartSuccess,
+    TResult? Function(String error)? rateChartFailure,
   }) {
     return paginationFailure?.call(error);
   }
@@ -1516,6 +1630,9 @@ class _$PaginationFailureImpl<T> implements PaginationFailure<T> {
     TResult Function()? rateReviewsLoading,
     TResult Function(T data)? rateReviewsSuccess,
     TResult Function(String error)? rateReviewsFailure,
+    TResult Function()? rateChartLoading,
+    TResult Function(T data)? rateChartSuccess,
+    TResult Function(String error)? rateChartFailure,
     required TResult orElse(),
   }) {
     if (paginationFailure != null) {
@@ -1548,6 +1665,9 @@ class _$PaginationFailureImpl<T> implements PaginationFailure<T> {
     required TResult Function(RateReviewsLoading<T> value) rateReviewsLoading,
     required TResult Function(RateReviewsSuccess<T> value) rateReviewsSuccess,
     required TResult Function(RateReviewsFailure<T> value) rateReviewsFailure,
+    required TResult Function(RateChartLoading<T> value) rateChartLoading,
+    required TResult Function(RateChartSuccess<T> value) rateChartSuccess,
+    required TResult Function(RateChartFailure<T> value) rateChartFailure,
   }) {
     return paginationFailure(this);
   }
@@ -1576,6 +1696,9 @@ class _$PaginationFailureImpl<T> implements PaginationFailure<T> {
     TResult? Function(RateReviewsLoading<T> value)? rateReviewsLoading,
     TResult? Function(RateReviewsSuccess<T> value)? rateReviewsSuccess,
     TResult? Function(RateReviewsFailure<T> value)? rateReviewsFailure,
+    TResult? Function(RateChartLoading<T> value)? rateChartLoading,
+    TResult? Function(RateChartSuccess<T> value)? rateChartSuccess,
+    TResult? Function(RateChartFailure<T> value)? rateChartFailure,
   }) {
     return paginationFailure?.call(this);
   }
@@ -1604,6 +1727,9 @@ class _$PaginationFailureImpl<T> implements PaginationFailure<T> {
     TResult Function(RateReviewsLoading<T> value)? rateReviewsLoading,
     TResult Function(RateReviewsSuccess<T> value)? rateReviewsSuccess,
     TResult Function(RateReviewsFailure<T> value)? rateReviewsFailure,
+    TResult Function(RateChartLoading<T> value)? rateChartLoading,
+    TResult Function(RateChartSuccess<T> value)? rateChartSuccess,
+    TResult Function(RateChartFailure<T> value)? rateChartFailure,
     required TResult orElse(),
   }) {
     if (paginationFailure != null) {
@@ -1689,6 +1815,9 @@ class _$ResetAllFiltersImpl<T> implements ResetAllFilters<T> {
     required TResult Function() rateReviewsLoading,
     required TResult Function(T data) rateReviewsSuccess,
     required TResult Function(String error) rateReviewsFailure,
+    required TResult Function() rateChartLoading,
+    required TResult Function(T data) rateChartSuccess,
+    required TResult Function(String error) rateChartFailure,
   }) {
     return resetFilter();
   }
@@ -1717,6 +1846,9 @@ class _$ResetAllFiltersImpl<T> implements ResetAllFilters<T> {
     TResult? Function()? rateReviewsLoading,
     TResult? Function(T data)? rateReviewsSuccess,
     TResult? Function(String error)? rateReviewsFailure,
+    TResult? Function()? rateChartLoading,
+    TResult? Function(T data)? rateChartSuccess,
+    TResult? Function(String error)? rateChartFailure,
   }) {
     return resetFilter?.call();
   }
@@ -1745,6 +1877,9 @@ class _$ResetAllFiltersImpl<T> implements ResetAllFilters<T> {
     TResult Function()? rateReviewsLoading,
     TResult Function(T data)? rateReviewsSuccess,
     TResult Function(String error)? rateReviewsFailure,
+    TResult Function()? rateChartLoading,
+    TResult Function(T data)? rateChartSuccess,
+    TResult Function(String error)? rateChartFailure,
     required TResult orElse(),
   }) {
     if (resetFilter != null) {
@@ -1777,6 +1912,9 @@ class _$ResetAllFiltersImpl<T> implements ResetAllFilters<T> {
     required TResult Function(RateReviewsLoading<T> value) rateReviewsLoading,
     required TResult Function(RateReviewsSuccess<T> value) rateReviewsSuccess,
     required TResult Function(RateReviewsFailure<T> value) rateReviewsFailure,
+    required TResult Function(RateChartLoading<T> value) rateChartLoading,
+    required TResult Function(RateChartSuccess<T> value) rateChartSuccess,
+    required TResult Function(RateChartFailure<T> value) rateChartFailure,
   }) {
     return resetFilter(this);
   }
@@ -1805,6 +1943,9 @@ class _$ResetAllFiltersImpl<T> implements ResetAllFilters<T> {
     TResult? Function(RateReviewsLoading<T> value)? rateReviewsLoading,
     TResult? Function(RateReviewsSuccess<T> value)? rateReviewsSuccess,
     TResult? Function(RateReviewsFailure<T> value)? rateReviewsFailure,
+    TResult? Function(RateChartLoading<T> value)? rateChartLoading,
+    TResult? Function(RateChartSuccess<T> value)? rateChartSuccess,
+    TResult? Function(RateChartFailure<T> value)? rateChartFailure,
   }) {
     return resetFilter?.call(this);
   }
@@ -1833,6 +1974,9 @@ class _$ResetAllFiltersImpl<T> implements ResetAllFilters<T> {
     TResult Function(RateReviewsLoading<T> value)? rateReviewsLoading,
     TResult Function(RateReviewsSuccess<T> value)? rateReviewsSuccess,
     TResult Function(RateReviewsFailure<T> value)? rateReviewsFailure,
+    TResult Function(RateChartLoading<T> value)? rateChartLoading,
+    TResult Function(RateChartSuccess<T> value)? rateChartSuccess,
+    TResult Function(RateChartFailure<T> value)? rateChartFailure,
     required TResult orElse(),
   }) {
     if (resetFilter != null) {
@@ -1909,6 +2053,9 @@ class _$FilterUpdatedImpl<T> implements FilterUpdated<T> {
     required TResult Function() rateReviewsLoading,
     required TResult Function(T data) rateReviewsSuccess,
     required TResult Function(String error) rateReviewsFailure,
+    required TResult Function() rateChartLoading,
+    required TResult Function(T data) rateChartSuccess,
+    required TResult Function(String error) rateChartFailure,
   }) {
     return filterUpdated();
   }
@@ -1937,6 +2084,9 @@ class _$FilterUpdatedImpl<T> implements FilterUpdated<T> {
     TResult? Function()? rateReviewsLoading,
     TResult? Function(T data)? rateReviewsSuccess,
     TResult? Function(String error)? rateReviewsFailure,
+    TResult? Function()? rateChartLoading,
+    TResult? Function(T data)? rateChartSuccess,
+    TResult? Function(String error)? rateChartFailure,
   }) {
     return filterUpdated?.call();
   }
@@ -1965,6 +2115,9 @@ class _$FilterUpdatedImpl<T> implements FilterUpdated<T> {
     TResult Function()? rateReviewsLoading,
     TResult Function(T data)? rateReviewsSuccess,
     TResult Function(String error)? rateReviewsFailure,
+    TResult Function()? rateChartLoading,
+    TResult Function(T data)? rateChartSuccess,
+    TResult Function(String error)? rateChartFailure,
     required TResult orElse(),
   }) {
     if (filterUpdated != null) {
@@ -1997,6 +2150,9 @@ class _$FilterUpdatedImpl<T> implements FilterUpdated<T> {
     required TResult Function(RateReviewsLoading<T> value) rateReviewsLoading,
     required TResult Function(RateReviewsSuccess<T> value) rateReviewsSuccess,
     required TResult Function(RateReviewsFailure<T> value) rateReviewsFailure,
+    required TResult Function(RateChartLoading<T> value) rateChartLoading,
+    required TResult Function(RateChartSuccess<T> value) rateChartSuccess,
+    required TResult Function(RateChartFailure<T> value) rateChartFailure,
   }) {
     return filterUpdated(this);
   }
@@ -2025,6 +2181,9 @@ class _$FilterUpdatedImpl<T> implements FilterUpdated<T> {
     TResult? Function(RateReviewsLoading<T> value)? rateReviewsLoading,
     TResult? Function(RateReviewsSuccess<T> value)? rateReviewsSuccess,
     TResult? Function(RateReviewsFailure<T> value)? rateReviewsFailure,
+    TResult? Function(RateChartLoading<T> value)? rateChartLoading,
+    TResult? Function(RateChartSuccess<T> value)? rateChartSuccess,
+    TResult? Function(RateChartFailure<T> value)? rateChartFailure,
   }) {
     return filterUpdated?.call(this);
   }
@@ -2053,6 +2212,9 @@ class _$FilterUpdatedImpl<T> implements FilterUpdated<T> {
     TResult Function(RateReviewsLoading<T> value)? rateReviewsLoading,
     TResult Function(RateReviewsSuccess<T> value)? rateReviewsSuccess,
     TResult Function(RateReviewsFailure<T> value)? rateReviewsFailure,
+    TResult Function(RateChartLoading<T> value)? rateChartLoading,
+    TResult Function(RateChartSuccess<T> value)? rateChartSuccess,
+    TResult Function(RateChartFailure<T> value)? rateChartFailure,
     required TResult orElse(),
   }) {
     if (filterUpdated != null) {
@@ -2129,6 +2291,9 @@ class _$CartLoadingImpl<T> implements CartLoading<T> {
     required TResult Function() rateReviewsLoading,
     required TResult Function(T data) rateReviewsSuccess,
     required TResult Function(String error) rateReviewsFailure,
+    required TResult Function() rateChartLoading,
+    required TResult Function(T data) rateChartSuccess,
+    required TResult Function(String error) rateChartFailure,
   }) {
     return cartLoading();
   }
@@ -2157,6 +2322,9 @@ class _$CartLoadingImpl<T> implements CartLoading<T> {
     TResult? Function()? rateReviewsLoading,
     TResult? Function(T data)? rateReviewsSuccess,
     TResult? Function(String error)? rateReviewsFailure,
+    TResult? Function()? rateChartLoading,
+    TResult? Function(T data)? rateChartSuccess,
+    TResult? Function(String error)? rateChartFailure,
   }) {
     return cartLoading?.call();
   }
@@ -2185,6 +2353,9 @@ class _$CartLoadingImpl<T> implements CartLoading<T> {
     TResult Function()? rateReviewsLoading,
     TResult Function(T data)? rateReviewsSuccess,
     TResult Function(String error)? rateReviewsFailure,
+    TResult Function()? rateChartLoading,
+    TResult Function(T data)? rateChartSuccess,
+    TResult Function(String error)? rateChartFailure,
     required TResult orElse(),
   }) {
     if (cartLoading != null) {
@@ -2217,6 +2388,9 @@ class _$CartLoadingImpl<T> implements CartLoading<T> {
     required TResult Function(RateReviewsLoading<T> value) rateReviewsLoading,
     required TResult Function(RateReviewsSuccess<T> value) rateReviewsSuccess,
     required TResult Function(RateReviewsFailure<T> value) rateReviewsFailure,
+    required TResult Function(RateChartLoading<T> value) rateChartLoading,
+    required TResult Function(RateChartSuccess<T> value) rateChartSuccess,
+    required TResult Function(RateChartFailure<T> value) rateChartFailure,
   }) {
     return cartLoading(this);
   }
@@ -2245,6 +2419,9 @@ class _$CartLoadingImpl<T> implements CartLoading<T> {
     TResult? Function(RateReviewsLoading<T> value)? rateReviewsLoading,
     TResult? Function(RateReviewsSuccess<T> value)? rateReviewsSuccess,
     TResult? Function(RateReviewsFailure<T> value)? rateReviewsFailure,
+    TResult? Function(RateChartLoading<T> value)? rateChartLoading,
+    TResult? Function(RateChartSuccess<T> value)? rateChartSuccess,
+    TResult? Function(RateChartFailure<T> value)? rateChartFailure,
   }) {
     return cartLoading?.call(this);
   }
@@ -2273,6 +2450,9 @@ class _$CartLoadingImpl<T> implements CartLoading<T> {
     TResult Function(RateReviewsLoading<T> value)? rateReviewsLoading,
     TResult Function(RateReviewsSuccess<T> value)? rateReviewsSuccess,
     TResult Function(RateReviewsFailure<T> value)? rateReviewsFailure,
+    TResult Function(RateChartLoading<T> value)? rateChartLoading,
+    TResult Function(RateChartSuccess<T> value)? rateChartSuccess,
+    TResult Function(RateChartFailure<T> value)? rateChartFailure,
     required TResult orElse(),
   }) {
     if (cartLoading != null) {
@@ -2349,6 +2529,9 @@ class _$cartEmptyImpl<T> implements cartEmpty<T> {
     required TResult Function() rateReviewsLoading,
     required TResult Function(T data) rateReviewsSuccess,
     required TResult Function(String error) rateReviewsFailure,
+    required TResult Function() rateChartLoading,
+    required TResult Function(T data) rateChartSuccess,
+    required TResult Function(String error) rateChartFailure,
   }) {
     return cartEmpty();
   }
@@ -2377,6 +2560,9 @@ class _$cartEmptyImpl<T> implements cartEmpty<T> {
     TResult? Function()? rateReviewsLoading,
     TResult? Function(T data)? rateReviewsSuccess,
     TResult? Function(String error)? rateReviewsFailure,
+    TResult? Function()? rateChartLoading,
+    TResult? Function(T data)? rateChartSuccess,
+    TResult? Function(String error)? rateChartFailure,
   }) {
     return cartEmpty?.call();
   }
@@ -2405,6 +2591,9 @@ class _$cartEmptyImpl<T> implements cartEmpty<T> {
     TResult Function()? rateReviewsLoading,
     TResult Function(T data)? rateReviewsSuccess,
     TResult Function(String error)? rateReviewsFailure,
+    TResult Function()? rateChartLoading,
+    TResult Function(T data)? rateChartSuccess,
+    TResult Function(String error)? rateChartFailure,
     required TResult orElse(),
   }) {
     if (cartEmpty != null) {
@@ -2437,6 +2626,9 @@ class _$cartEmptyImpl<T> implements cartEmpty<T> {
     required TResult Function(RateReviewsLoading<T> value) rateReviewsLoading,
     required TResult Function(RateReviewsSuccess<T> value) rateReviewsSuccess,
     required TResult Function(RateReviewsFailure<T> value) rateReviewsFailure,
+    required TResult Function(RateChartLoading<T> value) rateChartLoading,
+    required TResult Function(RateChartSuccess<T> value) rateChartSuccess,
+    required TResult Function(RateChartFailure<T> value) rateChartFailure,
   }) {
     return cartEmpty(this);
   }
@@ -2465,6 +2657,9 @@ class _$cartEmptyImpl<T> implements cartEmpty<T> {
     TResult? Function(RateReviewsLoading<T> value)? rateReviewsLoading,
     TResult? Function(RateReviewsSuccess<T> value)? rateReviewsSuccess,
     TResult? Function(RateReviewsFailure<T> value)? rateReviewsFailure,
+    TResult? Function(RateChartLoading<T> value)? rateChartLoading,
+    TResult? Function(RateChartSuccess<T> value)? rateChartSuccess,
+    TResult? Function(RateChartFailure<T> value)? rateChartFailure,
   }) {
     return cartEmpty?.call(this);
   }
@@ -2493,6 +2688,9 @@ class _$cartEmptyImpl<T> implements cartEmpty<T> {
     TResult Function(RateReviewsLoading<T> value)? rateReviewsLoading,
     TResult Function(RateReviewsSuccess<T> value)? rateReviewsSuccess,
     TResult Function(RateReviewsFailure<T> value)? rateReviewsFailure,
+    TResult Function(RateChartLoading<T> value)? rateChartLoading,
+    TResult Function(RateChartSuccess<T> value)? rateChartSuccess,
+    TResult Function(RateChartFailure<T> value)? rateChartFailure,
     required TResult orElse(),
   }) {
     if (cartEmpty != null) {
@@ -2605,6 +2803,9 @@ class _$CartSuccessImpl<T> implements CartSuccess<T> {
     required TResult Function() rateReviewsLoading,
     required TResult Function(T data) rateReviewsSuccess,
     required TResult Function(String error) rateReviewsFailure,
+    required TResult Function() rateChartLoading,
+    required TResult Function(T data) rateChartSuccess,
+    required TResult Function(String error) rateChartFailure,
   }) {
     return cartSuccess(cartItems);
   }
@@ -2633,6 +2834,9 @@ class _$CartSuccessImpl<T> implements CartSuccess<T> {
     TResult? Function()? rateReviewsLoading,
     TResult? Function(T data)? rateReviewsSuccess,
     TResult? Function(String error)? rateReviewsFailure,
+    TResult? Function()? rateChartLoading,
+    TResult? Function(T data)? rateChartSuccess,
+    TResult? Function(String error)? rateChartFailure,
   }) {
     return cartSuccess?.call(cartItems);
   }
@@ -2661,6 +2865,9 @@ class _$CartSuccessImpl<T> implements CartSuccess<T> {
     TResult Function()? rateReviewsLoading,
     TResult Function(T data)? rateReviewsSuccess,
     TResult Function(String error)? rateReviewsFailure,
+    TResult Function()? rateChartLoading,
+    TResult Function(T data)? rateChartSuccess,
+    TResult Function(String error)? rateChartFailure,
     required TResult orElse(),
   }) {
     if (cartSuccess != null) {
@@ -2693,6 +2900,9 @@ class _$CartSuccessImpl<T> implements CartSuccess<T> {
     required TResult Function(RateReviewsLoading<T> value) rateReviewsLoading,
     required TResult Function(RateReviewsSuccess<T> value) rateReviewsSuccess,
     required TResult Function(RateReviewsFailure<T> value) rateReviewsFailure,
+    required TResult Function(RateChartLoading<T> value) rateChartLoading,
+    required TResult Function(RateChartSuccess<T> value) rateChartSuccess,
+    required TResult Function(RateChartFailure<T> value) rateChartFailure,
   }) {
     return cartSuccess(this);
   }
@@ -2721,6 +2931,9 @@ class _$CartSuccessImpl<T> implements CartSuccess<T> {
     TResult? Function(RateReviewsLoading<T> value)? rateReviewsLoading,
     TResult? Function(RateReviewsSuccess<T> value)? rateReviewsSuccess,
     TResult? Function(RateReviewsFailure<T> value)? rateReviewsFailure,
+    TResult? Function(RateChartLoading<T> value)? rateChartLoading,
+    TResult? Function(RateChartSuccess<T> value)? rateChartSuccess,
+    TResult? Function(RateChartFailure<T> value)? rateChartFailure,
   }) {
     return cartSuccess?.call(this);
   }
@@ -2749,6 +2962,9 @@ class _$CartSuccessImpl<T> implements CartSuccess<T> {
     TResult Function(RateReviewsLoading<T> value)? rateReviewsLoading,
     TResult Function(RateReviewsSuccess<T> value)? rateReviewsSuccess,
     TResult Function(RateReviewsFailure<T> value)? rateReviewsFailure,
+    TResult Function(RateChartLoading<T> value)? rateChartLoading,
+    TResult Function(RateChartSuccess<T> value)? rateChartSuccess,
+    TResult Function(RateChartFailure<T> value)? rateChartFailure,
     required TResult orElse(),
   }) {
     if (cartSuccess != null) {
@@ -2862,6 +3078,9 @@ class _$CartFailureImpl<T> implements CartFailure<T> {
     required TResult Function() rateReviewsLoading,
     required TResult Function(T data) rateReviewsSuccess,
     required TResult Function(String error) rateReviewsFailure,
+    required TResult Function() rateChartLoading,
+    required TResult Function(T data) rateChartSuccess,
+    required TResult Function(String error) rateChartFailure,
   }) {
     return cartFailure(error);
   }
@@ -2890,6 +3109,9 @@ class _$CartFailureImpl<T> implements CartFailure<T> {
     TResult? Function()? rateReviewsLoading,
     TResult? Function(T data)? rateReviewsSuccess,
     TResult? Function(String error)? rateReviewsFailure,
+    TResult? Function()? rateChartLoading,
+    TResult? Function(T data)? rateChartSuccess,
+    TResult? Function(String error)? rateChartFailure,
   }) {
     return cartFailure?.call(error);
   }
@@ -2918,6 +3140,9 @@ class _$CartFailureImpl<T> implements CartFailure<T> {
     TResult Function()? rateReviewsLoading,
     TResult Function(T data)? rateReviewsSuccess,
     TResult Function(String error)? rateReviewsFailure,
+    TResult Function()? rateChartLoading,
+    TResult Function(T data)? rateChartSuccess,
+    TResult Function(String error)? rateChartFailure,
     required TResult orElse(),
   }) {
     if (cartFailure != null) {
@@ -2950,6 +3175,9 @@ class _$CartFailureImpl<T> implements CartFailure<T> {
     required TResult Function(RateReviewsLoading<T> value) rateReviewsLoading,
     required TResult Function(RateReviewsSuccess<T> value) rateReviewsSuccess,
     required TResult Function(RateReviewsFailure<T> value) rateReviewsFailure,
+    required TResult Function(RateChartLoading<T> value) rateChartLoading,
+    required TResult Function(RateChartSuccess<T> value) rateChartSuccess,
+    required TResult Function(RateChartFailure<T> value) rateChartFailure,
   }) {
     return cartFailure(this);
   }
@@ -2978,6 +3206,9 @@ class _$CartFailureImpl<T> implements CartFailure<T> {
     TResult? Function(RateReviewsLoading<T> value)? rateReviewsLoading,
     TResult? Function(RateReviewsSuccess<T> value)? rateReviewsSuccess,
     TResult? Function(RateReviewsFailure<T> value)? rateReviewsFailure,
+    TResult? Function(RateChartLoading<T> value)? rateChartLoading,
+    TResult? Function(RateChartSuccess<T> value)? rateChartSuccess,
+    TResult? Function(RateChartFailure<T> value)? rateChartFailure,
   }) {
     return cartFailure?.call(this);
   }
@@ -3006,6 +3237,9 @@ class _$CartFailureImpl<T> implements CartFailure<T> {
     TResult Function(RateReviewsLoading<T> value)? rateReviewsLoading,
     TResult Function(RateReviewsSuccess<T> value)? rateReviewsSuccess,
     TResult Function(RateReviewsFailure<T> value)? rateReviewsFailure,
+    TResult Function(RateChartLoading<T> value)? rateChartLoading,
+    TResult Function(RateChartSuccess<T> value)? rateChartSuccess,
+    TResult Function(RateChartFailure<T> value)? rateChartFailure,
     required TResult orElse(),
   }) {
     if (cartFailure != null) {
@@ -3092,6 +3326,9 @@ class _$InsertOrderLoadingImpl<T> implements InsertOrderLoading<T> {
     required TResult Function() rateReviewsLoading,
     required TResult Function(T data) rateReviewsSuccess,
     required TResult Function(String error) rateReviewsFailure,
+    required TResult Function() rateChartLoading,
+    required TResult Function(T data) rateChartSuccess,
+    required TResult Function(String error) rateChartFailure,
   }) {
     return insertOrderLoading();
   }
@@ -3120,6 +3357,9 @@ class _$InsertOrderLoadingImpl<T> implements InsertOrderLoading<T> {
     TResult? Function()? rateReviewsLoading,
     TResult? Function(T data)? rateReviewsSuccess,
     TResult? Function(String error)? rateReviewsFailure,
+    TResult? Function()? rateChartLoading,
+    TResult? Function(T data)? rateChartSuccess,
+    TResult? Function(String error)? rateChartFailure,
   }) {
     return insertOrderLoading?.call();
   }
@@ -3148,6 +3388,9 @@ class _$InsertOrderLoadingImpl<T> implements InsertOrderLoading<T> {
     TResult Function()? rateReviewsLoading,
     TResult Function(T data)? rateReviewsSuccess,
     TResult Function(String error)? rateReviewsFailure,
+    TResult Function()? rateChartLoading,
+    TResult Function(T data)? rateChartSuccess,
+    TResult Function(String error)? rateChartFailure,
     required TResult orElse(),
   }) {
     if (insertOrderLoading != null) {
@@ -3180,6 +3423,9 @@ class _$InsertOrderLoadingImpl<T> implements InsertOrderLoading<T> {
     required TResult Function(RateReviewsLoading<T> value) rateReviewsLoading,
     required TResult Function(RateReviewsSuccess<T> value) rateReviewsSuccess,
     required TResult Function(RateReviewsFailure<T> value) rateReviewsFailure,
+    required TResult Function(RateChartLoading<T> value) rateChartLoading,
+    required TResult Function(RateChartSuccess<T> value) rateChartSuccess,
+    required TResult Function(RateChartFailure<T> value) rateChartFailure,
   }) {
     return insertOrderLoading(this);
   }
@@ -3208,6 +3454,9 @@ class _$InsertOrderLoadingImpl<T> implements InsertOrderLoading<T> {
     TResult? Function(RateReviewsLoading<T> value)? rateReviewsLoading,
     TResult? Function(RateReviewsSuccess<T> value)? rateReviewsSuccess,
     TResult? Function(RateReviewsFailure<T> value)? rateReviewsFailure,
+    TResult? Function(RateChartLoading<T> value)? rateChartLoading,
+    TResult? Function(RateChartSuccess<T> value)? rateChartSuccess,
+    TResult? Function(RateChartFailure<T> value)? rateChartFailure,
   }) {
     return insertOrderLoading?.call(this);
   }
@@ -3236,6 +3485,9 @@ class _$InsertOrderLoadingImpl<T> implements InsertOrderLoading<T> {
     TResult Function(RateReviewsLoading<T> value)? rateReviewsLoading,
     TResult Function(RateReviewsSuccess<T> value)? rateReviewsSuccess,
     TResult Function(RateReviewsFailure<T> value)? rateReviewsFailure,
+    TResult Function(RateChartLoading<T> value)? rateChartLoading,
+    TResult Function(RateChartSuccess<T> value)? rateChartSuccess,
+    TResult Function(RateChartFailure<T> value)? rateChartFailure,
     required TResult orElse(),
   }) {
     if (insertOrderLoading != null) {
@@ -3341,6 +3593,9 @@ class _$InsertOrderSuccessImpl<T> implements InsertOrderSuccess<T> {
     required TResult Function() rateReviewsLoading,
     required TResult Function(T data) rateReviewsSuccess,
     required TResult Function(String error) rateReviewsFailure,
+    required TResult Function() rateChartLoading,
+    required TResult Function(T data) rateChartSuccess,
+    required TResult Function(String error) rateChartFailure,
   }) {
     return insertOrderSuccess(data);
   }
@@ -3369,6 +3624,9 @@ class _$InsertOrderSuccessImpl<T> implements InsertOrderSuccess<T> {
     TResult? Function()? rateReviewsLoading,
     TResult? Function(T data)? rateReviewsSuccess,
     TResult? Function(String error)? rateReviewsFailure,
+    TResult? Function()? rateChartLoading,
+    TResult? Function(T data)? rateChartSuccess,
+    TResult? Function(String error)? rateChartFailure,
   }) {
     return insertOrderSuccess?.call(data);
   }
@@ -3397,6 +3655,9 @@ class _$InsertOrderSuccessImpl<T> implements InsertOrderSuccess<T> {
     TResult Function()? rateReviewsLoading,
     TResult Function(T data)? rateReviewsSuccess,
     TResult Function(String error)? rateReviewsFailure,
+    TResult Function()? rateChartLoading,
+    TResult Function(T data)? rateChartSuccess,
+    TResult Function(String error)? rateChartFailure,
     required TResult orElse(),
   }) {
     if (insertOrderSuccess != null) {
@@ -3429,6 +3690,9 @@ class _$InsertOrderSuccessImpl<T> implements InsertOrderSuccess<T> {
     required TResult Function(RateReviewsLoading<T> value) rateReviewsLoading,
     required TResult Function(RateReviewsSuccess<T> value) rateReviewsSuccess,
     required TResult Function(RateReviewsFailure<T> value) rateReviewsFailure,
+    required TResult Function(RateChartLoading<T> value) rateChartLoading,
+    required TResult Function(RateChartSuccess<T> value) rateChartSuccess,
+    required TResult Function(RateChartFailure<T> value) rateChartFailure,
   }) {
     return insertOrderSuccess(this);
   }
@@ -3457,6 +3721,9 @@ class _$InsertOrderSuccessImpl<T> implements InsertOrderSuccess<T> {
     TResult? Function(RateReviewsLoading<T> value)? rateReviewsLoading,
     TResult? Function(RateReviewsSuccess<T> value)? rateReviewsSuccess,
     TResult? Function(RateReviewsFailure<T> value)? rateReviewsFailure,
+    TResult? Function(RateChartLoading<T> value)? rateChartLoading,
+    TResult? Function(RateChartSuccess<T> value)? rateChartSuccess,
+    TResult? Function(RateChartFailure<T> value)? rateChartFailure,
   }) {
     return insertOrderSuccess?.call(this);
   }
@@ -3485,6 +3752,9 @@ class _$InsertOrderSuccessImpl<T> implements InsertOrderSuccess<T> {
     TResult Function(RateReviewsLoading<T> value)? rateReviewsLoading,
     TResult Function(RateReviewsSuccess<T> value)? rateReviewsSuccess,
     TResult Function(RateReviewsFailure<T> value)? rateReviewsFailure,
+    TResult Function(RateChartLoading<T> value)? rateChartLoading,
+    TResult Function(RateChartSuccess<T> value)? rateChartSuccess,
+    TResult Function(RateChartFailure<T> value)? rateChartFailure,
     required TResult orElse(),
   }) {
     if (insertOrderSuccess != null) {
@@ -3597,6 +3867,9 @@ class _$InsertOrderFailureImpl<T> implements InsertOrderFailure<T> {
     required TResult Function() rateReviewsLoading,
     required TResult Function(T data) rateReviewsSuccess,
     required TResult Function(String error) rateReviewsFailure,
+    required TResult Function() rateChartLoading,
+    required TResult Function(T data) rateChartSuccess,
+    required TResult Function(String error) rateChartFailure,
   }) {
     return insertOrderFailure(error);
   }
@@ -3625,6 +3898,9 @@ class _$InsertOrderFailureImpl<T> implements InsertOrderFailure<T> {
     TResult? Function()? rateReviewsLoading,
     TResult? Function(T data)? rateReviewsSuccess,
     TResult? Function(String error)? rateReviewsFailure,
+    TResult? Function()? rateChartLoading,
+    TResult? Function(T data)? rateChartSuccess,
+    TResult? Function(String error)? rateChartFailure,
   }) {
     return insertOrderFailure?.call(error);
   }
@@ -3653,6 +3929,9 @@ class _$InsertOrderFailureImpl<T> implements InsertOrderFailure<T> {
     TResult Function()? rateReviewsLoading,
     TResult Function(T data)? rateReviewsSuccess,
     TResult Function(String error)? rateReviewsFailure,
+    TResult Function()? rateChartLoading,
+    TResult Function(T data)? rateChartSuccess,
+    TResult Function(String error)? rateChartFailure,
     required TResult orElse(),
   }) {
     if (insertOrderFailure != null) {
@@ -3685,6 +3964,9 @@ class _$InsertOrderFailureImpl<T> implements InsertOrderFailure<T> {
     required TResult Function(RateReviewsLoading<T> value) rateReviewsLoading,
     required TResult Function(RateReviewsSuccess<T> value) rateReviewsSuccess,
     required TResult Function(RateReviewsFailure<T> value) rateReviewsFailure,
+    required TResult Function(RateChartLoading<T> value) rateChartLoading,
+    required TResult Function(RateChartSuccess<T> value) rateChartSuccess,
+    required TResult Function(RateChartFailure<T> value) rateChartFailure,
   }) {
     return insertOrderFailure(this);
   }
@@ -3713,6 +3995,9 @@ class _$InsertOrderFailureImpl<T> implements InsertOrderFailure<T> {
     TResult? Function(RateReviewsLoading<T> value)? rateReviewsLoading,
     TResult? Function(RateReviewsSuccess<T> value)? rateReviewsSuccess,
     TResult? Function(RateReviewsFailure<T> value)? rateReviewsFailure,
+    TResult? Function(RateChartLoading<T> value)? rateChartLoading,
+    TResult? Function(RateChartSuccess<T> value)? rateChartSuccess,
+    TResult? Function(RateChartFailure<T> value)? rateChartFailure,
   }) {
     return insertOrderFailure?.call(this);
   }
@@ -3741,6 +4026,9 @@ class _$InsertOrderFailureImpl<T> implements InsertOrderFailure<T> {
     TResult Function(RateReviewsLoading<T> value)? rateReviewsLoading,
     TResult Function(RateReviewsSuccess<T> value)? rateReviewsSuccess,
     TResult Function(RateReviewsFailure<T> value)? rateReviewsFailure,
+    TResult Function(RateChartLoading<T> value)? rateChartLoading,
+    TResult Function(RateChartSuccess<T> value)? rateChartSuccess,
+    TResult Function(RateChartFailure<T> value)? rateChartFailure,
     required TResult orElse(),
   }) {
     if (insertOrderFailure != null) {
@@ -3827,6 +4115,9 @@ class _$ProductRateLoadingImpl<T> implements ProductRateLoading<T> {
     required TResult Function() rateReviewsLoading,
     required TResult Function(T data) rateReviewsSuccess,
     required TResult Function(String error) rateReviewsFailure,
+    required TResult Function() rateChartLoading,
+    required TResult Function(T data) rateChartSuccess,
+    required TResult Function(String error) rateChartFailure,
   }) {
     return productRateLoading();
   }
@@ -3855,6 +4146,9 @@ class _$ProductRateLoadingImpl<T> implements ProductRateLoading<T> {
     TResult? Function()? rateReviewsLoading,
     TResult? Function(T data)? rateReviewsSuccess,
     TResult? Function(String error)? rateReviewsFailure,
+    TResult? Function()? rateChartLoading,
+    TResult? Function(T data)? rateChartSuccess,
+    TResult? Function(String error)? rateChartFailure,
   }) {
     return productRateLoading?.call();
   }
@@ -3883,6 +4177,9 @@ class _$ProductRateLoadingImpl<T> implements ProductRateLoading<T> {
     TResult Function()? rateReviewsLoading,
     TResult Function(T data)? rateReviewsSuccess,
     TResult Function(String error)? rateReviewsFailure,
+    TResult Function()? rateChartLoading,
+    TResult Function(T data)? rateChartSuccess,
+    TResult Function(String error)? rateChartFailure,
     required TResult orElse(),
   }) {
     if (productRateLoading != null) {
@@ -3915,6 +4212,9 @@ class _$ProductRateLoadingImpl<T> implements ProductRateLoading<T> {
     required TResult Function(RateReviewsLoading<T> value) rateReviewsLoading,
     required TResult Function(RateReviewsSuccess<T> value) rateReviewsSuccess,
     required TResult Function(RateReviewsFailure<T> value) rateReviewsFailure,
+    required TResult Function(RateChartLoading<T> value) rateChartLoading,
+    required TResult Function(RateChartSuccess<T> value) rateChartSuccess,
+    required TResult Function(RateChartFailure<T> value) rateChartFailure,
   }) {
     return productRateLoading(this);
   }
@@ -3943,6 +4243,9 @@ class _$ProductRateLoadingImpl<T> implements ProductRateLoading<T> {
     TResult? Function(RateReviewsLoading<T> value)? rateReviewsLoading,
     TResult? Function(RateReviewsSuccess<T> value)? rateReviewsSuccess,
     TResult? Function(RateReviewsFailure<T> value)? rateReviewsFailure,
+    TResult? Function(RateChartLoading<T> value)? rateChartLoading,
+    TResult? Function(RateChartSuccess<T> value)? rateChartSuccess,
+    TResult? Function(RateChartFailure<T> value)? rateChartFailure,
   }) {
     return productRateLoading?.call(this);
   }
@@ -3971,6 +4274,9 @@ class _$ProductRateLoadingImpl<T> implements ProductRateLoading<T> {
     TResult Function(RateReviewsLoading<T> value)? rateReviewsLoading,
     TResult Function(RateReviewsSuccess<T> value)? rateReviewsSuccess,
     TResult Function(RateReviewsFailure<T> value)? rateReviewsFailure,
+    TResult Function(RateChartLoading<T> value)? rateChartLoading,
+    TResult Function(RateChartSuccess<T> value)? rateChartSuccess,
+    TResult Function(RateChartFailure<T> value)? rateChartFailure,
     required TResult orElse(),
   }) {
     if (productRateLoading != null) {
@@ -4076,6 +4382,9 @@ class _$ProductRateSuccessImpl<T> implements ProductRateSuccess<T> {
     required TResult Function() rateReviewsLoading,
     required TResult Function(T data) rateReviewsSuccess,
     required TResult Function(String error) rateReviewsFailure,
+    required TResult Function() rateChartLoading,
+    required TResult Function(T data) rateChartSuccess,
+    required TResult Function(String error) rateChartFailure,
   }) {
     return productRateSuccess(data);
   }
@@ -4104,6 +4413,9 @@ class _$ProductRateSuccessImpl<T> implements ProductRateSuccess<T> {
     TResult? Function()? rateReviewsLoading,
     TResult? Function(T data)? rateReviewsSuccess,
     TResult? Function(String error)? rateReviewsFailure,
+    TResult? Function()? rateChartLoading,
+    TResult? Function(T data)? rateChartSuccess,
+    TResult? Function(String error)? rateChartFailure,
   }) {
     return productRateSuccess?.call(data);
   }
@@ -4132,6 +4444,9 @@ class _$ProductRateSuccessImpl<T> implements ProductRateSuccess<T> {
     TResult Function()? rateReviewsLoading,
     TResult Function(T data)? rateReviewsSuccess,
     TResult Function(String error)? rateReviewsFailure,
+    TResult Function()? rateChartLoading,
+    TResult Function(T data)? rateChartSuccess,
+    TResult Function(String error)? rateChartFailure,
     required TResult orElse(),
   }) {
     if (productRateSuccess != null) {
@@ -4164,6 +4479,9 @@ class _$ProductRateSuccessImpl<T> implements ProductRateSuccess<T> {
     required TResult Function(RateReviewsLoading<T> value) rateReviewsLoading,
     required TResult Function(RateReviewsSuccess<T> value) rateReviewsSuccess,
     required TResult Function(RateReviewsFailure<T> value) rateReviewsFailure,
+    required TResult Function(RateChartLoading<T> value) rateChartLoading,
+    required TResult Function(RateChartSuccess<T> value) rateChartSuccess,
+    required TResult Function(RateChartFailure<T> value) rateChartFailure,
   }) {
     return productRateSuccess(this);
   }
@@ -4192,6 +4510,9 @@ class _$ProductRateSuccessImpl<T> implements ProductRateSuccess<T> {
     TResult? Function(RateReviewsLoading<T> value)? rateReviewsLoading,
     TResult? Function(RateReviewsSuccess<T> value)? rateReviewsSuccess,
     TResult? Function(RateReviewsFailure<T> value)? rateReviewsFailure,
+    TResult? Function(RateChartLoading<T> value)? rateChartLoading,
+    TResult? Function(RateChartSuccess<T> value)? rateChartSuccess,
+    TResult? Function(RateChartFailure<T> value)? rateChartFailure,
   }) {
     return productRateSuccess?.call(this);
   }
@@ -4220,6 +4541,9 @@ class _$ProductRateSuccessImpl<T> implements ProductRateSuccess<T> {
     TResult Function(RateReviewsLoading<T> value)? rateReviewsLoading,
     TResult Function(RateReviewsSuccess<T> value)? rateReviewsSuccess,
     TResult Function(RateReviewsFailure<T> value)? rateReviewsFailure,
+    TResult Function(RateChartLoading<T> value)? rateChartLoading,
+    TResult Function(RateChartSuccess<T> value)? rateChartSuccess,
+    TResult Function(RateChartFailure<T> value)? rateChartFailure,
     required TResult orElse(),
   }) {
     if (productRateSuccess != null) {
@@ -4332,6 +4656,9 @@ class _$ProductRateFailureImpl<T> implements ProductRateFailure<T> {
     required TResult Function() rateReviewsLoading,
     required TResult Function(T data) rateReviewsSuccess,
     required TResult Function(String error) rateReviewsFailure,
+    required TResult Function() rateChartLoading,
+    required TResult Function(T data) rateChartSuccess,
+    required TResult Function(String error) rateChartFailure,
   }) {
     return productRateFailure(error);
   }
@@ -4360,6 +4687,9 @@ class _$ProductRateFailureImpl<T> implements ProductRateFailure<T> {
     TResult? Function()? rateReviewsLoading,
     TResult? Function(T data)? rateReviewsSuccess,
     TResult? Function(String error)? rateReviewsFailure,
+    TResult? Function()? rateChartLoading,
+    TResult? Function(T data)? rateChartSuccess,
+    TResult? Function(String error)? rateChartFailure,
   }) {
     return productRateFailure?.call(error);
   }
@@ -4388,6 +4718,9 @@ class _$ProductRateFailureImpl<T> implements ProductRateFailure<T> {
     TResult Function()? rateReviewsLoading,
     TResult Function(T data)? rateReviewsSuccess,
     TResult Function(String error)? rateReviewsFailure,
+    TResult Function()? rateChartLoading,
+    TResult Function(T data)? rateChartSuccess,
+    TResult Function(String error)? rateChartFailure,
     required TResult orElse(),
   }) {
     if (productRateFailure != null) {
@@ -4420,6 +4753,9 @@ class _$ProductRateFailureImpl<T> implements ProductRateFailure<T> {
     required TResult Function(RateReviewsLoading<T> value) rateReviewsLoading,
     required TResult Function(RateReviewsSuccess<T> value) rateReviewsSuccess,
     required TResult Function(RateReviewsFailure<T> value) rateReviewsFailure,
+    required TResult Function(RateChartLoading<T> value) rateChartLoading,
+    required TResult Function(RateChartSuccess<T> value) rateChartSuccess,
+    required TResult Function(RateChartFailure<T> value) rateChartFailure,
   }) {
     return productRateFailure(this);
   }
@@ -4448,6 +4784,9 @@ class _$ProductRateFailureImpl<T> implements ProductRateFailure<T> {
     TResult? Function(RateReviewsLoading<T> value)? rateReviewsLoading,
     TResult? Function(RateReviewsSuccess<T> value)? rateReviewsSuccess,
     TResult? Function(RateReviewsFailure<T> value)? rateReviewsFailure,
+    TResult? Function(RateChartLoading<T> value)? rateChartLoading,
+    TResult? Function(RateChartSuccess<T> value)? rateChartSuccess,
+    TResult? Function(RateChartFailure<T> value)? rateChartFailure,
   }) {
     return productRateFailure?.call(this);
   }
@@ -4476,6 +4815,9 @@ class _$ProductRateFailureImpl<T> implements ProductRateFailure<T> {
     TResult Function(RateReviewsLoading<T> value)? rateReviewsLoading,
     TResult Function(RateReviewsSuccess<T> value)? rateReviewsSuccess,
     TResult Function(RateReviewsFailure<T> value)? rateReviewsFailure,
+    TResult Function(RateChartLoading<T> value)? rateChartLoading,
+    TResult Function(RateChartSuccess<T> value)? rateChartSuccess,
+    TResult Function(RateChartFailure<T> value)? rateChartFailure,
     required TResult orElse(),
   }) {
     if (productRateFailure != null) {
@@ -4562,6 +4904,9 @@ class _$RateReviewsLoadingImpl<T> implements RateReviewsLoading<T> {
     required TResult Function() rateReviewsLoading,
     required TResult Function(T data) rateReviewsSuccess,
     required TResult Function(String error) rateReviewsFailure,
+    required TResult Function() rateChartLoading,
+    required TResult Function(T data) rateChartSuccess,
+    required TResult Function(String error) rateChartFailure,
   }) {
     return rateReviewsLoading();
   }
@@ -4590,6 +4935,9 @@ class _$RateReviewsLoadingImpl<T> implements RateReviewsLoading<T> {
     TResult? Function()? rateReviewsLoading,
     TResult? Function(T data)? rateReviewsSuccess,
     TResult? Function(String error)? rateReviewsFailure,
+    TResult? Function()? rateChartLoading,
+    TResult? Function(T data)? rateChartSuccess,
+    TResult? Function(String error)? rateChartFailure,
   }) {
     return rateReviewsLoading?.call();
   }
@@ -4618,6 +4966,9 @@ class _$RateReviewsLoadingImpl<T> implements RateReviewsLoading<T> {
     TResult Function()? rateReviewsLoading,
     TResult Function(T data)? rateReviewsSuccess,
     TResult Function(String error)? rateReviewsFailure,
+    TResult Function()? rateChartLoading,
+    TResult Function(T data)? rateChartSuccess,
+    TResult Function(String error)? rateChartFailure,
     required TResult orElse(),
   }) {
     if (rateReviewsLoading != null) {
@@ -4650,6 +5001,9 @@ class _$RateReviewsLoadingImpl<T> implements RateReviewsLoading<T> {
     required TResult Function(RateReviewsLoading<T> value) rateReviewsLoading,
     required TResult Function(RateReviewsSuccess<T> value) rateReviewsSuccess,
     required TResult Function(RateReviewsFailure<T> value) rateReviewsFailure,
+    required TResult Function(RateChartLoading<T> value) rateChartLoading,
+    required TResult Function(RateChartSuccess<T> value) rateChartSuccess,
+    required TResult Function(RateChartFailure<T> value) rateChartFailure,
   }) {
     return rateReviewsLoading(this);
   }
@@ -4678,6 +5032,9 @@ class _$RateReviewsLoadingImpl<T> implements RateReviewsLoading<T> {
     TResult? Function(RateReviewsLoading<T> value)? rateReviewsLoading,
     TResult? Function(RateReviewsSuccess<T> value)? rateReviewsSuccess,
     TResult? Function(RateReviewsFailure<T> value)? rateReviewsFailure,
+    TResult? Function(RateChartLoading<T> value)? rateChartLoading,
+    TResult? Function(RateChartSuccess<T> value)? rateChartSuccess,
+    TResult? Function(RateChartFailure<T> value)? rateChartFailure,
   }) {
     return rateReviewsLoading?.call(this);
   }
@@ -4706,6 +5063,9 @@ class _$RateReviewsLoadingImpl<T> implements RateReviewsLoading<T> {
     TResult Function(RateReviewsLoading<T> value)? rateReviewsLoading,
     TResult Function(RateReviewsSuccess<T> value)? rateReviewsSuccess,
     TResult Function(RateReviewsFailure<T> value)? rateReviewsFailure,
+    TResult Function(RateChartLoading<T> value)? rateChartLoading,
+    TResult Function(RateChartSuccess<T> value)? rateChartSuccess,
+    TResult Function(RateChartFailure<T> value)? rateChartFailure,
     required TResult orElse(),
   }) {
     if (rateReviewsLoading != null) {
@@ -4811,6 +5171,9 @@ class _$RateReviewsSuccessImpl<T> implements RateReviewsSuccess<T> {
     required TResult Function() rateReviewsLoading,
     required TResult Function(T data) rateReviewsSuccess,
     required TResult Function(String error) rateReviewsFailure,
+    required TResult Function() rateChartLoading,
+    required TResult Function(T data) rateChartSuccess,
+    required TResult Function(String error) rateChartFailure,
   }) {
     return rateReviewsSuccess(data);
   }
@@ -4839,6 +5202,9 @@ class _$RateReviewsSuccessImpl<T> implements RateReviewsSuccess<T> {
     TResult? Function()? rateReviewsLoading,
     TResult? Function(T data)? rateReviewsSuccess,
     TResult? Function(String error)? rateReviewsFailure,
+    TResult? Function()? rateChartLoading,
+    TResult? Function(T data)? rateChartSuccess,
+    TResult? Function(String error)? rateChartFailure,
   }) {
     return rateReviewsSuccess?.call(data);
   }
@@ -4867,6 +5233,9 @@ class _$RateReviewsSuccessImpl<T> implements RateReviewsSuccess<T> {
     TResult Function()? rateReviewsLoading,
     TResult Function(T data)? rateReviewsSuccess,
     TResult Function(String error)? rateReviewsFailure,
+    TResult Function()? rateChartLoading,
+    TResult Function(T data)? rateChartSuccess,
+    TResult Function(String error)? rateChartFailure,
     required TResult orElse(),
   }) {
     if (rateReviewsSuccess != null) {
@@ -4899,6 +5268,9 @@ class _$RateReviewsSuccessImpl<T> implements RateReviewsSuccess<T> {
     required TResult Function(RateReviewsLoading<T> value) rateReviewsLoading,
     required TResult Function(RateReviewsSuccess<T> value) rateReviewsSuccess,
     required TResult Function(RateReviewsFailure<T> value) rateReviewsFailure,
+    required TResult Function(RateChartLoading<T> value) rateChartLoading,
+    required TResult Function(RateChartSuccess<T> value) rateChartSuccess,
+    required TResult Function(RateChartFailure<T> value) rateChartFailure,
   }) {
     return rateReviewsSuccess(this);
   }
@@ -4927,6 +5299,9 @@ class _$RateReviewsSuccessImpl<T> implements RateReviewsSuccess<T> {
     TResult? Function(RateReviewsLoading<T> value)? rateReviewsLoading,
     TResult? Function(RateReviewsSuccess<T> value)? rateReviewsSuccess,
     TResult? Function(RateReviewsFailure<T> value)? rateReviewsFailure,
+    TResult? Function(RateChartLoading<T> value)? rateChartLoading,
+    TResult? Function(RateChartSuccess<T> value)? rateChartSuccess,
+    TResult? Function(RateChartFailure<T> value)? rateChartFailure,
   }) {
     return rateReviewsSuccess?.call(this);
   }
@@ -4955,6 +5330,9 @@ class _$RateReviewsSuccessImpl<T> implements RateReviewsSuccess<T> {
     TResult Function(RateReviewsLoading<T> value)? rateReviewsLoading,
     TResult Function(RateReviewsSuccess<T> value)? rateReviewsSuccess,
     TResult Function(RateReviewsFailure<T> value)? rateReviewsFailure,
+    TResult Function(RateChartLoading<T> value)? rateChartLoading,
+    TResult Function(RateChartSuccess<T> value)? rateChartSuccess,
+    TResult Function(RateChartFailure<T> value)? rateChartFailure,
     required TResult orElse(),
   }) {
     if (rateReviewsSuccess != null) {
@@ -5067,6 +5445,9 @@ class _$RateReviewsFailureImpl<T> implements RateReviewsFailure<T> {
     required TResult Function() rateReviewsLoading,
     required TResult Function(T data) rateReviewsSuccess,
     required TResult Function(String error) rateReviewsFailure,
+    required TResult Function() rateChartLoading,
+    required TResult Function(T data) rateChartSuccess,
+    required TResult Function(String error) rateChartFailure,
   }) {
     return rateReviewsFailure(error);
   }
@@ -5095,6 +5476,9 @@ class _$RateReviewsFailureImpl<T> implements RateReviewsFailure<T> {
     TResult? Function()? rateReviewsLoading,
     TResult? Function(T data)? rateReviewsSuccess,
     TResult? Function(String error)? rateReviewsFailure,
+    TResult? Function()? rateChartLoading,
+    TResult? Function(T data)? rateChartSuccess,
+    TResult? Function(String error)? rateChartFailure,
   }) {
     return rateReviewsFailure?.call(error);
   }
@@ -5123,6 +5507,9 @@ class _$RateReviewsFailureImpl<T> implements RateReviewsFailure<T> {
     TResult Function()? rateReviewsLoading,
     TResult Function(T data)? rateReviewsSuccess,
     TResult Function(String error)? rateReviewsFailure,
+    TResult Function()? rateChartLoading,
+    TResult Function(T data)? rateChartSuccess,
+    TResult Function(String error)? rateChartFailure,
     required TResult orElse(),
   }) {
     if (rateReviewsFailure != null) {
@@ -5155,6 +5542,9 @@ class _$RateReviewsFailureImpl<T> implements RateReviewsFailure<T> {
     required TResult Function(RateReviewsLoading<T> value) rateReviewsLoading,
     required TResult Function(RateReviewsSuccess<T> value) rateReviewsSuccess,
     required TResult Function(RateReviewsFailure<T> value) rateReviewsFailure,
+    required TResult Function(RateChartLoading<T> value) rateChartLoading,
+    required TResult Function(RateChartSuccess<T> value) rateChartSuccess,
+    required TResult Function(RateChartFailure<T> value) rateChartFailure,
   }) {
     return rateReviewsFailure(this);
   }
@@ -5183,6 +5573,9 @@ class _$RateReviewsFailureImpl<T> implements RateReviewsFailure<T> {
     TResult? Function(RateReviewsLoading<T> value)? rateReviewsLoading,
     TResult? Function(RateReviewsSuccess<T> value)? rateReviewsSuccess,
     TResult? Function(RateReviewsFailure<T> value)? rateReviewsFailure,
+    TResult? Function(RateChartLoading<T> value)? rateChartLoading,
+    TResult? Function(RateChartSuccess<T> value)? rateChartSuccess,
+    TResult? Function(RateChartFailure<T> value)? rateChartFailure,
   }) {
     return rateReviewsFailure?.call(this);
   }
@@ -5211,6 +5604,9 @@ class _$RateReviewsFailureImpl<T> implements RateReviewsFailure<T> {
     TResult Function(RateReviewsLoading<T> value)? rateReviewsLoading,
     TResult Function(RateReviewsSuccess<T> value)? rateReviewsSuccess,
     TResult Function(RateReviewsFailure<T> value)? rateReviewsFailure,
+    TResult Function(RateChartLoading<T> value)? rateChartLoading,
+    TResult Function(RateChartSuccess<T> value)? rateChartSuccess,
+    TResult Function(RateChartFailure<T> value)? rateChartFailure,
     required TResult orElse(),
   }) {
     if (rateReviewsFailure != null) {
@@ -5231,4 +5627,793 @@ abstract class RateReviewsFailure<T> implements CartState<T> {
   @JsonKey(includeFromJson: false, includeToJson: false)
   _$$RateReviewsFailureImplCopyWith<T, _$RateReviewsFailureImpl<T>>
       get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$RateChartLoadingImplCopyWith<T, $Res> {
+  factory _$$RateChartLoadingImplCopyWith(_$RateChartLoadingImpl<T> value,
+          $Res Function(_$RateChartLoadingImpl<T>) then) =
+      __$$RateChartLoadingImplCopyWithImpl<T, $Res>;
+}
+
+/// @nodoc
+class __$$RateChartLoadingImplCopyWithImpl<T, $Res>
+    extends _$CartStateCopyWithImpl<T, $Res, _$RateChartLoadingImpl<T>>
+    implements _$$RateChartLoadingImplCopyWith<T, $Res> {
+  __$$RateChartLoadingImplCopyWithImpl(_$RateChartLoadingImpl<T> _value,
+      $Res Function(_$RateChartLoadingImpl<T>) _then)
+      : super(_value, _then);
+
+  /// Create a copy of CartState
+  /// with the given fields replaced by the non-null parameter values.
+}
+
+/// @nodoc
+
+class _$RateChartLoadingImpl<T> implements RateChartLoading<T> {
+  const _$RateChartLoadingImpl();
+
+  @override
+  String toString() {
+    return 'CartState<$T>.rateChartLoading()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$RateChartLoadingImpl<T>);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() shopNowLoading,
+    required TResult Function(ShopNowResponseModel responseModel)
+        shopNowSuccess,
+    required TResult Function(String error) shopNowFailure,
+    required TResult Function() paginationLoading,
+    required TResult Function(String error) paginationFailure,
+    required TResult Function() resetFilter,
+    required TResult Function() filterUpdated,
+    required TResult Function() cartLoading,
+    required TResult Function() cartEmpty,
+    required TResult Function(List<CartItemModel> cartItems) cartSuccess,
+    required TResult Function(String error) cartFailure,
+    required TResult Function() insertOrderLoading,
+    required TResult Function(T data) insertOrderSuccess,
+    required TResult Function(String error) insertOrderFailure,
+    required TResult Function() productRateLoading,
+    required TResult Function(T data) productRateSuccess,
+    required TResult Function(String error) productRateFailure,
+    required TResult Function() rateReviewsLoading,
+    required TResult Function(T data) rateReviewsSuccess,
+    required TResult Function(String error) rateReviewsFailure,
+    required TResult Function() rateChartLoading,
+    required TResult Function(T data) rateChartSuccess,
+    required TResult Function(String error) rateChartFailure,
+  }) {
+    return rateChartLoading();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? shopNowLoading,
+    TResult? Function(ShopNowResponseModel responseModel)? shopNowSuccess,
+    TResult? Function(String error)? shopNowFailure,
+    TResult? Function()? paginationLoading,
+    TResult? Function(String error)? paginationFailure,
+    TResult? Function()? resetFilter,
+    TResult? Function()? filterUpdated,
+    TResult? Function()? cartLoading,
+    TResult? Function()? cartEmpty,
+    TResult? Function(List<CartItemModel> cartItems)? cartSuccess,
+    TResult? Function(String error)? cartFailure,
+    TResult? Function()? insertOrderLoading,
+    TResult? Function(T data)? insertOrderSuccess,
+    TResult? Function(String error)? insertOrderFailure,
+    TResult? Function()? productRateLoading,
+    TResult? Function(T data)? productRateSuccess,
+    TResult? Function(String error)? productRateFailure,
+    TResult? Function()? rateReviewsLoading,
+    TResult? Function(T data)? rateReviewsSuccess,
+    TResult? Function(String error)? rateReviewsFailure,
+    TResult? Function()? rateChartLoading,
+    TResult? Function(T data)? rateChartSuccess,
+    TResult? Function(String error)? rateChartFailure,
+  }) {
+    return rateChartLoading?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? shopNowLoading,
+    TResult Function(ShopNowResponseModel responseModel)? shopNowSuccess,
+    TResult Function(String error)? shopNowFailure,
+    TResult Function()? paginationLoading,
+    TResult Function(String error)? paginationFailure,
+    TResult Function()? resetFilter,
+    TResult Function()? filterUpdated,
+    TResult Function()? cartLoading,
+    TResult Function()? cartEmpty,
+    TResult Function(List<CartItemModel> cartItems)? cartSuccess,
+    TResult Function(String error)? cartFailure,
+    TResult Function()? insertOrderLoading,
+    TResult Function(T data)? insertOrderSuccess,
+    TResult Function(String error)? insertOrderFailure,
+    TResult Function()? productRateLoading,
+    TResult Function(T data)? productRateSuccess,
+    TResult Function(String error)? productRateFailure,
+    TResult Function()? rateReviewsLoading,
+    TResult Function(T data)? rateReviewsSuccess,
+    TResult Function(String error)? rateReviewsFailure,
+    TResult Function()? rateChartLoading,
+    TResult Function(T data)? rateChartSuccess,
+    TResult Function(String error)? rateChartFailure,
+    required TResult orElse(),
+  }) {
+    if (rateChartLoading != null) {
+      return rateChartLoading();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial<T> value) initial,
+    required TResult Function(ShopNowLoading<T> value) shopNowLoading,
+    required TResult Function(ShopNowSuccess<T> value) shopNowSuccess,
+    required TResult Function(ShopNowFailure<T> value) shopNowFailure,
+    required TResult Function(PaginationLoading<T> value) paginationLoading,
+    required TResult Function(PaginationFailure<T> value) paginationFailure,
+    required TResult Function(ResetAllFilters<T> value) resetFilter,
+    required TResult Function(FilterUpdated<T> value) filterUpdated,
+    required TResult Function(CartLoading<T> value) cartLoading,
+    required TResult Function(cartEmpty<T> value) cartEmpty,
+    required TResult Function(CartSuccess<T> value) cartSuccess,
+    required TResult Function(CartFailure<T> value) cartFailure,
+    required TResult Function(InsertOrderLoading<T> value) insertOrderLoading,
+    required TResult Function(InsertOrderSuccess<T> value) insertOrderSuccess,
+    required TResult Function(InsertOrderFailure<T> value) insertOrderFailure,
+    required TResult Function(ProductRateLoading<T> value) productRateLoading,
+    required TResult Function(ProductRateSuccess<T> value) productRateSuccess,
+    required TResult Function(ProductRateFailure<T> value) productRateFailure,
+    required TResult Function(RateReviewsLoading<T> value) rateReviewsLoading,
+    required TResult Function(RateReviewsSuccess<T> value) rateReviewsSuccess,
+    required TResult Function(RateReviewsFailure<T> value) rateReviewsFailure,
+    required TResult Function(RateChartLoading<T> value) rateChartLoading,
+    required TResult Function(RateChartSuccess<T> value) rateChartSuccess,
+    required TResult Function(RateChartFailure<T> value) rateChartFailure,
+  }) {
+    return rateChartLoading(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial<T> value)? initial,
+    TResult? Function(ShopNowLoading<T> value)? shopNowLoading,
+    TResult? Function(ShopNowSuccess<T> value)? shopNowSuccess,
+    TResult? Function(ShopNowFailure<T> value)? shopNowFailure,
+    TResult? Function(PaginationLoading<T> value)? paginationLoading,
+    TResult? Function(PaginationFailure<T> value)? paginationFailure,
+    TResult? Function(ResetAllFilters<T> value)? resetFilter,
+    TResult? Function(FilterUpdated<T> value)? filterUpdated,
+    TResult? Function(CartLoading<T> value)? cartLoading,
+    TResult? Function(cartEmpty<T> value)? cartEmpty,
+    TResult? Function(CartSuccess<T> value)? cartSuccess,
+    TResult? Function(CartFailure<T> value)? cartFailure,
+    TResult? Function(InsertOrderLoading<T> value)? insertOrderLoading,
+    TResult? Function(InsertOrderSuccess<T> value)? insertOrderSuccess,
+    TResult? Function(InsertOrderFailure<T> value)? insertOrderFailure,
+    TResult? Function(ProductRateLoading<T> value)? productRateLoading,
+    TResult? Function(ProductRateSuccess<T> value)? productRateSuccess,
+    TResult? Function(ProductRateFailure<T> value)? productRateFailure,
+    TResult? Function(RateReviewsLoading<T> value)? rateReviewsLoading,
+    TResult? Function(RateReviewsSuccess<T> value)? rateReviewsSuccess,
+    TResult? Function(RateReviewsFailure<T> value)? rateReviewsFailure,
+    TResult? Function(RateChartLoading<T> value)? rateChartLoading,
+    TResult? Function(RateChartSuccess<T> value)? rateChartSuccess,
+    TResult? Function(RateChartFailure<T> value)? rateChartFailure,
+  }) {
+    return rateChartLoading?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial<T> value)? initial,
+    TResult Function(ShopNowLoading<T> value)? shopNowLoading,
+    TResult Function(ShopNowSuccess<T> value)? shopNowSuccess,
+    TResult Function(ShopNowFailure<T> value)? shopNowFailure,
+    TResult Function(PaginationLoading<T> value)? paginationLoading,
+    TResult Function(PaginationFailure<T> value)? paginationFailure,
+    TResult Function(ResetAllFilters<T> value)? resetFilter,
+    TResult Function(FilterUpdated<T> value)? filterUpdated,
+    TResult Function(CartLoading<T> value)? cartLoading,
+    TResult Function(cartEmpty<T> value)? cartEmpty,
+    TResult Function(CartSuccess<T> value)? cartSuccess,
+    TResult Function(CartFailure<T> value)? cartFailure,
+    TResult Function(InsertOrderLoading<T> value)? insertOrderLoading,
+    TResult Function(InsertOrderSuccess<T> value)? insertOrderSuccess,
+    TResult Function(InsertOrderFailure<T> value)? insertOrderFailure,
+    TResult Function(ProductRateLoading<T> value)? productRateLoading,
+    TResult Function(ProductRateSuccess<T> value)? productRateSuccess,
+    TResult Function(ProductRateFailure<T> value)? productRateFailure,
+    TResult Function(RateReviewsLoading<T> value)? rateReviewsLoading,
+    TResult Function(RateReviewsSuccess<T> value)? rateReviewsSuccess,
+    TResult Function(RateReviewsFailure<T> value)? rateReviewsFailure,
+    TResult Function(RateChartLoading<T> value)? rateChartLoading,
+    TResult Function(RateChartSuccess<T> value)? rateChartSuccess,
+    TResult Function(RateChartFailure<T> value)? rateChartFailure,
+    required TResult orElse(),
+  }) {
+    if (rateChartLoading != null) {
+      return rateChartLoading(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class RateChartLoading<T> implements CartState<T> {
+  const factory RateChartLoading() = _$RateChartLoadingImpl<T>;
+}
+
+/// @nodoc
+abstract class _$$RateChartSuccessImplCopyWith<T, $Res> {
+  factory _$$RateChartSuccessImplCopyWith(_$RateChartSuccessImpl<T> value,
+          $Res Function(_$RateChartSuccessImpl<T>) then) =
+      __$$RateChartSuccessImplCopyWithImpl<T, $Res>;
+  @useResult
+  $Res call({T data});
+}
+
+/// @nodoc
+class __$$RateChartSuccessImplCopyWithImpl<T, $Res>
+    extends _$CartStateCopyWithImpl<T, $Res, _$RateChartSuccessImpl<T>>
+    implements _$$RateChartSuccessImplCopyWith<T, $Res> {
+  __$$RateChartSuccessImplCopyWithImpl(_$RateChartSuccessImpl<T> _value,
+      $Res Function(_$RateChartSuccessImpl<T>) _then)
+      : super(_value, _then);
+
+  /// Create a copy of CartState
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? data = freezed,
+  }) {
+    return _then(_$RateChartSuccessImpl<T>(
+      freezed == data
+          ? _value.data
+          : data // ignore: cast_nullable_to_non_nullable
+              as T,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$RateChartSuccessImpl<T> implements RateChartSuccess<T> {
+  const _$RateChartSuccessImpl(this.data);
+
+  @override
+  final T data;
+
+  @override
+  String toString() {
+    return 'CartState<$T>.rateChartSuccess(data: $data)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$RateChartSuccessImpl<T> &&
+            const DeepCollectionEquality().equals(other.data, data));
+  }
+
+  @override
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(data));
+
+  /// Create a copy of CartState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$RateChartSuccessImplCopyWith<T, _$RateChartSuccessImpl<T>> get copyWith =>
+      __$$RateChartSuccessImplCopyWithImpl<T, _$RateChartSuccessImpl<T>>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() shopNowLoading,
+    required TResult Function(ShopNowResponseModel responseModel)
+        shopNowSuccess,
+    required TResult Function(String error) shopNowFailure,
+    required TResult Function() paginationLoading,
+    required TResult Function(String error) paginationFailure,
+    required TResult Function() resetFilter,
+    required TResult Function() filterUpdated,
+    required TResult Function() cartLoading,
+    required TResult Function() cartEmpty,
+    required TResult Function(List<CartItemModel> cartItems) cartSuccess,
+    required TResult Function(String error) cartFailure,
+    required TResult Function() insertOrderLoading,
+    required TResult Function(T data) insertOrderSuccess,
+    required TResult Function(String error) insertOrderFailure,
+    required TResult Function() productRateLoading,
+    required TResult Function(T data) productRateSuccess,
+    required TResult Function(String error) productRateFailure,
+    required TResult Function() rateReviewsLoading,
+    required TResult Function(T data) rateReviewsSuccess,
+    required TResult Function(String error) rateReviewsFailure,
+    required TResult Function() rateChartLoading,
+    required TResult Function(T data) rateChartSuccess,
+    required TResult Function(String error) rateChartFailure,
+  }) {
+    return rateChartSuccess(data);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? shopNowLoading,
+    TResult? Function(ShopNowResponseModel responseModel)? shopNowSuccess,
+    TResult? Function(String error)? shopNowFailure,
+    TResult? Function()? paginationLoading,
+    TResult? Function(String error)? paginationFailure,
+    TResult? Function()? resetFilter,
+    TResult? Function()? filterUpdated,
+    TResult? Function()? cartLoading,
+    TResult? Function()? cartEmpty,
+    TResult? Function(List<CartItemModel> cartItems)? cartSuccess,
+    TResult? Function(String error)? cartFailure,
+    TResult? Function()? insertOrderLoading,
+    TResult? Function(T data)? insertOrderSuccess,
+    TResult? Function(String error)? insertOrderFailure,
+    TResult? Function()? productRateLoading,
+    TResult? Function(T data)? productRateSuccess,
+    TResult? Function(String error)? productRateFailure,
+    TResult? Function()? rateReviewsLoading,
+    TResult? Function(T data)? rateReviewsSuccess,
+    TResult? Function(String error)? rateReviewsFailure,
+    TResult? Function()? rateChartLoading,
+    TResult? Function(T data)? rateChartSuccess,
+    TResult? Function(String error)? rateChartFailure,
+  }) {
+    return rateChartSuccess?.call(data);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? shopNowLoading,
+    TResult Function(ShopNowResponseModel responseModel)? shopNowSuccess,
+    TResult Function(String error)? shopNowFailure,
+    TResult Function()? paginationLoading,
+    TResult Function(String error)? paginationFailure,
+    TResult Function()? resetFilter,
+    TResult Function()? filterUpdated,
+    TResult Function()? cartLoading,
+    TResult Function()? cartEmpty,
+    TResult Function(List<CartItemModel> cartItems)? cartSuccess,
+    TResult Function(String error)? cartFailure,
+    TResult Function()? insertOrderLoading,
+    TResult Function(T data)? insertOrderSuccess,
+    TResult Function(String error)? insertOrderFailure,
+    TResult Function()? productRateLoading,
+    TResult Function(T data)? productRateSuccess,
+    TResult Function(String error)? productRateFailure,
+    TResult Function()? rateReviewsLoading,
+    TResult Function(T data)? rateReviewsSuccess,
+    TResult Function(String error)? rateReviewsFailure,
+    TResult Function()? rateChartLoading,
+    TResult Function(T data)? rateChartSuccess,
+    TResult Function(String error)? rateChartFailure,
+    required TResult orElse(),
+  }) {
+    if (rateChartSuccess != null) {
+      return rateChartSuccess(data);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial<T> value) initial,
+    required TResult Function(ShopNowLoading<T> value) shopNowLoading,
+    required TResult Function(ShopNowSuccess<T> value) shopNowSuccess,
+    required TResult Function(ShopNowFailure<T> value) shopNowFailure,
+    required TResult Function(PaginationLoading<T> value) paginationLoading,
+    required TResult Function(PaginationFailure<T> value) paginationFailure,
+    required TResult Function(ResetAllFilters<T> value) resetFilter,
+    required TResult Function(FilterUpdated<T> value) filterUpdated,
+    required TResult Function(CartLoading<T> value) cartLoading,
+    required TResult Function(cartEmpty<T> value) cartEmpty,
+    required TResult Function(CartSuccess<T> value) cartSuccess,
+    required TResult Function(CartFailure<T> value) cartFailure,
+    required TResult Function(InsertOrderLoading<T> value) insertOrderLoading,
+    required TResult Function(InsertOrderSuccess<T> value) insertOrderSuccess,
+    required TResult Function(InsertOrderFailure<T> value) insertOrderFailure,
+    required TResult Function(ProductRateLoading<T> value) productRateLoading,
+    required TResult Function(ProductRateSuccess<T> value) productRateSuccess,
+    required TResult Function(ProductRateFailure<T> value) productRateFailure,
+    required TResult Function(RateReviewsLoading<T> value) rateReviewsLoading,
+    required TResult Function(RateReviewsSuccess<T> value) rateReviewsSuccess,
+    required TResult Function(RateReviewsFailure<T> value) rateReviewsFailure,
+    required TResult Function(RateChartLoading<T> value) rateChartLoading,
+    required TResult Function(RateChartSuccess<T> value) rateChartSuccess,
+    required TResult Function(RateChartFailure<T> value) rateChartFailure,
+  }) {
+    return rateChartSuccess(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial<T> value)? initial,
+    TResult? Function(ShopNowLoading<T> value)? shopNowLoading,
+    TResult? Function(ShopNowSuccess<T> value)? shopNowSuccess,
+    TResult? Function(ShopNowFailure<T> value)? shopNowFailure,
+    TResult? Function(PaginationLoading<T> value)? paginationLoading,
+    TResult? Function(PaginationFailure<T> value)? paginationFailure,
+    TResult? Function(ResetAllFilters<T> value)? resetFilter,
+    TResult? Function(FilterUpdated<T> value)? filterUpdated,
+    TResult? Function(CartLoading<T> value)? cartLoading,
+    TResult? Function(cartEmpty<T> value)? cartEmpty,
+    TResult? Function(CartSuccess<T> value)? cartSuccess,
+    TResult? Function(CartFailure<T> value)? cartFailure,
+    TResult? Function(InsertOrderLoading<T> value)? insertOrderLoading,
+    TResult? Function(InsertOrderSuccess<T> value)? insertOrderSuccess,
+    TResult? Function(InsertOrderFailure<T> value)? insertOrderFailure,
+    TResult? Function(ProductRateLoading<T> value)? productRateLoading,
+    TResult? Function(ProductRateSuccess<T> value)? productRateSuccess,
+    TResult? Function(ProductRateFailure<T> value)? productRateFailure,
+    TResult? Function(RateReviewsLoading<T> value)? rateReviewsLoading,
+    TResult? Function(RateReviewsSuccess<T> value)? rateReviewsSuccess,
+    TResult? Function(RateReviewsFailure<T> value)? rateReviewsFailure,
+    TResult? Function(RateChartLoading<T> value)? rateChartLoading,
+    TResult? Function(RateChartSuccess<T> value)? rateChartSuccess,
+    TResult? Function(RateChartFailure<T> value)? rateChartFailure,
+  }) {
+    return rateChartSuccess?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial<T> value)? initial,
+    TResult Function(ShopNowLoading<T> value)? shopNowLoading,
+    TResult Function(ShopNowSuccess<T> value)? shopNowSuccess,
+    TResult Function(ShopNowFailure<T> value)? shopNowFailure,
+    TResult Function(PaginationLoading<T> value)? paginationLoading,
+    TResult Function(PaginationFailure<T> value)? paginationFailure,
+    TResult Function(ResetAllFilters<T> value)? resetFilter,
+    TResult Function(FilterUpdated<T> value)? filterUpdated,
+    TResult Function(CartLoading<T> value)? cartLoading,
+    TResult Function(cartEmpty<T> value)? cartEmpty,
+    TResult Function(CartSuccess<T> value)? cartSuccess,
+    TResult Function(CartFailure<T> value)? cartFailure,
+    TResult Function(InsertOrderLoading<T> value)? insertOrderLoading,
+    TResult Function(InsertOrderSuccess<T> value)? insertOrderSuccess,
+    TResult Function(InsertOrderFailure<T> value)? insertOrderFailure,
+    TResult Function(ProductRateLoading<T> value)? productRateLoading,
+    TResult Function(ProductRateSuccess<T> value)? productRateSuccess,
+    TResult Function(ProductRateFailure<T> value)? productRateFailure,
+    TResult Function(RateReviewsLoading<T> value)? rateReviewsLoading,
+    TResult Function(RateReviewsSuccess<T> value)? rateReviewsSuccess,
+    TResult Function(RateReviewsFailure<T> value)? rateReviewsFailure,
+    TResult Function(RateChartLoading<T> value)? rateChartLoading,
+    TResult Function(RateChartSuccess<T> value)? rateChartSuccess,
+    TResult Function(RateChartFailure<T> value)? rateChartFailure,
+    required TResult orElse(),
+  }) {
+    if (rateChartSuccess != null) {
+      return rateChartSuccess(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class RateChartSuccess<T> implements CartState<T> {
+  const factory RateChartSuccess(final T data) = _$RateChartSuccessImpl<T>;
+
+  T get data;
+
+  /// Create a copy of CartState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$RateChartSuccessImplCopyWith<T, _$RateChartSuccessImpl<T>> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$RateChartFailureImplCopyWith<T, $Res> {
+  factory _$$RateChartFailureImplCopyWith(_$RateChartFailureImpl<T> value,
+          $Res Function(_$RateChartFailureImpl<T>) then) =
+      __$$RateChartFailureImplCopyWithImpl<T, $Res>;
+  @useResult
+  $Res call({String error});
+}
+
+/// @nodoc
+class __$$RateChartFailureImplCopyWithImpl<T, $Res>
+    extends _$CartStateCopyWithImpl<T, $Res, _$RateChartFailureImpl<T>>
+    implements _$$RateChartFailureImplCopyWith<T, $Res> {
+  __$$RateChartFailureImplCopyWithImpl(_$RateChartFailureImpl<T> _value,
+      $Res Function(_$RateChartFailureImpl<T>) _then)
+      : super(_value, _then);
+
+  /// Create a copy of CartState
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? error = null,
+  }) {
+    return _then(_$RateChartFailureImpl<T>(
+      error: null == error
+          ? _value.error
+          : error // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$RateChartFailureImpl<T> implements RateChartFailure<T> {
+  const _$RateChartFailureImpl({required this.error});
+
+  @override
+  final String error;
+
+  @override
+  String toString() {
+    return 'CartState<$T>.rateChartFailure(error: $error)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$RateChartFailureImpl<T> &&
+            (identical(other.error, error) || other.error == error));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, error);
+
+  /// Create a copy of CartState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$RateChartFailureImplCopyWith<T, _$RateChartFailureImpl<T>> get copyWith =>
+      __$$RateChartFailureImplCopyWithImpl<T, _$RateChartFailureImpl<T>>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() shopNowLoading,
+    required TResult Function(ShopNowResponseModel responseModel)
+        shopNowSuccess,
+    required TResult Function(String error) shopNowFailure,
+    required TResult Function() paginationLoading,
+    required TResult Function(String error) paginationFailure,
+    required TResult Function() resetFilter,
+    required TResult Function() filterUpdated,
+    required TResult Function() cartLoading,
+    required TResult Function() cartEmpty,
+    required TResult Function(List<CartItemModel> cartItems) cartSuccess,
+    required TResult Function(String error) cartFailure,
+    required TResult Function() insertOrderLoading,
+    required TResult Function(T data) insertOrderSuccess,
+    required TResult Function(String error) insertOrderFailure,
+    required TResult Function() productRateLoading,
+    required TResult Function(T data) productRateSuccess,
+    required TResult Function(String error) productRateFailure,
+    required TResult Function() rateReviewsLoading,
+    required TResult Function(T data) rateReviewsSuccess,
+    required TResult Function(String error) rateReviewsFailure,
+    required TResult Function() rateChartLoading,
+    required TResult Function(T data) rateChartSuccess,
+    required TResult Function(String error) rateChartFailure,
+  }) {
+    return rateChartFailure(error);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? shopNowLoading,
+    TResult? Function(ShopNowResponseModel responseModel)? shopNowSuccess,
+    TResult? Function(String error)? shopNowFailure,
+    TResult? Function()? paginationLoading,
+    TResult? Function(String error)? paginationFailure,
+    TResult? Function()? resetFilter,
+    TResult? Function()? filterUpdated,
+    TResult? Function()? cartLoading,
+    TResult? Function()? cartEmpty,
+    TResult? Function(List<CartItemModel> cartItems)? cartSuccess,
+    TResult? Function(String error)? cartFailure,
+    TResult? Function()? insertOrderLoading,
+    TResult? Function(T data)? insertOrderSuccess,
+    TResult? Function(String error)? insertOrderFailure,
+    TResult? Function()? productRateLoading,
+    TResult? Function(T data)? productRateSuccess,
+    TResult? Function(String error)? productRateFailure,
+    TResult? Function()? rateReviewsLoading,
+    TResult? Function(T data)? rateReviewsSuccess,
+    TResult? Function(String error)? rateReviewsFailure,
+    TResult? Function()? rateChartLoading,
+    TResult? Function(T data)? rateChartSuccess,
+    TResult? Function(String error)? rateChartFailure,
+  }) {
+    return rateChartFailure?.call(error);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? shopNowLoading,
+    TResult Function(ShopNowResponseModel responseModel)? shopNowSuccess,
+    TResult Function(String error)? shopNowFailure,
+    TResult Function()? paginationLoading,
+    TResult Function(String error)? paginationFailure,
+    TResult Function()? resetFilter,
+    TResult Function()? filterUpdated,
+    TResult Function()? cartLoading,
+    TResult Function()? cartEmpty,
+    TResult Function(List<CartItemModel> cartItems)? cartSuccess,
+    TResult Function(String error)? cartFailure,
+    TResult Function()? insertOrderLoading,
+    TResult Function(T data)? insertOrderSuccess,
+    TResult Function(String error)? insertOrderFailure,
+    TResult Function()? productRateLoading,
+    TResult Function(T data)? productRateSuccess,
+    TResult Function(String error)? productRateFailure,
+    TResult Function()? rateReviewsLoading,
+    TResult Function(T data)? rateReviewsSuccess,
+    TResult Function(String error)? rateReviewsFailure,
+    TResult Function()? rateChartLoading,
+    TResult Function(T data)? rateChartSuccess,
+    TResult Function(String error)? rateChartFailure,
+    required TResult orElse(),
+  }) {
+    if (rateChartFailure != null) {
+      return rateChartFailure(error);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial<T> value) initial,
+    required TResult Function(ShopNowLoading<T> value) shopNowLoading,
+    required TResult Function(ShopNowSuccess<T> value) shopNowSuccess,
+    required TResult Function(ShopNowFailure<T> value) shopNowFailure,
+    required TResult Function(PaginationLoading<T> value) paginationLoading,
+    required TResult Function(PaginationFailure<T> value) paginationFailure,
+    required TResult Function(ResetAllFilters<T> value) resetFilter,
+    required TResult Function(FilterUpdated<T> value) filterUpdated,
+    required TResult Function(CartLoading<T> value) cartLoading,
+    required TResult Function(cartEmpty<T> value) cartEmpty,
+    required TResult Function(CartSuccess<T> value) cartSuccess,
+    required TResult Function(CartFailure<T> value) cartFailure,
+    required TResult Function(InsertOrderLoading<T> value) insertOrderLoading,
+    required TResult Function(InsertOrderSuccess<T> value) insertOrderSuccess,
+    required TResult Function(InsertOrderFailure<T> value) insertOrderFailure,
+    required TResult Function(ProductRateLoading<T> value) productRateLoading,
+    required TResult Function(ProductRateSuccess<T> value) productRateSuccess,
+    required TResult Function(ProductRateFailure<T> value) productRateFailure,
+    required TResult Function(RateReviewsLoading<T> value) rateReviewsLoading,
+    required TResult Function(RateReviewsSuccess<T> value) rateReviewsSuccess,
+    required TResult Function(RateReviewsFailure<T> value) rateReviewsFailure,
+    required TResult Function(RateChartLoading<T> value) rateChartLoading,
+    required TResult Function(RateChartSuccess<T> value) rateChartSuccess,
+    required TResult Function(RateChartFailure<T> value) rateChartFailure,
+  }) {
+    return rateChartFailure(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial<T> value)? initial,
+    TResult? Function(ShopNowLoading<T> value)? shopNowLoading,
+    TResult? Function(ShopNowSuccess<T> value)? shopNowSuccess,
+    TResult? Function(ShopNowFailure<T> value)? shopNowFailure,
+    TResult? Function(PaginationLoading<T> value)? paginationLoading,
+    TResult? Function(PaginationFailure<T> value)? paginationFailure,
+    TResult? Function(ResetAllFilters<T> value)? resetFilter,
+    TResult? Function(FilterUpdated<T> value)? filterUpdated,
+    TResult? Function(CartLoading<T> value)? cartLoading,
+    TResult? Function(cartEmpty<T> value)? cartEmpty,
+    TResult? Function(CartSuccess<T> value)? cartSuccess,
+    TResult? Function(CartFailure<T> value)? cartFailure,
+    TResult? Function(InsertOrderLoading<T> value)? insertOrderLoading,
+    TResult? Function(InsertOrderSuccess<T> value)? insertOrderSuccess,
+    TResult? Function(InsertOrderFailure<T> value)? insertOrderFailure,
+    TResult? Function(ProductRateLoading<T> value)? productRateLoading,
+    TResult? Function(ProductRateSuccess<T> value)? productRateSuccess,
+    TResult? Function(ProductRateFailure<T> value)? productRateFailure,
+    TResult? Function(RateReviewsLoading<T> value)? rateReviewsLoading,
+    TResult? Function(RateReviewsSuccess<T> value)? rateReviewsSuccess,
+    TResult? Function(RateReviewsFailure<T> value)? rateReviewsFailure,
+    TResult? Function(RateChartLoading<T> value)? rateChartLoading,
+    TResult? Function(RateChartSuccess<T> value)? rateChartSuccess,
+    TResult? Function(RateChartFailure<T> value)? rateChartFailure,
+  }) {
+    return rateChartFailure?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial<T> value)? initial,
+    TResult Function(ShopNowLoading<T> value)? shopNowLoading,
+    TResult Function(ShopNowSuccess<T> value)? shopNowSuccess,
+    TResult Function(ShopNowFailure<T> value)? shopNowFailure,
+    TResult Function(PaginationLoading<T> value)? paginationLoading,
+    TResult Function(PaginationFailure<T> value)? paginationFailure,
+    TResult Function(ResetAllFilters<T> value)? resetFilter,
+    TResult Function(FilterUpdated<T> value)? filterUpdated,
+    TResult Function(CartLoading<T> value)? cartLoading,
+    TResult Function(cartEmpty<T> value)? cartEmpty,
+    TResult Function(CartSuccess<T> value)? cartSuccess,
+    TResult Function(CartFailure<T> value)? cartFailure,
+    TResult Function(InsertOrderLoading<T> value)? insertOrderLoading,
+    TResult Function(InsertOrderSuccess<T> value)? insertOrderSuccess,
+    TResult Function(InsertOrderFailure<T> value)? insertOrderFailure,
+    TResult Function(ProductRateLoading<T> value)? productRateLoading,
+    TResult Function(ProductRateSuccess<T> value)? productRateSuccess,
+    TResult Function(ProductRateFailure<T> value)? productRateFailure,
+    TResult Function(RateReviewsLoading<T> value)? rateReviewsLoading,
+    TResult Function(RateReviewsSuccess<T> value)? rateReviewsSuccess,
+    TResult Function(RateReviewsFailure<T> value)? rateReviewsFailure,
+    TResult Function(RateChartLoading<T> value)? rateChartLoading,
+    TResult Function(RateChartSuccess<T> value)? rateChartSuccess,
+    TResult Function(RateChartFailure<T> value)? rateChartFailure,
+    required TResult orElse(),
+  }) {
+    if (rateChartFailure != null) {
+      return rateChartFailure(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class RateChartFailure<T> implements CartState<T> {
+  const factory RateChartFailure({required final String error}) =
+      _$RateChartFailureImpl<T>;
+
+  String get error;
+
+  /// Create a copy of CartState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$RateChartFailureImplCopyWith<T, _$RateChartFailureImpl<T>> get copyWith =>
+      throw _privateConstructorUsedError;
 }

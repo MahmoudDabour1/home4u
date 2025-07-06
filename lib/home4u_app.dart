@@ -168,7 +168,6 @@ class _Home4uAppState extends State<Home4uApp> {
             ),
             BlocProvider<AsksCubit>(
               create: (_) => sl<AsksCubit>(),
-              create: (context) => sl<ProjectsFilterCubit>(),
             ),BlocProvider<HomeCubit>(
               create: (context) => sl<HomeCubit>(),
             ),
@@ -197,9 +196,9 @@ class _Home4uAppState extends State<Home4uApp> {
                     debugShowCheckedModeBanner: false,
                     navigatorObservers: [RouterObserver(), _routeObserver],
                     initialRoute:
-                        Routes.onBoardingScreen,
-                        // snapshot.data!,
-                        Routes.userBottomNavLayout,
+                        // Routes.onBoardingScreen,
+                        snapshot.data!,
+                        // Routes.productsRatingScreen,
                         // snapshot.data!,
                   ),
                 );

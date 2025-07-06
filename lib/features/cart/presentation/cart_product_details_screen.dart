@@ -3,12 +3,11 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_localization/flutter_localization.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:home4u/core/widgets/app_custom_loading_indicator.dart';
-import 'package:home4u/features/cart/logic/cart_cubit.dart';
 import 'package:home4u/features/cart/presentation/widgets/cart_details_widgets/cart_details_data_section.dart';
 import 'package:home4u/features/cart/presentation/widgets/cart_details_widgets/cart_details_tap_bar.dart';
 import 'package:home4u/features/cart/presentation/widgets/cart_details_widgets/cart_product_details_favorite_button.dart';
+import 'package:home4u/features/cart/presentation/widgets/cart_details_widgets/rating/rating_chart_section.dart';
 import 'package:home4u/features/cart/presentation/widgets/cart_details_widgets/rating/rating_reviews_widget.dart';
-import 'package:home4u/features/cart/presentation/widgets/cart_details_widgets/rating/rating_section.dart';
 import 'package:home4u/features/products/data/models/product_preview_response.dart';
 import 'package:home4u/features/products/logic/products_cubit.dart';
 import 'package:home4u/features/products/logic/products_state.dart';
@@ -33,8 +32,6 @@ class _CartProductDetailsScreenState extends State<CartProductDetailsScreen> {
   void initState() {
     super.initState();
     context.read<ProductsCubit>().getProductById(widget.productId);
-    context.read<CartCubit>().getProductRate(10);
-    context.read<CartCubit>().getRateReviews(productId:183);
   }
 
   @override
@@ -72,7 +69,7 @@ class _CartProductDetailsScreenState extends State<CartProductDetailsScreen> {
               return state.maybeWhen(
                 getProductPreviewLoading: () => setupLoading(),
                 getProductPreviewSuccess: (product) {
-                  return setupSuccess(product);
+                  return setupSuccess(product, widget.productId);
                 },
                 orElse: () => SizedBox(),
               );
@@ -89,7 +86,7 @@ class _CartProductDetailsScreenState extends State<CartProductDetailsScreen> {
     );
   }
 
-  Widget setupSuccess(ProductPreviewResponse product) {
+  Widget setupSuccess(ProductPreviewResponse product, int productId) {
     return SingleChildScrollView(
       child: Column(
         mainAxisAlignment: MainAxisAlignment.start,
@@ -97,11 +94,15 @@ class _CartProductDetailsScreenState extends State<CartProductDetailsScreen> {
         children: [
           CartDetailsDataSection(product: product),
           CartDetailsTapBar(product: product),
-          verticalSpace(32),
-          RatingSection(),
-          RatingReviewsWidget(),
-          verticalSpace(64),
-          verticalSpace(32),
+          verticalSpace(16),
+          RatingChartSection(
+            productId: productId,
+          ),
+          verticalSpace(16),
+          RatingReviewsWidget(
+            productId: productId,
+          ),
+          verticalSpace(100),
         ],
       ),
     );

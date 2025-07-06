@@ -20,6 +20,7 @@ class ScrollContainerWidget extends StatefulWidget {
   final String rankBySales;
   final int? productId;
   final bool? isVerticalScroll;
+  final String numberOfSales;
 
   const ScrollContainerWidget({
     super.key,
@@ -30,7 +31,7 @@ class ScrollContainerWidget extends StatefulWidget {
     required this.price,
     required this.rankBySales,
     this.productId,
-    this.isVerticalScroll = false,
+    this.isVerticalScroll = false,required this.numberOfSales,
   });
 
   @override
@@ -164,6 +165,7 @@ class _ScrollContainerWidgetState extends State<ScrollContainerWidget> {
                   verticalSpace(8),
                   AnimatedToggleRow(
                       textOne: "#${widget.rankBySales}",
+                      textTwo: widget.numberOfSales,
                       iconSize: 20.r,
                       textStyle: AppStyles.font14BlackMedium),
                   widget.isVerticalScroll == true

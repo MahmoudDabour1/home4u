@@ -119,5 +119,11 @@ abstract class AppAssets {
   static const String requestDesignIcon= 'assets/images/request_desgin_icon.png';
   static const String shopNowIcon = 'assets/images/shop_now_icon.png';
   static const String appIcon = 'assets/images/app_icon.png';
+  static const String electricalTools = 'assets/images/electrical_tools_image.jpg';
+  static const String emptyRate = 'assets/images/empty_rate.png';
+  static const String furnishings = 'assets/images/furnishings_image.jpg';
+  static const String furnitureImage = 'assets/images/furniture_image.jpg';
+  static const String kitchensImage = 'assets/images/kitchens_image.jpg';
+  static const String paintMaterials = 'assets/images/paint_materials_image.jpg';
 }
 

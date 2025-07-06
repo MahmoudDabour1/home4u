@@ -282,4 +282,15 @@ class CartCubit extends Cubit<CartState> {
       emit(CartState.rateReviewsFailure(error: error.message.toString()));
     });
   }
+
+  Future<void> getProductRateChart(int productId) async {
+    emit(const CartState.rateChartLoading());
+    final response = await cartRepository.getProductRateChart(productId);
+
+    response.when(success: (data) {
+      emit(CartState.rateChartSuccess(data));
+    }, failure: (error) {
+      emit(CartState.rateChartFailure(error: error.message.toString()));
+    });
+  }
 }
