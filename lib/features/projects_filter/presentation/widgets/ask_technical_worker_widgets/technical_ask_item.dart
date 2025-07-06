@@ -7,6 +7,7 @@ import 'package:home4u/features/projects_filter/presentation/widgets/filter_imag
 import '../../../../../core/theming/app_colors.dart';
 import '../../../../../core/theming/app_styles.dart';
 import '../../../../../core/utils/app_constants.dart';
+import '../../../data/models/ask_requests/ask_technical_request/ask_technical_request_response_model.dart';
 
 class TechnicalAskItem extends StatelessWidget {
   const TechnicalAskItem({
@@ -14,7 +15,7 @@ class TechnicalAskItem extends StatelessWidget {
     required this.ask,
   });
 
-  final AskData ask;
+  final AskTechnicalRequestData ask;
 
   @override
   Widget build(BuildContext context) {

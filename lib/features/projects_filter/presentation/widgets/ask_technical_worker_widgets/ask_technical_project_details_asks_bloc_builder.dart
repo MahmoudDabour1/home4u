@@ -15,14 +15,14 @@ class AskTechnicalProjectDetailsAsksBlocBuilder extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocBuilder<AskTechnicalServicesCubit, AskTechnicalServicesState>(
       buildWhen: (previous, current) => current.maybeWhen(
-        technicalAsksLoading: () => true,
-        technicalAsksSuccess: (_) => true,
-        technicalAsksFailure: (_) => true,
+        askTechnicalRequestsLoading: () => true,
+        askTechnicalRequestsSuccess: (_) => true,
+        askTechnicalRequestsFailure: (_) => true,
         orElse: () => false,
       ),
       builder: (context, state) {
         return state.maybeWhen(
-          technicalAsksSuccess: (technicalAsk) {
+          askTechnicalRequestsSuccess: (technicalAsk) {
             final ask = technicalAsk.data;
 
             if (ask == null || ask.isEmpty) {
@@ -39,7 +39,7 @@ class AskTechnicalProjectDetailsAsksBlocBuilder extends StatelessWidget {
               itemCount: ask.length,
             );
           },
-          technicalAsksLoading: () => SizedBox(
+          askTechnicalRequestsLoading: () => SizedBox(
             height: MediaQuery.sizeOf(context).height * 0.5,
             child: const Center(
               child: CircularProgressIndicator(),

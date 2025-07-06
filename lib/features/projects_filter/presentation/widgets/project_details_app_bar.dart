@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_localization/flutter_localization.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import '../../../core/theming/app_styles.dart';
-import '../../../core/widgets/app_back_button.dart';
-import '../../../locale/app_locale.dart';
+import '../../../../core/theming/app_styles.dart';
+import '../../../../core/widgets/app_back_button.dart';
+import '../../../../locale/app_locale.dart';
 
 class ProjectDetailsAppBar extends StatelessWidget
     implements PreferredSizeWidget {

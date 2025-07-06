@@ -42,7 +42,7 @@ class _ProjectsFilterScreenState extends State<ProjectsFilterScreen> {
                   pinned: true,
                   forceElevated: true,
                   bottom: PreferredSize(
-                    preferredSize: Size.fromHeight(130.h),
+                    preferredSize: Size.fromHeight(140.h),
                     child: Column(
                       children: [
                         ProjectsFilterSearchBarWidget(),

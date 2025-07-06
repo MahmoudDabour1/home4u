@@ -27,6 +27,7 @@ import 'package:home4u/features/orders/data/models/order_details_response_model.
 import 'package:home4u/features/products/data/models/product_preview_response.dart';
 import 'package:home4u/features/products/presentation/product_details_screen.dart';
 import 'package:home4u/features/profile/presentation/add_certification_screen.dart';
+import 'package:home4u/features/projects_filter/logic/ask_engineer/ask_engineer_services_cubit.dart';
 import 'package:home4u/features/rating/logic/product_rating/product_rating_cubit.dart';
 import 'package:home4u/features/user/home/presentation/best_offices_screen.dart';
 import 'package:home4u/features/user/home/presentation/best_show_rooms_screen.dart';
@@ -57,6 +58,7 @@ import '../../features/profile/presentation/edit_profile_screen.dart';
 import '../../features/profile/presentation/profile_screen.dart';
 import '../../features/profile/presentation/project_details_screen.dart';
 import '../../features/projects_filter/logic/ask_technical/ask_technical_services_cubit.dart';
+import '../../features/projects_filter/presentation/ask_engineer_service_details_screen.dart';
 import '../../features/projects_filter/presentation/ask_technical_project_details_screen.dart';
 import '../../features/projects_filter/presentation/projects_filter_screen.dart';
 import '../../features/rating/presentation/products_rating_screen.dart';
@@ -378,6 +380,15 @@ class AppRouter {
           builder: (_) => BlocProvider<AskTechnicalServicesCubit>(
             create: (context) => sl<AskTechnicalServicesCubit>(),
             child: AskTechnicalProjectDetailsScreen(askId: askId),
+          ),
+        );
+      case Routes.askEngineerProjectDetailsScreen:
+        final askId = settings.arguments as int;
+        return MaterialPageRoute(
+          settings: settings,
+          builder: (_) => BlocProvider<AskEngineerServicesCubit>(
+            create: (context) => sl<AskEngineerServicesCubit>(),
+            child: AskEngineerServiceDetailsScreen(askId: askId),
           ),
         );
       default:

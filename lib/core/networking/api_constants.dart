@@ -135,8 +135,8 @@ class ApiConstants {
   static const String furnishYourHomeDetailsEp =
       "/api/v1/home-furnishing-requests/{furnishId}";
 
-  ///Asks
-  static const String technicalAsksEp = "/api/v1/request-ask-worker/my-asks";
+  ///My-Asks
+  static const String technicalAsksEp = "/api/v1/ask-worker/my-asks";
   static const String engineerAsksEp = "/api/v1/ask-engineer/my-asks";
   static const String requestDesignAsksEp =
       "/api/v1/request-design/my-request-design";

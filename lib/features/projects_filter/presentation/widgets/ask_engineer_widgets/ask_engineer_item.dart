@@ -5,11 +5,12 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../../../core/theming/app_colors.dart';
 import '../../../../../core/theming/app_styles.dart';
 import '../../../../../core/utils/app_constants.dart';
-import '../../../data/models/asks/engineer_ask/engineer_asks_response_model.dart';
+import '../../../data/models/ask_requests/ask_engineer_request/ask_engineer_request_response_model.dart';
 import '../filter_image_and_name_widget.dart';
 
 class AskEngineerItem extends StatelessWidget {
-  final AskEngineerData ask;
+  final AskEngineerRequestData ask;
+
   const AskEngineerItem({super.key, required this.ask});
 
   @override
@@ -30,15 +31,19 @@ class AskEngineerItem extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.start,
           spacing: 16.h,
           children: [
-            Expanded(
-              flex: 1,
-              child: FilterImageAndNameWidget(
-                imageUrl: ask.user?.personalPhoto,
-                userName: ask.user?.username,
-                timeAgo: formatDate(
-                  ask.user?.createdDate,
+            Row(
+              children: [
+                Expanded(
+                  flex: 1,
+                  child: FilterImageAndNameWidget(
+                    imageUrl: ask.user?.personalPhoto,
+                    userName: ask.user?.username,
+                    timeAgo: formatDate(
+                      ask.user?.createdDate,
+                    ),
+                  ),
                 ),
-              ),
+              ],
             ),
             Row(
               children: [

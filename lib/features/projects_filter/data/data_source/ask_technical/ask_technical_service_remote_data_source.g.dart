@@ -107,7 +107,7 @@ class _AskTechnicalServiceRemoteDataSource
     )
         .compose(
           _dio.options,
-          '/api/v1/request-ask-worker/my-asks',
+          '/api/v1/ask-worker/my-asks',
           queryParameters: queryParameters,
           data: _data,
         )

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:home4u/features/projects_filter/logic/ask_technical/ask_technical_services_cubit.dart';
-import 'package:home4u/features/projects_filter/presentation/project_details_app_bar.dart';
+import 'package:home4u/features/projects_filter/presentation/widgets/project_details_app_bar.dart';
 import 'package:home4u/features/projects_filter/presentation/widgets/ask_technical_worker_widgets/ask_technical_project_details_asks_bloc_builder.dart';
 import 'package:home4u/features/projects_filter/presentation/widgets/ask_technical_worker_widgets/ask_technical_project_details_bloc_builder.dart';
 
@@ -25,7 +25,7 @@ class _AskTechnicalProjectDetailsScreenState
         .read<AskTechnicalServicesCubit>()
         .askTechnicalServiceDetails(askId: widget.askId.toString());
 
-    context.read<AskTechnicalServicesCubit>().getTechnicalAsks(
+    context.read<AskTechnicalServicesCubit>().getAskTechnicalRequests(
           askId: widget.askId.toString(),
         );
   }
