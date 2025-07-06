@@ -12,7 +12,7 @@ EngineerAsksResponseModel _$EngineerAsksResponseModelFromJson(
       success: json['success'] as bool?,
       status: (json['status'] as num?)?.toInt(),
       data: (json['data'] as List<dynamic>?)
-          ?.map((e) => EngineerAskData.fromJson(e as Map<String, dynamic>))
+          ?.map((e) => AskEngineerData.fromJson(e as Map<String, dynamic>))
           .toList(),
     );
 
@@ -24,8 +24,43 @@ Map<String, dynamic> _$EngineerAsksResponseModelToJson(
       'data': instance.data,
     };
 
-EngineerAskData _$EngineerAskDataFromJson(Map<String, dynamic> json) =>
-    EngineerAskData(
+AskEngineerData _$AskEngineerDataFromJson(Map<String, dynamic> json) =>
+    AskEngineerData(
+      id: (json['id'] as num?)?.toInt(),
+      statusCode: (json['statusCode'] as num?)?.toInt(),
+      createdDate: json['createdDate'] == null
+          ? null
+          : DateTime.parse(json['createdDate'] as String),
+      modifiedDate: json['modifiedDate'] == null
+          ? null
+          : DateTime.parse(json['modifiedDate'] as String),
+      user: json['user'] == null
+          ? null
+          : UserBaseModel.fromJson(json['user'] as Map<String, dynamic>),
+      askEngineer: json['askEngineer'] == null
+          ? null
+          : AskEngineer.fromJson(json['askEngineer'] as Map<String, dynamic>),
+      comment: json['comment'] as String?,
+      isAccepted: json['isAccepted'],
+      isFinished: json['isFinished'],
+      isRejected: json['isRejected'],
+    );
+
+Map<String, dynamic> _$AskEngineerDataToJson(AskEngineerData instance) =>
+    <String, dynamic>{
+      'id': instance.id,
+      'statusCode': instance.statusCode,
+      'createdDate': instance.createdDate?.toIso8601String(),
+      'modifiedDate': instance.modifiedDate?.toIso8601String(),
+      'user': instance.user,
+      'askEngineer': instance.askEngineer,
+      'comment': instance.comment,
+      'isAccepted': instance.isAccepted,
+      'isFinished': instance.isFinished,
+      'isRejected': instance.isRejected,
+    };
+
+EngineerAsk _$EngineerAskFromJson(Map<String, dynamic> json) => EngineerAsk(
       id: (json['id'] as num?)?.toInt(),
       statusCode: (json['statusCode'] as num?)?.toInt(),
       createdDate: json['createdDate'] == null
@@ -68,7 +103,7 @@ EngineerAskData _$EngineerAskDataFromJson(Map<String, dynamic> json) =>
       askStatus: json['askStatus'] as String?,
     );
 
-Map<String, dynamic> _$EngineerAskDataToJson(EngineerAskData instance) =>
+Map<String, dynamic> _$EngineerAskToJson(EngineerAsk instance) =>
     <String, dynamic>{
       'id': instance.id,
       'statusCode': instance.statusCode,

@@ -14,6 +14,7 @@ import 'package:home4u/features/cart/logic/cart_cubit.dart';
 import 'package:home4u/features/products/logic/products_cubit.dart';
 import 'package:home4u/features/profile/logic/profile/profile_cubit.dart';
 import 'package:home4u/features/profile/logic/services/services_cubit.dart';
+import 'package:home4u/features/projects_filter/logic/ask_engineer/ask_engineer_services_cubit.dart';
 import 'package:home4u/features/projects_filter/logic/projects_filter/projects_filter_cubit.dart';
 import 'package:home4u/features/user/request_design/logic/request_design_cubit.dart';
 
@@ -159,6 +160,9 @@ class _Home4uAppState extends State<Home4uApp> {
             ),
             BlocProvider<ProjectsFilterCubit>(
               create: (_) => sl<ProjectsFilterCubit>(),
+            ),
+            BlocProvider<AskEngineerServicesCubit>(
+              create: (_) => sl<AskEngineerServicesCubit>(),
             ),
           ],
           child: ScreenUtilInit(

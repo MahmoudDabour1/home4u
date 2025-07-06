@@ -1,4 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:home4u/features/projects_filter/data/models/add_request/ask_engineer/add_ask_engineer_request_body.dart';
 import 'package:home4u/features/projects_filter/data/models/base/base_type_model.dart';
 import 'package:home4u/features/projects_filter/data/models/base/city_base_model.dart';
 import 'package:home4u/features/projects_filter/data/models/base/photo_base_model.dart';
@@ -13,7 +14,7 @@ class EngineerAsksResponseModel {
   @JsonKey(name: "status")
   final int? status;
   @JsonKey(name: "data")
-  final List<EngineerAskData>? data;
+  final List<AskEngineerData>? data;
 
   EngineerAsksResponseModel({
     this.success,
@@ -26,9 +27,50 @@ class EngineerAsksResponseModel {
 
   Map<String, dynamic> toJson() => _$EngineerAsksResponseModelToJson(this);
 }
+@JsonSerializable()
+class AskEngineerData {
+  @JsonKey(name: "id")
+  final int? id;
+  @JsonKey(name: "statusCode")
+  final int? statusCode;
+  @JsonKey(name: "createdDate")
+  final DateTime? createdDate;
+  @JsonKey(name: "modifiedDate")
+  final DateTime? modifiedDate;
+  @JsonKey(name: "user")
+  final UserBaseModel? user;
+  @JsonKey(name: "askEngineer")
+  final AskEngineer? askEngineer;
+  @JsonKey(name: "comment")
+  final String? comment;
+  @JsonKey(name: "isAccepted")
+  final dynamic isAccepted;
+  @JsonKey(name: "isFinished")
+  final dynamic isFinished;
+  @JsonKey(name: "isRejected")
+  final dynamic isRejected;
+
+  AskEngineerData({
+    this.id,
+    this.statusCode,
+    this.createdDate,
+    this.modifiedDate,
+    this.user,
+    this.askEngineer,
+    this.comment,
+    this.isAccepted,
+    this.isFinished,
+    this.isRejected,
+  });
+
+  factory AskEngineerData.fromJson(Map<String, dynamic> json) =>
+      _$AskEngineerDataFromJson(json);
+
+  Map<String, dynamic> toJson() => _$AskEngineerDataToJson(this);
+}
 
 @JsonSerializable()
-class EngineerAskData {
+class EngineerAsk {
   @JsonKey(name: "id")
   final int? id;
   @JsonKey(name: "statusCode")
@@ -66,7 +108,7 @@ class EngineerAskData {
   @JsonKey(name: "askStatus")
   final String? askStatus;
 
-  EngineerAskData({
+  EngineerAsk({
     this.id,
     this.statusCode,
     this.createdDate,
@@ -87,8 +129,8 @@ class EngineerAskData {
     this.askStatus,
   });
 
-  factory EngineerAskData.fromJson(Map<String, dynamic> json) =>
-      _$EngineerAskDataFromJson(json);
+  factory EngineerAsk.fromJson(Map<String, dynamic> json) =>
+      _$EngineerAskFromJson(json);
 
-  Map<String, dynamic> toJson() => _$EngineerAskDataToJson(this);
+  Map<String, dynamic> toJson() => _$EngineerAskToJson(this);
 }

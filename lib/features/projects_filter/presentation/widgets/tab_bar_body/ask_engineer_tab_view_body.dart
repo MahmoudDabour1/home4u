@@ -1,21 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:home4u/features/projects_filter/logic/ask_engineer/ask_engineer_services_cubit.dart';
-import 'package:home4u/features/projects_filter/presentation/widgets/ask_technical_worker_widgets/ask_technical_tab_view_item.dart';
+import 'package:home4u/features/projects_filter/presentation/widgets/ask_engineer_widgets/ask_engineer_tab_view_item.dart';
 
 import '../../../../../core/utils/spacing.dart';
 import '../../../logic/projects_filter/projects_filter_cubit.dart';
 import '../../../logic/projects_filter/projects_filter_state.dart';
 
-class AskTechnicalTabViewBody extends StatefulWidget {
-  const AskTechnicalTabViewBody({super.key});
+class AskEngineerTabViewBody extends StatefulWidget {
+  const AskEngineerTabViewBody({super.key});
 
   @override
-  State<AskTechnicalTabViewBody> createState() =>
-      _AskTechnicalTabViewBodyState();
+  State<AskEngineerTabViewBody> createState() => _AskEngineerTabViewBodyState();
 }
 
-class _AskTechnicalTabViewBodyState extends State<AskTechnicalTabViewBody> {
+class _AskEngineerTabViewBodyState extends State<AskEngineerTabViewBody> {
   late ScrollController _scrollController;
 
   @override
@@ -27,7 +25,7 @@ class _AskTechnicalTabViewBodyState extends State<AskTechnicalTabViewBody> {
 
   void _loadInitialData() {
     final cubit = context.read<ProjectsFilterCubit>();
-    cubit.askTechnicalWorkerFilter(isRefresh: true);
+    cubit.askEngineerFilter(isRefresh: true);
   }
 
   void _scrollListener() {
@@ -35,15 +33,15 @@ class _AskTechnicalTabViewBodyState extends State<AskTechnicalTabViewBody> {
 
     if (_scrollController.offset >=
             _scrollController.position.maxScrollExtent * 0.7 &&
-        !cubit.hasReachedMaxOfAskTechnicalWorker) {
-      cubit.askTechnicalWorkerFilter();
+        !cubit.hasReachedMaxOfAskEngineer) {
+      cubit.askEngineerFilter();
     }
   }
 
   @override
   void dispose() {
     final cubit = context.read<ProjectsFilterCubit>();
-    cubit.resetPaginationOfAskTechnical();
+    cubit.resetPaginationOfAskEngineer();
     _scrollController.removeListener(_scrollListener);
     _scrollController.dispose();
     super.dispose();
@@ -54,11 +52,10 @@ class _AskTechnicalTabViewBodyState extends State<AskTechnicalTabViewBody> {
     return BlocBuilder<ProjectsFilterCubit, ProjectsFilterState>(
       builder: (context, state) {
         final cubit = context.read<ProjectsFilterCubit>();
-        final isLoadingMore = cubit.isFetchingAskTechnical &&
-            !cubit.hasReachedMaxOfAskTechnicalWorker;
+        final isLoadingMore =
+            cubit.isFetchingAskEngineer && !cubit.hasReachedMaxOfAskEngineer;
 
-        if (state is AskTechnicalWorkerFilterLoading &&
-            cubit.askTechnicalItems.isEmpty) {
+        if (cubit.askEngineerItems.isEmpty && !isLoadingMore) {
           return const Center(
             child: CircularProgressIndicator(
               color: Colors.amber,
@@ -68,9 +65,9 @@ class _AskTechnicalTabViewBodyState extends State<AskTechnicalTabViewBody> {
 
         return ListView.separated(
           itemBuilder: (context, index) {
-            if (index < cubit.askTechnicalItems.length) {
-              return AskTechnicalTabViewItem(
-                askTechnical: cubit.askTechnicalItems[index],
+            if (index < cubit.askEngineerItems.length) {
+              return AskEngineerTabViewItem(
+                askEngineer: cubit.askEngineerItems[index],
               );
             } else if (isLoadingMore) {
               return const Center(
@@ -81,7 +78,7 @@ class _AskTechnicalTabViewBodyState extends State<AskTechnicalTabViewBody> {
             }
           },
           separatorBuilder: (_, __) => verticalSpace(12),
-          itemCount: cubit.askTechnicalItems.length + (isLoadingMore ? 1 : 0),
+          itemCount: cubit.askEngineerItems.length + (isLoadingMore ? 1 : 0),
         );
       },
     );
