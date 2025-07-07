@@ -30,4 +30,22 @@ class HomeState<T> with _$HomeState<T> {
 
   const factory HomeState.getRecommendedForYouError(String message) =
       GetRecommendedForYouHomeError;
+
+  // top engineers
+  const factory HomeState.geTopEngineersLoading() = GetTopEngineersLoading;
+
+  const factory HomeState.getTopEngineersSuccess(T data) =
+      GetTopEngineersSuccess<T>;
+
+  const factory HomeState.getTopEngineersError(String message) =
+      GetTopEngineersError;
+
+  // top workers
+  const factory HomeState.geTopWorkersLoading() = GetTopWorkersLoading;
+
+  const factory HomeState.getTopWorkersSuccess(T data) =
+      GetTopWorkersSuccess<T>;
+
+  const factory HomeState.getTopWorkersError(String message) =
+      GetTopWorkersError;
 }

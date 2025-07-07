@@ -1,3 +1,4 @@
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_localization/flutter_localization.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -141,11 +142,11 @@ class _ScrollContainerWidgetState extends State<ScrollContainerWidget> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text(
+                  AutoSizeText(
                     widget.title,
                     style: AppStyles.font16BlackMedium,
                     overflow: TextOverflow.ellipsis,
-                    maxLines: 2,
+                    maxLines: 1,
                   ),
                   verticalSpace(8),
                   widget.isVerticalScroll == true
@@ -168,6 +169,7 @@ class _ScrollContainerWidgetState extends State<ScrollContainerWidget> {
                       textTwo: widget.numberOfSales,
                       iconSize: 20.r,
                       textStyle: AppStyles.font14BlackMedium),
+                  verticalSpace(8),
                   widget.isVerticalScroll == true
                       ? verticalSpace(16)
                       : SizedBox.shrink(),

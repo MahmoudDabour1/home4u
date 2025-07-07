@@ -413,6 +413,8 @@ class AppLocale {
   static const String thisProductDoesHaveAnyRatingYet = 'This product doesn\'t have any rating yet.';
   static const String soldRecently = 'Sold Recently';
   static const String shopByCategory  = 'Shop By Category';
+  static const String topEngineers  = 'Top Engineers';
+  static const String topWorkers  = 'Top Workers';
 
 
   static const Map<String, dynamic> en = {
@@ -763,6 +765,8 @@ class AppLocale {
     thisProductDoesHaveAnyRatingYet: 'This product doesn\'t have any rating yet.',
     soldRecently: 'Sold Recently',
     shopByCategory: 'Shop By Category',
+    topEngineers: 'Top Engineers',
+    topWorkers: 'Top Workers',
   };
 
   static const Map<String, dynamic> ar = {
@@ -1109,5 +1113,7 @@ class AppLocale {
     thisProductDoesHaveAnyRatingYet: 'هذا المنتج لا يحتوي على أي تقييم حتى الآن.',
     soldRecently: 'تم بيعه مؤخرًا',
     shopByCategory: 'تسوق حسب الفئة',
+    topEngineers: 'أفضل المهندسين',
+    topWorkers: 'أفضل العمال',
   };
 }

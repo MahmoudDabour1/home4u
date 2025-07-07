@@ -15,51 +15,55 @@ class BestOfficeListView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      height: 310.h,
-      child: BlocBuilder<HomeCubit, HomeState>(
-        buildWhen: (previous, current) =>
-            current is GetTopBestSellerLoading ||
-            current is GetTopBestSellerHomeSuccess ||
-            current is GetTopBestSellerHomeError,
-        builder: (context, state) {
-          return state.maybeWhen(
-              getTopBestSellerLoading: () => const Center(
-                    child: CircularProgressIndicator(),
+    return BlocBuilder<HomeCubit, HomeState>(
+      buildWhen: (previous, current) =>
+          current is GetTopBestSellerLoading ||
+          current is GetTopBestSellerHomeSuccess ||
+          current is GetTopBestSellerHomeError,
+      builder: (context, state) {
+        return state.maybeWhen(
+            getTopBestSellerLoading: () => const Center(
+                  child: CircularProgressIndicator(),
+                ),
+            getTopBestSellerSuccess: (data) {
+              return setupSuccess(data,context);
+            },
+            getTopBestSellerError: (e) => Center(
+                  child: Text(
+                    e.toString(),
+                    style: TextStyle(fontSize: 16.sp, color: Colors.red),
                   ),
-              getTopBestSellerSuccess: (data) {
-                return setupSuccess(data);
-              },
-              getTopBestSellerError: (e) => Center(
-                    child: Text(
-                      e.toString(),
-                      style: TextStyle(fontSize: 16.sp, color: Colors.red),
-                    ),
-                  ),
-              orElse: () => SizedBox.shrink());
-        },
-      ),
+                ),
+            orElse: () => SizedBox.shrink());
+      },
     );
   }
 
-  Widget setupSuccess(TopBestSellerResponseModel data) {
-    return ListView.separated(
-      separatorBuilder: (context, index) => horizontalSpace(8.w),
-      itemCount: data.data?.length ?? 0,
+  Widget setupSuccess(TopBestSellerResponseModel data,BuildContext context) {
+    return SingleChildScrollView(
       scrollDirection: Axis.horizontal,
-      itemBuilder: (context, index) {
-        return ScrollContainerWidget(
-          productId: data.data?[index].id ?? 0,
-          image: data.data?[index].images?[0] ?? '',
-          title: data.data?[index].name ?? '',
-          starCount: data.data?[index].rate.toString() ?? '0',
-          price: data.data?[index].price.toString() ?? "0",
-          ratingCount: data.data?[index].countRates?.toString() ?? '0',
-          rankBySales:
-              "${data.data?[index].productRankBySales ?? 0} ${AppLocale.on.getString(context)} ${data.data?[index].categoryName ?? ""} category",
-          numberOfSales: "${data.data?[index].numberOfSales} ${AppLocale.soldRecently.getString(context)}",
-        );
-      },
+      child: Row(
+        children: List.generate(
+          data.data?.length ?? 0,
+              (index) {
+            return Padding(
+              padding: EdgeInsets.only(right: 8.w),
+              child: ScrollContainerWidget(
+                productId: data.data?[index].id ?? 0,
+                image: data.data?[index].images?[0] ?? '',
+                title: data.data?[index].name ?? '',
+                starCount: data.data?[index].rate.toString() ?? '0',
+                price: data.data?[index].price.toString() ?? "0",
+                ratingCount: data.data?[index].countRates?.toString() ?? '0',
+                rankBySales:
+                "${data.data?[index].productRankBySales ?? 0} ${AppLocale.on.getString(context)} ${data.data?[index].categoryName ?? ""} category",
+                numberOfSales:
+                "${data.data?[index].numberOfSales} ${AppLocale.soldRecently.getString(context)}",
+              ),
+            );
+          },
+        ),
+      ),
     );
   }
 }

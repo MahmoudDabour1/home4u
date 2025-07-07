@@ -145,6 +145,15 @@ class ApiConstants {
 
   ///Asks
   static const String technicalAsksEp = "/api/v1/request-ask-worker/my-asks";
+
+
+  /// top engineers
+static const String topEngineersEp = "/api/v1/engineers/top-engineers";
+
+  /// top workers
+  static const String topWorkersEp = "/api/v1/technical-workers/top-workers";
+
+
 }
 
 class ApiErrors {

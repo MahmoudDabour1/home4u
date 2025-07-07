@@ -28,6 +28,12 @@ mixin _$HomeState<T> {
     required TResult Function() getRecommendedForYouLoading,
     required TResult Function(T data) getRecommendedForYouSuccess,
     required TResult Function(String message) getRecommendedForYouError,
+    required TResult Function() geTopEngineersLoading,
+    required TResult Function(T data) getTopEngineersSuccess,
+    required TResult Function(String message) getTopEngineersError,
+    required TResult Function() geTopWorkersLoading,
+    required TResult Function(T data) getTopWorkersSuccess,
+    required TResult Function(String message) getTopWorkersError,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -42,6 +48,12 @@ mixin _$HomeState<T> {
     TResult? Function()? getRecommendedForYouLoading,
     TResult? Function(T data)? getRecommendedForYouSuccess,
     TResult? Function(String message)? getRecommendedForYouError,
+    TResult? Function()? geTopEngineersLoading,
+    TResult? Function(T data)? getTopEngineersSuccess,
+    TResult? Function(String message)? getTopEngineersError,
+    TResult? Function()? geTopWorkersLoading,
+    TResult? Function(T data)? getTopWorkersSuccess,
+    TResult? Function(String message)? getTopWorkersError,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -56,6 +68,12 @@ mixin _$HomeState<T> {
     TResult Function()? getRecommendedForYouLoading,
     TResult Function(T data)? getRecommendedForYouSuccess,
     TResult Function(String message)? getRecommendedForYouError,
+    TResult Function()? geTopEngineersLoading,
+    TResult Function(T data)? getTopEngineersSuccess,
+    TResult Function(String message)? getTopEngineersError,
+    TResult Function()? geTopWorkersLoading,
+    TResult Function(T data)? getTopWorkersSuccess,
+    TResult Function(String message)? getTopWorkersError,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -80,6 +98,17 @@ mixin _$HomeState<T> {
         getRecommendedForYouSuccess,
     required TResult Function(GetRecommendedForYouHomeError<T> value)
         getRecommendedForYouError,
+    required TResult Function(GetTopEngineersLoading<T> value)
+        geTopEngineersLoading,
+    required TResult Function(GetTopEngineersSuccess<T> value)
+        getTopEngineersSuccess,
+    required TResult Function(GetTopEngineersError<T> value)
+        getTopEngineersError,
+    required TResult Function(GetTopWorkersLoading<T> value)
+        geTopWorkersLoading,
+    required TResult Function(GetTopWorkersSuccess<T> value)
+        getTopWorkersSuccess,
+    required TResult Function(GetTopWorkersError<T> value) getTopWorkersError,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -101,6 +130,12 @@ mixin _$HomeState<T> {
         getRecommendedForYouSuccess,
     TResult? Function(GetRecommendedForYouHomeError<T> value)?
         getRecommendedForYouError,
+    TResult? Function(GetTopEngineersLoading<T> value)? geTopEngineersLoading,
+    TResult? Function(GetTopEngineersSuccess<T> value)? getTopEngineersSuccess,
+    TResult? Function(GetTopEngineersError<T> value)? getTopEngineersError,
+    TResult? Function(GetTopWorkersLoading<T> value)? geTopWorkersLoading,
+    TResult? Function(GetTopWorkersSuccess<T> value)? getTopWorkersSuccess,
+    TResult? Function(GetTopWorkersError<T> value)? getTopWorkersError,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -120,6 +155,12 @@ mixin _$HomeState<T> {
         getRecommendedForYouSuccess,
     TResult Function(GetRecommendedForYouHomeError<T> value)?
         getRecommendedForYouError,
+    TResult Function(GetTopEngineersLoading<T> value)? geTopEngineersLoading,
+    TResult Function(GetTopEngineersSuccess<T> value)? getTopEngineersSuccess,
+    TResult Function(GetTopEngineersError<T> value)? getTopEngineersError,
+    TResult Function(GetTopWorkersLoading<T> value)? geTopWorkersLoading,
+    TResult Function(GetTopWorkersSuccess<T> value)? getTopWorkersSuccess,
+    TResult Function(GetTopWorkersError<T> value)? getTopWorkersError,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -197,6 +238,12 @@ class _$HomeInitialImpl<T> implements HomeInitial<T> {
     required TResult Function() getRecommendedForYouLoading,
     required TResult Function(T data) getRecommendedForYouSuccess,
     required TResult Function(String message) getRecommendedForYouError,
+    required TResult Function() geTopEngineersLoading,
+    required TResult Function(T data) getTopEngineersSuccess,
+    required TResult Function(String message) getTopEngineersError,
+    required TResult Function() geTopWorkersLoading,
+    required TResult Function(T data) getTopWorkersSuccess,
+    required TResult Function(String message) getTopWorkersError,
   }) {
     return initial();
   }
@@ -214,6 +261,12 @@ class _$HomeInitialImpl<T> implements HomeInitial<T> {
     TResult? Function()? getRecommendedForYouLoading,
     TResult? Function(T data)? getRecommendedForYouSuccess,
     TResult? Function(String message)? getRecommendedForYouError,
+    TResult? Function()? geTopEngineersLoading,
+    TResult? Function(T data)? getTopEngineersSuccess,
+    TResult? Function(String message)? getTopEngineersError,
+    TResult? Function()? geTopWorkersLoading,
+    TResult? Function(T data)? getTopWorkersSuccess,
+    TResult? Function(String message)? getTopWorkersError,
   }) {
     return initial?.call();
   }
@@ -231,6 +284,12 @@ class _$HomeInitialImpl<T> implements HomeInitial<T> {
     TResult Function()? getRecommendedForYouLoading,
     TResult Function(T data)? getRecommendedForYouSuccess,
     TResult Function(String message)? getRecommendedForYouError,
+    TResult Function()? geTopEngineersLoading,
+    TResult Function(T data)? getTopEngineersSuccess,
+    TResult Function(String message)? getTopEngineersError,
+    TResult Function()? geTopWorkersLoading,
+    TResult Function(T data)? getTopWorkersSuccess,
+    TResult Function(String message)? getTopWorkersError,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -261,6 +320,17 @@ class _$HomeInitialImpl<T> implements HomeInitial<T> {
         getRecommendedForYouSuccess,
     required TResult Function(GetRecommendedForYouHomeError<T> value)
         getRecommendedForYouError,
+    required TResult Function(GetTopEngineersLoading<T> value)
+        geTopEngineersLoading,
+    required TResult Function(GetTopEngineersSuccess<T> value)
+        getTopEngineersSuccess,
+    required TResult Function(GetTopEngineersError<T> value)
+        getTopEngineersError,
+    required TResult Function(GetTopWorkersLoading<T> value)
+        geTopWorkersLoading,
+    required TResult Function(GetTopWorkersSuccess<T> value)
+        getTopWorkersSuccess,
+    required TResult Function(GetTopWorkersError<T> value) getTopWorkersError,
   }) {
     return initial(this);
   }
@@ -285,6 +355,12 @@ class _$HomeInitialImpl<T> implements HomeInitial<T> {
         getRecommendedForYouSuccess,
     TResult? Function(GetRecommendedForYouHomeError<T> value)?
         getRecommendedForYouError,
+    TResult? Function(GetTopEngineersLoading<T> value)? geTopEngineersLoading,
+    TResult? Function(GetTopEngineersSuccess<T> value)? getTopEngineersSuccess,
+    TResult? Function(GetTopEngineersError<T> value)? getTopEngineersError,
+    TResult? Function(GetTopWorkersLoading<T> value)? geTopWorkersLoading,
+    TResult? Function(GetTopWorkersSuccess<T> value)? getTopWorkersSuccess,
+    TResult? Function(GetTopWorkersError<T> value)? getTopWorkersError,
   }) {
     return initial?.call(this);
   }
@@ -307,6 +383,12 @@ class _$HomeInitialImpl<T> implements HomeInitial<T> {
         getRecommendedForYouSuccess,
     TResult Function(GetRecommendedForYouHomeError<T> value)?
         getRecommendedForYouError,
+    TResult Function(GetTopEngineersLoading<T> value)? geTopEngineersLoading,
+    TResult Function(GetTopEngineersSuccess<T> value)? getTopEngineersSuccess,
+    TResult Function(GetTopEngineersError<T> value)? getTopEngineersError,
+    TResult Function(GetTopWorkersLoading<T> value)? geTopWorkersLoading,
+    TResult Function(GetTopWorkersSuccess<T> value)? getTopWorkersSuccess,
+    TResult Function(GetTopWorkersError<T> value)? getTopWorkersError,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -374,6 +456,12 @@ class _$GetTopBestSellerLoadingImpl<T> implements GetTopBestSellerLoading<T> {
     required TResult Function() getRecommendedForYouLoading,
     required TResult Function(T data) getRecommendedForYouSuccess,
     required TResult Function(String message) getRecommendedForYouError,
+    required TResult Function() geTopEngineersLoading,
+    required TResult Function(T data) getTopEngineersSuccess,
+    required TResult Function(String message) getTopEngineersError,
+    required TResult Function() geTopWorkersLoading,
+    required TResult Function(T data) getTopWorkersSuccess,
+    required TResult Function(String message) getTopWorkersError,
   }) {
     return getTopBestSellerLoading();
   }
@@ -391,6 +479,12 @@ class _$GetTopBestSellerLoadingImpl<T> implements GetTopBestSellerLoading<T> {
     TResult? Function()? getRecommendedForYouLoading,
     TResult? Function(T data)? getRecommendedForYouSuccess,
     TResult? Function(String message)? getRecommendedForYouError,
+    TResult? Function()? geTopEngineersLoading,
+    TResult? Function(T data)? getTopEngineersSuccess,
+    TResult? Function(String message)? getTopEngineersError,
+    TResult? Function()? geTopWorkersLoading,
+    TResult? Function(T data)? getTopWorkersSuccess,
+    TResult? Function(String message)? getTopWorkersError,
   }) {
     return getTopBestSellerLoading?.call();
   }
@@ -408,6 +502,12 @@ class _$GetTopBestSellerLoadingImpl<T> implements GetTopBestSellerLoading<T> {
     TResult Function()? getRecommendedForYouLoading,
     TResult Function(T data)? getRecommendedForYouSuccess,
     TResult Function(String message)? getRecommendedForYouError,
+    TResult Function()? geTopEngineersLoading,
+    TResult Function(T data)? getTopEngineersSuccess,
+    TResult Function(String message)? getTopEngineersError,
+    TResult Function()? geTopWorkersLoading,
+    TResult Function(T data)? getTopWorkersSuccess,
+    TResult Function(String message)? getTopWorkersError,
     required TResult orElse(),
   }) {
     if (getTopBestSellerLoading != null) {
@@ -438,6 +538,17 @@ class _$GetTopBestSellerLoadingImpl<T> implements GetTopBestSellerLoading<T> {
         getRecommendedForYouSuccess,
     required TResult Function(GetRecommendedForYouHomeError<T> value)
         getRecommendedForYouError,
+    required TResult Function(GetTopEngineersLoading<T> value)
+        geTopEngineersLoading,
+    required TResult Function(GetTopEngineersSuccess<T> value)
+        getTopEngineersSuccess,
+    required TResult Function(GetTopEngineersError<T> value)
+        getTopEngineersError,
+    required TResult Function(GetTopWorkersLoading<T> value)
+        geTopWorkersLoading,
+    required TResult Function(GetTopWorkersSuccess<T> value)
+        getTopWorkersSuccess,
+    required TResult Function(GetTopWorkersError<T> value) getTopWorkersError,
   }) {
     return getTopBestSellerLoading(this);
   }
@@ -462,6 +573,12 @@ class _$GetTopBestSellerLoadingImpl<T> implements GetTopBestSellerLoading<T> {
         getRecommendedForYouSuccess,
     TResult? Function(GetRecommendedForYouHomeError<T> value)?
         getRecommendedForYouError,
+    TResult? Function(GetTopEngineersLoading<T> value)? geTopEngineersLoading,
+    TResult? Function(GetTopEngineersSuccess<T> value)? getTopEngineersSuccess,
+    TResult? Function(GetTopEngineersError<T> value)? getTopEngineersError,
+    TResult? Function(GetTopWorkersLoading<T> value)? geTopWorkersLoading,
+    TResult? Function(GetTopWorkersSuccess<T> value)? getTopWorkersSuccess,
+    TResult? Function(GetTopWorkersError<T> value)? getTopWorkersError,
   }) {
     return getTopBestSellerLoading?.call(this);
   }
@@ -484,6 +601,12 @@ class _$GetTopBestSellerLoadingImpl<T> implements GetTopBestSellerLoading<T> {
         getRecommendedForYouSuccess,
     TResult Function(GetRecommendedForYouHomeError<T> value)?
         getRecommendedForYouError,
+    TResult Function(GetTopEngineersLoading<T> value)? geTopEngineersLoading,
+    TResult Function(GetTopEngineersSuccess<T> value)? getTopEngineersSuccess,
+    TResult Function(GetTopEngineersError<T> value)? getTopEngineersError,
+    TResult Function(GetTopWorkersLoading<T> value)? geTopWorkersLoading,
+    TResult Function(GetTopWorkersSuccess<T> value)? getTopWorkersSuccess,
+    TResult Function(GetTopWorkersError<T> value)? getTopWorkersError,
     required TResult orElse(),
   }) {
     if (getTopBestSellerLoading != null) {
@@ -582,6 +705,12 @@ class _$GetTopBestSellerHomeSuccessImpl<T>
     required TResult Function() getRecommendedForYouLoading,
     required TResult Function(T data) getRecommendedForYouSuccess,
     required TResult Function(String message) getRecommendedForYouError,
+    required TResult Function() geTopEngineersLoading,
+    required TResult Function(T data) getTopEngineersSuccess,
+    required TResult Function(String message) getTopEngineersError,
+    required TResult Function() geTopWorkersLoading,
+    required TResult Function(T data) getTopWorkersSuccess,
+    required TResult Function(String message) getTopWorkersError,
   }) {
     return getTopBestSellerSuccess(data);
   }
@@ -599,6 +728,12 @@ class _$GetTopBestSellerHomeSuccessImpl<T>
     TResult? Function()? getRecommendedForYouLoading,
     TResult? Function(T data)? getRecommendedForYouSuccess,
     TResult? Function(String message)? getRecommendedForYouError,
+    TResult? Function()? geTopEngineersLoading,
+    TResult? Function(T data)? getTopEngineersSuccess,
+    TResult? Function(String message)? getTopEngineersError,
+    TResult? Function()? geTopWorkersLoading,
+    TResult? Function(T data)? getTopWorkersSuccess,
+    TResult? Function(String message)? getTopWorkersError,
   }) {
     return getTopBestSellerSuccess?.call(data);
   }
@@ -616,6 +751,12 @@ class _$GetTopBestSellerHomeSuccessImpl<T>
     TResult Function()? getRecommendedForYouLoading,
     TResult Function(T data)? getRecommendedForYouSuccess,
     TResult Function(String message)? getRecommendedForYouError,
+    TResult Function()? geTopEngineersLoading,
+    TResult Function(T data)? getTopEngineersSuccess,
+    TResult Function(String message)? getTopEngineersError,
+    TResult Function()? geTopWorkersLoading,
+    TResult Function(T data)? getTopWorkersSuccess,
+    TResult Function(String message)? getTopWorkersError,
     required TResult orElse(),
   }) {
     if (getTopBestSellerSuccess != null) {
@@ -646,6 +787,17 @@ class _$GetTopBestSellerHomeSuccessImpl<T>
         getRecommendedForYouSuccess,
     required TResult Function(GetRecommendedForYouHomeError<T> value)
         getRecommendedForYouError,
+    required TResult Function(GetTopEngineersLoading<T> value)
+        geTopEngineersLoading,
+    required TResult Function(GetTopEngineersSuccess<T> value)
+        getTopEngineersSuccess,
+    required TResult Function(GetTopEngineersError<T> value)
+        getTopEngineersError,
+    required TResult Function(GetTopWorkersLoading<T> value)
+        geTopWorkersLoading,
+    required TResult Function(GetTopWorkersSuccess<T> value)
+        getTopWorkersSuccess,
+    required TResult Function(GetTopWorkersError<T> value) getTopWorkersError,
   }) {
     return getTopBestSellerSuccess(this);
   }
@@ -670,6 +822,12 @@ class _$GetTopBestSellerHomeSuccessImpl<T>
         getRecommendedForYouSuccess,
     TResult? Function(GetRecommendedForYouHomeError<T> value)?
         getRecommendedForYouError,
+    TResult? Function(GetTopEngineersLoading<T> value)? geTopEngineersLoading,
+    TResult? Function(GetTopEngineersSuccess<T> value)? getTopEngineersSuccess,
+    TResult? Function(GetTopEngineersError<T> value)? getTopEngineersError,
+    TResult? Function(GetTopWorkersLoading<T> value)? geTopWorkersLoading,
+    TResult? Function(GetTopWorkersSuccess<T> value)? getTopWorkersSuccess,
+    TResult? Function(GetTopWorkersError<T> value)? getTopWorkersError,
   }) {
     return getTopBestSellerSuccess?.call(this);
   }
@@ -692,6 +850,12 @@ class _$GetTopBestSellerHomeSuccessImpl<T>
         getRecommendedForYouSuccess,
     TResult Function(GetRecommendedForYouHomeError<T> value)?
         getRecommendedForYouError,
+    TResult Function(GetTopEngineersLoading<T> value)? geTopEngineersLoading,
+    TResult Function(GetTopEngineersSuccess<T> value)? getTopEngineersSuccess,
+    TResult Function(GetTopEngineersError<T> value)? getTopEngineersError,
+    TResult Function(GetTopWorkersLoading<T> value)? geTopWorkersLoading,
+    TResult Function(GetTopWorkersSuccess<T> value)? getTopWorkersSuccess,
+    TResult Function(GetTopWorkersError<T> value)? getTopWorkersError,
     required TResult orElse(),
   }) {
     if (getTopBestSellerSuccess != null) {
@@ -798,6 +962,12 @@ class _$GetTopBestSellerHomeErrorImpl<T>
     required TResult Function() getRecommendedForYouLoading,
     required TResult Function(T data) getRecommendedForYouSuccess,
     required TResult Function(String message) getRecommendedForYouError,
+    required TResult Function() geTopEngineersLoading,
+    required TResult Function(T data) getTopEngineersSuccess,
+    required TResult Function(String message) getTopEngineersError,
+    required TResult Function() geTopWorkersLoading,
+    required TResult Function(T data) getTopWorkersSuccess,
+    required TResult Function(String message) getTopWorkersError,
   }) {
     return getTopBestSellerError(message);
   }
@@ -815,6 +985,12 @@ class _$GetTopBestSellerHomeErrorImpl<T>
     TResult? Function()? getRecommendedForYouLoading,
     TResult? Function(T data)? getRecommendedForYouSuccess,
     TResult? Function(String message)? getRecommendedForYouError,
+    TResult? Function()? geTopEngineersLoading,
+    TResult? Function(T data)? getTopEngineersSuccess,
+    TResult? Function(String message)? getTopEngineersError,
+    TResult? Function()? geTopWorkersLoading,
+    TResult? Function(T data)? getTopWorkersSuccess,
+    TResult? Function(String message)? getTopWorkersError,
   }) {
     return getTopBestSellerError?.call(message);
   }
@@ -832,6 +1008,12 @@ class _$GetTopBestSellerHomeErrorImpl<T>
     TResult Function()? getRecommendedForYouLoading,
     TResult Function(T data)? getRecommendedForYouSuccess,
     TResult Function(String message)? getRecommendedForYouError,
+    TResult Function()? geTopEngineersLoading,
+    TResult Function(T data)? getTopEngineersSuccess,
+    TResult Function(String message)? getTopEngineersError,
+    TResult Function()? geTopWorkersLoading,
+    TResult Function(T data)? getTopWorkersSuccess,
+    TResult Function(String message)? getTopWorkersError,
     required TResult orElse(),
   }) {
     if (getTopBestSellerError != null) {
@@ -862,6 +1044,17 @@ class _$GetTopBestSellerHomeErrorImpl<T>
         getRecommendedForYouSuccess,
     required TResult Function(GetRecommendedForYouHomeError<T> value)
         getRecommendedForYouError,
+    required TResult Function(GetTopEngineersLoading<T> value)
+        geTopEngineersLoading,
+    required TResult Function(GetTopEngineersSuccess<T> value)
+        getTopEngineersSuccess,
+    required TResult Function(GetTopEngineersError<T> value)
+        getTopEngineersError,
+    required TResult Function(GetTopWorkersLoading<T> value)
+        geTopWorkersLoading,
+    required TResult Function(GetTopWorkersSuccess<T> value)
+        getTopWorkersSuccess,
+    required TResult Function(GetTopWorkersError<T> value) getTopWorkersError,
   }) {
     return getTopBestSellerError(this);
   }
@@ -886,6 +1079,12 @@ class _$GetTopBestSellerHomeErrorImpl<T>
         getRecommendedForYouSuccess,
     TResult? Function(GetRecommendedForYouHomeError<T> value)?
         getRecommendedForYouError,
+    TResult? Function(GetTopEngineersLoading<T> value)? geTopEngineersLoading,
+    TResult? Function(GetTopEngineersSuccess<T> value)? getTopEngineersSuccess,
+    TResult? Function(GetTopEngineersError<T> value)? getTopEngineersError,
+    TResult? Function(GetTopWorkersLoading<T> value)? geTopWorkersLoading,
+    TResult? Function(GetTopWorkersSuccess<T> value)? getTopWorkersSuccess,
+    TResult? Function(GetTopWorkersError<T> value)? getTopWorkersError,
   }) {
     return getTopBestSellerError?.call(this);
   }
@@ -908,6 +1107,12 @@ class _$GetTopBestSellerHomeErrorImpl<T>
         getRecommendedForYouSuccess,
     TResult Function(GetRecommendedForYouHomeError<T> value)?
         getRecommendedForYouError,
+    TResult Function(GetTopEngineersLoading<T> value)? geTopEngineersLoading,
+    TResult Function(GetTopEngineersSuccess<T> value)? getTopEngineersSuccess,
+    TResult Function(GetTopEngineersError<T> value)? getTopEngineersError,
+    TResult Function(GetTopWorkersLoading<T> value)? geTopWorkersLoading,
+    TResult Function(GetTopWorkersSuccess<T> value)? getTopWorkersSuccess,
+    TResult Function(GetTopWorkersError<T> value)? getTopWorkersError,
     required TResult orElse(),
   }) {
     if (getTopBestSellerError != null) {
@@ -985,6 +1190,12 @@ class _$GetHighestRatedLoadingImpl<T> implements GetHighestRatedLoading<T> {
     required TResult Function() getRecommendedForYouLoading,
     required TResult Function(T data) getRecommendedForYouSuccess,
     required TResult Function(String message) getRecommendedForYouError,
+    required TResult Function() geTopEngineersLoading,
+    required TResult Function(T data) getTopEngineersSuccess,
+    required TResult Function(String message) getTopEngineersError,
+    required TResult Function() geTopWorkersLoading,
+    required TResult Function(T data) getTopWorkersSuccess,
+    required TResult Function(String message) getTopWorkersError,
   }) {
     return getHighestRatedLoading();
   }
@@ -1002,6 +1213,12 @@ class _$GetHighestRatedLoadingImpl<T> implements GetHighestRatedLoading<T> {
     TResult? Function()? getRecommendedForYouLoading,
     TResult? Function(T data)? getRecommendedForYouSuccess,
     TResult? Function(String message)? getRecommendedForYouError,
+    TResult? Function()? geTopEngineersLoading,
+    TResult? Function(T data)? getTopEngineersSuccess,
+    TResult? Function(String message)? getTopEngineersError,
+    TResult? Function()? geTopWorkersLoading,
+    TResult? Function(T data)? getTopWorkersSuccess,
+    TResult? Function(String message)? getTopWorkersError,
   }) {
     return getHighestRatedLoading?.call();
   }
@@ -1019,6 +1236,12 @@ class _$GetHighestRatedLoadingImpl<T> implements GetHighestRatedLoading<T> {
     TResult Function()? getRecommendedForYouLoading,
     TResult Function(T data)? getRecommendedForYouSuccess,
     TResult Function(String message)? getRecommendedForYouError,
+    TResult Function()? geTopEngineersLoading,
+    TResult Function(T data)? getTopEngineersSuccess,
+    TResult Function(String message)? getTopEngineersError,
+    TResult Function()? geTopWorkersLoading,
+    TResult Function(T data)? getTopWorkersSuccess,
+    TResult Function(String message)? getTopWorkersError,
     required TResult orElse(),
   }) {
     if (getHighestRatedLoading != null) {
@@ -1049,6 +1272,17 @@ class _$GetHighestRatedLoadingImpl<T> implements GetHighestRatedLoading<T> {
         getRecommendedForYouSuccess,
     required TResult Function(GetRecommendedForYouHomeError<T> value)
         getRecommendedForYouError,
+    required TResult Function(GetTopEngineersLoading<T> value)
+        geTopEngineersLoading,
+    required TResult Function(GetTopEngineersSuccess<T> value)
+        getTopEngineersSuccess,
+    required TResult Function(GetTopEngineersError<T> value)
+        getTopEngineersError,
+    required TResult Function(GetTopWorkersLoading<T> value)
+        geTopWorkersLoading,
+    required TResult Function(GetTopWorkersSuccess<T> value)
+        getTopWorkersSuccess,
+    required TResult Function(GetTopWorkersError<T> value) getTopWorkersError,
   }) {
     return getHighestRatedLoading(this);
   }
@@ -1073,6 +1307,12 @@ class _$GetHighestRatedLoadingImpl<T> implements GetHighestRatedLoading<T> {
         getRecommendedForYouSuccess,
     TResult? Function(GetRecommendedForYouHomeError<T> value)?
         getRecommendedForYouError,
+    TResult? Function(GetTopEngineersLoading<T> value)? geTopEngineersLoading,
+    TResult? Function(GetTopEngineersSuccess<T> value)? getTopEngineersSuccess,
+    TResult? Function(GetTopEngineersError<T> value)? getTopEngineersError,
+    TResult? Function(GetTopWorkersLoading<T> value)? geTopWorkersLoading,
+    TResult? Function(GetTopWorkersSuccess<T> value)? getTopWorkersSuccess,
+    TResult? Function(GetTopWorkersError<T> value)? getTopWorkersError,
   }) {
     return getHighestRatedLoading?.call(this);
   }
@@ -1095,6 +1335,12 @@ class _$GetHighestRatedLoadingImpl<T> implements GetHighestRatedLoading<T> {
         getRecommendedForYouSuccess,
     TResult Function(GetRecommendedForYouHomeError<T> value)?
         getRecommendedForYouError,
+    TResult Function(GetTopEngineersLoading<T> value)? geTopEngineersLoading,
+    TResult Function(GetTopEngineersSuccess<T> value)? getTopEngineersSuccess,
+    TResult Function(GetTopEngineersError<T> value)? getTopEngineersError,
+    TResult Function(GetTopWorkersLoading<T> value)? geTopWorkersLoading,
+    TResult Function(GetTopWorkersSuccess<T> value)? getTopWorkersSuccess,
+    TResult Function(GetTopWorkersError<T> value)? getTopWorkersError,
     required TResult orElse(),
   }) {
     if (getHighestRatedLoading != null) {
@@ -1193,6 +1439,12 @@ class _$GetHighestRatedHomeSuccessImpl<T>
     required TResult Function() getRecommendedForYouLoading,
     required TResult Function(T data) getRecommendedForYouSuccess,
     required TResult Function(String message) getRecommendedForYouError,
+    required TResult Function() geTopEngineersLoading,
+    required TResult Function(T data) getTopEngineersSuccess,
+    required TResult Function(String message) getTopEngineersError,
+    required TResult Function() geTopWorkersLoading,
+    required TResult Function(T data) getTopWorkersSuccess,
+    required TResult Function(String message) getTopWorkersError,
   }) {
     return getHighestRatedSuccess(data);
   }
@@ -1210,6 +1462,12 @@ class _$GetHighestRatedHomeSuccessImpl<T>
     TResult? Function()? getRecommendedForYouLoading,
     TResult? Function(T data)? getRecommendedForYouSuccess,
     TResult? Function(String message)? getRecommendedForYouError,
+    TResult? Function()? geTopEngineersLoading,
+    TResult? Function(T data)? getTopEngineersSuccess,
+    TResult? Function(String message)? getTopEngineersError,
+    TResult? Function()? geTopWorkersLoading,
+    TResult? Function(T data)? getTopWorkersSuccess,
+    TResult? Function(String message)? getTopWorkersError,
   }) {
     return getHighestRatedSuccess?.call(data);
   }
@@ -1227,6 +1485,12 @@ class _$GetHighestRatedHomeSuccessImpl<T>
     TResult Function()? getRecommendedForYouLoading,
     TResult Function(T data)? getRecommendedForYouSuccess,
     TResult Function(String message)? getRecommendedForYouError,
+    TResult Function()? geTopEngineersLoading,
+    TResult Function(T data)? getTopEngineersSuccess,
+    TResult Function(String message)? getTopEngineersError,
+    TResult Function()? geTopWorkersLoading,
+    TResult Function(T data)? getTopWorkersSuccess,
+    TResult Function(String message)? getTopWorkersError,
     required TResult orElse(),
   }) {
     if (getHighestRatedSuccess != null) {
@@ -1257,6 +1521,17 @@ class _$GetHighestRatedHomeSuccessImpl<T>
         getRecommendedForYouSuccess,
     required TResult Function(GetRecommendedForYouHomeError<T> value)
         getRecommendedForYouError,
+    required TResult Function(GetTopEngineersLoading<T> value)
+        geTopEngineersLoading,
+    required TResult Function(GetTopEngineersSuccess<T> value)
+        getTopEngineersSuccess,
+    required TResult Function(GetTopEngineersError<T> value)
+        getTopEngineersError,
+    required TResult Function(GetTopWorkersLoading<T> value)
+        geTopWorkersLoading,
+    required TResult Function(GetTopWorkersSuccess<T> value)
+        getTopWorkersSuccess,
+    required TResult Function(GetTopWorkersError<T> value) getTopWorkersError,
   }) {
     return getHighestRatedSuccess(this);
   }
@@ -1281,6 +1556,12 @@ class _$GetHighestRatedHomeSuccessImpl<T>
         getRecommendedForYouSuccess,
     TResult? Function(GetRecommendedForYouHomeError<T> value)?
         getRecommendedForYouError,
+    TResult? Function(GetTopEngineersLoading<T> value)? geTopEngineersLoading,
+    TResult? Function(GetTopEngineersSuccess<T> value)? getTopEngineersSuccess,
+    TResult? Function(GetTopEngineersError<T> value)? getTopEngineersError,
+    TResult? Function(GetTopWorkersLoading<T> value)? geTopWorkersLoading,
+    TResult? Function(GetTopWorkersSuccess<T> value)? getTopWorkersSuccess,
+    TResult? Function(GetTopWorkersError<T> value)? getTopWorkersError,
   }) {
     return getHighestRatedSuccess?.call(this);
   }
@@ -1303,6 +1584,12 @@ class _$GetHighestRatedHomeSuccessImpl<T>
         getRecommendedForYouSuccess,
     TResult Function(GetRecommendedForYouHomeError<T> value)?
         getRecommendedForYouError,
+    TResult Function(GetTopEngineersLoading<T> value)? geTopEngineersLoading,
+    TResult Function(GetTopEngineersSuccess<T> value)? getTopEngineersSuccess,
+    TResult Function(GetTopEngineersError<T> value)? getTopEngineersError,
+    TResult Function(GetTopWorkersLoading<T> value)? geTopWorkersLoading,
+    TResult Function(GetTopWorkersSuccess<T> value)? getTopWorkersSuccess,
+    TResult Function(GetTopWorkersError<T> value)? getTopWorkersError,
     required TResult orElse(),
   }) {
     if (getHighestRatedSuccess != null) {
@@ -1407,6 +1694,12 @@ class _$GetHighestRatedHomeErrorImpl<T> implements GetHighestRatedHomeError<T> {
     required TResult Function() getRecommendedForYouLoading,
     required TResult Function(T data) getRecommendedForYouSuccess,
     required TResult Function(String message) getRecommendedForYouError,
+    required TResult Function() geTopEngineersLoading,
+    required TResult Function(T data) getTopEngineersSuccess,
+    required TResult Function(String message) getTopEngineersError,
+    required TResult Function() geTopWorkersLoading,
+    required TResult Function(T data) getTopWorkersSuccess,
+    required TResult Function(String message) getTopWorkersError,
   }) {
     return getHighestRatedError(message);
   }
@@ -1424,6 +1717,12 @@ class _$GetHighestRatedHomeErrorImpl<T> implements GetHighestRatedHomeError<T> {
     TResult? Function()? getRecommendedForYouLoading,
     TResult? Function(T data)? getRecommendedForYouSuccess,
     TResult? Function(String message)? getRecommendedForYouError,
+    TResult? Function()? geTopEngineersLoading,
+    TResult? Function(T data)? getTopEngineersSuccess,
+    TResult? Function(String message)? getTopEngineersError,
+    TResult? Function()? geTopWorkersLoading,
+    TResult? Function(T data)? getTopWorkersSuccess,
+    TResult? Function(String message)? getTopWorkersError,
   }) {
     return getHighestRatedError?.call(message);
   }
@@ -1441,6 +1740,12 @@ class _$GetHighestRatedHomeErrorImpl<T> implements GetHighestRatedHomeError<T> {
     TResult Function()? getRecommendedForYouLoading,
     TResult Function(T data)? getRecommendedForYouSuccess,
     TResult Function(String message)? getRecommendedForYouError,
+    TResult Function()? geTopEngineersLoading,
+    TResult Function(T data)? getTopEngineersSuccess,
+    TResult Function(String message)? getTopEngineersError,
+    TResult Function()? geTopWorkersLoading,
+    TResult Function(T data)? getTopWorkersSuccess,
+    TResult Function(String message)? getTopWorkersError,
     required TResult orElse(),
   }) {
     if (getHighestRatedError != null) {
@@ -1471,6 +1776,17 @@ class _$GetHighestRatedHomeErrorImpl<T> implements GetHighestRatedHomeError<T> {
         getRecommendedForYouSuccess,
     required TResult Function(GetRecommendedForYouHomeError<T> value)
         getRecommendedForYouError,
+    required TResult Function(GetTopEngineersLoading<T> value)
+        geTopEngineersLoading,
+    required TResult Function(GetTopEngineersSuccess<T> value)
+        getTopEngineersSuccess,
+    required TResult Function(GetTopEngineersError<T> value)
+        getTopEngineersError,
+    required TResult Function(GetTopWorkersLoading<T> value)
+        geTopWorkersLoading,
+    required TResult Function(GetTopWorkersSuccess<T> value)
+        getTopWorkersSuccess,
+    required TResult Function(GetTopWorkersError<T> value) getTopWorkersError,
   }) {
     return getHighestRatedError(this);
   }
@@ -1495,6 +1811,12 @@ class _$GetHighestRatedHomeErrorImpl<T> implements GetHighestRatedHomeError<T> {
         getRecommendedForYouSuccess,
     TResult? Function(GetRecommendedForYouHomeError<T> value)?
         getRecommendedForYouError,
+    TResult? Function(GetTopEngineersLoading<T> value)? geTopEngineersLoading,
+    TResult? Function(GetTopEngineersSuccess<T> value)? getTopEngineersSuccess,
+    TResult? Function(GetTopEngineersError<T> value)? getTopEngineersError,
+    TResult? Function(GetTopWorkersLoading<T> value)? geTopWorkersLoading,
+    TResult? Function(GetTopWorkersSuccess<T> value)? getTopWorkersSuccess,
+    TResult? Function(GetTopWorkersError<T> value)? getTopWorkersError,
   }) {
     return getHighestRatedError?.call(this);
   }
@@ -1517,6 +1839,12 @@ class _$GetHighestRatedHomeErrorImpl<T> implements GetHighestRatedHomeError<T> {
         getRecommendedForYouSuccess,
     TResult Function(GetRecommendedForYouHomeError<T> value)?
         getRecommendedForYouError,
+    TResult Function(GetTopEngineersLoading<T> value)? geTopEngineersLoading,
+    TResult Function(GetTopEngineersSuccess<T> value)? getTopEngineersSuccess,
+    TResult Function(GetTopEngineersError<T> value)? getTopEngineersError,
+    TResult Function(GetTopWorkersLoading<T> value)? geTopWorkersLoading,
+    TResult Function(GetTopWorkersSuccess<T> value)? getTopWorkersSuccess,
+    TResult Function(GetTopWorkersError<T> value)? getTopWorkersError,
     required TResult orElse(),
   }) {
     if (getHighestRatedError != null) {
@@ -1595,6 +1923,12 @@ class _$GetRecommendedForYouLoadingImpl<T>
     required TResult Function() getRecommendedForYouLoading,
     required TResult Function(T data) getRecommendedForYouSuccess,
     required TResult Function(String message) getRecommendedForYouError,
+    required TResult Function() geTopEngineersLoading,
+    required TResult Function(T data) getTopEngineersSuccess,
+    required TResult Function(String message) getTopEngineersError,
+    required TResult Function() geTopWorkersLoading,
+    required TResult Function(T data) getTopWorkersSuccess,
+    required TResult Function(String message) getTopWorkersError,
   }) {
     return getRecommendedForYouLoading();
   }
@@ -1612,6 +1946,12 @@ class _$GetRecommendedForYouLoadingImpl<T>
     TResult? Function()? getRecommendedForYouLoading,
     TResult? Function(T data)? getRecommendedForYouSuccess,
     TResult? Function(String message)? getRecommendedForYouError,
+    TResult? Function()? geTopEngineersLoading,
+    TResult? Function(T data)? getTopEngineersSuccess,
+    TResult? Function(String message)? getTopEngineersError,
+    TResult? Function()? geTopWorkersLoading,
+    TResult? Function(T data)? getTopWorkersSuccess,
+    TResult? Function(String message)? getTopWorkersError,
   }) {
     return getRecommendedForYouLoading?.call();
   }
@@ -1629,6 +1969,12 @@ class _$GetRecommendedForYouLoadingImpl<T>
     TResult Function()? getRecommendedForYouLoading,
     TResult Function(T data)? getRecommendedForYouSuccess,
     TResult Function(String message)? getRecommendedForYouError,
+    TResult Function()? geTopEngineersLoading,
+    TResult Function(T data)? getTopEngineersSuccess,
+    TResult Function(String message)? getTopEngineersError,
+    TResult Function()? geTopWorkersLoading,
+    TResult Function(T data)? getTopWorkersSuccess,
+    TResult Function(String message)? getTopWorkersError,
     required TResult orElse(),
   }) {
     if (getRecommendedForYouLoading != null) {
@@ -1659,6 +2005,17 @@ class _$GetRecommendedForYouLoadingImpl<T>
         getRecommendedForYouSuccess,
     required TResult Function(GetRecommendedForYouHomeError<T> value)
         getRecommendedForYouError,
+    required TResult Function(GetTopEngineersLoading<T> value)
+        geTopEngineersLoading,
+    required TResult Function(GetTopEngineersSuccess<T> value)
+        getTopEngineersSuccess,
+    required TResult Function(GetTopEngineersError<T> value)
+        getTopEngineersError,
+    required TResult Function(GetTopWorkersLoading<T> value)
+        geTopWorkersLoading,
+    required TResult Function(GetTopWorkersSuccess<T> value)
+        getTopWorkersSuccess,
+    required TResult Function(GetTopWorkersError<T> value) getTopWorkersError,
   }) {
     return getRecommendedForYouLoading(this);
   }
@@ -1683,6 +2040,12 @@ class _$GetRecommendedForYouLoadingImpl<T>
         getRecommendedForYouSuccess,
     TResult? Function(GetRecommendedForYouHomeError<T> value)?
         getRecommendedForYouError,
+    TResult? Function(GetTopEngineersLoading<T> value)? geTopEngineersLoading,
+    TResult? Function(GetTopEngineersSuccess<T> value)? getTopEngineersSuccess,
+    TResult? Function(GetTopEngineersError<T> value)? getTopEngineersError,
+    TResult? Function(GetTopWorkersLoading<T> value)? geTopWorkersLoading,
+    TResult? Function(GetTopWorkersSuccess<T> value)? getTopWorkersSuccess,
+    TResult? Function(GetTopWorkersError<T> value)? getTopWorkersError,
   }) {
     return getRecommendedForYouLoading?.call(this);
   }
@@ -1705,6 +2068,12 @@ class _$GetRecommendedForYouLoadingImpl<T>
         getRecommendedForYouSuccess,
     TResult Function(GetRecommendedForYouHomeError<T> value)?
         getRecommendedForYouError,
+    TResult Function(GetTopEngineersLoading<T> value)? geTopEngineersLoading,
+    TResult Function(GetTopEngineersSuccess<T> value)? getTopEngineersSuccess,
+    TResult Function(GetTopEngineersError<T> value)? getTopEngineersError,
+    TResult Function(GetTopWorkersLoading<T> value)? geTopWorkersLoading,
+    TResult Function(GetTopWorkersSuccess<T> value)? getTopWorkersSuccess,
+    TResult Function(GetTopWorkersError<T> value)? getTopWorkersError,
     required TResult orElse(),
   }) {
     if (getRecommendedForYouLoading != null) {
@@ -1804,6 +2173,12 @@ class _$GetRecommendedForYouHomeSuccessImpl<T>
     required TResult Function() getRecommendedForYouLoading,
     required TResult Function(T data) getRecommendedForYouSuccess,
     required TResult Function(String message) getRecommendedForYouError,
+    required TResult Function() geTopEngineersLoading,
+    required TResult Function(T data) getTopEngineersSuccess,
+    required TResult Function(String message) getTopEngineersError,
+    required TResult Function() geTopWorkersLoading,
+    required TResult Function(T data) getTopWorkersSuccess,
+    required TResult Function(String message) getTopWorkersError,
   }) {
     return getRecommendedForYouSuccess(data);
   }
@@ -1821,6 +2196,12 @@ class _$GetRecommendedForYouHomeSuccessImpl<T>
     TResult? Function()? getRecommendedForYouLoading,
     TResult? Function(T data)? getRecommendedForYouSuccess,
     TResult? Function(String message)? getRecommendedForYouError,
+    TResult? Function()? geTopEngineersLoading,
+    TResult? Function(T data)? getTopEngineersSuccess,
+    TResult? Function(String message)? getTopEngineersError,
+    TResult? Function()? geTopWorkersLoading,
+    TResult? Function(T data)? getTopWorkersSuccess,
+    TResult? Function(String message)? getTopWorkersError,
   }) {
     return getRecommendedForYouSuccess?.call(data);
   }
@@ -1838,6 +2219,12 @@ class _$GetRecommendedForYouHomeSuccessImpl<T>
     TResult Function()? getRecommendedForYouLoading,
     TResult Function(T data)? getRecommendedForYouSuccess,
     TResult Function(String message)? getRecommendedForYouError,
+    TResult Function()? geTopEngineersLoading,
+    TResult Function(T data)? getTopEngineersSuccess,
+    TResult Function(String message)? getTopEngineersError,
+    TResult Function()? geTopWorkersLoading,
+    TResult Function(T data)? getTopWorkersSuccess,
+    TResult Function(String message)? getTopWorkersError,
     required TResult orElse(),
   }) {
     if (getRecommendedForYouSuccess != null) {
@@ -1868,6 +2255,17 @@ class _$GetRecommendedForYouHomeSuccessImpl<T>
         getRecommendedForYouSuccess,
     required TResult Function(GetRecommendedForYouHomeError<T> value)
         getRecommendedForYouError,
+    required TResult Function(GetTopEngineersLoading<T> value)
+        geTopEngineersLoading,
+    required TResult Function(GetTopEngineersSuccess<T> value)
+        getTopEngineersSuccess,
+    required TResult Function(GetTopEngineersError<T> value)
+        getTopEngineersError,
+    required TResult Function(GetTopWorkersLoading<T> value)
+        geTopWorkersLoading,
+    required TResult Function(GetTopWorkersSuccess<T> value)
+        getTopWorkersSuccess,
+    required TResult Function(GetTopWorkersError<T> value) getTopWorkersError,
   }) {
     return getRecommendedForYouSuccess(this);
   }
@@ -1892,6 +2290,12 @@ class _$GetRecommendedForYouHomeSuccessImpl<T>
         getRecommendedForYouSuccess,
     TResult? Function(GetRecommendedForYouHomeError<T> value)?
         getRecommendedForYouError,
+    TResult? Function(GetTopEngineersLoading<T> value)? geTopEngineersLoading,
+    TResult? Function(GetTopEngineersSuccess<T> value)? getTopEngineersSuccess,
+    TResult? Function(GetTopEngineersError<T> value)? getTopEngineersError,
+    TResult? Function(GetTopWorkersLoading<T> value)? geTopWorkersLoading,
+    TResult? Function(GetTopWorkersSuccess<T> value)? getTopWorkersSuccess,
+    TResult? Function(GetTopWorkersError<T> value)? getTopWorkersError,
   }) {
     return getRecommendedForYouSuccess?.call(this);
   }
@@ -1914,6 +2318,12 @@ class _$GetRecommendedForYouHomeSuccessImpl<T>
         getRecommendedForYouSuccess,
     TResult Function(GetRecommendedForYouHomeError<T> value)?
         getRecommendedForYouError,
+    TResult Function(GetTopEngineersLoading<T> value)? geTopEngineersLoading,
+    TResult Function(GetTopEngineersSuccess<T> value)? getTopEngineersSuccess,
+    TResult Function(GetTopEngineersError<T> value)? getTopEngineersError,
+    TResult Function(GetTopWorkersLoading<T> value)? geTopWorkersLoading,
+    TResult Function(GetTopWorkersSuccess<T> value)? getTopWorkersSuccess,
+    TResult Function(GetTopWorkersError<T> value)? getTopWorkersError,
     required TResult orElse(),
   }) {
     if (getRecommendedForYouSuccess != null) {
@@ -2021,6 +2431,12 @@ class _$GetRecommendedForYouHomeErrorImpl<T>
     required TResult Function() getRecommendedForYouLoading,
     required TResult Function(T data) getRecommendedForYouSuccess,
     required TResult Function(String message) getRecommendedForYouError,
+    required TResult Function() geTopEngineersLoading,
+    required TResult Function(T data) getTopEngineersSuccess,
+    required TResult Function(String message) getTopEngineersError,
+    required TResult Function() geTopWorkersLoading,
+    required TResult Function(T data) getTopWorkersSuccess,
+    required TResult Function(String message) getTopWorkersError,
   }) {
     return getRecommendedForYouError(message);
   }
@@ -2038,6 +2454,12 @@ class _$GetRecommendedForYouHomeErrorImpl<T>
     TResult? Function()? getRecommendedForYouLoading,
     TResult? Function(T data)? getRecommendedForYouSuccess,
     TResult? Function(String message)? getRecommendedForYouError,
+    TResult? Function()? geTopEngineersLoading,
+    TResult? Function(T data)? getTopEngineersSuccess,
+    TResult? Function(String message)? getTopEngineersError,
+    TResult? Function()? geTopWorkersLoading,
+    TResult? Function(T data)? getTopWorkersSuccess,
+    TResult? Function(String message)? getTopWorkersError,
   }) {
     return getRecommendedForYouError?.call(message);
   }
@@ -2055,6 +2477,12 @@ class _$GetRecommendedForYouHomeErrorImpl<T>
     TResult Function()? getRecommendedForYouLoading,
     TResult Function(T data)? getRecommendedForYouSuccess,
     TResult Function(String message)? getRecommendedForYouError,
+    TResult Function()? geTopEngineersLoading,
+    TResult Function(T data)? getTopEngineersSuccess,
+    TResult Function(String message)? getTopEngineersError,
+    TResult Function()? geTopWorkersLoading,
+    TResult Function(T data)? getTopWorkersSuccess,
+    TResult Function(String message)? getTopWorkersError,
     required TResult orElse(),
   }) {
     if (getRecommendedForYouError != null) {
@@ -2085,6 +2513,17 @@ class _$GetRecommendedForYouHomeErrorImpl<T>
         getRecommendedForYouSuccess,
     required TResult Function(GetRecommendedForYouHomeError<T> value)
         getRecommendedForYouError,
+    required TResult Function(GetTopEngineersLoading<T> value)
+        geTopEngineersLoading,
+    required TResult Function(GetTopEngineersSuccess<T> value)
+        getTopEngineersSuccess,
+    required TResult Function(GetTopEngineersError<T> value)
+        getTopEngineersError,
+    required TResult Function(GetTopWorkersLoading<T> value)
+        geTopWorkersLoading,
+    required TResult Function(GetTopWorkersSuccess<T> value)
+        getTopWorkersSuccess,
+    required TResult Function(GetTopWorkersError<T> value) getTopWorkersError,
   }) {
     return getRecommendedForYouError(this);
   }
@@ -2109,6 +2548,12 @@ class _$GetRecommendedForYouHomeErrorImpl<T>
         getRecommendedForYouSuccess,
     TResult? Function(GetRecommendedForYouHomeError<T> value)?
         getRecommendedForYouError,
+    TResult? Function(GetTopEngineersLoading<T> value)? geTopEngineersLoading,
+    TResult? Function(GetTopEngineersSuccess<T> value)? getTopEngineersSuccess,
+    TResult? Function(GetTopEngineersError<T> value)? getTopEngineersError,
+    TResult? Function(GetTopWorkersLoading<T> value)? geTopWorkersLoading,
+    TResult? Function(GetTopWorkersSuccess<T> value)? getTopWorkersSuccess,
+    TResult? Function(GetTopWorkersError<T> value)? getTopWorkersError,
   }) {
     return getRecommendedForYouError?.call(this);
   }
@@ -2131,6 +2576,12 @@ class _$GetRecommendedForYouHomeErrorImpl<T>
         getRecommendedForYouSuccess,
     TResult Function(GetRecommendedForYouHomeError<T> value)?
         getRecommendedForYouError,
+    TResult Function(GetTopEngineersLoading<T> value)? geTopEngineersLoading,
+    TResult Function(GetTopEngineersSuccess<T> value)? getTopEngineersSuccess,
+    TResult Function(GetTopEngineersError<T> value)? getTopEngineersError,
+    TResult Function(GetTopWorkersLoading<T> value)? geTopWorkersLoading,
+    TResult Function(GetTopWorkersSuccess<T> value)? getTopWorkersSuccess,
+    TResult Function(GetTopWorkersError<T> value)? getTopWorkersError,
     required TResult orElse(),
   }) {
     if (getRecommendedForYouError != null) {
@@ -2151,5 +2602,1454 @@ abstract class GetRecommendedForYouHomeError<T> implements HomeState<T> {
   @JsonKey(includeFromJson: false, includeToJson: false)
   _$$GetRecommendedForYouHomeErrorImplCopyWith<T,
           _$GetRecommendedForYouHomeErrorImpl<T>>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$GetTopEngineersLoadingImplCopyWith<T, $Res> {
+  factory _$$GetTopEngineersLoadingImplCopyWith(
+          _$GetTopEngineersLoadingImpl<T> value,
+          $Res Function(_$GetTopEngineersLoadingImpl<T>) then) =
+      __$$GetTopEngineersLoadingImplCopyWithImpl<T, $Res>;
+}
+
+/// @nodoc
+class __$$GetTopEngineersLoadingImplCopyWithImpl<T, $Res>
+    extends _$HomeStateCopyWithImpl<T, $Res, _$GetTopEngineersLoadingImpl<T>>
+    implements _$$GetTopEngineersLoadingImplCopyWith<T, $Res> {
+  __$$GetTopEngineersLoadingImplCopyWithImpl(
+      _$GetTopEngineersLoadingImpl<T> _value,
+      $Res Function(_$GetTopEngineersLoadingImpl<T>) _then)
+      : super(_value, _then);
+
+  /// Create a copy of HomeState
+  /// with the given fields replaced by the non-null parameter values.
+}
+
+/// @nodoc
+
+class _$GetTopEngineersLoadingImpl<T> implements GetTopEngineersLoading<T> {
+  const _$GetTopEngineersLoadingImpl();
+
+  @override
+  String toString() {
+    return 'HomeState<$T>.geTopEngineersLoading()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$GetTopEngineersLoadingImpl<T>);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() getTopBestSellerLoading,
+    required TResult Function(T data) getTopBestSellerSuccess,
+    required TResult Function(String message) getTopBestSellerError,
+    required TResult Function() getHighestRatedLoading,
+    required TResult Function(T data) getHighestRatedSuccess,
+    required TResult Function(String message) getHighestRatedError,
+    required TResult Function() getRecommendedForYouLoading,
+    required TResult Function(T data) getRecommendedForYouSuccess,
+    required TResult Function(String message) getRecommendedForYouError,
+    required TResult Function() geTopEngineersLoading,
+    required TResult Function(T data) getTopEngineersSuccess,
+    required TResult Function(String message) getTopEngineersError,
+    required TResult Function() geTopWorkersLoading,
+    required TResult Function(T data) getTopWorkersSuccess,
+    required TResult Function(String message) getTopWorkersError,
+  }) {
+    return geTopEngineersLoading();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? getTopBestSellerLoading,
+    TResult? Function(T data)? getTopBestSellerSuccess,
+    TResult? Function(String message)? getTopBestSellerError,
+    TResult? Function()? getHighestRatedLoading,
+    TResult? Function(T data)? getHighestRatedSuccess,
+    TResult? Function(String message)? getHighestRatedError,
+    TResult? Function()? getRecommendedForYouLoading,
+    TResult? Function(T data)? getRecommendedForYouSuccess,
+    TResult? Function(String message)? getRecommendedForYouError,
+    TResult? Function()? geTopEngineersLoading,
+    TResult? Function(T data)? getTopEngineersSuccess,
+    TResult? Function(String message)? getTopEngineersError,
+    TResult? Function()? geTopWorkersLoading,
+    TResult? Function(T data)? getTopWorkersSuccess,
+    TResult? Function(String message)? getTopWorkersError,
+  }) {
+    return geTopEngineersLoading?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? getTopBestSellerLoading,
+    TResult Function(T data)? getTopBestSellerSuccess,
+    TResult Function(String message)? getTopBestSellerError,
+    TResult Function()? getHighestRatedLoading,
+    TResult Function(T data)? getHighestRatedSuccess,
+    TResult Function(String message)? getHighestRatedError,
+    TResult Function()? getRecommendedForYouLoading,
+    TResult Function(T data)? getRecommendedForYouSuccess,
+    TResult Function(String message)? getRecommendedForYouError,
+    TResult Function()? geTopEngineersLoading,
+    TResult Function(T data)? getTopEngineersSuccess,
+    TResult Function(String message)? getTopEngineersError,
+    TResult Function()? geTopWorkersLoading,
+    TResult Function(T data)? getTopWorkersSuccess,
+    TResult Function(String message)? getTopWorkersError,
+    required TResult orElse(),
+  }) {
+    if (geTopEngineersLoading != null) {
+      return geTopEngineersLoading();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(HomeInitial<T> value) initial,
+    required TResult Function(GetTopBestSellerLoading<T> value)
+        getTopBestSellerLoading,
+    required TResult Function(GetTopBestSellerHomeSuccess<T> value)
+        getTopBestSellerSuccess,
+    required TResult Function(GetTopBestSellerHomeError<T> value)
+        getTopBestSellerError,
+    required TResult Function(GetHighestRatedLoading<T> value)
+        getHighestRatedLoading,
+    required TResult Function(GetHighestRatedHomeSuccess<T> value)
+        getHighestRatedSuccess,
+    required TResult Function(GetHighestRatedHomeError<T> value)
+        getHighestRatedError,
+    required TResult Function(GetRecommendedForYouLoading<T> value)
+        getRecommendedForYouLoading,
+    required TResult Function(GetRecommendedForYouHomeSuccess<T> value)
+        getRecommendedForYouSuccess,
+    required TResult Function(GetRecommendedForYouHomeError<T> value)
+        getRecommendedForYouError,
+    required TResult Function(GetTopEngineersLoading<T> value)
+        geTopEngineersLoading,
+    required TResult Function(GetTopEngineersSuccess<T> value)
+        getTopEngineersSuccess,
+    required TResult Function(GetTopEngineersError<T> value)
+        getTopEngineersError,
+    required TResult Function(GetTopWorkersLoading<T> value)
+        geTopWorkersLoading,
+    required TResult Function(GetTopWorkersSuccess<T> value)
+        getTopWorkersSuccess,
+    required TResult Function(GetTopWorkersError<T> value) getTopWorkersError,
+  }) {
+    return geTopEngineersLoading(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(HomeInitial<T> value)? initial,
+    TResult? Function(GetTopBestSellerLoading<T> value)?
+        getTopBestSellerLoading,
+    TResult? Function(GetTopBestSellerHomeSuccess<T> value)?
+        getTopBestSellerSuccess,
+    TResult? Function(GetTopBestSellerHomeError<T> value)?
+        getTopBestSellerError,
+    TResult? Function(GetHighestRatedLoading<T> value)? getHighestRatedLoading,
+    TResult? Function(GetHighestRatedHomeSuccess<T> value)?
+        getHighestRatedSuccess,
+    TResult? Function(GetHighestRatedHomeError<T> value)? getHighestRatedError,
+    TResult? Function(GetRecommendedForYouLoading<T> value)?
+        getRecommendedForYouLoading,
+    TResult? Function(GetRecommendedForYouHomeSuccess<T> value)?
+        getRecommendedForYouSuccess,
+    TResult? Function(GetRecommendedForYouHomeError<T> value)?
+        getRecommendedForYouError,
+    TResult? Function(GetTopEngineersLoading<T> value)? geTopEngineersLoading,
+    TResult? Function(GetTopEngineersSuccess<T> value)? getTopEngineersSuccess,
+    TResult? Function(GetTopEngineersError<T> value)? getTopEngineersError,
+    TResult? Function(GetTopWorkersLoading<T> value)? geTopWorkersLoading,
+    TResult? Function(GetTopWorkersSuccess<T> value)? getTopWorkersSuccess,
+    TResult? Function(GetTopWorkersError<T> value)? getTopWorkersError,
+  }) {
+    return geTopEngineersLoading?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(HomeInitial<T> value)? initial,
+    TResult Function(GetTopBestSellerLoading<T> value)? getTopBestSellerLoading,
+    TResult Function(GetTopBestSellerHomeSuccess<T> value)?
+        getTopBestSellerSuccess,
+    TResult Function(GetTopBestSellerHomeError<T> value)? getTopBestSellerError,
+    TResult Function(GetHighestRatedLoading<T> value)? getHighestRatedLoading,
+    TResult Function(GetHighestRatedHomeSuccess<T> value)?
+        getHighestRatedSuccess,
+    TResult Function(GetHighestRatedHomeError<T> value)? getHighestRatedError,
+    TResult Function(GetRecommendedForYouLoading<T> value)?
+        getRecommendedForYouLoading,
+    TResult Function(GetRecommendedForYouHomeSuccess<T> value)?
+        getRecommendedForYouSuccess,
+    TResult Function(GetRecommendedForYouHomeError<T> value)?
+        getRecommendedForYouError,
+    TResult Function(GetTopEngineersLoading<T> value)? geTopEngineersLoading,
+    TResult Function(GetTopEngineersSuccess<T> value)? getTopEngineersSuccess,
+    TResult Function(GetTopEngineersError<T> value)? getTopEngineersError,
+    TResult Function(GetTopWorkersLoading<T> value)? geTopWorkersLoading,
+    TResult Function(GetTopWorkersSuccess<T> value)? getTopWorkersSuccess,
+    TResult Function(GetTopWorkersError<T> value)? getTopWorkersError,
+    required TResult orElse(),
+  }) {
+    if (geTopEngineersLoading != null) {
+      return geTopEngineersLoading(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class GetTopEngineersLoading<T> implements HomeState<T> {
+  const factory GetTopEngineersLoading() = _$GetTopEngineersLoadingImpl<T>;
+}
+
+/// @nodoc
+abstract class _$$GetTopEngineersSuccessImplCopyWith<T, $Res> {
+  factory _$$GetTopEngineersSuccessImplCopyWith(
+          _$GetTopEngineersSuccessImpl<T> value,
+          $Res Function(_$GetTopEngineersSuccessImpl<T>) then) =
+      __$$GetTopEngineersSuccessImplCopyWithImpl<T, $Res>;
+  @useResult
+  $Res call({T data});
+}
+
+/// @nodoc
+class __$$GetTopEngineersSuccessImplCopyWithImpl<T, $Res>
+    extends _$HomeStateCopyWithImpl<T, $Res, _$GetTopEngineersSuccessImpl<T>>
+    implements _$$GetTopEngineersSuccessImplCopyWith<T, $Res> {
+  __$$GetTopEngineersSuccessImplCopyWithImpl(
+      _$GetTopEngineersSuccessImpl<T> _value,
+      $Res Function(_$GetTopEngineersSuccessImpl<T>) _then)
+      : super(_value, _then);
+
+  /// Create a copy of HomeState
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? data = freezed,
+  }) {
+    return _then(_$GetTopEngineersSuccessImpl<T>(
+      freezed == data
+          ? _value.data
+          : data // ignore: cast_nullable_to_non_nullable
+              as T,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$GetTopEngineersSuccessImpl<T> implements GetTopEngineersSuccess<T> {
+  const _$GetTopEngineersSuccessImpl(this.data);
+
+  @override
+  final T data;
+
+  @override
+  String toString() {
+    return 'HomeState<$T>.getTopEngineersSuccess(data: $data)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$GetTopEngineersSuccessImpl<T> &&
+            const DeepCollectionEquality().equals(other.data, data));
+  }
+
+  @override
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(data));
+
+  /// Create a copy of HomeState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$GetTopEngineersSuccessImplCopyWith<T, _$GetTopEngineersSuccessImpl<T>>
+      get copyWith => __$$GetTopEngineersSuccessImplCopyWithImpl<T,
+          _$GetTopEngineersSuccessImpl<T>>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() getTopBestSellerLoading,
+    required TResult Function(T data) getTopBestSellerSuccess,
+    required TResult Function(String message) getTopBestSellerError,
+    required TResult Function() getHighestRatedLoading,
+    required TResult Function(T data) getHighestRatedSuccess,
+    required TResult Function(String message) getHighestRatedError,
+    required TResult Function() getRecommendedForYouLoading,
+    required TResult Function(T data) getRecommendedForYouSuccess,
+    required TResult Function(String message) getRecommendedForYouError,
+    required TResult Function() geTopEngineersLoading,
+    required TResult Function(T data) getTopEngineersSuccess,
+    required TResult Function(String message) getTopEngineersError,
+    required TResult Function() geTopWorkersLoading,
+    required TResult Function(T data) getTopWorkersSuccess,
+    required TResult Function(String message) getTopWorkersError,
+  }) {
+    return getTopEngineersSuccess(data);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? getTopBestSellerLoading,
+    TResult? Function(T data)? getTopBestSellerSuccess,
+    TResult? Function(String message)? getTopBestSellerError,
+    TResult? Function()? getHighestRatedLoading,
+    TResult? Function(T data)? getHighestRatedSuccess,
+    TResult? Function(String message)? getHighestRatedError,
+    TResult? Function()? getRecommendedForYouLoading,
+    TResult? Function(T data)? getRecommendedForYouSuccess,
+    TResult? Function(String message)? getRecommendedForYouError,
+    TResult? Function()? geTopEngineersLoading,
+    TResult? Function(T data)? getTopEngineersSuccess,
+    TResult? Function(String message)? getTopEngineersError,
+    TResult? Function()? geTopWorkersLoading,
+    TResult? Function(T data)? getTopWorkersSuccess,
+    TResult? Function(String message)? getTopWorkersError,
+  }) {
+    return getTopEngineersSuccess?.call(data);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? getTopBestSellerLoading,
+    TResult Function(T data)? getTopBestSellerSuccess,
+    TResult Function(String message)? getTopBestSellerError,
+    TResult Function()? getHighestRatedLoading,
+    TResult Function(T data)? getHighestRatedSuccess,
+    TResult Function(String message)? getHighestRatedError,
+    TResult Function()? getRecommendedForYouLoading,
+    TResult Function(T data)? getRecommendedForYouSuccess,
+    TResult Function(String message)? getRecommendedForYouError,
+    TResult Function()? geTopEngineersLoading,
+    TResult Function(T data)? getTopEngineersSuccess,
+    TResult Function(String message)? getTopEngineersError,
+    TResult Function()? geTopWorkersLoading,
+    TResult Function(T data)? getTopWorkersSuccess,
+    TResult Function(String message)? getTopWorkersError,
+    required TResult orElse(),
+  }) {
+    if (getTopEngineersSuccess != null) {
+      return getTopEngineersSuccess(data);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(HomeInitial<T> value) initial,
+    required TResult Function(GetTopBestSellerLoading<T> value)
+        getTopBestSellerLoading,
+    required TResult Function(GetTopBestSellerHomeSuccess<T> value)
+        getTopBestSellerSuccess,
+    required TResult Function(GetTopBestSellerHomeError<T> value)
+        getTopBestSellerError,
+    required TResult Function(GetHighestRatedLoading<T> value)
+        getHighestRatedLoading,
+    required TResult Function(GetHighestRatedHomeSuccess<T> value)
+        getHighestRatedSuccess,
+    required TResult Function(GetHighestRatedHomeError<T> value)
+        getHighestRatedError,
+    required TResult Function(GetRecommendedForYouLoading<T> value)
+        getRecommendedForYouLoading,
+    required TResult Function(GetRecommendedForYouHomeSuccess<T> value)
+        getRecommendedForYouSuccess,
+    required TResult Function(GetRecommendedForYouHomeError<T> value)
+        getRecommendedForYouError,
+    required TResult Function(GetTopEngineersLoading<T> value)
+        geTopEngineersLoading,
+    required TResult Function(GetTopEngineersSuccess<T> value)
+        getTopEngineersSuccess,
+    required TResult Function(GetTopEngineersError<T> value)
+        getTopEngineersError,
+    required TResult Function(GetTopWorkersLoading<T> value)
+        geTopWorkersLoading,
+    required TResult Function(GetTopWorkersSuccess<T> value)
+        getTopWorkersSuccess,
+    required TResult Function(GetTopWorkersError<T> value) getTopWorkersError,
+  }) {
+    return getTopEngineersSuccess(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(HomeInitial<T> value)? initial,
+    TResult? Function(GetTopBestSellerLoading<T> value)?
+        getTopBestSellerLoading,
+    TResult? Function(GetTopBestSellerHomeSuccess<T> value)?
+        getTopBestSellerSuccess,
+    TResult? Function(GetTopBestSellerHomeError<T> value)?
+        getTopBestSellerError,
+    TResult? Function(GetHighestRatedLoading<T> value)? getHighestRatedLoading,
+    TResult? Function(GetHighestRatedHomeSuccess<T> value)?
+        getHighestRatedSuccess,
+    TResult? Function(GetHighestRatedHomeError<T> value)? getHighestRatedError,
+    TResult? Function(GetRecommendedForYouLoading<T> value)?
+        getRecommendedForYouLoading,
+    TResult? Function(GetRecommendedForYouHomeSuccess<T> value)?
+        getRecommendedForYouSuccess,
+    TResult? Function(GetRecommendedForYouHomeError<T> value)?
+        getRecommendedForYouError,
+    TResult? Function(GetTopEngineersLoading<T> value)? geTopEngineersLoading,
+    TResult? Function(GetTopEngineersSuccess<T> value)? getTopEngineersSuccess,
+    TResult? Function(GetTopEngineersError<T> value)? getTopEngineersError,
+    TResult? Function(GetTopWorkersLoading<T> value)? geTopWorkersLoading,
+    TResult? Function(GetTopWorkersSuccess<T> value)? getTopWorkersSuccess,
+    TResult? Function(GetTopWorkersError<T> value)? getTopWorkersError,
+  }) {
+    return getTopEngineersSuccess?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(HomeInitial<T> value)? initial,
+    TResult Function(GetTopBestSellerLoading<T> value)? getTopBestSellerLoading,
+    TResult Function(GetTopBestSellerHomeSuccess<T> value)?
+        getTopBestSellerSuccess,
+    TResult Function(GetTopBestSellerHomeError<T> value)? getTopBestSellerError,
+    TResult Function(GetHighestRatedLoading<T> value)? getHighestRatedLoading,
+    TResult Function(GetHighestRatedHomeSuccess<T> value)?
+        getHighestRatedSuccess,
+    TResult Function(GetHighestRatedHomeError<T> value)? getHighestRatedError,
+    TResult Function(GetRecommendedForYouLoading<T> value)?
+        getRecommendedForYouLoading,
+    TResult Function(GetRecommendedForYouHomeSuccess<T> value)?
+        getRecommendedForYouSuccess,
+    TResult Function(GetRecommendedForYouHomeError<T> value)?
+        getRecommendedForYouError,
+    TResult Function(GetTopEngineersLoading<T> value)? geTopEngineersLoading,
+    TResult Function(GetTopEngineersSuccess<T> value)? getTopEngineersSuccess,
+    TResult Function(GetTopEngineersError<T> value)? getTopEngineersError,
+    TResult Function(GetTopWorkersLoading<T> value)? geTopWorkersLoading,
+    TResult Function(GetTopWorkersSuccess<T> value)? getTopWorkersSuccess,
+    TResult Function(GetTopWorkersError<T> value)? getTopWorkersError,
+    required TResult orElse(),
+  }) {
+    if (getTopEngineersSuccess != null) {
+      return getTopEngineersSuccess(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class GetTopEngineersSuccess<T> implements HomeState<T> {
+  const factory GetTopEngineersSuccess(final T data) =
+      _$GetTopEngineersSuccessImpl<T>;
+
+  T get data;
+
+  /// Create a copy of HomeState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$GetTopEngineersSuccessImplCopyWith<T, _$GetTopEngineersSuccessImpl<T>>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$GetTopEngineersErrorImplCopyWith<T, $Res> {
+  factory _$$GetTopEngineersErrorImplCopyWith(
+          _$GetTopEngineersErrorImpl<T> value,
+          $Res Function(_$GetTopEngineersErrorImpl<T>) then) =
+      __$$GetTopEngineersErrorImplCopyWithImpl<T, $Res>;
+  @useResult
+  $Res call({String message});
+}
+
+/// @nodoc
+class __$$GetTopEngineersErrorImplCopyWithImpl<T, $Res>
+    extends _$HomeStateCopyWithImpl<T, $Res, _$GetTopEngineersErrorImpl<T>>
+    implements _$$GetTopEngineersErrorImplCopyWith<T, $Res> {
+  __$$GetTopEngineersErrorImplCopyWithImpl(_$GetTopEngineersErrorImpl<T> _value,
+      $Res Function(_$GetTopEngineersErrorImpl<T>) _then)
+      : super(_value, _then);
+
+  /// Create a copy of HomeState
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? message = null,
+  }) {
+    return _then(_$GetTopEngineersErrorImpl<T>(
+      null == message
+          ? _value.message
+          : message // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$GetTopEngineersErrorImpl<T> implements GetTopEngineersError<T> {
+  const _$GetTopEngineersErrorImpl(this.message);
+
+  @override
+  final String message;
+
+  @override
+  String toString() {
+    return 'HomeState<$T>.getTopEngineersError(message: $message)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$GetTopEngineersErrorImpl<T> &&
+            (identical(other.message, message) || other.message == message));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, message);
+
+  /// Create a copy of HomeState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$GetTopEngineersErrorImplCopyWith<T, _$GetTopEngineersErrorImpl<T>>
+      get copyWith => __$$GetTopEngineersErrorImplCopyWithImpl<T,
+          _$GetTopEngineersErrorImpl<T>>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() getTopBestSellerLoading,
+    required TResult Function(T data) getTopBestSellerSuccess,
+    required TResult Function(String message) getTopBestSellerError,
+    required TResult Function() getHighestRatedLoading,
+    required TResult Function(T data) getHighestRatedSuccess,
+    required TResult Function(String message) getHighestRatedError,
+    required TResult Function() getRecommendedForYouLoading,
+    required TResult Function(T data) getRecommendedForYouSuccess,
+    required TResult Function(String message) getRecommendedForYouError,
+    required TResult Function() geTopEngineersLoading,
+    required TResult Function(T data) getTopEngineersSuccess,
+    required TResult Function(String message) getTopEngineersError,
+    required TResult Function() geTopWorkersLoading,
+    required TResult Function(T data) getTopWorkersSuccess,
+    required TResult Function(String message) getTopWorkersError,
+  }) {
+    return getTopEngineersError(message);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? getTopBestSellerLoading,
+    TResult? Function(T data)? getTopBestSellerSuccess,
+    TResult? Function(String message)? getTopBestSellerError,
+    TResult? Function()? getHighestRatedLoading,
+    TResult? Function(T data)? getHighestRatedSuccess,
+    TResult? Function(String message)? getHighestRatedError,
+    TResult? Function()? getRecommendedForYouLoading,
+    TResult? Function(T data)? getRecommendedForYouSuccess,
+    TResult? Function(String message)? getRecommendedForYouError,
+    TResult? Function()? geTopEngineersLoading,
+    TResult? Function(T data)? getTopEngineersSuccess,
+    TResult? Function(String message)? getTopEngineersError,
+    TResult? Function()? geTopWorkersLoading,
+    TResult? Function(T data)? getTopWorkersSuccess,
+    TResult? Function(String message)? getTopWorkersError,
+  }) {
+    return getTopEngineersError?.call(message);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? getTopBestSellerLoading,
+    TResult Function(T data)? getTopBestSellerSuccess,
+    TResult Function(String message)? getTopBestSellerError,
+    TResult Function()? getHighestRatedLoading,
+    TResult Function(T data)? getHighestRatedSuccess,
+    TResult Function(String message)? getHighestRatedError,
+    TResult Function()? getRecommendedForYouLoading,
+    TResult Function(T data)? getRecommendedForYouSuccess,
+    TResult Function(String message)? getRecommendedForYouError,
+    TResult Function()? geTopEngineersLoading,
+    TResult Function(T data)? getTopEngineersSuccess,
+    TResult Function(String message)? getTopEngineersError,
+    TResult Function()? geTopWorkersLoading,
+    TResult Function(T data)? getTopWorkersSuccess,
+    TResult Function(String message)? getTopWorkersError,
+    required TResult orElse(),
+  }) {
+    if (getTopEngineersError != null) {
+      return getTopEngineersError(message);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(HomeInitial<T> value) initial,
+    required TResult Function(GetTopBestSellerLoading<T> value)
+        getTopBestSellerLoading,
+    required TResult Function(GetTopBestSellerHomeSuccess<T> value)
+        getTopBestSellerSuccess,
+    required TResult Function(GetTopBestSellerHomeError<T> value)
+        getTopBestSellerError,
+    required TResult Function(GetHighestRatedLoading<T> value)
+        getHighestRatedLoading,
+    required TResult Function(GetHighestRatedHomeSuccess<T> value)
+        getHighestRatedSuccess,
+    required TResult Function(GetHighestRatedHomeError<T> value)
+        getHighestRatedError,
+    required TResult Function(GetRecommendedForYouLoading<T> value)
+        getRecommendedForYouLoading,
+    required TResult Function(GetRecommendedForYouHomeSuccess<T> value)
+        getRecommendedForYouSuccess,
+    required TResult Function(GetRecommendedForYouHomeError<T> value)
+        getRecommendedForYouError,
+    required TResult Function(GetTopEngineersLoading<T> value)
+        geTopEngineersLoading,
+    required TResult Function(GetTopEngineersSuccess<T> value)
+        getTopEngineersSuccess,
+    required TResult Function(GetTopEngineersError<T> value)
+        getTopEngineersError,
+    required TResult Function(GetTopWorkersLoading<T> value)
+        geTopWorkersLoading,
+    required TResult Function(GetTopWorkersSuccess<T> value)
+        getTopWorkersSuccess,
+    required TResult Function(GetTopWorkersError<T> value) getTopWorkersError,
+  }) {
+    return getTopEngineersError(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(HomeInitial<T> value)? initial,
+    TResult? Function(GetTopBestSellerLoading<T> value)?
+        getTopBestSellerLoading,
+    TResult? Function(GetTopBestSellerHomeSuccess<T> value)?
+        getTopBestSellerSuccess,
+    TResult? Function(GetTopBestSellerHomeError<T> value)?
+        getTopBestSellerError,
+    TResult? Function(GetHighestRatedLoading<T> value)? getHighestRatedLoading,
+    TResult? Function(GetHighestRatedHomeSuccess<T> value)?
+        getHighestRatedSuccess,
+    TResult? Function(GetHighestRatedHomeError<T> value)? getHighestRatedError,
+    TResult? Function(GetRecommendedForYouLoading<T> value)?
+        getRecommendedForYouLoading,
+    TResult? Function(GetRecommendedForYouHomeSuccess<T> value)?
+        getRecommendedForYouSuccess,
+    TResult? Function(GetRecommendedForYouHomeError<T> value)?
+        getRecommendedForYouError,
+    TResult? Function(GetTopEngineersLoading<T> value)? geTopEngineersLoading,
+    TResult? Function(GetTopEngineersSuccess<T> value)? getTopEngineersSuccess,
+    TResult? Function(GetTopEngineersError<T> value)? getTopEngineersError,
+    TResult? Function(GetTopWorkersLoading<T> value)? geTopWorkersLoading,
+    TResult? Function(GetTopWorkersSuccess<T> value)? getTopWorkersSuccess,
+    TResult? Function(GetTopWorkersError<T> value)? getTopWorkersError,
+  }) {
+    return getTopEngineersError?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(HomeInitial<T> value)? initial,
+    TResult Function(GetTopBestSellerLoading<T> value)? getTopBestSellerLoading,
+    TResult Function(GetTopBestSellerHomeSuccess<T> value)?
+        getTopBestSellerSuccess,
+    TResult Function(GetTopBestSellerHomeError<T> value)? getTopBestSellerError,
+    TResult Function(GetHighestRatedLoading<T> value)? getHighestRatedLoading,
+    TResult Function(GetHighestRatedHomeSuccess<T> value)?
+        getHighestRatedSuccess,
+    TResult Function(GetHighestRatedHomeError<T> value)? getHighestRatedError,
+    TResult Function(GetRecommendedForYouLoading<T> value)?
+        getRecommendedForYouLoading,
+    TResult Function(GetRecommendedForYouHomeSuccess<T> value)?
+        getRecommendedForYouSuccess,
+    TResult Function(GetRecommendedForYouHomeError<T> value)?
+        getRecommendedForYouError,
+    TResult Function(GetTopEngineersLoading<T> value)? geTopEngineersLoading,
+    TResult Function(GetTopEngineersSuccess<T> value)? getTopEngineersSuccess,
+    TResult Function(GetTopEngineersError<T> value)? getTopEngineersError,
+    TResult Function(GetTopWorkersLoading<T> value)? geTopWorkersLoading,
+    TResult Function(GetTopWorkersSuccess<T> value)? getTopWorkersSuccess,
+    TResult Function(GetTopWorkersError<T> value)? getTopWorkersError,
+    required TResult orElse(),
+  }) {
+    if (getTopEngineersError != null) {
+      return getTopEngineersError(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class GetTopEngineersError<T> implements HomeState<T> {
+  const factory GetTopEngineersError(final String message) =
+      _$GetTopEngineersErrorImpl<T>;
+
+  String get message;
+
+  /// Create a copy of HomeState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$GetTopEngineersErrorImplCopyWith<T, _$GetTopEngineersErrorImpl<T>>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$GetTopWorkersLoadingImplCopyWith<T, $Res> {
+  factory _$$GetTopWorkersLoadingImplCopyWith(
+          _$GetTopWorkersLoadingImpl<T> value,
+          $Res Function(_$GetTopWorkersLoadingImpl<T>) then) =
+      __$$GetTopWorkersLoadingImplCopyWithImpl<T, $Res>;
+}
+
+/// @nodoc
+class __$$GetTopWorkersLoadingImplCopyWithImpl<T, $Res>
+    extends _$HomeStateCopyWithImpl<T, $Res, _$GetTopWorkersLoadingImpl<T>>
+    implements _$$GetTopWorkersLoadingImplCopyWith<T, $Res> {
+  __$$GetTopWorkersLoadingImplCopyWithImpl(_$GetTopWorkersLoadingImpl<T> _value,
+      $Res Function(_$GetTopWorkersLoadingImpl<T>) _then)
+      : super(_value, _then);
+
+  /// Create a copy of HomeState
+  /// with the given fields replaced by the non-null parameter values.
+}
+
+/// @nodoc
+
+class _$GetTopWorkersLoadingImpl<T> implements GetTopWorkersLoading<T> {
+  const _$GetTopWorkersLoadingImpl();
+
+  @override
+  String toString() {
+    return 'HomeState<$T>.geTopWorkersLoading()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$GetTopWorkersLoadingImpl<T>);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() getTopBestSellerLoading,
+    required TResult Function(T data) getTopBestSellerSuccess,
+    required TResult Function(String message) getTopBestSellerError,
+    required TResult Function() getHighestRatedLoading,
+    required TResult Function(T data) getHighestRatedSuccess,
+    required TResult Function(String message) getHighestRatedError,
+    required TResult Function() getRecommendedForYouLoading,
+    required TResult Function(T data) getRecommendedForYouSuccess,
+    required TResult Function(String message) getRecommendedForYouError,
+    required TResult Function() geTopEngineersLoading,
+    required TResult Function(T data) getTopEngineersSuccess,
+    required TResult Function(String message) getTopEngineersError,
+    required TResult Function() geTopWorkersLoading,
+    required TResult Function(T data) getTopWorkersSuccess,
+    required TResult Function(String message) getTopWorkersError,
+  }) {
+    return geTopWorkersLoading();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? getTopBestSellerLoading,
+    TResult? Function(T data)? getTopBestSellerSuccess,
+    TResult? Function(String message)? getTopBestSellerError,
+    TResult? Function()? getHighestRatedLoading,
+    TResult? Function(T data)? getHighestRatedSuccess,
+    TResult? Function(String message)? getHighestRatedError,
+    TResult? Function()? getRecommendedForYouLoading,
+    TResult? Function(T data)? getRecommendedForYouSuccess,
+    TResult? Function(String message)? getRecommendedForYouError,
+    TResult? Function()? geTopEngineersLoading,
+    TResult? Function(T data)? getTopEngineersSuccess,
+    TResult? Function(String message)? getTopEngineersError,
+    TResult? Function()? geTopWorkersLoading,
+    TResult? Function(T data)? getTopWorkersSuccess,
+    TResult? Function(String message)? getTopWorkersError,
+  }) {
+    return geTopWorkersLoading?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? getTopBestSellerLoading,
+    TResult Function(T data)? getTopBestSellerSuccess,
+    TResult Function(String message)? getTopBestSellerError,
+    TResult Function()? getHighestRatedLoading,
+    TResult Function(T data)? getHighestRatedSuccess,
+    TResult Function(String message)? getHighestRatedError,
+    TResult Function()? getRecommendedForYouLoading,
+    TResult Function(T data)? getRecommendedForYouSuccess,
+    TResult Function(String message)? getRecommendedForYouError,
+    TResult Function()? geTopEngineersLoading,
+    TResult Function(T data)? getTopEngineersSuccess,
+    TResult Function(String message)? getTopEngineersError,
+    TResult Function()? geTopWorkersLoading,
+    TResult Function(T data)? getTopWorkersSuccess,
+    TResult Function(String message)? getTopWorkersError,
+    required TResult orElse(),
+  }) {
+    if (geTopWorkersLoading != null) {
+      return geTopWorkersLoading();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(HomeInitial<T> value) initial,
+    required TResult Function(GetTopBestSellerLoading<T> value)
+        getTopBestSellerLoading,
+    required TResult Function(GetTopBestSellerHomeSuccess<T> value)
+        getTopBestSellerSuccess,
+    required TResult Function(GetTopBestSellerHomeError<T> value)
+        getTopBestSellerError,
+    required TResult Function(GetHighestRatedLoading<T> value)
+        getHighestRatedLoading,
+    required TResult Function(GetHighestRatedHomeSuccess<T> value)
+        getHighestRatedSuccess,
+    required TResult Function(GetHighestRatedHomeError<T> value)
+        getHighestRatedError,
+    required TResult Function(GetRecommendedForYouLoading<T> value)
+        getRecommendedForYouLoading,
+    required TResult Function(GetRecommendedForYouHomeSuccess<T> value)
+        getRecommendedForYouSuccess,
+    required TResult Function(GetRecommendedForYouHomeError<T> value)
+        getRecommendedForYouError,
+    required TResult Function(GetTopEngineersLoading<T> value)
+        geTopEngineersLoading,
+    required TResult Function(GetTopEngineersSuccess<T> value)
+        getTopEngineersSuccess,
+    required TResult Function(GetTopEngineersError<T> value)
+        getTopEngineersError,
+    required TResult Function(GetTopWorkersLoading<T> value)
+        geTopWorkersLoading,
+    required TResult Function(GetTopWorkersSuccess<T> value)
+        getTopWorkersSuccess,
+    required TResult Function(GetTopWorkersError<T> value) getTopWorkersError,
+  }) {
+    return geTopWorkersLoading(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(HomeInitial<T> value)? initial,
+    TResult? Function(GetTopBestSellerLoading<T> value)?
+        getTopBestSellerLoading,
+    TResult? Function(GetTopBestSellerHomeSuccess<T> value)?
+        getTopBestSellerSuccess,
+    TResult? Function(GetTopBestSellerHomeError<T> value)?
+        getTopBestSellerError,
+    TResult? Function(GetHighestRatedLoading<T> value)? getHighestRatedLoading,
+    TResult? Function(GetHighestRatedHomeSuccess<T> value)?
+        getHighestRatedSuccess,
+    TResult? Function(GetHighestRatedHomeError<T> value)? getHighestRatedError,
+    TResult? Function(GetRecommendedForYouLoading<T> value)?
+        getRecommendedForYouLoading,
+    TResult? Function(GetRecommendedForYouHomeSuccess<T> value)?
+        getRecommendedForYouSuccess,
+    TResult? Function(GetRecommendedForYouHomeError<T> value)?
+        getRecommendedForYouError,
+    TResult? Function(GetTopEngineersLoading<T> value)? geTopEngineersLoading,
+    TResult? Function(GetTopEngineersSuccess<T> value)? getTopEngineersSuccess,
+    TResult? Function(GetTopEngineersError<T> value)? getTopEngineersError,
+    TResult? Function(GetTopWorkersLoading<T> value)? geTopWorkersLoading,
+    TResult? Function(GetTopWorkersSuccess<T> value)? getTopWorkersSuccess,
+    TResult? Function(GetTopWorkersError<T> value)? getTopWorkersError,
+  }) {
+    return geTopWorkersLoading?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(HomeInitial<T> value)? initial,
+    TResult Function(GetTopBestSellerLoading<T> value)? getTopBestSellerLoading,
+    TResult Function(GetTopBestSellerHomeSuccess<T> value)?
+        getTopBestSellerSuccess,
+    TResult Function(GetTopBestSellerHomeError<T> value)? getTopBestSellerError,
+    TResult Function(GetHighestRatedLoading<T> value)? getHighestRatedLoading,
+    TResult Function(GetHighestRatedHomeSuccess<T> value)?
+        getHighestRatedSuccess,
+    TResult Function(GetHighestRatedHomeError<T> value)? getHighestRatedError,
+    TResult Function(GetRecommendedForYouLoading<T> value)?
+        getRecommendedForYouLoading,
+    TResult Function(GetRecommendedForYouHomeSuccess<T> value)?
+        getRecommendedForYouSuccess,
+    TResult Function(GetRecommendedForYouHomeError<T> value)?
+        getRecommendedForYouError,
+    TResult Function(GetTopEngineersLoading<T> value)? geTopEngineersLoading,
+    TResult Function(GetTopEngineersSuccess<T> value)? getTopEngineersSuccess,
+    TResult Function(GetTopEngineersError<T> value)? getTopEngineersError,
+    TResult Function(GetTopWorkersLoading<T> value)? geTopWorkersLoading,
+    TResult Function(GetTopWorkersSuccess<T> value)? getTopWorkersSuccess,
+    TResult Function(GetTopWorkersError<T> value)? getTopWorkersError,
+    required TResult orElse(),
+  }) {
+    if (geTopWorkersLoading != null) {
+      return geTopWorkersLoading(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class GetTopWorkersLoading<T> implements HomeState<T> {
+  const factory GetTopWorkersLoading() = _$GetTopWorkersLoadingImpl<T>;
+}
+
+/// @nodoc
+abstract class _$$GetTopWorkersSuccessImplCopyWith<T, $Res> {
+  factory _$$GetTopWorkersSuccessImplCopyWith(
+          _$GetTopWorkersSuccessImpl<T> value,
+          $Res Function(_$GetTopWorkersSuccessImpl<T>) then) =
+      __$$GetTopWorkersSuccessImplCopyWithImpl<T, $Res>;
+  @useResult
+  $Res call({T data});
+}
+
+/// @nodoc
+class __$$GetTopWorkersSuccessImplCopyWithImpl<T, $Res>
+    extends _$HomeStateCopyWithImpl<T, $Res, _$GetTopWorkersSuccessImpl<T>>
+    implements _$$GetTopWorkersSuccessImplCopyWith<T, $Res> {
+  __$$GetTopWorkersSuccessImplCopyWithImpl(_$GetTopWorkersSuccessImpl<T> _value,
+      $Res Function(_$GetTopWorkersSuccessImpl<T>) _then)
+      : super(_value, _then);
+
+  /// Create a copy of HomeState
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? data = freezed,
+  }) {
+    return _then(_$GetTopWorkersSuccessImpl<T>(
+      freezed == data
+          ? _value.data
+          : data // ignore: cast_nullable_to_non_nullable
+              as T,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$GetTopWorkersSuccessImpl<T> implements GetTopWorkersSuccess<T> {
+  const _$GetTopWorkersSuccessImpl(this.data);
+
+  @override
+  final T data;
+
+  @override
+  String toString() {
+    return 'HomeState<$T>.getTopWorkersSuccess(data: $data)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$GetTopWorkersSuccessImpl<T> &&
+            const DeepCollectionEquality().equals(other.data, data));
+  }
+
+  @override
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(data));
+
+  /// Create a copy of HomeState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$GetTopWorkersSuccessImplCopyWith<T, _$GetTopWorkersSuccessImpl<T>>
+      get copyWith => __$$GetTopWorkersSuccessImplCopyWithImpl<T,
+          _$GetTopWorkersSuccessImpl<T>>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() getTopBestSellerLoading,
+    required TResult Function(T data) getTopBestSellerSuccess,
+    required TResult Function(String message) getTopBestSellerError,
+    required TResult Function() getHighestRatedLoading,
+    required TResult Function(T data) getHighestRatedSuccess,
+    required TResult Function(String message) getHighestRatedError,
+    required TResult Function() getRecommendedForYouLoading,
+    required TResult Function(T data) getRecommendedForYouSuccess,
+    required TResult Function(String message) getRecommendedForYouError,
+    required TResult Function() geTopEngineersLoading,
+    required TResult Function(T data) getTopEngineersSuccess,
+    required TResult Function(String message) getTopEngineersError,
+    required TResult Function() geTopWorkersLoading,
+    required TResult Function(T data) getTopWorkersSuccess,
+    required TResult Function(String message) getTopWorkersError,
+  }) {
+    return getTopWorkersSuccess(data);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? getTopBestSellerLoading,
+    TResult? Function(T data)? getTopBestSellerSuccess,
+    TResult? Function(String message)? getTopBestSellerError,
+    TResult? Function()? getHighestRatedLoading,
+    TResult? Function(T data)? getHighestRatedSuccess,
+    TResult? Function(String message)? getHighestRatedError,
+    TResult? Function()? getRecommendedForYouLoading,
+    TResult? Function(T data)? getRecommendedForYouSuccess,
+    TResult? Function(String message)? getRecommendedForYouError,
+    TResult? Function()? geTopEngineersLoading,
+    TResult? Function(T data)? getTopEngineersSuccess,
+    TResult? Function(String message)? getTopEngineersError,
+    TResult? Function()? geTopWorkersLoading,
+    TResult? Function(T data)? getTopWorkersSuccess,
+    TResult? Function(String message)? getTopWorkersError,
+  }) {
+    return getTopWorkersSuccess?.call(data);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? getTopBestSellerLoading,
+    TResult Function(T data)? getTopBestSellerSuccess,
+    TResult Function(String message)? getTopBestSellerError,
+    TResult Function()? getHighestRatedLoading,
+    TResult Function(T data)? getHighestRatedSuccess,
+    TResult Function(String message)? getHighestRatedError,
+    TResult Function()? getRecommendedForYouLoading,
+    TResult Function(T data)? getRecommendedForYouSuccess,
+    TResult Function(String message)? getRecommendedForYouError,
+    TResult Function()? geTopEngineersLoading,
+    TResult Function(T data)? getTopEngineersSuccess,
+    TResult Function(String message)? getTopEngineersError,
+    TResult Function()? geTopWorkersLoading,
+    TResult Function(T data)? getTopWorkersSuccess,
+    TResult Function(String message)? getTopWorkersError,
+    required TResult orElse(),
+  }) {
+    if (getTopWorkersSuccess != null) {
+      return getTopWorkersSuccess(data);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(HomeInitial<T> value) initial,
+    required TResult Function(GetTopBestSellerLoading<T> value)
+        getTopBestSellerLoading,
+    required TResult Function(GetTopBestSellerHomeSuccess<T> value)
+        getTopBestSellerSuccess,
+    required TResult Function(GetTopBestSellerHomeError<T> value)
+        getTopBestSellerError,
+    required TResult Function(GetHighestRatedLoading<T> value)
+        getHighestRatedLoading,
+    required TResult Function(GetHighestRatedHomeSuccess<T> value)
+        getHighestRatedSuccess,
+    required TResult Function(GetHighestRatedHomeError<T> value)
+        getHighestRatedError,
+    required TResult Function(GetRecommendedForYouLoading<T> value)
+        getRecommendedForYouLoading,
+    required TResult Function(GetRecommendedForYouHomeSuccess<T> value)
+        getRecommendedForYouSuccess,
+    required TResult Function(GetRecommendedForYouHomeError<T> value)
+        getRecommendedForYouError,
+    required TResult Function(GetTopEngineersLoading<T> value)
+        geTopEngineersLoading,
+    required TResult Function(GetTopEngineersSuccess<T> value)
+        getTopEngineersSuccess,
+    required TResult Function(GetTopEngineersError<T> value)
+        getTopEngineersError,
+    required TResult Function(GetTopWorkersLoading<T> value)
+        geTopWorkersLoading,
+    required TResult Function(GetTopWorkersSuccess<T> value)
+        getTopWorkersSuccess,
+    required TResult Function(GetTopWorkersError<T> value) getTopWorkersError,
+  }) {
+    return getTopWorkersSuccess(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(HomeInitial<T> value)? initial,
+    TResult? Function(GetTopBestSellerLoading<T> value)?
+        getTopBestSellerLoading,
+    TResult? Function(GetTopBestSellerHomeSuccess<T> value)?
+        getTopBestSellerSuccess,
+    TResult? Function(GetTopBestSellerHomeError<T> value)?
+        getTopBestSellerError,
+    TResult? Function(GetHighestRatedLoading<T> value)? getHighestRatedLoading,
+    TResult? Function(GetHighestRatedHomeSuccess<T> value)?
+        getHighestRatedSuccess,
+    TResult? Function(GetHighestRatedHomeError<T> value)? getHighestRatedError,
+    TResult? Function(GetRecommendedForYouLoading<T> value)?
+        getRecommendedForYouLoading,
+    TResult? Function(GetRecommendedForYouHomeSuccess<T> value)?
+        getRecommendedForYouSuccess,
+    TResult? Function(GetRecommendedForYouHomeError<T> value)?
+        getRecommendedForYouError,
+    TResult? Function(GetTopEngineersLoading<T> value)? geTopEngineersLoading,
+    TResult? Function(GetTopEngineersSuccess<T> value)? getTopEngineersSuccess,
+    TResult? Function(GetTopEngineersError<T> value)? getTopEngineersError,
+    TResult? Function(GetTopWorkersLoading<T> value)? geTopWorkersLoading,
+    TResult? Function(GetTopWorkersSuccess<T> value)? getTopWorkersSuccess,
+    TResult? Function(GetTopWorkersError<T> value)? getTopWorkersError,
+  }) {
+    return getTopWorkersSuccess?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(HomeInitial<T> value)? initial,
+    TResult Function(GetTopBestSellerLoading<T> value)? getTopBestSellerLoading,
+    TResult Function(GetTopBestSellerHomeSuccess<T> value)?
+        getTopBestSellerSuccess,
+    TResult Function(GetTopBestSellerHomeError<T> value)? getTopBestSellerError,
+    TResult Function(GetHighestRatedLoading<T> value)? getHighestRatedLoading,
+    TResult Function(GetHighestRatedHomeSuccess<T> value)?
+        getHighestRatedSuccess,
+    TResult Function(GetHighestRatedHomeError<T> value)? getHighestRatedError,
+    TResult Function(GetRecommendedForYouLoading<T> value)?
+        getRecommendedForYouLoading,
+    TResult Function(GetRecommendedForYouHomeSuccess<T> value)?
+        getRecommendedForYouSuccess,
+    TResult Function(GetRecommendedForYouHomeError<T> value)?
+        getRecommendedForYouError,
+    TResult Function(GetTopEngineersLoading<T> value)? geTopEngineersLoading,
+    TResult Function(GetTopEngineersSuccess<T> value)? getTopEngineersSuccess,
+    TResult Function(GetTopEngineersError<T> value)? getTopEngineersError,
+    TResult Function(GetTopWorkersLoading<T> value)? geTopWorkersLoading,
+    TResult Function(GetTopWorkersSuccess<T> value)? getTopWorkersSuccess,
+    TResult Function(GetTopWorkersError<T> value)? getTopWorkersError,
+    required TResult orElse(),
+  }) {
+    if (getTopWorkersSuccess != null) {
+      return getTopWorkersSuccess(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class GetTopWorkersSuccess<T> implements HomeState<T> {
+  const factory GetTopWorkersSuccess(final T data) =
+      _$GetTopWorkersSuccessImpl<T>;
+
+  T get data;
+
+  /// Create a copy of HomeState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$GetTopWorkersSuccessImplCopyWith<T, _$GetTopWorkersSuccessImpl<T>>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$GetTopWorkersErrorImplCopyWith<T, $Res> {
+  factory _$$GetTopWorkersErrorImplCopyWith(_$GetTopWorkersErrorImpl<T> value,
+          $Res Function(_$GetTopWorkersErrorImpl<T>) then) =
+      __$$GetTopWorkersErrorImplCopyWithImpl<T, $Res>;
+  @useResult
+  $Res call({String message});
+}
+
+/// @nodoc
+class __$$GetTopWorkersErrorImplCopyWithImpl<T, $Res>
+    extends _$HomeStateCopyWithImpl<T, $Res, _$GetTopWorkersErrorImpl<T>>
+    implements _$$GetTopWorkersErrorImplCopyWith<T, $Res> {
+  __$$GetTopWorkersErrorImplCopyWithImpl(_$GetTopWorkersErrorImpl<T> _value,
+      $Res Function(_$GetTopWorkersErrorImpl<T>) _then)
+      : super(_value, _then);
+
+  /// Create a copy of HomeState
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? message = null,
+  }) {
+    return _then(_$GetTopWorkersErrorImpl<T>(
+      null == message
+          ? _value.message
+          : message // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$GetTopWorkersErrorImpl<T> implements GetTopWorkersError<T> {
+  const _$GetTopWorkersErrorImpl(this.message);
+
+  @override
+  final String message;
+
+  @override
+  String toString() {
+    return 'HomeState<$T>.getTopWorkersError(message: $message)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$GetTopWorkersErrorImpl<T> &&
+            (identical(other.message, message) || other.message == message));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, message);
+
+  /// Create a copy of HomeState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$GetTopWorkersErrorImplCopyWith<T, _$GetTopWorkersErrorImpl<T>>
+      get copyWith => __$$GetTopWorkersErrorImplCopyWithImpl<T,
+          _$GetTopWorkersErrorImpl<T>>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() getTopBestSellerLoading,
+    required TResult Function(T data) getTopBestSellerSuccess,
+    required TResult Function(String message) getTopBestSellerError,
+    required TResult Function() getHighestRatedLoading,
+    required TResult Function(T data) getHighestRatedSuccess,
+    required TResult Function(String message) getHighestRatedError,
+    required TResult Function() getRecommendedForYouLoading,
+    required TResult Function(T data) getRecommendedForYouSuccess,
+    required TResult Function(String message) getRecommendedForYouError,
+    required TResult Function() geTopEngineersLoading,
+    required TResult Function(T data) getTopEngineersSuccess,
+    required TResult Function(String message) getTopEngineersError,
+    required TResult Function() geTopWorkersLoading,
+    required TResult Function(T data) getTopWorkersSuccess,
+    required TResult Function(String message) getTopWorkersError,
+  }) {
+    return getTopWorkersError(message);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? getTopBestSellerLoading,
+    TResult? Function(T data)? getTopBestSellerSuccess,
+    TResult? Function(String message)? getTopBestSellerError,
+    TResult? Function()? getHighestRatedLoading,
+    TResult? Function(T data)? getHighestRatedSuccess,
+    TResult? Function(String message)? getHighestRatedError,
+    TResult? Function()? getRecommendedForYouLoading,
+    TResult? Function(T data)? getRecommendedForYouSuccess,
+    TResult? Function(String message)? getRecommendedForYouError,
+    TResult? Function()? geTopEngineersLoading,
+    TResult? Function(T data)? getTopEngineersSuccess,
+    TResult? Function(String message)? getTopEngineersError,
+    TResult? Function()? geTopWorkersLoading,
+    TResult? Function(T data)? getTopWorkersSuccess,
+    TResult? Function(String message)? getTopWorkersError,
+  }) {
+    return getTopWorkersError?.call(message);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? getTopBestSellerLoading,
+    TResult Function(T data)? getTopBestSellerSuccess,
+    TResult Function(String message)? getTopBestSellerError,
+    TResult Function()? getHighestRatedLoading,
+    TResult Function(T data)? getHighestRatedSuccess,
+    TResult Function(String message)? getHighestRatedError,
+    TResult Function()? getRecommendedForYouLoading,
+    TResult Function(T data)? getRecommendedForYouSuccess,
+    TResult Function(String message)? getRecommendedForYouError,
+    TResult Function()? geTopEngineersLoading,
+    TResult Function(T data)? getTopEngineersSuccess,
+    TResult Function(String message)? getTopEngineersError,
+    TResult Function()? geTopWorkersLoading,
+    TResult Function(T data)? getTopWorkersSuccess,
+    TResult Function(String message)? getTopWorkersError,
+    required TResult orElse(),
+  }) {
+    if (getTopWorkersError != null) {
+      return getTopWorkersError(message);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(HomeInitial<T> value) initial,
+    required TResult Function(GetTopBestSellerLoading<T> value)
+        getTopBestSellerLoading,
+    required TResult Function(GetTopBestSellerHomeSuccess<T> value)
+        getTopBestSellerSuccess,
+    required TResult Function(GetTopBestSellerHomeError<T> value)
+        getTopBestSellerError,
+    required TResult Function(GetHighestRatedLoading<T> value)
+        getHighestRatedLoading,
+    required TResult Function(GetHighestRatedHomeSuccess<T> value)
+        getHighestRatedSuccess,
+    required TResult Function(GetHighestRatedHomeError<T> value)
+        getHighestRatedError,
+    required TResult Function(GetRecommendedForYouLoading<T> value)
+        getRecommendedForYouLoading,
+    required TResult Function(GetRecommendedForYouHomeSuccess<T> value)
+        getRecommendedForYouSuccess,
+    required TResult Function(GetRecommendedForYouHomeError<T> value)
+        getRecommendedForYouError,
+    required TResult Function(GetTopEngineersLoading<T> value)
+        geTopEngineersLoading,
+    required TResult Function(GetTopEngineersSuccess<T> value)
+        getTopEngineersSuccess,
+    required TResult Function(GetTopEngineersError<T> value)
+        getTopEngineersError,
+    required TResult Function(GetTopWorkersLoading<T> value)
+        geTopWorkersLoading,
+    required TResult Function(GetTopWorkersSuccess<T> value)
+        getTopWorkersSuccess,
+    required TResult Function(GetTopWorkersError<T> value) getTopWorkersError,
+  }) {
+    return getTopWorkersError(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(HomeInitial<T> value)? initial,
+    TResult? Function(GetTopBestSellerLoading<T> value)?
+        getTopBestSellerLoading,
+    TResult? Function(GetTopBestSellerHomeSuccess<T> value)?
+        getTopBestSellerSuccess,
+    TResult? Function(GetTopBestSellerHomeError<T> value)?
+        getTopBestSellerError,
+    TResult? Function(GetHighestRatedLoading<T> value)? getHighestRatedLoading,
+    TResult? Function(GetHighestRatedHomeSuccess<T> value)?
+        getHighestRatedSuccess,
+    TResult? Function(GetHighestRatedHomeError<T> value)? getHighestRatedError,
+    TResult? Function(GetRecommendedForYouLoading<T> value)?
+        getRecommendedForYouLoading,
+    TResult? Function(GetRecommendedForYouHomeSuccess<T> value)?
+        getRecommendedForYouSuccess,
+    TResult? Function(GetRecommendedForYouHomeError<T> value)?
+        getRecommendedForYouError,
+    TResult? Function(GetTopEngineersLoading<T> value)? geTopEngineersLoading,
+    TResult? Function(GetTopEngineersSuccess<T> value)? getTopEngineersSuccess,
+    TResult? Function(GetTopEngineersError<T> value)? getTopEngineersError,
+    TResult? Function(GetTopWorkersLoading<T> value)? geTopWorkersLoading,
+    TResult? Function(GetTopWorkersSuccess<T> value)? getTopWorkersSuccess,
+    TResult? Function(GetTopWorkersError<T> value)? getTopWorkersError,
+  }) {
+    return getTopWorkersError?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(HomeInitial<T> value)? initial,
+    TResult Function(GetTopBestSellerLoading<T> value)? getTopBestSellerLoading,
+    TResult Function(GetTopBestSellerHomeSuccess<T> value)?
+        getTopBestSellerSuccess,
+    TResult Function(GetTopBestSellerHomeError<T> value)? getTopBestSellerError,
+    TResult Function(GetHighestRatedLoading<T> value)? getHighestRatedLoading,
+    TResult Function(GetHighestRatedHomeSuccess<T> value)?
+        getHighestRatedSuccess,
+    TResult Function(GetHighestRatedHomeError<T> value)? getHighestRatedError,
+    TResult Function(GetRecommendedForYouLoading<T> value)?
+        getRecommendedForYouLoading,
+    TResult Function(GetRecommendedForYouHomeSuccess<T> value)?
+        getRecommendedForYouSuccess,
+    TResult Function(GetRecommendedForYouHomeError<T> value)?
+        getRecommendedForYouError,
+    TResult Function(GetTopEngineersLoading<T> value)? geTopEngineersLoading,
+    TResult Function(GetTopEngineersSuccess<T> value)? getTopEngineersSuccess,
+    TResult Function(GetTopEngineersError<T> value)? getTopEngineersError,
+    TResult Function(GetTopWorkersLoading<T> value)? geTopWorkersLoading,
+    TResult Function(GetTopWorkersSuccess<T> value)? getTopWorkersSuccess,
+    TResult Function(GetTopWorkersError<T> value)? getTopWorkersError,
+    required TResult orElse(),
+  }) {
+    if (getTopWorkersError != null) {
+      return getTopWorkersError(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class GetTopWorkersError<T> implements HomeState<T> {
+  const factory GetTopWorkersError(final String message) =
+      _$GetTopWorkersErrorImpl<T>;
+
+  String get message;
+
+  /// Create a copy of HomeState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$GetTopWorkersErrorImplCopyWith<T, _$GetTopWorkersErrorImpl<T>>
       get copyWith => throw _privateConstructorUsedError;
 }

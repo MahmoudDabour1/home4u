@@ -15,51 +15,55 @@ class BestShowRoomsListView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      height: 310.h,
-      child: BlocBuilder<HomeCubit, HomeState>(
-        buildWhen: (previous, current) =>
-            current is GetHighestRatedLoading ||
-            current is GetHighestRatedHomeSuccess ||
-            current is GetHighestRatedHomeError,
-        builder: (context, state) {
-          return state.maybeWhen(
-              getHighestRatedLoading: () => const Center(
-                    child: CircularProgressIndicator(),
+    return BlocBuilder<HomeCubit, HomeState>(
+      buildWhen: (previous, current) =>
+          current is GetHighestRatedLoading ||
+          current is GetHighestRatedHomeSuccess ||
+          current is GetHighestRatedHomeError,
+      builder: (context, state) {
+        return state.maybeWhen(
+            getHighestRatedLoading: () => const Center(
+                  child: CircularProgressIndicator(),
+                ),
+            getHighestRatedSuccess: (data) {
+              return setupSuccess(data,context);
+            },
+            getHighestRatedError: (e) => Center(
+                  child: Text(
+                    e.toString(),
+                    style: TextStyle(fontSize: 16.sp, color: Colors.red),
                   ),
-              getHighestRatedSuccess: (data) {
-                return setupSuccess(data);
-              },
-              getHighestRatedError: (e) => Center(
-                    child: Text(
-                      e.toString(),
-                      style: TextStyle(fontSize: 16.sp, color: Colors.red),
-                    ),
-                  ),
-              orElse: () => SizedBox.shrink());
-        },
-      ),
+                ),
+            orElse: () => SizedBox.shrink());
+      },
     );
   }
 
-  Widget setupSuccess(HighestRatedResponseModel data) {
-    return ListView.separated(
-      separatorBuilder: (context, index) => horizontalSpace(8.w),
-      itemCount: data.data?.length ?? 0,
+  Widget setupSuccess(HighestRatedResponseModel data,BuildContext context) {
+    return SingleChildScrollView(
       scrollDirection: Axis.horizontal,
-      itemBuilder: (context, index) {
-        return ScrollContainerWidget(
-          productId: data.data?[index].id ?? 0,
-          image: data.data?[index].images?[0] ?? '',
-          title: data.data?[index].name ?? '',
-          starCount: data.data?[index].rate.toString() ?? '0',
-          price: data.data?[index].price.toString() ?? "0",
-          ratingCount: data.data?[index].countRates?.toString() ?? '0',
-          rankBySales:
-              "${data.data?[index].productRankBySales ?? 0} ${AppLocale.on.getString(context)} ${data.data?[index].categoryName ?? ""} category",
-          numberOfSales: "${data.data?[index].numberOfSales} ${AppLocale.soldRecently.getString(context)}",
-        );
-      },
+      child: Row(
+        children: List.generate(
+          data.data?.length ?? 0,
+          (index) {
+            return Padding(
+              padding: EdgeInsets.only(right: 8.w),
+              child: ScrollContainerWidget(
+                productId: data.data?[index].id ?? 0,
+                image: data.data?[index].images?[0] ?? '',
+                title: data.data?[index].name ?? '',
+                starCount: data.data?[index].rate.toString() ?? '0',
+                price: data.data?[index].price.toString() ?? "0",
+                ratingCount: data.data?[index].countRates?.toString() ?? '0',
+                rankBySales:
+                    "${data.data?[index].productRankBySales ?? 0} ${AppLocale.on.getString(context)} ${data.data?[index].categoryName ?? ""} category",
+                numberOfSales:
+                    "${data.data?[index].numberOfSales} ${AppLocale.soldRecently.getString(context)}",
+              ),
+            );
+          },
+        ),
+      ),
     );
   }
 }

@@ -3,36 +3,28 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_localization/flutter_localization.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:home4u/core/extensions/navigation_extension.dart';
-import 'package:home4u/core/helpers/shared_pref_keys.dart';
-import 'package:home4u/features/user/home/presentation/widgets/recommended_for_you/recommended_for_you_list_view.dart';
+import 'package:home4u/features/user/home/presentation/widgets/top_engineers/top_engineers_list_view.dart';
 
-import '../../../../../../core/helpers/shared_pref_helper.dart';
 import '../../../../../../core/routing/routes.dart';
 import '../../../../../../core/utils/spacing.dart';
 import '../../../../../../locale/app_locale.dart';
 import '../../../logic/home_cubit.dart';
 import '../custom_see_all_row_widget.dart';
 
-class RecommendedForYouWidget extends StatefulWidget {
-  const RecommendedForYouWidget({super.key});
+class TopEngineersSection extends StatefulWidget {
+  const TopEngineersSection({super.key});
 
   @override
-  State<RecommendedForYouWidget> createState() => _RecommendedForYouWidgetState();
+  State<TopEngineersSection> createState() => _TopEngineersSectionState();
 }
 
-class _RecommendedForYouWidgetState extends State<RecommendedForYouWidget> {
+class _TopEngineersSectionState extends State<TopEngineersSection> {
   @override
   void initState() {
     super.initState();
-    _loadUserIdAndFetchRecommendations();
+    context.read<HomeCubit>().getTopEngineers();
   }
 
-  void _loadUserIdAndFetchRecommendations() async {
-    final userId = await SharedPrefHelper.getInt(SharedPrefKeys.userId);
-    if (userId != null) {
-      context.read<HomeCubit>().getRecommendedForYou(userId);
-    }
-  }
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -41,13 +33,13 @@ class _RecommendedForYouWidgetState extends State<RecommendedForYouWidget> {
         children: [
           verticalSpace(16),
           CustomSeeAllRowWidget(
-            text: AppLocale.recommendedForYou.getString(context),
+            text: AppLocale.topEngineers.getString(context),
             onPressed: () {
-              context.pushNamed(Routes.recommendedForYouScreen);
+              context.pushNamed(Routes.topEngineersScreen);
             },
           ),
           verticalSpace(8),
-          RecommendedForYouListView(),
+          TopEngineersListView(),
         ],
       ),
     );

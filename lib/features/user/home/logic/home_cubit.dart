@@ -48,4 +48,33 @@ class HomeCubit extends Cubit<HomeState> {
       },
     );
   }
+
+  // top engineers
+  Future<void> getTopEngineers() async {
+    emit(HomeState.geTopEngineersLoading());
+    final result = await homeRepos.getTopEngineers();
+    result.when(
+      success: (data) {
+        emit(HomeState.getTopEngineersSuccess(data));
+      },
+      failure: (error) {
+        emit(HomeState.getTopEngineersError(error.message.toString()));
+      },
+    );
+  }
+
+  // top workers
+  Future<void> getTopWorkers() async {
+    emit(HomeState.geTopWorkersLoading());
+    final result = await homeRepos.getTopWorkers();
+    result.when(
+      success: (data) {
+        emit(HomeState.getTopWorkersSuccess(data));
+      },
+      failure: (error) {
+        emit(HomeState.getTopWorkersError(error.message.toString()));
+      },
+    );
+  }
+
 }
