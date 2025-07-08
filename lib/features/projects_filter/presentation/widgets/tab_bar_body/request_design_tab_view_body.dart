@@ -72,8 +72,15 @@ class _RequestDesignTabViewBodyState extends State<RequestDesignTabViewBody> {
               return RequestDesignTabViewItem(
                 requestDesignItem: cubit.requestDesignItems[index],
               );
+            } else if (isLoadingMore) {
+              return SizedBox(
+                height: MediaQuery.sizeOf(context).height * 0.4,
+                child: const Center(
+                  child: CircularProgressIndicator(),
+                ),
+              );
             } else {
-              return const Center(child: CircularProgressIndicator());
+              return const SizedBox.shrink();
             }
           },
           separatorBuilder: (_, __) => verticalSpace(12),

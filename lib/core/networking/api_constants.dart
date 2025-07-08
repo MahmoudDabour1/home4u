@@ -115,21 +115,58 @@ class ApiConstants {
 
   ///Projects Filter
   static const String renovateHouseFilterEp = "/api/v1/home-renovate/filter";
-  static const String renovateHouseFixedPackageFilterEp = "/api/v1/select-custom-package/filter";
+  static const String renovateHouseFixedPackageFilterEp =
+      "/api/v1/select-custom-package/filter";
   static const String requestDesignFilterEp = "/api/v1/request-design/filter";
   static const String askTechnicalWorkerFilterEp = "/api/v1/ask-worker/filter";
   static const String askEngineerFilterEp = "/api/v1/ask-engineer/filter";
 
   ///Projects Details
-  static const String askTechnicalServiceDetailsEp = "/api/v1/ask-worker/{askId}";
-  static const String askEngineerServiceDetailsEp = "/api/v1/ask-engineer/{askId}";
-  static const String renovateHouseDetailsEp = "/api/v1/home-renovate/{renovateId}";
-  static const String requestDesignDetailsEp = "/api/v1/request-design/{requestId}";
-  static const String renovateHouseFixedPackageDetailsEp = "/api/v1/custom-package/{packageId}";
-  static const String furnishYourHomeDetailsEp = "/api/v1/home-furnishing-requests/{furnishId}";
+  static const String askTechnicalServiceDetailsEp =
+      "/api/v1/ask-worker/{askId}";
+  static const String askEngineerServiceDetailsEp =
+      "/api/v1/ask-engineer/{askId}";
+  static const String renovateHouseDetailsEp =
+      "/api/v1/home-renovate/{renovateId}";
+  static const String requestDesignDetailsEp =
+      "/api/v1/request-design/{requestId}";
+  static const String renovateHouseFixedPackageDetailsEp =
+      "/api/v1/select-custom-package/{packageId}";
+  static const String furnishYourHomeDetailsEp =
+      "/api/v1/home-furnishing-requests/{furnishId}";
 
-  ///Asks
-  static const String technicalAsksEp = "/api/v1/request-ask-worker/my-asks";
+  ///My-Asks
+  static const String technicalAsksEp = "/api/v1/ask-worker/my-asks";
+  static const String engineerAsksEp = "/api/v1/ask-engineer/my-asks";
+  static const String requestDesignAsksEp =
+      "/api/v1/request-design/my-request-design";
+  static const String renovateHouseAsksEp =
+      "/api/v1/home-renovate/my-home-renovate";
+  static const String renovateHouseFixedPackageAsksEp =
+      "/api/v1/select-custom-package/my-select-package";
+
+  ///Request Asks
+  ///Request
+  static const String requestAskEngineerEp = "/api/v1/request-ask-engineer";
+  static const String requestAskWorkerEp = "/api/v1/request-ask-worker";
+  static const String requestRenovateHouseEp = "/api/v1/request-home-renovate";
+  static const String requestRenovateHouseCustomPackageEp =
+      "/api/v1/request-select-custom-package";
+  static const String requestRequestDesignEp = "/api/v1/request-request-design";
+
+  ///Get Request Asks By Id
+  static const String requestAskEngineerByIdEp =
+      "/api/v1/request-ask-engineer/my-asks";
+  static const String requestAskWorkerByIdEp =
+      '/api/v1/request-ask-worker/my-asks';
+  static const String requestRequestDesignByIdEp =
+      '/api/v1/request-request-design/my-asks';
+
+  static const String requestRenovateHouseCustomPackageByIdEp =
+      '/api/v1/request-select-custom-package/my-asks';
+
+  static const String requestRenovateHouseByIdEp =
+      '/api/v1/request-home-renovate/my-asks';
 }
 
 class ApiErrors {

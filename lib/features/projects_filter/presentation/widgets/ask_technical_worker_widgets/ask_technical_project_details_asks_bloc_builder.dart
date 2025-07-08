@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:home4u/core/utils/spacing.dart';
-import 'package:home4u/features/projects_filter/logic/asks/asks_cubit.dart';
-import 'package:home4u/features/projects_filter/logic/asks/asks_state.dart';
 import 'package:home4u/features/projects_filter/presentation/widgets/ask_technical_worker_widgets/technical_ask_item.dart';
+
+import '../../../logic/ask_technical/ask_technical_services_cubit.dart';
+import '../../../logic/ask_technical/ask_technical_services_state.dart';
 
 class AskTechnicalProjectDetailsAsksBlocBuilder extends StatelessWidget {
   const AskTechnicalProjectDetailsAsksBlocBuilder({
@@ -12,10 +13,16 @@ class AskTechnicalProjectDetailsAsksBlocBuilder extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocBuilder<AsksCubit, AsksState>(
+    return BlocBuilder<AskTechnicalServicesCubit, AskTechnicalServicesState>(
+      buildWhen: (previous, current) => current.maybeWhen(
+        askTechnicalRequestsLoading: () => true,
+        askTechnicalRequestsSuccess: (_) => true,
+        askTechnicalRequestsFailure: (_) => true,
+        orElse: () => false,
+      ),
       builder: (context, state) {
         return state.maybeWhen(
-          technicalAsksSuccess: (technicalAsk) {
+          askTechnicalRequestsSuccess: (technicalAsk) {
             final ask = technicalAsk.data;
 
             if (ask == null || ask.isEmpty) {
@@ -32,6 +39,12 @@ class AskTechnicalProjectDetailsAsksBlocBuilder extends StatelessWidget {
               itemCount: ask.length,
             );
           },
+          askTechnicalRequestsLoading: () => SizedBox(
+            height: MediaQuery.sizeOf(context).height * 0.5,
+            child: const Center(
+              child: CircularProgressIndicator(),
+            ),
+          ),
           orElse: () => SizedBox.shrink(),
         );
       },

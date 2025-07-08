@@ -1,16 +1,13 @@
 import 'package:custom_rating_bar/custom_rating_bar.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:home4u/core/utils/spacing.dart';
 import 'package:home4u/features/projects_filter/data/models/asks/technical_asks_response_model.dart';
-import 'package:home4u/features/projects_filter/logic/asks/asks_cubit.dart';
-import 'package:home4u/features/projects_filter/logic/asks/asks_state.dart';
 import 'package:home4u/features/projects_filter/presentation/widgets/filter_image_and_name_widget.dart';
 
 import '../../../../../core/theming/app_colors.dart';
 import '../../../../../core/theming/app_styles.dart';
 import '../../../../../core/utils/app_constants.dart';
+import '../../../data/models/ask_requests/ask_technical_request/ask_technical_request_response_model.dart';
 
 class TechnicalAskItem extends StatelessWidget {
   const TechnicalAskItem({
@@ -18,7 +15,7 @@ class TechnicalAskItem extends StatelessWidget {
     required this.ask,
   });
 
-  final AskData ask;
+  final AskTechnicalRequestData ask;
 
   @override
   Widget build(BuildContext context) {

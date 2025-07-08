@@ -13,15 +13,18 @@ class FurnishHouseTabViewItem extends StatelessWidget {
     return Stack(
       children: [
         Container(
-          width: MediaQuery.sizeOf(context).width,
-          height: MediaQuery.sizeOf(context).height * 0.35,
+          width: MediaQuery
+              .sizeOf(context)
+              .width,
           decoration: BoxDecoration(
             color: AppColors.containersColor,
             borderRadius: BorderRadius.circular(24.r),
           ),
           child: FurnishHouseTabViewContent(),
         ),
-        FilterOfferBadgeWidget(),
+        // FilterOfferBadgeWidget(
+        //   badgeCount: renovateItem.requestCount.toString(),
+        // ),
       ],
     );
   }

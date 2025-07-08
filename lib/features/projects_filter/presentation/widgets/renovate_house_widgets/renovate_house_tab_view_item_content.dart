@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_localization/flutter_localization.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:home4u/features/projects_filter/presentation/widgets/renovate_house_widgets/renovate_house_tab_view_item_title.dart';
+import 'package:home4u/locale/app_locale.dart';
 
+import '../../../../../core/utils/app_constants.dart';
 import '../../../data/models/renovate_house_filter/renovate_house_filter_response_model.dart';
 import '../filter_image_and_name_widget.dart';
 import '../project_skills_needed_widget.dart';
@@ -26,16 +29,22 @@ class RenovateHouseTabViewItemContent extends StatelessWidget {
             unitType: renovateItem.unitType?.name ?? 'N/A',
             unitArea: renovateItem.unitArea ?? 0,
           ),
-          FilterImageAndNameWidget(),
+          FilterImageAndNameWidget(
+            imageUrl: renovateItem.user?.personalPhoto,
+            userName: renovateItem.user?.username,
+            timeAgo: formatDate(renovateItem.createdDate),
+          ),
           ServiceRowItem(
-            serviceKey: "Works needed : ",
-            serviceValue: renovateItem.workSkills?.name ?? 'N/A',
+            serviceKey: '${AppLocale.finishType.getString(context)}:',
+            serviceValue: renovateItem.unitStatuses?.name ?? 'N/A',
           ),
           ServicesConstData(
             government: renovateItem.governorate?.name ?? 'N/A',
-            projectStatus: 'available',
+            projectStatus:  renovateItem.askStatus ?? 'N/A',
           ),
-          ProjectSkillsNeededWidget(),
+          ProjectSkillsNeededWidget(
+            skillNeeded: renovateItem.workSkills?.name ?? 'N/A',
+          ),
         ],
       ),
     );

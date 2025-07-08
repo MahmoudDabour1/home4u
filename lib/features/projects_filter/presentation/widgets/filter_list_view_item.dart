@@ -21,7 +21,7 @@ class FilterListViewItem extends StatelessWidget {
           ),
           child: FilterContainerContent(),
         ),
-        FilterOfferBadgeWidget(),
+        // FilterOfferBadgeWidget(),
       ],
     );
   }
