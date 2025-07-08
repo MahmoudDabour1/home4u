@@ -151,7 +151,7 @@ class _RenovateHouseCustomPackageServiceRemoteDataSource
     )
             .compose(
               _dio.options,
-              '/api/v1/custom-package/${packageId}',
+              '/api/v1/select-custom-package/${packageId}',
               queryParameters: queryParameters,
               data: _data,
             )

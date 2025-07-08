@@ -81,12 +81,12 @@ class RenovateHouseCustomPackageServicesCubit
 
   /// Renovate House Custom Package Service Requests
   Future<void> getRenovateHouseCustomPackageRequests({
-    required String askId,
+    required String requestId,
   }) async {
     emit(RenovateHouseCustomPackageServicesState
         .renovateHouseCustomPackageServiceRequestsLoading());
     final result = await _renovateHouseCustomPackageServicesRepository
-        .getAskRenovateHouseCustomPackageRequests(askId: askId);
+        .getAskRenovateHouseCustomPackageRequests(askId: requestId);
 
     result.when(
       success: (data) => emit(RenovateHouseCustomPackageServicesState

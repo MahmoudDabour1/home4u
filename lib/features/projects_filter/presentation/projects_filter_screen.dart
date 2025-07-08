@@ -6,6 +6,7 @@ import 'package:home4u/features/projects_filter/presentation/widgets/tab_bar/pro
 import 'package:home4u/features/projects_filter/presentation/widgets/tab_bar_body/ask_engineer_tab_view_body.dart';
 import 'package:home4u/features/projects_filter/presentation/widgets/tab_bar_body/ask_technical_tab_view_body.dart';
 import 'package:home4u/features/projects_filter/presentation/widgets/tab_bar_body/furnish_house_tab_view_body.dart';
+import 'package:home4u/features/projects_filter/presentation/widgets/tab_bar_body/renovate_house_custom_package_tab_view_body.dart';
 import 'package:home4u/features/projects_filter/presentation/widgets/tab_bar_body/renovate_house_tab_view_body.dart';
 import 'package:home4u/features/projects_filter/presentation/widgets/tab_bar_body/request_design_tab_view_body.dart';
 
@@ -71,8 +72,8 @@ class _ProjectsFilterScreenState extends State<ProjectsFilterScreen> {
 
                   ///ToDo : Mostafa
                   Center(child: Text('Kitchen && Dressing')),
-                  Center(child: Text('Kitchen && Dressing')),
 
+                  RenovateHouseCustomPackageTabViewBody(),
                   RenovateHouseTabViewBody(),
                   AskEngineerTabViewBody(),
                   AskTechnicalTabViewBody(),

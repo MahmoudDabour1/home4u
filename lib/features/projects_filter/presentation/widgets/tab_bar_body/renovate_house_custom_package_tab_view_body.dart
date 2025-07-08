@@ -1,20 +1,21 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:home4u/features/projects_filter/presentation/widgets/renovate_house_widgets/renovate_house_tab_view_item.dart';
 
 import '../../../../../core/utils/spacing.dart';
 import '../../../logic/projects_filter/projects_filter_cubit.dart';
 import '../../../logic/projects_filter/projects_filter_state.dart';
+import '../renovate_house_custom_package/renovate_house_custom_package_tab_view_item.dart';
 
-class RenovateHouseTabViewBody extends StatefulWidget {
-  const RenovateHouseTabViewBody({super.key});
+class RenovateHouseCustomPackageTabViewBody extends StatefulWidget {
+  const RenovateHouseCustomPackageTabViewBody({super.key});
 
   @override
-  State<RenovateHouseTabViewBody> createState() =>
-      _RenovateHouseTabViewBodyState();
+  State<RenovateHouseCustomPackageTabViewBody> createState() =>
+      _RenovateHouseCustomPackageTabViewBodyState();
 }
 
-class _RenovateHouseTabViewBodyState extends State<RenovateHouseTabViewBody> {
+class _RenovateHouseCustomPackageTabViewBodyState
+    extends State<RenovateHouseCustomPackageTabViewBody> {
   late ScrollController _scrollController;
 
   @override
@@ -27,7 +28,8 @@ class _RenovateHouseTabViewBodyState extends State<RenovateHouseTabViewBody> {
 
   void _loadInitialData() {
     final cubit = context.read<ProjectsFilterCubit>();
-    cubit.renovateHouseCustomPackages();
+
+    cubit.getFixedPackagesFilter(isRefresh: true);
   }
 
   void _scrollListener() {
@@ -35,15 +37,15 @@ class _RenovateHouseTabViewBodyState extends State<RenovateHouseTabViewBody> {
 
     if (_scrollController.offset >=
         _scrollController.position.maxScrollExtent * 0.7 &&
-        !cubit.hasReachedMaxOfCustomPackage) {
-      cubit.renovateHouseCustomPackages();
+        !cubit.hasReachedMaxOfFixedPackage) {
+      cubit.getFixedPackagesFilter();
     }
   }
 
   @override
   void dispose() {
     final cubit = context.read<ProjectsFilterCubit>();
-    cubit.resetPaginationOfCustomPackage();
+    cubit.resetPaginationOfFixedPackage();
     _scrollController.removeListener(_scrollListener);
     _scrollController.dispose();
     super.dispose();
@@ -54,22 +56,24 @@ class _RenovateHouseTabViewBodyState extends State<RenovateHouseTabViewBody> {
     return BlocBuilder<ProjectsFilterCubit, ProjectsFilterState>(
       builder: (context, state) {
         final cubit = context.read<ProjectsFilterCubit>();
-        final isLoadingMore = cubit.isFetchingCustomPackage &&
-            !cubit.hasReachedMaxOfCustomPackage;
+        final isLoadingMore = cubit.isFetchingFixedPackage &&
+            !cubit.hasReachedMaxOfFixedPackage;
 
-        if (state is RenovateYourHouseCustomPackagesFilterLoading &&
-            cubit.customPackages.isEmpty) {
-          return Center(
+        if (state is RenovateYourHouseFixedPackagesFilterLoading &&
+            cubit.fixedPackages.isEmpty) {
+          return const Center(
             child: CircularProgressIndicator(
               color: Colors.amber,
             ),
           );
         }
+
         return ListView.separated(
           itemBuilder: (context, index) {
-            if (index < cubit.customPackages.length) {
-              return RenovateHouseTabViewItem(
-                renovateItem: cubit.customPackages[index],
+            if (index < cubit.fixedPackages.length) {
+              final package = cubit.fixedPackages[index];
+              return RenovateHouseCustomPackageTabViewItem(
+                renovateItem: package,
               );
             } else if (isLoadingMore) {
               return SizedBox(
@@ -80,12 +84,13 @@ class _RenovateHouseTabViewBodyState extends State<RenovateHouseTabViewBody> {
                   child: CircularProgressIndicator(),
                 ),
               );
-            } else {
+            }
+            else {
               return const SizedBox.shrink();
             }
           },
           separatorBuilder: (_, __) => verticalSpace(12),
-          itemCount: cubit.customPackages.length + (isLoadingMore ? 1 : 0),
+          itemCount: cubit.fixedPackages.length + (isLoadingMore ? 1 : 0),
         );
       },
     );

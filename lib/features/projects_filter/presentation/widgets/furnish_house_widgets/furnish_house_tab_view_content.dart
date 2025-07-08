@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import '../../../data/models/renovate_house_filter/renovate_house_filter_response_model.dart';
 import '../filter_image_and_name_widget.dart';
 import '../project_skills_needed_widget.dart';
 import '../services_const_data.dart';
@@ -31,7 +30,9 @@ class FurnishHouseTabViewContent extends StatelessWidget {
             government: 'N/A',
             projectStatus: 'available',
           ),
-          ProjectSkillsNeededWidget(),
+          ProjectSkillsNeededWidget(
+            skillNeeded: 'Plumbing',
+          ),
         ],
       ),
     );

@@ -28,6 +28,8 @@ import 'package:home4u/features/products/data/models/product_preview_response.da
 import 'package:home4u/features/products/presentation/product_details_screen.dart';
 import 'package:home4u/features/profile/presentation/add_certification_screen.dart';
 import 'package:home4u/features/projects_filter/logic/ask_engineer/ask_engineer_services_cubit.dart';
+import 'package:home4u/features/projects_filter/logic/renovate_house/renovate_house_services_cubit.dart';
+import 'package:home4u/features/projects_filter/logic/renovate_house_custom_package/renovate_house_custom_package_services_cubit.dart';
 import 'package:home4u/features/projects_filter/logic/request_design/request_design_services_cubit.dart';
 import 'package:home4u/features/projects_filter/presentation/request_design_service_details_screen.dart';
 import 'package:home4u/features/rating/logic/product_rating/product_rating_cubit.dart';
@@ -63,6 +65,8 @@ import '../../features/projects_filter/logic/ask_technical/ask_technical_service
 import '../../features/projects_filter/presentation/ask_engineer_service_details_screen.dart';
 import '../../features/projects_filter/presentation/ask_technical_project_details_screen.dart';
 import '../../features/projects_filter/presentation/projects_filter_screen.dart';
+import '../../features/projects_filter/presentation/renovate_house_custom_package_service_details_screen.dart';
+import '../../features/projects_filter/presentation/renovate_house_service_details_screen.dart';
 import '../../features/rating/presentation/products_rating_screen.dart';
 import '../../features/rating/presentation/single_product_rating_screen.dart';
 import '../../features/settings/presentation/setting_screen.dart';
@@ -400,6 +404,25 @@ class AppRouter {
           builder: (_) => BlocProvider<RequestDesignServicesCubit>(
             create: (context) => sl<RequestDesignServicesCubit>(),
             child: RequestDesignServiceDetailsScreen(requestId: requestId),
+          ),
+        );
+      case Routes.renovateHouseServiceDetailsScreen:
+        final requestId = settings.arguments as int;
+        return MaterialPageRoute(
+          settings: settings,
+          builder: (_) => BlocProvider<RenovateHouseServicesCubit>(
+            create: (context) => sl<RenovateHouseServicesCubit>(),
+            child: RenovateHouseServiceDetailsScreen(requestId: requestId),
+          ),
+        );
+      case Routes.renovateHouseCustomPackageServiceDetailsScreen:
+        final requestId = settings.arguments as int;
+        return MaterialPageRoute(
+          settings: settings,
+          builder: (_) => BlocProvider<RenovateHouseCustomPackageServicesCubit>(
+            create: (context) => sl<RenovateHouseCustomPackageServicesCubit>(),
+            child: RenovateHouseCustomPackageServiceDetailsScreen(
+                requestId: requestId),
           ),
         );
       default:

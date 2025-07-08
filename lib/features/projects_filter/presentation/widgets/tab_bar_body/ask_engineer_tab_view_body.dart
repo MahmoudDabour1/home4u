@@ -55,8 +55,9 @@ class _AskEngineerTabViewBodyState extends State<AskEngineerTabViewBody> {
         final isLoadingMore =
             cubit.isFetchingAskEngineer && !cubit.hasReachedMaxOfAskEngineer;
 
-        if (cubit.askEngineerItems.isEmpty && !isLoadingMore) {
-          return const Center(
+        if (state is AskEngineerFilterLoading &&
+            cubit.askEngineerItems.isEmpty) {
+          return Center(
             child: CircularProgressIndicator(
               color: Colors.amber,
             ),
@@ -70,8 +71,13 @@ class _AskEngineerTabViewBodyState extends State<AskEngineerTabViewBody> {
                 askEngineer: cubit.askEngineerItems[index],
               );
             } else if (isLoadingMore) {
-              return const Center(
-                child: CircularProgressIndicator(),
+              return SizedBox(
+                height: MediaQuery
+                    .sizeOf(context)
+                    .height * 0.4,
+                child: const Center(
+                  child: CircularProgressIndicator(),
+                ),
               );
             } else {
               return const SizedBox.shrink();

@@ -69,11 +69,11 @@ class RenovateHouseServicesCubit extends Cubit<RenovateHouseServicesState> {
 
   /// Renovate House Service Requests
   Future<void> getRenovateHouseServiceRequests({
-    required String askId,
+    required String requestId,
   }) async {
     emit(RenovateHouseServicesState.renovateHouseServiceRequestsLoading());
     final result = await _renovateHouseServicesRepository
-        .getAskRenovateHouseRequests(askId);
+        .getAskRenovateHouseRequests(requestId);
 
     result.when(
       success: (data) => emit(

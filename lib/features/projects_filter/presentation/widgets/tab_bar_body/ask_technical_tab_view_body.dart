@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:home4u/features/projects_filter/logic/ask_engineer/ask_engineer_services_cubit.dart';
 import 'package:home4u/features/projects_filter/presentation/widgets/ask_technical_worker_widgets/ask_technical_tab_view_item.dart';
 
 import '../../../../../core/utils/spacing.dart';
@@ -73,10 +72,15 @@ class _AskTechnicalTabViewBodyState extends State<AskTechnicalTabViewBody> {
                 askTechnical: cubit.askTechnicalItems[index],
               );
             } else if (isLoadingMore) {
-              return const Center(
-                child: CircularProgressIndicator(),
+              return SizedBox(
+                height: MediaQuery
+                    .sizeOf(context)
+                    .height * 0.4,
+                child: const Center(
+                  child: CircularProgressIndicator(),
+                ),
               );
-            } else {
+            }else {
               return const SizedBox.shrink();
             }
           },
