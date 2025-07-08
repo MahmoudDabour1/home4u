@@ -21,7 +21,8 @@ class _RenovateHouseTabViewBodyState extends State<RenovateHouseTabViewBody> {
   void initState() {
     super.initState();
     _loadInitialData();
-    _scrollController = ScrollController()..addListener(_scrollListener);
+    _scrollController = ScrollController()
+      ..addListener(_scrollListener);
   }
 
   void _loadInitialData() {
@@ -33,7 +34,7 @@ class _RenovateHouseTabViewBodyState extends State<RenovateHouseTabViewBody> {
     final cubit = context.read<ProjectsFilterCubit>();
 
     if (_scrollController.offset >=
-            _scrollController.position.maxScrollExtent * 0.7 &&
+        _scrollController.position.maxScrollExtent * 0.7 &&
         !cubit.hasReachedMaxOfCustomPackage) {
       cubit.renovateHouseCustomPackages();
     }
@@ -71,8 +72,13 @@ class _RenovateHouseTabViewBodyState extends State<RenovateHouseTabViewBody> {
                 renovateItem: cubit.customPackages[index],
               );
             } else if (isLoadingMore) {
-              return const Center(
-                child: CircularProgressIndicator(),
+              return SizedBox(
+                height: MediaQuery
+                    .sizeOf(context)
+                    .height * 0.4,
+                child: const Center(
+                  child: CircularProgressIndicator(),
+                ),
               );
             } else {
               return const SizedBox.shrink();

@@ -9,9 +9,9 @@ import '../../../../core/theming/app_colors.dart';
 import '../../../../core/theming/app_styles.dart';
 
 class FilterOfferBadgeWidget extends StatelessWidget {
-  final String? badgeCount;
+  final String badgeCount;
 
-  const FilterOfferBadgeWidget({super.key, this.badgeCount});
+  const FilterOfferBadgeWidget({super.key, required this.badgeCount});
 
   @override
   Widget build(BuildContext context) {
@@ -23,7 +23,7 @@ class FilterOfferBadgeWidget extends StatelessWidget {
           Column(
             children: [
               Text(
-                badgeCount ?? '0',
+                badgeCount,
                 style: AppStyles.font16BlackLight
                     .copyWith(color: AppColors.whiteColor),
               ),

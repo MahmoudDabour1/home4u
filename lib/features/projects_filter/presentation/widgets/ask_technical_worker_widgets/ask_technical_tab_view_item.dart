@@ -26,7 +26,6 @@ class AskTechnicalTabViewItem extends StatelessWidget {
         children: [
           Container(
             width: MediaQuery.sizeOf(context).width,
-            height: MediaQuery.sizeOf(context).height * 0.28,
             decoration: BoxDecoration(
               color: AppColors.containersColor,
               borderRadius: BorderRadius.circular(24.r),

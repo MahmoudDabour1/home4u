@@ -2,7 +2,7 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:home4u/features/projects_filter/data/models/base/user_base_model.dart';
 
 import '../base/city_base_model.dart';
-import '../base/user_base_type_model.dart';
+import '../base/base_type_model.dart';
 
 part 'technical_asks_response_model.g.dart';
 
@@ -86,9 +86,9 @@ class AskWorker {
   @JsonKey(name: "projectDescription")
   final String? projectDescription;
   @JsonKey(name: "workerType")
-  final UserBaseTypeModel? workerType;
+  final BaseTypeModel? workerType;
   @JsonKey(name: "unitType")
-  final UserBaseTypeModel? unitType;
+  final BaseTypeModel? unitType;
   @JsonKey(name: "city")
   final CityBaseModel? city;
   @JsonKey(name: "governorate")

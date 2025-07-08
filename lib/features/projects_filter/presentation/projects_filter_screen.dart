@@ -3,8 +3,10 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:home4u/core/theming/app_styles.dart';
 import 'package:home4u/features/projects_filter/presentation/widgets/search/projects_filter_search_bar_widget.dart';
 import 'package:home4u/features/projects_filter/presentation/widgets/tab_bar/projects_filter_tab_bar_widget.dart';
+import 'package:home4u/features/projects_filter/presentation/widgets/tab_bar_body/ask_engineer_tab_view_body.dart';
 import 'package:home4u/features/projects_filter/presentation/widgets/tab_bar_body/ask_technical_tab_view_body.dart';
 import 'package:home4u/features/projects_filter/presentation/widgets/tab_bar_body/furnish_house_tab_view_body.dart';
+import 'package:home4u/features/projects_filter/presentation/widgets/tab_bar_body/renovate_house_custom_package_tab_view_body.dart';
 import 'package:home4u/features/projects_filter/presentation/widgets/tab_bar_body/renovate_house_tab_view_body.dart';
 import 'package:home4u/features/projects_filter/presentation/widgets/tab_bar_body/request_design_tab_view_body.dart';
 
@@ -21,7 +23,7 @@ class _ProjectsFilterScreenState extends State<ProjectsFilterScreen> {
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
-      length: 6,
+      length: 7,
       child: Scaffold(
         body: SafeArea(
           child: NestedScrollView(
@@ -41,7 +43,7 @@ class _ProjectsFilterScreenState extends State<ProjectsFilterScreen> {
                   pinned: true,
                   forceElevated: true,
                   bottom: PreferredSize(
-                    preferredSize: Size.fromHeight(130.h),
+                    preferredSize: Size.fromHeight(140.h),
                     child: Column(
                       children: [
                         ProjectsFilterSearchBarWidget(),
@@ -55,7 +57,11 @@ class _ProjectsFilterScreenState extends State<ProjectsFilterScreen> {
               ];
             },
             body: Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 16.0).h,
+              padding:  EdgeInsets.only(
+                left: 24.w,
+                right: 24.w,
+                bottom: 16.h,
+              ),
               child: TabBarView(
                 physics: NeverScrollableScrollPhysics(),
                 children: [
@@ -67,8 +73,9 @@ class _ProjectsFilterScreenState extends State<ProjectsFilterScreen> {
                   ///ToDo : Mostafa
                   Center(child: Text('Kitchen && Dressing')),
 
+                  RenovateHouseCustomPackageTabViewBody(),
                   RenovateHouseTabViewBody(),
-                  Center(child: Text('Ask Engineer')),
+                  AskEngineerTabViewBody(),
                   AskTechnicalTabViewBody(),
                 ],
               ),

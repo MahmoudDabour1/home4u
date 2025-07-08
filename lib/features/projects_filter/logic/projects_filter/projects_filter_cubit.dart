@@ -30,8 +30,6 @@ class ProjectsFilterCubit extends Cubit<ProjectsFilterState> {
   bool isFetchingRequestDesign = false;
 
   Future<void> getRequestDesignFilter({bool isRefresh = false}) async {
-    ///get any data help you here ....
-
     if (isFetchingRequestDesign) return;
     isFetchingRequestDesign = true;
 

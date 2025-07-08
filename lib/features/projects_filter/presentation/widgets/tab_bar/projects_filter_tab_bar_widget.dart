@@ -47,6 +47,10 @@ class ProjectsFilterTabBarWidget extends StatelessWidget {
           iconPath: AppAssets.kitchensAndDressingIcon,
         ),
         ProjectsFilterCustomTab(
+          label: AppLocale.customPackage.getString(context),
+          iconPath: AppAssets.renovateYourHomeIcon,
+        ),
+        ProjectsFilterCustomTab(
           label: AppLocale.renovateYourHouse.getString(context),
           iconPath: AppAssets.renovateYourHomeIcon,
         ),
