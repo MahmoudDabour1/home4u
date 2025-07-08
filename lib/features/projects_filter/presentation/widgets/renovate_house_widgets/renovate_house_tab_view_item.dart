@@ -4,7 +4,6 @@ import 'package:home4u/features/projects_filter/presentation/widgets/renovate_ho
 
 import '../../../../../core/theming/app_colors.dart';
 import '../../../data/models/renovate_house_filter/renovate_house_filter_response_model.dart';
-import '../filter_container_content.dart';
 import '../filter_offer_badge_widget.dart';
 
 class RenovateHouseTabViewItem extends StatelessWidget {
@@ -29,7 +28,9 @@ class RenovateHouseTabViewItem extends StatelessWidget {
             renovateItem: renovateItem,
           ),
         ),
-        FilterOfferBadgeWidget(),
+        FilterOfferBadgeWidget(
+          badgeCount: renovateItem.requestCount.toString(),
+        ),
       ],
     );
   }

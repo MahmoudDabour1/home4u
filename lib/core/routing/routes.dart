@@ -64,4 +64,5 @@ abstract class Routes{
   ///Project Services Details
   static const String askTechnicalProjectDetailsScreen = '/askTechnicalProjectDetailsScreen';
   static const String askEngineerProjectDetailsScreen = '/askEngineerServiceDetailsScreen';
+  static const String requestDesignServiceDetailsScreen = '/requestDesignServiceDetailsScreen';
 }

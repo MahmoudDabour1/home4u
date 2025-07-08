@@ -4,12 +4,12 @@ import 'package:home4u/features/projects_filter/presentation/widgets/details/pro
 import 'package:home4u/locale/app_locale.dart';
 
 class ProjectDetailsGovernorateCityRow extends StatelessWidget {
-  final String city;
+  final String? city;
   final String governorate;
 
   const ProjectDetailsGovernorateCityRow({
     super.key,
-    required this.city,
+    this.city,
     required this.governorate,
   });
 
@@ -24,11 +24,11 @@ class ProjectDetailsGovernorateCityRow extends StatelessWidget {
             value: governorate,
           ),
         ),
-        Expanded(
+        city == null ? SizedBox.shrink() : Expanded(
           flex: 2,
           child: ProjectDetailsItemValue(
             itemTitle: AppLocale.city.getString(context),
-            value: city,
+            value: city ?? 'N/A',
           ),
         ),
       ],

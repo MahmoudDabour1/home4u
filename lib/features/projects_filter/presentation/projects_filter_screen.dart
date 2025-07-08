@@ -22,7 +22,7 @@ class _ProjectsFilterScreenState extends State<ProjectsFilterScreen> {
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
-      length: 6,
+      length: 7,
       child: Scaffold(
         body: SafeArea(
           child: NestedScrollView(
@@ -70,6 +70,7 @@ class _ProjectsFilterScreenState extends State<ProjectsFilterScreen> {
                   RequestDesignTabViewBody(),
 
                   ///ToDo : Mostafa
+                  Center(child: Text('Kitchen && Dressing')),
                   Center(child: Text('Kitchen && Dressing')),
 
                   RenovateHouseTabViewBody(),

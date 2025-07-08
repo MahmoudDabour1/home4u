@@ -28,6 +28,8 @@ import 'package:home4u/features/products/data/models/product_preview_response.da
 import 'package:home4u/features/products/presentation/product_details_screen.dart';
 import 'package:home4u/features/profile/presentation/add_certification_screen.dart';
 import 'package:home4u/features/projects_filter/logic/ask_engineer/ask_engineer_services_cubit.dart';
+import 'package:home4u/features/projects_filter/logic/request_design/request_design_services_cubit.dart';
+import 'package:home4u/features/projects_filter/presentation/request_design_service_details_screen.dart';
 import 'package:home4u/features/rating/logic/product_rating/product_rating_cubit.dart';
 import 'package:home4u/features/user/home/presentation/best_offices_screen.dart';
 import 'package:home4u/features/user/home/presentation/best_show_rooms_screen.dart';
@@ -389,6 +391,15 @@ class AppRouter {
           builder: (_) => BlocProvider<AskEngineerServicesCubit>(
             create: (context) => sl<AskEngineerServicesCubit>(),
             child: AskEngineerServiceDetailsScreen(askId: askId),
+          ),
+        );
+      case Routes.requestDesignServiceDetailsScreen:
+        final requestId = settings.arguments as int;
+        return MaterialPageRoute(
+          settings: settings,
+          builder: (_) => BlocProvider<RequestDesignServicesCubit>(
+            create: (context) => sl<RequestDesignServicesCubit>(),
+            child: RequestDesignServiceDetailsScreen(requestId: requestId),
           ),
         );
       default:
