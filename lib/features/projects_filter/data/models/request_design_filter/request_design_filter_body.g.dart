@@ -34,6 +34,7 @@ SearchCriteria _$SearchCriteriaFromJson(Map<String, dynamic> json) =>
       unitAreaTo: json['unitAreaTo'] as num?,
       budgetFrom: json['budgetFrom'] as num?,
       budgetTo: json['budgetTo'] as num?,
+      projectName: json['projectName'] as String?,
     );
 
 Map<String, dynamic> _$SearchCriteriaToJson(SearchCriteria instance) =>
@@ -47,4 +48,5 @@ Map<String, dynamic> _$SearchCriteriaToJson(SearchCriteria instance) =>
       'unitAreaTo': instance.unitAreaTo,
       'budgetFrom': instance.budgetFrom,
       'budgetTo': instance.budgetTo,
+      'projectName': instance.projectName,
     };

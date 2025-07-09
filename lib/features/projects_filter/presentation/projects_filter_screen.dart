@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:home4u/core/theming/app_styles.dart';
+import 'package:home4u/features/projects_filter/logic/projects_filter/projects_filter_cubit.dart';
 import 'package:home4u/features/projects_filter/presentation/widgets/search/projects_filter_search_bar_widget.dart';
 import 'package:home4u/features/projects_filter/presentation/widgets/tab_bar/projects_filter_tab_bar_widget.dart';
 import 'package:home4u/features/projects_filter/presentation/widgets/tab_bar_body/ask_engineer_tab_view_body.dart';
@@ -11,6 +13,8 @@ import 'package:home4u/features/projects_filter/presentation/widgets/tab_bar_bod
 import 'package:home4u/features/projects_filter/presentation/widgets/tab_bar_body/request_design_tab_view_body.dart';
 
 import '../../../core/utils/spacing.dart';
+import '../../auth/sign_up/logic/sign_up_cubit.dart';
+import '../../user/renovate_your_house/logic/renovate_your_house_cubit.dart';
 
 class ProjectsFilterScreen extends StatefulWidget {
   const ProjectsFilterScreen({super.key});
@@ -20,6 +24,16 @@ class ProjectsFilterScreen extends StatefulWidget {
 }
 
 class _ProjectsFilterScreenState extends State<ProjectsFilterScreen> {
+  @override
+  void initState() {
+    super.initState();
+    context.read<RenovateYourHouseCubit>().getRenovateYourHouseLookUps();
+    context.read<SignUpCubit>().getGovernorates();
+    context.read<ProjectsFilterCubit>().getAllCustomPackageLookUp();
+    context.read<ProjectsFilterCubit>().getAskEngineerLookUp();
+    context.read<ProjectsFilterCubit>().getAskWorkerLookUp();
+  }
+
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
@@ -85,4 +99,14 @@ class _ProjectsFilterScreenState extends State<ProjectsFilterScreen> {
       ),
     );
   }
+}
+
+enum ProjectsFilterTabEnum {
+  furnishYourHome,
+  requestDesign,
+  kitchensAndDressing,
+  customPackage,
+  renovateYourHouse,
+  askEngineer,
+  askTechnicalWorker,
 }

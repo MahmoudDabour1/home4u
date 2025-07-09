@@ -415,6 +415,16 @@ class AppLocale {
   static const String shopByCategory  = 'Shop By Category';
   static const String topEngineers  = 'Top Engineers';
   static const String topWorkers  = 'Top Workers';
+  static const String area  = 'Area';
+  static const String minArea  = 'Min Area';
+  static const String maxArea  = 'Max Area';
+  static const String durationPerMonth  = 'Duration Per Month';
+  static const String minDuration = 'Min Duration';
+  static const String maxDuration = 'Max Duration';
+  static const String max = 'Max';
+  static const String min = 'Min';
+
+
 
 
   static const Map<String, dynamic> en = {
@@ -767,6 +777,14 @@ class AppLocale {
     shopByCategory: 'Shop By Category',
     topEngineers: 'Top Engineers',
     topWorkers: 'Top Workers',
+    area: 'Area',
+    minArea: 'Min Area',
+    maxArea: 'Max Area',
+    durationPerMonth: 'Duration Per Month',
+    minDuration: 'Min Duration',
+    maxDuration: 'Max Duration',
+    max: 'Max',
+    min: 'Min',
   };
 
   static const Map<String, dynamic> ar = {
@@ -1115,5 +1133,13 @@ class AppLocale {
     shopByCategory: 'تسوق حسب الفئة',
     topEngineers: 'أفضل المهندسين',
     topWorkers: 'أفضل العمال',
+    area: 'المساحة',
+    minArea: 'الحد الأدنى للمساحة',
+    maxArea: 'الحد الأقصى للمساحة',
+    durationPerMonth: 'المدة في الشهر',
+    minDuration: 'الحد الأدنى للمدة',
+    maxDuration: 'الحد الأقصى للمدة',
+    max: 'الحد الأقصى',
+    min: 'الحد الأدنى',
   };
 }

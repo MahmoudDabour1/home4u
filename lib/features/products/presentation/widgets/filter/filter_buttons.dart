@@ -10,7 +10,8 @@ import '../../../../../core/widgets/app_custom_button.dart';
 import '../../../../../locale/app_locale.dart';
 
 class FilterButtons extends StatelessWidget {
-  const FilterButtons({super.key});
+  final VoidCallback? onConfirm;
+  const FilterButtons({super.key, this.onConfirm});
 
   @override
   Widget build(BuildContext context) {
@@ -21,7 +22,7 @@ class FilterButtons extends StatelessWidget {
             textButton: AppLocale.confirm.getString(context),
             btnWidth: MediaQuery.sizeOf(context).width,
             btnHeight: 50.h,
-            onPressed: () {
+            onPressed: onConfirm??() {
               final cubit = context.read<ProductsCubit>();
               cubit.resetPagination();
               cubit.getProducts();

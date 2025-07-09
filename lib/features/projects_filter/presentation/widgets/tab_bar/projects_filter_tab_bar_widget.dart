@@ -1,12 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_localization/flutter_localization.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:home4u/core/theming/app_assets.dart';
 import 'package:home4u/core/theming/app_styles.dart';
+import 'package:home4u/features/projects_filter/logic/projects_filter/projects_filter_cubit.dart';
 import 'package:home4u/features/projects_filter/presentation/widgets/tab_bar/projects_filter_custom_tab.dart';
 
 import '../../../../../core/theming/app_colors.dart';
 import '../../../../../locale/app_locale.dart';
+import '../../projects_filter_screen.dart';
 
 class ProjectsFilterTabBarWidget extends StatelessWidget {
   const ProjectsFilterTabBarWidget({
@@ -16,6 +19,33 @@ class ProjectsFilterTabBarWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return TabBar(
+      onTap: ( index){
+        final cubit = context.read<ProjectsFilterCubit>();
+        switch (index) {
+          case 0:
+            cubit.changeTab(ProjectsFilterTabEnum.furnishYourHome);
+            break;
+          case 1:
+            cubit.changeTab(ProjectsFilterTabEnum.requestDesign);
+            break;
+          case 2:
+            cubit.changeTab(ProjectsFilterTabEnum.kitchensAndDressing);
+            break;
+          case 3:
+            cubit.changeTab(ProjectsFilterTabEnum.customPackage);
+            break;
+          case 4:
+            cubit.changeTab(ProjectsFilterTabEnum.renovateYourHouse);
+            break;
+          case 5:
+            cubit.changeTab(ProjectsFilterTabEnum.askEngineer);
+            break;
+          case 6:
+            cubit.changeTab(ProjectsFilterTabEnum.askTechnicalWorker);
+            break;
+        }
+
+      },
       isScrollable: true,
       padding: EdgeInsets.symmetric(horizontal: 24.w),
       enableFeedback: true,

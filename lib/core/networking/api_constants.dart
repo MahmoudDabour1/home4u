@@ -183,6 +183,11 @@ static const String topEngineersEp = "/api/v1/engineers/top-engineers";
   /// top workers
   static const String topWorkersEp = "/api/v1/technical-workers/top-workers";
 
+
+  static const String allCustomLookUpEp = "/api/v1/custom-package";
+  static const String askEngineerLookUpEp = "/api/v1/ask-engineer/lkps";
+  static const String askWorkerLookUpEp = "/api/v1/ask-worker/lkps";
+
 }
 
 class ApiErrors {
