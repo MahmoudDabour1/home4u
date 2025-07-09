@@ -1,4 +1,5 @@
 import 'package:bloc/bloc.dart';
+import 'package:flutter/material.dart';
 import 'package:home4u/features/projects_filter/data/repository/ask_engineer_services_repository.dart';
 
 import '../../data/models/add_request/ask_engineer/add_ask_engineer_request_body.dart';
@@ -10,8 +11,12 @@ class AskEngineerServicesCubit extends Cubit<AskEngineerServicesState> {
   AskEngineerServicesCubit(this._askEngineerServicesRepository)
       : super(const AskEngineerServicesState.initial());
 
+  ///Controller
+  final TextEditingController commentController = TextEditingController();
+  final GlobalKey<FormState> askEngineerFormKey = GlobalKey<FormState>();
+
   ///Engineer Asks
-  Future<void> getEngineerAsks({
+  Future<void> getAskEngineerMyAsks({
     required String askId,
   }) async {
     emit(AskEngineerServicesState.engineerAsksLoading());

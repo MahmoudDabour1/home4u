@@ -7,7 +7,6 @@ import 'package:home4u/features/projects_filter/logic/ask_engineer/ask_engineer_
 import 'package:home4u/features/projects_filter/presentation/widgets/ask_engineer_widgets/ask_engineer_tab_view_item_title.dart';
 
 import '../../../../../core/theming/app_colors.dart';
-import '../../../../../core/theming/app_styles.dart';
 import '../../../../../core/utils/app_constants.dart';
 import '../../../../../core/widgets/app_custom_loading_indicator.dart';
 import '../../../../../locale/app_locale.dart';
@@ -15,6 +14,7 @@ import '../details/project_details_governorate_city_row.dart';
 import '../details/project_details_item_value.dart';
 import '../details/project_details_photos_list_view.dart';
 import '../filter_image_and_name_widget.dart';
+import 'add_offer_ask_engineer_button.dart';
 
 class AskEngineerServiceContentDetails extends StatelessWidget {
   const AskEngineerServiceContentDetails({super.key});
@@ -117,12 +117,12 @@ class AskEngineerServiceContentDetails extends StatelessWidget {
                     ),
                   ),
                 ),
-                askEngineerData.requestCount == 0
-                    ? SizedBox.shrink()
-                    : Text(
-                        "${AppLocale.offersCount.getString(context)} (${(askEngineerData.requestCount ?? 0).toString()})",
-                        style: AppStyles.font16BlackMedium,
-                      ),
+
+                ///Add Offer
+                AddOfferAskEngineerButton(
+                  requestCount: askEngineerData.requestCount,
+                  askId: askEngineerData.id ?? 0,
+                ),
               ],
             );
           },

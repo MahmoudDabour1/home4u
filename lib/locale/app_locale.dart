@@ -402,6 +402,7 @@ class AppLocale {
   static const String neededSkills = 'Needed Skills';
   static const String offersCount = 'Offers Count';
   static const String projectImages = 'Project Images';
+  static const String addOffer = 'Add Offer';
 
   static const Map<String, dynamic> en = {
     onBoardingTitle1: 'Civil works and finishing services',
@@ -740,6 +741,7 @@ class AppLocale {
     governorate : 'Governorate',
     city : 'City',
     projectImages: 'Project Images',
+    addOffer : 'Add Offer',
   };
 
   static const Map<String, dynamic> ar = {
@@ -1076,5 +1078,6 @@ class AppLocale {
     governorate: 'المحافظة',
     city: 'المدينة',
     projectImages: 'صور المشروع',
+    addOffer : 'إضافة عرض',
   };
 }

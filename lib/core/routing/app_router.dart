@@ -62,6 +62,7 @@ import '../../features/profile/presentation/edit_profile_screen.dart';
 import '../../features/profile/presentation/profile_screen.dart';
 import '../../features/profile/presentation/project_details_screen.dart';
 import '../../features/projects_filter/logic/ask_technical/ask_technical_services_cubit.dart';
+import '../../features/projects_filter/presentation/add_offer_screen.dart';
 import '../../features/projects_filter/presentation/ask_engineer_service_details_screen.dart';
 import '../../features/projects_filter/presentation/ask_technical_project_details_screen.dart';
 import '../../features/projects_filter/presentation/projects_filter_screen.dart';
@@ -423,6 +424,14 @@ class AppRouter {
             create: (context) => sl<RenovateHouseCustomPackageServicesCubit>(),
             child: RenovateHouseCustomPackageServiceDetailsScreen(
                 requestId: requestId),
+          ),
+        );
+      case Routes.addOfferScreen:
+        final askId = settings.arguments as int;
+        return MaterialPageRoute(
+          settings: settings,
+          builder: (_) => AddOfferScreen(
+            askId: askId,
           ),
         );
       default:

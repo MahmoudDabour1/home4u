@@ -36,26 +36,6 @@ List<IconData> _bottomNavIcons = [
 
 List<Widget> _bottomNavScreens = [
   UserHomeScreen(),
-  // MultiBlocProvider(
-  //   providers: [
-  //     BlocProvider<AskTechnicalServicesCubit>(
-  //       create: (context) => sl<AskTechnicalServicesCubit>(),
-  //     ),
-  //     BlocProvider<AskEngineerServicesCubit>(
-  //       create: (context) => sl<AskEngineerServicesCubit>(),
-  //     ),
-  //     BlocProvider<RenovateHouseCustomPackageServicesCubit>(
-  //       create: (context) => sl<RenovateHouseCustomPackageServicesCubit>(),
-  //     ),
-  //     BlocProvider<RequestDesignServicesCubit>(
-  //       create: (context) => sl<RequestDesignServicesCubit>(),
-  //     ),
-  //     BlocProvider<RenovateHouseServicesCubit>(
-  //       create: (context) => sl<RenovateHouseServicesCubit>(),
-  //     ),
-  //   ],
-  //   child: ProjectsFilterScreen(),
-  // ),
   ProjectsFilterScreen(),
   Container(color: Colors.blue),
   AccountScreen(),

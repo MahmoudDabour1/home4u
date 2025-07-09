@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import '../../profile/presentation/profile_screen.dart';
+import '../../projects_filter/presentation/projects_filter_screen.dart';
 import '../../settings/presentation/setting_screen.dart';
 import 'bottom_nav_bar_layout.dart';
 
@@ -27,7 +28,7 @@ List<IconData> bottomNavIcons = [
 
 List<Widget> bottomNavScreens = [
   ProfileScreen(),
-  Container(color: Colors.green),
+  ProjectsFilterScreen(),
   Container(color: Colors.blue),
   Container(color: Colors.yellow),
   SettingScreen(),
