@@ -15,7 +15,7 @@ class AddRequestDesignRequestBody {
 
   Map<String, dynamic> toJson() {
     return {
-      "requestDesign": requestDesignItem.id,
+      "requestDesign": requestDesignItem.toJson(),
       "comment": comment,
       "isAccepted": isAccepted,
       "isFinished": isFinished,
@@ -40,4 +40,16 @@ class RequestDesignItem {
   RequestDesignItem({
     required this.id,
   });
+
+  Map<String, dynamic> toJson() {
+    return {
+      "id": id,
+    };
+  }
+
+  factory RequestDesignItem.fromJson(Map<String, dynamic> json) {
+    return RequestDesignItem(
+      id: json['id'],
+    );
+  }
 }
