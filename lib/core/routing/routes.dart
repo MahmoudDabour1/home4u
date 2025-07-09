@@ -77,8 +77,6 @@ abstract class Routes {
   static const String renovateHouseServiceDetailsScreen =
       '/renovateHouseServiceDetailsScreen';
   static const String renovateHouseCustomPackageServiceDetailsScreen =
-      '/renovateHouseCustomPackageServiceDetailsScreen';
-  static const String askTechnicalProjectDetailsScreen = '/askTechnicalProjectDetailsScreen';
-  static const String topWorkersScreen = '/TopWorkersScreen';
+      '/renovateHouseCustomPackageServiceDetailsScreen';static const String topWorkersScreen = '/TopWorkersScreen';
   static const String topEngineersScreen = '/TopEngineersScreen';
 }
