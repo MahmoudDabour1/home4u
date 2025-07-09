@@ -14,6 +14,7 @@ import '../../../../../locale/app_locale.dart';
 import '../details/project_details_governorate_city_row.dart';
 import '../details/project_details_item_value.dart';
 import '../filter_image_and_name_widget.dart';
+import 'add_offer_request_design_button.dart';
 
 class RequestDesignServiceDetailsContent extends StatelessWidget {
   const RequestDesignServiceDetailsContent({super.key});
@@ -109,12 +110,10 @@ class RequestDesignServiceDetailsContent extends StatelessWidget {
                     ),
                   ),
                 ),
-                requestDesignData.requestCount == 0
-                    ? SizedBox.shrink()
-                    : Text(
-                        "${AppLocale.offersCount.getString(context)} (${(requestDesignData.requestCount ?? 0).toString()})",
-                        style: AppStyles.font16BlackMedium,
-                      ),
+                AddOfferRequestDesignButton(
+                  askId: requestDesignData.id ?? 0,
+                  requestCount: requestDesignData.requestCount,
+                ),
               ],
             );
           },

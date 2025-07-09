@@ -27,7 +27,7 @@ class _RenovateHouseTabViewBodyState extends State<RenovateHouseTabViewBody> {
 
   void _loadInitialData() {
     final cubit = context.read<ProjectsFilterCubit>();
-    cubit.renovateHouseCustomPackages();
+    cubit.renovateHouseCustomPackages(isRefresh: true);
   }
 
   void _scrollListener() {

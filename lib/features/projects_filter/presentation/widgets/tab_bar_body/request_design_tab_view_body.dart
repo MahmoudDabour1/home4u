@@ -26,7 +26,7 @@ class _RequestDesignTabViewBodyState extends State<RequestDesignTabViewBody> {
 
   void _loadInitialData() {
     final cubit = context.read<ProjectsFilterCubit>();
-    cubit.getRequestDesignFilter();
+    cubit.getRequestDesignFilter(isRefresh: true);
   }
 
   void _scrollListener() {

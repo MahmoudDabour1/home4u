@@ -14,6 +14,7 @@ import '../details/project_details_governorate_city_row.dart';
 import '../details/project_details_item_value.dart';
 import '../filter_image_and_name_widget.dart';
 import '../project_skills_needed_widget.dart';
+import 'add_offer_renovate_house_button.dart';
 
 class RenovateHouseServiceDetailsContent extends StatelessWidget {
   const RenovateHouseServiceDetailsContent({super.key});
@@ -150,12 +151,10 @@ class RenovateHouseServiceDetailsContent extends StatelessWidget {
                     ),
                   ),
                 ),
-                renovateHouseData.requestCount == 0
-                    ? SizedBox.shrink()
-                    : Text(
-                        "${AppLocale.offersCount.getString(context)} (${(renovateHouseData.requestCount ?? 0).toString()})",
-                        style: AppStyles.font16BlackMedium,
-                      ),
+                AddOfferRenovateHouseButton(
+                  askId: renovateHouseData.id ?? 0,
+                  requestCount: renovateHouseData.requestCount,
+                ),
               ],
             );
           },

@@ -8,9 +8,9 @@ class AddRenovateHouseRequestBody {
   AddRenovateHouseRequestBody({
     required this.homeRenovate,
     required this.comment,
-    required this.isAccepted,
-    required this.isFinished,
-    required this.isRejected,
+    this.isAccepted,
+    this.isFinished,
+    this.isRejected,
   });
 
   factory AddRenovateHouseRequestBody.fromJson(Map<String, dynamic> json) {

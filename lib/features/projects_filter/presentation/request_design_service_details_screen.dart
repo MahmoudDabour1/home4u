@@ -6,7 +6,6 @@ import 'package:home4u/features/projects_filter/presentation/widgets/project_det
 import 'package:home4u/features/projects_filter/presentation/widgets/request_design_widgets/request_design_service_details_content.dart';
 import 'package:home4u/features/projects_filter/presentation/widgets/request_design_widgets/request_design_service_details_requests.dart';
 
-import '../logic/request_design/request_design_services_state.dart';
 
 class RequestDesignServiceDetailsScreen extends StatefulWidget {
   final int requestId;
@@ -32,6 +31,7 @@ class _RequestDesignServiceDetailsScreenState
               vertical: 16.0.h,
             ),
             child: Column(
+              spacing: 32.h,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 RequestDesignServiceDetailsContent(),

@@ -1,8 +1,10 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:home4u/features/demo/presentation/community_screen.dart';
 import 'package:home4u/features/layout/presentation/bottom_nav_bar_layout.dart';
 import 'package:home4u/features/products/presentation/products_screen.dart';
 
+import '../../demo/presentation/chat_screen.dart';
 import '../../settings/presentation/setting_screen.dart';
 
 class ExhibitionsAndStoresBottomNavLayout extends StatelessWidget {
@@ -28,7 +30,8 @@ List<IconData> _bottomNavIcons = [
 List<Widget> _bottomNavScreens = [
   ProductsScreen(),
   Container(color: Colors.red),
-  Container(color: Colors.amber),
-  Container(color: Colors.yellow),
+  ChatsScreen(),
+  CommunityScreen(),
   SettingScreen(),
 ];
+

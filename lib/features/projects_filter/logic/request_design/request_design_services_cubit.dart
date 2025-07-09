@@ -1,4 +1,5 @@
 import 'package:bloc/bloc.dart';
+import 'package:flutter/material.dart';
 import 'package:home4u/features/projects_filter/logic/request_design/request_design_services_state.dart';
 
 import '../../data/models/add_request/request_design/add_request_design_request_body.dart';
@@ -9,6 +10,10 @@ class RequestDesignServicesCubit extends Cubit<RequestDesignServicesState> {
 
   RequestDesignServicesCubit(this._requestDesignServicesRepository)
       : super(const RequestDesignServicesState.initial());
+
+  ///Controllers
+  final TextEditingController commentController = TextEditingController();
+  final GlobalKey<FormState> requestDesignFormKey = GlobalKey<FormState>();
 
   ///Request Design Service Requests
   Future<void> getAskRequestDesignRequests({

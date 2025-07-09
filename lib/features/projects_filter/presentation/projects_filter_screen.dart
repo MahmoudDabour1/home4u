@@ -5,7 +5,6 @@ import 'package:home4u/features/projects_filter/presentation/widgets/search/proj
 import 'package:home4u/features/projects_filter/presentation/widgets/tab_bar/projects_filter_tab_bar_widget.dart';
 import 'package:home4u/features/projects_filter/presentation/widgets/tab_bar_body/ask_engineer_tab_view_body.dart';
 import 'package:home4u/features/projects_filter/presentation/widgets/tab_bar_body/ask_technical_tab_view_body.dart';
-import 'package:home4u/features/projects_filter/presentation/widgets/tab_bar_body/furnish_house_tab_view_body.dart';
 import 'package:home4u/features/projects_filter/presentation/widgets/tab_bar_body/renovate_house_custom_package_tab_view_body.dart';
 import 'package:home4u/features/projects_filter/presentation/widgets/tab_bar_body/renovate_house_tab_view_body.dart';
 import 'package:home4u/features/projects_filter/presentation/widgets/tab_bar_body/request_design_tab_view_body.dart';
@@ -23,7 +22,7 @@ class _ProjectsFilterScreenState extends State<ProjectsFilterScreen> {
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
-      length: 7,
+      length: 5,
       child: Scaffold(
         body: SafeArea(
           child: NestedScrollView(
@@ -57,7 +56,7 @@ class _ProjectsFilterScreenState extends State<ProjectsFilterScreen> {
               ];
             },
             body: Padding(
-              padding:  EdgeInsets.only(
+              padding: EdgeInsets.only(
                 left: 24.w,
                 right: 24.w,
                 bottom: 16.h,
@@ -65,16 +64,16 @@ class _ProjectsFilterScreenState extends State<ProjectsFilterScreen> {
               child: TabBarView(
                 physics: NeverScrollableScrollPhysics(),
                 children: [
-                  ///ToDo : Mostafa
-                  FurnishHouseTabViewBody(),
+                  // ///ToDo : Mostafa
+                  // FurnishHouseTabViewBody(),
 
                   RequestDesignTabViewBody(),
 
-                  ///ToDo : Mostafa
-                  Center(child: Text('Kitchen && Dressing')),
-
-                  RenovateHouseCustomPackageTabViewBody(),
+                  // ///ToDo : Mostafa
+                  // Center(child: Text('Kitchen && Dressing')),
                   RenovateHouseTabViewBody(),
+                  RenovateHouseCustomPackageTabViewBody(),
+
                   AskEngineerTabViewBody(),
                   AskTechnicalTabViewBody(),
                 ],

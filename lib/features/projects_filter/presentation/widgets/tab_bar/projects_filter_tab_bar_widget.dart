@@ -34,24 +34,24 @@ class ProjectsFilterTabBarWidget extends StatelessWidget {
         color: AppColors.secondaryColor,
       ),
       tabs: [
-        ProjectsFilterCustomTab(
-          label: AppLocale.furnishTitle.getString(context),
-          iconPath: AppAssets.furnishYourHomeIcon,
-        ),
+        // ProjectsFilterCustomTab(
+        //   label: AppLocale.furnishTitle.getString(context),
+        //   iconPath: AppAssets.furnishYourHomeIcon,
+        // ),
         ProjectsFilterCustomTab(
           label: AppLocale.requestDesign.getString(context),
           iconPath: AppAssets.requestDesignIcon,
         ),
+        // ProjectsFilterCustomTab(
+        //   label: AppLocale.kitchensAndDressing.getString(context),
+        //   iconPath: AppAssets.kitchensAndDressingIcon,
+        // ),
         ProjectsFilterCustomTab(
-          label: AppLocale.kitchensAndDressing.getString(context),
-          iconPath: AppAssets.kitchensAndDressingIcon,
-        ),
-        ProjectsFilterCustomTab(
-          label: AppLocale.customPackage.getString(context),
+          label: AppLocale.renovateYourHouse.getString(context),
           iconPath: AppAssets.renovateYourHomeIcon,
         ),
         ProjectsFilterCustomTab(
-          label: AppLocale.renovateYourHouse.getString(context),
+          label: AppLocale.customPackage.getString(context),
           iconPath: AppAssets.renovateYourHomeIcon,
         ),
         ProjectsFilterCustomTab(

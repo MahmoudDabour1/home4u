@@ -119,5 +119,6 @@ abstract class AppAssets {
   static const String requestDesignIcon= 'assets/images/request_desgin_icon.png';
   static const String shopNowIcon = 'assets/images/shop_now_icon.png';
   static const String appIcon = 'assets/images/app_icon.png';
+  static const String comingSoonOneJpg = 'assets/images/coming_soon_1.jpg';
 }
 

@@ -1,6 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
+import '../../../core/theming/app_assets.dart';
+import '../../demo/presentation/chat_screen.dart';
+import '../../demo/presentation/community_screen.dart';
 import '../../profile/presentation/profile_screen.dart';
 import '../../projects_filter/presentation/projects_filter_screen.dart';
 import '../../settings/presentation/setting_screen.dart';
@@ -29,7 +32,9 @@ List<IconData> bottomNavIcons = [
 List<Widget> bottomNavScreens = [
   ProfileScreen(),
   ProjectsFilterScreen(),
-  Container(color: Colors.blue),
-  Container(color: Colors.yellow),
+  ChatsScreen(),
+  CommunityScreen(),
   SettingScreen(),
 ];
+
+

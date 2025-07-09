@@ -12,6 +12,7 @@ import '../../../logic/renovate_house_custom_package/renovate_house_custom_packa
 import '../../../logic/renovate_house_custom_package/renovate_house_custom_package_services_state.dart';
 import '../details/project_details_item_value.dart';
 import '../filter_image_and_name_widget.dart';
+import 'add_offer_renovate_house_custom_package_button.dart';
 
 class RenovateHouseCustomPackageServiceDetailsContent extends StatelessWidget {
   const RenovateHouseCustomPackageServiceDetailsContent({super.key});
@@ -81,13 +82,9 @@ class RenovateHouseCustomPackageServiceDetailsContent extends StatelessWidget {
                     ),
                   ),
                 ),
-                renovateHouseData.requestCount == 0
-                    ? SizedBox.shrink()
-                    : Text(
-                  "${AppLocale.offersCount.getString(
-                      context)} (${(renovateHouseData.requestCount ?? 0)
-                      .toString()})",
-                  style: AppStyles.font16BlackMedium,
+                AddOfferRenovateHouseCustomPackageButton(
+                  requestCount: renovateHouseData.requestCount,
+                  askId: renovateHouseData.id ?? 0,
                 ),
               ],
             );

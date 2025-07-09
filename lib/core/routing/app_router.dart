@@ -68,7 +68,10 @@ import '../../features/projects_filter/presentation/projects_filter_screen.dart'
 import '../../features/projects_filter/presentation/renovate_house_custom_package_service_details_screen.dart';
 import '../../features/projects_filter/presentation/renovate_house_service_details_screen.dart';
 import '../../features/projects_filter/presentation/widgets/offers/add_offer_engineer_screen.dart';
+import '../../features/projects_filter/presentation/widgets/offers/add_offer_renovate_house_screen.dart';
+import '../../features/projects_filter/presentation/widgets/offers/add_offer_request_design_screen.dart';
 import '../../features/projects_filter/presentation/widgets/offers/add_offer_technical_screen.dart';
+import '../../features/projects_filter/presentation/widgets/offers/renovate_house_custom_package_screen.dart';
 import '../../features/rating/presentation/products_rating_screen.dart';
 import '../../features/rating/presentation/single_product_rating_screen.dart';
 import '../../features/settings/presentation/setting_screen.dart';
@@ -442,6 +445,39 @@ class AppRouter {
           builder: (_) => BlocProvider<AskTechnicalServicesCubit>(
             create: (context) => sl<AskTechnicalServicesCubit>(),
             child: AddOfferTechnicalScreen(
+              askId: askId,
+            ),
+          ),
+        );
+      case Routes.addOfferRequestDesignScreen:
+        final askId = settings.arguments as int;
+        return MaterialPageRoute(
+          settings: settings,
+          builder: (_) => BlocProvider<RequestDesignServicesCubit>(
+            create: (_) => sl<RequestDesignServicesCubit>(),
+            child: AddOfferRequestDesignScreen(
+              askId: askId,
+            ),
+          ),
+        );
+      case Routes.addOfferRenovateHouseScreen:
+        final askId = settings.arguments as int;
+        return MaterialPageRoute(
+          settings: settings,
+          builder: (_) => BlocProvider<RenovateHouseServicesCubit>(
+            create: (_) => sl<RenovateHouseServicesCubit>(),
+            child: AddOfferRenovateHouseScreen(
+              askId: askId,
+            ),
+          ),
+        );
+      case Routes.addOfferRenovateHouseCustomPackageScreen:
+        final askId = settings.arguments as int;
+        return MaterialPageRoute(
+          settings: settings,
+          builder: (_) => BlocProvider<RenovateHouseCustomPackageServicesCubit>(
+            create: (_) => sl<RenovateHouseCustomPackageServicesCubit>(),
+            child: RenovateHouseCustomPackageScreen(
               askId: askId,
             ),
           ),
