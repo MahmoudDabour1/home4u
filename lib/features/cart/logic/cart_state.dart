@@ -70,4 +70,16 @@ class CartState<T> with _$CartState<T> {
   const factory CartState.rateReviewsFailure({required String error}) =
   RateReviewsFailure;
 
+  ///Product Rate Chart
+  const factory CartState.rateChartLoading() = RateChartLoading;
+
+
+
+  const factory CartState.rateChartSuccess(T data) = RateChartSuccess<T>;
+
+
+
+  const factory CartState.rateChartFailure({required String error}) =
+  RateChartFailure;
+
 }

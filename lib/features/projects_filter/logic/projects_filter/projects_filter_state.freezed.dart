@@ -41,6 +41,16 @@ mixin _$ProjectsFilterState<T> {
     required TResult Function(String error) askEngineerFilterFailure,
     required TResult Function() paginationLoading,
     required TResult Function(String error) paginationFailure,
+    required TResult Function() changeTap,
+    required TResult Function() getAllCustomPackageLoading,
+    required TResult Function(T data) getAllCustomPackageSuccess,
+    required TResult Function(String error) getAllCustomPackageFailure,
+    required TResult Function() askEngineerLookUpLoading,
+    required TResult Function(T data) askEngineerLookUpSuccess,
+    required TResult Function(String error) askEngineerLookUpFailure,
+    required TResult Function() askWorkerLookUpLoading,
+    required TResult Function(T data) askWorkerLookUpSuccess,
+    required TResult Function(String error) askWorkerLookUpFailure,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -65,6 +75,16 @@ mixin _$ProjectsFilterState<T> {
     TResult? Function(String error)? askEngineerFilterFailure,
     TResult? Function()? paginationLoading,
     TResult? Function(String error)? paginationFailure,
+    TResult? Function()? changeTap,
+    TResult? Function()? getAllCustomPackageLoading,
+    TResult? Function(T data)? getAllCustomPackageSuccess,
+    TResult? Function(String error)? getAllCustomPackageFailure,
+    TResult? Function()? askEngineerLookUpLoading,
+    TResult? Function(T data)? askEngineerLookUpSuccess,
+    TResult? Function(String error)? askEngineerLookUpFailure,
+    TResult? Function()? askWorkerLookUpLoading,
+    TResult? Function(T data)? askWorkerLookUpSuccess,
+    TResult? Function(String error)? askWorkerLookUpFailure,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -89,6 +109,16 @@ mixin _$ProjectsFilterState<T> {
     TResult Function(String error)? askEngineerFilterFailure,
     TResult Function()? paginationLoading,
     TResult Function(String error)? paginationFailure,
+    TResult Function()? changeTap,
+    TResult Function()? getAllCustomPackageLoading,
+    TResult Function(T data)? getAllCustomPackageSuccess,
+    TResult Function(String error)? getAllCustomPackageFailure,
+    TResult Function()? askEngineerLookUpLoading,
+    TResult Function(T data)? askEngineerLookUpSuccess,
+    TResult Function(String error)? askEngineerLookUpFailure,
+    TResult Function()? askWorkerLookUpLoading,
+    TResult Function(T data)? askWorkerLookUpSuccess,
+    TResult Function(String error)? askWorkerLookUpFailure,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -135,6 +165,25 @@ mixin _$ProjectsFilterState<T> {
         paginationLoading,
     required TResult Function(RequestDesignPaginationFailure<T> value)
         paginationFailure,
+    required TResult Function(ChangeTap<T> value) changeTap,
+    required TResult Function(getAllPackagePackageLoading<T> value)
+        getAllCustomPackageLoading,
+    required TResult Function(getAllPackagePackageSuccess<T> value)
+        getAllCustomPackageSuccess,
+    required TResult Function(getAllPackagePackageFailure<T> value)
+        getAllCustomPackageFailure,
+    required TResult Function(AskEngineerLookUpLoading<T> value)
+        askEngineerLookUpLoading,
+    required TResult Function(AskEngineerLookUpSuccess<T> value)
+        askEngineerLookUpSuccess,
+    required TResult Function(AskEngineerLookUpFailure<T> value)
+        askEngineerLookUpFailure,
+    required TResult Function(AskWorkerLookUpLoading<T> value)
+        askWorkerLookUpLoading,
+    required TResult Function(AskWorkerLookUpSuccess<T> value)
+        askWorkerLookUpSuccess,
+    required TResult Function(AskWorkerLookUpFailure<T> value)
+        askWorkerLookUpFailure,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -174,6 +223,22 @@ mixin _$ProjectsFilterState<T> {
         paginationLoading,
     TResult? Function(RequestDesignPaginationFailure<T> value)?
         paginationFailure,
+    TResult? Function(ChangeTap<T> value)? changeTap,
+    TResult? Function(getAllPackagePackageLoading<T> value)?
+        getAllCustomPackageLoading,
+    TResult? Function(getAllPackagePackageSuccess<T> value)?
+        getAllCustomPackageSuccess,
+    TResult? Function(getAllPackagePackageFailure<T> value)?
+        getAllCustomPackageFailure,
+    TResult? Function(AskEngineerLookUpLoading<T> value)?
+        askEngineerLookUpLoading,
+    TResult? Function(AskEngineerLookUpSuccess<T> value)?
+        askEngineerLookUpSuccess,
+    TResult? Function(AskEngineerLookUpFailure<T> value)?
+        askEngineerLookUpFailure,
+    TResult? Function(AskWorkerLookUpLoading<T> value)? askWorkerLookUpLoading,
+    TResult? Function(AskWorkerLookUpSuccess<T> value)? askWorkerLookUpSuccess,
+    TResult? Function(AskWorkerLookUpFailure<T> value)? askWorkerLookUpFailure,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -213,6 +278,22 @@ mixin _$ProjectsFilterState<T> {
         paginationLoading,
     TResult Function(RequestDesignPaginationFailure<T> value)?
         paginationFailure,
+    TResult Function(ChangeTap<T> value)? changeTap,
+    TResult Function(getAllPackagePackageLoading<T> value)?
+        getAllCustomPackageLoading,
+    TResult Function(getAllPackagePackageSuccess<T> value)?
+        getAllCustomPackageSuccess,
+    TResult Function(getAllPackagePackageFailure<T> value)?
+        getAllCustomPackageFailure,
+    TResult Function(AskEngineerLookUpLoading<T> value)?
+        askEngineerLookUpLoading,
+    TResult Function(AskEngineerLookUpSuccess<T> value)?
+        askEngineerLookUpSuccess,
+    TResult Function(AskEngineerLookUpFailure<T> value)?
+        askEngineerLookUpFailure,
+    TResult Function(AskWorkerLookUpLoading<T> value)? askWorkerLookUpLoading,
+    TResult Function(AskWorkerLookUpSuccess<T> value)? askWorkerLookUpSuccess,
+    TResult Function(AskWorkerLookUpFailure<T> value)? askWorkerLookUpFailure,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -304,6 +385,16 @@ class _$InitialImpl<T> implements _Initial<T> {
     required TResult Function(String error) askEngineerFilterFailure,
     required TResult Function() paginationLoading,
     required TResult Function(String error) paginationFailure,
+    required TResult Function() changeTap,
+    required TResult Function() getAllCustomPackageLoading,
+    required TResult Function(T data) getAllCustomPackageSuccess,
+    required TResult Function(String error) getAllCustomPackageFailure,
+    required TResult Function() askEngineerLookUpLoading,
+    required TResult Function(T data) askEngineerLookUpSuccess,
+    required TResult Function(String error) askEngineerLookUpFailure,
+    required TResult Function() askWorkerLookUpLoading,
+    required TResult Function(T data) askWorkerLookUpSuccess,
+    required TResult Function(String error) askWorkerLookUpFailure,
   }) {
     return initial();
   }
@@ -331,6 +422,16 @@ class _$InitialImpl<T> implements _Initial<T> {
     TResult? Function(String error)? askEngineerFilterFailure,
     TResult? Function()? paginationLoading,
     TResult? Function(String error)? paginationFailure,
+    TResult? Function()? changeTap,
+    TResult? Function()? getAllCustomPackageLoading,
+    TResult? Function(T data)? getAllCustomPackageSuccess,
+    TResult? Function(String error)? getAllCustomPackageFailure,
+    TResult? Function()? askEngineerLookUpLoading,
+    TResult? Function(T data)? askEngineerLookUpSuccess,
+    TResult? Function(String error)? askEngineerLookUpFailure,
+    TResult? Function()? askWorkerLookUpLoading,
+    TResult? Function(T data)? askWorkerLookUpSuccess,
+    TResult? Function(String error)? askWorkerLookUpFailure,
   }) {
     return initial?.call();
   }
@@ -358,6 +459,16 @@ class _$InitialImpl<T> implements _Initial<T> {
     TResult Function(String error)? askEngineerFilterFailure,
     TResult Function()? paginationLoading,
     TResult Function(String error)? paginationFailure,
+    TResult Function()? changeTap,
+    TResult Function()? getAllCustomPackageLoading,
+    TResult Function(T data)? getAllCustomPackageSuccess,
+    TResult Function(String error)? getAllCustomPackageFailure,
+    TResult Function()? askEngineerLookUpLoading,
+    TResult Function(T data)? askEngineerLookUpSuccess,
+    TResult Function(String error)? askEngineerLookUpFailure,
+    TResult Function()? askWorkerLookUpLoading,
+    TResult Function(T data)? askWorkerLookUpSuccess,
+    TResult Function(String error)? askWorkerLookUpFailure,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -410,6 +521,25 @@ class _$InitialImpl<T> implements _Initial<T> {
         paginationLoading,
     required TResult Function(RequestDesignPaginationFailure<T> value)
         paginationFailure,
+    required TResult Function(ChangeTap<T> value) changeTap,
+    required TResult Function(getAllPackagePackageLoading<T> value)
+        getAllCustomPackageLoading,
+    required TResult Function(getAllPackagePackageSuccess<T> value)
+        getAllCustomPackageSuccess,
+    required TResult Function(getAllPackagePackageFailure<T> value)
+        getAllCustomPackageFailure,
+    required TResult Function(AskEngineerLookUpLoading<T> value)
+        askEngineerLookUpLoading,
+    required TResult Function(AskEngineerLookUpSuccess<T> value)
+        askEngineerLookUpSuccess,
+    required TResult Function(AskEngineerLookUpFailure<T> value)
+        askEngineerLookUpFailure,
+    required TResult Function(AskWorkerLookUpLoading<T> value)
+        askWorkerLookUpLoading,
+    required TResult Function(AskWorkerLookUpSuccess<T> value)
+        askWorkerLookUpSuccess,
+    required TResult Function(AskWorkerLookUpFailure<T> value)
+        askWorkerLookUpFailure,
   }) {
     return initial(this);
   }
@@ -452,6 +582,22 @@ class _$InitialImpl<T> implements _Initial<T> {
         paginationLoading,
     TResult? Function(RequestDesignPaginationFailure<T> value)?
         paginationFailure,
+    TResult? Function(ChangeTap<T> value)? changeTap,
+    TResult? Function(getAllPackagePackageLoading<T> value)?
+        getAllCustomPackageLoading,
+    TResult? Function(getAllPackagePackageSuccess<T> value)?
+        getAllCustomPackageSuccess,
+    TResult? Function(getAllPackagePackageFailure<T> value)?
+        getAllCustomPackageFailure,
+    TResult? Function(AskEngineerLookUpLoading<T> value)?
+        askEngineerLookUpLoading,
+    TResult? Function(AskEngineerLookUpSuccess<T> value)?
+        askEngineerLookUpSuccess,
+    TResult? Function(AskEngineerLookUpFailure<T> value)?
+        askEngineerLookUpFailure,
+    TResult? Function(AskWorkerLookUpLoading<T> value)? askWorkerLookUpLoading,
+    TResult? Function(AskWorkerLookUpSuccess<T> value)? askWorkerLookUpSuccess,
+    TResult? Function(AskWorkerLookUpFailure<T> value)? askWorkerLookUpFailure,
   }) {
     return initial?.call(this);
   }
@@ -494,6 +640,22 @@ class _$InitialImpl<T> implements _Initial<T> {
         paginationLoading,
     TResult Function(RequestDesignPaginationFailure<T> value)?
         paginationFailure,
+    TResult Function(ChangeTap<T> value)? changeTap,
+    TResult Function(getAllPackagePackageLoading<T> value)?
+        getAllCustomPackageLoading,
+    TResult Function(getAllPackagePackageSuccess<T> value)?
+        getAllCustomPackageSuccess,
+    TResult Function(getAllPackagePackageFailure<T> value)?
+        getAllCustomPackageFailure,
+    TResult Function(AskEngineerLookUpLoading<T> value)?
+        askEngineerLookUpLoading,
+    TResult Function(AskEngineerLookUpSuccess<T> value)?
+        askEngineerLookUpSuccess,
+    TResult Function(AskEngineerLookUpFailure<T> value)?
+        askEngineerLookUpFailure,
+    TResult Function(AskWorkerLookUpLoading<T> value)? askWorkerLookUpLoading,
+    TResult Function(AskWorkerLookUpSuccess<T> value)? askWorkerLookUpSuccess,
+    TResult Function(AskWorkerLookUpFailure<T> value)? askWorkerLookUpFailure,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -576,6 +738,16 @@ class _$RequestDesignFilterLoadingImpl<T>
     required TResult Function(String error) askEngineerFilterFailure,
     required TResult Function() paginationLoading,
     required TResult Function(String error) paginationFailure,
+    required TResult Function() changeTap,
+    required TResult Function() getAllCustomPackageLoading,
+    required TResult Function(T data) getAllCustomPackageSuccess,
+    required TResult Function(String error) getAllCustomPackageFailure,
+    required TResult Function() askEngineerLookUpLoading,
+    required TResult Function(T data) askEngineerLookUpSuccess,
+    required TResult Function(String error) askEngineerLookUpFailure,
+    required TResult Function() askWorkerLookUpLoading,
+    required TResult Function(T data) askWorkerLookUpSuccess,
+    required TResult Function(String error) askWorkerLookUpFailure,
   }) {
     return requestDesignFilterLoading();
   }
@@ -603,6 +775,16 @@ class _$RequestDesignFilterLoadingImpl<T>
     TResult? Function(String error)? askEngineerFilterFailure,
     TResult? Function()? paginationLoading,
     TResult? Function(String error)? paginationFailure,
+    TResult? Function()? changeTap,
+    TResult? Function()? getAllCustomPackageLoading,
+    TResult? Function(T data)? getAllCustomPackageSuccess,
+    TResult? Function(String error)? getAllCustomPackageFailure,
+    TResult? Function()? askEngineerLookUpLoading,
+    TResult? Function(T data)? askEngineerLookUpSuccess,
+    TResult? Function(String error)? askEngineerLookUpFailure,
+    TResult? Function()? askWorkerLookUpLoading,
+    TResult? Function(T data)? askWorkerLookUpSuccess,
+    TResult? Function(String error)? askWorkerLookUpFailure,
   }) {
     return requestDesignFilterLoading?.call();
   }
@@ -630,6 +812,16 @@ class _$RequestDesignFilterLoadingImpl<T>
     TResult Function(String error)? askEngineerFilterFailure,
     TResult Function()? paginationLoading,
     TResult Function(String error)? paginationFailure,
+    TResult Function()? changeTap,
+    TResult Function()? getAllCustomPackageLoading,
+    TResult Function(T data)? getAllCustomPackageSuccess,
+    TResult Function(String error)? getAllCustomPackageFailure,
+    TResult Function()? askEngineerLookUpLoading,
+    TResult Function(T data)? askEngineerLookUpSuccess,
+    TResult Function(String error)? askEngineerLookUpFailure,
+    TResult Function()? askWorkerLookUpLoading,
+    TResult Function(T data)? askWorkerLookUpSuccess,
+    TResult Function(String error)? askWorkerLookUpFailure,
     required TResult orElse(),
   }) {
     if (requestDesignFilterLoading != null) {
@@ -682,6 +874,25 @@ class _$RequestDesignFilterLoadingImpl<T>
         paginationLoading,
     required TResult Function(RequestDesignPaginationFailure<T> value)
         paginationFailure,
+    required TResult Function(ChangeTap<T> value) changeTap,
+    required TResult Function(getAllPackagePackageLoading<T> value)
+        getAllCustomPackageLoading,
+    required TResult Function(getAllPackagePackageSuccess<T> value)
+        getAllCustomPackageSuccess,
+    required TResult Function(getAllPackagePackageFailure<T> value)
+        getAllCustomPackageFailure,
+    required TResult Function(AskEngineerLookUpLoading<T> value)
+        askEngineerLookUpLoading,
+    required TResult Function(AskEngineerLookUpSuccess<T> value)
+        askEngineerLookUpSuccess,
+    required TResult Function(AskEngineerLookUpFailure<T> value)
+        askEngineerLookUpFailure,
+    required TResult Function(AskWorkerLookUpLoading<T> value)
+        askWorkerLookUpLoading,
+    required TResult Function(AskWorkerLookUpSuccess<T> value)
+        askWorkerLookUpSuccess,
+    required TResult Function(AskWorkerLookUpFailure<T> value)
+        askWorkerLookUpFailure,
   }) {
     return requestDesignFilterLoading(this);
   }
@@ -724,6 +935,22 @@ class _$RequestDesignFilterLoadingImpl<T>
         paginationLoading,
     TResult? Function(RequestDesignPaginationFailure<T> value)?
         paginationFailure,
+    TResult? Function(ChangeTap<T> value)? changeTap,
+    TResult? Function(getAllPackagePackageLoading<T> value)?
+        getAllCustomPackageLoading,
+    TResult? Function(getAllPackagePackageSuccess<T> value)?
+        getAllCustomPackageSuccess,
+    TResult? Function(getAllPackagePackageFailure<T> value)?
+        getAllCustomPackageFailure,
+    TResult? Function(AskEngineerLookUpLoading<T> value)?
+        askEngineerLookUpLoading,
+    TResult? Function(AskEngineerLookUpSuccess<T> value)?
+        askEngineerLookUpSuccess,
+    TResult? Function(AskEngineerLookUpFailure<T> value)?
+        askEngineerLookUpFailure,
+    TResult? Function(AskWorkerLookUpLoading<T> value)? askWorkerLookUpLoading,
+    TResult? Function(AskWorkerLookUpSuccess<T> value)? askWorkerLookUpSuccess,
+    TResult? Function(AskWorkerLookUpFailure<T> value)? askWorkerLookUpFailure,
   }) {
     return requestDesignFilterLoading?.call(this);
   }
@@ -766,6 +993,22 @@ class _$RequestDesignFilterLoadingImpl<T>
         paginationLoading,
     TResult Function(RequestDesignPaginationFailure<T> value)?
         paginationFailure,
+    TResult Function(ChangeTap<T> value)? changeTap,
+    TResult Function(getAllPackagePackageLoading<T> value)?
+        getAllCustomPackageLoading,
+    TResult Function(getAllPackagePackageSuccess<T> value)?
+        getAllCustomPackageSuccess,
+    TResult Function(getAllPackagePackageFailure<T> value)?
+        getAllCustomPackageFailure,
+    TResult Function(AskEngineerLookUpLoading<T> value)?
+        askEngineerLookUpLoading,
+    TResult Function(AskEngineerLookUpSuccess<T> value)?
+        askEngineerLookUpSuccess,
+    TResult Function(AskEngineerLookUpFailure<T> value)?
+        askEngineerLookUpFailure,
+    TResult Function(AskWorkerLookUpLoading<T> value)? askWorkerLookUpLoading,
+    TResult Function(AskWorkerLookUpSuccess<T> value)? askWorkerLookUpSuccess,
+    TResult Function(AskWorkerLookUpFailure<T> value)? askWorkerLookUpFailure,
     required TResult orElse(),
   }) {
     if (requestDesignFilterLoading != null) {
@@ -876,6 +1119,16 @@ class _$RequestDesignFilterSuccessImpl<T>
     required TResult Function(String error) askEngineerFilterFailure,
     required TResult Function() paginationLoading,
     required TResult Function(String error) paginationFailure,
+    required TResult Function() changeTap,
+    required TResult Function() getAllCustomPackageLoading,
+    required TResult Function(T data) getAllCustomPackageSuccess,
+    required TResult Function(String error) getAllCustomPackageFailure,
+    required TResult Function() askEngineerLookUpLoading,
+    required TResult Function(T data) askEngineerLookUpSuccess,
+    required TResult Function(String error) askEngineerLookUpFailure,
+    required TResult Function() askWorkerLookUpLoading,
+    required TResult Function(T data) askWorkerLookUpSuccess,
+    required TResult Function(String error) askWorkerLookUpFailure,
   }) {
     return requestDesignFilterSuccess(data);
   }
@@ -903,6 +1156,16 @@ class _$RequestDesignFilterSuccessImpl<T>
     TResult? Function(String error)? askEngineerFilterFailure,
     TResult? Function()? paginationLoading,
     TResult? Function(String error)? paginationFailure,
+    TResult? Function()? changeTap,
+    TResult? Function()? getAllCustomPackageLoading,
+    TResult? Function(T data)? getAllCustomPackageSuccess,
+    TResult? Function(String error)? getAllCustomPackageFailure,
+    TResult? Function()? askEngineerLookUpLoading,
+    TResult? Function(T data)? askEngineerLookUpSuccess,
+    TResult? Function(String error)? askEngineerLookUpFailure,
+    TResult? Function()? askWorkerLookUpLoading,
+    TResult? Function(T data)? askWorkerLookUpSuccess,
+    TResult? Function(String error)? askWorkerLookUpFailure,
   }) {
     return requestDesignFilterSuccess?.call(data);
   }
@@ -930,6 +1193,16 @@ class _$RequestDesignFilterSuccessImpl<T>
     TResult Function(String error)? askEngineerFilterFailure,
     TResult Function()? paginationLoading,
     TResult Function(String error)? paginationFailure,
+    TResult Function()? changeTap,
+    TResult Function()? getAllCustomPackageLoading,
+    TResult Function(T data)? getAllCustomPackageSuccess,
+    TResult Function(String error)? getAllCustomPackageFailure,
+    TResult Function()? askEngineerLookUpLoading,
+    TResult Function(T data)? askEngineerLookUpSuccess,
+    TResult Function(String error)? askEngineerLookUpFailure,
+    TResult Function()? askWorkerLookUpLoading,
+    TResult Function(T data)? askWorkerLookUpSuccess,
+    TResult Function(String error)? askWorkerLookUpFailure,
     required TResult orElse(),
   }) {
     if (requestDesignFilterSuccess != null) {
@@ -982,6 +1255,25 @@ class _$RequestDesignFilterSuccessImpl<T>
         paginationLoading,
     required TResult Function(RequestDesignPaginationFailure<T> value)
         paginationFailure,
+    required TResult Function(ChangeTap<T> value) changeTap,
+    required TResult Function(getAllPackagePackageLoading<T> value)
+        getAllCustomPackageLoading,
+    required TResult Function(getAllPackagePackageSuccess<T> value)
+        getAllCustomPackageSuccess,
+    required TResult Function(getAllPackagePackageFailure<T> value)
+        getAllCustomPackageFailure,
+    required TResult Function(AskEngineerLookUpLoading<T> value)
+        askEngineerLookUpLoading,
+    required TResult Function(AskEngineerLookUpSuccess<T> value)
+        askEngineerLookUpSuccess,
+    required TResult Function(AskEngineerLookUpFailure<T> value)
+        askEngineerLookUpFailure,
+    required TResult Function(AskWorkerLookUpLoading<T> value)
+        askWorkerLookUpLoading,
+    required TResult Function(AskWorkerLookUpSuccess<T> value)
+        askWorkerLookUpSuccess,
+    required TResult Function(AskWorkerLookUpFailure<T> value)
+        askWorkerLookUpFailure,
   }) {
     return requestDesignFilterSuccess(this);
   }
@@ -1024,6 +1316,22 @@ class _$RequestDesignFilterSuccessImpl<T>
         paginationLoading,
     TResult? Function(RequestDesignPaginationFailure<T> value)?
         paginationFailure,
+    TResult? Function(ChangeTap<T> value)? changeTap,
+    TResult? Function(getAllPackagePackageLoading<T> value)?
+        getAllCustomPackageLoading,
+    TResult? Function(getAllPackagePackageSuccess<T> value)?
+        getAllCustomPackageSuccess,
+    TResult? Function(getAllPackagePackageFailure<T> value)?
+        getAllCustomPackageFailure,
+    TResult? Function(AskEngineerLookUpLoading<T> value)?
+        askEngineerLookUpLoading,
+    TResult? Function(AskEngineerLookUpSuccess<T> value)?
+        askEngineerLookUpSuccess,
+    TResult? Function(AskEngineerLookUpFailure<T> value)?
+        askEngineerLookUpFailure,
+    TResult? Function(AskWorkerLookUpLoading<T> value)? askWorkerLookUpLoading,
+    TResult? Function(AskWorkerLookUpSuccess<T> value)? askWorkerLookUpSuccess,
+    TResult? Function(AskWorkerLookUpFailure<T> value)? askWorkerLookUpFailure,
   }) {
     return requestDesignFilterSuccess?.call(this);
   }
@@ -1066,6 +1374,22 @@ class _$RequestDesignFilterSuccessImpl<T>
         paginationLoading,
     TResult Function(RequestDesignPaginationFailure<T> value)?
         paginationFailure,
+    TResult Function(ChangeTap<T> value)? changeTap,
+    TResult Function(getAllPackagePackageLoading<T> value)?
+        getAllCustomPackageLoading,
+    TResult Function(getAllPackagePackageSuccess<T> value)?
+        getAllCustomPackageSuccess,
+    TResult Function(getAllPackagePackageFailure<T> value)?
+        getAllCustomPackageFailure,
+    TResult Function(AskEngineerLookUpLoading<T> value)?
+        askEngineerLookUpLoading,
+    TResult Function(AskEngineerLookUpSuccess<T> value)?
+        askEngineerLookUpSuccess,
+    TResult Function(AskEngineerLookUpFailure<T> value)?
+        askEngineerLookUpFailure,
+    TResult Function(AskWorkerLookUpLoading<T> value)? askWorkerLookUpLoading,
+    TResult Function(AskWorkerLookUpSuccess<T> value)? askWorkerLookUpSuccess,
+    TResult Function(AskWorkerLookUpFailure<T> value)? askWorkerLookUpFailure,
     required TResult orElse(),
   }) {
     if (requestDesignFilterSuccess != null) {
@@ -1187,6 +1511,16 @@ class _$RequestDesignFilterFailureImpl<T>
     required TResult Function(String error) askEngineerFilterFailure,
     required TResult Function() paginationLoading,
     required TResult Function(String error) paginationFailure,
+    required TResult Function() changeTap,
+    required TResult Function() getAllCustomPackageLoading,
+    required TResult Function(T data) getAllCustomPackageSuccess,
+    required TResult Function(String error) getAllCustomPackageFailure,
+    required TResult Function() askEngineerLookUpLoading,
+    required TResult Function(T data) askEngineerLookUpSuccess,
+    required TResult Function(String error) askEngineerLookUpFailure,
+    required TResult Function() askWorkerLookUpLoading,
+    required TResult Function(T data) askWorkerLookUpSuccess,
+    required TResult Function(String error) askWorkerLookUpFailure,
   }) {
     return requestDesignFilterFailure(error);
   }
@@ -1214,6 +1548,16 @@ class _$RequestDesignFilterFailureImpl<T>
     TResult? Function(String error)? askEngineerFilterFailure,
     TResult? Function()? paginationLoading,
     TResult? Function(String error)? paginationFailure,
+    TResult? Function()? changeTap,
+    TResult? Function()? getAllCustomPackageLoading,
+    TResult? Function(T data)? getAllCustomPackageSuccess,
+    TResult? Function(String error)? getAllCustomPackageFailure,
+    TResult? Function()? askEngineerLookUpLoading,
+    TResult? Function(T data)? askEngineerLookUpSuccess,
+    TResult? Function(String error)? askEngineerLookUpFailure,
+    TResult? Function()? askWorkerLookUpLoading,
+    TResult? Function(T data)? askWorkerLookUpSuccess,
+    TResult? Function(String error)? askWorkerLookUpFailure,
   }) {
     return requestDesignFilterFailure?.call(error);
   }
@@ -1241,6 +1585,16 @@ class _$RequestDesignFilterFailureImpl<T>
     TResult Function(String error)? askEngineerFilterFailure,
     TResult Function()? paginationLoading,
     TResult Function(String error)? paginationFailure,
+    TResult Function()? changeTap,
+    TResult Function()? getAllCustomPackageLoading,
+    TResult Function(T data)? getAllCustomPackageSuccess,
+    TResult Function(String error)? getAllCustomPackageFailure,
+    TResult Function()? askEngineerLookUpLoading,
+    TResult Function(T data)? askEngineerLookUpSuccess,
+    TResult Function(String error)? askEngineerLookUpFailure,
+    TResult Function()? askWorkerLookUpLoading,
+    TResult Function(T data)? askWorkerLookUpSuccess,
+    TResult Function(String error)? askWorkerLookUpFailure,
     required TResult orElse(),
   }) {
     if (requestDesignFilterFailure != null) {
@@ -1293,6 +1647,25 @@ class _$RequestDesignFilterFailureImpl<T>
         paginationLoading,
     required TResult Function(RequestDesignPaginationFailure<T> value)
         paginationFailure,
+    required TResult Function(ChangeTap<T> value) changeTap,
+    required TResult Function(getAllPackagePackageLoading<T> value)
+        getAllCustomPackageLoading,
+    required TResult Function(getAllPackagePackageSuccess<T> value)
+        getAllCustomPackageSuccess,
+    required TResult Function(getAllPackagePackageFailure<T> value)
+        getAllCustomPackageFailure,
+    required TResult Function(AskEngineerLookUpLoading<T> value)
+        askEngineerLookUpLoading,
+    required TResult Function(AskEngineerLookUpSuccess<T> value)
+        askEngineerLookUpSuccess,
+    required TResult Function(AskEngineerLookUpFailure<T> value)
+        askEngineerLookUpFailure,
+    required TResult Function(AskWorkerLookUpLoading<T> value)
+        askWorkerLookUpLoading,
+    required TResult Function(AskWorkerLookUpSuccess<T> value)
+        askWorkerLookUpSuccess,
+    required TResult Function(AskWorkerLookUpFailure<T> value)
+        askWorkerLookUpFailure,
   }) {
     return requestDesignFilterFailure(this);
   }
@@ -1335,6 +1708,22 @@ class _$RequestDesignFilterFailureImpl<T>
         paginationLoading,
     TResult? Function(RequestDesignPaginationFailure<T> value)?
         paginationFailure,
+    TResult? Function(ChangeTap<T> value)? changeTap,
+    TResult? Function(getAllPackagePackageLoading<T> value)?
+        getAllCustomPackageLoading,
+    TResult? Function(getAllPackagePackageSuccess<T> value)?
+        getAllCustomPackageSuccess,
+    TResult? Function(getAllPackagePackageFailure<T> value)?
+        getAllCustomPackageFailure,
+    TResult? Function(AskEngineerLookUpLoading<T> value)?
+        askEngineerLookUpLoading,
+    TResult? Function(AskEngineerLookUpSuccess<T> value)?
+        askEngineerLookUpSuccess,
+    TResult? Function(AskEngineerLookUpFailure<T> value)?
+        askEngineerLookUpFailure,
+    TResult? Function(AskWorkerLookUpLoading<T> value)? askWorkerLookUpLoading,
+    TResult? Function(AskWorkerLookUpSuccess<T> value)? askWorkerLookUpSuccess,
+    TResult? Function(AskWorkerLookUpFailure<T> value)? askWorkerLookUpFailure,
   }) {
     return requestDesignFilterFailure?.call(this);
   }
@@ -1377,6 +1766,22 @@ class _$RequestDesignFilterFailureImpl<T>
         paginationLoading,
     TResult Function(RequestDesignPaginationFailure<T> value)?
         paginationFailure,
+    TResult Function(ChangeTap<T> value)? changeTap,
+    TResult Function(getAllPackagePackageLoading<T> value)?
+        getAllCustomPackageLoading,
+    TResult Function(getAllPackagePackageSuccess<T> value)?
+        getAllCustomPackageSuccess,
+    TResult Function(getAllPackagePackageFailure<T> value)?
+        getAllCustomPackageFailure,
+    TResult Function(AskEngineerLookUpLoading<T> value)?
+        askEngineerLookUpLoading,
+    TResult Function(AskEngineerLookUpSuccess<T> value)?
+        askEngineerLookUpSuccess,
+    TResult Function(AskEngineerLookUpFailure<T> value)?
+        askEngineerLookUpFailure,
+    TResult Function(AskWorkerLookUpLoading<T> value)? askWorkerLookUpLoading,
+    TResult Function(AskWorkerLookUpSuccess<T> value)? askWorkerLookUpSuccess,
+    TResult Function(AskWorkerLookUpFailure<T> value)? askWorkerLookUpFailure,
     required TResult orElse(),
   }) {
     if (requestDesignFilterFailure != null) {
@@ -1472,6 +1877,16 @@ class _$RenovateYourHouseFixedPackagesFilterLoadingImpl<T>
     required TResult Function(String error) askEngineerFilterFailure,
     required TResult Function() paginationLoading,
     required TResult Function(String error) paginationFailure,
+    required TResult Function() changeTap,
+    required TResult Function() getAllCustomPackageLoading,
+    required TResult Function(T data) getAllCustomPackageSuccess,
+    required TResult Function(String error) getAllCustomPackageFailure,
+    required TResult Function() askEngineerLookUpLoading,
+    required TResult Function(T data) askEngineerLookUpSuccess,
+    required TResult Function(String error) askEngineerLookUpFailure,
+    required TResult Function() askWorkerLookUpLoading,
+    required TResult Function(T data) askWorkerLookUpSuccess,
+    required TResult Function(String error) askWorkerLookUpFailure,
   }) {
     return renovateYourHouseFixedPackagesFilterLoading();
   }
@@ -1499,6 +1914,16 @@ class _$RenovateYourHouseFixedPackagesFilterLoadingImpl<T>
     TResult? Function(String error)? askEngineerFilterFailure,
     TResult? Function()? paginationLoading,
     TResult? Function(String error)? paginationFailure,
+    TResult? Function()? changeTap,
+    TResult? Function()? getAllCustomPackageLoading,
+    TResult? Function(T data)? getAllCustomPackageSuccess,
+    TResult? Function(String error)? getAllCustomPackageFailure,
+    TResult? Function()? askEngineerLookUpLoading,
+    TResult? Function(T data)? askEngineerLookUpSuccess,
+    TResult? Function(String error)? askEngineerLookUpFailure,
+    TResult? Function()? askWorkerLookUpLoading,
+    TResult? Function(T data)? askWorkerLookUpSuccess,
+    TResult? Function(String error)? askWorkerLookUpFailure,
   }) {
     return renovateYourHouseFixedPackagesFilterLoading?.call();
   }
@@ -1526,6 +1951,16 @@ class _$RenovateYourHouseFixedPackagesFilterLoadingImpl<T>
     TResult Function(String error)? askEngineerFilterFailure,
     TResult Function()? paginationLoading,
     TResult Function(String error)? paginationFailure,
+    TResult Function()? changeTap,
+    TResult Function()? getAllCustomPackageLoading,
+    TResult Function(T data)? getAllCustomPackageSuccess,
+    TResult Function(String error)? getAllCustomPackageFailure,
+    TResult Function()? askEngineerLookUpLoading,
+    TResult Function(T data)? askEngineerLookUpSuccess,
+    TResult Function(String error)? askEngineerLookUpFailure,
+    TResult Function()? askWorkerLookUpLoading,
+    TResult Function(T data)? askWorkerLookUpSuccess,
+    TResult Function(String error)? askWorkerLookUpFailure,
     required TResult orElse(),
   }) {
     if (renovateYourHouseFixedPackagesFilterLoading != null) {
@@ -1578,6 +2013,25 @@ class _$RenovateYourHouseFixedPackagesFilterLoadingImpl<T>
         paginationLoading,
     required TResult Function(RequestDesignPaginationFailure<T> value)
         paginationFailure,
+    required TResult Function(ChangeTap<T> value) changeTap,
+    required TResult Function(getAllPackagePackageLoading<T> value)
+        getAllCustomPackageLoading,
+    required TResult Function(getAllPackagePackageSuccess<T> value)
+        getAllCustomPackageSuccess,
+    required TResult Function(getAllPackagePackageFailure<T> value)
+        getAllCustomPackageFailure,
+    required TResult Function(AskEngineerLookUpLoading<T> value)
+        askEngineerLookUpLoading,
+    required TResult Function(AskEngineerLookUpSuccess<T> value)
+        askEngineerLookUpSuccess,
+    required TResult Function(AskEngineerLookUpFailure<T> value)
+        askEngineerLookUpFailure,
+    required TResult Function(AskWorkerLookUpLoading<T> value)
+        askWorkerLookUpLoading,
+    required TResult Function(AskWorkerLookUpSuccess<T> value)
+        askWorkerLookUpSuccess,
+    required TResult Function(AskWorkerLookUpFailure<T> value)
+        askWorkerLookUpFailure,
   }) {
     return renovateYourHouseFixedPackagesFilterLoading(this);
   }
@@ -1620,6 +2074,22 @@ class _$RenovateYourHouseFixedPackagesFilterLoadingImpl<T>
         paginationLoading,
     TResult? Function(RequestDesignPaginationFailure<T> value)?
         paginationFailure,
+    TResult? Function(ChangeTap<T> value)? changeTap,
+    TResult? Function(getAllPackagePackageLoading<T> value)?
+        getAllCustomPackageLoading,
+    TResult? Function(getAllPackagePackageSuccess<T> value)?
+        getAllCustomPackageSuccess,
+    TResult? Function(getAllPackagePackageFailure<T> value)?
+        getAllCustomPackageFailure,
+    TResult? Function(AskEngineerLookUpLoading<T> value)?
+        askEngineerLookUpLoading,
+    TResult? Function(AskEngineerLookUpSuccess<T> value)?
+        askEngineerLookUpSuccess,
+    TResult? Function(AskEngineerLookUpFailure<T> value)?
+        askEngineerLookUpFailure,
+    TResult? Function(AskWorkerLookUpLoading<T> value)? askWorkerLookUpLoading,
+    TResult? Function(AskWorkerLookUpSuccess<T> value)? askWorkerLookUpSuccess,
+    TResult? Function(AskWorkerLookUpFailure<T> value)? askWorkerLookUpFailure,
   }) {
     return renovateYourHouseFixedPackagesFilterLoading?.call(this);
   }
@@ -1662,6 +2132,22 @@ class _$RenovateYourHouseFixedPackagesFilterLoadingImpl<T>
         paginationLoading,
     TResult Function(RequestDesignPaginationFailure<T> value)?
         paginationFailure,
+    TResult Function(ChangeTap<T> value)? changeTap,
+    TResult Function(getAllPackagePackageLoading<T> value)?
+        getAllCustomPackageLoading,
+    TResult Function(getAllPackagePackageSuccess<T> value)?
+        getAllCustomPackageSuccess,
+    TResult Function(getAllPackagePackageFailure<T> value)?
+        getAllCustomPackageFailure,
+    TResult Function(AskEngineerLookUpLoading<T> value)?
+        askEngineerLookUpLoading,
+    TResult Function(AskEngineerLookUpSuccess<T> value)?
+        askEngineerLookUpSuccess,
+    TResult Function(AskEngineerLookUpFailure<T> value)?
+        askEngineerLookUpFailure,
+    TResult Function(AskWorkerLookUpLoading<T> value)? askWorkerLookUpLoading,
+    TResult Function(AskWorkerLookUpSuccess<T> value)? askWorkerLookUpSuccess,
+    TResult Function(AskWorkerLookUpFailure<T> value)? askWorkerLookUpFailure,
     required TResult orElse(),
   }) {
     if (renovateYourHouseFixedPackagesFilterLoading != null) {
@@ -1780,6 +2266,16 @@ class _$RenovateYourHouseFixedPackagesFilterLoadedImpl<T>
     required TResult Function(String error) askEngineerFilterFailure,
     required TResult Function() paginationLoading,
     required TResult Function(String error) paginationFailure,
+    required TResult Function() changeTap,
+    required TResult Function() getAllCustomPackageLoading,
+    required TResult Function(T data) getAllCustomPackageSuccess,
+    required TResult Function(String error) getAllCustomPackageFailure,
+    required TResult Function() askEngineerLookUpLoading,
+    required TResult Function(T data) askEngineerLookUpSuccess,
+    required TResult Function(String error) askEngineerLookUpFailure,
+    required TResult Function() askWorkerLookUpLoading,
+    required TResult Function(T data) askWorkerLookUpSuccess,
+    required TResult Function(String error) askWorkerLookUpFailure,
   }) {
     return renovateYourHouseFixedPackagesFilterLoaded(data);
   }
@@ -1807,6 +2303,16 @@ class _$RenovateYourHouseFixedPackagesFilterLoadedImpl<T>
     TResult? Function(String error)? askEngineerFilterFailure,
     TResult? Function()? paginationLoading,
     TResult? Function(String error)? paginationFailure,
+    TResult? Function()? changeTap,
+    TResult? Function()? getAllCustomPackageLoading,
+    TResult? Function(T data)? getAllCustomPackageSuccess,
+    TResult? Function(String error)? getAllCustomPackageFailure,
+    TResult? Function()? askEngineerLookUpLoading,
+    TResult? Function(T data)? askEngineerLookUpSuccess,
+    TResult? Function(String error)? askEngineerLookUpFailure,
+    TResult? Function()? askWorkerLookUpLoading,
+    TResult? Function(T data)? askWorkerLookUpSuccess,
+    TResult? Function(String error)? askWorkerLookUpFailure,
   }) {
     return renovateYourHouseFixedPackagesFilterLoaded?.call(data);
   }
@@ -1834,6 +2340,16 @@ class _$RenovateYourHouseFixedPackagesFilterLoadedImpl<T>
     TResult Function(String error)? askEngineerFilterFailure,
     TResult Function()? paginationLoading,
     TResult Function(String error)? paginationFailure,
+    TResult Function()? changeTap,
+    TResult Function()? getAllCustomPackageLoading,
+    TResult Function(T data)? getAllCustomPackageSuccess,
+    TResult Function(String error)? getAllCustomPackageFailure,
+    TResult Function()? askEngineerLookUpLoading,
+    TResult Function(T data)? askEngineerLookUpSuccess,
+    TResult Function(String error)? askEngineerLookUpFailure,
+    TResult Function()? askWorkerLookUpLoading,
+    TResult Function(T data)? askWorkerLookUpSuccess,
+    TResult Function(String error)? askWorkerLookUpFailure,
     required TResult orElse(),
   }) {
     if (renovateYourHouseFixedPackagesFilterLoaded != null) {
@@ -1886,6 +2402,25 @@ class _$RenovateYourHouseFixedPackagesFilterLoadedImpl<T>
         paginationLoading,
     required TResult Function(RequestDesignPaginationFailure<T> value)
         paginationFailure,
+    required TResult Function(ChangeTap<T> value) changeTap,
+    required TResult Function(getAllPackagePackageLoading<T> value)
+        getAllCustomPackageLoading,
+    required TResult Function(getAllPackagePackageSuccess<T> value)
+        getAllCustomPackageSuccess,
+    required TResult Function(getAllPackagePackageFailure<T> value)
+        getAllCustomPackageFailure,
+    required TResult Function(AskEngineerLookUpLoading<T> value)
+        askEngineerLookUpLoading,
+    required TResult Function(AskEngineerLookUpSuccess<T> value)
+        askEngineerLookUpSuccess,
+    required TResult Function(AskEngineerLookUpFailure<T> value)
+        askEngineerLookUpFailure,
+    required TResult Function(AskWorkerLookUpLoading<T> value)
+        askWorkerLookUpLoading,
+    required TResult Function(AskWorkerLookUpSuccess<T> value)
+        askWorkerLookUpSuccess,
+    required TResult Function(AskWorkerLookUpFailure<T> value)
+        askWorkerLookUpFailure,
   }) {
     return renovateYourHouseFixedPackagesFilterLoaded(this);
   }
@@ -1928,6 +2463,22 @@ class _$RenovateYourHouseFixedPackagesFilterLoadedImpl<T>
         paginationLoading,
     TResult? Function(RequestDesignPaginationFailure<T> value)?
         paginationFailure,
+    TResult? Function(ChangeTap<T> value)? changeTap,
+    TResult? Function(getAllPackagePackageLoading<T> value)?
+        getAllCustomPackageLoading,
+    TResult? Function(getAllPackagePackageSuccess<T> value)?
+        getAllCustomPackageSuccess,
+    TResult? Function(getAllPackagePackageFailure<T> value)?
+        getAllCustomPackageFailure,
+    TResult? Function(AskEngineerLookUpLoading<T> value)?
+        askEngineerLookUpLoading,
+    TResult? Function(AskEngineerLookUpSuccess<T> value)?
+        askEngineerLookUpSuccess,
+    TResult? Function(AskEngineerLookUpFailure<T> value)?
+        askEngineerLookUpFailure,
+    TResult? Function(AskWorkerLookUpLoading<T> value)? askWorkerLookUpLoading,
+    TResult? Function(AskWorkerLookUpSuccess<T> value)? askWorkerLookUpSuccess,
+    TResult? Function(AskWorkerLookUpFailure<T> value)? askWorkerLookUpFailure,
   }) {
     return renovateYourHouseFixedPackagesFilterLoaded?.call(this);
   }
@@ -1970,6 +2521,22 @@ class _$RenovateYourHouseFixedPackagesFilterLoadedImpl<T>
         paginationLoading,
     TResult Function(RequestDesignPaginationFailure<T> value)?
         paginationFailure,
+    TResult Function(ChangeTap<T> value)? changeTap,
+    TResult Function(getAllPackagePackageLoading<T> value)?
+        getAllCustomPackageLoading,
+    TResult Function(getAllPackagePackageSuccess<T> value)?
+        getAllCustomPackageSuccess,
+    TResult Function(getAllPackagePackageFailure<T> value)?
+        getAllCustomPackageFailure,
+    TResult Function(AskEngineerLookUpLoading<T> value)?
+        askEngineerLookUpLoading,
+    TResult Function(AskEngineerLookUpSuccess<T> value)?
+        askEngineerLookUpSuccess,
+    TResult Function(AskEngineerLookUpFailure<T> value)?
+        askEngineerLookUpFailure,
+    TResult Function(AskWorkerLookUpLoading<T> value)? askWorkerLookUpLoading,
+    TResult Function(AskWorkerLookUpSuccess<T> value)? askWorkerLookUpSuccess,
+    TResult Function(AskWorkerLookUpFailure<T> value)? askWorkerLookUpFailure,
     required TResult orElse(),
   }) {
     if (renovateYourHouseFixedPackagesFilterLoaded != null) {
@@ -2096,6 +2663,16 @@ class _$RenovateYourHouseFixedPackagesFilterErrorImpl<T>
     required TResult Function(String error) askEngineerFilterFailure,
     required TResult Function() paginationLoading,
     required TResult Function(String error) paginationFailure,
+    required TResult Function() changeTap,
+    required TResult Function() getAllCustomPackageLoading,
+    required TResult Function(T data) getAllCustomPackageSuccess,
+    required TResult Function(String error) getAllCustomPackageFailure,
+    required TResult Function() askEngineerLookUpLoading,
+    required TResult Function(T data) askEngineerLookUpSuccess,
+    required TResult Function(String error) askEngineerLookUpFailure,
+    required TResult Function() askWorkerLookUpLoading,
+    required TResult Function(T data) askWorkerLookUpSuccess,
+    required TResult Function(String error) askWorkerLookUpFailure,
   }) {
     return renovateYourHouseFixedPackagesFilterError(error);
   }
@@ -2123,6 +2700,16 @@ class _$RenovateYourHouseFixedPackagesFilterErrorImpl<T>
     TResult? Function(String error)? askEngineerFilterFailure,
     TResult? Function()? paginationLoading,
     TResult? Function(String error)? paginationFailure,
+    TResult? Function()? changeTap,
+    TResult? Function()? getAllCustomPackageLoading,
+    TResult? Function(T data)? getAllCustomPackageSuccess,
+    TResult? Function(String error)? getAllCustomPackageFailure,
+    TResult? Function()? askEngineerLookUpLoading,
+    TResult? Function(T data)? askEngineerLookUpSuccess,
+    TResult? Function(String error)? askEngineerLookUpFailure,
+    TResult? Function()? askWorkerLookUpLoading,
+    TResult? Function(T data)? askWorkerLookUpSuccess,
+    TResult? Function(String error)? askWorkerLookUpFailure,
   }) {
     return renovateYourHouseFixedPackagesFilterError?.call(error);
   }
@@ -2150,6 +2737,16 @@ class _$RenovateYourHouseFixedPackagesFilterErrorImpl<T>
     TResult Function(String error)? askEngineerFilterFailure,
     TResult Function()? paginationLoading,
     TResult Function(String error)? paginationFailure,
+    TResult Function()? changeTap,
+    TResult Function()? getAllCustomPackageLoading,
+    TResult Function(T data)? getAllCustomPackageSuccess,
+    TResult Function(String error)? getAllCustomPackageFailure,
+    TResult Function()? askEngineerLookUpLoading,
+    TResult Function(T data)? askEngineerLookUpSuccess,
+    TResult Function(String error)? askEngineerLookUpFailure,
+    TResult Function()? askWorkerLookUpLoading,
+    TResult Function(T data)? askWorkerLookUpSuccess,
+    TResult Function(String error)? askWorkerLookUpFailure,
     required TResult orElse(),
   }) {
     if (renovateYourHouseFixedPackagesFilterError != null) {
@@ -2202,6 +2799,25 @@ class _$RenovateYourHouseFixedPackagesFilterErrorImpl<T>
         paginationLoading,
     required TResult Function(RequestDesignPaginationFailure<T> value)
         paginationFailure,
+    required TResult Function(ChangeTap<T> value) changeTap,
+    required TResult Function(getAllPackagePackageLoading<T> value)
+        getAllCustomPackageLoading,
+    required TResult Function(getAllPackagePackageSuccess<T> value)
+        getAllCustomPackageSuccess,
+    required TResult Function(getAllPackagePackageFailure<T> value)
+        getAllCustomPackageFailure,
+    required TResult Function(AskEngineerLookUpLoading<T> value)
+        askEngineerLookUpLoading,
+    required TResult Function(AskEngineerLookUpSuccess<T> value)
+        askEngineerLookUpSuccess,
+    required TResult Function(AskEngineerLookUpFailure<T> value)
+        askEngineerLookUpFailure,
+    required TResult Function(AskWorkerLookUpLoading<T> value)
+        askWorkerLookUpLoading,
+    required TResult Function(AskWorkerLookUpSuccess<T> value)
+        askWorkerLookUpSuccess,
+    required TResult Function(AskWorkerLookUpFailure<T> value)
+        askWorkerLookUpFailure,
   }) {
     return renovateYourHouseFixedPackagesFilterError(this);
   }
@@ -2244,6 +2860,22 @@ class _$RenovateYourHouseFixedPackagesFilterErrorImpl<T>
         paginationLoading,
     TResult? Function(RequestDesignPaginationFailure<T> value)?
         paginationFailure,
+    TResult? Function(ChangeTap<T> value)? changeTap,
+    TResult? Function(getAllPackagePackageLoading<T> value)?
+        getAllCustomPackageLoading,
+    TResult? Function(getAllPackagePackageSuccess<T> value)?
+        getAllCustomPackageSuccess,
+    TResult? Function(getAllPackagePackageFailure<T> value)?
+        getAllCustomPackageFailure,
+    TResult? Function(AskEngineerLookUpLoading<T> value)?
+        askEngineerLookUpLoading,
+    TResult? Function(AskEngineerLookUpSuccess<T> value)?
+        askEngineerLookUpSuccess,
+    TResult? Function(AskEngineerLookUpFailure<T> value)?
+        askEngineerLookUpFailure,
+    TResult? Function(AskWorkerLookUpLoading<T> value)? askWorkerLookUpLoading,
+    TResult? Function(AskWorkerLookUpSuccess<T> value)? askWorkerLookUpSuccess,
+    TResult? Function(AskWorkerLookUpFailure<T> value)? askWorkerLookUpFailure,
   }) {
     return renovateYourHouseFixedPackagesFilterError?.call(this);
   }
@@ -2286,6 +2918,22 @@ class _$RenovateYourHouseFixedPackagesFilterErrorImpl<T>
         paginationLoading,
     TResult Function(RequestDesignPaginationFailure<T> value)?
         paginationFailure,
+    TResult Function(ChangeTap<T> value)? changeTap,
+    TResult Function(getAllPackagePackageLoading<T> value)?
+        getAllCustomPackageLoading,
+    TResult Function(getAllPackagePackageSuccess<T> value)?
+        getAllCustomPackageSuccess,
+    TResult Function(getAllPackagePackageFailure<T> value)?
+        getAllCustomPackageFailure,
+    TResult Function(AskEngineerLookUpLoading<T> value)?
+        askEngineerLookUpLoading,
+    TResult Function(AskEngineerLookUpSuccess<T> value)?
+        askEngineerLookUpSuccess,
+    TResult Function(AskEngineerLookUpFailure<T> value)?
+        askEngineerLookUpFailure,
+    TResult Function(AskWorkerLookUpLoading<T> value)? askWorkerLookUpLoading,
+    TResult Function(AskWorkerLookUpSuccess<T> value)? askWorkerLookUpSuccess,
+    TResult Function(AskWorkerLookUpFailure<T> value)? askWorkerLookUpFailure,
     required TResult orElse(),
   }) {
     if (renovateYourHouseFixedPackagesFilterError != null) {
@@ -2384,6 +3032,16 @@ class _$RenovateYourHouseCustomPackagesFilterLoadingImpl<T>
     required TResult Function(String error) askEngineerFilterFailure,
     required TResult Function() paginationLoading,
     required TResult Function(String error) paginationFailure,
+    required TResult Function() changeTap,
+    required TResult Function() getAllCustomPackageLoading,
+    required TResult Function(T data) getAllCustomPackageSuccess,
+    required TResult Function(String error) getAllCustomPackageFailure,
+    required TResult Function() askEngineerLookUpLoading,
+    required TResult Function(T data) askEngineerLookUpSuccess,
+    required TResult Function(String error) askEngineerLookUpFailure,
+    required TResult Function() askWorkerLookUpLoading,
+    required TResult Function(T data) askWorkerLookUpSuccess,
+    required TResult Function(String error) askWorkerLookUpFailure,
   }) {
     return renovateYourHouseCustomPackagesFilterLoading();
   }
@@ -2411,6 +3069,16 @@ class _$RenovateYourHouseCustomPackagesFilterLoadingImpl<T>
     TResult? Function(String error)? askEngineerFilterFailure,
     TResult? Function()? paginationLoading,
     TResult? Function(String error)? paginationFailure,
+    TResult? Function()? changeTap,
+    TResult? Function()? getAllCustomPackageLoading,
+    TResult? Function(T data)? getAllCustomPackageSuccess,
+    TResult? Function(String error)? getAllCustomPackageFailure,
+    TResult? Function()? askEngineerLookUpLoading,
+    TResult? Function(T data)? askEngineerLookUpSuccess,
+    TResult? Function(String error)? askEngineerLookUpFailure,
+    TResult? Function()? askWorkerLookUpLoading,
+    TResult? Function(T data)? askWorkerLookUpSuccess,
+    TResult? Function(String error)? askWorkerLookUpFailure,
   }) {
     return renovateYourHouseCustomPackagesFilterLoading?.call();
   }
@@ -2438,6 +3106,16 @@ class _$RenovateYourHouseCustomPackagesFilterLoadingImpl<T>
     TResult Function(String error)? askEngineerFilterFailure,
     TResult Function()? paginationLoading,
     TResult Function(String error)? paginationFailure,
+    TResult Function()? changeTap,
+    TResult Function()? getAllCustomPackageLoading,
+    TResult Function(T data)? getAllCustomPackageSuccess,
+    TResult Function(String error)? getAllCustomPackageFailure,
+    TResult Function()? askEngineerLookUpLoading,
+    TResult Function(T data)? askEngineerLookUpSuccess,
+    TResult Function(String error)? askEngineerLookUpFailure,
+    TResult Function()? askWorkerLookUpLoading,
+    TResult Function(T data)? askWorkerLookUpSuccess,
+    TResult Function(String error)? askWorkerLookUpFailure,
     required TResult orElse(),
   }) {
     if (renovateYourHouseCustomPackagesFilterLoading != null) {
@@ -2490,6 +3168,25 @@ class _$RenovateYourHouseCustomPackagesFilterLoadingImpl<T>
         paginationLoading,
     required TResult Function(RequestDesignPaginationFailure<T> value)
         paginationFailure,
+    required TResult Function(ChangeTap<T> value) changeTap,
+    required TResult Function(getAllPackagePackageLoading<T> value)
+        getAllCustomPackageLoading,
+    required TResult Function(getAllPackagePackageSuccess<T> value)
+        getAllCustomPackageSuccess,
+    required TResult Function(getAllPackagePackageFailure<T> value)
+        getAllCustomPackageFailure,
+    required TResult Function(AskEngineerLookUpLoading<T> value)
+        askEngineerLookUpLoading,
+    required TResult Function(AskEngineerLookUpSuccess<T> value)
+        askEngineerLookUpSuccess,
+    required TResult Function(AskEngineerLookUpFailure<T> value)
+        askEngineerLookUpFailure,
+    required TResult Function(AskWorkerLookUpLoading<T> value)
+        askWorkerLookUpLoading,
+    required TResult Function(AskWorkerLookUpSuccess<T> value)
+        askWorkerLookUpSuccess,
+    required TResult Function(AskWorkerLookUpFailure<T> value)
+        askWorkerLookUpFailure,
   }) {
     return renovateYourHouseCustomPackagesFilterLoading(this);
   }
@@ -2532,6 +3229,22 @@ class _$RenovateYourHouseCustomPackagesFilterLoadingImpl<T>
         paginationLoading,
     TResult? Function(RequestDesignPaginationFailure<T> value)?
         paginationFailure,
+    TResult? Function(ChangeTap<T> value)? changeTap,
+    TResult? Function(getAllPackagePackageLoading<T> value)?
+        getAllCustomPackageLoading,
+    TResult? Function(getAllPackagePackageSuccess<T> value)?
+        getAllCustomPackageSuccess,
+    TResult? Function(getAllPackagePackageFailure<T> value)?
+        getAllCustomPackageFailure,
+    TResult? Function(AskEngineerLookUpLoading<T> value)?
+        askEngineerLookUpLoading,
+    TResult? Function(AskEngineerLookUpSuccess<T> value)?
+        askEngineerLookUpSuccess,
+    TResult? Function(AskEngineerLookUpFailure<T> value)?
+        askEngineerLookUpFailure,
+    TResult? Function(AskWorkerLookUpLoading<T> value)? askWorkerLookUpLoading,
+    TResult? Function(AskWorkerLookUpSuccess<T> value)? askWorkerLookUpSuccess,
+    TResult? Function(AskWorkerLookUpFailure<T> value)? askWorkerLookUpFailure,
   }) {
     return renovateYourHouseCustomPackagesFilterLoading?.call(this);
   }
@@ -2574,6 +3287,22 @@ class _$RenovateYourHouseCustomPackagesFilterLoadingImpl<T>
         paginationLoading,
     TResult Function(RequestDesignPaginationFailure<T> value)?
         paginationFailure,
+    TResult Function(ChangeTap<T> value)? changeTap,
+    TResult Function(getAllPackagePackageLoading<T> value)?
+        getAllCustomPackageLoading,
+    TResult Function(getAllPackagePackageSuccess<T> value)?
+        getAllCustomPackageSuccess,
+    TResult Function(getAllPackagePackageFailure<T> value)?
+        getAllCustomPackageFailure,
+    TResult Function(AskEngineerLookUpLoading<T> value)?
+        askEngineerLookUpLoading,
+    TResult Function(AskEngineerLookUpSuccess<T> value)?
+        askEngineerLookUpSuccess,
+    TResult Function(AskEngineerLookUpFailure<T> value)?
+        askEngineerLookUpFailure,
+    TResult Function(AskWorkerLookUpLoading<T> value)? askWorkerLookUpLoading,
+    TResult Function(AskWorkerLookUpSuccess<T> value)? askWorkerLookUpSuccess,
+    TResult Function(AskWorkerLookUpFailure<T> value)? askWorkerLookUpFailure,
     required TResult orElse(),
   }) {
     if (renovateYourHouseCustomPackagesFilterLoading != null) {
@@ -2691,6 +3420,16 @@ class _$RenovateYourHouseCustomPackagesFilterLoadedImpl<T>
     required TResult Function(String error) askEngineerFilterFailure,
     required TResult Function() paginationLoading,
     required TResult Function(String error) paginationFailure,
+    required TResult Function() changeTap,
+    required TResult Function() getAllCustomPackageLoading,
+    required TResult Function(T data) getAllCustomPackageSuccess,
+    required TResult Function(String error) getAllCustomPackageFailure,
+    required TResult Function() askEngineerLookUpLoading,
+    required TResult Function(T data) askEngineerLookUpSuccess,
+    required TResult Function(String error) askEngineerLookUpFailure,
+    required TResult Function() askWorkerLookUpLoading,
+    required TResult Function(T data) askWorkerLookUpSuccess,
+    required TResult Function(String error) askWorkerLookUpFailure,
   }) {
     return renovateYourHouseCustomPackagesFilterLoaded(data);
   }
@@ -2718,6 +3457,16 @@ class _$RenovateYourHouseCustomPackagesFilterLoadedImpl<T>
     TResult? Function(String error)? askEngineerFilterFailure,
     TResult? Function()? paginationLoading,
     TResult? Function(String error)? paginationFailure,
+    TResult? Function()? changeTap,
+    TResult? Function()? getAllCustomPackageLoading,
+    TResult? Function(T data)? getAllCustomPackageSuccess,
+    TResult? Function(String error)? getAllCustomPackageFailure,
+    TResult? Function()? askEngineerLookUpLoading,
+    TResult? Function(T data)? askEngineerLookUpSuccess,
+    TResult? Function(String error)? askEngineerLookUpFailure,
+    TResult? Function()? askWorkerLookUpLoading,
+    TResult? Function(T data)? askWorkerLookUpSuccess,
+    TResult? Function(String error)? askWorkerLookUpFailure,
   }) {
     return renovateYourHouseCustomPackagesFilterLoaded?.call(data);
   }
@@ -2745,6 +3494,16 @@ class _$RenovateYourHouseCustomPackagesFilterLoadedImpl<T>
     TResult Function(String error)? askEngineerFilterFailure,
     TResult Function()? paginationLoading,
     TResult Function(String error)? paginationFailure,
+    TResult Function()? changeTap,
+    TResult Function()? getAllCustomPackageLoading,
+    TResult Function(T data)? getAllCustomPackageSuccess,
+    TResult Function(String error)? getAllCustomPackageFailure,
+    TResult Function()? askEngineerLookUpLoading,
+    TResult Function(T data)? askEngineerLookUpSuccess,
+    TResult Function(String error)? askEngineerLookUpFailure,
+    TResult Function()? askWorkerLookUpLoading,
+    TResult Function(T data)? askWorkerLookUpSuccess,
+    TResult Function(String error)? askWorkerLookUpFailure,
     required TResult orElse(),
   }) {
     if (renovateYourHouseCustomPackagesFilterLoaded != null) {
@@ -2797,6 +3556,25 @@ class _$RenovateYourHouseCustomPackagesFilterLoadedImpl<T>
         paginationLoading,
     required TResult Function(RequestDesignPaginationFailure<T> value)
         paginationFailure,
+    required TResult Function(ChangeTap<T> value) changeTap,
+    required TResult Function(getAllPackagePackageLoading<T> value)
+        getAllCustomPackageLoading,
+    required TResult Function(getAllPackagePackageSuccess<T> value)
+        getAllCustomPackageSuccess,
+    required TResult Function(getAllPackagePackageFailure<T> value)
+        getAllCustomPackageFailure,
+    required TResult Function(AskEngineerLookUpLoading<T> value)
+        askEngineerLookUpLoading,
+    required TResult Function(AskEngineerLookUpSuccess<T> value)
+        askEngineerLookUpSuccess,
+    required TResult Function(AskEngineerLookUpFailure<T> value)
+        askEngineerLookUpFailure,
+    required TResult Function(AskWorkerLookUpLoading<T> value)
+        askWorkerLookUpLoading,
+    required TResult Function(AskWorkerLookUpSuccess<T> value)
+        askWorkerLookUpSuccess,
+    required TResult Function(AskWorkerLookUpFailure<T> value)
+        askWorkerLookUpFailure,
   }) {
     return renovateYourHouseCustomPackagesFilterLoaded(this);
   }
@@ -2839,6 +3617,22 @@ class _$RenovateYourHouseCustomPackagesFilterLoadedImpl<T>
         paginationLoading,
     TResult? Function(RequestDesignPaginationFailure<T> value)?
         paginationFailure,
+    TResult? Function(ChangeTap<T> value)? changeTap,
+    TResult? Function(getAllPackagePackageLoading<T> value)?
+        getAllCustomPackageLoading,
+    TResult? Function(getAllPackagePackageSuccess<T> value)?
+        getAllCustomPackageSuccess,
+    TResult? Function(getAllPackagePackageFailure<T> value)?
+        getAllCustomPackageFailure,
+    TResult? Function(AskEngineerLookUpLoading<T> value)?
+        askEngineerLookUpLoading,
+    TResult? Function(AskEngineerLookUpSuccess<T> value)?
+        askEngineerLookUpSuccess,
+    TResult? Function(AskEngineerLookUpFailure<T> value)?
+        askEngineerLookUpFailure,
+    TResult? Function(AskWorkerLookUpLoading<T> value)? askWorkerLookUpLoading,
+    TResult? Function(AskWorkerLookUpSuccess<T> value)? askWorkerLookUpSuccess,
+    TResult? Function(AskWorkerLookUpFailure<T> value)? askWorkerLookUpFailure,
   }) {
     return renovateYourHouseCustomPackagesFilterLoaded?.call(this);
   }
@@ -2881,6 +3675,22 @@ class _$RenovateYourHouseCustomPackagesFilterLoadedImpl<T>
         paginationLoading,
     TResult Function(RequestDesignPaginationFailure<T> value)?
         paginationFailure,
+    TResult Function(ChangeTap<T> value)? changeTap,
+    TResult Function(getAllPackagePackageLoading<T> value)?
+        getAllCustomPackageLoading,
+    TResult Function(getAllPackagePackageSuccess<T> value)?
+        getAllCustomPackageSuccess,
+    TResult Function(getAllPackagePackageFailure<T> value)?
+        getAllCustomPackageFailure,
+    TResult Function(AskEngineerLookUpLoading<T> value)?
+        askEngineerLookUpLoading,
+    TResult Function(AskEngineerLookUpSuccess<T> value)?
+        askEngineerLookUpSuccess,
+    TResult Function(AskEngineerLookUpFailure<T> value)?
+        askEngineerLookUpFailure,
+    TResult Function(AskWorkerLookUpLoading<T> value)? askWorkerLookUpLoading,
+    TResult Function(AskWorkerLookUpSuccess<T> value)? askWorkerLookUpSuccess,
+    TResult Function(AskWorkerLookUpFailure<T> value)? askWorkerLookUpFailure,
     required TResult orElse(),
   }) {
     if (renovateYourHouseCustomPackagesFilterLoaded != null) {
@@ -3008,6 +3818,16 @@ class _$RenovateYourHouseCustomPackagesFilterErrorImpl<T>
     required TResult Function(String error) askEngineerFilterFailure,
     required TResult Function() paginationLoading,
     required TResult Function(String error) paginationFailure,
+    required TResult Function() changeTap,
+    required TResult Function() getAllCustomPackageLoading,
+    required TResult Function(T data) getAllCustomPackageSuccess,
+    required TResult Function(String error) getAllCustomPackageFailure,
+    required TResult Function() askEngineerLookUpLoading,
+    required TResult Function(T data) askEngineerLookUpSuccess,
+    required TResult Function(String error) askEngineerLookUpFailure,
+    required TResult Function() askWorkerLookUpLoading,
+    required TResult Function(T data) askWorkerLookUpSuccess,
+    required TResult Function(String error) askWorkerLookUpFailure,
   }) {
     return renovateYourHouseCustomPackagesFilterError(error);
   }
@@ -3035,6 +3855,16 @@ class _$RenovateYourHouseCustomPackagesFilterErrorImpl<T>
     TResult? Function(String error)? askEngineerFilterFailure,
     TResult? Function()? paginationLoading,
     TResult? Function(String error)? paginationFailure,
+    TResult? Function()? changeTap,
+    TResult? Function()? getAllCustomPackageLoading,
+    TResult? Function(T data)? getAllCustomPackageSuccess,
+    TResult? Function(String error)? getAllCustomPackageFailure,
+    TResult? Function()? askEngineerLookUpLoading,
+    TResult? Function(T data)? askEngineerLookUpSuccess,
+    TResult? Function(String error)? askEngineerLookUpFailure,
+    TResult? Function()? askWorkerLookUpLoading,
+    TResult? Function(T data)? askWorkerLookUpSuccess,
+    TResult? Function(String error)? askWorkerLookUpFailure,
   }) {
     return renovateYourHouseCustomPackagesFilterError?.call(error);
   }
@@ -3062,6 +3892,16 @@ class _$RenovateYourHouseCustomPackagesFilterErrorImpl<T>
     TResult Function(String error)? askEngineerFilterFailure,
     TResult Function()? paginationLoading,
     TResult Function(String error)? paginationFailure,
+    TResult Function()? changeTap,
+    TResult Function()? getAllCustomPackageLoading,
+    TResult Function(T data)? getAllCustomPackageSuccess,
+    TResult Function(String error)? getAllCustomPackageFailure,
+    TResult Function()? askEngineerLookUpLoading,
+    TResult Function(T data)? askEngineerLookUpSuccess,
+    TResult Function(String error)? askEngineerLookUpFailure,
+    TResult Function()? askWorkerLookUpLoading,
+    TResult Function(T data)? askWorkerLookUpSuccess,
+    TResult Function(String error)? askWorkerLookUpFailure,
     required TResult orElse(),
   }) {
     if (renovateYourHouseCustomPackagesFilterError != null) {
@@ -3114,6 +3954,25 @@ class _$RenovateYourHouseCustomPackagesFilterErrorImpl<T>
         paginationLoading,
     required TResult Function(RequestDesignPaginationFailure<T> value)
         paginationFailure,
+    required TResult Function(ChangeTap<T> value) changeTap,
+    required TResult Function(getAllPackagePackageLoading<T> value)
+        getAllCustomPackageLoading,
+    required TResult Function(getAllPackagePackageSuccess<T> value)
+        getAllCustomPackageSuccess,
+    required TResult Function(getAllPackagePackageFailure<T> value)
+        getAllCustomPackageFailure,
+    required TResult Function(AskEngineerLookUpLoading<T> value)
+        askEngineerLookUpLoading,
+    required TResult Function(AskEngineerLookUpSuccess<T> value)
+        askEngineerLookUpSuccess,
+    required TResult Function(AskEngineerLookUpFailure<T> value)
+        askEngineerLookUpFailure,
+    required TResult Function(AskWorkerLookUpLoading<T> value)
+        askWorkerLookUpLoading,
+    required TResult Function(AskWorkerLookUpSuccess<T> value)
+        askWorkerLookUpSuccess,
+    required TResult Function(AskWorkerLookUpFailure<T> value)
+        askWorkerLookUpFailure,
   }) {
     return renovateYourHouseCustomPackagesFilterError(this);
   }
@@ -3156,6 +4015,22 @@ class _$RenovateYourHouseCustomPackagesFilterErrorImpl<T>
         paginationLoading,
     TResult? Function(RequestDesignPaginationFailure<T> value)?
         paginationFailure,
+    TResult? Function(ChangeTap<T> value)? changeTap,
+    TResult? Function(getAllPackagePackageLoading<T> value)?
+        getAllCustomPackageLoading,
+    TResult? Function(getAllPackagePackageSuccess<T> value)?
+        getAllCustomPackageSuccess,
+    TResult? Function(getAllPackagePackageFailure<T> value)?
+        getAllCustomPackageFailure,
+    TResult? Function(AskEngineerLookUpLoading<T> value)?
+        askEngineerLookUpLoading,
+    TResult? Function(AskEngineerLookUpSuccess<T> value)?
+        askEngineerLookUpSuccess,
+    TResult? Function(AskEngineerLookUpFailure<T> value)?
+        askEngineerLookUpFailure,
+    TResult? Function(AskWorkerLookUpLoading<T> value)? askWorkerLookUpLoading,
+    TResult? Function(AskWorkerLookUpSuccess<T> value)? askWorkerLookUpSuccess,
+    TResult? Function(AskWorkerLookUpFailure<T> value)? askWorkerLookUpFailure,
   }) {
     return renovateYourHouseCustomPackagesFilterError?.call(this);
   }
@@ -3198,6 +4073,22 @@ class _$RenovateYourHouseCustomPackagesFilterErrorImpl<T>
         paginationLoading,
     TResult Function(RequestDesignPaginationFailure<T> value)?
         paginationFailure,
+    TResult Function(ChangeTap<T> value)? changeTap,
+    TResult Function(getAllPackagePackageLoading<T> value)?
+        getAllCustomPackageLoading,
+    TResult Function(getAllPackagePackageSuccess<T> value)?
+        getAllCustomPackageSuccess,
+    TResult Function(getAllPackagePackageFailure<T> value)?
+        getAllCustomPackageFailure,
+    TResult Function(AskEngineerLookUpLoading<T> value)?
+        askEngineerLookUpLoading,
+    TResult Function(AskEngineerLookUpSuccess<T> value)?
+        askEngineerLookUpSuccess,
+    TResult Function(AskEngineerLookUpFailure<T> value)?
+        askEngineerLookUpFailure,
+    TResult Function(AskWorkerLookUpLoading<T> value)? askWorkerLookUpLoading,
+    TResult Function(AskWorkerLookUpSuccess<T> value)? askWorkerLookUpSuccess,
+    TResult Function(AskWorkerLookUpFailure<T> value)? askWorkerLookUpFailure,
     required TResult orElse(),
   }) {
     if (renovateYourHouseCustomPackagesFilterError != null) {
@@ -3292,6 +4183,16 @@ class _$AskTechnicalWorkerFilterLoadingImpl<T>
     required TResult Function(String error) askEngineerFilterFailure,
     required TResult Function() paginationLoading,
     required TResult Function(String error) paginationFailure,
+    required TResult Function() changeTap,
+    required TResult Function() getAllCustomPackageLoading,
+    required TResult Function(T data) getAllCustomPackageSuccess,
+    required TResult Function(String error) getAllCustomPackageFailure,
+    required TResult Function() askEngineerLookUpLoading,
+    required TResult Function(T data) askEngineerLookUpSuccess,
+    required TResult Function(String error) askEngineerLookUpFailure,
+    required TResult Function() askWorkerLookUpLoading,
+    required TResult Function(T data) askWorkerLookUpSuccess,
+    required TResult Function(String error) askWorkerLookUpFailure,
   }) {
     return askTechnicalWorkerFilterLoading();
   }
@@ -3319,6 +4220,16 @@ class _$AskTechnicalWorkerFilterLoadingImpl<T>
     TResult? Function(String error)? askEngineerFilterFailure,
     TResult? Function()? paginationLoading,
     TResult? Function(String error)? paginationFailure,
+    TResult? Function()? changeTap,
+    TResult? Function()? getAllCustomPackageLoading,
+    TResult? Function(T data)? getAllCustomPackageSuccess,
+    TResult? Function(String error)? getAllCustomPackageFailure,
+    TResult? Function()? askEngineerLookUpLoading,
+    TResult? Function(T data)? askEngineerLookUpSuccess,
+    TResult? Function(String error)? askEngineerLookUpFailure,
+    TResult? Function()? askWorkerLookUpLoading,
+    TResult? Function(T data)? askWorkerLookUpSuccess,
+    TResult? Function(String error)? askWorkerLookUpFailure,
   }) {
     return askTechnicalWorkerFilterLoading?.call();
   }
@@ -3346,6 +4257,16 @@ class _$AskTechnicalWorkerFilterLoadingImpl<T>
     TResult Function(String error)? askEngineerFilterFailure,
     TResult Function()? paginationLoading,
     TResult Function(String error)? paginationFailure,
+    TResult Function()? changeTap,
+    TResult Function()? getAllCustomPackageLoading,
+    TResult Function(T data)? getAllCustomPackageSuccess,
+    TResult Function(String error)? getAllCustomPackageFailure,
+    TResult Function()? askEngineerLookUpLoading,
+    TResult Function(T data)? askEngineerLookUpSuccess,
+    TResult Function(String error)? askEngineerLookUpFailure,
+    TResult Function()? askWorkerLookUpLoading,
+    TResult Function(T data)? askWorkerLookUpSuccess,
+    TResult Function(String error)? askWorkerLookUpFailure,
     required TResult orElse(),
   }) {
     if (askTechnicalWorkerFilterLoading != null) {
@@ -3398,6 +4319,25 @@ class _$AskTechnicalWorkerFilterLoadingImpl<T>
         paginationLoading,
     required TResult Function(RequestDesignPaginationFailure<T> value)
         paginationFailure,
+    required TResult Function(ChangeTap<T> value) changeTap,
+    required TResult Function(getAllPackagePackageLoading<T> value)
+        getAllCustomPackageLoading,
+    required TResult Function(getAllPackagePackageSuccess<T> value)
+        getAllCustomPackageSuccess,
+    required TResult Function(getAllPackagePackageFailure<T> value)
+        getAllCustomPackageFailure,
+    required TResult Function(AskEngineerLookUpLoading<T> value)
+        askEngineerLookUpLoading,
+    required TResult Function(AskEngineerLookUpSuccess<T> value)
+        askEngineerLookUpSuccess,
+    required TResult Function(AskEngineerLookUpFailure<T> value)
+        askEngineerLookUpFailure,
+    required TResult Function(AskWorkerLookUpLoading<T> value)
+        askWorkerLookUpLoading,
+    required TResult Function(AskWorkerLookUpSuccess<T> value)
+        askWorkerLookUpSuccess,
+    required TResult Function(AskWorkerLookUpFailure<T> value)
+        askWorkerLookUpFailure,
   }) {
     return askTechnicalWorkerFilterLoading(this);
   }
@@ -3440,6 +4380,22 @@ class _$AskTechnicalWorkerFilterLoadingImpl<T>
         paginationLoading,
     TResult? Function(RequestDesignPaginationFailure<T> value)?
         paginationFailure,
+    TResult? Function(ChangeTap<T> value)? changeTap,
+    TResult? Function(getAllPackagePackageLoading<T> value)?
+        getAllCustomPackageLoading,
+    TResult? Function(getAllPackagePackageSuccess<T> value)?
+        getAllCustomPackageSuccess,
+    TResult? Function(getAllPackagePackageFailure<T> value)?
+        getAllCustomPackageFailure,
+    TResult? Function(AskEngineerLookUpLoading<T> value)?
+        askEngineerLookUpLoading,
+    TResult? Function(AskEngineerLookUpSuccess<T> value)?
+        askEngineerLookUpSuccess,
+    TResult? Function(AskEngineerLookUpFailure<T> value)?
+        askEngineerLookUpFailure,
+    TResult? Function(AskWorkerLookUpLoading<T> value)? askWorkerLookUpLoading,
+    TResult? Function(AskWorkerLookUpSuccess<T> value)? askWorkerLookUpSuccess,
+    TResult? Function(AskWorkerLookUpFailure<T> value)? askWorkerLookUpFailure,
   }) {
     return askTechnicalWorkerFilterLoading?.call(this);
   }
@@ -3482,6 +4438,22 @@ class _$AskTechnicalWorkerFilterLoadingImpl<T>
         paginationLoading,
     TResult Function(RequestDesignPaginationFailure<T> value)?
         paginationFailure,
+    TResult Function(ChangeTap<T> value)? changeTap,
+    TResult Function(getAllPackagePackageLoading<T> value)?
+        getAllCustomPackageLoading,
+    TResult Function(getAllPackagePackageSuccess<T> value)?
+        getAllCustomPackageSuccess,
+    TResult Function(getAllPackagePackageFailure<T> value)?
+        getAllCustomPackageFailure,
+    TResult Function(AskEngineerLookUpLoading<T> value)?
+        askEngineerLookUpLoading,
+    TResult Function(AskEngineerLookUpSuccess<T> value)?
+        askEngineerLookUpSuccess,
+    TResult Function(AskEngineerLookUpFailure<T> value)?
+        askEngineerLookUpFailure,
+    TResult Function(AskWorkerLookUpLoading<T> value)? askWorkerLookUpLoading,
+    TResult Function(AskWorkerLookUpSuccess<T> value)? askWorkerLookUpSuccess,
+    TResult Function(AskWorkerLookUpFailure<T> value)? askWorkerLookUpFailure,
     required TResult orElse(),
   }) {
     if (askTechnicalWorkerFilterLoading != null) {
@@ -3595,6 +4567,16 @@ class _$AskTechnicalWorkerFilterSuccessImpl<T>
     required TResult Function(String error) askEngineerFilterFailure,
     required TResult Function() paginationLoading,
     required TResult Function(String error) paginationFailure,
+    required TResult Function() changeTap,
+    required TResult Function() getAllCustomPackageLoading,
+    required TResult Function(T data) getAllCustomPackageSuccess,
+    required TResult Function(String error) getAllCustomPackageFailure,
+    required TResult Function() askEngineerLookUpLoading,
+    required TResult Function(T data) askEngineerLookUpSuccess,
+    required TResult Function(String error) askEngineerLookUpFailure,
+    required TResult Function() askWorkerLookUpLoading,
+    required TResult Function(T data) askWorkerLookUpSuccess,
+    required TResult Function(String error) askWorkerLookUpFailure,
   }) {
     return askTechnicalWorkerFilterSuccess(data);
   }
@@ -3622,6 +4604,16 @@ class _$AskTechnicalWorkerFilterSuccessImpl<T>
     TResult? Function(String error)? askEngineerFilterFailure,
     TResult? Function()? paginationLoading,
     TResult? Function(String error)? paginationFailure,
+    TResult? Function()? changeTap,
+    TResult? Function()? getAllCustomPackageLoading,
+    TResult? Function(T data)? getAllCustomPackageSuccess,
+    TResult? Function(String error)? getAllCustomPackageFailure,
+    TResult? Function()? askEngineerLookUpLoading,
+    TResult? Function(T data)? askEngineerLookUpSuccess,
+    TResult? Function(String error)? askEngineerLookUpFailure,
+    TResult? Function()? askWorkerLookUpLoading,
+    TResult? Function(T data)? askWorkerLookUpSuccess,
+    TResult? Function(String error)? askWorkerLookUpFailure,
   }) {
     return askTechnicalWorkerFilterSuccess?.call(data);
   }
@@ -3649,6 +4641,16 @@ class _$AskTechnicalWorkerFilterSuccessImpl<T>
     TResult Function(String error)? askEngineerFilterFailure,
     TResult Function()? paginationLoading,
     TResult Function(String error)? paginationFailure,
+    TResult Function()? changeTap,
+    TResult Function()? getAllCustomPackageLoading,
+    TResult Function(T data)? getAllCustomPackageSuccess,
+    TResult Function(String error)? getAllCustomPackageFailure,
+    TResult Function()? askEngineerLookUpLoading,
+    TResult Function(T data)? askEngineerLookUpSuccess,
+    TResult Function(String error)? askEngineerLookUpFailure,
+    TResult Function()? askWorkerLookUpLoading,
+    TResult Function(T data)? askWorkerLookUpSuccess,
+    TResult Function(String error)? askWorkerLookUpFailure,
     required TResult orElse(),
   }) {
     if (askTechnicalWorkerFilterSuccess != null) {
@@ -3701,6 +4703,25 @@ class _$AskTechnicalWorkerFilterSuccessImpl<T>
         paginationLoading,
     required TResult Function(RequestDesignPaginationFailure<T> value)
         paginationFailure,
+    required TResult Function(ChangeTap<T> value) changeTap,
+    required TResult Function(getAllPackagePackageLoading<T> value)
+        getAllCustomPackageLoading,
+    required TResult Function(getAllPackagePackageSuccess<T> value)
+        getAllCustomPackageSuccess,
+    required TResult Function(getAllPackagePackageFailure<T> value)
+        getAllCustomPackageFailure,
+    required TResult Function(AskEngineerLookUpLoading<T> value)
+        askEngineerLookUpLoading,
+    required TResult Function(AskEngineerLookUpSuccess<T> value)
+        askEngineerLookUpSuccess,
+    required TResult Function(AskEngineerLookUpFailure<T> value)
+        askEngineerLookUpFailure,
+    required TResult Function(AskWorkerLookUpLoading<T> value)
+        askWorkerLookUpLoading,
+    required TResult Function(AskWorkerLookUpSuccess<T> value)
+        askWorkerLookUpSuccess,
+    required TResult Function(AskWorkerLookUpFailure<T> value)
+        askWorkerLookUpFailure,
   }) {
     return askTechnicalWorkerFilterSuccess(this);
   }
@@ -3743,6 +4764,22 @@ class _$AskTechnicalWorkerFilterSuccessImpl<T>
         paginationLoading,
     TResult? Function(RequestDesignPaginationFailure<T> value)?
         paginationFailure,
+    TResult? Function(ChangeTap<T> value)? changeTap,
+    TResult? Function(getAllPackagePackageLoading<T> value)?
+        getAllCustomPackageLoading,
+    TResult? Function(getAllPackagePackageSuccess<T> value)?
+        getAllCustomPackageSuccess,
+    TResult? Function(getAllPackagePackageFailure<T> value)?
+        getAllCustomPackageFailure,
+    TResult? Function(AskEngineerLookUpLoading<T> value)?
+        askEngineerLookUpLoading,
+    TResult? Function(AskEngineerLookUpSuccess<T> value)?
+        askEngineerLookUpSuccess,
+    TResult? Function(AskEngineerLookUpFailure<T> value)?
+        askEngineerLookUpFailure,
+    TResult? Function(AskWorkerLookUpLoading<T> value)? askWorkerLookUpLoading,
+    TResult? Function(AskWorkerLookUpSuccess<T> value)? askWorkerLookUpSuccess,
+    TResult? Function(AskWorkerLookUpFailure<T> value)? askWorkerLookUpFailure,
   }) {
     return askTechnicalWorkerFilterSuccess?.call(this);
   }
@@ -3785,6 +4822,22 @@ class _$AskTechnicalWorkerFilterSuccessImpl<T>
         paginationLoading,
     TResult Function(RequestDesignPaginationFailure<T> value)?
         paginationFailure,
+    TResult Function(ChangeTap<T> value)? changeTap,
+    TResult Function(getAllPackagePackageLoading<T> value)?
+        getAllCustomPackageLoading,
+    TResult Function(getAllPackagePackageSuccess<T> value)?
+        getAllCustomPackageSuccess,
+    TResult Function(getAllPackagePackageFailure<T> value)?
+        getAllCustomPackageFailure,
+    TResult Function(AskEngineerLookUpLoading<T> value)?
+        askEngineerLookUpLoading,
+    TResult Function(AskEngineerLookUpSuccess<T> value)?
+        askEngineerLookUpSuccess,
+    TResult Function(AskEngineerLookUpFailure<T> value)?
+        askEngineerLookUpFailure,
+    TResult Function(AskWorkerLookUpLoading<T> value)? askWorkerLookUpLoading,
+    TResult Function(AskWorkerLookUpSuccess<T> value)? askWorkerLookUpSuccess,
+    TResult Function(AskWorkerLookUpFailure<T> value)? askWorkerLookUpFailure,
     required TResult orElse(),
   }) {
     if (askTechnicalWorkerFilterSuccess != null) {
@@ -3906,6 +4959,16 @@ class _$AskTechnicalWorkerFilterFailureImpl<T>
     required TResult Function(String error) askEngineerFilterFailure,
     required TResult Function() paginationLoading,
     required TResult Function(String error) paginationFailure,
+    required TResult Function() changeTap,
+    required TResult Function() getAllCustomPackageLoading,
+    required TResult Function(T data) getAllCustomPackageSuccess,
+    required TResult Function(String error) getAllCustomPackageFailure,
+    required TResult Function() askEngineerLookUpLoading,
+    required TResult Function(T data) askEngineerLookUpSuccess,
+    required TResult Function(String error) askEngineerLookUpFailure,
+    required TResult Function() askWorkerLookUpLoading,
+    required TResult Function(T data) askWorkerLookUpSuccess,
+    required TResult Function(String error) askWorkerLookUpFailure,
   }) {
     return askTechnicalWorkerFilterFailure(error);
   }
@@ -3933,6 +4996,16 @@ class _$AskTechnicalWorkerFilterFailureImpl<T>
     TResult? Function(String error)? askEngineerFilterFailure,
     TResult? Function()? paginationLoading,
     TResult? Function(String error)? paginationFailure,
+    TResult? Function()? changeTap,
+    TResult? Function()? getAllCustomPackageLoading,
+    TResult? Function(T data)? getAllCustomPackageSuccess,
+    TResult? Function(String error)? getAllCustomPackageFailure,
+    TResult? Function()? askEngineerLookUpLoading,
+    TResult? Function(T data)? askEngineerLookUpSuccess,
+    TResult? Function(String error)? askEngineerLookUpFailure,
+    TResult? Function()? askWorkerLookUpLoading,
+    TResult? Function(T data)? askWorkerLookUpSuccess,
+    TResult? Function(String error)? askWorkerLookUpFailure,
   }) {
     return askTechnicalWorkerFilterFailure?.call(error);
   }
@@ -3960,6 +5033,16 @@ class _$AskTechnicalWorkerFilterFailureImpl<T>
     TResult Function(String error)? askEngineerFilterFailure,
     TResult Function()? paginationLoading,
     TResult Function(String error)? paginationFailure,
+    TResult Function()? changeTap,
+    TResult Function()? getAllCustomPackageLoading,
+    TResult Function(T data)? getAllCustomPackageSuccess,
+    TResult Function(String error)? getAllCustomPackageFailure,
+    TResult Function()? askEngineerLookUpLoading,
+    TResult Function(T data)? askEngineerLookUpSuccess,
+    TResult Function(String error)? askEngineerLookUpFailure,
+    TResult Function()? askWorkerLookUpLoading,
+    TResult Function(T data)? askWorkerLookUpSuccess,
+    TResult Function(String error)? askWorkerLookUpFailure,
     required TResult orElse(),
   }) {
     if (askTechnicalWorkerFilterFailure != null) {
@@ -4012,6 +5095,25 @@ class _$AskTechnicalWorkerFilterFailureImpl<T>
         paginationLoading,
     required TResult Function(RequestDesignPaginationFailure<T> value)
         paginationFailure,
+    required TResult Function(ChangeTap<T> value) changeTap,
+    required TResult Function(getAllPackagePackageLoading<T> value)
+        getAllCustomPackageLoading,
+    required TResult Function(getAllPackagePackageSuccess<T> value)
+        getAllCustomPackageSuccess,
+    required TResult Function(getAllPackagePackageFailure<T> value)
+        getAllCustomPackageFailure,
+    required TResult Function(AskEngineerLookUpLoading<T> value)
+        askEngineerLookUpLoading,
+    required TResult Function(AskEngineerLookUpSuccess<T> value)
+        askEngineerLookUpSuccess,
+    required TResult Function(AskEngineerLookUpFailure<T> value)
+        askEngineerLookUpFailure,
+    required TResult Function(AskWorkerLookUpLoading<T> value)
+        askWorkerLookUpLoading,
+    required TResult Function(AskWorkerLookUpSuccess<T> value)
+        askWorkerLookUpSuccess,
+    required TResult Function(AskWorkerLookUpFailure<T> value)
+        askWorkerLookUpFailure,
   }) {
     return askTechnicalWorkerFilterFailure(this);
   }
@@ -4054,6 +5156,22 @@ class _$AskTechnicalWorkerFilterFailureImpl<T>
         paginationLoading,
     TResult? Function(RequestDesignPaginationFailure<T> value)?
         paginationFailure,
+    TResult? Function(ChangeTap<T> value)? changeTap,
+    TResult? Function(getAllPackagePackageLoading<T> value)?
+        getAllCustomPackageLoading,
+    TResult? Function(getAllPackagePackageSuccess<T> value)?
+        getAllCustomPackageSuccess,
+    TResult? Function(getAllPackagePackageFailure<T> value)?
+        getAllCustomPackageFailure,
+    TResult? Function(AskEngineerLookUpLoading<T> value)?
+        askEngineerLookUpLoading,
+    TResult? Function(AskEngineerLookUpSuccess<T> value)?
+        askEngineerLookUpSuccess,
+    TResult? Function(AskEngineerLookUpFailure<T> value)?
+        askEngineerLookUpFailure,
+    TResult? Function(AskWorkerLookUpLoading<T> value)? askWorkerLookUpLoading,
+    TResult? Function(AskWorkerLookUpSuccess<T> value)? askWorkerLookUpSuccess,
+    TResult? Function(AskWorkerLookUpFailure<T> value)? askWorkerLookUpFailure,
   }) {
     return askTechnicalWorkerFilterFailure?.call(this);
   }
@@ -4096,6 +5214,22 @@ class _$AskTechnicalWorkerFilterFailureImpl<T>
         paginationLoading,
     TResult Function(RequestDesignPaginationFailure<T> value)?
         paginationFailure,
+    TResult Function(ChangeTap<T> value)? changeTap,
+    TResult Function(getAllPackagePackageLoading<T> value)?
+        getAllCustomPackageLoading,
+    TResult Function(getAllPackagePackageSuccess<T> value)?
+        getAllCustomPackageSuccess,
+    TResult Function(getAllPackagePackageFailure<T> value)?
+        getAllCustomPackageFailure,
+    TResult Function(AskEngineerLookUpLoading<T> value)?
+        askEngineerLookUpLoading,
+    TResult Function(AskEngineerLookUpSuccess<T> value)?
+        askEngineerLookUpSuccess,
+    TResult Function(AskEngineerLookUpFailure<T> value)?
+        askEngineerLookUpFailure,
+    TResult Function(AskWorkerLookUpLoading<T> value)? askWorkerLookUpLoading,
+    TResult Function(AskWorkerLookUpSuccess<T> value)? askWorkerLookUpSuccess,
+    TResult Function(AskWorkerLookUpFailure<T> value)? askWorkerLookUpFailure,
     required TResult orElse(),
   }) {
     if (askTechnicalWorkerFilterFailure != null) {
@@ -4188,6 +5322,16 @@ class _$AskEngineerFilterLoadingImpl<T> implements AskEngineerFilterLoading<T> {
     required TResult Function(String error) askEngineerFilterFailure,
     required TResult Function() paginationLoading,
     required TResult Function(String error) paginationFailure,
+    required TResult Function() changeTap,
+    required TResult Function() getAllCustomPackageLoading,
+    required TResult Function(T data) getAllCustomPackageSuccess,
+    required TResult Function(String error) getAllCustomPackageFailure,
+    required TResult Function() askEngineerLookUpLoading,
+    required TResult Function(T data) askEngineerLookUpSuccess,
+    required TResult Function(String error) askEngineerLookUpFailure,
+    required TResult Function() askWorkerLookUpLoading,
+    required TResult Function(T data) askWorkerLookUpSuccess,
+    required TResult Function(String error) askWorkerLookUpFailure,
   }) {
     return askEngineerFilterLoading();
   }
@@ -4215,6 +5359,16 @@ class _$AskEngineerFilterLoadingImpl<T> implements AskEngineerFilterLoading<T> {
     TResult? Function(String error)? askEngineerFilterFailure,
     TResult? Function()? paginationLoading,
     TResult? Function(String error)? paginationFailure,
+    TResult? Function()? changeTap,
+    TResult? Function()? getAllCustomPackageLoading,
+    TResult? Function(T data)? getAllCustomPackageSuccess,
+    TResult? Function(String error)? getAllCustomPackageFailure,
+    TResult? Function()? askEngineerLookUpLoading,
+    TResult? Function(T data)? askEngineerLookUpSuccess,
+    TResult? Function(String error)? askEngineerLookUpFailure,
+    TResult? Function()? askWorkerLookUpLoading,
+    TResult? Function(T data)? askWorkerLookUpSuccess,
+    TResult? Function(String error)? askWorkerLookUpFailure,
   }) {
     return askEngineerFilterLoading?.call();
   }
@@ -4242,6 +5396,16 @@ class _$AskEngineerFilterLoadingImpl<T> implements AskEngineerFilterLoading<T> {
     TResult Function(String error)? askEngineerFilterFailure,
     TResult Function()? paginationLoading,
     TResult Function(String error)? paginationFailure,
+    TResult Function()? changeTap,
+    TResult Function()? getAllCustomPackageLoading,
+    TResult Function(T data)? getAllCustomPackageSuccess,
+    TResult Function(String error)? getAllCustomPackageFailure,
+    TResult Function()? askEngineerLookUpLoading,
+    TResult Function(T data)? askEngineerLookUpSuccess,
+    TResult Function(String error)? askEngineerLookUpFailure,
+    TResult Function()? askWorkerLookUpLoading,
+    TResult Function(T data)? askWorkerLookUpSuccess,
+    TResult Function(String error)? askWorkerLookUpFailure,
     required TResult orElse(),
   }) {
     if (askEngineerFilterLoading != null) {
@@ -4294,6 +5458,25 @@ class _$AskEngineerFilterLoadingImpl<T> implements AskEngineerFilterLoading<T> {
         paginationLoading,
     required TResult Function(RequestDesignPaginationFailure<T> value)
         paginationFailure,
+    required TResult Function(ChangeTap<T> value) changeTap,
+    required TResult Function(getAllPackagePackageLoading<T> value)
+        getAllCustomPackageLoading,
+    required TResult Function(getAllPackagePackageSuccess<T> value)
+        getAllCustomPackageSuccess,
+    required TResult Function(getAllPackagePackageFailure<T> value)
+        getAllCustomPackageFailure,
+    required TResult Function(AskEngineerLookUpLoading<T> value)
+        askEngineerLookUpLoading,
+    required TResult Function(AskEngineerLookUpSuccess<T> value)
+        askEngineerLookUpSuccess,
+    required TResult Function(AskEngineerLookUpFailure<T> value)
+        askEngineerLookUpFailure,
+    required TResult Function(AskWorkerLookUpLoading<T> value)
+        askWorkerLookUpLoading,
+    required TResult Function(AskWorkerLookUpSuccess<T> value)
+        askWorkerLookUpSuccess,
+    required TResult Function(AskWorkerLookUpFailure<T> value)
+        askWorkerLookUpFailure,
   }) {
     return askEngineerFilterLoading(this);
   }
@@ -4336,6 +5519,22 @@ class _$AskEngineerFilterLoadingImpl<T> implements AskEngineerFilterLoading<T> {
         paginationLoading,
     TResult? Function(RequestDesignPaginationFailure<T> value)?
         paginationFailure,
+    TResult? Function(ChangeTap<T> value)? changeTap,
+    TResult? Function(getAllPackagePackageLoading<T> value)?
+        getAllCustomPackageLoading,
+    TResult? Function(getAllPackagePackageSuccess<T> value)?
+        getAllCustomPackageSuccess,
+    TResult? Function(getAllPackagePackageFailure<T> value)?
+        getAllCustomPackageFailure,
+    TResult? Function(AskEngineerLookUpLoading<T> value)?
+        askEngineerLookUpLoading,
+    TResult? Function(AskEngineerLookUpSuccess<T> value)?
+        askEngineerLookUpSuccess,
+    TResult? Function(AskEngineerLookUpFailure<T> value)?
+        askEngineerLookUpFailure,
+    TResult? Function(AskWorkerLookUpLoading<T> value)? askWorkerLookUpLoading,
+    TResult? Function(AskWorkerLookUpSuccess<T> value)? askWorkerLookUpSuccess,
+    TResult? Function(AskWorkerLookUpFailure<T> value)? askWorkerLookUpFailure,
   }) {
     return askEngineerFilterLoading?.call(this);
   }
@@ -4378,6 +5577,22 @@ class _$AskEngineerFilterLoadingImpl<T> implements AskEngineerFilterLoading<T> {
         paginationLoading,
     TResult Function(RequestDesignPaginationFailure<T> value)?
         paginationFailure,
+    TResult Function(ChangeTap<T> value)? changeTap,
+    TResult Function(getAllPackagePackageLoading<T> value)?
+        getAllCustomPackageLoading,
+    TResult Function(getAllPackagePackageSuccess<T> value)?
+        getAllCustomPackageSuccess,
+    TResult Function(getAllPackagePackageFailure<T> value)?
+        getAllCustomPackageFailure,
+    TResult Function(AskEngineerLookUpLoading<T> value)?
+        askEngineerLookUpLoading,
+    TResult Function(AskEngineerLookUpSuccess<T> value)?
+        askEngineerLookUpSuccess,
+    TResult Function(AskEngineerLookUpFailure<T> value)?
+        askEngineerLookUpFailure,
+    TResult Function(AskWorkerLookUpLoading<T> value)? askWorkerLookUpLoading,
+    TResult Function(AskWorkerLookUpSuccess<T> value)? askWorkerLookUpSuccess,
+    TResult Function(AskWorkerLookUpFailure<T> value)? askWorkerLookUpFailure,
     required TResult orElse(),
   }) {
     if (askEngineerFilterLoading != null) {
@@ -4487,6 +5702,16 @@ class _$AskEngineerFilterSuccessImpl<T> implements AskEngineerFilterSuccess<T> {
     required TResult Function(String error) askEngineerFilterFailure,
     required TResult Function() paginationLoading,
     required TResult Function(String error) paginationFailure,
+    required TResult Function() changeTap,
+    required TResult Function() getAllCustomPackageLoading,
+    required TResult Function(T data) getAllCustomPackageSuccess,
+    required TResult Function(String error) getAllCustomPackageFailure,
+    required TResult Function() askEngineerLookUpLoading,
+    required TResult Function(T data) askEngineerLookUpSuccess,
+    required TResult Function(String error) askEngineerLookUpFailure,
+    required TResult Function() askWorkerLookUpLoading,
+    required TResult Function(T data) askWorkerLookUpSuccess,
+    required TResult Function(String error) askWorkerLookUpFailure,
   }) {
     return askEngineerFilterSuccess(data);
   }
@@ -4514,6 +5739,16 @@ class _$AskEngineerFilterSuccessImpl<T> implements AskEngineerFilterSuccess<T> {
     TResult? Function(String error)? askEngineerFilterFailure,
     TResult? Function()? paginationLoading,
     TResult? Function(String error)? paginationFailure,
+    TResult? Function()? changeTap,
+    TResult? Function()? getAllCustomPackageLoading,
+    TResult? Function(T data)? getAllCustomPackageSuccess,
+    TResult? Function(String error)? getAllCustomPackageFailure,
+    TResult? Function()? askEngineerLookUpLoading,
+    TResult? Function(T data)? askEngineerLookUpSuccess,
+    TResult? Function(String error)? askEngineerLookUpFailure,
+    TResult? Function()? askWorkerLookUpLoading,
+    TResult? Function(T data)? askWorkerLookUpSuccess,
+    TResult? Function(String error)? askWorkerLookUpFailure,
   }) {
     return askEngineerFilterSuccess?.call(data);
   }
@@ -4541,6 +5776,16 @@ class _$AskEngineerFilterSuccessImpl<T> implements AskEngineerFilterSuccess<T> {
     TResult Function(String error)? askEngineerFilterFailure,
     TResult Function()? paginationLoading,
     TResult Function(String error)? paginationFailure,
+    TResult Function()? changeTap,
+    TResult Function()? getAllCustomPackageLoading,
+    TResult Function(T data)? getAllCustomPackageSuccess,
+    TResult Function(String error)? getAllCustomPackageFailure,
+    TResult Function()? askEngineerLookUpLoading,
+    TResult Function(T data)? askEngineerLookUpSuccess,
+    TResult Function(String error)? askEngineerLookUpFailure,
+    TResult Function()? askWorkerLookUpLoading,
+    TResult Function(T data)? askWorkerLookUpSuccess,
+    TResult Function(String error)? askWorkerLookUpFailure,
     required TResult orElse(),
   }) {
     if (askEngineerFilterSuccess != null) {
@@ -4593,6 +5838,25 @@ class _$AskEngineerFilterSuccessImpl<T> implements AskEngineerFilterSuccess<T> {
         paginationLoading,
     required TResult Function(RequestDesignPaginationFailure<T> value)
         paginationFailure,
+    required TResult Function(ChangeTap<T> value) changeTap,
+    required TResult Function(getAllPackagePackageLoading<T> value)
+        getAllCustomPackageLoading,
+    required TResult Function(getAllPackagePackageSuccess<T> value)
+        getAllCustomPackageSuccess,
+    required TResult Function(getAllPackagePackageFailure<T> value)
+        getAllCustomPackageFailure,
+    required TResult Function(AskEngineerLookUpLoading<T> value)
+        askEngineerLookUpLoading,
+    required TResult Function(AskEngineerLookUpSuccess<T> value)
+        askEngineerLookUpSuccess,
+    required TResult Function(AskEngineerLookUpFailure<T> value)
+        askEngineerLookUpFailure,
+    required TResult Function(AskWorkerLookUpLoading<T> value)
+        askWorkerLookUpLoading,
+    required TResult Function(AskWorkerLookUpSuccess<T> value)
+        askWorkerLookUpSuccess,
+    required TResult Function(AskWorkerLookUpFailure<T> value)
+        askWorkerLookUpFailure,
   }) {
     return askEngineerFilterSuccess(this);
   }
@@ -4635,6 +5899,22 @@ class _$AskEngineerFilterSuccessImpl<T> implements AskEngineerFilterSuccess<T> {
         paginationLoading,
     TResult? Function(RequestDesignPaginationFailure<T> value)?
         paginationFailure,
+    TResult? Function(ChangeTap<T> value)? changeTap,
+    TResult? Function(getAllPackagePackageLoading<T> value)?
+        getAllCustomPackageLoading,
+    TResult? Function(getAllPackagePackageSuccess<T> value)?
+        getAllCustomPackageSuccess,
+    TResult? Function(getAllPackagePackageFailure<T> value)?
+        getAllCustomPackageFailure,
+    TResult? Function(AskEngineerLookUpLoading<T> value)?
+        askEngineerLookUpLoading,
+    TResult? Function(AskEngineerLookUpSuccess<T> value)?
+        askEngineerLookUpSuccess,
+    TResult? Function(AskEngineerLookUpFailure<T> value)?
+        askEngineerLookUpFailure,
+    TResult? Function(AskWorkerLookUpLoading<T> value)? askWorkerLookUpLoading,
+    TResult? Function(AskWorkerLookUpSuccess<T> value)? askWorkerLookUpSuccess,
+    TResult? Function(AskWorkerLookUpFailure<T> value)? askWorkerLookUpFailure,
   }) {
     return askEngineerFilterSuccess?.call(this);
   }
@@ -4677,6 +5957,22 @@ class _$AskEngineerFilterSuccessImpl<T> implements AskEngineerFilterSuccess<T> {
         paginationLoading,
     TResult Function(RequestDesignPaginationFailure<T> value)?
         paginationFailure,
+    TResult Function(ChangeTap<T> value)? changeTap,
+    TResult Function(getAllPackagePackageLoading<T> value)?
+        getAllCustomPackageLoading,
+    TResult Function(getAllPackagePackageSuccess<T> value)?
+        getAllCustomPackageSuccess,
+    TResult Function(getAllPackagePackageFailure<T> value)?
+        getAllCustomPackageFailure,
+    TResult Function(AskEngineerLookUpLoading<T> value)?
+        askEngineerLookUpLoading,
+    TResult Function(AskEngineerLookUpSuccess<T> value)?
+        askEngineerLookUpSuccess,
+    TResult Function(AskEngineerLookUpFailure<T> value)?
+        askEngineerLookUpFailure,
+    TResult Function(AskWorkerLookUpLoading<T> value)? askWorkerLookUpLoading,
+    TResult Function(AskWorkerLookUpSuccess<T> value)? askWorkerLookUpSuccess,
+    TResult Function(AskWorkerLookUpFailure<T> value)? askWorkerLookUpFailure,
     required TResult orElse(),
   }) {
     if (askEngineerFilterSuccess != null) {
@@ -4794,6 +6090,16 @@ class _$AskEngineerFilterFailureImpl<T> implements AskEngineerFilterFailure<T> {
     required TResult Function(String error) askEngineerFilterFailure,
     required TResult Function() paginationLoading,
     required TResult Function(String error) paginationFailure,
+    required TResult Function() changeTap,
+    required TResult Function() getAllCustomPackageLoading,
+    required TResult Function(T data) getAllCustomPackageSuccess,
+    required TResult Function(String error) getAllCustomPackageFailure,
+    required TResult Function() askEngineerLookUpLoading,
+    required TResult Function(T data) askEngineerLookUpSuccess,
+    required TResult Function(String error) askEngineerLookUpFailure,
+    required TResult Function() askWorkerLookUpLoading,
+    required TResult Function(T data) askWorkerLookUpSuccess,
+    required TResult Function(String error) askWorkerLookUpFailure,
   }) {
     return askEngineerFilterFailure(error);
   }
@@ -4821,6 +6127,16 @@ class _$AskEngineerFilterFailureImpl<T> implements AskEngineerFilterFailure<T> {
     TResult? Function(String error)? askEngineerFilterFailure,
     TResult? Function()? paginationLoading,
     TResult? Function(String error)? paginationFailure,
+    TResult? Function()? changeTap,
+    TResult? Function()? getAllCustomPackageLoading,
+    TResult? Function(T data)? getAllCustomPackageSuccess,
+    TResult? Function(String error)? getAllCustomPackageFailure,
+    TResult? Function()? askEngineerLookUpLoading,
+    TResult? Function(T data)? askEngineerLookUpSuccess,
+    TResult? Function(String error)? askEngineerLookUpFailure,
+    TResult? Function()? askWorkerLookUpLoading,
+    TResult? Function(T data)? askWorkerLookUpSuccess,
+    TResult? Function(String error)? askWorkerLookUpFailure,
   }) {
     return askEngineerFilterFailure?.call(error);
   }
@@ -4848,6 +6164,16 @@ class _$AskEngineerFilterFailureImpl<T> implements AskEngineerFilterFailure<T> {
     TResult Function(String error)? askEngineerFilterFailure,
     TResult Function()? paginationLoading,
     TResult Function(String error)? paginationFailure,
+    TResult Function()? changeTap,
+    TResult Function()? getAllCustomPackageLoading,
+    TResult Function(T data)? getAllCustomPackageSuccess,
+    TResult Function(String error)? getAllCustomPackageFailure,
+    TResult Function()? askEngineerLookUpLoading,
+    TResult Function(T data)? askEngineerLookUpSuccess,
+    TResult Function(String error)? askEngineerLookUpFailure,
+    TResult Function()? askWorkerLookUpLoading,
+    TResult Function(T data)? askWorkerLookUpSuccess,
+    TResult Function(String error)? askWorkerLookUpFailure,
     required TResult orElse(),
   }) {
     if (askEngineerFilterFailure != null) {
@@ -4900,6 +6226,25 @@ class _$AskEngineerFilterFailureImpl<T> implements AskEngineerFilterFailure<T> {
         paginationLoading,
     required TResult Function(RequestDesignPaginationFailure<T> value)
         paginationFailure,
+    required TResult Function(ChangeTap<T> value) changeTap,
+    required TResult Function(getAllPackagePackageLoading<T> value)
+        getAllCustomPackageLoading,
+    required TResult Function(getAllPackagePackageSuccess<T> value)
+        getAllCustomPackageSuccess,
+    required TResult Function(getAllPackagePackageFailure<T> value)
+        getAllCustomPackageFailure,
+    required TResult Function(AskEngineerLookUpLoading<T> value)
+        askEngineerLookUpLoading,
+    required TResult Function(AskEngineerLookUpSuccess<T> value)
+        askEngineerLookUpSuccess,
+    required TResult Function(AskEngineerLookUpFailure<T> value)
+        askEngineerLookUpFailure,
+    required TResult Function(AskWorkerLookUpLoading<T> value)
+        askWorkerLookUpLoading,
+    required TResult Function(AskWorkerLookUpSuccess<T> value)
+        askWorkerLookUpSuccess,
+    required TResult Function(AskWorkerLookUpFailure<T> value)
+        askWorkerLookUpFailure,
   }) {
     return askEngineerFilterFailure(this);
   }
@@ -4942,6 +6287,22 @@ class _$AskEngineerFilterFailureImpl<T> implements AskEngineerFilterFailure<T> {
         paginationLoading,
     TResult? Function(RequestDesignPaginationFailure<T> value)?
         paginationFailure,
+    TResult? Function(ChangeTap<T> value)? changeTap,
+    TResult? Function(getAllPackagePackageLoading<T> value)?
+        getAllCustomPackageLoading,
+    TResult? Function(getAllPackagePackageSuccess<T> value)?
+        getAllCustomPackageSuccess,
+    TResult? Function(getAllPackagePackageFailure<T> value)?
+        getAllCustomPackageFailure,
+    TResult? Function(AskEngineerLookUpLoading<T> value)?
+        askEngineerLookUpLoading,
+    TResult? Function(AskEngineerLookUpSuccess<T> value)?
+        askEngineerLookUpSuccess,
+    TResult? Function(AskEngineerLookUpFailure<T> value)?
+        askEngineerLookUpFailure,
+    TResult? Function(AskWorkerLookUpLoading<T> value)? askWorkerLookUpLoading,
+    TResult? Function(AskWorkerLookUpSuccess<T> value)? askWorkerLookUpSuccess,
+    TResult? Function(AskWorkerLookUpFailure<T> value)? askWorkerLookUpFailure,
   }) {
     return askEngineerFilterFailure?.call(this);
   }
@@ -4984,6 +6345,22 @@ class _$AskEngineerFilterFailureImpl<T> implements AskEngineerFilterFailure<T> {
         paginationLoading,
     TResult Function(RequestDesignPaginationFailure<T> value)?
         paginationFailure,
+    TResult Function(ChangeTap<T> value)? changeTap,
+    TResult Function(getAllPackagePackageLoading<T> value)?
+        getAllCustomPackageLoading,
+    TResult Function(getAllPackagePackageSuccess<T> value)?
+        getAllCustomPackageSuccess,
+    TResult Function(getAllPackagePackageFailure<T> value)?
+        getAllCustomPackageFailure,
+    TResult Function(AskEngineerLookUpLoading<T> value)?
+        askEngineerLookUpLoading,
+    TResult Function(AskEngineerLookUpSuccess<T> value)?
+        askEngineerLookUpSuccess,
+    TResult Function(AskEngineerLookUpFailure<T> value)?
+        askEngineerLookUpFailure,
+    TResult Function(AskWorkerLookUpLoading<T> value)? askWorkerLookUpLoading,
+    TResult Function(AskWorkerLookUpSuccess<T> value)? askWorkerLookUpSuccess,
+    TResult Function(AskWorkerLookUpFailure<T> value)? askWorkerLookUpFailure,
     required TResult orElse(),
   }) {
     if (askEngineerFilterFailure != null) {
@@ -5075,6 +6452,16 @@ class _$RequestDesignPaginationLoadingImpl<T>
     required TResult Function(String error) askEngineerFilterFailure,
     required TResult Function() paginationLoading,
     required TResult Function(String error) paginationFailure,
+    required TResult Function() changeTap,
+    required TResult Function() getAllCustomPackageLoading,
+    required TResult Function(T data) getAllCustomPackageSuccess,
+    required TResult Function(String error) getAllCustomPackageFailure,
+    required TResult Function() askEngineerLookUpLoading,
+    required TResult Function(T data) askEngineerLookUpSuccess,
+    required TResult Function(String error) askEngineerLookUpFailure,
+    required TResult Function() askWorkerLookUpLoading,
+    required TResult Function(T data) askWorkerLookUpSuccess,
+    required TResult Function(String error) askWorkerLookUpFailure,
   }) {
     return paginationLoading();
   }
@@ -5102,6 +6489,16 @@ class _$RequestDesignPaginationLoadingImpl<T>
     TResult? Function(String error)? askEngineerFilterFailure,
     TResult? Function()? paginationLoading,
     TResult? Function(String error)? paginationFailure,
+    TResult? Function()? changeTap,
+    TResult? Function()? getAllCustomPackageLoading,
+    TResult? Function(T data)? getAllCustomPackageSuccess,
+    TResult? Function(String error)? getAllCustomPackageFailure,
+    TResult? Function()? askEngineerLookUpLoading,
+    TResult? Function(T data)? askEngineerLookUpSuccess,
+    TResult? Function(String error)? askEngineerLookUpFailure,
+    TResult? Function()? askWorkerLookUpLoading,
+    TResult? Function(T data)? askWorkerLookUpSuccess,
+    TResult? Function(String error)? askWorkerLookUpFailure,
   }) {
     return paginationLoading?.call();
   }
@@ -5129,6 +6526,16 @@ class _$RequestDesignPaginationLoadingImpl<T>
     TResult Function(String error)? askEngineerFilterFailure,
     TResult Function()? paginationLoading,
     TResult Function(String error)? paginationFailure,
+    TResult Function()? changeTap,
+    TResult Function()? getAllCustomPackageLoading,
+    TResult Function(T data)? getAllCustomPackageSuccess,
+    TResult Function(String error)? getAllCustomPackageFailure,
+    TResult Function()? askEngineerLookUpLoading,
+    TResult Function(T data)? askEngineerLookUpSuccess,
+    TResult Function(String error)? askEngineerLookUpFailure,
+    TResult Function()? askWorkerLookUpLoading,
+    TResult Function(T data)? askWorkerLookUpSuccess,
+    TResult Function(String error)? askWorkerLookUpFailure,
     required TResult orElse(),
   }) {
     if (paginationLoading != null) {
@@ -5181,6 +6588,25 @@ class _$RequestDesignPaginationLoadingImpl<T>
         paginationLoading,
     required TResult Function(RequestDesignPaginationFailure<T> value)
         paginationFailure,
+    required TResult Function(ChangeTap<T> value) changeTap,
+    required TResult Function(getAllPackagePackageLoading<T> value)
+        getAllCustomPackageLoading,
+    required TResult Function(getAllPackagePackageSuccess<T> value)
+        getAllCustomPackageSuccess,
+    required TResult Function(getAllPackagePackageFailure<T> value)
+        getAllCustomPackageFailure,
+    required TResult Function(AskEngineerLookUpLoading<T> value)
+        askEngineerLookUpLoading,
+    required TResult Function(AskEngineerLookUpSuccess<T> value)
+        askEngineerLookUpSuccess,
+    required TResult Function(AskEngineerLookUpFailure<T> value)
+        askEngineerLookUpFailure,
+    required TResult Function(AskWorkerLookUpLoading<T> value)
+        askWorkerLookUpLoading,
+    required TResult Function(AskWorkerLookUpSuccess<T> value)
+        askWorkerLookUpSuccess,
+    required TResult Function(AskWorkerLookUpFailure<T> value)
+        askWorkerLookUpFailure,
   }) {
     return paginationLoading(this);
   }
@@ -5223,6 +6649,22 @@ class _$RequestDesignPaginationLoadingImpl<T>
         paginationLoading,
     TResult? Function(RequestDesignPaginationFailure<T> value)?
         paginationFailure,
+    TResult? Function(ChangeTap<T> value)? changeTap,
+    TResult? Function(getAllPackagePackageLoading<T> value)?
+        getAllCustomPackageLoading,
+    TResult? Function(getAllPackagePackageSuccess<T> value)?
+        getAllCustomPackageSuccess,
+    TResult? Function(getAllPackagePackageFailure<T> value)?
+        getAllCustomPackageFailure,
+    TResult? Function(AskEngineerLookUpLoading<T> value)?
+        askEngineerLookUpLoading,
+    TResult? Function(AskEngineerLookUpSuccess<T> value)?
+        askEngineerLookUpSuccess,
+    TResult? Function(AskEngineerLookUpFailure<T> value)?
+        askEngineerLookUpFailure,
+    TResult? Function(AskWorkerLookUpLoading<T> value)? askWorkerLookUpLoading,
+    TResult? Function(AskWorkerLookUpSuccess<T> value)? askWorkerLookUpSuccess,
+    TResult? Function(AskWorkerLookUpFailure<T> value)? askWorkerLookUpFailure,
   }) {
     return paginationLoading?.call(this);
   }
@@ -5265,6 +6707,22 @@ class _$RequestDesignPaginationLoadingImpl<T>
         paginationLoading,
     TResult Function(RequestDesignPaginationFailure<T> value)?
         paginationFailure,
+    TResult Function(ChangeTap<T> value)? changeTap,
+    TResult Function(getAllPackagePackageLoading<T> value)?
+        getAllCustomPackageLoading,
+    TResult Function(getAllPackagePackageSuccess<T> value)?
+        getAllCustomPackageSuccess,
+    TResult Function(getAllPackagePackageFailure<T> value)?
+        getAllCustomPackageFailure,
+    TResult Function(AskEngineerLookUpLoading<T> value)?
+        askEngineerLookUpLoading,
+    TResult Function(AskEngineerLookUpSuccess<T> value)?
+        askEngineerLookUpSuccess,
+    TResult Function(AskEngineerLookUpFailure<T> value)?
+        askEngineerLookUpFailure,
+    TResult Function(AskWorkerLookUpLoading<T> value)? askWorkerLookUpLoading,
+    TResult Function(AskWorkerLookUpSuccess<T> value)? askWorkerLookUpSuccess,
+    TResult Function(AskWorkerLookUpFailure<T> value)? askWorkerLookUpFailure,
     required TResult orElse(),
   }) {
     if (paginationLoading != null) {
@@ -5377,6 +6835,16 @@ class _$RequestDesignPaginationFailureImpl<T>
     required TResult Function(String error) askEngineerFilterFailure,
     required TResult Function() paginationLoading,
     required TResult Function(String error) paginationFailure,
+    required TResult Function() changeTap,
+    required TResult Function() getAllCustomPackageLoading,
+    required TResult Function(T data) getAllCustomPackageSuccess,
+    required TResult Function(String error) getAllCustomPackageFailure,
+    required TResult Function() askEngineerLookUpLoading,
+    required TResult Function(T data) askEngineerLookUpSuccess,
+    required TResult Function(String error) askEngineerLookUpFailure,
+    required TResult Function() askWorkerLookUpLoading,
+    required TResult Function(T data) askWorkerLookUpSuccess,
+    required TResult Function(String error) askWorkerLookUpFailure,
   }) {
     return paginationFailure(error);
   }
@@ -5404,6 +6872,16 @@ class _$RequestDesignPaginationFailureImpl<T>
     TResult? Function(String error)? askEngineerFilterFailure,
     TResult? Function()? paginationLoading,
     TResult? Function(String error)? paginationFailure,
+    TResult? Function()? changeTap,
+    TResult? Function()? getAllCustomPackageLoading,
+    TResult? Function(T data)? getAllCustomPackageSuccess,
+    TResult? Function(String error)? getAllCustomPackageFailure,
+    TResult? Function()? askEngineerLookUpLoading,
+    TResult? Function(T data)? askEngineerLookUpSuccess,
+    TResult? Function(String error)? askEngineerLookUpFailure,
+    TResult? Function()? askWorkerLookUpLoading,
+    TResult? Function(T data)? askWorkerLookUpSuccess,
+    TResult? Function(String error)? askWorkerLookUpFailure,
   }) {
     return paginationFailure?.call(error);
   }
@@ -5431,6 +6909,16 @@ class _$RequestDesignPaginationFailureImpl<T>
     TResult Function(String error)? askEngineerFilterFailure,
     TResult Function()? paginationLoading,
     TResult Function(String error)? paginationFailure,
+    TResult Function()? changeTap,
+    TResult Function()? getAllCustomPackageLoading,
+    TResult Function(T data)? getAllCustomPackageSuccess,
+    TResult Function(String error)? getAllCustomPackageFailure,
+    TResult Function()? askEngineerLookUpLoading,
+    TResult Function(T data)? askEngineerLookUpSuccess,
+    TResult Function(String error)? askEngineerLookUpFailure,
+    TResult Function()? askWorkerLookUpLoading,
+    TResult Function(T data)? askWorkerLookUpSuccess,
+    TResult Function(String error)? askWorkerLookUpFailure,
     required TResult orElse(),
   }) {
     if (paginationFailure != null) {
@@ -5483,6 +6971,25 @@ class _$RequestDesignPaginationFailureImpl<T>
         paginationLoading,
     required TResult Function(RequestDesignPaginationFailure<T> value)
         paginationFailure,
+    required TResult Function(ChangeTap<T> value) changeTap,
+    required TResult Function(getAllPackagePackageLoading<T> value)
+        getAllCustomPackageLoading,
+    required TResult Function(getAllPackagePackageSuccess<T> value)
+        getAllCustomPackageSuccess,
+    required TResult Function(getAllPackagePackageFailure<T> value)
+        getAllCustomPackageFailure,
+    required TResult Function(AskEngineerLookUpLoading<T> value)
+        askEngineerLookUpLoading,
+    required TResult Function(AskEngineerLookUpSuccess<T> value)
+        askEngineerLookUpSuccess,
+    required TResult Function(AskEngineerLookUpFailure<T> value)
+        askEngineerLookUpFailure,
+    required TResult Function(AskWorkerLookUpLoading<T> value)
+        askWorkerLookUpLoading,
+    required TResult Function(AskWorkerLookUpSuccess<T> value)
+        askWorkerLookUpSuccess,
+    required TResult Function(AskWorkerLookUpFailure<T> value)
+        askWorkerLookUpFailure,
   }) {
     return paginationFailure(this);
   }
@@ -5525,6 +7032,22 @@ class _$RequestDesignPaginationFailureImpl<T>
         paginationLoading,
     TResult? Function(RequestDesignPaginationFailure<T> value)?
         paginationFailure,
+    TResult? Function(ChangeTap<T> value)? changeTap,
+    TResult? Function(getAllPackagePackageLoading<T> value)?
+        getAllCustomPackageLoading,
+    TResult? Function(getAllPackagePackageSuccess<T> value)?
+        getAllCustomPackageSuccess,
+    TResult? Function(getAllPackagePackageFailure<T> value)?
+        getAllCustomPackageFailure,
+    TResult? Function(AskEngineerLookUpLoading<T> value)?
+        askEngineerLookUpLoading,
+    TResult? Function(AskEngineerLookUpSuccess<T> value)?
+        askEngineerLookUpSuccess,
+    TResult? Function(AskEngineerLookUpFailure<T> value)?
+        askEngineerLookUpFailure,
+    TResult? Function(AskWorkerLookUpLoading<T> value)? askWorkerLookUpLoading,
+    TResult? Function(AskWorkerLookUpSuccess<T> value)? askWorkerLookUpSuccess,
+    TResult? Function(AskWorkerLookUpFailure<T> value)? askWorkerLookUpFailure,
   }) {
     return paginationFailure?.call(this);
   }
@@ -5567,6 +7090,22 @@ class _$RequestDesignPaginationFailureImpl<T>
         paginationLoading,
     TResult Function(RequestDesignPaginationFailure<T> value)?
         paginationFailure,
+    TResult Function(ChangeTap<T> value)? changeTap,
+    TResult Function(getAllPackagePackageLoading<T> value)?
+        getAllCustomPackageLoading,
+    TResult Function(getAllPackagePackageSuccess<T> value)?
+        getAllCustomPackageSuccess,
+    TResult Function(getAllPackagePackageFailure<T> value)?
+        getAllCustomPackageFailure,
+    TResult Function(AskEngineerLookUpLoading<T> value)?
+        askEngineerLookUpLoading,
+    TResult Function(AskEngineerLookUpSuccess<T> value)?
+        askEngineerLookUpSuccess,
+    TResult Function(AskEngineerLookUpFailure<T> value)?
+        askEngineerLookUpFailure,
+    TResult Function(AskWorkerLookUpLoading<T> value)? askWorkerLookUpLoading,
+    TResult Function(AskWorkerLookUpSuccess<T> value)? askWorkerLookUpSuccess,
+    TResult Function(AskWorkerLookUpFailure<T> value)? askWorkerLookUpFailure,
     required TResult orElse(),
   }) {
     if (paginationFailure != null) {
@@ -5588,5 +7127,3750 @@ abstract class RequestDesignPaginationFailure<T>
   @JsonKey(includeFromJson: false, includeToJson: false)
   _$$RequestDesignPaginationFailureImplCopyWith<T,
           _$RequestDesignPaginationFailureImpl<T>>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$ChangeTapImplCopyWith<T, $Res> {
+  factory _$$ChangeTapImplCopyWith(
+          _$ChangeTapImpl<T> value, $Res Function(_$ChangeTapImpl<T>) then) =
+      __$$ChangeTapImplCopyWithImpl<T, $Res>;
+}
+
+/// @nodoc
+class __$$ChangeTapImplCopyWithImpl<T, $Res>
+    extends _$ProjectsFilterStateCopyWithImpl<T, $Res, _$ChangeTapImpl<T>>
+    implements _$$ChangeTapImplCopyWith<T, $Res> {
+  __$$ChangeTapImplCopyWithImpl(
+      _$ChangeTapImpl<T> _value, $Res Function(_$ChangeTapImpl<T>) _then)
+      : super(_value, _then);
+
+  /// Create a copy of ProjectsFilterState
+  /// with the given fields replaced by the non-null parameter values.
+}
+
+/// @nodoc
+
+class _$ChangeTapImpl<T> implements ChangeTap<T> {
+  _$ChangeTapImpl();
+
+  @override
+  String toString() {
+    return 'ProjectsFilterState<$T>.changeTap()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$ChangeTapImpl<T>);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() requestDesignFilterLoading,
+    required TResult Function(RequestDesignFilterResponseModel data)
+        requestDesignFilterSuccess,
+    required TResult Function(String error) requestDesignFilterFailure,
+    required TResult Function() renovateYourHouseFixedPackagesFilterLoading,
+    required TResult Function(T data)
+        renovateYourHouseFixedPackagesFilterLoaded,
+    required TResult Function(String error)
+        renovateYourHouseFixedPackagesFilterError,
+    required TResult Function() renovateYourHouseCustomPackagesFilterLoading,
+    required TResult Function(RenovateHouseFilterResponseModel data)
+        renovateYourHouseCustomPackagesFilterLoaded,
+    required TResult Function(String error)
+        renovateYourHouseCustomPackagesFilterError,
+    required TResult Function() askTechnicalWorkerFilterLoading,
+    required TResult Function(T data) askTechnicalWorkerFilterSuccess,
+    required TResult Function(String error) askTechnicalWorkerFilterFailure,
+    required TResult Function() askEngineerFilterLoading,
+    required TResult Function(T data) askEngineerFilterSuccess,
+    required TResult Function(String error) askEngineerFilterFailure,
+    required TResult Function() paginationLoading,
+    required TResult Function(String error) paginationFailure,
+    required TResult Function() changeTap,
+    required TResult Function() getAllCustomPackageLoading,
+    required TResult Function(T data) getAllCustomPackageSuccess,
+    required TResult Function(String error) getAllCustomPackageFailure,
+    required TResult Function() askEngineerLookUpLoading,
+    required TResult Function(T data) askEngineerLookUpSuccess,
+    required TResult Function(String error) askEngineerLookUpFailure,
+    required TResult Function() askWorkerLookUpLoading,
+    required TResult Function(T data) askWorkerLookUpSuccess,
+    required TResult Function(String error) askWorkerLookUpFailure,
+  }) {
+    return changeTap();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? requestDesignFilterLoading,
+    TResult? Function(RequestDesignFilterResponseModel data)?
+        requestDesignFilterSuccess,
+    TResult? Function(String error)? requestDesignFilterFailure,
+    TResult? Function()? renovateYourHouseFixedPackagesFilterLoading,
+    TResult? Function(T data)? renovateYourHouseFixedPackagesFilterLoaded,
+    TResult? Function(String error)? renovateYourHouseFixedPackagesFilterError,
+    TResult? Function()? renovateYourHouseCustomPackagesFilterLoading,
+    TResult? Function(RenovateHouseFilterResponseModel data)?
+        renovateYourHouseCustomPackagesFilterLoaded,
+    TResult? Function(String error)? renovateYourHouseCustomPackagesFilterError,
+    TResult? Function()? askTechnicalWorkerFilterLoading,
+    TResult? Function(T data)? askTechnicalWorkerFilterSuccess,
+    TResult? Function(String error)? askTechnicalWorkerFilterFailure,
+    TResult? Function()? askEngineerFilterLoading,
+    TResult? Function(T data)? askEngineerFilterSuccess,
+    TResult? Function(String error)? askEngineerFilterFailure,
+    TResult? Function()? paginationLoading,
+    TResult? Function(String error)? paginationFailure,
+    TResult? Function()? changeTap,
+    TResult? Function()? getAllCustomPackageLoading,
+    TResult? Function(T data)? getAllCustomPackageSuccess,
+    TResult? Function(String error)? getAllCustomPackageFailure,
+    TResult? Function()? askEngineerLookUpLoading,
+    TResult? Function(T data)? askEngineerLookUpSuccess,
+    TResult? Function(String error)? askEngineerLookUpFailure,
+    TResult? Function()? askWorkerLookUpLoading,
+    TResult? Function(T data)? askWorkerLookUpSuccess,
+    TResult? Function(String error)? askWorkerLookUpFailure,
+  }) {
+    return changeTap?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? requestDesignFilterLoading,
+    TResult Function(RequestDesignFilterResponseModel data)?
+        requestDesignFilterSuccess,
+    TResult Function(String error)? requestDesignFilterFailure,
+    TResult Function()? renovateYourHouseFixedPackagesFilterLoading,
+    TResult Function(T data)? renovateYourHouseFixedPackagesFilterLoaded,
+    TResult Function(String error)? renovateYourHouseFixedPackagesFilterError,
+    TResult Function()? renovateYourHouseCustomPackagesFilterLoading,
+    TResult Function(RenovateHouseFilterResponseModel data)?
+        renovateYourHouseCustomPackagesFilterLoaded,
+    TResult Function(String error)? renovateYourHouseCustomPackagesFilterError,
+    TResult Function()? askTechnicalWorkerFilterLoading,
+    TResult Function(T data)? askTechnicalWorkerFilterSuccess,
+    TResult Function(String error)? askTechnicalWorkerFilterFailure,
+    TResult Function()? askEngineerFilterLoading,
+    TResult Function(T data)? askEngineerFilterSuccess,
+    TResult Function(String error)? askEngineerFilterFailure,
+    TResult Function()? paginationLoading,
+    TResult Function(String error)? paginationFailure,
+    TResult Function()? changeTap,
+    TResult Function()? getAllCustomPackageLoading,
+    TResult Function(T data)? getAllCustomPackageSuccess,
+    TResult Function(String error)? getAllCustomPackageFailure,
+    TResult Function()? askEngineerLookUpLoading,
+    TResult Function(T data)? askEngineerLookUpSuccess,
+    TResult Function(String error)? askEngineerLookUpFailure,
+    TResult Function()? askWorkerLookUpLoading,
+    TResult Function(T data)? askWorkerLookUpSuccess,
+    TResult Function(String error)? askWorkerLookUpFailure,
+    required TResult orElse(),
+  }) {
+    if (changeTap != null) {
+      return changeTap();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial<T> value) initial,
+    required TResult Function(RequestDesignFilterLoading<T> value)
+        requestDesignFilterLoading,
+    required TResult Function(RequestDesignFilterSuccess<T> value)
+        requestDesignFilterSuccess,
+    required TResult Function(RequestDesignFilterFailure<T> value)
+        requestDesignFilterFailure,
+    required TResult Function(
+            RenovateYourHouseFixedPackagesFilterLoading<T> value)
+        renovateYourHouseFixedPackagesFilterLoading,
+    required TResult Function(
+            RenovateYourHouseFixedPackagesFilterLoaded<T> value)
+        renovateYourHouseFixedPackagesFilterLoaded,
+    required TResult Function(
+            RenovateYourHouseFixedPackagesFilterError<T> value)
+        renovateYourHouseFixedPackagesFilterError,
+    required TResult Function(
+            RenovateYourHouseCustomPackagesFilterLoading<T> value)
+        renovateYourHouseCustomPackagesFilterLoading,
+    required TResult Function(
+            RenovateYourHouseCustomPackagesFilterLoaded<T> value)
+        renovateYourHouseCustomPackagesFilterLoaded,
+    required TResult Function(
+            RenovateYourHouseCustomPackagesFilterError<T> value)
+        renovateYourHouseCustomPackagesFilterError,
+    required TResult Function(AskTechnicalWorkerFilterLoading<T> value)
+        askTechnicalWorkerFilterLoading,
+    required TResult Function(AskTechnicalWorkerFilterSuccess<T> value)
+        askTechnicalWorkerFilterSuccess,
+    required TResult Function(AskTechnicalWorkerFilterFailure<T> value)
+        askTechnicalWorkerFilterFailure,
+    required TResult Function(AskEngineerFilterLoading<T> value)
+        askEngineerFilterLoading,
+    required TResult Function(AskEngineerFilterSuccess<T> value)
+        askEngineerFilterSuccess,
+    required TResult Function(AskEngineerFilterFailure<T> value)
+        askEngineerFilterFailure,
+    required TResult Function(RequestDesignPaginationLoading<T> value)
+        paginationLoading,
+    required TResult Function(RequestDesignPaginationFailure<T> value)
+        paginationFailure,
+    required TResult Function(ChangeTap<T> value) changeTap,
+    required TResult Function(getAllPackagePackageLoading<T> value)
+        getAllCustomPackageLoading,
+    required TResult Function(getAllPackagePackageSuccess<T> value)
+        getAllCustomPackageSuccess,
+    required TResult Function(getAllPackagePackageFailure<T> value)
+        getAllCustomPackageFailure,
+    required TResult Function(AskEngineerLookUpLoading<T> value)
+        askEngineerLookUpLoading,
+    required TResult Function(AskEngineerLookUpSuccess<T> value)
+        askEngineerLookUpSuccess,
+    required TResult Function(AskEngineerLookUpFailure<T> value)
+        askEngineerLookUpFailure,
+    required TResult Function(AskWorkerLookUpLoading<T> value)
+        askWorkerLookUpLoading,
+    required TResult Function(AskWorkerLookUpSuccess<T> value)
+        askWorkerLookUpSuccess,
+    required TResult Function(AskWorkerLookUpFailure<T> value)
+        askWorkerLookUpFailure,
+  }) {
+    return changeTap(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial<T> value)? initial,
+    TResult? Function(RequestDesignFilterLoading<T> value)?
+        requestDesignFilterLoading,
+    TResult? Function(RequestDesignFilterSuccess<T> value)?
+        requestDesignFilterSuccess,
+    TResult? Function(RequestDesignFilterFailure<T> value)?
+        requestDesignFilterFailure,
+    TResult? Function(RenovateYourHouseFixedPackagesFilterLoading<T> value)?
+        renovateYourHouseFixedPackagesFilterLoading,
+    TResult? Function(RenovateYourHouseFixedPackagesFilterLoaded<T> value)?
+        renovateYourHouseFixedPackagesFilterLoaded,
+    TResult? Function(RenovateYourHouseFixedPackagesFilterError<T> value)?
+        renovateYourHouseFixedPackagesFilterError,
+    TResult? Function(RenovateYourHouseCustomPackagesFilterLoading<T> value)?
+        renovateYourHouseCustomPackagesFilterLoading,
+    TResult? Function(RenovateYourHouseCustomPackagesFilterLoaded<T> value)?
+        renovateYourHouseCustomPackagesFilterLoaded,
+    TResult? Function(RenovateYourHouseCustomPackagesFilterError<T> value)?
+        renovateYourHouseCustomPackagesFilterError,
+    TResult? Function(AskTechnicalWorkerFilterLoading<T> value)?
+        askTechnicalWorkerFilterLoading,
+    TResult? Function(AskTechnicalWorkerFilterSuccess<T> value)?
+        askTechnicalWorkerFilterSuccess,
+    TResult? Function(AskTechnicalWorkerFilterFailure<T> value)?
+        askTechnicalWorkerFilterFailure,
+    TResult? Function(AskEngineerFilterLoading<T> value)?
+        askEngineerFilterLoading,
+    TResult? Function(AskEngineerFilterSuccess<T> value)?
+        askEngineerFilterSuccess,
+    TResult? Function(AskEngineerFilterFailure<T> value)?
+        askEngineerFilterFailure,
+    TResult? Function(RequestDesignPaginationLoading<T> value)?
+        paginationLoading,
+    TResult? Function(RequestDesignPaginationFailure<T> value)?
+        paginationFailure,
+    TResult? Function(ChangeTap<T> value)? changeTap,
+    TResult? Function(getAllPackagePackageLoading<T> value)?
+        getAllCustomPackageLoading,
+    TResult? Function(getAllPackagePackageSuccess<T> value)?
+        getAllCustomPackageSuccess,
+    TResult? Function(getAllPackagePackageFailure<T> value)?
+        getAllCustomPackageFailure,
+    TResult? Function(AskEngineerLookUpLoading<T> value)?
+        askEngineerLookUpLoading,
+    TResult? Function(AskEngineerLookUpSuccess<T> value)?
+        askEngineerLookUpSuccess,
+    TResult? Function(AskEngineerLookUpFailure<T> value)?
+        askEngineerLookUpFailure,
+    TResult? Function(AskWorkerLookUpLoading<T> value)? askWorkerLookUpLoading,
+    TResult? Function(AskWorkerLookUpSuccess<T> value)? askWorkerLookUpSuccess,
+    TResult? Function(AskWorkerLookUpFailure<T> value)? askWorkerLookUpFailure,
+  }) {
+    return changeTap?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial<T> value)? initial,
+    TResult Function(RequestDesignFilterLoading<T> value)?
+        requestDesignFilterLoading,
+    TResult Function(RequestDesignFilterSuccess<T> value)?
+        requestDesignFilterSuccess,
+    TResult Function(RequestDesignFilterFailure<T> value)?
+        requestDesignFilterFailure,
+    TResult Function(RenovateYourHouseFixedPackagesFilterLoading<T> value)?
+        renovateYourHouseFixedPackagesFilterLoading,
+    TResult Function(RenovateYourHouseFixedPackagesFilterLoaded<T> value)?
+        renovateYourHouseFixedPackagesFilterLoaded,
+    TResult Function(RenovateYourHouseFixedPackagesFilterError<T> value)?
+        renovateYourHouseFixedPackagesFilterError,
+    TResult Function(RenovateYourHouseCustomPackagesFilterLoading<T> value)?
+        renovateYourHouseCustomPackagesFilterLoading,
+    TResult Function(RenovateYourHouseCustomPackagesFilterLoaded<T> value)?
+        renovateYourHouseCustomPackagesFilterLoaded,
+    TResult Function(RenovateYourHouseCustomPackagesFilterError<T> value)?
+        renovateYourHouseCustomPackagesFilterError,
+    TResult Function(AskTechnicalWorkerFilterLoading<T> value)?
+        askTechnicalWorkerFilterLoading,
+    TResult Function(AskTechnicalWorkerFilterSuccess<T> value)?
+        askTechnicalWorkerFilterSuccess,
+    TResult Function(AskTechnicalWorkerFilterFailure<T> value)?
+        askTechnicalWorkerFilterFailure,
+    TResult Function(AskEngineerFilterLoading<T> value)?
+        askEngineerFilterLoading,
+    TResult Function(AskEngineerFilterSuccess<T> value)?
+        askEngineerFilterSuccess,
+    TResult Function(AskEngineerFilterFailure<T> value)?
+        askEngineerFilterFailure,
+    TResult Function(RequestDesignPaginationLoading<T> value)?
+        paginationLoading,
+    TResult Function(RequestDesignPaginationFailure<T> value)?
+        paginationFailure,
+    TResult Function(ChangeTap<T> value)? changeTap,
+    TResult Function(getAllPackagePackageLoading<T> value)?
+        getAllCustomPackageLoading,
+    TResult Function(getAllPackagePackageSuccess<T> value)?
+        getAllCustomPackageSuccess,
+    TResult Function(getAllPackagePackageFailure<T> value)?
+        getAllCustomPackageFailure,
+    TResult Function(AskEngineerLookUpLoading<T> value)?
+        askEngineerLookUpLoading,
+    TResult Function(AskEngineerLookUpSuccess<T> value)?
+        askEngineerLookUpSuccess,
+    TResult Function(AskEngineerLookUpFailure<T> value)?
+        askEngineerLookUpFailure,
+    TResult Function(AskWorkerLookUpLoading<T> value)? askWorkerLookUpLoading,
+    TResult Function(AskWorkerLookUpSuccess<T> value)? askWorkerLookUpSuccess,
+    TResult Function(AskWorkerLookUpFailure<T> value)? askWorkerLookUpFailure,
+    required TResult orElse(),
+  }) {
+    if (changeTap != null) {
+      return changeTap(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class ChangeTap<T> implements ProjectsFilterState<T> {
+  factory ChangeTap() = _$ChangeTapImpl<T>;
+}
+
+/// @nodoc
+abstract class _$$getAllPackagePackageLoadingImplCopyWith<T, $Res> {
+  factory _$$getAllPackagePackageLoadingImplCopyWith(
+          _$getAllPackagePackageLoadingImpl<T> value,
+          $Res Function(_$getAllPackagePackageLoadingImpl<T>) then) =
+      __$$getAllPackagePackageLoadingImplCopyWithImpl<T, $Res>;
+}
+
+/// @nodoc
+class __$$getAllPackagePackageLoadingImplCopyWithImpl<T, $Res>
+    extends _$ProjectsFilterStateCopyWithImpl<T, $Res,
+        _$getAllPackagePackageLoadingImpl<T>>
+    implements _$$getAllPackagePackageLoadingImplCopyWith<T, $Res> {
+  __$$getAllPackagePackageLoadingImplCopyWithImpl(
+      _$getAllPackagePackageLoadingImpl<T> _value,
+      $Res Function(_$getAllPackagePackageLoadingImpl<T>) _then)
+      : super(_value, _then);
+
+  /// Create a copy of ProjectsFilterState
+  /// with the given fields replaced by the non-null parameter values.
+}
+
+/// @nodoc
+
+class _$getAllPackagePackageLoadingImpl<T>
+    implements getAllPackagePackageLoading<T> {
+  _$getAllPackagePackageLoadingImpl();
+
+  @override
+  String toString() {
+    return 'ProjectsFilterState<$T>.getAllCustomPackageLoading()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$getAllPackagePackageLoadingImpl<T>);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() requestDesignFilterLoading,
+    required TResult Function(RequestDesignFilterResponseModel data)
+        requestDesignFilterSuccess,
+    required TResult Function(String error) requestDesignFilterFailure,
+    required TResult Function() renovateYourHouseFixedPackagesFilterLoading,
+    required TResult Function(T data)
+        renovateYourHouseFixedPackagesFilterLoaded,
+    required TResult Function(String error)
+        renovateYourHouseFixedPackagesFilterError,
+    required TResult Function() renovateYourHouseCustomPackagesFilterLoading,
+    required TResult Function(RenovateHouseFilterResponseModel data)
+        renovateYourHouseCustomPackagesFilterLoaded,
+    required TResult Function(String error)
+        renovateYourHouseCustomPackagesFilterError,
+    required TResult Function() askTechnicalWorkerFilterLoading,
+    required TResult Function(T data) askTechnicalWorkerFilterSuccess,
+    required TResult Function(String error) askTechnicalWorkerFilterFailure,
+    required TResult Function() askEngineerFilterLoading,
+    required TResult Function(T data) askEngineerFilterSuccess,
+    required TResult Function(String error) askEngineerFilterFailure,
+    required TResult Function() paginationLoading,
+    required TResult Function(String error) paginationFailure,
+    required TResult Function() changeTap,
+    required TResult Function() getAllCustomPackageLoading,
+    required TResult Function(T data) getAllCustomPackageSuccess,
+    required TResult Function(String error) getAllCustomPackageFailure,
+    required TResult Function() askEngineerLookUpLoading,
+    required TResult Function(T data) askEngineerLookUpSuccess,
+    required TResult Function(String error) askEngineerLookUpFailure,
+    required TResult Function() askWorkerLookUpLoading,
+    required TResult Function(T data) askWorkerLookUpSuccess,
+    required TResult Function(String error) askWorkerLookUpFailure,
+  }) {
+    return getAllCustomPackageLoading();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? requestDesignFilterLoading,
+    TResult? Function(RequestDesignFilterResponseModel data)?
+        requestDesignFilterSuccess,
+    TResult? Function(String error)? requestDesignFilterFailure,
+    TResult? Function()? renovateYourHouseFixedPackagesFilterLoading,
+    TResult? Function(T data)? renovateYourHouseFixedPackagesFilterLoaded,
+    TResult? Function(String error)? renovateYourHouseFixedPackagesFilterError,
+    TResult? Function()? renovateYourHouseCustomPackagesFilterLoading,
+    TResult? Function(RenovateHouseFilterResponseModel data)?
+        renovateYourHouseCustomPackagesFilterLoaded,
+    TResult? Function(String error)? renovateYourHouseCustomPackagesFilterError,
+    TResult? Function()? askTechnicalWorkerFilterLoading,
+    TResult? Function(T data)? askTechnicalWorkerFilterSuccess,
+    TResult? Function(String error)? askTechnicalWorkerFilterFailure,
+    TResult? Function()? askEngineerFilterLoading,
+    TResult? Function(T data)? askEngineerFilterSuccess,
+    TResult? Function(String error)? askEngineerFilterFailure,
+    TResult? Function()? paginationLoading,
+    TResult? Function(String error)? paginationFailure,
+    TResult? Function()? changeTap,
+    TResult? Function()? getAllCustomPackageLoading,
+    TResult? Function(T data)? getAllCustomPackageSuccess,
+    TResult? Function(String error)? getAllCustomPackageFailure,
+    TResult? Function()? askEngineerLookUpLoading,
+    TResult? Function(T data)? askEngineerLookUpSuccess,
+    TResult? Function(String error)? askEngineerLookUpFailure,
+    TResult? Function()? askWorkerLookUpLoading,
+    TResult? Function(T data)? askWorkerLookUpSuccess,
+    TResult? Function(String error)? askWorkerLookUpFailure,
+  }) {
+    return getAllCustomPackageLoading?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? requestDesignFilterLoading,
+    TResult Function(RequestDesignFilterResponseModel data)?
+        requestDesignFilterSuccess,
+    TResult Function(String error)? requestDesignFilterFailure,
+    TResult Function()? renovateYourHouseFixedPackagesFilterLoading,
+    TResult Function(T data)? renovateYourHouseFixedPackagesFilterLoaded,
+    TResult Function(String error)? renovateYourHouseFixedPackagesFilterError,
+    TResult Function()? renovateYourHouseCustomPackagesFilterLoading,
+    TResult Function(RenovateHouseFilterResponseModel data)?
+        renovateYourHouseCustomPackagesFilterLoaded,
+    TResult Function(String error)? renovateYourHouseCustomPackagesFilterError,
+    TResult Function()? askTechnicalWorkerFilterLoading,
+    TResult Function(T data)? askTechnicalWorkerFilterSuccess,
+    TResult Function(String error)? askTechnicalWorkerFilterFailure,
+    TResult Function()? askEngineerFilterLoading,
+    TResult Function(T data)? askEngineerFilterSuccess,
+    TResult Function(String error)? askEngineerFilterFailure,
+    TResult Function()? paginationLoading,
+    TResult Function(String error)? paginationFailure,
+    TResult Function()? changeTap,
+    TResult Function()? getAllCustomPackageLoading,
+    TResult Function(T data)? getAllCustomPackageSuccess,
+    TResult Function(String error)? getAllCustomPackageFailure,
+    TResult Function()? askEngineerLookUpLoading,
+    TResult Function(T data)? askEngineerLookUpSuccess,
+    TResult Function(String error)? askEngineerLookUpFailure,
+    TResult Function()? askWorkerLookUpLoading,
+    TResult Function(T data)? askWorkerLookUpSuccess,
+    TResult Function(String error)? askWorkerLookUpFailure,
+    required TResult orElse(),
+  }) {
+    if (getAllCustomPackageLoading != null) {
+      return getAllCustomPackageLoading();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial<T> value) initial,
+    required TResult Function(RequestDesignFilterLoading<T> value)
+        requestDesignFilterLoading,
+    required TResult Function(RequestDesignFilterSuccess<T> value)
+        requestDesignFilterSuccess,
+    required TResult Function(RequestDesignFilterFailure<T> value)
+        requestDesignFilterFailure,
+    required TResult Function(
+            RenovateYourHouseFixedPackagesFilterLoading<T> value)
+        renovateYourHouseFixedPackagesFilterLoading,
+    required TResult Function(
+            RenovateYourHouseFixedPackagesFilterLoaded<T> value)
+        renovateYourHouseFixedPackagesFilterLoaded,
+    required TResult Function(
+            RenovateYourHouseFixedPackagesFilterError<T> value)
+        renovateYourHouseFixedPackagesFilterError,
+    required TResult Function(
+            RenovateYourHouseCustomPackagesFilterLoading<T> value)
+        renovateYourHouseCustomPackagesFilterLoading,
+    required TResult Function(
+            RenovateYourHouseCustomPackagesFilterLoaded<T> value)
+        renovateYourHouseCustomPackagesFilterLoaded,
+    required TResult Function(
+            RenovateYourHouseCustomPackagesFilterError<T> value)
+        renovateYourHouseCustomPackagesFilterError,
+    required TResult Function(AskTechnicalWorkerFilterLoading<T> value)
+        askTechnicalWorkerFilterLoading,
+    required TResult Function(AskTechnicalWorkerFilterSuccess<T> value)
+        askTechnicalWorkerFilterSuccess,
+    required TResult Function(AskTechnicalWorkerFilterFailure<T> value)
+        askTechnicalWorkerFilterFailure,
+    required TResult Function(AskEngineerFilterLoading<T> value)
+        askEngineerFilterLoading,
+    required TResult Function(AskEngineerFilterSuccess<T> value)
+        askEngineerFilterSuccess,
+    required TResult Function(AskEngineerFilterFailure<T> value)
+        askEngineerFilterFailure,
+    required TResult Function(RequestDesignPaginationLoading<T> value)
+        paginationLoading,
+    required TResult Function(RequestDesignPaginationFailure<T> value)
+        paginationFailure,
+    required TResult Function(ChangeTap<T> value) changeTap,
+    required TResult Function(getAllPackagePackageLoading<T> value)
+        getAllCustomPackageLoading,
+    required TResult Function(getAllPackagePackageSuccess<T> value)
+        getAllCustomPackageSuccess,
+    required TResult Function(getAllPackagePackageFailure<T> value)
+        getAllCustomPackageFailure,
+    required TResult Function(AskEngineerLookUpLoading<T> value)
+        askEngineerLookUpLoading,
+    required TResult Function(AskEngineerLookUpSuccess<T> value)
+        askEngineerLookUpSuccess,
+    required TResult Function(AskEngineerLookUpFailure<T> value)
+        askEngineerLookUpFailure,
+    required TResult Function(AskWorkerLookUpLoading<T> value)
+        askWorkerLookUpLoading,
+    required TResult Function(AskWorkerLookUpSuccess<T> value)
+        askWorkerLookUpSuccess,
+    required TResult Function(AskWorkerLookUpFailure<T> value)
+        askWorkerLookUpFailure,
+  }) {
+    return getAllCustomPackageLoading(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial<T> value)? initial,
+    TResult? Function(RequestDesignFilterLoading<T> value)?
+        requestDesignFilterLoading,
+    TResult? Function(RequestDesignFilterSuccess<T> value)?
+        requestDesignFilterSuccess,
+    TResult? Function(RequestDesignFilterFailure<T> value)?
+        requestDesignFilterFailure,
+    TResult? Function(RenovateYourHouseFixedPackagesFilterLoading<T> value)?
+        renovateYourHouseFixedPackagesFilterLoading,
+    TResult? Function(RenovateYourHouseFixedPackagesFilterLoaded<T> value)?
+        renovateYourHouseFixedPackagesFilterLoaded,
+    TResult? Function(RenovateYourHouseFixedPackagesFilterError<T> value)?
+        renovateYourHouseFixedPackagesFilterError,
+    TResult? Function(RenovateYourHouseCustomPackagesFilterLoading<T> value)?
+        renovateYourHouseCustomPackagesFilterLoading,
+    TResult? Function(RenovateYourHouseCustomPackagesFilterLoaded<T> value)?
+        renovateYourHouseCustomPackagesFilterLoaded,
+    TResult? Function(RenovateYourHouseCustomPackagesFilterError<T> value)?
+        renovateYourHouseCustomPackagesFilterError,
+    TResult? Function(AskTechnicalWorkerFilterLoading<T> value)?
+        askTechnicalWorkerFilterLoading,
+    TResult? Function(AskTechnicalWorkerFilterSuccess<T> value)?
+        askTechnicalWorkerFilterSuccess,
+    TResult? Function(AskTechnicalWorkerFilterFailure<T> value)?
+        askTechnicalWorkerFilterFailure,
+    TResult? Function(AskEngineerFilterLoading<T> value)?
+        askEngineerFilterLoading,
+    TResult? Function(AskEngineerFilterSuccess<T> value)?
+        askEngineerFilterSuccess,
+    TResult? Function(AskEngineerFilterFailure<T> value)?
+        askEngineerFilterFailure,
+    TResult? Function(RequestDesignPaginationLoading<T> value)?
+        paginationLoading,
+    TResult? Function(RequestDesignPaginationFailure<T> value)?
+        paginationFailure,
+    TResult? Function(ChangeTap<T> value)? changeTap,
+    TResult? Function(getAllPackagePackageLoading<T> value)?
+        getAllCustomPackageLoading,
+    TResult? Function(getAllPackagePackageSuccess<T> value)?
+        getAllCustomPackageSuccess,
+    TResult? Function(getAllPackagePackageFailure<T> value)?
+        getAllCustomPackageFailure,
+    TResult? Function(AskEngineerLookUpLoading<T> value)?
+        askEngineerLookUpLoading,
+    TResult? Function(AskEngineerLookUpSuccess<T> value)?
+        askEngineerLookUpSuccess,
+    TResult? Function(AskEngineerLookUpFailure<T> value)?
+        askEngineerLookUpFailure,
+    TResult? Function(AskWorkerLookUpLoading<T> value)? askWorkerLookUpLoading,
+    TResult? Function(AskWorkerLookUpSuccess<T> value)? askWorkerLookUpSuccess,
+    TResult? Function(AskWorkerLookUpFailure<T> value)? askWorkerLookUpFailure,
+  }) {
+    return getAllCustomPackageLoading?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial<T> value)? initial,
+    TResult Function(RequestDesignFilterLoading<T> value)?
+        requestDesignFilterLoading,
+    TResult Function(RequestDesignFilterSuccess<T> value)?
+        requestDesignFilterSuccess,
+    TResult Function(RequestDesignFilterFailure<T> value)?
+        requestDesignFilterFailure,
+    TResult Function(RenovateYourHouseFixedPackagesFilterLoading<T> value)?
+        renovateYourHouseFixedPackagesFilterLoading,
+    TResult Function(RenovateYourHouseFixedPackagesFilterLoaded<T> value)?
+        renovateYourHouseFixedPackagesFilterLoaded,
+    TResult Function(RenovateYourHouseFixedPackagesFilterError<T> value)?
+        renovateYourHouseFixedPackagesFilterError,
+    TResult Function(RenovateYourHouseCustomPackagesFilterLoading<T> value)?
+        renovateYourHouseCustomPackagesFilterLoading,
+    TResult Function(RenovateYourHouseCustomPackagesFilterLoaded<T> value)?
+        renovateYourHouseCustomPackagesFilterLoaded,
+    TResult Function(RenovateYourHouseCustomPackagesFilterError<T> value)?
+        renovateYourHouseCustomPackagesFilterError,
+    TResult Function(AskTechnicalWorkerFilterLoading<T> value)?
+        askTechnicalWorkerFilterLoading,
+    TResult Function(AskTechnicalWorkerFilterSuccess<T> value)?
+        askTechnicalWorkerFilterSuccess,
+    TResult Function(AskTechnicalWorkerFilterFailure<T> value)?
+        askTechnicalWorkerFilterFailure,
+    TResult Function(AskEngineerFilterLoading<T> value)?
+        askEngineerFilterLoading,
+    TResult Function(AskEngineerFilterSuccess<T> value)?
+        askEngineerFilterSuccess,
+    TResult Function(AskEngineerFilterFailure<T> value)?
+        askEngineerFilterFailure,
+    TResult Function(RequestDesignPaginationLoading<T> value)?
+        paginationLoading,
+    TResult Function(RequestDesignPaginationFailure<T> value)?
+        paginationFailure,
+    TResult Function(ChangeTap<T> value)? changeTap,
+    TResult Function(getAllPackagePackageLoading<T> value)?
+        getAllCustomPackageLoading,
+    TResult Function(getAllPackagePackageSuccess<T> value)?
+        getAllCustomPackageSuccess,
+    TResult Function(getAllPackagePackageFailure<T> value)?
+        getAllCustomPackageFailure,
+    TResult Function(AskEngineerLookUpLoading<T> value)?
+        askEngineerLookUpLoading,
+    TResult Function(AskEngineerLookUpSuccess<T> value)?
+        askEngineerLookUpSuccess,
+    TResult Function(AskEngineerLookUpFailure<T> value)?
+        askEngineerLookUpFailure,
+    TResult Function(AskWorkerLookUpLoading<T> value)? askWorkerLookUpLoading,
+    TResult Function(AskWorkerLookUpSuccess<T> value)? askWorkerLookUpSuccess,
+    TResult Function(AskWorkerLookUpFailure<T> value)? askWorkerLookUpFailure,
+    required TResult orElse(),
+  }) {
+    if (getAllCustomPackageLoading != null) {
+      return getAllCustomPackageLoading(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class getAllPackagePackageLoading<T>
+    implements ProjectsFilterState<T> {
+  factory getAllPackagePackageLoading() = _$getAllPackagePackageLoadingImpl<T>;
+}
+
+/// @nodoc
+abstract class _$$getAllPackagePackageSuccessImplCopyWith<T, $Res> {
+  factory _$$getAllPackagePackageSuccessImplCopyWith(
+          _$getAllPackagePackageSuccessImpl<T> value,
+          $Res Function(_$getAllPackagePackageSuccessImpl<T>) then) =
+      __$$getAllPackagePackageSuccessImplCopyWithImpl<T, $Res>;
+  @useResult
+  $Res call({T data});
+}
+
+/// @nodoc
+class __$$getAllPackagePackageSuccessImplCopyWithImpl<T, $Res>
+    extends _$ProjectsFilterStateCopyWithImpl<T, $Res,
+        _$getAllPackagePackageSuccessImpl<T>>
+    implements _$$getAllPackagePackageSuccessImplCopyWith<T, $Res> {
+  __$$getAllPackagePackageSuccessImplCopyWithImpl(
+      _$getAllPackagePackageSuccessImpl<T> _value,
+      $Res Function(_$getAllPackagePackageSuccessImpl<T>) _then)
+      : super(_value, _then);
+
+  /// Create a copy of ProjectsFilterState
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? data = freezed,
+  }) {
+    return _then(_$getAllPackagePackageSuccessImpl<T>(
+      freezed == data
+          ? _value.data
+          : data // ignore: cast_nullable_to_non_nullable
+              as T,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$getAllPackagePackageSuccessImpl<T>
+    implements getAllPackagePackageSuccess<T> {
+  _$getAllPackagePackageSuccessImpl(this.data);
+
+  @override
+  final T data;
+
+  @override
+  String toString() {
+    return 'ProjectsFilterState<$T>.getAllCustomPackageSuccess(data: $data)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$getAllPackagePackageSuccessImpl<T> &&
+            const DeepCollectionEquality().equals(other.data, data));
+  }
+
+  @override
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(data));
+
+  /// Create a copy of ProjectsFilterState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$getAllPackagePackageSuccessImplCopyWith<T,
+          _$getAllPackagePackageSuccessImpl<T>>
+      get copyWith => __$$getAllPackagePackageSuccessImplCopyWithImpl<T,
+          _$getAllPackagePackageSuccessImpl<T>>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() requestDesignFilterLoading,
+    required TResult Function(RequestDesignFilterResponseModel data)
+        requestDesignFilterSuccess,
+    required TResult Function(String error) requestDesignFilterFailure,
+    required TResult Function() renovateYourHouseFixedPackagesFilterLoading,
+    required TResult Function(T data)
+        renovateYourHouseFixedPackagesFilterLoaded,
+    required TResult Function(String error)
+        renovateYourHouseFixedPackagesFilterError,
+    required TResult Function() renovateYourHouseCustomPackagesFilterLoading,
+    required TResult Function(RenovateHouseFilterResponseModel data)
+        renovateYourHouseCustomPackagesFilterLoaded,
+    required TResult Function(String error)
+        renovateYourHouseCustomPackagesFilterError,
+    required TResult Function() askTechnicalWorkerFilterLoading,
+    required TResult Function(T data) askTechnicalWorkerFilterSuccess,
+    required TResult Function(String error) askTechnicalWorkerFilterFailure,
+    required TResult Function() askEngineerFilterLoading,
+    required TResult Function(T data) askEngineerFilterSuccess,
+    required TResult Function(String error) askEngineerFilterFailure,
+    required TResult Function() paginationLoading,
+    required TResult Function(String error) paginationFailure,
+    required TResult Function() changeTap,
+    required TResult Function() getAllCustomPackageLoading,
+    required TResult Function(T data) getAllCustomPackageSuccess,
+    required TResult Function(String error) getAllCustomPackageFailure,
+    required TResult Function() askEngineerLookUpLoading,
+    required TResult Function(T data) askEngineerLookUpSuccess,
+    required TResult Function(String error) askEngineerLookUpFailure,
+    required TResult Function() askWorkerLookUpLoading,
+    required TResult Function(T data) askWorkerLookUpSuccess,
+    required TResult Function(String error) askWorkerLookUpFailure,
+  }) {
+    return getAllCustomPackageSuccess(data);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? requestDesignFilterLoading,
+    TResult? Function(RequestDesignFilterResponseModel data)?
+        requestDesignFilterSuccess,
+    TResult? Function(String error)? requestDesignFilterFailure,
+    TResult? Function()? renovateYourHouseFixedPackagesFilterLoading,
+    TResult? Function(T data)? renovateYourHouseFixedPackagesFilterLoaded,
+    TResult? Function(String error)? renovateYourHouseFixedPackagesFilterError,
+    TResult? Function()? renovateYourHouseCustomPackagesFilterLoading,
+    TResult? Function(RenovateHouseFilterResponseModel data)?
+        renovateYourHouseCustomPackagesFilterLoaded,
+    TResult? Function(String error)? renovateYourHouseCustomPackagesFilterError,
+    TResult? Function()? askTechnicalWorkerFilterLoading,
+    TResult? Function(T data)? askTechnicalWorkerFilterSuccess,
+    TResult? Function(String error)? askTechnicalWorkerFilterFailure,
+    TResult? Function()? askEngineerFilterLoading,
+    TResult? Function(T data)? askEngineerFilterSuccess,
+    TResult? Function(String error)? askEngineerFilterFailure,
+    TResult? Function()? paginationLoading,
+    TResult? Function(String error)? paginationFailure,
+    TResult? Function()? changeTap,
+    TResult? Function()? getAllCustomPackageLoading,
+    TResult? Function(T data)? getAllCustomPackageSuccess,
+    TResult? Function(String error)? getAllCustomPackageFailure,
+    TResult? Function()? askEngineerLookUpLoading,
+    TResult? Function(T data)? askEngineerLookUpSuccess,
+    TResult? Function(String error)? askEngineerLookUpFailure,
+    TResult? Function()? askWorkerLookUpLoading,
+    TResult? Function(T data)? askWorkerLookUpSuccess,
+    TResult? Function(String error)? askWorkerLookUpFailure,
+  }) {
+    return getAllCustomPackageSuccess?.call(data);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? requestDesignFilterLoading,
+    TResult Function(RequestDesignFilterResponseModel data)?
+        requestDesignFilterSuccess,
+    TResult Function(String error)? requestDesignFilterFailure,
+    TResult Function()? renovateYourHouseFixedPackagesFilterLoading,
+    TResult Function(T data)? renovateYourHouseFixedPackagesFilterLoaded,
+    TResult Function(String error)? renovateYourHouseFixedPackagesFilterError,
+    TResult Function()? renovateYourHouseCustomPackagesFilterLoading,
+    TResult Function(RenovateHouseFilterResponseModel data)?
+        renovateYourHouseCustomPackagesFilterLoaded,
+    TResult Function(String error)? renovateYourHouseCustomPackagesFilterError,
+    TResult Function()? askTechnicalWorkerFilterLoading,
+    TResult Function(T data)? askTechnicalWorkerFilterSuccess,
+    TResult Function(String error)? askTechnicalWorkerFilterFailure,
+    TResult Function()? askEngineerFilterLoading,
+    TResult Function(T data)? askEngineerFilterSuccess,
+    TResult Function(String error)? askEngineerFilterFailure,
+    TResult Function()? paginationLoading,
+    TResult Function(String error)? paginationFailure,
+    TResult Function()? changeTap,
+    TResult Function()? getAllCustomPackageLoading,
+    TResult Function(T data)? getAllCustomPackageSuccess,
+    TResult Function(String error)? getAllCustomPackageFailure,
+    TResult Function()? askEngineerLookUpLoading,
+    TResult Function(T data)? askEngineerLookUpSuccess,
+    TResult Function(String error)? askEngineerLookUpFailure,
+    TResult Function()? askWorkerLookUpLoading,
+    TResult Function(T data)? askWorkerLookUpSuccess,
+    TResult Function(String error)? askWorkerLookUpFailure,
+    required TResult orElse(),
+  }) {
+    if (getAllCustomPackageSuccess != null) {
+      return getAllCustomPackageSuccess(data);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial<T> value) initial,
+    required TResult Function(RequestDesignFilterLoading<T> value)
+        requestDesignFilterLoading,
+    required TResult Function(RequestDesignFilterSuccess<T> value)
+        requestDesignFilterSuccess,
+    required TResult Function(RequestDesignFilterFailure<T> value)
+        requestDesignFilterFailure,
+    required TResult Function(
+            RenovateYourHouseFixedPackagesFilterLoading<T> value)
+        renovateYourHouseFixedPackagesFilterLoading,
+    required TResult Function(
+            RenovateYourHouseFixedPackagesFilterLoaded<T> value)
+        renovateYourHouseFixedPackagesFilterLoaded,
+    required TResult Function(
+            RenovateYourHouseFixedPackagesFilterError<T> value)
+        renovateYourHouseFixedPackagesFilterError,
+    required TResult Function(
+            RenovateYourHouseCustomPackagesFilterLoading<T> value)
+        renovateYourHouseCustomPackagesFilterLoading,
+    required TResult Function(
+            RenovateYourHouseCustomPackagesFilterLoaded<T> value)
+        renovateYourHouseCustomPackagesFilterLoaded,
+    required TResult Function(
+            RenovateYourHouseCustomPackagesFilterError<T> value)
+        renovateYourHouseCustomPackagesFilterError,
+    required TResult Function(AskTechnicalWorkerFilterLoading<T> value)
+        askTechnicalWorkerFilterLoading,
+    required TResult Function(AskTechnicalWorkerFilterSuccess<T> value)
+        askTechnicalWorkerFilterSuccess,
+    required TResult Function(AskTechnicalWorkerFilterFailure<T> value)
+        askTechnicalWorkerFilterFailure,
+    required TResult Function(AskEngineerFilterLoading<T> value)
+        askEngineerFilterLoading,
+    required TResult Function(AskEngineerFilterSuccess<T> value)
+        askEngineerFilterSuccess,
+    required TResult Function(AskEngineerFilterFailure<T> value)
+        askEngineerFilterFailure,
+    required TResult Function(RequestDesignPaginationLoading<T> value)
+        paginationLoading,
+    required TResult Function(RequestDesignPaginationFailure<T> value)
+        paginationFailure,
+    required TResult Function(ChangeTap<T> value) changeTap,
+    required TResult Function(getAllPackagePackageLoading<T> value)
+        getAllCustomPackageLoading,
+    required TResult Function(getAllPackagePackageSuccess<T> value)
+        getAllCustomPackageSuccess,
+    required TResult Function(getAllPackagePackageFailure<T> value)
+        getAllCustomPackageFailure,
+    required TResult Function(AskEngineerLookUpLoading<T> value)
+        askEngineerLookUpLoading,
+    required TResult Function(AskEngineerLookUpSuccess<T> value)
+        askEngineerLookUpSuccess,
+    required TResult Function(AskEngineerLookUpFailure<T> value)
+        askEngineerLookUpFailure,
+    required TResult Function(AskWorkerLookUpLoading<T> value)
+        askWorkerLookUpLoading,
+    required TResult Function(AskWorkerLookUpSuccess<T> value)
+        askWorkerLookUpSuccess,
+    required TResult Function(AskWorkerLookUpFailure<T> value)
+        askWorkerLookUpFailure,
+  }) {
+    return getAllCustomPackageSuccess(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial<T> value)? initial,
+    TResult? Function(RequestDesignFilterLoading<T> value)?
+        requestDesignFilterLoading,
+    TResult? Function(RequestDesignFilterSuccess<T> value)?
+        requestDesignFilterSuccess,
+    TResult? Function(RequestDesignFilterFailure<T> value)?
+        requestDesignFilterFailure,
+    TResult? Function(RenovateYourHouseFixedPackagesFilterLoading<T> value)?
+        renovateYourHouseFixedPackagesFilterLoading,
+    TResult? Function(RenovateYourHouseFixedPackagesFilterLoaded<T> value)?
+        renovateYourHouseFixedPackagesFilterLoaded,
+    TResult? Function(RenovateYourHouseFixedPackagesFilterError<T> value)?
+        renovateYourHouseFixedPackagesFilterError,
+    TResult? Function(RenovateYourHouseCustomPackagesFilterLoading<T> value)?
+        renovateYourHouseCustomPackagesFilterLoading,
+    TResult? Function(RenovateYourHouseCustomPackagesFilterLoaded<T> value)?
+        renovateYourHouseCustomPackagesFilterLoaded,
+    TResult? Function(RenovateYourHouseCustomPackagesFilterError<T> value)?
+        renovateYourHouseCustomPackagesFilterError,
+    TResult? Function(AskTechnicalWorkerFilterLoading<T> value)?
+        askTechnicalWorkerFilterLoading,
+    TResult? Function(AskTechnicalWorkerFilterSuccess<T> value)?
+        askTechnicalWorkerFilterSuccess,
+    TResult? Function(AskTechnicalWorkerFilterFailure<T> value)?
+        askTechnicalWorkerFilterFailure,
+    TResult? Function(AskEngineerFilterLoading<T> value)?
+        askEngineerFilterLoading,
+    TResult? Function(AskEngineerFilterSuccess<T> value)?
+        askEngineerFilterSuccess,
+    TResult? Function(AskEngineerFilterFailure<T> value)?
+        askEngineerFilterFailure,
+    TResult? Function(RequestDesignPaginationLoading<T> value)?
+        paginationLoading,
+    TResult? Function(RequestDesignPaginationFailure<T> value)?
+        paginationFailure,
+    TResult? Function(ChangeTap<T> value)? changeTap,
+    TResult? Function(getAllPackagePackageLoading<T> value)?
+        getAllCustomPackageLoading,
+    TResult? Function(getAllPackagePackageSuccess<T> value)?
+        getAllCustomPackageSuccess,
+    TResult? Function(getAllPackagePackageFailure<T> value)?
+        getAllCustomPackageFailure,
+    TResult? Function(AskEngineerLookUpLoading<T> value)?
+        askEngineerLookUpLoading,
+    TResult? Function(AskEngineerLookUpSuccess<T> value)?
+        askEngineerLookUpSuccess,
+    TResult? Function(AskEngineerLookUpFailure<T> value)?
+        askEngineerLookUpFailure,
+    TResult? Function(AskWorkerLookUpLoading<T> value)? askWorkerLookUpLoading,
+    TResult? Function(AskWorkerLookUpSuccess<T> value)? askWorkerLookUpSuccess,
+    TResult? Function(AskWorkerLookUpFailure<T> value)? askWorkerLookUpFailure,
+  }) {
+    return getAllCustomPackageSuccess?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial<T> value)? initial,
+    TResult Function(RequestDesignFilterLoading<T> value)?
+        requestDesignFilterLoading,
+    TResult Function(RequestDesignFilterSuccess<T> value)?
+        requestDesignFilterSuccess,
+    TResult Function(RequestDesignFilterFailure<T> value)?
+        requestDesignFilterFailure,
+    TResult Function(RenovateYourHouseFixedPackagesFilterLoading<T> value)?
+        renovateYourHouseFixedPackagesFilterLoading,
+    TResult Function(RenovateYourHouseFixedPackagesFilterLoaded<T> value)?
+        renovateYourHouseFixedPackagesFilterLoaded,
+    TResult Function(RenovateYourHouseFixedPackagesFilterError<T> value)?
+        renovateYourHouseFixedPackagesFilterError,
+    TResult Function(RenovateYourHouseCustomPackagesFilterLoading<T> value)?
+        renovateYourHouseCustomPackagesFilterLoading,
+    TResult Function(RenovateYourHouseCustomPackagesFilterLoaded<T> value)?
+        renovateYourHouseCustomPackagesFilterLoaded,
+    TResult Function(RenovateYourHouseCustomPackagesFilterError<T> value)?
+        renovateYourHouseCustomPackagesFilterError,
+    TResult Function(AskTechnicalWorkerFilterLoading<T> value)?
+        askTechnicalWorkerFilterLoading,
+    TResult Function(AskTechnicalWorkerFilterSuccess<T> value)?
+        askTechnicalWorkerFilterSuccess,
+    TResult Function(AskTechnicalWorkerFilterFailure<T> value)?
+        askTechnicalWorkerFilterFailure,
+    TResult Function(AskEngineerFilterLoading<T> value)?
+        askEngineerFilterLoading,
+    TResult Function(AskEngineerFilterSuccess<T> value)?
+        askEngineerFilterSuccess,
+    TResult Function(AskEngineerFilterFailure<T> value)?
+        askEngineerFilterFailure,
+    TResult Function(RequestDesignPaginationLoading<T> value)?
+        paginationLoading,
+    TResult Function(RequestDesignPaginationFailure<T> value)?
+        paginationFailure,
+    TResult Function(ChangeTap<T> value)? changeTap,
+    TResult Function(getAllPackagePackageLoading<T> value)?
+        getAllCustomPackageLoading,
+    TResult Function(getAllPackagePackageSuccess<T> value)?
+        getAllCustomPackageSuccess,
+    TResult Function(getAllPackagePackageFailure<T> value)?
+        getAllCustomPackageFailure,
+    TResult Function(AskEngineerLookUpLoading<T> value)?
+        askEngineerLookUpLoading,
+    TResult Function(AskEngineerLookUpSuccess<T> value)?
+        askEngineerLookUpSuccess,
+    TResult Function(AskEngineerLookUpFailure<T> value)?
+        askEngineerLookUpFailure,
+    TResult Function(AskWorkerLookUpLoading<T> value)? askWorkerLookUpLoading,
+    TResult Function(AskWorkerLookUpSuccess<T> value)? askWorkerLookUpSuccess,
+    TResult Function(AskWorkerLookUpFailure<T> value)? askWorkerLookUpFailure,
+    required TResult orElse(),
+  }) {
+    if (getAllCustomPackageSuccess != null) {
+      return getAllCustomPackageSuccess(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class getAllPackagePackageSuccess<T>
+    implements ProjectsFilterState<T> {
+  factory getAllPackagePackageSuccess(final T data) =
+      _$getAllPackagePackageSuccessImpl<T>;
+
+  T get data;
+
+  /// Create a copy of ProjectsFilterState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$getAllPackagePackageSuccessImplCopyWith<T,
+          _$getAllPackagePackageSuccessImpl<T>>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$getAllPackagePackageFailureImplCopyWith<T, $Res> {
+  factory _$$getAllPackagePackageFailureImplCopyWith(
+          _$getAllPackagePackageFailureImpl<T> value,
+          $Res Function(_$getAllPackagePackageFailureImpl<T>) then) =
+      __$$getAllPackagePackageFailureImplCopyWithImpl<T, $Res>;
+  @useResult
+  $Res call({String error});
+}
+
+/// @nodoc
+class __$$getAllPackagePackageFailureImplCopyWithImpl<T, $Res>
+    extends _$ProjectsFilterStateCopyWithImpl<T, $Res,
+        _$getAllPackagePackageFailureImpl<T>>
+    implements _$$getAllPackagePackageFailureImplCopyWith<T, $Res> {
+  __$$getAllPackagePackageFailureImplCopyWithImpl(
+      _$getAllPackagePackageFailureImpl<T> _value,
+      $Res Function(_$getAllPackagePackageFailureImpl<T>) _then)
+      : super(_value, _then);
+
+  /// Create a copy of ProjectsFilterState
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? error = null,
+  }) {
+    return _then(_$getAllPackagePackageFailureImpl<T>(
+      error: null == error
+          ? _value.error
+          : error // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$getAllPackagePackageFailureImpl<T>
+    implements getAllPackagePackageFailure<T> {
+  _$getAllPackagePackageFailureImpl({required this.error});
+
+  @override
+  final String error;
+
+  @override
+  String toString() {
+    return 'ProjectsFilterState<$T>.getAllCustomPackageFailure(error: $error)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$getAllPackagePackageFailureImpl<T> &&
+            (identical(other.error, error) || other.error == error));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, error);
+
+  /// Create a copy of ProjectsFilterState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$getAllPackagePackageFailureImplCopyWith<T,
+          _$getAllPackagePackageFailureImpl<T>>
+      get copyWith => __$$getAllPackagePackageFailureImplCopyWithImpl<T,
+          _$getAllPackagePackageFailureImpl<T>>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() requestDesignFilterLoading,
+    required TResult Function(RequestDesignFilterResponseModel data)
+        requestDesignFilterSuccess,
+    required TResult Function(String error) requestDesignFilterFailure,
+    required TResult Function() renovateYourHouseFixedPackagesFilterLoading,
+    required TResult Function(T data)
+        renovateYourHouseFixedPackagesFilterLoaded,
+    required TResult Function(String error)
+        renovateYourHouseFixedPackagesFilterError,
+    required TResult Function() renovateYourHouseCustomPackagesFilterLoading,
+    required TResult Function(RenovateHouseFilterResponseModel data)
+        renovateYourHouseCustomPackagesFilterLoaded,
+    required TResult Function(String error)
+        renovateYourHouseCustomPackagesFilterError,
+    required TResult Function() askTechnicalWorkerFilterLoading,
+    required TResult Function(T data) askTechnicalWorkerFilterSuccess,
+    required TResult Function(String error) askTechnicalWorkerFilterFailure,
+    required TResult Function() askEngineerFilterLoading,
+    required TResult Function(T data) askEngineerFilterSuccess,
+    required TResult Function(String error) askEngineerFilterFailure,
+    required TResult Function() paginationLoading,
+    required TResult Function(String error) paginationFailure,
+    required TResult Function() changeTap,
+    required TResult Function() getAllCustomPackageLoading,
+    required TResult Function(T data) getAllCustomPackageSuccess,
+    required TResult Function(String error) getAllCustomPackageFailure,
+    required TResult Function() askEngineerLookUpLoading,
+    required TResult Function(T data) askEngineerLookUpSuccess,
+    required TResult Function(String error) askEngineerLookUpFailure,
+    required TResult Function() askWorkerLookUpLoading,
+    required TResult Function(T data) askWorkerLookUpSuccess,
+    required TResult Function(String error) askWorkerLookUpFailure,
+  }) {
+    return getAllCustomPackageFailure(error);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? requestDesignFilterLoading,
+    TResult? Function(RequestDesignFilterResponseModel data)?
+        requestDesignFilterSuccess,
+    TResult? Function(String error)? requestDesignFilterFailure,
+    TResult? Function()? renovateYourHouseFixedPackagesFilterLoading,
+    TResult? Function(T data)? renovateYourHouseFixedPackagesFilterLoaded,
+    TResult? Function(String error)? renovateYourHouseFixedPackagesFilterError,
+    TResult? Function()? renovateYourHouseCustomPackagesFilterLoading,
+    TResult? Function(RenovateHouseFilterResponseModel data)?
+        renovateYourHouseCustomPackagesFilterLoaded,
+    TResult? Function(String error)? renovateYourHouseCustomPackagesFilterError,
+    TResult? Function()? askTechnicalWorkerFilterLoading,
+    TResult? Function(T data)? askTechnicalWorkerFilterSuccess,
+    TResult? Function(String error)? askTechnicalWorkerFilterFailure,
+    TResult? Function()? askEngineerFilterLoading,
+    TResult? Function(T data)? askEngineerFilterSuccess,
+    TResult? Function(String error)? askEngineerFilterFailure,
+    TResult? Function()? paginationLoading,
+    TResult? Function(String error)? paginationFailure,
+    TResult? Function()? changeTap,
+    TResult? Function()? getAllCustomPackageLoading,
+    TResult? Function(T data)? getAllCustomPackageSuccess,
+    TResult? Function(String error)? getAllCustomPackageFailure,
+    TResult? Function()? askEngineerLookUpLoading,
+    TResult? Function(T data)? askEngineerLookUpSuccess,
+    TResult? Function(String error)? askEngineerLookUpFailure,
+    TResult? Function()? askWorkerLookUpLoading,
+    TResult? Function(T data)? askWorkerLookUpSuccess,
+    TResult? Function(String error)? askWorkerLookUpFailure,
+  }) {
+    return getAllCustomPackageFailure?.call(error);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? requestDesignFilterLoading,
+    TResult Function(RequestDesignFilterResponseModel data)?
+        requestDesignFilterSuccess,
+    TResult Function(String error)? requestDesignFilterFailure,
+    TResult Function()? renovateYourHouseFixedPackagesFilterLoading,
+    TResult Function(T data)? renovateYourHouseFixedPackagesFilterLoaded,
+    TResult Function(String error)? renovateYourHouseFixedPackagesFilterError,
+    TResult Function()? renovateYourHouseCustomPackagesFilterLoading,
+    TResult Function(RenovateHouseFilterResponseModel data)?
+        renovateYourHouseCustomPackagesFilterLoaded,
+    TResult Function(String error)? renovateYourHouseCustomPackagesFilterError,
+    TResult Function()? askTechnicalWorkerFilterLoading,
+    TResult Function(T data)? askTechnicalWorkerFilterSuccess,
+    TResult Function(String error)? askTechnicalWorkerFilterFailure,
+    TResult Function()? askEngineerFilterLoading,
+    TResult Function(T data)? askEngineerFilterSuccess,
+    TResult Function(String error)? askEngineerFilterFailure,
+    TResult Function()? paginationLoading,
+    TResult Function(String error)? paginationFailure,
+    TResult Function()? changeTap,
+    TResult Function()? getAllCustomPackageLoading,
+    TResult Function(T data)? getAllCustomPackageSuccess,
+    TResult Function(String error)? getAllCustomPackageFailure,
+    TResult Function()? askEngineerLookUpLoading,
+    TResult Function(T data)? askEngineerLookUpSuccess,
+    TResult Function(String error)? askEngineerLookUpFailure,
+    TResult Function()? askWorkerLookUpLoading,
+    TResult Function(T data)? askWorkerLookUpSuccess,
+    TResult Function(String error)? askWorkerLookUpFailure,
+    required TResult orElse(),
+  }) {
+    if (getAllCustomPackageFailure != null) {
+      return getAllCustomPackageFailure(error);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial<T> value) initial,
+    required TResult Function(RequestDesignFilterLoading<T> value)
+        requestDesignFilterLoading,
+    required TResult Function(RequestDesignFilterSuccess<T> value)
+        requestDesignFilterSuccess,
+    required TResult Function(RequestDesignFilterFailure<T> value)
+        requestDesignFilterFailure,
+    required TResult Function(
+            RenovateYourHouseFixedPackagesFilterLoading<T> value)
+        renovateYourHouseFixedPackagesFilterLoading,
+    required TResult Function(
+            RenovateYourHouseFixedPackagesFilterLoaded<T> value)
+        renovateYourHouseFixedPackagesFilterLoaded,
+    required TResult Function(
+            RenovateYourHouseFixedPackagesFilterError<T> value)
+        renovateYourHouseFixedPackagesFilterError,
+    required TResult Function(
+            RenovateYourHouseCustomPackagesFilterLoading<T> value)
+        renovateYourHouseCustomPackagesFilterLoading,
+    required TResult Function(
+            RenovateYourHouseCustomPackagesFilterLoaded<T> value)
+        renovateYourHouseCustomPackagesFilterLoaded,
+    required TResult Function(
+            RenovateYourHouseCustomPackagesFilterError<T> value)
+        renovateYourHouseCustomPackagesFilterError,
+    required TResult Function(AskTechnicalWorkerFilterLoading<T> value)
+        askTechnicalWorkerFilterLoading,
+    required TResult Function(AskTechnicalWorkerFilterSuccess<T> value)
+        askTechnicalWorkerFilterSuccess,
+    required TResult Function(AskTechnicalWorkerFilterFailure<T> value)
+        askTechnicalWorkerFilterFailure,
+    required TResult Function(AskEngineerFilterLoading<T> value)
+        askEngineerFilterLoading,
+    required TResult Function(AskEngineerFilterSuccess<T> value)
+        askEngineerFilterSuccess,
+    required TResult Function(AskEngineerFilterFailure<T> value)
+        askEngineerFilterFailure,
+    required TResult Function(RequestDesignPaginationLoading<T> value)
+        paginationLoading,
+    required TResult Function(RequestDesignPaginationFailure<T> value)
+        paginationFailure,
+    required TResult Function(ChangeTap<T> value) changeTap,
+    required TResult Function(getAllPackagePackageLoading<T> value)
+        getAllCustomPackageLoading,
+    required TResult Function(getAllPackagePackageSuccess<T> value)
+        getAllCustomPackageSuccess,
+    required TResult Function(getAllPackagePackageFailure<T> value)
+        getAllCustomPackageFailure,
+    required TResult Function(AskEngineerLookUpLoading<T> value)
+        askEngineerLookUpLoading,
+    required TResult Function(AskEngineerLookUpSuccess<T> value)
+        askEngineerLookUpSuccess,
+    required TResult Function(AskEngineerLookUpFailure<T> value)
+        askEngineerLookUpFailure,
+    required TResult Function(AskWorkerLookUpLoading<T> value)
+        askWorkerLookUpLoading,
+    required TResult Function(AskWorkerLookUpSuccess<T> value)
+        askWorkerLookUpSuccess,
+    required TResult Function(AskWorkerLookUpFailure<T> value)
+        askWorkerLookUpFailure,
+  }) {
+    return getAllCustomPackageFailure(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial<T> value)? initial,
+    TResult? Function(RequestDesignFilterLoading<T> value)?
+        requestDesignFilterLoading,
+    TResult? Function(RequestDesignFilterSuccess<T> value)?
+        requestDesignFilterSuccess,
+    TResult? Function(RequestDesignFilterFailure<T> value)?
+        requestDesignFilterFailure,
+    TResult? Function(RenovateYourHouseFixedPackagesFilterLoading<T> value)?
+        renovateYourHouseFixedPackagesFilterLoading,
+    TResult? Function(RenovateYourHouseFixedPackagesFilterLoaded<T> value)?
+        renovateYourHouseFixedPackagesFilterLoaded,
+    TResult? Function(RenovateYourHouseFixedPackagesFilterError<T> value)?
+        renovateYourHouseFixedPackagesFilterError,
+    TResult? Function(RenovateYourHouseCustomPackagesFilterLoading<T> value)?
+        renovateYourHouseCustomPackagesFilterLoading,
+    TResult? Function(RenovateYourHouseCustomPackagesFilterLoaded<T> value)?
+        renovateYourHouseCustomPackagesFilterLoaded,
+    TResult? Function(RenovateYourHouseCustomPackagesFilterError<T> value)?
+        renovateYourHouseCustomPackagesFilterError,
+    TResult? Function(AskTechnicalWorkerFilterLoading<T> value)?
+        askTechnicalWorkerFilterLoading,
+    TResult? Function(AskTechnicalWorkerFilterSuccess<T> value)?
+        askTechnicalWorkerFilterSuccess,
+    TResult? Function(AskTechnicalWorkerFilterFailure<T> value)?
+        askTechnicalWorkerFilterFailure,
+    TResult? Function(AskEngineerFilterLoading<T> value)?
+        askEngineerFilterLoading,
+    TResult? Function(AskEngineerFilterSuccess<T> value)?
+        askEngineerFilterSuccess,
+    TResult? Function(AskEngineerFilterFailure<T> value)?
+        askEngineerFilterFailure,
+    TResult? Function(RequestDesignPaginationLoading<T> value)?
+        paginationLoading,
+    TResult? Function(RequestDesignPaginationFailure<T> value)?
+        paginationFailure,
+    TResult? Function(ChangeTap<T> value)? changeTap,
+    TResult? Function(getAllPackagePackageLoading<T> value)?
+        getAllCustomPackageLoading,
+    TResult? Function(getAllPackagePackageSuccess<T> value)?
+        getAllCustomPackageSuccess,
+    TResult? Function(getAllPackagePackageFailure<T> value)?
+        getAllCustomPackageFailure,
+    TResult? Function(AskEngineerLookUpLoading<T> value)?
+        askEngineerLookUpLoading,
+    TResult? Function(AskEngineerLookUpSuccess<T> value)?
+        askEngineerLookUpSuccess,
+    TResult? Function(AskEngineerLookUpFailure<T> value)?
+        askEngineerLookUpFailure,
+    TResult? Function(AskWorkerLookUpLoading<T> value)? askWorkerLookUpLoading,
+    TResult? Function(AskWorkerLookUpSuccess<T> value)? askWorkerLookUpSuccess,
+    TResult? Function(AskWorkerLookUpFailure<T> value)? askWorkerLookUpFailure,
+  }) {
+    return getAllCustomPackageFailure?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial<T> value)? initial,
+    TResult Function(RequestDesignFilterLoading<T> value)?
+        requestDesignFilterLoading,
+    TResult Function(RequestDesignFilterSuccess<T> value)?
+        requestDesignFilterSuccess,
+    TResult Function(RequestDesignFilterFailure<T> value)?
+        requestDesignFilterFailure,
+    TResult Function(RenovateYourHouseFixedPackagesFilterLoading<T> value)?
+        renovateYourHouseFixedPackagesFilterLoading,
+    TResult Function(RenovateYourHouseFixedPackagesFilterLoaded<T> value)?
+        renovateYourHouseFixedPackagesFilterLoaded,
+    TResult Function(RenovateYourHouseFixedPackagesFilterError<T> value)?
+        renovateYourHouseFixedPackagesFilterError,
+    TResult Function(RenovateYourHouseCustomPackagesFilterLoading<T> value)?
+        renovateYourHouseCustomPackagesFilterLoading,
+    TResult Function(RenovateYourHouseCustomPackagesFilterLoaded<T> value)?
+        renovateYourHouseCustomPackagesFilterLoaded,
+    TResult Function(RenovateYourHouseCustomPackagesFilterError<T> value)?
+        renovateYourHouseCustomPackagesFilterError,
+    TResult Function(AskTechnicalWorkerFilterLoading<T> value)?
+        askTechnicalWorkerFilterLoading,
+    TResult Function(AskTechnicalWorkerFilterSuccess<T> value)?
+        askTechnicalWorkerFilterSuccess,
+    TResult Function(AskTechnicalWorkerFilterFailure<T> value)?
+        askTechnicalWorkerFilterFailure,
+    TResult Function(AskEngineerFilterLoading<T> value)?
+        askEngineerFilterLoading,
+    TResult Function(AskEngineerFilterSuccess<T> value)?
+        askEngineerFilterSuccess,
+    TResult Function(AskEngineerFilterFailure<T> value)?
+        askEngineerFilterFailure,
+    TResult Function(RequestDesignPaginationLoading<T> value)?
+        paginationLoading,
+    TResult Function(RequestDesignPaginationFailure<T> value)?
+        paginationFailure,
+    TResult Function(ChangeTap<T> value)? changeTap,
+    TResult Function(getAllPackagePackageLoading<T> value)?
+        getAllCustomPackageLoading,
+    TResult Function(getAllPackagePackageSuccess<T> value)?
+        getAllCustomPackageSuccess,
+    TResult Function(getAllPackagePackageFailure<T> value)?
+        getAllCustomPackageFailure,
+    TResult Function(AskEngineerLookUpLoading<T> value)?
+        askEngineerLookUpLoading,
+    TResult Function(AskEngineerLookUpSuccess<T> value)?
+        askEngineerLookUpSuccess,
+    TResult Function(AskEngineerLookUpFailure<T> value)?
+        askEngineerLookUpFailure,
+    TResult Function(AskWorkerLookUpLoading<T> value)? askWorkerLookUpLoading,
+    TResult Function(AskWorkerLookUpSuccess<T> value)? askWorkerLookUpSuccess,
+    TResult Function(AskWorkerLookUpFailure<T> value)? askWorkerLookUpFailure,
+    required TResult orElse(),
+  }) {
+    if (getAllCustomPackageFailure != null) {
+      return getAllCustomPackageFailure(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class getAllPackagePackageFailure<T>
+    implements ProjectsFilterState<T> {
+  factory getAllPackagePackageFailure({required final String error}) =
+      _$getAllPackagePackageFailureImpl<T>;
+
+  String get error;
+
+  /// Create a copy of ProjectsFilterState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$getAllPackagePackageFailureImplCopyWith<T,
+          _$getAllPackagePackageFailureImpl<T>>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$AskEngineerLookUpLoadingImplCopyWith<T, $Res> {
+  factory _$$AskEngineerLookUpLoadingImplCopyWith(
+          _$AskEngineerLookUpLoadingImpl<T> value,
+          $Res Function(_$AskEngineerLookUpLoadingImpl<T>) then) =
+      __$$AskEngineerLookUpLoadingImplCopyWithImpl<T, $Res>;
+}
+
+/// @nodoc
+class __$$AskEngineerLookUpLoadingImplCopyWithImpl<T, $Res>
+    extends _$ProjectsFilterStateCopyWithImpl<T, $Res,
+        _$AskEngineerLookUpLoadingImpl<T>>
+    implements _$$AskEngineerLookUpLoadingImplCopyWith<T, $Res> {
+  __$$AskEngineerLookUpLoadingImplCopyWithImpl(
+      _$AskEngineerLookUpLoadingImpl<T> _value,
+      $Res Function(_$AskEngineerLookUpLoadingImpl<T>) _then)
+      : super(_value, _then);
+
+  /// Create a copy of ProjectsFilterState
+  /// with the given fields replaced by the non-null parameter values.
+}
+
+/// @nodoc
+
+class _$AskEngineerLookUpLoadingImpl<T> implements AskEngineerLookUpLoading<T> {
+  _$AskEngineerLookUpLoadingImpl();
+
+  @override
+  String toString() {
+    return 'ProjectsFilterState<$T>.askEngineerLookUpLoading()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$AskEngineerLookUpLoadingImpl<T>);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() requestDesignFilterLoading,
+    required TResult Function(RequestDesignFilterResponseModel data)
+        requestDesignFilterSuccess,
+    required TResult Function(String error) requestDesignFilterFailure,
+    required TResult Function() renovateYourHouseFixedPackagesFilterLoading,
+    required TResult Function(T data)
+        renovateYourHouseFixedPackagesFilterLoaded,
+    required TResult Function(String error)
+        renovateYourHouseFixedPackagesFilterError,
+    required TResult Function() renovateYourHouseCustomPackagesFilterLoading,
+    required TResult Function(RenovateHouseFilterResponseModel data)
+        renovateYourHouseCustomPackagesFilterLoaded,
+    required TResult Function(String error)
+        renovateYourHouseCustomPackagesFilterError,
+    required TResult Function() askTechnicalWorkerFilterLoading,
+    required TResult Function(T data) askTechnicalWorkerFilterSuccess,
+    required TResult Function(String error) askTechnicalWorkerFilterFailure,
+    required TResult Function() askEngineerFilterLoading,
+    required TResult Function(T data) askEngineerFilterSuccess,
+    required TResult Function(String error) askEngineerFilterFailure,
+    required TResult Function() paginationLoading,
+    required TResult Function(String error) paginationFailure,
+    required TResult Function() changeTap,
+    required TResult Function() getAllCustomPackageLoading,
+    required TResult Function(T data) getAllCustomPackageSuccess,
+    required TResult Function(String error) getAllCustomPackageFailure,
+    required TResult Function() askEngineerLookUpLoading,
+    required TResult Function(T data) askEngineerLookUpSuccess,
+    required TResult Function(String error) askEngineerLookUpFailure,
+    required TResult Function() askWorkerLookUpLoading,
+    required TResult Function(T data) askWorkerLookUpSuccess,
+    required TResult Function(String error) askWorkerLookUpFailure,
+  }) {
+    return askEngineerLookUpLoading();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? requestDesignFilterLoading,
+    TResult? Function(RequestDesignFilterResponseModel data)?
+        requestDesignFilterSuccess,
+    TResult? Function(String error)? requestDesignFilterFailure,
+    TResult? Function()? renovateYourHouseFixedPackagesFilterLoading,
+    TResult? Function(T data)? renovateYourHouseFixedPackagesFilterLoaded,
+    TResult? Function(String error)? renovateYourHouseFixedPackagesFilterError,
+    TResult? Function()? renovateYourHouseCustomPackagesFilterLoading,
+    TResult? Function(RenovateHouseFilterResponseModel data)?
+        renovateYourHouseCustomPackagesFilterLoaded,
+    TResult? Function(String error)? renovateYourHouseCustomPackagesFilterError,
+    TResult? Function()? askTechnicalWorkerFilterLoading,
+    TResult? Function(T data)? askTechnicalWorkerFilterSuccess,
+    TResult? Function(String error)? askTechnicalWorkerFilterFailure,
+    TResult? Function()? askEngineerFilterLoading,
+    TResult? Function(T data)? askEngineerFilterSuccess,
+    TResult? Function(String error)? askEngineerFilterFailure,
+    TResult? Function()? paginationLoading,
+    TResult? Function(String error)? paginationFailure,
+    TResult? Function()? changeTap,
+    TResult? Function()? getAllCustomPackageLoading,
+    TResult? Function(T data)? getAllCustomPackageSuccess,
+    TResult? Function(String error)? getAllCustomPackageFailure,
+    TResult? Function()? askEngineerLookUpLoading,
+    TResult? Function(T data)? askEngineerLookUpSuccess,
+    TResult? Function(String error)? askEngineerLookUpFailure,
+    TResult? Function()? askWorkerLookUpLoading,
+    TResult? Function(T data)? askWorkerLookUpSuccess,
+    TResult? Function(String error)? askWorkerLookUpFailure,
+  }) {
+    return askEngineerLookUpLoading?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? requestDesignFilterLoading,
+    TResult Function(RequestDesignFilterResponseModel data)?
+        requestDesignFilterSuccess,
+    TResult Function(String error)? requestDesignFilterFailure,
+    TResult Function()? renovateYourHouseFixedPackagesFilterLoading,
+    TResult Function(T data)? renovateYourHouseFixedPackagesFilterLoaded,
+    TResult Function(String error)? renovateYourHouseFixedPackagesFilterError,
+    TResult Function()? renovateYourHouseCustomPackagesFilterLoading,
+    TResult Function(RenovateHouseFilterResponseModel data)?
+        renovateYourHouseCustomPackagesFilterLoaded,
+    TResult Function(String error)? renovateYourHouseCustomPackagesFilterError,
+    TResult Function()? askTechnicalWorkerFilterLoading,
+    TResult Function(T data)? askTechnicalWorkerFilterSuccess,
+    TResult Function(String error)? askTechnicalWorkerFilterFailure,
+    TResult Function()? askEngineerFilterLoading,
+    TResult Function(T data)? askEngineerFilterSuccess,
+    TResult Function(String error)? askEngineerFilterFailure,
+    TResult Function()? paginationLoading,
+    TResult Function(String error)? paginationFailure,
+    TResult Function()? changeTap,
+    TResult Function()? getAllCustomPackageLoading,
+    TResult Function(T data)? getAllCustomPackageSuccess,
+    TResult Function(String error)? getAllCustomPackageFailure,
+    TResult Function()? askEngineerLookUpLoading,
+    TResult Function(T data)? askEngineerLookUpSuccess,
+    TResult Function(String error)? askEngineerLookUpFailure,
+    TResult Function()? askWorkerLookUpLoading,
+    TResult Function(T data)? askWorkerLookUpSuccess,
+    TResult Function(String error)? askWorkerLookUpFailure,
+    required TResult orElse(),
+  }) {
+    if (askEngineerLookUpLoading != null) {
+      return askEngineerLookUpLoading();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial<T> value) initial,
+    required TResult Function(RequestDesignFilterLoading<T> value)
+        requestDesignFilterLoading,
+    required TResult Function(RequestDesignFilterSuccess<T> value)
+        requestDesignFilterSuccess,
+    required TResult Function(RequestDesignFilterFailure<T> value)
+        requestDesignFilterFailure,
+    required TResult Function(
+            RenovateYourHouseFixedPackagesFilterLoading<T> value)
+        renovateYourHouseFixedPackagesFilterLoading,
+    required TResult Function(
+            RenovateYourHouseFixedPackagesFilterLoaded<T> value)
+        renovateYourHouseFixedPackagesFilterLoaded,
+    required TResult Function(
+            RenovateYourHouseFixedPackagesFilterError<T> value)
+        renovateYourHouseFixedPackagesFilterError,
+    required TResult Function(
+            RenovateYourHouseCustomPackagesFilterLoading<T> value)
+        renovateYourHouseCustomPackagesFilterLoading,
+    required TResult Function(
+            RenovateYourHouseCustomPackagesFilterLoaded<T> value)
+        renovateYourHouseCustomPackagesFilterLoaded,
+    required TResult Function(
+            RenovateYourHouseCustomPackagesFilterError<T> value)
+        renovateYourHouseCustomPackagesFilterError,
+    required TResult Function(AskTechnicalWorkerFilterLoading<T> value)
+        askTechnicalWorkerFilterLoading,
+    required TResult Function(AskTechnicalWorkerFilterSuccess<T> value)
+        askTechnicalWorkerFilterSuccess,
+    required TResult Function(AskTechnicalWorkerFilterFailure<T> value)
+        askTechnicalWorkerFilterFailure,
+    required TResult Function(AskEngineerFilterLoading<T> value)
+        askEngineerFilterLoading,
+    required TResult Function(AskEngineerFilterSuccess<T> value)
+        askEngineerFilterSuccess,
+    required TResult Function(AskEngineerFilterFailure<T> value)
+        askEngineerFilterFailure,
+    required TResult Function(RequestDesignPaginationLoading<T> value)
+        paginationLoading,
+    required TResult Function(RequestDesignPaginationFailure<T> value)
+        paginationFailure,
+    required TResult Function(ChangeTap<T> value) changeTap,
+    required TResult Function(getAllPackagePackageLoading<T> value)
+        getAllCustomPackageLoading,
+    required TResult Function(getAllPackagePackageSuccess<T> value)
+        getAllCustomPackageSuccess,
+    required TResult Function(getAllPackagePackageFailure<T> value)
+        getAllCustomPackageFailure,
+    required TResult Function(AskEngineerLookUpLoading<T> value)
+        askEngineerLookUpLoading,
+    required TResult Function(AskEngineerLookUpSuccess<T> value)
+        askEngineerLookUpSuccess,
+    required TResult Function(AskEngineerLookUpFailure<T> value)
+        askEngineerLookUpFailure,
+    required TResult Function(AskWorkerLookUpLoading<T> value)
+        askWorkerLookUpLoading,
+    required TResult Function(AskWorkerLookUpSuccess<T> value)
+        askWorkerLookUpSuccess,
+    required TResult Function(AskWorkerLookUpFailure<T> value)
+        askWorkerLookUpFailure,
+  }) {
+    return askEngineerLookUpLoading(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial<T> value)? initial,
+    TResult? Function(RequestDesignFilterLoading<T> value)?
+        requestDesignFilterLoading,
+    TResult? Function(RequestDesignFilterSuccess<T> value)?
+        requestDesignFilterSuccess,
+    TResult? Function(RequestDesignFilterFailure<T> value)?
+        requestDesignFilterFailure,
+    TResult? Function(RenovateYourHouseFixedPackagesFilterLoading<T> value)?
+        renovateYourHouseFixedPackagesFilterLoading,
+    TResult? Function(RenovateYourHouseFixedPackagesFilterLoaded<T> value)?
+        renovateYourHouseFixedPackagesFilterLoaded,
+    TResult? Function(RenovateYourHouseFixedPackagesFilterError<T> value)?
+        renovateYourHouseFixedPackagesFilterError,
+    TResult? Function(RenovateYourHouseCustomPackagesFilterLoading<T> value)?
+        renovateYourHouseCustomPackagesFilterLoading,
+    TResult? Function(RenovateYourHouseCustomPackagesFilterLoaded<T> value)?
+        renovateYourHouseCustomPackagesFilterLoaded,
+    TResult? Function(RenovateYourHouseCustomPackagesFilterError<T> value)?
+        renovateYourHouseCustomPackagesFilterError,
+    TResult? Function(AskTechnicalWorkerFilterLoading<T> value)?
+        askTechnicalWorkerFilterLoading,
+    TResult? Function(AskTechnicalWorkerFilterSuccess<T> value)?
+        askTechnicalWorkerFilterSuccess,
+    TResult? Function(AskTechnicalWorkerFilterFailure<T> value)?
+        askTechnicalWorkerFilterFailure,
+    TResult? Function(AskEngineerFilterLoading<T> value)?
+        askEngineerFilterLoading,
+    TResult? Function(AskEngineerFilterSuccess<T> value)?
+        askEngineerFilterSuccess,
+    TResult? Function(AskEngineerFilterFailure<T> value)?
+        askEngineerFilterFailure,
+    TResult? Function(RequestDesignPaginationLoading<T> value)?
+        paginationLoading,
+    TResult? Function(RequestDesignPaginationFailure<T> value)?
+        paginationFailure,
+    TResult? Function(ChangeTap<T> value)? changeTap,
+    TResult? Function(getAllPackagePackageLoading<T> value)?
+        getAllCustomPackageLoading,
+    TResult? Function(getAllPackagePackageSuccess<T> value)?
+        getAllCustomPackageSuccess,
+    TResult? Function(getAllPackagePackageFailure<T> value)?
+        getAllCustomPackageFailure,
+    TResult? Function(AskEngineerLookUpLoading<T> value)?
+        askEngineerLookUpLoading,
+    TResult? Function(AskEngineerLookUpSuccess<T> value)?
+        askEngineerLookUpSuccess,
+    TResult? Function(AskEngineerLookUpFailure<T> value)?
+        askEngineerLookUpFailure,
+    TResult? Function(AskWorkerLookUpLoading<T> value)? askWorkerLookUpLoading,
+    TResult? Function(AskWorkerLookUpSuccess<T> value)? askWorkerLookUpSuccess,
+    TResult? Function(AskWorkerLookUpFailure<T> value)? askWorkerLookUpFailure,
+  }) {
+    return askEngineerLookUpLoading?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial<T> value)? initial,
+    TResult Function(RequestDesignFilterLoading<T> value)?
+        requestDesignFilterLoading,
+    TResult Function(RequestDesignFilterSuccess<T> value)?
+        requestDesignFilterSuccess,
+    TResult Function(RequestDesignFilterFailure<T> value)?
+        requestDesignFilterFailure,
+    TResult Function(RenovateYourHouseFixedPackagesFilterLoading<T> value)?
+        renovateYourHouseFixedPackagesFilterLoading,
+    TResult Function(RenovateYourHouseFixedPackagesFilterLoaded<T> value)?
+        renovateYourHouseFixedPackagesFilterLoaded,
+    TResult Function(RenovateYourHouseFixedPackagesFilterError<T> value)?
+        renovateYourHouseFixedPackagesFilterError,
+    TResult Function(RenovateYourHouseCustomPackagesFilterLoading<T> value)?
+        renovateYourHouseCustomPackagesFilterLoading,
+    TResult Function(RenovateYourHouseCustomPackagesFilterLoaded<T> value)?
+        renovateYourHouseCustomPackagesFilterLoaded,
+    TResult Function(RenovateYourHouseCustomPackagesFilterError<T> value)?
+        renovateYourHouseCustomPackagesFilterError,
+    TResult Function(AskTechnicalWorkerFilterLoading<T> value)?
+        askTechnicalWorkerFilterLoading,
+    TResult Function(AskTechnicalWorkerFilterSuccess<T> value)?
+        askTechnicalWorkerFilterSuccess,
+    TResult Function(AskTechnicalWorkerFilterFailure<T> value)?
+        askTechnicalWorkerFilterFailure,
+    TResult Function(AskEngineerFilterLoading<T> value)?
+        askEngineerFilterLoading,
+    TResult Function(AskEngineerFilterSuccess<T> value)?
+        askEngineerFilterSuccess,
+    TResult Function(AskEngineerFilterFailure<T> value)?
+        askEngineerFilterFailure,
+    TResult Function(RequestDesignPaginationLoading<T> value)?
+        paginationLoading,
+    TResult Function(RequestDesignPaginationFailure<T> value)?
+        paginationFailure,
+    TResult Function(ChangeTap<T> value)? changeTap,
+    TResult Function(getAllPackagePackageLoading<T> value)?
+        getAllCustomPackageLoading,
+    TResult Function(getAllPackagePackageSuccess<T> value)?
+        getAllCustomPackageSuccess,
+    TResult Function(getAllPackagePackageFailure<T> value)?
+        getAllCustomPackageFailure,
+    TResult Function(AskEngineerLookUpLoading<T> value)?
+        askEngineerLookUpLoading,
+    TResult Function(AskEngineerLookUpSuccess<T> value)?
+        askEngineerLookUpSuccess,
+    TResult Function(AskEngineerLookUpFailure<T> value)?
+        askEngineerLookUpFailure,
+    TResult Function(AskWorkerLookUpLoading<T> value)? askWorkerLookUpLoading,
+    TResult Function(AskWorkerLookUpSuccess<T> value)? askWorkerLookUpSuccess,
+    TResult Function(AskWorkerLookUpFailure<T> value)? askWorkerLookUpFailure,
+    required TResult orElse(),
+  }) {
+    if (askEngineerLookUpLoading != null) {
+      return askEngineerLookUpLoading(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class AskEngineerLookUpLoading<T> implements ProjectsFilterState<T> {
+  factory AskEngineerLookUpLoading() = _$AskEngineerLookUpLoadingImpl<T>;
+}
+
+/// @nodoc
+abstract class _$$AskEngineerLookUpSuccessImplCopyWith<T, $Res> {
+  factory _$$AskEngineerLookUpSuccessImplCopyWith(
+          _$AskEngineerLookUpSuccessImpl<T> value,
+          $Res Function(_$AskEngineerLookUpSuccessImpl<T>) then) =
+      __$$AskEngineerLookUpSuccessImplCopyWithImpl<T, $Res>;
+  @useResult
+  $Res call({T data});
+}
+
+/// @nodoc
+class __$$AskEngineerLookUpSuccessImplCopyWithImpl<T, $Res>
+    extends _$ProjectsFilterStateCopyWithImpl<T, $Res,
+        _$AskEngineerLookUpSuccessImpl<T>>
+    implements _$$AskEngineerLookUpSuccessImplCopyWith<T, $Res> {
+  __$$AskEngineerLookUpSuccessImplCopyWithImpl(
+      _$AskEngineerLookUpSuccessImpl<T> _value,
+      $Res Function(_$AskEngineerLookUpSuccessImpl<T>) _then)
+      : super(_value, _then);
+
+  /// Create a copy of ProjectsFilterState
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? data = freezed,
+  }) {
+    return _then(_$AskEngineerLookUpSuccessImpl<T>(
+      freezed == data
+          ? _value.data
+          : data // ignore: cast_nullable_to_non_nullable
+              as T,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$AskEngineerLookUpSuccessImpl<T> implements AskEngineerLookUpSuccess<T> {
+  _$AskEngineerLookUpSuccessImpl(this.data);
+
+  @override
+  final T data;
+
+  @override
+  String toString() {
+    return 'ProjectsFilterState<$T>.askEngineerLookUpSuccess(data: $data)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$AskEngineerLookUpSuccessImpl<T> &&
+            const DeepCollectionEquality().equals(other.data, data));
+  }
+
+  @override
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(data));
+
+  /// Create a copy of ProjectsFilterState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$AskEngineerLookUpSuccessImplCopyWith<T, _$AskEngineerLookUpSuccessImpl<T>>
+      get copyWith => __$$AskEngineerLookUpSuccessImplCopyWithImpl<T,
+          _$AskEngineerLookUpSuccessImpl<T>>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() requestDesignFilterLoading,
+    required TResult Function(RequestDesignFilterResponseModel data)
+        requestDesignFilterSuccess,
+    required TResult Function(String error) requestDesignFilterFailure,
+    required TResult Function() renovateYourHouseFixedPackagesFilterLoading,
+    required TResult Function(T data)
+        renovateYourHouseFixedPackagesFilterLoaded,
+    required TResult Function(String error)
+        renovateYourHouseFixedPackagesFilterError,
+    required TResult Function() renovateYourHouseCustomPackagesFilterLoading,
+    required TResult Function(RenovateHouseFilterResponseModel data)
+        renovateYourHouseCustomPackagesFilterLoaded,
+    required TResult Function(String error)
+        renovateYourHouseCustomPackagesFilterError,
+    required TResult Function() askTechnicalWorkerFilterLoading,
+    required TResult Function(T data) askTechnicalWorkerFilterSuccess,
+    required TResult Function(String error) askTechnicalWorkerFilterFailure,
+    required TResult Function() askEngineerFilterLoading,
+    required TResult Function(T data) askEngineerFilterSuccess,
+    required TResult Function(String error) askEngineerFilterFailure,
+    required TResult Function() paginationLoading,
+    required TResult Function(String error) paginationFailure,
+    required TResult Function() changeTap,
+    required TResult Function() getAllCustomPackageLoading,
+    required TResult Function(T data) getAllCustomPackageSuccess,
+    required TResult Function(String error) getAllCustomPackageFailure,
+    required TResult Function() askEngineerLookUpLoading,
+    required TResult Function(T data) askEngineerLookUpSuccess,
+    required TResult Function(String error) askEngineerLookUpFailure,
+    required TResult Function() askWorkerLookUpLoading,
+    required TResult Function(T data) askWorkerLookUpSuccess,
+    required TResult Function(String error) askWorkerLookUpFailure,
+  }) {
+    return askEngineerLookUpSuccess(data);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? requestDesignFilterLoading,
+    TResult? Function(RequestDesignFilterResponseModel data)?
+        requestDesignFilterSuccess,
+    TResult? Function(String error)? requestDesignFilterFailure,
+    TResult? Function()? renovateYourHouseFixedPackagesFilterLoading,
+    TResult? Function(T data)? renovateYourHouseFixedPackagesFilterLoaded,
+    TResult? Function(String error)? renovateYourHouseFixedPackagesFilterError,
+    TResult? Function()? renovateYourHouseCustomPackagesFilterLoading,
+    TResult? Function(RenovateHouseFilterResponseModel data)?
+        renovateYourHouseCustomPackagesFilterLoaded,
+    TResult? Function(String error)? renovateYourHouseCustomPackagesFilterError,
+    TResult? Function()? askTechnicalWorkerFilterLoading,
+    TResult? Function(T data)? askTechnicalWorkerFilterSuccess,
+    TResult? Function(String error)? askTechnicalWorkerFilterFailure,
+    TResult? Function()? askEngineerFilterLoading,
+    TResult? Function(T data)? askEngineerFilterSuccess,
+    TResult? Function(String error)? askEngineerFilterFailure,
+    TResult? Function()? paginationLoading,
+    TResult? Function(String error)? paginationFailure,
+    TResult? Function()? changeTap,
+    TResult? Function()? getAllCustomPackageLoading,
+    TResult? Function(T data)? getAllCustomPackageSuccess,
+    TResult? Function(String error)? getAllCustomPackageFailure,
+    TResult? Function()? askEngineerLookUpLoading,
+    TResult? Function(T data)? askEngineerLookUpSuccess,
+    TResult? Function(String error)? askEngineerLookUpFailure,
+    TResult? Function()? askWorkerLookUpLoading,
+    TResult? Function(T data)? askWorkerLookUpSuccess,
+    TResult? Function(String error)? askWorkerLookUpFailure,
+  }) {
+    return askEngineerLookUpSuccess?.call(data);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? requestDesignFilterLoading,
+    TResult Function(RequestDesignFilterResponseModel data)?
+        requestDesignFilterSuccess,
+    TResult Function(String error)? requestDesignFilterFailure,
+    TResult Function()? renovateYourHouseFixedPackagesFilterLoading,
+    TResult Function(T data)? renovateYourHouseFixedPackagesFilterLoaded,
+    TResult Function(String error)? renovateYourHouseFixedPackagesFilterError,
+    TResult Function()? renovateYourHouseCustomPackagesFilterLoading,
+    TResult Function(RenovateHouseFilterResponseModel data)?
+        renovateYourHouseCustomPackagesFilterLoaded,
+    TResult Function(String error)? renovateYourHouseCustomPackagesFilterError,
+    TResult Function()? askTechnicalWorkerFilterLoading,
+    TResult Function(T data)? askTechnicalWorkerFilterSuccess,
+    TResult Function(String error)? askTechnicalWorkerFilterFailure,
+    TResult Function()? askEngineerFilterLoading,
+    TResult Function(T data)? askEngineerFilterSuccess,
+    TResult Function(String error)? askEngineerFilterFailure,
+    TResult Function()? paginationLoading,
+    TResult Function(String error)? paginationFailure,
+    TResult Function()? changeTap,
+    TResult Function()? getAllCustomPackageLoading,
+    TResult Function(T data)? getAllCustomPackageSuccess,
+    TResult Function(String error)? getAllCustomPackageFailure,
+    TResult Function()? askEngineerLookUpLoading,
+    TResult Function(T data)? askEngineerLookUpSuccess,
+    TResult Function(String error)? askEngineerLookUpFailure,
+    TResult Function()? askWorkerLookUpLoading,
+    TResult Function(T data)? askWorkerLookUpSuccess,
+    TResult Function(String error)? askWorkerLookUpFailure,
+    required TResult orElse(),
+  }) {
+    if (askEngineerLookUpSuccess != null) {
+      return askEngineerLookUpSuccess(data);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial<T> value) initial,
+    required TResult Function(RequestDesignFilterLoading<T> value)
+        requestDesignFilterLoading,
+    required TResult Function(RequestDesignFilterSuccess<T> value)
+        requestDesignFilterSuccess,
+    required TResult Function(RequestDesignFilterFailure<T> value)
+        requestDesignFilterFailure,
+    required TResult Function(
+            RenovateYourHouseFixedPackagesFilterLoading<T> value)
+        renovateYourHouseFixedPackagesFilterLoading,
+    required TResult Function(
+            RenovateYourHouseFixedPackagesFilterLoaded<T> value)
+        renovateYourHouseFixedPackagesFilterLoaded,
+    required TResult Function(
+            RenovateYourHouseFixedPackagesFilterError<T> value)
+        renovateYourHouseFixedPackagesFilterError,
+    required TResult Function(
+            RenovateYourHouseCustomPackagesFilterLoading<T> value)
+        renovateYourHouseCustomPackagesFilterLoading,
+    required TResult Function(
+            RenovateYourHouseCustomPackagesFilterLoaded<T> value)
+        renovateYourHouseCustomPackagesFilterLoaded,
+    required TResult Function(
+            RenovateYourHouseCustomPackagesFilterError<T> value)
+        renovateYourHouseCustomPackagesFilterError,
+    required TResult Function(AskTechnicalWorkerFilterLoading<T> value)
+        askTechnicalWorkerFilterLoading,
+    required TResult Function(AskTechnicalWorkerFilterSuccess<T> value)
+        askTechnicalWorkerFilterSuccess,
+    required TResult Function(AskTechnicalWorkerFilterFailure<T> value)
+        askTechnicalWorkerFilterFailure,
+    required TResult Function(AskEngineerFilterLoading<T> value)
+        askEngineerFilterLoading,
+    required TResult Function(AskEngineerFilterSuccess<T> value)
+        askEngineerFilterSuccess,
+    required TResult Function(AskEngineerFilterFailure<T> value)
+        askEngineerFilterFailure,
+    required TResult Function(RequestDesignPaginationLoading<T> value)
+        paginationLoading,
+    required TResult Function(RequestDesignPaginationFailure<T> value)
+        paginationFailure,
+    required TResult Function(ChangeTap<T> value) changeTap,
+    required TResult Function(getAllPackagePackageLoading<T> value)
+        getAllCustomPackageLoading,
+    required TResult Function(getAllPackagePackageSuccess<T> value)
+        getAllCustomPackageSuccess,
+    required TResult Function(getAllPackagePackageFailure<T> value)
+        getAllCustomPackageFailure,
+    required TResult Function(AskEngineerLookUpLoading<T> value)
+        askEngineerLookUpLoading,
+    required TResult Function(AskEngineerLookUpSuccess<T> value)
+        askEngineerLookUpSuccess,
+    required TResult Function(AskEngineerLookUpFailure<T> value)
+        askEngineerLookUpFailure,
+    required TResult Function(AskWorkerLookUpLoading<T> value)
+        askWorkerLookUpLoading,
+    required TResult Function(AskWorkerLookUpSuccess<T> value)
+        askWorkerLookUpSuccess,
+    required TResult Function(AskWorkerLookUpFailure<T> value)
+        askWorkerLookUpFailure,
+  }) {
+    return askEngineerLookUpSuccess(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial<T> value)? initial,
+    TResult? Function(RequestDesignFilterLoading<T> value)?
+        requestDesignFilterLoading,
+    TResult? Function(RequestDesignFilterSuccess<T> value)?
+        requestDesignFilterSuccess,
+    TResult? Function(RequestDesignFilterFailure<T> value)?
+        requestDesignFilterFailure,
+    TResult? Function(RenovateYourHouseFixedPackagesFilterLoading<T> value)?
+        renovateYourHouseFixedPackagesFilterLoading,
+    TResult? Function(RenovateYourHouseFixedPackagesFilterLoaded<T> value)?
+        renovateYourHouseFixedPackagesFilterLoaded,
+    TResult? Function(RenovateYourHouseFixedPackagesFilterError<T> value)?
+        renovateYourHouseFixedPackagesFilterError,
+    TResult? Function(RenovateYourHouseCustomPackagesFilterLoading<T> value)?
+        renovateYourHouseCustomPackagesFilterLoading,
+    TResult? Function(RenovateYourHouseCustomPackagesFilterLoaded<T> value)?
+        renovateYourHouseCustomPackagesFilterLoaded,
+    TResult? Function(RenovateYourHouseCustomPackagesFilterError<T> value)?
+        renovateYourHouseCustomPackagesFilterError,
+    TResult? Function(AskTechnicalWorkerFilterLoading<T> value)?
+        askTechnicalWorkerFilterLoading,
+    TResult? Function(AskTechnicalWorkerFilterSuccess<T> value)?
+        askTechnicalWorkerFilterSuccess,
+    TResult? Function(AskTechnicalWorkerFilterFailure<T> value)?
+        askTechnicalWorkerFilterFailure,
+    TResult? Function(AskEngineerFilterLoading<T> value)?
+        askEngineerFilterLoading,
+    TResult? Function(AskEngineerFilterSuccess<T> value)?
+        askEngineerFilterSuccess,
+    TResult? Function(AskEngineerFilterFailure<T> value)?
+        askEngineerFilterFailure,
+    TResult? Function(RequestDesignPaginationLoading<T> value)?
+        paginationLoading,
+    TResult? Function(RequestDesignPaginationFailure<T> value)?
+        paginationFailure,
+    TResult? Function(ChangeTap<T> value)? changeTap,
+    TResult? Function(getAllPackagePackageLoading<T> value)?
+        getAllCustomPackageLoading,
+    TResult? Function(getAllPackagePackageSuccess<T> value)?
+        getAllCustomPackageSuccess,
+    TResult? Function(getAllPackagePackageFailure<T> value)?
+        getAllCustomPackageFailure,
+    TResult? Function(AskEngineerLookUpLoading<T> value)?
+        askEngineerLookUpLoading,
+    TResult? Function(AskEngineerLookUpSuccess<T> value)?
+        askEngineerLookUpSuccess,
+    TResult? Function(AskEngineerLookUpFailure<T> value)?
+        askEngineerLookUpFailure,
+    TResult? Function(AskWorkerLookUpLoading<T> value)? askWorkerLookUpLoading,
+    TResult? Function(AskWorkerLookUpSuccess<T> value)? askWorkerLookUpSuccess,
+    TResult? Function(AskWorkerLookUpFailure<T> value)? askWorkerLookUpFailure,
+  }) {
+    return askEngineerLookUpSuccess?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial<T> value)? initial,
+    TResult Function(RequestDesignFilterLoading<T> value)?
+        requestDesignFilterLoading,
+    TResult Function(RequestDesignFilterSuccess<T> value)?
+        requestDesignFilterSuccess,
+    TResult Function(RequestDesignFilterFailure<T> value)?
+        requestDesignFilterFailure,
+    TResult Function(RenovateYourHouseFixedPackagesFilterLoading<T> value)?
+        renovateYourHouseFixedPackagesFilterLoading,
+    TResult Function(RenovateYourHouseFixedPackagesFilterLoaded<T> value)?
+        renovateYourHouseFixedPackagesFilterLoaded,
+    TResult Function(RenovateYourHouseFixedPackagesFilterError<T> value)?
+        renovateYourHouseFixedPackagesFilterError,
+    TResult Function(RenovateYourHouseCustomPackagesFilterLoading<T> value)?
+        renovateYourHouseCustomPackagesFilterLoading,
+    TResult Function(RenovateYourHouseCustomPackagesFilterLoaded<T> value)?
+        renovateYourHouseCustomPackagesFilterLoaded,
+    TResult Function(RenovateYourHouseCustomPackagesFilterError<T> value)?
+        renovateYourHouseCustomPackagesFilterError,
+    TResult Function(AskTechnicalWorkerFilterLoading<T> value)?
+        askTechnicalWorkerFilterLoading,
+    TResult Function(AskTechnicalWorkerFilterSuccess<T> value)?
+        askTechnicalWorkerFilterSuccess,
+    TResult Function(AskTechnicalWorkerFilterFailure<T> value)?
+        askTechnicalWorkerFilterFailure,
+    TResult Function(AskEngineerFilterLoading<T> value)?
+        askEngineerFilterLoading,
+    TResult Function(AskEngineerFilterSuccess<T> value)?
+        askEngineerFilterSuccess,
+    TResult Function(AskEngineerFilterFailure<T> value)?
+        askEngineerFilterFailure,
+    TResult Function(RequestDesignPaginationLoading<T> value)?
+        paginationLoading,
+    TResult Function(RequestDesignPaginationFailure<T> value)?
+        paginationFailure,
+    TResult Function(ChangeTap<T> value)? changeTap,
+    TResult Function(getAllPackagePackageLoading<T> value)?
+        getAllCustomPackageLoading,
+    TResult Function(getAllPackagePackageSuccess<T> value)?
+        getAllCustomPackageSuccess,
+    TResult Function(getAllPackagePackageFailure<T> value)?
+        getAllCustomPackageFailure,
+    TResult Function(AskEngineerLookUpLoading<T> value)?
+        askEngineerLookUpLoading,
+    TResult Function(AskEngineerLookUpSuccess<T> value)?
+        askEngineerLookUpSuccess,
+    TResult Function(AskEngineerLookUpFailure<T> value)?
+        askEngineerLookUpFailure,
+    TResult Function(AskWorkerLookUpLoading<T> value)? askWorkerLookUpLoading,
+    TResult Function(AskWorkerLookUpSuccess<T> value)? askWorkerLookUpSuccess,
+    TResult Function(AskWorkerLookUpFailure<T> value)? askWorkerLookUpFailure,
+    required TResult orElse(),
+  }) {
+    if (askEngineerLookUpSuccess != null) {
+      return askEngineerLookUpSuccess(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class AskEngineerLookUpSuccess<T> implements ProjectsFilterState<T> {
+  factory AskEngineerLookUpSuccess(final T data) =
+      _$AskEngineerLookUpSuccessImpl<T>;
+
+  T get data;
+
+  /// Create a copy of ProjectsFilterState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$AskEngineerLookUpSuccessImplCopyWith<T, _$AskEngineerLookUpSuccessImpl<T>>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$AskEngineerLookUpFailureImplCopyWith<T, $Res> {
+  factory _$$AskEngineerLookUpFailureImplCopyWith(
+          _$AskEngineerLookUpFailureImpl<T> value,
+          $Res Function(_$AskEngineerLookUpFailureImpl<T>) then) =
+      __$$AskEngineerLookUpFailureImplCopyWithImpl<T, $Res>;
+  @useResult
+  $Res call({String error});
+}
+
+/// @nodoc
+class __$$AskEngineerLookUpFailureImplCopyWithImpl<T, $Res>
+    extends _$ProjectsFilterStateCopyWithImpl<T, $Res,
+        _$AskEngineerLookUpFailureImpl<T>>
+    implements _$$AskEngineerLookUpFailureImplCopyWith<T, $Res> {
+  __$$AskEngineerLookUpFailureImplCopyWithImpl(
+      _$AskEngineerLookUpFailureImpl<T> _value,
+      $Res Function(_$AskEngineerLookUpFailureImpl<T>) _then)
+      : super(_value, _then);
+
+  /// Create a copy of ProjectsFilterState
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? error = null,
+  }) {
+    return _then(_$AskEngineerLookUpFailureImpl<T>(
+      error: null == error
+          ? _value.error
+          : error // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$AskEngineerLookUpFailureImpl<T> implements AskEngineerLookUpFailure<T> {
+  _$AskEngineerLookUpFailureImpl({required this.error});
+
+  @override
+  final String error;
+
+  @override
+  String toString() {
+    return 'ProjectsFilterState<$T>.askEngineerLookUpFailure(error: $error)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$AskEngineerLookUpFailureImpl<T> &&
+            (identical(other.error, error) || other.error == error));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, error);
+
+  /// Create a copy of ProjectsFilterState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$AskEngineerLookUpFailureImplCopyWith<T, _$AskEngineerLookUpFailureImpl<T>>
+      get copyWith => __$$AskEngineerLookUpFailureImplCopyWithImpl<T,
+          _$AskEngineerLookUpFailureImpl<T>>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() requestDesignFilterLoading,
+    required TResult Function(RequestDesignFilterResponseModel data)
+        requestDesignFilterSuccess,
+    required TResult Function(String error) requestDesignFilterFailure,
+    required TResult Function() renovateYourHouseFixedPackagesFilterLoading,
+    required TResult Function(T data)
+        renovateYourHouseFixedPackagesFilterLoaded,
+    required TResult Function(String error)
+        renovateYourHouseFixedPackagesFilterError,
+    required TResult Function() renovateYourHouseCustomPackagesFilterLoading,
+    required TResult Function(RenovateHouseFilterResponseModel data)
+        renovateYourHouseCustomPackagesFilterLoaded,
+    required TResult Function(String error)
+        renovateYourHouseCustomPackagesFilterError,
+    required TResult Function() askTechnicalWorkerFilterLoading,
+    required TResult Function(T data) askTechnicalWorkerFilterSuccess,
+    required TResult Function(String error) askTechnicalWorkerFilterFailure,
+    required TResult Function() askEngineerFilterLoading,
+    required TResult Function(T data) askEngineerFilterSuccess,
+    required TResult Function(String error) askEngineerFilterFailure,
+    required TResult Function() paginationLoading,
+    required TResult Function(String error) paginationFailure,
+    required TResult Function() changeTap,
+    required TResult Function() getAllCustomPackageLoading,
+    required TResult Function(T data) getAllCustomPackageSuccess,
+    required TResult Function(String error) getAllCustomPackageFailure,
+    required TResult Function() askEngineerLookUpLoading,
+    required TResult Function(T data) askEngineerLookUpSuccess,
+    required TResult Function(String error) askEngineerLookUpFailure,
+    required TResult Function() askWorkerLookUpLoading,
+    required TResult Function(T data) askWorkerLookUpSuccess,
+    required TResult Function(String error) askWorkerLookUpFailure,
+  }) {
+    return askEngineerLookUpFailure(error);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? requestDesignFilterLoading,
+    TResult? Function(RequestDesignFilterResponseModel data)?
+        requestDesignFilterSuccess,
+    TResult? Function(String error)? requestDesignFilterFailure,
+    TResult? Function()? renovateYourHouseFixedPackagesFilterLoading,
+    TResult? Function(T data)? renovateYourHouseFixedPackagesFilterLoaded,
+    TResult? Function(String error)? renovateYourHouseFixedPackagesFilterError,
+    TResult? Function()? renovateYourHouseCustomPackagesFilterLoading,
+    TResult? Function(RenovateHouseFilterResponseModel data)?
+        renovateYourHouseCustomPackagesFilterLoaded,
+    TResult? Function(String error)? renovateYourHouseCustomPackagesFilterError,
+    TResult? Function()? askTechnicalWorkerFilterLoading,
+    TResult? Function(T data)? askTechnicalWorkerFilterSuccess,
+    TResult? Function(String error)? askTechnicalWorkerFilterFailure,
+    TResult? Function()? askEngineerFilterLoading,
+    TResult? Function(T data)? askEngineerFilterSuccess,
+    TResult? Function(String error)? askEngineerFilterFailure,
+    TResult? Function()? paginationLoading,
+    TResult? Function(String error)? paginationFailure,
+    TResult? Function()? changeTap,
+    TResult? Function()? getAllCustomPackageLoading,
+    TResult? Function(T data)? getAllCustomPackageSuccess,
+    TResult? Function(String error)? getAllCustomPackageFailure,
+    TResult? Function()? askEngineerLookUpLoading,
+    TResult? Function(T data)? askEngineerLookUpSuccess,
+    TResult? Function(String error)? askEngineerLookUpFailure,
+    TResult? Function()? askWorkerLookUpLoading,
+    TResult? Function(T data)? askWorkerLookUpSuccess,
+    TResult? Function(String error)? askWorkerLookUpFailure,
+  }) {
+    return askEngineerLookUpFailure?.call(error);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? requestDesignFilterLoading,
+    TResult Function(RequestDesignFilterResponseModel data)?
+        requestDesignFilterSuccess,
+    TResult Function(String error)? requestDesignFilterFailure,
+    TResult Function()? renovateYourHouseFixedPackagesFilterLoading,
+    TResult Function(T data)? renovateYourHouseFixedPackagesFilterLoaded,
+    TResult Function(String error)? renovateYourHouseFixedPackagesFilterError,
+    TResult Function()? renovateYourHouseCustomPackagesFilterLoading,
+    TResult Function(RenovateHouseFilterResponseModel data)?
+        renovateYourHouseCustomPackagesFilterLoaded,
+    TResult Function(String error)? renovateYourHouseCustomPackagesFilterError,
+    TResult Function()? askTechnicalWorkerFilterLoading,
+    TResult Function(T data)? askTechnicalWorkerFilterSuccess,
+    TResult Function(String error)? askTechnicalWorkerFilterFailure,
+    TResult Function()? askEngineerFilterLoading,
+    TResult Function(T data)? askEngineerFilterSuccess,
+    TResult Function(String error)? askEngineerFilterFailure,
+    TResult Function()? paginationLoading,
+    TResult Function(String error)? paginationFailure,
+    TResult Function()? changeTap,
+    TResult Function()? getAllCustomPackageLoading,
+    TResult Function(T data)? getAllCustomPackageSuccess,
+    TResult Function(String error)? getAllCustomPackageFailure,
+    TResult Function()? askEngineerLookUpLoading,
+    TResult Function(T data)? askEngineerLookUpSuccess,
+    TResult Function(String error)? askEngineerLookUpFailure,
+    TResult Function()? askWorkerLookUpLoading,
+    TResult Function(T data)? askWorkerLookUpSuccess,
+    TResult Function(String error)? askWorkerLookUpFailure,
+    required TResult orElse(),
+  }) {
+    if (askEngineerLookUpFailure != null) {
+      return askEngineerLookUpFailure(error);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial<T> value) initial,
+    required TResult Function(RequestDesignFilterLoading<T> value)
+        requestDesignFilterLoading,
+    required TResult Function(RequestDesignFilterSuccess<T> value)
+        requestDesignFilterSuccess,
+    required TResult Function(RequestDesignFilterFailure<T> value)
+        requestDesignFilterFailure,
+    required TResult Function(
+            RenovateYourHouseFixedPackagesFilterLoading<T> value)
+        renovateYourHouseFixedPackagesFilterLoading,
+    required TResult Function(
+            RenovateYourHouseFixedPackagesFilterLoaded<T> value)
+        renovateYourHouseFixedPackagesFilterLoaded,
+    required TResult Function(
+            RenovateYourHouseFixedPackagesFilterError<T> value)
+        renovateYourHouseFixedPackagesFilterError,
+    required TResult Function(
+            RenovateYourHouseCustomPackagesFilterLoading<T> value)
+        renovateYourHouseCustomPackagesFilterLoading,
+    required TResult Function(
+            RenovateYourHouseCustomPackagesFilterLoaded<T> value)
+        renovateYourHouseCustomPackagesFilterLoaded,
+    required TResult Function(
+            RenovateYourHouseCustomPackagesFilterError<T> value)
+        renovateYourHouseCustomPackagesFilterError,
+    required TResult Function(AskTechnicalWorkerFilterLoading<T> value)
+        askTechnicalWorkerFilterLoading,
+    required TResult Function(AskTechnicalWorkerFilterSuccess<T> value)
+        askTechnicalWorkerFilterSuccess,
+    required TResult Function(AskTechnicalWorkerFilterFailure<T> value)
+        askTechnicalWorkerFilterFailure,
+    required TResult Function(AskEngineerFilterLoading<T> value)
+        askEngineerFilterLoading,
+    required TResult Function(AskEngineerFilterSuccess<T> value)
+        askEngineerFilterSuccess,
+    required TResult Function(AskEngineerFilterFailure<T> value)
+        askEngineerFilterFailure,
+    required TResult Function(RequestDesignPaginationLoading<T> value)
+        paginationLoading,
+    required TResult Function(RequestDesignPaginationFailure<T> value)
+        paginationFailure,
+    required TResult Function(ChangeTap<T> value) changeTap,
+    required TResult Function(getAllPackagePackageLoading<T> value)
+        getAllCustomPackageLoading,
+    required TResult Function(getAllPackagePackageSuccess<T> value)
+        getAllCustomPackageSuccess,
+    required TResult Function(getAllPackagePackageFailure<T> value)
+        getAllCustomPackageFailure,
+    required TResult Function(AskEngineerLookUpLoading<T> value)
+        askEngineerLookUpLoading,
+    required TResult Function(AskEngineerLookUpSuccess<T> value)
+        askEngineerLookUpSuccess,
+    required TResult Function(AskEngineerLookUpFailure<T> value)
+        askEngineerLookUpFailure,
+    required TResult Function(AskWorkerLookUpLoading<T> value)
+        askWorkerLookUpLoading,
+    required TResult Function(AskWorkerLookUpSuccess<T> value)
+        askWorkerLookUpSuccess,
+    required TResult Function(AskWorkerLookUpFailure<T> value)
+        askWorkerLookUpFailure,
+  }) {
+    return askEngineerLookUpFailure(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial<T> value)? initial,
+    TResult? Function(RequestDesignFilterLoading<T> value)?
+        requestDesignFilterLoading,
+    TResult? Function(RequestDesignFilterSuccess<T> value)?
+        requestDesignFilterSuccess,
+    TResult? Function(RequestDesignFilterFailure<T> value)?
+        requestDesignFilterFailure,
+    TResult? Function(RenovateYourHouseFixedPackagesFilterLoading<T> value)?
+        renovateYourHouseFixedPackagesFilterLoading,
+    TResult? Function(RenovateYourHouseFixedPackagesFilterLoaded<T> value)?
+        renovateYourHouseFixedPackagesFilterLoaded,
+    TResult? Function(RenovateYourHouseFixedPackagesFilterError<T> value)?
+        renovateYourHouseFixedPackagesFilterError,
+    TResult? Function(RenovateYourHouseCustomPackagesFilterLoading<T> value)?
+        renovateYourHouseCustomPackagesFilterLoading,
+    TResult? Function(RenovateYourHouseCustomPackagesFilterLoaded<T> value)?
+        renovateYourHouseCustomPackagesFilterLoaded,
+    TResult? Function(RenovateYourHouseCustomPackagesFilterError<T> value)?
+        renovateYourHouseCustomPackagesFilterError,
+    TResult? Function(AskTechnicalWorkerFilterLoading<T> value)?
+        askTechnicalWorkerFilterLoading,
+    TResult? Function(AskTechnicalWorkerFilterSuccess<T> value)?
+        askTechnicalWorkerFilterSuccess,
+    TResult? Function(AskTechnicalWorkerFilterFailure<T> value)?
+        askTechnicalWorkerFilterFailure,
+    TResult? Function(AskEngineerFilterLoading<T> value)?
+        askEngineerFilterLoading,
+    TResult? Function(AskEngineerFilterSuccess<T> value)?
+        askEngineerFilterSuccess,
+    TResult? Function(AskEngineerFilterFailure<T> value)?
+        askEngineerFilterFailure,
+    TResult? Function(RequestDesignPaginationLoading<T> value)?
+        paginationLoading,
+    TResult? Function(RequestDesignPaginationFailure<T> value)?
+        paginationFailure,
+    TResult? Function(ChangeTap<T> value)? changeTap,
+    TResult? Function(getAllPackagePackageLoading<T> value)?
+        getAllCustomPackageLoading,
+    TResult? Function(getAllPackagePackageSuccess<T> value)?
+        getAllCustomPackageSuccess,
+    TResult? Function(getAllPackagePackageFailure<T> value)?
+        getAllCustomPackageFailure,
+    TResult? Function(AskEngineerLookUpLoading<T> value)?
+        askEngineerLookUpLoading,
+    TResult? Function(AskEngineerLookUpSuccess<T> value)?
+        askEngineerLookUpSuccess,
+    TResult? Function(AskEngineerLookUpFailure<T> value)?
+        askEngineerLookUpFailure,
+    TResult? Function(AskWorkerLookUpLoading<T> value)? askWorkerLookUpLoading,
+    TResult? Function(AskWorkerLookUpSuccess<T> value)? askWorkerLookUpSuccess,
+    TResult? Function(AskWorkerLookUpFailure<T> value)? askWorkerLookUpFailure,
+  }) {
+    return askEngineerLookUpFailure?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial<T> value)? initial,
+    TResult Function(RequestDesignFilterLoading<T> value)?
+        requestDesignFilterLoading,
+    TResult Function(RequestDesignFilterSuccess<T> value)?
+        requestDesignFilterSuccess,
+    TResult Function(RequestDesignFilterFailure<T> value)?
+        requestDesignFilterFailure,
+    TResult Function(RenovateYourHouseFixedPackagesFilterLoading<T> value)?
+        renovateYourHouseFixedPackagesFilterLoading,
+    TResult Function(RenovateYourHouseFixedPackagesFilterLoaded<T> value)?
+        renovateYourHouseFixedPackagesFilterLoaded,
+    TResult Function(RenovateYourHouseFixedPackagesFilterError<T> value)?
+        renovateYourHouseFixedPackagesFilterError,
+    TResult Function(RenovateYourHouseCustomPackagesFilterLoading<T> value)?
+        renovateYourHouseCustomPackagesFilterLoading,
+    TResult Function(RenovateYourHouseCustomPackagesFilterLoaded<T> value)?
+        renovateYourHouseCustomPackagesFilterLoaded,
+    TResult Function(RenovateYourHouseCustomPackagesFilterError<T> value)?
+        renovateYourHouseCustomPackagesFilterError,
+    TResult Function(AskTechnicalWorkerFilterLoading<T> value)?
+        askTechnicalWorkerFilterLoading,
+    TResult Function(AskTechnicalWorkerFilterSuccess<T> value)?
+        askTechnicalWorkerFilterSuccess,
+    TResult Function(AskTechnicalWorkerFilterFailure<T> value)?
+        askTechnicalWorkerFilterFailure,
+    TResult Function(AskEngineerFilterLoading<T> value)?
+        askEngineerFilterLoading,
+    TResult Function(AskEngineerFilterSuccess<T> value)?
+        askEngineerFilterSuccess,
+    TResult Function(AskEngineerFilterFailure<T> value)?
+        askEngineerFilterFailure,
+    TResult Function(RequestDesignPaginationLoading<T> value)?
+        paginationLoading,
+    TResult Function(RequestDesignPaginationFailure<T> value)?
+        paginationFailure,
+    TResult Function(ChangeTap<T> value)? changeTap,
+    TResult Function(getAllPackagePackageLoading<T> value)?
+        getAllCustomPackageLoading,
+    TResult Function(getAllPackagePackageSuccess<T> value)?
+        getAllCustomPackageSuccess,
+    TResult Function(getAllPackagePackageFailure<T> value)?
+        getAllCustomPackageFailure,
+    TResult Function(AskEngineerLookUpLoading<T> value)?
+        askEngineerLookUpLoading,
+    TResult Function(AskEngineerLookUpSuccess<T> value)?
+        askEngineerLookUpSuccess,
+    TResult Function(AskEngineerLookUpFailure<T> value)?
+        askEngineerLookUpFailure,
+    TResult Function(AskWorkerLookUpLoading<T> value)? askWorkerLookUpLoading,
+    TResult Function(AskWorkerLookUpSuccess<T> value)? askWorkerLookUpSuccess,
+    TResult Function(AskWorkerLookUpFailure<T> value)? askWorkerLookUpFailure,
+    required TResult orElse(),
+  }) {
+    if (askEngineerLookUpFailure != null) {
+      return askEngineerLookUpFailure(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class AskEngineerLookUpFailure<T> implements ProjectsFilterState<T> {
+  factory AskEngineerLookUpFailure({required final String error}) =
+      _$AskEngineerLookUpFailureImpl<T>;
+
+  String get error;
+
+  /// Create a copy of ProjectsFilterState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$AskEngineerLookUpFailureImplCopyWith<T, _$AskEngineerLookUpFailureImpl<T>>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$AskWorkerLookUpLoadingImplCopyWith<T, $Res> {
+  factory _$$AskWorkerLookUpLoadingImplCopyWith(
+          _$AskWorkerLookUpLoadingImpl<T> value,
+          $Res Function(_$AskWorkerLookUpLoadingImpl<T>) then) =
+      __$$AskWorkerLookUpLoadingImplCopyWithImpl<T, $Res>;
+}
+
+/// @nodoc
+class __$$AskWorkerLookUpLoadingImplCopyWithImpl<T, $Res>
+    extends _$ProjectsFilterStateCopyWithImpl<T, $Res,
+        _$AskWorkerLookUpLoadingImpl<T>>
+    implements _$$AskWorkerLookUpLoadingImplCopyWith<T, $Res> {
+  __$$AskWorkerLookUpLoadingImplCopyWithImpl(
+      _$AskWorkerLookUpLoadingImpl<T> _value,
+      $Res Function(_$AskWorkerLookUpLoadingImpl<T>) _then)
+      : super(_value, _then);
+
+  /// Create a copy of ProjectsFilterState
+  /// with the given fields replaced by the non-null parameter values.
+}
+
+/// @nodoc
+
+class _$AskWorkerLookUpLoadingImpl<T> implements AskWorkerLookUpLoading<T> {
+  _$AskWorkerLookUpLoadingImpl();
+
+  @override
+  String toString() {
+    return 'ProjectsFilterState<$T>.askWorkerLookUpLoading()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$AskWorkerLookUpLoadingImpl<T>);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() requestDesignFilterLoading,
+    required TResult Function(RequestDesignFilterResponseModel data)
+        requestDesignFilterSuccess,
+    required TResult Function(String error) requestDesignFilterFailure,
+    required TResult Function() renovateYourHouseFixedPackagesFilterLoading,
+    required TResult Function(T data)
+        renovateYourHouseFixedPackagesFilterLoaded,
+    required TResult Function(String error)
+        renovateYourHouseFixedPackagesFilterError,
+    required TResult Function() renovateYourHouseCustomPackagesFilterLoading,
+    required TResult Function(RenovateHouseFilterResponseModel data)
+        renovateYourHouseCustomPackagesFilterLoaded,
+    required TResult Function(String error)
+        renovateYourHouseCustomPackagesFilterError,
+    required TResult Function() askTechnicalWorkerFilterLoading,
+    required TResult Function(T data) askTechnicalWorkerFilterSuccess,
+    required TResult Function(String error) askTechnicalWorkerFilterFailure,
+    required TResult Function() askEngineerFilterLoading,
+    required TResult Function(T data) askEngineerFilterSuccess,
+    required TResult Function(String error) askEngineerFilterFailure,
+    required TResult Function() paginationLoading,
+    required TResult Function(String error) paginationFailure,
+    required TResult Function() changeTap,
+    required TResult Function() getAllCustomPackageLoading,
+    required TResult Function(T data) getAllCustomPackageSuccess,
+    required TResult Function(String error) getAllCustomPackageFailure,
+    required TResult Function() askEngineerLookUpLoading,
+    required TResult Function(T data) askEngineerLookUpSuccess,
+    required TResult Function(String error) askEngineerLookUpFailure,
+    required TResult Function() askWorkerLookUpLoading,
+    required TResult Function(T data) askWorkerLookUpSuccess,
+    required TResult Function(String error) askWorkerLookUpFailure,
+  }) {
+    return askWorkerLookUpLoading();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? requestDesignFilterLoading,
+    TResult? Function(RequestDesignFilterResponseModel data)?
+        requestDesignFilterSuccess,
+    TResult? Function(String error)? requestDesignFilterFailure,
+    TResult? Function()? renovateYourHouseFixedPackagesFilterLoading,
+    TResult? Function(T data)? renovateYourHouseFixedPackagesFilterLoaded,
+    TResult? Function(String error)? renovateYourHouseFixedPackagesFilterError,
+    TResult? Function()? renovateYourHouseCustomPackagesFilterLoading,
+    TResult? Function(RenovateHouseFilterResponseModel data)?
+        renovateYourHouseCustomPackagesFilterLoaded,
+    TResult? Function(String error)? renovateYourHouseCustomPackagesFilterError,
+    TResult? Function()? askTechnicalWorkerFilterLoading,
+    TResult? Function(T data)? askTechnicalWorkerFilterSuccess,
+    TResult? Function(String error)? askTechnicalWorkerFilterFailure,
+    TResult? Function()? askEngineerFilterLoading,
+    TResult? Function(T data)? askEngineerFilterSuccess,
+    TResult? Function(String error)? askEngineerFilterFailure,
+    TResult? Function()? paginationLoading,
+    TResult? Function(String error)? paginationFailure,
+    TResult? Function()? changeTap,
+    TResult? Function()? getAllCustomPackageLoading,
+    TResult? Function(T data)? getAllCustomPackageSuccess,
+    TResult? Function(String error)? getAllCustomPackageFailure,
+    TResult? Function()? askEngineerLookUpLoading,
+    TResult? Function(T data)? askEngineerLookUpSuccess,
+    TResult? Function(String error)? askEngineerLookUpFailure,
+    TResult? Function()? askWorkerLookUpLoading,
+    TResult? Function(T data)? askWorkerLookUpSuccess,
+    TResult? Function(String error)? askWorkerLookUpFailure,
+  }) {
+    return askWorkerLookUpLoading?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? requestDesignFilterLoading,
+    TResult Function(RequestDesignFilterResponseModel data)?
+        requestDesignFilterSuccess,
+    TResult Function(String error)? requestDesignFilterFailure,
+    TResult Function()? renovateYourHouseFixedPackagesFilterLoading,
+    TResult Function(T data)? renovateYourHouseFixedPackagesFilterLoaded,
+    TResult Function(String error)? renovateYourHouseFixedPackagesFilterError,
+    TResult Function()? renovateYourHouseCustomPackagesFilterLoading,
+    TResult Function(RenovateHouseFilterResponseModel data)?
+        renovateYourHouseCustomPackagesFilterLoaded,
+    TResult Function(String error)? renovateYourHouseCustomPackagesFilterError,
+    TResult Function()? askTechnicalWorkerFilterLoading,
+    TResult Function(T data)? askTechnicalWorkerFilterSuccess,
+    TResult Function(String error)? askTechnicalWorkerFilterFailure,
+    TResult Function()? askEngineerFilterLoading,
+    TResult Function(T data)? askEngineerFilterSuccess,
+    TResult Function(String error)? askEngineerFilterFailure,
+    TResult Function()? paginationLoading,
+    TResult Function(String error)? paginationFailure,
+    TResult Function()? changeTap,
+    TResult Function()? getAllCustomPackageLoading,
+    TResult Function(T data)? getAllCustomPackageSuccess,
+    TResult Function(String error)? getAllCustomPackageFailure,
+    TResult Function()? askEngineerLookUpLoading,
+    TResult Function(T data)? askEngineerLookUpSuccess,
+    TResult Function(String error)? askEngineerLookUpFailure,
+    TResult Function()? askWorkerLookUpLoading,
+    TResult Function(T data)? askWorkerLookUpSuccess,
+    TResult Function(String error)? askWorkerLookUpFailure,
+    required TResult orElse(),
+  }) {
+    if (askWorkerLookUpLoading != null) {
+      return askWorkerLookUpLoading();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial<T> value) initial,
+    required TResult Function(RequestDesignFilterLoading<T> value)
+        requestDesignFilterLoading,
+    required TResult Function(RequestDesignFilterSuccess<T> value)
+        requestDesignFilterSuccess,
+    required TResult Function(RequestDesignFilterFailure<T> value)
+        requestDesignFilterFailure,
+    required TResult Function(
+            RenovateYourHouseFixedPackagesFilterLoading<T> value)
+        renovateYourHouseFixedPackagesFilterLoading,
+    required TResult Function(
+            RenovateYourHouseFixedPackagesFilterLoaded<T> value)
+        renovateYourHouseFixedPackagesFilterLoaded,
+    required TResult Function(
+            RenovateYourHouseFixedPackagesFilterError<T> value)
+        renovateYourHouseFixedPackagesFilterError,
+    required TResult Function(
+            RenovateYourHouseCustomPackagesFilterLoading<T> value)
+        renovateYourHouseCustomPackagesFilterLoading,
+    required TResult Function(
+            RenovateYourHouseCustomPackagesFilterLoaded<T> value)
+        renovateYourHouseCustomPackagesFilterLoaded,
+    required TResult Function(
+            RenovateYourHouseCustomPackagesFilterError<T> value)
+        renovateYourHouseCustomPackagesFilterError,
+    required TResult Function(AskTechnicalWorkerFilterLoading<T> value)
+        askTechnicalWorkerFilterLoading,
+    required TResult Function(AskTechnicalWorkerFilterSuccess<T> value)
+        askTechnicalWorkerFilterSuccess,
+    required TResult Function(AskTechnicalWorkerFilterFailure<T> value)
+        askTechnicalWorkerFilterFailure,
+    required TResult Function(AskEngineerFilterLoading<T> value)
+        askEngineerFilterLoading,
+    required TResult Function(AskEngineerFilterSuccess<T> value)
+        askEngineerFilterSuccess,
+    required TResult Function(AskEngineerFilterFailure<T> value)
+        askEngineerFilterFailure,
+    required TResult Function(RequestDesignPaginationLoading<T> value)
+        paginationLoading,
+    required TResult Function(RequestDesignPaginationFailure<T> value)
+        paginationFailure,
+    required TResult Function(ChangeTap<T> value) changeTap,
+    required TResult Function(getAllPackagePackageLoading<T> value)
+        getAllCustomPackageLoading,
+    required TResult Function(getAllPackagePackageSuccess<T> value)
+        getAllCustomPackageSuccess,
+    required TResult Function(getAllPackagePackageFailure<T> value)
+        getAllCustomPackageFailure,
+    required TResult Function(AskEngineerLookUpLoading<T> value)
+        askEngineerLookUpLoading,
+    required TResult Function(AskEngineerLookUpSuccess<T> value)
+        askEngineerLookUpSuccess,
+    required TResult Function(AskEngineerLookUpFailure<T> value)
+        askEngineerLookUpFailure,
+    required TResult Function(AskWorkerLookUpLoading<T> value)
+        askWorkerLookUpLoading,
+    required TResult Function(AskWorkerLookUpSuccess<T> value)
+        askWorkerLookUpSuccess,
+    required TResult Function(AskWorkerLookUpFailure<T> value)
+        askWorkerLookUpFailure,
+  }) {
+    return askWorkerLookUpLoading(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial<T> value)? initial,
+    TResult? Function(RequestDesignFilterLoading<T> value)?
+        requestDesignFilterLoading,
+    TResult? Function(RequestDesignFilterSuccess<T> value)?
+        requestDesignFilterSuccess,
+    TResult? Function(RequestDesignFilterFailure<T> value)?
+        requestDesignFilterFailure,
+    TResult? Function(RenovateYourHouseFixedPackagesFilterLoading<T> value)?
+        renovateYourHouseFixedPackagesFilterLoading,
+    TResult? Function(RenovateYourHouseFixedPackagesFilterLoaded<T> value)?
+        renovateYourHouseFixedPackagesFilterLoaded,
+    TResult? Function(RenovateYourHouseFixedPackagesFilterError<T> value)?
+        renovateYourHouseFixedPackagesFilterError,
+    TResult? Function(RenovateYourHouseCustomPackagesFilterLoading<T> value)?
+        renovateYourHouseCustomPackagesFilterLoading,
+    TResult? Function(RenovateYourHouseCustomPackagesFilterLoaded<T> value)?
+        renovateYourHouseCustomPackagesFilterLoaded,
+    TResult? Function(RenovateYourHouseCustomPackagesFilterError<T> value)?
+        renovateYourHouseCustomPackagesFilterError,
+    TResult? Function(AskTechnicalWorkerFilterLoading<T> value)?
+        askTechnicalWorkerFilterLoading,
+    TResult? Function(AskTechnicalWorkerFilterSuccess<T> value)?
+        askTechnicalWorkerFilterSuccess,
+    TResult? Function(AskTechnicalWorkerFilterFailure<T> value)?
+        askTechnicalWorkerFilterFailure,
+    TResult? Function(AskEngineerFilterLoading<T> value)?
+        askEngineerFilterLoading,
+    TResult? Function(AskEngineerFilterSuccess<T> value)?
+        askEngineerFilterSuccess,
+    TResult? Function(AskEngineerFilterFailure<T> value)?
+        askEngineerFilterFailure,
+    TResult? Function(RequestDesignPaginationLoading<T> value)?
+        paginationLoading,
+    TResult? Function(RequestDesignPaginationFailure<T> value)?
+        paginationFailure,
+    TResult? Function(ChangeTap<T> value)? changeTap,
+    TResult? Function(getAllPackagePackageLoading<T> value)?
+        getAllCustomPackageLoading,
+    TResult? Function(getAllPackagePackageSuccess<T> value)?
+        getAllCustomPackageSuccess,
+    TResult? Function(getAllPackagePackageFailure<T> value)?
+        getAllCustomPackageFailure,
+    TResult? Function(AskEngineerLookUpLoading<T> value)?
+        askEngineerLookUpLoading,
+    TResult? Function(AskEngineerLookUpSuccess<T> value)?
+        askEngineerLookUpSuccess,
+    TResult? Function(AskEngineerLookUpFailure<T> value)?
+        askEngineerLookUpFailure,
+    TResult? Function(AskWorkerLookUpLoading<T> value)? askWorkerLookUpLoading,
+    TResult? Function(AskWorkerLookUpSuccess<T> value)? askWorkerLookUpSuccess,
+    TResult? Function(AskWorkerLookUpFailure<T> value)? askWorkerLookUpFailure,
+  }) {
+    return askWorkerLookUpLoading?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial<T> value)? initial,
+    TResult Function(RequestDesignFilterLoading<T> value)?
+        requestDesignFilterLoading,
+    TResult Function(RequestDesignFilterSuccess<T> value)?
+        requestDesignFilterSuccess,
+    TResult Function(RequestDesignFilterFailure<T> value)?
+        requestDesignFilterFailure,
+    TResult Function(RenovateYourHouseFixedPackagesFilterLoading<T> value)?
+        renovateYourHouseFixedPackagesFilterLoading,
+    TResult Function(RenovateYourHouseFixedPackagesFilterLoaded<T> value)?
+        renovateYourHouseFixedPackagesFilterLoaded,
+    TResult Function(RenovateYourHouseFixedPackagesFilterError<T> value)?
+        renovateYourHouseFixedPackagesFilterError,
+    TResult Function(RenovateYourHouseCustomPackagesFilterLoading<T> value)?
+        renovateYourHouseCustomPackagesFilterLoading,
+    TResult Function(RenovateYourHouseCustomPackagesFilterLoaded<T> value)?
+        renovateYourHouseCustomPackagesFilterLoaded,
+    TResult Function(RenovateYourHouseCustomPackagesFilterError<T> value)?
+        renovateYourHouseCustomPackagesFilterError,
+    TResult Function(AskTechnicalWorkerFilterLoading<T> value)?
+        askTechnicalWorkerFilterLoading,
+    TResult Function(AskTechnicalWorkerFilterSuccess<T> value)?
+        askTechnicalWorkerFilterSuccess,
+    TResult Function(AskTechnicalWorkerFilterFailure<T> value)?
+        askTechnicalWorkerFilterFailure,
+    TResult Function(AskEngineerFilterLoading<T> value)?
+        askEngineerFilterLoading,
+    TResult Function(AskEngineerFilterSuccess<T> value)?
+        askEngineerFilterSuccess,
+    TResult Function(AskEngineerFilterFailure<T> value)?
+        askEngineerFilterFailure,
+    TResult Function(RequestDesignPaginationLoading<T> value)?
+        paginationLoading,
+    TResult Function(RequestDesignPaginationFailure<T> value)?
+        paginationFailure,
+    TResult Function(ChangeTap<T> value)? changeTap,
+    TResult Function(getAllPackagePackageLoading<T> value)?
+        getAllCustomPackageLoading,
+    TResult Function(getAllPackagePackageSuccess<T> value)?
+        getAllCustomPackageSuccess,
+    TResult Function(getAllPackagePackageFailure<T> value)?
+        getAllCustomPackageFailure,
+    TResult Function(AskEngineerLookUpLoading<T> value)?
+        askEngineerLookUpLoading,
+    TResult Function(AskEngineerLookUpSuccess<T> value)?
+        askEngineerLookUpSuccess,
+    TResult Function(AskEngineerLookUpFailure<T> value)?
+        askEngineerLookUpFailure,
+    TResult Function(AskWorkerLookUpLoading<T> value)? askWorkerLookUpLoading,
+    TResult Function(AskWorkerLookUpSuccess<T> value)? askWorkerLookUpSuccess,
+    TResult Function(AskWorkerLookUpFailure<T> value)? askWorkerLookUpFailure,
+    required TResult orElse(),
+  }) {
+    if (askWorkerLookUpLoading != null) {
+      return askWorkerLookUpLoading(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class AskWorkerLookUpLoading<T> implements ProjectsFilterState<T> {
+  factory AskWorkerLookUpLoading() = _$AskWorkerLookUpLoadingImpl<T>;
+}
+
+/// @nodoc
+abstract class _$$AskWorkerLookUpSuccessImplCopyWith<T, $Res> {
+  factory _$$AskWorkerLookUpSuccessImplCopyWith(
+          _$AskWorkerLookUpSuccessImpl<T> value,
+          $Res Function(_$AskWorkerLookUpSuccessImpl<T>) then) =
+      __$$AskWorkerLookUpSuccessImplCopyWithImpl<T, $Res>;
+  @useResult
+  $Res call({T data});
+}
+
+/// @nodoc
+class __$$AskWorkerLookUpSuccessImplCopyWithImpl<T, $Res>
+    extends _$ProjectsFilterStateCopyWithImpl<T, $Res,
+        _$AskWorkerLookUpSuccessImpl<T>>
+    implements _$$AskWorkerLookUpSuccessImplCopyWith<T, $Res> {
+  __$$AskWorkerLookUpSuccessImplCopyWithImpl(
+      _$AskWorkerLookUpSuccessImpl<T> _value,
+      $Res Function(_$AskWorkerLookUpSuccessImpl<T>) _then)
+      : super(_value, _then);
+
+  /// Create a copy of ProjectsFilterState
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? data = freezed,
+  }) {
+    return _then(_$AskWorkerLookUpSuccessImpl<T>(
+      freezed == data
+          ? _value.data
+          : data // ignore: cast_nullable_to_non_nullable
+              as T,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$AskWorkerLookUpSuccessImpl<T> implements AskWorkerLookUpSuccess<T> {
+  _$AskWorkerLookUpSuccessImpl(this.data);
+
+  @override
+  final T data;
+
+  @override
+  String toString() {
+    return 'ProjectsFilterState<$T>.askWorkerLookUpSuccess(data: $data)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$AskWorkerLookUpSuccessImpl<T> &&
+            const DeepCollectionEquality().equals(other.data, data));
+  }
+
+  @override
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(data));
+
+  /// Create a copy of ProjectsFilterState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$AskWorkerLookUpSuccessImplCopyWith<T, _$AskWorkerLookUpSuccessImpl<T>>
+      get copyWith => __$$AskWorkerLookUpSuccessImplCopyWithImpl<T,
+          _$AskWorkerLookUpSuccessImpl<T>>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() requestDesignFilterLoading,
+    required TResult Function(RequestDesignFilterResponseModel data)
+        requestDesignFilterSuccess,
+    required TResult Function(String error) requestDesignFilterFailure,
+    required TResult Function() renovateYourHouseFixedPackagesFilterLoading,
+    required TResult Function(T data)
+        renovateYourHouseFixedPackagesFilterLoaded,
+    required TResult Function(String error)
+        renovateYourHouseFixedPackagesFilterError,
+    required TResult Function() renovateYourHouseCustomPackagesFilterLoading,
+    required TResult Function(RenovateHouseFilterResponseModel data)
+        renovateYourHouseCustomPackagesFilterLoaded,
+    required TResult Function(String error)
+        renovateYourHouseCustomPackagesFilterError,
+    required TResult Function() askTechnicalWorkerFilterLoading,
+    required TResult Function(T data) askTechnicalWorkerFilterSuccess,
+    required TResult Function(String error) askTechnicalWorkerFilterFailure,
+    required TResult Function() askEngineerFilterLoading,
+    required TResult Function(T data) askEngineerFilterSuccess,
+    required TResult Function(String error) askEngineerFilterFailure,
+    required TResult Function() paginationLoading,
+    required TResult Function(String error) paginationFailure,
+    required TResult Function() changeTap,
+    required TResult Function() getAllCustomPackageLoading,
+    required TResult Function(T data) getAllCustomPackageSuccess,
+    required TResult Function(String error) getAllCustomPackageFailure,
+    required TResult Function() askEngineerLookUpLoading,
+    required TResult Function(T data) askEngineerLookUpSuccess,
+    required TResult Function(String error) askEngineerLookUpFailure,
+    required TResult Function() askWorkerLookUpLoading,
+    required TResult Function(T data) askWorkerLookUpSuccess,
+    required TResult Function(String error) askWorkerLookUpFailure,
+  }) {
+    return askWorkerLookUpSuccess(data);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? requestDesignFilterLoading,
+    TResult? Function(RequestDesignFilterResponseModel data)?
+        requestDesignFilterSuccess,
+    TResult? Function(String error)? requestDesignFilterFailure,
+    TResult? Function()? renovateYourHouseFixedPackagesFilterLoading,
+    TResult? Function(T data)? renovateYourHouseFixedPackagesFilterLoaded,
+    TResult? Function(String error)? renovateYourHouseFixedPackagesFilterError,
+    TResult? Function()? renovateYourHouseCustomPackagesFilterLoading,
+    TResult? Function(RenovateHouseFilterResponseModel data)?
+        renovateYourHouseCustomPackagesFilterLoaded,
+    TResult? Function(String error)? renovateYourHouseCustomPackagesFilterError,
+    TResult? Function()? askTechnicalWorkerFilterLoading,
+    TResult? Function(T data)? askTechnicalWorkerFilterSuccess,
+    TResult? Function(String error)? askTechnicalWorkerFilterFailure,
+    TResult? Function()? askEngineerFilterLoading,
+    TResult? Function(T data)? askEngineerFilterSuccess,
+    TResult? Function(String error)? askEngineerFilterFailure,
+    TResult? Function()? paginationLoading,
+    TResult? Function(String error)? paginationFailure,
+    TResult? Function()? changeTap,
+    TResult? Function()? getAllCustomPackageLoading,
+    TResult? Function(T data)? getAllCustomPackageSuccess,
+    TResult? Function(String error)? getAllCustomPackageFailure,
+    TResult? Function()? askEngineerLookUpLoading,
+    TResult? Function(T data)? askEngineerLookUpSuccess,
+    TResult? Function(String error)? askEngineerLookUpFailure,
+    TResult? Function()? askWorkerLookUpLoading,
+    TResult? Function(T data)? askWorkerLookUpSuccess,
+    TResult? Function(String error)? askWorkerLookUpFailure,
+  }) {
+    return askWorkerLookUpSuccess?.call(data);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? requestDesignFilterLoading,
+    TResult Function(RequestDesignFilterResponseModel data)?
+        requestDesignFilterSuccess,
+    TResult Function(String error)? requestDesignFilterFailure,
+    TResult Function()? renovateYourHouseFixedPackagesFilterLoading,
+    TResult Function(T data)? renovateYourHouseFixedPackagesFilterLoaded,
+    TResult Function(String error)? renovateYourHouseFixedPackagesFilterError,
+    TResult Function()? renovateYourHouseCustomPackagesFilterLoading,
+    TResult Function(RenovateHouseFilterResponseModel data)?
+        renovateYourHouseCustomPackagesFilterLoaded,
+    TResult Function(String error)? renovateYourHouseCustomPackagesFilterError,
+    TResult Function()? askTechnicalWorkerFilterLoading,
+    TResult Function(T data)? askTechnicalWorkerFilterSuccess,
+    TResult Function(String error)? askTechnicalWorkerFilterFailure,
+    TResult Function()? askEngineerFilterLoading,
+    TResult Function(T data)? askEngineerFilterSuccess,
+    TResult Function(String error)? askEngineerFilterFailure,
+    TResult Function()? paginationLoading,
+    TResult Function(String error)? paginationFailure,
+    TResult Function()? changeTap,
+    TResult Function()? getAllCustomPackageLoading,
+    TResult Function(T data)? getAllCustomPackageSuccess,
+    TResult Function(String error)? getAllCustomPackageFailure,
+    TResult Function()? askEngineerLookUpLoading,
+    TResult Function(T data)? askEngineerLookUpSuccess,
+    TResult Function(String error)? askEngineerLookUpFailure,
+    TResult Function()? askWorkerLookUpLoading,
+    TResult Function(T data)? askWorkerLookUpSuccess,
+    TResult Function(String error)? askWorkerLookUpFailure,
+    required TResult orElse(),
+  }) {
+    if (askWorkerLookUpSuccess != null) {
+      return askWorkerLookUpSuccess(data);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial<T> value) initial,
+    required TResult Function(RequestDesignFilterLoading<T> value)
+        requestDesignFilterLoading,
+    required TResult Function(RequestDesignFilterSuccess<T> value)
+        requestDesignFilterSuccess,
+    required TResult Function(RequestDesignFilterFailure<T> value)
+        requestDesignFilterFailure,
+    required TResult Function(
+            RenovateYourHouseFixedPackagesFilterLoading<T> value)
+        renovateYourHouseFixedPackagesFilterLoading,
+    required TResult Function(
+            RenovateYourHouseFixedPackagesFilterLoaded<T> value)
+        renovateYourHouseFixedPackagesFilterLoaded,
+    required TResult Function(
+            RenovateYourHouseFixedPackagesFilterError<T> value)
+        renovateYourHouseFixedPackagesFilterError,
+    required TResult Function(
+            RenovateYourHouseCustomPackagesFilterLoading<T> value)
+        renovateYourHouseCustomPackagesFilterLoading,
+    required TResult Function(
+            RenovateYourHouseCustomPackagesFilterLoaded<T> value)
+        renovateYourHouseCustomPackagesFilterLoaded,
+    required TResult Function(
+            RenovateYourHouseCustomPackagesFilterError<T> value)
+        renovateYourHouseCustomPackagesFilterError,
+    required TResult Function(AskTechnicalWorkerFilterLoading<T> value)
+        askTechnicalWorkerFilterLoading,
+    required TResult Function(AskTechnicalWorkerFilterSuccess<T> value)
+        askTechnicalWorkerFilterSuccess,
+    required TResult Function(AskTechnicalWorkerFilterFailure<T> value)
+        askTechnicalWorkerFilterFailure,
+    required TResult Function(AskEngineerFilterLoading<T> value)
+        askEngineerFilterLoading,
+    required TResult Function(AskEngineerFilterSuccess<T> value)
+        askEngineerFilterSuccess,
+    required TResult Function(AskEngineerFilterFailure<T> value)
+        askEngineerFilterFailure,
+    required TResult Function(RequestDesignPaginationLoading<T> value)
+        paginationLoading,
+    required TResult Function(RequestDesignPaginationFailure<T> value)
+        paginationFailure,
+    required TResult Function(ChangeTap<T> value) changeTap,
+    required TResult Function(getAllPackagePackageLoading<T> value)
+        getAllCustomPackageLoading,
+    required TResult Function(getAllPackagePackageSuccess<T> value)
+        getAllCustomPackageSuccess,
+    required TResult Function(getAllPackagePackageFailure<T> value)
+        getAllCustomPackageFailure,
+    required TResult Function(AskEngineerLookUpLoading<T> value)
+        askEngineerLookUpLoading,
+    required TResult Function(AskEngineerLookUpSuccess<T> value)
+        askEngineerLookUpSuccess,
+    required TResult Function(AskEngineerLookUpFailure<T> value)
+        askEngineerLookUpFailure,
+    required TResult Function(AskWorkerLookUpLoading<T> value)
+        askWorkerLookUpLoading,
+    required TResult Function(AskWorkerLookUpSuccess<T> value)
+        askWorkerLookUpSuccess,
+    required TResult Function(AskWorkerLookUpFailure<T> value)
+        askWorkerLookUpFailure,
+  }) {
+    return askWorkerLookUpSuccess(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial<T> value)? initial,
+    TResult? Function(RequestDesignFilterLoading<T> value)?
+        requestDesignFilterLoading,
+    TResult? Function(RequestDesignFilterSuccess<T> value)?
+        requestDesignFilterSuccess,
+    TResult? Function(RequestDesignFilterFailure<T> value)?
+        requestDesignFilterFailure,
+    TResult? Function(RenovateYourHouseFixedPackagesFilterLoading<T> value)?
+        renovateYourHouseFixedPackagesFilterLoading,
+    TResult? Function(RenovateYourHouseFixedPackagesFilterLoaded<T> value)?
+        renovateYourHouseFixedPackagesFilterLoaded,
+    TResult? Function(RenovateYourHouseFixedPackagesFilterError<T> value)?
+        renovateYourHouseFixedPackagesFilterError,
+    TResult? Function(RenovateYourHouseCustomPackagesFilterLoading<T> value)?
+        renovateYourHouseCustomPackagesFilterLoading,
+    TResult? Function(RenovateYourHouseCustomPackagesFilterLoaded<T> value)?
+        renovateYourHouseCustomPackagesFilterLoaded,
+    TResult? Function(RenovateYourHouseCustomPackagesFilterError<T> value)?
+        renovateYourHouseCustomPackagesFilterError,
+    TResult? Function(AskTechnicalWorkerFilterLoading<T> value)?
+        askTechnicalWorkerFilterLoading,
+    TResult? Function(AskTechnicalWorkerFilterSuccess<T> value)?
+        askTechnicalWorkerFilterSuccess,
+    TResult? Function(AskTechnicalWorkerFilterFailure<T> value)?
+        askTechnicalWorkerFilterFailure,
+    TResult? Function(AskEngineerFilterLoading<T> value)?
+        askEngineerFilterLoading,
+    TResult? Function(AskEngineerFilterSuccess<T> value)?
+        askEngineerFilterSuccess,
+    TResult? Function(AskEngineerFilterFailure<T> value)?
+        askEngineerFilterFailure,
+    TResult? Function(RequestDesignPaginationLoading<T> value)?
+        paginationLoading,
+    TResult? Function(RequestDesignPaginationFailure<T> value)?
+        paginationFailure,
+    TResult? Function(ChangeTap<T> value)? changeTap,
+    TResult? Function(getAllPackagePackageLoading<T> value)?
+        getAllCustomPackageLoading,
+    TResult? Function(getAllPackagePackageSuccess<T> value)?
+        getAllCustomPackageSuccess,
+    TResult? Function(getAllPackagePackageFailure<T> value)?
+        getAllCustomPackageFailure,
+    TResult? Function(AskEngineerLookUpLoading<T> value)?
+        askEngineerLookUpLoading,
+    TResult? Function(AskEngineerLookUpSuccess<T> value)?
+        askEngineerLookUpSuccess,
+    TResult? Function(AskEngineerLookUpFailure<T> value)?
+        askEngineerLookUpFailure,
+    TResult? Function(AskWorkerLookUpLoading<T> value)? askWorkerLookUpLoading,
+    TResult? Function(AskWorkerLookUpSuccess<T> value)? askWorkerLookUpSuccess,
+    TResult? Function(AskWorkerLookUpFailure<T> value)? askWorkerLookUpFailure,
+  }) {
+    return askWorkerLookUpSuccess?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial<T> value)? initial,
+    TResult Function(RequestDesignFilterLoading<T> value)?
+        requestDesignFilterLoading,
+    TResult Function(RequestDesignFilterSuccess<T> value)?
+        requestDesignFilterSuccess,
+    TResult Function(RequestDesignFilterFailure<T> value)?
+        requestDesignFilterFailure,
+    TResult Function(RenovateYourHouseFixedPackagesFilterLoading<T> value)?
+        renovateYourHouseFixedPackagesFilterLoading,
+    TResult Function(RenovateYourHouseFixedPackagesFilterLoaded<T> value)?
+        renovateYourHouseFixedPackagesFilterLoaded,
+    TResult Function(RenovateYourHouseFixedPackagesFilterError<T> value)?
+        renovateYourHouseFixedPackagesFilterError,
+    TResult Function(RenovateYourHouseCustomPackagesFilterLoading<T> value)?
+        renovateYourHouseCustomPackagesFilterLoading,
+    TResult Function(RenovateYourHouseCustomPackagesFilterLoaded<T> value)?
+        renovateYourHouseCustomPackagesFilterLoaded,
+    TResult Function(RenovateYourHouseCustomPackagesFilterError<T> value)?
+        renovateYourHouseCustomPackagesFilterError,
+    TResult Function(AskTechnicalWorkerFilterLoading<T> value)?
+        askTechnicalWorkerFilterLoading,
+    TResult Function(AskTechnicalWorkerFilterSuccess<T> value)?
+        askTechnicalWorkerFilterSuccess,
+    TResult Function(AskTechnicalWorkerFilterFailure<T> value)?
+        askTechnicalWorkerFilterFailure,
+    TResult Function(AskEngineerFilterLoading<T> value)?
+        askEngineerFilterLoading,
+    TResult Function(AskEngineerFilterSuccess<T> value)?
+        askEngineerFilterSuccess,
+    TResult Function(AskEngineerFilterFailure<T> value)?
+        askEngineerFilterFailure,
+    TResult Function(RequestDesignPaginationLoading<T> value)?
+        paginationLoading,
+    TResult Function(RequestDesignPaginationFailure<T> value)?
+        paginationFailure,
+    TResult Function(ChangeTap<T> value)? changeTap,
+    TResult Function(getAllPackagePackageLoading<T> value)?
+        getAllCustomPackageLoading,
+    TResult Function(getAllPackagePackageSuccess<T> value)?
+        getAllCustomPackageSuccess,
+    TResult Function(getAllPackagePackageFailure<T> value)?
+        getAllCustomPackageFailure,
+    TResult Function(AskEngineerLookUpLoading<T> value)?
+        askEngineerLookUpLoading,
+    TResult Function(AskEngineerLookUpSuccess<T> value)?
+        askEngineerLookUpSuccess,
+    TResult Function(AskEngineerLookUpFailure<T> value)?
+        askEngineerLookUpFailure,
+    TResult Function(AskWorkerLookUpLoading<T> value)? askWorkerLookUpLoading,
+    TResult Function(AskWorkerLookUpSuccess<T> value)? askWorkerLookUpSuccess,
+    TResult Function(AskWorkerLookUpFailure<T> value)? askWorkerLookUpFailure,
+    required TResult orElse(),
+  }) {
+    if (askWorkerLookUpSuccess != null) {
+      return askWorkerLookUpSuccess(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class AskWorkerLookUpSuccess<T> implements ProjectsFilterState<T> {
+  factory AskWorkerLookUpSuccess(final T data) =
+      _$AskWorkerLookUpSuccessImpl<T>;
+
+  T get data;
+
+  /// Create a copy of ProjectsFilterState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$AskWorkerLookUpSuccessImplCopyWith<T, _$AskWorkerLookUpSuccessImpl<T>>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$AskWorkerLookUpFailureImplCopyWith<T, $Res> {
+  factory _$$AskWorkerLookUpFailureImplCopyWith(
+          _$AskWorkerLookUpFailureImpl<T> value,
+          $Res Function(_$AskWorkerLookUpFailureImpl<T>) then) =
+      __$$AskWorkerLookUpFailureImplCopyWithImpl<T, $Res>;
+  @useResult
+  $Res call({String error});
+}
+
+/// @nodoc
+class __$$AskWorkerLookUpFailureImplCopyWithImpl<T, $Res>
+    extends _$ProjectsFilterStateCopyWithImpl<T, $Res,
+        _$AskWorkerLookUpFailureImpl<T>>
+    implements _$$AskWorkerLookUpFailureImplCopyWith<T, $Res> {
+  __$$AskWorkerLookUpFailureImplCopyWithImpl(
+      _$AskWorkerLookUpFailureImpl<T> _value,
+      $Res Function(_$AskWorkerLookUpFailureImpl<T>) _then)
+      : super(_value, _then);
+
+  /// Create a copy of ProjectsFilterState
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? error = null,
+  }) {
+    return _then(_$AskWorkerLookUpFailureImpl<T>(
+      error: null == error
+          ? _value.error
+          : error // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$AskWorkerLookUpFailureImpl<T> implements AskWorkerLookUpFailure<T> {
+  _$AskWorkerLookUpFailureImpl({required this.error});
+
+  @override
+  final String error;
+
+  @override
+  String toString() {
+    return 'ProjectsFilterState<$T>.askWorkerLookUpFailure(error: $error)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$AskWorkerLookUpFailureImpl<T> &&
+            (identical(other.error, error) || other.error == error));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, error);
+
+  /// Create a copy of ProjectsFilterState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$AskWorkerLookUpFailureImplCopyWith<T, _$AskWorkerLookUpFailureImpl<T>>
+      get copyWith => __$$AskWorkerLookUpFailureImplCopyWithImpl<T,
+          _$AskWorkerLookUpFailureImpl<T>>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() requestDesignFilterLoading,
+    required TResult Function(RequestDesignFilterResponseModel data)
+        requestDesignFilterSuccess,
+    required TResult Function(String error) requestDesignFilterFailure,
+    required TResult Function() renovateYourHouseFixedPackagesFilterLoading,
+    required TResult Function(T data)
+        renovateYourHouseFixedPackagesFilterLoaded,
+    required TResult Function(String error)
+        renovateYourHouseFixedPackagesFilterError,
+    required TResult Function() renovateYourHouseCustomPackagesFilterLoading,
+    required TResult Function(RenovateHouseFilterResponseModel data)
+        renovateYourHouseCustomPackagesFilterLoaded,
+    required TResult Function(String error)
+        renovateYourHouseCustomPackagesFilterError,
+    required TResult Function() askTechnicalWorkerFilterLoading,
+    required TResult Function(T data) askTechnicalWorkerFilterSuccess,
+    required TResult Function(String error) askTechnicalWorkerFilterFailure,
+    required TResult Function() askEngineerFilterLoading,
+    required TResult Function(T data) askEngineerFilterSuccess,
+    required TResult Function(String error) askEngineerFilterFailure,
+    required TResult Function() paginationLoading,
+    required TResult Function(String error) paginationFailure,
+    required TResult Function() changeTap,
+    required TResult Function() getAllCustomPackageLoading,
+    required TResult Function(T data) getAllCustomPackageSuccess,
+    required TResult Function(String error) getAllCustomPackageFailure,
+    required TResult Function() askEngineerLookUpLoading,
+    required TResult Function(T data) askEngineerLookUpSuccess,
+    required TResult Function(String error) askEngineerLookUpFailure,
+    required TResult Function() askWorkerLookUpLoading,
+    required TResult Function(T data) askWorkerLookUpSuccess,
+    required TResult Function(String error) askWorkerLookUpFailure,
+  }) {
+    return askWorkerLookUpFailure(error);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? requestDesignFilterLoading,
+    TResult? Function(RequestDesignFilterResponseModel data)?
+        requestDesignFilterSuccess,
+    TResult? Function(String error)? requestDesignFilterFailure,
+    TResult? Function()? renovateYourHouseFixedPackagesFilterLoading,
+    TResult? Function(T data)? renovateYourHouseFixedPackagesFilterLoaded,
+    TResult? Function(String error)? renovateYourHouseFixedPackagesFilterError,
+    TResult? Function()? renovateYourHouseCustomPackagesFilterLoading,
+    TResult? Function(RenovateHouseFilterResponseModel data)?
+        renovateYourHouseCustomPackagesFilterLoaded,
+    TResult? Function(String error)? renovateYourHouseCustomPackagesFilterError,
+    TResult? Function()? askTechnicalWorkerFilterLoading,
+    TResult? Function(T data)? askTechnicalWorkerFilterSuccess,
+    TResult? Function(String error)? askTechnicalWorkerFilterFailure,
+    TResult? Function()? askEngineerFilterLoading,
+    TResult? Function(T data)? askEngineerFilterSuccess,
+    TResult? Function(String error)? askEngineerFilterFailure,
+    TResult? Function()? paginationLoading,
+    TResult? Function(String error)? paginationFailure,
+    TResult? Function()? changeTap,
+    TResult? Function()? getAllCustomPackageLoading,
+    TResult? Function(T data)? getAllCustomPackageSuccess,
+    TResult? Function(String error)? getAllCustomPackageFailure,
+    TResult? Function()? askEngineerLookUpLoading,
+    TResult? Function(T data)? askEngineerLookUpSuccess,
+    TResult? Function(String error)? askEngineerLookUpFailure,
+    TResult? Function()? askWorkerLookUpLoading,
+    TResult? Function(T data)? askWorkerLookUpSuccess,
+    TResult? Function(String error)? askWorkerLookUpFailure,
+  }) {
+    return askWorkerLookUpFailure?.call(error);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? requestDesignFilterLoading,
+    TResult Function(RequestDesignFilterResponseModel data)?
+        requestDesignFilterSuccess,
+    TResult Function(String error)? requestDesignFilterFailure,
+    TResult Function()? renovateYourHouseFixedPackagesFilterLoading,
+    TResult Function(T data)? renovateYourHouseFixedPackagesFilterLoaded,
+    TResult Function(String error)? renovateYourHouseFixedPackagesFilterError,
+    TResult Function()? renovateYourHouseCustomPackagesFilterLoading,
+    TResult Function(RenovateHouseFilterResponseModel data)?
+        renovateYourHouseCustomPackagesFilterLoaded,
+    TResult Function(String error)? renovateYourHouseCustomPackagesFilterError,
+    TResult Function()? askTechnicalWorkerFilterLoading,
+    TResult Function(T data)? askTechnicalWorkerFilterSuccess,
+    TResult Function(String error)? askTechnicalWorkerFilterFailure,
+    TResult Function()? askEngineerFilterLoading,
+    TResult Function(T data)? askEngineerFilterSuccess,
+    TResult Function(String error)? askEngineerFilterFailure,
+    TResult Function()? paginationLoading,
+    TResult Function(String error)? paginationFailure,
+    TResult Function()? changeTap,
+    TResult Function()? getAllCustomPackageLoading,
+    TResult Function(T data)? getAllCustomPackageSuccess,
+    TResult Function(String error)? getAllCustomPackageFailure,
+    TResult Function()? askEngineerLookUpLoading,
+    TResult Function(T data)? askEngineerLookUpSuccess,
+    TResult Function(String error)? askEngineerLookUpFailure,
+    TResult Function()? askWorkerLookUpLoading,
+    TResult Function(T data)? askWorkerLookUpSuccess,
+    TResult Function(String error)? askWorkerLookUpFailure,
+    required TResult orElse(),
+  }) {
+    if (askWorkerLookUpFailure != null) {
+      return askWorkerLookUpFailure(error);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial<T> value) initial,
+    required TResult Function(RequestDesignFilterLoading<T> value)
+        requestDesignFilterLoading,
+    required TResult Function(RequestDesignFilterSuccess<T> value)
+        requestDesignFilterSuccess,
+    required TResult Function(RequestDesignFilterFailure<T> value)
+        requestDesignFilterFailure,
+    required TResult Function(
+            RenovateYourHouseFixedPackagesFilterLoading<T> value)
+        renovateYourHouseFixedPackagesFilterLoading,
+    required TResult Function(
+            RenovateYourHouseFixedPackagesFilterLoaded<T> value)
+        renovateYourHouseFixedPackagesFilterLoaded,
+    required TResult Function(
+            RenovateYourHouseFixedPackagesFilterError<T> value)
+        renovateYourHouseFixedPackagesFilterError,
+    required TResult Function(
+            RenovateYourHouseCustomPackagesFilterLoading<T> value)
+        renovateYourHouseCustomPackagesFilterLoading,
+    required TResult Function(
+            RenovateYourHouseCustomPackagesFilterLoaded<T> value)
+        renovateYourHouseCustomPackagesFilterLoaded,
+    required TResult Function(
+            RenovateYourHouseCustomPackagesFilterError<T> value)
+        renovateYourHouseCustomPackagesFilterError,
+    required TResult Function(AskTechnicalWorkerFilterLoading<T> value)
+        askTechnicalWorkerFilterLoading,
+    required TResult Function(AskTechnicalWorkerFilterSuccess<T> value)
+        askTechnicalWorkerFilterSuccess,
+    required TResult Function(AskTechnicalWorkerFilterFailure<T> value)
+        askTechnicalWorkerFilterFailure,
+    required TResult Function(AskEngineerFilterLoading<T> value)
+        askEngineerFilterLoading,
+    required TResult Function(AskEngineerFilterSuccess<T> value)
+        askEngineerFilterSuccess,
+    required TResult Function(AskEngineerFilterFailure<T> value)
+        askEngineerFilterFailure,
+    required TResult Function(RequestDesignPaginationLoading<T> value)
+        paginationLoading,
+    required TResult Function(RequestDesignPaginationFailure<T> value)
+        paginationFailure,
+    required TResult Function(ChangeTap<T> value) changeTap,
+    required TResult Function(getAllPackagePackageLoading<T> value)
+        getAllCustomPackageLoading,
+    required TResult Function(getAllPackagePackageSuccess<T> value)
+        getAllCustomPackageSuccess,
+    required TResult Function(getAllPackagePackageFailure<T> value)
+        getAllCustomPackageFailure,
+    required TResult Function(AskEngineerLookUpLoading<T> value)
+        askEngineerLookUpLoading,
+    required TResult Function(AskEngineerLookUpSuccess<T> value)
+        askEngineerLookUpSuccess,
+    required TResult Function(AskEngineerLookUpFailure<T> value)
+        askEngineerLookUpFailure,
+    required TResult Function(AskWorkerLookUpLoading<T> value)
+        askWorkerLookUpLoading,
+    required TResult Function(AskWorkerLookUpSuccess<T> value)
+        askWorkerLookUpSuccess,
+    required TResult Function(AskWorkerLookUpFailure<T> value)
+        askWorkerLookUpFailure,
+  }) {
+    return askWorkerLookUpFailure(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial<T> value)? initial,
+    TResult? Function(RequestDesignFilterLoading<T> value)?
+        requestDesignFilterLoading,
+    TResult? Function(RequestDesignFilterSuccess<T> value)?
+        requestDesignFilterSuccess,
+    TResult? Function(RequestDesignFilterFailure<T> value)?
+        requestDesignFilterFailure,
+    TResult? Function(RenovateYourHouseFixedPackagesFilterLoading<T> value)?
+        renovateYourHouseFixedPackagesFilterLoading,
+    TResult? Function(RenovateYourHouseFixedPackagesFilterLoaded<T> value)?
+        renovateYourHouseFixedPackagesFilterLoaded,
+    TResult? Function(RenovateYourHouseFixedPackagesFilterError<T> value)?
+        renovateYourHouseFixedPackagesFilterError,
+    TResult? Function(RenovateYourHouseCustomPackagesFilterLoading<T> value)?
+        renovateYourHouseCustomPackagesFilterLoading,
+    TResult? Function(RenovateYourHouseCustomPackagesFilterLoaded<T> value)?
+        renovateYourHouseCustomPackagesFilterLoaded,
+    TResult? Function(RenovateYourHouseCustomPackagesFilterError<T> value)?
+        renovateYourHouseCustomPackagesFilterError,
+    TResult? Function(AskTechnicalWorkerFilterLoading<T> value)?
+        askTechnicalWorkerFilterLoading,
+    TResult? Function(AskTechnicalWorkerFilterSuccess<T> value)?
+        askTechnicalWorkerFilterSuccess,
+    TResult? Function(AskTechnicalWorkerFilterFailure<T> value)?
+        askTechnicalWorkerFilterFailure,
+    TResult? Function(AskEngineerFilterLoading<T> value)?
+        askEngineerFilterLoading,
+    TResult? Function(AskEngineerFilterSuccess<T> value)?
+        askEngineerFilterSuccess,
+    TResult? Function(AskEngineerFilterFailure<T> value)?
+        askEngineerFilterFailure,
+    TResult? Function(RequestDesignPaginationLoading<T> value)?
+        paginationLoading,
+    TResult? Function(RequestDesignPaginationFailure<T> value)?
+        paginationFailure,
+    TResult? Function(ChangeTap<T> value)? changeTap,
+    TResult? Function(getAllPackagePackageLoading<T> value)?
+        getAllCustomPackageLoading,
+    TResult? Function(getAllPackagePackageSuccess<T> value)?
+        getAllCustomPackageSuccess,
+    TResult? Function(getAllPackagePackageFailure<T> value)?
+        getAllCustomPackageFailure,
+    TResult? Function(AskEngineerLookUpLoading<T> value)?
+        askEngineerLookUpLoading,
+    TResult? Function(AskEngineerLookUpSuccess<T> value)?
+        askEngineerLookUpSuccess,
+    TResult? Function(AskEngineerLookUpFailure<T> value)?
+        askEngineerLookUpFailure,
+    TResult? Function(AskWorkerLookUpLoading<T> value)? askWorkerLookUpLoading,
+    TResult? Function(AskWorkerLookUpSuccess<T> value)? askWorkerLookUpSuccess,
+    TResult? Function(AskWorkerLookUpFailure<T> value)? askWorkerLookUpFailure,
+  }) {
+    return askWorkerLookUpFailure?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial<T> value)? initial,
+    TResult Function(RequestDesignFilterLoading<T> value)?
+        requestDesignFilterLoading,
+    TResult Function(RequestDesignFilterSuccess<T> value)?
+        requestDesignFilterSuccess,
+    TResult Function(RequestDesignFilterFailure<T> value)?
+        requestDesignFilterFailure,
+    TResult Function(RenovateYourHouseFixedPackagesFilterLoading<T> value)?
+        renovateYourHouseFixedPackagesFilterLoading,
+    TResult Function(RenovateYourHouseFixedPackagesFilterLoaded<T> value)?
+        renovateYourHouseFixedPackagesFilterLoaded,
+    TResult Function(RenovateYourHouseFixedPackagesFilterError<T> value)?
+        renovateYourHouseFixedPackagesFilterError,
+    TResult Function(RenovateYourHouseCustomPackagesFilterLoading<T> value)?
+        renovateYourHouseCustomPackagesFilterLoading,
+    TResult Function(RenovateYourHouseCustomPackagesFilterLoaded<T> value)?
+        renovateYourHouseCustomPackagesFilterLoaded,
+    TResult Function(RenovateYourHouseCustomPackagesFilterError<T> value)?
+        renovateYourHouseCustomPackagesFilterError,
+    TResult Function(AskTechnicalWorkerFilterLoading<T> value)?
+        askTechnicalWorkerFilterLoading,
+    TResult Function(AskTechnicalWorkerFilterSuccess<T> value)?
+        askTechnicalWorkerFilterSuccess,
+    TResult Function(AskTechnicalWorkerFilterFailure<T> value)?
+        askTechnicalWorkerFilterFailure,
+    TResult Function(AskEngineerFilterLoading<T> value)?
+        askEngineerFilterLoading,
+    TResult Function(AskEngineerFilterSuccess<T> value)?
+        askEngineerFilterSuccess,
+    TResult Function(AskEngineerFilterFailure<T> value)?
+        askEngineerFilterFailure,
+    TResult Function(RequestDesignPaginationLoading<T> value)?
+        paginationLoading,
+    TResult Function(RequestDesignPaginationFailure<T> value)?
+        paginationFailure,
+    TResult Function(ChangeTap<T> value)? changeTap,
+    TResult Function(getAllPackagePackageLoading<T> value)?
+        getAllCustomPackageLoading,
+    TResult Function(getAllPackagePackageSuccess<T> value)?
+        getAllCustomPackageSuccess,
+    TResult Function(getAllPackagePackageFailure<T> value)?
+        getAllCustomPackageFailure,
+    TResult Function(AskEngineerLookUpLoading<T> value)?
+        askEngineerLookUpLoading,
+    TResult Function(AskEngineerLookUpSuccess<T> value)?
+        askEngineerLookUpSuccess,
+    TResult Function(AskEngineerLookUpFailure<T> value)?
+        askEngineerLookUpFailure,
+    TResult Function(AskWorkerLookUpLoading<T> value)? askWorkerLookUpLoading,
+    TResult Function(AskWorkerLookUpSuccess<T> value)? askWorkerLookUpSuccess,
+    TResult Function(AskWorkerLookUpFailure<T> value)? askWorkerLookUpFailure,
+    required TResult orElse(),
+  }) {
+    if (askWorkerLookUpFailure != null) {
+      return askWorkerLookUpFailure(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class AskWorkerLookUpFailure<T> implements ProjectsFilterState<T> {
+  factory AskWorkerLookUpFailure({required final String error}) =
+      _$AskWorkerLookUpFailureImpl<T>;
+
+  String get error;
+
+  /// Create a copy of ProjectsFilterState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$AskWorkerLookUpFailureImplCopyWith<T, _$AskWorkerLookUpFailureImpl<T>>
       get copyWith => throw _privateConstructorUsedError;
 }

@@ -224,13 +224,16 @@ import '../../../../../core/utils/spacing.dart';
 
 class AnimatedToggleRow extends StatefulWidget {
   final String textOne;
-
-  // final String textTwo;
+  final String? textTwo;
   final double? iconSize;
   final TextStyle? textStyle;
 
   const AnimatedToggleRow(
-      {super.key, required this.textOne, this.iconSize, this.textStyle});
+      {super.key,
+      required this.textOne,
+      this.iconSize,
+      this.textStyle,
+       this.textTwo});
 
   @override
   State<AnimatedToggleRow> createState() => _AnimatedToggleRowState();
@@ -240,31 +243,15 @@ class _AnimatedToggleRowState extends State<AnimatedToggleRow> {
   bool showFirst = true;
   Timer? _timer;
 
-  // @override
-  // void initState() {
-  //   super.initState();
-  //   _toggleRows();
-  // }
-  //
-  // void _toggleRows() async {
-  //   while (mounted) {
-  //     await Future.delayed(const Duration(seconds: 3));
-  //     setState(() {
-  //       showFirst = !showFirst;
-  //     });
-  //   }
-  // }
-
-
   @override
   void initState() {
     super.initState();
-    _startToggleTimer(); // Initialize the timer
+    _startToggleTimer();
   }
 
   void _startToggleTimer() {
     _timer = Timer.periodic(const Duration(seconds: 3), (timer) {
-      if (mounted) { // Check if widget is still mounted
+      if (mounted) {
         setState(() {
           showFirst = !showFirst;
         });
@@ -276,7 +263,7 @@ class _AnimatedToggleRowState extends State<AnimatedToggleRow> {
 
   @override
   void dispose() {
-    _timer?.cancel(); // Cancel the timer when widget is disposed
+    _timer?.cancel();
     super.dispose();
   }
 
@@ -315,11 +302,11 @@ class _AnimatedToggleRowState extends State<AnimatedToggleRow> {
               key: const ValueKey(1))
           : _buildRow(
               icon: Icon(
-                Icons.delivery_dining_rounded,
+                (widget.textTwo?.isEmpty??true)?Icons.delivery_dining_outlined:Icons.schedule_sharp,
                 color: AppColors.lightBlueColor,
                 size: widget.iconSize ?? 30.r,
               ),
-              text: AppLocale.freeDelivery.getString(context),
+              text:widget.textTwo?? AppLocale.freeDelivery.getString(context),
               key: const ValueKey(2)),
     );
   }
@@ -333,7 +320,6 @@ class _AnimatedToggleRowState extends State<AnimatedToggleRow> {
           icon,
           horizontalSpace(8),
           Expanded(
-
             child: AutoSizeText(
               text,
               style: widget.textStyle ?? AppStyles.font16BlackBold,
@@ -346,93 +332,3 @@ class _AnimatedToggleRowState extends State<AnimatedToggleRow> {
     );
   }
 }
-////////////////////////////////////////
-// class AnimatedToggleRow extends StatefulWidget {
-//   const AnimatedToggleRow({super.key});
-//
-//   @override
-//   State<AnimatedToggleRow> createState() => _AnimatedToggleRowState();
-// }
-//
-// class _AnimatedToggleRowState extends State<AnimatedToggleRow> with TickerProviderStateMixin {
-//   late AnimationController _controller;
-//   late Animation<Offset> _offsetAnimation1;
-//   late Animation<Offset> _offsetAnimation2;
-//   bool showFirst = true;
-//
-//   @override
-//   void initState() {
-//     super.initState();
-//     _controller = AnimationController(
-//       vsync: this,
-//       duration: const Duration(milliseconds: 600),
-//     );
-//
-//     _initAnimations();
-//     _startToggleLoop();
-//   }
-//
-//   void _initAnimations() {
-//     _offsetAnimation1 = Tween<Offset>(
-//       begin: Offset.zero,
-//       end: const Offset(0, -1),
-//     ).animate(CurvedAnimation(parent: _controller, curve: Curves.easeInOut));
-//
-//     _offsetAnimation2 = Tween<Offset>(
-//       begin: const Offset(0, 1),
-//       end: Offset.zero,
-//     ).animate(CurvedAnimation(parent: _controller, curve: Curves.easeInOut));
-//   }
-//
-//   void _startToggleLoop() async {
-//     while (mounted) {
-//       await Future.delayed(const Duration(seconds: 3));
-//       await _controller.forward();
-//       setState(() {
-//         showFirst = !showFirst;
-//       });
-//       _controller.reset();
-//     }
-//   }
-//
-//   @override
-//   Widget build(BuildContext context) {
-//     return SizedBox(
-//       height: 40.h,
-//       child: Stack(
-//         alignment: Alignment.centerLeft,
-//         children: [
-//           if (showFirst)
-//             SlideTransition(
-//               position: _offsetAnimation1,
-//               child: _buildRow("MMMMMMM"),
-//             )
-//           else
-//             SlideTransition(
-//               position: _offsetAnimation2,
-//               child: _buildRow("NNNNNNN"),
-//             ),
-//         ],
-//       ),
-//     );
-//   }
-//
-//   Widget _buildRow(String text) {
-//     return Row(
-//       children: [
-//         const Icon(Icons.star, color: Colors.amber),
-//         horizontalSpace(8),
-//         Text(
-//           text,
-//           style: AppStyles.font16BlackMedium,
-//         ),
-//       ],
-//     );
-//   }
-//
-//   @override
-//   void dispose() {
-//     _controller.dispose();
-//     super.dispose();
-//   }
-// }

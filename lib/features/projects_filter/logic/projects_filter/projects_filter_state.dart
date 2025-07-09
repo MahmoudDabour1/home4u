@@ -67,4 +67,42 @@ class ProjectsFilterState<T> with _$ProjectsFilterState<T> {
 
   factory ProjectsFilterState.paginationFailure({required String error}) =
       RequestDesignPaginationFailure;
+
+
+  factory ProjectsFilterState.changeTap() =
+      ChangeTap;
+
+
+  ///look up
+  factory ProjectsFilterState.getAllCustomPackageLoading() =
+     getAllPackagePackageLoading;
+
+  factory ProjectsFilterState.getAllCustomPackageSuccess(T data) =
+  getAllPackagePackageSuccess;
+
+  factory ProjectsFilterState.getAllCustomPackageFailure(
+      {required String error}) = getAllPackagePackageFailure;
+
+  /// ask Engineer Look up
+
+  factory ProjectsFilterState.askEngineerLookUpLoading() =
+  AskEngineerLookUpLoading;
+
+  factory ProjectsFilterState.askEngineerLookUpSuccess(T data) =
+  AskEngineerLookUpSuccess;
+
+  factory ProjectsFilterState.askEngineerLookUpFailure(
+      {required String error}) = AskEngineerLookUpFailure;
+
+
+  // ask worker Look up
+
+  factory ProjectsFilterState.askWorkerLookUpLoading() =
+  AskWorkerLookUpLoading;
+
+  factory ProjectsFilterState.askWorkerLookUpSuccess(T data) =
+  AskWorkerLookUpSuccess;
+
+  factory ProjectsFilterState.askWorkerLookUpFailure(
+      {required String error}) = AskWorkerLookUpFailure;
 }

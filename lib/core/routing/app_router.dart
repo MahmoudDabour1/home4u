@@ -35,6 +35,9 @@ import 'package:home4u/features/projects_filter/presentation/request_design_serv
 import 'package:home4u/features/rating/logic/product_rating/product_rating_cubit.dart';
 import 'package:home4u/features/user/home/presentation/best_offices_screen.dart';
 import 'package:home4u/features/user/home/presentation/best_show_rooms_screen.dart';
+import 'package:home4u/features/user/home/presentation/recommended_for_you_screen.dart';
+import 'package:home4u/features/user/home/presentation/top_engineering_screen.dart';
+import 'package:home4u/features/user/home/presentation/top_workers_screen.dart';
 import 'package:home4u/features/user/request_design/presentation/request_design_screen.dart';
 
 import '../../features/ask_technical_worker/presentation/ask_technical_screen.dart';
@@ -482,6 +485,23 @@ class AppRouter {
             ),
           ),
         );
+
+      case Routes.recommendedForYouScreen:
+        return MaterialPageRoute(
+          settings: settings,
+          builder: (_) => RecommendedForYouScreen(),
+        );
+      case Routes.topEngineersScreen:
+        return MaterialPageRoute(
+          settings: settings,
+          builder: (_) => TopEngineeringScreen(),
+        );
+      case Routes.topWorkersScreen:
+        return MaterialPageRoute(
+          settings: settings,
+          builder: (_) => TopWorkersScreen(),
+        );
+
       default:
         return null;
     }

@@ -2,14 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:home4u/core/helpers/helper_methods.dart';
-import 'package:home4u/core/helpers/shared_pref_keys.dart';
 import 'package:home4u/features/auth/widgets/auth_welcome_data.dart';
 import 'package:home4u/features/rating/logic/product_rating/product_rating_state.dart';
 import 'package:home4u/features/rating/presentation/widgets/feedback_success_dialog.dart';
 import 'package:home4u/features/rating/presentation/widgets/product_info_section.dart';
 import 'package:home4u/features/rating/presentation/widgets/product_rating_info_section.dart';
 import 'package:home4u/features/rating/presentation/widgets/product_rating_submit_button.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 
 import '../../../core/utils/spacing.dart';
 import '../../orders/data/models/order_details_response_model.dart';

@@ -46,6 +46,9 @@ import 'package:home4u/features/projects_filter/data/repository/projects_filter_
 import 'package:home4u/features/projects_filter/data/repository/renovate_house_custom_package_services_repository.dart';
 import 'package:home4u/features/rating/data/data_source/product_rating_remote_data_source.dart';
 import 'package:home4u/features/rating/data/repository/product_rating_repository.dart';
+import 'package:home4u/features/user/home/data/data_source/home_remote_data_source.dart';
+import 'package:home4u/features/user/home/data/repos/home_repos.dart';
+import 'package:home4u/features/user/home/logic/home_cubit.dart';
 import 'package:home4u/features/user/renovate_your_house/logic/renovate_your_house_cubit.dart';
 
 import '../../features/ask_engineer/data/data_source/ask_engineer_remote_data_source.dart';
@@ -369,4 +372,13 @@ Future<void> setupGetIt() async {
 
   sl.registerFactory<RenovateHouseCustomPackageServicesCubit>(
       () => RenovateHouseCustomPackageServicesCubit(sl()));
+
+  ///Home
+  sl.registerLazySingleton<HomeRemoteDataSource>(
+    () => HomeRemoteDataSource(dio),
+  );
+
+  sl.registerLazySingleton<HomeRepos>(() => HomeReposImpl(sl()));
+
+  sl.registerFactory<HomeCubit>(() => HomeCubit(sl()));
 }

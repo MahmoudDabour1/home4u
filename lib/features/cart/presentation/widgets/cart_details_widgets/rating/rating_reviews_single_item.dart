@@ -13,8 +13,11 @@ class RatingReviewsSingleItem extends StatelessWidget {
   final RatingReviewResponseModel data;
   final int index;
 
-  const RatingReviewsSingleItem(
-      {super.key, required this.data, required this.index});
+  const RatingReviewsSingleItem({
+    super.key,
+    required this.data,
+    required this.index,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -28,11 +31,12 @@ class RatingReviewsSingleItem extends StatelessWidget {
               CircleAvatar(
                 radius: 25.r,
                 backgroundColor: AppColors.grayColor.withOpacity(0.2),
-                backgroundImage: (data.data?.content?[index].userImage == null ||
-                    data.data!.content![index].userImage!.isEmpty)
-                    ? AssetImage("assets/images/user_placeholder.png")
-                as ImageProvider
-                    : NetworkImage(data.data!.content![index].userImage!),
+                backgroundImage:
+                    (data.data?.content?[index].userImage == null ||
+                            data.data!.content![index].userImage!.isEmpty)
+                        ? AssetImage("assets/images/user_placeholder.png")
+                            as ImageProvider
+                        : NetworkImage(data.data!.content![index].userImage!),
               ),
               horizontalSpace(8),
               Column(
@@ -90,7 +94,9 @@ class RatingReviewsSingleItem extends StatelessWidget {
             style: AppStyles.font16BlackMedium,
           ),
           verticalSpace(8),
-          Divider(),
+          Divider(
+            color: AppColors.mediumGrayColor,
+          ),
         ],
       ),
     );

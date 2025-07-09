@@ -51,7 +51,7 @@ class CartDetailsDataSection extends StatelessWidget {
           verticalSpace(16),
           AnimatedToggleRow(
             textOne: "#1 on apple devices",
-          ),
+    ),
           verticalSpace(16),
           CartProductDetailsColorsListView(
             previewData: product,
