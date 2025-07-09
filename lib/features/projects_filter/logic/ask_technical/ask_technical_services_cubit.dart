@@ -1,4 +1,5 @@
 import 'package:bloc/bloc.dart';
+import 'package:flutter/material.dart';
 
 import '../../data/models/add_request/ask_technical/add_ask_technical_request_body.dart';
 import '../../data/repository/ask_technical_services_repository.dart';
@@ -9,6 +10,10 @@ class AskTechnicalServicesCubit extends Cubit<AskTechnicalServicesState> {
 
   AskTechnicalServicesCubit(this._askTechnicalServicesRepository)
       : super(const AskTechnicalServicesState.initial());
+
+  ///Controllers
+  final GlobalKey<FormState> askTechnicalFormKey = GlobalKey<FormState>();
+  final TextEditingController commentController = TextEditingController();
 
   ///Technical Asks
   Future<void> getTechnicalAsks({

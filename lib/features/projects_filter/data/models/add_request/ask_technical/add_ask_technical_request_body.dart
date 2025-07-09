@@ -8,9 +8,9 @@ class AddAskTechnicalRequestBody {
   AddAskTechnicalRequestBody({
     required this.askWorker,
     required this.comment,
-    required this.isAccepted,
-    required this.isFinished,
-    required this.isRejected,
+    this.isAccepted,
+    this.isFinished,
+    this.isRejected,
   });
 
   Map<String, dynamic> toJson() {

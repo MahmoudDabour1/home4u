@@ -62,12 +62,13 @@ import '../../features/profile/presentation/edit_profile_screen.dart';
 import '../../features/profile/presentation/profile_screen.dart';
 import '../../features/profile/presentation/project_details_screen.dart';
 import '../../features/projects_filter/logic/ask_technical/ask_technical_services_cubit.dart';
-import '../../features/projects_filter/presentation/add_offer_screen.dart';
 import '../../features/projects_filter/presentation/ask_engineer_service_details_screen.dart';
 import '../../features/projects_filter/presentation/ask_technical_project_details_screen.dart';
 import '../../features/projects_filter/presentation/projects_filter_screen.dart';
 import '../../features/projects_filter/presentation/renovate_house_custom_package_service_details_screen.dart';
 import '../../features/projects_filter/presentation/renovate_house_service_details_screen.dart';
+import '../../features/projects_filter/presentation/widgets/offers/add_offer_engineer_screen.dart';
+import '../../features/projects_filter/presentation/widgets/offers/add_offer_technical_screen.dart';
 import '../../features/rating/presentation/products_rating_screen.dart';
 import '../../features/rating/presentation/single_product_rating_screen.dart';
 import '../../features/settings/presentation/setting_screen.dart';
@@ -426,12 +427,23 @@ class AppRouter {
                 requestId: requestId),
           ),
         );
-      case Routes.addOfferScreen:
+      case Routes.addOfferAskEngineerScreen:
         final askId = settings.arguments as int;
         return MaterialPageRoute(
           settings: settings,
-          builder: (_) => AddOfferScreen(
+          builder: (_) => AddOfferEngineerScreen(
             askId: askId,
+          ),
+        );
+      case Routes.addOfferAskTechnicalScreen:
+        final askId = settings.arguments as int;
+        return MaterialPageRoute(
+          settings: settings,
+          builder: (_) => BlocProvider<AskTechnicalServicesCubit>(
+            create: (context) => sl<AskTechnicalServicesCubit>(),
+            child: AddOfferTechnicalScreen(
+              askId: askId,
+            ),
           ),
         );
       default:

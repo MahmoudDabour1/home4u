@@ -1,29 +1,31 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_localization/flutter_localization.dart';
 import 'package:home4u/core/extensions/navigation_extension.dart';
-import 'package:home4u/core/routing/routes.dart';
 
 import '../../../../../core/helpers/shared_pref_helper.dart';
 import '../../../../../core/helpers/shared_pref_keys.dart';
+import '../../../../../core/routing/routes.dart';
 import '../../../../../core/theming/app_styles.dart';
 import '../../../../../core/widgets/app_custom_add_button.dart';
 import '../../../../../locale/app_locale.dart';
 
-class AddOfferAskEngineerButton extends StatefulWidget {
+class AddOfferAskTechnicalButton extends StatefulWidget {
   final num? requestCount;
   final int askId;
 
-  const AddOfferAskEngineerButton({
+  const AddOfferAskTechnicalButton({
     super.key,
-    required this.requestCount,
+    this.requestCount,
     required this.askId,
   });
 
   @override
-  State<AddOfferAskEngineerButton> createState() => _AddOfferAskEngineerButtonState();
+  State<AddOfferAskTechnicalButton> createState() =>
+      _AddOfferAskTechnicalButtonState();
 }
 
-class _AddOfferAskEngineerButtonState extends State<AddOfferAskEngineerButton> {
+class _AddOfferAskTechnicalButtonState
+    extends State<AddOfferAskTechnicalButton> {
   String? _userType;
 
   @override
@@ -38,8 +40,9 @@ class _AddOfferAskEngineerButtonState extends State<AddOfferAskEngineerButton> {
   }
 
   bool get _canAddOffer {
-    return _userType == "ENGINEER";
+    return _userType == "TECHNICAL_WORKER";
   }
+
 
   @override
   Widget build(BuildContext context) {
@@ -61,7 +64,7 @@ class _AddOfferAskEngineerButtonState extends State<AddOfferAskEngineerButton> {
       text: AppLocale.addOffer.getString(context),
       onPressed: () {
         context.pushNamed(
-          Routes.addOfferAskEngineerScreen,
+          Routes.addOfferAskTechnicalScreen,
           arguments: widget.askId,
         );
       },
