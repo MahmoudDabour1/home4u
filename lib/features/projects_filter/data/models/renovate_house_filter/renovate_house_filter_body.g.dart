@@ -37,6 +37,7 @@ RenovateHouseSearchCriteria _$RenovateHouseSearchCriteriaFromJson(
       unitAreaTo: json['unitAreaTo'] as num?,
       budgetFrom: json['budgetFrom'] as num?,
       budgetTo: json['budgetTo'] as num?,
+      projectName: json['projectName'] as String?,
     );
 
 Map<String, dynamic> _$RenovateHouseSearchCriteriaToJson(
@@ -55,4 +56,5 @@ Map<String, dynamic> _$RenovateHouseSearchCriteriaToJson(
       'unitAreaTo': instance.unitAreaTo,
       'budgetFrom': instance.budgetFrom,
       'budgetTo': instance.budgetTo,
+      'projectName': instance.projectName,
     };

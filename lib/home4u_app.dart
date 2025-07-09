@@ -16,6 +16,7 @@ import 'package:home4u/features/profile/logic/profile/profile_cubit.dart';
 import 'package:home4u/features/profile/logic/services/services_cubit.dart';
 import 'package:home4u/features/projects_filter/logic/ask_engineer/ask_engineer_services_cubit.dart';
 import 'package:home4u/features/projects_filter/logic/projects_filter/projects_filter_cubit.dart';
+import 'package:home4u/features/user/home/logic/home_cubit.dart';
 import 'package:home4u/features/user/request_design/logic/request_design_cubit.dart';
 
 import 'core/di/dependency_injection.dart';
@@ -163,6 +164,8 @@ class _Home4uAppState extends State<Home4uApp> {
             ),
             BlocProvider<AskEngineerServicesCubit>(
               create: (_) => sl<AskEngineerServicesCubit>(),
+            ),BlocProvider<HomeCubit>(
+              create: (context) => sl<HomeCubit>(),
             ),
           ],
           child: ScreenUtilInit(
@@ -191,6 +194,8 @@ class _Home4uAppState extends State<Home4uApp> {
                     initialRoute:
                         // Routes.onBoardingScreen,
                         snapshot.data!,
+                        // Routes.productsRatingScreen,
+                        // snapshot.data!,
                   ),
                 );
               },

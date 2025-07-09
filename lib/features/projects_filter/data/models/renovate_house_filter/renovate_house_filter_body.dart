@@ -48,6 +48,8 @@ class RenovateHouseSearchCriteria {
   final num? budgetFrom;
   @JsonKey(name: "budgetTo")
   final num? budgetTo;
+  @JsonKey(name: "projectName")
+  final String? projectName;
 
   RenovateHouseSearchCriteria({
     required this.userId,
@@ -63,6 +65,7 @@ class RenovateHouseSearchCriteria {
     required this.unitAreaTo,
     required this.budgetFrom,
     required this.budgetTo,
+    required this.projectName,
   });
 
   factory RenovateHouseSearchCriteria.fromJson(Map<String, dynamic> json) =>

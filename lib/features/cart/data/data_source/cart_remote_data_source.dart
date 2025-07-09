@@ -1,5 +1,6 @@
 import 'package:dio/dio.dart';
 import 'package:home4u/features/cart/data/models/order_details_response.dart';
+import 'package:home4u/features/cart/data/models/rating_chart_response_model.dart';
 import 'package:home4u/features/cart/data/models/rating_response_model.dart';
 import 'package:home4u/features/cart/data/models/shop_now_search_body.dart';
 import 'package:retrofit/error_logger.dart';
@@ -36,5 +37,10 @@ abstract class CartRemoteDataSource {
   @POST(ApiConstants.getRateReviewEp)
   Future<RatingReviewResponseModel> getRatesReviews(
     @Body() RatingReviewRequestModel ratingReviewRequestModel,
+  );
+
+  @GET(ApiConstants.productChartRateEp)
+  Future<RatingChartResponseModel> getProductRatesChart(
+    @Path('productId') int productId,
   );
 }

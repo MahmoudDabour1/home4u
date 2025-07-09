@@ -65,6 +65,7 @@ abstract class Routes {
   ///Rating
   static const String singleProductRatingScreen = '/singleProductRatingScreen';
   static const String productsRatingScreen = '/productRatingScreen';
+  static const String recommendedForYouScreen = '/RecommendedForYouScreen';
 
   ///Project Services Details
   static const String askTechnicalProjectDetailsScreen =
@@ -76,5 +77,6 @@ abstract class Routes {
   static const String renovateHouseServiceDetailsScreen =
       '/renovateHouseServiceDetailsScreen';
   static const String renovateHouseCustomPackageServiceDetailsScreen =
-      '/renovateHouseCustomPackageServiceDetailsScreen';
+      '/renovateHouseCustomPackageServiceDetailsScreen';static const String topWorkersScreen = '/TopWorkersScreen';
+  static const String topEngineersScreen = '/TopEngineersScreen';
 }

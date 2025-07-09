@@ -112,6 +112,8 @@ class ApiConstants {
   static const String findRateByIdEp = "/api/v1/product-ratings/{rateId}";
   static const String findProductRateByProductIdAndUserIdEp =
       "/api/v1/product-ratings/product/{productId}/user/{userId}";
+  static const String productChartRateEp =
+      "/api/v1/product-ratings/chart/{productId}";
 
   ///Projects Filter
   static const String renovateHouseFilterEp = "/api/v1/home-renovate/filter";
@@ -120,6 +122,12 @@ class ApiConstants {
   static const String requestDesignFilterEp = "/api/v1/request-design/filter";
   static const String askTechnicalWorkerFilterEp = "/api/v1/ask-worker/filter";
   static const String askEngineerFilterEp = "/api/v1/ask-engineer/filter";
+
+  ///Home
+  static const String topBestSellerEp = "/api/v1/products/top-best-seller";
+  static const String highestRatedEp = "/api/v1/products/highest-rated";
+  static const String recommendedForYouEp =
+      "/api/v1/products/recommended-for-you?userId={userId}";
 
   ///Projects Details
   static const String askTechnicalServiceDetailsEp =
@@ -167,6 +175,19 @@ class ApiConstants {
 
   static const String requestRenovateHouseByIdEp =
       '/api/v1/request-home-renovate/my-asks';
+
+
+  /// top engineers
+static const String topEngineersEp = "/api/v1/engineers/top-engineers";
+
+  /// top workers
+  static const String topWorkersEp = "/api/v1/technical-workers/top-workers";
+
+
+  static const String allCustomLookUpEp = "/api/v1/custom-package";
+  static const String askEngineerLookUpEp = "/api/v1/ask-engineer/lkps";
+  static const String askWorkerLookUpEp = "/api/v1/ask-worker/lkps";
+
 }
 
 class ApiErrors {
