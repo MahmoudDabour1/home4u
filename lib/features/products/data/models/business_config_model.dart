@@ -1,19 +1,22 @@
-
-
+import 'package:hive/hive.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'business_config_model.g.dart';
 
-
-
+@HiveType(typeId: 50)
 @JsonSerializable()
 class BusinessConfigModel {
+  @HiveField(0)
   @JsonKey(name: "success")
   final bool? success;
+
+  @HiveField(1)
   @JsonKey(name: "status")
   final int? status;
+
+  @HiveField(2)
   @JsonKey(name: "data")
-  final Data? data;
+  final BusinessConfigData? data;
 
   BusinessConfigModel({
     this.success,
@@ -21,41 +24,82 @@ class BusinessConfigModel {
     this.data,
   });
 
-  factory BusinessConfigModel.fromJson(Map<String, dynamic> json) => _$BusinessConfigModelFromJson(json);
+  factory BusinessConfigModel.fromJson(Map<String, dynamic> json) =>
+      _$BusinessConfigModelFromJson(json);
 
   Map<String, dynamic> toJson() => _$BusinessConfigModelToJson(this);
 }
 
+@HiveType(typeId: 51)
 @JsonSerializable()
-class Data {
+class BusinessConfigData {
+  @HiveField(0)
   @JsonKey(name: "colors")
   final List<FilterColor>? colors;
+
+  @HiveField(1)
   @JsonKey(name: "productBaseUnits")
   final List<ProductBaseUnit>? productBaseUnits;
+
+  @HiveField(2)
   @JsonKey(name: "productMaterial")
   final List<ProductMaterial>? productMaterial;
+
+  @HiveField(3)
   @JsonKey(name: "businessTypes")
   final List<BusinessType>? businessTypes;
 
-  Data({
+  @HiveField(4)
+  @JsonKey(name: "businessTypeCategories")
+  final List<BusinessType>? businessTypeCategories;
+
+  @HiveField(5)
+  @JsonKey(name: "homeFurnishingRequestTypes")
+  final List<DevicesAttached>? homeFurnishingRequestTypes;
+  @HiveField(6)
+  @JsonKey(name: "furnitureTypes")
+  final List<DevicesAttached>? furnitureTypes;
+  @HiveField(7)
+  @JsonKey(name: "devicesAttacheds")
+  final List<DevicesAttached>? devicesAttacheds;
+  @HiveField(8)
+  @JsonKey(name: "kitchenTypes")
+  final List<DevicesAttached>? kitchenTypes;
+
+  BusinessConfigData({
     this.colors,
     this.productBaseUnits,
     this.productMaterial,
     this.businessTypes,
+    this.businessTypeCategories,
+    this.homeFurnishingRequestTypes,
+    this.furnitureTypes,
+    this.devicesAttacheds,
+    this.kitchenTypes,
   });
 
-  factory Data.fromJson(Map<String, dynamic> json) => _$DataFromJson(json);
+  factory BusinessConfigData.fromJson(Map<String, dynamic> json) =>
+      _$BusinessConfigDataFromJson(json);
 
-  Map<String, dynamic> toJson() => _$DataToJson(this);
+  Map<String, dynamic> toJson() => _$BusinessConfigDataToJson(this);
 }
+
+@HiveType(typeId: 52)
 @JsonSerializable()
 class FilterColor {
+  @HiveField(0)
   @JsonKey(name: "id")
   final int? id;
+
+  @HiveField(1)
   @JsonKey(name: "code")
   final String? code;
+
+  @HiveField(2)
   @JsonKey(name: "name")
   final String? name;
+
+  @HiveField(3)
   @JsonKey(name: "hexColor")
   final String? hexColor;
 
@@ -66,18 +110,24 @@ class FilterColor {
     this.hexColor,
   });
 
-  factory FilterColor.fromJson(Map<String, dynamic> json) => _$FilterColorFromJson(json);
+  factory FilterColor.fromJson(Map<String, dynamic> json) =>
+      _$FilterColorFromJson(json);
 
   Map<String, dynamic> toJson() => _$FilterColorToJson(this);
 }
 
-
+@HiveType(typeId: 53)
 @JsonSerializable()
 class ProductBaseUnit {
+  @HiveField(0)
   @JsonKey(name: "id")
   final int? id;
+
+  @HiveField(1)
   @JsonKey(name: "code")
   final String? code;
+
+  @HiveField(2)
   @JsonKey(name: "name")
   final String? name;
 
@@ -87,48 +137,92 @@ class ProductBaseUnit {
     this.name,
   });
 
-  factory ProductBaseUnit.fromJson(Map<String, dynamic> json) => _$ProductBaseUnitFromJson(json);
+  factory ProductBaseUnit.fromJson(Map<String, dynamic> json) =>
+      _$ProductBaseUnitFromJson(json);
 
   Map<String, dynamic> toJson() => _$ProductBaseUnitToJson(this);
 }
 
-
+@HiveType(typeId: 54)
 @JsonSerializable()
 class ProductMaterial {
+  @HiveField(0)
   @JsonKey(name: "id")
   final int? id;
+
+  @HiveField(1)
   @JsonKey(name: "code")
   final String? code;
+
+  @HiveField(2)
   @JsonKey(name: "name")
   final String? name;
 
-  ProductMaterial( {
-    this.id,
-    this.code,this.name,
-  });
-
-  factory ProductMaterial.fromJson(Map<String, dynamic> json) => _$ProductMaterialFromJson(json);
-
-  Map<String, dynamic> toJson() => _$ProductMaterialToJson(this);
-}
-
-@JsonSerializable()
-class BusinessType {
-  @JsonKey(name: "id")
-  final int? id;
-  @JsonKey(name: "code")
-  final String? code;
-  @JsonKey(name: "name")
-  final String? name;
-
-
-  BusinessType({
+  ProductMaterial({
     this.id,
     this.code,
     this.name,
   });
 
-  factory BusinessType.fromJson(Map<String, dynamic> json) => _$BusinessTypeFromJson(json);
+  factory ProductMaterial.fromJson(Map<String, dynamic> json) =>
+      _$ProductMaterialFromJson(json);
+
+  Map<String, dynamic> toJson() => _$ProductMaterialToJson(this);
+}
+
+@HiveType(typeId: 55)
+@JsonSerializable()
+class BusinessType {
+  @HiveField(0)
+  @JsonKey(name: "id")
+  final int? id;
+
+  @HiveField(1)
+  @JsonKey(name: "code")
+  final String? code;
+
+  @HiveField(2)
+  @JsonKey(name: "name")
+  final String? name;
+
+  @HiveField(3)
+  @JsonKey(name: "businessType")
+  final BusinessType? businessType;
+
+  BusinessType({
+    this.id,
+    this.code,
+    this.name,
+    this.businessType,
+  });
+
+  factory BusinessType.fromJson(Map<String, dynamic> json) =>
+      _$BusinessTypeFromJson(json);
 
   Map<String, dynamic> toJson() => _$BusinessTypeToJson(this);
+}
+
+@HiveType(typeId: 56)
+@JsonSerializable()
+class DevicesAttached {
+  @HiveField(0)
+  @JsonKey(name: "id")
+  final int? id;
+  @HiveField(1)
+  @JsonKey(name: "code")
+  final String? code;
+  @HiveField(2)
+  @JsonKey(name: "name")
+  final String? name;
+
+  DevicesAttached({
+    this.id,
+    this.code,
+    this.name,
+  });
+
+  factory DevicesAttached.fromJson(Map<String, dynamic> json) =>
+      _$DevicesAttachedFromJson(json);
+
+  Map<String, dynamic> toJson() => _$DevicesAttachedToJson(this);
 }

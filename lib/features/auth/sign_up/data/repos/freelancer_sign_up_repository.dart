@@ -15,6 +15,11 @@ abstract class FreelancerSignUpRepository {
 
   Future<ApiResult<List<FreelancerServiceData>>> getTechnicalWorkerServices(
       int technicalWorkerTypeId);
+
+  Future<ApiResult<List<FreelancerTypeData>>> getEngineeringOfficeFields();
+
+  Future<ApiResult<List<FreelancerServiceData>>> getEngineeringOfficeServices(
+      int engineeringOfficeFieldId);
 }
 
 class FreelancerSignUpRepositoryImpl implements FreelancerSignUpRepository {
@@ -63,6 +68,30 @@ class FreelancerSignUpRepositoryImpl implements FreelancerSignUpRepository {
       final technicalWorkerServiceData = await remoteDataSource
           .getTechnicalWorkerServices(technicalWorkerTypeId);
       return ApiResult.success(technicalWorkerServiceData.data);
+    } catch (error) {
+      return Future.value(ApiResult.failure(ApiErrorHandler.handle(error)));
+    }
+  }
+
+  @override
+  Future<ApiResult<List<FreelancerTypeData>>>
+      getEngineeringOfficeFields() async {
+    try {
+      final engineeringOfficeFieldData =
+          await remoteDataSource.getEngineeringOfficeFields();
+      return ApiResult.success(engineeringOfficeFieldData.data);
+    } catch (error) {
+      return Future.value(ApiResult.failure(ApiErrorHandler.handle(error)));
+    }
+  }
+
+  @override
+  Future<ApiResult<List<FreelancerServiceData>>> getEngineeringOfficeServices(
+      int engineeringOfficeFieldId) async {
+    try {
+      final engineeringOfficeServiceData = await remoteDataSource
+          .getEngineeringOfficeServices(engineeringOfficeFieldId);
+      return ApiResult.success(engineeringOfficeServiceData.data);
     } catch (error) {
       return Future.value(ApiResult.failure(ApiErrorHandler.handle(error)));
     }

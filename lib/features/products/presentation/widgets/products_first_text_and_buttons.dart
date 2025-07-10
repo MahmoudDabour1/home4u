@@ -24,10 +24,15 @@ class ProductsFirstTextAndButtons extends StatelessWidget {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
-        Text(
-          content!.name ?? "Modern l-Shaped Sofa",
-          style: AppStyles.font16BlackLight,
-        ),
+       Expanded(
+         child: Text(
+            content!.name ?? "Modern l-Shaped Sofa",
+            overflow:TextOverflow.ellipsis,
+            maxLines: 1,
+            softWrap: true,
+            style: AppStyles.font16BlackLight,
+          ),
+       ),
         Row(
           children: [
             AppCustomIconButton(

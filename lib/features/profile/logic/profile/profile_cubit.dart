@@ -7,6 +7,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:home4u/core/extensions/navigation_extension.dart';
 import 'package:home4u/core/helpers/shared_pref_helper.dart';
 import 'package:home4u/features/profile/data/models/profile/engineer_profile_response_model.dart';
+import 'package:home4u/features/profile/data/models/profile/engineering_office_profile_response_model.dart';
 import 'package:home4u/features/profile/data/models/profile/technical_worker_profile_response_model.dart';
 import 'package:home4u/features/profile/data/repos/profile_repo.dart';
 import 'package:home4u/features/profile/logic/profile/profile_state.dart';
@@ -29,15 +30,18 @@ class ProfileCubit extends Cubit<ProfileState> {
 
   static ProfileCubit get(context) => BlocProvider.of(context);
 
-  EngineerProfileResponseModel? engineerProfileCachedData;
-  TechnicalWorkerResponseModel? technicalWorkerProfileCachedData;
+  EngineerProfileResponseModel? engineerProfileData;
+  TechnicalWorkerResponseModel? technicalWorkerProfileData;
+  EngineeringOfficeProfileResponseModel? engineeringOfficeProfileData;
 
-  Future<void> initializeProfileData() async {
-    engineerProfileCachedData =
-        await _profileLocalDataSource.getEngineerProfileData();
-    technicalWorkerProfileCachedData =
-        await _profileLocalDataSource.getTechnicalWorkerProfileData();
-  }
+  // Future<void> initializeProfileData() async {
+  //   engineerProfileCachedData =
+  //       await _profileLocalDataSource.getEngineerProfileData();
+  //   technicalWorkerProfileCachedData =
+  //       await _profileLocalDataSource.getTechnicalWorkerProfileData();
+  //   engineeringOfficeProfileCachedData =
+  //       await _profileLocalDataSource.getEngineeringOfficeProfileData();
+  // }
 
   List<GovernorateDataModel> governorates = [];
   List<CityDataModel> cities = [];
@@ -49,28 +53,39 @@ class ProfileCubit extends Cubit<ProfileState> {
   final bioController = TextEditingController();
   final linkedinController = TextEditingController();
   final behanceController = TextEditingController();
+  final facebookController = TextEditingController();
+  final phoneController = TextEditingController();
+
+  final tradeNameController = TextEditingController();
+  final descriptionController = TextEditingController();
+
   String? selectedGovernorate;
   String? selectedCity;
+  String? selectEngineeringOfficeField;
 
   void selectImage({required BuildContext context, ImageSource? source}) {
-    ImagePicker.platform
-        .getImageFromSource(
-      source: source!,
-    )
-        .then((value) {
+    final nav = Navigator.of(context);
+    ImagePicker().pickImage(source: source!).then((value) {
       if (value != null) {
         image = File(value.path);
-        Navigator.pop(context);
+        nav.pop();
         emit(ProfileState.addImage());
-        uploadProfileImage().then((value) async{
-          final userType =
-          await SharedPrefHelper.getString(SharedPrefKeys.userType);
-          userType == "ENGINEER"
-              ? getEngineerProfileData()
-              : getTechnicalWorkerProfileData();
-        });
+        uploadProfileImage();
       }
     });
+  }
+
+  Object? get currentUser {
+    switch (SharedPrefHelper.getString(SharedPrefKeys.userType)) {
+      case "engineering_office":
+        return engineeringOfficeProfileData?.data?.user;
+      case "technical_worker":
+        return technicalWorkerProfileData?.data?.user;
+      case "engineer":
+        return engineerProfileData?.data?.user;
+      default:
+        return null;
+    }
   }
 
   Future<void> getEngineerProfileData() async {
@@ -79,6 +94,7 @@ class ProfileCubit extends Cubit<ProfileState> {
     result.when(
       success: (profileData) async {
         await _profileLocalDataSource.cacheEngineerProfileData(profileData);
+        engineerProfileData = profileData;
         emit(ProfileState.successEngineerProfileData(profileData));
       },
       failure: (error) {
@@ -95,8 +111,26 @@ class ProfileCubit extends Cubit<ProfileState> {
       success: (profileData) async {
         await _profileLocalDataSource
             .cacheTechnicalWorkerProfileData(profileData);
+        technicalWorkerProfileData = profileData;
         logger.e("Technical Worker Profile Data Cached $profileData");
         emit(ProfileState.successTechnicalWorkerProfileData(profileData));
+      },
+      failure: (error) {
+        emit(ProfileState.errorProfileData(error: error.message.toString()));
+      },
+    );
+  }
+
+  Future<void> getEngineeringOfficeProfileData() async {
+    emit(const ProfileState.loadingProfileData());
+    final result = await _profileRepo.getEngineeringOfficeByToken();
+    result.when(
+      success: (profileData) async {
+        await _profileLocalDataSource
+            .cacheEngineeringOfficeProfileData(profileData);
+        engineeringOfficeProfileData = profileData;
+        logger.e("Engineering Office Profile Data Cached $profileData");
+        emit(ProfileState.successEngineeringOfficeProfileData(profileData));
       },
       failure: (error) {
         emit(ProfileState.errorProfileData(error: error.message.toString()));
@@ -153,13 +187,38 @@ class ProfileCubit extends Cubit<ProfileState> {
     }
   }
 
+  Future<void> updateEngineeringOfficeProfileData(BuildContext context) async {
+    try {
+      emit(const ProfileState.loadingUpdateProfile());
+      String jsonString = await _prepareEngineeringOfficeUpdateData();
+      final response =
+          await _profileRepo.updateEngineeringOfficeProfile(jsonString);
+      response.when(
+        success: (profileData) {
+          showToast(message: "Profile Updated Successfully");
+          emit(ProfileState.successEngineeringOfficeProfileData(profileData));
+          context.pop();
+          getEngineeringOfficeProfileData();
+        },
+        failure: (error) {
+          showToast(message: error.message.toString(), isError: true);
+          emit(
+              ProfileState.errorUpdateProfile(error: error.message.toString()));
+        },
+      );
+    } catch (e) {
+      showToast(message: e.toString(), isError: true);
+      emit(ProfileState.errorUpdateProfile(error: e.toString()));
+    }
+  }
+
   Future<void> uploadProfileImage() async {
     emit(const ProfileState.loadingUploadImage());
     try {
       final formData = await _createImageFormData();
       final result = await _profileRepo.uploadProfileImage(formData);
       final userType =
-      await SharedPrefHelper.getString(SharedPrefKeys.userType);
+          await SharedPrefHelper.getString(SharedPrefKeys.userType);
       result.when(
         success: (uploadProfileImageResponseModel) {
           showToast(message: 'Image Uploaded Successfully');
@@ -167,9 +226,20 @@ class ProfileCubit extends Cubit<ProfileState> {
             emit(ProfileState.successUploadImage(
                 uploadProfileImageResponseModel));
             logger.w("User Type: $userType");
-            userType == "ENGINEER"
-                ? getEngineerProfileData()
-                : getTechnicalWorkerProfileData();
+            switch (userType) {
+              case "ENGINEER":
+                getEngineerProfileData();
+                break;
+              case "TECHNICAL_WORKER":
+                getTechnicalWorkerProfileData();
+                break;
+              case "ENGINEERING_OFFICE":
+                getEngineeringOfficeProfileData();
+                break;
+              default:
+                getEngineeringOfficeProfileData();
+                break;
+            }
           }
         },
         failure: (error) {
@@ -214,9 +284,9 @@ class ProfileCubit extends Cubit<ProfileState> {
             ? lastNameController.text
             : engineerProfileData?.data?.user?.lastName ?? "",
         "email": engineerProfileData?.data?.user?.email ?? "",
-        // "phone": engineerProfileData?.data?.user?.phone ??
-        //     technicalWorkerProfileData?.data?.user?.phone ??
-        //     "",
+        "phone": phoneController.text.isNotEmpty
+            ? phoneController.text
+            : engineerProfileData?.data?.user?.phone,
         "personalPhoto": engineerProfileData?.data?.user?.personalPhoto ?? "",
         "password": engineerProfileData?.data?.user?.password ?? "",
         "userType": {
@@ -253,12 +323,15 @@ class ProfileCubit extends Cubit<ProfileState> {
               ?.map((e) => {"id": e.id})
               .toList() ??
           [],
-      "linkedin": linkedinController.text.isNotEmpty
+      "linkedinLink": linkedinController.text.isNotEmpty
           ? linkedinController.text
           : engineerProfileData?.data?.linkedin ?? "",
-      "behance": behanceController.text.isNotEmpty
+      "behanceLink": behanceController.text.isNotEmpty
           ? behanceController.text
           : engineerProfileData?.data?.behance ?? "",
+      "facebookLink": facebookController.text.isNotEmpty
+          ? facebookController.text
+          : engineerProfileData?.data?.facebookLink ?? "",
     };
 
     final jsonEngineerString = json.encode(jsonEngineerData);
@@ -280,9 +353,9 @@ class ProfileCubit extends Cubit<ProfileState> {
             ? lastNameController.text
             : technicalProfileData?.data?.user?.lastName ?? "",
         "email": technicalProfileData?.data?.user?.email ?? "",
-        // "phone": engineerProfileData?.data?.user?.phone ??
-        //     technicalWorkerProfileData?.data?.user?.phone ??
-        //     "",
+        "phone": phoneController.text.isNotEmpty
+            ? phoneController.text
+            : technicalWorkerProfileData?.data?.user?.phone,
         "personalPhoto": technicalProfileData?.data?.user?.personalPhoto ?? "",
         "password": technicalProfileData?.data?.user?.password ?? "",
         "userType": {
@@ -319,9 +392,86 @@ class ProfileCubit extends Cubit<ProfileState> {
       "bio": bioController.text.isNotEmpty
           ? bioController.text
           : technicalProfileData?.data?.bio ?? "",
+      "linkedinLink": linkedinController.text.isNotEmpty
+          ? linkedinController.text
+          : technicalProfileData?.data?.linkedin ?? "",
+      "behanceLink": behanceController.text.isNotEmpty
+          ? behanceController.text
+          : technicalProfileData?.data?.behance ?? "",
+      "facebookLink": facebookController.text.isNotEmpty
+          ? facebookController.text
+          : technicalProfileData?.data?.facebookLink ?? "",
     };
 
     final jsonTechnicalWorkerString = json.encode(jsonTechnicalWorkerData);
     return jsonTechnicalWorkerString;
+  }
+
+  Future<String> _prepareEngineeringOfficeUpdateData() async {
+    var engineeringOfficeData =
+        await _profileLocalDataSource.getEngineeringOfficeProfileData();
+    final jsonEngineeringOfficeData = {
+      "id": engineeringOfficeData?.data?.id ?? 0,
+      "statusCode": engineeringOfficeData?.data?.statusCode ?? 1,
+      "user": {
+        "id": engineeringOfficeData?.data?.user?.id ?? 0,
+        "firstName": firstNameController.text.isNotEmpty
+            ? firstNameController.text
+            : engineeringOfficeData?.data?.user?.firstName ?? "",
+        "lastName": lastNameController.text.isNotEmpty
+            ? lastNameController.text
+            : engineeringOfficeData?.data?.user?.lastName ?? "",
+        "email": engineeringOfficeData?.data?.user?.email ?? '',
+        "phone": phoneController.text.isNotEmpty
+            ? phoneController.text
+            : engineeringOfficeData?.data?.user?.phone ?? '',
+        "personalPhoto": engineeringOfficeData?.data?.user?.personalPhoto ?? "",
+        "userType": {
+          "id": engineeringOfficeData?.data?.user?.userType?.id ?? 0,
+        },
+        "governorate": selectedGovernorate != null
+            ? {"id": int.parse(selectedGovernorate!)}
+            : {"id": engineeringOfficeData?.data?.user?.governorate?.id ?? 0},
+        "city": selectedCity != null
+            ? {"id": int.parse(selectedCity!)}
+            : {"id": engineeringOfficeData?.data?.user?.city?.id ?? 0},
+        "engineer": null,
+        "technicalWorker": null,
+        "engineeringOffice": null,
+        "enabled": true,
+        "business": null
+      },
+      "tradeName": tradeNameController.text.isNotEmpty
+          ? tradeNameController.text
+          : engineeringOfficeData?.data?.name ?? "",
+      "description": descriptionController.text.isNotEmpty
+          ? descriptionController.text
+          : engineeringOfficeData?.data?.description ?? "",
+      "commercialRegisterPath": null,
+      "taxCardPath": null,
+      "personalCardPath": null,
+      "engineeringOfficeField": selectEngineeringOfficeField != null
+          ? {"id": int.parse(selectEngineeringOfficeField!)}
+          : {
+              "id": engineeringOfficeData?.data?.engineeringOfficeField?.id ?? 0
+            },
+      "engineeringOfficeDepartments": engineeringOfficeData
+              ?.data?.engineeringOfficeDepartments
+              ?.map((e) => {"id": e.id})
+              .toList() ??
+          [],
+      "linkedinLink": linkedinController.text.isNotEmpty
+          ? linkedinController.text
+          : engineeringOfficeData?.data?.linkedin ?? "",
+      "behanceLink": behanceController.text.isNotEmpty
+          ? behanceController.text
+          : engineeringOfficeData?.data?.behance ?? "",
+      "facebookLink": facebookController.text.isNotEmpty
+          ? facebookController.text
+          : engineeringOfficeData?.data?.facebookLink ?? "",
+    };
+
+    final jsonEngineeringOfficeString = json.encode(jsonEngineeringOfficeData);
+    return jsonEngineeringOfficeString;
   }
 }

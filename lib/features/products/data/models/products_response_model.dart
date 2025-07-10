@@ -16,7 +16,7 @@ class ProductsResponseModel {
 
   @HiveField(2)
   @JsonKey(name: "data")
-  final Data? data;
+  final ProductData? data;
 
   ProductsResponseModel({this.success, this.status, this.data});
 
@@ -27,7 +27,7 @@ class ProductsResponseModel {
 
 @HiveType(typeId: 81)
 @JsonSerializable()
-class Data {
+class ProductData {
   @HiveField(0)
   @JsonKey(name: "content")
   final List<Content>? content;
@@ -72,11 +72,11 @@ class Data {
   @JsonKey(name: "empty")
   final bool? empty;
 
-  Data({this.content, this.pageable, this.totalPages, this.totalElements, this.last, this.size, this.number, this.sort, this.numberOfElements, this.first, this.empty});
+  ProductData({this.content, this.pageable, this.totalPages, this.totalElements, this.last, this.size, this.number, this.sort, this.numberOfElements, this.first, this.empty});
 
-  factory Data.fromJson(Map<String, dynamic> json) => _$DataFromJson(json);
+  factory ProductData.fromJson(Map<String, dynamic> json) => _$ProductDataFromJson(json);
 
-  Map<String, dynamic> toJson() => _$DataToJson(this);
+  Map<String, dynamic> toJson() => _$ProductDataToJson(this);
 }
 
 @HiveType(typeId: 82)

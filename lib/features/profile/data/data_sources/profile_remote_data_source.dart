@@ -1,5 +1,6 @@
 import 'package:dio/dio.dart';
 import 'package:home4u/features/profile/data/models/profile/engineer_profile_response_model.dart';
+import 'package:home4u/features/profile/data/models/profile/engineering_office_profile_response_model.dart';
 import 'package:home4u/features/profile/data/models/profile/technical_worker_profile_response_model.dart';
 import 'package:home4u/features/profile/data/models/profile/upload_profile_image_response_model.dart';
 import 'package:retrofit/error_logger.dart';
@@ -29,8 +30,16 @@ abstract class ProfileRemoteDataSource {
     @Body() String profileResponseModel,
   );
 
+  @PUT(ApiConstants.updateEngineeringOfficeProfileEP)
+  Future<EngineeringOfficeProfileResponseModel> updateEngineeringOfficeProfile(
+    @Body() String profileResponseModel,
+  );
+
   @POST(ApiConstants.uploadProfileImageEP)
   Future<UploadProfileImageResponseModel> uploadProfileImage(
     @Body() FormData formData,
   );
+
+  @GET(ApiConstants.getEngineeringOfficeByTokenEp)
+  Future<EngineeringOfficeProfileResponseModel> getEngineeringOfficeByToken();
 }

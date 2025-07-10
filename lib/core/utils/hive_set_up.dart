@@ -1,8 +1,12 @@
 import 'package:hive_flutter/hive_flutter.dart';
 import 'package:home4u/features/products/data/models/products_response_model.dart';
+import 'package:home4u/features/profile/data/models/profile/engineering_office_profile_response_model.dart' ;
+import 'package:home4u/features/user/renovate_your_house/data/models/renovate_your_house_fixed_packages_model.dart';
+import 'package:home4u/features/user/renovate_your_house/data/models/renovate_your_house_look_ups_model.dart';
 
-import '../../features/profile/data/models/profile/engineer_profile_response_model.dart';
-import '../../features/profile/data/models/profile/technical_worker_profile_response_model.dart';
+import '../../features/products/data/models/business_config_model.dart';
+import '../../features/profile/data/models/profile/engineer_profile_response_model.dart' ;
+import '../../features/profile/data/models/profile/technical_worker_profile_response_model.dart' ;
 import '../../features/profile/data/models/projects/get_projects_response_model.dart';
 import 'app_constants.dart';
 
@@ -11,8 +15,12 @@ Future<void> initHive() async {
   _registerHiveAdapters();
   await Hive.openBox<EngineerProfileResponseModel>(kEngineerProfileBox);
   await Hive.openBox<TechnicalWorkerResponseModel>(kTechnicalWorkerProfileBox);
+  await Hive.openBox<EngineeringOfficeProfileResponseModel>(kEngineeringOfficeProfileBox);
   await Hive.openBox<GetProjectsResponseModel>(kProjectsBox);
   await Hive.openBox<ProductsResponseModel>(kProductsBox);
+  await Hive.openBox<BusinessConfigModel>(kBusinessConfigBox);
+  await Hive.openBox<RenovateYourHouseLookUpsModel>(kRenovateYourHouseLookUpsBox);
+  await Hive.openBox<RenovateYourHouseFixedPackagesModel>(kRenovateYourHouseFixedPackagesBox);
 }
 
 void _registerHiveAdapters() {
@@ -48,7 +56,7 @@ void _registerHiveAdapters() {
     Hive.registerAdapter(ProductsResponseModelAdapter());
   }
   if (!Hive.isAdapterRegistered(81)) {
-    Hive.registerAdapter(DataAdapter());
+    Hive.registerAdapter(ProductDataAdapter());
   }
   if (!Hive.isAdapterRegistered(82)) {
     Hive.registerAdapter(ContentAdapter());
@@ -61,5 +69,64 @@ void _registerHiveAdapters() {
   }
   if (!Hive.isAdapterRegistered(85)) {
     Hive.registerAdapter(SortAdapter());
+  }
+  if (!Hive.isAdapterRegistered(90)) {
+    Hive.registerAdapter(EngineeringOfficeProfileResponseModelAdapter());
+  }
+  if (!Hive.isAdapterRegistered(91)) {
+    Hive.registerAdapter(EngineeringOfficeDataAdapter());
+  }
+  if (!Hive.isAdapterRegistered(92)) {
+    Hive.registerAdapter(EngineeringOfficeAdapter());
+  }
+  if (!Hive.isAdapterRegistered(93)) {
+    Hive.registerAdapter(EngineeringOfficeUserAdapter());
+  }
+  if (!Hive.isAdapterRegistered(94)) {
+    Hive.registerAdapter(EngineeringOfficeCityAdapter());
+  }
+  if (!Hive.isAdapterRegistered(95)) {
+    Hive.registerAdapter(RenovateYourHouseLookUpsModelAdapter());
+  }
+  if (!Hive.isAdapterRegistered(96)) {
+    Hive.registerAdapter(DataAdapter());
+  }
+  if (!Hive.isAdapterRegistered(97)) {
+    Hive.registerAdapter(GovernorateAdapter());
+  }
+  if (!Hive.isAdapterRegistered(98)) {
+    Hive.registerAdapter(UnitStatusAdapter());
+  }
+  if (!Hive.isAdapterRegistered(99)) {
+    Hive.registerAdapter(RenovateYourHouseFixedPackagesModelAdapter());
+  }
+  if (!Hive.isAdapterRegistered(100)) {
+    Hive.registerAdapter(FixedPackageDataModelAdapter());
+  }
+
+  if (!Hive.isAdapterRegistered(50)) {
+    Hive.registerAdapter(BusinessConfigModelAdapter());
+  }
+
+  if (!Hive.isAdapterRegistered(51)) {
+    Hive.registerAdapter(BusinessConfigDataAdapter());
+  }
+
+  if (!Hive.isAdapterRegistered(52)) {
+    Hive.registerAdapter(FilterColorAdapter());
+  }
+
+  if (!Hive.isAdapterRegistered(53)) {
+    Hive.registerAdapter(ProductBaseUnitAdapter());
+  }
+
+  if (!Hive.isAdapterRegistered(54)) {
+    Hive.registerAdapter(ProductMaterialAdapter());
+  }
+
+  if (!Hive.isAdapterRegistered(55)) {
+    Hive.registerAdapter(BusinessTypeAdapter());
+  } if (!Hive.isAdapterRegistered(56)) {
+    Hive.registerAdapter(DevicesAttachedAdapter());
   }
 }

@@ -5,13 +5,11 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_localization/flutter_localization.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:hive_flutter/hive_flutter.dart';
-import 'package:home4u/core/extensions/navigation_extension.dart';
 
 import 'core/di/dependency_injection.dart';
 import 'core/helpers/shared_pref_helper.dart';
 import 'core/helpers/shared_pref_keys.dart';
 import 'core/routing/app_router.dart';
-import 'core/utils/app_constants.dart';
 import 'core/utils/hive_set_up.dart';
 import 'core/utils/my_bloc_observer.dart';
 import 'firebase_options.dart';
@@ -26,7 +24,6 @@ void main() async {
       FlutterLocalization.instance.ensureInitialized(),
       Hive.initFlutter(),
       initHive(),
-      checkIfLoggedInUser(),
     ],
   );
 
@@ -55,14 +52,4 @@ void main() async {
       initialLocale: initialLocale,
     ),
   );
-}
-
-Future<void> checkIfLoggedInUser() async {
-  String userToken =
-      await SharedPrefHelper.getSecuredString(SharedPrefKeys.userToken);
-  if (!userToken.isNullOrEmpty()) {
-    isLoggedInUser = true;
-  } else {
-    isLoggedInUser = false;
-  }
 }

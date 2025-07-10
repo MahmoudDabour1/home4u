@@ -1,10 +1,10 @@
+import 'dart:developer';
 import 'dart:io';
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_localization/flutter_localization.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:home4u/core/networking/api_constants.dart';
 import 'package:home4u/core/utils/spacing.dart';
 import 'package:home4u/features/profile/logic/certifications/certifications_cubit.dart';
 import 'package:home4u/features/profile/logic/certifications/certifications_state.dart';
@@ -32,8 +32,8 @@ class AddCertificationsInfo extends StatelessWidget {
             cubit.nameController.text = certificationData!.name ?? '';
             cubit.descriptionController.text =
                 certificationData!.description ?? '';
-            _loadImageFromUrl(context,
-                ApiConstants.getImageBaseUrl(certificationData!.imagePath!));
+            // _loadImageFromUrl(context,
+            //     ApiConstants.getImageBaseUrl(certificationData!.imagePath!));
             // if (certificationData!.imagePath != null) {
             //   final file = File(certificationData!.imagePath!);
             //   if (file.existsSync()) {
@@ -54,9 +54,8 @@ class AddCertificationsInfo extends StatelessWidget {
               children: [
                 SelectImageWidget(
                   cubit: cubit,
-                  images: [if (cubit.image != null) cubit.image!],
-                  isCoverImage: false,
-                  isEdit: certificationData != null,
+                  images: cubit.image,
+                  updateImageCallback: cubit.updateSelectedImages,
                 ),
                 verticalSpace(16),
                 AppTextFormField(
@@ -141,21 +140,21 @@ class AddCertificationsInfo extends StatelessWidget {
         final directory = await getTemporaryDirectory();
         final file = File('${directory.path}/temp_image.jpg');
         await file.writeAsBytes(response.data);
-        cubit.image = file;
-        print('Image loaded successfully: ${file.path}');
+        cubit.image = file as List<File>;
+        log('Image loaded successfully: ${file.path}');
       } else {
         showToast(
           message: "Failed to load image",
           isError: true,
         );
-        print('Failed to load image: ${response.statusCode}');
+        log('Failed to load image: ${response.statusCode}');
       }
     } catch (e) {
       showToast(
         message: "Error loading image: $e",
         isError: true,
       );
-      print('Error loading image: $e');
+      log('Error loading image: $e');
     }
   }
 }

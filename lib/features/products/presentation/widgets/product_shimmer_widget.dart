@@ -37,14 +37,14 @@ class ProductShimmerItem extends StatelessWidget {
       child: Column(
         children: [
           Container(
-            height: MediaQuery.sizeOf(context).height * 0.52,
+            height: MediaQuery.sizeOf(context).height * 0.5,
             width: MediaQuery.sizeOf(context).width,
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(16.r),
               color: AppColors.whiteColor,
               boxShadow: [
                 BoxShadow(
-                  color: AppColors.blackColor.withOpacity(0.1),
+                  color: AppColors.blackColor.withValues(alpha: 0.1),
                   blurRadius: 10,
                   spreadRadius: 1,
                   offset: Offset(0, 4),
@@ -124,12 +124,16 @@ class ProductShimmerItem extends StatelessWidget {
                           children: [
                             Row(
                               children: [
+                                //TODO: Refactor this code to add colors shimmer
                                 Row(
-                                  children: List.generate(2, (index) {
+                                  children: List.generate(4, (index) {
                                     return Skeletonizer(
                                       enabled: true,
-                                      child: ProductsCustomColorContainer(
-                                          text: "White"),
+                                      child: Padding(
+                                        padding:  EdgeInsets.all(8.0.r),
+                                        child: ProductsCustomColorContainer(
+                                            color: Colors.transparent),
+                                      ),
                                     );
                                   }),
                                 ),
@@ -159,7 +163,7 @@ class ProductShimmerItem extends StatelessWidget {
                             ),
                           ],
                         ),
-                        verticalSpace(8),
+                        // verticalSpace(4),
                       ],
                     ),
                   ),

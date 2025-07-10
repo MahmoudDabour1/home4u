@@ -1,10 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:home4u/core/extensions/navigation_extension.dart';
+import 'package:home4u/core/helpers/shared_pref_helper.dart';
+import 'package:home4u/core/helpers/shared_pref_keys.dart';
 import 'package:home4u/core/theming/app_styles.dart';
 import 'package:home4u/core/widgets/app_back_button.dart';
 
 import '../../features/auth/widgets/custom_header_shape.dart';
+import '../routing/routes.dart';
 import '../theming/app_assets.dart';
 import '../theming/app_colors.dart';
 import '../theming/font_weight_helper.dart';
@@ -41,7 +45,7 @@ class BusinessHeaderWidget extends StatelessWidget {
               Spacer(),
               _buildHeaderTitle(isHasIcon: isHasIcon),
               Spacer(),
-              _buildHeaderNotification(),
+              _buildHeaderNotification(context),
             ],
           ),
         ),
@@ -62,14 +66,20 @@ class BusinessHeaderWidget extends StatelessWidget {
     );
   }
 
-  Widget _buildHeaderNotification() {
-    return SvgPicture.asset(
-      AppAssets.notificationSvgImage,
-      width: 24.w,
-      height: 24.h,
-      colorFilter: ColorFilter.mode(
-        AppColors.whiteColor,
-        BlendMode.srcIn,
+  Widget _buildHeaderNotification(BuildContext context) {
+    return GestureDetector(
+      onTap: ()async{
+       await SharedPrefHelper.removeSecuredString(SharedPrefKeys.userToken);
+       context.pushNameAndRemoveUntil(Routes.loginScreen, predicate: (Route<dynamic> route)=>false);
+      },
+      child: SvgPicture.asset(
+        AppAssets.notificationSvgImage,
+        width: 24.w,
+        height: 24.h,
+        colorFilter: ColorFilter.mode(
+          AppColors.whiteColor,
+          BlendMode.srcIn,
+        ),
       ),
     );
   }

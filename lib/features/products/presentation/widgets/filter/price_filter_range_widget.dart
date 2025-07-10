@@ -18,7 +18,7 @@ class PriceFilterRangeWidget extends StatelessWidget {
     return RangeSlider(
         values: RangeValues(minPrice, maxPrice),
         min: 0,
-        max: 1000,
+        max: 100000,
         divisions: 20,
         activeColor: AppColors.primaryColor,
         overlayColor:WidgetStateProperty.resolveWith((states)

@@ -23,9 +23,12 @@ abstract class ProductsRepo {
 
 class ProductsRepoImpl implements ProductsRepo {
   final ProductsRemoteDataSource productsRemoteDataSource;
-  // final ProductsLocalDatasource productsLocalDataSource;
+  final ProductsLocalDatasource productsLocalDataSource;
 
-  ProductsRepoImpl( {required this.productsRemoteDataSource});
+  ProductsRepoImpl({
+    required this.productsLocalDataSource,
+    required this.productsRemoteDataSource,
+  });
 
   @override
   Future<ApiResult<ProductsResponseModel>> getProducts(
@@ -33,13 +36,14 @@ class ProductsRepoImpl implements ProductsRepo {
     try {
       final response =
           await productsRemoteDataSource.getProducts(productsFilter);
-      // await productsLocalDataSource.cacheProductsData(response);
+      await productsLocalDataSource.cacheProductsData(response);
       return ApiResult.success(response);
     } catch (error) {
-      // final cachedProductsData = await productsLocalDataSource.getProductsData();
-      // if (cachedProductsData != null) {
-      //   return ApiResult.success(cachedProductsData);
-      // }
+      final cachedProductsData =
+          await productsLocalDataSource.getProductsData();
+      if (cachedProductsData != null) {
+        return ApiResult.success(cachedProductsData);
+      }
       return ApiResult.failure(ApiErrorHandler.handle(error));
     }
   }

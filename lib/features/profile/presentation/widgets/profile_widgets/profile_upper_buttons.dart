@@ -18,6 +18,13 @@ class ProfileUpperButtons extends StatelessWidget {
           Row(
             children: [
               AppCustomCircleButton(
+                imagePath: AppAssets.editSvgImage,
+                onPressed: (){
+
+                },
+              ),
+              horizontalSpace(8),
+              AppCustomCircleButton(
                 imagePath: AppAssets.notificationSvgImage,
               ),
               horizontalSpace(8),

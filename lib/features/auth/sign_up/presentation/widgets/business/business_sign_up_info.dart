@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_localization/flutter_localization.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:home4u/core/utils/spacing.dart';
+import 'package:home4u/features/auth/sign_up/logic/sign_up_state.dart';
 
 import '../../../../../../core/widgets/app_custom_drop_down_multi_select_button.dart';
 import '../../../../../../core/widgets/app_text_form_field.dart';
@@ -92,36 +93,40 @@ class _BusinessSignUpInfoState extends State<BusinessSignUpInfo> {
               return null;
             },
           ),
-
-          ///ToDo : problem when choose exhibition and go to second screen ,then return and choose store show the same data first and then show store data and vice versa is true
-          AppCustomDropDownMultiSelectButton(
-            validator: (value) {
-              if (value?.isEmpty ?? true) {
-                return "Please select at least one service";
-              }
-              return null;
-            },
-            selectedValues: selectedBusinessTypes ?? [],
-            items: signUpCubit.businessTypes.map((businessType) {
-              return businessType.name ?? 'N/A';
-            }).toList(),
-            labelText: AppLocale.businessTypes.getString(context),
-            onChanged: (List<String> values) {
-              setState(() {
-                selectedBusinessTypes = values;
-                signUpCubit.selectedBusinessTypes = values.map((name) {
-                  return signUpCubit.businessTypes
-                      .firstWhere((businessType) => businessType.name == name)
-                      .id;
-                }).toList();
-              });
-            },
-            onSaved: (value) {
-              signUpCubit.selectedBusinessTypes = value?.map((name) {
-                return signUpCubit.businessTypes
-                    .firstWhere((businessType) => businessType.name == name)
-                    .id;
-              }).toList();
+          //ToDo : refactor to separated widget
+          BlocBuilder<SignUpCubit, SignUpState>(
+            builder: (context, state) {
+              return AppCustomDropDownMultiSelectButton(
+                validator: (value) {
+                  if (value?.isEmpty ?? true) {
+                    return "Please select at least one service";
+                  }
+                  return null;
+                },
+                selectedValues: selectedBusinessTypes ?? [],
+                items: signUpCubit.businessTypes.map((businessType) {
+                  return businessType.name ?? 'N/A';
+                }).toList(),
+                labelText: AppLocale.businessTypes.getString(context),
+                onChanged: (List<String> values) {
+                  setState(() {
+                    selectedBusinessTypes = values;
+                    signUpCubit.selectedBusinessTypes = values.map((name) {
+                      return signUpCubit.businessTypes
+                          .firstWhere(
+                              (businessType) => businessType.name == name)
+                          .id;
+                    }).toList();
+                  });
+                },
+                onSaved: (value) {
+                  signUpCubit.selectedBusinessTypes = value?.map((name) {
+                    return signUpCubit.businessTypes
+                        .firstWhere((businessType) => businessType.name == name)
+                        .id;
+                  }).toList();
+                },
+              );
             },
           ),
           verticalSpace(16),

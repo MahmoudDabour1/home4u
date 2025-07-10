@@ -9,7 +9,6 @@ import 'package:home4u/features/products/presentation/widgets/filter/products_fi
 import 'package:home4u/features/products/presentation/widgets/products_bloc_builder.dart';
 import 'package:home4u/locale/app_locale.dart';
 
-import '../../../core/routing/router_observer.dart';
 import '../../../core/theming/app_colors.dart';
 import '../../../core/widgets/app_custom_search_text_field.dart';
 import '../../../core/widgets/business_header_widget.dart';
@@ -72,6 +71,7 @@ class _ProductsScreenState extends State<ProductsScreen>
               builder: (context) => BusinessHeaderWidget(
                 headerTitle: AppLocale.products.getString(context),
                 headerIcon: AppAssets.productWhiteSvg,
+
               ),
             ),
           ),

@@ -31,18 +31,20 @@ class LoginBlocListener extends StatelessWidget {
 
   void _handleSuccess(BuildContext context, dynamic loginResponse) {
     context.pop();
-    final String userTypeCode =
-        loginResponse.userData?.userInformation?.userType?.code;
+    final String userTypeCode = loginResponse.data?.user?.userType?.code;
 
     switch (userTypeCode) {
       case "EXHIBITION":
       case "STORE":
-        context.pushNamed(Routes.productsScreen);
+        context.pushNamed(Routes.exhibitionsAndStoresBottomNavLayout);
         break;
       case "TECHNICAL_WORKER":
+      case "ENGINEERING_OFFICE":
       case "ENGINEER":
-        context.pushNamed(Routes.bottomNavLayout);
+        context.pushNamed(Routes.freelancerBottomNavLayout);
         break;
+      case "GENERAL_USER":
+        context.pushNamed(Routes.userBottomNavLayout);
       default:
         context.pushNamed(Routes.homeScreen);
     }

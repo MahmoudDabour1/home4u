@@ -1,3 +1,4 @@
+import 'package:dio/dio.dart';
 import 'package:home4u/core/networking/api_result.dart';
 import 'package:home4u/features/auth/sign_up/data/data_source/common_local_data_source.dart';
 import 'package:home4u/features/auth/sign_up/data/models/business_type.dart';
@@ -6,6 +7,7 @@ import 'package:home4u/features/auth/sign_up/data/models/sign_up_body.dart';
 import 'package:home4u/features/auth/sign_up/data/models/sign_up_response.dart';
 
 import '../../../../../core/networking/api_error_handler.dart';
+import '../../../../exhibition/data/models/upload_image_response.dart';
 import '../data_source/sign_up_remote_data_source.dart';
 import '../models/city_model.dart';
 import '../models/user_type_model.dart';
@@ -20,6 +22,12 @@ abstract class SignUpRepository {
   Future<ApiResult<List<BaseData>>> getBusinessTypes(int userTypeId);
 
   Future<ApiResult<SignUpResponse>> signUp(SignUpBody signUpBody);
+
+  Future<ApiResult<UploadImageResponse>> uploadEngineeringOfficeImages(
+    String pathId,
+    int id,
+    FormData image,
+  );
 }
 
 class SignUpRepositoryImpl implements SignUpRepository {
@@ -45,7 +53,7 @@ class SignUpRepositoryImpl implements SignUpRepository {
       final response = await remoteDataSource.signUp(signUpBody);
       return ApiResult.success(response);
     } catch (error) {
-      return Future.value(ApiResult.failure(ApiErrorHandler.handle(error)));
+      return ApiResult.failure(ApiErrorHandler.handle(error));
     }
   }
 
@@ -76,10 +84,25 @@ class SignUpRepositoryImpl implements SignUpRepository {
   }
 
   @override
-  Future<ApiResult<List<BaseData>>> getBusinessTypes(int userTypeId) async{
+  Future<ApiResult<List<BaseData>>> getBusinessTypes(int userTypeId) async {
     try {
       final businessTypes = await remoteDataSource.getBusinessTypes(userTypeId);
       return ApiResult.success(businessTypes.data);
+    } catch (error) {
+      return Future.value(ApiResult.failure(ApiErrorHandler.handle(error)));
+    }
+  }
+
+  @override
+  Future<ApiResult<UploadImageResponse>> uploadEngineeringOfficeImages(
+      String pathId, int id, FormData image) async {
+    try {
+      final response = await remoteDataSource.uploadEngineeringOfficeImages(
+        pathId,
+        id,
+        image,
+      );
+      return ApiResult.success(response);
     } catch (error) {
       return Future.value(ApiResult.failure(ApiErrorHandler.handle(error)));
     }

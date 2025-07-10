@@ -3,6 +3,8 @@ import 'package:home4u/features/profile/data/models/profile/engineer_profile_res
 import 'package:home4u/features/profile/data/models/profile/technical_worker_profile_response_model.dart';
 import 'package:home4u/features/profile/data/models/profile/upload_profile_image_response_model.dart';
 
+import '../../data/models/profile/engineering_office_profile_response_model.dart';
+
 part 'profile_state.freezed.dart';
 
 @freezed
@@ -18,6 +20,8 @@ class ProfileState<T> with _$ProfileState<T> {
   const factory ProfileState.successTechnicalWorkerProfileData(
           TechnicalWorkerResponseModel profileData) =
       SuccessTechnicalWorkerProfileData;
+  const factory ProfileState.successEngineeringOfficeProfileData(
+          EngineeringOfficeProfileResponseModel profileData) = SuccessEngineeringOfficeProfileData;
 
   const factory ProfileState.errorProfileData({required String error}) =
       ErrorProfileData;
@@ -31,6 +35,9 @@ class ProfileState<T> with _$ProfileState<T> {
   const factory ProfileState.successUpdateTechnicalWorkerProfile(
           TechnicalWorkerResponseModel? profileData) =
       SuccessUpdateTechnicalWorkerProfile;
+
+  const factory ProfileState.successUpdateEngineeringOfficeProfile(
+          EngineeringOfficeProfileResponseModel? profileData) = SuccessUpdateEngineeringOfficeProfile;
 
   const factory ProfileState.errorUpdateProfile({required String error}) =
       ErrorUpdateProfile;

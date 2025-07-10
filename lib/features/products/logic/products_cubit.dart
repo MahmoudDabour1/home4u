@@ -11,6 +11,7 @@ import 'package:home4u/features/products/data/repos/business_config_repo.dart';
 import 'package:home4u/features/products/data/repos/products_repo.dart';
 import 'package:home4u/features/products/logic/products_state.dart';
 
+import '../data/data_source/products_local_data_source.dart';
 import '../data/models/product_preview_response.dart';
 import '../data/models/products_response_model.dart';
 
@@ -20,10 +21,13 @@ class ProductsCubit extends Cubit<ProductsState> {
   BusinessConfigModel? businessConfigModel;
   final ProductsRepo _productsRepo;
 
-  // final ProductsLocalDatasource _productsLocalDatasource;
+  final ProductsLocalDatasource _productsLocalDatasource;
 
-  ProductsCubit(this._businessConfigRepo, this._productsRepo)
-      : super(ProductsState.initial());
+  ProductsCubit(
+    this._businessConfigRepo,
+    this._productsRepo,
+    this._productsLocalDatasource,
+  ) : super(ProductsState.initial());
   double? minPrice;
   double? maxPrice;
   List<int?> colorsIds = [];
@@ -43,14 +47,25 @@ class ProductsCubit extends Cubit<ProductsState> {
 
   static ProductsCubit get(context) => BlocProvider.of(context);
 
-  List<ProductBaseUnit> baseUnits = [];
-  List<FilterColor> colors = [];
-  List<ProductMaterial> materials = [];
-  ProductPreviewResponse? productPreviewResponse; // Add this
+  List<ProductBaseUnit>? baseUnits = [];
+  List<FilterColor>? colors = [];
+  List<ProductMaterial>? materials = [];
+  List<BusinessType>? businessTypeCategories = [];
+  List<BusinessType>? businessTypes = [];
+  ProductPreviewResponse? productPreviewResponse;
+
+  ///resolve filter
+  List<String>? selectedBusinessTypeNames = [];
+  List<String> ?selectedMaterialNames = [];
+  List<String>? selectedColorNames = [];
+
 
   Future<void> getProducts({bool isRefresh = false}) async {
     final int userBusinessId =
         await SharedPrefHelper.getInt(SharedPrefKeys.userTypeId);
+
+    final String userBusinessTypeId =
+        await SharedPrefHelper.getString(SharedPrefKeys.userBusinessTypeId);
 
     log("userBusinessId: $userBusinessId");
 
@@ -75,7 +90,7 @@ class ProductsCubit extends Cubit<ProductsState> {
     final requestBody = {
       "pageNumber": _page,
       "searchCriteria": {
-        "businessId": 12,
+        "businessId": int.parse(userBusinessTypeId),
         "minPrice": minPrice,
         "maxPrice": maxPrice,
         "colorsIds": colorsIds.isEmpty ? null : colorsIds,
@@ -158,11 +173,11 @@ class ProductsCubit extends Cubit<ProductsState> {
     );
   }
 
-  Future<void> getBusinessConfig() async {
+  Future<void> getBusinessConfig({bool forceRefresh = false}) async {
     emit(const ProductsState.businessConfigLoading());
 
     DioFactory.setContentType("application/json");
-    final response = await _businessConfigRepo.getBusinessConfig();
+    final response = await _businessConfigRepo.getBusinessConfig(forceRefresh: forceRefresh);
     response.when(
       success: (data) {
         businessConfigModel = data;
@@ -171,6 +186,8 @@ class ProductsCubit extends Cubit<ProductsState> {
           colors = data.data?.colors ?? [];
           baseUnits = data.data?.productBaseUnits ?? [];
           materials = data.data?.productMaterial ?? [];
+          businessTypeCategories = data.data?.businessTypeCategories ?? [];
+          businessTypes = data.data?.businessTypes ?? [];
         }
       },
       failure: (error) {
@@ -191,26 +208,25 @@ class ProductsCubit extends Cubit<ProductsState> {
     products.clear();
   }
 
+  void resetFilters() {
+    selectedBusinessTypeNames = null;
+    selectedMaterialNames = null;
+    selectedColorNames = null;
+    colors = null;
+    baseUnits = null;
+    materials = null;
+    businessTypeCategories = null;
+    minPrice = null;
+    colorsIds= [];
+    materialIds =  [];
+    businessTypeIds= [];
+    maxPrice = null;
+    isAvailable = null;
+    emit(ProductsState.resetFilter());
+  }
   @override
   Future<void> close() {
     resetPagination();
     return super.close();
   }
-}
-
-Future<Map<String, dynamic>> _productsFilterJson(
-  double? minPrice,
-  double? maxPrice,
-  List<int>? colorsIds,
-  List<int>? businessTypeIds,
-) async {
-  return {
-    "searchCriteria": {
-      "businessId": 12,
-      "minPrice": minPrice,
-      "maxPrice": maxPrice,
-      "colorsIds": colorsIds,
-      "businessTypeIds": businessTypeIds,
-    }
-  };
 }

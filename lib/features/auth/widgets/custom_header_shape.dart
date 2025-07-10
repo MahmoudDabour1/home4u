@@ -1,15 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:home4u/core/networking/api_constants.dart';
 import 'package:home4u/core/theming/app_colors.dart';
 
 import 'custom_card_clipper.dart';
 
 class CustomHeaderShape extends StatelessWidget {
   final bool isImage;
+  final String? imageUrl;
 
   const CustomHeaderShape({
     super.key,
     this.isImage = false,
+    this.imageUrl,
   });
 
   @override
@@ -22,8 +25,11 @@ class CustomHeaderShape extends StatelessWidget {
           color: AppColors.secondaryColor,
           image: isImage
               ? DecorationImage(
-                  image: AssetImage("assets/images/profile_back_image.png"),
-                  fit: BoxFit.cover ,
+                  image: imageUrl!.isNotEmpty
+                      ? NetworkImage(
+                          ApiConstants.getImageBaseUrl(imageUrl ?? ''))
+                      : AssetImage("assets/images/profile_back_image.png"),
+                  fit: BoxFit.cover,
                 )
               : null,
         ),

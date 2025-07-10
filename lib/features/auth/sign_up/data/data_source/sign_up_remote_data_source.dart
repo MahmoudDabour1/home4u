@@ -7,6 +7,7 @@ import 'package:retrofit/error_logger.dart';
 import 'package:retrofit/http.dart';
 
 import '../../../../../core/networking/api_constants.dart';
+import '../../../../exhibition/data/models/upload_image_response.dart';
 import '../models/business_type.dart';
 import '../models/sign_up_body.dart';
 
@@ -33,7 +34,16 @@ abstract class SignUpRemoteDataSource {
     @Path("governorateId") int governorateId,
   );
 
+  @GET("/api/v1/business-types/user-type/{userTypeId}")
   Future<BusinessTypesModel> getBusinessTypes(
     @Path("userTypeId") int userTypeId,
   );
+
+  @MultiPart()
+  @POST("/api/v1/file")
+  Future<UploadImageResponse> uploadEngineeringOfficeImages(
+      @Query("pathId") String pathId,
+      @Query("id") int id,
+      @Body() FormData image,
+      );
 }

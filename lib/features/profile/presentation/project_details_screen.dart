@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:hive/hive.dart';
 import 'package:home4u/core/helpers/shared_pref_helper.dart';
 import 'package:home4u/core/helpers/shared_pref_keys.dart';
+import 'package:home4u/features/profile/data/models/profile/engineering_office_profile_response_model.dart';
 import 'package:home4u/features/profile/data/models/profile/technical_worker_profile_response_model.dart';
 import 'package:home4u/features/profile/data/models/projects/get_projects_response_model.dart';
 import 'package:home4u/features/profile/logic/project/project_cubit.dart';
@@ -38,6 +39,9 @@ class _ProjectDetailsScreenState extends State<ProjectDetailsScreen> {
     var technicalWorkerProfileBox =
         await Hive.openBox<TechnicalWorkerResponseModel>(
             kTechnicalWorkerProfileBox);
+    var engineeringOfficeProfileBox =
+        await Hive.openBox<EngineeringOfficeProfileResponseModel>(
+            kEngineeringOfficeProfileBox);
 
     var projectBox = await Hive.openBox<GetProjectsResponseModel>(kProjectsBox);
     var projectsData = projectBox.get(kProjectsKey);
@@ -46,8 +50,10 @@ class _ProjectDetailsScreenState extends State<ProjectDetailsScreen> {
     final userType = await SharedPrefHelper.getString(SharedPrefKeys.userType);
     if (userType == 'ENGINEER') {
       profileData = engineerProfileBox.get(kEngineerProfileData);
-    } else {
+    } else if (userType == "TECHNICAL_WORKER") {
       profileData = technicalWorkerProfileBox.get(kTechnicalWorkerProfileData);
+    } else if (userType == "ENGINEERING_OFFICE") {
+      profileData = engineeringOfficeProfileBox.get(kEngineeringOfficeProfileData);
     }
   }
 

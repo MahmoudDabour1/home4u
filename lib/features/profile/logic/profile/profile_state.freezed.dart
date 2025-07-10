@@ -24,12 +24,17 @@ mixin _$ProfileState<T> {
         successEngineerProfileData,
     required TResult Function(TechnicalWorkerResponseModel profileData)
         successTechnicalWorkerProfileData,
+    required TResult Function(EngineeringOfficeProfileResponseModel profileData)
+        successEngineeringOfficeProfileData,
     required TResult Function(String error) errorProfileData,
     required TResult Function() loadingUpdateProfile,
     required TResult Function(EngineerProfileResponseModel? profileData)
         successUpdateEngineerProfile,
     required TResult Function(TechnicalWorkerResponseModel? profileData)
         successUpdateTechnicalWorkerProfile,
+    required TResult Function(
+            EngineeringOfficeProfileResponseModel? profileData)
+        successUpdateEngineeringOfficeProfile,
     required TResult Function(String error) errorUpdateProfile,
     required TResult Function() loadingUploadImage,
     required TResult Function(
@@ -47,12 +52,16 @@ mixin _$ProfileState<T> {
         successEngineerProfileData,
     TResult? Function(TechnicalWorkerResponseModel profileData)?
         successTechnicalWorkerProfileData,
+    TResult? Function(EngineeringOfficeProfileResponseModel profileData)?
+        successEngineeringOfficeProfileData,
     TResult? Function(String error)? errorProfileData,
     TResult? Function()? loadingUpdateProfile,
     TResult? Function(EngineerProfileResponseModel? profileData)?
         successUpdateEngineerProfile,
     TResult? Function(TechnicalWorkerResponseModel? profileData)?
         successUpdateTechnicalWorkerProfile,
+    TResult? Function(EngineeringOfficeProfileResponseModel? profileData)?
+        successUpdateEngineeringOfficeProfile,
     TResult? Function(String error)? errorUpdateProfile,
     TResult? Function()? loadingUploadImage,
     TResult? Function(
@@ -70,12 +79,16 @@ mixin _$ProfileState<T> {
         successEngineerProfileData,
     TResult Function(TechnicalWorkerResponseModel profileData)?
         successTechnicalWorkerProfileData,
+    TResult Function(EngineeringOfficeProfileResponseModel profileData)?
+        successEngineeringOfficeProfileData,
     TResult Function(String error)? errorProfileData,
     TResult Function()? loadingUpdateProfile,
     TResult Function(EngineerProfileResponseModel? profileData)?
         successUpdateEngineerProfile,
     TResult Function(TechnicalWorkerResponseModel? profileData)?
         successUpdateTechnicalWorkerProfile,
+    TResult Function(EngineeringOfficeProfileResponseModel? profileData)?
+        successUpdateEngineeringOfficeProfile,
     TResult Function(String error)? errorUpdateProfile,
     TResult Function()? loadingUploadImage,
     TResult Function(
@@ -94,6 +107,8 @@ mixin _$ProfileState<T> {
         successEngineerProfileData,
     required TResult Function(SuccessTechnicalWorkerProfileData<T> value)
         successTechnicalWorkerProfileData,
+    required TResult Function(SuccessEngineeringOfficeProfileData<T> value)
+        successEngineeringOfficeProfileData,
     required TResult Function(ErrorProfileData<T> value) errorProfileData,
     required TResult Function(LoadingUpdateProfile<T> value)
         loadingUpdateProfile,
@@ -101,6 +116,8 @@ mixin _$ProfileState<T> {
         successUpdateEngineerProfile,
     required TResult Function(SuccessUpdateTechnicalWorkerProfile<T> value)
         successUpdateTechnicalWorkerProfile,
+    required TResult Function(SuccessUpdateEngineeringOfficeProfile<T> value)
+        successUpdateEngineeringOfficeProfile,
     required TResult Function(ErrorUpdateProfile<T> value) errorUpdateProfile,
     required TResult Function(LoadingUploadImage<T> value) loadingUploadImage,
     required TResult Function(SuccessUploadImage<T> value) successUploadImage,
@@ -116,12 +133,16 @@ mixin _$ProfileState<T> {
         successEngineerProfileData,
     TResult? Function(SuccessTechnicalWorkerProfileData<T> value)?
         successTechnicalWorkerProfileData,
+    TResult? Function(SuccessEngineeringOfficeProfileData<T> value)?
+        successEngineeringOfficeProfileData,
     TResult? Function(ErrorProfileData<T> value)? errorProfileData,
     TResult? Function(LoadingUpdateProfile<T> value)? loadingUpdateProfile,
     TResult? Function(SuccessUpdateEngineerProfile<T> value)?
         successUpdateEngineerProfile,
     TResult? Function(SuccessUpdateTechnicalWorkerProfile<T> value)?
         successUpdateTechnicalWorkerProfile,
+    TResult? Function(SuccessUpdateEngineeringOfficeProfile<T> value)?
+        successUpdateEngineeringOfficeProfile,
     TResult? Function(ErrorUpdateProfile<T> value)? errorUpdateProfile,
     TResult? Function(LoadingUploadImage<T> value)? loadingUploadImage,
     TResult? Function(SuccessUploadImage<T> value)? successUploadImage,
@@ -137,12 +158,16 @@ mixin _$ProfileState<T> {
         successEngineerProfileData,
     TResult Function(SuccessTechnicalWorkerProfileData<T> value)?
         successTechnicalWorkerProfileData,
+    TResult Function(SuccessEngineeringOfficeProfileData<T> value)?
+        successEngineeringOfficeProfileData,
     TResult Function(ErrorProfileData<T> value)? errorProfileData,
     TResult Function(LoadingUpdateProfile<T> value)? loadingUpdateProfile,
     TResult Function(SuccessUpdateEngineerProfile<T> value)?
         successUpdateEngineerProfile,
     TResult Function(SuccessUpdateTechnicalWorkerProfile<T> value)?
         successUpdateTechnicalWorkerProfile,
+    TResult Function(SuccessUpdateEngineeringOfficeProfile<T> value)?
+        successUpdateEngineeringOfficeProfile,
     TResult Function(ErrorUpdateProfile<T> value)? errorUpdateProfile,
     TResult Function(LoadingUploadImage<T> value)? loadingUploadImage,
     TResult Function(SuccessUploadImage<T> value)? successUploadImage,
@@ -221,12 +246,17 @@ class _$ProfileInitialImpl<T> implements ProfileInitial<T> {
         successEngineerProfileData,
     required TResult Function(TechnicalWorkerResponseModel profileData)
         successTechnicalWorkerProfileData,
+    required TResult Function(EngineeringOfficeProfileResponseModel profileData)
+        successEngineeringOfficeProfileData,
     required TResult Function(String error) errorProfileData,
     required TResult Function() loadingUpdateProfile,
     required TResult Function(EngineerProfileResponseModel? profileData)
         successUpdateEngineerProfile,
     required TResult Function(TechnicalWorkerResponseModel? profileData)
         successUpdateTechnicalWorkerProfile,
+    required TResult Function(
+            EngineeringOfficeProfileResponseModel? profileData)
+        successUpdateEngineeringOfficeProfile,
     required TResult Function(String error) errorUpdateProfile,
     required TResult Function() loadingUploadImage,
     required TResult Function(
@@ -247,12 +277,16 @@ class _$ProfileInitialImpl<T> implements ProfileInitial<T> {
         successEngineerProfileData,
     TResult? Function(TechnicalWorkerResponseModel profileData)?
         successTechnicalWorkerProfileData,
+    TResult? Function(EngineeringOfficeProfileResponseModel profileData)?
+        successEngineeringOfficeProfileData,
     TResult? Function(String error)? errorProfileData,
     TResult? Function()? loadingUpdateProfile,
     TResult? Function(EngineerProfileResponseModel? profileData)?
         successUpdateEngineerProfile,
     TResult? Function(TechnicalWorkerResponseModel? profileData)?
         successUpdateTechnicalWorkerProfile,
+    TResult? Function(EngineeringOfficeProfileResponseModel? profileData)?
+        successUpdateEngineeringOfficeProfile,
     TResult? Function(String error)? errorUpdateProfile,
     TResult? Function()? loadingUploadImage,
     TResult? Function(
@@ -273,12 +307,16 @@ class _$ProfileInitialImpl<T> implements ProfileInitial<T> {
         successEngineerProfileData,
     TResult Function(TechnicalWorkerResponseModel profileData)?
         successTechnicalWorkerProfileData,
+    TResult Function(EngineeringOfficeProfileResponseModel profileData)?
+        successEngineeringOfficeProfileData,
     TResult Function(String error)? errorProfileData,
     TResult Function()? loadingUpdateProfile,
     TResult Function(EngineerProfileResponseModel? profileData)?
         successUpdateEngineerProfile,
     TResult Function(TechnicalWorkerResponseModel? profileData)?
         successUpdateTechnicalWorkerProfile,
+    TResult Function(EngineeringOfficeProfileResponseModel? profileData)?
+        successUpdateEngineeringOfficeProfile,
     TResult Function(String error)? errorUpdateProfile,
     TResult Function()? loadingUploadImage,
     TResult Function(
@@ -303,6 +341,8 @@ class _$ProfileInitialImpl<T> implements ProfileInitial<T> {
         successEngineerProfileData,
     required TResult Function(SuccessTechnicalWorkerProfileData<T> value)
         successTechnicalWorkerProfileData,
+    required TResult Function(SuccessEngineeringOfficeProfileData<T> value)
+        successEngineeringOfficeProfileData,
     required TResult Function(ErrorProfileData<T> value) errorProfileData,
     required TResult Function(LoadingUpdateProfile<T> value)
         loadingUpdateProfile,
@@ -310,6 +350,8 @@ class _$ProfileInitialImpl<T> implements ProfileInitial<T> {
         successUpdateEngineerProfile,
     required TResult Function(SuccessUpdateTechnicalWorkerProfile<T> value)
         successUpdateTechnicalWorkerProfile,
+    required TResult Function(SuccessUpdateEngineeringOfficeProfile<T> value)
+        successUpdateEngineeringOfficeProfile,
     required TResult Function(ErrorUpdateProfile<T> value) errorUpdateProfile,
     required TResult Function(LoadingUploadImage<T> value) loadingUploadImage,
     required TResult Function(SuccessUploadImage<T> value) successUploadImage,
@@ -328,12 +370,16 @@ class _$ProfileInitialImpl<T> implements ProfileInitial<T> {
         successEngineerProfileData,
     TResult? Function(SuccessTechnicalWorkerProfileData<T> value)?
         successTechnicalWorkerProfileData,
+    TResult? Function(SuccessEngineeringOfficeProfileData<T> value)?
+        successEngineeringOfficeProfileData,
     TResult? Function(ErrorProfileData<T> value)? errorProfileData,
     TResult? Function(LoadingUpdateProfile<T> value)? loadingUpdateProfile,
     TResult? Function(SuccessUpdateEngineerProfile<T> value)?
         successUpdateEngineerProfile,
     TResult? Function(SuccessUpdateTechnicalWorkerProfile<T> value)?
         successUpdateTechnicalWorkerProfile,
+    TResult? Function(SuccessUpdateEngineeringOfficeProfile<T> value)?
+        successUpdateEngineeringOfficeProfile,
     TResult? Function(ErrorUpdateProfile<T> value)? errorUpdateProfile,
     TResult? Function(LoadingUploadImage<T> value)? loadingUploadImage,
     TResult? Function(SuccessUploadImage<T> value)? successUploadImage,
@@ -352,12 +398,16 @@ class _$ProfileInitialImpl<T> implements ProfileInitial<T> {
         successEngineerProfileData,
     TResult Function(SuccessTechnicalWorkerProfileData<T> value)?
         successTechnicalWorkerProfileData,
+    TResult Function(SuccessEngineeringOfficeProfileData<T> value)?
+        successEngineeringOfficeProfileData,
     TResult Function(ErrorProfileData<T> value)? errorProfileData,
     TResult Function(LoadingUpdateProfile<T> value)? loadingUpdateProfile,
     TResult Function(SuccessUpdateEngineerProfile<T> value)?
         successUpdateEngineerProfile,
     TResult Function(SuccessUpdateTechnicalWorkerProfile<T> value)?
         successUpdateTechnicalWorkerProfile,
+    TResult Function(SuccessUpdateEngineeringOfficeProfile<T> value)?
+        successUpdateEngineeringOfficeProfile,
     TResult Function(ErrorUpdateProfile<T> value)? errorUpdateProfile,
     TResult Function(LoadingUploadImage<T> value)? loadingUploadImage,
     TResult Function(SuccessUploadImage<T> value)? successUploadImage,
@@ -424,12 +474,17 @@ class _$LoadingProfileDataImpl<T> implements LoadingProfileData<T> {
         successEngineerProfileData,
     required TResult Function(TechnicalWorkerResponseModel profileData)
         successTechnicalWorkerProfileData,
+    required TResult Function(EngineeringOfficeProfileResponseModel profileData)
+        successEngineeringOfficeProfileData,
     required TResult Function(String error) errorProfileData,
     required TResult Function() loadingUpdateProfile,
     required TResult Function(EngineerProfileResponseModel? profileData)
         successUpdateEngineerProfile,
     required TResult Function(TechnicalWorkerResponseModel? profileData)
         successUpdateTechnicalWorkerProfile,
+    required TResult Function(
+            EngineeringOfficeProfileResponseModel? profileData)
+        successUpdateEngineeringOfficeProfile,
     required TResult Function(String error) errorUpdateProfile,
     required TResult Function() loadingUploadImage,
     required TResult Function(
@@ -450,12 +505,16 @@ class _$LoadingProfileDataImpl<T> implements LoadingProfileData<T> {
         successEngineerProfileData,
     TResult? Function(TechnicalWorkerResponseModel profileData)?
         successTechnicalWorkerProfileData,
+    TResult? Function(EngineeringOfficeProfileResponseModel profileData)?
+        successEngineeringOfficeProfileData,
     TResult? Function(String error)? errorProfileData,
     TResult? Function()? loadingUpdateProfile,
     TResult? Function(EngineerProfileResponseModel? profileData)?
         successUpdateEngineerProfile,
     TResult? Function(TechnicalWorkerResponseModel? profileData)?
         successUpdateTechnicalWorkerProfile,
+    TResult? Function(EngineeringOfficeProfileResponseModel? profileData)?
+        successUpdateEngineeringOfficeProfile,
     TResult? Function(String error)? errorUpdateProfile,
     TResult? Function()? loadingUploadImage,
     TResult? Function(
@@ -476,12 +535,16 @@ class _$LoadingProfileDataImpl<T> implements LoadingProfileData<T> {
         successEngineerProfileData,
     TResult Function(TechnicalWorkerResponseModel profileData)?
         successTechnicalWorkerProfileData,
+    TResult Function(EngineeringOfficeProfileResponseModel profileData)?
+        successEngineeringOfficeProfileData,
     TResult Function(String error)? errorProfileData,
     TResult Function()? loadingUpdateProfile,
     TResult Function(EngineerProfileResponseModel? profileData)?
         successUpdateEngineerProfile,
     TResult Function(TechnicalWorkerResponseModel? profileData)?
         successUpdateTechnicalWorkerProfile,
+    TResult Function(EngineeringOfficeProfileResponseModel? profileData)?
+        successUpdateEngineeringOfficeProfile,
     TResult Function(String error)? errorUpdateProfile,
     TResult Function()? loadingUploadImage,
     TResult Function(
@@ -506,6 +569,8 @@ class _$LoadingProfileDataImpl<T> implements LoadingProfileData<T> {
         successEngineerProfileData,
     required TResult Function(SuccessTechnicalWorkerProfileData<T> value)
         successTechnicalWorkerProfileData,
+    required TResult Function(SuccessEngineeringOfficeProfileData<T> value)
+        successEngineeringOfficeProfileData,
     required TResult Function(ErrorProfileData<T> value) errorProfileData,
     required TResult Function(LoadingUpdateProfile<T> value)
         loadingUpdateProfile,
@@ -513,6 +578,8 @@ class _$LoadingProfileDataImpl<T> implements LoadingProfileData<T> {
         successUpdateEngineerProfile,
     required TResult Function(SuccessUpdateTechnicalWorkerProfile<T> value)
         successUpdateTechnicalWorkerProfile,
+    required TResult Function(SuccessUpdateEngineeringOfficeProfile<T> value)
+        successUpdateEngineeringOfficeProfile,
     required TResult Function(ErrorUpdateProfile<T> value) errorUpdateProfile,
     required TResult Function(LoadingUploadImage<T> value) loadingUploadImage,
     required TResult Function(SuccessUploadImage<T> value) successUploadImage,
@@ -531,12 +598,16 @@ class _$LoadingProfileDataImpl<T> implements LoadingProfileData<T> {
         successEngineerProfileData,
     TResult? Function(SuccessTechnicalWorkerProfileData<T> value)?
         successTechnicalWorkerProfileData,
+    TResult? Function(SuccessEngineeringOfficeProfileData<T> value)?
+        successEngineeringOfficeProfileData,
     TResult? Function(ErrorProfileData<T> value)? errorProfileData,
     TResult? Function(LoadingUpdateProfile<T> value)? loadingUpdateProfile,
     TResult? Function(SuccessUpdateEngineerProfile<T> value)?
         successUpdateEngineerProfile,
     TResult? Function(SuccessUpdateTechnicalWorkerProfile<T> value)?
         successUpdateTechnicalWorkerProfile,
+    TResult? Function(SuccessUpdateEngineeringOfficeProfile<T> value)?
+        successUpdateEngineeringOfficeProfile,
     TResult? Function(ErrorUpdateProfile<T> value)? errorUpdateProfile,
     TResult? Function(LoadingUploadImage<T> value)? loadingUploadImage,
     TResult? Function(SuccessUploadImage<T> value)? successUploadImage,
@@ -555,12 +626,16 @@ class _$LoadingProfileDataImpl<T> implements LoadingProfileData<T> {
         successEngineerProfileData,
     TResult Function(SuccessTechnicalWorkerProfileData<T> value)?
         successTechnicalWorkerProfileData,
+    TResult Function(SuccessEngineeringOfficeProfileData<T> value)?
+        successEngineeringOfficeProfileData,
     TResult Function(ErrorProfileData<T> value)? errorProfileData,
     TResult Function(LoadingUpdateProfile<T> value)? loadingUpdateProfile,
     TResult Function(SuccessUpdateEngineerProfile<T> value)?
         successUpdateEngineerProfile,
     TResult Function(SuccessUpdateTechnicalWorkerProfile<T> value)?
         successUpdateTechnicalWorkerProfile,
+    TResult Function(SuccessUpdateEngineeringOfficeProfile<T> value)?
+        successUpdateEngineeringOfficeProfile,
     TResult Function(ErrorUpdateProfile<T> value)? errorUpdateProfile,
     TResult Function(LoadingUploadImage<T> value)? loadingUploadImage,
     TResult Function(SuccessUploadImage<T> value)? successUploadImage,
@@ -660,12 +735,17 @@ class _$SuccessEngineerProfileDataImpl<T>
         successEngineerProfileData,
     required TResult Function(TechnicalWorkerResponseModel profileData)
         successTechnicalWorkerProfileData,
+    required TResult Function(EngineeringOfficeProfileResponseModel profileData)
+        successEngineeringOfficeProfileData,
     required TResult Function(String error) errorProfileData,
     required TResult Function() loadingUpdateProfile,
     required TResult Function(EngineerProfileResponseModel? profileData)
         successUpdateEngineerProfile,
     required TResult Function(TechnicalWorkerResponseModel? profileData)
         successUpdateTechnicalWorkerProfile,
+    required TResult Function(
+            EngineeringOfficeProfileResponseModel? profileData)
+        successUpdateEngineeringOfficeProfile,
     required TResult Function(String error) errorUpdateProfile,
     required TResult Function() loadingUploadImage,
     required TResult Function(
@@ -686,12 +766,16 @@ class _$SuccessEngineerProfileDataImpl<T>
         successEngineerProfileData,
     TResult? Function(TechnicalWorkerResponseModel profileData)?
         successTechnicalWorkerProfileData,
+    TResult? Function(EngineeringOfficeProfileResponseModel profileData)?
+        successEngineeringOfficeProfileData,
     TResult? Function(String error)? errorProfileData,
     TResult? Function()? loadingUpdateProfile,
     TResult? Function(EngineerProfileResponseModel? profileData)?
         successUpdateEngineerProfile,
     TResult? Function(TechnicalWorkerResponseModel? profileData)?
         successUpdateTechnicalWorkerProfile,
+    TResult? Function(EngineeringOfficeProfileResponseModel? profileData)?
+        successUpdateEngineeringOfficeProfile,
     TResult? Function(String error)? errorUpdateProfile,
     TResult? Function()? loadingUploadImage,
     TResult? Function(
@@ -712,12 +796,16 @@ class _$SuccessEngineerProfileDataImpl<T>
         successEngineerProfileData,
     TResult Function(TechnicalWorkerResponseModel profileData)?
         successTechnicalWorkerProfileData,
+    TResult Function(EngineeringOfficeProfileResponseModel profileData)?
+        successEngineeringOfficeProfileData,
     TResult Function(String error)? errorProfileData,
     TResult Function()? loadingUpdateProfile,
     TResult Function(EngineerProfileResponseModel? profileData)?
         successUpdateEngineerProfile,
     TResult Function(TechnicalWorkerResponseModel? profileData)?
         successUpdateTechnicalWorkerProfile,
+    TResult Function(EngineeringOfficeProfileResponseModel? profileData)?
+        successUpdateEngineeringOfficeProfile,
     TResult Function(String error)? errorUpdateProfile,
     TResult Function()? loadingUploadImage,
     TResult Function(
@@ -742,6 +830,8 @@ class _$SuccessEngineerProfileDataImpl<T>
         successEngineerProfileData,
     required TResult Function(SuccessTechnicalWorkerProfileData<T> value)
         successTechnicalWorkerProfileData,
+    required TResult Function(SuccessEngineeringOfficeProfileData<T> value)
+        successEngineeringOfficeProfileData,
     required TResult Function(ErrorProfileData<T> value) errorProfileData,
     required TResult Function(LoadingUpdateProfile<T> value)
         loadingUpdateProfile,
@@ -749,6 +839,8 @@ class _$SuccessEngineerProfileDataImpl<T>
         successUpdateEngineerProfile,
     required TResult Function(SuccessUpdateTechnicalWorkerProfile<T> value)
         successUpdateTechnicalWorkerProfile,
+    required TResult Function(SuccessUpdateEngineeringOfficeProfile<T> value)
+        successUpdateEngineeringOfficeProfile,
     required TResult Function(ErrorUpdateProfile<T> value) errorUpdateProfile,
     required TResult Function(LoadingUploadImage<T> value) loadingUploadImage,
     required TResult Function(SuccessUploadImage<T> value) successUploadImage,
@@ -767,12 +859,16 @@ class _$SuccessEngineerProfileDataImpl<T>
         successEngineerProfileData,
     TResult? Function(SuccessTechnicalWorkerProfileData<T> value)?
         successTechnicalWorkerProfileData,
+    TResult? Function(SuccessEngineeringOfficeProfileData<T> value)?
+        successEngineeringOfficeProfileData,
     TResult? Function(ErrorProfileData<T> value)? errorProfileData,
     TResult? Function(LoadingUpdateProfile<T> value)? loadingUpdateProfile,
     TResult? Function(SuccessUpdateEngineerProfile<T> value)?
         successUpdateEngineerProfile,
     TResult? Function(SuccessUpdateTechnicalWorkerProfile<T> value)?
         successUpdateTechnicalWorkerProfile,
+    TResult? Function(SuccessUpdateEngineeringOfficeProfile<T> value)?
+        successUpdateEngineeringOfficeProfile,
     TResult? Function(ErrorUpdateProfile<T> value)? errorUpdateProfile,
     TResult? Function(LoadingUploadImage<T> value)? loadingUploadImage,
     TResult? Function(SuccessUploadImage<T> value)? successUploadImage,
@@ -791,12 +887,16 @@ class _$SuccessEngineerProfileDataImpl<T>
         successEngineerProfileData,
     TResult Function(SuccessTechnicalWorkerProfileData<T> value)?
         successTechnicalWorkerProfileData,
+    TResult Function(SuccessEngineeringOfficeProfileData<T> value)?
+        successEngineeringOfficeProfileData,
     TResult Function(ErrorProfileData<T> value)? errorProfileData,
     TResult Function(LoadingUpdateProfile<T> value)? loadingUpdateProfile,
     TResult Function(SuccessUpdateEngineerProfile<T> value)?
         successUpdateEngineerProfile,
     TResult Function(SuccessUpdateTechnicalWorkerProfile<T> value)?
         successUpdateTechnicalWorkerProfile,
+    TResult Function(SuccessUpdateEngineeringOfficeProfile<T> value)?
+        successUpdateEngineeringOfficeProfile,
     TResult Function(ErrorUpdateProfile<T> value)? errorUpdateProfile,
     TResult Function(LoadingUploadImage<T> value)? loadingUploadImage,
     TResult Function(SuccessUploadImage<T> value)? successUploadImage,
@@ -907,12 +1007,17 @@ class _$SuccessTechnicalWorkerProfileDataImpl<T>
         successEngineerProfileData,
     required TResult Function(TechnicalWorkerResponseModel profileData)
         successTechnicalWorkerProfileData,
+    required TResult Function(EngineeringOfficeProfileResponseModel profileData)
+        successEngineeringOfficeProfileData,
     required TResult Function(String error) errorProfileData,
     required TResult Function() loadingUpdateProfile,
     required TResult Function(EngineerProfileResponseModel? profileData)
         successUpdateEngineerProfile,
     required TResult Function(TechnicalWorkerResponseModel? profileData)
         successUpdateTechnicalWorkerProfile,
+    required TResult Function(
+            EngineeringOfficeProfileResponseModel? profileData)
+        successUpdateEngineeringOfficeProfile,
     required TResult Function(String error) errorUpdateProfile,
     required TResult Function() loadingUploadImage,
     required TResult Function(
@@ -933,12 +1038,16 @@ class _$SuccessTechnicalWorkerProfileDataImpl<T>
         successEngineerProfileData,
     TResult? Function(TechnicalWorkerResponseModel profileData)?
         successTechnicalWorkerProfileData,
+    TResult? Function(EngineeringOfficeProfileResponseModel profileData)?
+        successEngineeringOfficeProfileData,
     TResult? Function(String error)? errorProfileData,
     TResult? Function()? loadingUpdateProfile,
     TResult? Function(EngineerProfileResponseModel? profileData)?
         successUpdateEngineerProfile,
     TResult? Function(TechnicalWorkerResponseModel? profileData)?
         successUpdateTechnicalWorkerProfile,
+    TResult? Function(EngineeringOfficeProfileResponseModel? profileData)?
+        successUpdateEngineeringOfficeProfile,
     TResult? Function(String error)? errorUpdateProfile,
     TResult? Function()? loadingUploadImage,
     TResult? Function(
@@ -959,12 +1068,16 @@ class _$SuccessTechnicalWorkerProfileDataImpl<T>
         successEngineerProfileData,
     TResult Function(TechnicalWorkerResponseModel profileData)?
         successTechnicalWorkerProfileData,
+    TResult Function(EngineeringOfficeProfileResponseModel profileData)?
+        successEngineeringOfficeProfileData,
     TResult Function(String error)? errorProfileData,
     TResult Function()? loadingUpdateProfile,
     TResult Function(EngineerProfileResponseModel? profileData)?
         successUpdateEngineerProfile,
     TResult Function(TechnicalWorkerResponseModel? profileData)?
         successUpdateTechnicalWorkerProfile,
+    TResult Function(EngineeringOfficeProfileResponseModel? profileData)?
+        successUpdateEngineeringOfficeProfile,
     TResult Function(String error)? errorUpdateProfile,
     TResult Function()? loadingUploadImage,
     TResult Function(
@@ -989,6 +1102,8 @@ class _$SuccessTechnicalWorkerProfileDataImpl<T>
         successEngineerProfileData,
     required TResult Function(SuccessTechnicalWorkerProfileData<T> value)
         successTechnicalWorkerProfileData,
+    required TResult Function(SuccessEngineeringOfficeProfileData<T> value)
+        successEngineeringOfficeProfileData,
     required TResult Function(ErrorProfileData<T> value) errorProfileData,
     required TResult Function(LoadingUpdateProfile<T> value)
         loadingUpdateProfile,
@@ -996,6 +1111,8 @@ class _$SuccessTechnicalWorkerProfileDataImpl<T>
         successUpdateEngineerProfile,
     required TResult Function(SuccessUpdateTechnicalWorkerProfile<T> value)
         successUpdateTechnicalWorkerProfile,
+    required TResult Function(SuccessUpdateEngineeringOfficeProfile<T> value)
+        successUpdateEngineeringOfficeProfile,
     required TResult Function(ErrorUpdateProfile<T> value) errorUpdateProfile,
     required TResult Function(LoadingUploadImage<T> value) loadingUploadImage,
     required TResult Function(SuccessUploadImage<T> value) successUploadImage,
@@ -1014,12 +1131,16 @@ class _$SuccessTechnicalWorkerProfileDataImpl<T>
         successEngineerProfileData,
     TResult? Function(SuccessTechnicalWorkerProfileData<T> value)?
         successTechnicalWorkerProfileData,
+    TResult? Function(SuccessEngineeringOfficeProfileData<T> value)?
+        successEngineeringOfficeProfileData,
     TResult? Function(ErrorProfileData<T> value)? errorProfileData,
     TResult? Function(LoadingUpdateProfile<T> value)? loadingUpdateProfile,
     TResult? Function(SuccessUpdateEngineerProfile<T> value)?
         successUpdateEngineerProfile,
     TResult? Function(SuccessUpdateTechnicalWorkerProfile<T> value)?
         successUpdateTechnicalWorkerProfile,
+    TResult? Function(SuccessUpdateEngineeringOfficeProfile<T> value)?
+        successUpdateEngineeringOfficeProfile,
     TResult? Function(ErrorUpdateProfile<T> value)? errorUpdateProfile,
     TResult? Function(LoadingUploadImage<T> value)? loadingUploadImage,
     TResult? Function(SuccessUploadImage<T> value)? successUploadImage,
@@ -1038,12 +1159,16 @@ class _$SuccessTechnicalWorkerProfileDataImpl<T>
         successEngineerProfileData,
     TResult Function(SuccessTechnicalWorkerProfileData<T> value)?
         successTechnicalWorkerProfileData,
+    TResult Function(SuccessEngineeringOfficeProfileData<T> value)?
+        successEngineeringOfficeProfileData,
     TResult Function(ErrorProfileData<T> value)? errorProfileData,
     TResult Function(LoadingUpdateProfile<T> value)? loadingUpdateProfile,
     TResult Function(SuccessUpdateEngineerProfile<T> value)?
         successUpdateEngineerProfile,
     TResult Function(SuccessUpdateTechnicalWorkerProfile<T> value)?
         successUpdateTechnicalWorkerProfile,
+    TResult Function(SuccessUpdateEngineeringOfficeProfile<T> value)?
+        successUpdateEngineeringOfficeProfile,
     TResult Function(ErrorUpdateProfile<T> value)? errorUpdateProfile,
     TResult Function(LoadingUploadImage<T> value)? loadingUploadImage,
     TResult Function(SuccessUploadImage<T> value)? successUploadImage,
@@ -1070,6 +1195,279 @@ abstract class SuccessTechnicalWorkerProfileData<T> implements ProfileState<T> {
   @JsonKey(includeFromJson: false, includeToJson: false)
   _$$SuccessTechnicalWorkerProfileDataImplCopyWith<T,
           _$SuccessTechnicalWorkerProfileDataImpl<T>>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$SuccessEngineeringOfficeProfileDataImplCopyWith<T, $Res> {
+  factory _$$SuccessEngineeringOfficeProfileDataImplCopyWith(
+          _$SuccessEngineeringOfficeProfileDataImpl<T> value,
+          $Res Function(_$SuccessEngineeringOfficeProfileDataImpl<T>) then) =
+      __$$SuccessEngineeringOfficeProfileDataImplCopyWithImpl<T, $Res>;
+  @useResult
+  $Res call({EngineeringOfficeProfileResponseModel profileData});
+}
+
+/// @nodoc
+class __$$SuccessEngineeringOfficeProfileDataImplCopyWithImpl<T, $Res>
+    extends _$ProfileStateCopyWithImpl<T, $Res,
+        _$SuccessEngineeringOfficeProfileDataImpl<T>>
+    implements _$$SuccessEngineeringOfficeProfileDataImplCopyWith<T, $Res> {
+  __$$SuccessEngineeringOfficeProfileDataImplCopyWithImpl(
+      _$SuccessEngineeringOfficeProfileDataImpl<T> _value,
+      $Res Function(_$SuccessEngineeringOfficeProfileDataImpl<T>) _then)
+      : super(_value, _then);
+
+  /// Create a copy of ProfileState
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? profileData = null,
+  }) {
+    return _then(_$SuccessEngineeringOfficeProfileDataImpl<T>(
+      null == profileData
+          ? _value.profileData
+          : profileData // ignore: cast_nullable_to_non_nullable
+              as EngineeringOfficeProfileResponseModel,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$SuccessEngineeringOfficeProfileDataImpl<T>
+    implements SuccessEngineeringOfficeProfileData<T> {
+  const _$SuccessEngineeringOfficeProfileDataImpl(this.profileData);
+
+  @override
+  final EngineeringOfficeProfileResponseModel profileData;
+
+  @override
+  String toString() {
+    return 'ProfileState<$T>.successEngineeringOfficeProfileData(profileData: $profileData)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$SuccessEngineeringOfficeProfileDataImpl<T> &&
+            (identical(other.profileData, profileData) ||
+                other.profileData == profileData));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, profileData);
+
+  /// Create a copy of ProfileState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$SuccessEngineeringOfficeProfileDataImplCopyWith<T,
+          _$SuccessEngineeringOfficeProfileDataImpl<T>>
+      get copyWith => __$$SuccessEngineeringOfficeProfileDataImplCopyWithImpl<T,
+          _$SuccessEngineeringOfficeProfileDataImpl<T>>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() loadingProfileData,
+    required TResult Function(EngineerProfileResponseModel profileData)
+        successEngineerProfileData,
+    required TResult Function(TechnicalWorkerResponseModel profileData)
+        successTechnicalWorkerProfileData,
+    required TResult Function(EngineeringOfficeProfileResponseModel profileData)
+        successEngineeringOfficeProfileData,
+    required TResult Function(String error) errorProfileData,
+    required TResult Function() loadingUpdateProfile,
+    required TResult Function(EngineerProfileResponseModel? profileData)
+        successUpdateEngineerProfile,
+    required TResult Function(TechnicalWorkerResponseModel? profileData)
+        successUpdateTechnicalWorkerProfile,
+    required TResult Function(
+            EngineeringOfficeProfileResponseModel? profileData)
+        successUpdateEngineeringOfficeProfile,
+    required TResult Function(String error) errorUpdateProfile,
+    required TResult Function() loadingUploadImage,
+    required TResult Function(
+            UploadProfileImageResponseModel uploadProfileImageResponseModel)
+        successUploadImage,
+    required TResult Function(String error) errorUploadImage,
+    required TResult Function() addImage,
+  }) {
+    return successEngineeringOfficeProfileData(profileData);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? loadingProfileData,
+    TResult? Function(EngineerProfileResponseModel profileData)?
+        successEngineerProfileData,
+    TResult? Function(TechnicalWorkerResponseModel profileData)?
+        successTechnicalWorkerProfileData,
+    TResult? Function(EngineeringOfficeProfileResponseModel profileData)?
+        successEngineeringOfficeProfileData,
+    TResult? Function(String error)? errorProfileData,
+    TResult? Function()? loadingUpdateProfile,
+    TResult? Function(EngineerProfileResponseModel? profileData)?
+        successUpdateEngineerProfile,
+    TResult? Function(TechnicalWorkerResponseModel? profileData)?
+        successUpdateTechnicalWorkerProfile,
+    TResult? Function(EngineeringOfficeProfileResponseModel? profileData)?
+        successUpdateEngineeringOfficeProfile,
+    TResult? Function(String error)? errorUpdateProfile,
+    TResult? Function()? loadingUploadImage,
+    TResult? Function(
+            UploadProfileImageResponseModel uploadProfileImageResponseModel)?
+        successUploadImage,
+    TResult? Function(String error)? errorUploadImage,
+    TResult? Function()? addImage,
+  }) {
+    return successEngineeringOfficeProfileData?.call(profileData);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loadingProfileData,
+    TResult Function(EngineerProfileResponseModel profileData)?
+        successEngineerProfileData,
+    TResult Function(TechnicalWorkerResponseModel profileData)?
+        successTechnicalWorkerProfileData,
+    TResult Function(EngineeringOfficeProfileResponseModel profileData)?
+        successEngineeringOfficeProfileData,
+    TResult Function(String error)? errorProfileData,
+    TResult Function()? loadingUpdateProfile,
+    TResult Function(EngineerProfileResponseModel? profileData)?
+        successUpdateEngineerProfile,
+    TResult Function(TechnicalWorkerResponseModel? profileData)?
+        successUpdateTechnicalWorkerProfile,
+    TResult Function(EngineeringOfficeProfileResponseModel? profileData)?
+        successUpdateEngineeringOfficeProfile,
+    TResult Function(String error)? errorUpdateProfile,
+    TResult Function()? loadingUploadImage,
+    TResult Function(
+            UploadProfileImageResponseModel uploadProfileImageResponseModel)?
+        successUploadImage,
+    TResult Function(String error)? errorUploadImage,
+    TResult Function()? addImage,
+    required TResult orElse(),
+  }) {
+    if (successEngineeringOfficeProfileData != null) {
+      return successEngineeringOfficeProfileData(profileData);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(ProfileInitial<T> value) initial,
+    required TResult Function(LoadingProfileData<T> value) loadingProfileData,
+    required TResult Function(SuccessEngineerProfileData<T> value)
+        successEngineerProfileData,
+    required TResult Function(SuccessTechnicalWorkerProfileData<T> value)
+        successTechnicalWorkerProfileData,
+    required TResult Function(SuccessEngineeringOfficeProfileData<T> value)
+        successEngineeringOfficeProfileData,
+    required TResult Function(ErrorProfileData<T> value) errorProfileData,
+    required TResult Function(LoadingUpdateProfile<T> value)
+        loadingUpdateProfile,
+    required TResult Function(SuccessUpdateEngineerProfile<T> value)
+        successUpdateEngineerProfile,
+    required TResult Function(SuccessUpdateTechnicalWorkerProfile<T> value)
+        successUpdateTechnicalWorkerProfile,
+    required TResult Function(SuccessUpdateEngineeringOfficeProfile<T> value)
+        successUpdateEngineeringOfficeProfile,
+    required TResult Function(ErrorUpdateProfile<T> value) errorUpdateProfile,
+    required TResult Function(LoadingUploadImage<T> value) loadingUploadImage,
+    required TResult Function(SuccessUploadImage<T> value) successUploadImage,
+    required TResult Function(ErrorUploadImage<T> value) errorUploadImage,
+    required TResult Function(AddImage<T> value) addImage,
+  }) {
+    return successEngineeringOfficeProfileData(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(ProfileInitial<T> value)? initial,
+    TResult? Function(LoadingProfileData<T> value)? loadingProfileData,
+    TResult? Function(SuccessEngineerProfileData<T> value)?
+        successEngineerProfileData,
+    TResult? Function(SuccessTechnicalWorkerProfileData<T> value)?
+        successTechnicalWorkerProfileData,
+    TResult? Function(SuccessEngineeringOfficeProfileData<T> value)?
+        successEngineeringOfficeProfileData,
+    TResult? Function(ErrorProfileData<T> value)? errorProfileData,
+    TResult? Function(LoadingUpdateProfile<T> value)? loadingUpdateProfile,
+    TResult? Function(SuccessUpdateEngineerProfile<T> value)?
+        successUpdateEngineerProfile,
+    TResult? Function(SuccessUpdateTechnicalWorkerProfile<T> value)?
+        successUpdateTechnicalWorkerProfile,
+    TResult? Function(SuccessUpdateEngineeringOfficeProfile<T> value)?
+        successUpdateEngineeringOfficeProfile,
+    TResult? Function(ErrorUpdateProfile<T> value)? errorUpdateProfile,
+    TResult? Function(LoadingUploadImage<T> value)? loadingUploadImage,
+    TResult? Function(SuccessUploadImage<T> value)? successUploadImage,
+    TResult? Function(ErrorUploadImage<T> value)? errorUploadImage,
+    TResult? Function(AddImage<T> value)? addImage,
+  }) {
+    return successEngineeringOfficeProfileData?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(ProfileInitial<T> value)? initial,
+    TResult Function(LoadingProfileData<T> value)? loadingProfileData,
+    TResult Function(SuccessEngineerProfileData<T> value)?
+        successEngineerProfileData,
+    TResult Function(SuccessTechnicalWorkerProfileData<T> value)?
+        successTechnicalWorkerProfileData,
+    TResult Function(SuccessEngineeringOfficeProfileData<T> value)?
+        successEngineeringOfficeProfileData,
+    TResult Function(ErrorProfileData<T> value)? errorProfileData,
+    TResult Function(LoadingUpdateProfile<T> value)? loadingUpdateProfile,
+    TResult Function(SuccessUpdateEngineerProfile<T> value)?
+        successUpdateEngineerProfile,
+    TResult Function(SuccessUpdateTechnicalWorkerProfile<T> value)?
+        successUpdateTechnicalWorkerProfile,
+    TResult Function(SuccessUpdateEngineeringOfficeProfile<T> value)?
+        successUpdateEngineeringOfficeProfile,
+    TResult Function(ErrorUpdateProfile<T> value)? errorUpdateProfile,
+    TResult Function(LoadingUploadImage<T> value)? loadingUploadImage,
+    TResult Function(SuccessUploadImage<T> value)? successUploadImage,
+    TResult Function(ErrorUploadImage<T> value)? errorUploadImage,
+    TResult Function(AddImage<T> value)? addImage,
+    required TResult orElse(),
+  }) {
+    if (successEngineeringOfficeProfileData != null) {
+      return successEngineeringOfficeProfileData(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class SuccessEngineeringOfficeProfileData<T>
+    implements ProfileState<T> {
+  const factory SuccessEngineeringOfficeProfileData(
+          final EngineeringOfficeProfileResponseModel profileData) =
+      _$SuccessEngineeringOfficeProfileDataImpl<T>;
+
+  EngineeringOfficeProfileResponseModel get profileData;
+
+  /// Create a copy of ProfileState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$SuccessEngineeringOfficeProfileDataImplCopyWith<T,
+          _$SuccessEngineeringOfficeProfileDataImpl<T>>
       get copyWith => throw _privateConstructorUsedError;
 }
 
@@ -1148,12 +1546,17 @@ class _$ErrorProfileDataImpl<T> implements ErrorProfileData<T> {
         successEngineerProfileData,
     required TResult Function(TechnicalWorkerResponseModel profileData)
         successTechnicalWorkerProfileData,
+    required TResult Function(EngineeringOfficeProfileResponseModel profileData)
+        successEngineeringOfficeProfileData,
     required TResult Function(String error) errorProfileData,
     required TResult Function() loadingUpdateProfile,
     required TResult Function(EngineerProfileResponseModel? profileData)
         successUpdateEngineerProfile,
     required TResult Function(TechnicalWorkerResponseModel? profileData)
         successUpdateTechnicalWorkerProfile,
+    required TResult Function(
+            EngineeringOfficeProfileResponseModel? profileData)
+        successUpdateEngineeringOfficeProfile,
     required TResult Function(String error) errorUpdateProfile,
     required TResult Function() loadingUploadImage,
     required TResult Function(
@@ -1174,12 +1577,16 @@ class _$ErrorProfileDataImpl<T> implements ErrorProfileData<T> {
         successEngineerProfileData,
     TResult? Function(TechnicalWorkerResponseModel profileData)?
         successTechnicalWorkerProfileData,
+    TResult? Function(EngineeringOfficeProfileResponseModel profileData)?
+        successEngineeringOfficeProfileData,
     TResult? Function(String error)? errorProfileData,
     TResult? Function()? loadingUpdateProfile,
     TResult? Function(EngineerProfileResponseModel? profileData)?
         successUpdateEngineerProfile,
     TResult? Function(TechnicalWorkerResponseModel? profileData)?
         successUpdateTechnicalWorkerProfile,
+    TResult? Function(EngineeringOfficeProfileResponseModel? profileData)?
+        successUpdateEngineeringOfficeProfile,
     TResult? Function(String error)? errorUpdateProfile,
     TResult? Function()? loadingUploadImage,
     TResult? Function(
@@ -1200,12 +1607,16 @@ class _$ErrorProfileDataImpl<T> implements ErrorProfileData<T> {
         successEngineerProfileData,
     TResult Function(TechnicalWorkerResponseModel profileData)?
         successTechnicalWorkerProfileData,
+    TResult Function(EngineeringOfficeProfileResponseModel profileData)?
+        successEngineeringOfficeProfileData,
     TResult Function(String error)? errorProfileData,
     TResult Function()? loadingUpdateProfile,
     TResult Function(EngineerProfileResponseModel? profileData)?
         successUpdateEngineerProfile,
     TResult Function(TechnicalWorkerResponseModel? profileData)?
         successUpdateTechnicalWorkerProfile,
+    TResult Function(EngineeringOfficeProfileResponseModel? profileData)?
+        successUpdateEngineeringOfficeProfile,
     TResult Function(String error)? errorUpdateProfile,
     TResult Function()? loadingUploadImage,
     TResult Function(
@@ -1230,6 +1641,8 @@ class _$ErrorProfileDataImpl<T> implements ErrorProfileData<T> {
         successEngineerProfileData,
     required TResult Function(SuccessTechnicalWorkerProfileData<T> value)
         successTechnicalWorkerProfileData,
+    required TResult Function(SuccessEngineeringOfficeProfileData<T> value)
+        successEngineeringOfficeProfileData,
     required TResult Function(ErrorProfileData<T> value) errorProfileData,
     required TResult Function(LoadingUpdateProfile<T> value)
         loadingUpdateProfile,
@@ -1237,6 +1650,8 @@ class _$ErrorProfileDataImpl<T> implements ErrorProfileData<T> {
         successUpdateEngineerProfile,
     required TResult Function(SuccessUpdateTechnicalWorkerProfile<T> value)
         successUpdateTechnicalWorkerProfile,
+    required TResult Function(SuccessUpdateEngineeringOfficeProfile<T> value)
+        successUpdateEngineeringOfficeProfile,
     required TResult Function(ErrorUpdateProfile<T> value) errorUpdateProfile,
     required TResult Function(LoadingUploadImage<T> value) loadingUploadImage,
     required TResult Function(SuccessUploadImage<T> value) successUploadImage,
@@ -1255,12 +1670,16 @@ class _$ErrorProfileDataImpl<T> implements ErrorProfileData<T> {
         successEngineerProfileData,
     TResult? Function(SuccessTechnicalWorkerProfileData<T> value)?
         successTechnicalWorkerProfileData,
+    TResult? Function(SuccessEngineeringOfficeProfileData<T> value)?
+        successEngineeringOfficeProfileData,
     TResult? Function(ErrorProfileData<T> value)? errorProfileData,
     TResult? Function(LoadingUpdateProfile<T> value)? loadingUpdateProfile,
     TResult? Function(SuccessUpdateEngineerProfile<T> value)?
         successUpdateEngineerProfile,
     TResult? Function(SuccessUpdateTechnicalWorkerProfile<T> value)?
         successUpdateTechnicalWorkerProfile,
+    TResult? Function(SuccessUpdateEngineeringOfficeProfile<T> value)?
+        successUpdateEngineeringOfficeProfile,
     TResult? Function(ErrorUpdateProfile<T> value)? errorUpdateProfile,
     TResult? Function(LoadingUploadImage<T> value)? loadingUploadImage,
     TResult? Function(SuccessUploadImage<T> value)? successUploadImage,
@@ -1279,12 +1698,16 @@ class _$ErrorProfileDataImpl<T> implements ErrorProfileData<T> {
         successEngineerProfileData,
     TResult Function(SuccessTechnicalWorkerProfileData<T> value)?
         successTechnicalWorkerProfileData,
+    TResult Function(SuccessEngineeringOfficeProfileData<T> value)?
+        successEngineeringOfficeProfileData,
     TResult Function(ErrorProfileData<T> value)? errorProfileData,
     TResult Function(LoadingUpdateProfile<T> value)? loadingUpdateProfile,
     TResult Function(SuccessUpdateEngineerProfile<T> value)?
         successUpdateEngineerProfile,
     TResult Function(SuccessUpdateTechnicalWorkerProfile<T> value)?
         successUpdateTechnicalWorkerProfile,
+    TResult Function(SuccessUpdateEngineeringOfficeProfile<T> value)?
+        successUpdateEngineeringOfficeProfile,
     TResult Function(ErrorUpdateProfile<T> value)? errorUpdateProfile,
     TResult Function(LoadingUploadImage<T> value)? loadingUploadImage,
     TResult Function(SuccessUploadImage<T> value)? successUploadImage,
@@ -1361,12 +1784,17 @@ class _$LoadingUpdateProfileImpl<T> implements LoadingUpdateProfile<T> {
         successEngineerProfileData,
     required TResult Function(TechnicalWorkerResponseModel profileData)
         successTechnicalWorkerProfileData,
+    required TResult Function(EngineeringOfficeProfileResponseModel profileData)
+        successEngineeringOfficeProfileData,
     required TResult Function(String error) errorProfileData,
     required TResult Function() loadingUpdateProfile,
     required TResult Function(EngineerProfileResponseModel? profileData)
         successUpdateEngineerProfile,
     required TResult Function(TechnicalWorkerResponseModel? profileData)
         successUpdateTechnicalWorkerProfile,
+    required TResult Function(
+            EngineeringOfficeProfileResponseModel? profileData)
+        successUpdateEngineeringOfficeProfile,
     required TResult Function(String error) errorUpdateProfile,
     required TResult Function() loadingUploadImage,
     required TResult Function(
@@ -1387,12 +1815,16 @@ class _$LoadingUpdateProfileImpl<T> implements LoadingUpdateProfile<T> {
         successEngineerProfileData,
     TResult? Function(TechnicalWorkerResponseModel profileData)?
         successTechnicalWorkerProfileData,
+    TResult? Function(EngineeringOfficeProfileResponseModel profileData)?
+        successEngineeringOfficeProfileData,
     TResult? Function(String error)? errorProfileData,
     TResult? Function()? loadingUpdateProfile,
     TResult? Function(EngineerProfileResponseModel? profileData)?
         successUpdateEngineerProfile,
     TResult? Function(TechnicalWorkerResponseModel? profileData)?
         successUpdateTechnicalWorkerProfile,
+    TResult? Function(EngineeringOfficeProfileResponseModel? profileData)?
+        successUpdateEngineeringOfficeProfile,
     TResult? Function(String error)? errorUpdateProfile,
     TResult? Function()? loadingUploadImage,
     TResult? Function(
@@ -1413,12 +1845,16 @@ class _$LoadingUpdateProfileImpl<T> implements LoadingUpdateProfile<T> {
         successEngineerProfileData,
     TResult Function(TechnicalWorkerResponseModel profileData)?
         successTechnicalWorkerProfileData,
+    TResult Function(EngineeringOfficeProfileResponseModel profileData)?
+        successEngineeringOfficeProfileData,
     TResult Function(String error)? errorProfileData,
     TResult Function()? loadingUpdateProfile,
     TResult Function(EngineerProfileResponseModel? profileData)?
         successUpdateEngineerProfile,
     TResult Function(TechnicalWorkerResponseModel? profileData)?
         successUpdateTechnicalWorkerProfile,
+    TResult Function(EngineeringOfficeProfileResponseModel? profileData)?
+        successUpdateEngineeringOfficeProfile,
     TResult Function(String error)? errorUpdateProfile,
     TResult Function()? loadingUploadImage,
     TResult Function(
@@ -1443,6 +1879,8 @@ class _$LoadingUpdateProfileImpl<T> implements LoadingUpdateProfile<T> {
         successEngineerProfileData,
     required TResult Function(SuccessTechnicalWorkerProfileData<T> value)
         successTechnicalWorkerProfileData,
+    required TResult Function(SuccessEngineeringOfficeProfileData<T> value)
+        successEngineeringOfficeProfileData,
     required TResult Function(ErrorProfileData<T> value) errorProfileData,
     required TResult Function(LoadingUpdateProfile<T> value)
         loadingUpdateProfile,
@@ -1450,6 +1888,8 @@ class _$LoadingUpdateProfileImpl<T> implements LoadingUpdateProfile<T> {
         successUpdateEngineerProfile,
     required TResult Function(SuccessUpdateTechnicalWorkerProfile<T> value)
         successUpdateTechnicalWorkerProfile,
+    required TResult Function(SuccessUpdateEngineeringOfficeProfile<T> value)
+        successUpdateEngineeringOfficeProfile,
     required TResult Function(ErrorUpdateProfile<T> value) errorUpdateProfile,
     required TResult Function(LoadingUploadImage<T> value) loadingUploadImage,
     required TResult Function(SuccessUploadImage<T> value) successUploadImage,
@@ -1468,12 +1908,16 @@ class _$LoadingUpdateProfileImpl<T> implements LoadingUpdateProfile<T> {
         successEngineerProfileData,
     TResult? Function(SuccessTechnicalWorkerProfileData<T> value)?
         successTechnicalWorkerProfileData,
+    TResult? Function(SuccessEngineeringOfficeProfileData<T> value)?
+        successEngineeringOfficeProfileData,
     TResult? Function(ErrorProfileData<T> value)? errorProfileData,
     TResult? Function(LoadingUpdateProfile<T> value)? loadingUpdateProfile,
     TResult? Function(SuccessUpdateEngineerProfile<T> value)?
         successUpdateEngineerProfile,
     TResult? Function(SuccessUpdateTechnicalWorkerProfile<T> value)?
         successUpdateTechnicalWorkerProfile,
+    TResult? Function(SuccessUpdateEngineeringOfficeProfile<T> value)?
+        successUpdateEngineeringOfficeProfile,
     TResult? Function(ErrorUpdateProfile<T> value)? errorUpdateProfile,
     TResult? Function(LoadingUploadImage<T> value)? loadingUploadImage,
     TResult? Function(SuccessUploadImage<T> value)? successUploadImage,
@@ -1492,12 +1936,16 @@ class _$LoadingUpdateProfileImpl<T> implements LoadingUpdateProfile<T> {
         successEngineerProfileData,
     TResult Function(SuccessTechnicalWorkerProfileData<T> value)?
         successTechnicalWorkerProfileData,
+    TResult Function(SuccessEngineeringOfficeProfileData<T> value)?
+        successEngineeringOfficeProfileData,
     TResult Function(ErrorProfileData<T> value)? errorProfileData,
     TResult Function(LoadingUpdateProfile<T> value)? loadingUpdateProfile,
     TResult Function(SuccessUpdateEngineerProfile<T> value)?
         successUpdateEngineerProfile,
     TResult Function(SuccessUpdateTechnicalWorkerProfile<T> value)?
         successUpdateTechnicalWorkerProfile,
+    TResult Function(SuccessUpdateEngineeringOfficeProfile<T> value)?
+        successUpdateEngineeringOfficeProfile,
     TResult Function(ErrorUpdateProfile<T> value)? errorUpdateProfile,
     TResult Function(LoadingUploadImage<T> value)? loadingUploadImage,
     TResult Function(SuccessUploadImage<T> value)? successUploadImage,
@@ -1597,12 +2045,17 @@ class _$SuccessUpdateEngineerProfileImpl<T>
         successEngineerProfileData,
     required TResult Function(TechnicalWorkerResponseModel profileData)
         successTechnicalWorkerProfileData,
+    required TResult Function(EngineeringOfficeProfileResponseModel profileData)
+        successEngineeringOfficeProfileData,
     required TResult Function(String error) errorProfileData,
     required TResult Function() loadingUpdateProfile,
     required TResult Function(EngineerProfileResponseModel? profileData)
         successUpdateEngineerProfile,
     required TResult Function(TechnicalWorkerResponseModel? profileData)
         successUpdateTechnicalWorkerProfile,
+    required TResult Function(
+            EngineeringOfficeProfileResponseModel? profileData)
+        successUpdateEngineeringOfficeProfile,
     required TResult Function(String error) errorUpdateProfile,
     required TResult Function() loadingUploadImage,
     required TResult Function(
@@ -1623,12 +2076,16 @@ class _$SuccessUpdateEngineerProfileImpl<T>
         successEngineerProfileData,
     TResult? Function(TechnicalWorkerResponseModel profileData)?
         successTechnicalWorkerProfileData,
+    TResult? Function(EngineeringOfficeProfileResponseModel profileData)?
+        successEngineeringOfficeProfileData,
     TResult? Function(String error)? errorProfileData,
     TResult? Function()? loadingUpdateProfile,
     TResult? Function(EngineerProfileResponseModel? profileData)?
         successUpdateEngineerProfile,
     TResult? Function(TechnicalWorkerResponseModel? profileData)?
         successUpdateTechnicalWorkerProfile,
+    TResult? Function(EngineeringOfficeProfileResponseModel? profileData)?
+        successUpdateEngineeringOfficeProfile,
     TResult? Function(String error)? errorUpdateProfile,
     TResult? Function()? loadingUploadImage,
     TResult? Function(
@@ -1649,12 +2106,16 @@ class _$SuccessUpdateEngineerProfileImpl<T>
         successEngineerProfileData,
     TResult Function(TechnicalWorkerResponseModel profileData)?
         successTechnicalWorkerProfileData,
+    TResult Function(EngineeringOfficeProfileResponseModel profileData)?
+        successEngineeringOfficeProfileData,
     TResult Function(String error)? errorProfileData,
     TResult Function()? loadingUpdateProfile,
     TResult Function(EngineerProfileResponseModel? profileData)?
         successUpdateEngineerProfile,
     TResult Function(TechnicalWorkerResponseModel? profileData)?
         successUpdateTechnicalWorkerProfile,
+    TResult Function(EngineeringOfficeProfileResponseModel? profileData)?
+        successUpdateEngineeringOfficeProfile,
     TResult Function(String error)? errorUpdateProfile,
     TResult Function()? loadingUploadImage,
     TResult Function(
@@ -1679,6 +2140,8 @@ class _$SuccessUpdateEngineerProfileImpl<T>
         successEngineerProfileData,
     required TResult Function(SuccessTechnicalWorkerProfileData<T> value)
         successTechnicalWorkerProfileData,
+    required TResult Function(SuccessEngineeringOfficeProfileData<T> value)
+        successEngineeringOfficeProfileData,
     required TResult Function(ErrorProfileData<T> value) errorProfileData,
     required TResult Function(LoadingUpdateProfile<T> value)
         loadingUpdateProfile,
@@ -1686,6 +2149,8 @@ class _$SuccessUpdateEngineerProfileImpl<T>
         successUpdateEngineerProfile,
     required TResult Function(SuccessUpdateTechnicalWorkerProfile<T> value)
         successUpdateTechnicalWorkerProfile,
+    required TResult Function(SuccessUpdateEngineeringOfficeProfile<T> value)
+        successUpdateEngineeringOfficeProfile,
     required TResult Function(ErrorUpdateProfile<T> value) errorUpdateProfile,
     required TResult Function(LoadingUploadImage<T> value) loadingUploadImage,
     required TResult Function(SuccessUploadImage<T> value) successUploadImage,
@@ -1704,12 +2169,16 @@ class _$SuccessUpdateEngineerProfileImpl<T>
         successEngineerProfileData,
     TResult? Function(SuccessTechnicalWorkerProfileData<T> value)?
         successTechnicalWorkerProfileData,
+    TResult? Function(SuccessEngineeringOfficeProfileData<T> value)?
+        successEngineeringOfficeProfileData,
     TResult? Function(ErrorProfileData<T> value)? errorProfileData,
     TResult? Function(LoadingUpdateProfile<T> value)? loadingUpdateProfile,
     TResult? Function(SuccessUpdateEngineerProfile<T> value)?
         successUpdateEngineerProfile,
     TResult? Function(SuccessUpdateTechnicalWorkerProfile<T> value)?
         successUpdateTechnicalWorkerProfile,
+    TResult? Function(SuccessUpdateEngineeringOfficeProfile<T> value)?
+        successUpdateEngineeringOfficeProfile,
     TResult? Function(ErrorUpdateProfile<T> value)? errorUpdateProfile,
     TResult? Function(LoadingUploadImage<T> value)? loadingUploadImage,
     TResult? Function(SuccessUploadImage<T> value)? successUploadImage,
@@ -1728,12 +2197,16 @@ class _$SuccessUpdateEngineerProfileImpl<T>
         successEngineerProfileData,
     TResult Function(SuccessTechnicalWorkerProfileData<T> value)?
         successTechnicalWorkerProfileData,
+    TResult Function(SuccessEngineeringOfficeProfileData<T> value)?
+        successEngineeringOfficeProfileData,
     TResult Function(ErrorProfileData<T> value)? errorProfileData,
     TResult Function(LoadingUpdateProfile<T> value)? loadingUpdateProfile,
     TResult Function(SuccessUpdateEngineerProfile<T> value)?
         successUpdateEngineerProfile,
     TResult Function(SuccessUpdateTechnicalWorkerProfile<T> value)?
         successUpdateTechnicalWorkerProfile,
+    TResult Function(SuccessUpdateEngineeringOfficeProfile<T> value)?
+        successUpdateEngineeringOfficeProfile,
     TResult Function(ErrorUpdateProfile<T> value)? errorUpdateProfile,
     TResult Function(LoadingUploadImage<T> value)? loadingUploadImage,
     TResult Function(SuccessUploadImage<T> value)? successUploadImage,
@@ -1844,12 +2317,17 @@ class _$SuccessUpdateTechnicalWorkerProfileImpl<T>
         successEngineerProfileData,
     required TResult Function(TechnicalWorkerResponseModel profileData)
         successTechnicalWorkerProfileData,
+    required TResult Function(EngineeringOfficeProfileResponseModel profileData)
+        successEngineeringOfficeProfileData,
     required TResult Function(String error) errorProfileData,
     required TResult Function() loadingUpdateProfile,
     required TResult Function(EngineerProfileResponseModel? profileData)
         successUpdateEngineerProfile,
     required TResult Function(TechnicalWorkerResponseModel? profileData)
         successUpdateTechnicalWorkerProfile,
+    required TResult Function(
+            EngineeringOfficeProfileResponseModel? profileData)
+        successUpdateEngineeringOfficeProfile,
     required TResult Function(String error) errorUpdateProfile,
     required TResult Function() loadingUploadImage,
     required TResult Function(
@@ -1870,12 +2348,16 @@ class _$SuccessUpdateTechnicalWorkerProfileImpl<T>
         successEngineerProfileData,
     TResult? Function(TechnicalWorkerResponseModel profileData)?
         successTechnicalWorkerProfileData,
+    TResult? Function(EngineeringOfficeProfileResponseModel profileData)?
+        successEngineeringOfficeProfileData,
     TResult? Function(String error)? errorProfileData,
     TResult? Function()? loadingUpdateProfile,
     TResult? Function(EngineerProfileResponseModel? profileData)?
         successUpdateEngineerProfile,
     TResult? Function(TechnicalWorkerResponseModel? profileData)?
         successUpdateTechnicalWorkerProfile,
+    TResult? Function(EngineeringOfficeProfileResponseModel? profileData)?
+        successUpdateEngineeringOfficeProfile,
     TResult? Function(String error)? errorUpdateProfile,
     TResult? Function()? loadingUploadImage,
     TResult? Function(
@@ -1896,12 +2378,16 @@ class _$SuccessUpdateTechnicalWorkerProfileImpl<T>
         successEngineerProfileData,
     TResult Function(TechnicalWorkerResponseModel profileData)?
         successTechnicalWorkerProfileData,
+    TResult Function(EngineeringOfficeProfileResponseModel profileData)?
+        successEngineeringOfficeProfileData,
     TResult Function(String error)? errorProfileData,
     TResult Function()? loadingUpdateProfile,
     TResult Function(EngineerProfileResponseModel? profileData)?
         successUpdateEngineerProfile,
     TResult Function(TechnicalWorkerResponseModel? profileData)?
         successUpdateTechnicalWorkerProfile,
+    TResult Function(EngineeringOfficeProfileResponseModel? profileData)?
+        successUpdateEngineeringOfficeProfile,
     TResult Function(String error)? errorUpdateProfile,
     TResult Function()? loadingUploadImage,
     TResult Function(
@@ -1926,6 +2412,8 @@ class _$SuccessUpdateTechnicalWorkerProfileImpl<T>
         successEngineerProfileData,
     required TResult Function(SuccessTechnicalWorkerProfileData<T> value)
         successTechnicalWorkerProfileData,
+    required TResult Function(SuccessEngineeringOfficeProfileData<T> value)
+        successEngineeringOfficeProfileData,
     required TResult Function(ErrorProfileData<T> value) errorProfileData,
     required TResult Function(LoadingUpdateProfile<T> value)
         loadingUpdateProfile,
@@ -1933,6 +2421,8 @@ class _$SuccessUpdateTechnicalWorkerProfileImpl<T>
         successUpdateEngineerProfile,
     required TResult Function(SuccessUpdateTechnicalWorkerProfile<T> value)
         successUpdateTechnicalWorkerProfile,
+    required TResult Function(SuccessUpdateEngineeringOfficeProfile<T> value)
+        successUpdateEngineeringOfficeProfile,
     required TResult Function(ErrorUpdateProfile<T> value) errorUpdateProfile,
     required TResult Function(LoadingUploadImage<T> value) loadingUploadImage,
     required TResult Function(SuccessUploadImage<T> value) successUploadImage,
@@ -1951,12 +2441,16 @@ class _$SuccessUpdateTechnicalWorkerProfileImpl<T>
         successEngineerProfileData,
     TResult? Function(SuccessTechnicalWorkerProfileData<T> value)?
         successTechnicalWorkerProfileData,
+    TResult? Function(SuccessEngineeringOfficeProfileData<T> value)?
+        successEngineeringOfficeProfileData,
     TResult? Function(ErrorProfileData<T> value)? errorProfileData,
     TResult? Function(LoadingUpdateProfile<T> value)? loadingUpdateProfile,
     TResult? Function(SuccessUpdateEngineerProfile<T> value)?
         successUpdateEngineerProfile,
     TResult? Function(SuccessUpdateTechnicalWorkerProfile<T> value)?
         successUpdateTechnicalWorkerProfile,
+    TResult? Function(SuccessUpdateEngineeringOfficeProfile<T> value)?
+        successUpdateEngineeringOfficeProfile,
     TResult? Function(ErrorUpdateProfile<T> value)? errorUpdateProfile,
     TResult? Function(LoadingUploadImage<T> value)? loadingUploadImage,
     TResult? Function(SuccessUploadImage<T> value)? successUploadImage,
@@ -1975,12 +2469,16 @@ class _$SuccessUpdateTechnicalWorkerProfileImpl<T>
         successEngineerProfileData,
     TResult Function(SuccessTechnicalWorkerProfileData<T> value)?
         successTechnicalWorkerProfileData,
+    TResult Function(SuccessEngineeringOfficeProfileData<T> value)?
+        successEngineeringOfficeProfileData,
     TResult Function(ErrorProfileData<T> value)? errorProfileData,
     TResult Function(LoadingUpdateProfile<T> value)? loadingUpdateProfile,
     TResult Function(SuccessUpdateEngineerProfile<T> value)?
         successUpdateEngineerProfile,
     TResult Function(SuccessUpdateTechnicalWorkerProfile<T> value)?
         successUpdateTechnicalWorkerProfile,
+    TResult Function(SuccessUpdateEngineeringOfficeProfile<T> value)?
+        successUpdateEngineeringOfficeProfile,
     TResult Function(ErrorUpdateProfile<T> value)? errorUpdateProfile,
     TResult Function(LoadingUploadImage<T> value)? loadingUploadImage,
     TResult Function(SuccessUploadImage<T> value)? successUploadImage,
@@ -2008,6 +2506,279 @@ abstract class SuccessUpdateTechnicalWorkerProfile<T>
   @JsonKey(includeFromJson: false, includeToJson: false)
   _$$SuccessUpdateTechnicalWorkerProfileImplCopyWith<T,
           _$SuccessUpdateTechnicalWorkerProfileImpl<T>>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$SuccessUpdateEngineeringOfficeProfileImplCopyWith<T, $Res> {
+  factory _$$SuccessUpdateEngineeringOfficeProfileImplCopyWith(
+          _$SuccessUpdateEngineeringOfficeProfileImpl<T> value,
+          $Res Function(_$SuccessUpdateEngineeringOfficeProfileImpl<T>) then) =
+      __$$SuccessUpdateEngineeringOfficeProfileImplCopyWithImpl<T, $Res>;
+  @useResult
+  $Res call({EngineeringOfficeProfileResponseModel? profileData});
+}
+
+/// @nodoc
+class __$$SuccessUpdateEngineeringOfficeProfileImplCopyWithImpl<T, $Res>
+    extends _$ProfileStateCopyWithImpl<T, $Res,
+        _$SuccessUpdateEngineeringOfficeProfileImpl<T>>
+    implements _$$SuccessUpdateEngineeringOfficeProfileImplCopyWith<T, $Res> {
+  __$$SuccessUpdateEngineeringOfficeProfileImplCopyWithImpl(
+      _$SuccessUpdateEngineeringOfficeProfileImpl<T> _value,
+      $Res Function(_$SuccessUpdateEngineeringOfficeProfileImpl<T>) _then)
+      : super(_value, _then);
+
+  /// Create a copy of ProfileState
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? profileData = freezed,
+  }) {
+    return _then(_$SuccessUpdateEngineeringOfficeProfileImpl<T>(
+      freezed == profileData
+          ? _value.profileData
+          : profileData // ignore: cast_nullable_to_non_nullable
+              as EngineeringOfficeProfileResponseModel?,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$SuccessUpdateEngineeringOfficeProfileImpl<T>
+    implements SuccessUpdateEngineeringOfficeProfile<T> {
+  const _$SuccessUpdateEngineeringOfficeProfileImpl(this.profileData);
+
+  @override
+  final EngineeringOfficeProfileResponseModel? profileData;
+
+  @override
+  String toString() {
+    return 'ProfileState<$T>.successUpdateEngineeringOfficeProfile(profileData: $profileData)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$SuccessUpdateEngineeringOfficeProfileImpl<T> &&
+            (identical(other.profileData, profileData) ||
+                other.profileData == profileData));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, profileData);
+
+  /// Create a copy of ProfileState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$SuccessUpdateEngineeringOfficeProfileImplCopyWith<T,
+          _$SuccessUpdateEngineeringOfficeProfileImpl<T>>
+      get copyWith => __$$SuccessUpdateEngineeringOfficeProfileImplCopyWithImpl<
+          T, _$SuccessUpdateEngineeringOfficeProfileImpl<T>>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() loadingProfileData,
+    required TResult Function(EngineerProfileResponseModel profileData)
+        successEngineerProfileData,
+    required TResult Function(TechnicalWorkerResponseModel profileData)
+        successTechnicalWorkerProfileData,
+    required TResult Function(EngineeringOfficeProfileResponseModel profileData)
+        successEngineeringOfficeProfileData,
+    required TResult Function(String error) errorProfileData,
+    required TResult Function() loadingUpdateProfile,
+    required TResult Function(EngineerProfileResponseModel? profileData)
+        successUpdateEngineerProfile,
+    required TResult Function(TechnicalWorkerResponseModel? profileData)
+        successUpdateTechnicalWorkerProfile,
+    required TResult Function(
+            EngineeringOfficeProfileResponseModel? profileData)
+        successUpdateEngineeringOfficeProfile,
+    required TResult Function(String error) errorUpdateProfile,
+    required TResult Function() loadingUploadImage,
+    required TResult Function(
+            UploadProfileImageResponseModel uploadProfileImageResponseModel)
+        successUploadImage,
+    required TResult Function(String error) errorUploadImage,
+    required TResult Function() addImage,
+  }) {
+    return successUpdateEngineeringOfficeProfile(profileData);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? loadingProfileData,
+    TResult? Function(EngineerProfileResponseModel profileData)?
+        successEngineerProfileData,
+    TResult? Function(TechnicalWorkerResponseModel profileData)?
+        successTechnicalWorkerProfileData,
+    TResult? Function(EngineeringOfficeProfileResponseModel profileData)?
+        successEngineeringOfficeProfileData,
+    TResult? Function(String error)? errorProfileData,
+    TResult? Function()? loadingUpdateProfile,
+    TResult? Function(EngineerProfileResponseModel? profileData)?
+        successUpdateEngineerProfile,
+    TResult? Function(TechnicalWorkerResponseModel? profileData)?
+        successUpdateTechnicalWorkerProfile,
+    TResult? Function(EngineeringOfficeProfileResponseModel? profileData)?
+        successUpdateEngineeringOfficeProfile,
+    TResult? Function(String error)? errorUpdateProfile,
+    TResult? Function()? loadingUploadImage,
+    TResult? Function(
+            UploadProfileImageResponseModel uploadProfileImageResponseModel)?
+        successUploadImage,
+    TResult? Function(String error)? errorUploadImage,
+    TResult? Function()? addImage,
+  }) {
+    return successUpdateEngineeringOfficeProfile?.call(profileData);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loadingProfileData,
+    TResult Function(EngineerProfileResponseModel profileData)?
+        successEngineerProfileData,
+    TResult Function(TechnicalWorkerResponseModel profileData)?
+        successTechnicalWorkerProfileData,
+    TResult Function(EngineeringOfficeProfileResponseModel profileData)?
+        successEngineeringOfficeProfileData,
+    TResult Function(String error)? errorProfileData,
+    TResult Function()? loadingUpdateProfile,
+    TResult Function(EngineerProfileResponseModel? profileData)?
+        successUpdateEngineerProfile,
+    TResult Function(TechnicalWorkerResponseModel? profileData)?
+        successUpdateTechnicalWorkerProfile,
+    TResult Function(EngineeringOfficeProfileResponseModel? profileData)?
+        successUpdateEngineeringOfficeProfile,
+    TResult Function(String error)? errorUpdateProfile,
+    TResult Function()? loadingUploadImage,
+    TResult Function(
+            UploadProfileImageResponseModel uploadProfileImageResponseModel)?
+        successUploadImage,
+    TResult Function(String error)? errorUploadImage,
+    TResult Function()? addImage,
+    required TResult orElse(),
+  }) {
+    if (successUpdateEngineeringOfficeProfile != null) {
+      return successUpdateEngineeringOfficeProfile(profileData);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(ProfileInitial<T> value) initial,
+    required TResult Function(LoadingProfileData<T> value) loadingProfileData,
+    required TResult Function(SuccessEngineerProfileData<T> value)
+        successEngineerProfileData,
+    required TResult Function(SuccessTechnicalWorkerProfileData<T> value)
+        successTechnicalWorkerProfileData,
+    required TResult Function(SuccessEngineeringOfficeProfileData<T> value)
+        successEngineeringOfficeProfileData,
+    required TResult Function(ErrorProfileData<T> value) errorProfileData,
+    required TResult Function(LoadingUpdateProfile<T> value)
+        loadingUpdateProfile,
+    required TResult Function(SuccessUpdateEngineerProfile<T> value)
+        successUpdateEngineerProfile,
+    required TResult Function(SuccessUpdateTechnicalWorkerProfile<T> value)
+        successUpdateTechnicalWorkerProfile,
+    required TResult Function(SuccessUpdateEngineeringOfficeProfile<T> value)
+        successUpdateEngineeringOfficeProfile,
+    required TResult Function(ErrorUpdateProfile<T> value) errorUpdateProfile,
+    required TResult Function(LoadingUploadImage<T> value) loadingUploadImage,
+    required TResult Function(SuccessUploadImage<T> value) successUploadImage,
+    required TResult Function(ErrorUploadImage<T> value) errorUploadImage,
+    required TResult Function(AddImage<T> value) addImage,
+  }) {
+    return successUpdateEngineeringOfficeProfile(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(ProfileInitial<T> value)? initial,
+    TResult? Function(LoadingProfileData<T> value)? loadingProfileData,
+    TResult? Function(SuccessEngineerProfileData<T> value)?
+        successEngineerProfileData,
+    TResult? Function(SuccessTechnicalWorkerProfileData<T> value)?
+        successTechnicalWorkerProfileData,
+    TResult? Function(SuccessEngineeringOfficeProfileData<T> value)?
+        successEngineeringOfficeProfileData,
+    TResult? Function(ErrorProfileData<T> value)? errorProfileData,
+    TResult? Function(LoadingUpdateProfile<T> value)? loadingUpdateProfile,
+    TResult? Function(SuccessUpdateEngineerProfile<T> value)?
+        successUpdateEngineerProfile,
+    TResult? Function(SuccessUpdateTechnicalWorkerProfile<T> value)?
+        successUpdateTechnicalWorkerProfile,
+    TResult? Function(SuccessUpdateEngineeringOfficeProfile<T> value)?
+        successUpdateEngineeringOfficeProfile,
+    TResult? Function(ErrorUpdateProfile<T> value)? errorUpdateProfile,
+    TResult? Function(LoadingUploadImage<T> value)? loadingUploadImage,
+    TResult? Function(SuccessUploadImage<T> value)? successUploadImage,
+    TResult? Function(ErrorUploadImage<T> value)? errorUploadImage,
+    TResult? Function(AddImage<T> value)? addImage,
+  }) {
+    return successUpdateEngineeringOfficeProfile?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(ProfileInitial<T> value)? initial,
+    TResult Function(LoadingProfileData<T> value)? loadingProfileData,
+    TResult Function(SuccessEngineerProfileData<T> value)?
+        successEngineerProfileData,
+    TResult Function(SuccessTechnicalWorkerProfileData<T> value)?
+        successTechnicalWorkerProfileData,
+    TResult Function(SuccessEngineeringOfficeProfileData<T> value)?
+        successEngineeringOfficeProfileData,
+    TResult Function(ErrorProfileData<T> value)? errorProfileData,
+    TResult Function(LoadingUpdateProfile<T> value)? loadingUpdateProfile,
+    TResult Function(SuccessUpdateEngineerProfile<T> value)?
+        successUpdateEngineerProfile,
+    TResult Function(SuccessUpdateTechnicalWorkerProfile<T> value)?
+        successUpdateTechnicalWorkerProfile,
+    TResult Function(SuccessUpdateEngineeringOfficeProfile<T> value)?
+        successUpdateEngineeringOfficeProfile,
+    TResult Function(ErrorUpdateProfile<T> value)? errorUpdateProfile,
+    TResult Function(LoadingUploadImage<T> value)? loadingUploadImage,
+    TResult Function(SuccessUploadImage<T> value)? successUploadImage,
+    TResult Function(ErrorUploadImage<T> value)? errorUploadImage,
+    TResult Function(AddImage<T> value)? addImage,
+    required TResult orElse(),
+  }) {
+    if (successUpdateEngineeringOfficeProfile != null) {
+      return successUpdateEngineeringOfficeProfile(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class SuccessUpdateEngineeringOfficeProfile<T>
+    implements ProfileState<T> {
+  const factory SuccessUpdateEngineeringOfficeProfile(
+          final EngineeringOfficeProfileResponseModel? profileData) =
+      _$SuccessUpdateEngineeringOfficeProfileImpl<T>;
+
+  EngineeringOfficeProfileResponseModel? get profileData;
+
+  /// Create a copy of ProfileState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$SuccessUpdateEngineeringOfficeProfileImplCopyWith<T,
+          _$SuccessUpdateEngineeringOfficeProfileImpl<T>>
       get copyWith => throw _privateConstructorUsedError;
 }
 
@@ -2086,12 +2857,17 @@ class _$ErrorUpdateProfileImpl<T> implements ErrorUpdateProfile<T> {
         successEngineerProfileData,
     required TResult Function(TechnicalWorkerResponseModel profileData)
         successTechnicalWorkerProfileData,
+    required TResult Function(EngineeringOfficeProfileResponseModel profileData)
+        successEngineeringOfficeProfileData,
     required TResult Function(String error) errorProfileData,
     required TResult Function() loadingUpdateProfile,
     required TResult Function(EngineerProfileResponseModel? profileData)
         successUpdateEngineerProfile,
     required TResult Function(TechnicalWorkerResponseModel? profileData)
         successUpdateTechnicalWorkerProfile,
+    required TResult Function(
+            EngineeringOfficeProfileResponseModel? profileData)
+        successUpdateEngineeringOfficeProfile,
     required TResult Function(String error) errorUpdateProfile,
     required TResult Function() loadingUploadImage,
     required TResult Function(
@@ -2112,12 +2888,16 @@ class _$ErrorUpdateProfileImpl<T> implements ErrorUpdateProfile<T> {
         successEngineerProfileData,
     TResult? Function(TechnicalWorkerResponseModel profileData)?
         successTechnicalWorkerProfileData,
+    TResult? Function(EngineeringOfficeProfileResponseModel profileData)?
+        successEngineeringOfficeProfileData,
     TResult? Function(String error)? errorProfileData,
     TResult? Function()? loadingUpdateProfile,
     TResult? Function(EngineerProfileResponseModel? profileData)?
         successUpdateEngineerProfile,
     TResult? Function(TechnicalWorkerResponseModel? profileData)?
         successUpdateTechnicalWorkerProfile,
+    TResult? Function(EngineeringOfficeProfileResponseModel? profileData)?
+        successUpdateEngineeringOfficeProfile,
     TResult? Function(String error)? errorUpdateProfile,
     TResult? Function()? loadingUploadImage,
     TResult? Function(
@@ -2138,12 +2918,16 @@ class _$ErrorUpdateProfileImpl<T> implements ErrorUpdateProfile<T> {
         successEngineerProfileData,
     TResult Function(TechnicalWorkerResponseModel profileData)?
         successTechnicalWorkerProfileData,
+    TResult Function(EngineeringOfficeProfileResponseModel profileData)?
+        successEngineeringOfficeProfileData,
     TResult Function(String error)? errorProfileData,
     TResult Function()? loadingUpdateProfile,
     TResult Function(EngineerProfileResponseModel? profileData)?
         successUpdateEngineerProfile,
     TResult Function(TechnicalWorkerResponseModel? profileData)?
         successUpdateTechnicalWorkerProfile,
+    TResult Function(EngineeringOfficeProfileResponseModel? profileData)?
+        successUpdateEngineeringOfficeProfile,
     TResult Function(String error)? errorUpdateProfile,
     TResult Function()? loadingUploadImage,
     TResult Function(
@@ -2168,6 +2952,8 @@ class _$ErrorUpdateProfileImpl<T> implements ErrorUpdateProfile<T> {
         successEngineerProfileData,
     required TResult Function(SuccessTechnicalWorkerProfileData<T> value)
         successTechnicalWorkerProfileData,
+    required TResult Function(SuccessEngineeringOfficeProfileData<T> value)
+        successEngineeringOfficeProfileData,
     required TResult Function(ErrorProfileData<T> value) errorProfileData,
     required TResult Function(LoadingUpdateProfile<T> value)
         loadingUpdateProfile,
@@ -2175,6 +2961,8 @@ class _$ErrorUpdateProfileImpl<T> implements ErrorUpdateProfile<T> {
         successUpdateEngineerProfile,
     required TResult Function(SuccessUpdateTechnicalWorkerProfile<T> value)
         successUpdateTechnicalWorkerProfile,
+    required TResult Function(SuccessUpdateEngineeringOfficeProfile<T> value)
+        successUpdateEngineeringOfficeProfile,
     required TResult Function(ErrorUpdateProfile<T> value) errorUpdateProfile,
     required TResult Function(LoadingUploadImage<T> value) loadingUploadImage,
     required TResult Function(SuccessUploadImage<T> value) successUploadImage,
@@ -2193,12 +2981,16 @@ class _$ErrorUpdateProfileImpl<T> implements ErrorUpdateProfile<T> {
         successEngineerProfileData,
     TResult? Function(SuccessTechnicalWorkerProfileData<T> value)?
         successTechnicalWorkerProfileData,
+    TResult? Function(SuccessEngineeringOfficeProfileData<T> value)?
+        successEngineeringOfficeProfileData,
     TResult? Function(ErrorProfileData<T> value)? errorProfileData,
     TResult? Function(LoadingUpdateProfile<T> value)? loadingUpdateProfile,
     TResult? Function(SuccessUpdateEngineerProfile<T> value)?
         successUpdateEngineerProfile,
     TResult? Function(SuccessUpdateTechnicalWorkerProfile<T> value)?
         successUpdateTechnicalWorkerProfile,
+    TResult? Function(SuccessUpdateEngineeringOfficeProfile<T> value)?
+        successUpdateEngineeringOfficeProfile,
     TResult? Function(ErrorUpdateProfile<T> value)? errorUpdateProfile,
     TResult? Function(LoadingUploadImage<T> value)? loadingUploadImage,
     TResult? Function(SuccessUploadImage<T> value)? successUploadImage,
@@ -2217,12 +3009,16 @@ class _$ErrorUpdateProfileImpl<T> implements ErrorUpdateProfile<T> {
         successEngineerProfileData,
     TResult Function(SuccessTechnicalWorkerProfileData<T> value)?
         successTechnicalWorkerProfileData,
+    TResult Function(SuccessEngineeringOfficeProfileData<T> value)?
+        successEngineeringOfficeProfileData,
     TResult Function(ErrorProfileData<T> value)? errorProfileData,
     TResult Function(LoadingUpdateProfile<T> value)? loadingUpdateProfile,
     TResult Function(SuccessUpdateEngineerProfile<T> value)?
         successUpdateEngineerProfile,
     TResult Function(SuccessUpdateTechnicalWorkerProfile<T> value)?
         successUpdateTechnicalWorkerProfile,
+    TResult Function(SuccessUpdateEngineeringOfficeProfile<T> value)?
+        successUpdateEngineeringOfficeProfile,
     TResult Function(ErrorUpdateProfile<T> value)? errorUpdateProfile,
     TResult Function(LoadingUploadImage<T> value)? loadingUploadImage,
     TResult Function(SuccessUploadImage<T> value)? successUploadImage,
@@ -2298,12 +3094,17 @@ class _$LoadingUploadImageImpl<T> implements LoadingUploadImage<T> {
         successEngineerProfileData,
     required TResult Function(TechnicalWorkerResponseModel profileData)
         successTechnicalWorkerProfileData,
+    required TResult Function(EngineeringOfficeProfileResponseModel profileData)
+        successEngineeringOfficeProfileData,
     required TResult Function(String error) errorProfileData,
     required TResult Function() loadingUpdateProfile,
     required TResult Function(EngineerProfileResponseModel? profileData)
         successUpdateEngineerProfile,
     required TResult Function(TechnicalWorkerResponseModel? profileData)
         successUpdateTechnicalWorkerProfile,
+    required TResult Function(
+            EngineeringOfficeProfileResponseModel? profileData)
+        successUpdateEngineeringOfficeProfile,
     required TResult Function(String error) errorUpdateProfile,
     required TResult Function() loadingUploadImage,
     required TResult Function(
@@ -2324,12 +3125,16 @@ class _$LoadingUploadImageImpl<T> implements LoadingUploadImage<T> {
         successEngineerProfileData,
     TResult? Function(TechnicalWorkerResponseModel profileData)?
         successTechnicalWorkerProfileData,
+    TResult? Function(EngineeringOfficeProfileResponseModel profileData)?
+        successEngineeringOfficeProfileData,
     TResult? Function(String error)? errorProfileData,
     TResult? Function()? loadingUpdateProfile,
     TResult? Function(EngineerProfileResponseModel? profileData)?
         successUpdateEngineerProfile,
     TResult? Function(TechnicalWorkerResponseModel? profileData)?
         successUpdateTechnicalWorkerProfile,
+    TResult? Function(EngineeringOfficeProfileResponseModel? profileData)?
+        successUpdateEngineeringOfficeProfile,
     TResult? Function(String error)? errorUpdateProfile,
     TResult? Function()? loadingUploadImage,
     TResult? Function(
@@ -2350,12 +3155,16 @@ class _$LoadingUploadImageImpl<T> implements LoadingUploadImage<T> {
         successEngineerProfileData,
     TResult Function(TechnicalWorkerResponseModel profileData)?
         successTechnicalWorkerProfileData,
+    TResult Function(EngineeringOfficeProfileResponseModel profileData)?
+        successEngineeringOfficeProfileData,
     TResult Function(String error)? errorProfileData,
     TResult Function()? loadingUpdateProfile,
     TResult Function(EngineerProfileResponseModel? profileData)?
         successUpdateEngineerProfile,
     TResult Function(TechnicalWorkerResponseModel? profileData)?
         successUpdateTechnicalWorkerProfile,
+    TResult Function(EngineeringOfficeProfileResponseModel? profileData)?
+        successUpdateEngineeringOfficeProfile,
     TResult Function(String error)? errorUpdateProfile,
     TResult Function()? loadingUploadImage,
     TResult Function(
@@ -2380,6 +3189,8 @@ class _$LoadingUploadImageImpl<T> implements LoadingUploadImage<T> {
         successEngineerProfileData,
     required TResult Function(SuccessTechnicalWorkerProfileData<T> value)
         successTechnicalWorkerProfileData,
+    required TResult Function(SuccessEngineeringOfficeProfileData<T> value)
+        successEngineeringOfficeProfileData,
     required TResult Function(ErrorProfileData<T> value) errorProfileData,
     required TResult Function(LoadingUpdateProfile<T> value)
         loadingUpdateProfile,
@@ -2387,6 +3198,8 @@ class _$LoadingUploadImageImpl<T> implements LoadingUploadImage<T> {
         successUpdateEngineerProfile,
     required TResult Function(SuccessUpdateTechnicalWorkerProfile<T> value)
         successUpdateTechnicalWorkerProfile,
+    required TResult Function(SuccessUpdateEngineeringOfficeProfile<T> value)
+        successUpdateEngineeringOfficeProfile,
     required TResult Function(ErrorUpdateProfile<T> value) errorUpdateProfile,
     required TResult Function(LoadingUploadImage<T> value) loadingUploadImage,
     required TResult Function(SuccessUploadImage<T> value) successUploadImage,
@@ -2405,12 +3218,16 @@ class _$LoadingUploadImageImpl<T> implements LoadingUploadImage<T> {
         successEngineerProfileData,
     TResult? Function(SuccessTechnicalWorkerProfileData<T> value)?
         successTechnicalWorkerProfileData,
+    TResult? Function(SuccessEngineeringOfficeProfileData<T> value)?
+        successEngineeringOfficeProfileData,
     TResult? Function(ErrorProfileData<T> value)? errorProfileData,
     TResult? Function(LoadingUpdateProfile<T> value)? loadingUpdateProfile,
     TResult? Function(SuccessUpdateEngineerProfile<T> value)?
         successUpdateEngineerProfile,
     TResult? Function(SuccessUpdateTechnicalWorkerProfile<T> value)?
         successUpdateTechnicalWorkerProfile,
+    TResult? Function(SuccessUpdateEngineeringOfficeProfile<T> value)?
+        successUpdateEngineeringOfficeProfile,
     TResult? Function(ErrorUpdateProfile<T> value)? errorUpdateProfile,
     TResult? Function(LoadingUploadImage<T> value)? loadingUploadImage,
     TResult? Function(SuccessUploadImage<T> value)? successUploadImage,
@@ -2429,12 +3246,16 @@ class _$LoadingUploadImageImpl<T> implements LoadingUploadImage<T> {
         successEngineerProfileData,
     TResult Function(SuccessTechnicalWorkerProfileData<T> value)?
         successTechnicalWorkerProfileData,
+    TResult Function(SuccessEngineeringOfficeProfileData<T> value)?
+        successEngineeringOfficeProfileData,
     TResult Function(ErrorProfileData<T> value)? errorProfileData,
     TResult Function(LoadingUpdateProfile<T> value)? loadingUpdateProfile,
     TResult Function(SuccessUpdateEngineerProfile<T> value)?
         successUpdateEngineerProfile,
     TResult Function(SuccessUpdateTechnicalWorkerProfile<T> value)?
         successUpdateTechnicalWorkerProfile,
+    TResult Function(SuccessUpdateEngineeringOfficeProfile<T> value)?
+        successUpdateEngineeringOfficeProfile,
     TResult Function(ErrorUpdateProfile<T> value)? errorUpdateProfile,
     TResult Function(LoadingUploadImage<T> value)? loadingUploadImage,
     TResult Function(SuccessUploadImage<T> value)? successUploadImage,
@@ -2531,12 +3352,17 @@ class _$SuccessUploadImageImpl<T> implements SuccessUploadImage<T> {
         successEngineerProfileData,
     required TResult Function(TechnicalWorkerResponseModel profileData)
         successTechnicalWorkerProfileData,
+    required TResult Function(EngineeringOfficeProfileResponseModel profileData)
+        successEngineeringOfficeProfileData,
     required TResult Function(String error) errorProfileData,
     required TResult Function() loadingUpdateProfile,
     required TResult Function(EngineerProfileResponseModel? profileData)
         successUpdateEngineerProfile,
     required TResult Function(TechnicalWorkerResponseModel? profileData)
         successUpdateTechnicalWorkerProfile,
+    required TResult Function(
+            EngineeringOfficeProfileResponseModel? profileData)
+        successUpdateEngineeringOfficeProfile,
     required TResult Function(String error) errorUpdateProfile,
     required TResult Function() loadingUploadImage,
     required TResult Function(
@@ -2557,12 +3383,16 @@ class _$SuccessUploadImageImpl<T> implements SuccessUploadImage<T> {
         successEngineerProfileData,
     TResult? Function(TechnicalWorkerResponseModel profileData)?
         successTechnicalWorkerProfileData,
+    TResult? Function(EngineeringOfficeProfileResponseModel profileData)?
+        successEngineeringOfficeProfileData,
     TResult? Function(String error)? errorProfileData,
     TResult? Function()? loadingUpdateProfile,
     TResult? Function(EngineerProfileResponseModel? profileData)?
         successUpdateEngineerProfile,
     TResult? Function(TechnicalWorkerResponseModel? profileData)?
         successUpdateTechnicalWorkerProfile,
+    TResult? Function(EngineeringOfficeProfileResponseModel? profileData)?
+        successUpdateEngineeringOfficeProfile,
     TResult? Function(String error)? errorUpdateProfile,
     TResult? Function()? loadingUploadImage,
     TResult? Function(
@@ -2583,12 +3413,16 @@ class _$SuccessUploadImageImpl<T> implements SuccessUploadImage<T> {
         successEngineerProfileData,
     TResult Function(TechnicalWorkerResponseModel profileData)?
         successTechnicalWorkerProfileData,
+    TResult Function(EngineeringOfficeProfileResponseModel profileData)?
+        successEngineeringOfficeProfileData,
     TResult Function(String error)? errorProfileData,
     TResult Function()? loadingUpdateProfile,
     TResult Function(EngineerProfileResponseModel? profileData)?
         successUpdateEngineerProfile,
     TResult Function(TechnicalWorkerResponseModel? profileData)?
         successUpdateTechnicalWorkerProfile,
+    TResult Function(EngineeringOfficeProfileResponseModel? profileData)?
+        successUpdateEngineeringOfficeProfile,
     TResult Function(String error)? errorUpdateProfile,
     TResult Function()? loadingUploadImage,
     TResult Function(
@@ -2613,6 +3447,8 @@ class _$SuccessUploadImageImpl<T> implements SuccessUploadImage<T> {
         successEngineerProfileData,
     required TResult Function(SuccessTechnicalWorkerProfileData<T> value)
         successTechnicalWorkerProfileData,
+    required TResult Function(SuccessEngineeringOfficeProfileData<T> value)
+        successEngineeringOfficeProfileData,
     required TResult Function(ErrorProfileData<T> value) errorProfileData,
     required TResult Function(LoadingUpdateProfile<T> value)
         loadingUpdateProfile,
@@ -2620,6 +3456,8 @@ class _$SuccessUploadImageImpl<T> implements SuccessUploadImage<T> {
         successUpdateEngineerProfile,
     required TResult Function(SuccessUpdateTechnicalWorkerProfile<T> value)
         successUpdateTechnicalWorkerProfile,
+    required TResult Function(SuccessUpdateEngineeringOfficeProfile<T> value)
+        successUpdateEngineeringOfficeProfile,
     required TResult Function(ErrorUpdateProfile<T> value) errorUpdateProfile,
     required TResult Function(LoadingUploadImage<T> value) loadingUploadImage,
     required TResult Function(SuccessUploadImage<T> value) successUploadImage,
@@ -2638,12 +3476,16 @@ class _$SuccessUploadImageImpl<T> implements SuccessUploadImage<T> {
         successEngineerProfileData,
     TResult? Function(SuccessTechnicalWorkerProfileData<T> value)?
         successTechnicalWorkerProfileData,
+    TResult? Function(SuccessEngineeringOfficeProfileData<T> value)?
+        successEngineeringOfficeProfileData,
     TResult? Function(ErrorProfileData<T> value)? errorProfileData,
     TResult? Function(LoadingUpdateProfile<T> value)? loadingUpdateProfile,
     TResult? Function(SuccessUpdateEngineerProfile<T> value)?
         successUpdateEngineerProfile,
     TResult? Function(SuccessUpdateTechnicalWorkerProfile<T> value)?
         successUpdateTechnicalWorkerProfile,
+    TResult? Function(SuccessUpdateEngineeringOfficeProfile<T> value)?
+        successUpdateEngineeringOfficeProfile,
     TResult? Function(ErrorUpdateProfile<T> value)? errorUpdateProfile,
     TResult? Function(LoadingUploadImage<T> value)? loadingUploadImage,
     TResult? Function(SuccessUploadImage<T> value)? successUploadImage,
@@ -2662,12 +3504,16 @@ class _$SuccessUploadImageImpl<T> implements SuccessUploadImage<T> {
         successEngineerProfileData,
     TResult Function(SuccessTechnicalWorkerProfileData<T> value)?
         successTechnicalWorkerProfileData,
+    TResult Function(SuccessEngineeringOfficeProfileData<T> value)?
+        successEngineeringOfficeProfileData,
     TResult Function(ErrorProfileData<T> value)? errorProfileData,
     TResult Function(LoadingUpdateProfile<T> value)? loadingUpdateProfile,
     TResult Function(SuccessUpdateEngineerProfile<T> value)?
         successUpdateEngineerProfile,
     TResult Function(SuccessUpdateTechnicalWorkerProfile<T> value)?
         successUpdateTechnicalWorkerProfile,
+    TResult Function(SuccessUpdateEngineeringOfficeProfile<T> value)?
+        successUpdateEngineeringOfficeProfile,
     TResult Function(ErrorUpdateProfile<T> value)? errorUpdateProfile,
     TResult Function(LoadingUploadImage<T> value)? loadingUploadImage,
     TResult Function(SuccessUploadImage<T> value)? successUploadImage,
@@ -2771,12 +3617,17 @@ class _$ErrorUploadImageImpl<T> implements ErrorUploadImage<T> {
         successEngineerProfileData,
     required TResult Function(TechnicalWorkerResponseModel profileData)
         successTechnicalWorkerProfileData,
+    required TResult Function(EngineeringOfficeProfileResponseModel profileData)
+        successEngineeringOfficeProfileData,
     required TResult Function(String error) errorProfileData,
     required TResult Function() loadingUpdateProfile,
     required TResult Function(EngineerProfileResponseModel? profileData)
         successUpdateEngineerProfile,
     required TResult Function(TechnicalWorkerResponseModel? profileData)
         successUpdateTechnicalWorkerProfile,
+    required TResult Function(
+            EngineeringOfficeProfileResponseModel? profileData)
+        successUpdateEngineeringOfficeProfile,
     required TResult Function(String error) errorUpdateProfile,
     required TResult Function() loadingUploadImage,
     required TResult Function(
@@ -2797,12 +3648,16 @@ class _$ErrorUploadImageImpl<T> implements ErrorUploadImage<T> {
         successEngineerProfileData,
     TResult? Function(TechnicalWorkerResponseModel profileData)?
         successTechnicalWorkerProfileData,
+    TResult? Function(EngineeringOfficeProfileResponseModel profileData)?
+        successEngineeringOfficeProfileData,
     TResult? Function(String error)? errorProfileData,
     TResult? Function()? loadingUpdateProfile,
     TResult? Function(EngineerProfileResponseModel? profileData)?
         successUpdateEngineerProfile,
     TResult? Function(TechnicalWorkerResponseModel? profileData)?
         successUpdateTechnicalWorkerProfile,
+    TResult? Function(EngineeringOfficeProfileResponseModel? profileData)?
+        successUpdateEngineeringOfficeProfile,
     TResult? Function(String error)? errorUpdateProfile,
     TResult? Function()? loadingUploadImage,
     TResult? Function(
@@ -2823,12 +3678,16 @@ class _$ErrorUploadImageImpl<T> implements ErrorUploadImage<T> {
         successEngineerProfileData,
     TResult Function(TechnicalWorkerResponseModel profileData)?
         successTechnicalWorkerProfileData,
+    TResult Function(EngineeringOfficeProfileResponseModel profileData)?
+        successEngineeringOfficeProfileData,
     TResult Function(String error)? errorProfileData,
     TResult Function()? loadingUpdateProfile,
     TResult Function(EngineerProfileResponseModel? profileData)?
         successUpdateEngineerProfile,
     TResult Function(TechnicalWorkerResponseModel? profileData)?
         successUpdateTechnicalWorkerProfile,
+    TResult Function(EngineeringOfficeProfileResponseModel? profileData)?
+        successUpdateEngineeringOfficeProfile,
     TResult Function(String error)? errorUpdateProfile,
     TResult Function()? loadingUploadImage,
     TResult Function(
@@ -2853,6 +3712,8 @@ class _$ErrorUploadImageImpl<T> implements ErrorUploadImage<T> {
         successEngineerProfileData,
     required TResult Function(SuccessTechnicalWorkerProfileData<T> value)
         successTechnicalWorkerProfileData,
+    required TResult Function(SuccessEngineeringOfficeProfileData<T> value)
+        successEngineeringOfficeProfileData,
     required TResult Function(ErrorProfileData<T> value) errorProfileData,
     required TResult Function(LoadingUpdateProfile<T> value)
         loadingUpdateProfile,
@@ -2860,6 +3721,8 @@ class _$ErrorUploadImageImpl<T> implements ErrorUploadImage<T> {
         successUpdateEngineerProfile,
     required TResult Function(SuccessUpdateTechnicalWorkerProfile<T> value)
         successUpdateTechnicalWorkerProfile,
+    required TResult Function(SuccessUpdateEngineeringOfficeProfile<T> value)
+        successUpdateEngineeringOfficeProfile,
     required TResult Function(ErrorUpdateProfile<T> value) errorUpdateProfile,
     required TResult Function(LoadingUploadImage<T> value) loadingUploadImage,
     required TResult Function(SuccessUploadImage<T> value) successUploadImage,
@@ -2878,12 +3741,16 @@ class _$ErrorUploadImageImpl<T> implements ErrorUploadImage<T> {
         successEngineerProfileData,
     TResult? Function(SuccessTechnicalWorkerProfileData<T> value)?
         successTechnicalWorkerProfileData,
+    TResult? Function(SuccessEngineeringOfficeProfileData<T> value)?
+        successEngineeringOfficeProfileData,
     TResult? Function(ErrorProfileData<T> value)? errorProfileData,
     TResult? Function(LoadingUpdateProfile<T> value)? loadingUpdateProfile,
     TResult? Function(SuccessUpdateEngineerProfile<T> value)?
         successUpdateEngineerProfile,
     TResult? Function(SuccessUpdateTechnicalWorkerProfile<T> value)?
         successUpdateTechnicalWorkerProfile,
+    TResult? Function(SuccessUpdateEngineeringOfficeProfile<T> value)?
+        successUpdateEngineeringOfficeProfile,
     TResult? Function(ErrorUpdateProfile<T> value)? errorUpdateProfile,
     TResult? Function(LoadingUploadImage<T> value)? loadingUploadImage,
     TResult? Function(SuccessUploadImage<T> value)? successUploadImage,
@@ -2902,12 +3769,16 @@ class _$ErrorUploadImageImpl<T> implements ErrorUploadImage<T> {
         successEngineerProfileData,
     TResult Function(SuccessTechnicalWorkerProfileData<T> value)?
         successTechnicalWorkerProfileData,
+    TResult Function(SuccessEngineeringOfficeProfileData<T> value)?
+        successEngineeringOfficeProfileData,
     TResult Function(ErrorProfileData<T> value)? errorProfileData,
     TResult Function(LoadingUpdateProfile<T> value)? loadingUpdateProfile,
     TResult Function(SuccessUpdateEngineerProfile<T> value)?
         successUpdateEngineerProfile,
     TResult Function(SuccessUpdateTechnicalWorkerProfile<T> value)?
         successUpdateTechnicalWorkerProfile,
+    TResult Function(SuccessUpdateEngineeringOfficeProfile<T> value)?
+        successUpdateEngineeringOfficeProfile,
     TResult Function(ErrorUpdateProfile<T> value)? errorUpdateProfile,
     TResult Function(LoadingUploadImage<T> value)? loadingUploadImage,
     TResult Function(SuccessUploadImage<T> value)? successUploadImage,
@@ -2982,12 +3853,17 @@ class _$AddImageImpl<T> implements AddImage<T> {
         successEngineerProfileData,
     required TResult Function(TechnicalWorkerResponseModel profileData)
         successTechnicalWorkerProfileData,
+    required TResult Function(EngineeringOfficeProfileResponseModel profileData)
+        successEngineeringOfficeProfileData,
     required TResult Function(String error) errorProfileData,
     required TResult Function() loadingUpdateProfile,
     required TResult Function(EngineerProfileResponseModel? profileData)
         successUpdateEngineerProfile,
     required TResult Function(TechnicalWorkerResponseModel? profileData)
         successUpdateTechnicalWorkerProfile,
+    required TResult Function(
+            EngineeringOfficeProfileResponseModel? profileData)
+        successUpdateEngineeringOfficeProfile,
     required TResult Function(String error) errorUpdateProfile,
     required TResult Function() loadingUploadImage,
     required TResult Function(
@@ -3008,12 +3884,16 @@ class _$AddImageImpl<T> implements AddImage<T> {
         successEngineerProfileData,
     TResult? Function(TechnicalWorkerResponseModel profileData)?
         successTechnicalWorkerProfileData,
+    TResult? Function(EngineeringOfficeProfileResponseModel profileData)?
+        successEngineeringOfficeProfileData,
     TResult? Function(String error)? errorProfileData,
     TResult? Function()? loadingUpdateProfile,
     TResult? Function(EngineerProfileResponseModel? profileData)?
         successUpdateEngineerProfile,
     TResult? Function(TechnicalWorkerResponseModel? profileData)?
         successUpdateTechnicalWorkerProfile,
+    TResult? Function(EngineeringOfficeProfileResponseModel? profileData)?
+        successUpdateEngineeringOfficeProfile,
     TResult? Function(String error)? errorUpdateProfile,
     TResult? Function()? loadingUploadImage,
     TResult? Function(
@@ -3034,12 +3914,16 @@ class _$AddImageImpl<T> implements AddImage<T> {
         successEngineerProfileData,
     TResult Function(TechnicalWorkerResponseModel profileData)?
         successTechnicalWorkerProfileData,
+    TResult Function(EngineeringOfficeProfileResponseModel profileData)?
+        successEngineeringOfficeProfileData,
     TResult Function(String error)? errorProfileData,
     TResult Function()? loadingUpdateProfile,
     TResult Function(EngineerProfileResponseModel? profileData)?
         successUpdateEngineerProfile,
     TResult Function(TechnicalWorkerResponseModel? profileData)?
         successUpdateTechnicalWorkerProfile,
+    TResult Function(EngineeringOfficeProfileResponseModel? profileData)?
+        successUpdateEngineeringOfficeProfile,
     TResult Function(String error)? errorUpdateProfile,
     TResult Function()? loadingUploadImage,
     TResult Function(
@@ -3064,6 +3948,8 @@ class _$AddImageImpl<T> implements AddImage<T> {
         successEngineerProfileData,
     required TResult Function(SuccessTechnicalWorkerProfileData<T> value)
         successTechnicalWorkerProfileData,
+    required TResult Function(SuccessEngineeringOfficeProfileData<T> value)
+        successEngineeringOfficeProfileData,
     required TResult Function(ErrorProfileData<T> value) errorProfileData,
     required TResult Function(LoadingUpdateProfile<T> value)
         loadingUpdateProfile,
@@ -3071,6 +3957,8 @@ class _$AddImageImpl<T> implements AddImage<T> {
         successUpdateEngineerProfile,
     required TResult Function(SuccessUpdateTechnicalWorkerProfile<T> value)
         successUpdateTechnicalWorkerProfile,
+    required TResult Function(SuccessUpdateEngineeringOfficeProfile<T> value)
+        successUpdateEngineeringOfficeProfile,
     required TResult Function(ErrorUpdateProfile<T> value) errorUpdateProfile,
     required TResult Function(LoadingUploadImage<T> value) loadingUploadImage,
     required TResult Function(SuccessUploadImage<T> value) successUploadImage,
@@ -3089,12 +3977,16 @@ class _$AddImageImpl<T> implements AddImage<T> {
         successEngineerProfileData,
     TResult? Function(SuccessTechnicalWorkerProfileData<T> value)?
         successTechnicalWorkerProfileData,
+    TResult? Function(SuccessEngineeringOfficeProfileData<T> value)?
+        successEngineeringOfficeProfileData,
     TResult? Function(ErrorProfileData<T> value)? errorProfileData,
     TResult? Function(LoadingUpdateProfile<T> value)? loadingUpdateProfile,
     TResult? Function(SuccessUpdateEngineerProfile<T> value)?
         successUpdateEngineerProfile,
     TResult? Function(SuccessUpdateTechnicalWorkerProfile<T> value)?
         successUpdateTechnicalWorkerProfile,
+    TResult? Function(SuccessUpdateEngineeringOfficeProfile<T> value)?
+        successUpdateEngineeringOfficeProfile,
     TResult? Function(ErrorUpdateProfile<T> value)? errorUpdateProfile,
     TResult? Function(LoadingUploadImage<T> value)? loadingUploadImage,
     TResult? Function(SuccessUploadImage<T> value)? successUploadImage,
@@ -3113,12 +4005,16 @@ class _$AddImageImpl<T> implements AddImage<T> {
         successEngineerProfileData,
     TResult Function(SuccessTechnicalWorkerProfileData<T> value)?
         successTechnicalWorkerProfileData,
+    TResult Function(SuccessEngineeringOfficeProfileData<T> value)?
+        successEngineeringOfficeProfileData,
     TResult Function(ErrorProfileData<T> value)? errorProfileData,
     TResult Function(LoadingUpdateProfile<T> value)? loadingUpdateProfile,
     TResult Function(SuccessUpdateEngineerProfile<T> value)?
         successUpdateEngineerProfile,
     TResult Function(SuccessUpdateTechnicalWorkerProfile<T> value)?
         successUpdateTechnicalWorkerProfile,
+    TResult Function(SuccessUpdateEngineeringOfficeProfile<T> value)?
+        successUpdateEngineeringOfficeProfile,
     TResult Function(ErrorUpdateProfile<T> value)? errorUpdateProfile,
     TResult Function(LoadingUploadImage<T> value)? loadingUploadImage,
     TResult Function(SuccessUploadImage<T> value)? successUploadImage,

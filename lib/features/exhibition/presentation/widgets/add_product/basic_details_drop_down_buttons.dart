@@ -28,6 +28,7 @@ class BasicDetailsDropDownButtons extends StatefulWidget {
 class _BasicDetailsDropDownButtonsState
     extends State<BasicDetailsDropDownButtons> {
   String? selectedBusinessType;
+  String? selectedBusinessTypeCategory;
   String? selectedBaseUnit;
 
   @override
@@ -41,6 +42,8 @@ class _BasicDetailsDropDownButtonsState
     if (widget.productData != null) {
       selectedBusinessType =
           widget.productData!.data.businessType.id.toString();
+      selectedBusinessTypeCategory =
+          widget.productData!.data.businessTypeCategory?.id.toString();
       selectedBaseUnit = widget.productData!.data.baseUnit.id.toString();
       final businessCubit = context.read<BusinessAddProductCubit>();
 
@@ -48,6 +51,11 @@ class _BasicDetailsDropDownButtonsState
           selectedBusinessType != null
               ? int.parse(selectedBusinessType!)
               : null;
+      businessCubit.selectedBusinessTypeCategory =
+          selectedBusinessTypeCategory != null
+              ? int.parse(selectedBusinessTypeCategory!)
+              : null;
+
       businessCubit.selectedBaseUnit =
           selectedBaseUnit != null ? int.parse(selectedBaseUnit!) : null;
     }
@@ -79,8 +87,10 @@ class _BasicDetailsDropDownButtonsState
                 if (value != null) {
                   setState(() {
                     selectedBusinessType = value;
+                    selectedBusinessTypeCategory = null;
                     businessCubit.selectedExhibitionBusinessType =
                         int.parse(value);
+                    businessCubit.selectedBusinessTypeCategory = null;
                   });
                 }
               },
@@ -97,27 +107,62 @@ class _BasicDetailsDropDownButtonsState
         ),
         BlocBuilder<ProductsCubit, ProductsState>(
           builder: (context, state) {
-            return AppCustomDropDownButtonFormField(
-              value: selectedBaseUnit,
-              items: productsCubit.baseUnits.map((material) {
-                return DropdownMenuItem<String>(
-                  value: material.id.toString(),
-                  child: Text(
-                    material.name!,
-                    style: AppStyles.font16BlackLight,
-                  ),
-                );
-              }).toList(),
-              onChanged: (value) {
-                setState(() {
-                  selectedBaseUnit = value;
-                  businessCubit.selectedBaseUnit = int.parse(value!);
-                });
-              },
-              onSaved: (value) {
-                businessCubit.selectedBaseUnit = int.parse(value!);
-              },
-              labelText: AppLocale.baseUnit.getString(context),
+            return Column(
+              spacing: 16.h,
+              children: [
+                AppCustomDropDownButtonFormField(
+                  isEnabled: selectedBusinessType != null &&
+                      productsCubit.businessTypeCategories != null,
+                  value: selectedBusinessTypeCategory,
+                  items: productsCubit.businessTypeCategories!
+                      .where((category) =>
+                          category.businessType?.id.toString() ==
+                          selectedBusinessType)
+                      .map((category) {
+                    return DropdownMenuItem<String>(
+                      value: category.id.toString(),
+                      child: Text(
+                        category.name!,
+                        style: AppStyles.font16BlackLight,
+                      ),
+                    );
+                  }).toList(),
+                  onChanged: (value) {
+                    setState(() {
+                      selectedBusinessTypeCategory = value;
+                      businessCubit.selectedBusinessTypeCategory =
+                          int.parse(value!);
+                    });
+                  },
+                  onSaved: (value) {
+                    businessCubit.selectedBusinessTypeCategory =
+                        int.parse(value!);
+                  },
+                  labelText: AppLocale.businessTypeCategory.getString(context),
+                ),
+                AppCustomDropDownButtonFormField(
+                  value: selectedBaseUnit,
+                  items: productsCubit.baseUnits!.map((material) {
+                    return DropdownMenuItem<String>(
+                      value: material.id.toString(),
+                      child: Text(
+                        material.name!,
+                        style: AppStyles.font16BlackLight,
+                      ),
+                    );
+                  }).toList(),
+                  onChanged: (value) {
+                    setState(() {
+                      selectedBaseUnit = value;
+                      businessCubit.selectedBaseUnit = int.parse(value!);
+                    });
+                  },
+                  onSaved: (value) {
+                    businessCubit.selectedBaseUnit = int.parse(value!);
+                  },
+                  labelText: AppLocale.baseUnit.getString(context),
+                ),
+              ],
             );
           },
         ),

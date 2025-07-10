@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_localization/flutter_localization.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:home4u/core/routing/router_observer.dart';
 import 'package:home4u/core/theming/app_colors.dart';
 import 'package:home4u/features/exhibition/presentation/widgets/add_product/up_down_form_field.dart';
 import 'package:home4u/features/products/logic/products_state.dart';
@@ -64,7 +63,7 @@ class _AddProductColorsAndStockState extends State<AddProductColorsAndStock> {
           builder: (context, state) {
             return AppCustomDropDownButtonFormField(
               value: selectedColorId,
-              items: productsCubit.colors.map((color) {
+              items: productsCubit.colors!.map((color) {
                 return DropdownMenuItem<String>(
                   value: color.id.toString(),
                   child: Text(
@@ -106,7 +105,7 @@ class _AddProductColorsAndStockState extends State<AddProductColorsAndStock> {
                         businessCubit.productStockAmountController.text);
                     if (stock > 0) {
                       final selectedColorObject =
-                      productsCubit.colors.firstWhere(
+                      productsCubit.colors!.firstWhere(
                             (element) => element.id.toString() == selectedColorId,
                         orElse: () => throw Exception("Color not found!"),
                       );

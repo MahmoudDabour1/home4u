@@ -6,6 +6,7 @@ import 'package:home4u/core/extensions/navigation_extension.dart';
 import 'package:home4u/core/routing/routes.dart';
 import 'package:home4u/core/utils/spacing.dart';
 import 'package:home4u/features/profile/data/models/profile/engineer_profile_response_model.dart';
+import 'package:home4u/features/profile/data/models/profile/engineering_office_profile_response_model.dart';
 import 'package:home4u/features/profile/data/models/profile/technical_worker_profile_response_model.dart';
 import 'package:home4u/features/profile/presentation/widgets/profile_widgets/profile_rating_widget.dart';
 import 'package:skeletonizer/skeletonizer.dart';
@@ -19,18 +20,20 @@ import '../../../logic/profile/profile_state.dart';
 class InformationWidget extends StatelessWidget {
   final EngineerProfileResponseModel? engineerProfileResponseModel;
   final TechnicalWorkerResponseModel? technicalWorkerProfileData;
+  final EngineeringOfficeProfileResponseModel? engineeringOfficeProfileData;
 
   const InformationWidget({
     super.key,
     this.engineerProfileResponseModel,
     this.technicalWorkerProfileData,
+    this.engineeringOfficeProfileData,
   });
 
   @override
   Widget build(BuildContext context) {
-    final profileData =
-        engineerProfileResponseModel?.data ?? technicalWorkerProfileData?.data;
-
+    final profileData = engineerProfileResponseModel?.data ??
+        technicalWorkerProfileData?.data ??
+        engineeringOfficeProfileData?.data;
     return Padding(
       padding: EdgeInsets.symmetric(horizontal: 24.w),
       child: BlocBuilder<ProfileCubit, ProfileState>(
@@ -41,8 +44,9 @@ class InformationWidget extends StatelessWidget {
               Skeletonizer(
                 enabled: state is LoadingProfileData,
                 child: Text(
-                  "${(profileData as dynamic)?.user?.firstName} ${(profileData as dynamic)?.user?.lastName}" ??
-                      "",
+                  engineeringOfficeProfileData?.data == null
+                      ? "${(profileData as dynamic)?.user?.firstName} ${(profileData as dynamic)?.user?.lastName}"
+                      : "${(profileData as dynamic)?.name}" ?? "",
                   style: AppStyles.font16BlackSemiBold,
                 ),
               ),
@@ -50,17 +54,29 @@ class InformationWidget extends StatelessWidget {
               Skeletonizer(
                 enabled: state is LoadingProfileData,
                 child: Text(
-                  (profileData as dynamic)?.type?.name ?? "",
+                  engineeringOfficeProfileData?.data == null
+                      ? (profileData as dynamic)?.type?.name
+                      : (profileData as dynamic)
+                              ?.engineeringOfficeField
+                              ?.name ??
+                          "" ??
+                          "",
                   style: AppStyles.font16BlackLight,
                 ),
               ),
               verticalSpace(8),
-              ProfileRatingWidget(),
+              ProfileRatingWidget(
+                initialRating: engineeringOfficeProfileData?.data == null ?
+                    (profileData as dynamic)?.averageRate?.toDouble() ?? 0.0 :
+                    (profileData as dynamic)?.averageRate?.toDouble() ?? 0.0,
+              ),
               verticalSpace(8),
               Skeletonizer(
                 enabled: state is LoadingProfileData,
                 child: Text(
-                  (profileData as dynamic)?.bio ?? "",
+                  engineeringOfficeProfileData?.data != null
+                      ? (profileData as dynamic)?.description ?? ""
+                      : (profileData as dynamic)?.bio ?? "",
                   style: AppStyles.font16BlackLight,
                   textAlign: TextAlign.center,
                 ),

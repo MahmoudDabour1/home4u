@@ -10,34 +10,47 @@ class AppCustomSearchTextField extends StatelessWidget {
   final TextEditingController? controller;
   final void Function(String)? onChanged;
   final void Function(String?)? onSaved;
-  const AppCustomSearchTextField({super.key, this.controller, this.onChanged, this.onSaved});
+  final Color? fillColor;
+  final bool? isHasBorder;
+  final String? hintText;
+  final TextStyle? hintStyle;
+  final double? borderRadius;
+  final void Function(String?)? onFieldSubmitted;
+
+  const AppCustomSearchTextField({super.key,
+    this.controller,
+    this.onChanged,
+    this.onSaved,
+    this.fillColor,
+    this.isHasBorder = false, this.hintText, this.hintStyle, this.borderRadius, this.onFieldSubmitted,});
 
   @override
   Widget build(BuildContext context) {
     return TextFormField(
-      controller:controller ,
+      controller: controller,
       onChanged: onChanged,
-      onSaved:  onSaved,
+      onFieldSubmitted: onFieldSubmitted,
+      onSaved: onSaved,
       onTapOutside: (event) {
         FocusManager.instance.primaryFocus?.unfocus();
       },
       keyboardType: TextInputType.text,
       decoration: InputDecoration(
-        constraints: BoxConstraints(
-          maxHeight: 40.h,
-        ),
-        hintText: AppLocale.search.getString(context),
+        // constraints: BoxConstraints(
+        //   maxHeight: 40.h,
+        // ),
+        hintText: hintText ?? AppLocale.search.getString(context),
         prefixIcon: Icon(
           Icons.search_outlined,
           color: AppColors.grayColor,
           size: 25.r,
         ),
         border: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(16.r),
-          borderSide: BorderSide.none,
+          borderRadius: BorderRadius.circular(borderRadius ?? 16.r),
+          borderSide: isHasBorder == true ? BorderSide() : BorderSide.none,
         ),
-        hintStyle: AppStyles.font16GrayLight,
-        fillColor: AppColors.whiteColor,
+        hintStyle: hintStyle ?? AppStyles.font16GrayLight,
+        fillColor: fillColor ?? AppColors.whiteColor,
         filled: true,
         // hoverColor: AppColors.blueColor,
       ),

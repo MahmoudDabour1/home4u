@@ -13,7 +13,7 @@ class AppCustomAddButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Align(
-      alignment: Alignment.centerRight,
+      alignment: AlignmentDirectional.centerEnd,
       child: IconButton(
         onPressed: onPressed,
         icon: Row(
@@ -27,7 +27,7 @@ class AppCustomAddButton extends StatelessWidget {
             horizontalSpace(10),
             Text(
               text,
-              style: AppStyles.font16DarkBlueLight,
+              style: AppStyles.font16BlackMedium,
             ),
           ],
         ),

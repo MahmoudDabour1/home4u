@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:home4u/core/utils/spacing.dart';
 
 import '../drawer_header_widget.dart';
@@ -12,10 +13,16 @@ class ProductsDrawer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Drawer(
-      width: MediaQuery.sizeOf(context).width * 0.56,
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.only(
+          topRight: Radius.circular(24.r),
+          bottomRight: Radius.circular(24.r),
+        ),
+      ),
+      width: MediaQuery.sizeOf(context).width * 0.65,
       child: Column(
         children: [
-          verticalSpace(32),
+          verticalSpace(64),
           DrawerHeaderWidget(),
           verticalSpace(32),
           DrawerListView(

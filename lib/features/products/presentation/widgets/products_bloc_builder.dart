@@ -35,6 +35,9 @@ class _ProductsBlocBuilderState extends State<ProductsBlocBuilder>
   @override
   void didPop() {
     logger.i('Exited from Products Page');
+    final productsCubit = context.read<ProductsCubit>();
+    productsCubit.resetPagination();
+    productsCubit.getProducts(isRefresh: true);
   }
 
   @override

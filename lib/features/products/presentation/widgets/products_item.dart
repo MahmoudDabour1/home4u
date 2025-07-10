@@ -36,14 +36,14 @@ class ProductsItem extends StatelessWidget {
         child: Column(
           children: [
             Container(
-              height: MediaQuery.sizeOf(context).height * 0.52,
+              height: MediaQuery.sizeOf(context).height * 0.50,
               width: MediaQuery.sizeOf(context).width,
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(16.r),
                 color: AppColors.whiteColor,
                 boxShadow: [
                   BoxShadow(
-                    color: AppColors.blackColor.withOpacity(0.1),
+                    color: AppColors.blackColor.withValues(alpha:0.1),
                     blurRadius: 10,
                     spreadRadius: 1,
                     offset: Offset(0, 4),

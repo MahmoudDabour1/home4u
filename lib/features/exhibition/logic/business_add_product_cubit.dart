@@ -38,6 +38,7 @@ class BusinessAddProductCubit extends Cubit<BusinessAddProductState> {
 
   int? selectedBaseUnit;
   int? selectedExhibitionBusinessType;
+  int? selectedBusinessTypeCategory;
   List<int>? selectedMaterials;
   int? selectedColor;
 
@@ -68,6 +69,11 @@ class BusinessAddProductCubit extends Cubit<BusinessAddProductState> {
     if (selectedExhibitionBusinessType == null || selectedBaseUnit == null) {
       emit(BusinessAddProductState.addBusinessProductFailure(
           "Please select a business type and base unit."));
+      return;
+    }
+    if (selectedBusinessTypeCategory == null) {
+      emit(BusinessAddProductState.addBusinessProductFailure(
+          "Please select a business type category."));
       return;
     }
     isUpdate
@@ -130,11 +136,14 @@ class BusinessAddProductCubit extends Cubit<BusinessAddProductState> {
       final colorId = item["colorId"];
       final stockAmount = item["stock"];
 
-      final existingStocks = productData?.data.stocks.map((stock) => Stock(
-        id: stock.id,
-        color: BaseUnit(id: stock.color.id),
-        amount: stock.amount,
-      )).toList() ?? [];
+      final existingStocks = productData?.data.stocks
+              .map((stock) => Stock(
+                    id: stock.id,
+                    color: BaseUnit(id: stock.color.id),
+                    amount: stock.amount,
+                  ))
+              .toList() ??
+          [];
 
       if (selectedColorsAndStock.isEmpty && productData != null) {
         uniqueStocks.addAll(existingStocks);
@@ -144,16 +153,14 @@ class BusinessAddProductCubit extends Cubit<BusinessAddProductState> {
           final stockAmount = item["stock"];
 
           final existingStock = existingStocks.firstWhere(
-                (stock) => stock.color.id == colorId,
-            orElse: () =>
-                Stock(id: null,
-                    color: BaseUnit(id: colorId),
-                    amount: stockAmount),
+            (stock) => stock.color.id == colorId,
+            orElse: () => Stock(
+                id: null, color: BaseUnit(id: colorId), amount: stockAmount),
           );
           if (!seen.contains(colorId)) {
             seen.add(colorId);
             uniqueStocks.add(Stock(
-              id: existingStock?.id,
+              id: existingStock.id,
               color: BaseUnit(id: colorId),
               amount: stockAmount,
             ));
@@ -179,6 +186,7 @@ class BusinessAddProductCubit extends Cubit<BusinessAddProductState> {
       descriptionAr: productDescriptionArController.text,
       descriptionEn: productDescriptionEnController.text,
       businessType: BaseUnit(id: selectedExhibitionBusinessType!),
+      businessTypeCategory: BaseUnit(id: selectedBusinessTypeCategory!),
       price: double.parse(productPriceController.text),
       length: double.parse(productLengthController.text),
       width: double.parse(productWidthController.text),
@@ -186,12 +194,16 @@ class BusinessAddProductCubit extends Cubit<BusinessAddProductState> {
       baseUnit: BaseUnit(id: selectedBaseUnit!),
       materials: (selectedMaterials != null && selectedMaterials!.isNotEmpty)
           ? selectedMaterials!.map((e) => BaseUnit(id: e)).toList()
-          : productData?.data.materials.map((e) => BaseUnit(id: e.id)).toList() ?? [],
+          : productData?.data.materials
+                  .map((e) => BaseUnit(id: e.id))
+                  .toList() ??
+              [],
       stocks: uniqueStocks,
       imagePaths: isUpdateData ? beforeAddedImages : [],
     );
   }
 
+  ///Step :: 2
   Future<void> _addBusinessProductImages(int productId) async {
     emit(const BusinessAddProductState.addBusinessProductImageLoading());
 
@@ -219,6 +231,7 @@ class BusinessAddProductCubit extends Cubit<BusinessAddProductState> {
     );
   }
 
+  ///Step :: 3
   Future<void> _uploadBusinessImages(
       BusinessAddProductImagesResponse imageResponse) async {
     emit(const BusinessAddProductState.uploadBusinessImageLoading());
@@ -269,14 +282,14 @@ class BusinessAddProductCubit extends Cubit<BusinessAddProductState> {
     final productCubit = context.read<ProductsCubit>();
 
     final materialNames = selectedMaterials?.map((id) {
-          final material = productCubit.materials.firstWhere(
+          final material = productCubit.materials!.firstWhere(
             (material) => material.id == id,
           );
           return material.name ?? 'N/A';
         }).join(', ') ??
         '';
 
-    final baseUnitName = productCubit.baseUnits
+    final baseUnitName = productCubit.baseUnits!
             .firstWhere(
               (unit) => unit.id == selectedBaseUnit,
             )
@@ -284,7 +297,7 @@ class BusinessAddProductCubit extends Cubit<BusinessAddProductState> {
         'N/A';
 
     final productStockAndColors = selectedColorsAndStock.map((item) {
-      final color = productCubit.colors.firstWhere(
+      final color = productCubit.colors!.firstWhere(
         (element) => element.id == item["colorId"],
       );
       return {

@@ -8,13 +8,15 @@ final ThemeData appTheme = ThemeData(
   primaryColor: AppColors.primaryColor,
   fontFamily: "IBM Plex Sans Arabic",
   appBarTheme: AppBarTheme(
+    backgroundColor: Colors.transparent,
+    elevation: 0,
     systemOverlayStyle: SystemUiOverlayStyle(
-      statusBarColor: Colors.black,
-      statusBarBrightness: Brightness.dark,
+      statusBarColor: Colors.transparent,
+      statusBarBrightness: Brightness.light,
       statusBarIconBrightness: Brightness.dark,
+      systemNavigationBarColor: Colors.white,
       systemNavigationBarIconBrightness: Brightness.dark,
-      systemNavigationBarColor: Colors.black,
-      systemNavigationBarDividerColor: Colors.black,
+      systemNavigationBarDividerColor: Colors.transparent,
     ),
   ),
 );

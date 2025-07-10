@@ -67,13 +67,15 @@ class FreeLancerDataAdapter extends TypeAdapter<FreeLancerData> {
       bio: fields[6] as String?,
       linkedin: fields[7] as String?,
       behance: fields[8] as String?,
+      facebookLink: fields[9] as String?,
+      averageRate: fields[10] as double?,
     );
   }
 
   @override
   void write(BinaryWriter writer, FreeLancerData obj) {
     writer
-      ..writeByte(9)
+      ..writeByte(11)
       ..writeByte(0)
       ..write(obj.id)
       ..writeByte(1)
@@ -91,7 +93,11 @@ class FreeLancerDataAdapter extends TypeAdapter<FreeLancerData> {
       ..writeByte(7)
       ..write(obj.linkedin)
       ..writeByte(8)
-      ..write(obj.behance);
+      ..write(obj.behance)
+      ..writeByte(9)
+      ..write(obj.facebookLink)
+      ..writeByte(10)
+      ..write(obj.averageRate);
   }
 
   @override
@@ -292,8 +298,10 @@ FreeLancerData _$FreeLancerDataFromJson(Map<String, dynamic> json) =>
           ?.map((e) => FreeLancerType.fromJson(e as Map<String, dynamic>))
           .toList(),
       bio: json['bio'] as String?,
-      linkedin: json['linkedin'] as String?,
-      behance: json['behance'] as String?,
+      linkedin: json['linkedinLink'] as String?,
+      behance: json['behanceLink'] as String?,
+      facebookLink: json['facebookLink'] as String?,
+      averageRate: (json['averageRate'] as num?)?.toDouble(),
     );
 
 Map<String, dynamic> _$FreeLancerDataToJson(FreeLancerData instance) =>
@@ -305,8 +313,10 @@ Map<String, dynamic> _$FreeLancerDataToJson(FreeLancerData instance) =>
       'yearsOfExperience': instance.yearsOfExperience,
       'engineerServ': instance.engineerServ,
       'bio': instance.bio,
-      'linkedin': instance.linkedin,
-      'behance': instance.behance,
+      'linkedinLink': instance.linkedin,
+      'behanceLink': instance.behance,
+      'facebookLink': instance.facebookLink,
+      'averageRate': instance.averageRate,
     };
 
 FreeLancerType _$FreeLancerTypeFromJson(Map<String, dynamic> json) =>

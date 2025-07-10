@@ -27,10 +27,12 @@ class _AddProductImagesState extends State<AddProductImages> {
         return Column(
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.start,
+          spacing: 32.h,
           children: [
             SelectImageWidget(
               cubit: businessCubit,
               images: images,
+              updateImageCallback: businessCubit.updateSelectedImages,
             ),
             if (businessCubit.images.isNotEmpty ||
                 businessCubit.storedImages.isNotEmpty)

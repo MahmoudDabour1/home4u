@@ -12,6 +12,7 @@ class AppCustomDropDownButtonFormField extends StatelessWidget {
   final void Function(String?)? onSaved;
   final Color? fillColor;
   final double? verticalPadding;
+  final bool isEnabled;
 
   const AppCustomDropDownButtonFormField({
     super.key,
@@ -23,12 +24,15 @@ class AppCustomDropDownButtonFormField extends StatelessWidget {
     this.onSaved,
     this.fillColor,
     this.verticalPadding,
+    this.isEnabled = true,
   });
 
   @override
   Widget build(BuildContext context) {
     return DropdownButtonFormField<String>(
-      isExpanded: true,
+      isExpanded: isEnabled,
+      iconDisabledColor: AppColors.darkRedColor,
+
       value: value,
       icon: Icon(
         Icons.keyboard_arrow_down_outlined,

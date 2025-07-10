@@ -1,4 +1,4 @@
-import 'dart:io';
+import 'dart:developer';
 
 import 'package:bottom_picker/bottom_picker.dart';
 import 'package:bottom_picker/resources/arrays.dart';
@@ -14,7 +14,6 @@ import 'package:home4u/features/profile/data/models/projects/get_projects_respon
 import 'package:home4u/features/profile/logic/project/project_cubit.dart';
 import 'package:home4u/features/profile/logic/project/project_state.dart';
 
-import '../../../../../core/helpers/helper_methods.dart';
 import '../../../../../core/utils/app_constants.dart';
 import '../../../../../core/utils/spacing.dart';
 import '../../../../../core/widgets/app_custom_button.dart';
@@ -41,17 +40,17 @@ class AddProjectInfo extends StatelessWidget {
           cubit.projectEndDateController.text =
               formatDate(projectData!.endDate) ?? '';
           cubit.projectToolsController.text = projectData!.tools ?? '';
-          if (projectData!.coverPath != null) {
-            final file = File(projectData!.coverPath!);
-            if (file.existsSync()) {
-              cubit.coverImage = file;
-            } else {
-              showToast(
-                message: "fileNotFound",
-                isError: true,
-              );
-            }
-          }
+          // if (projectData!.coverPath != null) {
+          //   final file = File(projectData!.coverPath!);
+          //   if (file.existsSync()) {
+          //     cubit.coverImage = file;
+          //   } else {
+          //     showToast(
+          //       message: "fileNotFound",
+          //       isError: true,
+          //     );
+          //   }
+          // }
         }
         if (state is ProjectFailureState) {
           return Center(child: Text(state.errorMessage));
@@ -63,13 +62,13 @@ class AddProjectInfo extends StatelessWidget {
                 SelectImageWidget(
                   cubit: cubit,
                   images: cubit.images,
-                  isCoverImage: false,
+                  updateImageCallback: cubit.updateSelectedImages,
                 ),
                 verticalSpace(16),
                 SelectImageWidget(
                   cubit: cubit,
-                  images: [if (cubit.coverImage != null) cubit.coverImage!],
-                  isCoverImage: true,
+                  images: cubit.coverImage,
+                  updateImageCallback: cubit.updateSelectedCoversImages,
                 ),
                 verticalSpace(16),
                 verticalSpace(16),
@@ -195,7 +194,7 @@ class AddProjectInfo extends StatelessWidget {
         fontSize: 16.sp,
       ),
       onChange: (index) {
-        print(index);
+        log(index);
       },
       onSubmit: (index) {
         String formattedDate =

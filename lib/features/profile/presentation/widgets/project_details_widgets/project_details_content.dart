@@ -37,10 +37,9 @@ class ProjectDetailsContent extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           AuthWelcomeData(
-            headText: profileData?.data?.type?.name ?? "",
+            headText: profileData?.data?.user.userType?.name??profileData?.data?.type?.name ?? "",
             subText: '',
           ),
-          verticalSpace(32),
           Padding(
             padding: EdgeInsets.symmetric(
               horizontal: 24.0.w,
