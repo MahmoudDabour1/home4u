@@ -1,1 +1,7 @@
-3.32.6
+{
+  "flutter": "3.32.6",
+  "flavors": {
+    "production": "3.32.6",
+    "development": "3.32.6"
+  }
+}
