@@ -8,9 +8,9 @@ class AddAskEngineerRequestBody {
   AddAskEngineerRequestBody({
     required this.askEngineer,
     required this.comment,
-    required this.isAccepted,
-    required this.isFinished,
-    required this.isRejected,
+    this.isAccepted,
+    this.isFinished,
+    this.isRejected,
   });
 
   factory AddAskEngineerRequestBody.fromJson(Map<String, dynamic> json) {

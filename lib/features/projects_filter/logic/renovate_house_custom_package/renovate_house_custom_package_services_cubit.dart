@@ -1,4 +1,5 @@
 import 'package:bloc/bloc.dart';
+import 'package:flutter/material.dart';
 import 'package:home4u/features/projects_filter/data/repository/renovate_house_custom_package_services_repository.dart';
 import 'package:home4u/features/projects_filter/logic/renovate_house_custom_package/renovate_house_custom_package_services_state.dart';
 
@@ -12,6 +13,10 @@ class RenovateHouseCustomPackageServicesCubit
   RenovateHouseCustomPackageServicesCubit(
       this._renovateHouseCustomPackageServicesRepository)
       : super(const RenovateHouseCustomPackageServicesState.initial());
+
+  ///Controllers
+  final TextEditingController commentController = TextEditingController();
+  final GlobalKey<FormState> customPackageFormKey = GlobalKey<FormState>();
 
   /// Renovate House Custom Package Details
   Future<void> renovateHouseCustomPackageServiceDetails({

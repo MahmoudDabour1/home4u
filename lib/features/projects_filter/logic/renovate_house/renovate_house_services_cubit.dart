@@ -1,4 +1,5 @@
 import 'package:bloc/bloc.dart';
+import 'package:flutter/material.dart';
 import 'package:home4u/features/projects_filter/logic/renovate_house/renovate_house_services_state.dart';
 
 import '../../data/models/add_request/renovate_house/add_renovate_house_request_body.dart';
@@ -9,6 +10,10 @@ class RenovateHouseServicesCubit extends Cubit<RenovateHouseServicesState> {
 
   RenovateHouseServicesCubit(this._renovateHouseServicesRepository)
       : super(const RenovateHouseServicesState.initial());
+
+  ///Controllers
+  final TextEditingController commentController = TextEditingController();
+  final GlobalKey<FormState> renovateHouseFormKey = GlobalKey<FormState>();
 
   /// Renovate House Asks
   Future<void> getRenovateHouseAsks({

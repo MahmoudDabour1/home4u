@@ -426,6 +426,7 @@ class AppLocale {
 
 
 
+  static const String addOffer = 'Add Offer';
 
   static const Map<String, dynamic> en = {
     onBoardingTitle1: 'Civil Works & Finishing Services',
@@ -785,6 +786,7 @@ class AppLocale {
     maxDuration: 'Max Duration',
     max: 'Max',
     min: 'Min',
+    addOffer : 'Add Offer',
   };
 
   static const Map<String, dynamic> ar = {
@@ -1141,5 +1143,6 @@ class AppLocale {
     maxDuration: 'الحد الأقصى للمدة',
     max: 'الحد الأقصى',
     min: 'الحد الأدنى',
+    addOffer : 'إضافة عرض',
   };
 }

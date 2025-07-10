@@ -4,7 +4,6 @@ import 'package:flutter_localization/flutter_localization.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:home4u/features/user/home/data/models/recommended_for_you_response_model.dart';
 
-import '../../../../../../core/utils/spacing.dart';
 import '../../../../../../locale/app_locale.dart';
 import '../../../logic/home_cubit.dart';
 import '../../../logic/home_state.dart';

@@ -23,24 +23,18 @@ class ProjectsFilterTabBarWidget extends StatelessWidget {
         final cubit = context.read<ProjectsFilterCubit>();
         switch (index) {
           case 0:
-            cubit.changeTab(ProjectsFilterTabEnum.furnishYourHome);
-            break;
-          case 1:
             cubit.changeTab(ProjectsFilterTabEnum.requestDesign);
             break;
-          case 2:
-            cubit.changeTab(ProjectsFilterTabEnum.kitchensAndDressing);
-            break;
-          case 3:
+          case 1:
             cubit.changeTab(ProjectsFilterTabEnum.customPackage);
             break;
-          case 4:
+          case 2:
             cubit.changeTab(ProjectsFilterTabEnum.renovateYourHouse);
             break;
-          case 5:
+          case 3:
             cubit.changeTab(ProjectsFilterTabEnum.askEngineer);
             break;
-          case 6:
+          case 4:
             cubit.changeTab(ProjectsFilterTabEnum.askTechnicalWorker);
             break;
         }
@@ -65,23 +59,15 @@ class ProjectsFilterTabBarWidget extends StatelessWidget {
       ),
       tabs: [
         ProjectsFilterCustomTab(
-          label: AppLocale.furnishTitle.getString(context),
-          iconPath: AppAssets.furnishYourHomeIcon,
-        ),
-        ProjectsFilterCustomTab(
           label: AppLocale.requestDesign.getString(context),
           iconPath: AppAssets.requestDesignIcon,
         ),
         ProjectsFilterCustomTab(
-          label: AppLocale.kitchensAndDressing.getString(context),
-          iconPath: AppAssets.kitchensAndDressingIcon,
-        ),
-        ProjectsFilterCustomTab(
-          label: AppLocale.customPackage.getString(context),
+          label: AppLocale.renovateYourHouse.getString(context),
           iconPath: AppAssets.renovateYourHomeIcon,
         ),
         ProjectsFilterCustomTab(
-          label: AppLocale.renovateYourHouse.getString(context),
+          label: AppLocale.customPackage.getString(context),
           iconPath: AppAssets.renovateYourHomeIcon,
         ),
         ProjectsFilterCustomTab(

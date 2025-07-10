@@ -6,7 +6,6 @@ import 'package:home4u/features/user/home/data/models/top_best_seller_response_m
 import 'package:home4u/features/user/home/logic/home_cubit.dart';
 import 'package:home4u/locale/app_locale.dart';
 
-import '../../../../../../core/utils/spacing.dart';
 import '../../../logic/home_state.dart';
 import '../scroll_container_widget.dart';
 

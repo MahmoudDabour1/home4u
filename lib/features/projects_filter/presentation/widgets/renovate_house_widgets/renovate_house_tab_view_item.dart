@@ -20,15 +20,15 @@ class RenovateHouseTabViewItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        context.pushNamed(Routes.renovateHouseServiceDetailsScreen,
-          arguments: renovateItem.id,);
+        context.pushNamed(
+          Routes.renovateHouseServiceDetailsScreen,
+          arguments: renovateItem.id,
+        );
       },
       child: Stack(
         children: [
           Container(
-            width: MediaQuery
-                .sizeOf(context)
-                .width,
+            width: MediaQuery.sizeOf(context).width,
             decoration: BoxDecoration(
               color: AppColors.containersColor,
               borderRadius: BorderRadius.circular(24.r),

@@ -1,21 +1,21 @@
 class AddRequestDesignRequestBody {
-  final SelectCustomPackage selectCustomPackage;
+  final RequestDesignItem requestDesignItem;
   final String comment;
   final bool? isAccepted;
   final bool? isFinished;
   final bool? isRejected;
 
   AddRequestDesignRequestBody({
-    required this.selectCustomPackage,
+    required this.requestDesignItem,
     required this.comment,
-    required this.isAccepted,
-    required this.isFinished,
-    required this.isRejected,
+    this.isAccepted,
+    this.isFinished,
+    this.isRejected,
   });
 
   Map<String, dynamic> toJson() {
     return {
-      "selectCustomPackage": selectCustomPackage.id,
+      "requestDesign": requestDesignItem.toJson(),
       "comment": comment,
       "isAccepted": isAccepted,
       "isFinished": isFinished,
@@ -25,7 +25,7 @@ class AddRequestDesignRequestBody {
 
   factory AddRequestDesignRequestBody.fromJson(Map<String, dynamic> json) {
     return AddRequestDesignRequestBody(
-      selectCustomPackage: SelectCustomPackage(id: json['selectCustomPackage']),
+      requestDesignItem: RequestDesignItem(id: json['requestDesign']),
       comment: json['comment'],
       isAccepted: json['isAccepted'] as bool?,
       isFinished: json['isFinished'] as bool?,
@@ -34,10 +34,22 @@ class AddRequestDesignRequestBody {
   }
 }
 
-class SelectCustomPackage {
+class RequestDesignItem {
   final int id;
 
-  SelectCustomPackage({
+  RequestDesignItem({
     required this.id,
   });
+
+  Map<String, dynamic> toJson() {
+    return {
+      "id": id,
+    };
+  }
+
+  factory RequestDesignItem.fromJson(Map<String, dynamic> json) {
+    return RequestDesignItem(
+      id: json['id'],
+    );
+  }
 }

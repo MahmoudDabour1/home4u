@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../../../core/theming/app_colors.dart';
-import '../filter_offer_badge_widget.dart';
 import 'furnish_house_tab_view_content.dart';
 
 class FurnishHouseTabViewItem extends StatelessWidget {

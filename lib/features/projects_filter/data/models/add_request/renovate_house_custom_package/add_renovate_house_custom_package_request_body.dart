@@ -8,9 +8,9 @@ class AddRenovateHouseCustomPackageRequestBody {
   AddRenovateHouseCustomPackageRequestBody({
     required this.selectCustomPackage,
     required this.comment,
-    required this.isAccepted,
-    required this.isFinished,
-    required this.isRejected,
+    this.isAccepted,
+    this.isFinished,
+    this.isRejected,
   });
 
   factory AddRenovateHouseCustomPackageRequestBody.fromJson(

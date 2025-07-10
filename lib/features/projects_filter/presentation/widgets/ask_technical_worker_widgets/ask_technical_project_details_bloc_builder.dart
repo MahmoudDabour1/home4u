@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_localization/flutter_localization.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:home4u/core/theming/app_styles.dart';
 import 'package:home4u/core/widgets/app_custom_loading_indicator.dart';
+import 'package:home4u/features/projects_filter/presentation/widgets/ask_technical_worker_widgets/add_offer_ask_technical_button.dart';
 import 'package:home4u/features/projects_filter/presentation/widgets/ask_technical_worker_widgets/ask_technical_tab_view_item_title.dart';
 import 'package:home4u/features/projects_filter/presentation/widgets/details/project_details_governorate_city_row.dart';
 import 'package:home4u/features/projects_filter/presentation/widgets/details/project_details_item_value.dart';
@@ -24,13 +24,12 @@ class AskTechnicalProjectDetailsBlocBuilder extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocBuilder<AskTechnicalServicesCubit, AskTechnicalServicesState>(
-      buildWhen: (previous, current) =>
-          current.maybeWhen(
-            askTechnicalServiceDetailsLoading: () => true,
-            askTechnicalServiceDetailsSuccess: (_) => true,
-            askTechnicalServiceDetailsFailure: (_) => true,
-            orElse: () => false,
-          ),
+      buildWhen: (previous, current) => current.maybeWhen(
+        askTechnicalServiceDetailsLoading: () => true,
+        askTechnicalServiceDetailsSuccess: (_) => true,
+        askTechnicalServiceDetailsFailure: (_) => true,
+        orElse: () => false,
+      ),
       builder: (context, state) {
         return state.maybeWhen(
           askTechnicalServiceDetailsLoading: () => SizedBox(
@@ -102,12 +101,10 @@ class AskTechnicalProjectDetailsBlocBuilder extends StatelessWidget {
                     ),
                   ),
                 ),
-                askTechnical.requestCount == 0
-                    ? SizedBox.shrink()
-                    : Text(
-                        "${AppLocale.offersCount.getString(context)} (${(askTechnical.requestCount ?? 0).toString()})",
-                        style: AppStyles.font16BlackMedium,
-                      ),
+                AddOfferAskTechnicalButton(
+                  askId: askTechnical.id ?? 0,
+                  requestCount: askTechnical.requestCount,
+                ),
               ],
             );
           },

@@ -7,13 +7,13 @@ import 'package:home4u/features/projects_filter/logic/request_design/request_des
 import 'package:home4u/features/projects_filter/presentation/widgets/request_design_widgets/request_design_tab_view_item_title.dart';
 
 import '../../../../../core/theming/app_colors.dart';
-import '../../../../../core/theming/app_styles.dart';
 import '../../../../../core/utils/app_constants.dart';
 import '../../../../../core/widgets/app_custom_loading_indicator.dart';
 import '../../../../../locale/app_locale.dart';
 import '../details/project_details_governorate_city_row.dart';
 import '../details/project_details_item_value.dart';
 import '../filter_image_and_name_widget.dart';
+import 'add_offer_request_design_button.dart';
 
 class RequestDesignServiceDetailsContent extends StatelessWidget {
   const RequestDesignServiceDetailsContent({super.key});
@@ -109,12 +109,10 @@ class RequestDesignServiceDetailsContent extends StatelessWidget {
                     ),
                   ),
                 ),
-                requestDesignData.requestCount == 0
-                    ? SizedBox.shrink()
-                    : Text(
-                        "${AppLocale.offersCount.getString(context)} (${(requestDesignData.requestCount ?? 0).toString()})",
-                        style: AppStyles.font16BlackMedium,
-                      ),
+                AddOfferRequestDesignButton(
+                  askId: requestDesignData.id ?? 0,
+                  requestCount: requestDesignData.requestCount,
+                ),
               ],
             );
           },

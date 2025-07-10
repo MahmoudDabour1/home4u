@@ -5,13 +5,13 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:home4u/features/projects_filter/presentation/widgets/renovate_house_custom_package/renovate_house_custom_package_tab_view_item_title.dart';
 
 import '../../../../../core/theming/app_colors.dart';
-import '../../../../../core/theming/app_styles.dart';
 import '../../../../../core/utils/app_constants.dart';
 import '../../../../../locale/app_locale.dart';
 import '../../../logic/renovate_house_custom_package/renovate_house_custom_package_services_cubit.dart';
 import '../../../logic/renovate_house_custom_package/renovate_house_custom_package_services_state.dart';
 import '../details/project_details_item_value.dart';
 import '../filter_image_and_name_widget.dart';
+import 'add_offer_renovate_house_custom_package_button.dart';
 
 class RenovateHouseCustomPackageServiceDetailsContent extends StatelessWidget {
   const RenovateHouseCustomPackageServiceDetailsContent({super.key});
@@ -81,13 +81,9 @@ class RenovateHouseCustomPackageServiceDetailsContent extends StatelessWidget {
                     ),
                   ),
                 ),
-                renovateHouseData.requestCount == 0
-                    ? SizedBox.shrink()
-                    : Text(
-                  "${AppLocale.offersCount.getString(
-                      context)} (${(renovateHouseData.requestCount ?? 0)
-                      .toString()})",
-                  style: AppStyles.font16BlackMedium,
+                AddOfferRenovateHouseCustomPackageButton(
+                  requestCount: renovateHouseData.requestCount,
+                  askId: renovateHouseData.id ?? 0,
                 ),
               ],
             );

@@ -77,6 +77,18 @@ abstract class Routes {
   static const String renovateHouseServiceDetailsScreen =
       '/renovateHouseServiceDetailsScreen';
   static const String renovateHouseCustomPackageServiceDetailsScreen =
-      '/renovateHouseCustomPackageServiceDetailsScreen';static const String topWorkersScreen = '/TopWorkersScreen';
+      '/renovateHouseCustomPackageServiceDetailsScreen';
+
+  /// Offers
+  static const String addOfferAskEngineerScreen = '/addOfferAskEngineerScreen';
+  static const String addOfferAskTechnicalScreen =
+      '/addOfferAskTechnicalScreen';
+  static const String addOfferRenovateHouseScreen =
+      '/addOfferRenovateHouseScreen';
+  static const String addOfferRequestDesignScreen =
+      '/addOfferRequestDesignScreen';
+  static const String addOfferRenovateHouseCustomPackageScreen =
+      '/addOfferRenovateHouseCustomPackageScreen';
+  static const String topWorkersScreen = '/TopWorkersScreen';
   static const String topEngineersScreen = '/TopEngineersScreen';
 }

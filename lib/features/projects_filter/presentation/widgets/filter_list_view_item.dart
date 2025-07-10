@@ -3,7 +3,6 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../../core/theming/app_colors.dart';
 import 'filter_container_content.dart';
-import 'filter_offer_badge_widget.dart';
 
 class FilterListViewItem extends StatelessWidget {
   const FilterListViewItem({super.key});

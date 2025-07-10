@@ -4,11 +4,8 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:home4u/core/extensions/navigation_extension.dart';
 import 'package:home4u/core/routing/routes.dart';
 import 'package:home4u/core/theming/app_assets.dart';
-import 'package:home4u/core/theming/app_styles.dart';
-import 'package:home4u/core/theming/font_weight_helper.dart';
 
 import '../../../../../../core/utils/spacing.dart';
-import '../../../../../../core/widgets/app_custom_search_text_field.dart';
 
 class TodayOffersWidget extends StatefulWidget {
   const TodayOffersWidget({super.key});

@@ -27,7 +27,7 @@ class AppCustomAddButton extends StatelessWidget {
             horizontalSpace(10),
             Text(
               text,
-              style: AppStyles.font16DarkBlueLight,
+              style: AppStyles.font16BlackMedium,
             ),
           ],
         ),

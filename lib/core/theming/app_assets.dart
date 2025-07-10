@@ -125,5 +125,6 @@ abstract class AppAssets {
   static const String furnitureImage = 'assets/images/furniture_image.jpg';
   static const String kitchensImage = 'assets/images/kitchens_image.jpg';
   static const String paintMaterials = 'assets/images/paint_materials_image.jpg';
+  static const String comingSoonOneJpg = 'assets/images/coming_soon_1.jpg';
 }
 

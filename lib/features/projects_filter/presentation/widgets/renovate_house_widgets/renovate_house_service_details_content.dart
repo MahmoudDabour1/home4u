@@ -7,13 +7,13 @@ import 'package:home4u/features/projects_filter/logic/renovate_house/renovate_ho
 import 'package:home4u/features/projects_filter/presentation/widgets/renovate_house_widgets/renovate_house_tab_view_item_title.dart';
 
 import '../../../../../core/theming/app_colors.dart';
-import '../../../../../core/theming/app_styles.dart';
 import '../../../../../core/utils/app_constants.dart';
 import '../../../../../locale/app_locale.dart';
 import '../details/project_details_governorate_city_row.dart';
 import '../details/project_details_item_value.dart';
 import '../filter_image_and_name_widget.dart';
 import '../project_skills_needed_widget.dart';
+import 'add_offer_renovate_house_button.dart';
 
 class RenovateHouseServiceDetailsContent extends StatelessWidget {
   const RenovateHouseServiceDetailsContent({super.key});
@@ -150,12 +150,10 @@ class RenovateHouseServiceDetailsContent extends StatelessWidget {
                     ),
                   ),
                 ),
-                renovateHouseData.requestCount == 0
-                    ? SizedBox.shrink()
-                    : Text(
-                        "${AppLocale.offersCount.getString(context)} (${(renovateHouseData.requestCount ?? 0).toString()})",
-                        style: AppStyles.font16BlackMedium,
-                      ),
+                AddOfferRenovateHouseButton(
+                  askId: renovateHouseData.id ?? 0,
+                  requestCount: renovateHouseData.requestCount,
+                ),
               ],
             );
           },

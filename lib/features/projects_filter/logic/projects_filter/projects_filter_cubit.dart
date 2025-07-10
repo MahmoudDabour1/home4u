@@ -62,9 +62,9 @@ class ProjectsFilterCubit extends Cubit<ProjectsFilterState> {
   int? selectedMaterialId;
   int? selectedUrgencyLevelId;
   int? selectedEngineerTypeId;
-  ProjectsFilterTabEnum currentTab = ProjectsFilterTabEnum.furnishYourHome;
+  ProjectsFilterTabEnum currentTab = ProjectsFilterTabEnum.requestDesign;
 
-  //reset filter
+  ///reset filter
   void resetFilter() {
     selectedUnitTypeId = null;
     selectedGovernorateId = null;
@@ -81,26 +81,20 @@ class ProjectsFilterCubit extends Cubit<ProjectsFilterState> {
     searchController?.clear();
     switch (currentTab) {
       case ProjectsFilterTabEnum.requestDesign:
-        resetPaginationOfRequestDesign();
+        getRequestDesignFilter(isRefresh: true);
         break;
       case ProjectsFilterTabEnum.customPackage:
-        resetPaginationOfCustomPackage();
+        getFixedPackagesFilter(isRefresh: true);
         break;
       case ProjectsFilterTabEnum.renovateYourHouse:
-        resetPaginationOfFixedPackage();
+        renovateHouseCustomPackages(isRefresh: true);
         break;
       case ProjectsFilterTabEnum.askTechnicalWorker:
-        resetPaginationOfAskTechnical();
+        askTechnicalWorkerFilter(isRefresh: true);
         break;
       case ProjectsFilterTabEnum.askEngineer:
-        resetPaginationOfAskEngineer();
+        askEngineerFilter(isRefresh: true);
         break;
-      case ProjectsFilterTabEnum.furnishYourHome:
-        // TODO: Handle this case.
-        throw UnimplementedError();
-      case ProjectsFilterTabEnum.kitchensAndDressing:
-        // TODO: Handle this case.
-        throw UnimplementedError();
     }
   }
 
@@ -572,5 +566,4 @@ class ProjectsFilterCubit extends Cubit<ProjectsFilterState> {
       },
     );
   }
-
 }
