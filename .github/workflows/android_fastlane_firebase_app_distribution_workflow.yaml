@@ -19,16 +19,22 @@ jobs:
           java-version: 21
           distribution: 'temurin'
 
+      - name: Install Flutter (Temporary for Dart & FVM)
+        uses: subosito/flutter-action@v2
+        with:
+          flutter-version: '3.32.6' # Match your .fvmrc version
+          channel: stable
+
       - name: Install FVM
         run: dart pub global activate fvm
 
-      - name: Install Flutter using FVM
+      - name: Install Flutter SDK via FVM
         run: |
           fvm install
           fvm flutter --version
 
-      - name: Set Flutter PATH
-        run: echo "$HOME/fvm/default/bin" >> $GITHUB_PATH
+      - name: Set FVM Flutter to PATH
+        run: echo "$(fvm flutter sdk-path)/bin" >> $GITHUB_PATH
 
       - name: Get Dependencies
         run: fvm flutter pub get
