@@ -15,12 +15,8 @@ class ProjectFilterButtonsWidget extends StatelessWidget {
       onConfirm: () {
         final cubit = context.read<ProjectsFilterCubit>();
         switch (cubit.currentTab) {
-          case ProjectsFilterTabEnum.furnishYourHome:
-            break;
           case ProjectsFilterTabEnum.requestDesign:
             cubit.getRequestDesignFilter(isRefresh: true);
-            break;
-          case ProjectsFilterTabEnum.kitchensAndDressing:
             break;
           case ProjectsFilterTabEnum.customPackage:
             cubit.getFixedPackagesFilter(isRefresh: true);

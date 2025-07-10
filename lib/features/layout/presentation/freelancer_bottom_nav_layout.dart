@@ -1,7 +1,5 @@
 import 'package:flutter/cupertino.dart';
-import 'package:flutter/material.dart';
 
-import '../../../core/theming/app_assets.dart';
 import '../../demo/presentation/chat_screen.dart';
 import '../../demo/presentation/community_screen.dart';
 import '../../profile/presentation/profile_screen.dart';

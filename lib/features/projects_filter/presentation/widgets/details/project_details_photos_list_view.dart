@@ -5,7 +5,6 @@ import 'package:home4u/core/networking/api_constants.dart';
 import 'package:home4u/core/theming/app_styles.dart';
 import 'package:home4u/core/utils/spacing.dart';
 import 'package:home4u/core/widgets/fancy_image.dart';
-import 'package:home4u/features/projects_filter/data/models/ask_filter/technical/ask_technical_worker_filter_response_model.dart';
 import 'package:home4u/locale/app_locale.dart';
 
 import '../../../data/models/base/photo_base_model.dart';

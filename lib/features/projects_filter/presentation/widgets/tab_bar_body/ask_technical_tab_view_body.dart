@@ -5,6 +5,7 @@ import 'package:home4u/features/projects_filter/presentation/widgets/ask_technic
 import '../../../../../core/utils/spacing.dart';
 import '../../../logic/projects_filter/projects_filter_cubit.dart';
 import '../../../logic/projects_filter/projects_filter_state.dart';
+import 'empty_state_widget.dart';
 
 class AskTechnicalTabViewBody extends StatefulWidget {
   const AskTechnicalTabViewBody({super.key});
@@ -73,14 +74,12 @@ class _AskTechnicalTabViewBodyState extends State<AskTechnicalTabViewBody> {
               );
             } else if (isLoadingMore) {
               return SizedBox(
-                height: MediaQuery
-                    .sizeOf(context)
-                    .height * 0.4,
+                height: MediaQuery.sizeOf(context).height * 0.4,
                 child: const Center(
                   child: CircularProgressIndicator(),
                 ),
               );
-            }else {
+            } else {
               return const SizedBox.shrink();
             }
           },

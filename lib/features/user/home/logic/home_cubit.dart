@@ -1,6 +1,5 @@
 import 'package:bloc/bloc.dart';
 import 'package:home4u/features/user/home/data/repos/home_repos.dart';
-import 'package:meta/meta.dart';
 
 import 'home_state.dart';
 

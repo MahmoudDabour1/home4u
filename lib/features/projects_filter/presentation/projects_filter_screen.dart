@@ -101,9 +101,7 @@ class _ProjectsFilterScreenState extends State<ProjectsFilterScreen> {
 }
 
 enum ProjectsFilterTabEnum {
-  furnishYourHome,
   requestDesign,
-  kitchensAndDressing,
   customPackage,
   renovateYourHouse,
   askEngineer,

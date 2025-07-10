@@ -5,6 +5,7 @@ import '../../../../../core/utils/spacing.dart';
 import '../../../logic/projects_filter/projects_filter_cubit.dart';
 import '../../../logic/projects_filter/projects_filter_state.dart';
 import '../renovate_house_custom_package/renovate_house_custom_package_tab_view_item.dart';
+import 'empty_state_widget.dart';
 
 class RenovateHouseCustomPackageTabViewBody extends StatefulWidget {
   const RenovateHouseCustomPackageTabViewBody({super.key});
@@ -56,8 +57,8 @@ class _RenovateHouseCustomPackageTabViewBodyState
     return BlocBuilder<ProjectsFilterCubit, ProjectsFilterState>(
       builder: (context, state) {
         final cubit = context.read<ProjectsFilterCubit>();
-        final isLoadingMore = cubit.isFetchingFixedPackage &&
-            !cubit.hasReachedMaxOfFixedPackage;
+        final isLoadingMore =
+            cubit.isFetchingFixedPackage && !cubit.hasReachedMaxOfFixedPackage;
 
         if (state is RenovateYourHouseFixedPackagesFilterLoading &&
             cubit.fixedPackages.isEmpty) {
@@ -84,8 +85,7 @@ class _RenovateHouseCustomPackageTabViewBodyState
                   child: CircularProgressIndicator(),
                 ),
               );
-            }
-            else {
+            } else {
               return const SizedBox.shrink();
             }
           },

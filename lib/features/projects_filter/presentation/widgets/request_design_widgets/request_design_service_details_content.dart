@@ -7,7 +7,6 @@ import 'package:home4u/features/projects_filter/logic/request_design/request_des
 import 'package:home4u/features/projects_filter/presentation/widgets/request_design_widgets/request_design_tab_view_item_title.dart';
 
 import '../../../../../core/theming/app_colors.dart';
-import '../../../../../core/theming/app_styles.dart';
 import '../../../../../core/utils/app_constants.dart';
 import '../../../../../core/widgets/app_custom_loading_indicator.dart';
 import '../../../../../locale/app_locale.dart';

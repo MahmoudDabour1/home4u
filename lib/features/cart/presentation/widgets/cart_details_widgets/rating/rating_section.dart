@@ -5,7 +5,6 @@ import 'package:flutter_localization/flutter_localization.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:home4u/features/cart/data/models/rating_response_model.dart';
 import 'package:home4u/features/cart/logic/cart_cubit.dart';
-import 'package:home4u/features/cart/presentation/widgets/cart_details_widgets/rating/rating_reviews_widget.dart';
 import 'package:home4u/locale/app_locale.dart';
 
 import '../../../../../../core/theming/app_colors.dart';

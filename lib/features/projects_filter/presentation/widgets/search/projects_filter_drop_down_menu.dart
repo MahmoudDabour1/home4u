@@ -30,7 +30,6 @@ class _ProjectsFilterDropDownMenuState
         return Column(
           children: <Widget>[
             verticalSpace(32),
-            if (currentTab == ProjectsFilterTabEnum.furnishYourHome) ...[],
             if (currentTab == ProjectsFilterTabEnum.requestDesign) ...[
               unitTypeDropDownMenu(projectFilterCubit, cubit),
               verticalSpace(16),

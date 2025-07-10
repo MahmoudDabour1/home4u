@@ -44,7 +44,7 @@ class _CheckProductRatingBlocBuilderState
           findProductRatingSuccess: (response) {
             return ProductIsRatedBeforeWidget(
               isRatedBefore: response != null,
-              ratingValue: response?.data?.rate,
+              ratingValue: response.data?.rate,
             );
           },
           findProductRatingLoading: () => const Center(child: CircularProgressIndicator()),

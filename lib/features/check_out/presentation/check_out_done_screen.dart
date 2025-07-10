@@ -10,7 +10,6 @@ import 'package:home4u/locale/app_locale.dart';
 
 import '../../../core/routing/routes.dart';
 import '../../../core/theming/app_colors.dart';
-import '../../../core/widgets/app_back_button.dart';
 import '../../../core/widgets/app_custom_button.dart';
 
 class CheckOutDoneScreen extends StatelessWidget {

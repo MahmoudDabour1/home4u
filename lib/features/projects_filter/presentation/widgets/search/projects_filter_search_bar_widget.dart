@@ -28,14 +28,8 @@ class ProjectsFilterSearchBarWidget extends StatelessWidget {
                       DefaultTabController.of(context).index ?? 0;
                   final cubit = context.read<ProjectsFilterCubit>();
                   switch (cubit.currentTab) {
-                    case ProjectsFilterTabEnum.furnishYourHome:
-                      // TODO: Add filter call for this tab
-                      break;
                     case ProjectsFilterTabEnum.requestDesign:
                       cubit.getRequestDesignFilter(isRefresh: true);
-                      break;
-                    case ProjectsFilterTabEnum.kitchensAndDressing:
-                      // TODO: Add filter call for this tab
                       break;
                     case ProjectsFilterTabEnum.customPackage:
                       cubit.getFixedPackagesFilter(isRefresh: true);

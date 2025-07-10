@@ -1,5 +1,4 @@
 import 'package:auto_size_text/auto_size_text.dart';
-import 'package:carousel_slider/carousel_options.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_localization/flutter_localization.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -11,8 +10,6 @@ import '../../../../../core/theming/app_assets.dart';
 import '../../../../../core/theming/app_colors.dart';
 import '../../../../../core/theming/app_styles.dart';
 import '../../../../../core/utils/spacing.dart';
-import '../../../../../core/widgets/app_back_button.dart';
-import '../../../../../core/widgets/app_custom_button.dart';
 import '../../../../../locale/app_locale.dart';
 import 'expandable_text.dart';
 

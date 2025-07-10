@@ -5,6 +5,7 @@ import 'package:home4u/features/projects_filter/presentation/widgets/ask_enginee
 import '../../../../../core/utils/spacing.dart';
 import '../../../logic/projects_filter/projects_filter_cubit.dart';
 import '../../../logic/projects_filter/projects_filter_state.dart';
+import 'empty_state_widget.dart';
 
 class AskEngineerTabViewBody extends StatefulWidget {
   const AskEngineerTabViewBody({super.key});
@@ -20,7 +21,8 @@ class _AskEngineerTabViewBodyState extends State<AskEngineerTabViewBody> {
   void initState() {
     super.initState();
     _loadInitialData();
-    _scrollController = ScrollController()..addListener(_scrollListener);
+    _scrollController = ScrollController()
+      ..addListener(_scrollListener);
   }
 
   void _loadInitialData() {
@@ -32,7 +34,7 @@ class _AskEngineerTabViewBodyState extends State<AskEngineerTabViewBody> {
     final cubit = context.read<ProjectsFilterCubit>();
 
     if (_scrollController.offset >=
-            _scrollController.position.maxScrollExtent * 0.7 &&
+        _scrollController.position.maxScrollExtent * 0.7 &&
         !cubit.hasReachedMaxOfAskEngineer) {
       cubit.askEngineerFilter();
     }
