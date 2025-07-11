@@ -42,28 +42,28 @@ class _TopWorkersScreenState extends State<TopWorkersScreen> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              verticalSpace(32),
-              Row(
-                spacing: 16.w,
-                children: [
-                  Expanded(
-                    child: AppCustomSearchTextField(
-                      fillColor: AppColors.offWhiteColor,
-                    ),
-                  ),
-                  AppCustomFilterButton(
-                    onPressed: () {},
-                    backgroundColor: AppColors.offWhiteColor,
-                  ),
-                ],
-              ),
-              Padding(
-                padding: EdgeInsets.symmetric(vertical: 16.h),
-                child: Text(
-                  AppLocale.topWorkers.getString(context),
-                  style: AppStyles.font16BlackMedium,
-                ),
-              ),
+              verticalSpace(16),
+              // Row(
+              //   spacing: 16.w,
+              //   children: [
+              //     Expanded(
+              //       child: AppCustomSearchTextField(
+              //         fillColor: AppColors.offWhiteColor,
+              //       ),
+              //     ),
+              //     AppCustomFilterButton(
+              //       onPressed: () {},
+              //       backgroundColor: AppColors.offWhiteColor,
+              //     ),
+              //   ],
+              // ),
+              // Padding(
+              //   padding: EdgeInsets.symmetric(vertical: 16.h),
+              //   child: Text(
+              //     AppLocale.topWorkers.getString(context),
+              //     style: AppStyles.font16BlackMedium,
+              //   ),
+              // ),
               BlocBuilder<HomeCubit, HomeState>(
                 buildWhen: (previous, current) =>
                 current is GetTopWorkersLoading||

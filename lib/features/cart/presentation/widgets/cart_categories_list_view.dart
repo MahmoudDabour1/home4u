@@ -12,7 +12,8 @@ import '../../../products/logic/products_state.dart';
 import '../../logic/cart_cubit.dart';
 
 class CartCategoriesListView extends StatefulWidget {
-  const CartCategoriesListView({super.key});
+  final int? categoryIndex;
+  const CartCategoriesListView({super.key, this.categoryIndex});
 
   @override
   State<CartCategoriesListView> createState() => _CartCategoriesListViewState();
@@ -26,16 +27,24 @@ class _CartCategoriesListViewState extends State<CartCategoriesListView> {
   @override
   void initState() {
     super.initState();
+    selectedIndex = (widget.categoryIndex ?? -1) + 1;
     final cartCubit = context.read<CartCubit>();
-    WidgetsBinding.instance.addPostFrameCallback((_) {
-      if (cartCubit.selectedBusinessType == null) {
-        setState(() {
-          selectedIndex = 0;
-          selectedSubCategoryIndex = -1;
-          filteredSubCategories = [];
-        });
-      }
-    });
+    if (selectedIndex > 0) {
+      WidgetsBinding.instance.addPostFrameCallback((_) {
+        cartCubit.selectedBusinessType =
+            context.read<ProductsCubit>().businessTypes![selectedIndex - 1].id;
+        cartCubit.getCartProducts(isRefresh: true);
+      });
+    }
+    // WidgetsBinding.instance.addPostFrameCallback((_) {
+    //   if (cartCubit.selectedBusinessType == null) {
+    //     setState(() {
+    //       selectedIndex = 0;
+    //       selectedSubCategoryIndex = -1;
+    //       filteredSubCategories = [];
+    //     });
+    //   }
+    // });
   }
 
   @override

@@ -15,4 +15,7 @@ class RequestDesignState<T> with _$RequestDesignState<T> {
 
   factory RequestDesignState.addRequestDesignFailure({required String error}) =
       AddRequestDesignFailure;
+
+  factory RequestDesignState.addImage() =
+     AddImage;
 }

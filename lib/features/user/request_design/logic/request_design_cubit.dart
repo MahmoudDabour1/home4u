@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:bloc/bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:home4u/features/user/request_design/logic/request_design_state.dart';
@@ -24,7 +26,12 @@ class RequestDesignCubit extends Cubit<RequestDesignState> {
   ///Items
   int? selectedUnitType;
   int? selectedGovernorate;
+File? image;
 
+  void updateSelectedImages(File newImages) {
+    image = newImages;
+    emit(RequestDesignState.addImage());
+  }
   ///Filter
   // int _page = 0;
   // bool hasReachedMax = false;

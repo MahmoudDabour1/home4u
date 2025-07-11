@@ -72,19 +72,23 @@ class _RatingReviewsWidgetState extends State<RatingReviewsWidget> {
             color: AppColors.grayColor,
           ),
           data.data?.content == [] || data.data!.content!.isEmpty
-              ? Column(
-                  children: [
-                    Image.asset("assets/images/empty_state.jpg",
-                        height: 200.h, width: 200.w),
-                    Text(
-                      AppLocale.thisProductDoesHaveAnyReviewsYet
-                          .getString(context),
-                      textAlign: TextAlign.center,
-                      style: AppStyles.font18BlackMedium,
-                    ),
-                    verticalSpace(16),
-                  ],
-                )
+              ? Center(
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      Image.asset("assets/images/empty_rate.png",
+                          height: 100.h, width: 100.w),
+                      Text(
+                        AppLocale.thisProductDoesHaveAnyReviewsYet
+                            .getString(context),
+                        textAlign: TextAlign.center,
+                        style: AppStyles.font18BlackMedium,
+                      ),
+                      verticalSpace(16),
+                    ],
+                  ),
+              )
               : SizedBox.shrink(),
           ListView.builder(
             shrinkWrap: true,

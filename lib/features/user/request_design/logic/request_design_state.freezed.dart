@@ -22,6 +22,7 @@ mixin _$RequestDesignState<T> {
     required TResult Function() addRequestDesignLoading,
     required TResult Function(T data) addRequestDesignSuccess,
     required TResult Function(String error) addRequestDesignFailure,
+    required TResult Function() addImage,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -30,6 +31,7 @@ mixin _$RequestDesignState<T> {
     TResult? Function()? addRequestDesignLoading,
     TResult? Function(T data)? addRequestDesignSuccess,
     TResult? Function(String error)? addRequestDesignFailure,
+    TResult? Function()? addImage,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -38,6 +40,7 @@ mixin _$RequestDesignState<T> {
     TResult Function()? addRequestDesignLoading,
     TResult Function(T data)? addRequestDesignSuccess,
     TResult Function(String error)? addRequestDesignFailure,
+    TResult Function()? addImage,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -50,6 +53,7 @@ mixin _$RequestDesignState<T> {
         addRequestDesignSuccess,
     required TResult Function(AddRequestDesignFailure<T> value)
         addRequestDesignFailure,
+    required TResult Function(AddImage<T> value) addImage,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -61,6 +65,7 @@ mixin _$RequestDesignState<T> {
         addRequestDesignSuccess,
     TResult? Function(AddRequestDesignFailure<T> value)?
         addRequestDesignFailure,
+    TResult? Function(AddImage<T> value)? addImage,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -69,6 +74,7 @@ mixin _$RequestDesignState<T> {
     TResult Function(AddRequestDesignLoading<T> value)? addRequestDesignLoading,
     TResult Function(AddRequestDesignSuccess<T> value)? addRequestDesignSuccess,
     TResult Function(AddRequestDesignFailure<T> value)? addRequestDesignFailure,
+    TResult Function(AddImage<T> value)? addImage,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -141,6 +147,7 @@ class _$InitialImpl<T> implements _Initial<T> {
     required TResult Function() addRequestDesignLoading,
     required TResult Function(T data) addRequestDesignSuccess,
     required TResult Function(String error) addRequestDesignFailure,
+    required TResult Function() addImage,
   }) {
     return initial();
   }
@@ -152,6 +159,7 @@ class _$InitialImpl<T> implements _Initial<T> {
     TResult? Function()? addRequestDesignLoading,
     TResult? Function(T data)? addRequestDesignSuccess,
     TResult? Function(String error)? addRequestDesignFailure,
+    TResult? Function()? addImage,
   }) {
     return initial?.call();
   }
@@ -163,6 +171,7 @@ class _$InitialImpl<T> implements _Initial<T> {
     TResult Function()? addRequestDesignLoading,
     TResult Function(T data)? addRequestDesignSuccess,
     TResult Function(String error)? addRequestDesignFailure,
+    TResult Function()? addImage,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -181,6 +190,7 @@ class _$InitialImpl<T> implements _Initial<T> {
         addRequestDesignSuccess,
     required TResult Function(AddRequestDesignFailure<T> value)
         addRequestDesignFailure,
+    required TResult Function(AddImage<T> value) addImage,
   }) {
     return initial(this);
   }
@@ -195,6 +205,7 @@ class _$InitialImpl<T> implements _Initial<T> {
         addRequestDesignSuccess,
     TResult? Function(AddRequestDesignFailure<T> value)?
         addRequestDesignFailure,
+    TResult? Function(AddImage<T> value)? addImage,
   }) {
     return initial?.call(this);
   }
@@ -206,6 +217,7 @@ class _$InitialImpl<T> implements _Initial<T> {
     TResult Function(AddRequestDesignLoading<T> value)? addRequestDesignLoading,
     TResult Function(AddRequestDesignSuccess<T> value)? addRequestDesignSuccess,
     TResult Function(AddRequestDesignFailure<T> value)? addRequestDesignFailure,
+    TResult Function(AddImage<T> value)? addImage,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -268,6 +280,7 @@ class _$AddRequestDesignLoadingImpl<T> implements AddRequestDesignLoading<T> {
     required TResult Function() addRequestDesignLoading,
     required TResult Function(T data) addRequestDesignSuccess,
     required TResult Function(String error) addRequestDesignFailure,
+    required TResult Function() addImage,
   }) {
     return addRequestDesignLoading();
   }
@@ -279,6 +292,7 @@ class _$AddRequestDesignLoadingImpl<T> implements AddRequestDesignLoading<T> {
     TResult? Function()? addRequestDesignLoading,
     TResult? Function(T data)? addRequestDesignSuccess,
     TResult? Function(String error)? addRequestDesignFailure,
+    TResult? Function()? addImage,
   }) {
     return addRequestDesignLoading?.call();
   }
@@ -290,6 +304,7 @@ class _$AddRequestDesignLoadingImpl<T> implements AddRequestDesignLoading<T> {
     TResult Function()? addRequestDesignLoading,
     TResult Function(T data)? addRequestDesignSuccess,
     TResult Function(String error)? addRequestDesignFailure,
+    TResult Function()? addImage,
     required TResult orElse(),
   }) {
     if (addRequestDesignLoading != null) {
@@ -308,6 +323,7 @@ class _$AddRequestDesignLoadingImpl<T> implements AddRequestDesignLoading<T> {
         addRequestDesignSuccess,
     required TResult Function(AddRequestDesignFailure<T> value)
         addRequestDesignFailure,
+    required TResult Function(AddImage<T> value) addImage,
   }) {
     return addRequestDesignLoading(this);
   }
@@ -322,6 +338,7 @@ class _$AddRequestDesignLoadingImpl<T> implements AddRequestDesignLoading<T> {
         addRequestDesignSuccess,
     TResult? Function(AddRequestDesignFailure<T> value)?
         addRequestDesignFailure,
+    TResult? Function(AddImage<T> value)? addImage,
   }) {
     return addRequestDesignLoading?.call(this);
   }
@@ -333,6 +350,7 @@ class _$AddRequestDesignLoadingImpl<T> implements AddRequestDesignLoading<T> {
     TResult Function(AddRequestDesignLoading<T> value)? addRequestDesignLoading,
     TResult Function(AddRequestDesignSuccess<T> value)? addRequestDesignSuccess,
     TResult Function(AddRequestDesignFailure<T> value)? addRequestDesignFailure,
+    TResult Function(AddImage<T> value)? addImage,
     required TResult orElse(),
   }) {
     if (addRequestDesignLoading != null) {
@@ -423,6 +441,7 @@ class _$AddRequestDesignSuccessImpl<T> implements AddRequestDesignSuccess<T> {
     required TResult Function() addRequestDesignLoading,
     required TResult Function(T data) addRequestDesignSuccess,
     required TResult Function(String error) addRequestDesignFailure,
+    required TResult Function() addImage,
   }) {
     return addRequestDesignSuccess(data);
   }
@@ -434,6 +453,7 @@ class _$AddRequestDesignSuccessImpl<T> implements AddRequestDesignSuccess<T> {
     TResult? Function()? addRequestDesignLoading,
     TResult? Function(T data)? addRequestDesignSuccess,
     TResult? Function(String error)? addRequestDesignFailure,
+    TResult? Function()? addImage,
   }) {
     return addRequestDesignSuccess?.call(data);
   }
@@ -445,6 +465,7 @@ class _$AddRequestDesignSuccessImpl<T> implements AddRequestDesignSuccess<T> {
     TResult Function()? addRequestDesignLoading,
     TResult Function(T data)? addRequestDesignSuccess,
     TResult Function(String error)? addRequestDesignFailure,
+    TResult Function()? addImage,
     required TResult orElse(),
   }) {
     if (addRequestDesignSuccess != null) {
@@ -463,6 +484,7 @@ class _$AddRequestDesignSuccessImpl<T> implements AddRequestDesignSuccess<T> {
         addRequestDesignSuccess,
     required TResult Function(AddRequestDesignFailure<T> value)
         addRequestDesignFailure,
+    required TResult Function(AddImage<T> value) addImage,
   }) {
     return addRequestDesignSuccess(this);
   }
@@ -477,6 +499,7 @@ class _$AddRequestDesignSuccessImpl<T> implements AddRequestDesignSuccess<T> {
         addRequestDesignSuccess,
     TResult? Function(AddRequestDesignFailure<T> value)?
         addRequestDesignFailure,
+    TResult? Function(AddImage<T> value)? addImage,
   }) {
     return addRequestDesignSuccess?.call(this);
   }
@@ -488,6 +511,7 @@ class _$AddRequestDesignSuccessImpl<T> implements AddRequestDesignSuccess<T> {
     TResult Function(AddRequestDesignLoading<T> value)? addRequestDesignLoading,
     TResult Function(AddRequestDesignSuccess<T> value)? addRequestDesignSuccess,
     TResult Function(AddRequestDesignFailure<T> value)? addRequestDesignFailure,
+    TResult Function(AddImage<T> value)? addImage,
     required TResult orElse(),
   }) {
     if (addRequestDesignSuccess != null) {
@@ -586,6 +610,7 @@ class _$AddRequestDesignFailureImpl<T> implements AddRequestDesignFailure<T> {
     required TResult Function() addRequestDesignLoading,
     required TResult Function(T data) addRequestDesignSuccess,
     required TResult Function(String error) addRequestDesignFailure,
+    required TResult Function() addImage,
   }) {
     return addRequestDesignFailure(error);
   }
@@ -597,6 +622,7 @@ class _$AddRequestDesignFailureImpl<T> implements AddRequestDesignFailure<T> {
     TResult? Function()? addRequestDesignLoading,
     TResult? Function(T data)? addRequestDesignSuccess,
     TResult? Function(String error)? addRequestDesignFailure,
+    TResult? Function()? addImage,
   }) {
     return addRequestDesignFailure?.call(error);
   }
@@ -608,6 +634,7 @@ class _$AddRequestDesignFailureImpl<T> implements AddRequestDesignFailure<T> {
     TResult Function()? addRequestDesignLoading,
     TResult Function(T data)? addRequestDesignSuccess,
     TResult Function(String error)? addRequestDesignFailure,
+    TResult Function()? addImage,
     required TResult orElse(),
   }) {
     if (addRequestDesignFailure != null) {
@@ -626,6 +653,7 @@ class _$AddRequestDesignFailureImpl<T> implements AddRequestDesignFailure<T> {
         addRequestDesignSuccess,
     required TResult Function(AddRequestDesignFailure<T> value)
         addRequestDesignFailure,
+    required TResult Function(AddImage<T> value) addImage,
   }) {
     return addRequestDesignFailure(this);
   }
@@ -640,6 +668,7 @@ class _$AddRequestDesignFailureImpl<T> implements AddRequestDesignFailure<T> {
         addRequestDesignSuccess,
     TResult? Function(AddRequestDesignFailure<T> value)?
         addRequestDesignFailure,
+    TResult? Function(AddImage<T> value)? addImage,
   }) {
     return addRequestDesignFailure?.call(this);
   }
@@ -651,6 +680,7 @@ class _$AddRequestDesignFailureImpl<T> implements AddRequestDesignFailure<T> {
     TResult Function(AddRequestDesignLoading<T> value)? addRequestDesignLoading,
     TResult Function(AddRequestDesignSuccess<T> value)? addRequestDesignSuccess,
     TResult Function(AddRequestDesignFailure<T> value)? addRequestDesignFailure,
+    TResult Function(AddImage<T> value)? addImage,
     required TResult orElse(),
   }) {
     if (addRequestDesignFailure != null) {
@@ -671,4 +701,133 @@ abstract class AddRequestDesignFailure<T> implements RequestDesignState<T> {
   @JsonKey(includeFromJson: false, includeToJson: false)
   _$$AddRequestDesignFailureImplCopyWith<T, _$AddRequestDesignFailureImpl<T>>
       get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$AddImageImplCopyWith<T, $Res> {
+  factory _$$AddImageImplCopyWith(
+          _$AddImageImpl<T> value, $Res Function(_$AddImageImpl<T>) then) =
+      __$$AddImageImplCopyWithImpl<T, $Res>;
+}
+
+/// @nodoc
+class __$$AddImageImplCopyWithImpl<T, $Res>
+    extends _$RequestDesignStateCopyWithImpl<T, $Res, _$AddImageImpl<T>>
+    implements _$$AddImageImplCopyWith<T, $Res> {
+  __$$AddImageImplCopyWithImpl(
+      _$AddImageImpl<T> _value, $Res Function(_$AddImageImpl<T>) _then)
+      : super(_value, _then);
+
+  /// Create a copy of RequestDesignState
+  /// with the given fields replaced by the non-null parameter values.
+}
+
+/// @nodoc
+
+class _$AddImageImpl<T> implements AddImage<T> {
+  _$AddImageImpl();
+
+  @override
+  String toString() {
+    return 'RequestDesignState<$T>.addImage()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$AddImageImpl<T>);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() addRequestDesignLoading,
+    required TResult Function(T data) addRequestDesignSuccess,
+    required TResult Function(String error) addRequestDesignFailure,
+    required TResult Function() addImage,
+  }) {
+    return addImage();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? addRequestDesignLoading,
+    TResult? Function(T data)? addRequestDesignSuccess,
+    TResult? Function(String error)? addRequestDesignFailure,
+    TResult? Function()? addImage,
+  }) {
+    return addImage?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? addRequestDesignLoading,
+    TResult Function(T data)? addRequestDesignSuccess,
+    TResult Function(String error)? addRequestDesignFailure,
+    TResult Function()? addImage,
+    required TResult orElse(),
+  }) {
+    if (addImage != null) {
+      return addImage();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial<T> value) initial,
+    required TResult Function(AddRequestDesignLoading<T> value)
+        addRequestDesignLoading,
+    required TResult Function(AddRequestDesignSuccess<T> value)
+        addRequestDesignSuccess,
+    required TResult Function(AddRequestDesignFailure<T> value)
+        addRequestDesignFailure,
+    required TResult Function(AddImage<T> value) addImage,
+  }) {
+    return addImage(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial<T> value)? initial,
+    TResult? Function(AddRequestDesignLoading<T> value)?
+        addRequestDesignLoading,
+    TResult? Function(AddRequestDesignSuccess<T> value)?
+        addRequestDesignSuccess,
+    TResult? Function(AddRequestDesignFailure<T> value)?
+        addRequestDesignFailure,
+    TResult? Function(AddImage<T> value)? addImage,
+  }) {
+    return addImage?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial<T> value)? initial,
+    TResult Function(AddRequestDesignLoading<T> value)? addRequestDesignLoading,
+    TResult Function(AddRequestDesignSuccess<T> value)? addRequestDesignSuccess,
+    TResult Function(AddRequestDesignFailure<T> value)? addRequestDesignFailure,
+    TResult Function(AddImage<T> value)? addImage,
+    required TResult orElse(),
+  }) {
+    if (addImage != null) {
+      return addImage(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class AddImage<T> implements RequestDesignState<T> {
+  factory AddImage() = _$AddImageImpl<T>;
 }

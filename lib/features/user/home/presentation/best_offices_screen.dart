@@ -34,35 +34,35 @@ class _BestOfficesScreenState extends State<BestOfficesScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar:
-          AppCustomAppBar(title: AppLocale.theBestOffices.getString(context)),
+          AppCustomAppBar(title: AppLocale.topBestSeller.getString(context)),
       body: SafeArea(
         child: Padding(
           padding: EdgeInsets.symmetric(horizontal: 24.w),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              verticalSpace(32),
-              Row(
-                spacing: 16.w,
-                children: [
-                  Expanded(
-                    child: AppCustomSearchTextField(
-                      fillColor: AppColors.offWhiteColor,
-                    ),
-                  ),
-                  AppCustomFilterButton(
-                    onPressed: () {},
-                    backgroundColor: AppColors.offWhiteColor,
-                  ),
-                ],
-              ),
-              Padding(
-                padding: EdgeInsets.symmetric(vertical: 16.h),
-                child: Text(
-                  AppLocale.theBestOffices.getString(context),
-                  style: AppStyles.font16BlackMedium,
-                ),
-              ),
+              verticalSpace(16),
+              // Row(
+              //   spacing: 16.w,
+              //   children: [
+              //     Expanded(
+              //       child: AppCustomSearchTextField(
+              //         fillColor: AppColors.offWhiteColor,
+              //       ),
+              //     ),
+              //     AppCustomFilterButton(
+              //       onPressed: () {},
+              //       backgroundColor: AppColors.offWhiteColor,
+              //     ),
+              //   ],
+              // ),
+              // Padding(
+              //   padding: EdgeInsets.symmetric(vertical: 16.h),
+              //   child: Text(
+              //     AppLocale.topBestSeller.getString(context),
+              //     style: AppStyles.font16BlackMedium,
+              //   ),
+              // ),
               BlocBuilder<HomeCubit, HomeState>(
                 buildWhen: (previous, current) =>
                     current is GetTopBestSellerLoading ||
@@ -93,6 +93,7 @@ class _BestOfficesScreenState extends State<BestOfficesScreen> {
         physics: const BouncingScrollPhysics(),
         itemBuilder: (context, index) {
           return ScrollContainerWidget(
+            product: data.data?[index],
             isVerticalScroll: true,
             productId: data.data?[index].id ?? 0,
             image: data.data?[index].images?[0] ?? '',
@@ -102,7 +103,8 @@ class _BestOfficesScreenState extends State<BestOfficesScreen> {
             ratingCount: data.data?[index].countRates?.toString() ?? '0',
             rankBySales:
                 "${data.data?[index].productRankBySales ?? 0} ${AppLocale.on.getString(context)} ${data.data?[index].categoryName ?? ""} category",
-            numberOfSales: "${data.data?[index].numberOfSales} ${AppLocale.soldRecently.getString(context)}",
+            numberOfSales:
+                "${data.data?[index].numberOfSales} ${AppLocale.soldRecently.getString(context)}",
           );
         },
       ),

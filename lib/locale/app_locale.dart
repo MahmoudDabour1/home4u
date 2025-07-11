@@ -423,10 +423,11 @@ class AppLocale {
   static const String maxDuration = 'Max Duration';
   static const String max = 'Max';
   static const String min = 'Min';
-
-
-
+  static const String topBestSeller = 'Top Best Seller';
+  static const String highestRated =  'Highest Rated';
   static const String addOffer = 'Add Offer';
+  static const String productAddedToCartSuccessfully
+  = 'Product Added To Cart Successfully';
 
   static const Map<String, dynamic> en = {
     onBoardingTitle1: 'Civil Works & Finishing Services',
@@ -787,6 +788,9 @@ class AppLocale {
     max: 'Max',
     min: 'Min',
     addOffer : 'Add Offer',
+    topBestSeller: 'Top Best Seller',
+    highestRated: 'Highest Rated',
+    productAddedToCartSuccessfully: 'Product Added To Cart Successfully',
   };
 
   static const Map<String, dynamic> ar = {
@@ -1144,5 +1148,8 @@ class AppLocale {
     max: 'الحد الأقصى',
     min: 'الحد الأدنى',
     addOffer : 'إضافة عرض',
+    topBestSeller: 'الأكثر مبيعًا',
+    highestRated: 'الأعلى تقييمًا',
+    productAddedToCartSuccessfully: 'تم إضافة المنتج إلى السلة بنجاح',
   };
 }

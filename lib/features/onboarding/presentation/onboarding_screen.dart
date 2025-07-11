@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:home4u/core/extensions/navigation_extension.dart';
+import 'package:home4u/features/auth/sign_up/logic/sign_up_cubit.dart';
 import 'package:home4u/features/onboarding/data/model/onboarding_model.dart';
 import 'package:home4u/features/onboarding/presentation/widgets/onboarding_item.dart';
+import 'package:home4u/features/products/logic/products_cubit.dart';
 
 import '../../../core/routing/routes.dart';
 
@@ -20,6 +23,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
   @override
   void initState() {
     super.initState();
+    context.read<ProductsCubit>().getBusinessConfig();
     _pageController.addListener(_onPageChanged);
   }
 
