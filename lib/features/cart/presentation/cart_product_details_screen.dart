@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_localization/flutter_localization.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:home4u/core/widgets/app_custom_loading_indicator.dart';
+import 'package:home4u/features/cart/logic/cart_cubit.dart';
 import 'package:home4u/features/cart/presentation/widgets/cart_details_widgets/cart_details_data_section.dart';
 import 'package:home4u/features/cart/presentation/widgets/cart_details_widgets/cart_details_tap_bar.dart';
 import 'package:home4u/features/cart/presentation/widgets/cart_details_widgets/cart_product_details_favorite_button.dart';
@@ -16,6 +17,7 @@ import '../../../core/theming/app_colors.dart';
 import '../../../core/utils/spacing.dart';
 import '../../../core/widgets/app_custom_button.dart';
 import '../../../locale/app_locale.dart';
+import '../data/models/shop_now_response_model.dart';
 
 class CartProductDetailsScreen extends StatefulWidget {
   final int productId;
@@ -33,6 +35,8 @@ class _CartProductDetailsScreenState extends State<CartProductDetailsScreen> {
     super.initState();
     context.read<ProductsCubit>().getProductById(widget.productId);
   }
+
+  ShopNowContent? shopNowProduct;
 
   @override
   Widget build(BuildContext context) {
@@ -55,7 +59,11 @@ class _CartProductDetailsScreenState extends State<CartProductDetailsScreen> {
                     btnHeight: 50.h,
                     btnWidth: 278.w,
                     textButton: AppLocale.addToCart.getString(context),
-                    onPressed: () {},
+                    onPressed: () {
+                      context
+                          .read<CartCubit>()
+                          .addToCart(shopNowProduct!, context);
+                    },
                   ),
                 ),
               ],
@@ -69,6 +77,13 @@ class _CartProductDetailsScreenState extends State<CartProductDetailsScreen> {
               return state.maybeWhen(
                 getProductPreviewLoading: () => setupLoading(),
                 getProductPreviewSuccess: (product) {
+                  shopNowProduct = ShopNowContent(
+                    name: product.data.nameEn,
+                    price: product.data.price.toInt(),
+                    imagePath: product.data.imagePaths[0].imagePath,
+                    id: product.data.id,
+                    rate: 5,
+                  );
                   return setupSuccess(product, widget.productId);
                 },
                 orElse: () => SizedBox(),

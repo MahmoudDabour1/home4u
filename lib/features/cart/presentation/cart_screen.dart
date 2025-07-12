@@ -16,7 +16,8 @@ import '../../../core/widgets/app_custom_search_text_field.dart';
 import '../logic/cart_cubit.dart';
 
 class CartScreen extends StatefulWidget {
-  const CartScreen({super.key});
+  final int? categoryIndex;
+  const CartScreen({super.key, this.categoryIndex});
 
   @override
   State<CartScreen> createState() => _CartScreenState();
@@ -28,6 +29,7 @@ class _CartScreenState extends State<CartScreen> {
   @override
   void initState() {
     super.initState();
+    context.read<CartCubit>().getCartProducts(isRefresh: true);
     _loadInitialData();
     _scrollController = ScrollController()..addListener(_scrollListener);
   }
@@ -100,7 +102,7 @@ class _CartScreenState extends State<CartScreen> {
                     style: AppStyles.font20BlackMedium,
                   ),
                   verticalSpace(16.h),
-                  CartCategoriesListView(),
+                  CartCategoriesListView(categoryIndex: widget.categoryIndex,),
                 ],
               ),
             ),
