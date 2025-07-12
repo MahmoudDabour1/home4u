@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_localization/flutter_localization.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:home4u/core/extensions/navigation_extension.dart';
 import 'package:home4u/core/routing/routes.dart';
@@ -6,6 +7,7 @@ import 'package:home4u/core/routing/routes.dart';
 import '../../../../core/theming/app_colors.dart';
 import '../../../../core/theming/app_styles.dart';
 import '../../../../core/utils/spacing.dart';
+import '../../../../locale/app_locale.dart';
 
 class OrderAndWishlistGridView extends StatelessWidget {
   const OrderAndWishlistGridView({super.key});
@@ -51,8 +53,8 @@ class OrderAndWishlistGridView extends StatelessWidget {
                       index == 0
                           ? "assets/images/checklist_icon.png"
                           : "assets/images/wishlist_icon.png",
-                     height: 35.h,
-                      width: 35.w,
+                      height: 25.h,
+                      width: 25.w,
                       fit: BoxFit.cover,
                     ),
                   ),
@@ -62,12 +64,14 @@ class OrderAndWishlistGridView extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Text(
-                        index == 0 ? "Orders" : "Wishlist",
+                        index == 0
+                            ? AppLocale.orders.getString(context)
+                            : AppLocale.wishlist.getString(context),
                         style: AppStyles.font16BlackMedium,
                       ),
-                      verticalSpace(6),
                       Text(
-                        index == 0 ? "Manage & track" : "Saved item",
+                        index == 0 ? AppLocale.orderSubtitle.getString(context)
+                            : AppLocale.wishlistSubtitle.getString(context),
                         style: AppStyles.font16GrayLight,
                       ),
                     ],

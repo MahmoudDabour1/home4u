@@ -21,26 +21,26 @@ class RequestDesignServiceDetailsContent extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocBuilder<RequestDesignServicesCubit, RequestDesignServicesState>(
-      buildWhen: (previous, current) => current.maybeWhen(
-        requestDesignServiceDetailsLoading: () => true,
-        requestDesignServiceDetailsSuccess: (_) => true,
-        requestDesignServiceDetailsFailure: (_) => true,
-        orElse: () => false,
-      ),
+      buildWhen: (previous, current) =>
+          current.maybeWhen(
+            requestDesignServiceDetailsLoading: () => true,
+            requestDesignServiceDetailsSuccess: (_) => true,
+            requestDesignServiceDetailsFailure: (_) => true,
+            orElse: () => false,
+          ),
       builder: (context, state) {
+        final height = MediaQuery
+            .sizeOf(context)
+            .height;
         return state.maybeWhen(
-          requestDesignServiceDetailsLoading: () => SizedBox(
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              mainAxisSize: MainAxisSize.max,
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
+          requestDesignServiceDetailsLoading: () =>
+              SizedBox(
+                height: height * 0.5,
+                child:
                 AppCustomLoadingIndicator(
                   loadingColor: AppColors.primaryColor,
                 ),
-              ],
-            ),
-          ),
+              ),
           requestDesignServiceDetailsSuccess: (requestDesign) {
             final requestDesignData = requestDesign.data;
             return Column(
@@ -48,7 +48,9 @@ class RequestDesignServiceDetailsContent extends StatelessWidget {
               spacing: 32.h,
               children: [
                 Container(
-                  width: MediaQuery.sizeOf(context).width,
+                  width: MediaQuery
+                      .sizeOf(context)
+                      .width,
                   decoration: BoxDecoration(
                     color: AppColors.containersColor,
                     borderRadius: BorderRadius.circular(24.r),
@@ -73,7 +75,7 @@ class RequestDesignServiceDetailsContent extends StatelessWidget {
                         ),
                         ProjectDetailsGovernorateCityRow(
                           governorate:
-                              requestDesignData.governorate?.name ?? 'N/A',
+                          requestDesignData.governorate?.name ?? 'N/A',
                           city: null,
                         ),
                         Row(
@@ -82,7 +84,7 @@ class RequestDesignServiceDetailsContent extends StatelessWidget {
                               flex: 2,
                               child: ProjectDetailsItemValue(
                                 itemTitle:
-                                    AppLocale.durationInDays.getString(context),
+                                AppLocale.durationInDays.getString(context),
                                 value: '${requestDesignData.requiredDuration}',
                               ),
                             ),
@@ -90,7 +92,7 @@ class RequestDesignServiceDetailsContent extends StatelessWidget {
                               flex: 2,
                               child: ProjectDetailsItemValue(
                                 itemTitle:
-                                    AppLocale.unitArea.getString(context),
+                                AppLocale.unitArea.getString(context),
                                 value: '${requestDesignData.unitArea}',
                               ),
                             ),
@@ -99,7 +101,8 @@ class RequestDesignServiceDetailsContent extends StatelessWidget {
                         ProjectDetailsItemValue(
                           itemTitle: AppLocale.budget.getString(context),
                           value:
-                              '${requestDesignData.budget} ${AppLocale.egp.getString(context)}',
+                          '${requestDesignData.budget} ${AppLocale.egp
+                              .getString(context)}',
                         ),
                         ProjectDetailsItemValue(
                           itemTitle: AppLocale.notes.getString(context),

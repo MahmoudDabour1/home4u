@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:home4u/features/projects_filter/logic/ask_technical/ask_technical_services_cubit.dart';
-import 'package:home4u/features/projects_filter/presentation/widgets/project_details_app_bar.dart';
 import 'package:home4u/features/projects_filter/presentation/widgets/ask_technical_worker_widgets/ask_technical_project_details_asks_bloc_builder.dart';
 import 'package:home4u/features/projects_filter/presentation/widgets/ask_technical_worker_widgets/ask_technical_project_details_bloc_builder.dart';
+import 'package:home4u/features/projects_filter/presentation/widgets/project_details_app_bar.dart';
 
 class AskTechnicalProjectDetailsScreen extends StatefulWidget {
   final int askId;
@@ -21,13 +21,10 @@ class _AskTechnicalProjectDetailsScreenState
   @override
   void initState() {
     super.initState();
-    context
-        .read<AskTechnicalServicesCubit>()
-        .askTechnicalServiceDetails(askId: widget.askId.toString());
-
-    context.read<AskTechnicalServicesCubit>().getAskTechnicalRequests(
-          askId: widget.askId.toString(),
-        );
+    final cubit = context.read<AskTechnicalServicesCubit>();
+    cubit.askTechnicalServiceDetails(askId: widget.askId.toString()).then((_) {
+      cubit.getAskTechnicalRequests(askId: widget.askId.toString());
+    });
   }
 
   @override

@@ -23,12 +23,12 @@ class _RenovateHouseServiceDetailsScreenState
   void initState() {
     super.initState();
     final cubit = context.read<RenovateHouseServicesCubit>();
-    cubit.renovateHouseServiceDetails(
-      requestId: widget.requestId.toString(),
-    );
-    cubit.getRenovateHouseServiceRequests(
-      requestId: widget.requestId.toString(),
-    );
+    cubit
+        .renovateHouseServiceDetails(requestId: widget.requestId.toString())
+        .then((_) {
+      cubit.getRenovateHouseServiceRequests(
+          requestId: widget.requestId.toString());
+    });
   }
 
   @override

@@ -6,6 +6,7 @@ import 'package:home4u/features/projects_filter/presentation/widgets/renovate_ho
 
 import '../../../../../core/theming/app_colors.dart';
 import '../../../../../core/utils/app_constants.dart';
+import '../../../../../core/widgets/app_custom_loading_indicator.dart';
 import '../../../../../locale/app_locale.dart';
 import '../../../logic/renovate_house_custom_package/renovate_house_custom_package_services_cubit.dart';
 import '../../../logic/renovate_house_custom_package/renovate_house_custom_package_services_state.dart';
@@ -30,9 +31,15 @@ class RenovateHouseCustomPackageServiceDetailsContent extends StatelessWidget {
       builder: (context, state) {
         return state.maybeWhen(
           renovateHouseCustomPackageServiceDetailsLoading: () =>
-          const Center(
-            child: CircularProgressIndicator(),
-          ),
+              SizedBox(
+                height: MediaQuery
+                    .sizeOf(context)
+                    .height * 0.5,
+                child:
+                AppCustomLoadingIndicator(
+                  loadingColor: AppColors.primaryColor,
+                ),
+              ),
           renovateHouseCustomPackageServiceDetailsSuccess: (
               renovateHouseCustomPackage) {
             final renovateHouseData = renovateHouseCustomPackage.data;
