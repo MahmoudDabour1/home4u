@@ -259,7 +259,7 @@ Future<void> setupGetIt() async {
     ),
   );
 
-  sl.registerFactory<RequestDesignCubit>(() => RequestDesignCubit(sl()));
+  sl.registerFactory<RequestDesignCubit>(() => RequestDesignCubit(sl(),Dio()));
 
   ///Ask Technical
   sl.registerLazySingleton<AskTechnicalRemoteDataSource>(

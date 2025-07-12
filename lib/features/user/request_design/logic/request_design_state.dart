@@ -18,4 +18,15 @@ class RequestDesignState<T> with _$RequestDesignState<T> {
 
   factory RequestDesignState.addImage() =
      AddImage;
+
+
+  ///Add Request Design Ai
+  factory RequestDesignState.requestDesignAiLoading() =
+  RequestDesignAiLoading;
+
+  factory RequestDesignState.requestDesignAiSuccess(T data) =
+ RequestDesignAiSuccess;
+
+  factory RequestDesignState.requestDesignAiFailure({required String error}) =
+ RequestDesignAiFailure;
 }
