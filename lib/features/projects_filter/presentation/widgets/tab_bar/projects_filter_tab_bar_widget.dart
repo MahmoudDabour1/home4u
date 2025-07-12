@@ -19,17 +19,17 @@ class ProjectsFilterTabBarWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return TabBar(
-      onTap: ( index){
+      onTap: (index) {
         final cubit = context.read<ProjectsFilterCubit>();
         switch (index) {
           case 0:
             cubit.changeTab(ProjectsFilterTabEnum.requestDesign);
             break;
           case 1:
-            cubit.changeTab(ProjectsFilterTabEnum.customPackage);
+            cubit.changeTab(ProjectsFilterTabEnum.renovateYourHouse);
             break;
           case 2:
-            cubit.changeTab(ProjectsFilterTabEnum.renovateYourHouse);
+            cubit.changeTab(ProjectsFilterTabEnum.customPackage);
             break;
           case 3:
             cubit.changeTab(ProjectsFilterTabEnum.askEngineer);
@@ -38,7 +38,6 @@ class ProjectsFilterTabBarWidget extends StatelessWidget {
             cubit.changeTab(ProjectsFilterTabEnum.askTechnicalWorker);
             break;
         }
-
       },
       isScrollable: true,
       padding: EdgeInsets.symmetric(horizontal: 24.w),

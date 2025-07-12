@@ -33,7 +33,7 @@ class _BestShowRoomsWidgetState extends State<BestShowRoomsWidget> {
         children: [
           verticalSpace(16),
           CustomSeeAllRowWidget(
-            text: AppLocale.theBestShowrooms.getString(context),
+            text: AppLocale.highestRated.getString(context),
             onPressed: () {
               context.pushNamed(Routes.bestShowRoomsScreen);
             },

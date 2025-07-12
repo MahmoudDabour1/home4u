@@ -6,7 +6,6 @@ import 'package:home4u/features/projects_filter/presentation/widgets/project_det
 import 'package:home4u/features/projects_filter/presentation/widgets/request_design_widgets/request_design_service_details_content.dart';
 import 'package:home4u/features/projects_filter/presentation/widgets/request_design_widgets/request_design_service_details_requests.dart';
 
-
 class RequestDesignServiceDetailsScreen extends StatefulWidget {
   final int requestId;
 
@@ -48,11 +47,10 @@ class _RequestDesignServiceDetailsScreenState
   void initState() {
     super.initState();
     final cubit = context.read<RequestDesignServicesCubit>();
-    cubit.requestDesignDetails(
-      requestId: widget.requestId.toString(),
-    );
-    cubit.getAskRequestDesignRequests(
-      askId: widget.requestId.toString(),
-    );
+    cubit
+        .requestDesignDetails(requestId: widget.requestId.toString())
+        .then((_) {
+      cubit.getAskRequestDesignRequests(askId: widget.requestId.toString());
+    });
   }
 }

@@ -7,8 +7,7 @@ import '../data_source/request_design_remote_data_source.dart';
 
 abstract class RequestDesignRepository {
   Future<ApiResult<RequestDesignResponseModel>> requestDesign(
-    RequestDesignBody requestDesignBody,
-  );
+      RequestDesignBody requestDesignBody,);
 }
 
 class RequestDesignRepositoryImpl implements RequestDesignRepository {
@@ -20,8 +19,7 @@ class RequestDesignRepositoryImpl implements RequestDesignRepository {
 
   @override
   Future<ApiResult<RequestDesignResponseModel>> requestDesign(
-    RequestDesignBody requestDesignBody,
-  ) async {
+      RequestDesignBody requestDesignBody,) async {
     try {
       final response = await remoteDataSource.requestDesign(requestDesignBody);
       return ApiResult.success(response);

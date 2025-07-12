@@ -18,7 +18,9 @@ class AccountScreen extends StatelessWidget {
       body: SafeArea(
         child: SingleChildScrollView(
           child: Padding(
-            padding: EdgeInsets.symmetric(horizontal: 16.w),
+            padding: EdgeInsets.symmetric(horizontal: 24.w,
+            vertical: 16.h
+            ),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [

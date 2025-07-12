@@ -15,7 +15,10 @@ class AskTechnicalTabViewBody extends StatefulWidget {
       _AskTechnicalTabViewBodyState();
 }
 
-class _AskTechnicalTabViewBodyState extends State<AskTechnicalTabViewBody> {
+class _AskTechnicalTabViewBodyState extends State<AskTechnicalTabViewBody> with AutomaticKeepAliveClientMixin {
+  @override
+  bool get wantKeepAlive => true;
+
   late ScrollController _scrollController;
 
   @override
@@ -51,6 +54,7 @@ class _AskTechnicalTabViewBodyState extends State<AskTechnicalTabViewBody> {
 
   @override
   Widget build(BuildContext context) {
+    super.build(context);
     return BlocBuilder<ProjectsFilterCubit, ProjectsFilterState>(
       builder: (context, state) {
         final cubit = context.read<ProjectsFilterCubit>();
@@ -63,6 +67,12 @@ class _AskTechnicalTabViewBodyState extends State<AskTechnicalTabViewBody> {
             child: CircularProgressIndicator(
               color: Colors.amber,
             ),
+          );
+        }
+        if (state is AskTechnicalWorkerFilterSuccess &&
+            cubit.askTechnicalItems.isEmpty) {
+          return const EmptyStateWidget(
+            title: 'No Ask Technical requests founded',
           );
         }
 

@@ -52,11 +52,12 @@ class _RenovateHouseCustomPackageServiceDetailsScreenState
     super.initState();
 
     final cubit = context.read<RenovateHouseCustomPackageServicesCubit>();
-    cubit.renovateHouseCustomPackageServiceDetails(
-      packageId: widget.requestId.toString(),
-    );
-    cubit.getRenovateHouseCustomPackageRequests(
-      requestId: widget.requestId.toString(),
-    );
+    cubit
+        .renovateHouseCustomPackageServiceDetails(
+            packageId: widget.requestId.toString())
+        .then((_) {
+      cubit.getRenovateHouseCustomPackageRequests(
+          requestId: widget.requestId.toString());
+    });
   }
 }

@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_localization/flutter_localization.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:home4u/locale/app_locale.dart';
 
 import '../../../../core/theming/app_colors.dart';
 import '../../../../core/theming/app_styles.dart';
@@ -22,7 +24,7 @@ class UserDataSection extends StatelessWidget {
           children: [
             CircleAvatar(
               radius: 25.r,
-              backgroundColor: AppColors.grayColor.withOpacity(0.2),
+              backgroundColor: AppColors.grayColor.withValues(alpha: 0.2),
               backgroundImage: AssetImage("assets/images/user_placeholder.png"),
             ),
             horizontalSpace(8),
@@ -31,13 +33,13 @@ class UserDataSection extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    "user",
+                    AppLocale.user.getString(context),
                     style: AppStyles.font16BlackMedium,
                     maxLines: 1,
                     overflow: TextOverflow.ellipsis,
                   ),
                   Text(
-                    "email",
+                    AppLocale.email.getString(context),
                     style: AppStyles.font16BlackLight,
                     maxLines: 2,
                     overflow: TextOverflow.ellipsis,
@@ -47,12 +49,12 @@ class UserDataSection extends StatelessWidget {
             ),
             horizontalSpace(8),
             AppCustomButton(
-                textButton: "Edit",
-                btnWidth: 20.w,
-                btnHeight: 20.h,
-                isBorder: true,
-                radius: 30.r,
-                onPressed: () {}),
+              textButton: AppLocale.edit.getString(context),
+              btnWidth: 20.w,
+              btnHeight: 20.h,
+              isBorder: true,
+              radius: 30.r,
+              onPressed: () {},),
           ],
         ),
       ),

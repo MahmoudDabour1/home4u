@@ -1,9 +1,12 @@
 import 'package:auto_size_text/auto_size_text.dart';
+import 'package:fancy_shimmer_image/fancy_shimmer_image.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_localization/flutter_localization.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:home4u/core/extensions/navigation_extension.dart';
 import 'package:home4u/core/networking/api_constants.dart';
+import 'package:home4u/core/widgets/fancy_image.dart';
 import 'package:home4u/features/cart/presentation/widgets/cart_details_widgets/animated_toggle_row.dart';
 import 'package:home4u/locale/app_locale.dart';
 
@@ -11,6 +14,7 @@ import '../../../../../core/routing/routes.dart';
 import '../../../../../core/theming/app_colors.dart';
 import '../../../../../core/theming/app_styles.dart';
 import '../../../../../core/utils/spacing.dart';
+import '../../../../cart/logic/cart_cubit.dart';
 
 class ScrollContainerWidget extends StatefulWidget {
   final String image;
@@ -22,6 +26,7 @@ class ScrollContainerWidget extends StatefulWidget {
   final int? productId;
   final bool? isVerticalScroll;
   final String numberOfSales;
+  final dynamic product;
 
   const ScrollContainerWidget({
     super.key,
@@ -32,7 +37,9 @@ class ScrollContainerWidget extends StatefulWidget {
     required this.price,
     required this.rankBySales,
     this.productId,
-    this.isVerticalScroll = false,required this.numberOfSales,
+    this.isVerticalScroll = false,
+    required this.numberOfSales,
+    required this.product,
   });
 
   @override
@@ -78,12 +85,37 @@ class _ScrollContainerWidgetState extends State<ScrollContainerWidget> {
                     children: [
                       Padding(
                         padding: EdgeInsets.all(8.r),
-                        child: Image.network(
-                          '${ApiConstants.apiBaseUrl}/${widget.image}',
+                        child: FancyShimmerImage(
+                          imageUrl:
+                          ApiConstants.getImageBaseUrl(widget.image),
                           height: MediaQuery.sizeOf(context).height - 16.w,
                           width: MediaQuery.sizeOf(context).width - 16.w,
-                          fit: BoxFit.cover,
+                          boxFit: BoxFit.cover,
+                          shimmerBaseColor: Colors.grey[300]!,
+                          shimmerHighlightColor: Colors.grey[100]!,
+                          shimmerBackColor: Colors.grey[100]!,
+                          errorWidget: const Center(child: Icon(Icons.error)),
+                          alignment: Alignment.center,
+                          imageBuilder: (context, imageProvider) => Container(
+                            decoration: BoxDecoration(
+                              shape: BoxShape.rectangle,
+                              // borderRadius: BorderRadius.circular(16.r),
+                              image: DecorationImage(
+                                image: imageProvider,
+                                fit: BoxFit.cover,
+                              ),
+                            ),
+                          ),
                         ),
+
+
+
+                        // Image.network(
+                        //   '${ApiConstants.apiBaseUrl}/${widget.image}',
+                        //   height: MediaQuery.sizeOf(context).height - 16.w,
+                        //   width: MediaQuery.sizeOf(context).width - 16.w,
+                        //   fit: BoxFit.cover,
+                        // ),
                       ),
                       Positioned(
                         top: 4.h,
@@ -128,7 +160,11 @@ class _ScrollContainerWidgetState extends State<ScrollContainerWidget> {
                               Icons.shopping_cart_checkout_sharp,
                               size: 24.h,
                             ),
-                            onPressed: () {},
+                            onPressed: () {
+                              context
+                                  .read<CartCubit>()
+                                  .addToCart(widget.product, context);
+                            },
                           ),
                         ),
                       ),
@@ -214,7 +250,7 @@ class _ScrollContainerWidgetState extends State<ScrollContainerWidget> {
             ),
             Icon(
               Icons.star,
-              color: Colors.green,
+              color: Colors.yellow,
               size: 20.r,
             ),
             horizontalSpace(4),

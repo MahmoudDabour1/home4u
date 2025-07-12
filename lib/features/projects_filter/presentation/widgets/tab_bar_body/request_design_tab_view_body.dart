@@ -15,15 +15,18 @@ class RequestDesignTabViewBody extends StatefulWidget {
       _RequestDesignTabViewBodyState();
 }
 
-class _RequestDesignTabViewBodyState extends State<RequestDesignTabViewBody> {
+class _RequestDesignTabViewBodyState extends State<RequestDesignTabViewBody>
+    with AutomaticKeepAliveClientMixin {
+  @override
+  bool get wantKeepAlive => true;
+
   late ScrollController _scrollController;
 
   @override
   void initState() {
     super.initState();
     _loadInitialData();
-    _scrollController = ScrollController()
-      ..addListener(_scrollListener);
+    _scrollController = ScrollController()..addListener(_scrollListener);
   }
 
   void _loadInitialData() {
@@ -35,7 +38,7 @@ class _RequestDesignTabViewBodyState extends State<RequestDesignTabViewBody> {
     final cubit = context.read<ProjectsFilterCubit>();
 
     if (_scrollController.offset >=
-        _scrollController.position.maxScrollExtent * 0.7 &&
+            _scrollController.position.maxScrollExtent * 0.7 &&
         !cubit.hasReachedMaxOfRequestDesign) {
       cubit.getRequestDesignFilter();
     }
@@ -52,6 +55,7 @@ class _RequestDesignTabViewBodyState extends State<RequestDesignTabViewBody> {
 
   @override
   Widget build(BuildContext context) {
+    super.build(context);
     return BlocBuilder<ProjectsFilterCubit, ProjectsFilterState>(
       builder: (context, state) {
         final cubit = context.read<ProjectsFilterCubit>();
@@ -67,6 +71,13 @@ class _RequestDesignTabViewBodyState extends State<RequestDesignTabViewBody> {
           );
         }
 
+        if (state is RequestDesignFilterSuccess &&
+            cubit.requestDesignItems.isEmpty) {
+          return const EmptyStateWidget(
+            title: 'No request design items available.',
+          );
+        }
+
         return ListView.separated(
           controller: _scrollController,
           itemBuilder: (context, index) {
@@ -76,9 +87,7 @@ class _RequestDesignTabViewBodyState extends State<RequestDesignTabViewBody> {
               );
             } else if (isLoadingMore) {
               return SizedBox(
-                height: MediaQuery
-                    .sizeOf(context)
-                    .height * 0.4,
+                height: MediaQuery.sizeOf(context).height * 0.4,
                 child: const Center(
                   child: CircularProgressIndicator(),
                 ),

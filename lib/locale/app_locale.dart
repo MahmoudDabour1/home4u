@@ -423,10 +423,18 @@ class AppLocale {
   static const String maxDuration = 'Max Duration';
   static const String max = 'Max';
   static const String min = 'Min';
-
-
-
+  static const String topBestSeller = 'Top Best Seller';
+  static const String highestRated =  'Highest Rated';
   static const String addOffer = 'Add Offer';
+  static const String productAddedToCartSuccessfully
+  = 'Product Added To Cart Successfully';
+  static const String user = 'User';
+  static const String email = 'email';
+  static const String orders = 'Orders';
+  static const String wishlist = 'Wishlist';
+  static const String orderSubtitle = 'Manage & track';
+  static const String wishlistSubtitle = 'Saved item';
+  static const String payment = 'Payment';
 
   static const Map<String, dynamic> en = {
     onBoardingTitle1: 'Civil Works & Finishing Services',
@@ -787,6 +795,15 @@ class AppLocale {
     max: 'Max',
     min: 'Min',
     addOffer : 'Add Offer',
+    user : 'User',
+    email : 'email',
+    orders : 'Orders',
+    wishlist : 'Wishlist',
+    orderSubtitle: 'Manage & track',
+    wishlistSubtitle: 'Saved item',
+    topBestSeller: 'Top Best Seller',
+    highestRated: 'Highest Rated',
+    productAddedToCartSuccessfully: 'Product Added To Cart Successfully',
   };
 
   static const Map<String, dynamic> ar = {
@@ -1144,5 +1161,14 @@ class AppLocale {
     max: 'الحد الأقصى',
     min: 'الحد الأدنى',
     addOffer : 'إضافة عرض',
+    user : 'المستخدم',
+    email : 'البريد الإلكتروني',
+    orders : 'الطلبات',
+    wishlist : 'المفضلة',
+    orderSubtitle: 'إدارة وتتبع',
+    wishlistSubtitle: 'العناصر المحفوظة',
+    topBestSeller: 'الأكثر مبيعًا',
+    highestRated: 'الأعلى تقييمًا',
+    productAddedToCartSuccessfully: 'تم إضافة المنتج إلى السلة بنجاح',
   };
 }

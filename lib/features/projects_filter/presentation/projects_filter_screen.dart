@@ -78,16 +78,9 @@ class _ProjectsFilterScreenState extends State<ProjectsFilterScreen> {
               child: TabBarView(
                 physics: NeverScrollableScrollPhysics(),
                 children: [
-                  // ///ToDo : Mostafa
-                  // FurnishHouseTabViewBody(),
-
                   RequestDesignTabViewBody(),
-
-                  // ///ToDo : Mostafa
-                  // Center(child: Text('Kitchen && Dressing')),
                   RenovateHouseTabViewBody(),
                   RenovateHouseCustomPackageTabViewBody(),
-
                   AskEngineerTabViewBody(),
                   AskTechnicalTabViewBody(),
                 ],

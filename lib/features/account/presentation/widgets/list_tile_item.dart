@@ -26,14 +26,15 @@ class ListTileItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.symmetric(horizontal: 6.w, vertical: 8.h),
+      padding: EdgeInsets.symmetric(horizontal: 3.w, vertical: 4.h),
       child: Column(
         children: [
           ListTile(
+
             leading: Image.asset(
               imageUrl ?? "assets/images/country_icon.png",
-            height: 35.h  ,
-            width: 35.w,
+            height: 25.h  ,
+            width: 25.w,
             ),
             title: isHaveTitleDetails == true
                 ? Row(

@@ -17,7 +17,6 @@ class OrderDetailsCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return SizedBox(
       width: MediaQuery.sizeOf(context).width,
-      height: 92.h,
       child: Card(
         color: AppColors.secondaryGradientColor,
         shape: RoundedRectangleBorder(

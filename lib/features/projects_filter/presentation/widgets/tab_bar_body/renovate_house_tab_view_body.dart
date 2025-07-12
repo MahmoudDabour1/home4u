@@ -15,7 +15,11 @@ class RenovateHouseTabViewBody extends StatefulWidget {
       _RenovateHouseTabViewBodyState();
 }
 
-class _RenovateHouseTabViewBodyState extends State<RenovateHouseTabViewBody> {
+class _RenovateHouseTabViewBodyState extends State<RenovateHouseTabViewBody>
+    with AutomaticKeepAliveClientMixin {
+  @override
+  bool get wantKeepAlive => true;
+
   late ScrollController _scrollController;
 
   @override
@@ -51,6 +55,7 @@ class _RenovateHouseTabViewBodyState extends State<RenovateHouseTabViewBody> {
 
   @override
   Widget build(BuildContext context) {
+    super.build(context);
     return BlocBuilder<ProjectsFilterCubit, ProjectsFilterState>(
       builder: (context, state) {
         final cubit = context.read<ProjectsFilterCubit>();
@@ -65,6 +70,14 @@ class _RenovateHouseTabViewBodyState extends State<RenovateHouseTabViewBody> {
             ),
           );
         }
+
+        if (state is RenovateYourHouseCustomPackagesFilterLoaded &&
+            cubit.customPackages.isEmpty) {
+          return const EmptyStateWidget(
+            title: "No custom packages found",
+          );
+        }
+
         return ListView.separated(
           itemBuilder: (context, index) {
             if (index < cubit.customPackages.length) {
