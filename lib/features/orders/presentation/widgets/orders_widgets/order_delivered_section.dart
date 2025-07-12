@@ -9,11 +9,20 @@ import 'package:home4u/features/orders/presentation/widgets/orders_widgets/order
 import '../../../../../core/utils/spacing.dart';
 import 'orders_container_widget.dart';
 
-class OrderDeliveredSection extends StatelessWidget {
+class OrderDeliveredSection extends StatefulWidget {
   const OrderDeliveredSection({super.key});
 
   @override
+  State<OrderDeliveredSection> createState() => _OrderDeliveredSectionState();
+}
+
+class _OrderDeliveredSectionState extends State<OrderDeliveredSection> with AutomaticKeepAliveClientMixin{
+  @override
+  bool get wantKeepAlive => true;
+
+  @override
   Widget build(BuildContext context) {
+    super.build(context);
     return SingleChildScrollView(
       child: Column(
         children: [

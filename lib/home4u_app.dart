@@ -192,9 +192,8 @@ class _Home4uAppState extends State<Home4uApp> {
                     debugShowCheckedModeBanner: false,
                     navigatorObservers: [RouterObserver(), _routeObserver],
                     initialRoute:
-                        Routes.onBoardingScreen,
-                        // snapshot.data!,
-                        // Routes.productsRatingScreen,
+                        // Routes.onBoardingScreen,
+                        snapshot.data!,
                   ),
                 );
               },

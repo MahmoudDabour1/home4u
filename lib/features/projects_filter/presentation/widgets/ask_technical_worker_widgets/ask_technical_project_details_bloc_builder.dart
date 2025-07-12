@@ -32,16 +32,13 @@ class AskTechnicalProjectDetailsBlocBuilder extends StatelessWidget {
       ),
       builder: (context, state) {
         return state.maybeWhen(
-          askTechnicalServiceDetailsLoading: () => SizedBox(
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              mainAxisSize: MainAxisSize.max,
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                AppCustomLoadingIndicator(
-                  loadingColor: AppColors.primaryColor,
-                ),
-              ],
+          askTechnicalServiceDetailsLoading: () =>   SizedBox(
+            height: MediaQuery
+                .sizeOf(context)
+                .height * 0.5,
+            child:
+            AppCustomLoadingIndicator(
+              loadingColor: AppColors.primaryColor,
             ),
           ),
           askTechnicalServiceDetailsSuccess: (data) {

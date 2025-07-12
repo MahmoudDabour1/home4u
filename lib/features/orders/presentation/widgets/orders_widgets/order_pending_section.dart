@@ -9,11 +9,20 @@ import '../../../logic/orders_state.dart';
 import '../order_empty_state_widget.dart';
 import 'orders_container_widget.dart';
 
-class OrderPendingSection extends StatelessWidget {
+class OrderPendingSection extends StatefulWidget {
   const OrderPendingSection({super.key});
 
   @override
+  State<OrderPendingSection> createState() => _OrderPendingSectionState();
+}
+
+class _OrderPendingSectionState extends State<OrderPendingSection> with AutomaticKeepAliveClientMixin {
+  @override
+  bool get wantKeepAlive => true;
+
+  @override
   Widget build(BuildContext context) {
+    super.build(context);
     return SingleChildScrollView(
       child: Column(
         children: [
