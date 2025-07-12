@@ -194,8 +194,6 @@ class _Home4uAppState extends State<Home4uApp> {
                     initialRoute:
                         // Routes.onBoardingScreen,
                         snapshot.data!,
-                        // Routes.productsRatingScreen,
-                        // snapshot.data!,
                   ),
                 );
               },

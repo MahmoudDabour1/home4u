@@ -16,7 +16,10 @@ class RenovateHouseCustomPackageTabViewBody extends StatefulWidget {
 }
 
 class _RenovateHouseCustomPackageTabViewBodyState
-    extends State<RenovateHouseCustomPackageTabViewBody> {
+    extends State<RenovateHouseCustomPackageTabViewBody> with AutomaticKeepAliveClientMixin {
+  @override
+  bool get wantKeepAlive => true;
+
   late ScrollController _scrollController;
 
   @override
@@ -54,6 +57,7 @@ class _RenovateHouseCustomPackageTabViewBodyState
 
   @override
   Widget build(BuildContext context) {
+    super.build(context);
     return BlocBuilder<ProjectsFilterCubit, ProjectsFilterState>(
       builder: (context, state) {
         final cubit = context.read<ProjectsFilterCubit>();
@@ -66,6 +70,13 @@ class _RenovateHouseCustomPackageTabViewBodyState
             child: CircularProgressIndicator(
               color: Colors.amber,
             ),
+          );
+        }
+
+        if (state is RenovateYourHouseFixedPackagesFilterLoaded &&
+            cubit.fixedPackages.isEmpty) {
+          return const EmptyStateWidget(
+            title: 'No fixed packages found',
           );
         }
 

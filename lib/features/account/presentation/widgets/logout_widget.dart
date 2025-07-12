@@ -20,18 +20,23 @@ class LogoutWidget extends StatelessWidget {
           context: context,
           builder: (BuildContext dialogContext) {
             return AlertDialog(
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(16.r),
+              ),
+              backgroundColor: AppColors.whiteColor,
+              contentPadding: EdgeInsets.all(16.r),
+
               title: Row(
                 children: [
                   Image.asset(
                     "assets/images/logout_icon.png",
-                    height: 35.h,
-                    width: 35.w,
+                    height: 25.h,
+                    width: 25.w,
                   ),
                   horizontalSpace(8),
                   Text('Do you want to sign out?'),
                 ],
               ),
-              // content: Text('dialogBody'),
               actions: <Widget>[
                 ElevatedButton(
                     style: ElevatedButton.styleFrom(

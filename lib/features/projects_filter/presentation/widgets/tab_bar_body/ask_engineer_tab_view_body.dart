@@ -14,7 +14,10 @@ class AskEngineerTabViewBody extends StatefulWidget {
   State<AskEngineerTabViewBody> createState() => _AskEngineerTabViewBodyState();
 }
 
-class _AskEngineerTabViewBodyState extends State<AskEngineerTabViewBody> {
+class _AskEngineerTabViewBodyState extends State<AskEngineerTabViewBody> with AutomaticKeepAliveClientMixin {
+  @override
+  bool get wantKeepAlive => true;
+
   late ScrollController _scrollController;
 
   @override
@@ -51,6 +54,7 @@ class _AskEngineerTabViewBodyState extends State<AskEngineerTabViewBody> {
 
   @override
   Widget build(BuildContext context) {
+    super.build(context);
     return BlocBuilder<ProjectsFilterCubit, ProjectsFilterState>(
       builder: (context, state) {
         final cubit = context.read<ProjectsFilterCubit>();
@@ -63,6 +67,12 @@ class _AskEngineerTabViewBodyState extends State<AskEngineerTabViewBody> {
             child: CircularProgressIndicator(
               color: Colors.amber,
             ),
+          );
+        }
+        if (state is AskEngineerFilterSuccess &&
+            cubit.askEngineerItems.isEmpty) {
+          return const EmptyStateWidget(
+            title: 'No Ask Engineer Items Available',
           );
         }
 

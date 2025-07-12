@@ -8,6 +8,7 @@ import 'package:home4u/features/projects_filter/presentation/widgets/renovate_ho
 
 import '../../../../../core/theming/app_colors.dart';
 import '../../../../../core/utils/app_constants.dart';
+import '../../../../../core/widgets/app_custom_loading_indicator.dart';
 import '../../../../../locale/app_locale.dart';
 import '../details/project_details_governorate_city_row.dart';
 import '../details/project_details_item_value.dart';
@@ -21,17 +22,25 @@ class RenovateHouseServiceDetailsContent extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocBuilder<RenovateHouseServicesCubit, RenovateHouseServicesState>(
-      buildWhen: (previous, current) => current.maybeWhen(
-        renovateHouseServiceDetailsLoading: () => true,
-        renovateHouseServiceDetailsSuccess: (_) => true,
-        renovateHouseServiceDetailsFailure: (_) => true,
-        orElse: () => false,
-      ),
+      buildWhen: (previous, current) =>
+          current.maybeWhen(
+            renovateHouseServiceDetailsLoading: () => true,
+            renovateHouseServiceDetailsSuccess: (_) => true,
+            renovateHouseServiceDetailsFailure: (_) => true,
+            orElse: () => false,
+          ),
       builder: (context, state) {
         return state.maybeWhen(
-          renovateHouseServiceDetailsLoading: () => const Center(
-            child: CircularProgressIndicator(),
-          ),
+          renovateHouseServiceDetailsLoading: () =>
+              SizedBox(
+                height: MediaQuery
+                    .sizeOf(context)
+                    .height * 0.5,
+                child:
+                AppCustomLoadingIndicator(
+                  loadingColor: AppColors.primaryColor,
+                ),
+              ),
           renovateHouseServiceDetailsSuccess: (service) {
             final renovateHouseData = service.data;
             return Column(
@@ -39,7 +48,9 @@ class RenovateHouseServiceDetailsContent extends StatelessWidget {
               spacing: 32.h,
               children: [
                 Container(
-                  width: MediaQuery.sizeOf(context).width,
+                  width: MediaQuery
+                      .sizeOf(context)
+                      .width,
                   decoration: BoxDecoration(
                     color: AppColors.containersColor,
                     borderRadius: BorderRadius.circular(24.r),
@@ -64,7 +75,7 @@ class RenovateHouseServiceDetailsContent extends StatelessWidget {
                         ),
                         ProjectDetailsGovernorateCityRow(
                           governorate:
-                              renovateHouseData.governorate?.name ?? 'N/A',
+                          renovateHouseData.governorate?.name ?? 'N/A',
                           city: renovateHouseData.city?.name ?? 'N/A',
                         ),
                         Row(
@@ -73,7 +84,7 @@ class RenovateHouseServiceDetailsContent extends StatelessWidget {
                               flex: 2,
                               child: ProjectDetailsItemValue(
                                 itemTitle:
-                                    AppLocale.numberOfRooms.getString(context),
+                                AppLocale.numberOfRooms.getString(context),
                                 value: '${renovateHouseData.numberOfRooms}',
                               ),
                             ),
@@ -100,7 +111,7 @@ class RenovateHouseServiceDetailsContent extends StatelessWidget {
                               flex: 2,
                               child: ProjectDetailsItemValue(
                                 itemTitle:
-                                    AppLocale.durationInDays.getString(context),
+                                AppLocale.durationInDays.getString(context),
                                 value: '${renovateHouseData.requiredDuration}',
                               ),
                             ),
@@ -112,7 +123,7 @@ class RenovateHouseServiceDetailsContent extends StatelessWidget {
                               flex: 2,
                               child: ProjectDetailsItemValue(
                                 itemTitle:
-                                    AppLocale.unitStatus.getString(context),
+                                AppLocale.unitStatus.getString(context),
                                 value: renovateHouseData.unitStatuses?.name ??
                                     'N/A',
                               ),
@@ -121,7 +132,7 @@ class RenovateHouseServiceDetailsContent extends StatelessWidget {
                               flex: 2,
                               child: ProjectDetailsItemValue(
                                 itemTitle:
-                                    AppLocale.unitWorkType.getString(context),
+                                AppLocale.unitWorkType.getString(context),
                                 value: renovateHouseData.unitWorkTypes?.name ??
                                     'N/A',
                               ),
@@ -131,7 +142,8 @@ class RenovateHouseServiceDetailsContent extends StatelessWidget {
                         ProjectDetailsItemValue(
                           itemTitle: AppLocale.budget.getString(context),
                           value:
-                              '${renovateHouseData.budget} ${AppLocale.egp.getString(context)}',
+                          '${renovateHouseData.budget} ${AppLocale.egp
+                              .getString(context)}',
                         ),
                         ProjectDetailsItemValue(
                           itemTitle: AppLocale.notes.getString(context),
@@ -142,7 +154,7 @@ class RenovateHouseServiceDetailsContent extends StatelessWidget {
                           children: [
                             ProjectSkillsNeededWidget(
                               skillNeeded:
-                                  renovateHouseData.workSkills?.name ?? 'N/A',
+                              renovateHouseData.workSkills?.name ?? 'N/A',
                             ),
                           ],
                         ),
@@ -157,9 +169,10 @@ class RenovateHouseServiceDetailsContent extends StatelessWidget {
               ],
             );
           },
-          renovateHouseServiceDetailsFailure: (error) => Center(
-            child: Text('Error: $error'),
-          ),
+          renovateHouseServiceDetailsFailure: (error) =>
+              Center(
+                child: Text('Error: $error'),
+              ),
           orElse: () => const SizedBox.shrink(),
         );
       },

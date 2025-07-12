@@ -25,8 +25,9 @@ class _AskEngineerServiceDetailsScreenState
   void initState() {
     super.initState();
     final cubit = context.read<AskEngineerServicesCubit>();
-    cubit.askEngineerServiceDetails(askId: widget.askId.toString());
-    cubit.getAskEngineerRequests(askId: widget.askId.toString());
+    cubit.askEngineerServiceDetails(askId: widget.askId.toString()).then((_) {
+      cubit.getAskEngineerRequests(askId: widget.askId.toString());
+    });
   }
 
   @override

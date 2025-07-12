@@ -22,26 +22,25 @@ class AskEngineerServiceContentDetails extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocBuilder<AskEngineerServicesCubit, AskEngineerServicesState>(
-      buildWhen: (previous, current) => current.maybeWhen(
-        askEngineerServiceDetailsLoading: () => true,
-        askEngineerServiceDetailsSuccess: (_) => true,
-        askEngineerServiceDetailsFailure: (_) => true,
-        orElse: () => false,
-      ),
+      buildWhen: (previous, current) =>
+          current.maybeWhen(
+            askEngineerServiceDetailsLoading: () => true,
+            askEngineerServiceDetailsSuccess: (_) => true,
+            askEngineerServiceDetailsFailure: (_) => true,
+            orElse: () => false,
+          ),
       builder: (context, state) {
         return state.maybeWhen(
-          askEngineerServiceDetailsLoading: () => SizedBox(
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              mainAxisSize: MainAxisSize.max,
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
+          askEngineerServiceDetailsLoading: () =>
+              SizedBox(
+                height: MediaQuery
+                    .sizeOf(context)
+                    .height * 0.5,
+                child:
                 AppCustomLoadingIndicator(
                   loadingColor: AppColors.primaryColor,
                 ),
-              ],
-            ),
-          ),
+              ),
           askEngineerServiceDetailsSuccess: (askEngineer) {
             final askEngineerData = askEngineer.data;
             return Column(
@@ -49,7 +48,9 @@ class AskEngineerServiceContentDetails extends StatelessWidget {
               spacing: 32.h,
               children: [
                 Container(
-                  width: MediaQuery.sizeOf(context).width,
+                  width: MediaQuery
+                      .sizeOf(context)
+                      .width,
                   decoration: BoxDecoration(
                     color: AppColors.containersColor,
                     borderRadius: BorderRadius.circular(24.r),
@@ -73,12 +74,12 @@ class AskEngineerServiceContentDetails extends StatelessWidget {
                         ),
                         ProjectDetailsItemValue(
                           itemTitle:
-                              AppLocale.projectDetails.getString(context),
+                          AppLocale.projectDetails.getString(context),
                           value: askEngineerData.projectDescription ?? 'N/A',
                         ),
                         ProjectDetailsGovernorateCityRow(
                           governorate:
-                              askEngineerData.governorate?.name ?? 'N/A',
+                          askEngineerData.governorate?.name ?? 'N/A',
                           city: askEngineerData.city?.name ?? 'N/A',
                         ),
                         Row(
@@ -96,9 +97,9 @@ class AskEngineerServiceContentDetails extends StatelessWidget {
                               flex: 2,
                               child: ProjectDetailsItemValue(
                                 itemTitle:
-                                    AppLocale.urgencyLevel.getString(context),
+                                AppLocale.urgencyLevel.getString(context),
                                 value:
-                                    askEngineerData.urgencyLevel?.name ?? 'N/A',
+                                askEngineerData.urgencyLevel?.name ?? 'N/A',
                               ),
                             ),
                           ],
@@ -106,7 +107,8 @@ class AskEngineerServiceContentDetails extends StatelessWidget {
                         ProjectDetailsItemValue(
                           itemTitle: AppLocale.budget.getString(context),
                           value:
-                              '${askEngineerData.budget} ${AppLocale.egp.getString(context)}',
+                          '${askEngineerData.budget} ${AppLocale.egp.getString(
+                              context)}',
                         ),
                         if (askEngineerData.photos != null &&
                             askEngineerData.photos!.isNotEmpty)
