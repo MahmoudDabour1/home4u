@@ -423,7 +423,11 @@ class AppLocale {
   static const String maxDuration = 'Max Duration';
   static const String max = 'Max';
   static const String min = 'Min';
+  static const String topBestSeller = 'Top Best Seller';
+  static const String highestRated =  'Highest Rated';
   static const String addOffer = 'Add Offer';
+  static const String productAddedToCartSuccessfully
+  = 'Product Added To Cart Successfully';
   static const String user = 'User';
   static const String email = 'email';
   static const String orders = 'Orders';
@@ -797,6 +801,9 @@ class AppLocale {
     wishlist : 'Wishlist',
     orderSubtitle: 'Manage & track',
     wishlistSubtitle: 'Saved item',
+    topBestSeller: 'Top Best Seller',
+    highestRated: 'Highest Rated',
+    productAddedToCartSuccessfully: 'Product Added To Cart Successfully',
   };
 
   static const Map<String, dynamic> ar = {
@@ -1160,5 +1167,8 @@ class AppLocale {
     wishlist : 'المفضلة',
     orderSubtitle: 'إدارة وتتبع',
     wishlistSubtitle: 'العناصر المحفوظة',
+    topBestSeller: 'الأكثر مبيعًا',
+    highestRated: 'الأعلى تقييمًا',
+    productAddedToCartSuccessfully: 'تم إضافة المنتج إلى السلة بنجاح',
   };
 }

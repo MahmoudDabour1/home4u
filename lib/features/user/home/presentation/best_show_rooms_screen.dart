@@ -34,35 +34,35 @@ class _BestShowRoomsScreenState extends State<BestShowRoomsScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar:
-          AppCustomAppBar(title: AppLocale.theBestShowrooms.getString(context)),
+          AppCustomAppBar(title: AppLocale.highestRated.getString(context)),
       body: SafeArea(
         child: Padding(
           padding: EdgeInsets.symmetric(horizontal: 24.w),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              verticalSpace(32),
-              Row(
-                spacing: 16.w,
-                children: [
-                  Expanded(
-                    child: AppCustomSearchTextField(
-                      fillColor: AppColors.offWhiteColor,
-                    ),
-                  ),
-                  AppCustomFilterButton(
-                    onPressed: () {},
-                    backgroundColor: AppColors.offWhiteColor,
-                  ),
-                ],
-              ),
-              Padding(
-                padding: EdgeInsets.symmetric(vertical: 16.h),
-                child: Text(
-                  AppLocale.theBestShowrooms.getString(context),
-                  style: AppStyles.font16BlackMedium,
-                ),
-              ),
+              verticalSpace(16),
+              // Row(
+              //   spacing: 16.w,
+              //   children: [
+              //     Expanded(
+              //       child: AppCustomSearchTextField(
+              //         fillColor: AppColors.offWhiteColor,
+              //       ),
+              //     ),
+              //     AppCustomFilterButton(
+              //       onPressed: () {},
+              //       backgroundColor: AppColors.offWhiteColor,
+              //     ),
+              //   ],
+              // ),
+              // Padding(
+              //   padding: EdgeInsets.symmetric(vertical: 16.h),
+              //   child: Text(
+              //     AppLocale.highestRated.getString(context),
+              //     style: AppStyles.font16BlackMedium,
+              //   ),
+              // ),
               BlocBuilder<HomeCubit, HomeState>(
                 buildWhen: (previous, current) =>
                     current is GetHighestRatedLoading ||
@@ -92,7 +92,8 @@ class _BestShowRoomsScreenState extends State<BestShowRoomsScreen> {
         shrinkWrap: true,
         physics: const BouncingScrollPhysics(),
         itemBuilder: (context, index) {
-          return ScrollContainerWidget(
+          return ScrollContainerWidget(                product: data.data?[index],
+
             isVerticalScroll: true,
             productId: data.data?[index].id ?? 0,
             image: data.data?[index].images?[0] ?? '',

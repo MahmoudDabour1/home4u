@@ -38,7 +38,7 @@ class CartDetailsTapBar extends StatelessWidget {
               ]),
         ),
         Container(
-          height: MediaQuery.sizeOf(context).height*0.39.h,
+          height: MediaQuery.sizeOf(context).height*0.25.h,
           decoration: BoxDecoration(color: AppColors.whiteColor),
           child:TabBarView(
             children: [

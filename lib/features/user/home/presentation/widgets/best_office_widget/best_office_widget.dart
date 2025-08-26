@@ -32,7 +32,7 @@ class _BestOfficeWidgetState extends State<BestOfficeWidget> {
         children: [
           verticalSpace(16),
           CustomSeeAllRowWidget(
-            text: AppLocale.theBestOffices.getString(context),
+            text: AppLocale.topBestSeller.getString(context),
             onPressed: () {
               context.pushNamed(Routes.bestOfficesScreen);
             },

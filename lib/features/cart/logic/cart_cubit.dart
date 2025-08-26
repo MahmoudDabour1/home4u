@@ -1,11 +1,15 @@
 import 'package:bloc/bloc.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_localization/flutter_localization.dart';
+import 'package:home4u/core/helpers/helper_methods.dart';
 import 'package:home4u/features/cart/data/models/cart_item_model.dart';
 import 'package:home4u/features/cart/data/models/shop_now_search_body.dart';
+import 'package:home4u/locale/app_locale.dart';
 
 import '../../../core/routing/router_observer.dart';
 import '../../products/data/models/business_config_model.dart';
 import '../data/models/order_details_body.dart';
+import '../data/models/rating_chart_response_model.dart';
 import '../data/models/rating_reviews_request_model.dart';
 import '../data/models/shop_now_response_model.dart';
 import '../data/repository/cart_repository.dart';
@@ -30,6 +34,14 @@ class CartCubit extends Cubit<CartState> {
   final searchController = TextEditingController();
   int? selectedBusinessType;
   int? selectedBusinessTypeCategory;
+  RatingChartResponseModel? ratingChartResponseModel;
+
+  void initWithBusinessType(int? businessTypeId) {
+
+    selectedBusinessType = businessTypeId!;
+    selectedBusinessTypeCategory = null; // reset sub‑filter
+    getCartProducts(isRefresh: true); // fetch immediately
+  }
 
   ///pagination
   int _page = 0;
@@ -171,7 +183,7 @@ class CartCubit extends Cubit<CartState> {
   /// Cart functionality - manages all cart operations
   final List<CartItemModel> _cartItems = [];
 
-  void addToCart(ShopNowContent product) {
+  void addToCart(ShopNowContent product, BuildContext context) {
     final index =
         _cartItems.indexWhere((item) => item.product.id == product.id);
 
@@ -185,6 +197,8 @@ class CartCubit extends Cubit<CartState> {
       ));
     }
     emit(CartState.cartSuccess(List.from(_cartItems)));
+    showToast(
+        message: AppLocale.productAddedToCartSuccessfully.getString(context));
   }
 
   void removeFromCart(ShopNowContent cartItem) {
@@ -288,6 +302,7 @@ class CartCubit extends Cubit<CartState> {
     final response = await cartRepository.getProductRateChart(productId);
 
     response.when(success: (data) {
+      ratingChartResponseModel = data;
       emit(CartState.rateChartSuccess(data));
     }, failure: (error) {
       emit(CartState.rateChartFailure(error: error.message.toString()));

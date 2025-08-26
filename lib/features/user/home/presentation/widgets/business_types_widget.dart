@@ -4,6 +4,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_localization/flutter_localization.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:hive/hive.dart';
+import 'package:home4u/core/extensions/navigation_extension.dart';
+import 'package:home4u/core/routing/routes.dart';
 import 'package:home4u/core/theming/app_assets.dart';
 import 'package:home4u/core/theming/app_styles.dart';
 import 'package:home4u/core/utils/spacing.dart';
@@ -80,34 +82,39 @@ class _BusinessTypesWidgetState extends State<BusinessTypesWidget> {
                 itemCount: 5,
                 scrollDirection: Axis.horizontal,
                 itemBuilder: (context, index) {
-                  return Padding(
-                    padding: EdgeInsets.symmetric(horizontal: 4.0),
-                    child: Column(
-                      children: [
-                        ClipRRect(
-                          borderRadius: BorderRadius.circular(40.r),
-                          child: Image.asset(
-                            businessTypeImages[index],
-                            height: 80.h,
+                  return GestureDetector(
+                    onTap: (){
+                      context.pushNamed(Routes.cartScreen,arguments: index);
+                    },
+                    child: Padding(
+                      padding: EdgeInsets.symmetric(horizontal: 4.0),
+                      child: Column(
+                        children: [
+                          ClipRRect(
+                            borderRadius: BorderRadius.circular(40.r),
+                            child: Image.asset(
+                              businessTypeImages[index],
+                              height: 80.h,
+                              width: 80.w,
+                              fit: BoxFit.cover,
+                            ),
+                          ),
+                          verticalSpace(8),
+                          SizedBox(
                             width: 80.w,
-                            fit: BoxFit.cover,
+                            child: AutoSizeText(
+                              (businessTypes.length > index &&
+                                      businessTypes[index].name != null)
+                                  ? businessTypes[index].name!
+                                  : "",
+                              style: AppStyles.font14BlackMedium,
+                              textAlign: TextAlign.center,
+                              maxLines: 2,
+                              overflow: TextOverflow.ellipsis,
+                            ),
                           ),
-                        ),
-                        verticalSpace(8),
-                        SizedBox(
-                          width: 80.w,
-                          child: AutoSizeText(
-                            (businessTypes.length > index &&
-                                    businessTypes[index].name != null)
-                                ? businessTypes[index].name!
-                                : "",
-                            style: AppStyles.font14BlackMedium,
-                            textAlign: TextAlign.center,
-                            maxLines: 2,
-                            overflow: TextOverflow.ellipsis,
-                          ),
-                        ),
-                      ],
+                        ],
+                      ),
                     ),
                   );
                 }),

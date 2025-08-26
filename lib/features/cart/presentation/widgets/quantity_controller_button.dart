@@ -24,7 +24,7 @@ class QuantityControllerButton extends StatelessWidget {
 
         if (cartItem.quantity == 0) {
           return IconButton(
-            onPressed: () => cart.addToCart(content),
+            onPressed: () => cart.addToCart(content,context),
             icon: const Icon(Icons.add, color: Colors.white),
             style: ButtonStyle(
               backgroundColor: WidgetStateProperty.all(AppColors.primaryColor),

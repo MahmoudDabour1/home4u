@@ -1,4 +1,8 @@
+import 'dart:io';
+import 'dart:typed_data';
+
 import 'package:bloc/bloc.dart';
+import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:home4u/features/user/request_design/logic/request_design_state.dart';
 
@@ -8,8 +12,9 @@ import '../data/repository/request_design_repository.dart';
 
 class RequestDesignCubit extends Cubit<RequestDesignState> {
   RequestDesignRepository requestDesignRepository;
+  final Dio dio;
 
-  RequestDesignCubit(this.requestDesignRepository)
+  RequestDesignCubit(this.requestDesignRepository,this.dio)
       : super(const RequestDesignState.initial());
 
   ///Controllers
@@ -18,87 +23,27 @@ class RequestDesignCubit extends Cubit<RequestDesignState> {
   final TextEditingController unitAreaController = TextEditingController();
   final TextEditingController budgetController = TextEditingController();
   final TextEditingController requiredDurationController =
-      TextEditingController();
+  TextEditingController();
   final TextEditingController notesController = TextEditingController();
 
   ///Items
   int? selectedUnitType;
   int? selectedGovernorate;
+  File? image;
 
-  ///Filter
-  // int _page = 0;
-  // bool hasReachedMax = false;
-  // List<RequestDesignFilterContent> requestDesignItems = [];
-  // bool isFetching = false;
+  //controller
+  final promptController = TextEditingController();
 
-  // Future<void> getRequestDesignFilter({bool isRefresh = false}) async {
-  //   ///get any data help you here ....
-  //
-  //   if (isFetching) return;
-  //   isFetching = true;
-  //
-  //   if (!isRefresh && hasReachedMax) {
-  //     isFetching = false;
-  //     return;
-  //   }
-  //
-  //   if (isRefresh) {
-  //     _page = 0;
-  //     hasReachedMax = false;
-  //     requestDesignItems.clear();
-  //   } else if (_page > 0) {
-  //     emit(RequestDesignState.paginationLoading());
-  //   } else {
-  //     emit(RequestDesignState.requestDesignFilterLoading());
-  //   }
-  //
-  //   final requestDesignFilterBody = RequestDesignFilterBody(
-  //     pageNumber: _page,
-  //     searchCriteria: SearchCriteria(
-  //       userId: null,
-  //       unitTypeId: null,
-  //       governorateId: null,
-  //       requiredDurationFrom: null,
-  //       requiredDurationTo: null,
-  //       unitAreaFrom: null,
-  //       unitAreaTo: null,
-  //       budgetFrom: null,
-  //       budgetTo: null,
-  //     ),
-  //   );
-  //   final result = await requestDesignRepository
-  //       .getRequestDesignFilter(requestDesignFilterBody);
-  //
-  //   result.when(
-  //     success: (data) {
-  //       final newItems = data.data?.content ?? [];
-  //       if (newItems.isEmpty) {
-  //         hasReachedMax = true;
-  //       } else {
-  //         requestDesignItems.addAll(newItems);
-  //         _page++;
-  //         hasReachedMax = _page >= (data.data?.totalPages ?? 1);
-  //       }
-  //       if (!isClosed) {
-  //         emit(RequestDesignState.requestDesignFilterSuccess(data));
-  //       }
-  //     },
-  //     failure: (error) {
-  //       if (!isClosed) {
-  //         emit(RequestDesignState.requestDesignFilterFailure(
-  //           error: error.message.toString(),
-  //         ));
-  //       }
-  //     },
-  //   );
-  //   isFetching = false;
-  // }
+  void updateSelectedImages(File newImages) {
+    image = newImages;
+    emit(RequestDesignState.addImage());
+  }
 
   Future<void> addRequestDesign(
       {required RequestDesignBody requestDesignBody}) async {
     emit(RequestDesignState.addRequestDesignLoading());
     final result =
-        await requestDesignRepository.requestDesign(requestDesignBody);
+    await requestDesignRepository.requestDesign(requestDesignBody);
     result.when(
       success: (data) async {
         await showToast(
@@ -124,5 +69,55 @@ class RequestDesignCubit extends Cubit<RequestDesignState> {
       requiredDuration: int.parse(requiredDurationController.text),
       notes: notesController.text,
     );
+  }
+
+
+  Future<void> requestDesignAi() async {
+    if (image == null || promptController.text.isEmpty) {
+      emit( RequestDesignState.requestDesignAiFailure(
+        error: "Image and prompt are required.",
+      ));
+      return;
+    }
+    emit(RequestDesignState.requestDesignAiLoading());
+
+    try {
+      final formData = FormData.fromMap({
+        'image': await MultipartFile.fromFile(image!.path, filename: 'upload.jpg'),
+        'prompt': promptController.text,
+      });
+
+      final response = await dio.post<Uint8List>(
+        'http://51.4.114.63:8080/generate/',
+        data: formData,
+        options: Options(
+          contentType: 'multipart/form-data',
+          responseType: ResponseType.bytes,
+          sendTimeout: const Duration(minutes: 10),
+          receiveTimeout: const Duration(minutes: 10),
+        ),
+      );
+      if (response.statusCode == 200 && response.data != null) {
+        emit(RequestDesignState.requestDesignAiSuccess(response.data!));
+      } else {
+        emit(RequestDesignState.requestDesignAiFailure(
+          error: 'Failed: ${response.statusMessage}',
+        ));
+      }
+    } catch (e) {
+      emit(RequestDesignState.requestDesignAiFailure(
+        error: 'Error: $e',
+      ));
+    }
+  }
+  @override
+  Future<void> close() {
+    phoneNumberController.dispose();
+    unitAreaController.dispose();
+    budgetController.dispose();
+    requiredDurationController.dispose();
+    notesController.dispose();
+    promptController.dispose();
+    return super.close();
   }
 }

@@ -5,6 +5,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:home4u/features/user/home/data/models/highest_rated_response_model.dart';
 
 import '../../../../../../locale/app_locale.dart';
+import '../../../../../cart/data/models/shop_now_response_model.dart';
 import '../../../logic/home_cubit.dart';
 import '../../../logic/home_state.dart';
 import '../scroll_container_widget.dart';
@@ -16,18 +17,20 @@ class BestShowRoomsListView extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocBuilder<HomeCubit, HomeState>(
       buildWhen: (previous, current) =>
-          current is GetHighestRatedLoading ||
+      current is GetHighestRatedLoading ||
           current is GetHighestRatedHomeSuccess ||
           current is GetHighestRatedHomeError,
       builder: (context, state) {
         return state.maybeWhen(
-            getHighestRatedLoading: () => const Center(
-                  child: CircularProgressIndicator(),
-                ),
+            getHighestRatedLoading: () =>
+            const Center(
+              child: CircularProgressIndicator(),
+            ),
             getHighestRatedSuccess: (data) {
-              return setupSuccess(data,context);
+              return setupSuccess(data, context);
             },
-            getHighestRatedError: (e) => Center(
+            getHighestRatedError: (e) =>
+                Center(
                   child: Text(
                     e.toString(),
                     style: TextStyle(fontSize: 16.sp, color: Colors.red),
@@ -38,16 +41,24 @@ class BestShowRoomsListView extends StatelessWidget {
     );
   }
 
-  Widget setupSuccess(HighestRatedResponseModel data,BuildContext context) {
+  Widget setupSuccess(HighestRatedResponseModel data, BuildContext context) {
     return SingleChildScrollView(
       scrollDirection: Axis.horizontal,
       child: Row(
         children: List.generate(
           data.data?.length ?? 0,
-          (index) {
+              (index) {
             return Padding(
               padding: EdgeInsets.only(right: 8.w),
               child: ScrollContainerWidget(
+                product: ShopNowContent(
+                  name:data.data?[index].name,
+                  imagePath:data.data?[index].images?[0] ?? '',
+                  id: data.data?[index].id ?? 0,
+                  price:data.data?[index].price?.toInt(),
+                  rate: data.data?[index].rate?.toInt() ?? 0,
+                ),
+
                 productId: data.data?[index].id ?? 0,
                 image: data.data?[index].images?[0] ?? '',
                 title: data.data?[index].name ?? '',
@@ -55,9 +66,12 @@ class BestShowRoomsListView extends StatelessWidget {
                 price: data.data?[index].price.toString() ?? "0",
                 ratingCount: data.data?[index].countRates?.toString() ?? '0',
                 rankBySales:
-                    "${data.data?[index].productRankBySales ?? 0} ${AppLocale.on.getString(context)} ${data.data?[index].categoryName ?? ""} category",
+                "${data.data?[index].productRankBySales ?? 0} ${AppLocale.on
+                    .getString(context)} ${data.data?[index].categoryName ??
+                    ""} category",
                 numberOfSales:
-                    "${data.data?[index].numberOfSales} ${AppLocale.soldRecently.getString(context)}",
+                "${data.data?[index].numberOfSales} ${AppLocale.soldRecently
+                    .getString(context)}",
               ),
             );
           },

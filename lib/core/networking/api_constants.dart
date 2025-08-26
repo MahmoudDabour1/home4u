@@ -187,6 +187,8 @@ static const String topEngineersEp = "/api/v1/engineers/top-engineers";
   static const String allCustomLookUpEp = "/api/v1/custom-package";
   static const String askEngineerLookUpEp = "/api/v1/ask-engineer/lkps";
   static const String askWorkerLookUpEp = "/api/v1/ask-worker/lkps";
+  static const String aiBaseUrlEp = "http://51.4.114.63:8080/generate/";
+  static const String aiEp = "generate/";
 
 }
 

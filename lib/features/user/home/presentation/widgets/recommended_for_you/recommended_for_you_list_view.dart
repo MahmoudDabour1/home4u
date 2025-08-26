@@ -5,6 +5,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:home4u/features/user/home/data/models/recommended_for_you_response_model.dart';
 
 import '../../../../../../locale/app_locale.dart';
+import '../../../../../cart/data/models/shop_now_response_model.dart';
 import '../../../logic/home_cubit.dart';
 import '../../../logic/home_state.dart';
 import '../scroll_container_widget.dart';
@@ -47,7 +48,14 @@ class RecommendedForYouListView extends StatelessWidget {
               (index) {
             return Padding(
               padding:  EdgeInsets.only(right: 8.w),
-              child: ScrollContainerWidget(
+              child: ScrollContainerWidget(              product: ShopNowContent(
+                name:data.data?[index].name,
+                imagePath:data.data?[index].images?[0] ?? '',
+                id: data.data?[index].id ?? 0,
+                price:data.data?[index].price?.toInt(),
+                rate: data.data?[index].rate?.toInt() ?? 0,
+              ),
+
                 productId: data.data?[index].id ?? 0,
                 image: data.data?[index].images?[0] ?? '',
                 title: data.data?[index].name ?? '',
